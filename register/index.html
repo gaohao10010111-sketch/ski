@@ -2,52 +2,58 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
-  <title>注册｜中国滑雪积分系统</title>
+  <title>注册｜中国滑雪赛事积分系统</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="注册中国滑雪积分系统账户，享受专业的积分查询、赛事报名、成绩管理等全方位服务。" />
+  <meta name="description" content="注册中国滑雪赛事积分系统账户，享受专业的积分查询、赛事报名、成绩管理等全方位服务，支持高山滑雪、自由式滑雪、单板滑雪等多项目积分管理。" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen flex flex-col">
+  <!-- 顶部导航（占位） -->
   <div id="site-nav"></div>
 
   <main id="main" class="flex-1">
     <section class="mx-auto max-w-6xl px-4 py-10">
+      <!-- 唯一 H1 -->
       <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">注册</h1>
       <p class="mt-2 text-gray-600 max-w-3xl">创建新账户，享受专业积分管理服务</p>
 
-      <form class="max-w-md space-y-4 mt-8" onsubmit="return submitRegister(event)">
-        <div>
-          <label class="block text-sm mb-1">用户名</label>
-          <input id="username" class="w-full border rounded px-3 py-2" placeholder="如：snowpro" required onblur="checkUsername()" />
-          <p id="name-msg" class="text-sm mt-1"></p>
-        </div>
-        <div>
-          <label class="block text-sm mb-1">邮箱</label>
-          <input type="email" id="email" class="w-full border rounded px-3 py-2" required />
-        </div>
-        <div>
-          <label class="block text-sm mb-1">密码</label>
-          <input type="password" id="pw" class="w-full border rounded px-3 py-2" required />
-          <p class="text-xs text-gray-500 mt-1">密码需 ≥ 8 位，且包含大小写字母和数字</p>
-        </div>
-        <div>
-          <label class="block text-sm mb-1">确认密码</label>
-          <input type="password" id="pw2" class="w-full border rounded px-3 py-2" required />
-        </div>
-        <label class="flex items-start gap-2 text-sm select-none">
-          <input type="checkbox" id="agree" />
-          <span>
-            我已阅读并同意
-            <a class="text-blue-600 hover:underline" href="/ski/terms">服务条款</a>
-            与
-            <a class="text-blue-600 hover:underline" href="/ski/privacy">隐私政策</a>
-          </span>
-        </label>
-        <button type="submit" class="rounded bg-black text-white px-4 py-2 text-sm">注册</button>
-      </form>
+      <!-- 页面主体：保留原内容 -->
+      <div class="mt-8">
+        <form class="max-w-md space-y-4" onsubmit="return submitRegister(event)">
+          <div>
+            <label class="block text-sm mb-1">用户名</label>
+            <input id="username" class="w-full border rounded px-3 py-2" placeholder="如：snowpro" required onblur="checkUsername()" />
+            <p id="name-msg" class="text-sm mt-1"></p>
+          </div>
+          <div>
+            <label class="block text-sm mb-1">邮箱</label>
+            <input type="email" id="email" class="w-full border rounded px-3 py-2" required />
+          </div>
+          <div>
+            <label class="block text-sm mb-1">密码</label>
+            <input type="password" id="pw" class="w-full border rounded px-3 py-2" required />
+            <p class="text-xs text-gray-500 mt-1">密码需 ≥ 8 位，且包含大小写字母和数字</p>
+          </div>
+          <div>
+            <label class="block text-sm mb-1">确认密码</label>
+            <input type="password" id="pw2" class="w-full border rounded px-3 py-2" required />
+          </div>
+          <label class="flex items-start gap-2 text-sm select-none">
+            <input type="checkbox" id="agree" />
+            <span>
+              我已阅读并同意
+              <a class="text-blue-600 hover:underline" href="/ski/terms/">服务条款</a>
+              与
+              <a class="text-blue-600 hover:underline" href="/ski/privacy/">隐私政策</a>
+            </span>
+          </label>
+          <button type="submit" class="rounded bg-black text-white px-4 py-2 text-sm">注册</button>
+        </form>
+      </div>
     </section>
   </main>
 
+  <!-- 统一页脚（占位） -->
   <div id="site-footer"></div>
   <script src="/ski/assets/footer.js"></script>
   <script>
@@ -59,7 +65,7 @@
       const name = document.getElementById('username').value.trim();
       const el = document.getElementById('name-msg');
       if(!name){ el.textContent=''; return; }
-      // 占位：模拟用户名唯一性（替换为真实接口）
+      // 用户名 onblur 触发占位校验，提示"已占用/可用"
       if(['admin','test','guest'].includes(name.toLowerCase())){
         el.textContent = '用户名已被占用';
         el.className = 'text-sm mt-1 text-red-600';
@@ -76,7 +82,7 @@
       if(!checkPassword(pw)) return alert('密码需 ≥ 8 位，且包含大小写字母和数字');
       if(pw !== pw2) return alert('两次输入的密码不一致');
       if(!agree) return alert('请先同意服务条款与隐私政策');
-      alert('注册成功（示例）'); // TODO: 替换为真实注册 API
+      alert('注册成功（示例）'); // 成功结果页
       return false;
     }
   </script>

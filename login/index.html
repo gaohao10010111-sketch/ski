@@ -2,46 +2,52 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
-  <title>登录｜中国滑雪积分系统</title>
+  <title>登录｜中国滑雪赛事积分系统</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="登录中国滑雪积分系统，进入个人中心查询积分、管理赛事、查看排名等专业功能。" />
+  <meta name="description" content="登录中国滑雪赛事积分系统，进入个人中心查询积分、管理赛事、查看排名等专业功能，支持高山滑雪、自由式滑雪、单板滑雪等多项目积分管理。" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen flex flex-col">
-  <!-- 顶部导航占位 -->
+  <!-- 顶部导航（占位） -->
   <div id="site-nav"></div>
 
   <main id="main" class="flex-1">
     <section class="mx-auto max-w-6xl px-4 py-10">
+      <!-- 唯一 H1 -->
       <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">登录</h1>
       <p class="mt-2 text-gray-600 max-w-3xl">使用您的账户进入积分管理平台</p>
 
-      <form class="max-w-md space-y-4 mt-8" onsubmit="return fakeLogin(event)">
-        <div>
-          <label class="block text-sm mb-1">邮箱</label>
-          <input type="email" class="w-full border rounded px-3 py-2" placeholder="name@example.com" required />
-        </div>
-        <div>
-          <label class="block text-sm mb-1">密码</label>
-          <input type="password" class="w-full border rounded px-3 py-2" required />
-        </div>
-        <p id="login-error" class="text-sm text-red-600 hidden">登录失败，请检查邮箱或密码</p>
-        <button type="submit" class="inline-flex items-center justify-center rounded bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 text-sm font-medium transition-colors">登录</button>
-        <div class="text-sm flex items-center gap-3 mt-2">
-          <a class="text-blue-600 hover:underline" href="/ski/reset-password">忘记密码？</a>
-          <span class="text-gray-400">|</span>
-          <a class="text-blue-600 hover:underline" href="/ski/register/">没有账号？去注册</a>
-        </div>
-      </form>
+      <!-- 页面主体：保留原内容 -->
+      <div class="mt-8">
+        <form class="max-w-md space-y-4" onsubmit="return fakeLogin(event)">
+          <div>
+            <label class="block text-sm mb-1">邮箱</label>
+            <input type="email" class="w-full border rounded px-3 py-2" placeholder="name@example.com" required />
+          </div>
+          <div>
+            <label class="block text-sm mb-1">密码</label>
+            <input type="password" class="w-full border rounded px-3 py-2" required />
+          </div>
+          <p id="login-error" class="text-sm text-red-600 hidden">登录失败，请检查邮箱或密码</p>
+          <button id="login-btn" type="submit" class="rounded bg-black text-white px-4 py-2 text-sm">登录</button>
+          <div class="text-sm flex items-center gap-3 mt-2">
+            <a class="text-blue-600 hover:underline" href="/ski/reset-password">忘记密码？</a>
+            <span class="text-gray-400">|</span>
+            <a class="text-blue-600 hover:underline" href="/ski/register/">没有账号？去注册</a>
+          </div>
+        </form>
+      </div>
     </section>
   </main>
 
+  <!-- 统一页脚（占位） -->
   <div id="site-footer"></div>
   <script src="/ski/assets/footer.js"></script>
   <script>
     function fakeLogin(e){
       e.preventDefault();
-      // 这里替换为真实 API
+      // 伪逻辑：提交时置灰按钮，失败显示错误
+      document.getElementById('login-btn').disabled = true;
       document.getElementById('login-error').classList.remove('hidden');
       return false;
     }
