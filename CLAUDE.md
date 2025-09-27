@@ -1307,61 +1307,61 @@ PORT=3000
 Claude必须逐一访问以下所有35个页面/资源，检查并报告问题：
 
 #### 🏠 主要功能页面 (Next.js)
-1. **首页** - `https://guangyikeji.github.io/ski/`
-2. **关于系统** - `https://guangyikeji.github.io/ski/about`
-3. **积分体系** - `https://guangyikeji.github.io/ski/scoring-systems`
+1. **首页** - `https://gaohao10010111-sketch.github.io/ski/`
+2. **关于系统** - `https://gaohao10010111-sketch.github.io/ski/about`
+3. **积分体系** - `https://gaohao10010111-sketch.github.io/ski/scoring-systems`
 
 #### 📊 积分管理模块
-4. **积分中心** - `https://guangyikeji.github.io/ski/points`
-5. **积分计算器** - `https://guangyikeji.github.io/ski/points/calculator`
-6. **FIS积分查询** - `https://guangyikeji.github.io/ski/points/fis`
-7. **积分排名** - `https://guangyikeji.github.io/ski/points/rankings`
-8. **积分趋势** - `https://guangyikeji.github.io/ski/points/trends`
+4. **积分中心** - `https://gaohao10010111-sketch.github.io/ski/points`
+5. **积分计算器** - `https://gaohao10010111-sketch.github.io/ski/points/calculator`
+6. **FIS积分查询** - `https://gaohao10010111-sketch.github.io/ski/points/fis`
+7. **积分排名** - `https://gaohao10010111-sketch.github.io/ski/points/rankings`
+8. **积分趋势** - `https://gaohao10010111-sketch.github.io/ski/points/trends`
 
 #### 👥 运动员管理
-9. **运动员管理** - `https://guangyikeji.github.io/ski/athletes`
+9. **运动员管理** - `https://gaohao10010111-sketch.github.io/ski/athletes`
 
 #### 🏆 比赛管理模块
-10. **比赛管理** - `https://guangyikeji.github.io/ski/competitions`
-11. **赛程安排** - `https://guangyikeji.github.io/ski/competitions/schedule`
-12. **比赛统计** - `https://guangyikeji.github.io/ski/competitions/stats`
+10. **比赛管理** - `https://gaohao10010111-sketch.github.io/ski/competitions`
+11. **赛程安排** - `https://gaohao10010111-sketch.github.io/ski/competitions/schedule`
+12. **比赛统计** - `https://gaohao10010111-sketch.github.io/ski/competitions/stats`
 
 #### 📝 报名管理模块
-13. **报名管理** - `https://guangyikeji.github.io/ski/registration`
-14. **报名费用** - `https://guangyikeji.github.io/ski/registration/fees`
-15. **报名管理后台** - `https://guangyikeji.github.io/ski/registration/manage`
-16. **在线报名** - `https://guangyikeji.github.io/ski/registration/online`
+13. **报名管理** - `https://gaohao10010111-sketch.github.io/ski/registration`
+14. **报名费用** - `https://gaohao10010111-sketch.github.io/ski/registration/fees`
+15. **报名管理后台** - `https://gaohao10010111-sketch.github.io/ski/registration/manage`
+16. **在线报名** - `https://gaohao10010111-sketch.github.io/ski/registration/online`
 
 #### 📖 规则管理模块
-17. **规则中心** - `https://guangyikeji.github.io/ski/rules`
-18. **竞赛规则** - `https://guangyikeji.github.io/ski/rules/competition`
-19. **FIS规则** - `https://guangyikeji.github.io/ski/rules/fis`
-20. **积分规则** - `https://guangyikeji.github.io/ski/rules/points`
+17. **规则中心** - `https://gaohao10010111-sketch.github.io/ski/rules`
+18. **竞赛规则** - `https://gaohao10010111-sketch.github.io/ski/rules/competition`
+19. **FIS规则** - `https://gaohao10010111-sketch.github.io/ski/rules/fis`
+20. **积分规则** - `https://gaohao10010111-sketch.github.io/ski/rules/points`
 
 #### 📋 成绩管理模块
-21. **成绩公布** - `https://guangyikeji.github.io/ski/results-announcement`
-22. **成绩导入** - `https://guangyikeji.github.io/ski/results-import`
-23. **成绩查询** - `https://guangyikeji.github.io/ski/results-query`
+21. **成绩公布** - `https://gaohao10010111-sketch.github.io/ski/results-announcement`
+22. **成绩导入** - `https://gaohao10010111-sketch.github.io/ski/results-import`
+23. **成绩查询** - `https://gaohao10010111-sketch.github.io/ski/results-query`
 
 #### 🔐 用户管理模块 (Next.js版本)
-24. **登录** - `https://guangyikeji.github.io/ski/login`
-25. **注册** - `https://guangyikeji.github.io/ski/register`
-26. **个人中心** - `https://guangyikeji.github.io/ski/profile`
+24. **登录** - `https://gaohao10010111-sketch.github.io/ski/login`
+25. **注册** - `https://gaohao10010111-sketch.github.io/ski/register`
+26. **个人中心** - `https://gaohao10010111-sketch.github.io/ski/profile`
 
 #### 🧪 测试与工具
-27. **测试账号** - `https://guangyikeji.github.io/ski/test-accounts`
-28. **简单测试** - `https://guangyikeji.github.io/ski/test-simple`
+27. **测试账号** - `https://gaohao10010111-sketch.github.io/ski/test-accounts`
+28. **简单测试** - `https://gaohao10010111-sketch.github.io/ski/test-simple`
 
 #### 🌐 静态HTML页面 (零构建版本)
-29. **静态登录页** - `https://guangyikeji.github.io/ski/login/`
-30. **静态注册页** - `https://guangyikeji.github.io/ski/register/`
-31. **服务条款** - `https://guangyikeji.github.io/ski/terms/`
-32. **隐私政策** - `https://guangyikeji.github.io/ski/privacy/`
-33. **结构测试页** - `https://guangyikeji.github.io/ski/test-simple/`
+29. **静态登录页** - `https://gaohao10010111-sketch.github.io/ski/login/`
+30. **静态注册页** - `https://gaohao10010111-sketch.github.io/ski/register/`
+31. **服务条款** - `https://gaohao10010111-sketch.github.io/ski/terms/`
+32. **隐私政策** - `https://gaohao10010111-sketch.github.io/ski/privacy/`
+33. **结构测试页** - `https://gaohao10010111-sketch.github.io/ski/test-simple/`
 
 #### 🛠️ 工具与资源
-34. **统一页脚脚本** - `https://guangyikeji.github.io/ski/assets/footer.js`
-35. **工具目录** - `https://guangyikeji.github.io/ski/tools/`
+34. **统一页脚脚本** - `https://gaohao10010111-sketch.github.io/ski/assets/footer.js`
+35. **工具目录** - `https://gaohao10010111-sketch.github.io/ski/tools/`
 
 ### 🔍 测试检查项目
 对每个页面，Claude必须检查并报告：
