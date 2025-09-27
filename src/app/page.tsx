@@ -485,7 +485,7 @@ export default function HomePage() {
                   </div>
                   <div className="text-right">
                     <div className="font-semibold text-ski-navy">0.00</div>
-                    <div className="text-xs text-gray-500">中国积分</div>
+                    <div className="text-xs text-gray-500">积分</div>
                   </div>
                 </div>
                 <div className="flex items-center p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg border border-gray-200">
@@ -496,7 +496,7 @@ export default function HomePage() {
                   </div>
                   <div className="text-right">
                     <div className="font-semibold text-ski-navy">8.45</div>
-                    <div className="text-xs text-gray-500">中国积分</div>
+                    <div className="text-xs text-gray-500">积分</div>
                   </div>
                 </div>
                 <div className="flex items-center p-4 bg-gradient-to-r from-orange-50 to-orange-100 rounded-lg border border-orange-200">
@@ -507,7 +507,7 @@ export default function HomePage() {
                   </div>
                   <div className="text-right">
                     <div className="font-semibold text-ski-navy">12.30</div>
-                    <div className="text-xs text-gray-500">中国积分</div>
+                    <div className="text-xs text-gray-500">积分</div>
                   </div>
                 </div>
                 <div className="flex items-center p-4 bg-gray-50 rounded-lg">
@@ -518,7 +518,7 @@ export default function HomePage() {
                   </div>
                   <div className="text-right">
                     <div className="font-semibold text-ski-navy">15.67</div>
-                    <div className="text-xs text-gray-500">中国积分</div>
+                    <div className="text-xs text-gray-500">积分</div>
                   </div>
                 </div>
               </div>

@@ -7,12 +7,12 @@ import StructuredData from '@/components/StructuredData'
 
 export const metadata: Metadata = {
   title: {
-    default: '中国滑雪赛事积分系统 - 专业权威的滑雪竞赛管理平台',
-    template: '%s | 中国滑雪赛事积分系统'
+    default: '中国滑雪积分管理平台 - 专业权威的滑雪积分管理服务',
+    template: '%s | 中国滑雪积分管理平台'
   },
-  description: '中国官方认证的滑雪赛事积分管理平台，支持高山滑雪、自由式滑雪、单板滑雪等项目的积分计算、赛事管理、运动员档案管理。基于国家体育总局标准，提供准确的积分计算和排名服务。',
+  description: '权威的滑雪积分管理平台，支持高山滑雪、自由式滑雪、单板滑雪等项目的积分计算、赛事管理、运动员档案管理。基于官方标准，提供准确的积分计算和排名服务。',
   keywords: [
-    '中国滑雪积分系统',
+    '滑雪积分系统',
     '高山滑雪积分',
     '自由式滑雪',
     '单板滑雪',
@@ -20,12 +20,12 @@ export const metadata: Metadata = {
     '积分计算',
     '运动员管理',
     '赛事管理',
-    '中国滑雪协会',
+    '滑雪赛事管理',
     '滑雪积分排名'
   ],
-  authors: [{ name: '中国滑雪协会' }],
-  creator: '中国滑雪协会',
-  publisher: '中国滑雪协会',
+  authors: [{ name: '滑雪积分管理平台' }],
+  creator: '滑雪积分管理平台',
+  publisher: '滑雪积分管理平台',
   robots: {
     index: true,
     follow: true,
@@ -41,22 +41,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'zh_CN',
     url: 'https://gaohao10010111-sketch.github.io/ski/',
-    siteName: '中国滑雪赛事积分系统',
-    title: '中国滑雪赛事积分系统 - 专业权威的滑雪竞赛管理平台',
-    description: '中国官方认证的滑雪赛事积分管理平台，支持高山滑雪、自由式滑雪、单板滑雪等项目的积分计算、赛事管理、运动员档案管理。',
+    siteName: '中国滑雪积分管理平台',
+    title: '中国滑雪积分管理平台 - 专业权威的滑雪积分管理服务',
+    description: '权威的滑雪积分管理平台，支持高山滑雪、自由式滑雪、单板滑雪等项目的积分计算、赛事管理、运动员档案管理。',
     images: [
       {
         url: '/images/ski-bg.jpg',
         width: 1200,
         height: 630,
-        alt: '中国滑雪赛事积分系统',
+        alt: '中国滑雪积分管理平台',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '中国滑雪赛事积分系统',
-    description: '中国官方认证的滑雪赛事积分管理平台',
+    title: '中国滑雪积分管理平台',
+    description: '权威的滑雪积分管理平台',
     images: ['/images/ski-bg.jpg'],
   },
   alternates: {

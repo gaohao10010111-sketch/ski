@@ -73,7 +73,7 @@ export default function PointsCalculatorPage() {
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">积分计算器</h1>
           <p className="text-xl text-gray-600">
-            基于中国高山滑雪积分规则v4.0的在线计算工具
+            基于高山滑雪积分计算标准的专业在线工具
           </p>
         </div>
 

@@ -8,7 +8,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">关于我们</h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            中国滑雪赛事积分系统是专业的滑雪运动积分管理平台，致力于推动中国滑雪运动的标准化和专业化发展
+            中国滑雪积分管理平台是专业的滑雪运动积分管理服务，致力于推动滑雪运动的标准化和专业化发展
           </p>
         </div>
       </div>
@@ -21,13 +21,13 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">平台简介</h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  中国滑雪赛事积分系统是基于《中国高山滑雪赛事积分规则v4.0》和《2025-2026赛季全国BA、SS青少年U系列比赛方案》建立的综合性滑雪运动管理平台。
+                  中国滑雪积分管理平台是基于官方积分计算规则和青少年U系列比赛方案建立的综合性滑雪运动管理平台。
                 </p>
                 <p>
                   平台支持<strong>高山滑雪、自由式滑雪、单板滑雪</strong>三大项目，涵盖速降、回转、大回转、超级大回转、全能、大跳台、坡面障碍技巧、U型场地等多个细分项目的积分计算和赛事管理。
                 </p>
                 <p>
-                  我们致力于为中国滑雪运动提供专业、准确、高效的数字化管理服务，推动中国滑雪运动的规范化发展。
+                  我们致力于为滑雪运动提供专业、准确、高效的数字化管理服务，推动滑雪运动的规范化发展。
                 </p>
               </div>
             </div>
@@ -118,7 +118,7 @@ export default function AboutPage() {
             <div className="bg-white p-8 rounded-lg shadow-md border border-gray-200">
               <h3 className="text-xl font-semibold mb-4">双积分计算引擎</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>• 高山滑雪：基于时间的v4.0积分计算</li>
+                <li>• 高山滑雪：基于时间的积分计算</li>
                 <li>• 自由式/单板：基于排名的240/360/120分档</li>
                 <li>• 动态判罚分计算</li>
                 <li>• 多项目积分管理</li>
@@ -128,7 +128,7 @@ export default function AboutPage() {
             <div className="bg-white p-8 rounded-lg shadow-md border border-gray-200">
               <h3 className="text-xl font-semibold mb-4">规则体系支持</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>• 中国高山滑雪积分规则v4.0</li>
+                <li>• 高山滑雪积分计算规则</li>
                 <li>• 全国BA、SS青少年U系列方案</li>
                 <li>• FIS国际雪联规则兼容</li>
                 <li>• 场地技术标准管理</li>
