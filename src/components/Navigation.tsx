@@ -42,7 +42,7 @@ const navigationItems = [
     resource: Resource.POINTS_QUERY,
     action: Action.READ,
     children: [
-      { name: '四大积分系统', href: '/scoring-systems', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
+      { name: '积分体系', href: '/scoring-systems', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
       { name: '中国积分查询', href: '/points/fis', active: true, resource: Resource.POINTS_QUERY, action: Action.READ },
       { name: '积分计算器', href: '/points/calculator', active: true, resource: Resource.POINTS_CALCULATOR, action: Action.READ },
       { name: '积分排行榜', href: '/points/rankings', active: true, resource: Resource.POINTS_RANKING, action: Action.READ },
@@ -185,7 +185,7 @@ export default function Navigation() {
             <Link href="/" className="flex items-center space-x-2">
               <Mountain className="h-8 w-8 text-ski-blue" />
               <span className="text-xl font-bold text-ski-navy whitespace-nowrap">
-                中国滑雪赛事积分系统
+                中国滑雪积分系统
               </span>
             </Link>
           </div>

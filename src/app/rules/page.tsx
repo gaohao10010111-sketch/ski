@@ -6,7 +6,7 @@ import Link from 'next/link'
 // 规则模块
 const ruleModules = [
   {
-    title: '中国高山滑雪积分规则 v4.0',
+    title: '中国高山滑雪积分规则 ',
     description: '全新简化的积分计算体系，基于三步计算公式，去除复杂系数',
     icon: Calculator,
     href: '/rules/points',
@@ -21,8 +21,8 @@ const ruleModules = [
     ]
   },
   {
-    title: '竞赛规则说明 v4.0',
-    description: '了解v4.0新版竞赛规则和扩展青少年体系，完整参赛指导',
+    title: '竞赛规则说明 ',
+    description: '了解新版竞赛规则和扩展青少年体系，完整参赛指导',
     icon: Trophy,
     href: '/rules/competition',
     color: 'text-green-600',
@@ -30,21 +30,21 @@ const ruleModules = [
     borderColor: 'border-green-200',
     features: [
       '比赛项目介绍',
-      'v4.0年龄分组体系',
+      '年龄分组体系',
       '参赛指南流程',
       '安全技术规范'
     ]
   },
   {
     title: '中国积分规则文档',
-    description: '查看最新的v4.0简化积分规则文档和计算器工具',
+    description: '查看最新的简化积分规则文档和计算器工具',
     icon: FileText,
     href: '/rules/fis',
     color: 'text-purple-600',
     bgColor: 'bg-purple-50',
     borderColor: 'border-purple-200',
     features: [
-      'v4.0规则详解',
+      '规则详解',
       '公式组件说明',
       '在线积分计算器',
       'PDF文档下载'
@@ -52,7 +52,7 @@ const ruleModules = [
   }
 ]
 
-// v4.0核心特点
+// 核心特点
 const v4Features = [
   {
     title: '简化计算',
@@ -82,7 +82,7 @@ const v4Features = [
 
 // 快速链接
 const quickLinks = [
-  { name: 'v4.0积分计算器', href: '/points/calculator', icon: Calculator },
+  { name: '积分计算器', href: '/points/calculator', icon: Calculator },
   { name: '积分规则查询', href: '/points/rankings', icon: Award },
   { name: '赛事数据管理', href: '/data', icon: FileText },
   { name: '中国滑雪协会', href: 'https://www.csa.org.cn', icon: ExternalLink, external: true }
@@ -94,15 +94,15 @@ export default function RulesMainPage() {
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-ski-navy mb-4">
-          中国高山滑雪规则文档 v4.0
+          中国高山滑雪规则文档 
         </h1>
         <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-          查看最新的v4.0简化规则体系，包含积分计算、竞赛管理、青少年培养等完整规则文档
+          查看最新的简化规则体系，包含积分计算、竞赛管理、青少年培养等完整规则文档
         </p>
         <div className="flex justify-center items-center space-x-4 mt-4 text-sm text-gray-500">
           <span className="flex items-center">
             <Award className="h-4 w-4 mr-1" />
-            官方v4.0标准
+            官方标准
           </span>
           <span className="flex items-center">
             <Target className="h-4 w-4 mr-1" />
@@ -115,15 +115,15 @@ export default function RulesMainPage() {
         </div>
       </div>
 
-      {/* v4.0简化公式展示 */}
+      {/* 简化公式展示 */}
       <div className="bg-gradient-to-r from-ski-blue to-primary-700 text-white rounded-lg p-8 mb-12">
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-4">v4.0核心公式</h2>
+          <h2 className="text-3xl font-bold mb-4">核心公式</h2>
           <div className="text-2xl font-mono font-bold mb-6 bg-white/20 rounded-lg py-4">
             最终积分 = (基础比赛积分 + 判罚分) × 赛事系数
           </div>
           <p className="text-lg opacity-90">
-            相比v2.0复杂体系，v4.0去除了质量系数、人数系数、附加分等复杂要素，
+            相比v2.0复杂体系，去除了质量系数、人数系数、附加分等复杂要素，
             采用简化三步计算法，提高效率和透明度
           </p>
         </div>
@@ -165,9 +165,9 @@ export default function RulesMainPage() {
         </div>
       </div>
 
-      {/* v4.0核心特点 */}
+      {/* 核心特点 */}
       <div className="mb-12">
-        <h2 className="text-3xl font-bold text-ski-navy mb-8 text-center">v4.0核心特点</h2>
+        <h2 className="text-3xl font-bold text-ski-navy mb-8 text-center">核心特点</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {v4Features.map((feature, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg p-6 text-center">
@@ -209,9 +209,9 @@ export default function RulesMainPage() {
         </div>
       </div>
 
-      {/* v4.0升级说明 */}
+      {/* 升级说明 */}
       <div className="bg-gradient-to-r from-ski-navy to-gray-800 text-white rounded-lg p-8 mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-center">v4.0升级说明</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center">升级说明</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <h3 className="text-xl font-semibold mb-4">主要改进</h3>
@@ -241,7 +241,7 @@ export default function RulesMainPage() {
           <div>
             <h4 className="font-semibold mb-2">📋 规则版本</h4>
             <ul className="space-y-1">
-              <li>• 当前版本：v4.0（最新）</li>
+              <li>• 当前版本：（最新）</li>
               <li>• 实施日期：2024-2025赛季</li>
               <li>• 适用范围：中国国内赛事</li>
               <li>• 更新周期：根据实践情况调整</li>

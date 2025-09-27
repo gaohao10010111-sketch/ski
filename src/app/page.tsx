@@ -200,7 +200,7 @@ export default function HomePage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 text-sm md:text-base lg:text-lg">
                   <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20">
                     <div className="w-3 h-3 bg-ski-blue rounded-full mr-3 flex-shrink-0"></div>
-                    <span className="text-white font-medium">四大积分系统</span>
+                    <span className="text-white font-medium">专业积分体系</span>
                   </div>
                   <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20">
                     <div className="w-3 h-3 bg-green-400 rounded-full mr-3 flex-shrink-0"></div>
@@ -703,7 +703,7 @@ export default function HomePage() {
                 <ul className="space-y-4">
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-300 mr-3 flex-shrink-0" />
-                    <span>高山滑雪中国积分规则v4.0标准</span>
+                    <span>高山滑雪中国积分规则标准</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-300 mr-3 flex-shrink-0" />

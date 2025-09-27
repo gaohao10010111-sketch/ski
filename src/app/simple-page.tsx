@@ -2,16 +2,16 @@ export default function SimplePage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold text-center mb-8">
-        中国滑雪赛事积分系统
+        中国滑雪积分系统
       </h1>
 
       <div className="bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-xl font-semibold mb-4">四大积分系统</h2>
+        <h2 className="text-xl font-semibold mb-4">专业积分体系</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="border rounded-lg p-4">
             <h3 className="font-semibold text-lg mb-2">高山滑雪积分系统</h3>
-            <p className="text-gray-600">基于时间的v4.0积分计算体系</p>
+            <p className="text-gray-600">基于时间的高山滑雪积分计算体系</p>
           </div>
 
           <div className="border rounded-lg p-4">

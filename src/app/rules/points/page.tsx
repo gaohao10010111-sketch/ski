@@ -2,7 +2,7 @@
 
 import { Calculator, TrendingUp, Clock, Award, FileText, CheckCircle, Users, Trophy, Star, Target, Zap, Medal, Crown, Gift } from 'lucide-react'
 
-// v4.0项目系数配置
+// 项目系数配置
 const disciplineFactors = [
   { discipline: '速降 (DH)', factor: 1250, description: '高速技术项目，考验选手勇气与技术', maxPoints: 330 },
   { discipline: '回转 (SL)', factor: 730, description: '技术性项目，要求精准的转弯技巧', maxPoints: 165 },
@@ -11,7 +11,7 @@ const disciplineFactors = [
   { discipline: '全能 (AC)', factor: 1360, description: '综合多项目的全能比拼', maxPoints: 270 }
 ]
 
-// v4.0赛事等级系统
+// 赛事等级系统
 const eventLevels = [
   { level: 'A级', name: '全国锦标赛、冬运会等', coefficient: 1.0, color: 'text-red-600', bgColor: 'bg-red-50', description: '国家级顶级赛事，影响力最大' },
   { level: 'B级', name: '省级锦标赛、区域邀请赛等', coefficient: 0.6, color: 'text-orange-600', bgColor: 'bg-orange-50', description: '区域性重要赛事，竞技水平较高' },
@@ -25,7 +25,7 @@ const youthGroups = [
   { group: '成年', name: '成年组', color: 'text-gray-600', description: '最高竞技水平，完整积分计算体系' }
 ]
 
-// v4.0基础公式组件
+// 基础公式组件
 const formulaComponents = [
   {
     component: '基础比赛积分',
@@ -50,7 +50,7 @@ const formulaComponents = [
   }
 ]
 
-// v4.0计算示例
+// 计算示例
 const calculationExample = {
   scenario: 'B级大回转比赛示例',
   winnerTime: 65.43,
@@ -93,7 +93,7 @@ export default function PointsRulesPage() {
         </div>
       </div>
 
-      {/* v4.0核心公式展示 */}
+      {/* 核心公式展示 */}
       <div className="bg-gradient-to-r from-ski-blue to-primary-700 text-white rounded-lg p-8 mb-12">
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-4">简化积分计算公式</h2>
@@ -123,7 +123,7 @@ export default function PointsRulesPage() {
         </div>
       </div>
 
-      {/* v4.0青少年体系说明 */}
+      {/* 青少年体系说明 */}
       <div className="bg-gradient-to-r from-green-600 to-teal-600 text-white rounded-lg p-6 mb-12">
         <h3 className="text-2xl font-bold mb-4 text-center">扩展青少年体系</h3>
         <div className="text-center">
@@ -313,7 +313,7 @@ export default function PointsRulesPage() {
         </div>
       </div>
 
-      {/* v4.0核心特点 */}
+      {/* 核心特点 */}
       <div className="mb-12">
         <h2 className="text-3xl font-bold text-ski-navy mb-8 text-center">最新规则特点</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

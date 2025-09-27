@@ -10,7 +10,7 @@ export default function StructuredData({ type = 'sportsOrganization' }: Structur
     '@type': type === 'website' ? 'WebSite' : 'SportsOrganization',
     name: '中国高山滑雪积分管理平台',
     alternateName: 'China Alpine Skiing Points Management',
-    description: '基于v4.0简化积分规则的专业滑雪竞赛数据管理平台，为中国高山滑雪运动提供积分计算、成绩管理、赛事组织等一站式解决方案',
+    description: '基于简化积分规则的专业滑雪竞赛数据管理平台，为中国高山滑雪运动提供积分计算、成绩管理、赛事组织等一站式解决方案',
     url: 'https://guangyikeji.github.io/ski/',
     logo: 'https://guangyikeji.github.io/ski/images/logo.png',
     image: 'https://guangyikeji.github.io/ski/images/ski-bg.jpg',
@@ -32,8 +32,8 @@ export default function StructuredData({ type = 'sportsOrganization' }: Structur
       },
       offers: {
         '@type': 'Service',
-        name: '中国高山滑雪积分管理 v4.0',
-        description: 'v4.0简化积分计算、运动员管理、赛事组织、成绩统计',
+        name: '中国高山滑雪积分管理 ',
+        description: '简化积分计算、运动员管理、赛事组织、成绩统计',
         serviceType: 'Sports Management Software',
         provider: {
           '@type': 'Organization',
@@ -54,7 +54,7 @@ export default function StructuredData({ type = 'sportsOrganization' }: Structur
       availableLanguage: ['Chinese', 'English']
     },
     keywords: [
-      '中国高山滑雪积分规则v4.0',
+      '中国高山滑雪积分规则',
       '高山滑雪',
       'Alpine Skiing',
       '中国积分',
@@ -66,7 +66,7 @@ export default function StructuredData({ type = 'sportsOrganization' }: Structur
       '赛事管理',
       '运动员积分',
       '青少年滑雪体系',
-      'v4.0简化公式'
+      '简化公式'
     ]
   }
 

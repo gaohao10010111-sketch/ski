@@ -3,12 +3,12 @@ import { getImagePath } from '@/utils/paths'
 
 const ruleCategories = [
   {
-    title: '中国高山滑雪积分规则 v4.0',
+    title: '中国高山滑雪积分规则 ',
     icon: Calculator,
-    description: '简化的v4.0积分计算体系，去除复杂系数，提高透明度',
+    description: '简化的积分计算体系，去除复杂系数，提高透明度',
     rules: [
       { name: '简化计算公式', description: '最终积分 = (基础积分 + 判罚分) × 赛事系数', status: 'active' },
-      { name: '项目系数表', description: '各项目的F系数值（v4.0标准）', status: 'active' },
+      { name: '项目系数表', description: '各项目的F系数值（标准）', status: 'active' },
       { name: '判罚分计算', description: '(Sum A + Sum B - Sum C) ÷ 10', status: 'active' },
       { name: '赛事级别系数', description: 'A级1.0、B级0.6、C级0.3', status: 'active' }
     ]
@@ -25,7 +25,7 @@ const ruleCategories = [
     ]
   },
   {
-    title: '赛事管理 v4.0',
+    title: '赛事管理 ',
     icon: Award,
     description: '简化的赛事分级和管理流程',
     rules: [
@@ -39,8 +39,8 @@ const ruleCategories = [
 
 const downloadableRules = [
   {
-    title: '中国高山滑雪赛事积分规则 v4.0',
-    description: '全新简化的v4.0积分计算规则文档',
+    title: '中国高山滑雪赛事积分规则 ',
+    description: '全新简化的积分计算规则文档',
     size: '1.8 MB',
     format: 'PDF',
     language: '中英对照',
@@ -69,9 +69,9 @@ export default function ChinaSkiRulesPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="section-title">中国高山滑雪积分规则 v4.0</h1>
+        <h1 className="section-title">中国高山滑雪积分规则 </h1>
         <p className="text-gray-600 text-lg">
-          查看最新的v4.0简化积分规则文档，了解三步计算公式和扩展青少年体系
+          查看最新的简化积分规则文档，了解三步计算公式和扩展青少年体系
         </p>
       </div>
 
@@ -79,7 +79,7 @@ export default function ChinaSkiRulesPage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         <div className="card text-center">
           <Calculator className="h-12 w-12 text-ski-blue mx-auto mb-4" />
-          <h3 className="text-lg font-semibold text-ski-navy mb-2">v4.0积分计算器</h3>
+          <h3 className="text-lg font-semibold text-ski-navy mb-2">积分计算器</h3>
           <p className="text-gray-600 text-sm mb-4">使用简化公式计算积分</p>
           <a href="/points/calculator" className="btn-primary text-sm w-full inline-block text-center">
             使用计算器
@@ -87,10 +87,10 @@ export default function ChinaSkiRulesPage() {
         </div>
         <div className="card text-center">
           <FileText className="h-12 w-12 text-green-600 mx-auto mb-4" />
-          <h3 className="text-lg font-semibold text-ski-navy mb-2">v4.0规则详解</h3>
-          <p className="text-gray-600 text-sm mb-4">查看v4.0简化规则说明</p>
+          <h3 className="text-lg font-semibold text-ski-navy mb-2">规则详解</h3>
+          <p className="text-gray-600 text-sm mb-4">查看简化规则说明</p>
           <a href="/rules/points" className="btn-primary text-sm w-full inline-block text-center">
-            查看v4.0规则
+            查看规则
           </a>
         </div>
         <div className="card text-center">
@@ -197,40 +197,40 @@ export default function ChinaSkiRulesPage() {
         <div className="space-y-6">
           <div>
             <h3 className="font-semibold text-gray-900 mb-2">
-              Q: v4.0积分是如何计算的？
+              Q: 积分是如何计算的？
             </h3>
             <p className="text-gray-600">
-              A: v4.0使用简化的三步计算公式：最终积分 = (基础比赛积分 + 判罚分) × 赛事系数。
+              A: 使用简化的三步计算公式：最终积分 = (基础比赛积分 + 判罚分) × 赛事系数。
               基础积分使用 P = F × (Tx/To - 1)，去除了复杂的质量系数、人数系数等要素。
             </p>
           </div>
 
           <div>
             <h3 className="font-semibold text-gray-900 mb-2">
-              Q: v4.0的赛事级别是如何划分的？
+              Q: 的赛事级别是如何划分的？
             </h3>
             <p className="text-gray-600">
-              A: v4.0采用三级赛事体系：A级赛事（系数1.0，全国锦标赛、冬运会等）、
+              A: 采用三级赛事体系：A级赛事（系数1.0，全国锦标赛、冬运会等）、
               B级赛事（系数0.6，省级锦标赛等）、C级赛事（系数0.3，地市级赛事）。
             </p>
           </div>
 
           <div>
             <h3 className="font-semibold text-gray-900 mb-2">
-              Q: v4.0青少年体系有什么特点？
+              Q: 青少年体系有什么特点？
             </h3>
             <p className="text-gray-600">
-              A: v4.0精简了青少年年龄组别，聚焦U15、U18两个核心组别，
+              A: 精简了青少年年龄组别，聚焦U15、U18两个核心组别，
               所有组别均使用正式积分计算，为青少年发展提供更精准的支持。
             </p>
           </div>
 
           <div>
             <h3 className="font-semibold text-gray-900 mb-2">
-              Q: v4.0相比v2.0有什么优势？
+              Q: 相比v2.0有什么优势？
             </h3>
             <p className="text-gray-600">
-              A: v4.0简化了计算流程，去除了质量系数、人数系数、附加分等复杂要素，
+              A: 简化了计算流程，去除了质量系数、人数系数、附加分等复杂要素，
               提高了计算效率和透明度，同时扩展了青少年体系，更加高效、透明。
             </p>
           </div>

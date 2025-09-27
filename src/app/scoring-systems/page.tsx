@@ -2,13 +2,13 @@ export default function ScoringSystems() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold text-center mb-8">
-        中国滑雪赛事四大积分系统
+        中国滑雪积分体系
       </h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white border rounded-lg p-6">
           <h2 className="text-xl font-semibold mb-3">高山滑雪积分系统</h2>
-          <p className="text-gray-600 mb-3">基于时间的v4.0积分计算体系</p>
+          <p className="text-gray-600 mb-3">基于时间的高山滑雪积分计算体系</p>
           <div className="text-sm space-y-1">
             <p>• 计算公式: 最终积分 = (基础积分 + 判罚分) × 赛事系数</p>
             <p>• 项目: DH/SL/GS/SG/AC</p>

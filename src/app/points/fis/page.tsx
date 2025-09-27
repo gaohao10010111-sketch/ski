@@ -246,7 +246,7 @@ export default function FISPointsQueryPage() {
             <div>
               <h4 className="font-medium text-gray-900 mb-2">积分系统</h4>
               <ul className="space-y-1">
-                <li>• 基于中国高山滑雪积分规则v4.0</li>
+                <li>• 基于中国高山滑雪积分规则</li>
                 <li>• 积分越低排名越高</li>
                 <li>• 每周更新一次</li>
                 <li>• 包含国内所有正式比赛</li>

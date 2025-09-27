@@ -8,7 +8,7 @@ export default function PointsPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">积分系统</h1>
           <p className="text-xl text-gray-600">
-            中国滑雪赛事积分查询与管理平台
+            中国滑雪积分查询与管理平台
           </p>
         </div>
 
@@ -19,7 +19,7 @@ export default function PointsPage() {
                 <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors">
                   <Trophy className="h-8 w-8 text-blue-600" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">四大积分系统</h3>
+                <h3 className="text-lg font-semibold mb-2">积分体系</h3>
                 <p className="text-gray-600 text-sm">
                   高山滑雪、自由式滑雪、单板滑雪积分体系
                 </p>
@@ -77,7 +77,7 @@ export default function PointsPage() {
             <div>
               <h3 className="text-lg font-semibold mb-3">积分计算</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>• 基于中国滑雪积分规则v4.0</li>
+                <li>• 基于中国滑雪积分规则</li>
                 <li>• 支持高山滑雪时间积分计算</li>
                 <li>• 支持自由式/单板排名积分</li>
                 <li>• 自动判罚分计算</li>
