@@ -1125,15 +1125,15 @@ npm run lint
 ## Git仓库信息 📦
 
 ### 🔗 远程仓库
-- **Gitee仓库**: https://gitee.com/guangyikeji/ski.git
-- **GitHub仓库**: https://github.com/guangyikeji/ski.git
-- **克隆命令**: `git clone https://gitee.com/guangyikeji/ski.git`
+- **主仓库**: https://github.com/gaohao10010111-sketch/ski.git
+- **Gitee镜像**: https://gitee.com/guangyikeji/ski.git
+- **克隆命令**: `git clone https://github.com/gaohao10010111-sketch/ski.git`
 - **主分支**: main
 
 ### 👤 Git配置
 ```bash
-git config --global user.name 'guangyikeji'
-git config --global user.email '16161327+guangyikeji@user.noreply.gitee.com'
+git config --global user.name 'gaohao10010111-sketch'
+git config --global user.email 'noreply@github.com'
 ```
 
 ### 🔑 访问令牌
@@ -1144,17 +1144,12 @@ git config --global user.email '16161327+guangyikeji@user.noreply.gitee.com'
 
 ### 📤 推送命令
 ```bash
-# 添加Gitee远程仓库
+# 主仓库（GitHub Pages）
+git push origin main
+
+# 推送到Gitee镜像
 git remote add gitee https://guangyikeji:5cb815ad06bd80f3fa523ba8498a89d8@gitee.com/guangyikeji/ski.git
-
-# 添加GitHub远程仓库 (使用环境变量)
-git remote add github https://guangyikeji:$GITHUB_TOKEN@github.com/guangyikeji/ski.git
-
-# 推送到Gitee
 git push gitee main
-
-# 推送到GitHub
-git push github main
 ```
 
 ### 🏷️ 分支管理
@@ -1163,9 +1158,9 @@ git push github main
 - **feature/***: 功能分支（按需创建）
 
 ### 📊 仓库状态
-- ✅ **Gitee**: 代码已成功推送，可正常访问
-- ✅ **GitHub**: 代码已成功推送，可正常访问
-- 🔄 **同步策略**: 双仓库同步更新
+- ✅ **GitHub Pages**: https://gaohao10010111-sketch.github.io/ski/
+- ✅ **Gitee镜像**: https://gitee.com/guangyikeji/ski
+- 🔄 **部署策略**: GitHub Pages主部署，Gitee镜像备份
 
 ## 云服务器部署方案 ☁️
 
@@ -1191,7 +1186,7 @@ npx vercel --prod
 #### 2. 阿里云/腾讯云 ECS ⭐⭐⭐⭐
 ```bash
 # 服务器上执行
-git clone https://gitee.com/guangyikeji/ski.git
+git clone https://github.com/gaohao10010111-sketch/ski.git
 cd ski
 chmod +x deploy.sh
 ./deploy.sh
@@ -1238,7 +1233,7 @@ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # 3. 克隆并部署
-git clone https://gitee.com/guangyikeji/ski.git
+git clone https://github.com/gaohao10010111-sketch/ski.git
 cd ski
 chmod +x deploy.sh
 ./deploy.sh
@@ -1250,7 +1245,7 @@ chmod +x deploy.sh
 curl -fsSL https://get.docker.com | sh
 
 # 2. 一键启动
-git clone https://gitee.com/guangyikeji/ski.git
+git clone https://github.com/gaohao10010111-sketch/ski.git
 cd ski
 docker-compose up -d
 ```
