@@ -187,10 +187,10 @@ export default function HomePage() {
             <div className="text-white">
               <h1 className="font-bold mb-8 leading-tight">
                 <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-2">
-                  <span className="text-gradient bg-gradient-ski">中国滑雪赛事积分系统</span>
+                  <span className="text-gradient bg-gradient-ski">中国滑雪积分系统</span>
                 </div>
                 <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white">
-                  China Skiing Competition Points System
+                  China Skiing Points System
                 </div>
               </h1>
               <div className="mb-8">

@@ -1,4 +1,4 @@
-# 中国滑雪赛事积分系统
+# 中国滑雪积分系统
 
 ## 项目概述
 中国综合性滑雪赛事积分管理系统，支持**高山滑雪**、**自由式滑雪**、**单板滑雪**三大项目的竞赛数据管理和积分计算。基于《中国高山滑雪赛事积分规则v4.docx》和《2025-2026赛季全国BA、SS青少年U系列比赛方案》，建立完整的中国滑雪运动积分体系。
@@ -1125,8 +1125,7 @@ npm run lint
 ## Git仓库信息 📦
 
 ### 🔗 远程仓库
-- **主仓库**: https://github.com/gaohao10010111-sketch/ski.git
-- **Gitee镜像**: https://gitee.com/guangyikeji/ski.git
+- **GitHub仓库**: https://github.com/gaohao10010111-sketch/ski.git
 - **克隆命令**: `git clone https://github.com/gaohao10010111-sketch/ski.git`
 - **主分支**: main
 
@@ -1137,19 +1136,14 @@ git config --global user.email 'noreply@github.com'
 ```
 
 ### 🔑 访问令牌
-- **Gitee Token**: `5cb815ad06bd80f3fa523ba8498a89d8`
 - **GitHub Token**: 请使用环境变量 `$GITHUB_TOKEN` 或安全存储
 - **用途**: 用于推送代码到远程仓库
 - **使用方法**: 在HTTPS URL中替换密码部分
 
 ### 📤 推送命令
 ```bash
-# 主仓库（GitHub Pages）
+# 推送到GitHub
 git push origin main
-
-# 推送到Gitee镜像
-git remote add gitee https://guangyikeji:5cb815ad06bd80f3fa523ba8498a89d8@gitee.com/guangyikeji/ski.git
-git push gitee main
 ```
 
 ### 🏷️ 分支管理
@@ -1159,8 +1153,7 @@ git push gitee main
 
 ### 📊 仓库状态
 - ✅ **GitHub Pages**: https://gaohao10010111-sketch.github.io/ski/
-- ✅ **Gitee镜像**: https://gitee.com/guangyikeji/ski
-- 🔄 **部署策略**: GitHub Pages主部署，Gitee镜像备份
+- 🔄 **部署策略**: GitHub Pages静态部署
 
 ## 云服务器部署方案 ☁️
 
