@@ -38,10 +38,10 @@
   const links = document.querySelectorAll('header nav a[href]');
   links.forEach(a => {
     try {
-      const u = new URL(a.href, location.origin);
-      if (location.pathname.startsWith(u.pathname) && u.pathname !== '/ski/') {
-        a.classList.add('underline', 'decoration-2', 'underline-offset-4');
+      const u = new URL(a.getAttribute('href'), location.origin);
+      if (u.pathname !== '/ski/' && location.pathname.startsWith(u.pathname)) {
+        a.classList.add('underline','decoration-2','underline-offset-4');
       }
-    } catch (_) {}
+    } catch(_) {}
   });
 })();
