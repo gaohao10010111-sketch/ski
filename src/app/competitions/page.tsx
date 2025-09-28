@@ -201,8 +201,8 @@ export default function CompetitionsPage() {
         </div>
       </div>
 
-      {/* 筛选和搜索 */}
-      <div className="card mb-8 relative z-10">
+      {/* 筛选和搜索 - 吸顶 */}
+      <div className="sticky top-16 z-40 bg-white rounded-lg shadow-md p-6 mb-8 border border-gray-200">
         <div className="flex flex-col md:flex-row gap-4 items-center">
           <div className="flex items-center space-x-2">
             <Filter className="h-5 w-5 text-gray-500" />
@@ -212,25 +212,25 @@ export default function CompetitionsPage() {
           <select
             value={selectedStatus}
             onChange={(e) => setSelectedStatus(e.target.value)}
-            className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue"
+            className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue transition-all"
           >
             <option value="all">全部状态</option>
-            <option value="registration">报名中</option>
-            <option value="upcoming">即将开始</option>
-            <option value="ongoing">进行中</option>
-            <option value="completed">已结束</option>
+            <option value="registration">📝 报名中</option>
+            <option value="upcoming">⏳ 即将开始</option>
+            <option value="ongoing">🏃 进行中</option>
+            <option value="completed">✅ 已结束</option>
           </select>
 
           <select
             value={selectedLevel}
             onChange={(e) => setSelectedLevel(e.target.value)}
-            className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue"
+            className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue transition-all"
           >
             <option value="all">全部级别</option>
-            <option value="national">全国级</option>
-            <option value="regional">地区级</option>
-            <option value="invitational">邀请赛</option>
-            <option value="youth">青年组</option>
+            <option value="national">🏆 全国级</option>
+            <option value="regional">📍 地区级</option>
+            <option value="invitational">⭐ 邀请赛</option>
+            <option value="youth">👥 青年组</option>
           </select>
 
           <div className="relative flex-1 max-w-md">
@@ -240,16 +240,22 @@ export default function CompetitionsPage() {
               placeholder="搜索比赛名称或地点..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue transition-all"
             />
           </div>
 
+          <div className="flex items-center space-x-2">
+            <span className="text-sm text-gray-600 font-medium">
+              找到 <span className="text-ski-blue font-bold">{filteredCompetitions.length}</span> 场比赛
+            </span>
+          </div>
+
           <div className="flex space-x-2">
-            <button className="btn-primary flex items-center">
+            <button className="btn-primary flex items-center shadow-sm hover:shadow-md transition-shadow">
               <Plus className="h-4 w-4 mr-2" />
               新建比赛
             </button>
-            <button className="btn-secondary flex items-center">
+            <button className="btn-secondary flex items-center shadow-sm hover:shadow-md transition-shadow">
               <Download className="h-4 w-4 mr-2" />
               导出
             </button>
@@ -338,21 +344,40 @@ export default function CompetitionsPage() {
                   {competition.status === 'completed' && (
                     <Link
                       href={`/results-announcement?competition=${encodeURIComponent(competition.name)}&id=${competition.id}`}
-                      className="flex items-center justify-center py-2 px-3 text-sm bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors"
+                      className="flex items-center justify-center py-2 px-3 text-sm bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors shadow-sm hover:shadow-md"
                     >
                       <Award className="h-4 w-4 mr-1" />
                       成绩公告
                     </Link>
                   )}
 
-                  {competition.status !== 'completed' && (
+                  {competition.status === 'ongoing' && (
                     <button
-                      className="flex items-center justify-center py-2 px-3 text-sm bg-gray-100 text-gray-500 rounded-md cursor-not-allowed"
-                      disabled
-                      title="比赛结束后可查看成绩公告"
+                      className="flex items-center justify-center py-2 px-3 text-sm bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition-colors shadow-sm"
+                      title="比赛进行中，即将发布成绩"
                     >
-                      <Award className="h-4 w-4 mr-1" />
-                      成绩公告
+                      <Clock className="h-4 w-4 mr-1" />
+                      比赛中
+                    </button>
+                  )}
+
+                  {competition.status === 'upcoming' && (
+                    <button
+                      className="flex items-center justify-center py-2 px-3 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors shadow-sm"
+                      title="比赛即将开始"
+                    >
+                      <Calendar className="h-4 w-4 mr-1" />
+                      即将开始
+                    </button>
+                  )}
+
+                  {competition.status === 'registration' && (
+                    <button
+                      className="flex items-center justify-center py-2 px-3 text-sm bg-orange-600 text-white rounded-md hover:bg-orange-700 transition-colors shadow-sm"
+                      title="比赛正在报名中"
+                    >
+                      <Users className="h-4 w-4 mr-1" />
+                      报名中
                     </button>
                   )}
 

@@ -1,6 +1,7 @@
 'use client'
 
-import { Calculator, FileText, Trophy, Users, Award, Star, Target, Clock, BookOpen, ExternalLink } from 'lucide-react'
+import { useState } from 'react'
+import { Calculator, FileText, Trophy, Users, Award, Star, Target, Clock, BookOpen, ExternalLink, Copy, Download, Menu } from 'lucide-react'
 import Link from 'next/link'
 
 // 规则模块
@@ -89,12 +90,83 @@ const quickLinks = [
 ]
 
 export default function RulesMainPage() {
+  const [copiedFormula, setCopiedFormula] = useState(false)
+  const [showToc, setShowToc] = useState(false)
+
+  // 目录项
+  const tocItems = [
+    { id: 'core-formula', title: '核心公式', icon: Calculator },
+    { id: 'rule-modules', title: '规则模块', icon: BookOpen },
+    { id: 'core-features', title: '核心特点', icon: Star },
+    { id: 'quick-links', title: '快速链接', icon: ExternalLink },
+    { id: 'upgrade-info', title: '升级说明', icon: Trophy },
+    { id: 'important-notice', title: '重要提示', icon: Award }
+  ]
+
+  const copyFormula = async () => {
+    const formula = '最终积分 = (基础比赛积分 + 判罚分) × 赛事系数'
+    try {
+      await navigator.clipboard.writeText(formula)
+      setCopiedFormula(true)
+      setTimeout(() => setCopiedFormula(false), 2000)
+    } catch (err) {
+      console.error('复制失败:', err)
+    }
+  }
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+      setShowToc(false)
+    }
+  }
+
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative">
+      {/* 目录侧边栏 */}
+      <div className="fixed top-20 right-4 z-50">
+        <button
+          onClick={() => setShowToc(!showToc)}
+          className="bg-ski-blue text-white p-2 rounded-lg shadow-lg hover:bg-ski-blue/90 transition-colors mb-2"
+          title="显示/隐藏目录"
+        >
+          <Menu className="h-5 w-5" />
+        </button>
+
+        {showToc && (
+          <div className="bg-white rounded-lg shadow-xl border border-gray-200 p-4 w-64 max-h-96 overflow-y-auto">
+            <h3 className="font-semibold text-gray-900 mb-4">页面目录</h3>
+            <nav className="space-y-2">
+              {tocItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className="flex items-center w-full text-left text-sm text-gray-600 hover:text-ski-blue hover:bg-gray-50 p-2 rounded transition-colors"
+                >
+                  <item.icon className="h-4 w-4 mr-2 flex-shrink-0" />
+                  {item.title}
+                </button>
+              ))}
+            </nav>
+
+            <div className="mt-4 pt-4 border-t border-gray-200">
+              <button
+                onClick={() => window.open('/docs/skiing-rules-v4.pdf', '_blank')}
+                className="flex items-center w-full text-left text-sm text-green-600 hover:text-green-700 hover:bg-green-50 p-2 rounded transition-colors"
+              >
+                <Download className="h-4 w-4 mr-2" />
+                下载PDF版本
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+
       {/* Header */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-12" id="header">
         <h1 className="text-4xl font-bold text-ski-navy mb-4">
-          中国高山滑雪规则文档 
+          中国高山滑雪规则文档
         </h1>
         <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
           查看最新的简化规则体系，包含积分计算、竞赛管理、青少年培养等完整规则文档
@@ -116,21 +188,51 @@ export default function RulesMainPage() {
       </div>
 
       {/* 简化公式展示 */}
-      <div className="bg-gradient-to-r from-ski-blue to-primary-700 text-white rounded-lg p-8 mb-12">
+      <div id="core-formula" className="bg-gradient-to-r from-ski-blue to-primary-700 text-white rounded-lg p-8 mb-12">
         <div className="text-center">
           <h2 className="text-3xl font-bold mb-4">核心公式</h2>
-          <div className="text-2xl font-mono font-bold mb-6 bg-white/20 rounded-lg py-4">
-            最终积分 = (基础比赛积分 + 判罚分) × 赛事系数
+          <div className="relative">
+            <div className="text-2xl font-mono font-bold mb-6 bg-white/20 rounded-lg py-4 px-6 relative">
+              最终积分 = (基础比赛积分 + 判罚分) × 赛事系数
+              <button
+                onClick={copyFormula}
+                className="absolute top-2 right-2 bg-white/20 hover:bg-white/30 p-2 rounded transition-colors"
+                title="复制公式"
+              >
+                <Copy className="h-4 w-4" />
+              </button>
+            </div>
+            {copiedFormula && (
+              <div className="absolute top-0 right-0 bg-green-500 text-white px-3 py-1 rounded text-sm">
+                已复制到剪贴板！
+              </div>
+            )}
           </div>
           <p className="text-lg opacity-90">
             相比v2.0复杂体系，去除了质量系数、人数系数、附加分等复杂要素，
             采用简化三步计算法，提高效率和透明度
           </p>
+          <div className="mt-6 flex justify-center space-x-4">
+            <button
+              onClick={copyFormula}
+              className="flex items-center px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
+            >
+              <Copy className="h-4 w-4 mr-2" />
+              复制公式
+            </button>
+            <button
+              onClick={() => window.open('/points/calculator', '_blank')}
+              className="flex items-center px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
+            >
+              <Calculator className="h-4 w-4 mr-2" />
+              使用计算器
+            </button>
+          </div>
         </div>
       </div>
 
       {/* 规则模块 */}
-      <div className="mb-12">
+      <div id="rule-modules" className="mb-12">
         <h2 className="text-3xl font-bold text-ski-navy mb-8 text-center">规则模块</h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {ruleModules.map((module, index) => (
@@ -166,7 +268,7 @@ export default function RulesMainPage() {
       </div>
 
       {/* 核心特点 */}
-      <div className="mb-12">
+      <div id="core-features" className="mb-12">
         <h2 className="text-3xl font-bold text-ski-navy mb-8 text-center">核心特点</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {v4Features.map((feature, index) => (
@@ -182,7 +284,7 @@ export default function RulesMainPage() {
       </div>
 
       {/* 快速链接 */}
-      <div className="mb-12">
+      <div id="quick-links" className="mb-12">
         <h2 className="text-3xl font-bold text-ski-navy mb-8 text-center">快速链接</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {quickLinks.map((link, index) => (
@@ -210,7 +312,7 @@ export default function RulesMainPage() {
       </div>
 
       {/* 升级说明 */}
-      <div className="bg-gradient-to-r from-ski-navy to-gray-800 text-white rounded-lg p-8 mb-12">
+      <div id="upgrade-info" className="bg-gradient-to-r from-ski-navy to-gray-800 text-white rounded-lg p-8 mb-12">
         <h2 className="text-3xl font-bold mb-6 text-center">升级说明</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
@@ -235,7 +337,7 @@ export default function RulesMainPage() {
       </div>
 
       {/* 重要提示 */}
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+      <div id="important-notice" className="bg-blue-50 border border-blue-200 rounded-lg p-6">
         <h3 className="text-lg font-semibold text-blue-800 mb-4">重要提示</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-blue-700">
           <div>

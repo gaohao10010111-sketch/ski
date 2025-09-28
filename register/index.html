@@ -17,37 +17,152 @@
       <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">注册</h1>
       <p class="mt-2 text-gray-600 max-w-3xl">创建新账户，享受专业积分管理服务</p>
 
-      <!-- 页面主体：保留原内容 -->
+      <!-- 页面主体：强化交互 -->
       <div class="mt-8">
-        <form class="max-w-md space-y-4" onsubmit="return submitRegister(event)">
+        <form id="register-form" class="max-w-md space-y-4" onsubmit="return handleRegister(event)">
           <div>
-            <label class="block text-sm mb-1">用户名</label>
-            <input id="username" class="w-full border rounded px-3 py-2" placeholder="如：snowpro" required onblur="checkUsername()" />
+            <label class="block text-sm font-medium mb-1 text-gray-700">用户名</label>
+            <input
+              id="username"
+              class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              placeholder="如：snowpro"
+              required
+              minlength="3"
+              maxlength="20"
+              onblur="checkUsername()"
+              oninput="validateUsername()"
+            />
+            <div id="username-loading" class="text-sm mt-1 text-gray-500 hidden">
+              <span class="inline-block animate-spin mr-2">⏳</span>检查用户名可用性...
+            </div>
             <p id="name-msg" class="text-sm mt-1"></p>
           </div>
+
           <div>
-            <label class="block text-sm mb-1">邮箱</label>
-            <input type="email" id="email" class="w-full border rounded px-3 py-2" required />
+            <label class="block text-sm font-medium mb-1 text-gray-700">邮箱地址</label>
+            <input
+              type="email"
+              id="email"
+              class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+              placeholder="请输入您的邮箱地址"
+              required
+              oninput="validateEmail()"
+            />
+            <div id="email-error" class="text-sm text-red-600 mt-1 hidden">请输入有效的邮箱地址</div>
           </div>
+
           <div>
-            <label class="block text-sm mb-1">密码</label>
-            <input type="password" id="pw" class="w-full border rounded px-3 py-2" required />
-            <p class="text-xs text-gray-500 mt-1">密码需 ≥ 8 位，且包含大小写字母和数字</p>
+            <label class="block text-sm font-medium mb-1 text-gray-700">密码</label>
+            <div class="relative">
+              <input
+                type="password"
+                id="pw"
+                class="w-full border border-gray-300 rounded-lg px-3 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                placeholder="请输入密码"
+                required
+                minlength="8"
+                oninput="validatePassword()"
+              />
+              <button
+                type="button"
+                onclick="togglePasswordVisibility('pw', 'eye-icon-1')"
+                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              >
+                <span id="eye-icon-1">👁️</span>
+              </button>
+            </div>
+
+            <!-- 密码强度指示器 -->
+            <div class="mt-2">
+              <div class="flex space-x-1">
+                <div id="strength-1" class="h-2 w-1/4 bg-gray-200 rounded"></div>
+                <div id="strength-2" class="h-2 w-1/4 bg-gray-200 rounded"></div>
+                <div id="strength-3" class="h-2 w-1/4 bg-gray-200 rounded"></div>
+                <div id="strength-4" class="h-2 w-1/4 bg-gray-200 rounded"></div>
+              </div>
+              <div id="password-requirements" class="text-xs text-gray-500 mt-1 space-y-1">
+                <div id="req-length" class="flex items-center">
+                  <span class="mr-2">❌</span>至少8个字符
+                </div>
+                <div id="req-lowercase" class="flex items-center">
+                  <span class="mr-2">❌</span>包含小写字母
+                </div>
+                <div id="req-uppercase" class="flex items-center">
+                  <span class="mr-2">❌</span>包含大写字母
+                </div>
+                <div id="req-number" class="flex items-center">
+                  <span class="mr-2">❌</span>包含数字
+                </div>
+              </div>
+            </div>
           </div>
+
           <div>
-            <label class="block text-sm mb-1">确认密码</label>
-            <input type="password" id="pw2" class="w-full border rounded px-3 py-2" required />
+            <label class="block text-sm font-medium mb-1 text-gray-700">确认密码</label>
+            <div class="relative">
+              <input
+                type="password"
+                id="pw2"
+                class="w-full border border-gray-300 rounded-lg px-3 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                placeholder="请再次输入密码"
+                required
+                oninput="validatePasswordMatch()"
+              />
+              <button
+                type="button"
+                onclick="togglePasswordVisibility('pw2', 'eye-icon-2')"
+                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              >
+                <span id="eye-icon-2">👁️</span>
+              </button>
+            </div>
+            <div id="password-match-error" class="text-sm text-red-600 mt-1 hidden">两次输入的密码不一致</div>
+            <div id="password-match-success" class="text-sm text-green-600 mt-1 hidden">密码确认成功</div>
           </div>
-          <label class="flex items-start gap-2 text-sm select-none">
-            <input type="checkbox" id="agree" />
+
+          <label class="flex items-start gap-2 text-sm select-none cursor-pointer">
+            <input type="checkbox" id="agree" class="mt-0.5 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded" />
             <span>
               我已阅读并同意
-              <a class="text-blue-600 hover:underline" href="/ski/terms/">服务条款</a>
+              <a class="text-blue-600 hover:text-blue-800 hover:underline transition-colors" href="/ski/terms/" target="_blank">服务条款</a>
               与
-              <a class="text-blue-600 hover:underline" href="/ski/privacy/">隐私政策</a>
+              <a class="text-blue-600 hover:text-blue-800 hover:underline transition-colors" href="/ski/privacy/" target="_blank">隐私政策</a>
             </span>
           </label>
-          <button type="submit" class="rounded bg-black text-white px-4 py-2 text-sm">注册</button>
+
+          <div id="register-error" class="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg p-3 hidden">
+            <div class="flex items-center">
+              <span class="mr-2">❌</span>
+              <span id="register-error-text"></span>
+            </div>
+          </div>
+
+          <div id="register-success" class="text-sm text-green-600 bg-green-50 border border-green-200 rounded-lg p-3 hidden">
+            <div class="flex items-center">
+              <span class="mr-2">✅</span>
+              <span>注册成功！正在为您跳转到登录页...</span>
+            </div>
+          </div>
+
+          <button
+            id="register-btn"
+            type="submit"
+            class="w-full rounded-lg bg-blue-600 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          >
+            <span id="register-btn-text">注册</span>
+            <span id="register-btn-loading" class="hidden">
+              <svg class="animate-spin -ml-1 mr-3 h-4 w-4 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              注册中...
+            </span>
+          </button>
+
+          <div class="text-center text-sm text-gray-600 mt-4">
+            已有账号？
+            <a class="text-blue-600 hover:text-blue-800 hover:underline transition-colors" href="/ski/login/">立即登录</a>
+          </div>
         </form>
       </div>
     </section>
@@ -57,34 +172,310 @@
   <div id="site-footer"></div>
   <script src="/ski/assets/footer.js"></script>
   <script>
-    function checkPassword(pw){
-      if(!pw || pw.length < 8) return false;
-      return /[a-z]/.test(pw) && /[A-Z]/.test(pw) && /\d/.test(pw);
-    }
-    function checkUsername(){
-      const name = document.getElementById('username').value.trim();
-      const el = document.getElementById('name-msg');
-      if(!name){ el.textContent=''; return; }
-      // 用户名 onblur 触发占位校验，提示"已占用/可用"
-      if(['admin','test','guest'].includes(name.toLowerCase())){
-        el.textContent = '用户名已被占用';
-        el.className = 'text-sm mt-1 text-red-600';
-      }else{
-        el.textContent = '用户名可用';
-        el.className = 'text-sm mt-1 text-green-600';
+    let isRegistering = false;
+    let usernameCheckTimeout = null;
+
+    function validateUsername() {
+      const username = document.getElementById('username').value.trim();
+      const usernameInput = document.getElementById('username');
+
+      if (username.length < 3 || username.length > 20) {
+        usernameInput.classList.add('border-red-500');
+        usernameInput.classList.remove('border-gray-300');
+        return false;
+      } else {
+        usernameInput.classList.remove('border-red-500');
+        usernameInput.classList.add('border-gray-300');
+        return true;
       }
     }
-    function submitRegister(e){
+
+    function validateEmail() {
+      const emailInput = document.getElementById('email');
+      const emailError = document.getElementById('email-error');
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (emailInput.value && !emailRegex.test(emailInput.value)) {
+        emailError.classList.remove('hidden');
+        emailInput.classList.add('border-red-500');
+        emailInput.classList.remove('border-gray-300');
+        return false;
+      } else {
+        emailError.classList.add('hidden');
+        emailInput.classList.remove('border-red-500');
+        emailInput.classList.add('border-gray-300');
+        return true;
+      }
+    }
+
+    function validatePassword() {
+      const password = document.getElementById('pw').value;
+      const passwordInput = document.getElementById('pw');
+
+      // 检查各个要求
+      const hasLength = password.length >= 8;
+      const hasLowercase = /[a-z]/.test(password);
+      const hasUppercase = /[A-Z]/.test(password);
+      const hasNumber = /\d/.test(password);
+
+      // 更新要求指示器
+      updateRequirement('req-length', hasLength);
+      updateRequirement('req-lowercase', hasLowercase);
+      updateRequirement('req-uppercase', hasUppercase);
+      updateRequirement('req-number', hasNumber);
+
+      // 更新强度指示器
+      const strength = [hasLength, hasLowercase, hasUppercase, hasNumber].filter(Boolean).length;
+      updatePasswordStrength(strength);
+
+      const isValid = hasLength && hasLowercase && hasUppercase && hasNumber;
+
+      if (password && !isValid) {
+        passwordInput.classList.add('border-red-500');
+        passwordInput.classList.remove('border-gray-300');
+      } else {
+        passwordInput.classList.remove('border-red-500');
+        passwordInput.classList.add('border-gray-300');
+      }
+
+      // 触发确认密码验证
+      if (document.getElementById('pw2').value) {
+        validatePasswordMatch();
+      }
+
+      return isValid;
+    }
+
+    function updateRequirement(elementId, isMet) {
+      const element = document.getElementById(elementId);
+      const icon = element.querySelector('span');
+
+      if (isMet) {
+        icon.textContent = '✅';
+        element.classList.remove('text-gray-500');
+        element.classList.add('text-green-600');
+      } else {
+        icon.textContent = '❌';
+        element.classList.remove('text-green-600');
+        element.classList.add('text-gray-500');
+      }
+    }
+
+    function updatePasswordStrength(strength) {
+      const colors = ['bg-red-500', 'bg-orange-500', 'bg-yellow-500', 'bg-green-500'];
+
+      for (let i = 1; i <= 4; i++) {
+        const strengthBar = document.getElementById(`strength-${i}`);
+        strengthBar.className = 'h-2 w-1/4 rounded';
+
+        if (i <= strength) {
+          strengthBar.classList.add(colors[strength - 1]);
+        } else {
+          strengthBar.classList.add('bg-gray-200');
+        }
+      }
+    }
+
+    function validatePasswordMatch() {
+      const password = document.getElementById('pw').value;
+      const confirmPassword = document.getElementById('pw2').value;
+      const errorElement = document.getElementById('password-match-error');
+      const successElement = document.getElementById('password-match-success');
+      const confirmInput = document.getElementById('pw2');
+
+      if (!confirmPassword) {
+        errorElement.classList.add('hidden');
+        successElement.classList.add('hidden');
+        confirmInput.classList.remove('border-red-500', 'border-green-500');
+        confirmInput.classList.add('border-gray-300');
+        return true;
+      }
+
+      if (password !== confirmPassword) {
+        errorElement.classList.remove('hidden');
+        successElement.classList.add('hidden');
+        confirmInput.classList.add('border-red-500');
+        confirmInput.classList.remove('border-gray-300', 'border-green-500');
+        return false;
+      } else {
+        errorElement.classList.add('hidden');
+        successElement.classList.remove('hidden');
+        confirmInput.classList.add('border-green-500');
+        confirmInput.classList.remove('border-gray-300', 'border-red-500');
+        return true;
+      }
+    }
+
+    function togglePasswordVisibility(inputId, iconId) {
+      const passwordInput = document.getElementById(inputId);
+      const eyeIcon = document.getElementById(iconId);
+
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeIcon.textContent = '🙈';
+      } else {
+        passwordInput.type = 'password';
+        eyeIcon.textContent = '👁️';
+      }
+    }
+
+    function checkUsername() {
+      const name = document.getElementById('username').value.trim();
+      const loadingElement = document.getElementById('username-loading');
+      const messageElement = document.getElementById('name-msg');
+      const usernameInput = document.getElementById('username');
+
+      if (!name) {
+        messageElement.textContent = '';
+        messageElement.className = 'text-sm mt-1';
+        return;
+      }
+
+      if (name.length < 3) {
+        messageElement.textContent = '用户名至少需要3个字符';
+        messageElement.className = 'text-sm mt-1 text-red-600';
+        return;
+      }
+
+      // 显示加载状态
+      loadingElement.classList.remove('hidden');
+      messageElement.classList.add('hidden');
+
+      // 清除之前的超时
+      if (usernameCheckTimeout) {
+        clearTimeout(usernameCheckTimeout);
+      }
+
+      // 模拟API检查
+      usernameCheckTimeout = setTimeout(() => {
+        loadingElement.classList.add('hidden');
+        messageElement.classList.remove('hidden');
+
+        if (['admin', 'test', 'guest', 'root', 'user'].includes(name.toLowerCase())) {
+          messageElement.textContent = '❌ 用户名已被占用';
+          messageElement.className = 'text-sm mt-1 text-red-600';
+          usernameInput.classList.add('border-red-500');
+          usernameInput.classList.remove('border-gray-300');
+        } else {
+          messageElement.textContent = '✅ 用户名可用';
+          messageElement.className = 'text-sm mt-1 text-green-600';
+          usernameInput.classList.remove('border-red-500');
+          usernameInput.classList.add('border-gray-300');
+        }
+      }, 800);
+    }
+
+    function showRegisterLoading() {
+      const btnText = document.getElementById('register-btn-text');
+      const btnLoading = document.getElementById('register-btn-loading');
+      const registerBtn = document.getElementById('register-btn');
+
+      btnText.classList.add('hidden');
+      btnLoading.classList.remove('hidden');
+      registerBtn.disabled = true;
+    }
+
+    function hideRegisterLoading() {
+      const btnText = document.getElementById('register-btn-text');
+      const btnLoading = document.getElementById('register-btn-loading');
+      const registerBtn = document.getElementById('register-btn');
+
+      btnText.classList.remove('hidden');
+      btnLoading.classList.add('hidden');
+      registerBtn.disabled = false;
+    }
+
+    function showRegisterError(message) {
+      const errorDiv = document.getElementById('register-error');
+      const errorText = document.getElementById('register-error-text');
+
+      errorText.textContent = message;
+      errorDiv.classList.remove('hidden');
+
+      setTimeout(() => {
+        errorDiv.classList.add('hidden');
+      }, 5000);
+    }
+
+    function showRegisterSuccess() {
+      const successDiv = document.getElementById('register-success');
+      const errorDiv = document.getElementById('register-error');
+
+      errorDiv.classList.add('hidden');
+      successDiv.classList.remove('hidden');
+
+      setTimeout(() => {
+        window.location.href = '/ski/login/';
+      }, 2000);
+    }
+
+    function handleRegister(e) {
       e.preventDefault();
-      const pw = document.getElementById('pw').value;
-      const pw2 = document.getElementById('pw2').value;
+
+      if (isRegistering) return false;
+
+      const username = document.getElementById('username').value.trim();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('pw').value;
+      const confirmPassword = document.getElementById('pw2').value;
       const agree = document.getElementById('agree').checked;
-      if(!checkPassword(pw)) return alert('密码需 ≥ 8 位，且包含大小写字母和数字');
-      if(pw !== pw2) return alert('两次输入的密码不一致');
-      if(!agree) return alert('请先同意服务条款与隐私政策');
-      alert('注册成功（示例）'); // 成功结果页
+
+      // 验证所有字段
+      const isUsernameValid = validateUsername();
+      const isEmailValid = validateEmail();
+      const isPasswordValid = validatePassword();
+      const isPasswordMatchValid = validatePasswordMatch();
+
+      if (!isUsernameValid) {
+        showRegisterError('用户名格式不正确');
+        return false;
+      }
+
+      if (!isEmailValid) {
+        showRegisterError('请输入有效的邮箱地址');
+        return false;
+      }
+
+      if (!isPasswordValid) {
+        showRegisterError('密码不符合安全要求');
+        return false;
+      }
+
+      if (!isPasswordMatchValid) {
+        showRegisterError('两次输入的密码不一致');
+        return false;
+      }
+
+      if (!agree) {
+        showRegisterError('请先同意服务条款与隐私政策');
+        return false;
+      }
+
+      // 检查用户名是否被占用
+      if (['admin', 'test', 'guest', 'root', 'user'].includes(username.toLowerCase())) {
+        showRegisterError('该用户名已被占用，请选择其他用户名');
+        return false;
+      }
+
+      isRegistering = true;
+      showRegisterLoading();
+
+      // 模拟注册请求
+      setTimeout(() => {
+        isRegistering = false;
+        hideRegisterLoading();
+        showRegisterSuccess();
+      }, 2000);
+
       return false;
     }
+
+    // 防止重复提交
+    document.getElementById('register-form').addEventListener('submit', function(e) {
+      if (isRegistering) {
+        e.preventDefault();
+      }
+    });
   </script>
 </body>
 </html>

@@ -83,8 +83,8 @@ export default function AthletesPage() {
           </p>
         </div>
 
-        {/* 搜索和筛选 */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+        {/* 搜索和筛选 - 吸顶 */}
+        <div className="sticky top-16 z-40 bg-white rounded-lg shadow-md p-6 mb-8 border border-gray-200">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
@@ -93,7 +93,7 @@ export default function AthletesPage() {
                 placeholder="搜索运动员姓名或省份..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue"
+                className="pl-10 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue transition-all"
               />
             </div>
 
@@ -102,7 +102,7 @@ export default function AthletesPage() {
               <select
                 value={selectedDiscipline}
                 onChange={(e) => setSelectedDiscipline(e.target.value)}
-                className="pl-10 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue"
+                className="pl-10 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue transition-all"
               >
                 <option value="all">所有项目</option>
                 <option value="高山滑雪">高山滑雪</option>
@@ -112,10 +112,10 @@ export default function AthletesPage() {
             </div>
 
             <div className="flex items-center justify-between">
-              <span className="text-sm text-gray-600">
-                找到 {filteredAthletes.length} 名运动员
+              <span className="text-sm text-gray-600 font-medium">
+                找到 <span className="text-ski-blue font-bold">{filteredAthletes.length}</span> 名运动员
               </span>
-              <button className="bg-ski-blue text-white px-4 py-2 rounded-md hover:bg-ski-blue/90 transition-colors">
+              <button className="bg-ski-blue text-white px-4 py-2 rounded-md hover:bg-ski-blue/90 transition-colors shadow-sm hover:shadow-md">
                 导出列表
               </button>
             </div>
@@ -179,29 +179,29 @@ export default function AthletesPage() {
             <h2 className="text-xl font-semibold text-gray-900">运动员列表</h2>
           </div>
 
-          <div className="overflow-x-auto">
+          <div className="overflow-x-auto max-h-96 overflow-y-auto">
             <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
+              <thead className="bg-gray-50 sticky top-0 z-30">
                 <tr>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">
                     排名
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">
                     运动员
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">
                     项目
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">
                     积分
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">
                     参赛次数
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">
                     最好成绩
                   </th>
-                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider bg-gray-50">
                     所属地区
                   </th>
                 </tr>

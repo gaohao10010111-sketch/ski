@@ -169,18 +169,18 @@ export default function Footer() {
               © 2024 中国滑雪赛事积分系统. 基于国家体育总局冬季运动管理中心标准开发.
             </div>
             <div className="flex flex-wrap gap-6 text-sm">
-              <a href="#" className="text-gray-300 hover:text-primary-400 transition-colors">
+              <Link href="/privacy/" className="text-gray-300 hover:text-primary-400 transition-colors">
                 隐私政策
-              </a>
-              <a href="#" className="text-gray-300 hover:text-primary-400 transition-colors">
+              </Link>
+              <Link href="/terms/" className="text-gray-300 hover:text-primary-400 transition-colors">
                 使用条款
-              </a>
-              <a href="#" className="text-gray-300 hover:text-primary-400 transition-colors">
+              </Link>
+              <Link href="/rules" className="text-gray-300 hover:text-primary-400 transition-colors">
                 技术规范
-              </a>
-              <a href="#" className="text-gray-300 hover:text-primary-400 transition-colors">
+              </Link>
+              <Link href="/about" className="text-gray-300 hover:text-primary-400 transition-colors">
                 联系我们
-              </a>
+              </Link>
             </div>
           </div>
         </div>
