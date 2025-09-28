@@ -6,48 +6,23 @@ export default function ScoringSystems() {
     <div className="max-w-6xl mx-auto px-4 py-8">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-ski-navy mb-4">
-          中国滑雪积分体系
+          四大独立积分体系
         </h1>
         <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-          基于国家体育总局冬季运动管理中心标准，构建完整的多项目积分管理体系
+          基于《2025-2026赛季全国BA、SS青少年U系列比赛方案》，构建四大项目独立积分管理体系
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        <Link href="/scoring-systems/alpine" className="group block bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-blue-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+        <Link href="/scoring-systems/snowboard-slopestyle-bigair" className="group block bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-blue-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
           <div className="flex items-center justify-between mb-4">
             <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-500 transition-colors">
-              <Calculator className="h-6 w-6 text-blue-600 group-hover:text-white" />
+              <Trophy className="h-6 w-6 text-blue-600 group-hover:text-white" />
             </div>
             <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-blue-500 transition-colors" />
           </div>
-          <h2 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors">高山滑雪积分系统</h2>
-          <p className="text-gray-600 mb-4">基于时间的v4.0积分计算体系，支持A/B/C级赛事系数</p>
-          <div className="text-sm space-y-2">
-            <div className="flex items-center">
-              <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-              <span>计算公式: 最终积分 = (基础积分 + 判罚分) × 赛事系数</span>
-            </div>
-            <div className="flex items-center">
-              <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-              <span>项目覆盖: DH/SL/GS/SG/AC</span>
-            </div>
-            <div className="flex items-center">
-              <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-              <span>系数体系: A级(1.0) B级(0.6) C级(0.3)</span>
-            </div>
-          </div>
-        </Link>
-
-        <Link href="/scoring-systems/freestyle" className="group block bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-green-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
-          <div className="flex items-center justify-between mb-4">
-            <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-500 transition-colors">
-              <Trophy className="h-6 w-6 text-green-600 group-hover:text-white" />
-            </div>
-            <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-green-500 transition-colors" />
-          </div>
-          <h2 className="text-xl font-semibold mb-3 group-hover:text-green-600 transition-colors">自由式滑雪积分系统</h2>
-          <p className="text-gray-600 mb-4">240/360/120分档排名积分体系，支持多类别赛事</p>
+          <h2 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors">全国单板滑雪坡面障碍技巧和大跳台</h2>
+          <p className="text-gray-600 mb-4">240/360/120分档积分分配，裁判评分转排名体系</p>
           <div className="text-sm space-y-2">
             <div className="flex items-center">
               <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
@@ -64,61 +39,86 @@ export default function ScoringSystems() {
           </div>
         </Link>
 
-        <Link href="/scoring-systems/snowboard" className="group block bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-purple-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+        <Link href="/scoring-systems/snowboard-parallel" className="group block bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-green-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
           <div className="flex items-center justify-between mb-4">
-            <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-500 transition-colors">
-              <TrendingUp className="h-6 w-6 text-purple-600 group-hover:text-white" />
+            <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-500 transition-colors">
+              <TrendingUp className="h-6 w-6 text-green-600 group-hover:text-white" />
             </div>
-            <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-purple-500 transition-colors" />
+            <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-green-500 transition-colors" />
           </div>
-          <h2 className="text-xl font-semibold mb-3 group-hover:text-purple-600 transition-colors">单板滑雪积分系统</h2>
-          <p className="text-gray-600 mb-4">技巧项目排名积分体系，支持多元化项目</p>
+          <h2 className="text-xl font-semibold mb-3 group-hover:text-green-600 transition-colors">单板滑雪平行项目</h2>
+          <p className="text-gray-600 mb-4">竞速时间积分计算，淘汰赛制积分分配</p>
           <div className="text-sm space-y-2">
             <div className="flex items-center">
               <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-              <span>基于排名的积分分配体系</span>
+              <span>淘汰赛制: 一对一对决</span>
             </div>
             <div className="flex items-center">
               <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-              <span>比例分配: 第一名100%, 第二名80%, 第三名60%</span>
+              <span>项目支持: PGS/PSL</span>
             </div>
             <div className="flex items-center">
               <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-              <span>项目覆盖: BA/SS/HP/PSL/PGS</span>
+              <span>基于最终排名的积分分配体系</span>
             </div>
           </div>
         </Link>
 
-        <div className="bg-gradient-to-br from-orange-50 to-orange-100 border-2 border-orange-200 rounded-xl p-6">
+        <Link href="/scoring-systems/freestyle-slopestyle-bigair" className="group block bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-purple-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
           <div className="flex items-center justify-between mb-4">
-            <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-              <Users className="h-6 w-6 text-orange-600" />
+            <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center group-hover:bg-purple-500 transition-colors">
+              <Calculator className="h-6 w-6 text-purple-600 group-hover:text-white" />
             </div>
-            <div className="px-3 py-1 bg-orange-200 text-orange-800 text-xs font-medium rounded-full">青少年专属</div>
+            <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-purple-500 transition-colors" />
           </div>
-          <h2 className="text-xl font-semibold mb-3 text-orange-800">U系列青少年积分</h2>
-          <p className="text-gray-600 mb-4">U12/U15/U18独立积分管理，培养滑雪后备人才</p>
+          <h2 className="text-xl font-semibold mb-3 group-hover:text-purple-600 transition-colors">自由式滑雪坡面障碍技巧和大跳台</h2>
+          <p className="text-gray-600 mb-4">技巧难度系数评分机制，多轮次最佳成绩计算</p>
           <div className="text-sm space-y-2">
             <div className="flex items-center">
-              <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-              <span>U12组: 发展积分(培养兴趣)</span>
+              <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
+              <span>一类赛事: 360分档(第一名360分)</span>
             </div>
             <div className="flex items-center">
-              <div className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
-              <span>U15/U18组: 正式积分(竞技培养)</span>
+              <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
+              <span>二类赛事: 240分档(第一名240分)</span>
             </div>
             <div className="flex items-center">
               <div className="w-2 h-2 bg-red-500 rounded-full mr-2"></div>
-              <span>独立排名系统, 32人/组参赛上限</span>
+              <span>动作难度系数自动计算</span>
             </div>
           </div>
-        </div>
+        </Link>
+
+        <Link href="/scoring-systems/alpine" className="group block bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-orange-500 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+          <div className="flex items-center justify-between mb-4">
+            <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center group-hover:bg-orange-500 transition-colors">
+              <Users className="h-6 w-6 text-orange-600 group-hover:text-white" />
+            </div>
+            <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-orange-500 transition-colors" />
+          </div>
+          <h2 className="text-xl font-semibold mb-3 group-hover:text-orange-600 transition-colors">高山滑雪</h2>
+          <p className="text-gray-600 mb-4">基于时间的v4.0积分计算体系，支持A/B/C级赛事系数</p>
+          <div className="text-sm space-y-2">
+            <div className="flex items-center">
+              <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+              <span>计算公式: 最终积分 = (基础积分 + 判罚分) × 赛事系数</span>
+            </div>
+            <div className="flex items-center">
+              <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+              <span>项目覆盖: DH/SL/GS/SG/AC</span>
+            </div>
+            <div className="flex items-center">
+              <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+              <span>系数体系: A级(1.0) B级(0.6) C级(0.3)</span>
+            </div>
+          </div>
+        </Link>
       </div>
 
       <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-xl p-8">
         <div className="text-center mb-8">
-          <h3 className="text-2xl font-bold text-ski-navy mb-2">积分延续机制</h3>
-          <p className="text-gray-600">科学合理的积分延续策略，确保竞技水平的连续性评估</p>
+          <h3 className="text-2xl font-bold text-ski-navy mb-2">四大项目积分延续机制</h3>
+          <p className="text-gray-600">科学合理的积分延续策略，确保四大项目竞技水平的连续性评估</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -128,7 +128,7 @@ export default function ScoringSystems() {
             </div>
             <h4 className="font-semibold text-gray-900 mb-2">延续比例</h4>
             <p className="text-sm text-gray-600 leading-relaxed">
-              赛季结束后，运动员积分按照50%的比例延续到下一赛季，保持合理的竞技起点
+              赛季结束后，运动员在四大项目中的积分分别按照50%的比例延续到下一赛季
             </p>
           </div>
 
@@ -148,7 +148,7 @@ export default function ScoringSystems() {
             </div>
             <h4 className="font-semibold text-gray-900 mb-2">成绩计算</h4>
             <p className="text-sm text-gray-600 leading-relaxed">
-              取运动员在赛季内同一项目最好的两次成绩平均值作为最终积分排名依据
+              取运动员在赛季内四大项目中每个项目最好的两次成绩平均值作为最终积分排名依据
             </p>
           </div>
         </div>
@@ -156,28 +156,28 @@ export default function ScoringSystems() {
         <div className="mt-8 bg-white/60 rounded-lg p-6">
           <h4 className="font-semibold text-gray-900 mb-4 flex items-center">
             <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
-            积分延续流程示例
+            四大项目积分延续流程示例
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-sm">
             <div className="text-center">
               <div className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs mb-2">Step 1</div>
               <p className="font-medium">赛季期内</p>
-              <p className="text-gray-600">积累最好2次成绩</p>
+              <p className="text-gray-600">四项目各积累最好2次成绩</p>
             </div>
             <div className="text-center">
               <div className="bg-green-500 text-white px-3 py-1 rounded-full text-xs mb-2">Step 2</div>
               <p className="font-medium">赛季结束</p>
-              <p className="text-gray-600">计算平均积分</p>
+              <p className="text-gray-600">分别计算各项目平均积分</p>
             </div>
             <div className="text-center">
               <div className="bg-orange-500 text-white px-3 py-1 rounded-full text-xs mb-2">Step 3</div>
               <p className="font-medium">积分延续</p>
-              <p className="text-gray-600">×50%进入新赛季</p>
+              <p className="text-gray-600">各项目×50%进入新赛季</p>
             </div>
             <div className="text-center">
               <div className="bg-purple-500 text-white px-3 py-1 rounded-full text-xs mb-2">Step 4</div>
               <p className="font-medium">新赛季开始</p>
-              <p className="text-gray-600">基础积分+新成绩</p>
+              <p className="text-gray-600">四项目基础积分+新成绩</p>
             </div>
           </div>
         </div>

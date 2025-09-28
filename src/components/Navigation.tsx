@@ -43,7 +43,7 @@ const navigationItems = [
     action: Action.READ,
     children: [
       { name: '积分体系', href: '/scoring-systems', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
-      { name: '中国积分查询', href: '/points/fis', active: true, resource: Resource.POINTS_QUERY, action: Action.READ },
+      { name: '积分查询', href: '/points/fis', active: true, resource: Resource.POINTS_QUERY, action: Action.READ },
       { name: '积分计算器', href: '/points/calculator', active: true, resource: Resource.POINTS_CALCULATOR, action: Action.READ },
       { name: '积分排行榜', href: '/points/rankings', active: true, resource: Resource.POINTS_RANKING, action: Action.READ },
       { name: '积分变化趋势', href: '/points/trends', active: true, resource: Resource.POINTS_TRENDS, action: Action.READ }
