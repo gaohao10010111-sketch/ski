@@ -198,15 +198,15 @@ export default function HomePage() {
                   权威·专业·精准的中国滑雪运动积分管理平台
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 text-sm md:text-base lg:text-lg">
-                  <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20">
+                  <div className="flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20">
                     <div className="w-3 h-3 bg-ski-blue rounded-full mr-3 flex-shrink-0"></div>
-                    <span className="text-white font-medium">专业积分体系</span>
+                    <span className="text-white font-medium whitespace-nowrap">专业积分体系</span>
                   </div>
-                  <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20">
+                  <div className="flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20">
                     <div className="w-3 h-3 bg-green-400 rounded-full mr-3 flex-shrink-0"></div>
                     <span className="text-white font-medium whitespace-nowrap">冬运中心官方认证</span>
                   </div>
-                  <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20">
+                  <div className="flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20">
                     <div className="w-3 h-3 bg-yellow-400 rounded-full mr-3 flex-shrink-0"></div>
                     <span className="text-white font-medium whitespace-nowrap">U系列·大众赛事</span>
                   </div>

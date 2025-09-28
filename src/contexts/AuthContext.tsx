@@ -6,35 +6,37 @@ import { User, UserRole, UserStatus, AuthState, LoginRequest, RegisterRequest, R
 // 权限规则配置 - 中国高山滑雪积分管理平台
 const PERMISSIONS_MAP: Record<UserRole, Record<Resource, Action[]>> = {
   [UserRole.PUBLIC]: {
-    // DEBUG模式: PUBLIC权限完全开放，所有功能所有操作
-    [Resource.HOME]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
-    [Resource.ABOUT]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
-    [Resource.NEWS]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
-    [Resource.CONTACT]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
+    // 公开内容：未登录用户只能查看基础信息
+    [Resource.HOME]: [Action.READ],
+    [Resource.ABOUT]: [Action.READ],
+    [Resource.NEWS]: [Action.READ],
+    [Resource.CONTACT]: [Action.READ],
 
-    // 会员功能完全开放
-    [Resource.PROFILE]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
-    [Resource.MY_POINTS]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
-    [Resource.POINTS_QUERY]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
-    [Resource.POINTS_RANKING]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
-    [Resource.POINTS_CALCULATOR]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
-    [Resource.POINTS_TRENDS]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
-    [Resource.RULES_POINTS]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
+    // 积分体系介绍：公开展示，但不能查询具体积分
+    [Resource.RULES_POINTS]: [Action.READ],
 
-    // 赛事功能完全开放
-    [Resource.COMPETITIONS]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
-    [Resource.COMPETITIONS_SCHEDULE]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
-    [Resource.RESULTS_IMPORT]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
-    [Resource.RESULTS_ANNOUNCEMENT]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
-    [Resource.REGISTRATION]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
-    [Resource.EVENTS]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
+    // 赛事信息：公开展示赛程，但不能报名或管理
+    [Resource.COMPETITIONS]: [Action.READ],
+    [Resource.COMPETITIONS_SCHEDULE]: [Action.READ],
+    [Resource.RESULTS_ANNOUNCEMENT]: [Action.READ],
 
-    // 管理员功能完全开放
-    [Resource.ADMIN_DASHBOARD]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
-    [Resource.POINTS_CALCULATION]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
-    [Resource.USER_MANAGEMENT]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
-    [Resource.STATISTICS]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
-    [Resource.SYSTEM_CONFIG]: [Action.READ, Action.WRITE, Action.UPDATE, Action.DELETE],
+    // 会员专享功能：不允许访问
+    // [Resource.PROFILE]: 需要登录
+    // [Resource.MY_POINTS]: 需要登录
+    // [Resource.POINTS_QUERY]: 需要登录
+    // [Resource.POINTS_RANKING]: 需要登录
+    // [Resource.POINTS_CALCULATOR]: 需要登录
+    // [Resource.POINTS_TRENDS]: 需要登录
+    // [Resource.REGISTRATION]: 需要登录
+    // [Resource.RESULTS_IMPORT]: 需要登录
+    // [Resource.EVENTS]: 需要登录
+
+    // 管理员功能：完全不允许访问
+    // [Resource.ADMIN_DASHBOARD]: 管理员专用
+    // [Resource.POINTS_CALCULATION]: 管理员专用
+    // [Resource.USER_MANAGEMENT]: 管理员专用
+    // [Resource.STATISTICS]: 管理员专用
+    // [Resource.SYSTEM_CONFIG]: 管理员专用
   } as Record<Resource, Action[]>,
 
   [UserRole.ATHLETE]: {
