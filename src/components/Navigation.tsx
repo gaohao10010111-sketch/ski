@@ -135,46 +135,24 @@ export default function Navigation() {
     return roleMap[role] || '用户'
   }
 
-  // 根据权限过滤导航项
-  const filterNavigationItems = (items: typeof navigationItems) => {
-    return items.filter(item => {
-      // 首页始终显示
-      if (item.name === '首页') return true
-
-      // 检查主菜单权限
-      if (item.resource && item.action) {
-        return hasPermission(item.resource, item.action)
-      }
-
-      // 检查是否有可访问的子菜单
-      if (item.children) {
-        const accessibleChildren = item.children.filter(child => {
-          if (child.resource && child.action) {
-            return hasPermission(child.resource, child.action)
-          }
-          return false
-        })
-        return accessibleChildren.length > 0
-      }
-
-      return false
-    }).map(item => ({
+  // 显示所有导航项，但标记权限状态
+  const processNavigationItems = (items: typeof navigationItems) => {
+    return items.map(item => ({
       ...item,
-      // 根据权限过滤子菜单
-      children: item.children ? item.children.filter(child => {
-        if (child.resource && child.action) {
-          return hasPermission(child.resource, child.action)
-        }
-        return false
-      }).map(child => ({
+      // 检查主菜单权限状态
+      isLocked: item.resource && item.action && !hasPermission(item.resource, item.action),
+      needsAuth: !isAuthenticated && item.resource && item.action,
+
+      // 处理子菜单，显示所有项但标记权限状态
+      children: item.children ? item.children.map(child => ({
         ...child,
+        isLocked: child.resource && child.action && !hasPermission(child.resource, child.action),
         needsAuth: !isAuthenticated && child.resource && child.action
-      })) : undefined,
-      needsAuth: !isAuthenticated && item.resource && item.action && !hasPermission(item.resource, item.action)
+      })) : undefined
     }))
   }
 
-  const filteredNavigationItems = filterNavigationItems(navigationItems)
+  const processedNavigationItems = processNavigationItems(navigationItems)
 
   return (
     <nav className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
@@ -192,34 +170,38 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6 flex-1 justify-center ml-8 whitespace-nowrap">
-            {filteredNavigationItems.map((item) => (
+            {processedNavigationItems.map((item) => (
               <div key={item.name} className="relative">
                 {item.children ? (
                   <div className="relative">
                     <button
-                      onClick={() => toggleDropdown(item.name)}
+                      onClick={() => !item.isLocked && toggleDropdown(item.name)}
                       className={`flex items-center space-x-1 nav-link whitespace-nowrap ${
                         pathname?.startsWith(item.href) ||
                         (item.children && item.children.some(child => pathname === child.href)) ? 'active' : ''
-                      } ${!item.active || item.needsAuth ? 'opacity-75' : ''}`}
-                      disabled={!item.active}
+                      } ${item.isLocked ? 'opacity-50 cursor-not-allowed' : ''}`}
+                      disabled={item.isLocked}
                     >
                       <item.icon className="h-4 w-4" />
                       <span>{item.name}</span>
-                      <ChevronDown className="h-3 w-3" />
+                      {item.isLocked ? (
+                        <LogIn className="h-3 w-3 text-gray-400" />
+                      ) : (
+                        <ChevronDown className="h-3 w-3" />
+                      )}
                     </button>
 
-                    {openDropdown === item.name && (
+                    {openDropdown === item.name && !item.isLocked && (
                       <div className="dropdown-menu">
                         {item.children.map((child) => (
-                          false ? ( // DEBUG模式: 移除"需要登录"的显示
+                          child.isLocked ? (
                             <div
                               key={child.name}
                               className="dropdown-item text-gray-400 cursor-not-allowed"
                             >
                               <div className="flex items-center justify-between">
                                 <span>{child.name}</span>
-                                <span className="text-xs text-sky-500">需要登录</span>
+                                <LogIn className="h-3 w-3 text-gray-400" />
                               </div>
                             </div>
                           ) : (
@@ -244,7 +226,7 @@ export default function Navigation() {
                             </Link>
                           )
                         ))}
-                        {item.needsAuth && (
+                        {item.children.some(child => child.isLocked) && !isAuthenticated && (
                           <div className="border-t border-gray-100 mt-1 pt-1">
                             <Link
                               href="/login"
@@ -253,13 +235,22 @@ export default function Navigation() {
                             >
                               <div className="flex items-center">
                                 <LogIn className="h-3 w-3 mr-2" />
-                                <span>登录解锁功能</span>
+                                <span>登录解锁更多功能</span>
                               </div>
                             </Link>
                           </div>
                         )}
                       </div>
                     )}
+                  </div>
+                ) : item.isLocked ? (
+                  <div
+                    className="flex items-center space-x-1 nav-link whitespace-nowrap opacity-50 cursor-not-allowed"
+                    title="需要登录才能访问"
+                  >
+                    <item.icon className="h-4 w-4" />
+                    <span>{item.name}</span>
+                    <LogIn className="h-3 w-3 text-gray-400" />
                   </div>
                 ) : (
                   <Link
