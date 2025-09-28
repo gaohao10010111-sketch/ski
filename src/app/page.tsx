@@ -204,11 +204,11 @@ export default function HomePage() {
                   </div>
                   <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20">
                     <div className="w-3 h-3 bg-green-400 rounded-full mr-3 flex-shrink-0"></div>
-                    <span className="text-white font-medium">冬运中心官方认证</span>
+                    <span className="text-white font-medium whitespace-nowrap">冬运中心官方认证</span>
                   </div>
                   <div className="flex items-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20">
                     <div className="w-3 h-3 bg-yellow-400 rounded-full mr-3 flex-shrink-0"></div>
-                    <span className="text-white font-medium">U系列·大众赛事</span>
+                    <span className="text-white font-medium whitespace-nowrap">U系列·大众赛事</span>
                   </div>
                 </div>
 
