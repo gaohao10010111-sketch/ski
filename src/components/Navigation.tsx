@@ -99,10 +99,10 @@ const navigationItems = [
     resource: Resource.RULES_POINTS,
     action: Action.READ,
     children: [
-      { name: '中国积分规则', href: '/rules/points', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
-      { name: '竞赛规则', href: '/rules/competition', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
-      { name: '技术规范', href: '/rules/technical', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
-      { name: '中英对照', href: '/rules/bilingual', active: true, resource: Resource.RULES_POINTS, action: Action.READ }
+      { name: '积分规则文档', href: '/rules/points', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
+      { name: '竞赛技术规则', href: '/rules/competition', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
+      { name: '场地技术标准', href: '/rules/technical', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
+      { name: 'FIS国际规则', href: '/rules/fis', active: true, resource: Resource.RULES_POINTS, action: Action.READ }
     ]
   }
 ]
