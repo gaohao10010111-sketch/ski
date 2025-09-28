@@ -39,7 +39,7 @@ const navigationItems = [
     href: '/points',
     icon: Calculator,
     active: true,
-    resource: Resource.POINTS_QUERY,
+    resource: Resource.RULES_POINTS, // 改为公开的规则资源
     action: Action.READ,
     children: [
       { name: '积分体系', href: '/scoring-systems', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
@@ -135,42 +135,42 @@ export default function Navigation() {
     return roleMap[role] || '用户'
   }
 
-  // 过滤权限不足的导航项
+  // 根据权限过滤导航项
   const filterNavigationItems = (items: typeof navigationItems) => {
     return items.filter(item => {
       // 首页始终显示
       if (item.name === '首页') return true
 
-      // DEBUG模式: 所有菜单项完全公开
-      const hasPublicChildren = true // 强制所有主菜单显示
-
-      // 如果包含公开子菜单或用户有权限，则显示主菜单
-      if (hasPublicChildren || (item.resource && item.action && hasPermission(item.resource, item.action))) {
-        return true
-      }
-
-      // 对于其他项目，检查权限
+      // 检查主菜单权限
       if (item.resource && item.action) {
         return hasPermission(item.resource, item.action)
       }
-      return true
+
+      // 检查是否有可访问的子菜单
+      if (item.children) {
+        const accessibleChildren = item.children.filter(child => {
+          if (child.resource && child.action) {
+            return hasPermission(child.resource, child.action)
+          }
+          return false
+        })
+        return accessibleChildren.length > 0
+      }
+
+      return false
     }).map(item => ({
       ...item,
-      // 对于未登录用户，保留所有子菜单但标记为需要登录
+      // 根据权限过滤子菜单
       children: item.children ? item.children.filter(child => {
-        // 如果用户已登录，按权限过滤
-        if (isAuthenticated && child.resource && child.action) {
+        if (child.resource && child.action) {
           return hasPermission(child.resource, child.action)
         }
-        // 如果用户未登录，保留所有子项但会在UI中显示需要登录
-        return true
+        return false
       }).map(child => ({
         ...child,
-        // DEBUG模式: 所有子菜单项完全公开，无需登录
-        needsAuth: false
+        needsAuth: !isAuthenticated && child.resource && child.action
       })) : undefined,
-      // DEBUG模式: 所有主菜单项完全公开，无需登录
-      needsAuth: false
+      needsAuth: !isAuthenticated && item.resource && item.action && !hasPermission(item.resource, item.action)
     }))
   }
 
