@@ -27,7 +27,7 @@ import { Resource, Action } from '@/types/auth'
 
 const navigationItems = [
   {
-    name: '🎿 滑雪项目',
+    name: '滑雪项目',
     href: '/disciplines',
     icon: Mountain,
     active: true,
@@ -42,7 +42,7 @@ const navigationItems = [
     ]
   },
   {
-    name: '📊 积分中心',
+    name: '积分中心',
     href: '/points',
     icon: Calculator,
     active: true,
@@ -57,7 +57,7 @@ const navigationItems = [
     ]
   },
   {
-    name: '🏆 赛事',
+    name: '赛事',
     href: '/events',
     icon: Trophy,
     active: true,
@@ -72,7 +72,7 @@ const navigationItems = [
     ]
   },
   {
-    name: '👤 我的',
+    name: '我的',
     href: '/my',
     icon: User,
     active: true,
@@ -87,7 +87,7 @@ const navigationItems = [
     ]
   },
   {
-    name: '📚 知识库',
+    name: '知识库',
     href: '/docs',
     icon: FileText,
     active: true,
