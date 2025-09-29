@@ -35,6 +35,21 @@ const navigationItems = [
     action: Action.READ
   },
   {
+    name: '项目',
+    href: '/disciplines',
+    icon: Trophy,
+    active: true,
+    resource: Resource.HOME,
+    action: Action.READ,
+    children: [
+      { name: '全部项目总览', href: '/disciplines', active: true, resource: Resource.HOME, action: Action.READ },
+      { name: '⛷️ 高山滑雪', href: '/disciplines/alpine', active: true, resource: Resource.HOME, action: Action.READ },
+      { name: '🏂 单板坡面/大跳台', href: '/disciplines/snowboard-slopestyle', active: true, resource: Resource.HOME, action: Action.READ },
+      { name: '🏂 单板平行项目', href: '/disciplines/snowboard-parallel', active: true, resource: Resource.HOME, action: Action.READ },
+      { name: '🎿 自由式坡面/大跳台', href: '/disciplines/freeski-slopestyle', active: true, resource: Resource.HOME, action: Action.READ }
+    ]
+  },
+  {
     name: '积分系统',
     href: '/points',
     icon: Calculator,
@@ -356,7 +371,7 @@ export default function Navigation() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {filteredNavigationItems.map((item) => (
+            {processedNavigationItems.map((item) => (
               <div key={item.name}>
                 <Link
                   href={item.needsAuth ? '/login' : item.href}

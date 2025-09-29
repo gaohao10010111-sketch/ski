@@ -1,0 +1,141 @@
+import Link from 'next/link';
+
+export default function DisciplinesOverview() {
+  const disciplines = [
+    {
+      id: 'alpine',
+      name: '高山滑雪',
+      nameEn: 'Alpine Skiing',
+      icon: '⛷️',
+      color: 'from-blue-600 to-cyan-600',
+      description: 'v4.0时间基础积分计算 | A/B/C三级赛事系数',
+      features: ['速降', '回转', '大回转', '超级大回转', '全能'],
+    },
+    {
+      id: 'snowboard-slopestyle',
+      name: '单板坡面障碍技巧 & 大跳台',
+      nameEn: 'Snowboard Slopestyle & Big Air',
+      icon: '🏂',
+      color: 'from-orange-600 to-yellow-600',
+      description: '240/360/120分档积分 | 裁判评分转排名',
+      features: ['坡面障碍技巧', '大跳台', 'U型场地'],
+    },
+    {
+      id: 'snowboard-parallel',
+      name: '单板滑雪平行项目',
+      nameEn: 'Snowboard Parallel',
+      icon: '🏂',
+      color: 'from-purple-600 to-pink-600',
+      description: '竞速时间积分 | 淘汰赛制',
+      features: ['平行大回转(PGS)', '平行回转(PSL)'],
+    },
+    {
+      id: 'freeski-slopestyle',
+      name: '自由式滑雪坡面障碍技巧 & 大跳台',
+      nameEn: 'Freeski Slopestyle & Big Air',
+      icon: '🎿',
+      color: 'from-red-600 to-rose-600',
+      description: '240/360/120分档积分 | 技巧难度系数',
+      features: ['坡面障碍技巧', '大跳台', '空中技巧'],
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+      {/* 头部横幅 */}
+      <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900 text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
+            🎿 中国滑雪积分系统
+          </h1>
+          <p className="text-xl text-center text-blue-200">
+            四大项目独立积分体系 | 专业赛事管理平台
+          </p>
+        </div>
+      </div>
+
+      {/* 项目卡片网格 */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {disciplines.map((discipline) => (
+            <Link
+              key={discipline.id}
+              href={`/disciplines/${discipline.id}`}
+              className="group"
+            >
+              <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-blue-500 transform hover:-translate-y-2">
+                {/* 渐变头部 */}
+                <div className={`bg-gradient-to-r ${discipline.color} p-6 text-white`}>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-5xl mb-2">{discipline.icon}</div>
+                      <h2 className="text-2xl font-bold mb-1">{discipline.name}</h2>
+                      <p className="text-sm opacity-90">{discipline.nameEn}</p>
+                    </div>
+                    <div className="text-white/50 group-hover:text-white transition-colors">
+                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                {/* 内容区域 */}
+                <div className="p-6">
+                  <p className="text-gray-600 mb-4 text-sm">{discipline.description}</p>
+
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {discipline.features.map((feature, index) => (
+                      <span
+                        key={index}
+                        className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="flex items-center text-blue-600 font-medium group-hover:text-blue-700">
+                    进入项目系统
+                    <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* 系统特点 */}
+        <div className="mt-16 bg-white rounded-2xl shadow-lg p-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            系统核心特点
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="text-center">
+              <div className="text-4xl mb-2">🏅</div>
+              <h4 className="font-bold text-gray-900 mb-2">独立积分体系</h4>
+              <p className="text-sm text-gray-600">四个项目独立排名和统计</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl mb-2">📊</div>
+              <h4 className="font-bold text-gray-900 mb-2">实时积分计算</h4>
+              <p className="text-sm text-gray-600">比赛结束后自动更新积分</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl mb-2">🎯</div>
+              <h4 className="font-bold text-gray-900 mb-2">U系列管理</h4>
+              <p className="text-sm text-gray-600">U12/U15/U18青少年分组</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl mb-2">🔄</div>
+              <h4 className="font-bold text-gray-900 mb-2">积分延续机制</h4>
+              <p className="text-sm text-gray-600">赛季结束后×50%基础积分</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
