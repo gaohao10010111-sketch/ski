@@ -27,22 +27,14 @@ import { Resource, Action } from '@/types/auth'
 
 const navigationItems = [
   {
-    name: '首页',
-    href: '/',
-    icon: Mountain,
-    active: true,
-    resource: Resource.HOME,
-    action: Action.READ
-  },
-  {
-    name: '项目',
+    name: '🎿 滑雪项目',
     href: '/disciplines',
-    icon: Trophy,
+    icon: Mountain,
     active: true,
     resource: Resource.HOME,
     action: Action.READ,
     children: [
-      { name: '全部项目总览', href: '/disciplines', active: true, resource: Resource.HOME, action: Action.READ },
+      { name: '项目总览', href: '/disciplines', active: true, resource: Resource.HOME, action: Action.READ },
       { name: '⛷️ 高山滑雪', href: '/disciplines/alpine', active: true, resource: Resource.HOME, action: Action.READ },
       { name: '🏂 单板坡面/大跳台', href: '/disciplines/snowboard-slopestyle', active: true, resource: Resource.HOME, action: Action.READ },
       { name: '🏂 单板平行项目', href: '/disciplines/snowboard-parallel', active: true, resource: Resource.HOME, action: Action.READ },
@@ -50,74 +42,63 @@ const navigationItems = [
     ]
   },
   {
-    name: '积分系统',
+    name: '📊 积分中心',
     href: '/points',
     icon: Calculator,
     active: true,
-    resource: Resource.RULES_POINTS, // 改为公开的规则资源
+    resource: Resource.RULES_POINTS,
     action: Action.READ,
     children: [
-      { name: '积分体系', href: '/scoring-systems', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
-      { name: '积分查询', href: '/points/fis', active: true, resource: Resource.POINTS_QUERY, action: Action.READ },
+      { name: '我的积分', href: '/my/points', active: true, resource: Resource.POINTS_QUERY, action: Action.READ },
+      { name: '积分查询', href: '/points/query', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
       { name: '积分计算器', href: '/points/calculator', active: true, resource: Resource.POINTS_CALCULATOR, action: Action.READ },
       { name: '积分排行榜', href: '/points/rankings', active: true, resource: Resource.POINTS_RANKING, action: Action.READ },
-      { name: '积分变化趋势', href: '/points/trends', active: true, resource: Resource.POINTS_TRENDS, action: Action.READ }
+      { name: '积分趋势分析', href: '/points/trends', active: true, resource: Resource.POINTS_TRENDS, action: Action.READ }
     ]
   },
   {
-    name: '赛事管理',
-    href: '/competitions',
+    name: '🏆 赛事',
+    href: '/events',
     icon: Trophy,
     active: true,
     resource: Resource.COMPETITIONS,
     action: Action.READ,
     children: [
-      { name: '赛事日程', href: '/competitions/schedule', active: true, resource: Resource.COMPETITIONS_SCHEDULE, action: Action.READ },
-      { name: '比赛列表', href: '/competitions', active: true, resource: Resource.COMPETITIONS, action: Action.READ },
-      { name: '成绩导入', href: '/results-import', active: true, resource: Resource.RESULTS_IMPORT, action: Action.READ },
-      { name: '成绩公布', href: '/results-announcement', active: true, resource: Resource.RESULTS_ANNOUNCEMENT, action: Action.READ },
-      { name: '数据分析', href: '/competitions/stats', active: true, resource: Resource.STATISTICS, action: Action.READ }
+      { name: '赛事日程', href: '/events/schedule', active: true, resource: Resource.COMPETITIONS_SCHEDULE, action: Action.READ },
+      { name: '在线报名', href: '/events/register', active: true, resource: Resource.REGISTRATION, action: Action.WRITE },
+      { name: '比赛列表', href: '/events/list', active: true, resource: Resource.COMPETITIONS, action: Action.READ },
+      { name: '成绩查询', href: '/events/results', active: true, resource: Resource.RESULTS_ANNOUNCEMENT, action: Action.READ },
+      { name: '数据统计', href: '/events/stats', active: true, resource: Resource.STATISTICS, action: Action.READ }
     ]
   },
   {
-    name: '运动员管理',
-    href: '/athletes',
-    icon: Users,
+    name: '👤 我的',
+    href: '/my',
+    icon: User,
     active: true,
-    resource: Resource.USER_MANAGEMENT,
+    resource: Resource.POINTS_QUERY,
     action: Action.READ,
     children: [
-      { name: '运动员档案', href: '/athletes', active: true, resource: Resource.USER_MANAGEMENT, action: Action.READ },
-      { name: '成绩历史', href: '/athletes/history', active: true, resource: Resource.POINTS_QUERY, action: Action.READ },
-      { name: '成绩统计', href: '/athletes/stats', active: true, resource: Resource.STATISTICS, action: Action.READ }
+      { name: '个人中心', href: '/my', active: true, resource: Resource.POINTS_QUERY, action: Action.READ },
+      { name: '我的积分', href: '/my/points', active: true, resource: Resource.POINTS_QUERY, action: Action.READ },
+      { name: '我的报名', href: '/my/registrations', active: true, resource: Resource.REGISTRATION, action: Action.READ },
+      { name: '运动员档案', href: '/my/athlete', active: true, resource: Resource.USER_MANAGEMENT, action: Action.READ },
+      { name: '成绩历史', href: '/my/history', active: true, resource: Resource.POINTS_QUERY, action: Action.READ }
     ]
   },
   {
-    name: '报名系统',
-    href: '/registration',
-    icon: UserPlus,
-    active: true,
-    resource: Resource.REGISTRATION,
-    action: Action.READ,
-    children: [
-      { name: '在线报名', href: '/registration', active: true, resource: Resource.REGISTRATION, action: Action.WRITE },
-      { name: '报名管理', href: '/registration/manage', active: true, resource: Resource.REGISTRATION, action: Action.UPDATE },
-      { name: '资格审查', href: '/registration/verification', active: true, resource: Resource.REGISTRATION, action: Action.UPDATE },
-      { name: '费用管理', href: '/registration/fees', active: true, resource: Resource.REGISTRATION, action: Action.UPDATE }
-    ]
-  },
-  {
-    name: '规则文档',
-    href: '/rules',
+    name: '📚 知识库',
+    href: '/docs',
     icon: FileText,
     active: true,
     resource: Resource.RULES_POINTS,
     action: Action.READ,
     children: [
-      { name: '积分规则文档', href: '/rules/points', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
-      { name: '竞赛技术规则', href: '/rules/competition', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
-      { name: '场地技术标准', href: '/rules/technical', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
-      { name: 'FIS国际规则', href: '/rules/fis', active: true, resource: Resource.RULES_POINTS, action: Action.READ }
+      { name: '积分规则文档', href: '/docs/points-rules', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
+      { name: '竞赛技术规则', href: '/docs/competition-rules', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
+      { name: '场地技术标准', href: '/docs/venue-standards', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
+      { name: 'FIS国际规则', href: '/docs/fis-rules', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
+      { name: '平台使用指南', href: '/docs/guide', active: true, resource: Resource.RULES_POINTS, action: Action.READ }
     ]
   }
 ]

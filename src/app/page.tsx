@@ -217,12 +217,12 @@ export default function HomePage() {
                   <div className="mt-8">
                     <div className="flex flex-col sm:flex-row gap-4">
                       <Link
-                        href="/scoring-systems"
+                        href="/disciplines"
                         className="inline-flex items-center justify-center px-6 py-3 bg-ski-blue text-white rounded-lg hover:bg-ski-blue/90 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
-                        title="了解中国滑雪积分体系"
+                        title="了解四大滑雪项目"
                       >
-                        <Calculator className="h-5 w-5 mr-2" />
-                        探索积分系统
+                        <Trophy className="h-5 w-5 mr-2" />
+                        探索滑雪项目
                       </Link>
                       <Link
                         href="/register"
@@ -396,17 +396,17 @@ export default function HomePage() {
                 </div>
                 <div className="mt-4 flex space-x-4">
                   <Link
-                    href="/profile"
+                    href="/my"
                     className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm"
                   >
-                    查看档案
+                    个人中心
                   </Link>
                   {user?.role === 'athlete' && (
                     <Link
-                      href="/points/fis"
+                      href="/my/points"
                       className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm"
                     >
-                      积分详情
+                      我的积分
                     </Link>
                   )}
                   {user?.role === 'admin' && (
@@ -464,7 +464,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="mt-6 text-center">
-                <Link href="/competitions" className="text-ski-blue hover:text-ski-blue/80 font-medium">
+                <Link href="/events" className="text-ski-blue hover:text-ski-blue/80 font-medium">
                   查看更多赛事 →
                 </Link>
               </div>
