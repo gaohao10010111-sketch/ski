@@ -21,35 +21,35 @@ export default function SnowboardParallelHome() {
       description: '查看竞速积分排名',
       icon: 'chart',
       href: '/disciplines/snowboard-parallel/points',
-      color: 'bg-purple-500',
+      color: 'bg-slate-600',
     },
     {
       title: '积分计算器',
       description: '淘汰赛制积分计算',
       icon: 'calculator',
       href: '/disciplines/snowboard-parallel/calculator',
-      color: 'bg-indigo-500',
+      color: 'bg-indigo-600',
     },
     {
       title: '赛事管理',
       description: '查看对决赛程和结果',
       icon: 'trophy',
       href: '/disciplines/snowboard-parallel/competitions',
-      color: 'bg-violet-500',
+      color: 'bg-slate-700',
     },
     {
       title: '运动员档案',
       description: '运动员信息和对战记录',
       icon: 'user',
       href: '/disciplines/snowboard-parallel/athletes',
-      color: 'bg-purple-600',
+      color: 'bg-indigo-700',
     },
     {
       title: '在线报名',
       description: '参加平行项目赛事',
       icon: 'file',
       href: '/disciplines/snowboard-parallel/registration',
-      color: 'bg-indigo-600',
+      color: 'bg-slate-800',
     },
     {
       title: '规则文档',
@@ -61,10 +61,10 @@ export default function SnowboardParallelHome() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-indigo-50">
 
       {/* 英雄区域 */}
-      <div className="relative bg-gradient-to-r from-purple-600 via-indigo-500 to-purple-500 text-white overflow-hidden">
+      <div className="relative bg-gradient-to-r from-slate-700 via-indigo-600 to-slate-600 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -94,7 +94,7 @@ export default function SnowboardParallelHome() {
 
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="currentColor" className="text-purple-50"/>
+            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="currentColor" className="text-slate-50"/>
           </svg>
         </div>
       </div>
@@ -109,17 +109,17 @@ export default function SnowboardParallelHome() {
             <Link
               key={index}
               href={link.href}
-              className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-purple-500 transform hover:-translate-y-1"
+              className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-indigo-500 transform hover:-translate-y-1"
             >
               <div className="p-6">
                 <div className={`${link.color} w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform`}>
                   {getIcon(link.icon)}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-700">
                   {link.title}
                 </h3>
                 <p className="text-gray-600 text-sm mb-4">{link.description}</p>
-                <div className="flex items-center text-purple-600 font-medium">
+                <div className="flex items-center text-indigo-700 font-medium">
                   进入功能
                   <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
