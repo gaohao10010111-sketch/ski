@@ -161,21 +161,24 @@ export default function Navigation() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
               <Mountain className="h-8 w-8 text-ski-blue" />
-              <span className="text-xl font-bold text-ski-navy whitespace-nowrap">
-                {t.navigation.title}
+              <span className="text-lg lg:text-xl font-bold text-ski-navy">
+                <span className="hidden xl:inline">{t.navigation.title}</span>
+                <span className="xl:hidden">
+                  {t.navigation.title.length > 12 ? t.navigation.title.substring(0, 12) + '...' : t.navigation.title}
+                </span>
               </span>
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6 flex-1 justify-center ml-8 whitespace-nowrap">
+          <div className="hidden md:flex items-center space-x-2 lg:space-x-4 xl:space-x-6 flex-1 justify-center ml-4 lg:ml-8">
             {processedNavigationItems.map((item) => (
               <div key={item.name} className="relative">
                 {item.children ? (
                   <div className="relative">
                     <button
                       onClick={() => !item.isLocked && toggleDropdown(item.name)}
-                      className={`flex items-center space-x-1 nav-link whitespace-nowrap ${
+                      className={`flex items-center space-x-1 nav-link text-sm lg:text-base xl:whitespace-nowrap ${
                         pathname?.startsWith(item.href) ||
                         (item.children && item.children.some(child => pathname === child.href)) ? 'active' : ''
                       } ${item.isLocked ? 'opacity-50 cursor-not-allowed' : ''}`}
@@ -254,7 +257,7 @@ export default function Navigation() {
                 ) : (
                   <Link
                     href={item.href}
-                    className={`flex items-center space-x-1 nav-link whitespace-nowrap ${
+                    className={`flex items-center space-x-1 nav-link text-sm lg:text-base xl:whitespace-nowrap ${
                       pathname === item.href || pathname?.startsWith(item.href + '/') ? 'active' : ''
                     } ${!item.active ? 'opacity-50 cursor-not-allowed' : ''}`}
                   >
