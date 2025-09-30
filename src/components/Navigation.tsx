@@ -23,84 +23,9 @@ import {
   TrendingUp
 } from 'lucide-react'
 import { useAuth } from '@/contexts/AuthContext'
+import { useTranslation } from '@/contexts/LanguageContext'
 import { Resource, Action } from '@/types/auth'
-
-const navigationItems = [
-  {
-    name: '滑雪项目',
-    href: '/disciplines',
-    icon: Mountain,
-    active: true,
-    resource: Resource.HOME,
-    action: Action.READ,
-    children: [
-      { name: '高山滑雪', href: '/disciplines/alpine', active: true, resource: Resource.HOME, action: Action.READ },
-      { name: '单板坡面/大跳台', href: '/disciplines/snowboard-slopestyle', active: true, resource: Resource.HOME, action: Action.READ },
-      { name: '单板平行项目', href: '/disciplines/snowboard-parallel', active: true, resource: Resource.HOME, action: Action.READ },
-      { name: '自由式坡面/大跳台', href: '/disciplines/freeski-slopestyle', active: true, resource: Resource.HOME, action: Action.READ }
-    ]
-  },
-  {
-    name: '积分中心',
-    href: '/points',
-    icon: Calculator,
-    active: true,
-    resource: Resource.RULES_POINTS,
-    action: Action.READ,
-    children: [
-      { name: '我的积分', href: '/my/points', active: true, resource: Resource.POINTS_QUERY, action: Action.READ },
-      { name: '积分查询', href: '/points/query', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
-      { name: '积分计算器', href: '/points/calculator', active: true, resource: Resource.POINTS_CALCULATOR, action: Action.READ },
-      { name: '积分排行榜', href: '/points/rankings', active: true, resource: Resource.POINTS_RANKING, action: Action.READ },
-      { name: '积分趋势分析', href: '/points/trends', active: true, resource: Resource.POINTS_TRENDS, action: Action.READ }
-    ]
-  },
-  {
-    name: '赛事',
-    href: '/events',
-    icon: Trophy,
-    active: true,
-    resource: Resource.COMPETITIONS,
-    action: Action.READ,
-    children: [
-      { name: '赛事日程', href: '/events/schedule', active: true, resource: Resource.COMPETITIONS_SCHEDULE, action: Action.READ },
-      { name: '在线报名', href: '/events/register', active: true, resource: Resource.REGISTRATION, action: Action.WRITE },
-      { name: '比赛列表', href: '/events/list', active: true, resource: Resource.COMPETITIONS, action: Action.READ },
-      { name: '成绩查询', href: '/events/results', active: true, resource: Resource.RESULTS_ANNOUNCEMENT, action: Action.READ },
-      { name: '数据统计', href: '/events/stats', active: true, resource: Resource.STATISTICS, action: Action.READ }
-    ]
-  },
-  {
-    name: '我的',
-    href: '/my',
-    icon: User,
-    active: true,
-    resource: Resource.POINTS_QUERY,
-    action: Action.READ,
-    children: [
-      { name: '个人中心', href: '/my', active: true, resource: Resource.POINTS_QUERY, action: Action.READ },
-      { name: '我的积分', href: '/my/points', active: true, resource: Resource.POINTS_QUERY, action: Action.READ },
-      { name: '我的报名', href: '/my/registrations', active: true, resource: Resource.REGISTRATION, action: Action.READ },
-      { name: '运动员档案', href: '/my/athlete', active: true, resource: Resource.USER_MANAGEMENT, action: Action.READ },
-      { name: '成绩历史', href: '/my/history', active: true, resource: Resource.POINTS_QUERY, action: Action.READ }
-    ]
-  },
-  {
-    name: '知识库',
-    href: '/docs',
-    icon: FileText,
-    active: true,
-    resource: Resource.RULES_POINTS,
-    action: Action.READ,
-    children: [
-      { name: '积分规则文档', href: '/docs/points-rules', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
-      { name: '竞赛技术规则', href: '/docs/competition-rules', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
-      { name: '场地技术标准', href: '/docs/venue-standards', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
-      { name: 'FIS国际规则', href: '/docs/fis-rules', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
-      { name: '平台使用指南', href: '/docs/guide', active: true, resource: Resource.RULES_POINTS, action: Action.READ }
-    ]
-  }
-]
+import LanguageSwitcher from '@/components/LanguageSwitcher'
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -109,6 +34,85 @@ export default function Navigation() {
   const pathname = usePathname()
   const router = useRouter()
   const { user, logout, isLoading, hasPermission, isAuthenticated } = useAuth()
+  const { t } = useTranslation()
+
+  // Move navigationItems inside the component to access translations
+  const navigationItems = [
+    {
+      name: t.navigation.disciplines,
+      href: '/disciplines',
+      icon: Mountain,
+      active: true,
+      resource: Resource.HOME,
+      action: Action.READ,
+      children: [
+        { name: t.navigation.submenus.alpine, href: '/disciplines/alpine', active: true, resource: Resource.HOME, action: Action.READ },
+        { name: t.navigation.submenus.snowboardSlopestyle, href: '/disciplines/snowboard-slopestyle', active: true, resource: Resource.HOME, action: Action.READ },
+        { name: t.navigation.submenus.snowboardParallel, href: '/disciplines/snowboard-parallel', active: true, resource: Resource.HOME, action: Action.READ },
+        { name: t.navigation.submenus.freeskiSlopestyle, href: '/disciplines/freeski-slopestyle', active: true, resource: Resource.HOME, action: Action.READ }
+      ]
+    },
+    {
+      name: t.navigation.points,
+      href: '/points',
+      icon: Calculator,
+      active: true,
+      resource: Resource.RULES_POINTS,
+      action: Action.READ,
+      children: [
+        { name: t.navigation.submenus.myPoints, href: '/my/points', active: true, resource: Resource.POINTS_QUERY, action: Action.READ },
+        { name: t.navigation.submenus.pointsQuery, href: '/points/query', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
+        { name: t.navigation.submenus.pointsCalculator, href: '/points/calculator', active: true, resource: Resource.POINTS_CALCULATOR, action: Action.READ },
+        { name: t.navigation.submenus.pointsRankings, href: '/points/rankings', active: true, resource: Resource.POINTS_RANKING, action: Action.READ },
+        { name: t.navigation.submenus.pointsTrends, href: '/points/trends', active: true, resource: Resource.POINTS_TRENDS, action: Action.READ }
+      ]
+    },
+    {
+      name: t.navigation.events,
+      href: '/events',
+      icon: Trophy,
+      active: true,
+      resource: Resource.COMPETITIONS,
+      action: Action.READ,
+      children: [
+        { name: t.navigation.submenus.eventsSchedule, href: '/events/schedule', active: true, resource: Resource.COMPETITIONS_SCHEDULE, action: Action.READ },
+        { name: t.navigation.submenus.eventsRegister, href: '/events/register', active: true, resource: Resource.REGISTRATION, action: Action.WRITE },
+        { name: t.navigation.submenus.eventsList, href: '/events/list', active: true, resource: Resource.COMPETITIONS, action: Action.READ },
+        { name: t.navigation.submenus.eventsResults, href: '/events/results', active: true, resource: Resource.RESULTS_ANNOUNCEMENT, action: Action.READ },
+        { name: t.navigation.submenus.eventsStats, href: '/events/stats', active: true, resource: Resource.STATISTICS, action: Action.READ }
+      ]
+    },
+    {
+      name: t.navigation.my,
+      href: '/my',
+      icon: User,
+      active: true,
+      resource: Resource.POINTS_QUERY,
+      action: Action.READ,
+      children: [
+        { name: t.navigation.submenus.personalCenter, href: '/my', active: true, resource: Resource.POINTS_QUERY, action: Action.READ },
+        { name: t.navigation.submenus.myPoints, href: '/my/points', active: true, resource: Resource.POINTS_QUERY, action: Action.READ },
+        { name: t.navigation.submenus.myRegistrations, href: '/my/registrations', active: true, resource: Resource.REGISTRATION, action: Action.READ },
+        { name: t.navigation.submenus.athleteProfile, href: '/my/athlete', active: true, resource: Resource.USER_MANAGEMENT, action: Action.READ },
+        { name: t.navigation.submenus.resultsHistory, href: '/my/history', active: true, resource: Resource.POINTS_QUERY, action: Action.READ }
+      ]
+    },
+    {
+      name: t.navigation.docs,
+      href: '/docs',
+      icon: FileText,
+      active: true,
+      resource: Resource.RULES_POINTS,
+      action: Action.READ,
+      children: [
+        { name: t.navigation.submenus.pointsRules, href: '/docs/points-rules', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
+        { name: t.navigation.submenus.competitionRules, href: '/docs/competition-rules', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
+        { name: t.navigation.submenus.venueStandards, href: '/docs/venue-standards', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
+        { name: t.navigation.submenus.fisRules, href: '/docs/fis-rules', active: true, resource: Resource.RULES_POINTS, action: Action.READ },
+        { name: t.navigation.submenus.userGuide, href: '/docs/guide', active: true, resource: Resource.RULES_POINTS, action: Action.READ }
+      ]
+    }
+  ]
 
   const toggleDropdown = (name: string) => {
     setOpenDropdown(openDropdown === name ? null : name)
@@ -158,7 +162,7 @@ export default function Navigation() {
             <Link href="/" className="flex items-center space-x-2">
               <Mountain className="h-8 w-8 text-ski-blue" />
               <span className="text-xl font-bold text-ski-navy whitespace-nowrap">
-                中国滑雪积分系统
+                {t.navigation.title}
               </span>
             </Link>
           </div>
@@ -215,7 +219,7 @@ export default function Navigation() {
                               <div className="flex items-center justify-between">
                                 <span>{child.name}</span>
                                 {!child.active && (
-                                  <span className="badge badge-coming-soon text-xs">即将上线</span>
+                                  <span className="badge badge-coming-soon text-xs">{t.auth.comingSoon}</span>
                                 )}
                               </div>
                             </Link>
@@ -230,7 +234,7 @@ export default function Navigation() {
                             >
                               <div className="flex items-center">
                                 <LogIn className="h-3 w-3 mr-2" />
-                                <span>登录解锁更多功能</span>
+                                <span>{t.auth.loginToUnlock}</span>
                               </div>
                             </Link>
                           </div>
@@ -257,7 +261,7 @@ export default function Navigation() {
                     <item.icon className="h-4 w-4" />
                     <span>{item.name}</span>
                     {!item.active && (
-                      <span className="badge badge-coming-soon text-xs ml-2">即将上线</span>
+                      <span className="badge badge-coming-soon text-xs ml-2">{t.auth.comingSoon}</span>
                     )}
                   </Link>
                 )}
@@ -267,6 +271,7 @@ export default function Navigation() {
 
           {/* Auth Links */}
           <div className="hidden md:flex items-center space-x-4 whitespace-nowrap">
+            <LanguageSwitcher />
             {isLoading ? (
               <div className="animate-pulse bg-gray-200 h-8 w-20 rounded"></div>
             ) : user ? (
@@ -296,7 +301,7 @@ export default function Navigation() {
                     >
                       <div className="flex items-center">
                         <Settings className="h-4 w-4 mr-2" />
-                        个人设置
+                        {t.common.profile}
                       </div>
                     </Link>
                     <button
@@ -305,7 +310,7 @@ export default function Navigation() {
                     >
                       <div className="flex items-center">
                         <LogOut className="h-4 w-4 mr-2" />
-                        退出登录
+                        {t.common.logout}
                       </div>
                     </button>
                   </div>
@@ -318,21 +323,22 @@ export default function Navigation() {
                   className="flex items-center space-x-1 text-gray-700 hover:text-ski-blue px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap"
                 >
                   <LogIn className="h-4 w-4" />
-                  <span>登录</span>
+                  <span>{t.common.login}</span>
                 </Link>
                 <Link
                   href="/register"
                   className="flex items-center space-x-1 bg-ski-blue text-white hover:bg-ski-blue/90 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap"
                 >
                   <User className="h-4 w-4" />
-                  <span>注册</span>
+                  <span>{t.common.register}</span>
                 </Link>
               </>
             )}
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-center space-x-2">
+            <LanguageSwitcher />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-gray-700 hover:text-ski-blue p-2"
@@ -366,10 +372,10 @@ export default function Navigation() {
                   <item.icon className="h-5 w-5" />
                   <span>{item.name}</span>
                   {item.needsAuth && (
-                    <span className="text-xs text-sky-500">需要登录</span>
+                    <span className="text-xs text-sky-500">{t.auth.needsLogin}</span>
                   )}
                   {!item.active && (
-                    <span className="badge badge-coming-soon text-xs">即将上线</span>
+                    <span className="badge badge-coming-soon text-xs">{t.auth.comingSoon}</span>
                   )}
                 </Link>
 
@@ -383,7 +389,7 @@ export default function Navigation() {
                         >
                           <div className="flex items-center justify-between">
                             <span>{child.name}</span>
-                            <span className="text-xs text-sky-500">需要登录</span>
+                            <span className="text-xs text-sky-500">{t.auth.needsLogin}</span>
                           </div>
                         </div>
                       ) : (
@@ -402,7 +408,7 @@ export default function Navigation() {
                           <div className="flex items-center justify-between">
                             <span>{child.name}</span>
                             {!child.active && (
-                              <span className="badge badge-coming-soon text-xs">即将上线</span>
+                              <span className="badge badge-coming-soon text-xs">{t.auth.comingSoon}</span>
                             )}
                           </div>
                         </Link>
@@ -455,7 +461,7 @@ export default function Navigation() {
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <LogIn className="h-5 w-5" />
-                    <span>登录</span>
+                    <span>{t.common.login}</span>
                   </Link>
                   <Link
                     href="/register"
@@ -463,7 +469,7 @@ export default function Navigation() {
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <User className="h-5 w-5" />
-                    <span>注册</span>
+                    <span>{t.common.register}</span>
                   </Link>
                 </>
               )}

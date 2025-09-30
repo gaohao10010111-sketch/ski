@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { BarChart3, Calculator, Trophy, User, FileText, BookOpen } from 'lucide-react';
+import { useTranslation } from '@/contexts/LanguageContext';
 
 const getIcon = (iconType: string) => {
   const iconProps = { className: "h-8 w-8 text-white" };
@@ -15,45 +18,47 @@ const getIcon = (iconType: string) => {
 };
 
 export default function AlpineSkiingHome() {
+  const { t } = useTranslation();
+
   const quickLinks = [
     {
-      title: '积分排行榜',
-      description: '查看当前赛季积分排名',
+      title: t.alpine.quickLinks.pointsRanking.title,
+      description: t.alpine.quickLinks.pointsRanking.description,
       icon: 'chart',
       href: '/disciplines/alpine/points',
       color: 'bg-indigo-500',
     },
     {
-      title: '积分计算器',
-      description: 'v4.0公式实时计算积分',
+      title: t.alpine.quickLinks.pointsCalculator.title,
+      description: t.alpine.quickLinks.pointsCalculator.description,
       icon: 'calculator',
       href: '/disciplines/alpine/calculator',
       color: 'bg-blue-500',
     },
     {
-      title: '赛事管理',
-      description: '查看赛程和比赛结果',
+      title: t.alpine.quickLinks.competitions.title,
+      description: t.alpine.quickLinks.competitions.description,
       icon: 'trophy',
       href: '/disciplines/alpine/competitions',
       color: 'bg-emerald-500',
     },
     {
-      title: '运动员档案',
-      description: '运动员信息和成绩查询',
+      title: t.alpine.quickLinks.athletes.title,
+      description: t.alpine.quickLinks.athletes.description,
       icon: 'user',
       href: '/disciplines/alpine/athletes',
       color: 'bg-cyan-500',
     },
     {
-      title: '在线报名',
-      description: '参加高山滑雪赛事',
+      title: t.alpine.quickLinks.registration.title,
+      description: t.alpine.quickLinks.registration.description,
       icon: 'file',
       href: '/disciplines/alpine/registration',
       color: 'bg-sky-500',
     },
     {
-      title: '规则文档',
-      description: '高山滑雪竞赛规则',
+      title: t.alpine.quickLinks.rules.title,
+      description: t.alpine.quickLinks.rules.description,
       icon: 'book',
       href: '/disciplines/alpine/rules',
       color: 'bg-violet-500',
@@ -75,18 +80,18 @@ export default function AlpineSkiingHome() {
               </svg>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              高山滑雪积分系统
+              {t.alpine.title}
             </h1>
-            <p className="text-xl text-gray-200 mb-8">Alpine Skiing Points System</p>
+            <p className="text-xl text-gray-200 mb-8">{t.alpine.subtitle}</p>
             <div className="flex flex-wrap items-center justify-center gap-3 mt-8 mb-12">
               <span className="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">
-                v4.0时间基础公式
+                {t.alpine.tags.timeBasedFormula}
               </span>
               <span className="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">
-                A/B/C三级赛事
+                {t.alpine.tags.raceLevels}
               </span>
               <span className="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">
-                判罚分动态计算
+                {t.alpine.tags.penaltyCalculation}
               </span>
             </div>
           </div>
@@ -102,7 +107,7 @@ export default function AlpineSkiingHome() {
       {/* 快速入口卡片 */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-          快速功能入口
+          {t.alpine.quickLinks.title}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {quickLinks.map((link, index) => (
@@ -124,7 +129,7 @@ export default function AlpineSkiingHome() {
                 </h3>
                 <p className="text-gray-600 text-sm mb-4 group-hover:text-gray-700 transition-colors duration-300 relative z-10">{link.description}</p>
                 <div className="flex items-center text-indigo-600 font-medium group-hover:text-indigo-700 transition-colors duration-300 relative z-10">
-                  进入功能
+                  {t.alpine.quickLinks.enterFunction}
                   <svg className="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -140,57 +145,57 @@ export default function AlpineSkiingHome() {
         {/* 积分规则说明 */}
         <div className="mt-12 bg-white rounded-2xl shadow-lg p-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-6">
-            高山滑雪积分规则 (v4.0)
+            {t.alpine.pointsRules.title}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h4 className="font-bold text-gray-900 mb-3 flex items-center">
                 <span className="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center mr-2 text-indigo-600">1</span>
-                基础比赛积分公式
+                {t.alpine.pointsRules.baseFormula.title}
               </h4>
               <div className="bg-indigo-50 p-4 rounded-lg font-mono text-sm">
-                P = F × (Tx/To - 1)
+                {t.alpine.pointsRules.baseFormula.formula}
               </div>
               <p className="text-gray-600 text-sm mt-2">
-                P=基础积分 | F=项目系数 | Tx=选手时间 | To=冠军时间
+                {t.alpine.pointsRules.baseFormula.description}
               </p>
             </div>
             <div>
               <h4 className="font-bold text-gray-900 mb-3 flex items-center">
                 <span className="w-8 h-8 bg-cyan-100 rounded-full flex items-center justify-center mr-2 text-cyan-600">2</span>
-                最终积分计算
+                {t.alpine.pointsRules.finalFormula.title}
               </h4>
               <div className="bg-cyan-50 p-4 rounded-lg font-mono text-sm">
-                最终积分 = (P + 判罚分) × 赛事系数
+                {t.alpine.pointsRules.finalFormula.formula}
               </div>
               <p className="text-gray-600 text-sm mt-2">
-                A级(1.0) | B级(0.6) | C级(0.3)
+                {t.alpine.pointsRules.finalFormula.description}
               </p>
             </div>
           </div>
 
           <div className="mt-6 border-t pt-6">
-            <h4 className="font-bold text-gray-900 mb-3">项目系数表</h4>
+            <h4 className="font-bold text-gray-900 mb-3">{t.alpine.pointsRules.disciplineFactors.title}</h4>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               <div className="bg-gray-50 p-3 rounded-lg text-center">
                 <div className="text-2xl font-bold text-indigo-600">1250</div>
-                <div className="text-sm text-gray-600">速降 DH</div>
+                <div className="text-sm text-gray-600">{t.alpine.pointsRules.disciplineFactors.downhill}</div>
               </div>
               <div className="bg-gray-50 p-3 rounded-lg text-center">
                 <div className="text-2xl font-bold text-sky-600">730</div>
-                <div className="text-sm text-gray-600">回转 SL</div>
+                <div className="text-sm text-gray-600">{t.alpine.pointsRules.disciplineFactors.slalom}</div>
               </div>
               <div className="bg-gray-50 p-3 rounded-lg text-center">
                 <div className="text-2xl font-bold text-blue-600">1010</div>
-                <div className="text-sm text-gray-600">大回转 GS</div>
+                <div className="text-sm text-gray-600">{t.alpine.pointsRules.disciplineFactors.giantSlalom}</div>
               </div>
               <div className="bg-gray-50 p-3 rounded-lg text-center">
                 <div className="text-2xl font-bold text-purple-600">1190</div>
-                <div className="text-sm text-gray-600">超大回转 SG</div>
+                <div className="text-sm text-gray-600">{t.alpine.pointsRules.disciplineFactors.superG}</div>
               </div>
               <div className="bg-gray-50 p-3 rounded-lg text-center">
                 <div className="text-2xl font-bold text-pink-600">1360</div>
-                <div className="text-sm text-gray-600">全能 AC</div>
+                <div className="text-sm text-gray-600">{t.alpine.pointsRules.disciplineFactors.combined}</div>
               </div>
             </div>
           </div>
@@ -199,7 +204,7 @@ export default function AlpineSkiingHome() {
         {/* 当前赛季数据统计 */}
         <div className="mt-12">
           <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-            实时数据统计
+            {t.alpine.statistics.title}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl p-6 text-white hover:scale-105 transition-transform duration-300 cursor-pointer group">
@@ -212,9 +217,9 @@ export default function AlpineSkiingHome() {
                   <span className="text-sm">+12</span>
                 </div>
               </div>
-              <div className="text-indigo-100 text-sm">注册运动员</div>
+              <div className="text-indigo-100 text-sm">{t.alpine.statistics.registeredAthletes}</div>
               <div className="text-indigo-200 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                本月新增12名
+                {t.alpine.statistics.monthlyIncrease}
               </div>
             </div>
             
@@ -228,9 +233,9 @@ export default function AlpineSkiingHome() {
                   <span className="text-sm">+5</span>
                 </div>
               </div>
-              <div className="text-cyan-100 text-sm">本赛季赛事</div>
+              <div className="text-cyan-100 text-sm">{t.alpine.statistics.seasonEvents}</div>
               <div className="text-cyan-200 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                较上赛季增长16%
+                {t.alpine.statistics.seasonGrowth}
               </div>
             </div>
             
@@ -244,9 +249,9 @@ export default function AlpineSkiingHome() {
                   <span className="text-sm">-23</span>
                 </div>
               </div>
-              <div className="text-blue-100 text-sm">比赛场次</div>
+              <div className="text-blue-100 text-sm">{t.alpine.statistics.raceCount}</div>
               <div className="text-blue-200 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                受疫情影响略有下降
+                {t.alpine.statistics.pandemicImpact}
               </div>
             </div>
             
@@ -260,9 +265,9 @@ export default function AlpineSkiingHome() {
                   <span className="text-sm">+2.3</span>
                 </div>
               </div>
-              <div className="text-purple-100 text-sm">平均积分</div>
+              <div className="text-purple-100 text-sm">{t.alpine.statistics.averagePoints}</div>
               <div className="text-purple-200 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                整体水平稳步提升
+                {t.alpine.statistics.levelImprovement}
               </div>
             </div>
           </div>

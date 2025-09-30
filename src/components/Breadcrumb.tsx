@@ -3,44 +3,46 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Home, ChevronRight } from 'lucide-react'
+import { useTranslation } from '@/contexts/LanguageContext'
 
 export default function Breadcrumb() {
   const pathname = usePathname()
+  const { t } = useTranslation()
 
-  // 路径映射表
+  // 路径映射表 - 使用翻译
   const pathNameMap: { [key: string]: string } = {
-    '': '首页',
-    'disciplines': '滑雪项目',
-    'disciplines/alpine': '高山滑雪',
-    'disciplines/snowboard-slopestyle': '单板坡面/大跳台',
-    'disciplines/snowboard-parallel': '单板平行项目',
-    'disciplines/freeski-slopestyle': '自由式坡面/大跳台',
-    'points': '积分中心',
-    'points/query': '积分查询',
-    'points/calculator': '积分计算器',
-    'points/rankings': '积分排行榜',
-    'points/trends': '积分趋势分析',
-    'events': '赛事',
-    'events/schedule': '赛事日程',
-    'events/register': '在线报名',
-    'events/list': '比赛列表',
-    'events/results': '成绩查询',
-    'events/stats': '数据统计',
-    'my': '我的',
-    'my/points': '我的积分',
-    'my/registrations': '我的报名',
-    'my/athlete': '运动员档案',
-    'my/history': '成绩历史',
-    'docs': '知识库',
-    'docs/points-rules': '积分规则文档',
-    'docs/competition-rules': '竞赛技术规则',
-    'docs/venue-standards': '场地技术标准',
-    'docs/fis-rules': 'FIS国际规则',
-    'docs/guide': '平台使用指南',
-    'about': '关于系统',
-    'login': '登录',
-    'register': '注册',
-    'profile': '个人设置'
+    '': t.breadcrumb.home,
+    'disciplines': t.breadcrumb.disciplines,
+    'disciplines/alpine': t.breadcrumb.alpine,
+    'disciplines/snowboard-slopestyle': t.breadcrumb.snowboardSlopestyle,
+    'disciplines/snowboard-parallel': t.breadcrumb.snowboardParallel,
+    'disciplines/freeski-slopestyle': t.breadcrumb.freeskiSlopestyle,
+    'points': t.breadcrumb.points,
+    'points/query': t.navigation.submenus.pointsQuery,
+    'points/calculator': t.navigation.submenus.pointsCalculator,
+    'points/rankings': t.navigation.submenus.pointsRankings,
+    'points/trends': t.navigation.submenus.pointsTrends,
+    'events': t.breadcrumb.events,
+    'events/schedule': t.navigation.submenus.eventsSchedule,
+    'events/register': t.navigation.submenus.eventsRegister,
+    'events/list': t.navigation.submenus.eventsList,
+    'events/results': t.navigation.submenus.eventsResults,
+    'events/stats': t.navigation.submenus.eventsStats,
+    'my': t.breadcrumb.my,
+    'my/points': t.navigation.submenus.myPoints,
+    'my/registrations': t.navigation.submenus.myRegistrations,
+    'my/athlete': t.navigation.submenus.athleteProfile,
+    'my/history': t.navigation.submenus.resultsHistory,
+    'docs': t.breadcrumb.docs,
+    'docs/points-rules': t.navigation.submenus.pointsRules,
+    'docs/competition-rules': t.navigation.submenus.competitionRules,
+    'docs/venue-standards': t.navigation.submenus.venueStandards,
+    'docs/fis-rules': t.navigation.submenus.fisRules,
+    'docs/guide': t.navigation.submenus.userGuide,
+    'about': t.breadcrumb.about,
+    'login': t.common.login,
+    'register': t.common.register,
+    'profile': t.common.profile
   }
 
   // 不显示面包屑的页面
