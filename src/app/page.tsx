@@ -233,6 +233,39 @@ export default function HomePage() {
                         免费注册
                       </Link>
                     </div>
+                    
+                    {/* 四大项目快速入口 */}
+                    <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
+                      <Link
+                        href="/disciplines/alpine"
+                        className="flex flex-col items-center justify-center px-4 py-3 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 group"
+                      >
+                        <span className="text-2xl mb-1">⛷️</span>
+                        <span className="text-white text-xs font-medium group-hover:text-blue-200">高山滑雪</span>
+                      </Link>
+                      <Link
+                        href="/disciplines/snowboard-slopestyle"
+                        className="flex flex-col items-center justify-center px-4 py-3 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 group"
+                      >
+                        <span className="text-2xl mb-1">🏂</span>
+                        <span className="text-white text-xs font-medium group-hover:text-orange-200">单板坡面/大跳台</span>
+                      </Link>
+                      <Link
+                        href="/disciplines/snowboard-parallel"
+                        className="flex flex-col items-center justify-center px-4 py-3 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 group"
+                      >
+                        <span className="text-2xl mb-1">🏂</span>
+                        <span className="text-white text-xs font-medium group-hover:text-purple-200">单板平行</span>
+                      </Link>
+                      <Link
+                        href="/disciplines/freeski-slopestyle"
+                        className="flex flex-col items-center justify-center px-4 py-3 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300 group"
+                      >
+                        <span className="text-2xl mb-1">🎿</span>
+                        <span className="text-white text-xs font-medium group-hover:text-red-200">自由式坡面/大跳台</span>
+                      </Link>
+                    </div>
+                    
                     <p className="text-gray-300 text-sm mt-4">
                       🏆 专业运动员、教练员、赛事组织者的首选平台 • 国家体育总局认证标准
                     </p>

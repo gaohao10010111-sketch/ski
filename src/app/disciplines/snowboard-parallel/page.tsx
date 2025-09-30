@@ -48,16 +48,46 @@ export default function SnowboardParallelHome() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50">
-      {/* 顶部面包屑 */}
+      {/* 顶部面包屑和项目导航 */}
       <div className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <nav className="flex items-center text-sm text-gray-600">
+          {/* 面包屑导航 */}
+          <nav className="flex items-center text-sm text-gray-600 mb-3">
             <Link href="/" className="hover:text-purple-600">首页</Link>
             <span className="mx-2">/</span>
-            <Link href="/disciplines" className="hover:text-purple-600">项目</Link>
+            <Link href="/disciplines" className="hover:text-purple-600">项目总览</Link>
             <span className="mx-2">/</span>
             <span className="text-gray-900 font-medium">单板滑雪平行项目</span>
           </nav>
+          
+          {/* 四大项目横向导航 */}
+          <div className="flex items-center gap-4 overflow-x-auto pb-2">
+            <Link
+              href="/disciplines/alpine"
+              className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-blue-100 hover:text-blue-700 transition-colors flex-shrink-0"
+            >
+              <span className="text-lg">⛷️</span>
+              <span>高山滑雪</span>
+            </Link>
+            <Link
+              href="/disciplines/snowboard-slopestyle"
+              className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-orange-100 hover:text-orange-700 transition-colors flex-shrink-0"
+            >
+              <span className="text-lg">🏂</span>
+              <span>单板坡面/大跳台</span>
+            </Link>
+            <div className="flex items-center space-x-1 px-3 py-2 bg-purple-100 text-purple-700 rounded-lg font-medium flex-shrink-0">
+              <span className="text-lg">🏂</span>
+              <span>单板平行</span>
+            </div>
+            <Link
+              href="/disciplines/freeski-slopestyle"
+              className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-red-100 hover:text-red-700 transition-colors flex-shrink-0"
+            >
+              <span className="text-lg">🎿</span>
+              <span>自由式坡面/大跳台</span>
+            </Link>
+          </div>
         </div>
       </div>
 

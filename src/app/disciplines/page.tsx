@@ -45,6 +45,19 @@ export default function DisciplinesOverview() {
       {/* 头部横幅 */}
       <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* 返回首页导航 */}
+          <div className="flex items-center justify-center mb-6">
+            <Link
+              href="/"
+              className="inline-flex items-center text-blue-200 hover:text-white transition-colors text-sm"
+            >
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              返回首页
+            </Link>
+          </div>
+          
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
             🎿 中国滑雪积分系统
           </h1>
