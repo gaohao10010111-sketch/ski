@@ -109,22 +109,29 @@ export default function AlpineSkiingHome() {
             <Link
               key={index}
               href={link.href}
-              className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-indigo-500 transform hover:-translate-y-1"
+              className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-transparent hover:border-indigo-500 transform hover:-translate-y-2 hover:rotate-1"
+              title={`${link.title} - ${link.description}`}
             >
-              <div className="p-6">
-                <div className={`${link.color} w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform`}>
+              <div className="p-6 relative">
+                {/* 悬停光效 */}
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-50 to-sky-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                
+                <div className={`${link.color} w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 relative z-10 shadow-lg group-hover:shadow-xl`}>
                   {getIcon(link.icon)}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors duration-300 relative z-10">
                   {link.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">{link.description}</p>
-                <div className="flex items-center text-indigo-600 font-medium">
+                <p className="text-gray-600 text-sm mb-4 group-hover:text-gray-700 transition-colors duration-300 relative z-10">{link.description}</p>
+                <div className="flex items-center text-indigo-600 font-medium group-hover:text-indigo-700 transition-colors duration-300 relative z-10">
                   进入功能
-                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </div>
+                
+                {/* 底部装饰线 */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-sky-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-b-xl"></div>
               </div>
             </Link>
           ))}
@@ -190,22 +197,74 @@ export default function AlpineSkiingHome() {
         </div>
 
         {/* 当前赛季数据统计 */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl p-6 text-white">
-            <div className="text-4xl font-bold mb-1">248</div>
-            <div className="text-indigo-100 text-sm">注册运动员</div>
-          </div>
-          <div className="bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl p-6 text-white">
-            <div className="text-4xl font-bold mb-1">36</div>
-            <div className="text-cyan-100 text-sm">本赛季赛事</div>
-          </div>
-          <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl p-6 text-white">
-            <div className="text-4xl font-bold mb-1">1,245</div>
-            <div className="text-cyan-100 text-sm">比赛场次</div>
-          </div>
-          <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white">
-            <div className="text-4xl font-bold mb-1">89.5</div>
-            <div className="text-purple-100 text-sm">平均积分</div>
+        <div className="mt-12">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            实时数据统计
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl p-6 text-white hover:scale-105 transition-transform duration-300 cursor-pointer group">
+              <div className="flex items-center justify-between mb-2">
+                <div className="text-4xl font-bold">248</div>
+                <div className="flex items-center text-green-300">
+                  <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-sm">+12</span>
+                </div>
+              </div>
+              <div className="text-indigo-100 text-sm">注册运动员</div>
+              <div className="text-indigo-200 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                本月新增12名
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl p-6 text-white hover:scale-105 transition-transform duration-300 cursor-pointer group">
+              <div className="flex items-center justify-between mb-2">
+                <div className="text-4xl font-bold">36</div>
+                <div className="flex items-center text-green-300">
+                  <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-sm">+5</span>
+                </div>
+              </div>
+              <div className="text-cyan-100 text-sm">本赛季赛事</div>
+              <div className="text-cyan-200 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                较上赛季增长16%
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white hover:scale-105 transition-transform duration-300 cursor-pointer group">
+              <div className="flex items-center justify-between mb-2">
+                <div className="text-4xl font-bold">1,245</div>
+                <div className="flex items-center text-yellow-300">
+                  <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-sm">-23</span>
+                </div>
+              </div>
+              <div className="text-blue-100 text-sm">比赛场次</div>
+              <div className="text-blue-200 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                受疫情影响略有下降
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white hover:scale-105 transition-transform duration-300 cursor-pointer group">
+              <div className="flex items-center justify-between mb-2">
+                <div className="text-4xl font-bold">89.5</div>
+                <div className="flex items-center text-green-300">
+                  <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                  </svg>
+                  <span className="text-sm">+2.3</span>
+                </div>
+              </div>
+              <div className="text-purple-100 text-sm">平均积分</div>
+              <div className="text-purple-200 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                整体水平稳步提升
+              </div>
+            </div>
           </div>
         </div>
       </div>

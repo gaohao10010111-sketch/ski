@@ -107,22 +107,29 @@ export default function FreeskiSlopestyleHome() {
             <Link
               key={index}
               href={link.href}
-              className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-indigo-500 transform hover:-translate-y-1"
+              className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-transparent hover:border-indigo-500 transform hover:-translate-y-2 hover:rotate-1"
+              title={`${link.title} - ${link.description}`}
             >
-              <div className="p-6">
-                <div className={`${link.color} w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform`}>
+              <div className="p-6 relative">
+                {/* 悬停光效 */}
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-50 to-sky-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+                
+                <div className={`${link.color} w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 relative z-10 shadow-lg group-hover:shadow-xl`}>
                   {getIcon(link.icon)}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600 transition-colors duration-300 relative z-10">
                   {link.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">{link.description}</p>
-                <div className="flex items-center text-indigo-600 font-medium">
+                <p className="text-gray-600 text-sm mb-4 group-hover:text-gray-700 transition-colors duration-300 relative z-10">{link.description}</p>
+                <div className="flex items-center text-indigo-600 font-medium group-hover:text-indigo-700 transition-colors duration-300 relative z-10">
                   进入功能
-                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </div>
+                
+                {/* 底部装饰线 */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-500 to-sky-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-b-xl"></div>
               </div>
             </Link>
           ))}
