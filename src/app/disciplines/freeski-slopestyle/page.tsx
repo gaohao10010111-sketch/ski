@@ -35,14 +35,14 @@ export default function FreeskiSlopestyleHome() {
       description: '查看赛程和比赛结果',
       icon: 'trophy',
       href: '/disciplines/freeski-slopestyle/competitions',
-      color: 'bg-slate-500',
+      color: 'bg-orange-500',
     },
     {
       title: '运动员档案',
       description: '运动员信息和技巧库',
       icon: 'user',
       href: '/disciplines/freeski-slopestyle/athletes',
-      color: 'bg-slate-600',
+      color: 'bg-orange-600',
     },
     {
       title: '在线报名',
@@ -56,7 +56,7 @@ export default function FreeskiSlopestyleHome() {
       description: '自由式滑雪竞赛规则',
       icon: 'book',
       href: '/disciplines/freeski-slopestyle/rules',
-      color: 'bg-slate-700',
+      color: 'bg-gray-600',
     },
   ];
 
@@ -64,10 +64,10 @@ export default function FreeskiSlopestyleHome() {
     <div className="min-h-screen bg-gradient-to-br from-red-50 to-rose-50">
 
       {/* 英雄区域 */}
-      <div className="relative bg-gradient-to-r from-slate-700 via-slate-600 to-slate-500 text-white overflow-hidden">
+      <div className="relative bg-gradient-to-r from-red-600 via-orange-500 to-red-500 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mb-6 mx-auto backdrop-blur-sm">
               <Mountain className="h-12 w-12 text-white" />
@@ -76,15 +76,15 @@ export default function FreeskiSlopestyleHome() {
               自由式坡面/大跳台
             </h1>
             <p className="text-xl text-gray-200 mb-8">Freeski Slopestyle & Big Air</p>
-            <div className="flex flex-wrap items-center justify-center gap-3 mt-6 mb-8">
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-8 mb-12">
               <span className="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">
-                360分档顶级赛事
+                240/360/120分档
               </span>
               <span className="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">
-                技巧难度系数
+                裁判评分制
               </span>
               <span className="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">
-                多轮次最佳成绩
+                预赛/决赛轮次
               </span>
             </div>
           </div>

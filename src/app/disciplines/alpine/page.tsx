@@ -67,7 +67,7 @@ export default function AlpineSkiingHome() {
       <div className="relative bg-gradient-to-r from-slate-700 via-slate-600 to-slate-500 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
             <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mb-6 mx-auto backdrop-blur-sm">
               <svg className="h-12 w-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,7 +78,7 @@ export default function AlpineSkiingHome() {
               高山滑雪积分系统
             </h1>
             <p className="text-xl text-gray-200 mb-8">Alpine Skiing Points System</p>
-            <div className="flex flex-wrap items-center justify-center gap-3 mt-6 mb-8">
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-8 mb-12">
               <span className="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">
                 v4.0时间基础公式
               </span>
