@@ -1,46 +1,60 @@
 import Link from 'next/link';
+import { BarChart3, Calculator, Trophy, User, FileText, BookOpen, Mountain } from 'lucide-react';
+
+const getIcon = (iconType: string) => {
+  const iconProps = { className: "h-8 w-8" };
+  switch (iconType) {
+    case 'chart': return <BarChart3 {...iconProps} />;
+    case 'calculator': return <Calculator {...iconProps} />;
+    case 'trophy': return <Trophy {...iconProps} />;
+    case 'user': return <User {...iconProps} />;
+    case 'file': return <FileText {...iconProps} />;
+    case 'book': return <BookOpen {...iconProps} />;
+    default: return <BarChart3 {...iconProps} />;
+  }
+};
 
 export default function FreeskiSlopestyleHome() {
   const quickLinks = [
     {
       title: '积分排行榜',
       description: '查看分档积分排名',
-      icon: '📊',
+      icon: 'chart',
       href: '/disciplines/freeski-slopestyle/points',
       color: 'bg-red-500',
     },
     {
       title: '分档积分计算器',
       description: '240/360/120分档计算',
-      icon: '🧮',
+      icon: 'calculator',
       href: '/disciplines/freeski-slopestyle/calculator',
       color: 'bg-rose-500',
     },
     {
       title: '赛事管理',
       description: '查看赛程和比赛结果',
-      icon: '🏆',
+      icon: 'trophy',
       href: '/disciplines/freeski-slopestyle/competitions',
       color: 'bg-pink-500',
     },
     {
       title: '运动员档案',
       description: '运动员信息和技巧库',
-      icon: '👤',
+      icon: 'user',
       href: '/disciplines/freeski-slopestyle/athletes',
       color: 'bg-fuchsia-500',
     },
     {
       title: '在线报名',
       description: '参加自由式坡面/大跳台赛事',
-      icon: '📝',
+      icon: 'file',
       href: '/disciplines/freeski-slopestyle/registration',
       color: 'bg-red-600',
     },
     {
       title: '规则文档',
       description: '自由式滑雪竞赛规则',
-      icon: '📖',
+      icon: 'book',
       href: '/disciplines/freeski-slopestyle/rules',
       color: 'bg-slate-600',
     },
@@ -55,37 +69,33 @@ export default function FreeskiSlopestyleHome() {
           <nav className="flex items-center text-sm text-gray-600 mb-3">
             <Link href="/" className="hover:text-red-600">首页</Link>
             <span className="mx-2">/</span>
-            <Link href="/disciplines" className="hover:text-red-600">项目总览</Link>
+            <Link href="/disciplines" className="hover:text-red-600">滑雪项目</Link>
             <span className="mx-2">/</span>
-            <span className="text-gray-900 font-medium">自由式滑雪坡面障碍技巧 & 大跳台</span>
+            <span className="text-gray-900 font-medium">自由式坡面/大跳台</span>
           </nav>
           
           {/* 四大项目横向导航 */}
-          <div className="flex items-center gap-4 overflow-x-auto pb-2">
+          <div className="flex items-center gap-2 overflow-x-auto pb-2">
             <Link
               href="/disciplines/alpine"
-              className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500 hover:text-white transition-all duration-300 flex-shrink-0"
+              className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300 flex-shrink-0 text-sm font-medium"
             >
-              <span className="text-lg">⛷️</span>
-              <span>高山滑雪</span>
+              高山滑雪
             </Link>
             <Link
               href="/disciplines/snowboard-slopestyle"
-              className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gradient-to-r hover:from-orange-400 hover:to-amber-400 hover:text-white transition-all duration-300 flex-shrink-0"
+              className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-300 flex-shrink-0 text-sm font-medium"
             >
-              <span className="text-lg">🏂</span>
-              <span>单板坡面/大跳台</span>
+              单板坡面/大跳台
             </Link>
             <Link
               href="/disciplines/snowboard-parallel"
-              className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:text-white transition-all duration-300 flex-shrink-0"
+              className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-purple-500 hover:text-white transition-all duration-300 flex-shrink-0 text-sm font-medium"
             >
-              <span className="text-lg">🏂</span>
-              <span>单板平行</span>
+              单板平行
             </Link>
-            <div className="flex items-center space-x-1 px-3 py-2 bg-gradient-to-r from-red-500 to-rose-500 text-white rounded-lg font-medium flex-shrink-0 shadow-lg">
-              <span className="text-lg">🎿</span>
-              <span>自由式坡面/大跳台</span>
+            <div className="px-3 py-2 bg-red-500 text-white rounded-lg font-medium flex-shrink-0 shadow-md text-sm">
+              自由式坡面/大跳台
             </div>
           </div>
         </div>
@@ -97,7 +107,9 @@ export default function FreeskiSlopestyleHome() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
-            <div className="text-7xl mb-4 animate-bounce">🎿</div>
+            <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mb-4 mx-auto backdrop-blur-sm">
+              <Mountain className="h-12 w-12 text-white" />
+            </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-4">
               自由式滑雪坡面障碍技巧 & 大跳台
             </h1>
@@ -137,7 +149,7 @@ export default function FreeskiSlopestyleHome() {
             >
               <div className="p-6">
                 <div className={`${link.color} w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform`}>
-                  {link.icon}
+                  {getIcon(link.icon)}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-red-600">
                   {link.title}
@@ -157,7 +169,7 @@ export default function FreeskiSlopestyleHome() {
         {/* 积分规则说明 */}
         <div className="mt-12 bg-white rounded-2xl shadow-lg p-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-6">
-            🎯 分档积分体系
+             分档积分体系
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-gradient-to-br from-red-400 to-rose-500 rounded-xl p-6 text-white">
@@ -192,21 +204,21 @@ export default function FreeskiSlopestyleHome() {
                 </thead>
                 <tbody className="divide-y">
                   <tr>
-                    <td className="px-4 py-2 font-bold">🥇 1</td>
+                    <td className="px-4 py-2 font-bold"> 1</td>
                     <td className="px-4 py-2 text-center">100%</td>
                     <td className="px-4 py-2 text-right font-bold text-red-600">360.00</td>
                     <td className="px-4 py-2 text-right font-bold text-rose-600">240.00</td>
                     <td className="px-4 py-2 text-right font-bold text-pink-600">120.00</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-2 font-bold">🥈 2</td>
+                    <td className="px-4 py-2 font-bold"> 2</td>
                     <td className="px-4 py-2 text-center">80%</td>
                     <td className="px-4 py-2 text-right">288.00</td>
                     <td className="px-4 py-2 text-right">192.00</td>
                     <td className="px-4 py-2 text-right">96.00</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-2 font-bold">🥉 3</td>
+                    <td className="px-4 py-2 font-bold"> 3</td>
                     <td className="px-4 py-2 text-center">60%</td>
                     <td className="px-4 py-2 text-right">216.00</td>
                     <td className="px-4 py-2 text-right">144.00</td>
@@ -236,7 +248,7 @@ export default function FreeskiSlopestyleHome() {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">
-              🏆 比赛格式
+               比赛格式
             </h3>
             <div className="space-y-4">
               <div className="border-2 border-red-200 rounded-xl p-4">

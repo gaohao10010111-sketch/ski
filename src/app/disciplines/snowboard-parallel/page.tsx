@@ -1,46 +1,60 @@
 import Link from 'next/link';
+import { BarChart3, Calculator, Trophy, User, FileText, BookOpen, Mountain, Flag, Target } from 'lucide-react';
+
+const getIcon = (iconType: string) => {
+  const iconProps = { className: "h-8 w-8" };
+  switch (iconType) {
+    case 'chart': return <BarChart3 {...iconProps} />;
+    case 'calculator': return <Calculator {...iconProps} />;
+    case 'trophy': return <Trophy {...iconProps} />;
+    case 'user': return <User {...iconProps} />;
+    case 'file': return <FileText {...iconProps} />;
+    case 'book': return <BookOpen {...iconProps} />;
+    default: return <BarChart3 {...iconProps} />;
+  }
+};
 
 export default function SnowboardParallelHome() {
   const quickLinks = [
     {
       title: '积分排行榜',
       description: '查看竞速积分排名',
-      icon: '📊',
+      icon: 'chart',
       href: '/disciplines/snowboard-parallel/points',
       color: 'bg-purple-500',
     },
     {
       title: '积分计算器',
       description: '淘汰赛制积分计算',
-      icon: '🧮',
+      icon: 'calculator',
       href: '/disciplines/snowboard-parallel/calculator',
       color: 'bg-pink-500',
     },
     {
       title: '赛事管理',
       description: '查看对决赛程和结果',
-      icon: '🏆',
+      icon: 'trophy',
       href: '/disciplines/snowboard-parallel/competitions',
       color: 'bg-fuchsia-500',
     },
     {
       title: '运动员档案',
       description: '运动员信息和对战记录',
-      icon: '👤',
+      icon: 'user',
       href: '/disciplines/snowboard-parallel/athletes',
       color: 'bg-violet-500',
     },
     {
       title: '在线报名',
       description: '参加平行项目赛事',
-      icon: '📝',
+      icon: 'file',
       href: '/disciplines/snowboard-parallel/registration',
       color: 'bg-purple-600',
     },
     {
       title: '规则文档',
       description: '平行项目竞赛规则',
-      icon: '📖',
+      icon: 'book',
       href: '/disciplines/snowboard-parallel/rules',
       color: 'bg-slate-600',
     },
@@ -55,37 +69,33 @@ export default function SnowboardParallelHome() {
           <nav className="flex items-center text-sm text-gray-600 mb-3">
             <Link href="/" className="hover:text-purple-600">首页</Link>
             <span className="mx-2">/</span>
-            <Link href="/disciplines" className="hover:text-purple-600">项目总览</Link>
+            <Link href="/disciplines" className="hover:text-purple-600">滑雪项目</Link>
             <span className="mx-2">/</span>
             <span className="text-gray-900 font-medium">单板滑雪平行项目</span>
           </nav>
           
           {/* 四大项目横向导航 */}
-          <div className="flex items-center gap-4 overflow-x-auto pb-2">
+          <div className="flex items-center gap-2 overflow-x-auto pb-2">
             <Link
               href="/disciplines/alpine"
-              className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500 hover:text-white transition-all duration-300 flex-shrink-0"
+              className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300 flex-shrink-0 text-sm font-medium"
             >
-              <span className="text-lg">⛷️</span>
-              <span>高山滑雪</span>
+              高山滑雪
             </Link>
             <Link
               href="/disciplines/snowboard-slopestyle"
-              className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gradient-to-r hover:from-orange-400 hover:to-amber-400 hover:text-white transition-all duration-300 flex-shrink-0"
+              className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-300 flex-shrink-0 text-sm font-medium"
             >
-              <span className="text-lg">🏂</span>
-              <span>单板坡面/大跳台</span>
+              单板坡面/大跳台
             </Link>
-            <div className="flex items-center space-x-1 px-3 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-medium flex-shrink-0 shadow-lg">
-              <span className="text-lg">🏂</span>
-              <span>单板平行</span>
+            <div className="px-3 py-2 bg-purple-500 text-white rounded-lg font-medium flex-shrink-0 shadow-md text-sm">
+              单板平行
             </div>
             <Link
               href="/disciplines/freeski-slopestyle"
-              className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gradient-to-r hover:from-red-500 hover:to-rose-500 hover:text-white transition-all duration-300 flex-shrink-0"
+              className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-red-500 hover:text-white transition-all duration-300 flex-shrink-0 text-sm font-medium"
             >
-              <span className="text-lg">🎿</span>
-              <span>自由式坡面/大跳台</span>
+              自由式坡面/大跳台
             </Link>
           </div>
         </div>
@@ -97,7 +107,9 @@ export default function SnowboardParallelHome() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
-            <div className="text-7xl mb-4 animate-bounce">🏂</div>
+            <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mb-4 mx-auto backdrop-blur-sm">
+              <Mountain className="h-12 w-12 text-white" />
+            </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-4">
               单板滑雪平行项目
             </h1>
@@ -137,7 +149,7 @@ export default function SnowboardParallelHome() {
             >
               <div className="p-6">
                 <div className={`${link.color} w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform`}>
-                  {link.icon}
+                  {getIcon(link.icon)}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600">
                   {link.title}
@@ -157,12 +169,12 @@ export default function SnowboardParallelHome() {
         {/* 项目介绍 */}
         <div className="mt-12 bg-white rounded-2xl shadow-lg p-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-6">
-            ⚡ 平行项目特点
+            平行项目特点
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h4 className="font-bold text-gray-900 mb-3 flex items-center">
-                <span className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-2 text-purple-600">🏁</span>
+                <span className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-2 text-purple-600"></span>
                 赛制特点
               </h4>
               <ul className="space-y-2 text-gray-700">
@@ -186,7 +198,7 @@ export default function SnowboardParallelHome() {
             </div>
             <div>
               <h4 className="font-bold text-gray-900 mb-3 flex items-center">
-                <span className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center mr-2 text-pink-600">🎯</span>
+                <span className="w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center mr-2 text-pink-600"></span>
                 项目分类
               </h4>
               <div className="space-y-4">
@@ -206,7 +218,7 @@ export default function SnowboardParallelHome() {
         {/* 对决树示例 */}
         <div className="mt-12 bg-white rounded-2xl shadow-lg p-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-6">
-            🏆 淘汰赛对决树
+            淘汰赛对决树
           </h3>
           <div className="overflow-x-auto">
             <div className="flex items-center justify-between gap-4 min-w-[800px]">
@@ -244,11 +256,11 @@ export default function SnowboardParallelHome() {
               <div className="flex-1">
                 <div className="text-xs text-gray-500 font-bold mb-2">决赛</div>
                 <div className="bg-gradient-to-r from-yellow-100 to-orange-100 p-3 rounded-lg text-xs border-2 border-yellow-400">
-                  <div className="font-bold text-yellow-700 mb-1">🥇 冠军争夺</div>
+                  <div className="font-bold text-yellow-700 mb-1"> 冠军争夺</div>
                   <div className="text-gray-600">金牌战</div>
                 </div>
                 <div className="bg-gray-50 p-2 rounded text-xs border border-gray-200 mt-4">
-                  <div className="font-bold text-gray-600">🥉 季军争夺</div>
+                  <div className="font-bold text-gray-600"> 季军争夺</div>
                 </div>
               </div>
             </div>
@@ -261,21 +273,21 @@ export default function SnowboardParallelHome() {
         {/* 积分分配规则 */}
         <div className="mt-12 bg-white rounded-2xl shadow-lg p-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-6">
-            📊 积分分配规则
+            积分分配规则
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="bg-gradient-to-br from-yellow-400 to-orange-400 rounded-xl p-4 text-white text-center">
-              <div className="text-3xl mb-1">🥇</div>
+              <div className="text-3xl mb-1"></div>
               <div className="text-2xl font-bold">100</div>
               <div className="text-sm text-yellow-100">冠军</div>
             </div>
             <div className="bg-gradient-to-br from-gray-300 to-gray-400 rounded-xl p-4 text-white text-center">
-              <div className="text-3xl mb-1">🥈</div>
+              <div className="text-3xl mb-1"></div>
               <div className="text-2xl font-bold">80</div>
               <div className="text-sm text-gray-100">亚军</div>
             </div>
             <div className="bg-gradient-to-br from-orange-400 to-orange-500 rounded-xl p-4 text-white text-center">
-              <div className="text-3xl mb-1">🥉</div>
+              <div className="text-3xl mb-1"></div>
               <div className="text-2xl font-bold">60</div>
               <div className="text-sm text-orange-100">季军</div>
             </div>

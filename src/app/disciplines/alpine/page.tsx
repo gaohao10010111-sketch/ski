@@ -69,37 +69,33 @@ export default function AlpineSkiingHome() {
           <nav className="flex items-center text-sm text-gray-600 mb-3">
             <Link href="/" className="hover:text-blue-600">首页</Link>
             <span className="mx-2">/</span>
-            <Link href="/disciplines" className="hover:text-blue-600">项目总览</Link>
+            <Link href="/disciplines" className="hover:text-blue-600">滑雪项目</Link>
             <span className="mx-2">/</span>
             <span className="text-gray-900 font-medium">高山滑雪</span>
           </nav>
           
           {/* 四大项目横向导航 */}
-          <div className="flex items-center gap-4 overflow-x-auto pb-2">
-            <div className="flex items-center space-x-1 px-3 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg font-medium flex-shrink-0 shadow-lg">
-              <span className="text-lg">⛷️</span>
-              <span>高山滑雪</span>
+          <div className="flex items-center gap-2 overflow-x-auto pb-2">
+            <div className="px-3 py-2 bg-blue-500 text-white rounded-lg font-medium flex-shrink-0 shadow-md text-sm">
+              高山滑雪
             </div>
             <Link
               href="/disciplines/snowboard-slopestyle"
-              className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gradient-to-r hover:from-orange-400 hover:to-amber-400 hover:text-white transition-all duration-300 flex-shrink-0"
+              className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-300 flex-shrink-0 text-sm font-medium"
             >
-              <span className="text-lg">SB</span>
-              <span>单板坡面/大跳台</span>
+              单板坡面/大跳台
             </Link>
             <Link
               href="/disciplines/snowboard-parallel"
-              className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:text-white transition-all duration-300 flex-shrink-0"
+              className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-purple-500 hover:text-white transition-all duration-300 flex-shrink-0 text-sm font-medium"
             >
-              <span className="text-lg">SB</span>
-              <span>单板平行</span>
+              单板平行
             </Link>
             <Link
               href="/disciplines/freeski-slopestyle"
-              className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gradient-to-r hover:from-red-500 hover:to-rose-500 hover:text-white transition-all duration-300 flex-shrink-0"
+              className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-red-500 hover:text-white transition-all duration-300 flex-shrink-0 text-sm font-medium"
             >
-              <span className="text-lg">FS</span>
-              <span>自由式坡面/大跳台</span>
+              自由式坡面/大跳台
             </Link>
           </div>
         </div>
