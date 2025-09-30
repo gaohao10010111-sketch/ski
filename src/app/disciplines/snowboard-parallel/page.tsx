@@ -4,123 +4,12 @@ import { BarChart3, Calculator, Trophy, User, FileText, BookOpen, Mountain, Flag
 const getIcon = (iconType: string) => {
   const iconProps = { className: "h-8 w-8 text-white" };
   switch (iconType) {
-    case 'chart': 
-      return (
-        <svg {...iconProps} fill="none" viewBox="0 0 24 24">
-          <defs>
-            <linearGradient id="chart-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="currentColor" stopOpacity="1"/>
-              <stop offset="100%" stopColor="currentColor" stopOpacity="0.6"/>
-            </linearGradient>
-          </defs>
-          <rect x="4" y="12" width="3" height="8" rx="1.5" fill="url(#chart-grad)"/>
-          <rect x="8.5" y="8" width="3" height="12" rx="1.5" fill="url(#chart-grad)"/>
-          <rect x="13" y="4" width="3" height="16" rx="1.5" fill="url(#chart-grad)"/>
-          <rect x="17.5" y="6" width="3" height="14" rx="1.5" fill="url(#chart-grad)"/>
-          <path d="M3 3l3 4 4-2 4 3 4-1 3 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none"/>
-          <circle cx="5.5" cy="6" r="2" fill="currentColor"/>
-          <circle cx="10" cy="4" r="2" fill="currentColor"/>
-          <circle cx="14.5" cy="7" r="2" fill="currentColor"/>
-          <circle cx="19" cy="6" r="2" fill="currentColor"/>
-        </svg>
-      );
-    case 'calculator':
-      return (
-        <svg {...iconProps} fill="none" viewBox="0 0 24 24">
-          <defs>
-            <linearGradient id="calc-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="currentColor" stopOpacity="0.9"/>
-              <stop offset="100%" stopColor="currentColor" stopOpacity="1"/>
-            </linearGradient>
-          </defs>
-          <rect x="5" y="3" width="14" height="18" rx="3" fill="url(#calc-grad)" stroke="currentColor" strokeWidth="1"/>
-          <rect x="7" y="5" width="10" height="3" rx="1" fill="white" fillOpacity="0.9"/>
-          <circle cx="9" cy="11" r="1.5" fill="white" fillOpacity="0.8"/>
-          <circle cx="12" cy="11" r="1.5" fill="white" fillOpacity="0.8"/>
-          <circle cx="15" cy="11" r="1.5" fill="white" fillOpacity="0.8"/>
-          <circle cx="9" cy="14" r="1.5" fill="white" fillOpacity="0.8"/>
-          <circle cx="12" cy="14" r="1.5" fill="white" fillOpacity="0.8"/>
-          <circle cx="15" cy="14" r="1.5" fill="white" fillOpacity="0.8"/>
-          <rect x="8.5" y="17" width="3" height="2" rx="1" fill="white" fillOpacity="0.8"/>
-          <rect x="12.5" y="17" width="3" height="2" rx="1" fill="white" fillOpacity="0.8"/>
-        </svg>
-      );
-    case 'trophy':
-      return (
-        <svg {...iconProps} fill="none" viewBox="0 0 24 24">
-          <defs>
-            <linearGradient id="trophy-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#FFD700"/>
-              <stop offset="100%" stopColor="currentColor"/>
-            </linearGradient>
-          </defs>
-          <path d="M8 7v3c0 2.2 1.8 4 4 4s4-1.8 4-4V7" stroke="currentColor" strokeWidth="2" fill="url(#trophy-grad)"/>
-          <path d="M6 7h2v3c0 .5.1 1 .3 1.4L6 13.6C5.2 13.2 5 12.6 5 12V9c0-1.1.9-2 2-2z" fill="currentColor"/>
-          <path d="M18 7h-2v3c0 .5-.1 1-.3 1.4L18 13.6c.8-.4 1-1 1-1.6V9c0-1.1-.9-2-2-2z" fill="currentColor"/>
-          <rect x="10" y="14" width="4" height="5" rx="2" fill="currentColor"/>
-          <ellipse cx="12" cy="19" rx="4" ry="1.5" fill="currentColor"/>
-          <path d="M6 2 L18 2 L16 7 L8 7 Z" fill="url(#trophy-grad)" stroke="currentColor" strokeWidth="1"/>
-          <circle cx="12" cy="4.5" r="1" fill="white"/>
-          <path d="M3 20 L21 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-        </svg>
-      );
-    case 'user':
-      return (
-        <svg {...iconProps} fill="none" viewBox="0 0 24 24">
-          <defs>
-            <radialGradient id="user-grad" cx="50%" cy="30%">
-              <stop offset="0%" stopColor="white" stopOpacity="0.3"/>
-              <stop offset="100%" stopColor="currentColor"/>
-            </radialGradient>
-          </defs>
-          <circle cx="12" cy="8" r="4" fill="url(#user-grad)" stroke="currentColor" strokeWidth="1"/>
-          <path d="M20 20v-1c0-3.3-2.7-6-6-6h-4c-3.3 0-6 2.7-6 6v1" stroke="currentColor" strokeWidth="2" fill="none"/>
-          <circle cx="10" cy="7" r="0.5" fill="white"/>
-          <circle cx="14" cy="7" r="0.5" fill="white"/>
-          <path d="M10.5 9.5c0.5 0.3 1 0.5 1.5 0.5s1-0.2 1.5-0.5" stroke="white" strokeWidth="1" fill="none"/>
-          <circle cx="12" cy="22" r="1" fill="currentColor" fillOpacity="0.3"/>
-        </svg>
-      );
-    case 'file':
-      return (
-        <svg {...iconProps} fill="none" viewBox="0 0 24 24">
-          <defs>
-            <linearGradient id="file-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="white" stopOpacity="0.2"/>
-              <stop offset="100%" stopColor="currentColor"/>
-            </linearGradient>
-          </defs>
-          <path d="M7 3h8l4 4v13c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2z" fill="url(#file-grad)" stroke="currentColor" strokeWidth="1"/>
-          <path d="M15 3v4h4" stroke="currentColor" strokeWidth="1" fill="none"/>
-          <rect x="9" y="11" width="6" height="1" rx="0.5" fill="white" fillOpacity="0.8"/>
-          <rect x="9" y="13" width="4" height="1" rx="0.5" fill="white" fillOpacity="0.8"/>
-          <rect x="9" y="15" width="6" height="1" rx="0.5" fill="white" fillOpacity="0.8"/>
-          <rect x="9" y="17" width="5" height="1" rx="0.5" fill="white" fillOpacity="0.8"/>
-          <circle cx="16" cy="18" r="2" fill="#10B981" stroke="white" strokeWidth="1"/>
-          <path d="M15 18l1 1 2-2" stroke="white" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-        </svg>
-      );
-    case 'book':
-      return (
-        <svg {...iconProps} fill="none" viewBox="0 0 24 24">
-          <defs>
-            <linearGradient id="book-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="white" stopOpacity="0.3"/>
-              <stop offset="100%" stopColor="currentColor"/>
-            </linearGradient>
-          </defs>
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="url(#book-grad)" stroke="currentColor" strokeWidth="1"/>
-          <path d="M12 4v16" stroke="currentColor" strokeWidth="1" strokeOpacity="0.3"/>
-          <rect x="6" y="7" width="4" height="1" rx="0.5" fill="white" fillOpacity="0.8"/>
-          <rect x="6" y="9" width="3" height="1" rx="0.5" fill="white" fillOpacity="0.8"/>
-          <rect x="6" y="11" width="4" height="1" rx="0.5" fill="white" fillOpacity="0.8"/>
-          <rect x="14" y="7" width="4" height="1" rx="0.5" fill="white" fillOpacity="0.8"/>
-          <rect x="14" y="9" width="3" height="1" rx="0.5" fill="white" fillOpacity="0.8"/>
-          <rect x="14" y="11" width="4" height="1" rx="0.5" fill="white" fillOpacity="0.8"/>
-          <circle cx="18" cy="16" r="1.5" fill="#F59E0B"/>
-          <path d="M17.5 15.5l1 1" stroke="white" strokeWidth="1" strokeLinecap="round"/>
-        </svg>
-      );
+    case 'chart': return <BarChart3 {...iconProps} />;
+    case 'calculator': return <Calculator {...iconProps} />;
+    case 'trophy': return <Trophy {...iconProps} />;
+    case 'user': return <User {...iconProps} />;
+    case 'file': return <FileText {...iconProps} />;
+    case 'book': return <BookOpen {...iconProps} />;
     default: return <BarChart3 {...iconProps} />;
   }
 };
