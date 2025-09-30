@@ -21,14 +21,14 @@ export default function SnowboardParallelHome() {
       description: '查看竞速积分排名',
       icon: 'chart',
       href: '/disciplines/snowboard-parallel/points',
-      color: 'bg-violet-500',
+      color: 'bg-indigo-500',
     },
     {
       title: '积分计算器',
       description: '淘汰赛制积分计算',
       icon: 'calculator',
       href: '/disciplines/snowboard-parallel/calculator',
-      color: 'bg-purple-500',
+      color: 'bg-blue-500',
     },
     {
       title: '赛事管理',
@@ -42,14 +42,14 @@ export default function SnowboardParallelHome() {
       description: '运动员信息和对战记录',
       icon: 'user',
       href: '/disciplines/snowboard-parallel/athletes',
-      color: 'bg-violet-600',
+      color: 'bg-sky-500',
     },
     {
       title: '在线报名',
       description: '参加平行项目赛事',
       icon: 'file',
       href: '/disciplines/snowboard-parallel/registration',
-      color: 'bg-purple-600',
+      color: 'bg-violet-500',
     },
     {
       title: '规则文档',
@@ -61,10 +61,10 @@ export default function SnowboardParallelHome() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-sky-50">
 
       {/* 英雄区域 */}
-      <div className="relative bg-gradient-to-r from-violet-600 via-purple-500 to-indigo-600 text-white overflow-hidden">
+      <div className="relative bg-gradient-to-r from-indigo-600 via-blue-600 to-sky-600 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -94,7 +94,7 @@ export default function SnowboardParallelHome() {
 
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="currentColor" className="text-violet-50"/>
+            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="currentColor" className="text-indigo-50"/>
           </svg>
         </div>
       </div>
@@ -109,17 +109,17 @@ export default function SnowboardParallelHome() {
             <Link
               key={index}
               href={link.href}
-              className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-purple-500 transform hover:-translate-y-1"
+              className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-indigo-500 transform hover:-translate-y-1"
             >
               <div className="p-6">
                 <div className={`${link.color} w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform`}>
                   {getIcon(link.icon)}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-600">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-indigo-600">
                   {link.title}
                 </h3>
                 <p className="text-gray-600 text-sm mb-4">{link.description}</p>
-                <div className="flex items-center text-purple-600 font-medium">
+                <div className="flex items-center text-indigo-600 font-medium">
                   进入功能
                   <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -268,21 +268,21 @@ export default function SnowboardParallelHome() {
 
         {/* 当前赛季数据统计 */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
-          <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white">
+          <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl p-6 text-white">
             <div className="text-4xl font-bold mb-1">98</div>
-            <div className="text-purple-100 text-sm">注册运动员</div>
+            <div className="text-indigo-100 text-sm">注册运动员</div>
           </div>
-          <div className="bg-gradient-to-br from-fuchsia-500 to-fuchsia-600 rounded-xl p-6 text-white">
+          <div className="bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl p-6 text-white">
             <div className="text-4xl font-bold mb-1">12</div>
-            <div className="text-fuchsia-100 text-sm">本赛季赛事</div>
+            <div className="text-cyan-100 text-sm">本赛季赛事</div>
           </div>
-          <div className="bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl p-6 text-white">
+          <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl p-6 text-white">
             <div className="text-4xl font-bold mb-1">384</div>
-            <div className="text-pink-100 text-sm">对决场次</div>
+            <div className="text-indigo-100 text-sm">对决场次</div>
           </div>
-          <div className="bg-gradient-to-br from-rose-500 to-rose-600 rounded-xl p-6 text-white">
+          <div className="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white">
             <div className="text-4xl font-bold mb-1">67.3</div>
-            <div className="text-rose-100 text-sm">平均积分</div>
+            <div className="text-purple-100 text-sm">平均积分</div>
           </div>
         </div>
       </div>
