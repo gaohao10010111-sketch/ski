@@ -28,93 +28,55 @@ export default function FreeskiSlopestyleHome() {
       description: '240/360/120分档计算',
       icon: 'calculator',
       href: '/disciplines/freeski-slopestyle/calculator',
-      color: 'bg-rose-500',
+      color: 'bg-red-600',
     },
     {
       title: '赛事管理',
       description: '查看赛程和比赛结果',
       icon: 'trophy',
       href: '/disciplines/freeski-slopestyle/competitions',
-      color: 'bg-pink-500',
+      color: 'bg-slate-500',
     },
     {
       title: '运动员档案',
       description: '运动员信息和技巧库',
       icon: 'user',
       href: '/disciplines/freeski-slopestyle/athletes',
-      color: 'bg-fuchsia-500',
+      color: 'bg-slate-600',
     },
     {
       title: '在线报名',
       description: '参加自由式坡面/大跳台赛事',
       icon: 'file',
       href: '/disciplines/freeski-slopestyle/registration',
-      color: 'bg-red-600',
+      color: 'bg-red-700',
     },
     {
       title: '规则文档',
       description: '自由式滑雪竞赛规则',
       icon: 'book',
       href: '/disciplines/freeski-slopestyle/rules',
-      color: 'bg-slate-600',
+      color: 'bg-slate-700',
     },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 to-rose-50">
-      {/* 顶部面包屑和项目导航 */}
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          {/* 面包屑导航 */}
-          <nav className="flex items-center text-sm text-gray-600 mb-3">
-            <Link href="/" className="hover:text-red-600">首页</Link>
-            <span className="mx-2">/</span>
-            <Link href="/disciplines" className="hover:text-red-600">滑雪项目</Link>
-            <span className="mx-2">/</span>
-            <span className="text-gray-900 font-medium">自由式坡面/大跳台</span>
-          </nav>
-          
-          {/* 四大项目横向导航 */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2">
-            <Link
-              href="/disciplines/alpine"
-              className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300 flex-shrink-0 text-sm font-medium"
-            >
-              高山滑雪
-            </Link>
-            <Link
-              href="/disciplines/snowboard-slopestyle"
-              className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-300 flex-shrink-0 text-sm font-medium"
-            >
-              单板坡面/大跳台
-            </Link>
-            <Link
-              href="/disciplines/snowboard-parallel"
-              className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-purple-500 hover:text-white transition-all duration-300 flex-shrink-0 text-sm font-medium"
-            >
-              单板平行
-            </Link>
-            <div className="px-3 py-2 bg-red-500 text-white rounded-lg font-medium flex-shrink-0 shadow-md text-sm">
-              自由式坡面/大跳台
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* 英雄区域 */}
-      <div className="relative bg-gradient-to-r from-red-700 via-rose-600 to-pink-600 text-white overflow-hidden">
+      <div className="relative bg-gradient-to-r from-slate-700 via-slate-600 to-slate-500 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
-            <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mb-4 mx-auto backdrop-blur-sm">
+            <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mb-6 mx-auto backdrop-blur-sm">
               <Mountain className="h-12 w-12 text-white" />
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-4">
-              自由式滑雪坡面障碍技巧 & 大跳台
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              自由式坡面/大跳台
             </h1>
-            <p className="text-2xl text-red-200 mb-2">Freeski Slopestyle & Big Air</p>
-            <div className="flex items-center justify-center gap-4 mt-6">
+            <p className="text-xl text-gray-200 mb-8">Freeski Slopestyle & Big Air</p>
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-6 mb-8">
               <span className="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">
                 360分档顶级赛事
               </span>

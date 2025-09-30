@@ -21,35 +21,35 @@ export default function SnowboardSlopestyleHome() {
       description: '查看分档积分排名',
       icon: 'chart',
       href: '/disciplines/snowboard-slopestyle/points',
-      color: 'bg-orange-500',
+      color: 'bg-blue-500',
     },
     {
       title: '分档积分计算器',
       description: '240/360/120分档计算',
       icon: 'calculator',
       href: '/disciplines/snowboard-slopestyle/calculator',
-      color: 'bg-yellow-500',
+      color: 'bg-blue-600',
     },
     {
       title: '赛事管理',
       description: '查看赛程和比赛结果',
       icon: 'trophy',
       href: '/disciplines/snowboard-slopestyle/competitions',
-      color: 'bg-amber-500',
+      color: 'bg-slate-500',
     },
     {
       title: '运动员档案',
       description: '运动员信息和动作库',
       icon: 'user',
       href: '/disciplines/snowboard-slopestyle/athletes',
-      color: 'bg-red-500',
+      color: 'bg-slate-600',
     },
     {
       title: '在线报名',
       description: '参加单板坡面/大跳台赛事',
       icon: 'file',
       href: '/disciplines/snowboard-slopestyle/registration',
-      color: 'bg-orange-600',
+      color: 'bg-blue-700',
     },
     {
       title: '规则文档',
@@ -61,58 +61,24 @@ export default function SnowboardSlopestyleHome() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
-      {/* 顶部面包屑和项目导航 */}
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          {/* 面包屑导航 */}
-          <nav className="flex items-center text-sm text-gray-600 mb-3">
-            <Link href="/" className="hover:text-orange-600">首页</Link>
-            <span className="mx-2">/</span>
-            <Link href="/disciplines" className="hover:text-orange-600">滑雪项目</Link>
-            <span className="mx-2">/</span>
-            <span className="text-gray-900 font-medium">单板坡面障碍技巧 & 大跳台</span>
-          </nav>
-          
-          {/* 四大项目横向导航 */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2">
-            <Link
-              href="/disciplines/alpine"
-              className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300 flex-shrink-0 text-sm font-medium"
-            >
-              高山滑雪
-            </Link>
-            <div className="px-3 py-2 bg-orange-500 text-white rounded-lg font-medium flex-shrink-0 shadow-md text-sm">
-              单板坡面/大跳台
-            </div>
-            <Link
-              href="/disciplines/snowboard-parallel"
-              className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-purple-500 hover:text-white transition-all duration-300 flex-shrink-0 text-sm font-medium"
-            >
-              单板平行
-            </Link>
-            <Link
-              href="/disciplines/freeski-slopestyle"
-              className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-red-500 hover:text-white transition-all duration-300 flex-shrink-0 text-sm font-medium"
-            >
-              自由式坡面/大跳台
-            </Link>
-          </div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
 
       {/* 英雄区域 */}
-      <div className="relative bg-gradient-to-r from-orange-700 via-amber-600 to-yellow-600 text-white overflow-hidden">
+      <div className="relative bg-gradient-to-r from-slate-700 via-slate-600 to-slate-500 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
-            <div className="text-7xl mb-4 animate-bounce">SB</div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-4">
+            <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mb-6 mx-auto backdrop-blur-sm">
+              <svg className="h-12 w-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
               单板坡面障碍技巧 & 大跳台
             </h1>
-            <p className="text-2xl text-orange-200 mb-2">Snowboard Slopestyle & Big Air</p>
-            <div className="flex items-center justify-center gap-4 mt-6">
+            <p className="text-xl text-gray-200 mb-8">Snowboard Slopestyle & Big Air</p>
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-6 mb-8">
               <span className="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">
                 360分档顶级赛事
               </span>
@@ -128,7 +94,7 @@ export default function SnowboardSlopestyleHome() {
 
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="currentColor" className="text-orange-50"/>
+            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="currentColor" className="text-slate-50"/>
           </svg>
         </div>
       </div>
@@ -143,17 +109,17 @@ export default function SnowboardSlopestyleHome() {
             <Link
               key={index}
               href={link.href}
-              className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-orange-500 transform hover:-translate-y-1"
+              className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-blue-500 transform hover:-translate-y-1"
             >
               <div className="p-6">
                 <div className={`${link.color} w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform`}>
-                  {link.icon}
+                  {getIcon(link.icon)}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-orange-600">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600">
                   {link.title}
                 </h3>
                 <p className="text-gray-600 text-sm mb-4">{link.description}</p>
-                <div className="flex items-center text-orange-600 font-medium">
+                <div className="flex items-center text-blue-600 font-medium">
                   进入功能
                   <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

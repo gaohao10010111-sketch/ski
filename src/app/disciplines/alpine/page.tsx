@@ -28,92 +28,57 @@ export default function AlpineSkiingHome() {
       description: 'v4.0公式实时计算积分',
       icon: 'calculator',
       href: '/disciplines/alpine/calculator',
-      color: 'bg-cyan-500',
+      color: 'bg-blue-600',
     },
     {
       title: '赛事管理',
       description: '查看赛程和比赛结果',
       icon: 'trophy',
       href: '/disciplines/alpine/competitions',
-      color: 'bg-indigo-500',
+      color: 'bg-slate-500',
     },
     {
       title: '运动员档案',
       description: '运动员信息和成绩查询',
       icon: 'user',
       href: '/disciplines/alpine/athletes',
-      color: 'bg-purple-500',
+      color: 'bg-slate-600',
     },
     {
       title: '在线报名',
       description: '参加高山滑雪赛事',
       icon: 'file',
       href: '/disciplines/alpine/registration',
-      color: 'bg-blue-600',
+      color: 'bg-blue-700',
     },
     {
       title: '规则文档',
       description: '高山滑雪竞赛规则',
       icon: 'book',
       href: '/disciplines/alpine/rules',
-      color: 'bg-slate-600',
+      color: 'bg-slate-700',
     },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      {/* 顶部面包屑和项目导航 */}
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          {/* 面包屑导航 */}
-          <nav className="flex items-center text-sm text-gray-600 mb-3">
-            <Link href="/" className="hover:text-blue-600">首页</Link>
-            <span className="mx-2">/</span>
-            <Link href="/disciplines" className="hover:text-blue-600">滑雪项目</Link>
-            <span className="mx-2">/</span>
-            <span className="text-gray-900 font-medium">高山滑雪</span>
-          </nav>
-          
-          {/* 四大项目横向导航 */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2">
-            <div className="px-3 py-2 bg-blue-500 text-white rounded-lg font-medium flex-shrink-0 shadow-md text-sm">
-              高山滑雪
-            </div>
-            <Link
-              href="/disciplines/snowboard-slopestyle"
-              className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-orange-500 hover:text-white transition-all duration-300 flex-shrink-0 text-sm font-medium"
-            >
-              单板坡面/大跳台
-            </Link>
-            <Link
-              href="/disciplines/snowboard-parallel"
-              className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-purple-500 hover:text-white transition-all duration-300 flex-shrink-0 text-sm font-medium"
-            >
-              单板平行
-            </Link>
-            <Link
-              href="/disciplines/freeski-slopestyle"
-              className="px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-red-500 hover:text-white transition-all duration-300 flex-shrink-0 text-sm font-medium"
-            >
-              自由式坡面/大跳台
-            </Link>
-          </div>
-        </div>
-      </div>
 
       {/* 英雄区域 */}
-      <div className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-cyan-800 text-white overflow-hidden">
+      <div className="relative bg-gradient-to-r from-slate-700 via-slate-600 to-slate-500 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute inset-0 bg-[url('/ski-pattern.svg')] opacity-10"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center">
-            <div className="text-7xl mb-4 animate-bounce">⛷️</div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-4">
+            <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mb-6 mx-auto backdrop-blur-sm">
+              <svg className="h-12 w-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
               高山滑雪积分系统
             </h1>
-            <p className="text-2xl text-blue-200 mb-2">Alpine Skiing Points System</p>
-            <div className="flex items-center justify-center gap-4 mt-6">
+            <p className="text-xl text-gray-200 mb-8">Alpine Skiing Points System</p>
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-6 mb-8">
               <span className="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">
                 v4.0时间基础公式
               </span>
