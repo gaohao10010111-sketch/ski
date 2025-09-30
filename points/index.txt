@@ -1,0 +1,67 @@
+2:I[2972,["972","static/chunks/972-a6f123220e8455a0.js","705","static/chunks/app/points/page-698c42df7ed44353.js"],""]
+3:I[4707,[],""]
+4:I[6423,[],""]
+5:I[8003,["972","static/chunks/972-a6f123220e8455a0.js","695","static/chunks/695-3d396daf55215ee2.js","185","static/chunks/app/layout-af63394defd1f527.js"],""]
+7:I[2114,["972","static/chunks/972-a6f123220e8455a0.js","695","static/chunks/695-3d396daf55215ee2.js","185","static/chunks/app/layout-af63394defd1f527.js"],"ClientProviders"]
+8:I[4768,["972","static/chunks/972-a6f123220e8455a0.js","695","static/chunks/695-3d396daf55215ee2.js","185","static/chunks/app/layout-af63394defd1f527.js"],"default"]
+9:I[2834,["972","static/chunks/972-a6f123220e8455a0.js","695","static/chunks/695-3d396daf55215ee2.js","185","static/chunks/app/layout-af63394defd1f527.js"],"default"]
+6:T6c4,{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "中国高山滑雪积分管理平台",
+  "alternateName": "China Alpine Skiing Points Management",
+  "description": "基于v4.0简化积分规则的专业滑雪竞赛数据管理平台，为中国高山滑雪运动提供积分计算、成绩管理、赛事组织等一站式解决方案",
+  "url": "https://guangyikeji.github.io/ski/",
+  "logo": "https://guangyikeji.github.io/ski/images/logo.png",
+  "image": "https://guangyikeji.github.io/ski/images/ski-bg.jpg",
+  "sameAs": [
+    "https://github.com/guangyikeji/ski",
+    "https://alpine-ski-points.vercel.app"
+  ],
+  "sport": "Alpine Skiing",
+  "foundingDate": "2024",
+  "foundingLocation": {
+    "@type": "Country",
+    "name": "China"
+  },
+  "memberOf": {
+    "@type": "SportsOrganization",
+    "name": "中国滑雪协会",
+    "url": "https://www.csa.org.cn"
+  },
+  "offers": {
+    "@type": "Service",
+    "name": "中国高山滑雪积分管理 v4.0",
+    "description": "v4.0简化积分计算、运动员管理、赛事组织、成绩统计",
+    "serviceType": "Sports Management Software",
+    "provider": {
+      "@type": "Organization",
+      "name": "中国高山滑雪积分管理平台"
+    }
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "availableLanguage": [
+      "Chinese",
+      "English"
+    ]
+  },
+  "keywords": [
+    "中国高山滑雪积分规则v4.0",
+    "高山滑雪",
+    "Alpine Skiing",
+    "中国积分",
+    "滑雪竞赛",
+    "积分计算",
+    "滑雪管理",
+    "中国滑雪",
+    "中国滑雪协会",
+    "赛事管理",
+    "运动员积分",
+    "青少年滑雪体系",
+    "v4.0简化公式"
+  ]
+}0:["rwughhmhD4RYLbrm7jVfI",[[["",{"children":["points",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",{"children":["points",{"children":["__PAGE__",{},[["$L1",["$","div",null,{"className":"min-h-screen bg-gray-50 py-12","children":["$","div",null,{"className":"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8","children":[["$","div",null,{"className":"text-center mb-12","children":[["$","h1",null,{"className":"text-4xl font-bold text-gray-900 mb-4","children":"积分系统"}],["$","p",null,{"className":"text-xl text-gray-600","children":"中国滑雪赛事积分查询与管理平台"}]]}],["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6","children":[["$","$L2",null,{"href":"/scoring-systems","className":"group","children":["$","div",null,{"className":"bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200","children":["$","div",null,{"className":"text-center","children":[["$","div",null,{"className":"bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors","children":["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"h-8 w-8 text-blue-600","children":[["$","path","17hqa7",{"d":"M6 9H4.5a2.5 2.5 0 0 1 0-5H6"}],["$","path","lmptdp",{"d":"M18 9h1.5a2.5 2.5 0 0 0 0-5H18"}],["$","path","57wxv0",{"d":"M4 22h16"}],["$","path","1nw9bq",{"d":"M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"}],["$","path","1np0yb",{"d":"M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"}],["$","path","u46fv3",{"d":"M18 2H6v7a6 6 0 0 0 12 0V2Z"}],"$undefined"]}]}],["$","h3",null,{"className":"text-lg font-semibold mb-2","children":"四大积分系统"}],["$","p",null,{"className":"text-gray-600 text-sm","children":"高山滑雪、自由式滑雪、单板滑雪积分体系"}]]}]}]}],["$","$L2",null,{"href":"/points/calculator","className":"group","children":["$","div",null,{"className":"bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200","children":["$","div",null,{"className":"text-center","children":[["$","div",null,{"className":"bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors","children":["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"h-8 w-8 text-green-600","children":[["$","rect","1nb95v",{"width":"16","height":"20","x":"4","y":"2","rx":"2"}],["$","line","x4nwl0",{"x1":"8","x2":"16","y1":"6","y2":"6"}],["$","line","wjye3r",{"x1":"16","x2":"16","y1":"14","y2":"18"}],["$","path","1m94wz",{"d":"M16 10h.01"}],["$","path","1nrarc",{"d":"M12 10h.01"}],["$","path","19clt8",{"d":"M8 10h.01"}],["$","path","1etili",{"d":"M12 14h.01"}],["$","path","6423bh",{"d":"M8 14h.01"}],["$","path","mhygvu",{"d":"M12 18h.01"}],["$","path","lrp35t",{"d":"M8 18h.01"}],"$undefined"]}]}],["$","h3",null,{"className":"text-lg font-semibold mb-2","children":"积分计算器"}],["$","p",null,{"className":"text-gray-600 text-sm","children":"在线计算中国滑雪积分"}]]}]}]}],["$","$L2",null,{"href":"/points/rankings","className":"group","children":["$","div",null,{"className":"bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200","children":["$","div",null,{"className":"text-center","children":[["$","div",null,{"className":"bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors","children":["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"h-8 w-8 text-purple-600","children":[["$","path","1s2lah",{"d":"M3 3v18h18"}],["$","path","2bz60n",{"d":"M18 17V9"}],["$","path","1frdt8",{"d":"M13 17V5"}],["$","path","17ska0",{"d":"M8 17v-3"}],"$undefined"]}]}],["$","h3",null,{"className":"text-lg font-semibold mb-2","children":"积分排行榜"}],["$","p",null,{"className":"text-gray-600 text-sm","children":"运动员积分排名统计"}]]}]}]}],["$","$L2",null,{"href":"/points/trends","className":"group","children":["$","div",null,{"className":"bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow border border-gray-200","children":["$","div",null,{"className":"text-center","children":[["$","div",null,{"className":"bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-red-200 transition-colors","children":["$","svg",null,{"xmlns":"http://www.w3.org/2000/svg","width":24,"height":24,"viewBox":"0 0 24 24","fill":"none","stroke":"currentColor","strokeWidth":2,"strokeLinecap":"round","strokeLinejoin":"round","className":"h-8 w-8 text-red-600","children":[["$","polyline","126l90",{"points":"22 7 13.5 15.5 8.5 10.5 2 17"}],["$","polyline","kwv8wd",{"points":"16 7 22 7 22 13"}],"$undefined"]}]}],["$","h3",null,{"className":"text-lg font-semibold mb-2","children":"积分趋势"}],["$","p",null,{"className":"text-gray-600 text-sm","children":"积分变化趋势分析"}]]}]}]}]]}],["$","div",null,{"className":"mt-16 bg-white rounded-lg shadow-md p-8","children":[["$","h2",null,{"className":"text-2xl font-bold text-gray-900 mb-6","children":"积分系统功能"}],["$","div",null,{"className":"grid grid-cols-1 md:grid-cols-2 gap-8","children":[["$","div",null,{"children":[["$","h3",null,{"className":"text-lg font-semibold mb-3","children":"积分计算"}],["$","ul",null,{"className":"space-y-2 text-gray-600","children":[["$","li",null,{"children":"• 基于中国滑雪积分规则v4.0"}],["$","li",null,{"children":"• 支持高山滑雪时间积分计算"}],["$","li",null,{"children":"• 支持自由式/单板排名积分"}],["$","li",null,{"children":"• 自动判罚分计算"}]]}]]}],["$","div",null,{"children":[["$","h3",null,{"className":"text-lg font-semibold mb-3","children":"数据管理"}],["$","ul",null,{"className":"space-y-2 text-gray-600","children":[["$","li",null,{"children":"• 个人积分记录查询"}],["$","li",null,{"children":"• 积分历史趋势分析"}],["$","li",null,{"children":"• 全国排名统计"}],["$","li",null,{"children":"• 项目分类积分管理"}]]}]]}]]}]]}]]}]}],null],null],null]},[null,["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children","points","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]],null]},[[[["$","link","0",{"rel":"stylesheet","href":"/ski/_next/static/css/64c6623abeb19290.css","precedence":"next","crossOrigin":"$undefined"}]],["$","html",null,{"lang":"zh-CN","children":[["$","head",null,{"children":["$","$L5",null,{"id":"structured-data","type":"application/ld+json","dangerouslySetInnerHTML":{"__html":"$6"}}]}],["$","body",null,{"children":["$","$L7",null,{"children":[["$","$L8",null,{}],["$","main",null,{"className":"min-h-screen","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[]}]}],["$","$L9",null,{}]]}]}]]}]],null],null],["$La",null]]]]
+a:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","1",{"charSet":"utf-8"}],["$","title","2",{"children":"中国滑雪赛事积分系统 - 专业权威的滑雪竞赛管理平台"}],["$","meta","3",{"name":"description","content":"中国官方认证的滑雪赛事积分管理平台，支持高山滑雪、自由式滑雪、单板滑雪等项目的积分计算、赛事管理、运动员档案管理。基于国家体育总局标准，提供准确的积分计算和排名服务。"}],["$","meta","4",{"name":"author","content":"中国滑雪协会"}],["$","meta","5",{"name":"keywords","content":"中国滑雪积分系统,高山滑雪积分,自由式滑雪,单板滑雪,滑雪竞赛管理,积分计算,运动员管理,赛事管理,中国滑雪协会,滑雪积分排名"}],["$","meta","6",{"name":"creator","content":"中国滑雪协会"}],["$","meta","7",{"name":"publisher","content":"中国滑雪协会"}],["$","meta","8",{"name":"robots","content":"index, follow"}],["$","meta","9",{"name":"googlebot","content":"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"}],["$","link","10",{"rel":"canonical","href":"https://gaohao10010111-sketch.github.io/ski/"}],["$","meta","11",{"name":"google-site-verification","content":"your-google-verification-code"}],["$","meta","12",{"property":"og:title","content":"中国滑雪赛事积分系统 - 专业权威的滑雪竞赛管理平台"}],["$","meta","13",{"property":"og:description","content":"中国官方认证的滑雪赛事积分管理平台，支持高山滑雪、自由式滑雪、单板滑雪等项目的积分计算、赛事管理、运动员档案管理。"}],["$","meta","14",{"property":"og:url","content":"https://gaohao10010111-sketch.github.io/ski/"}],["$","meta","15",{"property":"og:site_name","content":"中国滑雪赛事积分系统"}],["$","meta","16",{"property":"og:locale","content":"zh_CN"}],["$","meta","17",{"property":"og:image","content":"http://localhost:3000/images/ski-bg.jpg"}],["$","meta","18",{"property":"og:image:width","content":"1200"}],["$","meta","19",{"property":"og:image:height","content":"630"}],["$","meta","20",{"property":"og:image:alt","content":"中国滑雪赛事积分系统"}],["$","meta","21",{"property":"og:type","content":"website"}],["$","meta","22",{"name":"twitter:card","content":"summary_large_image"}],["$","meta","23",{"name":"twitter:title","content":"中国滑雪赛事积分系统"}],["$","meta","24",{"name":"twitter:description","content":"中国官方认证的滑雪赛事积分管理平台"}],["$","meta","25",{"name":"twitter:image","content":"http://localhost:3000/images/ski-bg.jpg"}]]
+1:null

@@ -2,250 +2,49 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
-  <title>登录｜中国滑雪积分系统</title>
+  <title>登录｜中国滑雪赛事积分系统</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="登录中国滑雪积分系统，享受专业的积分查询、赛事管理、排名查看等功能，支持高山滑雪、自由式滑雪、单板滑雪多项目积分服务。" />
+  <meta name="description" content="登录中国滑雪赛事积分系统，进入个人中心、积分查询与赛事管理。" />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen flex flex-col">
-  <!-- 顶部导航（占位） -->
+  <!-- 头部导航占位（可选） -->
   <div id="site-nav"></div>
 
   <main id="main" class="flex-1">
     <section class="mx-auto max-w-6xl px-4 py-10">
-      <!-- 唯一 H1 -->
       <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">登录</h1>
-      <p class="mt-2 text-gray-600 max-w-3xl">使用您的账户进入积分管理平台</p>
+      <p class="mt-2 text-gray-600 max-w-3xl">使用您的账户进入系统</p>
 
-      <!-- 页面主体：强化交互 -->
-      <div class="mt-8">
-        <form id="login-form" class="max-w-md space-y-4" onsubmit="return handleLogin(event)">
-          <div>
-            <label class="block text-sm font-medium mb-1 text-gray-700">邮箱地址</label>
-            <input
-              id="email-input"
-              type="email"
-              class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-              placeholder="请输入您的邮箱地址"
-              required
-              oninput="validateEmail()"
-            />
-            <div id="email-error" class="text-sm text-red-600 mt-1 hidden">请输入有效的邮箱地址</div>
-          </div>
-
-          <div>
-            <label class="block text-sm font-medium mb-1 text-gray-700">密码</label>
-            <div class="relative">
-              <input
-                id="password-input"
-                type="password"
-                class="w-full border border-gray-300 rounded-lg px-3 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                placeholder="请输入您的密码"
-                required
-                minlength="6"
-                oninput="validatePassword()"
-              />
-              <button
-                type="button"
-                onclick="togglePassword()"
-                class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
-              >
-                <span id="eye-icon">👁️</span>
-              </button>
-            </div>
-            <div id="password-error" class="text-sm text-red-600 mt-1 hidden">密码至少需要6个字符</div>
-          </div>
-
-          <div class="flex items-center">
-            <input id="remember-me" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-            <label for="remember-me" class="ml-2 block text-sm text-gray-700">记住我</label>
-          </div>
-
-          <div id="login-error" class="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg p-3 hidden">
-            <div class="flex items-center">
-              <span class="mr-2">❌</span>
-              <span id="login-error-text">登录失败，请检查邮箱或密码</span>
-            </div>
-          </div>
-
-          <div id="login-success" class="text-sm text-green-600 bg-green-50 border border-green-200 rounded-lg p-3 hidden">
-            <div class="flex items-center">
-              <span class="mr-2">✅</span>
-              <span>登录成功！正在跳转...</span>
-            </div>
-          </div>
-
-          <button
-            id="login-btn"
-            type="submit"
-            class="w-full rounded-lg bg-blue-600 text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-          >
-            <span id="btn-text">登录</span>
-            <span id="btn-loading" class="hidden">
-              <svg class="animate-spin -ml-1 mr-3 h-4 w-4 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-              </svg>
-              登录中...
-            </span>
-          </button>
-
-          <div class="text-sm flex items-center justify-between mt-4">
-            <a class="text-blue-600 hover:text-blue-800 hover:underline transition-colors" href="/ski/reset-password">忘记密码？</a>
-            <a class="text-blue-600 hover:text-blue-800 hover:underline transition-colors" href="/ski/register/">没有账号？去注册</a>
-          </div>
-        </form>
-      </div>
+      <form class="max-w-md space-y-4 mt-8" onsubmit="return fakeLogin(event)">
+        <div>
+          <label class="block text-sm mb-1">邮箱</label>
+          <input type="email" class="w-full border rounded px-3 py-2" placeholder="name@example.com" required />
+        </div>
+        <div>
+          <label class="block text-sm mb-1">密码</label>
+          <input type="password" class="w-full border rounded px-3 py-2" required />
+        </div>
+        <p id="login-error" class="text-sm text-red-600 hidden">登录失败，请检查邮箱或密码</p>
+        <button type="submit" class="inline-flex items-center justify-center rounded bg-black text-white px-4 py-2 text-sm">登录</button>
+        <div class="text-sm flex items-center gap-3 mt-2">
+          <a class="text-blue-600 hover:underline" href="/ski/reset-password">忘记密码？</a>
+          <span class="text-gray-400">|</span>
+          <a class="text-blue-600 hover:underline" href="/ski/register">没有账号？去注册</a>
+        </div>
+      </form>
     </section>
   </main>
 
-  <!-- 统一页脚（占位） -->
   <div id="site-footer"></div>
   <script src="/ski/assets/footer.js"></script>
   <script>
-    let isSubmitting = false;
-
-    function validateEmail() {
-      const emailInput = document.getElementById('email-input');
-      const emailError = document.getElementById('email-error');
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      if (emailInput.value && !emailRegex.test(emailInput.value)) {
-        emailError.classList.remove('hidden');
-        emailInput.classList.add('border-red-500');
-        emailInput.classList.remove('border-gray-300');
-        return false;
-      } else {
-        emailError.classList.add('hidden');
-        emailInput.classList.remove('border-red-500');
-        emailInput.classList.add('border-gray-300');
-        return true;
-      }
-    }
-
-    function validatePassword() {
-      const passwordInput = document.getElementById('password-input');
-      const passwordError = document.getElementById('password-error');
-
-      if (passwordInput.value && passwordInput.value.length < 6) {
-        passwordError.classList.remove('hidden');
-        passwordInput.classList.add('border-red-500');
-        passwordInput.classList.remove('border-gray-300');
-        return false;
-      } else {
-        passwordError.classList.add('hidden');
-        passwordInput.classList.remove('border-red-500');
-        passwordInput.classList.add('border-gray-300');
-        return true;
-      }
-    }
-
-    function togglePassword() {
-      const passwordInput = document.getElementById('password-input');
-      const eyeIcon = document.getElementById('eye-icon');
-
-      if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-        eyeIcon.textContent = '🙈';
-      } else {
-        passwordInput.type = 'password';
-        eyeIcon.textContent = '👁️';
-      }
-    }
-
-    function showLoading() {
-      const btnText = document.getElementById('btn-text');
-      const btnLoading = document.getElementById('btn-loading');
-      const loginBtn = document.getElementById('login-btn');
-
-      btnText.classList.add('hidden');
-      btnLoading.classList.remove('hidden');
-      loginBtn.disabled = true;
-    }
-
-    function hideLoading() {
-      const btnText = document.getElementById('btn-text');
-      const btnLoading = document.getElementById('btn-loading');
-      const loginBtn = document.getElementById('login-btn');
-
-      btnText.classList.remove('hidden');
-      btnLoading.classList.add('hidden');
-      loginBtn.disabled = false;
-    }
-
-    function showError(message) {
-      const errorDiv = document.getElementById('login-error');
-      const errorText = document.getElementById('login-error-text');
-
-      errorText.textContent = message;
-      errorDiv.classList.remove('hidden');
-
-      // 3秒后自动隐藏错误信息
-      setTimeout(() => {
-        errorDiv.classList.add('hidden');
-      }, 3000);
-    }
-
-    function showSuccess() {
-      const successDiv = document.getElementById('login-success');
-      const errorDiv = document.getElementById('login-error');
-
-      errorDiv.classList.add('hidden');
-      successDiv.classList.remove('hidden');
-
-      // 2秒后跳转到首页
-      setTimeout(() => {
-        window.location.href = '/ski/';
-      }, 2000);
-    }
-
-    function handleLogin(e) {
+    function fakeLogin(e){
       e.preventDefault();
-
-      if (isSubmitting) return false;
-
-      // 验证表单
-      const emailValid = validateEmail();
-      const passwordValid = validatePassword();
-
-      if (!emailValid || !passwordValid) {
-        showError('请检查输入信息的格式');
-        return false;
-      }
-
-      const email = document.getElementById('email-input').value;
-      const password = document.getElementById('password-input').value;
-
-      if (!email || !password) {
-        showError('请填写所有必填字段');
-        return false;
-      }
-
-      isSubmitting = true;
-      showLoading();
-
-      // 模拟登录请求
-      setTimeout(() => {
-        isSubmitting = false;
-        hideLoading();
-
-        // 演示：固定的测试账号
-        if (email === 'demo@ski.com' && password === '123456') {
-          showSuccess();
-        } else {
-          showError('邮箱或密码错误，请重试（测试账号：demo@ski.com / 123456）');
-        }
-      }, 1500);
-
+      // 这里替换为真实 API
+      document.getElementById('login-error').classList.remove('hidden');
       return false;
     }
-
-    // 防止重复提交
-    document.getElementById('login-form').addEventListener('submit', function(e) {
-      if (isSubmitting) {
-        e.preventDefault();
-      }
-    });
   </script>
 </body>
 </html>
