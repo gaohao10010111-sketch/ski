@@ -64,26 +64,26 @@ export default function FreeskiSlopestyleHome() {
           <div className="flex items-center gap-4 overflow-x-auto pb-2">
             <Link
               href="/disciplines/alpine"
-              className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-blue-100 hover:text-blue-700 transition-colors flex-shrink-0"
+              className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500 hover:text-white transition-all duration-300 flex-shrink-0"
             >
               <span className="text-lg">⛷️</span>
               <span>高山滑雪</span>
             </Link>
             <Link
               href="/disciplines/snowboard-slopestyle"
-              className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-orange-100 hover:text-orange-700 transition-colors flex-shrink-0"
+              className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gradient-to-r hover:from-orange-400 hover:to-amber-400 hover:text-white transition-all duration-300 flex-shrink-0"
             >
               <span className="text-lg">🏂</span>
               <span>单板坡面/大跳台</span>
             </Link>
             <Link
               href="/disciplines/snowboard-parallel"
-              className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-purple-100 hover:text-purple-700 transition-colors flex-shrink-0"
+              className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:text-white transition-all duration-300 flex-shrink-0"
             >
               <span className="text-lg">🏂</span>
               <span>单板平行</span>
             </Link>
-            <div className="flex items-center space-x-1 px-3 py-2 bg-red-100 text-red-700 rounded-lg font-medium flex-shrink-0">
+            <div className="flex items-center space-x-1 px-3 py-2 bg-gradient-to-r from-red-500 to-rose-500 text-white rounded-lg font-medium flex-shrink-0 shadow-lg">
               <span className="text-lg">🎿</span>
               <span>自由式坡面/大跳台</span>
             </div>
