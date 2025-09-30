@@ -2,14 +2,74 @@ import Link from 'next/link';
 import { BarChart3, Calculator, Trophy, User, FileText, BookOpen, Mountain } from 'lucide-react';
 
 const getIcon = (iconType: string) => {
-  const iconProps = { className: "h-8 w-8" };
+  const iconProps = { className: "h-8 w-8 text-white" };
   switch (iconType) {
-    case 'chart': return <BarChart3 {...iconProps} />;
-    case 'calculator': return <Calculator {...iconProps} />;
-    case 'trophy': return <Trophy {...iconProps} />;
-    case 'user': return <User {...iconProps} />;
-    case 'file': return <FileText {...iconProps} />;
-    case 'book': return <BookOpen {...iconProps} />;
+    case 'chart': 
+      return (
+        <svg {...iconProps} fill="currentColor" viewBox="0 0 24 24">
+          <path d="M3 13h4v8H3v-8zm6-5h4v13H9V8zm6-5h4v18h-4V3z"/>
+          <circle cx="5" cy="9" r="1.5" fill="currentColor"/>
+          <circle cx="11" cy="4" r="1.5" fill="currentColor"/>
+          <circle cx="17" cy="1" r="1.5" fill="currentColor"/>
+        </svg>
+      );
+    case 'calculator':
+      return (
+        <svg {...iconProps} fill="currentColor" viewBox="0 0 24 24">
+          <rect x="4" y="2" width="16" height="20" rx="2" stroke="currentColor" strokeWidth="2" fill="none"/>
+          <rect x="6" y="4" width="12" height="4" rx="1" fill="currentColor"/>
+          <circle cx="8" cy="11" r="1" fill="currentColor"/>
+          <circle cx="12" cy="11" r="1" fill="currentColor"/>
+          <circle cx="16" cy="11" r="1" fill="currentColor"/>
+          <circle cx="8" cy="15" r="1" fill="currentColor"/>
+          <circle cx="12" cy="15" r="1" fill="currentColor"/>
+          <circle cx="16" cy="15" r="1" fill="currentColor"/>
+          <circle cx="8" cy="19" r="1" fill="currentColor"/>
+          <rect x="11" y="18" width="6" height="2" rx="1" fill="currentColor"/>
+        </svg>
+      );
+    case 'trophy':
+      return (
+        <svg {...iconProps} fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C10.5 2 9.5 3 9.5 4.5v1c0 2.5 2 4.5 4.5 4.5s4.5-2 4.5-4.5v-1C18.5 3 17.5 2 16 2h-4z"/>
+          <path d="M7 8.5c-1.5 0-3 1-3 2.5s1.5 2.5 3 2.5h1v-5H7zm10 0v5h1c1.5 0 3-1 3-2.5s-1.5-2.5-3-2.5h-1z"/>
+          <rect x="10" y="14" width="4" height="6" rx="2" fill="currentColor"/>
+          <rect x="8" y="20" width="8" height="2" rx="1" fill="currentColor"/>
+          <circle cx="12" cy="6" r="1" fill="white"/>
+        </svg>
+      );
+    case 'user':
+      return (
+        <svg {...iconProps} fill="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="8" r="4" fill="currentColor"/>
+          <path d="M12 14c-4 0-8 2-8 6v2h16v-2c0-4-4-6-8-6z"/>
+          <circle cx="9" cy="7" r="0.5" fill="white"/>
+          <circle cx="15" cy="7" r="0.5" fill="white"/>
+          <path d="M10 9.5c0.5 0.3 1.3 0.5 2 0.5s1.5-0.2 2-0.5" stroke="white" strokeWidth="0.5" fill="none"/>
+        </svg>
+      );
+    case 'file':
+      return (
+        <svg {...iconProps} fill="currentColor" viewBox="0 0 24 24">
+          <path d="M6 2h8l6 6v14H6V2z" stroke="currentColor" strokeWidth="2" fill="none"/>
+          <path d="M14 2v6h6" stroke="currentColor" strokeWidth="2" fill="none"/>
+          <rect x="8" y="12" width="8" height="1" fill="currentColor"/>
+          <rect x="8" y="15" width="6" height="1" fill="currentColor"/>
+          <rect x="8" y="18" width="8" height="1" fill="currentColor"/>
+          <circle cx="17" cy="19" r="1.5" fill="currentColor"/>
+        </svg>
+      );
+    case 'book':
+      return (
+        <svg {...iconProps} fill="currentColor" viewBox="0 0 24 24">
+          <path d="M4 2h16c1 0 2 1 2 2v16c0 1-1 2-2 2H4c-1 0-2-1-2-2V4c0-1 1-2 2-2z"/>
+          <rect x="6" y="6" width="12" height="1" fill="white"/>
+          <rect x="6" y="9" width="10" height="1" fill="white"/>
+          <rect x="6" y="12" width="12" height="1" fill="white"/>
+          <rect x="6" y="15" width="8" height="1" fill="white"/>
+          <circle cx="18" cy="18" r="1" fill="white"/>
+        </svg>
+      );
     default: return <BarChart3 {...iconProps} />;
   }
 };
@@ -21,50 +81,50 @@ export default function FreeskiSlopestyleHome() {
       description: '查看分档积分排名',
       icon: 'chart',
       href: '/disciplines/freeski-slopestyle/points',
-      color: 'bg-gray-600',
+      color: 'bg-emerald-500',
     },
     {
       title: '分档积分计算器',
       description: '240/360/120分档计算',
       icon: 'calculator',
       href: '/disciplines/freeski-slopestyle/calculator',
-      color: 'bg-zinc-600',
+      color: 'bg-teal-500',
     },
     {
       title: '赛事管理',
       description: '查看赛程和比赛结果',
       icon: 'trophy',
       href: '/disciplines/freeski-slopestyle/competitions',
-      color: 'bg-gray-700',
+      color: 'bg-green-500',
     },
     {
       title: '运动员档案',
       description: '运动员信息和技巧库',
       icon: 'user',
       href: '/disciplines/freeski-slopestyle/athletes',
-      color: 'bg-zinc-700',
+      color: 'bg-emerald-600',
     },
     {
       title: '在线报名',
       description: '参加自由式坡面/大跳台赛事',
       icon: 'file',
       href: '/disciplines/freeski-slopestyle/registration',
-      color: 'bg-gray-800',
+      color: 'bg-teal-600',
     },
     {
       title: '规则文档',
       description: '自由式滑雪竞赛规则',
       icon: 'book',
       href: '/disciplines/freeski-slopestyle/rules',
-      color: 'bg-gray-600',
+      color: 'bg-emerald-700',
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-slate-50">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-50">
 
       {/* 英雄区域 */}
-      <div className="relative bg-gradient-to-r from-gray-700 via-zinc-600 to-gray-600 text-white overflow-hidden">
+      <div className="relative bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -92,7 +152,7 @@ export default function FreeskiSlopestyleHome() {
 
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="currentColor" className="text-gray-50"/>
+            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="currentColor" className="text-emerald-50"/>
           </svg>
         </div>
       </div>
@@ -107,17 +167,17 @@ export default function FreeskiSlopestyleHome() {
             <Link
               key={index}
               href={link.href}
-              className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-gray-500 transform hover:-translate-y-1"
+              className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-emerald-500 transform hover:-translate-y-1"
             >
               <div className="p-6">
                 <div className={`${link.color} w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform`}>
                   {getIcon(link.icon)}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-gray-700">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600">
                   {link.title}
                 </h3>
                 <p className="text-gray-600 text-sm mb-4">{link.description}</p>
-                <div className="flex items-center text-gray-700 font-medium">
+                <div className="flex items-center text-emerald-600 font-medium">
                   进入功能
                   <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />

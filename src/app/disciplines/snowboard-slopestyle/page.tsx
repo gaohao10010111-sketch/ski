@@ -21,35 +21,35 @@ export default function SnowboardSlopestyleHome() {
       description: '查看分档积分排名',
       icon: 'chart',
       href: '/disciplines/snowboard-slopestyle/points',
-      color: 'bg-slate-600',
+      color: 'bg-sky-500',
     },
     {
       title: '分档积分计算器',
       description: '240/360/120分档计算',
       icon: 'calculator',
       href: '/disciplines/snowboard-slopestyle/calculator',
-      color: 'bg-cyan-600',
+      color: 'bg-blue-500',
     },
     {
       title: '赛事管理',
       description: '查看赛程和比赛结果',
       icon: 'trophy',
       href: '/disciplines/snowboard-slopestyle/competitions',
-      color: 'bg-slate-700',
+      color: 'bg-indigo-500',
     },
     {
       title: '运动员档案',
       description: '运动员信息和动作库',
       icon: 'user',
       href: '/disciplines/snowboard-slopestyle/athletes',
-      color: 'bg-cyan-700',
+      color: 'bg-sky-600',
     },
     {
       title: '在线报名',
       description: '参加单板坡面/大跳台赛事',
       icon: 'file',
       href: '/disciplines/snowboard-slopestyle/registration',
-      color: 'bg-slate-800',
+      color: 'bg-blue-600',
     },
     {
       title: '规则文档',
@@ -61,10 +61,10 @@ export default function SnowboardSlopestyleHome() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-cyan-50">
+    <div className="min-h-screen bg-gradient-to-br from-sky-50 to-blue-50">
 
       {/* 英雄区域 */}
-      <div className="relative bg-gradient-to-r from-slate-600 via-cyan-600 to-slate-500 text-white overflow-hidden">
+      <div className="relative bg-gradient-to-r from-sky-600 via-blue-500 to-indigo-600 text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -94,7 +94,7 @@ export default function SnowboardSlopestyleHome() {
 
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="currentColor" className="text-slate-50"/>
+            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="currentColor" className="text-sky-50"/>
           </svg>
         </div>
       </div>
@@ -109,17 +109,17 @@ export default function SnowboardSlopestyleHome() {
             <Link
               key={index}
               href={link.href}
-              className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-cyan-500 transform hover:-translate-y-1"
+              className="group bg-white rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border-2 border-transparent hover:border-blue-500 transform hover:-translate-y-1"
             >
               <div className="p-6">
                 <div className={`${link.color} w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform`}>
                   {getIcon(link.icon)}
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-cyan-700">
+                <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600">
                   {link.title}
                 </h3>
                 <p className="text-gray-600 text-sm mb-4">{link.description}</p>
-                <div className="flex items-center text-cyan-700 font-medium">
+                <div className="flex items-center text-blue-600 font-medium">
                   进入功能
                   <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
