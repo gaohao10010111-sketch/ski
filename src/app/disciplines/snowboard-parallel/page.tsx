@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { BarChart3, Calculator, Trophy, User, FileText, BookOpen, Mountain, Flag, Target } from 'lucide-react';
+import { useTranslation } from '@/contexts/LanguageContext';
 
 const getIcon = (iconType: string) => {
   const iconProps = { className: "h-8 w-8 text-white" };
@@ -15,6 +18,8 @@ const getIcon = (iconType: string) => {
 };
 
 export default function SnowboardParallelHome() {
+  const { t } = useTranslation();
+  
   const quickLinks = [
     {
       title: '积分排行榜',
@@ -75,18 +80,18 @@ export default function SnowboardParallelHome() {
               </svg>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              单板滑雪平行项目
+              {t.navigation.submenus.snowboardParallel}
             </h1>
-            <p className="text-xl text-gray-200 mb-8">Snowboard Parallel Events</p>
+            <p className="text-xl text-gray-200 mb-8">{t.snowboardParallel.subtitle}</p>
             <div className="flex flex-wrap items-center justify-center gap-3 mt-8 mb-12">
               <span className="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">
-                时间积分计算
+                {t.snowboardParallel.tags.timeBasedScoring}
               </span>
               <span className="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">
-                淘汰赛制
+                {t.snowboardParallel.tags.eliminationFormat}
               </span>
               <span className="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">
-                一对一对决
+                {t.snowboardParallel.tags.parallelEvents}
               </span>
             </div>
           </div>

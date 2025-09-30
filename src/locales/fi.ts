@@ -32,12 +32,13 @@ export const fi: TranslationKeys = {
   // Navigointi
   navigation: {
     title: 'Kiinalainen Hiihtopistejärjestelmä',
-    disciplines: 'Hiihtolajit',
-    points: 'Pistekeskus',
+    titleShort: 'CSPS',
+    disciplines: 'Lajit',
+    points: 'Pisteet',
     events: 'Kilpailut',
-    my: 'Oma Alue',
-    docs: 'Tietokanta',
-    about: 'Järjestelmästä',
+    my: 'Oma',
+    docs: 'Dokumentit',
+    about: 'Tietoa',
     
     // Alavalikot
     submenus: {

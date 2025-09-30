@@ -32,12 +32,13 @@ export const de: TranslationKeys = {
   // Navigation
   navigation: {
     title: 'Chinesisches Ski-Punktesystem',
-    disciplines: 'Ski-Disziplinen',
-    points: 'Punkte-Center',
-    events: 'Wettkämpfe',
-    my: 'Mein Bereich',
-    docs: 'Wissensdatenbank',
-    about: 'Über das System',
+    titleShort: 'CSPS',
+    disciplines: 'Disziplinen',
+    points: 'Punkte',
+    events: 'Events',
+    my: 'Mein',
+    docs: 'Docs',
+    about: 'Info',
     
     // Untermenüs
     submenus: {

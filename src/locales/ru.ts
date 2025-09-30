@@ -32,12 +32,13 @@ export const ru: TranslationKeys = {
   // Навигация
   navigation: {
     title: 'Китайская Система Очков в Лыжном Спорте',
-    disciplines: 'Лыжные Дисциплины',
-    points: 'Центр Очков',
-    events: 'Соревнования',
-    my: 'Мой Раздел',
-    docs: 'База Знаний',
-    about: 'О Системе',
+    titleShort: 'CSPS',
+    disciplines: 'Дисциплины',
+    points: 'Очки',
+    events: 'События',
+    my: 'Моё',
+    docs: 'Документы',
+    about: 'О нас',
     
     // Подменю
     submenus: {

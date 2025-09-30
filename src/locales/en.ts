@@ -32,12 +32,13 @@ export const en: TranslationKeys = {
   // Navigation
   navigation: {
     title: 'China Ski Points System',
-    disciplines: 'Ski Disciplines',
-    points: 'Points Center',
+    titleShort: 'CSPS',
+    disciplines: 'Disciplines',
+    points: 'Points',
     events: 'Events',
     my: 'My',
-    docs: 'Knowledge Base',
-    about: 'About System',
+    docs: 'Docs',
+    about: 'About',
     
     // Submenus
     submenus: {

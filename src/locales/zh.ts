@@ -30,19 +30,20 @@ export const zh = {
   // 导航
   navigation: {
     title: '中国滑雪积分系统',
-    disciplines: '滑雪项目',
-    points: '积分中心',
+    titleShort: 'CSPS',
+    disciplines: '项目',
+    points: '积分',
     events: '赛事',
     my: '我的',
     docs: '知识库',
-    about: '关于系统',
+    about: '关于',
     
     // 子菜单
     submenus: {
       // 滑雪项目
       alpine: '高山滑雪',
       snowboardSlopestyle: '单板坡面/大跳台', 
-      snowboardParallel: '单板平行项目',
+      snowboardParallel: '单板平行',
       freeskiSlopestyle: '自由式坡面/大跳台',
       
       // 积分中心
@@ -80,7 +81,7 @@ export const zh = {
     disciplines: '滑雪项目',
     alpine: '高山滑雪',
     snowboardSlopestyle: '单板坡面/大跳台',
-    snowboardParallel: '单板平行项目',
+    snowboardParallel: '单板平行',
     freeskiSlopestyle: '自由式坡面/大跳台',
     points: '积分中心',
     events: '赛事',

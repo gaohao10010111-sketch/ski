@@ -32,12 +32,13 @@ export const ko: TranslationKeys = {
   // 내비게이션
   navigation: {
     title: '중국 스키 포인트 시스템',
-    disciplines: '스키 종목',
-    points: '포인트 센터',
+    titleShort: 'CSPS',
+    disciplines: '종목',
+    points: '포인트',
     events: '대회',
-    my: '마이페이지',
-    docs: '지식 베이스',
-    about: '시스템 소개',
+    my: '마이',
+    docs: '자료',
+    about: '정보',
     
     // 서브메뉴
     submenus: {

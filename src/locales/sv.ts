@@ -32,12 +32,13 @@ export const sv: TranslationKeys = {
   // Navigation
   navigation: {
     title: 'Kinesiska Skidpoäng System',
-    disciplines: 'Skiddiscipliner',
-    points: 'Poängcenter',
+    titleShort: 'CSPS',
+    disciplines: 'Discipliner',
+    points: 'Poäng',
     events: 'Tävlingar',
-    my: 'Min Sida',
-    docs: 'Kunskapsbas',
-    about: 'Om Systemet',
+    my: 'Min',
+    docs: 'Dokument',
+    about: 'Om',
     
     // Undermenyer
     submenus: {

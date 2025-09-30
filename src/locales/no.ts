@@ -32,12 +32,13 @@ export const no: TranslationKeys = {
   // Navigasjon
   navigation: {
     title: 'Kinesisk Skipoeng System',
-    disciplines: 'Skidisipliner',
-    points: 'Poengsenter',
+    titleShort: 'CSPS',
+    disciplines: 'Disipliner',
+    points: 'Poeng',
     events: 'Konkurranser',
-    my: 'Min Side',
-    docs: 'Kunnskapsbase',
-    about: 'Om Systemet',
+    my: 'Min',
+    docs: 'Dokumenter',
+    about: 'Om',
     
     // Undermenyer
     submenus: {

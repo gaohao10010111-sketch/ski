@@ -32,12 +32,13 @@ export const ja: TranslationKeys = {
   // ナビゲーション
   navigation: {
     title: '中国スキーポイントシステム',
-    disciplines: 'スキー競技',
-    points: 'ポイントセンター',
+    titleShort: 'CSPS',
+    disciplines: '競技',
+    points: 'ポイント',
     events: '大会',
-    my: 'マイページ',
-    docs: 'ナレッジベース',
-    about: 'システムについて',
+    my: 'マイ',
+    docs: '資料',
+    about: '情報',
     
     // サブメニュー
     submenus: {

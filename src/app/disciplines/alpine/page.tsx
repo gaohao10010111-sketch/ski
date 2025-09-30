@@ -80,7 +80,7 @@ export default function AlpineSkiingHome() {
               </svg>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              {t.alpine.title}
+              {t.navigation.submenus.alpine}
             </h1>
             <p className="text-xl text-gray-200 mb-8">{t.alpine.subtitle}</p>
             <div className="flex flex-wrap items-center justify-center gap-3 mt-8 mb-12">

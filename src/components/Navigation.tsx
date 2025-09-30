@@ -34,7 +34,7 @@ export default function Navigation() {
   const pathname = usePathname()
   const router = useRouter()
   const { user, logout, isLoading, hasPermission, isAuthenticated } = useAuth()
-  const { t } = useTranslation()
+  const { t, language } = useTranslation()
 
   // Move navigationItems inside the component to access translations
   const navigationItems = [
@@ -162,9 +162,14 @@ export default function Navigation() {
             <Link href="/" className="flex items-center space-x-2">
               <Mountain className="h-8 w-8 text-ski-blue" />
               <span className="text-lg lg:text-xl font-bold text-ski-navy">
-                <span className="hidden xl:inline">{t.navigation.title}</span>
+                <span className="hidden xl:inline">
+                  {language === 'zh' ? t.navigation.title : t.navigation.titleShort}
+                </span>
                 <span className="xl:hidden">
-                  {t.navigation.title.length > 12 ? t.navigation.title.substring(0, 12) + '...' : t.navigation.title}
+                  {language === 'zh' 
+                    ? (t.navigation.title.length > 12 ? t.navigation.title.substring(0, 12) + '...' : t.navigation.title)
+                    : t.navigation.titleShort
+                  }
                 </span>
               </span>
             </Link>

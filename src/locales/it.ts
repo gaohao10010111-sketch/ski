@@ -32,12 +32,13 @@ export const it: TranslationKeys = {
   // Navigazione
   navigation: {
     title: 'Sistema Punti Sci Cinese',
-    disciplines: 'Discipline Sciistiche',
-    points: 'Centro Punti',
+    titleShort: 'CSPS',
+    disciplines: 'Discipline',
+    points: 'Punti',
     events: 'Competizioni',
-    my: 'La Mia Area',
-    docs: 'Base di Conoscenza',
-    about: 'Informazioni sul Sistema',
+    my: 'Mia',
+    docs: 'Docs',
+    about: 'Info',
     
     // Sottomenu
     submenus: {

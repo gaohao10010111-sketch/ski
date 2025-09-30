@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import { BarChart3, Calculator, Trophy, User, FileText, BookOpen, Mountain } from 'lucide-react';
+import { useTranslation } from '@/contexts/LanguageContext';
 
 const getIcon = (iconType: string) => {
   const iconProps = { className: "h-8 w-8 text-white" };
@@ -15,6 +18,8 @@ const getIcon = (iconType: string) => {
 };
 
 export default function SnowboardSlopestyleHome() {
+  const { t } = useTranslation();
+  
   const quickLinks = [
     {
       title: '积分排行榜',
@@ -75,18 +80,18 @@ export default function SnowboardSlopestyleHome() {
               </svg>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              单板坡面障碍技巧 & 大跳台
+              {t.navigation.submenus.snowboardSlopestyle}
             </h1>
-            <p className="text-xl text-gray-200 mb-8">Snowboard Slopestyle & Big Air</p>
+            <p className="text-xl text-gray-200 mb-8">{t.snowboardSlopestyle.subtitle}</p>
             <div className="flex flex-wrap items-center justify-center gap-3 mt-8 mb-12">
               <span className="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">
-                240/360/120分档
+                {t.snowboardSlopestyle.tags.pointsSystem}
               </span>
               <span className="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">
-                裁判评分制
+                {t.snowboardSlopestyle.tags.judgingSystem}
               </span>
               <span className="px-4 py-2 bg-white/20 rounded-full text-sm backdrop-blur-sm">
-                预赛/决赛轮次
+                {t.snowboardSlopestyle.tags.competitionFormat}
               </span>
             </div>
           </div>
