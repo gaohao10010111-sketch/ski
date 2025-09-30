@@ -34,7 +34,6 @@ const navigationItems = [
     resource: Resource.HOME,
     action: Action.READ,
     children: [
-      { name: '项目总览', href: '/disciplines', active: true, resource: Resource.HOME, action: Action.READ },
       { name: '高山滑雪', href: '/disciplines/alpine', active: true, resource: Resource.HOME, action: Action.READ },
       { name: '单板坡面/大跳台', href: '/disciplines/snowboard-slopestyle', active: true, resource: Resource.HOME, action: Action.READ },
       { name: '单板平行项目', href: '/disciplines/snowboard-parallel', active: true, resource: Resource.HOME, action: Action.READ },

@@ -65,7 +65,6 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'your-google-verification-code',
-    baidu: 'your-baidu-verification-code',
   },
 }
 

@@ -197,9 +197,9 @@ export default function AlpineSkiScoring() {
             <div className="space-y-3 text-sm">
               <div><strong>发布时间</strong>：每年6月中旬</div>
               <div><strong>2次及以上成绩</strong>：BL = (最好成绩 + 次好成绩) ÷ 2</div>
-              <div><strong>单一成绩</strong>：BL = 该成绩 × 1.20 (标记"+")</div>
-              <div><strong>无成绩</strong>：BL = 前BL × 1.50 (标记">")</div>
-              <div><strong>新运动员</strong>：首次成绩 × 1.30 (标记"N")</div>
+              <div><strong>单一成绩</strong>：BL = 该成绩 × 1.20 (标记&quot;+&quot;)</div>
+              <div><strong>无成绩</strong>：BL = 前BL × 1.50 (标记&quot;&gt;&quot;)</div>
+              <div><strong>新运动员</strong>：首次成绩 × 1.30 (标记&quot;N&quot;)</div>
             </div>
           </div>
 

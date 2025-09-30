@@ -1,46 +1,60 @@
 import Link from 'next/link';
+import { BarChart3, Calculator, Trophy, User, FileText, BookOpen } from 'lucide-react';
+
+const getIcon = (iconType: string) => {
+  const iconProps = { className: "h-8 w-8" };
+  switch (iconType) {
+    case 'chart': return <BarChart3 {...iconProps} />;
+    case 'calculator': return <Calculator {...iconProps} />;
+    case 'trophy': return <Trophy {...iconProps} />;
+    case 'user': return <User {...iconProps} />;
+    case 'file': return <FileText {...iconProps} />;
+    case 'book': return <BookOpen {...iconProps} />;
+    default: return <BarChart3 {...iconProps} />;
+  }
+};
 
 export default function AlpineSkiingHome() {
   const quickLinks = [
     {
       title: '积分排行榜',
       description: '查看当前赛季积分排名',
-      icon: '📊',
+      icon: 'chart',
       href: '/disciplines/alpine/points',
       color: 'bg-blue-500',
     },
     {
       title: '积分计算器',
       description: 'v4.0公式实时计算积分',
-      icon: '🧮',
+      icon: 'calculator',
       href: '/disciplines/alpine/calculator',
       color: 'bg-cyan-500',
     },
     {
       title: '赛事管理',
       description: '查看赛程和比赛结果',
-      icon: '🏆',
+      icon: 'trophy',
       href: '/disciplines/alpine/competitions',
       color: 'bg-indigo-500',
     },
     {
       title: '运动员档案',
       description: '运动员信息和成绩查询',
-      icon: '👤',
+      icon: 'user',
       href: '/disciplines/alpine/athletes',
       color: 'bg-purple-500',
     },
     {
       title: '在线报名',
       description: '参加高山滑雪赛事',
-      icon: '📝',
+      icon: 'file',
       href: '/disciplines/alpine/registration',
       color: 'bg-blue-600',
     },
     {
       title: '规则文档',
       description: '高山滑雪竞赛规则',
-      icon: '📖',
+      icon: 'book',
       href: '/disciplines/alpine/rules',
       color: 'bg-slate-600',
     },
@@ -70,21 +84,21 @@ export default function AlpineSkiingHome() {
               href="/disciplines/snowboard-slopestyle"
               className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gradient-to-r hover:from-orange-400 hover:to-amber-400 hover:text-white transition-all duration-300 flex-shrink-0"
             >
-              <span className="text-lg">🏂</span>
+              <span className="text-lg">SB</span>
               <span>单板坡面/大跳台</span>
             </Link>
             <Link
               href="/disciplines/snowboard-parallel"
               className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:text-white transition-all duration-300 flex-shrink-0"
             >
-              <span className="text-lg">🏂</span>
+              <span className="text-lg">SB</span>
               <span>单板平行</span>
             </Link>
             <Link
               href="/disciplines/freeski-slopestyle"
               className="flex items-center space-x-1 px-3 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gradient-to-r hover:from-red-500 hover:to-rose-500 hover:text-white transition-all duration-300 flex-shrink-0"
             >
-              <span className="text-lg">🎿</span>
+              <span className="text-lg">FS</span>
               <span>自由式坡面/大跳台</span>
             </Link>
           </div>
@@ -138,7 +152,7 @@ export default function AlpineSkiingHome() {
             >
               <div className="p-6">
                 <div className={`${link.color} w-16 h-16 rounded-xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform`}>
-                  {link.icon}
+                  {getIcon(link.icon)}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600">
                   {link.title}
@@ -158,7 +172,7 @@ export default function AlpineSkiingHome() {
         {/* 积分规则说明 */}
         <div className="mt-12 bg-white rounded-2xl shadow-lg p-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-6">
-            📐 高山滑雪积分规则 (v4.0)
+            高山滑雪积分规则 (v4.0)
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>

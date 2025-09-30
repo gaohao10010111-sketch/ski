@@ -197,19 +197,35 @@ export default function HomePage() {
                 <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 leading-relaxed font-medium">
                   权威·专业·精准的中国滑雪运动积分管理平台
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 text-sm md:text-base lg:text-lg">
-                  <div className="flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20">
-                    <div className="w-3 h-3 bg-ski-blue rounded-full mr-3 flex-shrink-0"></div>
-                    <span className="text-white font-medium whitespace-nowrap">专业积分体系</span>
-                  </div>
-                  <div className="flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20">
-                    <div className="w-3 h-3 bg-green-400 rounded-full mr-3 flex-shrink-0"></div>
-                    <span className="text-white font-medium whitespace-nowrap">冬运中心官方认证</span>
-                  </div>
-                  <div className="flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20">
-                    <div className="w-3 h-3 bg-yellow-400 rounded-full mr-3 flex-shrink-0"></div>
-                    <span className="text-white font-medium whitespace-nowrap">U系列·大众赛事</span>
-                  </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4 text-sm md:text-base lg:text-lg">
+                  <Link
+                    href="/disciplines/alpine"
+                    className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 hover:bg-gradient-to-r hover:from-blue-500/80 hover:to-cyan-500/80 transition-all duration-300 group transform hover:scale-105"
+                  >
+                    <div className="w-3 h-3 bg-ski-blue rounded-full mb-2 flex-shrink-0"></div>
+                    <span className="text-white font-medium whitespace-nowrap text-xs">高山滑雪</span>
+                  </Link>
+                  <Link
+                    href="/disciplines/snowboard-slopestyle"
+                    className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 hover:bg-gradient-to-r hover:from-orange-400/80 hover:to-amber-400/80 transition-all duration-300 group transform hover:scale-105"
+                  >
+                    <div className="w-3 h-3 bg-orange-400 rounded-full mb-2 flex-shrink-0"></div>
+                    <span className="text-white font-medium whitespace-nowrap text-xs">单板坡面/大跳台</span>
+                  </Link>
+                  <Link
+                    href="/disciplines/snowboard-parallel"
+                    className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 hover:bg-gradient-to-r hover:from-purple-500/80 hover:to-pink-500/80 transition-all duration-300 group transform hover:scale-105"
+                  >
+                    <div className="w-3 h-3 bg-purple-400 rounded-full mb-2 flex-shrink-0"></div>
+                    <span className="text-white font-medium whitespace-nowrap text-xs">单板平行</span>
+                  </Link>
+                  <Link
+                    href="/disciplines/freeski-slopestyle"
+                    className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 hover:bg-gradient-to-r hover:from-red-500/80 hover:to-rose-500/80 transition-all duration-300 group transform hover:scale-105"
+                  >
+                    <div className="w-3 h-3 bg-red-400 rounded-full mb-2 flex-shrink-0"></div>
+                    <span className="text-white font-medium whitespace-nowrap text-xs">自由式坡面/大跳台</span>
+                  </Link>
                 </div>
 
                 {/* 平台介绍引导 */}
@@ -234,40 +250,8 @@ export default function HomePage() {
                       </Link>
                     </div>
                     
-                    {/* 四大项目快速入口 */}
-                    <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
-                      <Link
-                        href="/disciplines/alpine"
-                        className="flex flex-col items-center justify-center px-4 py-3 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 hover:bg-gradient-to-r hover:from-blue-500/80 hover:to-cyan-500/80 transition-all duration-300 group transform hover:scale-105"
-                      >
-                        <span className="text-2xl mb-1">⛷️</span>
-                        <span className="text-white text-xs font-medium">高山滑雪</span>
-                      </Link>
-                      <Link
-                        href="/disciplines/snowboard-slopestyle"
-                        className="flex flex-col items-center justify-center px-4 py-3 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 hover:bg-gradient-to-r hover:from-orange-400/80 hover:to-amber-400/80 transition-all duration-300 group transform hover:scale-105"
-                      >
-                        <span className="text-2xl mb-1">🏂</span>
-                        <span className="text-white text-xs font-medium">单板坡面/大跳台</span>
-                      </Link>
-                      <Link
-                        href="/disciplines/snowboard-parallel"
-                        className="flex flex-col items-center justify-center px-4 py-3 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 hover:bg-gradient-to-r hover:from-purple-500/80 hover:to-pink-500/80 transition-all duration-300 group transform hover:scale-105"
-                      >
-                        <span className="text-2xl mb-1">🏂</span>
-                        <span className="text-white text-xs font-medium">单板平行</span>
-                      </Link>
-                      <Link
-                        href="/disciplines/freeski-slopestyle"
-                        className="flex flex-col items-center justify-center px-4 py-3 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 hover:bg-gradient-to-r hover:from-red-500/80 hover:to-rose-500/80 transition-all duration-300 group transform hover:scale-105"
-                      >
-                        <span className="text-2xl mb-1">🎿</span>
-                        <span className="text-white text-xs font-medium">自由式坡面/大跳台</span>
-                      </Link>
-                    </div>
-                    
                     <p className="text-gray-300 text-sm mt-4">
-                      🏆 专业运动员、教练员、赛事组织者的首选平台 • 国家体育总局认证标准
+                      专业运动员、教练员、赛事组织者的首选平台 • 国家体育总局认证标准
                     </p>
                   </div>
                 )}

@@ -49,7 +49,7 @@ export default function Breadcrumb() {
   }
 
   // 生成面包屑路径
-  const pathSegments = pathname.split('/').filter(Boolean)
+  const pathSegments = pathname?.split('/').filter(Boolean) || []
   const breadcrumbs = pathSegments.map((_, index) => {
     const path = pathSegments.slice(0, index + 1).join('/')
     return {

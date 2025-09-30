@@ -1,4 +1,19 @@
 import Link from 'next/link';
+import { Mountain, Award, BarChart3, Target, RotateCcw } from 'lucide-react';
+
+const getIconComponent = (iconType: string) => {
+  const iconProps = { className: "w-12 h-12 text-white" };
+  switch (iconType) {
+    case 'alpine':
+      return <Mountain {...iconProps} />;
+    case 'snowboard':
+      return <Mountain {...iconProps} />;
+    case 'freeski':
+      return <Mountain {...iconProps} />;
+    default:
+      return <Mountain {...iconProps} />;
+  }
+};
 
 export default function DisciplinesOverview() {
   const disciplines = [
@@ -6,7 +21,7 @@ export default function DisciplinesOverview() {
       id: 'alpine',
       name: '高山滑雪',
       nameEn: 'Alpine Skiing',
-      icon: '⛷️',
+      icon: 'alpine',
       color: 'from-blue-600 to-cyan-600',
       description: 'v4.0时间基础积分计算 | A/B/C三级赛事系数',
       features: ['速降', '回转', '大回转', '超级大回转', '全能'],
@@ -15,7 +30,7 @@ export default function DisciplinesOverview() {
       id: 'snowboard-slopestyle',
       name: '单板坡面障碍技巧 & 大跳台',
       nameEn: 'Snowboard Slopestyle & Big Air',
-      icon: '🏂',
+      icon: 'snowboard',
       color: 'from-orange-600 to-yellow-600',
       description: '240/360/120分档积分 | 裁判评分转排名',
       features: ['坡面障碍技巧', '大跳台', 'U型场地'],
@@ -24,7 +39,7 @@ export default function DisciplinesOverview() {
       id: 'snowboard-parallel',
       name: '单板滑雪平行项目',
       nameEn: 'Snowboard Parallel',
-      icon: '🏂',
+      icon: 'snowboard',
       color: 'from-purple-600 to-pink-600',
       description: '竞速时间积分 | 淘汰赛制',
       features: ['平行大回转(PGS)', '平行回转(PSL)'],
@@ -33,7 +48,7 @@ export default function DisciplinesOverview() {
       id: 'freeski-slopestyle',
       name: '自由式滑雪坡面障碍技巧 & 大跳台',
       nameEn: 'Freeski Slopestyle & Big Air',
-      icon: '🎿',
+      icon: 'freeski',
       color: 'from-red-600 to-rose-600',
       description: '240/360/120分档积分 | 技巧难度系数',
       features: ['坡面障碍技巧', '大跳台', '空中技巧'],
@@ -59,7 +74,7 @@ export default function DisciplinesOverview() {
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            🎿 中国滑雪积分系统
+中国滑雪积分系统
           </h1>
           <p className="text-xl text-center text-blue-200">
             四大项目独立积分体系 | 专业赛事管理平台
@@ -124,7 +139,7 @@ export default function DisciplinesOverview() {
                 <div className={`bg-gradient-to-r ${discipline.color} p-6 text-white`}>
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-5xl mb-2">{discipline.icon}</div>
+                      <div className="mb-2">{getIconComponent(discipline.icon)}</div>
                       <h2 className="text-2xl font-bold mb-1">{discipline.name}</h2>
                       <p className="text-sm opacity-90">{discipline.nameEn}</p>
                     </div>
@@ -170,22 +185,30 @@ export default function DisciplinesOverview() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="text-4xl mb-2">🏅</div>
+              <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                <Award className="h-6 w-6 text-yellow-600" />
+              </div>
               <h4 className="font-bold text-gray-900 mb-2">独立积分体系</h4>
               <p className="text-sm text-gray-600">四个项目独立排名和统计</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl mb-2">📊</div>
+              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                <BarChart3 className="h-6 w-6 text-blue-600" />
+              </div>
               <h4 className="font-bold text-gray-900 mb-2">实时积分计算</h4>
               <p className="text-sm text-gray-600">比赛结束后自动更新积分</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl mb-2">🎯</div>
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                <Target className="h-6 w-6 text-green-600" />
+              </div>
               <h4 className="font-bold text-gray-900 mb-2">U系列管理</h4>
               <p className="text-sm text-gray-600">U12/U15/U18青少年分组</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl mb-2">🔄</div>
+              <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                <RotateCcw className="h-6 w-6 text-purple-600" />
+              </div>
               <h4 className="font-bold text-gray-900 mb-2">积分延续机制</h4>
               <p className="text-sm text-gray-600">赛季结束后×50%基础积分</p>
             </div>

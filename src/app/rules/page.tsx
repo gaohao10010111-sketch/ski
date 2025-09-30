@@ -341,7 +341,7 @@ export default function RulesMainPage() {
         <h3 className="text-lg font-semibold text-blue-800 mb-4">重要提示</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-blue-700">
           <div>
-            <h4 className="font-semibold mb-2">📋 规则版本</h4>
+            <h4 className="font-semibold mb-2">规则版本</h4>
             <ul className="space-y-1">
               <li>• 当前版本：（最新）</li>
               <li>• 实施日期：2024-2025赛季</li>
@@ -350,7 +350,7 @@ export default function RulesMainPage() {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-2">🔧 使用指南</h4>
+            <h4 className="font-semibold mb-2">使用指南</h4>
             <ul className="space-y-1">
               <li>• 建议从积分规则开始了解</li>
               <li>• 使用在线计算器验证计算</li>
@@ -361,7 +361,7 @@ export default function RulesMainPage() {
         </div>
         <div className="mt-6 p-4 bg-blue-100 rounded-lg">
           <p className="text-blue-800 text-sm">
-            <strong>🚀 技术支持：</strong>
+            <strong>技术支持：</strong>
             本规则体系基于国际先进经验，结合中国实际情况制定，旨在为中国高山滑雪运动发展提供科学、公平、高效的规则支撑。
             如有疑问或建议，请通过相关渠道联系我们。
           </p>

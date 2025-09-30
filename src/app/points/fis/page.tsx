@@ -217,11 +217,16 @@ export default function FISPointsQueryPage() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                       <div className="flex items-center">
                         <Trophy className="h-4 w-4 text-yellow-500 mr-2" />
-                        <span>最佳项目: {getDisciplineName(
-                          Object.entries(athlete.disciplines).reduce((best, [discipline, data]) =>
-                            data.rank < athlete.disciplines[best as keyof typeof athlete.disciplines].rank ? discipline : best
-                          )[0]
-                        )}</span>
+                        <span>最佳项目: {(() => {
+                          const entries = Object.entries(athlete.disciplines);
+                          if (entries.length === 0) return '无';
+                          const bestEntry = entries.reduce((bestEntry, [discipline, data]) => {
+                            const [bestDiscipline] = bestEntry;
+                            const bestData = athlete.disciplines[bestDiscipline as keyof typeof athlete.disciplines];
+                            return bestData && data.rank < bestData.rank ? [discipline, data] : bestEntry;
+                          });
+                          return getDisciplineName(bestEntry[0] as 'GS' | 'DH' | 'SL' | 'SG');
+                        })()}</span>
                       </div>
                       <div className="flex items-center">
                         <BarChart3 className="h-4 w-4 text-blue-500 mr-2" />
