@@ -62,17 +62,17 @@ export default function GlobalNavigation() {
   // 纯平台级功能，不涉及具体业务内容，无下拉菜单保持简洁
   const globalMenuItems = [
     {
-      name: '关于系统',
+      name: '系统介绍',
       href: '/about',
       icon: Info
     },
     {
-      name: '规则中心',
+      name: '规则文档',
       href: '/rules',
       icon: FileText
     },
     {
-      name: '会员中心',
+      name: '个人中心',
       href: '/profile',
       icon: User
     }
@@ -101,18 +101,18 @@ export default function GlobalNavigation() {
     { name: '运动员', href: '/athletes', icon: Users },
     // More下拉 - 中低频功能 (8项)
     {
-      name: '更多',
+      name: '更多功能',
       href: '#',
       icon: Menu,
       children: [
         { name: '积分排名', href: '/points/rankings' },
-        { name: '积分计算器', href: '/points/calculator' },
+        { name: '积分计算', href: '/points/calculator' },
         { name: '积分趋势', href: '/points/trends' },
         { name: '成绩查询', href: '/results-query' },
-        { name: '报名管理', href: '/registration/online' },
-        { name: '比赛统计', href: '/competitions/stats' },
-        { name: '成绩导入', href: '/results-import' },
-        { name: '成绩公布', href: '/results-announcement' }
+        { name: '赛事报名', href: '/registration/online' },
+        { name: '数据统计', href: '/competitions/stats' },
+        { name: '成绩录入', href: '/results-import' },
+        { name: '成绩发布', href: '/results-announcement' }
       ]
     }
   ];

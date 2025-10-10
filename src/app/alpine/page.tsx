@@ -47,12 +47,12 @@ export default function AlpinePage() {
 
   // 功能快捷入口
   const quickAccess = [
-    { title: '最新成绩', nameEn: 'Results', icon: Trophy, href: '/alpine/events/results', color: 'from-blue-500 to-blue-600' },
-    { title: '积分排名', nameEn: 'Ranking', icon: BarChart3, href: '/alpine/points/rankings', color: 'from-green-500 to-green-600' },
+    { title: '赛事成绩', nameEn: 'Results', icon: Trophy, href: '/alpine/events/results', color: 'from-blue-500 to-blue-600' },
+    { title: '积分排名', nameEn: 'Rankings', icon: BarChart3, href: '/alpine/points/rankings', color: 'from-green-500 to-green-600' },
     { title: '赛事日历', nameEn: 'Calendar', icon: Calendar, href: '/alpine/events/schedule', color: 'from-purple-500 to-purple-600' },
-    { title: '精彩视频', nameEn: 'Videos', icon: Video, href: '#videos', color: 'from-red-500 to-red-600' },
-    { title: '运动员', nameEn: 'Athletes', icon: Users, href: '/alpine/athletes/list', color: 'from-indigo-500 to-indigo-600' },
-    { title: '规则文档', nameEn: 'News', icon: FileText, href: '/alpine/docs/points-rules', color: 'from-cyan-500 to-cyan-600' }
+    { title: '视频中心', nameEn: 'Videos', icon: Video, href: '#videos', color: 'from-red-500 to-red-600' },
+    { title: '运动员名录', nameEn: 'Athletes', icon: Users, href: '/alpine/athletes/list', color: 'from-indigo-500 to-indigo-600' },
+    { title: '规则文档', nameEn: 'Documents', icon: FileText, href: '/alpine/docs/points-rules', color: 'from-cyan-500 to-cyan-600' }
   ];
 
   // 即将进行的比赛
@@ -175,7 +175,7 @@ export default function AlpinePage() {
                 href={heroSlides[currentSlide].link}
                 className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
               >
-                了解更多
+                查看详情
               </Link>
             </div>
           </div>
@@ -282,7 +282,7 @@ export default function AlpinePage() {
                       </h4>
                       <p className="text-sm text-gray-600">{news.subtitle}</p>
                       <button className="text-sm text-blue-600 hover:text-blue-700 mt-2 inline-flex items-center">
-                        继续阅读 <ExternalLink className="w-3 h-3 ml-1" />
+                        阅读全文 <ExternalLink className="w-3 h-3 ml-1" />
                       </button>
                     </div>
                   </div>

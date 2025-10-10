@@ -44,12 +44,12 @@ export default function SnowboardSlopestylePage() {
 
   // 功能快捷入口
   const quickAccess = [
-    { title: '最新成绩', nameEn: 'Results', icon: Trophy, href: '/snowboard-slopestyle/events/results', color: 'from-purple-500 to-purple-600' },
-    { title: '积分排名', nameEn: 'Ranking', icon: BarChart3, href: '/snowboard-slopestyle/points/rankings', color: 'from-pink-500 to-pink-600' },
+    { title: '赛事成绩', nameEn: 'Results', icon: Trophy, href: '/snowboard-slopestyle/events/results', color: 'from-purple-500 to-purple-600' },
+    { title: '积分排名', nameEn: 'Rankings', icon: BarChart3, href: '/snowboard-slopestyle/points/rankings', color: 'from-pink-500 to-pink-600' },
     { title: '赛事日历', nameEn: 'Calendar', icon: Calendar, href: '/snowboard-slopestyle/events/schedule', color: 'from-violet-500 to-violet-600' },
-    { title: '精彩视频', nameEn: 'Videos', icon: Video, href: '#videos', color: 'from-fuchsia-500 to-fuchsia-600' },
-    { title: '运动员', nameEn: 'Athletes', icon: Users, href: '/snowboard-slopestyle/athletes/list', color: 'from-indigo-500 to-indigo-600' },
-    { title: '规则文档', nameEn: 'Rules', icon: FileText, href: '/snowboard-slopestyle/docs/points-rules', color: 'from-purple-400 to-purple-500' }
+    { title: '视频中心', nameEn: 'Videos', icon: Video, href: '#videos', color: 'from-fuchsia-500 to-fuchsia-600' },
+    { title: '运动员名录', nameEn: 'Athletes', icon: Users, href: '/snowboard-slopestyle/athletes/list', color: 'from-indigo-500 to-indigo-600' },
+    { title: '规则文档', nameEn: 'Documents', icon: FileText, href: '/snowboard-slopestyle/docs/points-rules', color: 'from-purple-400 to-purple-500' }
   ];
 
   // 即将进行的比赛
@@ -172,7 +172,7 @@ export default function SnowboardSlopestylePage() {
                 href={heroSlides[currentSlide].link}
                 className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-medium"
               >
-                了解更多
+                查看详情
               </Link>
             </div>
           </div>
@@ -279,7 +279,7 @@ export default function SnowboardSlopestylePage() {
                       </h4>
                       <p className="text-sm text-gray-600">{news.subtitle}</p>
                       <button className="text-sm text-purple-600 hover:text-purple-700 mt-2 inline-flex items-center">
-                        继续阅读 <ExternalLink className="w-3 h-3 ml-1" />
+                        阅读全文 <ExternalLink className="w-3 h-3 ml-1" />
                       </button>
                     </div>
                   </div>
