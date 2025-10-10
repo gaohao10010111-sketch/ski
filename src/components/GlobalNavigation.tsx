@@ -61,12 +61,6 @@ export default function GlobalNavigation() {
   // 纯平台级功能，不涉及具体业务内容，无下拉菜单保持简洁
   const globalMenuItems = [
     {
-      name: t.navigation?.disciplines || '项目',
-      href: '/scoring-systems',  // 项目总览页面
-      icon: Mountain,
-      highlighted: true
-    },
-    {
       name: '关于系统',
       href: '/about',
       icon: Info
@@ -128,12 +122,12 @@ export default function GlobalNavigation() {
       <nav className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px]">
           <div className="flex justify-between h-14">
-            {/* Logo - 简化标题，节省空间 */}
+            {/* Logo */}
             <div className="flex items-center">
               <Link href="/" className="flex items-center space-x-2 hover:opacity-90 transition-opacity">
                 <Mountain className="h-6 w-6 text-ski-blue" />
                 <span className="text-base lg:text-lg font-bold text-ski-navy">
-                  {language === 'zh' ? '滑雪积分系统' : 'Ski Points'}
+                  {language === 'zh' ? '中国滑雪积分系统' : 'China Ski Points'}
                 </span>
               </Link>
             </div>
@@ -244,7 +238,7 @@ export default function GlobalNavigation() {
       {/* 第二行 - 功能导航栏 */}
       <nav className="bg-gray-50 border-b border-gray-200 sticky top-14 z-40">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px]">
-          <div className="hidden md:flex items-center space-x-2 h-10 overflow-x-auto scrollbar-hide">
+          <div className="hidden md:flex items-center justify-end space-x-2 h-10 overflow-x-auto scrollbar-hide">
             {secondaryMenuItems.map((item) => {
               const isActive = pathname === item.href || (item.href !== '#' && pathname?.startsWith(item.href));
               const isOpen = activeDropdown === `secondary-${item.name}`;
@@ -253,17 +247,16 @@ export default function GlobalNavigation() {
               const Icon = (item as any).icon;
 
               return (
-                <div key={item.name} className="relative">
+                <div
+                  key={item.name}
+                  className="relative"
+                  onMouseEnter={() => hasChildren && setActiveDropdown(`secondary-${item.name}`)}
+                  onMouseLeave={() => hasChildren && setActiveDropdown(null)}
+                >
                   {hasChildren ? (
                     // 有子菜单的按钮
                     <>
                       <button
-                        onClick={() => setActiveDropdown(isOpen ? null : `secondary-${item.name}`)}
-                        onBlur={(e) => {
-                          if (!e.currentTarget.contains(e.relatedTarget as Node)) {
-                            setTimeout(() => setActiveDropdown(null), 200);
-                          }
-                        }}
                         className={`flex items-center gap-1 px-3 py-1.5 rounded text-xs font-semibold transition-colors whitespace-nowrap ${
                           isHighlighted
                             ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-sm'
