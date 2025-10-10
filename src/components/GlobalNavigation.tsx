@@ -132,93 +132,96 @@ export default function GlobalNavigation() {
               </Link>
             </div>
 
-            {/* Desktop Global Menu */}
-            <div className="hidden md:flex items-center space-x-2">
-              {globalMenuItems.map((item) => {
-                const isActive = pathname?.startsWith(item.href) && item.href !== '#';
-                const isHighlighted = (item as any).highlighted;
-                const Icon = (item as any).icon;
+            {/* 右侧区域：导航菜单 + Auth & Language */}
+            <div className="hidden md:flex items-center space-x-4">
+              {/* Desktop Global Menu */}
+              <div className="flex items-center space-x-2">
+                {globalMenuItems.map((item) => {
+                  const isActive = pathname?.startsWith(item.href) && item.href !== '#';
+                  const isHighlighted = (item as any).highlighted;
+                  const Icon = (item as any).icon;
 
-                return (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className={`flex items-center gap-1.5 px-4 py-2 rounded text-sm font-medium transition-colors ${
-                      isHighlighted
-                        ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-sm'
-                        : isActive
-                        ? 'text-blue-600 bg-blue-50'
-                        : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-                    }`}
-                  >
-                    {Icon && <Icon className="w-3.5 h-3.5" />}
-                    <span>{item.name}</span>
-                  </Link>
-                );
-              })}
-            </div>
+                  return (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className={`flex items-center gap-1.5 px-4 py-2 rounded text-sm font-medium transition-colors ${
+                        isHighlighted
+                          ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-sm'
+                          : isActive
+                          ? 'text-blue-600 bg-blue-50'
+                          : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                      }`}
+                    >
+                      {Icon && <Icon className="w-3.5 h-3.5" />}
+                      <span>{item.name}</span>
+                    </Link>
+                  );
+                })}
+              </div>
 
-            {/* Auth & Language - 优化图标使用 */}
-            <div className="hidden md:flex items-center space-x-2 whitespace-nowrap">
-              <LanguageSwitcher />
-              {isLoading ? (
-                <div className="animate-pulse bg-gray-200 h-7 w-16 rounded"></div>
-              ) : user ? (
-                <div className="relative">
-                  <button
-                    onClick={() => setUserMenuOpen(!userMenuOpen)}
-                    className="flex items-center space-x-1.5 text-gray-700 hover:text-ski-blue px-2.5 py-1.5 rounded text-sm font-medium"
-                  >
-                    <User className="w-4 h-4" />
-                    <span className="text-sm max-w-[100px] truncate">{user.username}</span>
-                    <ChevronDown className="h-3.5 w-3.5" />
-                  </button>
+              {/* Auth & Language */}
+              <div className="flex items-center space-x-2 whitespace-nowrap">
+                <LanguageSwitcher />
+                {isLoading ? (
+                  <div className="animate-pulse bg-gray-200 h-7 w-16 rounded"></div>
+                ) : user ? (
+                  <div className="relative">
+                    <button
+                      onClick={() => setUserMenuOpen(!userMenuOpen)}
+                      className="flex items-center space-x-1.5 text-gray-700 hover:text-ski-blue px-2.5 py-1.5 rounded text-sm font-medium"
+                    >
+                      <User className="w-4 h-4" />
+                      <span className="text-sm max-w-[100px] truncate">{user.username}</span>
+                      <ChevronDown className="h-3.5 w-3.5" />
+                    </button>
 
-                  {userMenuOpen && (
-                    <div className="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-100 py-1 z-50">
-                      <div className="px-4 py-2 border-b border-gray-100">
-                        <div className="text-sm font-medium text-gray-900">{user.username}</div>
-                        <div className="text-xs text-gray-500 truncate">{user.email}</div>
-                        <div className="text-xs text-ski-blue">{getRoleDisplayName(user.role)}</div>
+                    {userMenuOpen && (
+                      <div className="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-100 py-1 z-50">
+                        <div className="px-4 py-2 border-b border-gray-100">
+                          <div className="text-sm font-medium text-gray-900">{user.username}</div>
+                          <div className="text-xs text-gray-500 truncate">{user.email}</div>
+                          <div className="text-xs text-ski-blue">{getRoleDisplayName(user.role)}</div>
+                        </div>
+                        <Link
+                          href="/profile"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                          onClick={() => setUserMenuOpen(false)}
+                        >
+                          <div className="flex items-center">
+                            <Settings className="h-4 w-4 mr-2" />
+                            {t.common?.profile || '个人设置'}
+                          </div>
+                        </Link>
+                        <button
+                          onClick={handleLogout}
+                          className="block w-full px-4 py-2 text-sm text-left text-red-600 hover:bg-red-50"
+                        >
+                          <div className="flex items-center">
+                            <LogOut className="h-4 w-4 mr-2" />
+                            {t.common?.logout || '退出登录'}
+                          </div>
+                        </button>
                       </div>
-                      <Link
-                        href="/profile"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                        onClick={() => setUserMenuOpen(false)}
-                      >
-                        <div className="flex items-center">
-                          <Settings className="h-4 w-4 mr-2" />
-                          {t.common?.profile || '个人设置'}
-                        </div>
-                      </Link>
-                      <button
-                        onClick={handleLogout}
-                        className="block w-full px-4 py-2 text-sm text-left text-red-600 hover:bg-red-50"
-                      >
-                        <div className="flex items-center">
-                          <LogOut className="h-4 w-4 mr-2" />
-                          {t.common?.logout || '退出登录'}
-                        </div>
-                      </button>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <>
-                  <Link
-                    href="/login"
-                    className="text-gray-700 hover:text-ski-blue px-2.5 py-1.5 rounded text-sm font-medium whitespace-nowrap transition-colors"
-                  >
-                    {t.common?.login || '登录'}
-                  </Link>
-                  <Link
-                    href="/register"
-                    className="bg-ski-blue text-white hover:bg-ski-blue/90 px-3 py-1.5 rounded text-sm font-medium whitespace-nowrap transition-colors"
-                  >
-                    {t.common?.register || '注册'}
-                  </Link>
-                </>
-              )}
+                    )}
+                  </div>
+                ) : (
+                  <>
+                    <Link
+                      href="/login"
+                      className="text-gray-700 hover:text-ski-blue px-2.5 py-1.5 rounded text-sm font-medium whitespace-nowrap transition-colors"
+                    >
+                      {t.common?.login || '登录'}
+                    </Link>
+                    <Link
+                      href="/register"
+                      className="bg-ski-blue text-white hover:bg-ski-blue/90 px-3 py-1.5 rounded text-sm font-medium whitespace-nowrap transition-colors"
+                    >
+                      {t.common?.register || '注册'}
+                    </Link>
+                  </>
+                )}
+              </div>
             </div>
 
             {/* Mobile menu button */}
