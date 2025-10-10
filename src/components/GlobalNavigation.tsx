@@ -17,7 +17,6 @@ import {
 import { useAuth } from '@/contexts/AuthContext';
 import { useTranslation } from '@/contexts/LanguageContext';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
-import DisciplineSwitcher from '@/components/DisciplineSwitcher';
 
 export default function GlobalNavigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -44,29 +43,48 @@ export default function GlobalNavigation() {
     return roleMap[role] || '用户';
   };
 
-  // 项目配置（用于下拉菜单）
-  const disciplines = [
-    { name: t.navigation?.alpine || '高山滑雪', href: '/alpine', color: 'text-blue-600' },
-    { name: t.navigation?.snowboardSlopestyle || '单板坡面障碍技巧', href: '/snowboard-slopestyle', color: 'text-purple-600' },
-    { name: t.navigation?.snowboardParallel || '单板平行项目', href: '/snowboard-parallel', color: 'text-indigo-600' },
-    { name: t.navigation?.freestyleSlopestyle || '自由式坡面障碍技巧', href: '/freestyle-slopestyle', color: 'text-cyan-600' }
-  ];
-
-  // 判断当前是否在项目页面内
-  const currentDiscipline = disciplines.find(d => pathname?.startsWith(d.href));
-
-  // 全局菜单项（跨项目功能）
+  // 全局菜单项（参考FIS风格，项目单独列出 + 更多功能）
   const globalMenuItems = [
+    // 四大项目 - 单独列出，重要性高
     {
-      name: t.navigation?.disciplines || '项目',
-      href: '#',
-      icon: Mountain,
-      children: disciplines.map(d => ({ name: d.name, href: d.href }))
+      name: t.navigation?.alpine || '高山滑雪',
+      href: '/alpine'
+    },
+    {
+      name: t.navigation?.snowboardSlopestyle || '单板坡障',
+      href: '/snowboard-slopestyle'
+    },
+    {
+      name: t.navigation?.snowboardParallel || '单板平行',
+      href: '/snowboard-parallel'
+    },
+    {
+      name: t.navigation?.freestyleSlopestyle || '自由式坡障',
+      href: '/freestyle-slopestyle'
+    },
+    // 功能菜单
+    {
+      name: '赛事',
+      href: '/competitions',
+      children: [
+        { name: '赛程日历', href: '/competitions/schedule' },
+        { name: '在线报名', href: '/registration/online' },
+        { name: '成绩查询', href: '/results-query' },
+        { name: '比赛统计', href: '/competitions/stats' }
+      ]
+    },
+    {
+      name: '运动员',
+      href: '/athletes',
+      children: [
+        { name: '运动员管理', href: '/athletes' },
+        { name: '积分排名', href: '/points/rankings' },
+        { name: '积分趋势', href: '/points/trends' }
+      ]
     },
     {
       name: t.navigation?.my || '我的',
       href: '/my',
-      icon: User,
       children: [
         { name: '个人中心', href: '/my' },
         { name: '我的积分', href: '/my/points' },
@@ -78,7 +96,6 @@ export default function GlobalNavigation() {
     {
       name: t.navigation?.docs || '文档',
       href: '/docs',
-      icon: FileText,
       children: [
         { name: '系统介绍', href: '/docs/guide' },
         { name: '积分规则', href: '/docs/points-rules' },
@@ -107,49 +124,65 @@ export default function GlobalNavigation() {
             {/* Desktop Global Menu */}
             <div className="hidden md:flex items-center space-x-1">
               {globalMenuItems.map((item) => {
-                const Icon = item.icon;
                 const isActive = pathname?.startsWith(item.href) && item.href !== '#';
                 const isOpen = activeDropdown === item.name;
+                const hasChildren = item.children && item.children.length > 0;
 
                 return (
                   <div key={item.name} className="relative">
-                    <button
-                      onClick={() => setActiveDropdown(isOpen ? null : item.name)}
-                      onBlur={(e) => {
-                        // 延迟关闭，让点击子菜单有时间
-                        if (!e.currentTarget.contains(e.relatedTarget as Node)) {
-                          setTimeout(() => setActiveDropdown(null), 200);
-                        }
-                      }}
-                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-sm font-medium transition-colors ${
-                        isActive
-                          ? 'text-blue-600 bg-blue-50'
-                          : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
-                      }`}
-                    >
-                      <Icon className="w-3.5 h-3.5" />
-                      <span>{item.name}</span>
-                      <ChevronDown className="w-3 h-3" />
-                    </button>
+                    {hasChildren ? (
+                      // 有子菜单的按钮
+                      <>
+                        <button
+                          onClick={() => setActiveDropdown(isOpen ? null : item.name)}
+                          onBlur={(e) => {
+                            // 延迟关闭，让点击子菜单有时间
+                            if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                              setTimeout(() => setActiveDropdown(null), 200);
+                            }
+                          }}
+                          className={`flex items-center gap-1 px-3 py-1.5 rounded text-sm font-medium transition-colors ${
+                            isActive
+                              ? 'text-blue-600 bg-blue-50'
+                              : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                          }`}
+                        >
+                          <span>{item.name}</span>
+                          <ChevronDown className="w-3 h-3" />
+                        </button>
 
-                    {/* 下拉菜单 - 受控组件 */}
-                    {item.children && isOpen && (
-                      <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            onClick={() => setActiveDropdown(null)}
-                            className={`block px-4 py-2 text-sm transition-colors ${
-                              pathname === child.href
-                                ? 'bg-blue-50 text-blue-600 font-medium'
-                                : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
-                            }`}
-                          >
-                            {child.name}
-                          </Link>
-                        ))}
-                      </div>
+                        {/* 下拉菜单 */}
+                        {isOpen && (
+                          <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
+                            {item.children.map((child) => (
+                              <Link
+                                key={child.href}
+                                href={child.href}
+                                onClick={() => setActiveDropdown(null)}
+                                className={`block px-4 py-2 text-sm transition-colors ${
+                                  pathname === child.href
+                                    ? 'bg-blue-50 text-blue-600 font-medium'
+                                    : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
+                                }`}
+                              >
+                                {child.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      // 直接链接（4个项目）
+                      <Link
+                        href={item.href}
+                        className={`block px-3 py-1.5 rounded text-sm font-medium transition-colors ${
+                          isActive
+                            ? 'text-blue-600 bg-blue-50'
+                            : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
                     )}
                   </div>
                 );
@@ -233,9 +266,6 @@ export default function GlobalNavigation() {
         </div>
       </nav>
 
-      {/* 项目切换器 - 仅在非项目页面显示 */}
-      {!currentDiscipline && <DisciplineSwitcher />}
-
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-b border-gray-100 fixed top-12 left-0 right-0 z-40 shadow-lg">
@@ -244,11 +274,10 @@ export default function GlobalNavigation() {
               <div key={item.name}>
                 <Link
                   href={item.href}
-                  className="flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-ski-blue hover:bg-gray-50"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-ski-blue hover:bg-gray-50"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <item.icon className="h-5 w-5" />
-                  <span>{item.name}</span>
+                  {item.name}
                 </Link>
                 {item.children && (
                   <div className="ml-6 space-y-1">
