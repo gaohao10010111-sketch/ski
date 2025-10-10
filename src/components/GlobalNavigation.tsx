@@ -19,7 +19,8 @@ import {
   Calendar,
   Home,
   TrendingUp,
-  BarChart3
+  BarChart3,
+  Search
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useTranslation } from '@/contexts/LanguageContext';
@@ -260,7 +261,7 @@ export default function GlobalNavigation() {
                     // 有子菜单的按钮
                     <>
                       <button
-                        className={`flex items-center gap-1 px-3 py-1.5 rounded text-xs font-semibold transition-colors whitespace-nowrap ${
+                        className={`flex items-center gap-1 px-3 py-1.5 rounded text-xs font-medium transition-colors whitespace-nowrap ${
                           isHighlighted
                             ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-sm'
                             : isActive
@@ -310,6 +311,14 @@ export default function GlobalNavigation() {
                 </div>
               );
             })}
+
+            {/* 搜索按钮 - 学习FIS */}
+            <button
+              className="flex items-center justify-center p-1.5 rounded text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors"
+              aria-label="搜索"
+            >
+              <Search className="w-4 h-4" />
+            </button>
           </div>
         </div>
       </nav>
