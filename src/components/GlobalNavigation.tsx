@@ -22,6 +22,7 @@ import DisciplineSwitcher from '@/components/DisciplineSwitcher';
 export default function GlobalNavigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const pathname = usePathname();
   const router = useRouter();
   const { user, logout, isLoading } = useAuth();
@@ -107,12 +108,19 @@ export default function GlobalNavigation() {
             <div className="hidden md:flex items-center space-x-1">
               {globalMenuItems.map((item) => {
                 const Icon = item.icon;
-                const isActive = pathname?.startsWith(item.href);
+                const isActive = pathname?.startsWith(item.href) && item.href !== '#';
+                const isOpen = activeDropdown === item.name;
 
                 return (
-                  <div key={item.name} className="relative group">
-                    <Link
-                      href={item.href}
+                  <div key={item.name} className="relative">
+                    <button
+                      onClick={() => setActiveDropdown(isOpen ? null : item.name)}
+                      onBlur={(e) => {
+                        // 延迟关闭，让点击子菜单有时间
+                        if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                          setTimeout(() => setActiveDropdown(null), 200);
+                        }
+                      }}
                       className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-sm font-medium transition-colors ${
                         isActive
                           ? 'text-blue-600 bg-blue-50'
@@ -122,15 +130,16 @@ export default function GlobalNavigation() {
                       <Icon className="w-3.5 h-3.5" />
                       <span>{item.name}</span>
                       <ChevronDown className="w-3 h-3" />
-                    </Link>
+                    </button>
 
-                    {/* 下拉菜单 */}
-                    {item.children && (
-                      <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    {/* 下拉菜单 - 受控组件 */}
+                    {item.children && isOpen && (
+                      <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
                         {item.children.map((child) => (
                           <Link
                             key={child.href}
                             href={child.href}
+                            onClick={() => setActiveDropdown(null)}
                             className={`block px-4 py-2 text-sm transition-colors ${
                               pathname === child.href
                                 ? 'bg-blue-50 text-blue-600 font-medium'
