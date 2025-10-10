@@ -19,20 +19,7 @@ const languageNames = {
   es: 'Español'
 };
 
-const languageFlags = {
-  zh: '🇨🇳',
-  en: '🇺🇸',
-  ja: '🇯🇵',
-  ko: '🇰🇷',
-  de: '🇩🇪',
-  fr: '🇫🇷',
-  it: '🇮🇹',
-  ru: '🇷🇺',
-  no: '🇳🇴',
-  sv: '🇸🇪',
-  fi: '🇫🇮',
-  es: '🇪🇸'
-};
+// 移除国旗图标，因为一种语言可能被多个国家使用
 
 export default function LanguageSwitcher() {
   const { language, setLanguage, t } = useTranslation();
@@ -65,8 +52,8 @@ export default function LanguageSwitcher() {
         aria-label={t.languageSelector.title}
       >
         <Globe className="w-4 h-4" />
-        <span className="hidden sm:inline">{languageFlags[language]} {languageNames[language]}</span>
-        <span className="sm:hidden">{languageFlags[language]}</span>
+        <span className="hidden sm:inline">{languageNames[language]}</span>
+        <span className="sm:hidden">{languageNames[language].substring(0, 2)}</span>
         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
@@ -83,7 +70,6 @@ export default function LanguageSwitcher() {
                 language === lang ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-700'
               }`}
             >
-              <span className="text-lg">{languageFlags[lang as keyof typeof languageFlags]}</span>
               <span>{name}</span>
               {language === lang && (
                 <span className="ml-auto text-blue-600">✓</span>
