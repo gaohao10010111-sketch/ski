@@ -43,13 +43,20 @@ export default function GlobalNavigation() {
     return roleMap[role] || '用户';
   };
 
-  // 全局菜单项（参考FIS风格）
+  // 判断当前在哪个项目页面
+  const currentDiscipline = pathname?.startsWith('/alpine') ? 'alpine'
+    : pathname?.startsWith('/snowboard-slopestyle') ? 'snowboard-slopestyle'
+    : pathname?.startsWith('/snowboard-parallel') ? 'snowboard-parallel'
+    : pathname?.startsWith('/freestyle-slopestyle') ? 'freestyle-slopestyle'
+    : null;
+
+  // 第一行 - 全局导航（参考FIS风格）
   const globalMenuItems = [
-    // 项目菜单 - 突出显示，重要性高
+    // 项目菜单 - 突出显示
     {
       name: t.navigation?.disciplines || '项目',
       href: '#',
-      highlighted: true, // 标记为突出显示
+      highlighted: true,
       children: [
         { name: t.navigation?.alpine || '高山滑雪', href: '/alpine' },
         { name: t.navigation?.snowboardSlopestyle || '单板坡面障碍技巧', href: '/snowboard-slopestyle' },
@@ -57,9 +64,12 @@ export default function GlobalNavigation() {
         { name: t.navigation?.freestyleSlopestyle || '自由式坡面障碍技巧', href: '/freestyle-slopestyle' }
       ]
     },
-    // 其他功能菜单
     {
-      name: '赛事',
+      name: '关于系统',
+      href: '/about'
+    },
+    {
+      name: '赛事中心',
       href: '/competitions',
       children: [
         { name: '赛程日历', href: '/competitions/schedule' },
@@ -69,7 +79,7 @@ export default function GlobalNavigation() {
       ]
     },
     {
-      name: '运动员',
+      name: '运动员中心',
       href: '/athletes',
       children: [
         { name: '运动员管理', href: '/athletes' },
@@ -89,7 +99,7 @@ export default function GlobalNavigation() {
       ]
     },
     {
-      name: t.navigation?.docs || '文档',
+      name: '文档中心',
       href: '/docs',
       children: [
         { name: '系统介绍', href: '/docs/guide' },
@@ -100,9 +110,58 @@ export default function GlobalNavigation() {
     }
   ];
 
+  // 第二行 - 功能导航（根据页面不同显示不同内容）
+  const secondaryMenuItems = currentDiscipline ? [
+    // 在项目页面内
+    {
+      name: '所有项目',
+      href: '#',
+      children: [
+        { name: t.navigation?.alpine || '高山滑雪', href: '/alpine' },
+        { name: t.navigation?.snowboardSlopestyle || '单板坡面障碍技巧', href: '/snowboard-slopestyle' },
+        { name: t.navigation?.snowboardParallel || '单板平行项目', href: '/snowboard-parallel' },
+        { name: t.navigation?.freestyleSlopestyle || '自由式坡面障碍技巧', href: '/freestyle-slopestyle' }
+      ]
+    },
+    { name: '首页', href: `/${currentDiscipline}` },
+    { name: '赛程成绩', href: `/${currentDiscipline}/events/schedule` },
+    { name: '实时成绩', href: `/${currentDiscipline}/events/results` },
+    { name: '运动员', href: `/${currentDiscipline}/athletes/list` },
+    { name: '积分', href: `/${currentDiscipline}/points/rankings` },
+    {
+      name: '更多',
+      href: '#',
+      children: [
+        { name: '积分计算器', href: `/${currentDiscipline}/points/calculator` },
+        { name: '积分趋势', href: `/${currentDiscipline}/points/trends` },
+        { name: '运动员排名', href: `/${currentDiscipline}/athletes/rankings` },
+        { name: '运动员统计', href: `/${currentDiscipline}/athletes/stats` },
+        { name: '积分规则', href: `/${currentDiscipline}/docs/points-rules` },
+        { name: '竞赛规则', href: `/${currentDiscipline}/docs/competition-rules` },
+        { name: '场地标准', href: `/${currentDiscipline}/docs/venue-standards` }
+      ]
+    }
+  ] : [
+    // 在首页或其他页面
+    {
+      name: '所有项目',
+      href: '#',
+      children: [
+        { name: t.navigation?.alpine || '高山滑雪', href: '/alpine' },
+        { name: t.navigation?.snowboardSlopestyle || '单板坡面障碍技巧', href: '/snowboard-slopestyle' },
+        { name: t.navigation?.snowboardParallel || '单板平行项目', href: '/snowboard-parallel' },
+        { name: t.navigation?.freestyleSlopestyle || '自由式坡面障碍技巧', href: '/freestyle-slopestyle' }
+      ]
+    },
+    { name: '最新赛事', href: '/competitions' },
+    { name: '积分排名', href: '/points/rankings' },
+    { name: '运动员', href: '/athletes' },
+    { name: '规则文档', href: '/docs' }
+  ];
+
   return (
     <>
-      {/* 顶部导航栏 */}
+      {/* 第一行 - 全局导航栏 */}
       <nav className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-12">
@@ -260,6 +319,77 @@ export default function GlobalNavigation() {
                 {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>
             </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* 第二行 - 功能导航栏 */}
+      <nav className="bg-gray-50 border-b border-gray-200 sticky top-12 z-40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="hidden md:flex items-center space-x-1 h-9 overflow-x-auto scrollbar-hide">
+            {secondaryMenuItems.map((item) => {
+              const isActive = pathname === item.href || (item.href !== '#' && pathname?.startsWith(item.href));
+              const isOpen = activeDropdown === `secondary-${item.name}`;
+              const hasChildren = item.children && item.children.length > 0;
+
+              return (
+                <div key={item.name} className="relative">
+                  {hasChildren ? (
+                    // 有子菜单的按钮
+                    <>
+                      <button
+                        onClick={() => setActiveDropdown(isOpen ? null : `secondary-${item.name}`)}
+                        onBlur={(e) => {
+                          if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                            setTimeout(() => setActiveDropdown(null), 200);
+                          }
+                        }}
+                        className={`flex items-center gap-1 px-2.5 py-1 rounded text-xs font-medium transition-colors whitespace-nowrap ${
+                          isActive
+                            ? 'text-blue-600 bg-blue-50'
+                            : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
+                        }`}
+                      >
+                        <span>{item.name}</span>
+                        <ChevronDown className="w-2.5 h-2.5" />
+                      </button>
+
+                      {/* 下拉菜单 */}
+                      {isOpen && (
+                        <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.href}
+                              href={child.href}
+                              onClick={() => setActiveDropdown(null)}
+                              className={`block px-4 py-2 text-sm transition-colors ${
+                                pathname === child.href
+                                  ? 'bg-blue-50 text-blue-600 font-medium'
+                                  : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
+                              }`}
+                            >
+                              {child.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    // 直接链接
+                    <Link
+                      href={item.href}
+                      className={`block px-2.5 py-1 rounded text-xs font-medium transition-colors whitespace-nowrap ${
+                        isActive
+                          ? 'text-blue-600 bg-blue-50'
+                          : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </nav>
