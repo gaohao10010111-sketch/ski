@@ -26,7 +26,11 @@ export const en: TranslationKeys = {
     login: 'Login',
     logout: 'Logout',
     register: 'Register',
-    profile: 'Profile'
+    profile: 'Profile',
+    viewDetails: 'View Details',
+    viewFullSchedule: 'View Full Schedule →',
+    viewFullRankings: 'View Full Rankings →',
+    readMore: 'Read More'
   },
 
   // Navigation
@@ -101,133 +105,173 @@ export const en: TranslationKeys = {
 
   // Alpine skiing page
   alpine: {
-    title: 'Alpine Skiing Points System',
-    subtitle: 'Alpine Skiing Points System',
-    description: 'v4.0 Time-based Formula',
-    
-    // Tags
-    tags: {
-      timeBasedFormula: 'v4.0 Time-based Formula',
-      raceLevels: 'A/B/C Level Events',
-      penaltyCalculation: 'Dynamic Penalty Calculation'
-    },
-    
-    // Quick links
-    quickLinks: {
-      title: 'Quick Access',
-      pointsRanking: {
-        title: 'Points Rankings',
-        description: 'View current season points rankings'
+    title: 'Alpine Skiing',
+    subtitle: 'Alpine Skiing',
+    projectLabel: 'Alpine',
+
+    hero: {
+      slide1: {
+        title: '2024 National Championship Highlights',
+        subtitle: 'Witness the glorious moments of Chinese alpine skiing'
       },
-      pointsCalculator: {
-        title: 'Points Calculator',
-        description: 'Real-time v4.0 formula calculation'
+      slide2: {
+        title: 'Points System Upgraded',
+        subtitle: 'More accurate points calculation based on v4.0 rules'
       },
-      competitions: {
-        title: 'Event Management',
-        description: 'View schedule and race results'
-      },
-      athletes: {
-        title: 'Athlete Profiles',
-        description: 'Athlete information and results query'
-      },
-      registration: {
-        title: 'Online Registration',
-        description: 'Register for alpine skiing events'
-      },
-      rules: {
-        title: 'Rules Documentation',
-        description: 'Alpine skiing competition rules'
-      },
-      enterFunction: 'Enter Function'
-    },
-    
-    // Points rules
-    pointsRules: {
-      title: 'Alpine Skiing Points Rules (v4.0)',
-      baseFormula: {
-        title: 'Base Race Points Formula',
-        formula: 'P = F × (Tx/To - 1)',
-        description: 'P=Base Points | F=Discipline Factor | Tx=Competitor Time | To=Winner Time'
-      },
-      finalFormula: {
-        title: 'Final Points Calculation',
-        formula: 'Final Points = (P + Penalty) × Race Coefficient',
-        description: 'A-Level(1.0) | B-Level(0.6) | C-Level(0.3)'
-      },
-      disciplineFactors: {
-        title: 'Discipline Factors',
-        downhill: 'Downhill DH',
-        slalom: 'Slalom SL',
-        giantSlalom: 'Giant Slalom GS',
-        superG: 'Super-G SG',
-        combined: 'Alpine Combined AC'
+      slide3: {
+        title: 'Winter Training Camp Registration',
+        subtitle: 'Professional coaching team to improve your skills'
       }
     },
-    
-    // Statistics
-    statistics: {
-      title: 'Real-time Statistics',
-      registeredAthletes: 'Registered Athletes',
-      seasonEvents: 'Season Events',
-      raceCount: 'Race Count',
-      averagePoints: 'Average Points',
-      monthlyIncrease: '12 new this month',
-      seasonGrowth: '16% growth vs last season',
-      pandemicImpact: 'Slightly affected by pandemic',
-      levelImprovement: 'Overall level steadily improving'
+
+    quickAccess: {
+      results: { title: 'Results', nameEn: 'Results' },
+      rankings: { title: 'Rankings', nameEn: 'Rankings' },
+      schedule: { title: 'Calendar', nameEn: 'Calendar' },
+      videos: { title: 'Videos', nameEn: 'Videos' },
+      athletes: { title: 'Athletes', nameEn: 'Athletes' },
+      documents: { title: 'Documents', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Upcoming'
+    },
+
+    latestNews: {
+      title: 'Latest News'
+    },
+
+    topAthletes: {
+      title: 'Rankings'
     }
   },
 
-  // Freeski slopestyle page
-  freeskiSlopestyle: {
-    title: 'Freeski Slopestyle/Big Air',
-    subtitle: 'Freeski Slopestyle & Big Air',
-    
-    tags: {
-      pointsSystem: '240/360/120 Points System',
-      judgingSystem: 'Judge Scoring System',
-      competitionFormat: 'Qualifying/Finals Format'
-    },
-    
-    pointsSystem: {
-      title: 'Tiered Points System',
-      class1: {
-        title: 'Class 1 Events',
-        description: 'National championships and top-tier events'
+  // Freestyle slopestyle page
+  freestyleSlopestyle: {
+    title: 'Freestyle Slopestyle',
+    subtitle: 'Freestyle Slopestyle',
+    projectLabel: 'Freestyle SS',
+
+    hero: {
+      slide1: {
+        title: '2024 National Freestyle Slopestyle Championship',
+        subtitle: 'Witness the extreme breakthrough of Chinese freestyle skiing'
       },
-      class2: {
-        title: 'Class 2 Events',
-        description: 'Regional important events'
+      slide2: {
+        title: '360 Points Tier System',
+        subtitle: 'Fair scoring mechanism based on difficulty coefficient'
       },
-      class3: {
-        title: 'Class 3 Events',
-        description: 'Local regular events'
+      slide3: {
+        title: 'U-Series Youth Development Program',
+        subtitle: 'U12/U15/U18 talent cultivation system'
       }
+    },
+
+    quickAccess: {
+      results: { title: 'Results', nameEn: 'Results' },
+      rankings: { title: 'Rankings', nameEn: 'Rankings' },
+      schedule: { title: 'Calendar', nameEn: 'Calendar' },
+      videos: { title: 'Videos', nameEn: 'Videos' },
+      athletes: { title: 'Athletes', nameEn: 'Athletes' },
+      documents: { title: 'Documents', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Upcoming'
+    },
+
+    latestNews: {
+      title: 'Latest News'
+    },
+
+    topAthletes: {
+      title: 'Rankings'
     }
   },
 
   // Snowboard slopestyle page
   snowboardSlopestyle: {
-    title: 'Snowboard Slopestyle/Big Air',
-    subtitle: 'Snowboard Slopestyle & Big Air',
-    
-    tags: {
-      pointsSystem: '240/360/120 Points System',
-      judgingSystem: 'Judge Scoring System',
-      competitionFormat: 'Qualifying/Finals Format'
+    title: 'Snowboard Slopestyle',
+    subtitle: 'Snowboard Slopestyle',
+    projectLabel: 'Snowboard SS',
+
+    hero: {
+      slide1: {
+        title: '2024 National Snowboard Slopestyle Championship',
+        subtitle: 'Witness the exciting moments of Chinese snowboarding'
+      },
+      slide2: {
+        title: '360 Points Tier System',
+        subtitle: 'Points calculation rules based on international standards'
+      },
+      slide3: {
+        title: 'U-Series Youth Training Program',
+        subtitle: 'U12/U15/U18 three-tier cultivation system'
+      }
+    },
+
+    quickAccess: {
+      results: { title: 'Results', nameEn: 'Results' },
+      rankings: { title: 'Rankings', nameEn: 'Rankings' },
+      schedule: { title: 'Calendar', nameEn: 'Calendar' },
+      videos: { title: 'Videos', nameEn: 'Videos' },
+      athletes: { title: 'Athletes', nameEn: 'Athletes' },
+      documents: { title: 'Documents', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Upcoming'
+    },
+
+    latestNews: {
+      title: 'Latest News'
+    },
+
+    topAthletes: {
+      title: 'Rankings'
     }
   },
 
   // Snowboard parallel page
   snowboardParallel: {
-    title: 'Snowboard Parallel Events',
-    subtitle: 'Snowboard Parallel Events',
-    
-    tags: {
-      timeBasedScoring: 'Time-based Scoring',
-      eliminationFormat: 'Elimination Format',
-      parallelEvents: 'PGS/PSL Events'
+    title: 'Snowboard Parallel',
+    subtitle: 'Snowboard Parallel',
+    projectLabel: 'Snowboard Parallel',
+
+    hero: {
+      slide1: {
+        title: '2024 National Snowboard Parallel Championship',
+        subtitle: 'Perfect combination of speed and skill'
+      },
+      slide2: {
+        title: 'Elimination Points System',
+        subtitle: 'Fair points calculation based on head-to-head rankings'
+      },
+      slide3: {
+        title: 'Elite Athlete Development Program',
+        subtitle: 'Improve racing level and compete in international events'
+      }
+    },
+
+    quickAccess: {
+      results: { title: 'Results', nameEn: 'Results' },
+      rankings: { title: 'Rankings', nameEn: 'Rankings' },
+      schedule: { title: 'Calendar', nameEn: 'Calendar' },
+      videos: { title: 'Videos', nameEn: 'Videos' },
+      athletes: { title: 'Athletes', nameEn: 'Athletes' },
+      documents: { title: 'Documents', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Upcoming'
+    },
+
+    latestNews: {
+      title: 'Latest News'
+    },
+
+    topAthletes: {
+      title: 'Rankings'
     }
   },
 

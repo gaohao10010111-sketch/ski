@@ -26,54 +26,65 @@ export const fr: TranslationKeys = {
     login: 'Connexion',
     logout: 'Déconnexion',
     register: 'S\'inscrire',
-    profile: 'Profil'
+    profile: 'Profil',
+    viewDetails: 'Voir les détails',
+    viewFullSchedule: 'Voir le calendrier complet →',
+    viewFullRankings: 'Voir le classement complet →',
+    readMore: 'Lire la suite'
   },
 
   // Navigation
   navigation: {
     title: 'Système de Points de Ski Chinois',
     titleShort: 'CSPS',
+
+    // Sélecteur de discipline
     disciplines: 'Disciplines',
-    points: 'Points',
-    events: 'Compétitions',
+    alpine: 'Ski Alpin',
+    snowboardSlopestyle: 'Snowboard Slopestyle',
+    snowboardParallel: 'Snowboard Parallèle',
+    freestyleSlopestyle: 'Freestyle Slopestyle',
+
+    // Navigation globale
     my: 'Mon',
     docs: 'Docs',
     about: 'À propos',
-    
+
+    // Navigation au niveau discipline
+    points: 'Points',
+    events: 'Compétitions',
+    athletes: 'Athlètes',
+
     // Sous-menus
     submenus: {
-      // Disciplines de Ski
-      alpine: 'Ski Alpin',
-      snowboardSlopestyle: 'Snowboard Slopestyle/Big Air',
-      snowboardParallel: 'Snowboard Parallèle',
-      freeskiSlopestyle: 'Freeski Slopestyle/Big Air',
-      
-      // Centre des Points
-      myPoints: 'Mes Points',
-      pointsQuery: 'Consultation des Points',
-      pointsCalculator: 'Calculateur de Points',
-      pointsRankings: 'Classement des Points',
-      pointsTrends: 'Analyse des Tendances',
-      
-      // Compétitions
-      eventsSchedule: 'Calendrier des Épreuves',
-      eventsRegister: 'Inscription en Ligne',
-      eventsList: 'Liste des Compétitions',
-      eventsResults: 'Consultation des Résultats',
+      // Sous-menu gestion des points
+      pointsCalculator: 'Calculateur',
+      pointsRankings: 'Classement',
+      pointsTrends: 'Tendances',
+
+      // Sous-menu gestion des compétitions
+      eventsSchedule: 'Calendrier',
+      eventsRegister: 'Inscription',
+      eventsResults: 'Résultats',
       eventsStats: 'Statistiques',
-      
-      // Mon Espace
-      personalCenter: 'Centre Personnel',
+
+      // Sous-menu athlètes
+      athletesList: 'Liste d\'Athlètes',
+      athletesProfile: 'Profil d\'Athlète',
+      athletesStats: 'Statistiques',
+
+      // Sous-menu docs
+      docsPointsRules: 'Règlement des Points',
+      docsCompetitionRules: 'Règlement de Compétition',
+      docsVenueStandards: 'Standards des Sites',
+      docsGuide: 'Guide d\'Utilisation',
+
+      // Sous-menu centre personnel
+      myProfile: 'Centre Personnel',
+      myPoints: 'Mes Points',
       myRegistrations: 'Mes Inscriptions',
-      athleteProfile: 'Profil d\'Athlète',
-      resultsHistory: 'Historique des Résultats',
-      
-      // Base de Connaissances
-      pointsRules: 'Règlement des Points',
-      competitionRules: 'Règlement de Compétition',
-      venueStandards: 'Standards des Sites',
-      fisRules: 'Règles FIS',
-      userGuide: 'Guide d\'Utilisation'
+      myAthlete: 'Profil d\'Athlète',
+      myHistory: 'Historique des Résultats'
     }
   },
 
@@ -94,133 +105,173 @@ export const fr: TranslationKeys = {
 
   // Page Ski Alpin
   alpine: {
-    title: 'Système de Points Ski Alpin',
-    subtitle: 'Alpine Skiing Points System',
-    description: 'Formule basée sur le temps v4.0',
-    
-    // Tags
-    tags: {
-      timeBasedFormula: 'Formule basée sur le temps v4.0',
-      raceLevels: 'Niveaux de course A/B/C',
-      penaltyCalculation: 'Calcul dynamique des pénalités'
-    },
-    
-    // Accès rapide
-    quickLinks: {
-      title: 'Accès Rapide aux Fonctions',
-      pointsRanking: {
-        title: 'Classement des Points',
-        description: 'Voir le classement des points de la saison actuelle'
+    title: 'Ski Alpin',
+    subtitle: 'Alpine Skiing',
+    projectLabel: 'Alpin',
+
+    hero: {
+      slide1: {
+        title: 'Moments forts du Championnat National 2024',
+        subtitle: 'Témoin des moments glorieux du ski alpin chinois'
       },
-      pointsCalculator: {
-        title: 'Calculateur de Points',
-        description: 'Calcul en temps réel avec la formule v4.0'
+      slide2: {
+        title: 'Système de Points Amélioré',
+        subtitle: 'Calcul de points plus précis basé sur les règles v4.0'
       },
-      competitions: {
-        title: 'Gestion des Compétitions',
-        description: 'Voir le calendrier et les résultats de course'
-      },
-      athletes: {
-        title: 'Profils d\'Athlètes',
-        description: 'Informations d\'athlètes et consultation des résultats'
-      },
-      registration: {
-        title: 'Inscription en Ligne',
-        description: 'Participer aux compétitions de ski alpin'
-      },
-      rules: {
-        title: 'Documentation des Règles',
-        description: 'Règlement de compétition de ski alpin'
-      },
-      enterFunction: 'Accéder à la fonction'
-    },
-    
-    // Règles des points
-    pointsRules: {
-      title: 'Règles des Points Ski Alpin (v4.0)',
-      baseFormula: {
-        title: 'Formule des Points de Course de Base',
-        formula: 'P = F × (Tx/To - 1)',
-        description: 'P=Points de base | F=Facteur discipline | Tx=Temps concurrent | To=Temps vainqueur'
-      },
-      finalFormula: {
-        title: 'Calcul des Points Finaux',
-        formula: 'Points Finaux = (P + Pénalité) × Coefficient de Course',
-        description: 'Niveau A(1.0) | Niveau B(0.6) | Niveau C(0.3)'
-      },
-      disciplineFactors: {
-        title: 'Tableau des Facteurs de Discipline',
-        downhill: 'Descente DH',
-        slalom: 'Slalom SL',
-        giantSlalom: 'Slalom Géant GS',
-        superG: 'Super-G SG',
-        combined: 'Combiné Alpin AC'
+      slide3: {
+        title: 'Inscription au Camp d\'Entraînement d\'Hiver',
+        subtitle: 'Équipe d\'entraîneurs professionnels pour améliorer vos compétences'
       }
     },
-    
-    // Statistiques
-    statistics: {
-      title: 'Statistiques en Temps Réel',
-      registeredAthletes: 'Athlètes Inscrits',
-      seasonEvents: 'Compétitions de la Saison',
-      raceCount: 'Nombre de Courses',
-      averagePoints: 'Points Moyens',
-      monthlyIncrease: '12 nouveaux ce mois',
-      seasonGrowth: '16% de croissance par rapport à la saison dernière',
-      pandemicImpact: 'Légèrement affecté par la pandémie',
-      levelImprovement: 'Niveau global en amélioration constante'
+
+    quickAccess: {
+      results: { title: 'Résultats', nameEn: 'Results' },
+      rankings: { title: 'Classement', nameEn: 'Rankings' },
+      schedule: { title: 'Calendrier', nameEn: 'Calendar' },
+      videos: { title: 'Vidéos', nameEn: 'Videos' },
+      athletes: { title: 'Athlètes', nameEn: 'Athletes' },
+      documents: { title: 'Documents', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'À venir'
+    },
+
+    latestNews: {
+      title: 'Dernières Nouvelles'
+    },
+
+    topAthletes: {
+      title: 'Classement'
     }
   },
 
-  // Page Freeski Slopestyle
-  freeskiSlopestyle: {
-    title: 'Freeski Slopestyle/Big Air',
-    subtitle: 'Freeski Slopestyle & Big Air',
-    
-    tags: {
-      pointsSystem: 'Système de Points 240/360/120',
-      judgingSystem: 'Système de Jugement',
-      competitionFormat: 'Format Qualifications/Finales'
-    },
-    
-    pointsSystem: {
-      title: 'Système de Points Échelonné',
-      class1: {
-        title: 'Compétitions Classe 1',
-        description: 'Championnats nationaux et événements de haut niveau'
+  // Page Freestyle Slopestyle
+  freestyleSlopestyle: {
+    title: 'Freestyle Slopestyle',
+    subtitle: 'Freestyle Slopestyle',
+    projectLabel: 'Freestyle SS',
+
+    hero: {
+      slide1: {
+        title: 'Championnat National de Freestyle Slopestyle 2024',
+        subtitle: 'Témoin de la percée extrême du ski freestyle chinois'
       },
-      class2: {
-        title: 'Compétitions Classe 2',
-        description: 'Compétitions régionales importantes'
+      slide2: {
+        title: 'Système de Points à 360 Niveaux',
+        subtitle: 'Mécanisme de notation équitable basé sur le coefficient de difficulté'
       },
-      class3: {
-        title: 'Compétitions Classe 3',
-        description: 'Compétitions locales régulières'
+      slide3: {
+        title: 'Programme de Développement de la Jeunesse Série U',
+        subtitle: 'Système de culture des talents U12/U15/U18'
       }
+    },
+
+    quickAccess: {
+      results: { title: 'Résultats', nameEn: 'Results' },
+      rankings: { title: 'Classement', nameEn: 'Rankings' },
+      schedule: { title: 'Calendrier', nameEn: 'Calendar' },
+      videos: { title: 'Vidéos', nameEn: 'Videos' },
+      athletes: { title: 'Athlètes', nameEn: 'Athletes' },
+      documents: { title: 'Documents', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'À venir'
+    },
+
+    latestNews: {
+      title: 'Dernières Nouvelles'
+    },
+
+    topAthletes: {
+      title: 'Classement'
     }
   },
 
   // Page Snowboard Slopestyle
   snowboardSlopestyle: {
-    title: 'Snowboard Slopestyle/Big Air',
-    subtitle: 'Snowboard Slopestyle & Big Air',
-    
-    tags: {
-      pointsSystem: 'Système de Points 240/360/120',
-      judgingSystem: 'Système de Jugement',
-      competitionFormat: 'Format Qualifications/Finales'
+    title: 'Snowboard Slopestyle',
+    subtitle: 'Snowboard Slopestyle',
+    projectLabel: 'Snowboard SS',
+
+    hero: {
+      slide1: {
+        title: 'Championnat National de Snowboard Slopestyle 2024',
+        subtitle: 'Témoin des moments passionnants du snowboard chinois'
+      },
+      slide2: {
+        title: 'Système de Points à 360 Niveaux',
+        subtitle: 'Règles de calcul de points basées sur les normes internationales'
+      },
+      slide3: {
+        title: 'Programme de Formation de la Jeunesse Série U',
+        subtitle: 'Système de culture à trois niveaux U12/U15/U18'
+      }
+    },
+
+    quickAccess: {
+      results: { title: 'Résultats', nameEn: 'Results' },
+      rankings: { title: 'Classement', nameEn: 'Rankings' },
+      schedule: { title: 'Calendrier', nameEn: 'Calendar' },
+      videos: { title: 'Vidéos', nameEn: 'Videos' },
+      athletes: { title: 'Athlètes', nameEn: 'Athletes' },
+      documents: { title: 'Documents', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'À venir'
+    },
+
+    latestNews: {
+      title: 'Dernières Nouvelles'
+    },
+
+    topAthletes: {
+      title: 'Classement'
     }
   },
 
   // Page Snowboard Parallèle
   snowboardParallel: {
-    title: 'Disciplines Snowboard Parallèle',
-    subtitle: 'Snowboard Parallel Events',
-    
-    tags: {
-      timeBasedScoring: 'Notation basée sur le temps',
-      eliminationFormat: 'Format d\'élimination',
-      parallelEvents: 'Disciplines PGS/PSL'
+    title: 'Snowboard Parallèle',
+    subtitle: 'Snowboard Parallel',
+    projectLabel: 'Snowboard Parallèle',
+
+    hero: {
+      slide1: {
+        title: 'Championnat National de Snowboard Parallèle 2024',
+        subtitle: 'Combinaison parfaite de vitesse et de compétence'
+      },
+      slide2: {
+        title: 'Système de Points d\'Élimination',
+        subtitle: 'Calcul de points équitable basé sur les classements tête-à-tête'
+      },
+      slide3: {
+        title: 'Programme de Développement d\'Athlètes d\'Élite',
+        subtitle: 'Améliorer le niveau de course et participer aux compétitions internationales'
+      }
+    },
+
+    quickAccess: {
+      results: { title: 'Résultats', nameEn: 'Results' },
+      rankings: { title: 'Classement', nameEn: 'Rankings' },
+      schedule: { title: 'Calendrier', nameEn: 'Calendar' },
+      videos: { title: 'Vidéos', nameEn: 'Videos' },
+      athletes: { title: 'Athlètes', nameEn: 'Athletes' },
+      documents: { title: 'Documents', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'À venir'
+    },
+
+    latestNews: {
+      title: 'Dernières Nouvelles'
+    },
+
+    topAthletes: {
+      title: 'Classement'
     }
   },
 

@@ -152,7 +152,7 @@ export default function GlobalNavigation() {
             {/* 右侧区域：导航菜单 + Auth & Language */}
             <div className="hidden md:flex items-center space-x-4">
               {/* Desktop Global Menu */}
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-3">
                 {globalMenuItems.map((item) => {
                   const isActive = pathname?.startsWith(item.href) && item.href !== '#';
                   const isHighlighted = (item as any).highlighted;
@@ -170,7 +170,7 @@ export default function GlobalNavigation() {
                           : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                       }`}
                     >
-                      {Icon && <Icon className="w-3.5 h-3.5" />}
+                      {Icon && <Icon className="w-4 h-4" />}
                       <span>{item.name}</span>
                     </Link>
                   );

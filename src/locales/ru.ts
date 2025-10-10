@@ -26,54 +26,65 @@ export const ru: TranslationKeys = {
     login: 'Войти',
     logout: 'Выйти',
     register: 'Регистрация',
-    profile: 'Профиль'
+    profile: 'Профиль',
+    viewDetails: 'Просмотр деталей',
+    viewFullSchedule: 'Просмотр полного расписания →',
+    viewFullRankings: 'Просмотр полного рейтинга →',
+    readMore: 'Читать далее'
   },
 
   // Навигация
   navigation: {
     title: 'Китайская Система Очков в Лыжном Спорте',
     titleShort: 'CSPS',
+
+    // Переключатель дисциплин
     disciplines: 'Дисциплины',
-    points: 'Очки',
-    events: 'События',
+    alpine: 'Горные Лыжи',
+    snowboardSlopestyle: 'Сноуборд Слоупстайл',
+    snowboardParallel: 'Сноуборд Параллель',
+    freestyleSlopestyle: 'Фристайл Слоупстайл',
+
+    // Глобальная навигация
     my: 'Моё',
     docs: 'Документы',
     about: 'О нас',
-    
+
+    // Навигация на уровне дисциплины
+    points: 'Очки',
+    events: 'События',
+    athletes: 'Спортсмены',
+
     // Подменю
     submenus: {
-      // Лыжные Дисциплины
-      alpine: 'Горные Лыжи',
-      snowboardSlopestyle: 'Сноуборд Слоупстайл/Биг-Эйр',
-      snowboardParallel: 'Сноуборд Параллель',
-      freeskiSlopestyle: 'Фристайл Слоупстайл/Биг-Эйр',
-      
-      // Центр Очков
+      // Подменю управления очками
+      pointsCalculator: 'Калькулятор',
+      pointsRankings: 'Рейтинг',
+      pointsTrends: 'Тренды',
+
+      // Подменю управления соревнованиями
+      eventsSchedule: 'Расписание',
+      eventsRegister: 'Регистрация',
+      eventsResults: 'Результаты',
+      eventsStats: 'Статистика',
+
+      // Подменю спортсменов
+      athletesList: 'Список Спортсменов',
+      athletesProfile: 'Профиль Спортсмена',
+      athletesStats: 'Статистика',
+
+      // Подменю документов
+      docsPointsRules: 'Правила Очков',
+      docsCompetitionRules: 'Правила Соревнований',
+      docsVenueStandards: 'Стандарты Объектов',
+      docsGuide: 'Руководство Пользователя',
+
+      // Подменю личного центра
+      myProfile: 'Личный Центр',
       myPoints: 'Мои Очки',
-      pointsQuery: 'Запрос Очков',
-      pointsCalculator: 'Калькулятор Очков',
-      pointsRankings: 'Рейтинг Очков',
-      pointsTrends: 'Анализ Трендов Очков',
-      
-      // Соревнования
-      eventsSchedule: 'Календарь Соревнований',
-      eventsRegister: 'Онлайн Регистрация',
-      eventsList: 'Список Соревнований',
-      eventsResults: 'Запрос Результатов',
-      eventsStats: 'Статистика Данных',
-      
-      // Мой Раздел
-      personalCenter: 'Личный Центр',
       myRegistrations: 'Мои Регистрации',
-      athleteProfile: 'Профиль Спортсмена',
-      resultsHistory: 'История Результатов',
-      
-      // База Знаний
-      pointsRules: 'Правила Очков',
-      competitionRules: 'Правила Соревнований',
-      venueStandards: 'Стандарты Объектов',
-      fisRules: 'Правила ФИС',
-      userGuide: 'Руководство Пользователя'
+      myAthlete: 'Профиль Спортсмена',
+      myHistory: 'История Результатов'
     }
   },
 
@@ -94,133 +105,173 @@ export const ru: TranslationKeys = {
 
   // Страница Горных Лыж
   alpine: {
-    title: 'Система Очков Горных Лыж',
-    subtitle: 'Alpine Skiing Points System',
-    description: 'Формула на основе времени v4.0',
-    
-    // Теги
-    tags: {
-      timeBasedFormula: 'Формула на основе времени v4.0',
-      raceLevels: 'Уровни гонок A/B/C',
-      penaltyCalculation: 'Динамический расчет штрафов'
-    },
-    
-    // Быстрый доступ
-    quickLinks: {
-      title: 'Быстрый Доступ к Функциям',
-      pointsRanking: {
-        title: 'Рейтинг Очков',
-        description: 'Просмотр рейтинга очков текущего сезона'
+    title: 'Горные Лыжи',
+    subtitle: 'Alpine Skiing',
+    projectLabel: 'Горные',
+
+    hero: {
+      slide1: {
+        title: 'Основные моменты Национального чемпионата 2024',
+        subtitle: 'Свидетель славных моментов китайских горных лыж'
       },
-      pointsCalculator: {
-        title: 'Калькулятор Очков',
-        description: 'Расчет в реальном времени по формуле v4.0'
+      slide2: {
+        title: 'Обновление Системы Очков',
+        subtitle: 'Более точный расчет очков на основе правил v4.0'
       },
-      competitions: {
-        title: 'Управление Соревнованиями',
-        description: 'Просмотр расписания и результатов гонок'
-      },
-      athletes: {
-        title: 'Профили Спортсменов',
-        description: 'Информация о спортсменах и запрос результатов'
-      },
-      registration: {
-        title: 'Онлайн Регистрация',
-        description: 'Участие в соревнованиях по горным лыжам'
-      },
-      rules: {
-        title: 'Документация Правил',
-        description: 'Правила соревнований по горным лыжам'
-      },
-      enterFunction: 'Войти в функцию'
-    },
-    
-    // Правила очков
-    pointsRules: {
-      title: 'Правила Очков Горных Лыж (v4.0)',
-      baseFormula: {
-        title: 'Формула Базовых Очков Гонки',
-        formula: 'P = F × (Tx/To - 1)',
-        description: 'P=Базовые очки | F=Фактор дисциплины | Tx=Время участника | To=Время победителя'
-      },
-      finalFormula: {
-        title: 'Расчет Финальных Очков',
-        formula: 'Финальные Очки = (P + Штраф) × Коэффициент Гонки',
-        description: 'Уровень A(1.0) | Уровень B(0.6) | Уровень C(0.3)'
-      },
-      disciplineFactors: {
-        title: 'Таблица Факторов Дисциплин',
-        downhill: 'Скоростной Спуск DH',
-        slalom: 'Слалом SL',
-        giantSlalom: 'Гигантский Слалом GS',
-        superG: 'Супер-Гигант SG',
-        combined: 'Альпийское Двоеборье AC'
+      slide3: {
+        title: 'Регистрация на Зимний Тренировочный Лагерь',
+        subtitle: 'Профессиональная команда тренеров для улучшения ваших навыков'
       }
     },
-    
-    // Статистика
-    statistics: {
-      title: 'Статистика в Реальном Времени',
-      registeredAthletes: 'Зарегистрированные Спортсмены',
-      seasonEvents: 'Соревнования Сезона',
-      raceCount: 'Количество Гонок',
-      averagePoints: 'Средние Очки',
-      monthlyIncrease: '12 новых в этом месяце',
-      seasonGrowth: '16% роста по сравнению с прошлым сезоном',
-      pandemicImpact: 'Незначительно затронуто пандемией',
-      levelImprovement: 'Общий уровень стабильно улучшается'
+
+    quickAccess: {
+      results: { title: 'Результаты', nameEn: 'Results' },
+      rankings: { title: 'Рейтинг', nameEn: 'Rankings' },
+      schedule: { title: 'Календарь', nameEn: 'Calendar' },
+      videos: { title: 'Видео', nameEn: 'Videos' },
+      athletes: { title: 'Спортсмены', nameEn: 'Athletes' },
+      documents: { title: 'Документы', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Предстоящие'
+    },
+
+    latestNews: {
+      title: 'Последние Новости'
+    },
+
+    topAthletes: {
+      title: 'Рейтинг'
     }
   },
 
   // Страница Фристайл Слоупстайл
-  freeskiSlopestyle: {
-    title: 'Фристайл Слоупстайл/Биг-Эйр',
-    subtitle: 'Freeski Slopestyle & Big Air',
-    
-    tags: {
-      pointsSystem: 'Система Очков 240/360/120',
-      judgingSystem: 'Система Судейства',
-      competitionFormat: 'Формат Квалификация/Финал'
-    },
-    
-    pointsSystem: {
-      title: 'Ступенчатая Система Очков',
-      class1: {
-        title: 'Соревнования Класса 1',
-        description: 'Национальные чемпионаты и мероприятия высшего уровня'
+  freestyleSlopestyle: {
+    title: 'Фристайл Слоупстайл',
+    subtitle: 'Freestyle Slopestyle',
+    projectLabel: 'Фристайл SS',
+
+    hero: {
+      slide1: {
+        title: 'Национальный чемпионат по Фристайлу Слоупстайл 2024',
+        subtitle: 'Свидетель экстремального прорыва китайского фристайла'
       },
-      class2: {
-        title: 'Соревнования Класса 2',
-        description: 'Региональные важные соревнования'
+      slide2: {
+        title: 'Система Очков с 360 Уровнями',
+        subtitle: 'Справедливый механизм оценки на основе коэффициента сложности'
       },
-      class3: {
-        title: 'Соревнования Класса 3',
-        description: 'Местные регулярные соревнования'
+      slide3: {
+        title: 'Программа Развития Молодежи Серии U',
+        subtitle: 'Система воспитания талантов U12/U15/U18'
       }
+    },
+
+    quickAccess: {
+      results: { title: 'Результаты', nameEn: 'Results' },
+      rankings: { title: 'Рейтинг', nameEn: 'Rankings' },
+      schedule: { title: 'Календарь', nameEn: 'Calendar' },
+      videos: { title: 'Видео', nameEn: 'Videos' },
+      athletes: { title: 'Спортсмены', nameEn: 'Athletes' },
+      documents: { title: 'Документы', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Предстоящие'
+    },
+
+    latestNews: {
+      title: 'Последние Новости'
+    },
+
+    topAthletes: {
+      title: 'Рейтинг'
     }
   },
 
   // Страница Сноуборд Слоупстайл
   snowboardSlopestyle: {
-    title: 'Сноуборд Слоупстайл/Биг-Эйр',
-    subtitle: 'Snowboard Slopestyle & Big Air',
-    
-    tags: {
-      pointsSystem: 'Система Очков 240/360/120',
-      judgingSystem: 'Система Судейства',
-      competitionFormat: 'Формат Квалификация/Финал'
+    title: 'Сноуборд Слоупстайл',
+    subtitle: 'Snowboard Slopestyle',
+    projectLabel: 'Сноуборд SS',
+
+    hero: {
+      slide1: {
+        title: 'Национальный чемпионат по Сноуборду Слоупстайл 2024',
+        subtitle: 'Свидетель захватывающих моментов китайского сноуборда'
+      },
+      slide2: {
+        title: 'Система Очков с 360 Уровнями',
+        subtitle: 'Правила расчета очков на основе международных стандартов'
+      },
+      slide3: {
+        title: 'Программа Подготовки Молодежи Серии U',
+        subtitle: 'Трехуровневая система воспитания U12/U15/U18'
+      }
+    },
+
+    quickAccess: {
+      results: { title: 'Результаты', nameEn: 'Results' },
+      rankings: { title: 'Рейтинг', nameEn: 'Rankings' },
+      schedule: { title: 'Календарь', nameEn: 'Calendar' },
+      videos: { title: 'Видео', nameEn: 'Videos' },
+      athletes: { title: 'Спортсмены', nameEn: 'Athletes' },
+      documents: { title: 'Документы', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Предстоящие'
+    },
+
+    latestNews: {
+      title: 'Последние Новости'
+    },
+
+    topAthletes: {
+      title: 'Рейтинг'
     }
   },
 
   // Страница Сноуборд Параллель
   snowboardParallel: {
-    title: 'Дисциплины Сноуборд Параллель',
-    subtitle: 'Snowboard Parallel Events',
-    
-    tags: {
-      timeBasedScoring: 'Оценка на основе времени',
-      eliminationFormat: 'Формат на выбывание',
-      parallelEvents: 'Дисциплины PGS/PSL'
+    title: 'Сноуборд Параллель',
+    subtitle: 'Snowboard Parallel',
+    projectLabel: 'Сноуборд Параллель',
+
+    hero: {
+      slide1: {
+        title: 'Национальный чемпионат по Сноуборду Параллель 2024',
+        subtitle: 'Идеальное сочетание скорости и мастерства'
+      },
+      slide2: {
+        title: 'Система Очков Выбывания',
+        subtitle: 'Справедливый расчет очков на основе рейтингов один на один'
+      },
+      slide3: {
+        title: 'Программа Развития Элитных Спортсменов',
+        subtitle: 'Повышение гоночного уровня и участие в международных соревнованиях'
+      }
+    },
+
+    quickAccess: {
+      results: { title: 'Результаты', nameEn: 'Results' },
+      rankings: { title: 'Рейтинг', nameEn: 'Rankings' },
+      schedule: { title: 'Календарь', nameEn: 'Calendar' },
+      videos: { title: 'Видео', nameEn: 'Videos' },
+      athletes: { title: 'Спортсмены', nameEn: 'Athletes' },
+      documents: { title: 'Документы', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Предстоящие'
+    },
+
+    latestNews: {
+      title: 'Последние Новости'
+    },
+
+    topAthletes: {
+      title: 'Рейтинг'
     }
   },
 

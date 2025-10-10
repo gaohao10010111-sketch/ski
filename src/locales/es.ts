@@ -26,54 +26,65 @@ export const es: TranslationKeys = {
     login: 'Iniciar Sesión',
     logout: 'Cerrar Sesión',
     register: 'Registrarse',
-    profile: 'Perfil'
+    profile: 'Perfil',
+    viewDetails: 'Ver detalles',
+    viewFullSchedule: 'Ver calendario completo →',
+    viewFullRankings: 'Ver clasificación completa →',
+    readMore: 'Leer más'
   },
 
   // Navegación
   navigation: {
     title: 'Sistema de Puntos de Esquí Chino',
     titleShort: 'CSPS',
+
+    // Selector de proyectos
     disciplines: 'Disciplinas',
-    points: 'Puntos',
-    events: 'Competencias',
+    alpine: 'Esquí Alpino',
+    snowboardSlopestyle: 'Snowboard Slopestyle',
+    snowboardParallel: 'Snowboard Paralelo',
+    freestyleSlopestyle: 'Freeski Slopestyle',
+
+    // Navegación global
     my: 'Mi',
     docs: 'Documentos',
     about: 'Acerca',
-    
+
+    // Navegación de nivel de proyecto
+    points: 'Gestión de Puntos',
+    events: 'Gestión de Competencias',
+    athletes: 'Atletas',
+
     // Submenús
     submenus: {
-      // Disciplinas de Esquí
-      alpine: 'Esquí Alpino',
-      snowboardSlopestyle: 'Snowboard Slopestyle/Big Air',
-      snowboardParallel: 'Snowboard Paralelo',
-      freeskiSlopestyle: 'Freeski Slopestyle/Big Air',
-      
-      // Centro de Puntos
-      myPoints: 'Mis Puntos',
-      pointsQuery: 'Consulta de Puntos',
+      // Submenús de gestión de puntos
       pointsCalculator: 'Calculadora de Puntos',
       pointsRankings: 'Clasificación de Puntos',
-      pointsTrends: 'Análisis de Tendencias',
-      
-      // Competencias
+      pointsTrends: 'Tendencias de Puntos',
+
+      // Submenús de gestión de competencias
       eventsSchedule: 'Calendario de Eventos',
       eventsRegister: 'Registro en Línea',
-      eventsList: 'Lista de Competencias',
       eventsResults: 'Consulta de Resultados',
       eventsStats: 'Estadísticas de Datos',
-      
-      // Mi Área
-      personalCenter: 'Centro Personal',
+
+      // Submenús de atletas
+      athletesList: 'Lista de Atletas',
+      athletesProfile: 'Perfil de Atleta',
+      athletesStats: 'Estadísticas de Atletas',
+
+      // Submenús de documentos
+      docsPointsRules: 'Reglas de Puntos',
+      docsCompetitionRules: 'Reglas de Competencia',
+      docsVenueStandards: 'Estándares de Instalaciones',
+      docsGuide: 'Guía del Usuario',
+
+      // Submenús de mi área
+      myProfile: 'Centro Personal',
+      myPoints: 'Mis Puntos',
       myRegistrations: 'Mis Registros',
-      athleteProfile: 'Perfil de Atleta',
-      resultsHistory: 'Historial de Resultados',
-      
-      // Base de Conocimientos
-      pointsRules: 'Reglas de Puntos',
-      competitionRules: 'Reglas de Competencia',
-      venueStandards: 'Estándares de Instalaciones',
-      fisRules: 'Reglas FIS',
-      userGuide: 'Guía del Usuario'
+      myAthlete: 'Perfil de Atleta',
+      myHistory: 'Historial de Resultados'
     }
   },
 
@@ -94,133 +105,173 @@ export const es: TranslationKeys = {
 
   // Página de Esquí Alpino
   alpine: {
-    title: 'Sistema de Puntos de Esquí Alpino',
-    subtitle: 'Alpine Skiing Points System',
-    description: 'Fórmula basada en tiempo v4.0',
-    
-    // Etiquetas
-    tags: {
-      timeBasedFormula: 'Fórmula basada en tiempo v4.0',
-      raceLevels: 'Niveles de carrera A/B/C',
-      penaltyCalculation: 'Cálculo dinámico de penalizaciones'
-    },
-    
-    // Acceso rápido
-    quickLinks: {
-      title: 'Acceso Rápido a Funciones',
-      pointsRanking: {
-        title: 'Clasificación de Puntos',
-        description: 'Ver clasificaciones de puntos de la temporada actual'
+    title: 'Esquí Alpino',
+    subtitle: 'Alpine Skiing',
+    projectLabel: 'Alpino',
+
+    hero: {
+      slide1: {
+        title: 'Destacados del Campeonato Nacional 2024',
+        subtitle: 'Presencia los momentos gloriosos del esquí alpino chino'
       },
-      pointsCalculator: {
-        title: 'Calculadora de Puntos',
-        description: 'Cálculo en tiempo real con fórmula v4.0'
+      slide2: {
+        title: 'Actualización del Sistema de Puntos',
+        subtitle: 'Cálculo de puntos más preciso basado en reglas v4.0'
       },
-      competitions: {
-        title: 'Gestión de Competencias',
-        description: 'Ver calendario y resultados de carreras'
-      },
-      athletes: {
-        title: 'Perfiles de Atletas',
-        description: 'Información de atletas y consulta de resultados'
-      },
-      registration: {
-        title: 'Registro en Línea',
-        description: 'Participar en competencias de esquí alpino'
-      },
-      rules: {
-        title: 'Documentación de Reglas',
-        description: 'Reglas de competencia de esquí alpino'
-      },
-      enterFunction: 'Acceder a la función'
-    },
-    
-    // Reglas de puntos
-    pointsRules: {
-      title: 'Reglas de Puntos de Esquí Alpino (v4.0)',
-      baseFormula: {
-        title: 'Fórmula de Puntos Base de Carrera',
-        formula: 'P = F × (Tx/To - 1)',
-        description: 'P=Puntos base | F=Factor disciplina | Tx=Tiempo competidor | To=Tiempo ganador'
-      },
-      finalFormula: {
-        title: 'Cálculo de Puntos Finales',
-        formula: 'Puntos Finales = (P + Penalización) × Coeficiente de Carrera',
-        description: 'Nivel A(1.0) | Nivel B(0.6) | Nivel C(0.3)'
-      },
-      disciplineFactors: {
-        title: 'Tabla de Factores de Disciplina',
-        downhill: 'Descenso DH',
-        slalom: 'Eslalon SL',
-        giantSlalom: 'Eslalon Gigante GS',
-        superG: 'Super Gigante SG',
-        combined: 'Combinada Alpina AC'
+      slide3: {
+        title: 'Campamento de Entrenamiento de Invierno Abierto',
+        subtitle: 'Equipo de entrenadores profesionales ayuda a mejorar tus habilidades'
       }
     },
-    
-    // Estadísticas
-    statistics: {
-      title: 'Estadísticas en Tiempo Real',
-      registeredAthletes: 'Atletas Registrados',
-      seasonEvents: 'Eventos de la Temporada',
-      raceCount: 'Número de Carreras',
-      averagePoints: 'Puntos Promedio',
-      monthlyIncrease: '12 nuevos este mes',
-      seasonGrowth: '16% de crecimiento respecto a la temporada pasada',
-      pandemicImpact: 'Ligeramente afectado por la pandemia',
-      levelImprovement: 'Nivel general mejorando constantemente'
+
+    quickAccess: {
+      results: { title: 'Resultados de Competencias', nameEn: 'Results' },
+      rankings: { title: 'Clasificación de Puntos', nameEn: 'Rankings' },
+      schedule: { title: 'Calendario de Eventos', nameEn: 'Calendar' },
+      videos: { title: 'Centro de Videos', nameEn: 'Videos' },
+      athletes: { title: 'Registro de Atletas', nameEn: 'Athletes' },
+      documents: { title: 'Documentos de Reglas', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Próximos Eventos'
+    },
+
+    latestNews: {
+      title: 'Últimas Noticias'
+    },
+
+    topAthletes: {
+      title: 'Clasificación de Puntos'
     }
   },
 
   // Página Freeski Slopestyle
-  freeskiSlopestyle: {
-    title: 'Freeski Slopestyle/Big Air',
-    subtitle: 'Freeski Slopestyle & Big Air',
-    
-    tags: {
-      pointsSystem: 'Sistema de Puntos 240/360/120',
-      judgingSystem: 'Sistema de Jueces',
-      competitionFormat: 'Formato Clasificatoria/Final'
-    },
-    
-    pointsSystem: {
-      title: 'Sistema de Puntos Escalonado',
-      class1: {
-        title: 'Competencias Clase 1',
-        description: 'Campeonatos nacionales y eventos de alto nivel'
+  freestyleSlopestyle: {
+    title: 'Freeski Slopestyle',
+    subtitle: 'Freestyle Slopestyle',
+    projectLabel: 'Freeski SS',
+
+    hero: {
+      slide1: {
+        title: 'Campeonato Nacional de Freeski Slopestyle 2024',
+        subtitle: 'Presencia momentos de ruptura de límites del freeski chino'
       },
-      class2: {
-        title: 'Competencias Clase 2',
-        description: 'Competencias regionales importantes'
+      slide2: {
+        title: 'Sistema de Puntos Graduado 360',
+        subtitle: 'Mecanismo de puntuación justo basado en coeficiente de dificultad'
       },
-      class3: {
-        title: 'Competencias Clase 3',
-        description: 'Competencias locales regulares'
+      slide3: {
+        title: 'Programa de Desarrollo Juvenil Serie U',
+        subtitle: 'Sistema de desarrollo de talentos U12/U15/U18'
       }
+    },
+
+    quickAccess: {
+      results: { title: 'Resultados de Competencias', nameEn: 'Results' },
+      rankings: { title: 'Clasificación de Puntos', nameEn: 'Rankings' },
+      schedule: { title: 'Calendario de Eventos', nameEn: 'Calendar' },
+      videos: { title: 'Centro de Videos', nameEn: 'Videos' },
+      athletes: { title: 'Registro de Atletas', nameEn: 'Athletes' },
+      documents: { title: 'Documentos de Reglas', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Próximos Eventos'
+    },
+
+    latestNews: {
+      title: 'Últimas Noticias'
+    },
+
+    topAthletes: {
+      title: 'Clasificación de Puntos'
     }
   },
 
   // Página Snowboard Slopestyle
   snowboardSlopestyle: {
-    title: 'Snowboard Slopestyle/Big Air',
-    subtitle: 'Snowboard Slopestyle & Big Air',
-    
-    tags: {
-      pointsSystem: 'Sistema de Puntos 240/360/120',
-      judgingSystem: 'Sistema de Jueces',
-      competitionFormat: 'Formato Clasificatoria/Final'
+    title: 'Snowboard Slopestyle',
+    subtitle: 'Snowboard Slopestyle',
+    projectLabel: 'Snowboard SS',
+
+    hero: {
+      slide1: {
+        title: 'Campeonato Nacional de Snowboard Slopestyle 2024',
+        subtitle: 'Presencia momentos emocionantes del snowboard chino'
+      },
+      slide2: {
+        title: 'Sistema de Puntos Graduado 360',
+        subtitle: 'Reglas de cálculo de puntos basadas en estándares internacionales'
+      },
+      slide3: {
+        title: 'Programa de Desarrollo Juvenil Serie U',
+        subtitle: 'Sistema de desarrollo de tres niveles U12/U15/U18'
+      }
+    },
+
+    quickAccess: {
+      results: { title: 'Resultados de Competencias', nameEn: 'Results' },
+      rankings: { title: 'Clasificación de Puntos', nameEn: 'Rankings' },
+      schedule: { title: 'Calendario de Eventos', nameEn: 'Calendar' },
+      videos: { title: 'Centro de Videos', nameEn: 'Videos' },
+      athletes: { title: 'Registro de Atletas', nameEn: 'Athletes' },
+      documents: { title: 'Documentos de Reglas', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Próximos Eventos'
+    },
+
+    latestNews: {
+      title: 'Últimas Noticias'
+    },
+
+    topAthletes: {
+      title: 'Clasificación de Puntos'
     }
   },
 
   // Página Snowboard Paralelo
   snowboardParallel: {
-    title: 'Disciplinas Snowboard Paralelo',
-    subtitle: 'Snowboard Parallel Events',
-    
-    tags: {
-      timeBasedScoring: 'Puntuación basada en tiempo',
-      eliminationFormat: 'Formato de eliminación',
-      parallelEvents: 'Disciplinas PGS/PSL'
+    title: 'Snowboard Paralelo',
+    subtitle: 'Snowboard Parallel',
+    projectLabel: 'Snowboard Paralelo',
+
+    hero: {
+      slide1: {
+        title: 'Campeonato Nacional de Snowboard Paralelo 2024',
+        subtitle: 'Combinación perfecta de velocidad y habilidad'
+      },
+      slide2: {
+        title: 'Sistema de Puntos de Torneo',
+        subtitle: 'Cálculo justo de puntos basado en clasificación de enfrentamientos'
+      },
+      slide3: {
+        title: 'Programa de Desarrollo de Atletas Elite',
+        subtitle: 'Mejora tu nivel de carrera y desafía competencias internacionales'
+      }
+    },
+
+    quickAccess: {
+      results: { title: 'Resultados de Competencias', nameEn: 'Results' },
+      rankings: { title: 'Clasificación de Puntos', nameEn: 'Rankings' },
+      schedule: { title: 'Calendario de Eventos', nameEn: 'Calendar' },
+      videos: { title: 'Centro de Videos', nameEn: 'Videos' },
+      athletes: { title: 'Registro de Atletas', nameEn: 'Athletes' },
+      documents: { title: 'Documentos de Reglas', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Próximos Eventos'
+    },
+
+    latestNews: {
+      title: 'Últimas Noticias'
+    },
+
+    topAthletes: {
+      title: 'Clasificación de Puntos'
     }
   },
 

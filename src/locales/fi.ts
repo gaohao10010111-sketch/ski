@@ -26,54 +26,65 @@ export const fi: TranslationKeys = {
     login: 'Kirjaudu',
     logout: 'Kirjaudu ulos',
     register: 'Rekisteröidy',
-    profile: 'Profiili'
+    profile: 'Profiili',
+    viewDetails: 'Näytä yksityiskohdat',
+    viewFullSchedule: 'Näytä täydellinen kilpailukalenteri →',
+    viewFullRankings: 'Näytä täydellinen sijoitus →',
+    readMore: 'Lue lisää'
   },
 
   // Navigointi
   navigation: {
     title: 'Kiinalainen Hiihtopistejärjestelmä',
     titleShort: 'CSPS',
+
+    // Projektinvalitsin
     disciplines: 'Lajit',
-    points: 'Pisteet',
-    events: 'Kilpailut',
+    alpine: 'Alppihiihto',
+    snowboardSlopestyle: 'Lumilautaslopestyle',
+    snowboardParallel: 'Lumilautaparalleli',
+    freestyleSlopestyle: 'Vapaalaskuslopestyle',
+
+    // Yleinen navigointi
     my: 'Oma',
     docs: 'Dokumentit',
     about: 'Tietoa',
-    
+
+    // Projektitason navigointi
+    points: 'Pisteiden hallinta',
+    events: 'Kilpailujen hallinta',
+    athletes: 'Urheilijat',
+
     // Alavalikot
     submenus: {
-      // Hiihtolajit
-      alpine: 'Alppihiihto',
-      snowboardSlopestyle: 'Lumilautaslopestyle/Big Air',
-      snowboardParallel: 'Lumilautaparalleli',
-      freeskiSlopestyle: 'Vapaalaskuslopestyle/Big Air',
-      
-      // Pistekeskus
-      myPoints: 'Omat Pisteet',
-      pointsQuery: 'Pistekysely',
+      // Pisteiden hallinta alavalikot
       pointsCalculator: 'Pistelaskin',
       pointsRankings: 'Pistesijoitus',
-      pointsTrends: 'Pistetrendianalyysi',
-      
-      // Kilpailut
+      pointsTrends: 'Pisteiden trendit',
+
+      // Kilpailujen hallinta alavalikot
       eventsSchedule: 'Kilpailukalenteri',
       eventsRegister: 'Verkkorekisteröinti',
-      eventsList: 'Kilpailulista',
       eventsResults: 'Tuloskysely',
       eventsStats: 'Datatilastot',
-      
-      // Oma Alue
-      personalCenter: 'Henkilökohtainen Keskus',
-      myRegistrations: 'Omat Rekisteröinnit',
-      athleteProfile: 'Urheilijan Profiili',
-      resultsHistory: 'Tuloshistoria',
-      
-      // Tietokanta
-      pointsRules: 'Pistesäännöt',
-      competitionRules: 'Kilpailusäännöt',
-      venueStandards: 'Paikkastandardit',
-      fisRules: 'FIS-säännöt',
-      userGuide: 'Käyttöopas'
+
+      // Urheilijat alavalikot
+      athletesList: 'Urheilijalista',
+      athletesProfile: 'Urheilijan profiili',
+      athletesStats: 'Urheilijan tilastot',
+
+      // Dokumentit alavalikot
+      docsPointsRules: 'Pistesäännöt',
+      docsCompetitionRules: 'Kilpailusäännöt',
+      docsVenueStandards: 'Paikkastandardit',
+      docsGuide: 'Käyttöopas',
+
+      // Oma alue alavalikot
+      myProfile: 'Henkilökohtainen keskus',
+      myPoints: 'Omat pisteet',
+      myRegistrations: 'Omat rekisteröinnit',
+      myAthlete: 'Urheilijan profiili',
+      myHistory: 'Tuloshistoria'
     }
   },
 
@@ -94,133 +105,173 @@ export const fi: TranslationKeys = {
 
   // Alppihiihto sivu
   alpine: {
-    title: 'Alppihiihtopistejärjestelmä',
-    subtitle: 'Alpine Skiing Points System',
-    description: 'v4.0 aikapohjainen kaava',
-    
-    // Tunnisteet
-    tags: {
-      timeBasedFormula: 'v4.0 aikapohjainen kaava',
-      raceLevels: 'A/B/C kilpailutasot',
-      penaltyCalculation: 'Dynaaminen rangaistuspistelaskenta'
-    },
-    
-    // Pikakäyttö
-    quickLinks: {
-      title: 'Pikakäyttö Toimintoihin',
-      pointsRanking: {
-        title: 'Pistesijoitus',
-        description: 'Näytä nykykauden pistesijoitukset'
+    title: 'Alppihiihto',
+    subtitle: 'Alpine Skiing',
+    projectLabel: 'Alppihiihto',
+
+    hero: {
+      slide1: {
+        title: '2024 Kansallisten Mestaruuskilpailujen Kohokohdat',
+        subtitle: 'Todista kiinalaisen alppihiihdon loistavia hetkiä'
       },
-      pointsCalculator: {
-        title: 'Pistelaskin',
-        description: 'v4.0 kaava reaaliaikainen laskenta'
+      slide2: {
+        title: 'Pistejärjestelmän Päivitys',
+        subtitle: 'Tarkempi pistelaskenta v4.0-sääntöjen pohjalta'
       },
-      competitions: {
-        title: 'Kilpailuhallinta',
-        description: 'Näytä aikataulu ja kilpailutulokset'
-      },
-      athletes: {
-        title: 'Urheilijoiden Profiilit',
-        description: 'Urheilijatiedot ja tuloskysely'
-      },
-      registration: {
-        title: 'Verkkorekisteröinti',
-        description: 'Osallistu alppihiihtokilpailuihin'
-      },
-      rules: {
-        title: 'Sääntödokumentaatio',
-        description: 'Alppihiihtokilpailusäännöt'
-      },
-      enterFunction: 'Siirry toimintoon'
-    },
-    
-    // Pistesäännöt
-    pointsRules: {
-      title: 'Alppihiihtopistesäännöt (v4.0)',
-      baseFormula: {
-        title: 'Peruskilpailupisteiden Kaava',
-        formula: 'P = F × (Tx/To - 1)',
-        description: 'P=Peruspisteet | F=Lajitekeräin | Tx=Kilpailijan aika | To=Voittajan aika'
-      },
-      finalFormula: {
-        title: 'Lopullisten Pisteiden Laskenta',
-        formula: 'Lopulliset Pisteet = (P + Rangaistus) × Kilpailukerroin',
-        description: 'A-taso(1.0) | B-taso(0.6) | C-taso(0.3)'
-      },
-      disciplineFactors: {
-        title: 'Lajitekiöiden Taulukko',
-        downhill: 'Syöksy DH',
-        slalom: 'Pujotteluhiihto SL',
-        giantSlalom: 'Suurpujottelu GS',
-        superG: 'Super-G SG',
-        combined: 'Alppiyhdistelmä AC'
+      slide3: {
+        title: 'Talviharjoitusleiri Ilmoittautuminen Avoinna',
+        subtitle: 'Ammattimainen valmennusryhmä auttaa taitojesi parantamisessa'
       }
     },
-    
-    // Tilastot
-    statistics: {
-      title: 'Reaaliaikaiset Tilastot',
-      registeredAthletes: 'Rekisteröityneet Urheilijat',
-      seasonEvents: 'Kauden Kilpailut',
-      raceCount: 'Kilpailujen Määrä',
-      averagePoints: 'Keskimääräiset Pisteet',
-      monthlyIncrease: '12 uutta tässä kuussa',
-      seasonGrowth: '16% kasvu edellisestä kaudesta',
-      pandemicImpact: 'Hieman pandemian vaikuttama',
-      levelImprovement: 'Kokonaistaso parani tasaisesti'
+
+    quickAccess: {
+      results: { title: 'Kilpailutulokset', nameEn: 'Results' },
+      rankings: { title: 'Pistesijoitus', nameEn: 'Rankings' },
+      schedule: { title: 'Kilpailukalenteri', nameEn: 'Calendar' },
+      videos: { title: 'Videokeskus', nameEn: 'Videos' },
+      athletes: { title: 'Urheilijarekisteri', nameEn: 'Athletes' },
+      documents: { title: 'Sääntödokumentit', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Tulevat'
+    },
+
+    latestNews: {
+      title: 'Uusimmat Uutiset'
+    },
+
+    topAthletes: {
+      title: 'Pistesijoitus'
     }
   },
 
   // Vapaalaskuslopestyle sivu
-  freeskiSlopestyle: {
-    title: 'Vapaalaskuslopestyle/Big Air',
-    subtitle: 'Freeski Slopestyle & Big Air',
-    
-    tags: {
-      pointsSystem: '240/360/120 Pistejärjestelmä',
-      judgingSystem: 'Tuomarijärjestelmä',
-      competitionFormat: 'Karsinta/Finaali Formaatti'
-    },
-    
-    pointsSystem: {
-      title: 'Porrastettu Pistejärjestelmä',
-      class1: {
-        title: 'Luokan 1 Kilpailut',
-        description: 'Kansalliset mestaruuskilpailut ja huipputason tapahtumat'
+  freestyleSlopestyle: {
+    title: 'Vapaalaskuslopestyle',
+    subtitle: 'Freestyle Slopestyle',
+    projectLabel: 'Freeski SS',
+
+    hero: {
+      slide1: {
+        title: '2024 Kansalliset Vapaalaskuslopestyle Mestaruuskilpailut',
+        subtitle: 'Todista kiinalaisen freeskiin rajojen ylittämistä'
       },
-      class2: {
-        title: 'Luokan 2 Kilpailut',
-        description: 'Alueelliset tärkeät kilpailut'
+      slide2: {
+        title: '360 Porrastettu Pistejärjestelmä',
+        subtitle: 'Oikeudenmukainen pistemekanismi vaikeuskertoimen pohjalta'
       },
-      class3: {
-        title: 'Luokan 3 Kilpailut',
-        description: 'Paikalliset säännölliset kilpailut'
+      slide3: {
+        title: 'U-sarjan Nuorten Kehitysohjelma',
+        subtitle: 'U12/U15/U18 lahjakkuuksien kehitysjärjestelmä'
       }
+    },
+
+    quickAccess: {
+      results: { title: 'Kilpailutulokset', nameEn: 'Results' },
+      rankings: { title: 'Pistesijoitus', nameEn: 'Rankings' },
+      schedule: { title: 'Kilpailukalenteri', nameEn: 'Calendar' },
+      videos: { title: 'Videokeskus', nameEn: 'Videos' },
+      athletes: { title: 'Urheilijarekisteri', nameEn: 'Athletes' },
+      documents: { title: 'Sääntödokumentit', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Tulevat'
+    },
+
+    latestNews: {
+      title: 'Uusimmat Uutiset'
+    },
+
+    topAthletes: {
+      title: 'Pistesijoitus'
     }
   },
 
   // Lumilautaslopestyle sivu
   snowboardSlopestyle: {
-    title: 'Lumilautaslopestyle/Big Air',
-    subtitle: 'Snowboard Slopestyle & Big Air',
-    
-    tags: {
-      pointsSystem: '240/360/120 Pistejärjestelmä',
-      judgingSystem: 'Tuomarijärjestelmä',
-      competitionFormat: 'Karsinta/Finaali Formaatti'
+    title: 'Lumilautaslopestyle',
+    subtitle: 'Snowboard Slopestyle',
+    projectLabel: 'Snowboard SS',
+
+    hero: {
+      slide1: {
+        title: '2024 Kansalliset Lumilautaslopestyle Mestaruuskilpailut',
+        subtitle: 'Todista kiinalaisen lumilautailun jännittäviä hetkiä'
+      },
+      slide2: {
+        title: '360 Porrastettu Pistejärjestelmä',
+        subtitle: 'Pistelaskentasäännöt kansainvälisten standardien pohjalta'
+      },
+      slide3: {
+        title: 'U-sarjan Nuorten Kehitysohjelma',
+        subtitle: 'U12/U15/U18 kolmiportainen kehitysjärjestelmä'
+      }
+    },
+
+    quickAccess: {
+      results: { title: 'Kilpailutulokset', nameEn: 'Results' },
+      rankings: { title: 'Pistesijoitus', nameEn: 'Rankings' },
+      schedule: { title: 'Kilpailukalenteri', nameEn: 'Calendar' },
+      videos: { title: 'Videokeskus', nameEn: 'Videos' },
+      athletes: { title: 'Urheilijarekisteri', nameEn: 'Athletes' },
+      documents: { title: 'Sääntödokumentit', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Tulevat'
+    },
+
+    latestNews: {
+      title: 'Uusimmat Uutiset'
+    },
+
+    topAthletes: {
+      title: 'Pistesijoitus'
     }
   },
 
   // Lumilautaparalleli sivu
   snowboardParallel: {
-    title: 'Lumilautaparalleli Lajit',
-    subtitle: 'Snowboard Parallel Events',
-    
-    tags: {
-      timeBasedScoring: 'Aikapohjainen pisteytys',
-      eliminationFormat: 'Karsintaformaatti',
-      parallelEvents: 'PGS/PSL lajit'
+    title: 'Lumilautaparalleli',
+    subtitle: 'Snowboard Parallel',
+    projectLabel: 'Lumilautaparalleli',
+
+    hero: {
+      slide1: {
+        title: '2024 Kansalliset Lumilautaparalleli Mestaruuskilpailut',
+        subtitle: 'Täydellinen yhdistelmä nopeutta ja taitoa'
+      },
+      slide2: {
+        title: 'Turnauspistysjärjestelmä',
+        subtitle: 'Oikeudenmukainen pistelaskenta ottelurankingin pohjalta'
+      },
+      slide3: {
+        title: 'Eliittien Urheilijan Kehitysohjelma',
+        subtitle: 'Paranna kilpailutasoasi ja haasta kansainväliset kilpailut'
+      }
+    },
+
+    quickAccess: {
+      results: { title: 'Kilpailutulokset', nameEn: 'Results' },
+      rankings: { title: 'Pistesijoitus', nameEn: 'Rankings' },
+      schedule: { title: 'Kilpailukalenteri', nameEn: 'Calendar' },
+      videos: { title: 'Videokeskus', nameEn: 'Videos' },
+      athletes: { title: 'Urheilijarekisteri', nameEn: 'Athletes' },
+      documents: { title: 'Sääntödokumentit', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Tulevat'
+    },
+
+    latestNews: {
+      title: 'Uusimmat Uutiset'
+    },
+
+    topAthletes: {
+      title: 'Pistesijoitus'
     }
   },
 

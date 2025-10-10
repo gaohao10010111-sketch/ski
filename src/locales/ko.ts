@@ -26,54 +26,65 @@ export const ko: TranslationKeys = {
     login: '로그인',
     logout: '로그아웃',
     register: '회원가입',
-    profile: '프로필'
+    profile: '프로필',
+    viewDetails: '세부정보 보기',
+    viewFullSchedule: '전체 일정 보기 →',
+    viewFullRankings: '전체 랭킹 보기 →',
+    readMore: '더 읽기'
   },
 
   // 내비게이션
   navigation: {
     title: '중국 스키 포인트 시스템',
     titleShort: 'CSPS',
+
+    // 종목 전환기
     disciplines: '종목',
-    points: '포인트',
-    events: '대회',
+    alpine: '알파인 스키',
+    snowboardSlopestyle: '스노보드 슬로프스타일',
+    snowboardParallel: '스노보드 패러렐',
+    freestyleSlopestyle: '프리스타일 슬로프스타일',
+
+    // 글로벌 내비게이션
     my: '마이',
     docs: '자료',
     about: '정보',
-    
+
+    // 종목별 내비게이션
+    points: '포인트 관리',
+    events: '대회 관리',
+    athletes: '선수',
+
     // 서브메뉴
     submenus: {
-      // 스키 종목
-      alpine: '알파인 스키',
-      snowboardSlopestyle: '스노보드 슬로프스타일/빅에어',
-      snowboardParallel: '스노보드 패러렐',
-      freeskiSlopestyle: '프리스키 슬로프스타일/빅에어',
-      
-      // 포인트 센터
-      myPoints: '내 포인트',
-      pointsQuery: '포인트 조회',
+      // 포인트 관리 서브메뉴
       pointsCalculator: '포인트 계산기',
       pointsRankings: '포인트 랭킹',
-      pointsTrends: '포인트 추이 분석',
-      
-      // 대회
+      pointsTrends: '포인트 추이',
+
+      // 대회 관리 서브메뉴
       eventsSchedule: '대회 일정',
       eventsRegister: '온라인 등록',
-      eventsList: '대회 목록',
       eventsResults: '결과 조회',
       eventsStats: '데이터 통계',
-      
-      // 마이페이지
-      personalCenter: '개인 센터',
+
+      // 선수 서브메뉴
+      athletesList: '선수 명단',
+      athletesProfile: '선수 프로필',
+      athletesStats: '선수 통계',
+
+      // 자료 서브메뉴
+      docsPointsRules: '포인트 규칙',
+      docsCompetitionRules: '경기 규칙',
+      docsVenueStandards: '경기장 기준',
+      docsGuide: '사용 가이드',
+
+      // 마이 서브메뉴
+      myProfile: '개인 센터',
+      myPoints: '내 포인트',
       myRegistrations: '내 등록',
-      athleteProfile: '선수 프로필',
-      resultsHistory: '성적 이력',
-      
-      // 지식 베이스
-      pointsRules: '포인트 규칙',
-      competitionRules: '경기 규칙',
-      venueStandards: '경기장 기준',
-      fisRules: 'FIS 규칙',
-      userGuide: '사용 가이드'
+      myAthlete: '선수 프로필',
+      myHistory: '성적 이력'
     }
   },
 
@@ -84,7 +95,7 @@ export const ko: TranslationKeys = {
     alpine: '알파인 스키',
     snowboardSlopestyle: '스노보드 슬로프스타일/빅에어',
     snowboardParallel: '스노보드 패러렐',
-    freeskiSlopestyle: '프리스키 슬로프스타일/빅에어',
+    freeskiSlopestyle: '프리스타일 슬로프스타일/빅에어',
     points: '포인트 센터',
     events: '대회',
     my: '마이페이지',
@@ -94,133 +105,173 @@ export const ko: TranslationKeys = {
 
   // 알파인 스키 페이지
   alpine: {
-    title: '알파인 스키 포인트 시스템',
-    subtitle: 'Alpine Skiing Points System',
-    description: 'v4.0 시간 기반 공식',
-    
-    // 태그
-    tags: {
-      timeBasedFormula: 'v4.0 시간 기반 공식',
-      raceLevels: 'A/B/C급 대회',
-      penaltyCalculation: '페널티 동적 계산'
-    },
-    
-    // 빠른 링크
-    quickLinks: {
-      title: '빠른 접근',
-      pointsRanking: {
-        title: '포인트 랭킹',
-        description: '현재 시즌 포인트 랭킹 보기'
+    title: '알파인 스키',
+    subtitle: 'Alpine Skiing',
+    projectLabel: '알파인',
+
+    hero: {
+      slide1: {
+        title: '2024 전국 선수권 대회 하이라이트',
+        subtitle: '중국 알파인 스키의 영광스러운 순간 목격'
       },
-      pointsCalculator: {
-        title: '포인트 계산기',
-        description: 'v4.0 공식 실시간 계산'
+      slide2: {
+        title: '포인트 시스템 업그레이드',
+        subtitle: 'v4.0 규칙 기반 더 정확한 포인트 계산'
       },
-      competitions: {
-        title: '대회 관리',
-        description: '일정 및 경기 결과 보기'
-      },
-      athletes: {
-        title: '선수 프로필',
-        description: '선수 정보 및 성적 조회'
-      },
-      registration: {
-        title: '온라인 등록',
-        description: '알파인 스키 대회 참가'
-      },
-      rules: {
-        title: '규칙 문서',
-        description: '알파인 스키 경기 규칙'
-      },
-      enterFunction: '기능 들어가기'
-    },
-    
-    // 포인트 규칙
-    pointsRules: {
-      title: '알파인 스키 포인트 규칙 (v4.0)',
-      baseFormula: {
-        title: '기본 경기 포인트 공식',
-        formula: 'P = F × (Tx/To - 1)',
-        description: 'P=기본포인트 | F=종목계수 | Tx=선수시간 | To=우승시간'
-      },
-      finalFormula: {
-        title: '최종 포인트 계산',
-        formula: '최종포인트 = (P + 페널티) × 대회계수',
-        description: 'A급(1.0) | B급(0.6) | C급(0.3)'
-      },
-      disciplineFactors: {
-        title: '종목 계수표',
-        downhill: '다운힐 DH',
-        slalom: '슬라롬 SL',
-        giantSlalom: '대회전 GS',
-        superG: '수퍼대회전 SG',
-        combined: '알파인복합 AC'
+      slide3: {
+        title: '겨울 훈련 캠프 등록',
+        subtitle: '전문 코칭 팀이 기술 향상 지원'
       }
     },
-    
-    // 통계
-    statistics: {
-      title: '실시간 통계',
-      registeredAthletes: '등록 선수',
-      seasonEvents: '이번 시즌 대회',
-      raceCount: '경기 횟수',
-      averagePoints: '평균 포인트',
-      monthlyIncrease: '이번 달 12명 증가',
-      seasonGrowth: '지난 시즌 대비 16% 증가',
-      pandemicImpact: '팬데믹 영향으로 소폭 감소',
-      levelImprovement: '전체 수준 꾸준히 향상'
+
+    quickAccess: {
+      results: { title: '대회 결과', nameEn: 'Results' },
+      rankings: { title: '포인트 랭킹', nameEn: 'Rankings' },
+      schedule: { title: '대회 캘린더', nameEn: 'Calendar' },
+      videos: { title: '비디오 센터', nameEn: 'Videos' },
+      athletes: { title: '선수 명단', nameEn: 'Athletes' },
+      documents: { title: '규칙 문서', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: '예정된 일정'
+    },
+
+    latestNews: {
+      title: '최신 뉴스'
+    },
+
+    topAthletes: {
+      title: '포인트 랭킹'
     }
   },
 
-  // 프리스키 슬로프스타일 페이지
-  freeskiSlopestyle: {
-    title: '프리스키 슬로프스타일/빅에어',
-    subtitle: 'Freeski Slopestyle & Big Air',
-    
-    tags: {
-      pointsSystem: '240/360/120 포인트 시스템',
-      judgingSystem: '심판 채점 시스템',
-      competitionFormat: '예선/결선 형식'
-    },
-    
-    pointsSystem: {
-      title: '단계별 포인트 시스템',
-      class1: {
-        title: '1급 대회',
-        description: '전국 선수권 등 최고급 대회'
+  // 프리스타일 슬로프스타일 페이지
+  freestyleSlopestyle: {
+    title: '프리스타일 슬로프스타일',
+    subtitle: 'Freestyle Slopestyle',
+    projectLabel: '프리스타일 SS',
+
+    hero: {
+      slide1: {
+        title: '2024 전국 프리스타일 슬로프스타일 선수권',
+        subtitle: '중국 프리스타일 스키의 극한 돌파 목격'
       },
-      class2: {
-        title: '2급 대회',
-        description: '지역 중요 대회'
+      slide2: {
+        title: '360 포인트 단계 시스템',
+        subtitle: '난이도 계수 기반 공정한 채점 메커니즘'
       },
-      class3: {
-        title: '3급 대회',
-        description: '지방 일반 대회'
+      slide3: {
+        title: 'U 시리즈 청소년 육성 프로그램',
+        subtitle: 'U12/U15/U18 인재 육성 시스템'
       }
+    },
+
+    quickAccess: {
+      results: { title: '대회 결과', nameEn: 'Results' },
+      rankings: { title: '포인트 랭킹', nameEn: 'Rankings' },
+      schedule: { title: '대회 캘린더', nameEn: 'Calendar' },
+      videos: { title: '비디오 센터', nameEn: 'Videos' },
+      athletes: { title: '선수 명단', nameEn: 'Athletes' },
+      documents: { title: '규칙 문서', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: '예정된 일정'
+    },
+
+    latestNews: {
+      title: '최신 뉴스'
+    },
+
+    topAthletes: {
+      title: '포인트 랭킹'
     }
   },
 
   // 스노보드 슬로프스타일 페이지
   snowboardSlopestyle: {
-    title: '스노보드 슬로프스타일/빅에어',
-    subtitle: 'Snowboard Slopestyle & Big Air',
-    
-    tags: {
-      pointsSystem: '240/360/120 포인트 시스템',
-      judgingSystem: '심판 채점 시스템',
-      competitionFormat: '예선/결선 형식'
+    title: '스노보드 슬로프스타일',
+    subtitle: 'Snowboard Slopestyle',
+    projectLabel: '스노보드 SS',
+
+    hero: {
+      slide1: {
+        title: '2024 전국 스노보드 슬로프스타일 선수권',
+        subtitle: '중국 스노보드의 흥미진진한 순간 목격'
+      },
+      slide2: {
+        title: '360 포인트 단계 시스템',
+        subtitle: '국제 표준 기반 포인트 계산 규칙'
+      },
+      slide3: {
+        title: 'U 시리즈 청소년 육성 프로그램',
+        subtitle: 'U12/U15/U18 3단계 육성 시스템'
+      }
+    },
+
+    quickAccess: {
+      results: { title: '대회 결과', nameEn: 'Results' },
+      rankings: { title: '포인트 랭킹', nameEn: 'Rankings' },
+      schedule: { title: '대회 캘린더', nameEn: 'Calendar' },
+      videos: { title: '비디오 센터', nameEn: 'Videos' },
+      athletes: { title: '선수 명단', nameEn: 'Athletes' },
+      documents: { title: '규칙 문서', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: '예정된 일정'
+    },
+
+    latestNews: {
+      title: '최신 뉴스'
+    },
+
+    topAthletes: {
+      title: '포인트 랭킹'
     }
   },
 
   // 스노보드 패러렐 페이지
   snowboardParallel: {
-    title: '스노보드 패러렐 종목',
-    subtitle: 'Snowboard Parallel Events',
-    
-    tags: {
-      timeBasedScoring: '시간 기반 채점',
-      eliminationFormat: '토너먼트 형식',
-      parallelEvents: 'PGS/PSL 종목'
+    title: '스노보드 패러렐',
+    subtitle: 'Snowboard Parallel',
+    projectLabel: '스노보드 패러렐',
+
+    hero: {
+      slide1: {
+        title: '2024 전국 스노보드 패러렐 선수권',
+        subtitle: '속도와 기술의 완벽한 조합'
+      },
+      slide2: {
+        title: '토너먼트 포인트 시스템',
+        subtitle: '대결 순위 기반 공정한 포인트 계산'
+      },
+      slide3: {
+        title: '엘리트 선수 육성 프로그램',
+        subtitle: '레이싱 레벨 향상 및 국제 대회 도전'
+      }
+    },
+
+    quickAccess: {
+      results: { title: '대회 결과', nameEn: 'Results' },
+      rankings: { title: '포인트 랭킹', nameEn: 'Rankings' },
+      schedule: { title: '대회 캘린더', nameEn: 'Calendar' },
+      videos: { title: '비디오 센터', nameEn: 'Videos' },
+      athletes: { title: '선수 명단', nameEn: 'Athletes' },
+      documents: { title: '규칙 문서', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: '예정된 일정'
+    },
+
+    latestNews: {
+      title: '최신 뉴스'
+    },
+
+    topAthletes: {
+      title: '포인트 랭킹'
     }
   },
 

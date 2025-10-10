@@ -1,15 +1,17 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Calculator, Trophy, Users, FileText, TrendingUp, Calendar,
   Video, BarChart3, ChevronLeft, ChevronRight, ExternalLink,
   Clock, MapPin, Medal
 } from 'lucide-react';
 import { getImagePath } from '@/utils/paths';
+import { useTranslation } from '@/contexts/LanguageContext';
 
 export default function SnowboardParallelPage() {
+  const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeSubDiscipline, setActiveSubDiscipline] = useState('all');
 
@@ -23,20 +25,20 @@ export default function SnowboardParallelPage() {
   // 英雄轮播内容
   const heroSlides = [
     {
-      title: '2024全国单板平行项目锦标赛',
-      subtitle: '竞速与技巧的完美结合',
+      title: t.snowboardParallel.hero.slide1.title,
+      subtitle: t.snowboardParallel.hero.slide1.subtitle,
       image: getImagePath('/images/ski-bg.jpg'),
       link: '/competitions'
     },
     {
-      title: '淘汰赛制积分系统',
-      subtitle: '基于对决排名的公平积分计算',
+      title: t.snowboardParallel.hero.slide2.title,
+      subtitle: t.snowboardParallel.hero.slide2.subtitle,
       image: getImagePath('/images/ski-bg.jpg'),
       link: '/rules/points'
     },
     {
-      title: '精英选手培养计划',
-      subtitle: '提升竞速水平，冲击国际赛事',
+      title: t.snowboardParallel.hero.slide3.title,
+      subtitle: t.snowboardParallel.hero.slide3.subtitle,
       image: getImagePath('/images/ski-bg.jpg'),
       link: '/registration'
     }
@@ -44,12 +46,12 @@ export default function SnowboardParallelPage() {
 
   // 功能快捷入口
   const quickAccess = [
-    { title: '赛事成绩', nameEn: 'Results', icon: Trophy, href: '/snowboard-parallel/events/results', color: 'from-indigo-500 to-indigo-600' },
-    { title: '积分排名', nameEn: 'Rankings', icon: BarChart3, href: '/snowboard-parallel/points/rankings', color: 'from-blue-500 to-blue-600' },
-    { title: '赛事日历', nameEn: 'Calendar', icon: Calendar, href: '/snowboard-parallel/events/schedule', color: 'from-sky-500 to-sky-600' },
-    { title: '视频中心', nameEn: 'Videos', icon: Video, href: '#videos', color: 'from-cyan-500 to-cyan-600' },
-    { title: '运动员名录', nameEn: 'Athletes', icon: Users, href: '/snowboard-parallel/athletes/list', color: 'from-violet-500 to-violet-600' },
-    { title: '规则文档', nameEn: 'Documents', icon: FileText, href: '/snowboard-parallel/docs/points-rules', color: 'from-indigo-400 to-indigo-500' }
+    { title: t.snowboardParallel.quickAccess.results.title, nameEn: t.snowboardParallel.quickAccess.results.nameEn, icon: Trophy, href: '/snowboard-parallel/events/results', color: 'from-indigo-500 to-indigo-600' },
+    { title: t.snowboardParallel.quickAccess.rankings.title, nameEn: t.snowboardParallel.quickAccess.rankings.nameEn, icon: BarChart3, href: '/snowboard-parallel/points/rankings', color: 'from-blue-500 to-blue-600' },
+    { title: t.snowboardParallel.quickAccess.schedule.title, nameEn: t.snowboardParallel.quickAccess.schedule.nameEn, icon: Calendar, href: '/snowboard-parallel/events/schedule', color: 'from-sky-500 to-sky-600' },
+    { title: t.snowboardParallel.quickAccess.videos.title, nameEn: t.snowboardParallel.quickAccess.videos.nameEn, icon: Video, href: '#videos', color: 'from-cyan-500 to-cyan-600' },
+    { title: t.snowboardParallel.quickAccess.athletes.title, nameEn: t.snowboardParallel.quickAccess.athletes.nameEn, icon: Users, href: '/snowboard-parallel/athletes/list', color: 'from-violet-500 to-violet-600' },
+    { title: t.snowboardParallel.quickAccess.documents.title, nameEn: t.snowboardParallel.quickAccess.documents.nameEn, icon: FileText, href: '/snowboard-parallel/docs/points-rules', color: 'from-indigo-400 to-indigo-500' }
   ];
 
   // 即将进行的比赛
@@ -116,6 +118,15 @@ export default function SnowboardParallelPage() {
     setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
   };
 
+  // 自动轮播功能
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000); // 每5秒切换一次
+
+    return () => clearInterval(interval);
+  }, [currentSlide]);
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* 英雄展示区 - 参考FIS设计 */}
@@ -132,8 +143,8 @@ export default function SnowboardParallelPage() {
         {/* 项目名称标签 - 左上角 FIS风格 */}
         <div className="absolute top-6 left-6 sm:left-10 md:left-20 xl:left-[120px] z-10">
           <div className="bg-indigo-600/90 backdrop-blur-sm text-white px-4 py-2 rounded-lg shadow-lg">
-            <div className="text-sm font-semibold">单板平行项目</div>
-            <div className="text-xs opacity-90">Snowboard Parallel</div>
+            <div className="text-sm font-semibold">{t.snowboardParallel.title}</div>
+            <div className="text-xs opacity-90">{t.snowboardParallel.subtitle}</div>
           </div>
         </div>
 
@@ -148,9 +159,15 @@ export default function SnowboardParallelPage() {
             <div className="flex gap-4">
               <Link
                 href={heroSlides[currentSlide].link}
-                className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium shadow-lg"
+                className="bg-ski-blue text-white hover:bg-ski-blue/90 px-6 py-3 rounded-lg text-sm font-medium transition-colors shadow-lg"
               >
-                查看详情
+                {t.common.viewDetails}
+              </Link>
+              <Link
+                href="/snowboard-parallel"
+                className="text-blue-600 bg-blue-50 hover:bg-blue-100 px-6 py-3 rounded-lg text-sm font-medium transition-colors border border-blue-200"
+              >
+                {t.snowboardParallel.projectLabel}
               </Link>
             </div>
           </div>
@@ -214,7 +231,7 @@ export default function SnowboardParallelPage() {
             <div className="bg-white rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
                 <Calendar className="w-5 h-5 mr-2 text-indigo-600" />
-                即将进行
+                {t.snowboardParallel.upcomingEvents.title}
               </h3>
               <div className="space-y-4">
                 {upcomingEvents.map((event, index) => (
@@ -233,7 +250,7 @@ export default function SnowboardParallelPage() {
                 ))}
               </div>
               <Link href="/snowboard-parallel/events/schedule" className="block text-center mt-4 text-indigo-600 hover:text-indigo-700 text-sm font-medium">
-                查看完整赛程 →
+                {t.common.viewFullSchedule}
               </Link>
             </div>
           </div>
@@ -241,7 +258,7 @@ export default function SnowboardParallelPage() {
           {/* 中间主栏 - 新闻流 */}
           <div className="lg:col-span-6">
             <div className="bg-white rounded-xl p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-gray-900 mb-6">最新动态</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-6">{t.snowboardParallel.latestNews.title}</h3>
               <div className="space-y-6">
                 {latestNews.map((news, index) => (
                   <div key={index} className="flex gap-4 pb-6 border-b border-gray-100 last:border-0">
@@ -257,7 +274,7 @@ export default function SnowboardParallelPage() {
                       </h4>
                       <p className="text-sm text-gray-600">{news.subtitle}</p>
                       <button className="text-sm text-indigo-600 hover:text-indigo-700 mt-2 inline-flex items-center">
-                        阅读全文 <ExternalLink className="w-3 h-3 ml-1" />
+                        {t.common.readMore} <ExternalLink className="w-3 h-3 ml-1" />
                       </button>
                     </div>
                   </div>
@@ -271,7 +288,7 @@ export default function SnowboardParallelPage() {
             <div className="bg-white rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
                 <Medal className="w-5 h-5 mr-2 text-yellow-500" />
-                积分排行
+                {t.snowboardParallel.topAthletes.title}
               </h3>
               <div className="space-y-3">
                 {topAthletes.map((athlete) => (
@@ -305,7 +322,7 @@ export default function SnowboardParallelPage() {
                 ))}
               </div>
               <Link href="/snowboard-parallel/points/rankings" className="block text-center mt-4 text-indigo-600 hover:text-indigo-700 text-sm font-medium">
-                查看完整排名 →
+                {t.common.viewFullRankings}
               </Link>
             </div>
           </div>

@@ -26,54 +26,65 @@ export const sv: TranslationKeys = {
     login: 'Logga in',
     logout: 'Logga ut',
     register: 'Registrera',
-    profile: 'Profil'
+    profile: 'Profil',
+    viewDetails: 'Visa detaljer',
+    viewFullSchedule: 'Visa fullständig tävlingskalender →',
+    viewFullRankings: 'Visa fullständig rankning →',
+    readMore: 'Läs mer'
   },
 
   // Navigation
   navigation: {
     title: 'Kinesiska Skidpoäng System',
     titleShort: 'CSPS',
+
+    // Projektväxlare
     disciplines: 'Discipliner',
-    points: 'Poäng',
-    events: 'Tävlingar',
+    alpine: 'Alpin Skidåkning',
+    snowboardSlopestyle: 'Snowboard Slopestyle',
+    snowboardParallel: 'Snowboard Parallel',
+    freestyleSlopestyle: 'Freeski Slopestyle',
+
+    // Global navigation
     my: 'Min',
     docs: 'Dokument',
     about: 'Om',
-    
+
+    // Projektnivå navigation
+    points: 'Poänghantering',
+    events: 'Tävlingshantering',
+    athletes: 'Atleter',
+
     // Undermenyer
     submenus: {
-      // Skiddiscipliner
-      alpine: 'Alpin Skidåkning',
-      snowboardSlopestyle: 'Snowboard Slopestyle/Big Air',
-      snowboardParallel: 'Snowboard Parallel',
-      freeskiSlopestyle: 'Freeski Slopestyle/Big Air',
-      
-      // Poängcenter
-      myPoints: 'Mina Poäng',
-      pointsQuery: 'Poängförfrågan',
+      // Poänghantering undermenyer
       pointsCalculator: 'Poängkalkylator',
-      pointsRankings: 'Poängranking',
-      pointsTrends: 'Poängtrendanalys',
-      
-      // Tävlingar
+      pointsRankings: 'Poängrankning',
+      pointsTrends: 'Poängtrender',
+
+      // Tävlingshantering undermenyer
       eventsSchedule: 'Tävlingskalender',
       eventsRegister: 'Onlineregistrering',
-      eventsList: 'Tävlingslista',
       eventsResults: 'Resultatförfrågan',
       eventsStats: 'Datastatistik',
-      
-      // Min Sida
-      personalCenter: 'Personligt Center',
+
+      // Atlet undermenyer
+      athletesList: 'Atletlista',
+      athletesProfile: 'Atletprofil',
+      athletesStats: 'Atletstatistik',
+
+      // Dokument undermenyer
+      docsPointsRules: 'Poängregler',
+      docsCompetitionRules: 'Tävlingsregler',
+      docsVenueStandards: 'Anläggningsstandarder',
+      docsGuide: 'Användarguide',
+
+      // Min sida undermenyer
+      myProfile: 'Personligt Center',
+      myPoints: 'Mina Poäng',
       myRegistrations: 'Mina Registreringar',
-      athleteProfile: 'Atletprofil',
-      resultsHistory: 'Resultathistorik',
-      
-      // Kunskapsbas
-      pointsRules: 'Poängregler',
-      competitionRules: 'Tävlingsregler',
-      venueStandards: 'Anläggningsstandarder',
-      fisRules: 'FIS-regler',
-      userGuide: 'Användarguide'
+      myAthlete: 'Atletprofil',
+      myHistory: 'Resultathistorik'
     }
   },
 
@@ -94,133 +105,173 @@ export const sv: TranslationKeys = {
 
   // Alpin skidåkning sida
   alpine: {
-    title: 'Alpin Skidåkning Poängsystem',
-    subtitle: 'Alpine Skiing Points System',
-    description: 'v4.0 tidsbaserad formel',
-    
-    // Taggar
-    tags: {
-      timeBasedFormula: 'v4.0 tidsbaserad formel',
-      raceLevels: 'A/B/C tävlingsnivåer',
-      penaltyCalculation: 'Dynamisk straffpoängberäkning'
-    },
-    
-    // Snabbåtkomst
-    quickLinks: {
-      title: 'Snabbåtkomst till Funktioner',
-      pointsRanking: {
-        title: 'Poängranking',
-        description: 'Visa nuvarande säsongs poängranking'
+    title: 'Alpin Skidåkning',
+    subtitle: 'Alpine Skiing',
+    projectLabel: 'Alpin',
+
+    hero: {
+      slide1: {
+        title: '2024 Nationella Mästerskapet Höjdpunkter',
+        subtitle: 'Bevittna de lysande ögonblicken av kinesisk alpin skidåkning'
       },
-      pointsCalculator: {
-        title: 'Poängkalkylator',
-        description: 'v4.0 formel realtidsberäkning'
+      slide2: {
+        title: 'Poängsystem Uppgradering',
+        subtitle: 'Mer exakt poängberäkning baserad på v4.0-regler'
       },
-      competitions: {
-        title: 'Tävlingshantering',
-        description: 'Visa schema och tävlingsresultat'
-      },
-      athletes: {
-        title: 'Atletprofiler',
-        description: 'Atletinformation och resultatförfrågan'
-      },
-      registration: {
-        title: 'Onlineregistrering',
-        description: 'Delta i alpina skidtävlingar'
-      },
-      rules: {
-        title: 'Regeldokumentation',
-        description: 'Alpina skidtävlingsregler'
-      },
-      enterFunction: 'Gå till funktion'
-    },
-    
-    // Poängregler
-    pointsRules: {
-      title: 'Alpina Poängregler (v4.0)',
-      baseFormula: {
-        title: 'Grundläggande Tävlingspoäng Formel',
-        formula: 'P = F × (Tx/To - 1)',
-        description: 'P=Baspoäng | F=Disciplinfaktor | Tx=Tävlandets tid | To=Vinnartid'
-      },
-      finalFormula: {
-        title: 'Slutpoängberäkning',
-        formula: 'Slutpoäng = (P + Straff) × Tävlingskoefficient',
-        description: 'A-nivå(1.0) | B-nivå(0.6) | C-nivå(0.3)'
-      },
-      disciplineFactors: {
-        title: 'Disciplinfaktorer Tabell',
-        downhill: 'Störtlopp DH',
-        slalom: 'Slalom SL',
-        giantSlalom: 'Storslalom GS',
-        superG: 'Super-G SG',
-        combined: 'Alpin Kombination AC'
+      slide3: {
+        title: 'Vinterträningsläger Registrering Öppen',
+        subtitle: 'Professionellt tränarteam hjälper dig förbättra dina färdigheter'
       }
     },
-    
-    // Statistik
-    statistics: {
-      title: 'Realtidsstatistik',
-      registeredAthletes: 'Registrerade Atleter',
-      seasonEvents: 'Säsongens Tävlingar',
-      raceCount: 'Antal Tävlingar',
-      averagePoints: 'Genomsnittspoäng',
-      monthlyIncrease: '12 nya denna månad',
-      seasonGrowth: '16% tillväxt från föregående säsong',
-      pandemicImpact: 'Något påverkad av pandemin',
-      levelImprovement: 'Totalnivå förbättras stadigt'
+
+    quickAccess: {
+      results: { title: 'Tävlingsresultat', nameEn: 'Results' },
+      rankings: { title: 'Poängrankning', nameEn: 'Rankings' },
+      schedule: { title: 'Tävlingskalender', nameEn: 'Calendar' },
+      videos: { title: 'Videoce center', nameEn: 'Videos' },
+      athletes: { title: 'Atletregister', nameEn: 'Athletes' },
+      documents: { title: 'Regeldokument', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Kommande'
+    },
+
+    latestNews: {
+      title: 'Senaste Nytt'
+    },
+
+    topAthletes: {
+      title: 'Poängrankning'
     }
   },
 
   // Freeski Slopestyle sida
-  freeskiSlopestyle: {
-    title: 'Freeski Slopestyle/Big Air',
-    subtitle: 'Freeski Slopestyle & Big Air',
-    
-    tags: {
-      pointsSystem: '240/360/120 Poängsystem',
-      judgingSystem: 'Domarsystem',
-      competitionFormat: 'Kvalificering/Final Format'
-    },
-    
-    pointsSystem: {
-      title: 'Trappstegspoängsystem',
-      class1: {
-        title: 'Klass 1 Tävlingar',
-        description: 'Nationella mästerskap och toppnivå evenemang'
+  freestyleSlopestyle: {
+    title: 'Freeski Slopestyle',
+    subtitle: 'Freestyle Slopestyle',
+    projectLabel: 'Freeski SS',
+
+    hero: {
+      slide1: {
+        title: '2024 Nationella Freeski Slopestyle Mästerskapet',
+        subtitle: 'Bevittna grensgränsöverskridande ögonblick av kinesisk freeski'
       },
-      class2: {
-        title: 'Klass 2 Tävlingar',
-        description: 'Regionala viktiga tävlingar'
+      slide2: {
+        title: '360 Graderat Poängsystem',
+        subtitle: 'Rättvis poängmekanism baserad på svårighetskoefficient'
       },
-      class3: {
-        title: 'Klass 3 Tävlingar',
-        description: 'Lokala reguljära tävlingar'
+      slide3: {
+        title: 'U-serien Ungdomsutvecklingsprogram',
+        subtitle: 'U12/U15/U18 talantutvecklingssystem'
       }
+    },
+
+    quickAccess: {
+      results: { title: 'Tävlingsresultat', nameEn: 'Results' },
+      rankings: { title: 'Poängrankning', nameEn: 'Rankings' },
+      schedule: { title: 'Tävlingskalender', nameEn: 'Calendar' },
+      videos: { title: 'Videocenter', nameEn: 'Videos' },
+      athletes: { title: 'Atletregister', nameEn: 'Athletes' },
+      documents: { title: 'Regeldokument', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Kommande'
+    },
+
+    latestNews: {
+      title: 'Senaste Nytt'
+    },
+
+    topAthletes: {
+      title: 'Poängrankning'
     }
   },
 
   // Snowboard Slopestyle sida
   snowboardSlopestyle: {
-    title: 'Snowboard Slopestyle/Big Air',
-    subtitle: 'Snowboard Slopestyle & Big Air',
-    
-    tags: {
-      pointsSystem: '240/360/120 Poängsystem',
-      judgingSystem: 'Domarsystem',
-      competitionFormat: 'Kvalificering/Final Format'
+    title: 'Snowboard Slopestyle',
+    subtitle: 'Snowboard Slopestyle',
+    projectLabel: 'Snowboard SS',
+
+    hero: {
+      slide1: {
+        title: '2024 Nationella Snowboard Slopestyle Mästerskapet',
+        subtitle: 'Bevittna spännande ögonblick av kinesisk snowboard'
+      },
+      slide2: {
+        title: '360 Graderat Poängsystem',
+        subtitle: 'Poängberäkningsregler baserade på internationella standarder'
+      },
+      slide3: {
+        title: 'U-serien Ungdomsutvecklingsprogram',
+        subtitle: 'U12/U15/U18 trestegs utvecklingssystem'
+      }
+    },
+
+    quickAccess: {
+      results: { title: 'Tävlingsresultat', nameEn: 'Results' },
+      rankings: { title: 'Poängrankning', nameEn: 'Rankings' },
+      schedule: { title: 'Tävlingskalender', nameEn: 'Calendar' },
+      videos: { title: 'Videocenter', nameEn: 'Videos' },
+      athletes: { title: 'Atletregister', nameEn: 'Athletes' },
+      documents: { title: 'Regeldokument', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Kommande'
+    },
+
+    latestNews: {
+      title: 'Senaste Nytt'
+    },
+
+    topAthletes: {
+      title: 'Poängrankning'
     }
   },
 
   // Snowboard Parallel sida
   snowboardParallel: {
-    title: 'Snowboard Parallel Discipliner',
-    subtitle: 'Snowboard Parallel Events',
-    
-    tags: {
-      timeBasedScoring: 'Tidsbaserad poängberäkning',
-      eliminationFormat: 'Eliminationsformat',
-      parallelEvents: 'PGS/PSL discipliner'
+    title: 'Snowboard Parallel',
+    subtitle: 'Snowboard Parallel',
+    projectLabel: 'Snowboard Parallel',
+
+    hero: {
+      slide1: {
+        title: '2024 Nationella Snowboard Parallel Mästerskapet',
+        subtitle: 'Perfekt kombination av hastighet och skicklighet'
+      },
+      slide2: {
+        title: 'Turneringspoängsystem',
+        subtitle: 'Rättvis poängberäkning baserad på matchningsrankning'
+      },
+      slide3: {
+        title: 'Elitatletutvecklingsprogram',
+        subtitle: 'Förbättra racenivå och utmana internationella tävlingar'
+      }
+    },
+
+    quickAccess: {
+      results: { title: 'Tävlingsresultat', nameEn: 'Results' },
+      rankings: { title: 'Poängrankning', nameEn: 'Rankings' },
+      schedule: { title: 'Tävlingskalender', nameEn: 'Calendar' },
+      videos: { title: 'Videocenter', nameEn: 'Videos' },
+      athletes: { title: 'Atletregister', nameEn: 'Athletes' },
+      documents: { title: 'Regeldokument', nameEn: 'Documents' }
+    },
+
+    upcomingEvents: {
+      title: 'Kommande'
+    },
+
+    latestNews: {
+      title: 'Senaste Nytt'
+    },
+
+    topAthletes: {
+      title: 'Poängrankning'
     }
   },
 
