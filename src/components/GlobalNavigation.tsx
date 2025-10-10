@@ -242,7 +242,7 @@ export default function GlobalNavigation() {
       {/* 第二行 - 功能导航栏 */}
       <nav className="bg-gray-50 border-b border-gray-200 sticky top-14 z-40">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px]">
-          <div className="hidden md:flex items-center justify-end space-x-2 h-10 overflow-x-auto scrollbar-hide">
+          <div className="hidden md:flex items-center justify-end space-x-2 h-10">
             {secondaryMenuItems.map((item) => {
               const isActive = pathname === item.href || (item.href !== '#' && pathname?.startsWith(item.href));
               const isOpen = activeDropdown === `secondary-${item.name}`;
