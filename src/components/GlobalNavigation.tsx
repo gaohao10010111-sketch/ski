@@ -43,12 +43,11 @@ export default function GlobalNavigation() {
     return roleMap[role] || '用户';
   };
 
-  // 全局菜单项（跨项目功能）
+  // 全局菜单项（跨项目功能）- FIS风格简化
   const globalMenuItems = [
     {
       name: t.navigation?.my || '我的',
       href: '/my',
-      icon: User,
       children: [
         { name: '个人中心', href: '/my' },
         { name: '我的积分', href: '/my/points' },
@@ -60,7 +59,6 @@ export default function GlobalNavigation() {
     {
       name: t.navigation?.docs || '文档',
       href: '/docs',
-      icon: FileText,
       children: [
         { name: '系统介绍', href: '/docs/guide' },
         { name: '积分规则', href: '/docs/points-rules' },
@@ -76,56 +74,45 @@ export default function GlobalNavigation() {
       <nav className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-12">
-            {/* Logo */}
+            {/* Logo - FIS风格极简设计 */}
             <div className="flex items-center">
-              <Link href="/" className="flex items-center space-x-2">
-                <Mountain className="h-6 w-6 text-ski-blue" />
-                <span className="text-base lg:text-lg font-bold text-ski-navy">
-                  <span className="hidden xl:inline">
-                    {language === 'zh' ? t.navigation?.title : t.navigation?.titleShort}
-                  </span>
-                  <span className="xl:hidden">
-                    {language === 'zh'
-                      ? (t.navigation?.title?.length > 12 ? t.navigation.title.substring(0, 12) + '...' : t.navigation?.title)
-                      : t.navigation?.titleShort
-                    }
-                  </span>
+              <Link href="/" className="flex items-center space-x-1.5 hover:opacity-80 transition-opacity">
+                <Mountain className="h-5 w-5 text-ski-blue" />
+                <span className="text-sm font-bold text-ski-navy tracking-tight">
+                  {language === 'zh' ? '滑雪积分' : 'Ski Points'}
                 </span>
               </Link>
             </div>
 
-            {/* Desktop Global Menu */}
-            <div className="hidden md:flex items-center space-x-1">
+            {/* Desktop Global Menu - FIS风格文字菜单 */}
+            <div className="hidden md:flex items-center space-x-0.5">
               {globalMenuItems.map((item) => {
-                const Icon = item.icon;
                 const isActive = pathname?.startsWith(item.href);
 
                 return (
                   <div key={item.name} className="relative group">
-                    <Link
-                      href={item.href}
-                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-sm font-medium transition-colors ${
+                    <button
+                      className={`flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium transition-colors ${
                         isActive
-                          ? 'text-blue-600 bg-blue-50'
-                          : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                          ? 'text-blue-600'
+                          : 'text-gray-600 hover:text-blue-600'
                       }`}
                     >
-                      <Icon className="w-3.5 h-3.5" />
                       <span>{item.name}</span>
-                      <ChevronDown className="w-3 h-3" />
-                    </Link>
+                      {item.children && <ChevronDown className="w-3 h-3" />}
+                    </button>
 
-                    {/* 下拉菜单 */}
+                    {/* 下拉菜单 - FIS风格 */}
                     {item.children && (
-                      <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                      <div className="absolute left-0 mt-1 w-44 bg-white rounded shadow-lg border border-gray-200 py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-150">
                         {item.children.map((child) => (
                           <Link
                             key={child.href}
                             href={child.href}
-                            className={`block px-4 py-2 text-sm transition-colors ${
+                            className={`block px-3 py-1.5 text-xs transition-colors ${
                               pathname === child.href
                                 ? 'bg-blue-50 text-blue-600 font-medium'
-                                : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
+                                : 'text-gray-700 hover:bg-gray-50'
                             }`}
                           >
                             {child.name}
@@ -138,47 +125,46 @@ export default function GlobalNavigation() {
               })}
             </div>
 
-            {/* Auth & Language */}
-            <div className="hidden md:flex items-center space-x-2 whitespace-nowrap">
+            {/* Auth & Language - FIS风格精简 */}
+            <div className="hidden md:flex items-center space-x-1.5 whitespace-nowrap">
               <LanguageSwitcher />
+              <div className="w-px h-4 bg-gray-300"></div>
               {isLoading ? (
-                <div className="animate-pulse bg-gray-200 h-7 w-16 rounded"></div>
+                <div className="animate-pulse bg-gray-200 h-6 w-14 rounded"></div>
               ) : user ? (
                 <div className="relative">
                   <button
                     onClick={() => setUserMenuOpen(!userMenuOpen)}
-                    className="flex items-center space-x-1.5 text-gray-700 hover:text-ski-blue px-2.5 py-1.5 rounded text-sm font-medium"
+                    className="flex items-center space-x-1 text-gray-600 hover:text-blue-600 px-2 py-1 text-xs font-medium"
                   >
-                    <div className="w-6 h-6 bg-ski-blue text-white rounded-full flex items-center justify-center text-xs font-semibold">
-                      {user.username.charAt(0).toUpperCase()}
-                    </div>
-                    <span className="text-sm">{user.username}</span>
-                    <ChevronDown className="h-3.5 w-3.5" />
+                    <User className="w-3.5 h-3.5" />
+                    <span className="max-w-[80px] truncate">{user.username}</span>
+                    <ChevronDown className="h-3 w-3" />
                   </button>
 
                   {userMenuOpen && (
-                    <div className="absolute right-0 mt-2 w-56 bg-white rounded-md shadow-lg border border-gray-100 py-1 z-50">
-                      <div className="px-4 py-2 border-b border-gray-100">
-                        <div className="text-sm font-medium text-gray-900">{user.username}</div>
-                        <div className="text-xs text-gray-500">{user.email}</div>
-                        <div className="text-xs text-ski-blue">{getRoleDisplayName(user.role)}</div>
+                    <div className="absolute right-0 mt-1 w-48 bg-white rounded shadow-lg border border-gray-200 py-1 z-50">
+                      <div className="px-3 py-2 border-b border-gray-100">
+                        <div className="text-xs font-medium text-gray-900">{user.username}</div>
+                        <div className="text-xs text-gray-500 truncate">{user.email}</div>
+                        <div className="text-xs text-blue-600">{getRoleDisplayName(user.role)}</div>
                       </div>
                       <Link
                         href="/profile"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50"
+                        className="block px-3 py-1.5 text-xs text-gray-700 hover:bg-gray-50"
                         onClick={() => setUserMenuOpen(false)}
                       >
                         <div className="flex items-center">
-                          <Settings className="h-4 w-4 mr-2" />
+                          <Settings className="h-3.5 w-3.5 mr-1.5" />
                           {t.common?.profile || '个人设置'}
                         </div>
                       </Link>
                       <button
                         onClick={handleLogout}
-                        className="block w-full px-4 py-2 text-sm text-left text-red-600 hover:bg-red-50"
+                        className="block w-full px-3 py-1.5 text-xs text-left text-red-600 hover:bg-red-50"
                       >
                         <div className="flex items-center">
-                          <LogOut className="h-4 w-4 mr-2" />
+                          <LogOut className="h-3.5 w-3.5 mr-1.5" />
                           {t.common?.logout || '退出登录'}
                         </div>
                       </button>
@@ -189,17 +175,15 @@ export default function GlobalNavigation() {
                 <>
                   <Link
                     href="/login"
-                    className="flex items-center gap-1 text-gray-700 hover:text-ski-blue px-2.5 py-1.5 rounded text-sm font-medium whitespace-nowrap"
+                    className="text-gray-600 hover:text-blue-600 px-2 py-1 text-xs font-medium whitespace-nowrap"
                   >
-                    <LogIn className="h-3.5 w-3.5" />
-                    <span>{t.common?.login || '登录'}</span>
+                    {t.common?.login || '登录'}
                   </Link>
                   <Link
                     href="/register"
-                    className="flex items-center gap-1 bg-ski-blue text-white hover:bg-ski-blue/90 px-2.5 py-1.5 rounded text-sm font-medium whitespace-nowrap"
+                    className="bg-blue-600 text-white hover:bg-blue-700 px-2.5 py-1 rounded text-xs font-medium whitespace-nowrap"
                   >
-                    <User className="h-3.5 w-3.5" />
-                    <span>{t.common?.register || '注册'}</span>
+                    {t.common?.register || '注册'}
                   </Link>
                 </>
               )}
@@ -222,27 +206,22 @@ export default function GlobalNavigation() {
       {/* 项目切换器 */}
       <DisciplineSwitcher />
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - FIS风格优化 */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-b border-gray-100 fixed top-12 left-0 right-0 z-40 shadow-lg">
-          <div className="px-2 pt-2 pb-3 space-y-1 max-h-[calc(100vh-3rem)] overflow-y-auto">
+          <div className="px-3 pt-2 pb-3 space-y-0.5 max-h-[calc(100vh-3rem)] overflow-y-auto">
             {globalMenuItems.map((item) => (
               <div key={item.name}>
-                <Link
-                  href={item.href}
-                  className="flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-ski-blue hover:bg-gray-50"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  <item.icon className="h-5 w-5" />
-                  <span>{item.name}</span>
-                </Link>
+                <div className="px-2 py-1.5 text-xs font-semibold text-gray-500 uppercase tracking-wide">
+                  {item.name}
+                </div>
                 {item.children && (
-                  <div className="ml-6 space-y-1">
+                  <div className="space-y-0.5">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-ski-blue hover:bg-gray-50"
+                        className="block px-2 py-1.5 text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {child.name}
@@ -253,15 +232,13 @@ export default function GlobalNavigation() {
               </div>
             ))}
 
-            {/* Mobile Auth Links */}
-            <div className="border-t border-gray-200 pt-3 mt-3">
+            {/* Mobile Auth Links - FIS风格 */}
+            <div className="border-t border-gray-200 pt-2 mt-2">
               {user ? (
                 <>
-                  <div className="px-3 py-2 mb-2">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-ski-blue text-white rounded-full flex items-center justify-center text-sm font-semibold">
-                        {user.username.charAt(0).toUpperCase()}
-                      </div>
+                  <div className="px-2 py-2 mb-1">
+                    <div className="flex items-center space-x-2">
+                      <User className="w-4 h-4 text-blue-600" />
                       <div>
                         <div className="text-sm font-medium text-gray-900">{user.username}</div>
                         <div className="text-xs text-gray-500">{getRoleDisplayName(user.role)}</div>
@@ -270,10 +247,10 @@ export default function GlobalNavigation() {
                   </div>
                   <Link
                     href="/profile"
-                    className="flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-ski-blue hover:bg-gray-50"
+                    className="flex items-center space-x-2 px-2 py-1.5 text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <Settings className="h-5 w-5" />
+                    <Settings className="h-4 w-4" />
                     <span>个人设置</span>
                   </Link>
                   <button
@@ -281,9 +258,9 @@ export default function GlobalNavigation() {
                       handleLogout();
                       setIsMobileMenuOpen(false);
                     }}
-                    className="flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium text-red-600 hover:bg-red-50 w-full text-left mt-2"
+                    className="flex items-center space-x-2 px-2 py-1.5 text-sm text-red-600 hover:bg-red-50 rounded w-full text-left mt-1"
                   >
-                    <LogOut className="h-5 w-5" />
+                    <LogOut className="h-4 w-4" />
                     <span>退出登录</span>
                   </button>
                 </>
@@ -291,19 +268,17 @@ export default function GlobalNavigation() {
                 <>
                   <Link
                     href="/login"
-                    className="flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-ski-blue hover:bg-gray-50"
+                    className="block px-2 py-1.5 text-sm text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <LogIn className="h-5 w-5" />
-                    <span>{t.common?.login || '登录'}</span>
+                    {t.common?.login || '登录'}
                   </Link>
                   <Link
                     href="/register"
-                    className="flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium bg-ski-blue text-white hover:bg-ski-blue/90 mt-2"
+                    className="block px-2 py-1.5 text-sm bg-blue-600 text-white hover:bg-blue-700 rounded mt-1 text-center"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <User className="h-5 w-5" />
-                    <span>{t.common?.register || '注册'}</span>
+                    {t.common?.register || '注册'}
                   </Link>
                 </>
               )}
