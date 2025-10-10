@@ -84,14 +84,27 @@ export default function GlobalNavigation() {
   ];
 
   // 🎯 第二层 - 内容功能导航 (Content/Functional Navigation - 参考FIS架构)
-  // 固定不变，不随页面变化，高频功能直接显示，中低频功能收入More
+  // 固定不变，不随页面变化，项目切换优先，高频功能直接显示，中低频功能收入More
   const secondaryMenuItems = [
+    // 🌟 项目切换下拉 - 首位最重要！（学习FIS的"All Disciplines▼"）
+    {
+      name: '项目',
+      href: '#',
+      icon: Mountain,
+      highlighted: true,  // 视觉突出
+      children: [
+        { name: '🏔️ 高山滑雪', href: '/alpine' },
+        { name: '🏂 单板坡面障碍技巧', href: '/snowboard-slopestyle' },
+        { name: '🏂 单板平行项目', href: '/snowboard-parallel' },
+        { name: '🎿 自由式坡面障碍技巧', href: '/freestyle-slopestyle' }
+      ]
+    },
     // 高频核心功能 - 直接显示 (4项)
     { name: '首页', href: '/', icon: Home },
     { name: '赛事日历', href: '/competitions/schedule', icon: Calendar },
     { name: '实时成绩', href: '/competitions', icon: Trophy },
     { name: '运动员', href: '/athletes', icon: Users },
-    // More下拉 - 中低频功能 (9项)
+    // More下拉 - 中低频功能 (8项)
     {
       name: '更多',
       href: '#',
@@ -103,7 +116,6 @@ export default function GlobalNavigation() {
         { name: '成绩查询', href: '/results-query' },
         { name: '报名管理', href: '/registration/online' },
         { name: '比赛统计', href: '/competitions/stats' },
-        { name: '文档中心', href: '/rules' },
         { name: '成绩导入', href: '/results-import' },
         { name: '成绩公布', href: '/results-announcement' }
       ]
@@ -237,6 +249,7 @@ export default function GlobalNavigation() {
               const isActive = pathname === item.href || (item.href !== '#' && pathname?.startsWith(item.href));
               const isOpen = activeDropdown === `secondary-${item.name}`;
               const hasChildren = item.children && item.children.length > 0;
+              const isHighlighted = (item as any).highlighted;  // 检查是否突出显示
               const Icon = (item as any).icon;
 
               return (
@@ -251,8 +264,10 @@ export default function GlobalNavigation() {
                             setTimeout(() => setActiveDropdown(null), 200);
                           }
                         }}
-                        className={`flex items-center gap-1 px-3 py-1.5 rounded text-xs font-medium transition-colors whitespace-nowrap ${
-                          isActive
+                        className={`flex items-center gap-1 px-3 py-1.5 rounded text-xs font-semibold transition-colors whitespace-nowrap ${
+                          isHighlighted
+                            ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-sm'
+                            : isActive
                             ? 'text-blue-600 bg-blue-50'
                             : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
                         }`}
