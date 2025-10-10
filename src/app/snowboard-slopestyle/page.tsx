@@ -44,12 +44,12 @@ export default function SnowboardSlopestylePage() {
 
   // 功能快捷入口
   const quickAccess = [
-    { title: '赛事成绩', nameEn: 'Results', icon: Trophy, href: '/snowboard-slopestyle/events/results', color: 'from-purple-500 to-purple-600' },
-    { title: '积分排名', nameEn: 'Rankings', icon: BarChart3, href: '/snowboard-slopestyle/points/rankings', color: 'from-pink-500 to-pink-600' },
-    { title: '赛事日历', nameEn: 'Calendar', icon: Calendar, href: '/snowboard-slopestyle/events/schedule', color: 'from-violet-500 to-violet-600' },
-    { title: '视频中心', nameEn: 'Videos', icon: Video, href: '#videos', color: 'from-fuchsia-500 to-fuchsia-600' },
+    { title: '赛事成绩', nameEn: 'Results', icon: Trophy, href: '/snowboard-slopestyle/events/results', color: 'from-sky-500 to-sky-600' },
+    { title: '积分排名', nameEn: 'Rankings', icon: BarChart3, href: '/snowboard-slopestyle/points/rankings', color: 'from-blue-500 to-blue-600' },
+    { title: '赛事日历', nameEn: 'Calendar', icon: Calendar, href: '/snowboard-slopestyle/events/schedule', color: 'from-cyan-500 to-cyan-600' },
+    { title: '视频中心', nameEn: 'Videos', icon: Video, href: '#videos', color: 'from-teal-500 to-teal-600' },
     { title: '运动员名录', nameEn: 'Athletes', icon: Users, href: '/snowboard-slopestyle/athletes/list', color: 'from-indigo-500 to-indigo-600' },
-    { title: '规则文档', nameEn: 'Documents', icon: FileText, href: '/snowboard-slopestyle/docs/points-rules', color: 'from-purple-400 to-purple-500' }
+    { title: '规则文档', nameEn: 'Documents', icon: FileText, href: '/snowboard-slopestyle/docs/points-rules', color: 'from-slate-500 to-slate-600' }
   ];
 
   // 即将进行的比赛
@@ -118,38 +118,8 @@ export default function SnowboardSlopestylePage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* 项目识别栏 */}
-      <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-8">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px]">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">🏂 单板坡面障碍技巧</h1>
-          <p className="text-purple-100 text-lg">Snowboard Slopestyle - 中国单板滑雪坡面障碍技巧积分管理系统</p>
-        </div>
-      </div>
-
-      {/* 子项目导航栏 */}
-      <div className="bg-white border-b border-gray-200 sticky top-[88px] z-30">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px]">
-          <div className="flex overflow-x-auto scrollbar-hide py-3">
-            {subDisciplines.map((sub) => (
-              <button
-                key={sub.id}
-                onClick={() => setActiveSubDiscipline(sub.id)}
-                className={`px-6 py-2 whitespace-nowrap text-sm font-medium transition-colors rounded-lg mr-2 ${
-                  activeSubDiscipline === sub.id
-                    ? 'bg-purple-600 text-white'
-                    : 'text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {sub.name}
-                <span className="text-xs ml-1 opacity-75">{sub.nameEn}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* 英雄展示区 */}
-      <div className="relative bg-gray-900 h-[400px] overflow-hidden">
+      {/* 英雄展示区 - 参考FIS设计 */}
+      <div className="relative bg-gray-900 h-[500px] overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroSlides[currentSlide].image}
@@ -157,6 +127,14 @@ export default function SnowboardSlopestylePage() {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30"></div>
+        </div>
+
+        {/* 项目名称标签 - 左上角 FIS风格 */}
+        <div className="absolute top-6 left-6 sm:left-10 md:left-20 xl:left-[120px] z-10">
+          <div className="bg-sky-600/90 backdrop-blur-sm text-white px-4 py-2 rounded-lg shadow-lg">
+            <div className="text-sm font-semibold">单板坡面障碍技巧</div>
+            <div className="text-xs opacity-90">Snowboard Slopestyle</div>
+          </div>
         </div>
 
         <div className="relative h-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px] flex items-center">
@@ -170,7 +148,7 @@ export default function SnowboardSlopestylePage() {
             <div className="flex gap-4">
               <Link
                 href={heroSlides[currentSlide].link}
-                className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-medium"
+                className="px-6 py-3 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition-colors font-medium shadow-lg"
               >
                 查看详情
               </Link>
@@ -235,12 +213,12 @@ export default function SnowboardSlopestylePage() {
           <div className="lg:col-span-3">
             <div className="bg-white rounded-xl p-6 shadow-sm">
               <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                <Calendar className="w-5 h-5 mr-2 text-purple-600" />
+                <Calendar className="w-5 h-5 mr-2 text-sky-600" />
                 即将进行
               </h3>
               <div className="space-y-4">
                 {upcomingEvents.map((event, index) => (
-                  <div key={index} className="border-l-4 border-purple-600 pl-4 py-2">
+                  <div key={index} className="border-l-4 border-sky-600 pl-4 py-2">
                     <div className="text-sm font-semibold text-gray-900">{event.event}</div>
                     <div className="text-xs text-gray-600 mt-1">{event.discipline}</div>
                     <div className="flex items-center text-xs text-gray-500 mt-1">
@@ -254,7 +232,7 @@ export default function SnowboardSlopestylePage() {
                   </div>
                 ))}
               </div>
-              <Link href="/snowboard-slopestyle/events/schedule" className="block text-center mt-4 text-purple-600 hover:text-purple-700 text-sm font-medium">
+              <Link href="/snowboard-slopestyle/events/schedule" className="block text-center mt-4 text-sky-600 hover:text-sky-700 text-sm font-medium">
                 查看完整赛程 →
               </Link>
             </div>
@@ -274,11 +252,11 @@ export default function SnowboardSlopestylePage() {
                     />
                     <div className="flex-1">
                       <div className="text-xs text-gray-500 mb-2">{news.time}</div>
-                      <h4 className="font-semibold text-gray-900 mb-1 hover:text-purple-600 cursor-pointer">
+                      <h4 className="font-semibold text-gray-900 mb-1 hover:text-sky-600 cursor-pointer">
                         {news.title}
                       </h4>
                       <p className="text-sm text-gray-600">{news.subtitle}</p>
-                      <button className="text-sm text-purple-600 hover:text-purple-700 mt-2 inline-flex items-center">
+                      <button className="text-sm text-sky-600 hover:text-sky-700 mt-2 inline-flex items-center">
                         阅读全文 <ExternalLink className="w-3 h-3 ml-1" />
                       </button>
                     </div>
@@ -326,7 +304,7 @@ export default function SnowboardSlopestylePage() {
                   </div>
                 ))}
               </div>
-              <Link href="/snowboard-slopestyle/points/rankings" className="block text-center mt-4 text-purple-600 hover:text-purple-700 text-sm font-medium">
+              <Link href="/snowboard-slopestyle/points/rankings" className="block text-center mt-4 text-sky-600 hover:text-sky-700 text-sm font-medium">
                 查看完整排名 →
               </Link>
             </div>

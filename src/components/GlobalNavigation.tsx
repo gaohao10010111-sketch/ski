@@ -58,6 +58,22 @@ export default function GlobalNavigation() {
     : pathname?.startsWith('/freestyle-slopestyle') ? 'freestyle-slopestyle'
     : null;
 
+  // 获取当前项目的中文名称
+  const getCurrentDisciplineName = () => {
+    switch (currentDiscipline) {
+      case 'alpine':
+        return '高山滑雪';
+      case 'snowboard-slopestyle':
+        return '单板坡面障碍技巧';
+      case 'snowboard-parallel':
+        return '单板平行项目';
+      case 'freestyle-slopestyle':
+        return '自由式坡面障碍技巧';
+      default:
+        return '项目';
+    }
+  };
+
   // 🎯 第一层 - 平台级服务 (Platform Services - 参考FIS架构)
   // 纯平台级功能，不涉及具体业务内容，无下拉菜单保持简洁
   const globalMenuItems = [
@@ -253,7 +269,7 @@ export default function GlobalNavigation() {
               return (
                 <div
                   key={item.name}
-                  className="relative"
+                  className={`relative ${isHighlighted && item.name === '项目' ? 'pr-2 mr-2 border-r border-gray-300' : ''}`}
                   onMouseEnter={() => hasChildren && setActiveDropdown(`secondary-${item.name}`)}
                   onMouseLeave={() => hasChildren && setActiveDropdown(null)}
                 >
@@ -263,14 +279,14 @@ export default function GlobalNavigation() {
                       <button
                         className={`flex items-center gap-1 px-3 py-1.5 rounded text-xs font-medium transition-colors whitespace-nowrap ${
                           isHighlighted
-                            ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-sm'
+                            ? 'bg-ski-blue text-white hover:bg-ski-blue/90 shadow-sm'
                             : isActive
                             ? 'text-blue-600 bg-blue-50'
                             : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
                         }`}
                       >
                         {Icon && <Icon className="w-3 h-3" />}
-                        <span>{item.name}</span>
+                        <span>{item.name === '项目' ? getCurrentDisciplineName() : item.name}</span>
                         <ChevronDown className="w-2.5 h-2.5" />
                       </button>
 

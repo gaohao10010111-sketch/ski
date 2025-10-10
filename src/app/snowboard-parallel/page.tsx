@@ -118,38 +118,8 @@ export default function SnowboardParallelPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* 项目识别栏 */}
-      <div className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-8">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px]">
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">🏂 单板平行项目</h1>
-          <p className="text-indigo-100 text-lg">Snowboard Parallel - 中国单板滑雪平行项目积分管理系统</p>
-        </div>
-      </div>
-
-      {/* 子项目导航栏 */}
-      <div className="bg-white border-b border-gray-200 sticky top-[88px] z-30">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px]">
-          <div className="flex overflow-x-auto scrollbar-hide py-3">
-            {subDisciplines.map((sub) => (
-              <button
-                key={sub.id}
-                onClick={() => setActiveSubDiscipline(sub.id)}
-                className={`px-6 py-2 whitespace-nowrap text-sm font-medium transition-colors rounded-lg mr-2 ${
-                  activeSubDiscipline === sub.id
-                    ? 'bg-indigo-600 text-white'
-                    : 'text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                {sub.name}
-                <span className="text-xs ml-1 opacity-75">{sub.nameEn}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* 英雄展示区 */}
-      <div className="relative bg-gray-900 h-[400px] overflow-hidden">
+      {/* 英雄展示区 - 参考FIS设计 */}
+      <div className="relative bg-gray-900 h-[500px] overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroSlides[currentSlide].image}
@@ -157,6 +127,14 @@ export default function SnowboardParallelPage() {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30"></div>
+        </div>
+
+        {/* 项目名称标签 - 左上角 FIS风格 */}
+        <div className="absolute top-6 left-6 sm:left-10 md:left-20 xl:left-[120px] z-10">
+          <div className="bg-indigo-600/90 backdrop-blur-sm text-white px-4 py-2 rounded-lg shadow-lg">
+            <div className="text-sm font-semibold">单板平行项目</div>
+            <div className="text-xs opacity-90">Snowboard Parallel</div>
+          </div>
         </div>
 
         <div className="relative h-full max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px] flex items-center">
@@ -170,7 +148,7 @@ export default function SnowboardParallelPage() {
             <div className="flex gap-4">
               <Link
                 href={heroSlides[currentSlide].link}
-                className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium"
+                className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium shadow-lg"
               >
                 查看详情
               </Link>
