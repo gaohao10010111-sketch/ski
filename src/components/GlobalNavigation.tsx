@@ -12,7 +12,14 @@ import {
   User,
   LogOut,
   Settings,
-  FileText
+  FileText,
+  Trophy,
+  Users,
+  Info,
+  Calendar,
+  Home,
+  TrendingUp,
+  BarChart3
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useTranslation } from '@/contexts/LanguageContext';
@@ -56,6 +63,7 @@ export default function GlobalNavigation() {
     {
       name: t.navigation?.disciplines || '项目',
       href: '#',
+      icon: Mountain,
       highlighted: true,
       children: [
         { name: t.navigation?.alpine || '高山滑雪', href: '/alpine' },
@@ -66,11 +74,13 @@ export default function GlobalNavigation() {
     },
     {
       name: '关于系统',
-      href: '/about'
+      href: '/about',
+      icon: Info
     },
     {
       name: '赛事中心',
       href: '/competitions',
+      icon: Trophy,
       children: [
         { name: '赛程日历', href: '/competitions/schedule' },
         { name: '在线报名', href: '/registration/online' },
@@ -81,6 +91,7 @@ export default function GlobalNavigation() {
     {
       name: '运动员中心',
       href: '/athletes',
+      icon: Users,
       children: [
         { name: '运动员管理', href: '/athletes' },
         { name: '积分排名', href: '/points/rankings' },
@@ -90,6 +101,7 @@ export default function GlobalNavigation() {
     {
       name: t.navigation?.my || '我的',
       href: '/my',
+      icon: User,
       children: [
         { name: '个人中心', href: '/my' },
         { name: '我的积分', href: '/my/points' },
@@ -101,6 +113,7 @@ export default function GlobalNavigation() {
     {
       name: '文档中心',
       href: '/docs',
+      icon: FileText,
       children: [
         { name: '系统介绍', href: '/docs/guide' },
         { name: '积分规则', href: '/docs/points-rules' },
@@ -116,6 +129,7 @@ export default function GlobalNavigation() {
     {
       name: '所有项目',
       href: '#',
+      icon: Mountain,
       children: [
         { name: t.navigation?.alpine || '高山滑雪', href: '/alpine' },
         { name: t.navigation?.snowboardSlopestyle || '单板坡面障碍技巧', href: '/snowboard-slopestyle' },
@@ -123,14 +137,15 @@ export default function GlobalNavigation() {
         { name: t.navigation?.freestyleSlopestyle || '自由式坡面障碍技巧', href: '/freestyle-slopestyle' }
       ]
     },
-    { name: '首页', href: `/${currentDiscipline}` },
-    { name: '赛程成绩', href: `/${currentDiscipline}/events/schedule` },
-    { name: '实时成绩', href: `/${currentDiscipline}/events/results` },
-    { name: '运动员', href: `/${currentDiscipline}/athletes/list` },
-    { name: '积分', href: `/${currentDiscipline}/points/rankings` },
+    { name: '首页', href: `/${currentDiscipline}`, icon: Home },
+    { name: '赛程成绩', href: `/${currentDiscipline}/events/schedule`, icon: Calendar },
+    { name: '实时成绩', href: `/${currentDiscipline}/events/results`, icon: Trophy },
+    { name: '运动员', href: `/${currentDiscipline}/athletes/list`, icon: Users },
+    { name: '积分', href: `/${currentDiscipline}/points/rankings`, icon: TrendingUp },
     {
       name: '更多',
       href: '#',
+      icon: Menu,
       children: [
         { name: '积分计算器', href: `/${currentDiscipline}/points/calculator` },
         { name: '积分趋势', href: `/${currentDiscipline}/points/trends` },
@@ -146,6 +161,7 @@ export default function GlobalNavigation() {
     {
       name: '所有项目',
       href: '#',
+      icon: Mountain,
       children: [
         { name: t.navigation?.alpine || '高山滑雪', href: '/alpine' },
         { name: t.navigation?.snowboardSlopestyle || '单板坡面障碍技巧', href: '/snowboard-slopestyle' },
@@ -153,10 +169,10 @@ export default function GlobalNavigation() {
         { name: t.navigation?.freestyleSlopestyle || '自由式坡面障碍技巧', href: '/freestyle-slopestyle' }
       ]
     },
-    { name: '最新赛事', href: '/competitions' },
-    { name: '积分排名', href: '/points/rankings' },
-    { name: '运动员', href: '/athletes' },
-    { name: '规则文档', href: '/docs' }
+    { name: '最新赛事', href: '/competitions', icon: Trophy },
+    { name: '积分排名', href: '/points/rankings', icon: TrendingUp },
+    { name: '运动员', href: '/athletes', icon: Users },
+    { name: '规则文档', href: '/docs', icon: FileText }
   ];
 
   return (
@@ -182,6 +198,7 @@ export default function GlobalNavigation() {
                 const isOpen = activeDropdown === item.name;
                 const hasChildren = item.children && item.children.length > 0;
                 const isHighlighted = (item as any).highlighted; // 项目按钮突出显示
+                const Icon = (item as any).icon;
 
                 return (
                   <div key={item.name} className="relative">
@@ -196,7 +213,7 @@ export default function GlobalNavigation() {
                               setTimeout(() => setActiveDropdown(null), 200);
                             }
                           }}
-                          className={`flex items-center gap-1 px-4 py-2 rounded text-sm font-semibold transition-colors ${
+                          className={`flex items-center gap-1.5 px-4 py-2 rounded text-sm font-semibold transition-colors ${
                             isHighlighted
                               ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-sm'
                               : isActive
@@ -204,6 +221,7 @@ export default function GlobalNavigation() {
                               : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                           }`}
                         >
+                          {Icon && <Icon className="w-3.5 h-3.5" />}
                           <span>{item.name}</span>
                           <ChevronDown className="w-3 h-3" />
                         </button>
@@ -232,13 +250,14 @@ export default function GlobalNavigation() {
                       // 直接链接
                       <Link
                         href={item.href}
-                        className={`block px-4 py-2 rounded text-sm font-medium transition-colors ${
+                        className={`flex items-center gap-1.5 px-4 py-2 rounded text-sm font-medium transition-colors ${
                           isActive
                             ? 'text-blue-600 bg-blue-50'
                             : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                         }`}
                       >
-                        {item.name}
+                        {Icon && <Icon className="w-3.5 h-3.5" />}
+                        <span>{item.name}</span>
                       </Link>
                     )}
                   </div>
@@ -331,6 +350,7 @@ export default function GlobalNavigation() {
               const isActive = pathname === item.href || (item.href !== '#' && pathname?.startsWith(item.href));
               const isOpen = activeDropdown === `secondary-${item.name}`;
               const hasChildren = item.children && item.children.length > 0;
+              const Icon = (item as any).icon;
 
               return (
                 <div key={item.name} className="relative">
@@ -350,6 +370,7 @@ export default function GlobalNavigation() {
                             : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
                         }`}
                       >
+                        {Icon && <Icon className="w-3 h-3" />}
                         <span>{item.name}</span>
                         <ChevronDown className="w-2.5 h-2.5" />
                       </button>
@@ -378,13 +399,14 @@ export default function GlobalNavigation() {
                     // 直接链接
                     <Link
                       href={item.href}
-                      className={`block px-3 py-1.5 rounded text-xs font-medium transition-colors whitespace-nowrap ${
+                      className={`flex items-center gap-1 px-3 py-1.5 rounded text-xs font-medium transition-colors whitespace-nowrap ${
                         isActive
                           ? 'text-blue-600 bg-blue-50'
                           : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
                       }`}
                     >
-                      {item.name}
+                      {Icon && <Icon className="w-3 h-3" />}
+                      <span>{item.name}</span>
                     </Link>
                   )}
                 </div>
