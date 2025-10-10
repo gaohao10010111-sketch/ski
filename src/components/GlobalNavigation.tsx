@@ -43,26 +43,21 @@ export default function GlobalNavigation() {
     return roleMap[role] || '用户';
   };
 
-  // 全局菜单项（参考FIS风格，项目单独列出 + 更多功能）
+  // 全局菜单项（参考FIS风格）
   const globalMenuItems = [
-    // 四大项目 - 单独列出，重要性高
+    // 项目菜单 - 突出显示，重要性高
     {
-      name: t.navigation?.alpine || '高山滑雪',
-      href: '/alpine'
+      name: t.navigation?.disciplines || '项目',
+      href: '#',
+      highlighted: true, // 标记为突出显示
+      children: [
+        { name: t.navigation?.alpine || '高山滑雪', href: '/alpine' },
+        { name: t.navigation?.snowboardSlopestyle || '单板坡面障碍技巧', href: '/snowboard-slopestyle' },
+        { name: t.navigation?.snowboardParallel || '单板平行项目', href: '/snowboard-parallel' },
+        { name: t.navigation?.freestyleSlopestyle || '自由式坡面障碍技巧', href: '/freestyle-slopestyle' }
+      ]
     },
-    {
-      name: t.navigation?.snowboardSlopestyle || '单板坡障',
-      href: '/snowboard-slopestyle'
-    },
-    {
-      name: t.navigation?.snowboardParallel || '单板平行',
-      href: '/snowboard-parallel'
-    },
-    {
-      name: t.navigation?.freestyleSlopestyle || '自由式坡障',
-      href: '/freestyle-slopestyle'
-    },
-    // 功能菜单
+    // 其他功能菜单
     {
       name: '赛事',
       href: '/competitions',
@@ -127,6 +122,7 @@ export default function GlobalNavigation() {
                 const isActive = pathname?.startsWith(item.href) && item.href !== '#';
                 const isOpen = activeDropdown === item.name;
                 const hasChildren = item.children && item.children.length > 0;
+                const isHighlighted = (item as any).highlighted; // 项目按钮突出显示
 
                 return (
                   <div key={item.name} className="relative">
@@ -141,8 +137,10 @@ export default function GlobalNavigation() {
                               setTimeout(() => setActiveDropdown(null), 200);
                             }
                           }}
-                          className={`flex items-center gap-1 px-3 py-1.5 rounded text-sm font-medium transition-colors ${
-                            isActive
+                          className={`flex items-center gap-1 px-3 py-1.5 rounded text-sm font-semibold transition-colors ${
+                            isHighlighted
+                              ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-sm'
+                              : isActive
                               ? 'text-blue-600 bg-blue-50'
                               : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                           }`}
@@ -172,7 +170,7 @@ export default function GlobalNavigation() {
                         )}
                       </>
                     ) : (
-                      // 直接链接（4个项目）
+                      // 直接链接
                       <Link
                         href={item.href}
                         className={`block px-3 py-1.5 rounded text-sm font-medium transition-colors ${
