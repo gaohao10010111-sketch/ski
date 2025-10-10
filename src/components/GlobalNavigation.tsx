@@ -75,12 +75,12 @@ export default function GlobalNavigation() {
       {/* 顶部导航栏 */}
       <nav className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
+          <div className="flex justify-between h-12">
             {/* Logo */}
             <div className="flex items-center">
               <Link href="/" className="flex items-center space-x-2">
-                <Mountain className="h-8 w-8 text-ski-blue" />
-                <span className="text-lg lg:text-xl font-bold text-ski-navy">
+                <Mountain className="h-6 w-6 text-ski-blue" />
+                <span className="text-base lg:text-lg font-bold text-ski-navy">
                   <span className="hidden xl:inline">
                     {language === 'zh' ? t.navigation?.title : t.navigation?.titleShort}
                   </span>
@@ -95,7 +95,7 @@ export default function GlobalNavigation() {
             </div>
 
             {/* Desktop Global Menu */}
-            <div className="hidden md:flex items-center space-x-6">
+            <div className="hidden md:flex items-center space-x-1">
               {globalMenuItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = pathname?.startsWith(item.href);
@@ -104,13 +104,13 @@ export default function GlobalNavigation() {
                   <div key={item.name} className="relative group">
                     <Link
                       href={item.href}
-                      className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-sm font-medium transition-colors ${
                         isActive
                           ? 'text-blue-600 bg-blue-50'
                           : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                       }`}
                     >
-                      <Icon className="w-4 h-4" />
+                      <Icon className="w-3.5 h-3.5" />
                       <span>{item.name}</span>
                       <ChevronDown className="w-3 h-3" />
                     </Link>
@@ -139,21 +139,21 @@ export default function GlobalNavigation() {
             </div>
 
             {/* Auth & Language */}
-            <div className="hidden md:flex items-center space-x-4 whitespace-nowrap">
+            <div className="hidden md:flex items-center space-x-2 whitespace-nowrap">
               <LanguageSwitcher />
               {isLoading ? (
-                <div className="animate-pulse bg-gray-200 h-8 w-20 rounded"></div>
+                <div className="animate-pulse bg-gray-200 h-7 w-16 rounded"></div>
               ) : user ? (
                 <div className="relative">
                   <button
                     onClick={() => setUserMenuOpen(!userMenuOpen)}
-                    className="flex items-center space-x-2 text-gray-700 hover:text-ski-blue px-3 py-2 rounded-md text-sm font-medium"
+                    className="flex items-center space-x-1.5 text-gray-700 hover:text-ski-blue px-2.5 py-1.5 rounded text-sm font-medium"
                   >
-                    <div className="w-8 h-8 bg-ski-blue text-white rounded-full flex items-center justify-center text-sm font-semibold">
+                    <div className="w-6 h-6 bg-ski-blue text-white rounded-full flex items-center justify-center text-xs font-semibold">
                       {user.username.charAt(0).toUpperCase()}
                     </div>
-                    <span>{user.username}</span>
-                    <ChevronDown className="h-4 w-4" />
+                    <span className="text-sm">{user.username}</span>
+                    <ChevronDown className="h-3.5 w-3.5" />
                   </button>
 
                   {userMenuOpen && (
@@ -189,16 +189,16 @@ export default function GlobalNavigation() {
                 <>
                   <Link
                     href="/login"
-                    className="flex items-center space-x-1 text-gray-700 hover:text-ski-blue px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap"
+                    className="flex items-center gap-1 text-gray-700 hover:text-ski-blue px-2.5 py-1.5 rounded text-sm font-medium whitespace-nowrap"
                   >
-                    <LogIn className="h-4 w-4" />
+                    <LogIn className="h-3.5 w-3.5" />
                     <span>{t.common?.login || '登录'}</span>
                   </Link>
                   <Link
                     href="/register"
-                    className="flex items-center space-x-1 bg-ski-blue text-white hover:bg-ski-blue/90 px-3 py-2 rounded-md text-sm font-medium whitespace-nowrap"
+                    className="flex items-center gap-1 bg-ski-blue text-white hover:bg-ski-blue/90 px-2.5 py-1.5 rounded text-sm font-medium whitespace-nowrap"
                   >
-                    <User className="h-4 w-4" />
+                    <User className="h-3.5 w-3.5" />
                     <span>{t.common?.register || '注册'}</span>
                   </Link>
                 </>
@@ -206,13 +206,13 @@ export default function GlobalNavigation() {
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:hidden flex items-center space-x-2">
+            <div className="md:hidden flex items-center space-x-1.5">
               <LanguageSwitcher />
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-gray-700 hover:text-ski-blue p-2"
+                className="text-gray-700 hover:text-ski-blue p-1.5"
               >
-                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>
             </div>
           </div>
@@ -224,8 +224,8 @@ export default function GlobalNavigation() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-gray-100 fixed top-16 left-0 right-0 z-40 shadow-lg">
-          <div className="px-2 pt-2 pb-3 space-y-1 max-h-[calc(100vh-4rem)] overflow-y-auto">
+        <div className="md:hidden bg-white border-b border-gray-100 fixed top-12 left-0 right-0 z-40 shadow-lg">
+          <div className="px-2 pt-2 pb-3 space-y-1 max-h-[calc(100vh-3rem)] overflow-y-auto">
             {globalMenuItems.map((item) => (
               <div key={item.name}>
                 <Link

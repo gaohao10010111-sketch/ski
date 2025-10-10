@@ -60,9 +60,9 @@ export default function DisciplineNavigation({ discipline }: DisciplineNavigatio
   ];
 
   return (
-    <div className="bg-gray-50 border-b border-gray-200">
+    <div className="bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav className="flex space-x-8 overflow-x-auto scrollbar-hide py-3">
+        <nav className="flex space-x-6 overflow-x-auto scrollbar-hide py-2">
           {navigationItems.map((item) => {
             const Icon = item.icon;
             const isActive = pathname?.startsWith(item.href);
@@ -71,13 +71,13 @@ export default function DisciplineNavigation({ discipline }: DisciplineNavigatio
               <div key={item.name} className="relative group">
                 <Link
                   href={item.href}
-                  className={`flex items-center gap-2 text-sm font-medium whitespace-nowrap transition-colors ${
+                  className={`flex items-center gap-1.5 text-sm font-medium whitespace-nowrap transition-colors ${
                     isActive
                       ? 'text-blue-600'
                       : 'text-gray-700 hover:text-blue-600'
                   }`}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-3.5 h-3.5" />
                   <span>{item.name}</span>
                 </Link>
 

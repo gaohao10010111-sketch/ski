@@ -55,9 +55,9 @@ export default function DisciplineSwitcher() {
   const currentDiscipline = getCurrentDiscipline();
 
   return (
-    <div className="bg-white border-b border-gray-200">
+    <div className="bg-gray-50 border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center space-x-1 overflow-x-auto py-2 scrollbar-hide">
+        <div className="flex items-center space-x-1 overflow-x-auto py-1.5 scrollbar-hide">
           {disciplines.map((discipline) => {
             const isActive = currentDiscipline === discipline.id;
             const Icon = discipline.icon;
@@ -66,15 +66,15 @@ export default function DisciplineSwitcher() {
               <Link
                 key={discipline.id}
                 href={discipline.path}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg whitespace-nowrap transition-all duration-200 ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded whitespace-nowrap transition-all duration-200 ${
                   isActive
-                    ? `${discipline.color} bg-blue-50 font-semibold`
-                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                    ? `${discipline.color} bg-white font-semibold shadow-sm`
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-white/50'
                 }`}
               >
-                <Icon className="w-4 h-4" />
+                <Icon className="w-3.5 h-3.5" />
                 <span className="text-sm">
-                  {t.disciplines?.[discipline.key] || discipline.key}
+                  {t.navigation?.[discipline.key] || discipline.key}
                 </span>
               </Link>
             );
