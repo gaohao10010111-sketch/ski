@@ -12,6 +12,12 @@ export default function Breadcrumb() {
   // 路径映射表 - 使用翻译
   const pathNameMap: { [key: string]: string } = {
     '': t.breadcrumb.home,
+    // 新项目路径
+    'alpine': t.navigation?.alpine || '高山滑雪',
+    'snowboard-slopestyle': t.navigation?.snowboardSlopestyle || '单板坡面障碍技巧',
+    'snowboard-parallel': t.navigation?.snowboardParallel || '单板平行项目',
+    'freestyle-slopestyle': t.navigation?.freestyleSlopestyle || '自由式坡面障碍技巧',
+    // 旧项目路径（保留兼容）
     'disciplines': t.breadcrumb.disciplines,
     'disciplines/alpine': t.breadcrumb.alpine,
     'disciplines/snowboard-slopestyle': t.breadcrumb.snowboardSlopestyle,

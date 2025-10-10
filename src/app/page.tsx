@@ -199,32 +199,32 @@ export default function HomePage() {
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4 text-sm md:text-base lg:text-lg">
                   <Link
-                    href="/disciplines/alpine"
+                    href="/alpine"
                     className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 hover:bg-gradient-to-r hover:from-blue-500/80 hover:to-cyan-500/80 transition-all duration-300 group transform hover:scale-105"
                   >
                     <div className="w-3 h-3 bg-ski-blue rounded-full mb-2 flex-shrink-0"></div>
                     <span className="text-white font-medium whitespace-nowrap text-xs">高山滑雪</span>
                   </Link>
                   <Link
-                    href="/disciplines/snowboard-slopestyle"
-                    className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 hover:bg-gradient-to-r hover:from-orange-400/80 hover:to-amber-400/80 transition-all duration-300 group transform hover:scale-105"
-                  >
-                    <div className="w-3 h-3 bg-orange-400 rounded-full mb-2 flex-shrink-0"></div>
-                    <span className="text-white font-medium whitespace-nowrap text-xs">单板坡面/大跳台</span>
-                  </Link>
-                  <Link
-                    href="/disciplines/snowboard-parallel"
+                    href="/snowboard-slopestyle"
                     className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 hover:bg-gradient-to-r hover:from-purple-500/80 hover:to-pink-500/80 transition-all duration-300 group transform hover:scale-105"
                   >
                     <div className="w-3 h-3 bg-purple-400 rounded-full mb-2 flex-shrink-0"></div>
-                    <span className="text-white font-medium whitespace-nowrap text-xs">单板平行</span>
+                    <span className="text-white font-medium whitespace-nowrap text-xs">单板坡面障碍技巧</span>
                   </Link>
                   <Link
-                    href="/disciplines/freeski-slopestyle"
-                    className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 hover:bg-gradient-to-r hover:from-red-500/80 hover:to-rose-500/80 transition-all duration-300 group transform hover:scale-105"
+                    href="/snowboard-parallel"
+                    className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 hover:bg-gradient-to-r hover:from-indigo-500/80 hover:to-blue-500/80 transition-all duration-300 group transform hover:scale-105"
                   >
-                    <div className="w-3 h-3 bg-red-400 rounded-full mb-2 flex-shrink-0"></div>
-                    <span className="text-white font-medium whitespace-nowrap text-xs">自由式坡面/大跳台</span>
+                    <div className="w-3 h-3 bg-indigo-400 rounded-full mb-2 flex-shrink-0"></div>
+                    <span className="text-white font-medium whitespace-nowrap text-xs">单板平行项目</span>
+                  </Link>
+                  <Link
+                    href="/freestyle-slopestyle"
+                    className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 hover:bg-gradient-to-r hover:from-cyan-500/80 hover:to-teal-500/80 transition-all duration-300 group transform hover:scale-105"
+                  >
+                    <div className="w-3 h-3 bg-cyan-400 rounded-full mb-2 flex-shrink-0"></div>
+                    <span className="text-white font-medium whitespace-nowrap text-xs">自由式坡面障碍技巧</span>
                   </Link>
                 </div>
 
@@ -233,9 +233,9 @@ export default function HomePage() {
                   <div className="mt-8">
                     <div className="flex flex-col sm:flex-row gap-4">
                       <Link
-                        href="/disciplines"
+                        href="/alpine"
                         className="inline-flex items-center justify-center px-6 py-3 bg-ski-blue text-white rounded-lg hover:bg-ski-blue/90 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
-                        title="了解四大滑雪项目"
+                        title="开始探索高山滑雪"
                       >
                         <Trophy className="h-5 w-5 mr-2" />
                         探索滑雪项目
