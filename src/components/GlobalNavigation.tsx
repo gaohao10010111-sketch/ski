@@ -88,10 +88,10 @@ export default function GlobalNavigation() {
       icon: Mountain,
       highlighted: true,  // 视觉突出
       children: [
-        { name: '🏔️ 高山滑雪', href: '/alpine' },
-        { name: '🏂 单板坡面障碍技巧', href: '/snowboard-slopestyle' },
-        { name: '🏂 单板平行项目', href: '/snowboard-parallel' },
-        { name: '🎿 自由式坡面障碍技巧', href: '/freestyle-slopestyle' }
+        { name: '高山滑雪', href: '/alpine' },
+        { name: '单板坡面障碍技巧', href: '/snowboard-slopestyle' },
+        { name: '单板平行项目', href: '/snowboard-parallel' },
+        { name: '自由式坡面障碍技巧', href: '/freestyle-slopestyle' }
       ]
     },
     // 高频核心功能 - 直接显示 (4项)
@@ -276,21 +276,23 @@ export default function GlobalNavigation() {
 
                       {/* 下拉菜单 */}
                       {isOpen && (
-                        <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1 z-50">
-                          {item.children.map((child) => (
-                            <Link
-                              key={child.href}
-                              href={child.href}
-                              onClick={() => setActiveDropdown(null)}
-                              className={`block px-4 py-2 text-sm transition-colors ${
-                                pathname === child.href
-                                  ? 'bg-blue-50 text-blue-600 font-medium'
-                                  : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
-                              }`}
-                            >
-                              {child.name}
-                            </Link>
-                          ))}
+                        <div className="absolute left-0 top-full pt-2 z-50">
+                          <div className="w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1">
+                            {item.children.map((child) => (
+                              <Link
+                                key={child.href}
+                                href={child.href}
+                                onClick={() => setActiveDropdown(null)}
+                                className={`block px-4 py-2 text-sm transition-colors ${
+                                  pathname === child.href
+                                    ? 'bg-blue-50 text-blue-600 font-medium'
+                                    : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
+                                }`}
+                              >
+                                {child.name}
+                              </Link>
+                            ))}
+                          </div>
                         </div>
                       )}
                     </>
