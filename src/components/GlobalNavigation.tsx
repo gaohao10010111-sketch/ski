@@ -163,8 +163,8 @@ export default function GlobalNavigation() {
     <>
       {/* 第一行 - 全局导航栏 */}
       <nav className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-12">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px]">
+          <div className="flex justify-between h-14">
             {/* Logo - 简化标题，节省空间 */}
             <div className="flex items-center">
               <Link href="/" className="flex items-center space-x-2 hover:opacity-90 transition-opacity">
@@ -176,7 +176,7 @@ export default function GlobalNavigation() {
             </div>
 
             {/* Desktop Global Menu */}
-            <div className="hidden md:flex items-center space-x-1">
+            <div className="hidden md:flex items-center space-x-2">
               {globalMenuItems.map((item) => {
                 const isActive = pathname?.startsWith(item.href) && item.href !== '#';
                 const isOpen = activeDropdown === item.name;
@@ -196,7 +196,7 @@ export default function GlobalNavigation() {
                               setTimeout(() => setActiveDropdown(null), 200);
                             }
                           }}
-                          className={`flex items-center gap-1 px-3 py-1.5 rounded text-sm font-semibold transition-colors ${
+                          className={`flex items-center gap-1 px-4 py-2 rounded text-sm font-semibold transition-colors ${
                             isHighlighted
                               ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-sm'
                               : isActive
@@ -232,7 +232,7 @@ export default function GlobalNavigation() {
                       // 直接链接
                       <Link
                         href={item.href}
-                        className={`block px-3 py-1.5 rounded text-sm font-medium transition-colors ${
+                        className={`block px-4 py-2 rounded text-sm font-medium transition-colors ${
                           isActive
                             ? 'text-blue-600 bg-blue-50'
                             : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
@@ -324,9 +324,9 @@ export default function GlobalNavigation() {
       </nav>
 
       {/* 第二行 - 功能导航栏 */}
-      <nav className="bg-gray-50 border-b border-gray-200 sticky top-12 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="hidden md:flex items-center space-x-1 h-9 overflow-x-auto scrollbar-hide">
+      <nav className="bg-gray-50 border-b border-gray-200 sticky top-14 z-40">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px]">
+          <div className="hidden md:flex items-center space-x-2 h-10 overflow-x-auto scrollbar-hide">
             {secondaryMenuItems.map((item) => {
               const isActive = pathname === item.href || (item.href !== '#' && pathname?.startsWith(item.href));
               const isOpen = activeDropdown === `secondary-${item.name}`;
@@ -344,7 +344,7 @@ export default function GlobalNavigation() {
                             setTimeout(() => setActiveDropdown(null), 200);
                           }
                         }}
-                        className={`flex items-center gap-1 px-2.5 py-1 rounded text-xs font-medium transition-colors whitespace-nowrap ${
+                        className={`flex items-center gap-1 px-3 py-1.5 rounded text-xs font-medium transition-colors whitespace-nowrap ${
                           isActive
                             ? 'text-blue-600 bg-blue-50'
                             : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
@@ -378,7 +378,7 @@ export default function GlobalNavigation() {
                     // 直接链接
                     <Link
                       href={item.href}
-                      className={`block px-2.5 py-1 rounded text-xs font-medium transition-colors whitespace-nowrap ${
+                      className={`block px-3 py-1.5 rounded text-xs font-medium transition-colors whitespace-nowrap ${
                         isActive
                           ? 'text-blue-600 bg-blue-50'
                           : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
@@ -396,7 +396,7 @@ export default function GlobalNavigation() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-gray-100 fixed top-12 left-0 right-0 z-40 shadow-lg">
+        <div className="md:hidden bg-white border-b border-gray-100 fixed top-14 left-0 right-0 z-40 shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 max-h-[calc(100vh-3rem)] overflow-y-auto">
             {globalMenuItems.map((item) => (
               <div key={item.name}>
