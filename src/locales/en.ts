@@ -33,47 +33,54 @@ export const en: TranslationKeys = {
   navigation: {
     title: 'China Ski Points System',
     titleShort: 'CSPS',
+
+    // Discipline Switcher
     disciplines: 'Disciplines',
-    points: 'Points',
-    events: 'Events',
+    alpine: 'Alpine Skiing',
+    snowboardSlopestyle: 'Snowboard Slopestyle',
+    snowboardParallel: 'Snowboard Parallel',
+    freestyleSlopestyle: 'Freestyle Slopestyle',
+
+    // Global Navigation
     my: 'My',
     docs: 'Docs',
     about: 'About',
-    
+
+    // Discipline-level Navigation
+    points: 'Points',
+    events: 'Events',
+    athletes: 'Athletes',
+
     // Submenus
     submenus: {
-      // Ski Disciplines
-      alpine: 'Alpine Skiing',
-      snowboardSlopestyle: 'Snowboard Slopestyle/Big Air',
-      snowboardParallel: 'Snowboard Parallel',
-      freeskiSlopestyle: 'Freeski Slopestyle/Big Air',
-      
-      // Points Center
-      myPoints: 'My Points',
-      pointsQuery: 'Points Query',
-      pointsCalculator: 'Points Calculator',
-      pointsRankings: 'Points Rankings',
-      pointsTrends: 'Points Trends',
-      
-      // Events
-      eventsSchedule: 'Event Schedule',
-      eventsRegister: 'Online Registration',
-      eventsList: 'Events List',
-      eventsResults: 'Results Query',
+      // Points Management Submenu
+      pointsCalculator: 'Calculator',
+      pointsRankings: 'Rankings',
+      pointsTrends: 'Trends',
+
+      // Events Management Submenu
+      eventsSchedule: 'Schedule',
+      eventsRegister: 'Register',
+      eventsResults: 'Results',
       eventsStats: 'Statistics',
-      
-      // My
-      personalCenter: 'Personal Center',
+
+      // Athletes Submenu
+      athletesList: 'Athletes List',
+      athletesProfile: 'Athlete Profile',
+      athletesStats: 'Statistics',
+
+      // Docs Submenu
+      docsPointsRules: 'Points Rules',
+      docsCompetitionRules: 'Competition Rules',
+      docsVenueStandards: 'Venue Standards',
+      docsGuide: 'User Guide',
+
+      // Personal Center Submenu
+      myProfile: 'Personal Center',
+      myPoints: 'My Points',
       myRegistrations: 'My Registrations',
-      athleteProfile: 'Athlete Profile',
-      resultsHistory: 'Results History',
-      
-      // Knowledge Base
-      pointsRules: 'Points Rules',
-      competitionRules: 'Competition Rules',
-      venueStandards: 'Venue Standards',
-      fisRules: 'FIS Rules',
-      userGuide: 'User Guide'
+      myAthlete: 'Athlete Profile',
+      myHistory: 'Results History'
     }
   },
 

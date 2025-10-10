@@ -1,7 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { ClientProviders } from '@/components/ClientProviders'
-import Navigation from '@/components/Navigation'
+import GlobalNavigation from '@/components/GlobalNavigation'
 import Breadcrumb from '@/components/Breadcrumb'
 import Footer from '@/components/Footer'
 import StructuredData from '@/components/StructuredData'
@@ -80,7 +80,7 @@ export default function RootLayout({
       </head>
       <body>
         <ClientProviders>
-          <Navigation />
+          <GlobalNavigation />
           <Breadcrumb />
           <main className="min-h-screen">
             {children}

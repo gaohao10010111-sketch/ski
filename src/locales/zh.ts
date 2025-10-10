@@ -31,47 +31,54 @@ export const zh = {
   navigation: {
     title: '中国滑雪积分系统',
     titleShort: 'CSPS',
+
+    // 项目切换器
     disciplines: '项目',
-    points: '积分',
-    events: '赛事',
+    alpine: '高山滑雪',
+    snowboardSlopestyle: '单板坡面障碍技巧',
+    snowboardParallel: '单板平行项目',
+    freestyleSlopestyle: '自由式坡面障碍技巧',
+
+    // 全局导航
     my: '我的',
-    docs: '知识库',
+    docs: '文档',
     about: '关于',
-    
+
+    // 项目级导航
+    points: '积分管理',
+    events: '赛事管理',
+    athletes: '运动员',
+
     // 子菜单
     submenus: {
-      // 滑雪项目
-      alpine: '高山滑雪',
-      snowboardSlopestyle: '单板坡面/大跳台', 
-      snowboardParallel: '单板平行',
-      freeskiSlopestyle: '自由式坡面/大跳台',
-      
-      // 积分中心
-      myPoints: '我的积分',
-      pointsQuery: '积分查询',
+      // 积分管理子菜单
       pointsCalculator: '积分计算器',
-      pointsRankings: '积分排行榜',
-      pointsTrends: '积分趋势分析',
-      
-      // 赛事
-      eventsSchedule: '赛事日程',
+      pointsRankings: '积分排名',
+      pointsTrends: '积分趋势',
+
+      // 赛事管理子菜单
+      eventsSchedule: '赛程日历',
       eventsRegister: '在线报名',
-      eventsList: '比赛列表',
       eventsResults: '成绩查询',
       eventsStats: '数据统计',
-      
-      // 我的
-      personalCenter: '个人中心',
+
+      // 运动员子菜单
+      athletesList: '运动员名录',
+      athletesProfile: '运动员档案',
+      athletesStats: '运动员统计',
+
+      // 文档子菜单
+      docsPointsRules: '积分规则',
+      docsCompetitionRules: '竞赛规则',
+      docsVenueStandards: '场地标准',
+      docsGuide: '使用指南',
+
+      // 个人中心子菜单
+      myProfile: '个人中心',
+      myPoints: '我的积分',
       myRegistrations: '我的报名',
-      athleteProfile: '运动员档案',
-      resultsHistory: '成绩历史',
-      
-      // 知识库
-      pointsRules: '积分规则文档',
-      competitionRules: '竞赛技术规则',
-      venueStandards: '场地技术标准',
-      fisRules: 'FIS国际规则',
-      userGuide: '平台使用指南'
+      myAthlete: '运动员资料',
+      myHistory: '成绩历史'
     }
   },
 
