@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Calculator, Trophy, Users, FileText } from 'lucide-react';
+import { Calculator, Trophy, Users, FileText, Mountain } from 'lucide-react';
 import { useTranslation } from '@/contexts/LanguageContext';
 
 interface DisciplineNavigationProps {
@@ -13,6 +13,16 @@ interface DisciplineNavigationProps {
 export default function DisciplineNavigation({ discipline }: DisciplineNavigationProps) {
   const pathname = usePathname();
   const { t } = useTranslation();
+
+  // 项目名称映射
+  const disciplineNames: { [key: string]: string } = {
+    'alpine': t.navigation?.alpine || '高山滑雪',
+    'snowboard-slopestyle': t.navigation?.snowboardSlopestyle || '单板坡面障碍技巧',
+    'snowboard-parallel': t.navigation?.snowboardParallel || '单板平行项目',
+    'freestyle-slopestyle': t.navigation?.freestyleSlopestyle || '自由式坡面障碍技巧'
+  };
+
+  const disciplineName = disciplineNames[discipline] || discipline;
 
   // 每个项目的二级菜单结构（统一模板）
   const navigationItems = [
@@ -62,7 +72,13 @@ export default function DisciplineNavigation({ discipline }: DisciplineNavigatio
   return (
     <div className="bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav className="flex space-x-6 overflow-x-auto scrollbar-hide py-2">
+        <nav className="flex items-center space-x-6 overflow-x-auto scrollbar-hide py-2">
+          {/* 当前项目名称（面包屑样式） */}
+          <div className="flex items-center gap-1.5 text-sm font-semibold text-gray-900 whitespace-nowrap border-r border-gray-300 pr-6">
+            <Mountain className="w-3.5 h-3.5 text-blue-600" />
+            <span>{disciplineName}</span>
+          </div>
+
           {navigationItems.map((item) => {
             const Icon = item.icon;
             const isActive = pathname?.startsWith(item.href);

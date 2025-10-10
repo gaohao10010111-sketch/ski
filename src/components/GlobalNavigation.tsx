@@ -43,8 +43,25 @@ export default function GlobalNavigation() {
     return roleMap[role] || '用户';
   };
 
+  // 项目配置（用于下拉菜单）
+  const disciplines = [
+    { name: t.navigation?.alpine || '高山滑雪', href: '/alpine', color: 'text-blue-600' },
+    { name: t.navigation?.snowboardSlopestyle || '单板坡面障碍技巧', href: '/snowboard-slopestyle', color: 'text-purple-600' },
+    { name: t.navigation?.snowboardParallel || '单板平行项目', href: '/snowboard-parallel', color: 'text-indigo-600' },
+    { name: t.navigation?.freestyleSlopestyle || '自由式坡面障碍技巧', href: '/freestyle-slopestyle', color: 'text-cyan-600' }
+  ];
+
+  // 判断当前是否在项目页面内
+  const currentDiscipline = disciplines.find(d => pathname?.startsWith(d.href));
+
   // 全局菜单项（跨项目功能）
   const globalMenuItems = [
+    {
+      name: t.navigation?.disciplines || '项目',
+      href: '#',
+      icon: Mountain,
+      children: disciplines.map(d => ({ name: d.name, href: d.href }))
+    },
     {
       name: t.navigation?.my || '我的',
       href: '/my',
@@ -207,8 +224,8 @@ export default function GlobalNavigation() {
         </div>
       </nav>
 
-      {/* 项目切换器 */}
-      <DisciplineSwitcher />
+      {/* 项目切换器 - 仅在非项目页面显示 */}
+      {!currentDiscipline && <DisciplineSwitcher />}
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
