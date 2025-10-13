@@ -67,6 +67,9 @@ export const ru: TranslationKeys = {
       eventsRegister: 'Регистрация',
       eventsResults: 'Результаты',
       eventsStats: 'Статистика',
+      resultsLive: 'Live Results',
+      resultsImport: 'Import Results',
+      resultsAnnouncement: 'Results Announcement',
 
       // Подменю спортсменов
       athletesList: 'Список Спортсменов',
@@ -83,8 +86,11 @@ export const ru: TranslationKeys = {
       myProfile: 'Личный Центр',
       myPoints: 'Мои Очки',
       myRegistrations: 'Мои Регистрации',
-      myAthlete: 'Профиль Спортсмена',
-      myHistory: 'История Результатов'
+      myAthlete: 'Athlete Profile',
+      myHistory: 'Results History',
+
+      // More features
+      moreFeatures: 'More'
     }
   },
 
@@ -288,6 +294,12 @@ export const ru: TranslationKeys = {
   auth: {
     needsLogin: 'Требуется вход',
     loginToUnlock: 'Войдите чтобы разблокировать больше функций',
-    comingSoon: 'Скоро доступно'
+    comingSoon: 'Скоро доступно',
+    roles: {
+      admin: 'Administrator',
+      coach: 'Coach',
+      athlete: 'Athlete',
+      user: 'User'
+    }
   }
 };

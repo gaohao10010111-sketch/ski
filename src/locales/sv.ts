@@ -67,6 +67,9 @@ export const sv: TranslationKeys = {
       eventsRegister: 'Onlineregistrering',
       eventsResults: 'Resultatförfrågan',
       eventsStats: 'Datastatistik',
+      resultsLive: 'Live Results',
+      resultsImport: 'Import Results',
+      resultsAnnouncement: 'Results Announcement',
 
       // Atlet undermenyer
       athletesList: 'Atletlista',
@@ -83,8 +86,11 @@ export const sv: TranslationKeys = {
       myProfile: 'Personligt Center',
       myPoints: 'Mina Poäng',
       myRegistrations: 'Mina Registreringar',
-      myAthlete: 'Atletprofil',
-      myHistory: 'Resultathistorik'
+      myAthlete: 'Athlete Profile',
+      myHistory: 'Results History',
+
+      // More features
+      moreFeatures: 'More'
     }
   },
 
@@ -288,6 +294,12 @@ export const sv: TranslationKeys = {
   auth: {
     needsLogin: 'Inloggning krävs',
     loginToUnlock: 'Logga in för att låsa upp fler funktioner',
-    comingSoon: 'Kommer snart'
+    comingSoon: 'Kommer snart',
+    roles: {
+      admin: 'Administrator',
+      coach: 'Coach',
+      athlete: 'Athlete',
+      user: 'User'
+    }
   }
 };

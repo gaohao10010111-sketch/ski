@@ -67,6 +67,9 @@ export const no: TranslationKeys = {
       eventsRegister: 'Registrering',
       eventsResults: 'Resultater',
       eventsStats: 'Statistikk',
+      resultsLive: 'Live Results',
+      resultsImport: 'Import Results',
+      resultsAnnouncement: 'Results Announcement',
 
       // Utøvere undermeny
       athletesList: 'Utøverliste',
@@ -83,8 +86,11 @@ export const no: TranslationKeys = {
       myProfile: 'Personlig Senter',
       myPoints: 'Mine Poeng',
       myRegistrations: 'Mine Registreringer',
-      myAthlete: 'Utøverprofil',
-      myHistory: 'Resultathistorikk'
+      myAthlete: 'Athlete Profile',
+      myHistory: 'Results History',
+
+      // More features
+      moreFeatures: 'More'
     }
   },
 
@@ -288,6 +294,12 @@ export const no: TranslationKeys = {
   auth: {
     needsLogin: 'Innlogging kreves',
     loginToUnlock: 'Logg inn for å låse opp flere funksjoner',
-    comingSoon: 'Kommer snart'
+    comingSoon: 'Kommer snart',
+    roles: {
+      admin: 'Administrator',
+      coach: 'Coach',
+      athlete: 'Athlete',
+      user: 'User'
+    }
   }
 };

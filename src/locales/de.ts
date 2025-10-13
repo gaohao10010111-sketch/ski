@@ -67,6 +67,9 @@ export const de: TranslationKeys = {
       eventsRegister: 'Anmeldung',
       eventsResults: 'Ergebnisse',
       eventsStats: 'Statistiken',
+      resultsLive: 'Live Results',
+      resultsImport: 'Import Results',
+      resultsAnnouncement: 'Results Announcement',
 
       // Athleten Untermenü
       athletesList: 'Athletenliste',
@@ -83,8 +86,11 @@ export const de: TranslationKeys = {
       myProfile: 'Persönliches Center',
       myPoints: 'Meine Punkte',
       myRegistrations: 'Meine Anmeldungen',
-      myAthlete: 'Athletenprofil',
-      myHistory: 'Ergebnis-Historie'
+      myAthlete: 'Athlete Profile',
+      myHistory: 'Results History',
+
+      // More features
+      moreFeatures: 'More'
     }
   },
 
@@ -288,6 +294,12 @@ export const de: TranslationKeys = {
   auth: {
     needsLogin: 'Anmeldung erforderlich',
     loginToUnlock: 'Anmelden um mehr Funktionen freizuschalten',
-    comingSoon: 'Demnächst verfügbar'
+    comingSoon: 'Demnächst verfügbar',
+    roles: {
+      admin: 'Administrator',
+      coach: 'Coach',
+      athlete: 'Athlete',
+      user: 'User'
+    }
   }
 };

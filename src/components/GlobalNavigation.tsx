@@ -43,12 +43,12 @@ export default function GlobalNavigation() {
 
   const getRoleDisplayName = (role: string) => {
     const roleMap: { [key: string]: string } = {
-      admin: '管理员',
-      coach: '教练员',
-      athlete: '运动员',
-      user: '用户'
+      admin: t.auth?.roles?.admin || 'Administrator',
+      coach: t.auth?.roles?.coach || 'Coach',
+      athlete: t.auth?.roles?.athlete || 'Athlete',
+      user: t.auth?.roles?.user || 'User'
     };
-    return roleMap[role] || '用户';
+    return roleMap[role] || t.auth?.roles?.user || 'User';
   };
 
   // 判断当前在哪个项目页面
@@ -58,19 +58,19 @@ export default function GlobalNavigation() {
     : pathname?.startsWith('/freestyle-slopestyle') ? 'freestyle-slopestyle'
     : null;
 
-  // 获取当前项目的中文名称
+  // 获取当前项目的名称
   const getCurrentDisciplineName = () => {
     switch (currentDiscipline) {
       case 'alpine':
-        return '高山滑雪';
+        return t.navigation?.alpine || 'Alpine Skiing';
       case 'snowboard-slopestyle':
-        return '单板坡面障碍技巧';
+        return t.navigation?.snowboardSlopestyle || 'Snowboard Slopestyle';
       case 'snowboard-parallel':
-        return '单板平行项目';
+        return t.navigation?.snowboardParallel || 'Snowboard Parallel';
       case 'freestyle-slopestyle':
-        return '自由式坡面障碍技巧';
+        return t.navigation?.freestyleSlopestyle || 'Freestyle Slopestyle';
       default:
-        return '项目';
+        return t.navigation?.disciplines || 'Disciplines';
     }
   };
 
@@ -78,17 +78,17 @@ export default function GlobalNavigation() {
   // 纯平台级功能，不涉及具体业务内容，无下拉菜单保持简洁
   const globalMenuItems = [
     {
-      name: '系统介绍',
+      name: t.navigation?.about || 'About',
       href: '/about',
       icon: Info
     },
     {
-      name: '规则文档',
+      name: t.navigation?.docs || 'Docs',
       href: '/rules',
       icon: FileText
     },
     {
-      name: '个人中心',
+      name: t.navigation?.submenus?.myProfile || t.common?.profile || 'Profile',
       href: '/profile',
       icon: User
     }
@@ -99,36 +99,36 @@ export default function GlobalNavigation() {
   const secondaryMenuItems = [
     // 🌟 项目切换下拉 - 首位最重要！（学习FIS的"All Disciplines▼"）
     {
-      name: '项目',
+      name: t.navigation?.disciplines || 'Disciplines',
       href: '#',
       icon: Mountain,
       highlighted: true,  // 视觉突出
       children: [
-        { name: '高山滑雪', href: '/alpine' },
-        { name: '单板坡面障碍技巧', href: '/snowboard-slopestyle' },
-        { name: '单板平行项目', href: '/snowboard-parallel' },
-        { name: '自由式坡面障碍技巧', href: '/freestyle-slopestyle' }
+        { name: t.navigation?.alpine || 'Alpine Skiing', href: '/alpine' },
+        { name: t.navigation?.snowboardSlopestyle || 'Snowboard Slopestyle', href: '/snowboard-slopestyle' },
+        { name: t.navigation?.snowboardParallel || 'Snowboard Parallel', href: '/snowboard-parallel' },
+        { name: t.navigation?.freestyleSlopestyle || 'Freestyle Slopestyle', href: '/freestyle-slopestyle' }
       ]
     },
     // 高频核心功能 - 直接显示 (4项)
-    { name: '首页', href: '/', icon: Home },
-    { name: '赛事日历', href: '/competitions/schedule', icon: Calendar },
-    { name: '实时成绩', href: '/competitions', icon: Trophy },
-    { name: '运动员', href: '/athletes', icon: Users },
+    { name: t.common?.home || 'Home', href: '/', icon: Home },
+    { name: t.navigation?.submenus?.eventsSchedule || 'Schedule', href: '/competitions/schedule', icon: Calendar },
+    { name: t.navigation?.submenus?.resultsLive || 'Live Results', href: '/competitions', icon: Trophy },
+    { name: t.navigation?.athletes || 'Athletes', href: '/athletes', icon: Users },
     // More下拉 - 中低频功能 (8项)
     {
-      name: '更多功能',
+      name: t.navigation?.submenus?.moreFeatures || 'More',
       href: '#',
       icon: Menu,
       children: [
-        { name: '积分排名', href: '/points/rankings' },
-        { name: '积分计算', href: '/points/calculator' },
-        { name: '积分趋势', href: '/points/trends' },
-        { name: '成绩查询', href: '/results-query' },
-        { name: '赛事报名', href: '/registration/online' },
-        { name: '数据统计', href: '/competitions/stats' },
-        { name: '成绩录入', href: '/results-import' },
-        { name: '成绩发布', href: '/results-announcement' }
+        { name: t.navigation?.submenus?.pointsRankings || 'Rankings', href: '/points/rankings' },
+        { name: t.navigation?.submenus?.pointsCalculator || 'Calculator', href: '/points/calculator' },
+        { name: t.navigation?.submenus?.pointsTrends || 'Trends', href: '/points/trends' },
+        { name: t.navigation?.submenus?.eventsResults || 'Results', href: '/results-query' },
+        { name: t.navigation?.submenus?.eventsRegister || 'Register', href: '/registration/online' },
+        { name: t.navigation?.submenus?.eventsStats || 'Statistics', href: '/competitions/stats' },
+        { name: t.navigation?.submenus?.resultsImport || 'Import Results', href: '/results-import' },
+        { name: t.navigation?.submenus?.resultsAnnouncement || 'Results Announcement', href: '/results-announcement' }
       ]
     }
   ];
@@ -144,7 +144,7 @@ export default function GlobalNavigation() {
               <Link href="/" className="flex items-center space-x-2 hover:opacity-90 transition-opacity">
                 <Mountain className="h-6 w-6 text-ski-blue" />
                 <span className="text-base lg:text-lg font-bold text-ski-navy">
-                  {language === 'zh' ? '中国滑雪积分系统' : 'China Ski Points'}
+                  {language === 'zh' ? (t.navigation?.title || '中国滑雪积分系统') : (t.navigation?.titleShort || 'China Ski Points')}
                 </span>
               </Link>
             </div>
@@ -333,7 +333,7 @@ export default function GlobalNavigation() {
             {/* 搜索按钮 - 学习FIS */}
             <button
               className="flex items-center justify-center p-1.5 rounded text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors"
-              aria-label="搜索"
+              aria-label={t.common?.search || 'Search'}
             >
               <Search className="w-4 h-4" />
             </button>
@@ -424,7 +424,7 @@ export default function GlobalNavigation() {
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <Settings className="h-5 w-5" />
-                    <span>个人设置</span>
+                    <span>{t.common?.profile || '个人设置'}</span>
                   </Link>
                   <button
                     onClick={() => {
@@ -434,7 +434,7 @@ export default function GlobalNavigation() {
                     className="flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium text-red-600 hover:bg-red-50 w-full text-left mt-2"
                   >
                     <LogOut className="h-5 w-5" />
-                    <span>退出登录</span>
+                    <span>{t.common?.logout || '退出登录'}</span>
                   </button>
                 </>
               ) : (

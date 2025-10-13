@@ -65,6 +65,9 @@ export const zh = {
       eventsRegister: '在线报名',
       eventsResults: '成绩查询',
       eventsStats: '数据统计',
+      resultsLive: '实时成绩',
+      resultsImport: '成绩录入',
+      resultsAnnouncement: '成绩发布',
 
       // 运动员子菜单
       athletesList: '运动员名录',
@@ -82,7 +85,10 @@ export const zh = {
       myPoints: '我的积分',
       myRegistrations: '我的报名',
       myAthlete: '运动员资料',
-      myHistory: '成绩历史'
+      myHistory: '成绩历史',
+
+      // 更多功能
+      moreFeatures: '更多功能'
     }
   },
 
@@ -286,7 +292,13 @@ export const zh = {
   auth: {
     needsLogin: '需要登录',
     loginToUnlock: '登录解锁更多功能',
-    comingSoon: '即将上线'
+    comingSoon: '即将上线',
+    roles: {
+      admin: '管理员',
+      coach: '教练员',
+      athlete: '运动员',
+      user: '用户'
+    }
   }
 };
 

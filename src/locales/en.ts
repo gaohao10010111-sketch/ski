@@ -67,6 +67,9 @@ export const en: TranslationKeys = {
       eventsRegister: 'Register',
       eventsResults: 'Results',
       eventsStats: 'Statistics',
+      resultsLive: 'Live Results',
+      resultsImport: 'Import Results',
+      resultsAnnouncement: 'Results Announcement',
 
       // Athletes Submenu
       athletesList: 'Athletes List',
@@ -84,7 +87,10 @@ export const en: TranslationKeys = {
       myPoints: 'My Points',
       myRegistrations: 'My Registrations',
       myAthlete: 'Athlete Profile',
-      myHistory: 'Results History'
+      myHistory: 'Results History',
+
+      // More Features
+      moreFeatures: 'More'
     }
   },
 
@@ -288,6 +294,12 @@ export const en: TranslationKeys = {
   auth: {
     needsLogin: 'Login Required',
     loginToUnlock: 'Login to unlock more features',
-    comingSoon: 'Coming Soon'
+    comingSoon: 'Coming Soon',
+    roles: {
+      admin: 'Administrator',
+      coach: 'Coach',
+      athlete: 'Athlete',
+      user: 'User'
+    }
   }
 };

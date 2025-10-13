@@ -67,6 +67,9 @@ export const ja: TranslationKeys = {
       eventsRegister: 'オンライン登録',
       eventsResults: '結果照会',
       eventsStats: 'データ統計',
+      resultsLive: 'ライブ結果',
+      resultsImport: '結果インポート',
+      resultsAnnouncement: '結果発表',
 
       // 選手サブメニュー
       athletesList: '選手名簿',
@@ -84,7 +87,10 @@ export const ja: TranslationKeys = {
       myPoints: 'マイポイント',
       myRegistrations: 'マイ登録',
       myAthlete: '選手プロフィール',
-      myHistory: '成績履歴'
+      myHistory: '成績履歴',
+
+      // その他の機能
+      moreFeatures: 'その他'
     }
   },
 
@@ -288,6 +294,12 @@ export const ja: TranslationKeys = {
   auth: {
     needsLogin: 'ログインが必要',
     loginToUnlock: 'ログインして機能を解除',
-    comingSoon: '近日公開'
+    comingSoon: '近日公開',
+    roles: {
+      admin: '管理者',
+      coach: 'コーチ',
+      athlete: '選手',
+      user: 'ユーザー'
+    }
   }
 };

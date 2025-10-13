@@ -67,6 +67,9 @@ export const ko: TranslationKeys = {
       eventsRegister: '온라인 등록',
       eventsResults: '결과 조회',
       eventsStats: '데이터 통계',
+      resultsLive: 'Live Results',
+      resultsImport: 'Import Results',
+      resultsAnnouncement: 'Results Announcement',
 
       // 선수 서브메뉴
       athletesList: '선수 명단',
@@ -84,7 +87,10 @@ export const ko: TranslationKeys = {
       myPoints: '내 포인트',
       myRegistrations: '내 등록',
       myAthlete: '선수 프로필',
-      myHistory: '성적 이력'
+      myHistory: '성적 이력',
+
+      // More features
+      moreFeatures: 'More'
     }
   },
 
@@ -288,6 +294,12 @@ export const ko: TranslationKeys = {
   auth: {
     needsLogin: '로그인 필요',
     loginToUnlock: '로그인하여 더 많은 기능 해제',
-    comingSoon: '곧 출시'
+    comingSoon: '곧 출시',
+    roles: {
+      admin: 'Administrator',
+      coach: 'Coach',
+      athlete: 'Athlete',
+      user: 'User'
+    }
   }
 };

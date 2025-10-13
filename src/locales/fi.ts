@@ -67,6 +67,9 @@ export const fi: TranslationKeys = {
       eventsRegister: 'Verkkorekisteröinti',
       eventsResults: 'Tuloskysely',
       eventsStats: 'Datatilastot',
+      resultsLive: 'Live Results',
+      resultsImport: 'Import Results',
+      resultsAnnouncement: 'Results Announcement',
 
       // Urheilijat alavalikot
       athletesList: 'Urheilijalista',
@@ -83,8 +86,11 @@ export const fi: TranslationKeys = {
       myProfile: 'Henkilökohtainen keskus',
       myPoints: 'Omat pisteet',
       myRegistrations: 'Omat rekisteröinnit',
-      myAthlete: 'Urheilijan profiili',
-      myHistory: 'Tuloshistoria'
+      myAthlete: 'Athlete Profile',
+      myHistory: 'Results History',
+
+      // More features
+      moreFeatures: 'More'
     }
   },
 
@@ -288,6 +294,12 @@ export const fi: TranslationKeys = {
   auth: {
     needsLogin: 'Kirjautuminen vaaditaan',
     loginToUnlock: 'Kirjaudu avataksesi lisää toimintoja',
-    comingSoon: 'Tulossa pian'
+    comingSoon: 'Tulossa pian',
+    roles: {
+      admin: 'Administrator',
+      coach: 'Coach',
+      athlete: 'Athlete',
+      user: 'User'
+    }
   }
 };
