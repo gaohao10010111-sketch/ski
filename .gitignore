@@ -68,3 +68,8 @@ ecosystem.config.js.backup
 
 # Docker
 .dockerignoretemp_venv/
+*.tar.gz
+*.sql
+fix_pg_hba.sh
+nginx-fix.conf
+test_connection.sql
