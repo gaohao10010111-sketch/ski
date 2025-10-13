@@ -299,6 +299,124 @@ export const zh = {
       athlete: '运动员',
       user: '用户'
     }
+  },
+
+  // 首页
+  home: {
+    hero: {
+      title: '中国滑雪积分系统',
+      titleEn: 'China Skiing Points System',
+      subtitle: '权威·专业·精准的中国滑雪运动积分管理平台',
+      exploreDisciplines: '探索滑雪项目',
+      freeRegister: '免费注册',
+      platformIntro: '专业运动员、教练员、赛事组织者的首选平台 • 国家体育总局认证标准'
+    },
+    features: {
+      title: '平台核心功能',
+      platformIntro: {
+        title: '平台介绍',
+        description: '了解中国高山滑雪积分体系'
+      },
+      memberRegister: {
+        title: '会员注册',
+        description: '注册成为平台会员，查看个人积分'
+      },
+      eventAnnouncement: {
+        title: '赛事公告',
+        description: '查看最新的赛事安排和公告'
+      },
+      pointsRules: {
+        title: '积分规则',
+        description: '查看中国高山滑雪积分计算规则'
+      },
+      competitionManagement: {
+        title: '竞赛管理',
+        description: '管理比赛信息、成绩录入和统计'
+      },
+      athleteProfiles: {
+        title: '运动员档案',
+        description: '运动员信息管理和积分历史'
+      },
+      onlineRegistration: {
+        title: '在线报名',
+        description: '便捷的赛事报名和费用管理'
+      },
+      dataAnalysis: {
+        title: '数据分析',
+        description: '深度数据分析和可视化报表'
+      }
+    },
+    stats: {
+      title: '平台数据概览',
+      subtitle: '实时更新的系统数据和运行状态',
+      disciplines: { label: '滑雪项目', value: '15+', description: '高山·自由式·单板' },
+      pointsRules: { label: '积分规则', value: '100%', description: '符合中国标准' },
+      updateCycle: { label: '积分更新', value: '7天', description: '每周更新' },
+      users: { label: '注册用户', value: '1,200+', description: '运动员教练' }
+    },
+    news: {
+      title: '实时动态',
+      pauseCarousel: '暂停轮播',
+      continueCarousel: '继续轮播'
+    },
+    latestResults: {
+      title: '最新赛事成绩',
+      subtitle: '实时更新的竞赛结果和积分排名',
+      recentResults: '最新成绩',
+      liveUpdate: '实时更新',
+      viewMore: '查看更多赛事 →'
+    },
+    rankings: {
+      title: '积分排行榜',
+      updatedOn: '更新于',
+      points: '积分',
+      viewFullRankings: '查看完整排名 →'
+    },
+    memberWelcome: {
+      welcomeBack: '欢迎回来',
+      accountStatus: '账户正常',
+      pendingReview: '待审核状态',
+      currentPoints: '当前积分',
+      systemPermissions: '系统权限',
+      personalCenter: '个人中心',
+      myPoints: '我的积分',
+      adminPanel: '管理后台'
+    },
+    memberValue: {
+      unlockFeatures: '解锁所有专业功能',
+      registerToUnlock: '注册成为会员，享受完整的积分管理和赛事服务',
+      pointsSystem: {
+        title: '积分系统',
+        features: ['个人积分查询与历史追踪', '实时积分排行榜', '积分计算器工具', '积分变化趋势分析']
+      },
+      eventManagement: {
+        title: '赛事管理',
+        features: ['查看比赛列表和赛事日程', '在线报名参赛', '实时成绩查看', '赛事成绩通知']
+      },
+      professionalFeatures: {
+        title: '专业功能',
+        features: ['个人运动员档案管理', '积分规则详解', '数据统计分析', '技术支持服务']
+      },
+      registerUnlock: '注册解锁'
+    },
+    about: {
+      title: '关于平台',
+      description1: '中国滑雪赛事积分系统是基于国家体育总局冬季运动管理中心标准打造的综合性竞赛管理平台。涵盖高山滑雪、自由式滑雪、单板滑雪全项目，采用符合中国标准的多档积分计算算法，为中国滑雪竞赛提供权威、准确的数据管理和积分计算服务。',
+      description2: '我们致力于推动中国滑雪运动的数字化、标准化发展，为运动员、教练员、赛事组织者、竞赛裁判提供现代化的数据管理、积分计算、成绩统计工具，全面覆盖大跳台、坡面障碍技巧、平行项目等各类雪上项目，提升中国滑雪运动的组织水平和竞技水平。',
+      multiTierPoints: { title: '多档积分体系', description: '360/240/120分档标准' },
+      uSeries: { title: 'U系列赛事', description: 'U12/U15/U18全覆盖' },
+      officialCertification: { title: '权威认证', description: '冬运中心官方标准' },
+      allDisciplines: { title: '全项目支持', description: '高山·自由式·单板滑雪' }
+    },
+    systemFeatures: {
+      title: '系统特色',
+      feature1: '高山滑雪中国积分规则标准',
+      feature2: '自由式/单板滑雪360/240/120分档体系',
+      feature3: '大跳台、坡面障碍技巧、平行项目全覆盖',
+      feature4: 'U12/U15/U18青少年系列赛事管理',
+      feature5: '国家体育总局冬运中心标准认证',
+      feature6: '多项目积分排行榜和数据可视化'
+    }
   }
 };
 

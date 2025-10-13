@@ -21,6 +21,7 @@ import {
 } from 'lucide-react'
 import { getImagePath } from '@/utils/paths'
 import { useAuth } from '@/contexts/AuthContext'
+import { useTranslation } from '@/contexts/LanguageContext'
 import { Resource, Action } from '@/types/auth'
 
 const features = [
