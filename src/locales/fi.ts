@@ -301,6 +301,7 @@ export const fi: TranslationKeys = {
       athlete: 'Athlete',
       user: 'User'
     }
+  },
 
   // Homepage
   home: {

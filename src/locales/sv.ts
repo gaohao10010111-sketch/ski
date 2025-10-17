@@ -301,6 +301,7 @@ export const sv: TranslationKeys = {
       athlete: 'Athlete',
       user: 'User'
     }
+  },
 
   // Homepage
   home: {

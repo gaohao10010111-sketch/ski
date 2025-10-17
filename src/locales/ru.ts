@@ -301,7 +301,7 @@ export const ru: TranslationKeys = {
       athlete: 'Athlete',
       user: 'User'
     }
-  }
+  },
 
   // Homepage
   home: {
