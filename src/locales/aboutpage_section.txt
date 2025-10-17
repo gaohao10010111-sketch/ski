@@ -1,0 +1,81 @@
+  // About Page
+  aboutPage: {
+    pageTitle: 'About Us',
+    heroDescription: 'China Skiing Points Management Platform is a professional ski sports points management service, committed to promoting the standardization and professionalization of skiing sports',
+
+    platformTitle: 'Platform Introduction',
+    platformDescription1: 'China Skiing Points Management Platform is a comprehensive skiing sports management platform established based on official points calculation rules and youth U-series competition programs.',
+    platformDescription2: 'The platform supports three major disciplines: alpine skiing, freestyle skiing, and snowboarding, covering multiple sub-disciplines including downhill, slalom, giant slalom, super-G, combined, big air, slopestyle, halfpipe and other events for points calculation and event management.',
+    platformDescription3: 'We are committed to providing professional, accurate, and efficient digital management services for skiing sports, promoting the standardized development of skiing.',
+
+    stats: {
+      pointsSystems: { value: '4', label: 'Points Systems' },
+      registeredAthletes: { value: '1000+', label: 'Registered Athletes' },
+      annualEvents: { value: '50+', label: 'Annual Events' },
+      onlineService: { value: '24/7', label: 'Online Service' }
+    },
+
+    coreFeaturesTitle: 'Core Features',
+    coreFeaturesSubtitle: 'Professional, comprehensive, and user-friendly ski event management solution',
+
+    pointsCalculation: {
+      title: 'Points Calculation System',
+      description: 'Accurate points calculation based on official rules, supporting dual points systems'
+    },
+    eventManagement: {
+      title: 'Event Management',
+      description: 'Full-process digital management from registration to results publication'
+    },
+    athleteManagement: {
+      title: 'Athlete Management',
+      description: 'Athlete registration, qualification review, and points record management'
+    },
+    dataAnalysis: {
+      title: 'Data Analysis',
+      description: 'Professional data statistics analysis and visualization reports'
+    },
+
+    technicalFeaturesTitle: 'Technical Features',
+
+    dualPointsEngine: {
+      title: 'Dual Points Calculation Engine',
+      features: [
+        'Alpine Skiing: Time-based points calculation',
+        'Freestyle/Snowboard: Rank-based 240/360/120 tier system',
+        'Dynamic penalty points calculation',
+        'Multi-discipline points management'
+      ]
+    },
+    rulesSupport: {
+      title: 'Rules System Support',
+      features: [
+        'Alpine Skiing points calculation rules',
+        'National BA/SS Youth U-Series program',
+        'FIS International Ski Federation rules compatibility',
+        'Venue technical standards management'
+      ]
+    },
+    userExperience: {
+      title: 'User Experience',
+      features: [
+        'Responsive design, multi-platform adaptation',
+        'Real-time data updates',
+        'Intuitive data visualization',
+        'Convenient operation workflow'
+      ]
+    },
+
+    contactTitle: 'Contact Us',
+    contactDescription: 'If you have any questions or suggestions, please feel free to contact us',
+
+    technicalSupport: {
+      title: 'Technical Support',
+      email: 'Email: support@ski-points.com',
+      phone: 'Phone: 400-123-4567'
+    },
+    businessCooperation: {
+      title: 'Business Cooperation',
+      email: 'Email: business@ski-points.com',
+      wechat: 'WeChat: ski-points-service'
+    }
+  }

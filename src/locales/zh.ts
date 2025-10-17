@@ -417,6 +417,88 @@ export const zh = {
       feature5: '国家体育总局冬运中心标准认证',
       feature6: '多项目积分排行榜和数据可视化'
     }
+  },
+
+  // 关于页面
+  aboutPage: {
+    pageTitle: '关于我们',
+    heroDescription: '中国滑雪积分管理平台是专业的滑雪运动积分管理服务，致力于推动滑雪运动的标准化和专业化发展',
+
+    platformTitle: '平台简介',
+    platformDescription1: '中国滑雪积分管理平台是基于官方积分计算规则和青少年U系列比赛方案建立的综合性滑雪运动管理平台。',
+    platformDescription2: '平台支持高山滑雪、自由式滑雪、单板滑雪三大项目，涵盖速降、回转、大回转、超级大回转、全能、大跳台、坡面障碍技巧、U型场地等多个细分项目的积分计算和赛事管理。',
+    platformDescription3: '我们致力于为滑雪运动提供专业、准确、高效的数字化管理服务，推动滑雪运动的规范化发展。',
+
+    stats: {
+      pointsSystems: { value: '4', label: '积分系统' },
+      registeredAthletes: { value: '1000+', label: '注册运动员' },
+      annualEvents: { value: '50+', label: '年度赛事' },
+      onlineService: { value: '24/7', label: '在线服务' }
+    },
+
+    coreFeaturesTitle: '核心功能',
+    coreFeaturesSubtitle: '专业、全面、易用的滑雪赛事管理解决方案',
+
+    pointsCalculation: {
+      title: '积分计算系统',
+      description: '基于官方规则的精确积分计算，支持双积分体系'
+    },
+    eventManagement: {
+      title: '赛事管理',
+      description: '从报名到成绩发布的全流程数字化管理'
+    },
+    athleteManagement: {
+      title: '运动员管理',
+      description: '运动员注册、资格审查、积分记录管理'
+    },
+    dataAnalysis: {
+      title: '数据分析',
+      description: '专业的数据统计分析和可视化报告'
+    },
+
+    technicalFeaturesTitle: '技术特色',
+
+    dualPointsEngine: {
+      title: '双积分计算引擎',
+      features: [
+        '高山滑雪：基于时间的积分计算',
+        '自由式/单板：基于排名的240/360/120分档',
+        '动态判罚分计算',
+        '多项目积分管理'
+      ]
+    },
+    rulesSupport: {
+      title: '规则体系支持',
+      features: [
+        '高山滑雪积分计算规则',
+        '全国BA、SS青少年U系列方案',
+        'FIS国际雪联规则兼容',
+        '场地技术标准管理'
+      ]
+    },
+    userExperience: {
+      title: '用户体验',
+      features: [
+        '响应式设计，多端适配',
+        '实时数据更新',
+        '直观的数据可视化',
+        '便捷的操作流程'
+      ]
+    },
+
+    contactTitle: '联系我们',
+    contactDescription: '如有任何问题或建议，欢迎联系我们',
+
+    technicalSupport: {
+      title: '技术支持',
+      email: '邮箱：support@ski-points.com',
+      phone: '电话：400-123-4567'
+    },
+    businessCooperation: {
+      title: '合作咨询',
+      email: '邮箱：business@ski-points.com',
+      wechat: '微信：ski-points-service'
+    }
   }
 };
 
