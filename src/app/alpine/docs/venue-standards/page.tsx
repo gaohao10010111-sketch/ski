@@ -1,18 +1,15 @@
 import ComingSoon from '@/components/ComingSoon';
-import { MapPin } from 'lucide-react';
 
 export const metadata = {
-  title: '场地标准 - 高山滑雪',
-  description: '高山滑雪场地技术标准'
+  title: 'Venue Standards – Alpine Skiing',
+  description: 'Alpine skiing venue standards and certification requirements'
 };
 
 export default function AlpineDocsVenueStandardsPage() {
   return (
     <ComingSoon
-      title="场地标准"
-      description="高山滑雪场地技术标准和认证要求"
+      translationKey="alpine.docs.venue-standards"
       backLink="/alpine"
-      backLabel="返回高山滑雪"
     />
   );
 }

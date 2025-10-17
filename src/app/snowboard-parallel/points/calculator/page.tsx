@@ -1,18 +1,15 @@
 import ComingSoon from '@/components/ComingSoon';
-import { Calculator } from 'lucide-react';
 
 export const metadata = {
-  title: '积分计算器 - 单板平行项目',
-  description: '单板平行项目积分计算器'
+  title: 'Points Calculator – Snowboard Parallel',
+  description: 'Precise points calculator coming soon'
 };
 
 export default function PointsCalculatorPage() {
   return (
     <ComingSoon
-      title="积分计算器"
-      description="精确的积分计算工具，即将上线"
+      translationKey="snowboard-parallel.points.calculator"
       backLink="/snowboard-parallel"
-      backLabel="返回单板平行项目"
     />
   );
 }

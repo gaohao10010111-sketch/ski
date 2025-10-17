@@ -1,18 +1,15 @@
 import ComingSoon from '@/components/ComingSoon';
-import { Medal } from 'lucide-react';
 
 export const metadata = {
-  title: '运动员排名 - 高山滑雪',
-  description: '高山滑雪运动员综合排名'
+  title: 'Athlete Rankings – Alpine Skiing',
+  description: 'Comprehensive athlete rankings based on points and results'
 };
 
 export default function AlpineAthletesRankingsPage() {
   return (
     <ComingSoon
-      title="运动员排名"
-      description="基于积分和成绩的运动员综合排名"
+      translationKey="alpine.athletes.rankings"
       backLink="/alpine"
-      backLabel="返回高山滑雪"
     />
   );
 }

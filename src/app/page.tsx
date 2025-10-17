@@ -8,14 +8,11 @@ import {
   Users,
   FileText,
   UserPlus,
-  TrendingUp,
   Award,
   Database,
   ChevronRight,
   Clock,
   CheckCircle,
-  Pin,
-  PinOff,
   Lock,
   LogIn
 } from 'lucide-react'
@@ -26,43 +23,100 @@ import { Resource, Action } from '@/types/auth'
 
 export default function HomePage() {
   const { hasPermission, isAuthenticated, user } = useAuth()
-  const { t } = useTranslation()
+  const { t, language } = useTranslation()
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   const [isClient, setIsClient] = useState(false)
 
-  // 动态新闻数据
-  const newsItems = [
+  const fallbackNewsItems = [
+    { id: 'nc-men-gs', title: '2024 National Championships', subtitle: 'Giant Slalom · Live Now', status: 'live', pinned: true },
+    { id: 'points-refresh', title: 'Points Rankings Refreshed', subtitle: '14-Day Cycle · Published', status: 'updated', pinned: false },
+    { id: 'rules-update', title: 'New Season Regulations', subtitle: 'Technical Committee · Released', status: 'updated', pinned: false },
+    { id: 'registration-open', title: 'Athlete Registration Open', subtitle: '2024-25 Season · Open Enrollment', status: 'upcoming', pinned: false },
+    { id: 'camp', title: 'Training Camp Notice', subtitle: 'Winter Program · Starting Soon', status: 'upcoming', pinned: false }
+  ]
+
+  const newsItems = t.home?.news?.items && t.home.news.items.length > 0 ? t.home.news.items : fallbackNewsItems
+
+  const newsStatusColors: Record<string, string> = {
+    live: 'bg-red-400 animate-pulse',
+    updated: 'bg-green-400',
+    upcoming: 'bg-yellow-400',
+    default: 'bg-gray-300'
+  }
+
+  const newsStatusLabels: Record<string, string> = t.home?.news?.statuses || {}
+
+  const fallbackResults = [
+    { id: 'nc-men-gs', title: '2024 National Championships', subtitle: 'Men Giant Slalom · Tianchi Resort', status: 'live', time: 'Dec 15 · 14:30' },
+    { id: 'china-cup-sl', title: 'China Cup Alpine Open', subtitle: 'Women Slalom · Wanlong Resort', status: 'completed', time: 'Dec 14 · 16:45' },
+    { id: 'northeast-league', title: 'Northeast League', subtitle: 'Mixed Alpine Combined · Yabuli Resort', status: 'completed', time: 'Dec 13 · 15:20' }
+  ]
+
+  const latestResults = t.home?.latestResults?.results && t.home.latestResults.results.length > 0
+    ? t.home.latestResults.results
+    : fallbackResults
+
+  const latestResultStatusLabels: Record<string, string> = t.home?.latestResults?.statusLabels || {}
+  const resultStatusStyles: Record<string, string> = {
+    live: 'text-ski-blue',
+    completed: 'text-green-600'
+  }
+
+  const fallbackRankingEntries = [
+    { rank: 1, name: 'Wei Zhang', event: 'Men Giant Slalom', points: '0.00' },
+    { rank: 2, name: 'Xue Li', event: 'Women Slalom', points: '8.45' },
+    { rank: 3, name: 'Bing Wang', event: 'Women Giant Slalom', points: '12.30' },
+    { rank: 4, name: 'Qiang Liu', event: 'Men Slalom', points: '15.67' }
+  ]
+
+  const rankingEntries = t.home?.rankings?.entries && t.home.rankings.entries.length > 0
+    ? t.home.rankings.entries
+    : fallbackRankingEntries
+
+  const rankingCardStyles = [
+    'bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-200',
+    'bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200',
+    'bg-gradient-to-r from-orange-50 to-orange-100 border border-orange-200'
+  ]
+
+  const rankingBadgeStyles = [
+    'bg-yellow-500 text-white',
+    'bg-gray-400 text-white',
+    'bg-orange-500 text-white'
+  ]
+
+  const defaultRankingCardClass = 'bg-gray-50 border border-gray-200'
+  const defaultRankingBadgeClass = 'bg-gray-300 text-gray-600'
+
+  const disciplineCards = [
     {
-      id: 1,
-      title: '2024全国锦标赛',
-      subtitle: '大回转项目 · 正在进行',
-      status: 'live',
-      pinned: true
+      key: 'alpine',
+      href: '/alpine',
+      accentClass: 'bg-ski-blue',
+      gradientClass: 'hover:bg-gradient-to-r hover:from-blue-500/80 hover:to-cyan-500/80',
+      label: t.navigation?.alpine || 'Alpine Skiing'
     },
     {
-      id: 2,
-      title: '积分排名更新',
-      subtitle: '14天周期 · 已发布',
-      status: 'updated'
+      key: 'snowboard-slopestyle',
+      href: '/snowboard-slopestyle',
+      accentClass: 'bg-purple-400',
+      gradientClass: 'hover:bg-gradient-to-r hover:from-purple-500/80 hover:to-pink-500/80',
+      label: t.navigation?.snowboardSlopestyle || 'Snowboard Slopestyle'
     },
     {
-      id: 3,
-      title: '新赛季规则',
-      subtitle: '技术委员会 · 已更新',
-      status: 'updated'
+      key: 'snowboard-parallel',
+      href: '/snowboard-parallel',
+      accentClass: 'bg-indigo-400',
+      gradientClass: 'hover:bg-gradient-to-r hover:from-indigo-500/80 hover:to-blue-500/80',
+      label: t.navigation?.snowboardParallel || 'Snowboard Parallel'
     },
     {
-      id: 4,
-      title: '选手注册开启',
-      subtitle: '2024-25赛季 · 开放报名',
-      status: 'updated'
-    },
-    {
-      id: 5,
-      title: '训练营通知',
-      subtitle: '冬训计划 · 即将开始',
-      status: 'updated'
+      key: 'freestyle-slopestyle',
+      href: '/freestyle-slopestyle',
+      accentClass: 'bg-cyan-400',
+      gradientClass: 'hover:bg-gradient-to-r hover:from-cyan-500/80 hover:to-teal-500/80',
+      label: t.navigation?.freestyleSlopestyle || 'Freestyle Slopestyle'
     }
   ]
 
@@ -100,22 +154,24 @@ export default function HomePage() {
 
   // 自动轮播功能
   useEffect(() => {
-    if (!isPaused) {
+    if (!isPaused && newsItems.length > 1) {
       const interval = setInterval(() => {
         setCurrentNewsIndex((prev) => (prev + 1) % newsItems.length)
       }, 4000) // 每4秒切换
 
       return () => clearInterval(interval)
     }
-  }, [isPaused])
+  }, [isPaused, newsItems.length])
+
+  useEffect(() => {
+    setCurrentNewsIndex(0)
+  }, [language, newsItems.length])
 
   const handlePauseToggle = () => {
     setIsPaused(!isPaused)
   }
 
-  const getCurrentNews = () => {
-    return newsItems[currentNewsIndex]
-  }
+  const getCurrentNews = () => newsItems[currentNewsIndex % newsItems.length] || newsItems[0]
 
   const goToNews = (index: number) => {
     setCurrentNewsIndex(index)
@@ -123,6 +179,8 @@ export default function HomePage() {
     // 3秒后自动恢复轮播
     setTimeout(() => setIsPaused(false), 3000)
   }
+
+  const currentNews = getCurrentNews()
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -141,7 +199,7 @@ export default function HomePage() {
             <div className="text-white">
               <h1 className="font-bold mb-8 leading-tight">
                 <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-2">
-                  <span className="text-gradient bg-gradient-ski">{t.home?.hero?.title || '中国滑雪积分系统'}</span>
+                  <span className="text-gradient bg-gradient-ski">{t.home?.hero?.title || 'China Ski Points System'}</span>
                 </div>
                 <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white">
                   {t.home?.hero?.titleEn || 'China Skiing Points System'}
@@ -149,37 +207,19 @@ export default function HomePage() {
               </h1>
               <div className="mb-8">
                 <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 leading-relaxed font-medium">
-                  {t.home?.hero?.subtitle || '权威·专业·精准的中国滑雪运动积分管理平台'}
+                  {t.home?.hero?.subtitle || 'Authoritative · Professional · Accurate ski points platform'}
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4 text-sm md:text-base lg:text-lg">
-                  <Link
-                    href="/alpine"
-                    className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 hover:bg-gradient-to-r hover:from-blue-500/80 hover:to-cyan-500/80 transition-all duration-300 group transform hover:scale-105"
-                  >
-                    <div className="w-3 h-3 bg-ski-blue rounded-full mb-2 flex-shrink-0"></div>
-                    <span className="text-white font-medium whitespace-nowrap text-xs">高山滑雪</span>
-                  </Link>
-                  <Link
-                    href="/snowboard-slopestyle"
-                    className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 hover:bg-gradient-to-r hover:from-purple-500/80 hover:to-pink-500/80 transition-all duration-300 group transform hover:scale-105"
-                  >
-                    <div className="w-3 h-3 bg-purple-400 rounded-full mb-2 flex-shrink-0"></div>
-                    <span className="text-white font-medium whitespace-nowrap text-xs">单板坡面障碍技巧</span>
-                  </Link>
-                  <Link
-                    href="/snowboard-parallel"
-                    className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 hover:bg-gradient-to-r hover:from-indigo-500/80 hover:to-blue-500/80 transition-all duration-300 group transform hover:scale-105"
-                  >
-                    <div className="w-3 h-3 bg-indigo-400 rounded-full mb-2 flex-shrink-0"></div>
-                    <span className="text-white font-medium whitespace-nowrap text-xs">单板平行项目</span>
-                  </Link>
-                  <Link
-                    href="/freestyle-slopestyle"
-                    className="flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 hover:bg-gradient-to-r hover:from-cyan-500/80 hover:to-teal-500/80 transition-all duration-300 group transform hover:scale-105"
-                  >
-                    <div className="w-3 h-3 bg-cyan-400 rounded-full mb-2 flex-shrink-0"></div>
-                    <span className="text-white font-medium whitespace-nowrap text-xs">自由式坡面障碍技巧</span>
-                  </Link>
+                  {disciplineCards.map((card) => (
+                    <Link
+                      key={card.key}
+                      href={card.href}
+                      className={`flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 transition-all duration-300 group transform hover:scale-105 ${card.gradientClass}`}
+                    >
+                      <div className={`w-3 h-3 ${card.accentClass} rounded-full mb-2 flex-shrink-0`} />
+                      <span className="text-white font-medium whitespace-nowrap text-xs">{card.label}</span>
+                    </Link>
+                  ))}
                 </div>
 
                 {/* 平台介绍引导 */}
@@ -192,7 +232,7 @@ export default function HomePage() {
                         title={t.home?.hero?.exploreDisciplines || 'Explore Disciplines'}
                       >
                         <Trophy className="h-5 w-5 mr-2" />
-                        {t.home?.hero?.exploreDisciplines || '探索滑雪项目'}
+                        {t.home?.hero?.exploreDisciplines || 'Explore Disciplines'}
                       </Link>
                       <Link
                         href="/register"
@@ -200,12 +240,12 @@ export default function HomePage() {
                         title={t.home?.hero?.freeRegister || 'Free Registration'}
                       >
                         <UserPlus className="h-5 w-5 mr-2" />
-                        {t.home?.hero?.freeRegister || '免费注册'}
+                        {t.home?.hero?.freeRegister || 'Free Registration'}
                       </Link>
                     </div>
 
                     <p className="text-gray-300 text-sm mt-4">
-                      {t.home?.hero?.platformIntro || '专业运动员、教练员、赛事组织者的首选平台 • 国家体育总局认证标准'}
+                      {t.home?.hero?.platformIntro || 'Preferred platform for athletes, coaches, and organisers • Certified by the General Administration of Sport'}
                     </p>
                   </div>
                 )}
@@ -215,11 +255,11 @@ export default function HomePage() {
               <div className="relative">
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 lg:p-8 border border-white/20 mt-8 lg:mt-0">
                   <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-2xl font-bold text-white">{t.home?.news?.title || '实时动态'}</h3>
+                    <h3 className="text-2xl font-bold text-white">{t.home?.news?.title || 'Latest Updates'}</h3>
                     <button
                       onClick={handlePauseToggle}
                       className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors"
-                      title={isPaused ? (t.home?.news?.continueCarousel || '继续轮播') : (t.home?.news?.pauseCarousel || '暂停轮播')}
+                      title={isPaused ? (t.home?.news?.continueCarousel || 'Continue Carousel') : (t.home?.news?.pauseCarousel || 'Pause Carousel')}
                     >
                       {isPaused ? (
                         <Clock className="h-4 w-4 text-orange-400" />
@@ -229,34 +269,40 @@ export default function HomePage() {
                     </button>
                   </div>
                   <div className="space-y-4">
-                    {/* 当前显示的动态 */}
                     <div className="flex items-center p-4 bg-white/10 rounded-lg border border-white/20">
                       <div className="flex-1">
-                        <div className="text-white font-semibold">{getCurrentNews().title}</div>
-                        <div className="text-gray-300 text-sm">{getCurrentNews().subtitle}</div>
+                        <div className="text-white font-semibold">{currentNews.title}</div>
+                        <div className="text-gray-300 text-sm">{currentNews.subtitle}</div>
                       </div>
-                      <div className={`w-3 h-3 rounded-full ${
-                        getCurrentNews().status === 'live'
-                          ? 'bg-red-400 animate-pulse'
-                          : 'bg-green-400'
-                      }`}></div>
+                      <div className={`w-3 h-3 rounded-full ${newsStatusColors[currentNews.status] || newsStatusColors.default}`}></div>
                     </div>
 
-                    {/* 其他动态预览 */}
-                    {newsItems.slice(0, 3).map((item, index) => (
-                      index !== currentNewsIndex && (
-                        <div
+                    {newsItems
+                      .map((item, index) => ({ item, index }))
+                      .filter(({ index }) => index !== currentNewsIndex)
+                      .slice(0, 3)
+                      .map(({ item, index }) => (
+                        <button
                           key={item.id}
-                          className="flex items-center p-3 bg-white/5 rounded-lg cursor-pointer hover:bg-white/10 transition-colors"
+                          type="button"
+                          className="flex items-center w-full p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
                           onClick={() => goToNews(index)}
                         >
-                          <div className="flex-1">
+                          <div className="flex-1 text-left">
                             <div className="text-white/80 font-medium text-sm">{item.title}</div>
                             <div className="text-gray-400 text-xs">{item.subtitle}</div>
                           </div>
-                        </div>
-                      )
-                    ))}
+                          <div className="flex items-center gap-1">
+                            <span className={`inline-block w-2 h-2 rounded-full ${newsStatusColors[item.status] || newsStatusColors.default}`} />
+                            <span className="text-xs text-gray-400">
+                              {newsStatusLabels[item.status] ||
+                                (item.status === 'live'
+                                  ? (t.home?.news?.statuses?.live || 'Live')
+                                  : (t.home?.news?.statuses?.updated || 'Updated'))}
+                            </span>
+                          </div>
+                        </button>
+                      ))}
                   </div>
 
                   {/* 指示器 */}
@@ -288,8 +334,8 @@ export default function HomePage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-ski-navy mb-4">{t.home?.stats?.title || '平台数据概览'}</h2>
-            <p className="text-gray-600 text-sm md:text-base">{t.home?.stats?.subtitle || '实时更新的系统数据和运行状态'}</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-ski-navy mb-4">{t.home?.stats?.title || 'Platform Data Overview'}</h2>
+            <p className="text-gray-600 text-sm md:text-base">{t.home?.stats?.subtitle || 'Real-time system data and status'}</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
             {stats.map((stat, index) => (
@@ -331,12 +377,12 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-ski-navy mb-4">
-              {isClient && isAuthenticated ? (t.home?.latestResults?.title || '最新赛事成绩') : (t.home?.features?.title || '平台核心功能')}
+              {isClient && isAuthenticated ? (t.home?.latestResults?.title || 'Latest Competition Results') : (t.home?.features?.title || 'Core Platform Features')}
             </h2>
             <p className="text-gray-600 text-sm md:text-base">
               {isClient && isAuthenticated
-                ? (t.home?.latestResults?.subtitle || '实时更新的竞赛结果和积分排名')
-                : (t.home?.memberValue?.registerToUnlock || '注册成为会员，解锁所有专业功能')
+                ? (t.home?.latestResults?.subtitle || 'Real-time competition results and points standings')
+                : (t.home?.memberValue?.registerToUnlock || 'Register to unlock all professional features')
               }
             </p>
           </div>
@@ -348,12 +394,12 @@ export default function HomePage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="text-xl font-bold mb-2">
-                      {t.home?.memberWelcome?.welcomeBack || '欢迎回来'}，{user?.username || '会员'}！
+                      {t.home?.memberWelcome?.welcomeBack || 'Welcome Back'}, {user?.username || 'Member'}！
                     </h3>
                     <p className="text-blue-100">
-                      {user?.role === 'admin' ? (t.auth?.roles?.admin || '管理员') :
-                       user?.role === 'coach' ? (t.auth?.roles?.coach || '教练') : (t.auth?.roles?.athlete || '运动员')} ·
-                      {user?.status === 'active' ? (t.home?.memberWelcome?.accountStatus || '账户正常') : (t.home?.memberWelcome?.pendingReview || '待审核状态')}
+                      {user?.role === 'admin' ? (t.auth?.roles?.admin || 'Administrator') :
+                       user?.role === 'coach' ? (t.auth?.roles?.coach || 'Coach') : (t.auth?.roles?.athlete || 'Athlete')} ·
+                      {user?.status === 'active' ? (t.home?.memberWelcome?.accountStatus || 'Account Active') : (t.home?.memberWelcome?.pendingReview || 'Pending Review')}
                     </p>
                   </div>
                   <div className="text-right">
@@ -361,7 +407,7 @@ export default function HomePage() {
                       {user?.role === 'athlete' ? '85.2' : '--'}
                     </div>
                     <div className="text-blue-100 text-sm">
-                      {user?.role === 'athlete' ? (t.home?.memberWelcome?.currentPoints || '当前积分') : (t.home?.memberWelcome?.systemPermissions || '系统权限')}
+                      {user?.role === 'athlete' ? (t.home?.memberWelcome?.currentPoints || 'Current Points') : (t.home?.memberWelcome?.systemPermissions || 'System Permissions')}
                     </div>
                   </div>
                 </div>
@@ -370,14 +416,14 @@ export default function HomePage() {
                     href="/my"
                     className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm"
                   >
-                    {t.home?.memberWelcome?.personalCenter || '个人中心'}
+                    {t.home?.memberWelcome?.personalCenter || 'Personal Center'}
                   </Link>
                   {user?.role === 'athlete' && (
                     <Link
                       href="/my/points"
                       className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm"
                     >
-                      {t.home?.memberWelcome?.myPoints || '我的积分'}
+                      {t.home?.memberWelcome?.myPoints || 'My Points'}
                     </Link>
                   )}
                   {user?.role === 'admin' && (
@@ -385,7 +431,7 @@ export default function HomePage() {
                       href="/admin"
                       className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm"
                     >
-                      {t.home?.memberWelcome?.adminPanel || '管理后台'}
+                      {t.home?.memberWelcome?.adminPanel || 'Admin Panel'}
                     </Link>
                   )}
                 </div>
@@ -396,47 +442,31 @@ export default function HomePage() {
             {/* Recent Competition Results */}
             <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
               <div className="flex items-center justify-between mb-4 md:mb-6">
-                <h3 className="text-lg md:text-xl font-semibold text-ski-navy">{t.home?.latestResults?.recentResults || '最新成绩'}</h3>
+                <h3 className="text-lg md:text-xl font-semibold text-ski-navy">{t.home?.latestResults?.recentResults || 'Recent Results'}</h3>
                 <div className="flex items-center text-sm text-green-600">
                   <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                  {t.home?.latestResults?.liveUpdate || '实时更新'}
+                  {t.home?.latestResults?.liveUpdate || 'Live Update'}
                 </div>
               </div>
               <div className="space-y-4">
-                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                  <div>
-                    <div className="font-semibold text-gray-900">2024全国锦标赛</div>
-                    <div className="text-sm text-gray-600">男子大回转 · 天池雪场</div>
+                {latestResults.map((result) => (
+                  <div key={result.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                    <div>
+                      <div className="font-semibold text-gray-900">{result.title}</div>
+                      <div className="text-sm text-gray-600">{result.subtitle}</div>
+                    </div>
+                    <div className="text-right">
+                      <div className={`text-sm font-medium ${resultStatusStyles[result.status] || 'text-gray-600'}`}>
+                        {latestResultStatusLabels[result.status] || (result.status === 'live' ? (t.home?.latestResults?.statusLabels?.live || 'Live') : (t.home?.latestResults?.statusLabels?.completed || 'Completed'))}
+                      </div>
+                      {result.time && <div className="text-xs text-gray-500">{result.time}</div>}
+                    </div>
                   </div>
-                  <div className="text-right">
-                    <div className="text-sm font-medium text-ski-blue">正在进行</div>
-                    <div className="text-xs text-gray-500">12-15 14:30</div>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                  <div>
-                    <div className="font-semibold text-gray-900">中国杯高山滑雪公开赛</div>
-                    <div className="text-sm text-gray-600">女子回转 · 万龙雪场</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-sm font-medium text-green-600">已完成</div>
-                    <div className="text-xs text-gray-500">12-14 16:45</div>
-                  </div>
-                </div>
-                <div className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                  <div>
-                    <div className="font-semibold text-gray-900">东北三省联赛</div>
-                    <div className="text-sm text-gray-600">混合全能 · 亚布力雪场</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-sm font-medium text-green-600">已完成</div>
-                    <div className="text-xs text-gray-500">12-13 15:20</div>
-                  </div>
-                </div>
+                ))}
               </div>
               <div className="mt-6 text-center">
                 <Link href="/events" className="text-ski-blue hover:text-ski-blue/80 font-medium">
-                  {t.home?.latestResults?.viewMore || '查看更多赛事 →'}
+                  {t.home?.latestResults?.viewMore || 'View More Events →'}
                 </Link>
               </div>
             </div>
@@ -444,58 +474,32 @@ export default function HomePage() {
             {/* Top Athletes Rankings */}
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-xl font-semibold text-ski-navy">{t.home?.rankings?.title || '积分排行榜'}</h3>
-                <div className="text-sm text-gray-500">{t.home?.rankings?.updatedOn || '更新于'}: 12-15</div>
+                <h3 className="text-xl font-semibold text-ski-navy">{t.home?.rankings?.title || 'Points Leaderboard'}</h3>
+                <div className="text-sm text-gray-500">{t.home?.rankings?.updatedOn || 'Updated on'}: 12-15</div>
               </div>
               <div className="space-y-4">
-                <div className="flex items-center p-4 bg-gradient-to-r from-yellow-50 to-yellow-100 rounded-lg border border-yellow-200">
-                  <div className="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold text-sm mr-4">1</div>
-                  <div className="flex-1">
-                    <div className="font-semibold text-gray-900">张伟</div>
-                    <div className="text-sm text-gray-600">男子大回转</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="font-semibold text-ski-navy">0.00</div>
-                    <div className="text-xs text-gray-500">{t.home?.rankings?.points || '积分'}</div>
-                  </div>
-                </div>
-                <div className="flex items-center p-4 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg border border-gray-200">
-                  <div className="w-8 h-8 bg-gray-400 text-white rounded-full flex items-center justify-center font-bold text-sm mr-4">2</div>
-                  <div className="flex-1">
-                    <div className="font-semibold text-gray-900">李雪</div>
-                    <div className="text-sm text-gray-600">女子回转</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="font-semibold text-ski-navy">8.45</div>
-                    <div className="text-xs text-gray-500">{t.home?.rankings?.points || '积分'}</div>
-                  </div>
-                </div>
-                <div className="flex items-center p-4 bg-gradient-to-r from-orange-50 to-orange-100 rounded-lg border border-orange-200">
-                  <div className="w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold text-sm mr-4">3</div>
-                  <div className="flex-1">
-                    <div className="font-semibold text-gray-900">王冰</div>
-                    <div className="text-sm text-gray-600">女子大回转</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="font-semibold text-ski-navy">12.30</div>
-                    <div className="text-xs text-gray-500">{t.home?.rankings?.points || '积分'}</div>
-                  </div>
-                </div>
-                <div className="flex items-center p-4 bg-gray-50 rounded-lg">
-                  <div className="w-8 h-8 bg-gray-300 text-gray-600 rounded-full flex items-center justify-center font-bold text-sm mr-4">4</div>
-                  <div className="flex-1">
-                    <div className="font-semibold text-gray-900">刘强</div>
-                    <div className="text-sm text-gray-600">男子回转</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="font-semibold text-ski-navy">15.67</div>
-                    <div className="text-xs text-gray-500">{t.home?.rankings?.points || '积分'}</div>
-                  </div>
-                </div>
+                {rankingEntries.map((entry, index) => {
+                  const cardClass = rankingCardStyles[index] || defaultRankingCardClass
+                  const badgeClass = rankingBadgeStyles[index] || defaultRankingBadgeClass
+
+                  return (
+                    <div key={entry.rank} className={`flex items-center p-4 rounded-lg ${cardClass}`}>
+                      <div className={`w-8 h-8 ${badgeClass} rounded-full flex items-center justify-center font-bold text-sm mr-4`}>{entry.rank}</div>
+                      <div className="flex-1">
+                        <div className="font-semibold text-gray-900">{entry.name}</div>
+                        <div className="text-sm text-gray-600">{entry.event}</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="font-semibold text-ski-navy">{entry.points}</div>
+                        <div className="text-xs text-gray-500">{t.home?.rankings?.points || 'Points'}</div>
+                      </div>
+                    </div>
+                  )
+                })}
               </div>
               <div className="mt-6 text-center">
                 <Link href="/points/rankings" className="text-ski-blue hover:text-ski-blue/80 font-medium">
-                  {t.home?.rankings?.viewFullRankings || '查看完整排名 →'}
+                  {t.home?.rankings?.viewFullRankings || 'View Full Rankings →'}
                 </Link>
               </div>
             </div>
@@ -513,10 +517,10 @@ export default function HomePage() {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-sky-900 mb-1">
-                        {t.home?.memberValue?.unlockFeatures || '解锁所有专业功能'}
+                        {t.home?.memberValue?.unlockFeatures || 'Unlock All Professional Features'}
                       </h3>
                       <p className="text-sky-700 text-sm">
-                        {t.home?.memberValue?.registerToUnlock || '注册成为会员，享受完整的积分管理和赛事服务'}
+                        {t.home?.memberValue?.registerToUnlock || 'Register to access full points and event services'}
                       </p>
                     </div>
                   </div>
@@ -525,13 +529,13 @@ export default function HomePage() {
                       href="/login"
                       className="px-4 py-2 border border-sky-300 text-sky-700 rounded-lg hover:bg-sky-50 transition-colors text-sm font-medium"
                     >
-                      {t.common?.login || '登录'}
+                      {t.common?.login || 'Login'}
                     </Link>
                     <Link
                       href="/register"
                       className="px-4 py-2 bg-sky-500 text-white rounded-lg hover:bg-sky-600 transition-colors text-sm font-medium"
                     >
-                      {t.home?.hero?.freeRegister || '免费注册'}
+                      {t.home?.hero?.freeRegister || 'Free Registration'}
                     </Link>
                   </div>
                 </div>
@@ -548,12 +552,12 @@ export default function HomePage() {
                     <Calculator className="h-8 w-8 text-blue-600" />
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-ski-navy mb-3 text-center">{t.home?.memberValue?.pointsSystem?.title || '积分系统'}</h3>
+                <h3 className="text-xl font-semibold text-ski-navy mb-3 text-center">{t.home?.memberValue?.pointsSystem?.title || 'Points System'}</h3>
                 <ul className="space-y-2 text-gray-600 text-sm">
-                  <li>• {t.home?.memberValue?.pointsSystem?.features?.[0] || '个人积分查询与历史追踪'}</li>
-                  <li>• {t.home?.memberValue?.pointsSystem?.features?.[1] || '实时积分排行榜'}</li>
-                  <li>• {t.home?.memberValue?.pointsSystem?.features?.[2] || '积分计算器工具'}</li>
-                  <li>• {t.home?.memberValue?.pointsSystem?.features?.[3] || '积分变化趋势分析'}</li>
+                  <li>• {t.home?.memberValue?.pointsSystem?.features?.[0] || 'Personal points history tracking'}</li>
+                  <li>• {t.home?.memberValue?.pointsSystem?.features?.[1] || 'Real-time points leaderboard'}</li>
+                  <li>• {t.home?.memberValue?.pointsSystem?.features?.[2] || 'Points calculator tool'}</li>
+                  <li>• {t.home?.memberValue?.pointsSystem?.features?.[3] || 'Points trend analysis'}</li>
                 </ul>
                 <div className="mt-6 text-center">
                   <Link
@@ -561,7 +565,7 @@ export default function HomePage() {
                     className="inline-flex items-center px-4 py-2 bg-ski-blue text-white rounded-lg hover:bg-ski-blue/90 transition-colors"
                   >
                     <LogIn className="h-4 w-4 mr-2" />
-                    {t.home?.memberValue?.registerUnlock || '注册解锁'}
+                    {t.home?.memberValue?.registerUnlock || 'Register to Unlock'}
                   </Link>
                 </div>
               </div>
@@ -576,12 +580,12 @@ export default function HomePage() {
                     <Trophy className="h-8 w-8 text-green-600" />
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-ski-navy mb-3 text-center">{t.home?.memberValue?.eventManagement?.title || '赛事管理'}</h3>
+                <h3 className="text-xl font-semibold text-ski-navy mb-3 text-center">{t.home?.memberValue?.eventManagement?.title || 'Event Management'}</h3>
                 <ul className="space-y-2 text-gray-600 text-sm">
-                  <li>• {t.home?.memberValue?.eventManagement?.features?.[0] || '查看比赛列表和赛事日程'}</li>
-                  <li>• {t.home?.memberValue?.eventManagement?.features?.[1] || '在线报名参赛'}</li>
-                  <li>• {t.home?.memberValue?.eventManagement?.features?.[2] || '实时成绩查看'}</li>
-                  <li>• {t.home?.memberValue?.eventManagement?.features?.[3] || '赛事成绩通知'}</li>
+                  <li>• {t.home?.memberValue?.eventManagement?.features?.[0] || 'View competition list and schedule'}</li>
+                  <li>• {t.home?.memberValue?.eventManagement?.features?.[1] || 'Register online for events'}</li>
+                  <li>• {t.home?.memberValue?.eventManagement?.features?.[2] || 'View live results'}</li>
+                  <li>• {t.home?.memberValue?.eventManagement?.features?.[3] || 'Event results notifications'}</li>
                 </ul>
                 <div className="mt-6 text-center">
                   <Link
@@ -589,7 +593,7 @@ export default function HomePage() {
                     className="inline-flex items-center px-4 py-2 bg-ski-blue text-white rounded-lg hover:bg-ski-blue/90 transition-colors"
                   >
                     <LogIn className="h-4 w-4 mr-2" />
-                    {t.home?.memberValue?.registerUnlock || '注册解锁'}
+                    {t.home?.memberValue?.registerUnlock || 'Register to Unlock'}
                   </Link>
                 </div>
               </div>
@@ -604,12 +608,12 @@ export default function HomePage() {
                     <Users className="h-8 w-8 text-purple-600" />
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold text-ski-navy mb-3 text-center">{t.home?.memberValue?.professionalFeatures?.title || '专业功能'}</h3>
+                <h3 className="text-xl font-semibold text-ski-navy mb-3 text-center">{t.home?.memberValue?.professionalFeatures?.title || 'Professional Features'}</h3>
                 <ul className="space-y-2 text-gray-600 text-sm">
-                  <li>• {t.home?.memberValue?.professionalFeatures?.features?.[0] || '个人运动员档案管理'}</li>
-                  <li>• {t.home?.memberValue?.professionalFeatures?.features?.[1] || '积分规则详解'}</li>
-                  <li>• {t.home?.memberValue?.professionalFeatures?.features?.[2] || '数据统计分析'}</li>
-                  <li>• {t.home?.memberValue?.professionalFeatures?.features?.[3] || '技术支持服务'}</li>
+                  <li>• {t.home?.memberValue?.professionalFeatures?.features?.[0] || 'Athlete profile management'}</li>
+                  <li>• {t.home?.memberValue?.professionalFeatures?.features?.[1] || 'Detailed points rules'}</li>
+                  <li>• {t.home?.memberValue?.professionalFeatures?.features?.[2] || 'Data statistics and analysis'}</li>
+                  <li>• {t.home?.memberValue?.professionalFeatures?.features?.[3] || 'Technical support service'}</li>
                 </ul>
                 <div className="mt-6 text-center">
                   <Link
@@ -617,7 +621,7 @@ export default function HomePage() {
                     className="inline-flex items-center px-4 py-2 bg-ski-blue text-white rounded-lg hover:bg-ski-blue/90 transition-colors"
                   >
                     <LogIn className="h-4 w-4 mr-2" />
-                    {t.home?.memberValue?.registerUnlock || '注册解锁'}
+                    {t.home?.memberValue?.registerUnlock || 'Register to Unlock'}
                   </Link>
                 </div>
               </div>
@@ -637,30 +641,30 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
             <div>
-              <h2 className="section-title">{t.home?.about?.title || '关于平台'}</h2>
+              <h2 className="section-title">{t.home?.about?.title || 'About the Platform'}</h2>
               <div className="space-y-6 text-gray-600">
                 <p>
-                  {t.home?.about?.description1 || '中国滑雪赛事积分系统是基于国家体育总局冬季运动管理中心标准打造的综合性竞赛管理平台。涵盖高山滑雪、自由式滑雪、单板滑雪全项目，采用符合中国标准的多档积分计算算法，为中国滑雪竞赛提供权威、准确的数据管理和积分计算服务。'}
+                  {t.home?.about?.description1 || 'China Ski Points System is built on Winter Sports Management Center standards, covering alpine, freestyle, and snowboard disciplines with multi-tier scoring aligned to national regulations.'}
                 </p>
                 <p>
-                  {t.home?.about?.description2 || '我们致力于推动中国滑雪运动的数字化、标准化发展，为运动员、教练员、赛事组织者、竞赛裁判提供现代化的数据管理、积分计算、成绩统计工具，全面覆盖大跳台、坡面障碍技巧、平行项目等各类雪上项目，提升中国滑雪运动的组织水平和竞技水平。'}
+                  {t.home?.about?.description2 || 'We are committed to advancing the digital and standardised development of Chinese skiing, offering modern tools for data management, scoring, and results across big air, slopestyle, parallel events, and more.'}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
                   <div className="border-l-4 border-ski-blue pl-4">
-                    <div className="font-semibold text-ski-navy">{t.home?.about?.multiTierPoints?.title || '多档积分体系'}</div>
-                    <div className="text-sm">{t.home?.about?.multiTierPoints?.description || '360/240/120分档标准'}</div>
+                    <div className="font-semibold text-ski-navy">{t.home?.about?.multiTierPoints?.title || 'Multi-tier Points System'}</div>
+                    <div className="text-sm">{t.home?.about?.multiTierPoints?.description || '360/240/120 point tiers'}</div>
                   </div>
                   <div className="border-l-4 border-green-500 pl-4">
-                    <div className="font-semibold text-ski-navy">{t.home?.about?.uSeries?.title || 'U系列赛事'}</div>
-                    <div className="text-sm">{t.home?.about?.uSeries?.description || 'U12/U15/U18全覆盖'}</div>
+                    <div className="font-semibold text-ski-navy">{t.home?.about?.uSeries?.title || 'U-Series Events'}</div>
+                    <div className="text-sm">{t.home?.about?.uSeries?.description || 'U12/U15/U18 coverage'}</div>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
-                    <div className="font-semibold text-ski-navy">{t.home?.about?.officialCertification?.title || '权威认证'}</div>
-                    <div className="text-sm">{t.home?.about?.officialCertification?.description || '冬运中心官方标准'}</div>
+                    <div className="font-semibold text-ski-navy">{t.home?.about?.officialCertification?.title || 'Official Certification'}</div>
+                    <div className="text-sm">{t.home?.about?.officialCertification?.description || 'Winter Sports Center standards'}</div>
                   </div>
                   <div className="border-l-4 border-orange-500 pl-4">
-                    <div className="font-semibold text-ski-navy">{t.home?.about?.allDisciplines?.title || '全项目支持'}</div>
-                    <div className="text-sm">{t.home?.about?.allDisciplines?.description || '高山·自由式·单板滑雪'}</div>
+                    <div className="font-semibold text-ski-navy">{t.home?.about?.allDisciplines?.title || 'All Disciplines Supported'}</div>
+                    <div className="text-sm">{t.home?.about?.allDisciplines?.description || 'Alpine · Freestyle · Snowboard'}</div>
                   </div>
                 </div>
               </div>
@@ -668,31 +672,31 @@ export default function HomePage() {
             <div className="mt-10 lg:mt-0 relative">
               <div className="bg-gradient-to-br from-ski-blue to-primary-700 rounded-lg p-8 text-white relative overflow-hidden">
                 <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-white/10 rounded-2xl opacity-30"></div>
-                <h3 className="text-2xl font-bold mb-6">{t.home?.systemFeatures?.title || '系统特色'}</h3>
+                <h3 className="text-2xl font-bold mb-6">{t.home?.systemFeatures?.title || 'System Highlights'}</h3>
                 <ul className="space-y-4">
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-300 mr-3 flex-shrink-0" />
-                    <span>{t.home?.systemFeatures?.feature1 || '高山滑雪中国积分规则标准'}</span>
+                    <span>{t.home?.systemFeatures?.feature1 || 'China alpine skiing points rule standard'}</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-300 mr-3 flex-shrink-0" />
-                    <span>{t.home?.systemFeatures?.feature2 || '自由式/单板滑雪360/240/120分档体系'}</span>
+                    <span>{t.home?.systemFeatures?.feature2 || 'Freestyle/Snowboard 360/240/120 scoring tiers'}</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-300 mr-3 flex-shrink-0" />
-                    <span>{t.home?.systemFeatures?.feature3 || '大跳台、坡面障碍技巧、平行项目全覆盖'}</span>
+                    <span>{t.home?.systemFeatures?.feature3 || 'Comprehensive coverage for big air, slopestyle, and parallel events'}</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-300 mr-3 flex-shrink-0" />
-                    <span>{t.home?.systemFeatures?.feature4 || 'U12/U15/U18青少年系列赛事管理'}</span>
+                    <span>{t.home?.systemFeatures?.feature4 || 'Youth series management for U12/U15/U18'}</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-300 mr-3 flex-shrink-0" />
-                    <span>{t.home?.systemFeatures?.feature5 || '国家体育总局冬运中心标准认证'}</span>
+                    <span>{t.home?.systemFeatures?.feature5 || 'Certified by the Winter Sports Management Center'}</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-300 mr-3 flex-shrink-0" />
-                    <span>{t.home?.systemFeatures?.feature6 || '多项目积分排行榜和数据可视化'}</span>
+                    <span>{t.home?.systemFeatures?.feature6 || 'Multi-discipline rankings and data visualisation'}</span>
                   </li>
                 </ul>
               </div>

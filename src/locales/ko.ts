@@ -1,7 +1,7 @@
 // Korean language pack
-import { TranslationKeys } from './zh';
+import type { TranslationKeys } from './zh';
 
-export const ko: TranslationKeys = {
+export const ko: Partial<TranslationKeys> = {
   // 공통
   common: {
     loading: '로딩 중...',
@@ -91,6 +91,33 @@ export const ko: TranslationKeys = {
 
       // More features
       moreFeatures: 'More'
+    },
+    docs: {
+      competitionRules: {
+        title: '경기 기술 규정',
+        description: '스키 경기 기술 규정과 심판 기준',
+        backLabel: '지식 센터로 돌아가기'
+      },
+      pointsRules: {
+        title: '포인트 규정',
+        description: '중국 스키 포인트 계산 규칙 문서',
+        backLabel: '지식 센터로 돌아가기'
+      },
+      venueStandards: {
+        title: '경기장 기준',
+        description: '경기장 시설 요구 사항과 안전 기준',
+        backLabel: '지식 센터로 돌아가기'
+      },
+      fisRules: {
+        title: 'FIS 국제 규정',
+        description: '국제스키연맹 공식 규정',
+        backLabel: '지식 센터로 돌아가기'
+      },
+      guide: {
+        title: '플랫폼 가이드',
+        description: '시스템 기능 사용 방법과 FAQ',
+        backLabel: '지식 센터로 돌아가기'
+      }
     }
   },
 
@@ -288,6 +315,369 @@ export const ko: TranslationKeys = {
     english: 'English',
     japanese: '日本語',
     korean: '한국어'
+  },
+
+  // 곧 공개 컴포넌트
+  comingSoon: {
+    title: '곧 공개',
+    description: '이 기능은 현재 개발 중입니다. 잠시 후 다시 확인해 주세요.',
+    backLabel: '홈으로 돌아가기',
+    learnMoreLabel: '자세히 보기',
+    progressLabel: '개발 진행 상황',
+    progressValue: '30%',
+    eta: '예상 오픈: 2~4주',
+    upcomingFeaturesTitle: '예정된 기능',
+    upcomingFeatures: ['실시간 데이터 업데이트', '지능형 분석', '맞춤형 추천', '모바일 최적화']
+  },
+
+  // 문서 센터
+  docsPage: {
+    hero: {
+      title: '지식 센터',
+      description: '스키 경기 규정, 기술 표준, 플랫폼 사용 가이드'
+    },
+    viewDocLabel: '문서 보기',
+    categories: {
+      pointsRules: {
+        title: '포인트 규정 문서',
+        description: '중국 스키 포인트 계산 규정 상세 설명',
+        topics: ['포인트 계산 공식', '대회 등급 계수', '감점/가산 메커니즘', 'BL/NL 포인트 표']
+      },
+      competitionRules: {
+        title: '경기 기술 규정',
+        description: '스키 경기 기술 규정과 심판 기준',
+        topics: ['경기 운영 절차', '심판 규정', '타이밍 시스템', '이의 제기 절차']
+      },
+      venueStandards: {
+        title: '경기장 기술 기준',
+        description: '경기장 시설 요구 사항과 안전 기준',
+        topics: ['경기장 기준', '시설 요구 사항', '안전 가이드라인', '인증 절차']
+      },
+      fisRules: {
+        title: 'FIS 국제 규정',
+        description: '국제스키연맹 공식 규정',
+        topics: ['FIS 포인트 규정', 'ICR 경기 규정', '국제 표준', '중영 대조 자료']
+      },
+      guide: {
+        title: '플랫폼 사용 가이드',
+        description: '시스템 기능 사용 방법과 자주 묻는 질문',
+        topics: ['회원 가입 절차', '대회 신청 가이드', '포인트 조회', 'FAQ']
+      }
+    },
+    popular: {
+      title: '인기 문서',
+      viewsLabel: '회 조회',
+      items: {
+        alpineRulesV4: { title: '중국 알파인 스키 포인트 규정 v4.0', category: '포인트 규정' },
+        seasonGrading: { title: '2024-2025 시즌 대회 등급 기준', category: '경기 규정' },
+        youthSeries: { title: 'U시리즈 청소년 대회 운영 지침', category: '경기 규정' },
+        fisPointsGuide: { title: 'FIS 포인트 계산 가이드', category: 'FIS 규정' }
+      }
+    }
+  },
+
+  // 페이지 문구 (Coming Soon)
+  pages: {
+    alpine: {
+      athletes: {
+        list: {
+          title: '선수 명단',
+          description: '등록된 모든 선수 프로필 보기',
+          backLabel: '알파인 스키로 돌아가기'
+        },
+        rankings: {
+          title: '선수 순위',
+          description: '포인트와 성적에 기반한 종합 선수 순위',
+          backLabel: '알파인 스키로 돌아가기'
+        },
+        stats: {
+          title: '선수 통계',
+          description: '선수 통계와 시각화 분석을 상세 제공',
+          backLabel: '알파인 스키로 돌아가기'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: '경기 규정',
+          description: '경기 기술 규정을 상세히 안내',
+          backLabel: '알파인 스키로 돌아가기'
+        },
+        'points-rules': {
+          title: '포인트 규정',
+          description: '알파인 스키 v4.0 포인트 규정을 확인',
+          backLabel: '알파인 스키로 돌아가기'
+        },
+        'venue-standards': {
+          title: '경기장 기준',
+          description: '알파인 스키 경기장 기준과 인증 요건',
+          backLabel: '알파인 스키로 돌아가기'
+        }
+      },
+      events: {
+        register: {
+          title: '온라인 등록',
+          description: '간편한 대회 등록 시스템이 곧 제공됩니다',
+          backLabel: '알파인 스키로 돌아가기'
+        },
+        results: {
+          title: '결과 조회',
+          description: '레이스 결과 및 포인트 변화를 실시간 확인',
+          backLabel: '알파인 스키로 돌아가기'
+        },
+        schedule: {
+          title: '대회 일정',
+          description: '다가오는 알파인 스키 대회 일정을 확인',
+          backLabel: '알파인 스키로 돌아가기'
+        },
+        stats: {
+          title: '대회 통계',
+          description: '대회 데이터를 종합 분석하는 도구',
+          backLabel: '알파인 스키로 돌아가기'
+        }
+      },
+      points: {
+        calculator: {
+          title: '포인트 계산기',
+          description: '정확한 v4.0 포인트 계산기는 곧 제공됩니다',
+          backLabel: '알파인 스키로 돌아가기'
+        },
+        rankings: {
+          title: '포인트 순위',
+          description: '실시간 선수 순위표는 곧 제공됩니다',
+          backLabel: '알파인 스키로 돌아가기'
+        },
+        trends: {
+          title: '포인트 추이',
+          description: '포인트 추세 시각화 도구는 곧 제공됩니다',
+          backLabel: '알파인 스키로 돌아가기'
+        }
+      }
+    },
+    'freestyle-slopestyle': {
+      athletes: {
+        list: {
+          title: '선수 명단',
+          description: '등록된 모든 선수 프로필 보기',
+          backLabel: '프리스타일 슬로프스타일로 돌아가기'
+        },
+        rankings: {
+          title: '선수 순위',
+          description: '포인트와 성적에 기반한 종합 선수 순위',
+          backLabel: '프리스타일 슬로프스타일로 돌아가기'
+        },
+        stats: {
+          title: '선수 통계',
+          description: '선수 통계와 시각화 분석을 상세 제공',
+          backLabel: '프리스타일 슬로프스타일로 돌아가기'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: '경기 규정',
+          description: '경기 기술 규정을 상세히 안내',
+          backLabel: '프리스타일 슬로프스타일로 돌아가기'
+        },
+        'points-rules': {
+          title: '포인트 규정',
+          description: '포인트 계산 규칙을 자세히 확인',
+          backLabel: '프리스타일 슬로프스타일로 돌아가기'
+        },
+        'venue-standards': {
+          title: '경기장 기준',
+          description: '경기장 기술 기준과 인증 요건',
+          backLabel: '프리스타일 슬로프스타일로 돌아가기'
+        }
+      },
+      events: {
+        register: {
+          title: '온라인 등록',
+          description: '간편한 대회 등록 시스템이 곧 제공됩니다',
+          backLabel: '프리스타일 슬로프스타일로 돌아가기'
+        },
+        results: {
+          title: '결과 조회',
+          description: '레이스 결과 및 포인트 변화를 실시간 확인',
+          backLabel: '프리스타일 슬로프스타일로 돌아가기'
+        },
+        schedule: {
+          title: '대회 일정',
+          description: '다가오는 대회 일정을 확인',
+          backLabel: '프리스타일 슬로프스타일로 돌아가기'
+        },
+        stats: {
+          title: '대회 통계',
+          description: '대회 데이터를 종합 분석하는 도구',
+          backLabel: '프리스타일 슬로프스타일로 돌아가기'
+        }
+      },
+      points: {
+        calculator: {
+          title: '포인트 계산기',
+          description: '정확한 포인트 계산기는 곧 제공됩니다',
+          backLabel: '프리스타일 슬로프스타일로 돌아가기'
+        },
+        rankings: {
+          title: '포인트 순위',
+          description: '실시간 선수 순위표는 곧 제공됩니다',
+          backLabel: '프리스타일 슬로프스타일로 돌아가기'
+        },
+        trends: {
+          title: '포인트 추이',
+          description: '포인트 추세 분석 도구는 곧 제공됩니다',
+          backLabel: '프리스타일 슬로프스타일로 돌아가기'
+        }
+      }
+    },
+    'snowboard-parallel': {
+      athletes: {
+        list: {
+          title: '선수 명단',
+          description: '등록된 모든 선수 프로필 보기',
+          backLabel: '스노보드 패럴렐로 돌아가기'
+        },
+        rankings: {
+          title: '선수 순위',
+          description: '포인트와 성적에 기반한 종합 선수 순위',
+          backLabel: '스노보드 패럴렐로 돌아가기'
+        },
+        stats: {
+          title: '선수 통계',
+          description: '선수 통계와 시각화 분석을 상세 제공',
+          backLabel: '스노보드 패럴렐로 돌아가기'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: '경기 규정',
+          description: '경기 기술 규정을 상세히 안내',
+          backLabel: '스노보드 패럴렐로 돌아가기'
+        },
+        'points-rules': {
+          title: '포인트 규정',
+          description: '포인트 계산 규칙을 자세히 확인',
+          backLabel: '스노보드 패럴렐로 돌아가기'
+        },
+        'venue-standards': {
+          title: '경기장 기준',
+          description: '경기장 기술 기준과 인증 요건',
+          backLabel: '스노보드 패럴렐로 돌아가기'
+        }
+      },
+      events: {
+        register: {
+          title: '온라인 등록',
+          description: '간편한 대회 등록 시스템이 곧 제공됩니다',
+          backLabel: '스노보드 패럴렐로 돌아가기'
+        },
+        results: {
+          title: '결과 조회',
+          description: '레이스 결과 및 포인트 변화를 실시간 확인',
+          backLabel: '스노보드 패럴렐로 돌아가기'
+        },
+        schedule: {
+          title: '대회 일정',
+          description: '다가오는 대회 일정을 확인',
+          backLabel: '스노보드 패럴렐로 돌아가기'
+        },
+        stats: {
+          title: '대회 통계',
+          description: '대회 데이터를 종합 분석하는 도구',
+          backLabel: '스노보드 패럴렐로 돌아가기'
+        }
+      },
+      points: {
+        calculator: {
+          title: '포인트 계산기',
+          description: '정확한 포인트 계산기는 곧 제공됩니다',
+          backLabel: '스노보드 패럴렐로 돌아가기'
+        },
+        rankings: {
+          title: '포인트 순위',
+          description: '실시간 선수 순위표는 곧 제공됩니다',
+          backLabel: '스노보드 패럴렐로 돌아가기'
+        },
+        trends: {
+          title: '포인트 추이',
+          description: '포인트 추세 분석 도구는 곧 제공됩니다',
+          backLabel: '스노보드 패럴렐로 돌아가기'
+        }
+      }
+    },
+    'snowboard-slopestyle': {
+      athletes: {
+        list: {
+          title: '선수 명단',
+          description: '등록된 모든 선수 프로필 보기',
+          backLabel: '스노보드 슬로프스타일로 돌아가기'
+        },
+        rankings: {
+          title: '선수 순위',
+          description: '포인트와 성적에 기반한 종합 선수 순위',
+          backLabel: '스노보드 슬로프스타일로 돌아가기'
+        },
+        stats: {
+          title: '선수 통계',
+          description: '선수 통계와 시각화 분석을 상세 제공',
+          backLabel: '스노보드 슬로프스타일로 돌아가기'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: '경기 규정',
+          description: '경기 기술 규정을 상세히 안내',
+          backLabel: '스노보드 슬로프스타일로 돌아가기'
+        },
+        'points-rules': {
+          title: '포인트 규정',
+          description: '포인트 계산 규칙을 자세히 확인',
+          backLabel: '스노보드 슬로프스타일로 돌아가기'
+        },
+        'venue-standards': {
+          title: '경기장 기준',
+          description: '경기장 기술 기준과 인증 요건',
+          backLabel: '스노보드 슬로프스타일로 돌아가기'
+        }
+      },
+      events: {
+        register: {
+          title: '온라인 등록',
+          description: '간편한 대회 등록 시스템이 곧 제공됩니다',
+          backLabel: '스노보드 슬로프스타일로 돌아가기'
+        },
+        results: {
+          title: '결과 조회',
+          description: '레이스 결과 및 포인트 변화를 실시간 확인',
+          backLabel: '스노보드 슬로프스타일로 돌아가기'
+        },
+        schedule: {
+          title: '대회 일정',
+          description: '다가오는 대회 일정을 확인',
+          backLabel: '스노보드 슬로프스타일로 돌아가기'
+        },
+        stats: {
+          title: '대회 통계',
+          description: '대회 데이터를 종합 분석하는 도구',
+          backLabel: '스노보드 슬로프스타일로 돌아가기'
+        }
+      },
+      points: {
+        calculator: {
+          title: '포인트 계산기',
+          description: '정확한 포인트 계산기는 곧 제공됩니다',
+          backLabel: '스노보드 슬로프스타일로 돌아가기'
+        },
+        rankings: {
+          title: '포인트 순위',
+          description: '실시간 선수 순위표는 곧 제공됩니다',
+          backLabel: '스노보드 슬로프스타일로 돌아가기'
+        },
+        trends: {
+          title: '포인트 추이',
+          description: '포인트 추세 분석 도구는 곧 제공됩니다',
+          backLabel: '스노보드 슬로프스타일로 돌아가기'
+        }
+      }
+    }
   },
 
   // 인증 및 권한

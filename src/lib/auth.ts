@@ -147,7 +147,7 @@ export function validatePassword(password: string): {
   return { valid: true, strength };
 }
 
-export default {
+const authUtils = {
   hashPassword,
   verifyPassword,
   generateToken,
@@ -157,3 +157,5 @@ export default {
   validateEmail,
   validatePassword,
 };
+
+export default authUtils;

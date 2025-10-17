@@ -88,10 +88,12 @@ export async function testConnection(): Promise<boolean> {
 // 导出连接池以供直接使用（如果需要）
 export { pool };
 
-export default {
+const db = {
   query,
   getClient,
   transaction,
   testConnection,
   pool,
 };
+
+export default db;

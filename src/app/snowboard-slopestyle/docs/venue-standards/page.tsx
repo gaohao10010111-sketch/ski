@@ -1,18 +1,15 @@
 import ComingSoon from '@/components/ComingSoon';
-import { MapPin } from 'lucide-react';
 
 export const metadata = {
-  title: '场地标准 - 单板坡面障碍技巧',
-  description: '单板坡面障碍技巧场地技术标准'
+  title: 'Venue Standards – Snowboard Slopestyle',
+  description: 'Venue technical standards and certification requirements'
 };
 
 export default function DocsVenueStandardsPage() {
   return (
     <ComingSoon
-      title="场地标准"
-      description="场地技术标准和认证要求"
+      translationKey="snowboard-slopestyle.docs.venue-standards"
       backLink="/snowboard-slopestyle"
-      backLabel="返回单板坡面障碍技巧"
     />
   );
 }

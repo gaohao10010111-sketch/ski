@@ -1,7 +1,7 @@
 // Finnish language pack - Suomalainen kielipaketti
-import { TranslationKeys } from './zh';
+import type { TranslationKeys } from './zh';
 
-export const fi: TranslationKeys = {
+export const fi: Partial<TranslationKeys> = {
   // Yleiset
   common: {
     loading: 'Ladataan...',
@@ -91,6 +91,33 @@ export const fi: TranslationKeys = {
 
       // More features
       moreFeatures: 'More'
+    },
+    docs: {
+      competitionRules: {
+        title: 'Kilpailusäännöt',
+        description: 'Tekniset kilpailusäännöt ja tuomaristandardit',
+        backLabel: 'Takaisin tietopankkiin'
+      },
+      pointsRules: {
+        title: 'Pistesäännöt',
+        description: 'Asiakirja pisteiden laskennasta',
+        backLabel: 'Takaisin tietopankkiin'
+      },
+      venueStandards: {
+        title: 'Ratastandardit',
+        description: 'Tilavaatimukset ja turvallisuusohjeet',
+        backLabel: 'Takaisin tietopankkiin'
+      },
+      fisRules: {
+        title: 'FIS-säännöt',
+        description: 'Kansainvälisen hiihtoliiton ohjeistus',
+        backLabel: 'Takaisin tietopankkiin'
+      },
+      guide: {
+        title: 'Alustan käyttöopas',
+        description: 'Toiminto-oppaat ja usein kysytyt kysymykset',
+        backLabel: 'Takaisin tietopankkiin'
+      }
     }
   },
 
@@ -288,6 +315,369 @@ export const fi: TranslationKeys = {
     english: 'English',
     japanese: '日本語',
     korean: '한국어'
+  },
+
+  // Tulossa pian -komponentti
+  comingSoon: {
+    title: 'Tulossa pian',
+    description: 'Tämä toiminto on parhaillaan kehityksessä. Palaa pian uudelleen.',
+    backLabel: 'Takaisin etusivulle',
+    learnMoreLabel: 'Lisätietoja',
+    progressLabel: 'Kehityksen tila',
+    progressValue: '30%',
+    eta: 'Arvioitu julkaisu: 2–4 viikkoa',
+    upcomingFeaturesTitle: 'Tulevat ominaisuudet',
+    upcomingFeatures: ['Reaaliaikaiset päivitykset', 'Älykäs analytiikka', 'Personoidut suositukset', 'Mobiilioptimointi']
+  },
+
+  // Dokumenttikeskus
+  docsPage: {
+    hero: {
+      title: 'Tietopankki',
+      description: 'Kilpailusäännöt, tekniset standardit ja alustankäyttöohjeet'
+    },
+    viewDocLabel: 'Näytä dokumentti',
+    categories: {
+      pointsRules: {
+        title: 'Pistesäännöt',
+        description: 'Yksityiskohtainen opas Kiinan pistesäännöistä',
+        topics: ['Pistelaskukaavat', 'Kilpailuluokkien kertoimet', 'Sanktiomekanismi', 'BL/NL pistetaulukot']
+      },
+      competitionRules: {
+        title: 'Kilpailusäännöt',
+        description: 'Kilpailujen tekniset säännöt ja tuomaristandardit',
+        topics: ['Kilpailun kulku', 'Tuomarointisäännöt', 'Ajastinjärjestelmät', 'Valitusprosessi']
+      },
+      venueStandards: {
+        title: 'Ratastandardit',
+        description: 'Alustavaatimukset ja turvallisuusohjeet',
+        topics: ['Ratastandardit', 'Laitteistovaatimukset', 'Turvallisuusohjeet', 'Sertifiointiprosessi']
+      },
+      fisRules: {
+        title: 'FIS-säännöt',
+        description: 'Kansainvälisen hiihtoliiton sääntökokoelma',
+        topics: ['FIS pistesäännöt', 'ICR kilpailusäännöt', 'Kansainväliset standardit', 'Kaksikieliset viitteet']
+      },
+      guide: {
+        title: 'Alustan käyttöopas',
+        description: 'Toiminto-oppaat ja usein kysytyt kysymykset',
+        topics: ['Rekisteröityminen', 'Ilmoittautumisohje', 'Pisteiden tarkastus', 'UKK']
+      }
+    },
+    popular: {
+      title: 'Suositut dokumentit',
+      viewsLabel: 'katselua',
+      items: {
+        alpineRulesV4: { title: 'Kiina alppipistesäännöt v4.0', category: 'Pistesäännöt' },
+        seasonGrading: { title: 'Kauden 2024-2025 kilpailuluokitus', category: 'Kilpailusäännöt' },
+        youthSeries: { title: 'U-sarjan nuorisokilpailujen suunnitelma', category: 'Kilpailusäännöt' },
+        fisPointsGuide: { title: 'FIS-pisteiden laskentaopas', category: 'FIS-säännöt' }
+      }
+    }
+  },
+
+  // Sivutekstit (Coming Soon)
+  pages: {
+    alpine: {
+      athletes: {
+        list: {
+          title: 'Urheilijarekisteri',
+          description: 'Selaa kaikkia rekisteröityjä urheilijaprofiileja',
+          backLabel: 'Takaisin alppihiihtoon'
+        },
+        rankings: {
+          title: 'Urheilijoiden ranking',
+          description: 'Kattava ranking pisteiden ja tulosten perusteella',
+          backLabel: 'Takaisin alppihiihtoon'
+        },
+        stats: {
+          title: 'Urheilijatiedot',
+          description: 'Yksityiskohtaiset urheilijatilastot ja visualisoinnit',
+          backLabel: 'Takaisin alppihiihtoon'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: 'Kilpailusäännöt',
+          description: 'Yksityiskohtaiset tekniset kilpailustandardit',
+          backLabel: 'Takaisin alppihiihtoon'
+        },
+        'points-rules': {
+          title: 'Pistesäännöt',
+          description: 'Tutustu alppihiihdon v4.0 pisteytyssääntöihin',
+          backLabel: 'Takaisin alppihiihtoon'
+        },
+        'venue-standards': {
+          title: 'Ratastandardit',
+          description: 'Alppihiihtoratojen standardit ja sertifiointivaatimukset',
+          backLabel: 'Takaisin alppihiihtoon'
+        }
+      },
+      events: {
+        register: {
+          title: 'Verkkoilmoittautuminen',
+          description: 'Helppokäyttöinen ilmoittautumisjärjestelmä tulossa pian',
+          backLabel: 'Takaisin alppihiihtoon'
+        },
+        results: {
+          title: 'Tuloshaku',
+          description: 'Tarkastele kilpailutuloksia ja pistepäivityksiä reaaliajassa',
+          backLabel: 'Takaisin alppihiihtoon'
+        },
+        schedule: {
+          title: 'Kilpailukalenteri',
+          description: 'Näe tulevat alppihiihtotapahtumat',
+          backLabel: 'Takaisin alppihiihtoon'
+        },
+        stats: {
+          title: 'Tapahtumatilastot',
+          description: 'Laaja analytiikkapaketti tapahtumadatalle',
+          backLabel: 'Takaisin alppihiihtoon'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'Pistelaskuri',
+          description: 'Tarkka v4.0 pistelaskuri tulossa pian',
+          backLabel: 'Takaisin alppihiihtoon'
+        },
+        rankings: {
+          title: 'Pisteranking',
+          description: 'Reaaliaikainen ranking tulossa pian',
+          backLabel: 'Takaisin alppihiihtoon'
+        },
+        trends: {
+          title: 'Pisteiden trendit',
+          description: 'Pistetrendien visualisointityökalut tulossa pian',
+          backLabel: 'Takaisin alppihiihtoon'
+        }
+      }
+    },
+    'freestyle-slopestyle': {
+      athletes: {
+        list: {
+          title: 'Urheilijarekisteri',
+          description: 'Selaa kaikkia rekisteröityjä urheilijaprofiileja',
+          backLabel: 'Takaisin freestyle slopestyleen'
+        },
+        rankings: {
+          title: 'Urheilijoiden ranking',
+          description: 'Kattava ranking pisteiden ja tulosten perusteella',
+          backLabel: 'Takaisin freestyle slopestyleen'
+        },
+        stats: {
+          title: 'Urheilijatiedot',
+          description: 'Yksityiskohtaiset urheilijatilastot ja visualisoinnit',
+          backLabel: 'Takaisin freestyle slopestyleen'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: 'Kilpailusäännöt',
+          description: 'Yksityiskohtaiset tekniset kilpailustandardit',
+          backLabel: 'Takaisin freestyle slopestyleen'
+        },
+        'points-rules': {
+          title: 'Pistesäännöt',
+          description: 'Tutustu pisteiden laskentasääntöihin',
+          backLabel: 'Takaisin freestyle slopestyleen'
+        },
+        'venue-standards': {
+          title: 'Ratastandardit',
+          description: 'Ratojen tekniset standardit ja sertifiointivaatimukset',
+          backLabel: 'Takaisin freestyle slopestyleen'
+        }
+      },
+      events: {
+        register: {
+          title: 'Verkkoilmoittautuminen',
+          description: 'Helppokäyttöinen ilmoittautumisjärjestelmä tulossa pian',
+          backLabel: 'Takaisin freestyle slopestyleen'
+        },
+        results: {
+          title: 'Tuloshaku',
+          description: 'Tarkastele kilpailutuloksia ja pistepäivityksiä reaaliajassa',
+          backLabel: 'Takaisin freestyle slopestyleen'
+        },
+        schedule: {
+          title: 'Kilpailukalenteri',
+          description: 'Näe tulevien kilpailujen aikataulu',
+          backLabel: 'Takaisin freestyle slopestyleen'
+        },
+        stats: {
+          title: 'Tapahtumatilastot',
+          description: 'Laaja analytiikkapaketti tapahtumadatalle',
+          backLabel: 'Takaisin freestyle slopestyleen'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'Pistelaskuri',
+          description: 'Tarkka pistelaskuri tulossa pian',
+          backLabel: 'Takaisin freestyle slopestyleen'
+        },
+        rankings: {
+          title: 'Pisteranking',
+          description: 'Reaaliaikainen ranking tulossa pian',
+          backLabel: 'Takaisin freestyle slopestyleen'
+        },
+        trends: {
+          title: 'Pisteiden trendit',
+          description: 'Pistetrendien analyysityökalut tulossa pian',
+          backLabel: 'Takaisin freestyle slopestyleen'
+        }
+      }
+    },
+    'snowboard-parallel': {
+      athletes: {
+        list: {
+          title: 'Urheilijarekisteri',
+          description: 'Selaa kaikkia rekisteröityjä urheilijaprofiileja',
+          backLabel: 'Takaisin snowboard paralleeliin'
+        },
+        rankings: {
+          title: 'Urheilijoiden ranking',
+          description: 'Kattava ranking pisteiden ja tulosten perusteella',
+          backLabel: 'Takaisin snowboard paralleeliin'
+        },
+        stats: {
+          title: 'Urheilijatiedot',
+          description: 'Yksityiskohtaiset urheilijatilastot ja visualisoinnit',
+          backLabel: 'Takaisin snowboard paralleeliin'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: 'Kilpailusäännöt',
+          description: 'Yksityiskohtaiset tekniset kilpailustandardit',
+          backLabel: 'Takaisin snowboard paralleeliin'
+        },
+        'points-rules': {
+          title: 'Pistesäännöt',
+          description: 'Tutustu pisteiden laskentasääntöihin',
+          backLabel: 'Takaisin snowboard paralleeliin'
+        },
+        'venue-standards': {
+          title: 'Ratastandardit',
+          description: 'Ratojen tekniset standardit ja sertifiointivaatimukset',
+          backLabel: 'Takaisin snowboard paralleeliin'
+        }
+      },
+      events: {
+        register: {
+          title: 'Verkkoilmoittautuminen',
+          description: 'Helppokäyttöinen ilmoittautumisjärjestelmä tulossa pian',
+          backLabel: 'Takaisin snowboard paralleeliin'
+        },
+        results: {
+          title: 'Tuloshaku',
+          description: 'Tarkastele kilpailutuloksia ja pistepäivityksiä reaaliajassa',
+          backLabel: 'Takaisin snowboard paralleeliin'
+        },
+        schedule: {
+          title: 'Kilpailukalenteri',
+          description: 'Näe tulevien kilpailujen aikataulu',
+          backLabel: 'Takaisin snowboard paralleeliin'
+        },
+        stats: {
+          title: 'Tapahtumatilastot',
+          description: 'Laaja analytiikkapaketti tapahtumadatalle',
+          backLabel: 'Takaisin snowboard paralleeliin'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'Pistelaskuri',
+          description: 'Tarkka pistelaskuri tulossa pian',
+          backLabel: 'Takaisin snowboard paralleeliin'
+        },
+        rankings: {
+          title: 'Pisteranking',
+          description: 'Reaaliaikainen ranking tulossa pian',
+          backLabel: 'Takaisin snowboard paralleeliin'
+        },
+        trends: {
+          title: 'Pisteiden trendit',
+          description: 'Pistetrendien analyysityökalut tulossa pian',
+          backLabel: 'Takaisin snowboard paralleeliin'
+        }
+      }
+    },
+    'snowboard-slopestyle': {
+      athletes: {
+        list: {
+          title: 'Urheilijarekisteri',
+          description: 'Selaa kaikkia rekisteröityjä urheilijaprofiileja',
+          backLabel: 'Takaisin snowboard slopestyleen'
+        },
+        rankings: {
+          title: 'Urheilijoiden ranking',
+          description: 'Kattava ranking pisteiden ja tulosten perusteella',
+          backLabel: 'Takaisin snowboard slopestyleen'
+        },
+        stats: {
+          title: 'Urheilijatiedot',
+          description: 'Yksityiskohtaiset urheilijatilastot ja visualisoinnit',
+          backLabel: 'Takaisin snowboard slopestyleen'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: 'Kilpailusäännöt',
+          description: 'Yksityiskohtaiset tekniset kilpailustandardit',
+          backLabel: 'Takaisin snowboard slopestyleen'
+        },
+        'points-rules': {
+          title: 'Pistesäännöt',
+          description: 'Tutustu pisteiden laskentasääntöihin',
+          backLabel: 'Takaisin snowboard slopestyleen'
+        },
+        'venue-standards': {
+          title: 'Ratastandardit',
+          description: 'Ratojen tekniset standardit ja sertifiointivaatimukset',
+          backLabel: 'Takaisin snowboard slopestyleen'
+        }
+      },
+      events: {
+        register: {
+          title: 'Verkkoilmoittautuminen',
+          description: 'Helppokäyttöinen ilmoittautumisjärjestelmä tulossa pian',
+          backLabel: 'Takaisin snowboard slopestyleen'
+        },
+        results: {
+          title: 'Tuloshaku',
+          description: 'Tarkastele kilpailutuloksia ja pistepäivityksiä reaaliajassa',
+          backLabel: 'Takaisin snowboard slopestyleen'
+        },
+        schedule: {
+          title: 'Kilpailukalenteri',
+          description: 'Näe tulevien kilpailujen aikataulu',
+          backLabel: 'Takaisin snowboard slopestyleen'
+        },
+        stats: {
+          title: 'Tapahtumatilastot',
+          description: 'Laaja analytiikkapaketti tapahtumadatalle',
+          backLabel: 'Takaisin snowboard slopestyleen'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'Pistelaskuri',
+          description: 'Tarkka pistelaskuri tulossa pian',
+          backLabel: 'Takaisin snowboard slopestyleen'
+        },
+        rankings: {
+          title: 'Pisteranking',
+          description: 'Reaaliaikainen ranking tulossa pian',
+          backLabel: 'Takaisin snowboard slopestyleen'
+        },
+        trends: {
+          title: 'Pisteiden trendit',
+          description: 'Pistetrendien analyysityökalut tulossa pian',
+          backLabel: 'Takaisin snowboard slopestyleen'
+        }
+      }
+    }
   },
 
   // Tunnistautuminen ja käyttöoikeudet

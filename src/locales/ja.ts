@@ -1,7 +1,7 @@
 // Japanese language pack
-import { TranslationKeys } from './zh';
+import type { TranslationKeys } from './zh';
 
-export const ja: TranslationKeys = {
+export const ja: Partial<TranslationKeys> = {
   // 共通
   common: {
     loading: '読み込み中...',
@@ -91,6 +91,33 @@ export const ja: TranslationKeys = {
 
       // その他の機能
       moreFeatures: 'その他'
+    },
+    docs: {
+      competitionRules: {
+        title: '競技技術規則',
+        description: '競技運営ルールと審判基準',
+        backLabel: 'ナレッジベースに戻る'
+      },
+      pointsRules: {
+        title: 'ポイント規則',
+        description: '中国スキーポイント計算ルール文書',
+        backLabel: 'ナレッジベースに戻る'
+      },
+      venueStandards: {
+        title: '会場基準',
+        description: '会場施設の要件と安全基準',
+        backLabel: 'ナレッジベースに戻る'
+      },
+      fisRules: {
+        title: 'FIS国際規則',
+        description: '国際スキー連盟の公式規則',
+        backLabel: 'ナレッジベースに戻る'
+      },
+      guide: {
+        title: 'プラットフォームガイド',
+        description: 'システム機能の使い方とFAQ',
+        backLabel: 'ナレッジベースに戻る'
+      }
     }
   },
 
@@ -288,6 +315,369 @@ export const ja: TranslationKeys = {
     english: 'English',
     japanese: '日本語',
     korean: '한국어'
+  },
+
+  // 近日公開コンポーネント
+  comingSoon: {
+    title: '近日公開',
+    description: 'この機能は現在開発中です。後ほど再度ご確認ください。',
+    backLabel: 'ホームに戻る',
+    learnMoreLabel: '詳しく見る',
+    progressLabel: '開発進捗',
+    progressValue: '30%',
+    eta: 'リリース予定：2〜4週間',
+    upcomingFeaturesTitle: '今後追加される機能',
+    upcomingFeatures: ['リアルタイムデータ更新', '高度な分析', 'パーソナライズされたレコメンド', 'モバイル最適化']
+  },
+
+  // ドキュメントセンター
+  docsPage: {
+    hero: {
+      title: 'ナレッジベース',
+      description: '競技ルール・技術標準・プラットフォーム利用ガイド'
+    },
+    viewDocLabel: 'ドキュメントを見る',
+    categories: {
+      pointsRules: {
+        title: 'ポイント規定ドキュメント',
+        description: '中国スキーポイント計算ルールの詳細解説',
+        topics: ['ポイント計算式', '大会グレード係数', '減点・加点メカニズム', 'BL/NLポイント表']
+      },
+      competitionRules: {
+        title: '競技技術規則',
+        description: '競技運営ルールと審判基準',
+        topics: ['競技運営フロー', '審判規定', '計時システム', '抗議手続き']
+      },
+      venueStandards: {
+        title: '会場技術基準',
+        description: '会場施設の要件と安全基準',
+        topics: ['会場基準', '設備要件', '安全ガイドライン', '認証プロセス']
+      },
+      fisRules: {
+        title: 'FIS国際規則',
+        description: '国際スキー連盟の公式ルール',
+        topics: ['FISポイント規定', 'ICR競技規則', '国際標準', 'バイリンガル資料']
+      },
+      guide: {
+        title: 'プラットフォームガイド',
+        description: 'システム機能の使い方とよくある質問',
+        topics: ['登録手順', 'エントリーガイド', 'ポイント照会', 'FAQ']
+      }
+    },
+    popular: {
+      title: '人気ドキュメント',
+      viewsLabel: '件の閲覧',
+      items: {
+        alpineRulesV4: { title: '中国アルペンスキー ポイント規則 v4.0', category: 'ポイント規則' },
+        seasonGrading: { title: '2024-2025シーズン大会グレード基準', category: '競技規則' },
+        youthSeries: { title: 'Uシリーズジュニア大会管理ガイド', category: '競技規則' },
+        fisPointsGuide: { title: 'FISポイント計算ガイド', category: 'FIS規則' }
+      }
+    }
+  },
+
+  // ページ文言（Coming Soon）
+  pages: {
+    alpine: {
+      athletes: {
+        list: {
+          title: '選手名簿',
+          description: '登録済み選手のプロフィールを一覧表示',
+          backLabel: 'アルペンスキーに戻る'
+        },
+        rankings: {
+          title: '選手ランキング',
+          description: 'ポイントと成績に基づく総合選手ランキング',
+          backLabel: 'アルペンスキーに戻る'
+        },
+        stats: {
+          title: '選手統計',
+          description: '選手統計と可視化分析を詳細に表示',
+          backLabel: 'アルペンスキーに戻る'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: '競技規則',
+          description: '競技の技術基準を詳細に解説',
+          backLabel: 'アルペンスキーに戻る'
+        },
+        'points-rules': {
+          title: 'ポイント規則',
+          description: 'アルペンスキー v4.0 のポイント規則を確認',
+          backLabel: 'アルペンスキーに戻る'
+        },
+        'venue-standards': {
+          title: '会場基準',
+          description: 'アルペンスキー会場の基準と認証要件',
+          backLabel: 'アルペンスキーに戻る'
+        }
+      },
+      events: {
+        register: {
+          title: 'オンライン登録',
+          description: 'イベント登録システムはまもなく公開予定',
+          backLabel: 'アルペンスキーに戻る'
+        },
+        results: {
+          title: '結果照会',
+          description: 'レース結果とポイント推移をリアルタイムで確認',
+          backLabel: 'アルペンスキーに戻る'
+        },
+        schedule: {
+          title: '大会スケジュール',
+          description: 'アルペンスキーの今後の大会予定を確認',
+          backLabel: 'アルペンスキーに戻る'
+        },
+        stats: {
+          title: '大会統計',
+          description: '大会データの総合分析ツール',
+          backLabel: 'アルペンスキーに戻る'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'ポイント計算機',
+          description: '正確な v4.0 ポイント計算ツールは近日公開',
+          backLabel: 'アルペンスキーに戻る'
+        },
+        rankings: {
+          title: 'ポイントランキング',
+          description: 'リアルタイム選手ランキングは近日公開',
+          backLabel: 'アルペンスキーに戻る'
+        },
+        trends: {
+          title: 'ポイント推移',
+          description: 'ポイント推移の可視化ツールは近日公開',
+          backLabel: 'アルペンスキーに戻る'
+        }
+      }
+    },
+    'freestyle-slopestyle': {
+      athletes: {
+        list: {
+          title: '選手名簿',
+          description: '登録済み選手のプロフィールを一覧表示',
+          backLabel: 'フリースタイル・スロープスタイルに戻る'
+        },
+        rankings: {
+          title: '選手ランキング',
+          description: 'ポイントと成績に基づく総合選手ランキング',
+          backLabel: 'フリースタイル・スロープスタイルに戻る'
+        },
+        stats: {
+          title: '選手統計',
+          description: '選手統計と可視化分析を詳細に表示',
+          backLabel: 'フリースタイル・スロープスタイルに戻る'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: '競技規則',
+          description: '競技の技術基準を詳細に解説',
+          backLabel: 'フリースタイル・スロープスタイルに戻る'
+        },
+        'points-rules': {
+          title: 'ポイント規則',
+          description: 'ポイント計算ルールの詳細を確認',
+          backLabel: 'フリースタイル・スロープスタイルに戻る'
+        },
+        'venue-standards': {
+          title: '会場基準',
+          description: '会場の技術基準と認証要件',
+          backLabel: 'フリースタイル・スロープスタイルに戻る'
+        }
+      },
+      events: {
+        register: {
+          title: 'オンライン登録',
+          description: 'イベント登録システムはまもなく公開予定',
+          backLabel: 'フリースタイル・スロープスタイルに戻る'
+        },
+        results: {
+          title: '結果照会',
+          description: 'レース結果とポイント推移をリアルタイムで確認',
+          backLabel: 'フリースタイル・スロープスタイルに戻る'
+        },
+        schedule: {
+          title: '大会スケジュール',
+          description: '今後の大会日程を確認',
+          backLabel: 'フリースタイル・スロープスタイルに戻る'
+        },
+        stats: {
+          title: '大会統計',
+          description: '大会データの総合分析ツール',
+          backLabel: 'フリースタイル・スロープスタイルに戻る'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'ポイント計算機',
+          description: '正確なポイント計算ツールは近日公開',
+          backLabel: 'フリースタイル・スロープスタイルに戻る'
+        },
+        rankings: {
+          title: 'ポイントランキング',
+          description: 'リアルタイム選手ランキングは近日公開',
+          backLabel: 'フリースタイル・スロープスタイルに戻る'
+        },
+        trends: {
+          title: 'ポイント推移',
+          description: 'ポイント推移分析ツールは近日公開',
+          backLabel: 'フリースタイル・スロープスタイルに戻る'
+        }
+      }
+    },
+    'snowboard-parallel': {
+      athletes: {
+        list: {
+          title: '選手名簿',
+          description: '登録済み選手のプロフィールを一覧表示',
+          backLabel: 'スノーボードパラレルに戻る'
+        },
+        rankings: {
+          title: '選手ランキング',
+          description: 'ポイントと成績に基づく総合選手ランキング',
+          backLabel: 'スノーボードパラレルに戻る'
+        },
+        stats: {
+          title: '選手統計',
+          description: '選手統計と可視化分析を詳細に表示',
+          backLabel: 'スノーボードパラレルに戻る'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: '競技規則',
+          description: '競技の技術基準を詳細に解説',
+          backLabel: 'スノーボードパラレルに戻る'
+        },
+        'points-rules': {
+          title: 'ポイント規則',
+          description: 'ポイント計算ルールの詳細を確認',
+          backLabel: 'スノーボードパラレルに戻る'
+        },
+        'venue-standards': {
+          title: '会場基準',
+          description: '会場の技術基準と認証要件',
+          backLabel: 'スノーボードパラレルに戻る'
+        }
+      },
+      events: {
+        register: {
+          title: 'オンライン登録',
+          description: 'イベント登録システムはまもなく公開予定',
+          backLabel: 'スノーボードパラレルに戻る'
+        },
+        results: {
+          title: '結果照会',
+          description: 'レース結果とポイント推移をリアルタイムで確認',
+          backLabel: 'スノーボードパラレルに戻る'
+        },
+        schedule: {
+          title: '大会スケジュール',
+          description: '今後の大会日程を確認',
+          backLabel: 'スノーボードパラレルに戻る'
+        },
+        stats: {
+          title: '大会統計',
+          description: '大会データの総合分析ツール',
+          backLabel: 'スノーボードパラレルに戻る'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'ポイント計算機',
+          description: '正確なポイント計算ツールは近日公開',
+          backLabel: 'スノーボードパラレルに戻る'
+        },
+        rankings: {
+          title: 'ポイントランキング',
+          description: 'リアルタイム選手ランキングは近日公開',
+          backLabel: 'スノーボードパラレルに戻る'
+        },
+        trends: {
+          title: 'ポイント推移',
+          description: 'ポイント推移分析ツールは近日公開',
+          backLabel: 'スノーボードパラレルに戻る'
+        }
+      }
+    },
+    'snowboard-slopestyle': {
+      athletes: {
+        list: {
+          title: '選手名簿',
+          description: '登録済み選手のプロフィールを一覧表示',
+          backLabel: 'スノーボードスロープスタイルに戻る'
+        },
+        rankings: {
+          title: '選手ランキング',
+          description: 'ポイントと成績に基づく総合選手ランキング',
+          backLabel: 'スノーボードスロープスタイルに戻る'
+        },
+        stats: {
+          title: '選手統計',
+          description: '選手統計と可視化分析を詳細に表示',
+          backLabel: 'スノーボードスロープスタイルに戻る'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: '競技規則',
+          description: '競技の技術基準を詳細に解説',
+          backLabel: 'スノーボードスロープスタイルに戻る'
+        },
+        'points-rules': {
+          title: 'ポイント規則',
+          description: 'ポイント計算ルールの詳細を確認',
+          backLabel: 'スノーボードスロープスタイルに戻る'
+        },
+        'venue-standards': {
+          title: '会場基準',
+          description: '会場の技術基準と認証要件',
+          backLabel: 'スノーボードスロープスタイルに戻る'
+        }
+      },
+      events: {
+        register: {
+          title: 'オンライン登録',
+          description: 'イベント登録システムはまもなく公開予定',
+          backLabel: 'スノーボードスロープスタイルに戻る'
+        },
+        results: {
+          title: '結果照会',
+          description: 'レース結果とポイント推移をリアルタイムで確認',
+          backLabel: 'スノーボードスロープスタイルに戻る'
+        },
+        schedule: {
+          title: '大会スケジュール',
+          description: '今後の大会日程を確認',
+          backLabel: 'スノーボードスロープスタイルに戻る'
+        },
+        stats: {
+          title: '大会統計',
+          description: '大会データの総合分析ツール',
+          backLabel: 'スノーボードスロープスタイルに戻る'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'ポイント計算機',
+          description: '正確なポイント計算ツールは近日公開',
+          backLabel: 'スノーボードスロープスタイルに戻る'
+        },
+        rankings: {
+          title: 'ポイントランキング',
+          description: 'リアルタイム選手ランキングは近日公開',
+          backLabel: 'スノーボードスロープスタイルに戻る'
+        },
+        trends: {
+          title: 'ポイント推移',
+          description: 'ポイント推移分析ツールは近日公開',
+          backLabel: 'スノーボードスロープスタイルに戻る'
+        }
+      }
+    }
   },
 
   // 認証と権限

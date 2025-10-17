@@ -1,18 +1,15 @@
 import ComingSoon from '@/components/ComingSoon';
-import { UserPlus } from 'lucide-react';
 
 export const metadata = {
-  title: '在线报名 - 单板坡面障碍技巧',
-  description: '单板坡面障碍技巧赛事在线报名'
+  title: 'Online Registration – Snowboard Slopestyle',
+  description: 'Streamlined event registration system'
 };
 
 export default function EventsRegisterPage() {
   return (
     <ComingSoon
-      title="在线报名"
-      description="便捷的赛事在线报名系统"
+      translationKey="snowboard-slopestyle.events.register"
       backLink="/snowboard-slopestyle"
-      backLabel="返回单板坡面障碍技巧"
     />
   );
 }

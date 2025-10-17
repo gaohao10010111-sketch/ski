@@ -1,18 +1,15 @@
 import ComingSoon from '@/components/ComingSoon';
-import { UserPlus } from 'lucide-react';
 
 export const metadata = {
-  title: '在线报名 - 高山滑雪',
-  description: '高山滑雪赛事在线报名系统'
+  title: 'Online Registration – Alpine Skiing',
+  description: 'Streamlined event registration system coming soon'
 };
 
 export default function AlpineEventsRegisterPage() {
   return (
     <ComingSoon
-      title="在线报名"
-      description="便捷的赛事在线报名系统，即将上线"
+      translationKey="alpine.events.register"
       backLink="/alpine"
-      backLabel="返回高山滑雪"
     />
   );
 }

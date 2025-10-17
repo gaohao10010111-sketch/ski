@@ -1,7 +1,7 @@
 // Norwegian language pack - Norsk språkpakke
-import { TranslationKeys } from './zh';
+import type { TranslationKeys } from './zh';
 
-export const no: TranslationKeys = {
+export const no: Partial<TranslationKeys> = {
   // Felles
   common: {
     loading: 'Laster...',
@@ -91,6 +91,33 @@ export const no: TranslationKeys = {
 
       // More features
       moreFeatures: 'More'
+    },
+    docs: {
+      competitionRules: {
+        title: 'Tekniske konkurranseregler',
+        description: 'Regler for gjennomføring og dommerstandarder',
+        backLabel: 'Tilbake til kunnskapsbasen'
+      },
+      pointsRules: {
+        title: 'Poengregler',
+        description: 'Dokument om beregning av poeng',
+        backLabel: 'Tilbake til kunnskapsbasen'
+      },
+      venueStandards: {
+        title: 'Arenastandarder',
+        description: 'Krav til anlegg og sikkerhet',
+        backLabel: 'Tilbake til kunnskapsbasen'
+      },
+      fisRules: {
+        title: 'FIS-regelverk',
+        description: 'Regler fra det internasjonale skiforbundet',
+        backLabel: 'Tilbake til kunnskapsbasen'
+      },
+      guide: {
+        title: 'Plattformveiledning',
+        description: 'Bruksveiledning og vanlige spørsmål',
+        backLabel: 'Tilbake til kunnskapsbasen'
+      }
     }
   },
 
@@ -288,6 +315,369 @@ export const no: TranslationKeys = {
     english: 'English',
     japanese: '日本語',
     korean: '한국어'
+  },
+
+  // Kommer snart-komponent
+  comingSoon: {
+    title: 'Kommer snart',
+    description: 'Denne funksjonen er under utvikling. Kom tilbake om litt.',
+    backLabel: 'Tilbake til forsiden',
+    learnMoreLabel: 'Les mer',
+    progressLabel: 'Fremdrift',
+    progressValue: '30%',
+    eta: 'Estimert lansering: 2–4 uker',
+    upcomingFeaturesTitle: 'Kommende funksjoner',
+    upcomingFeatures: ['Oppdateringer i sanntid', 'Intelligent analyse', 'Personlige anbefalinger', 'Mobiloptimalisering']
+  },
+
+  // Dokumentasjonssenter
+  docsPage: {
+    hero: {
+      title: 'Kunnskapsbank',
+      description: 'Konkurranseregler, tekniske standarder og plattformveiledninger'
+    },
+    viewDocLabel: 'Vis dokument',
+    categories: {
+      pointsRules: {
+        title: 'Poengregler',
+        description: 'Detaljert gjennomgang av det kinesiske poengsystemet',
+        topics: ['Poengformler', 'Konkurransekoeffisienter', 'Sanksjonsmekanisme', 'BL/NL-poengtabeller']
+      },
+      competitionRules: {
+        title: 'Tekniske konkurranseregler',
+        description: 'Regler for gjennomføring og dommerstandarder',
+        topics: ['Konkurranseflyt', 'Dommerregler', 'Tidtakingssystemer', 'Klageprosess']
+      },
+      venueStandards: {
+        title: 'Arenastandarder',
+        description: 'Krav til anlegg og sikkerhet',
+        topics: ['Arenastandarder', 'Utstyrskrav', 'Sikkerhetsretningslinjer', 'Sertifiseringsprosess']
+      },
+      fisRules: {
+        title: 'FIS-regelverk',
+        description: 'Regler fra det internasjonale skiforbundet',
+        topics: ['FIS-poengregler', 'ICR-regelverk', 'Internasjonale standarder', 'Tospråklige referanser']
+      },
+      guide: {
+        title: 'Plattformveiledning',
+        description: 'Funksjonsguider og ofte stilte spørsmål',
+        topics: ['Registreringsprosess', 'Påmeldingsguide', 'Poengoppslag', 'FAQ']
+      }
+    },
+    popular: {
+      title: 'Populære dokumenter',
+      viewsLabel: 'visninger',
+      items: {
+        alpineRulesV4: { title: 'Kinesisk alpin-poengregelverk v4.0', category: 'Poengregler' },
+        seasonGrading: { title: 'Konkurranseklassifisering 2024-2025', category: 'Tekniske regler' },
+        youthSeries: { title: 'U-serien ungdomsprogram', category: 'Tekniske regler' },
+        fisPointsGuide: { title: 'Veiledning for FIS-poengberegning', category: 'FIS-regler' }
+      }
+    }
+  },
+
+  // Sidetekster (Coming Soon)
+  pages: {
+    alpine: {
+      athletes: {
+        list: {
+          title: 'Utøveroversikt',
+          description: 'Se alle registrerte utøverprofiler',
+          backLabel: 'Tilbake til alpint'
+        },
+        rankings: {
+          title: 'Utøversranking',
+          description: 'Helhetlig ranking basert på poeng og resultater',
+          backLabel: 'Tilbake til alpint'
+        },
+        stats: {
+          title: 'Utøverstatistikk',
+          description: 'Detaljerte statistikker og visualiseringer',
+          backLabel: 'Tilbake til alpint'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: 'Konkurranseregler',
+          description: 'Detaljerte tekniske konkurransestandarder',
+          backLabel: 'Tilbake til alpint'
+        },
+        'points-rules': {
+          title: 'Poengregler',
+          description: 'Utforsk poengreglene v4.0 for alpint',
+          backLabel: 'Tilbake til alpint'
+        },
+        'venue-standards': {
+          title: 'Arenastandarder',
+          description: 'Standarder og sertifiseringskrav for alpinanlegg',
+          backLabel: 'Tilbake til alpint'
+        }
+      },
+      events: {
+        register: {
+          title: 'Online påmelding',
+          description: 'Forenklet påmeldingssystem kommer snart',
+          backLabel: 'Tilbake til alpint'
+        },
+        results: {
+          title: 'Resultater',
+          description: 'Se resultater og poengoppdateringer i sanntid',
+          backLabel: 'Tilbake til alpint'
+        },
+        schedule: {
+          title: 'Terminliste',
+          description: 'Se kommende alpinarrangementer',
+          backLabel: 'Tilbake til alpint'
+        },
+        stats: {
+          title: 'Arrangementsstatistikk',
+          description: 'Omfattende analyseverktøy for arrangementdata',
+          backLabel: 'Tilbake til alpint'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'Poengkalkulator',
+          description: 'Presis v4.0 poengkalkulator kommer snart',
+          backLabel: 'Tilbake til alpint'
+        },
+        rankings: {
+          title: 'Poengranking',
+          description: 'Live poengoversikt kommer snart',
+          backLabel: 'Tilbake til alpint'
+        },
+        trends: {
+          title: 'Poengtrender',
+          description: 'Verktøy for poengtrendanalyse kommer snart',
+          backLabel: 'Tilbake til alpint'
+        }
+      }
+    },
+    'freestyle-slopestyle': {
+      athletes: {
+        list: {
+          title: 'Utøveroversikt',
+          description: 'Se alle registrerte utøverprofiler',
+          backLabel: 'Tilbake til freestyle slopestyle'
+        },
+        rankings: {
+          title: 'Utøversranking',
+          description: 'Helhetlig ranking basert på poeng og resultater',
+          backLabel: 'Tilbake til freestyle slopestyle'
+        },
+        stats: {
+          title: 'Utøverstatistikk',
+          description: 'Detaljerte statistikker og visualiseringer',
+          backLabel: 'Tilbake til freestyle slopestyle'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: 'Konkurranseregler',
+          description: 'Detaljerte tekniske konkurransestandarder',
+          backLabel: 'Tilbake til freestyle slopestyle'
+        },
+        'points-rules': {
+          title: 'Poengregler',
+          description: 'Les mer om reglene for poengberegning',
+          backLabel: 'Tilbake til freestyle slopestyle'
+        },
+        'venue-standards': {
+          title: 'Arenastandarder',
+          description: 'Tekniske krav og sertifisering av arenaer',
+          backLabel: 'Tilbake til freestyle slopestyle'
+        }
+      },
+      events: {
+        register: {
+          title: 'Online påmelding',
+          description: 'Forenklet påmeldingssystem kommer snart',
+          backLabel: 'Tilbake til freestyle slopestyle'
+        },
+        results: {
+          title: 'Resultater',
+          description: 'Se resultater og poengoppdateringer i sanntid',
+          backLabel: 'Tilbake til freestyle slopestyle'
+        },
+        schedule: {
+          title: 'Terminliste',
+          description: 'Se kommende arrangementer',
+          backLabel: 'Tilbake til freestyle slopestyle'
+        },
+        stats: {
+          title: 'Arrangementsstatistikk',
+          description: 'Omfattende analyseverktøy for arrangementdata',
+          backLabel: 'Tilbake til freestyle slopestyle'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'Poengkalkulator',
+          description: 'Presis poengkalkulator kommer snart',
+          backLabel: 'Tilbake til freestyle slopestyle'
+        },
+        rankings: {
+          title: 'Poengranking',
+          description: 'Live poengoversikt kommer snart',
+          backLabel: 'Tilbake til freestyle slopestyle'
+        },
+        trends: {
+          title: 'Poengtrender',
+          description: 'Verktøy for poengtrendanalyse kommer snart',
+          backLabel: 'Tilbake til freestyle slopestyle'
+        }
+      }
+    },
+    'snowboard-parallel': {
+      athletes: {
+        list: {
+          title: 'Utøveroversikt',
+          description: 'Se alle registrerte utøverprofiler',
+          backLabel: 'Tilbake til snowboard parallell'
+        },
+        rankings: {
+          title: 'Utøversranking',
+          description: 'Helhetlig ranking basert på poeng og resultater',
+          backLabel: 'Tilbake til snowboard parallell'
+        },
+        stats: {
+          title: 'Utøverstatistikk',
+          description: 'Detaljerte statistikker og visualiseringer',
+          backLabel: 'Tilbake til snowboard parallell'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: 'Konkurranseregler',
+          description: 'Detaljerte tekniske konkurransestandarder',
+          backLabel: 'Tilbake til snowboard parallell'
+        },
+        'points-rules': {
+          title: 'Poengregler',
+          description: 'Les mer om reglene for poengberegning',
+          backLabel: 'Tilbake til snowboard parallell'
+        },
+        'venue-standards': {
+          title: 'Arenastandarder',
+          description: 'Tekniske krav og sertifisering av arenaer',
+          backLabel: 'Tilbake til snowboard parallell'
+        }
+      },
+      events: {
+        register: {
+          title: 'Online påmelding',
+          description: 'Forenklet påmeldingssystem kommer snart',
+          backLabel: 'Tilbake til snowboard parallell'
+        },
+        results: {
+          title: 'Resultater',
+          description: 'Se resultater og poengoppdateringer i sanntid',
+          backLabel: 'Tilbake til snowboard parallell'
+        },
+        schedule: {
+          title: 'Terminliste',
+          description: 'Se kommende arrangementer',
+          backLabel: 'Tilbake til snowboard parallell'
+        },
+        stats: {
+          title: 'Arrangementsstatistikk',
+          description: 'Omfattende analyseverktøy for arrangementdata',
+          backLabel: 'Tilbake til snowboard parallell'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'Poengkalkulator',
+          description: 'Presis poengkalkulator kommer snart',
+          backLabel: 'Tilbake til snowboard parallell'
+        },
+        rankings: {
+          title: 'Poengranking',
+          description: 'Live poengoversikt kommer snart',
+          backLabel: 'Tilbake til snowboard parallell'
+        },
+        trends: {
+          title: 'Poengtrender',
+          description: 'Verktøy for poengtrendanalyse kommer snart',
+          backLabel: 'Tilbake til snowboard parallell'
+        }
+      }
+    },
+    'snowboard-slopestyle': {
+      athletes: {
+        list: {
+          title: 'Utøveroversikt',
+          description: 'Se alle registrerte utøverprofiler',
+          backLabel: 'Tilbake til snowboard slopestyle'
+        },
+        rankings: {
+          title: 'Utøversranking',
+          description: 'Helhetlig ranking basert på poeng og resultater',
+          backLabel: 'Tilbake til snowboard slopestyle'
+        },
+        stats: {
+          title: 'Utøverstatistikk',
+          description: 'Detaljerte statistikker og visualiseringer',
+          backLabel: 'Tilbake til snowboard slopestyle'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: 'Konkurranseregler',
+          description: 'Detaljerte tekniske konkurransestandarder',
+          backLabel: 'Tilbake til snowboard slopestyle'
+        },
+        'points-rules': {
+          title: 'Poengregler',
+          description: 'Les mer om reglene for poengberegning',
+          backLabel: 'Tilbake til snowboard slopestyle'
+        },
+        'venue-standards': {
+          title: 'Arenastandarder',
+          description: 'Tekniske krav og sertifisering av arenaer',
+          backLabel: 'Tilbake til snowboard slopestyle'
+        }
+      },
+      events: {
+        register: {
+          title: 'Online påmelding',
+          description: 'Forenklet påmeldingssystem kommer snart',
+          backLabel: 'Tilbake til snowboard slopestyle'
+        },
+        results: {
+          title: 'Resultater',
+          description: 'Se resultater og poengoppdateringer i sanntid',
+          backLabel: 'Tilbake til snowboard slopestyle'
+        },
+        schedule: {
+          title: 'Terminliste',
+          description: 'Se kommende arrangementer',
+          backLabel: 'Tilbake til snowboard slopestyle'
+        },
+        stats: {
+          title: 'Arrangementsstatistikk',
+          description: 'Omfattende analyseverktøy for arrangementdata',
+          backLabel: 'Tilbake til snowboard slopestyle'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'Poengkalkulator',
+          description: 'Presis poengkalkulator kommer snart',
+          backLabel: 'Tilbake til snowboard slopestyle'
+        },
+        rankings: {
+          title: 'Poengranking',
+          description: 'Live poengoversikt kommer snart',
+          backLabel: 'Tilbake til snowboard slopestyle'
+        },
+        trends: {
+          title: 'Poengtrender',
+          description: 'Verktøy for poengtrendanalyse kommer snart',
+          backLabel: 'Tilbake til snowboard slopestyle'
+        }
+      }
+    }
   },
 
   // Autentisering og tillatelser

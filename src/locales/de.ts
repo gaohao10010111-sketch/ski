@@ -1,7 +1,7 @@
 // German language pack - Deutsche Sprachpaket
-import { TranslationKeys } from './zh';
+import type { TranslationKeys } from './zh';
 
-export const de: TranslationKeys = {
+export const de: Partial<TranslationKeys> = {
   // Allgemein
   common: {
     loading: 'Lädt...',
@@ -91,6 +91,33 @@ export const de: TranslationKeys = {
 
       // More features
       moreFeatures: 'More'
+    },
+    docs: {
+      competitionRules: {
+        title: 'Wettkampftechnische Regeln',
+        description: 'Technische Wettkampfregeln und Schiedsrichterstandards',
+        backLabel: 'Zurück zur Wissensdatenbank'
+      },
+      pointsRules: {
+        title: 'Punkterichtlinien',
+        description: 'Dokument zur chinesischen Punkteberechnung',
+        backLabel: 'Zurück zur Wissensdatenbank'
+      },
+      venueStandards: {
+        title: 'Stättenstandards',
+        description: 'Anforderungen an Anlagen und Sicherheit',
+        backLabel: 'Zurück zur Wissensdatenbank'
+      },
+      fisRules: {
+        title: 'FIS-Regelwerk',
+        description: 'Regeln des Internationalen Skiverbandes',
+        backLabel: 'Zurück zur Wissensdatenbank'
+      },
+      guide: {
+        title: 'Plattformhandbuch',
+        description: 'Funktionsanleitungen und häufige Fragen',
+        backLabel: 'Zurück zur Wissensdatenbank'
+      }
     }
   },
 
@@ -288,6 +315,369 @@ export const de: TranslationKeys = {
     english: 'English',
     japanese: '日本語',
     korean: '한국어'
+  },
+
+  // Demnächst-Komponente
+  comingSoon: {
+    title: 'Demnächst verfügbar',
+    description: 'Diese Funktion befindet sich derzeit in Entwicklung. Bitte schau bald wieder vorbei.',
+    backLabel: 'Zur Startseite',
+    learnMoreLabel: 'Mehr erfahren',
+    progressLabel: 'Entwicklungsfortschritt',
+    progressValue: '30%',
+    eta: 'Geplanter Start: 2–4 Wochen',
+    upcomingFeaturesTitle: 'Bevorstehende Funktionen',
+    upcomingFeatures: ['Echtzeit-Datenaktualisierung', 'Intelligente Analysen', 'Personalisierte Empfehlungen', 'Mobile Optimierung']
+  },
+
+  // Dokumentationszentrum
+  docsPage: {
+    hero: {
+      title: 'Wissensdatenbank',
+      description: 'Wettkampfregeln, technische Standards und Plattformhandbuch'
+    },
+    viewDocLabel: 'Dokument ansehen',
+    categories: {
+      pointsRules: {
+        title: 'Punkterichtlinien',
+        description: 'Ausführliche Erläuterungen zur chinesischen Ski-Punkteberechnung',
+        topics: ['Punkteformeln', 'Veranstaltungsfaktoren', 'Strafpunkt-Mechanismus', 'BL/NL-Punktetabellen']
+      },
+      competitionRules: {
+        title: 'Wettkampftechnische Regeln',
+        description: 'Technische Wettkampfregeln und Schiedsrichterstandards',
+        topics: ['Ablauf des Wettkampfs', 'Schiedsrichterregeln', 'Zeitmesssysteme', 'Einspruchsverfahren']
+      },
+      venueStandards: {
+        title: 'Stättenstandards',
+        description: 'Anforderungen an Anlagen und Sicherheit',
+        topics: ['Stättenstandards', 'Anforderungen an Einrichtungen', 'Sicherheitsrichtlinien', 'Zertifizierungsprozess']
+      },
+      fisRules: {
+        title: 'FIS-Regelwerk',
+        description: 'Regeln des Internationalen Skiverbandes',
+        topics: ['FIS-Punkterichtlinien', 'ICR-Wettkampfregeln', 'Internationale Standards', 'Zweisprachige Referenzen']
+      },
+      guide: {
+        title: 'Plattformhandbuch',
+        description: 'Funktionsanleitungen und häufige Fragen',
+        topics: ['Registrierungsablauf', 'Anmeldeleitfaden', 'Punkteeinsicht', 'FAQ']
+      }
+    },
+    popular: {
+      title: 'Beliebte Dokumente',
+      viewsLabel: 'Aufrufe',
+      items: {
+        alpineRulesV4: { title: 'China Alpin-Punkteregelwerk v4.0', category: 'Punkterichtlinien' },
+        seasonGrading: { title: 'Wettkampfeinstufung 2024-2025', category: 'Wettkampfregeln' },
+        youthSeries: { title: 'U-Serie Jugend-Wettkampfkonzept', category: 'Wettkampfregeln' },
+        fisPointsGuide: { title: 'FIS Punkterechner Leitfaden', category: 'FIS-Regeln' }
+      }
+    }
+  },
+
+  // Seiteninhalte (Coming Soon)
+  pages: {
+    alpine: {
+      athletes: {
+        list: {
+          title: 'Athletenverzeichnis',
+          description: 'Alle registrierten Athletenprofile ansehen',
+          backLabel: 'Zurück zu Alpin'
+        },
+        rankings: {
+          title: 'Athletenrangliste',
+          description: 'Umfassende Athletenrangliste basierend auf Punkten und Ergebnissen',
+          backLabel: 'Zurück zu Alpin'
+        },
+        stats: {
+          title: 'Athletenstatistiken',
+          description: 'Detaillierte Athletenstatistiken und Visualisierungen',
+          backLabel: 'Zurück zu Alpin'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: 'Wettkampfregeln',
+          description: 'Ausführliche technische Wettkampfnormen',
+          backLabel: 'Zurück zu Alpin'
+        },
+        'points-rules': {
+          title: 'Punkterichtlinien',
+          description: 'Punkteregelwerk v4.0 für Alpin erkunden',
+          backLabel: 'Zurück zu Alpin'
+        },
+        'venue-standards': {
+          title: 'Stättenstandards',
+          description: 'Pistenstandards und Zertifizierungsanforderungen für Alpin',
+          backLabel: 'Zurück zu Alpin'
+        }
+      },
+      events: {
+        register: {
+          title: 'Online-Anmeldung',
+          description: 'Optimiertes Meldesystem folgt in Kürze',
+          backLabel: 'Zurück zu Alpin'
+        },
+        results: {
+          title: 'Ergebnisse',
+          description: 'Rennresultate und Punkteaktualisierungen in Echtzeit einsehen',
+          backLabel: 'Zurück zu Alpin'
+        },
+        schedule: {
+          title: 'Wettkampfkalender',
+          description: 'Bevorstehende Alpin-Wettkämpfe ansehen',
+          backLabel: 'Zurück zu Alpin'
+        },
+        stats: {
+          title: 'Wettkampfstatistiken',
+          description: 'Umfassendes Analysepaket für Veranstaltungsdaten',
+          backLabel: 'Zurück zu Alpin'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'Punkterechner',
+          description: 'Präziser v4.0 Punkte-Rechner folgt in Kürze',
+          backLabel: 'Zurück zu Alpin'
+        },
+        rankings: {
+          title: 'Punkterangliste',
+          description: 'Live-Rangliste der Athleten folgt in Kürze',
+          backLabel: 'Zurück zu Alpin'
+        },
+        trends: {
+          title: 'Punktetrends',
+          description: 'Visualisierte Punktrend-Analysen folgen in Kürze',
+          backLabel: 'Zurück zu Alpin'
+        }
+      }
+    },
+    'freestyle-slopestyle': {
+      athletes: {
+        list: {
+          title: 'Athletenverzeichnis',
+          description: 'Alle registrierten Athletenprofile ansehen',
+          backLabel: 'Zurück zu Freestyle Slopestyle'
+        },
+        rankings: {
+          title: 'Athletenrangliste',
+          description: 'Umfassende Athletenrangliste basierend auf Punkten und Ergebnissen',
+          backLabel: 'Zurück zu Freestyle Slopestyle'
+        },
+        stats: {
+          title: 'Athletenstatistiken',
+          description: 'Detaillierte Athletenstatistiken und Visualisierungen',
+          backLabel: 'Zurück zu Freestyle Slopestyle'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: 'Wettkampfregeln',
+          description: 'Ausführliche technische Wettkampfnormen',
+          backLabel: 'Zurück zu Freestyle Slopestyle'
+        },
+        'points-rules': {
+          title: 'Punkterichtlinien',
+          description: 'Details zu den Punktberechnungsregeln einsehen',
+          backLabel: 'Zurück zu Freestyle Slopestyle'
+        },
+        'venue-standards': {
+          title: 'Stättenstandards',
+          description: 'Technische Anforderungen und Zertifizierungen der Austragungsorte',
+          backLabel: 'Zurück zu Freestyle Slopestyle'
+        }
+      },
+      events: {
+        register: {
+          title: 'Online-Anmeldung',
+          description: 'Optimiertes Meldesystem folgt in Kürze',
+          backLabel: 'Zurück zu Freestyle Slopestyle'
+        },
+        results: {
+          title: 'Ergebnisse',
+          description: 'Rennresultate und Punkteaktualisierungen in Echtzeit einsehen',
+          backLabel: 'Zurück zu Freestyle Slopestyle'
+        },
+        schedule: {
+          title: 'Wettkampfkalender',
+          description: 'Bevorstehende Wettkämpfe ansehen',
+          backLabel: 'Zurück zu Freestyle Slopestyle'
+        },
+        stats: {
+          title: 'Wettkampfstatistiken',
+          description: 'Umfassendes Analysepaket für Veranstaltungsdaten',
+          backLabel: 'Zurück zu Freestyle Slopestyle'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'Punkterechner',
+          description: 'Präziser Punkterechner folgt in Kürze',
+          backLabel: 'Zurück zu Freestyle Slopestyle'
+        },
+        rankings: {
+          title: 'Punkterangliste',
+          description: 'Live-Rangliste der Athleten folgt in Kürze',
+          backLabel: 'Zurück zu Freestyle Slopestyle'
+        },
+        trends: {
+          title: 'Punktetrends',
+          description: 'Analysewerkzeuge für Punktrends folgen in Kürze',
+          backLabel: 'Zurück zu Freestyle Slopestyle'
+        }
+      }
+    },
+    'snowboard-parallel': {
+      athletes: {
+        list: {
+          title: 'Athletenverzeichnis',
+          description: 'Alle registrierten Athletenprofile ansehen',
+          backLabel: 'Zurück zu Snowboard Parallel'
+        },
+        rankings: {
+          title: 'Athletenrangliste',
+          description: 'Umfassende Athletenrangliste basierend auf Punkten und Ergebnissen',
+          backLabel: 'Zurück zu Snowboard Parallel'
+        },
+        stats: {
+          title: 'Athletenstatistiken',
+          description: 'Detaillierte Athletenstatistiken und Visualisierungen',
+          backLabel: 'Zurück zu Snowboard Parallel'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: 'Wettkampfregeln',
+          description: 'Ausführliche technische Wettkampfnormen',
+          backLabel: 'Zurück zu Snowboard Parallel'
+        },
+        'points-rules': {
+          title: 'Punkterichtlinien',
+          description: 'Details zu den Punktberechnungsregeln einsehen',
+          backLabel: 'Zurück zu Snowboard Parallel'
+        },
+        'venue-standards': {
+          title: 'Stättenstandards',
+          description: 'Technische Anforderungen und Zertifizierungen der Austragungsorte',
+          backLabel: 'Zurück zu Snowboard Parallel'
+        }
+      },
+      events: {
+        register: {
+          title: 'Online-Anmeldung',
+          description: 'Optimiertes Meldesystem folgt in Kürze',
+          backLabel: 'Zurück zu Snowboard Parallel'
+        },
+        results: {
+          title: 'Ergebnisse',
+          description: 'Rennresultate und Punkteaktualisierungen in Echtzeit einsehen',
+          backLabel: 'Zurück zu Snowboard Parallel'
+        },
+        schedule: {
+          title: 'Wettkampfkalender',
+          description: 'Bevorstehende Wettkämpfe ansehen',
+          backLabel: 'Zurück zu Snowboard Parallel'
+        },
+        stats: {
+          title: 'Wettkampfstatistiken',
+          description: 'Umfassendes Analysepaket für Veranstaltungsdaten',
+          backLabel: 'Zurück zu Snowboard Parallel'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'Punkterechner',
+          description: 'Präziser Punkterechner folgt in Kürze',
+          backLabel: 'Zurück zu Snowboard Parallel'
+        },
+        rankings: {
+          title: 'Punkterangliste',
+          description: 'Live-Rangliste der Athleten folgt in Kürze',
+          backLabel: 'Zurück zu Snowboard Parallel'
+        },
+        trends: {
+          title: 'Punktetrends',
+          description: 'Analysewerkzeuge für Punktrends folgen in Kürze',
+          backLabel: 'Zurück zu Snowboard Parallel'
+        }
+      }
+    },
+    'snowboard-slopestyle': {
+      athletes: {
+        list: {
+          title: 'Athletenverzeichnis',
+          description: 'Alle registrierten Athletenprofile ansehen',
+          backLabel: 'Zurück zu Snowboard Slopestyle'
+        },
+        rankings: {
+          title: 'Athletenrangliste',
+          description: 'Umfassende Athletenrangliste basierend auf Punkten und Ergebnissen',
+          backLabel: 'Zurück zu Snowboard Slopestyle'
+        },
+        stats: {
+          title: 'Athletenstatistiken',
+          description: 'Detaillierte Athletenstatistiken und Visualisierungen',
+          backLabel: 'Zurück zu Snowboard Slopestyle'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: 'Wettkampfregeln',
+          description: 'Ausführliche technische Wettkampfnormen',
+          backLabel: 'Zurück zu Snowboard Slopestyle'
+        },
+        'points-rules': {
+          title: 'Punkterichtlinien',
+          description: 'Details zu den Punktberechnungsregeln einsehen',
+          backLabel: 'Zurück zu Snowboard Slopestyle'
+        },
+        'venue-standards': {
+          title: 'Stättenstandards',
+          description: 'Technische Anforderungen und Zertifizierungen der Austragungsorte',
+          backLabel: 'Zurück zu Snowboard Slopestyle'
+        }
+      },
+      events: {
+        register: {
+          title: 'Online-Anmeldung',
+          description: 'Optimiertes Meldesystem folgt in Kürze',
+          backLabel: 'Zurück zu Snowboard Slopestyle'
+        },
+        results: {
+          title: 'Ergebnisse',
+          description: 'Rennresultate und Punkteaktualisierungen in Echtzeit einsehen',
+          backLabel: 'Zurück zu Snowboard Slopestyle'
+        },
+        schedule: {
+          title: 'Wettkampfkalender',
+          description: 'Bevorstehende Wettkämpfe ansehen',
+          backLabel: 'Zurück zu Snowboard Slopestyle'
+        },
+        stats: {
+          title: 'Wettkampfstatistiken',
+          description: 'Umfassendes Analysepaket für Veranstaltungsdaten',
+          backLabel: 'Zurück zu Snowboard Slopestyle'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'Punkterechner',
+          description: 'Präziser Punkterechner folgt in Kürze',
+          backLabel: 'Zurück zu Snowboard Slopestyle'
+        },
+        rankings: {
+          title: 'Punkterangliste',
+          description: 'Live-Rangliste der Athleten folgt in Kürze',
+          backLabel: 'Zurück zu Snowboard Slopestyle'
+        },
+        trends: {
+          title: 'Punktetrends',
+          description: 'Analysewerkzeuge für Punktrends folgen in Kürze',
+          backLabel: 'Zurück zu Snowboard Slopestyle'
+        }
+      }
+    }
   },
 
   // Authentifizierung und Berechtigungen

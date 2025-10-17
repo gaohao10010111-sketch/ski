@@ -1,18 +1,15 @@
 import ComingSoon from '@/components/ComingSoon';
-import { LineChart } from 'lucide-react';
 
 export const metadata = {
-  title: '积分趋势 - 单板平行项目',
-  description: '单板平行项目积分变化趋势分析'
+  title: 'Points Trends – Snowboard Parallel',
+  description: 'Visualise points trends with analytics tools'
 };
 
 export default function PointsTrendsPage() {
   return (
     <ComingSoon
-      title="积分趋势"
-      description="可视化积分变化趋势，数据分析工具"
+      translationKey="snowboard-parallel.points.trends"
       backLink="/snowboard-parallel"
-      backLabel="返回单板平行项目"
     />
   );
 }

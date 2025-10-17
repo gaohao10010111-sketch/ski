@@ -1,18 +1,15 @@
 import ComingSoon from '@/components/ComingSoon';
-import { LineChart } from 'lucide-react';
 
 export const metadata = {
-  title: '积分趋势 - 自由式坡面障碍技巧',
-  description: '自由式坡面障碍技巧积分变化趋势分析'
+  title: 'Points Trends – Freestyle Slopestyle',
+  description: 'Visualise points trends with analytics tools'
 };
 
 export default function PointsTrendsPage() {
   return (
     <ComingSoon
-      title="积分趋势"
-      description="可视化积分变化趋势，数据分析工具"
+      translationKey="freestyle-slopestyle.points.trends"
       backLink="/freestyle-slopestyle"
-      backLabel="返回自由式坡面障碍技巧"
     />
   );
 }

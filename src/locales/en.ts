@@ -1,7 +1,7 @@
 // English language pack
-import { TranslationKeys } from './zh';
+import type { TranslationKeys } from './zh';
 
-export const en: TranslationKeys = {
+export const en: Partial<TranslationKeys> = {
   // Common
   common: {
     loading: 'Loading...',
@@ -91,6 +91,33 @@ export const en: TranslationKeys = {
 
       // More Features
       moreFeatures: 'More'
+    },
+    docs: {
+      competitionRules: {
+        title: 'Competition Rules',
+        description: 'Technical rules and officiating standards',
+        backLabel: 'Back to Knowledge Base'
+      },
+      pointsRules: {
+        title: 'Points Rules',
+        description: 'Points calculation documentation',
+        backLabel: 'Back to Knowledge Base'
+      },
+      venueStandards: {
+        title: 'Venue Standards',
+        description: 'Facility requirements and safety guidelines',
+        backLabel: 'Back to Knowledge Base'
+      },
+      fisRules: {
+        title: 'FIS Rules',
+        description: 'International Ski Federation references',
+        backLabel: 'Back to Knowledge Base'
+      },
+      guide: {
+        title: 'Platform Guide',
+        description: 'Usage guides and FAQs',
+        backLabel: 'Back to Knowledge Base'
+      }
     }
   },
 
@@ -290,6 +317,374 @@ export const en: TranslationKeys = {
     korean: '한국어'
   },
 
+  // Coming soon component
+  comingSoon: {
+    title: 'Coming Soon',
+    description: 'This feature is currently under development. Please check back soon.',
+    backLabel: 'Back to Home',
+    learnMoreLabel: 'Learn More',
+    progressLabel: 'Development Progress',
+    progressValue: '30%',
+    eta: 'Estimated launch: 2-4 weeks',
+    upcomingFeaturesTitle: 'Upcoming Features',
+    upcomingFeatures: [
+      'Real-time data updates',
+      'Intelligent analytics',
+      'Personalised recommendations',
+      'Mobile optimisation'
+    ]
+  },
+
+  // Docs hub
+  docsPage: {
+    hero: {
+      title: 'Knowledge Base',
+      description: 'Competition rules, technical standards, and platform user guides'
+    },
+    viewDocLabel: 'View document',
+    categories: {
+      pointsRules: {
+        title: 'Points Rules',
+        description: 'Detailed guide to China ski points calculations',
+        topics: ['Points formulas', 'Event tier coefficients', 'Penalty mechanisms', 'BL/NL points tables']
+      },
+      competitionRules: {
+        title: 'Competition Rules',
+        description: 'Technical rules and officiating standards',
+        topics: ['Competition flow', 'Judging rules', 'Timing systems', 'Appeal procedures']
+      },
+      venueStandards: {
+        title: 'Venue Standards',
+        description: 'Facility requirements and safety compliance',
+        topics: ['Venue standards', 'Facility requirements', 'Safety guidelines', 'Certification process']
+      },
+      fisRules: {
+        title: 'FIS International Rules',
+        description: 'International Ski Federation rulebook references',
+        topics: ['FIS points rules', 'ICR competition rules', 'International standards', 'Bilingual references']
+      },
+      guide: {
+        title: 'Platform Guide',
+        description: 'Feature walkthroughs and common questions',
+        topics: ['Registration flow', 'Entry guide', 'Points lookup', 'FAQs']
+      }
+    },
+    popular: {
+      title: 'Popular Documents',
+      viewsLabel: 'views',
+      items: {
+        alpineRulesV4: { title: 'China Alpine Ski Points Rules v4.0', category: 'Points Rules' },
+        seasonGrading: { title: '2024-2025 Event Tier Standards', category: 'Competition Rules' },
+        youthSeries: { title: 'U-Series Youth Event Plan', category: 'Competition Rules' },
+        fisPointsGuide: { title: 'FIS Points Calculation Guide', category: 'FIS Rules' }
+      }
+    }
+  },
+
+  // Page copy (ComingSoon)
+  pages: {
+    alpine: {
+      athletes: {
+        list: {
+          title: 'Athlete Directory',
+          description: 'Browse all registered athlete profiles',
+          backLabel: 'Back to Alpine Skiing'
+        },
+        rankings: {
+          title: 'Athlete Rankings',
+          description: 'Comprehensive athlete rankings based on points and results',
+          backLabel: 'Back to Alpine Skiing'
+        },
+        stats: {
+          title: 'Athlete Statistics',
+          description: 'In-depth athlete statistics and visual analytics',
+          backLabel: 'Back to Alpine Skiing'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: 'Competition Rules',
+          description: 'Detailed competition technical standards',
+          backLabel: 'Back to Alpine Skiing'
+        },
+        'points-rules': {
+          title: 'Points Rules',
+          description: 'Explore alpine skiing v4.0 points rules',
+          backLabel: 'Back to Alpine Skiing'
+        },
+        'venue-standards': {
+          title: 'Venue Standards',
+          description: 'Alpine skiing venue standards and certification requirements',
+          backLabel: 'Back to Alpine Skiing'
+        }
+      },
+      events: {
+        register: {
+          title: 'Online Registration',
+          description: 'Streamlined event registration system coming soon',
+          backLabel: 'Back to Alpine Skiing'
+        },
+        results: {
+          title: 'Results Lookup',
+          description: 'Check race results and points updates in real time',
+          backLabel: 'Back to Alpine Skiing'
+        },
+        schedule: {
+          title: 'Event Calendar',
+          description: 'View upcoming alpine skiing events',
+          backLabel: 'Back to Alpine Skiing'
+        },
+        stats: {
+          title: 'Event Statistics',
+          description: 'Comprehensive event data analytics suite',
+          backLabel: 'Back to Alpine Skiing'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'Points Calculator',
+          description: 'Accurate v4.0 points calculator coming soon',
+          backLabel: 'Back to Alpine Skiing'
+        },
+        rankings: {
+          title: 'Points Rankings',
+          description: 'Real-time athlete leaderboard coming soon',
+          backLabel: 'Back to Alpine Skiing'
+        },
+        trends: {
+          title: 'Points Trends',
+          description: 'Visual points trend analytics tools coming soon',
+          backLabel: 'Back to Alpine Skiing'
+        }
+      }
+    },
+    'freestyle-slopestyle': {
+      athletes: {
+        list: {
+          title: 'Athlete Directory',
+          description: 'Browse all registered athlete profiles',
+          backLabel: 'Back to Freestyle Slopestyle'
+        },
+        rankings: {
+          title: 'Athlete Rankings',
+          description: 'Comprehensive athlete rankings based on points and results',
+          backLabel: 'Back to Freestyle Slopestyle'
+        },
+        stats: {
+          title: 'Athlete Statistics',
+          description: 'In-depth athlete statistics and visual analytics',
+          backLabel: 'Back to Freestyle Slopestyle'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: 'Competition Rules',
+          description: 'Detailed competition technical standards',
+          backLabel: 'Back to Freestyle Slopestyle'
+        },
+        'points-rules': {
+          title: 'Points Rules',
+          description: 'Read detailed points calculation rules',
+          backLabel: 'Back to Freestyle Slopestyle'
+        },
+        'venue-standards': {
+          title: 'Venue Standards',
+          description: 'Venue technical standards and certification requirements',
+          backLabel: 'Back to Freestyle Slopestyle'
+        }
+      },
+      events: {
+        register: {
+          title: 'Online Registration',
+          description: 'Streamlined event registration system',
+          backLabel: 'Back to Freestyle Slopestyle'
+        },
+        results: {
+          title: 'Results Lookup',
+          description: 'Check race results and points updates in real time',
+          backLabel: 'Back to Freestyle Slopestyle'
+        },
+        schedule: {
+          title: 'Event Calendar',
+          description: 'View upcoming event schedule',
+          backLabel: 'Back to Freestyle Slopestyle'
+        },
+        stats: {
+          title: 'Event Statistics',
+          description: 'Comprehensive event data analytics suite',
+          backLabel: 'Back to Freestyle Slopestyle'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'Points Calculator',
+          description: 'Precise points calculator coming soon',
+          backLabel: 'Back to Freestyle Slopestyle'
+        },
+        rankings: {
+          title: 'Points Rankings',
+          description: 'Real-time athlete points leaderboard',
+          backLabel: 'Back to Freestyle Slopestyle'
+        },
+        trends: {
+          title: 'Points Trends',
+          description: 'Visualise points trends with analytics tools',
+          backLabel: 'Back to Freestyle Slopestyle'
+        }
+      }
+    },
+    'snowboard-parallel': {
+      athletes: {
+        list: {
+          title: 'Athlete Directory',
+          description: 'Browse all registered athlete profiles',
+          backLabel: 'Back to Snowboard Parallel'
+        },
+        rankings: {
+          title: 'Athlete Rankings',
+          description: 'Comprehensive athlete rankings based on points and results',
+          backLabel: 'Back to Snowboard Parallel'
+        },
+        stats: {
+          title: 'Athlete Statistics',
+          description: 'In-depth athlete statistics and visual analytics',
+          backLabel: 'Back to Snowboard Parallel'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: 'Competition Rules',
+          description: 'Detailed competition technical standards',
+          backLabel: 'Back to Snowboard Parallel'
+        },
+        'points-rules': {
+          title: 'Points Rules',
+          description: 'Read detailed points calculation rules',
+          backLabel: 'Back to Snowboard Parallel'
+        },
+        'venue-standards': {
+          title: 'Venue Standards',
+          description: 'Venue technical standards and certification requirements',
+          backLabel: 'Back to Snowboard Parallel'
+        }
+      },
+      events: {
+        register: {
+          title: 'Online Registration',
+          description: 'Streamlined event registration system',
+          backLabel: 'Back to Snowboard Parallel'
+        },
+        results: {
+          title: 'Results Lookup',
+          description: 'Check race results and points updates in real time',
+          backLabel: 'Back to Snowboard Parallel'
+        },
+        schedule: {
+          title: 'Event Calendar',
+          description: 'View upcoming event schedule',
+          backLabel: 'Back to Snowboard Parallel'
+        },
+        stats: {
+          title: 'Event Statistics',
+          description: 'Comprehensive event data analytics suite',
+          backLabel: 'Back to Snowboard Parallel'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'Points Calculator',
+          description: 'Precise points calculator coming soon',
+          backLabel: 'Back to Snowboard Parallel'
+        },
+        rankings: {
+          title: 'Points Rankings',
+          description: 'Real-time athlete points leaderboard',
+          backLabel: 'Back to Snowboard Parallel'
+        },
+        trends: {
+          title: 'Points Trends',
+          description: 'Visualise points trends with analytics tools',
+          backLabel: 'Back to Snowboard Parallel'
+        }
+      }
+    },
+    'snowboard-slopestyle': {
+      athletes: {
+        list: {
+          title: 'Athlete Directory',
+          description: 'Browse all registered athlete profiles',
+          backLabel: 'Back to Snowboard Slopestyle'
+        },
+        rankings: {
+          title: 'Athlete Rankings',
+          description: 'Comprehensive athlete rankings based on points and results',
+          backLabel: 'Back to Snowboard Slopestyle'
+        },
+        stats: {
+          title: 'Athlete Statistics',
+          description: 'In-depth athlete statistics and visual analytics',
+          backLabel: 'Back to Snowboard Slopestyle'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: 'Competition Rules',
+          description: 'Detailed competition technical standards',
+          backLabel: 'Back to Snowboard Slopestyle'
+        },
+        'points-rules': {
+          title: 'Points Rules',
+          description: 'Read detailed points calculation rules',
+          backLabel: 'Back to Snowboard Slopestyle'
+        },
+        'venue-standards': {
+          title: 'Venue Standards',
+          description: 'Venue technical standards and certification requirements',
+          backLabel: 'Back to Snowboard Slopestyle'
+        }
+      },
+      events: {
+        register: {
+          title: 'Online Registration',
+          description: 'Streamlined event registration system',
+          backLabel: 'Back to Snowboard Slopestyle'
+        },
+        results: {
+          title: 'Results Lookup',
+          description: 'Check race results and points updates in real time',
+          backLabel: 'Back to Snowboard Slopestyle'
+        },
+        schedule: {
+          title: 'Event Calendar',
+          description: 'View upcoming event schedule',
+          backLabel: 'Back to Snowboard Slopestyle'
+        },
+        stats: {
+          title: 'Event Statistics',
+          description: 'Comprehensive event data analytics suite',
+          backLabel: 'Back to Snowboard Slopestyle'
+        }
+      },
+      points: {
+        calculator: {
+          title: 'Points Calculator',
+          description: 'Precise points calculator coming soon',
+          backLabel: 'Back to Snowboard Slopestyle'
+        },
+        rankings: {
+          title: 'Points Rankings',
+          description: 'Real-time athlete points leaderboard',
+          backLabel: 'Back to Snowboard Slopestyle'
+        },
+        trends: {
+          title: 'Points Trends',
+          description: 'Visualise points trends with analytics tools',
+          backLabel: 'Back to Snowboard Slopestyle'
+        }
+      }
+    }
+  },
+
   // Authentication and permissions
   auth: {
     needsLogin: 'Login Required',
@@ -359,20 +754,47 @@ export const en: TranslationKeys = {
     news: {
       title: 'Latest Updates',
       pauseCarousel: 'Pause Carousel',
-      continueCarousel: 'Continue Carousel'
+      continueCarousel: 'Continue Carousel',
+      statuses: {
+        live: 'Live',
+        updated: 'Updated',
+        upcoming: 'Upcoming'
+      },
+      items: [
+        { id: 'nc-men-gs', title: '2024 National Championships', subtitle: 'Giant Slalom · Live Now', status: 'live', pinned: true },
+        { id: 'points-refresh', title: 'Points Rankings Refreshed', subtitle: '14-Day Cycle · Published', status: 'updated', pinned: false },
+        { id: 'rules-update', title: 'New Season Regulations', subtitle: 'Technical Committee · Released', status: 'updated', pinned: false },
+        { id: 'registration-open', title: 'Athlete Registration Open', subtitle: '2024-25 Season · Open Enrollment', status: 'upcoming', pinned: false },
+        { id: 'camp', title: 'Training Camp Notice', subtitle: 'Winter Program · Starting Soon', status: 'upcoming', pinned: false }
+      ]
     },
     latestResults: {
       title: 'Latest Competition Results',
       subtitle: 'Real-time competition results and points rankings',
       recentResults: 'Recent Results',
       liveUpdate: 'Live Update',
-      viewMore: 'View More Events →'
+      viewMore: 'View More Events →',
+      statusLabels: {
+        live: 'Live',
+        completed: 'Completed'
+      },
+      results: [
+        { id: 'nc-men-gs', title: '2024 National Championships', subtitle: 'Men Giant Slalom · Tianchi Resort', status: 'live', time: 'Dec 15 · 14:30' },
+        { id: 'china-cup-sl', title: 'China Cup Alpine Open', subtitle: 'Women Slalom · Wanlong Resort', status: 'completed', time: 'Dec 14 · 16:45' },
+        { id: 'northeast-league', title: 'Northeast League', subtitle: 'Mixed Alpine Combined · Yabuli Resort', status: 'completed', time: 'Dec 13 · 15:20' }
+      ]
     },
     rankings: {
       title: 'Points Leaderboard',
       updatedOn: 'Updated on',
       points: 'Points',
-      viewFullRankings: 'View Full Rankings →'
+      viewFullRankings: 'View Full Rankings →',
+      entries: [
+        { rank: 1, name: 'Wei Zhang', event: 'Men Giant Slalom', points: '0.00' },
+        { rank: 2, name: 'Xue Li', event: 'Women Slalom', points: '8.45' },
+        { rank: 3, name: 'Bing Wang', event: 'Women Giant Slalom', points: '12.30' },
+        { rank: 4, name: 'Qiang Liu', event: 'Men Slalom', points: '15.67' }
+      ]
     },
     memberWelcome: {
       welcomeBack: 'Welcome Back',

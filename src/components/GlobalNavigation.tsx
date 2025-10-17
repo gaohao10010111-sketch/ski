@@ -18,13 +18,21 @@ import {
   Info,
   Calendar,
   Home,
-  TrendingUp,
-  BarChart3,
   Search
 } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useTranslation } from '@/contexts/LanguageContext';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+
+interface NavigationItem {
+  key: string;
+  name: string;
+  href: string;
+  icon?: LucideIcon;
+  highlighted?: boolean;
+  children?: Array<{ key: string; name: string; href: string }>;
+}
 
 export default function GlobalNavigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -42,23 +50,26 @@ export default function GlobalNavigation() {
   };
 
   const getRoleDisplayName = (role: string) => {
-    const roleMap: { [key: string]: string } = {
+    const roleMap: Record<string, string> = {
       admin: t.auth?.roles?.admin || 'Administrator',
       coach: t.auth?.roles?.coach || 'Coach',
       athlete: t.auth?.roles?.athlete || 'Athlete',
       user: t.auth?.roles?.user || 'User'
     };
-    return roleMap[role] || t.auth?.roles?.user || 'User';
+
+    return roleMap[role] || roleMap.user;
   };
 
-  // 判断当前在哪个项目页面
-  const currentDiscipline = pathname?.startsWith('/alpine') ? 'alpine'
-    : pathname?.startsWith('/snowboard-slopestyle') ? 'snowboard-slopestyle'
-    : pathname?.startsWith('/snowboard-parallel') ? 'snowboard-parallel'
-    : pathname?.startsWith('/freestyle-slopestyle') ? 'freestyle-slopestyle'
+  const currentDiscipline = pathname?.startsWith('/alpine')
+    ? 'alpine'
+    : pathname?.startsWith('/snowboard-slopestyle')
+    ? 'snowboard-slopestyle'
+    : pathname?.startsWith('/snowboard-parallel')
+    ? 'snowboard-parallel'
+    : pathname?.startsWith('/freestyle-slopestyle')
+    ? 'freestyle-slopestyle'
     : null;
 
-  // 获取当前项目的名称
   const getCurrentDisciplineName = () => {
     switch (currentDiscipline) {
       case 'alpine':
@@ -74,96 +85,91 @@ export default function GlobalNavigation() {
     }
   };
 
-  // 🎯 第一层 - 平台级服务 (Platform Services - 参考FIS架构)
-  // 纯平台级功能，不涉及具体业务内容，无下拉菜单保持简洁
-  const globalMenuItems = [
+  const globalMenuItems: NavigationItem[] = [
     {
+      key: 'about',
       name: t.navigation?.about || 'About',
       href: '/about',
       icon: Info
     },
     {
+      key: 'docs',
       name: t.navigation?.docs || 'Docs',
       href: '/rules',
       icon: FileText
     },
     {
+      key: 'profile',
       name: t.navigation?.submenus?.myProfile || t.common?.profile || 'Profile',
       href: '/profile',
       icon: User
     }
   ];
 
-  // 🎯 第二层 - 内容功能导航 (Content/Functional Navigation - 参考FIS架构)
-  // 固定不变，不随页面变化，项目切换优先，高频功能直接显示，中低频功能收入More
-  const secondaryMenuItems = [
-    // 🌟 项目切换下拉 - 首位最重要！（学习FIS的"All Disciplines▼"）
+  const secondaryMenuItems: NavigationItem[] = [
     {
+      key: 'disciplines',
       name: t.navigation?.disciplines || 'Disciplines',
       href: '#',
       icon: Mountain,
-      highlighted: true,  // 视觉突出
+      highlighted: true,
       children: [
-        { name: t.navigation?.alpine || 'Alpine Skiing', href: '/alpine' },
-        { name: t.navigation?.snowboardSlopestyle || 'Snowboard Slopestyle', href: '/snowboard-slopestyle' },
-        { name: t.navigation?.snowboardParallel || 'Snowboard Parallel', href: '/snowboard-parallel' },
-        { name: t.navigation?.freestyleSlopestyle || 'Freestyle Slopestyle', href: '/freestyle-slopestyle' }
+        { key: 'alpine', name: t.navigation?.alpine || 'Alpine Skiing', href: '/alpine' },
+        { key: 'snowboard-slopestyle', name: t.navigation?.snowboardSlopestyle || 'Snowboard Slopestyle', href: '/snowboard-slopestyle' },
+        { key: 'snowboard-parallel', name: t.navigation?.snowboardParallel || 'Snowboard Parallel', href: '/snowboard-parallel' },
+        { key: 'freestyle-slopestyle', name: t.navigation?.freestyleSlopestyle || 'Freestyle Slopestyle', href: '/freestyle-slopestyle' }
       ]
     },
-    // 高频核心功能 - 直接显示 (4项)
-    { name: t.common?.home || 'Home', href: '/', icon: Home },
-    { name: t.navigation?.submenus?.eventsSchedule || 'Schedule', href: '/competitions/schedule', icon: Calendar },
-    { name: t.navigation?.submenus?.resultsLive || 'Live Results', href: '/competitions', icon: Trophy },
-    { name: t.navigation?.athletes || 'Athletes', href: '/athletes', icon: Users },
-    // More下拉 - 中低频功能 (8项)
+    { key: 'home', name: t.common?.home || 'Home', href: '/', icon: Home },
+    { key: 'schedule', name: t.navigation?.submenus?.eventsSchedule || 'Schedule', href: '/competitions/schedule', icon: Calendar },
+    { key: 'live-results', name: t.navigation?.submenus?.resultsLive || 'Live Results', href: '/competitions', icon: Trophy },
+    { key: 'athletes', name: t.navigation?.athletes || 'Athletes', href: '/athletes', icon: Users },
     {
+      key: 'more',
       name: t.navigation?.submenus?.moreFeatures || 'More',
       href: '#',
       icon: Menu,
       children: [
-        { name: t.navigation?.submenus?.pointsRankings || 'Rankings', href: '/points/rankings' },
-        { name: t.navigation?.submenus?.pointsCalculator || 'Calculator', href: '/points/calculator' },
-        { name: t.navigation?.submenus?.pointsTrends || 'Trends', href: '/points/trends' },
-        { name: t.navigation?.submenus?.eventsResults || 'Results', href: '/results-query' },
-        { name: t.navigation?.submenus?.eventsRegister || 'Register', href: '/registration/online' },
-        { name: t.navigation?.submenus?.eventsStats || 'Statistics', href: '/competitions/stats' },
-        { name: t.navigation?.submenus?.resultsImport || 'Import Results', href: '/results-import' },
-        { name: t.navigation?.submenus?.resultsAnnouncement || 'Results Announcement', href: '/results-announcement' }
+        { key: 'points-rankings', name: t.navigation?.submenus?.pointsRankings || 'Rankings', href: '/points/rankings' },
+        { key: 'points-calculator', name: t.navigation?.submenus?.pointsCalculator || 'Calculator', href: '/points/calculator' },
+        { key: 'points-trends', name: t.navigation?.submenus?.pointsTrends || 'Trends', href: '/points/trends' },
+        { key: 'results-query', name: t.navigation?.submenus?.eventsResults || 'Results', href: '/results-query' },
+        { key: 'events-register', name: t.navigation?.submenus?.eventsRegister || 'Register', href: '/registration/online' },
+        { key: 'events-stats', name: t.navigation?.submenus?.eventsStats || 'Statistics', href: '/competitions/stats' },
+        { key: 'results-import', name: t.navigation?.submenus?.resultsImport || 'Import Results', href: '/results-import' },
+        { key: 'results-announcement', name: t.navigation?.submenus?.resultsAnnouncement || 'Results Announcement', href: '/results-announcement' }
       ]
     }
   ];
 
   return (
     <>
-      {/* 第一行 - 全局导航栏 */}
       <nav className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px]">
           <div className="flex justify-between h-14">
-            {/* Logo */}
             <div className="flex items-center">
               <Link href="/" className="flex items-center space-x-2 hover:opacity-90 transition-opacity">
                 <Mountain className="h-6 w-6 text-ski-blue" />
                 <span className="text-base lg:text-lg font-bold text-ski-navy">
-                  {language === 'zh' ? (t.navigation?.title || '中国滑雪积分系统') : (t.navigation?.titleShort || 'China Ski Points')}
+                  {language === 'zh'
+                    ? t.navigation?.title || '中国滑雪积分系统'
+                    : t.navigation?.titleShort || 'China Ski Points'}
                 </span>
               </Link>
             </div>
 
-            {/* 右侧区域：导航菜单 + Auth & Language */}
             <div className="hidden md:flex items-center space-x-4">
-              {/* Desktop Global Menu */}
               <div className="flex items-center space-x-3">
                 {globalMenuItems.map((item) => {
                   const isActive = pathname?.startsWith(item.href) && item.href !== '#';
-                  const isHighlighted = (item as any).highlighted;
-                  const Icon = (item as any).icon;
+                  const Icon = item.icon;
 
                   return (
                     <Link
-                      key={item.name}
+                      key={item.key}
                       href={item.href}
                       className={`flex items-center gap-1.5 px-4 py-2 rounded text-sm font-medium transition-colors ${
-                        isHighlighted
+                        item.highlighted
                           ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-sm'
                           : isActive
                           ? 'text-blue-600 bg-blue-50'
@@ -177,11 +183,10 @@ export default function GlobalNavigation() {
                 })}
               </div>
 
-              {/* Auth & Language */}
               <div className="flex items-center space-x-2 whitespace-nowrap">
                 <LanguageSwitcher />
                 {isLoading ? (
-                  <div className="animate-pulse bg-gray-200 h-7 w-16 rounded"></div>
+                  <div className="animate-pulse bg-gray-200 h-7 w-16 rounded" />
                 ) : user ? (
                   <div className="relative">
                     <button
@@ -207,7 +212,7 @@ export default function GlobalNavigation() {
                         >
                           <div className="flex items-center">
                             <Settings className="h-4 w-4 mr-2" />
-                            {t.common?.profile || '个人设置'}
+                            {t.common?.profile || 'Profile'}
                           </div>
                         </Link>
                         <button
@@ -216,7 +221,7 @@ export default function GlobalNavigation() {
                         >
                           <div className="flex items-center">
                             <LogOut className="h-4 w-4 mr-2" />
-                            {t.common?.logout || '退出登录'}
+                            {t.common?.logout || 'Logout'}
                           </div>
                         </button>
                       </div>
@@ -228,20 +233,19 @@ export default function GlobalNavigation() {
                       href="/login"
                       className="text-gray-700 hover:text-ski-blue px-2.5 py-1.5 rounded text-sm font-medium whitespace-nowrap transition-colors"
                     >
-                      {t.common?.login || '登录'}
+                      {t.common?.login || 'Login'}
                     </Link>
                     <Link
                       href="/register"
                       className="bg-ski-blue text-white hover:bg-ski-blue/90 px-3 py-1.5 rounded text-sm font-medium whitespace-nowrap transition-colors"
                     >
-                      {t.common?.register || '注册'}
+                      {t.common?.register || 'Register'}
                     </Link>
                   </>
                 )}
               </div>
             </div>
 
-            {/* Mobile menu button */}
             <div className="md:hidden flex items-center space-x-1.5">
               <LanguageSwitcher />
               <button
@@ -255,30 +259,28 @@ export default function GlobalNavigation() {
         </div>
       </nav>
 
-      {/* 第二行 - 功能导航栏 */}
       <nav className="bg-gray-50 border-b border-gray-200 sticky top-14 z-40">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px]">
           <div className="hidden md:flex items-center justify-end space-x-2 h-10">
             {secondaryMenuItems.map((item) => {
-              const isActive = pathname === item.href || (item.href !== '#' && pathname?.startsWith(item.href));
-              const isOpen = activeDropdown === `secondary-${item.name}`;
-              const hasChildren = item.children && item.children.length > 0;
-              const isHighlighted = (item as any).highlighted;  // 检查是否突出显示
-              const Icon = (item as any).icon;
+              const isActive = item.href !== '#' && (pathname === item.href || pathname?.startsWith(item.href));
+              const hasChildren = Boolean(item.children?.length);
+              const Icon = item.icon;
+              const isDisciplineMenu = item.key === 'disciplines';
+              const dropdownKey = `secondary-${item.key}`;
 
               return (
                 <div
-                  key={item.name}
-                  className={`relative ${isHighlighted && item.name === '项目' ? 'pr-2 mr-2 border-r border-gray-300' : ''}`}
-                  onMouseEnter={() => hasChildren && setActiveDropdown(`secondary-${item.name}`)}
+                  key={item.key}
+                  className={`relative ${item.highlighted && isDisciplineMenu ? 'pr-2 mr-2 border-r border-gray-300' : ''}`}
+                  onMouseEnter={() => hasChildren && setActiveDropdown(dropdownKey)}
                   onMouseLeave={() => hasChildren && setActiveDropdown(null)}
                 >
                   {hasChildren ? (
-                    // 有子菜单的按钮
                     <>
                       <button
                         className={`flex items-center gap-1 px-3 py-1.5 rounded text-xs font-medium transition-colors whitespace-nowrap ${
-                          isHighlighted
+                          item.highlighted
                             ? 'bg-ski-blue text-white hover:bg-ski-blue/90 shadow-sm'
                             : isActive
                             ? 'text-blue-600 bg-blue-50'
@@ -286,17 +288,16 @@ export default function GlobalNavigation() {
                         }`}
                       >
                         {Icon && <Icon className="w-3 h-3" />}
-                        <span>{item.name === '项目' ? getCurrentDisciplineName() : item.name}</span>
+                        <span>{isDisciplineMenu ? getCurrentDisciplineName() : item.name}</span>
                         <ChevronDown className="w-2.5 h-2.5" />
                       </button>
 
-                      {/* 下拉菜单 */}
-                      {isOpen && (
+                      {activeDropdown === dropdownKey && (
                         <div className="absolute left-0 top-full pt-2 z-50">
                           <div className="w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1">
-                            {item.children.map((child) => (
+                            {item.children?.map((child) => (
                               <Link
-                                key={child.href}
+                                key={child.key}
                                 href={child.href}
                                 onClick={() => setActiveDropdown(null)}
                                 className={`block px-4 py-2 text-sm transition-colors ${
@@ -313,7 +314,6 @@ export default function GlobalNavigation() {
                       )}
                     </>
                   ) : (
-                    // 直接链接
                     <Link
                       href={item.href}
                       className={`flex items-center gap-1 px-3 py-1.5 rounded text-xs font-medium transition-colors whitespace-nowrap ${
@@ -330,7 +330,6 @@ export default function GlobalNavigation() {
               );
             })}
 
-            {/* 搜索按钮 - 学习FIS */}
             <button
               className="flex items-center justify-center p-1.5 rounded text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors"
               aria-label={t.common?.search || 'Search'}
@@ -341,17 +340,15 @@ export default function GlobalNavigation() {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white border-b border-gray-100 fixed top-14 left-0 right-0 z-40 shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 max-h-[calc(100vh-3rem)] overflow-y-auto">
-            {/* 第一层菜单 */}
             <div className="border-b border-gray-200 pb-2 mb-2">
               {globalMenuItems.map((item) => {
-                const Icon = (item as any).icon;
+                const Icon = item.icon;
                 return (
                   <Link
-                    key={item.name}
+                    key={item.key}
                     href={item.href}
                     className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-ski-blue hover:bg-gray-50"
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -363,21 +360,20 @@ export default function GlobalNavigation() {
               })}
             </div>
 
-            {/* 第二层菜单 */}
             {secondaryMenuItems.map((item) => {
-              const Icon = (item as any).icon;
-              const hasChildren = item.children && item.children.length > 0;
+              const Icon = item.icon;
+              const hasChildren = Boolean(item.children?.length);
 
               if (hasChildren) {
                 return (
-                  <div key={item.name}>
+                  <div key={item.key}>
                     <div className="px-3 py-2 text-sm font-semibold text-gray-500 uppercase tracking-wider">
                       {item.name}
                     </div>
                     <div className="ml-4 space-y-1">
-                      {item.children.map((child: any) => (
+                      {item.children?.map((child) => (
                         <Link
-                          key={child.href}
+                          key={child.key}
                           href={child.href}
                           className="block px-3 py-2 rounded-md text-sm text-gray-600 hover:text-ski-blue hover:bg-gray-50"
                           onClick={() => setIsMobileMenuOpen(false)}
@@ -392,7 +388,7 @@ export default function GlobalNavigation() {
 
               return (
                 <Link
-                  key={item.name}
+                  key={item.key}
                   href={item.href}
                   className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-ski-blue hover:bg-gray-50"
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -403,7 +399,6 @@ export default function GlobalNavigation() {
               );
             })}
 
-            {/* Mobile Auth Links */}
             <div className="border-t border-gray-200 pt-3 mt-3">
               {user ? (
                 <>
@@ -424,7 +419,7 @@ export default function GlobalNavigation() {
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <Settings className="h-5 w-5" />
-                    <span>{t.common?.profile || '个人设置'}</span>
+                    <span>{t.common?.profile || 'Profile'}</span>
                   </Link>
                   <button
                     onClick={() => {
@@ -434,7 +429,7 @@ export default function GlobalNavigation() {
                     className="flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium text-red-600 hover:bg-red-50 w-full text-left mt-2"
                   >
                     <LogOut className="h-5 w-5" />
-                    <span>{t.common?.logout || '退出登录'}</span>
+                    <span>{t.common?.logout || 'Logout'}</span>
                   </button>
                 </>
               ) : (
@@ -444,14 +439,14 @@ export default function GlobalNavigation() {
                     className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-ski-blue hover:bg-gray-50 text-center"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    {t.common?.login || '登录'}
+                    {t.common?.login || 'Login'}
                   </Link>
                   <Link
                     href="/register"
                     className="block px-3 py-2 rounded-md text-base font-medium bg-ski-blue text-white hover:bg-ski-blue/90 mt-2 text-center"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    {t.common?.register || '注册'}
+                    {t.common?.register || 'Register'}
                   </Link>
                 </>
               )}

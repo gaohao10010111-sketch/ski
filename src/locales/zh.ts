@@ -288,6 +288,396 @@ export const zh = {
     korean: '한국어'
   },
 
+  // 即将上线组件
+  comingSoon: {
+    title: '即将上线',
+    description: '此功能正在开发中，敬请期待。',
+    backLabel: '返回首页',
+    learnMoreLabel: '了解更多',
+    progressLabel: '开发进度',
+    progressValue: '30%',
+    eta: '预计上线时间：2-4周',
+    upcomingFeaturesTitle: '即将推出的功能：',
+    upcomingFeatures: ['实时数据更新', '智能分析', '个性化推荐', '移动端优化']
+  },
+
+  // 文档中心
+  docsPage: {
+    hero: {
+      title: '知识库',
+      description: '滑雪竞赛规则、技术标准、平台使用指南'
+    },
+    viewDocLabel: '查看文档',
+    categories: {
+      pointsRules: {
+        title: '积分规则文档',
+        description: '中国滑雪积分计算规则详解',
+        topics: ['积分计算公式', '赛事分级系数', '判罚分机制', 'BL/NL积分表']
+      },
+      competitionRules: {
+        title: '竞赛技术规则',
+        description: '滑雪竞赛技术规则和裁判标准',
+        topics: ['比赛流程', '裁判规则', '计时系统', '申诉机制']
+      },
+      venueStandards: {
+        title: '场地技术标准',
+        description: '赛事场地设施和技术要求',
+        topics: ['场地标准', '设施要求', '安全规范', '认证流程']
+      },
+      fisRules: {
+        title: 'FIS国际规则',
+        description: '国际滑雪联合会竞赛规则',
+        topics: ['FIS积分规则', 'ICR竞赛规则', '国际标准', '中英对照']
+      },
+      guide: {
+        title: '平台使用指南',
+        description: '系统功能使用说明和常见问题',
+        topics: ['注册流程', '报名指南', '积分查询', '常见问题']
+      }
+    },
+    popular: {
+      title: '热门文档',
+      viewsLabel: '次查看',
+      items: {
+        alpineRulesV4: { title: '中国高山滑雪积分规则v4.0', category: '积分规则' },
+        seasonGrading: { title: '2024-2025赛季赛事分级标准', category: '竞赛规则' },
+        youthSeries: { title: 'U系列青少年赛事管理办法', category: '竞赛规则' },
+        fisPointsGuide: { title: 'FIS积分计算方法详解', category: 'FIS规则' }
+      }
+    }
+  },
+
+  // 页面文案（ComingSoon）
+  pages: {
+    alpine: {
+      athletes: {
+        list: {
+          title: '运动员名录',
+          description: '查看所有注册运动员信息和档案',
+          backLabel: '返回高山滑雪'
+        },
+        rankings: {
+          title: '运动员排名',
+          description: '基于积分和成绩的运动员综合排名',
+          backLabel: '返回高山滑雪'
+        },
+        stats: {
+          title: '运动员统计',
+          description: '详细的运动员数据统计和可视化分析',
+          backLabel: '返回高山滑雪'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: '竞赛规则',
+          description: '详细的竞赛技术规则和标准',
+          backLabel: '返回高山滑雪'
+        },
+        'points-rules': {
+          title: '积分规则',
+          description: '查看高山滑雪v4.0积分计算规则详解',
+          backLabel: '返回高山滑雪'
+        },
+        'venue-standards': {
+          title: '场地标准',
+          description: '高山滑雪场地技术标准和认证要求',
+          backLabel: '返回高山滑雪'
+        }
+      },
+      events: {
+        register: {
+          title: '在线报名',
+          description: '便捷的赛事在线报名系统，即将上线',
+          backLabel: '返回高山滑雪'
+        },
+        results: {
+          title: '成绩查询',
+          description: '实时查询比赛成绩和积分变化',
+          backLabel: '返回高山滑雪'
+        },
+        schedule: {
+          title: '赛程日历',
+          description: '查看即将举行的高山滑雪比赛安排',
+          backLabel: '返回高山滑雪'
+        },
+        stats: {
+          title: '赛事统计',
+          description: '全面的赛事数据统计和分析工具',
+          backLabel: '返回高山滑雪'
+        }
+      },
+      points: {
+        calculator: {
+          title: '积分计算器',
+          description: '基于v4.0规则的精确积分计算工具，即将上线',
+          backLabel: '返回高山滑雪'
+        },
+        rankings: {
+          title: '积分排名',
+          description: '实时更新的运动员积分排名榜，敬请期待',
+          backLabel: '返回高山滑雪'
+        },
+        trends: {
+          title: '积分趋势',
+          description: '可视化积分变化趋势，数据分析工具即将上线',
+          backLabel: '返回高山滑雪'
+        }
+      }
+    },
+    'freestyle-slopestyle': {
+      athletes: {
+        list: {
+          title: '运动员名录',
+          description: '查看所有注册运动员信息和档案',
+          backLabel: '返回自由式坡面障碍技巧'
+        },
+        rankings: {
+          title: '运动员排名',
+          description: '基于积分和成绩的运动员综合排名',
+          backLabel: '返回自由式坡面障碍技巧'
+        },
+        stats: {
+          title: '运动员统计',
+          description: '详细的运动员数据统计和可视化分析',
+          backLabel: '返回自由式坡面障碍技巧'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: '竞赛规则',
+          description: '详细的竞赛技术规则和标准',
+          backLabel: '返回自由式坡面障碍技巧'
+        },
+        'points-rules': {
+          title: '积分规则',
+          description: '查看积分计算规则详解',
+          backLabel: '返回自由式坡面障碍技巧'
+        },
+        'venue-standards': {
+          title: '场地标准',
+          description: '场地技术标准和认证要求',
+          backLabel: '返回自由式坡面障碍技巧'
+        }
+      },
+      events: {
+        register: {
+          title: '在线报名',
+          description: '便捷的赛事在线报名系统',
+          backLabel: '返回自由式坡面障碍技巧'
+        },
+        results: {
+          title: '成绩查询',
+          description: '实时查询比赛成绩和积分变化',
+          backLabel: '返回自由式坡面障碍技巧'
+        },
+        schedule: {
+          title: '赛程日历',
+          description: '查看即将举行的比赛安排',
+          backLabel: '返回自由式坡面障碍技巧'
+        },
+        stats: {
+          title: '赛事统计',
+          description: '全面的赛事数据统计和分析工具',
+          backLabel: '返回自由式坡面障碍技巧'
+        }
+      },
+      points: {
+        calculator: {
+          title: '积分计算器',
+          description: '精确的积分计算工具，即将上线',
+          backLabel: '返回自由式坡面障碍技巧'
+        },
+        rankings: {
+          title: '积分排名',
+          description: '实时更新的运动员积分排名榜',
+          backLabel: '返回自由式坡面障碍技巧'
+        },
+        trends: {
+          title: '积分趋势',
+          description: '可视化积分变化趋势，数据分析工具',
+          backLabel: '返回自由式坡面障碍技巧'
+        }
+      }
+    },
+    'snowboard-parallel': {
+      athletes: {
+        list: {
+          title: '运动员名录',
+          description: '查看所有注册运动员信息和档案',
+          backLabel: '返回单板平行项目'
+        },
+        rankings: {
+          title: '运动员排名',
+          description: '基于积分和成绩的运动员综合排名',
+          backLabel: '返回单板平行项目'
+        },
+        stats: {
+          title: '运动员统计',
+          description: '详细的运动员数据统计和可视化分析',
+          backLabel: '返回单板平行项目'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: '竞赛规则',
+          description: '详细的竞赛技术规则和标准',
+          backLabel: '返回单板平行项目'
+        },
+        'points-rules': {
+          title: '积分规则',
+          description: '查看积分计算规则详解',
+          backLabel: '返回单板平行项目'
+        },
+        'venue-standards': {
+          title: '场地标准',
+          description: '场地技术标准和认证要求',
+          backLabel: '返回单板平行项目'
+        }
+      },
+      events: {
+        register: {
+          title: '在线报名',
+          description: '便捷的赛事在线报名系统',
+          backLabel: '返回单板平行项目'
+        },
+        results: {
+          title: '成绩查询',
+          description: '实时查询比赛成绩和积分变化',
+          backLabel: '返回单板平行项目'
+        },
+        schedule: {
+          title: '赛程日历',
+          description: '查看即将举行的比赛安排',
+          backLabel: '返回单板平行项目'
+        },
+        stats: {
+          title: '赛事统计',
+          description: '全面的赛事数据统计和分析工具',
+          backLabel: '返回单板平行项目'
+        }
+      },
+      points: {
+        calculator: {
+          title: '积分计算器',
+          description: '精确的积分计算工具，即将上线',
+          backLabel: '返回单板平行项目'
+        },
+        rankings: {
+          title: '积分排名',
+          description: '实时更新的运动员积分排名榜',
+          backLabel: '返回单板平行项目'
+        },
+        trends: {
+          title: '积分趋势',
+          description: '可视化积分变化趋势，数据分析工具',
+          backLabel: '返回单板平行项目'
+        }
+      }
+    },
+    'snowboard-slopestyle': {
+      athletes: {
+        list: {
+          title: '运动员名录',
+          description: '查看所有注册运动员信息和档案',
+          backLabel: '返回单板坡面障碍技巧'
+        },
+        rankings: {
+          title: '运动员排名',
+          description: '基于积分和成绩的运动员综合排名',
+          backLabel: '返回单板坡面障碍技巧'
+        },
+        stats: {
+          title: '运动员统计',
+          description: '详细的运动员数据统计和可视化分析',
+          backLabel: '返回单板坡面障碍技巧'
+        }
+      },
+      docs: {
+        'competition-rules': {
+          title: '竞赛规则',
+          description: '详细的竞赛技术规则和标准',
+          backLabel: '返回单板坡面障碍技巧'
+        },
+        'points-rules': {
+          title: '积分规则',
+          description: '查看积分计算规则详解',
+          backLabel: '返回单板坡面障碍技巧'
+        },
+        'venue-standards': {
+          title: '场地标准',
+          description: '场地技术标准和认证要求',
+          backLabel: '返回单板坡面障碍技巧'
+        }
+      },
+      events: {
+        register: {
+          title: '在线报名',
+          description: '便捷的赛事在线报名系统',
+          backLabel: '返回单板坡面障碍技巧'
+        },
+        results: {
+          title: '成绩查询',
+          description: '实时查询比赛成绩和积分变化',
+          backLabel: '返回单板坡面障碍技巧'
+        },
+        schedule: {
+          title: '赛程日历',
+          description: '查看即将举行的比赛安排',
+          backLabel: '返回单板坡面障碍技巧'
+        },
+        stats: {
+          title: '赛事统计',
+          description: '全面的赛事数据统计和分析工具',
+          backLabel: '返回单板坡面障碍技巧'
+        }
+      },
+      points: {
+        calculator: {
+          title: '积分计算器',
+          description: '精确的积分计算工具，即将上线',
+          backLabel: '返回单板坡面障碍技巧'
+        },
+        rankings: {
+          title: '积分排名',
+          description: '实时更新的运动员积分排名榜',
+          backLabel: '返回单板坡面障碍技巧'
+        },
+        trends: {
+          title: '积分趋势',
+          description: '可视化积分变化趋势，数据分析工具',
+          backLabel: '返回单板坡面障碍技巧'
+        }
+      }
+    },
+    docs: {
+      competitionRules: {
+        title: '竞赛技术规则',
+        description: '滑雪竞赛技术规则和裁判标准',
+        backLabel: '返回知识库'
+      },
+      pointsRules: {
+        title: '积分规则',
+        description: '中国滑雪积分计算规则文档',
+        backLabel: '返回知识库'
+      },
+      venueStandards: {
+        title: '场地标准',
+        description: '赛事场地设施和技术要求',
+        backLabel: '返回知识库'
+      },
+      fisRules: {
+        title: 'FIS国际规则',
+        description: '国际滑雪联合会竞赛规则',
+        backLabel: '返回知识库'
+      },
+      guide: {
+        title: '平台使用指南',
+        description: '系统功能使用说明和常见问题',
+        backLabel: '返回知识库'
+      }
+    }
+  },
+
   // 认证和权限
   auth: {
     needsLogin: '需要登录',
@@ -357,20 +747,47 @@ export const zh = {
     news: {
       title: '实时动态',
       pauseCarousel: '暂停轮播',
-      continueCarousel: '继续轮播'
+      continueCarousel: '继续轮播',
+      statuses: {
+        live: '进行中',
+        updated: '已更新',
+        upcoming: '即将开始'
+      },
+      items: [
+        { id: 'nc-men-gs', title: '2024全国锦标赛', subtitle: '大回转项目 · 正在进行', status: 'live', pinned: true },
+        { id: 'points-refresh', title: '积分排名更新', subtitle: '14天周期 · 已发布', status: 'updated', pinned: false },
+        { id: 'rules-update', title: '新赛季规则', subtitle: '技术委员会 · 已更新', status: 'updated', pinned: false },
+        { id: 'registration-open', title: '选手注册开启', subtitle: '2024-25赛季 · 开放报名', status: 'upcoming', pinned: false },
+        { id: 'camp', title: '训练营通知', subtitle: '冬训计划 · 即将开始', status: 'upcoming', pinned: false }
+      ]
     },
     latestResults: {
       title: '最新赛事成绩',
       subtitle: '实时更新的竞赛结果和积分排名',
       recentResults: '最新成绩',
       liveUpdate: '实时更新',
-      viewMore: '查看更多赛事 →'
+      viewMore: '查看更多赛事 →',
+      statusLabels: {
+        live: '正在进行',
+        completed: '已完成'
+      },
+      results: [
+        { id: 'nc-men-gs', title: '2024全国锦标赛', subtitle: '男子大回转 · 天池雪场', status: 'live', time: '12-15 14:30' },
+        { id: 'china-cup-sl', title: '中国杯高山滑雪公开赛', subtitle: '女子回转 · 万龙雪场', status: 'completed', time: '12-14 16:45' },
+        { id: 'northeast-league', title: '东北三省联赛', subtitle: '混合全能 · 亚布力雪场', status: 'completed', time: '12-13 15:20' }
+      ]
     },
     rankings: {
       title: '积分排行榜',
       updatedOn: '更新于',
       points: '积分',
-      viewFullRankings: '查看完整排名 →'
+      viewFullRankings: '查看完整排名 →',
+      entries: [
+        { rank: 1, name: '张伟', event: '男子大回转', points: '0.00' },
+        { rank: 2, name: '李雪', event: '女子回转', points: '8.45' },
+        { rank: 3, name: '王冰', event: '女子大回转', points: '12.30' },
+        { rank: 4, name: '刘强', event: '男子回转', points: '15.67' }
+      ]
     },
     memberWelcome: {
       welcomeBack: '欢迎回来',

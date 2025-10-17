@@ -1,18 +1,15 @@
 import ComingSoon from '@/components/ComingSoon';
-import { BookOpen } from 'lucide-react';
 
 export const metadata = {
-  title: '竞赛规则 - 单板坡面障碍技巧',
-  description: '单板坡面障碍技巧竞赛技术规则'
+  title: 'Competition Rules – Snowboard Slopestyle',
+  description: 'Detailed competition technical standards'
 };
 
 export default function DocsCompetitionRulesPage() {
   return (
     <ComingSoon
-      title="竞赛规则"
-      description="详细的竞赛技术规则和标准"
+      translationKey="snowboard-slopestyle.docs.competition-rules"
       backLink="/snowboard-slopestyle"
-      backLabel="返回单板坡面障碍技巧"
     />
   );
 }

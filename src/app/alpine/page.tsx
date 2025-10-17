@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import {
   Calculator, Trophy, Users, FileText, TrendingUp, Calendar,
   Video, BarChart3, ChevronLeft, ChevronRight, ExternalLink,
@@ -113,13 +113,13 @@ export default function AlpinePage() {
     { rank: 5, name: '陈明', nation: '辽宁', points: 18.92, change: 0 }
   ];
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-  };
+  }, [heroSlides.length]);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
-  };
+  }, [heroSlides.length]);
 
   // 自动轮播功能
   useEffect(() => {
@@ -128,7 +128,7 @@ export default function AlpinePage() {
     }, 5000); // 每5秒切换一次
 
     return () => clearInterval(interval);
-  }, [currentSlide]);
+  }, [currentSlide, nextSlide]);
 
   return (
     <div className="min-h-screen bg-gray-50">
