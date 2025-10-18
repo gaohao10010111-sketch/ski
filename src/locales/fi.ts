@@ -311,10 +311,20 @@ export const fi: Partial<TranslationKeys> = {
   // Kielivalitsin
   languageSelector: {
     title: 'Valitse kieli',
-    chinese: '中文',
-    english: 'English',
-    japanese: '日本語',
-    korean: '한국어'
+    languages: {
+      zh: 'Kiina',
+      en: 'Englanti',
+      ja: 'Japani',
+      ko: 'Korea',
+      de: 'Saksa',
+      fr: 'Ranska',
+      it: 'Italia',
+      ru: 'Venäjä',
+      no: 'Norja',
+      sv: 'Ruotsi',
+      fi: 'Suomi',
+      es: 'Espanja'
+    }
   },
 
   // Tulossa pian -komponentti
@@ -373,6 +383,115 @@ export const fi: Partial<TranslationKeys> = {
         youthSeries: { title: 'U-sarjan nuorisokilpailujen suunnitelma', category: 'Kilpailusäännöt' },
         fisPointsGuide: { title: 'FIS-pisteiden laskentaopas', category: 'FIS-säännöt' }
       }
+    }
+  },
+
+  rulesPage: {
+    header: {
+      title: 'Kiinalaisen alppihiihdon sääntökirjasto',
+      description: 'Tutustu yksinkertaistettuun sääntöjärjestelmään: pisteiden laskenta, kilpailujen hallinta ja junioritoiminta.',
+      highlights: [
+        { icon: 'award', text: 'Virallinen standardi' },
+        { icon: 'target', text: 'Yksinkertaistettu laskenta' },
+        { icon: 'users', text: 'Laajennettu nuorisojärjestelmä' }
+      ]
+    },
+    headings: {
+      ruleModules: 'Sääntömoduulit'
+    },
+    toc: {
+      toggleTitle: 'Näytä/piilota sisällysluettelo',
+      title: 'Sivun sisällysluettelo',
+      download: 'Lataa PDF-versio',
+      items: {
+        coreFormula: 'Pääkaava',
+        ruleModules: 'Sääntömoduulit',
+        coreFeatures: 'Keskeiset ominaisuudet',
+        quickLinks: 'Pikalinkit',
+        upgradeInfo: 'Päivitystiedot',
+        importantNotice: 'Tärkeät tiedot'
+      }
+    },
+    formula: {
+      title: 'Pääkaava',
+      expression: 'Loppupisteet = (Peruspisteet + Rangaistuspisteet) × Kilpailukerroin',
+      description: 'Verrattuna versioon 2.0 monimutkaiset tekijät on poistettu. Kolmiportainen malli parantaa tehokkuutta ja läpinäkyvyyttä.',
+      copyButton: 'Kopioi kaava',
+      copySuccess: 'Kopioitu leikepöydälle!',
+      calculatorButton: 'Avaa laskuri'
+    },
+    ruleModules: {
+      points: {
+        title: 'Kiina piste­säännöt',
+        description: 'Kolmiportaiseen malliin perustuva yksinkertaistettu pistejärjestelmä.',
+        features: ['Kolmiportainen laskentakaava', 'A/B/C -tasoinen kilpailurakenne', 'Laajennetut nuorisoluokat', 'Parempi läpinäkyvyys'],
+        linkLabel: 'Näytä tiedot'
+      },
+      competition: {
+        title: 'Kilpailuopas',
+        description: 'Ymmärrä päivitetyt kilpailusäännöt ja laajennettu nuorisojärjestelmä käytännön ohjeiden avulla.',
+        features: ['Lajien yleiskuva', 'Ikäluokitus', 'Osallistumisprosessi', 'Turvallisuus- ja tekniikkastandardit'],
+        linkLabel: 'Näytä tiedot'
+      },
+      documents: {
+        title: 'Piste­dokumentaatio',
+        description: 'Kaikki yksinkertaistetun pistejärjestelmän materiaalit ja työkalut yhdessä paikassa.',
+        features: ['Yksityiskohtaiset selitykset', 'Kaavan osien kuvaus', 'Online-laskuri', 'PDF-lataukset'],
+        linkLabel: 'Näytä tiedot'
+      }
+    },
+    v4Features: {
+      title: 'Keskeiset ominaisuudet',
+      items: {
+        simplified: {
+          title: 'Yksinkertaistettu laskenta',
+          description: 'Poistaa laatu-, osallistuja- ja lisäpisteiden kaltaiset monimutkaiset tekijät.'
+        },
+        tiers: {
+          title: 'Kolmiportainen rakenne',
+          description: 'A (1.0), B (0.6) ja C (0.3) -tasot helpottavat hallintaa.'
+        },
+        youth: {
+          title: 'Nuorten laajennus',
+          description: 'Kohdennettu tuki U15–U18 -ikäluokille.'
+        },
+        efficiency: {
+          title: 'Tehokas ja läpinäkyvä',
+          description: 'Kolmiportainen prosessi nopeuttaa ja selkeyttää toimintaa.'
+        }
+      }
+    },
+    quickLinks: {
+      title: 'Pikalinkit',
+      items: {
+        calculator: { label: 'Pistelaskuri' },
+        rankings: { label: 'Pistelista' },
+        data: { label: 'Kilpailudatan hallinta' },
+        association: { label: 'China Ski Association', external: true }
+      }
+    },
+    upgradeInfo: {
+      title: 'Päivitystiedot',
+      improvements: {
+        title: 'Keskeiset parannukset',
+        items: ['Yksinkertaistettu kaava ilman monimutkaisia tekijöitä', 'Kolmitasoinen kilpailurakenne', 'Laajennetut nuorisoluokat', 'Parempi läpinäkyvyys ja tehokkuus']
+      },
+      advantages: {
+        title: 'Tekniset edut',
+        items: ['Kolmiportainen laskenta on helppo ottaa käyttöön', 'Standardoitu hallinta kansainvälisten normien mukaan', 'Digitaaliset työkalut ja verkkotuki', 'Avoin ja reilu kilpailuympäristö']
+      }
+    },
+    importantNotice: {
+      title: 'Tärkeät tiedot',
+      version: {
+        title: 'Sääntöversio',
+        items: ['Nykyinen versio: uusin julkaisu', 'Voimassa kaudella 2024–2025', 'Soveltuu Kiinan kotimaisiin kilpailuihin', 'Päivityssykli: tilanteen mukaan']
+      },
+      usage: {
+        title: 'Käyttövinkit',
+        items: ['Aloita piste­säännön yleiskatsauksesta', 'Tarkista tulokset online-laskurilla', 'Seuraa nuorisopoliitikkoja aktiivisesti', 'Pysy ajan tasalla sääntöpäivityksistä']
+      },
+      support: 'Säännöstö yhdistää kansainvälisen kokemuksen ja Kiinan tarpeet tarjoten oikeudenmukaiset ja tehokkaat puitteet alppihiihdon kehitykselle. Kysymysten tai ehdotusten osalta ota yhteyttä ilmoitettuihin kanaviin.'
     }
   },
 
@@ -451,6 +570,13 @@ export const fi: Partial<TranslationKeys> = {
           description: 'Pistetrendien visualisointityökalut tulossa pian',
           backLabel: 'Takaisin alppihiihtoon'
         }
+      }
+    },
+    rules: {
+      competition: {
+        title: 'Kilpailuopas',
+        description: 'Sivu on parhaillaan työn alla. Palaa pian uudelleen.',
+        backLabel: 'Takaisin sääntöihin'
       }
     },
     'freestyle-slopestyle': {

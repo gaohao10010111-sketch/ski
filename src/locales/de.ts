@@ -311,10 +311,20 @@ export const de: Partial<TranslationKeys> = {
   // Sprachauswahl
   languageSelector: {
     title: 'Sprache auswählen',
-    chinese: '中文',
-    english: 'English',
-    japanese: '日本語',
-    korean: '한국어'
+    languages: {
+      zh: 'Chinesisch',
+      en: 'Englisch',
+      ja: 'Japanisch',
+      ko: 'Koreanisch',
+      de: 'Deutsch',
+      fr: 'Französisch',
+      it: 'Italienisch',
+      ru: 'Russisch',
+      no: 'Norwegisch',
+      sv: 'Schwedisch',
+      fi: 'Finnisch',
+      es: 'Spanisch'
+    }
   },
 
   // Demnächst-Komponente
@@ -373,6 +383,115 @@ export const de: Partial<TranslationKeys> = {
         youthSeries: { title: 'U-Serie Jugend-Wettkampfkonzept', category: 'Wettkampfregeln' },
         fisPointsGuide: { title: 'FIS Punkterechner Leitfaden', category: 'FIS-Regeln' }
       }
+    }
+  },
+
+  rulesPage: {
+    header: {
+      title: 'China Alpine Ski Regelbibliothek',
+      description: 'Entdecke das vereinfachte Regelwerk zur Punkteberechnung, zum Wettkampfmanagement und zur Nachwuchsförderung.',
+      highlights: [
+        { icon: 'award', text: 'Offizieller Standard' },
+        { icon: 'target', text: 'Vereinfachte Berechnung' },
+        { icon: 'users', text: 'Erweitertes Nachwuchssystem' }
+      ]
+    },
+    headings: {
+      ruleModules: 'Regelmodule'
+    },
+    toc: {
+      toggleTitle: 'Inhaltsverzeichnis ein-/ausblenden',
+      title: 'Seitenübersicht',
+      download: 'PDF-Version herunterladen',
+      items: {
+        coreFormula: 'Kernformel',
+        ruleModules: 'Regelmodule',
+        coreFeatures: 'Wesentliche Merkmale',
+        quickLinks: 'Schnellzugriffe',
+        upgradeInfo: 'Upgrade-Hinweise',
+        importantNotice: 'Wichtige Hinweise'
+      }
+    },
+    formula: {
+      title: 'Kernformel',
+      expression: 'Endpunkte = (Grundpunkte + Strafpunkte) × Wettkampffaktor',
+      description: 'Im Vergleich zu v2.0 wurden komplexe Qualitäts-, Teilnehmer- und Zusatzfaktoren entfernt. Die dreistufige Methode steigert Effizienz und Transparenz.',
+      copyButton: 'Formel kopieren',
+      copySuccess: 'In die Zwischenablage kopiert!',
+      calculatorButton: 'Rechner öffnen'
+    },
+    ruleModules: {
+      points: {
+        title: 'Punkterichtlinien China',
+        description: 'Vereinfachtes Punktesystem auf Basis einer dreistufigen Berechnung.',
+        features: ['Dreistufige Berechnungsformel', 'Drei Wettbewerbsstufen (A/B/C)', 'Erweiterte Nachwuchskategorien', 'Mehr Transparenz'],
+        linkLabel: 'Details ansehen'
+      },
+      competition: {
+        title: 'Wettkampfleitfaden',
+        description: 'Aktuelle Wettkampfregeln und Nachwuchssystem – praxisnah erklärt.',
+        features: ['Überblick über Disziplinen', 'Altersklassensystem', 'Teilnahme- und Ablaufplan', 'Sicherheits- und Technikstandards'],
+        linkLabel: 'Details ansehen'
+      },
+      documents: {
+        title: 'Punkte-Dokumentation',
+        description: 'Alle Unterlagen und Tools zum vereinfachten Punktesystem auf einen Blick.',
+        features: ['Regelerläuterungen', 'Beschreibung der Formelelemente', 'Online-Punkterechner', 'PDF-Downloads'],
+        linkLabel: 'Details ansehen'
+      }
+    },
+    v4Features: {
+      title: 'Wesentliche Merkmale',
+      items: {
+        simplified: {
+          title: 'Vereinfachte Berechnung',
+          description: 'Entfernt komplexe Qualitäts-, Teilnehmer- und Zusatzfaktoren.'
+        },
+        tiers: {
+          title: 'Dreistufiges System',
+          description: 'Klassen A (1.0), B (0.6) und C (0.3) sorgen für klare Struktur.'
+        },
+        youth: {
+          title: 'Erweiterter Nachwuchs',
+          description: 'Gezielte Förderung der Altersklassen U15 bis U18.'
+        },
+        efficiency: {
+          title: 'Effizient & Transparent',
+          description: 'Dreistufiger Ablauf steigert Geschwindigkeit und Nachvollziehbarkeit.'
+        }
+      }
+    },
+    quickLinks: {
+      title: 'Schnellzugriffe',
+      items: {
+        calculator: { label: 'Punkterechner' },
+        rankings: { label: 'Punktetabellen' },
+        data: { label: 'Wettkampfdaten-Verwaltung' },
+        association: { label: 'China Ski Association', external: true }
+      }
+    },
+    upgradeInfo: {
+      title: 'Upgrade-Hinweise',
+      improvements: {
+        title: 'Wesentliche Verbesserungen',
+        items: ['Vereinfachte Formel ohne komplexe Faktoren', 'Drei-Stufen-System für klare Struktur', 'Erweiterte Nachwuchsförderung', 'Mehr Transparenz und Effizienz']
+      },
+      advantages: {
+        title: 'Technische Vorteile',
+        items: ['Dreischritt-Berechnung, leicht verständlich', 'Standardisiertes Management nach internationalen Maßstäben', 'Digitale Tools und Online-Support', 'Offenes und faires Wettbewerbsumfeld']
+      }
+    },
+    importantNotice: {
+      title: 'Wichtige Hinweise',
+      version: {
+        title: 'Regelversion',
+        items: ['Aktuelle Version: neueste Ausgabe', 'Gültig für Saison 2024–2025', 'Geltungsbereich: nationale Wettbewerbe in China', 'Update-Zyklus: nach Bedarf']
+      },
+      usage: {
+        title: 'Anwendungstipps',
+        items: ['Mit den Punkterichtlinien beginnen', 'Online-Rechner zur Kontrolle nutzen', 'Jugendprogramme und Richtlinien im Blick behalten', 'Regelupdates regelmäßig prüfen']
+      },
+      support: 'Das Regelwerk kombiniert internationale Erfahrungen mit chinesischen Anforderungen, um faire und effiziente Wettkämpfe zu ermöglichen. Bei Fragen oder Anregungen kontaktiere uns über die angegebenen Kanäle.'
     }
   },
 
@@ -451,6 +570,13 @@ export const de: Partial<TranslationKeys> = {
           description: 'Visualisierte Punktrend-Analysen folgen in Kürze',
           backLabel: 'Zurück zu Alpin'
         }
+      }
+    },
+    rules: {
+      competition: {
+        title: 'Wettkampfleitfaden',
+        description: 'Diese Seite wird derzeit erstellt. Bitte schau später noch einmal vorbei.',
+        backLabel: 'Zurück zur Regelübersicht'
       }
     },
     'freestyle-slopestyle': {

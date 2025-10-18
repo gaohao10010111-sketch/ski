@@ -311,10 +311,20 @@ export const ja: Partial<TranslationKeys> = {
   // 言語セレクター
   languageSelector: {
     title: '言語を選択',
-    chinese: '中文',
-    english: 'English',
-    japanese: '日本語',
-    korean: '한국어'
+    languages: {
+      zh: '中国語',
+      en: '英語',
+      ja: '日本語',
+      ko: '韓国語',
+      de: 'ドイツ語',
+      fr: 'フランス語',
+      it: 'イタリア語',
+      ru: 'ロシア語',
+      no: 'ノルウェー語',
+      sv: 'スウェーデン語',
+      fi: 'フィンランド語',
+      es: 'スペイン語'
+    }
   },
 
   // 近日公開コンポーネント
@@ -373,6 +383,115 @@ export const ja: Partial<TranslationKeys> = {
         youthSeries: { title: 'Uシリーズジュニア大会管理ガイド', category: '競技規則' },
         fisPointsGuide: { title: 'FISポイント計算ガイド', category: 'FIS規則' }
       }
+    }
+  },
+
+  rulesPage: {
+    header: {
+      title: '中国アルペンスキー規則ライブラリ',
+      description: 'ポイント計算、競技運営、ジュニア育成まで最新の簡素化された規則体系をまとめて確認できます。',
+      highlights: [
+        { icon: 'award', text: '公式基準' },
+        { icon: 'target', text: '簡素化された計算体系' },
+        { icon: 'users', text: '拡張されたジュニアカテゴリー' }
+      ]
+    },
+    headings: {
+      ruleModules: '規則モジュール'
+    },
+    toc: {
+      toggleTitle: '目次の表示/非表示',
+      title: 'ページ目次',
+      download: 'PDF 版をダウンロード',
+      items: {
+        coreFormula: '基礎公式',
+        ruleModules: '規則モジュール',
+        coreFeatures: '主要な特徴',
+        quickLinks: 'クイックリンク',
+        upgradeInfo: 'アップグレード情報',
+        importantNotice: '重要なお知らせ'
+      }
+    },
+    formula: {
+      title: '基礎公式',
+      expression: '最終ポイント = (基礎大会ポイント + 判定ポイント) × 大会係数',
+      description: 'v2.0 の複雑な体系と比べ、品質係数や参加者係数、追加ポイントなどを排除し、三段階の計算手順で効率と透明性を高めました。',
+      copyButton: '公式をコピー',
+      copySuccess: 'クリップボードにコピーしました！',
+      calculatorButton: '計算ツールを開く'
+    },
+    ruleModules: {
+      points: {
+        title: '中国アルペンスキー ポイント規則',
+        description: '三段階の計算式に基づく簡素化されたポイント体系です。',
+        features: ['三段階の計算フロー', 'A/B/C の三層大会分類', 'ジュニアカテゴリーの拡張', '透明性の向上'],
+        linkLabel: '詳しく見る'
+      },
+      competition: {
+        title: '競技規則ガイド',
+        description: '最新の競技規則とジュニア体系を理解し、参加のための実践的なガイドを提供します。',
+        features: ['競技種目の概要', '年齢別カテゴリー', '参加ガイドフロー', '安全・技術基準'],
+        linkLabel: '詳しく見る'
+      },
+      documents: {
+        title: '中国ポイント資料',
+        description: '簡素化されたポイント規則に関する資料とサポートツールをまとめて確認できます。',
+        features: ['規則の詳細解説', '公式構成要素の説明', 'オンライン計算ツール', 'PDF 資料のダウンロード'],
+        linkLabel: '詳しく見る'
+      }
+    },
+    v4Features: {
+      title: '主要な特徴',
+      items: {
+        simplified: {
+          title: '計算の簡素化',
+          description: '品質係数や参加者係数、追加ポイントなど複雑な要素を排除しました。'
+        },
+        tiers: {
+          title: '三層構造',
+          description: 'A（1.0）・B（0.6）・C（0.3）の大会区分で明確に管理します。'
+        },
+        youth: {
+          title: 'ジュニアの拡張',
+          description: 'U15〜U18 のコア年齢層を重点的にサポートします。'
+        },
+        efficiency: {
+          title: '効率と透明性',
+          description: '三段階の計算手順でスピードと透明性を高めます。'
+        }
+      }
+    },
+    quickLinks: {
+      title: 'クイックリンク',
+      items: {
+        calculator: { label: 'ポイント計算ツール' },
+        rankings: { label: 'ポイントランキング' },
+        data: { label: '大会データ管理' },
+        association: { label: '中国スキー協会', external: true }
+      }
+    },
+    upgradeInfo: {
+      title: 'アップグレード情報',
+      improvements: {
+        title: '主な改善点',
+        items: ['計算式の簡素化で複雑な係数を排除', '三層大会体系で管理を明確化', 'ジュニアカテゴリーを拡充し継続的に育成サポート', '計算プロセスの透明性と効率を向上']
+      },
+      advantages: {
+        title: '技術面の優位性',
+        items: ['三段階計算で理解と導入が容易', '国際基準と整合した標準化管理', 'デジタルツール完備でオンライン運用を支援', 'オープンで公平な競技環境']
+      }
+    },
+    importantNotice: {
+      title: '重要なお知らせ',
+      version: {
+        title: '規則バージョン',
+        items: ['現行バージョン：最新リリース', '適用シーズン：2024-2025', '適用範囲：中国国内大会', '更新サイクル：運用状況に応じて調整']
+      },
+      usage: {
+        title: '利用ガイド',
+        items: ['まずポイント規則の概要を確認', 'オンライン計算ツールで結果を検証', 'ジュニア拡張施策の最新情報をチェック', '規則更新の情報を随時確認']
+      },
+      support: '本規則体系は国際的な経験と中国の実情を融合して策定され、公平かつ効率的な競技運営を支援します。ご不明点・ご意見があれば、掲載された窓口までご連絡ください。'
     }
   },
 
@@ -451,6 +570,13 @@ export const ja: Partial<TranslationKeys> = {
           description: 'ポイント推移の可視化ツールは近日公開',
           backLabel: 'アルペンスキーに戻る'
         }
+      }
+    },
+    rules: {
+      competition: {
+        title: '競技規則ガイド',
+        description: 'このページは現在準備中です。しばらくお待ちください。',
+        backLabel: '規則一覧に戻る'
       }
     },
     'freestyle-slopestyle': {

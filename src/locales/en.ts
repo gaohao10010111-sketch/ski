@@ -157,6 +157,15 @@ export const en: Partial<TranslationKeys> = {
       }
     },
 
+    subDisciplines: [
+      { id: 'all', name: 'All Events', nameEn: 'All Events' },
+      { id: 'DH', name: 'Downhill', nameEn: 'Downhill' },
+      { id: 'SL', name: 'Slalom', nameEn: 'Slalom' },
+      { id: 'GS', name: 'Giant Slalom', nameEn: 'Giant Slalom' },
+      { id: 'SG', name: 'Super-G', nameEn: 'Super-G' },
+      { id: 'AC', name: 'Alpine Combined', nameEn: 'Alpine Combined' }
+    ],
+
     quickAccess: {
       results: { title: 'Results', nameEn: 'Results' },
       rankings: { title: 'Rankings', nameEn: 'Rankings' },
@@ -167,15 +176,65 @@ export const en: Partial<TranslationKeys> = {
     },
 
     upcomingEvents: {
-      title: 'Upcoming'
+      title: 'Upcoming',
+      events: [
+        {
+          date: 'Dec 20',
+          event: 'National Championships',
+          discipline: 'Giant Slalom',
+          location: 'Wanlong Resort',
+          status: 'upcoming'
+        },
+        {
+          date: 'Dec 22',
+          event: 'National Championships',
+          discipline: 'Slalom',
+          location: 'Wanlong Resort',
+          status: 'upcoming'
+        },
+        {
+          date: 'Dec 25',
+          event: 'China Cup Open',
+          discipline: 'Downhill',
+          location: 'Changbaishan Resort',
+          status: 'upcoming'
+        }
+      ]
     },
 
     latestNews: {
-      title: 'Latest News'
+      title: 'Latest News',
+      items: [
+        {
+          title: 'China Alpine Team Winter Training',
+          subtitle: 'All-out preparation for the new season',
+          time: '2 hours ago',
+          image: '/images/ski-bg.jpg'
+        },
+        {
+          title: 'Points Rules v4.0 Explained',
+          subtitle: 'Understand the latest calculation standards',
+          time: '5 hours ago',
+          image: '/images/ski-bg.jpg'
+        },
+        {
+          title: 'Venue Certification in Full Swing',
+          subtitle: 'Ensuring venues meet international standards',
+          time: '1 day ago',
+          image: '/images/ski-bg.jpg'
+        }
+      ]
     },
 
     topAthletes: {
-      title: 'Rankings'
+      title: 'Rankings',
+      athletes: [
+        { rank: 1, name: 'Wei Zhang', nation: 'Beijing', points: 0.0, change: 0 },
+        { rank: 2, name: 'Xue Li', nation: 'Heilongjiang', points: 8.45, change: 1 },
+        { rank: 3, name: 'Bing Wang', nation: 'Jilin', points: 12.3, change: -1 },
+        { rank: 4, name: 'Qiang Liu', nation: 'Hebei', points: 15.67, change: 2 },
+        { rank: 5, name: 'Ming Chen', nation: 'Liaoning', points: 18.92, change: 0 }
+      ]
     }
   },
 
@@ -200,6 +259,12 @@ export const en: Partial<TranslationKeys> = {
       }
     },
 
+    subDisciplines: [
+      { id: 'all', name: 'All Events', nameEn: 'All Events' },
+      { id: 'SS', name: 'Slopestyle', nameEn: 'Slopestyle' },
+      { id: 'BA', name: 'Big Air', nameEn: 'Big Air' }
+    ],
+
     quickAccess: {
       results: { title: 'Results', nameEn: 'Results' },
       rankings: { title: 'Rankings', nameEn: 'Rankings' },
@@ -210,15 +275,65 @@ export const en: Partial<TranslationKeys> = {
     },
 
     upcomingEvents: {
-      title: 'Upcoming'
+      title: 'Upcoming',
+      events: [
+        {
+          date: 'Dec 19',
+          event: 'National Championships',
+          discipline: 'Slopestyle',
+          location: 'Genting Resort, Chongli',
+          status: 'upcoming'
+        },
+        {
+          date: 'Dec 21',
+          event: 'National Championships',
+          discipline: 'Big Air',
+          location: 'Genting Resort, Chongli',
+          status: 'upcoming'
+        },
+        {
+          date: 'Dec 26',
+          event: 'U-Series Youth Event',
+          discipline: 'Slopestyle',
+          location: 'Shijinglong Resort, Beijing',
+          status: 'upcoming'
+        }
+      ]
     },
 
     latestNews: {
-      title: 'Latest News'
+      title: 'Latest News',
+      items: [
+        {
+          title: 'China Freestyle Team Winter Training',
+          subtitle: 'Pushing difficulty limits with new tricks',
+          time: '1 hour ago',
+          image: '/images/ski-bg.jpg'
+        },
+        {
+          title: '360-Point Tier Rules Explained',
+          subtitle: 'Understand the latest scoring standards',
+          time: '4 hours ago',
+          image: '/images/ski-bg.jpg'
+        },
+        {
+          title: 'New Freestyle Venue Certified',
+          subtitle: 'Meets FIS level-two technical standards',
+          time: '1 day ago',
+          image: '/images/ski-bg.jpg'
+        }
+      ]
     },
 
     topAthletes: {
-      title: 'Rankings'
+      title: 'Rankings',
+      athletes: [
+        { rank: 1, name: 'Jinbo He', nation: 'Hebei', points: 360.0, change: 0 },
+        { rank: 2, name: 'Wenlong Yang', nation: 'Heilongjiang', points: 288.0, change: 1 },
+        { rank: 3, name: 'Jiaxu Sun', nation: 'Jilin', points: 216.0, change: -1 },
+        { rank: 4, name: 'Shuang Li', nation: 'Beijing', points: 180.0, change: 2 },
+        { rank: 5, name: 'Guangpu Qi', nation: 'Liaoning', points: 162.0, change: 0 }
+      ]
     }
   },
 
@@ -243,6 +358,12 @@ export const en: Partial<TranslationKeys> = {
       }
     },
 
+    subDisciplines: [
+      { id: 'all', name: 'All Events', nameEn: 'All Events' },
+      { id: 'SS', name: 'Slopestyle', nameEn: 'Slopestyle' },
+      { id: 'BA', name: 'Big Air', nameEn: 'Big Air' }
+    ],
+
     quickAccess: {
       results: { title: 'Results', nameEn: 'Results' },
       rankings: { title: 'Rankings', nameEn: 'Rankings' },
@@ -253,15 +374,65 @@ export const en: Partial<TranslationKeys> = {
     },
 
     upcomingEvents: {
-      title: 'Upcoming'
+      title: 'Upcoming',
+      events: [
+        {
+          date: 'Dec 18',
+          event: 'National Championships',
+          discipline: 'Slopestyle',
+          location: 'Genting Resort, Chongli',
+          status: 'upcoming'
+        },
+        {
+          date: 'Dec 20',
+          event: 'National Championships',
+          discipline: 'Big Air',
+          location: 'Genting Resort, Chongli',
+          status: 'upcoming'
+        },
+        {
+          date: 'Dec 28',
+          event: 'U-Series Youth Event',
+          discipline: 'Slopestyle',
+          location: 'Shijinglong Resort, Beijing',
+          status: 'upcoming'
+        }
+      ]
     },
 
     latestNews: {
-      title: 'Latest News'
+      title: 'Latest News',
+      items: [
+        {
+          title: 'China Snowboard Team Winter Training',
+          subtitle: 'Preparing for the new season with advanced tricks',
+          time: '3 hours ago',
+          image: '/images/ski-bg.jpg'
+        },
+        {
+          title: '360-Point Tier Rules Explained',
+          subtitle: 'Understand the latest calculation standards',
+          time: '6 hours ago',
+          image: '/images/ski-bg.jpg'
+        },
+        {
+          title: 'New Big Air Venue Certified',
+          subtitle: 'Meets level-two venue technical standards',
+          time: '1 day ago',
+          image: '/images/ski-bg.jpg'
+        }
+      ]
     },
 
     topAthletes: {
-      title: 'Rankings'
+      title: 'Rankings',
+      athletes: [
+        { rank: 1, name: 'Ming Li', nation: 'Beijing', points: 360.0, change: 0 },
+        { rank: 2, name: 'Xue Wang', nation: 'Hebei', points: 288.0, change: 1 },
+        { rank: 3, name: 'Qiang Zhang', nation: 'Jilin', points: 216.0, change: -1 },
+        { rank: 4, name: 'Bing Liu', nation: 'Heilongjiang', points: 180.0, change: 2 },
+        { rank: 5, name: 'Fei Chen', nation: 'Liaoning', points: 162.0, change: 0 }
+      ]
     }
   },
 
@@ -286,6 +457,12 @@ export const en: Partial<TranslationKeys> = {
       }
     },
 
+    subDisciplines: [
+      { id: 'all', name: 'All Events', nameEn: 'All Events' },
+      { id: 'PGS', name: 'Parallel Giant Slalom', nameEn: 'Parallel Giant Slalom' },
+      { id: 'PSL', name: 'Parallel Slalom', nameEn: 'Parallel Slalom' }
+    ],
+
     quickAccess: {
       results: { title: 'Results', nameEn: 'Results' },
       rankings: { title: 'Rankings', nameEn: 'Rankings' },
@@ -296,25 +473,279 @@ export const en: Partial<TranslationKeys> = {
     },
 
     upcomingEvents: {
-      title: 'Upcoming'
+      title: 'Upcoming',
+      events: [
+        {
+          date: 'Dec 16',
+          event: 'National Championships',
+          discipline: 'Parallel Giant Slalom',
+          location: 'Wanlong Resort, Chongli',
+          status: 'upcoming'
+        },
+        {
+          date: 'Dec 17',
+          event: 'National Championships',
+          discipline: 'Parallel Slalom',
+          location: 'Wanlong Resort, Chongli',
+          status: 'upcoming'
+        },
+        {
+          date: 'Dec 24',
+          event: 'Regional Points Event',
+          discipline: 'Parallel Giant Slalom',
+          location: 'Changbaishan Resort',
+          status: 'upcoming'
+        }
+      ]
     },
 
     latestNews: {
-      title: 'Latest News'
+      title: 'Latest News',
+      items: [
+        {
+          title: 'China Parallel Snowboard Team Winter Training',
+          subtitle: 'Building endurance and sharpening speed and precision',
+          time: '2 hours ago',
+          image: '/images/ski-bg.jpg'
+        },
+        {
+          title: 'Elimination Bracket Points Explained',
+          subtitle: 'Understand the unique points system for parallel events',
+          time: '5 hours ago',
+          image: '/images/ski-bg.jpg'
+        },
+        {
+          title: 'New Parallel Course Certified',
+          subtitle: 'Meets international competition technical standards',
+          time: '1 day ago',
+          image: '/images/ski-bg.jpg'
+        }
+      ]
     },
 
     topAthletes: {
-      title: 'Rankings'
+      title: 'Rankings',
+      athletes: [
+        { rank: 1, name: 'Lei Zhao', nation: 'Jilin', points: 380.0, change: 0 },
+        { rank: 2, name: 'Xue Sun', nation: 'Heilongjiang', points: 295.0, change: 1 },
+        { rank: 3, name: 'Qiang Zhou', nation: 'Hebei', points: 230.0, change: -1 },
+        { rank: 4, name: 'Bing Wu', nation: 'Beijing', points: 195.0, change: 2 },
+        { rank: 5, name: 'Fei Zheng', nation: 'Liaoning', points: 175.0, change: 0 }
+      ]
     }
+  },
+
+  // Disciplines overview page
+  disciplinesPage: {
+    hero: {
+      backLabel: 'Back to Home',
+      title: 'China Ski Points System',
+      subtitle: 'Four independent points systems | Professional event management platform'
+    },
+    continuation: {
+      title: 'Four-Discipline Points Continuation',
+      description: 'A scientifically designed carry-over strategy that keeps performance evaluation consistent across all disciplines.',
+      cards: [
+        {
+          id: 'carry-forward',
+          value: '×50%',
+          title: 'Carry-over Ratio',
+          description: 'At the end of each season, 50% of points for every discipline carry over to the next season.',
+          accent: 'blue'
+        },
+        {
+          id: 'season',
+          value: 'Jul 1 – Jun 30',
+          title: 'Season Window',
+          description: 'A unified season cycle from July 1 to June 30 ensures consistent timing for all calculations.',
+          accent: 'green'
+        },
+        {
+          id: 'best-two',
+          value: 'Best 2',
+          title: 'Results Calculation',
+          description: 'The average of the best two results in each discipline becomes the athlete’s season points.',
+          accent: 'purple'
+        }
+      ]
+    },
+    cardsSection: {
+      title: 'Choose Your Discipline',
+      ctaLabel: 'Enter Discipline',
+      cards: [
+        {
+          id: 'alpine',
+          name: 'Alpine Skiing',
+          nameEn: 'Alpine Skiing',
+          icon: 'alpine',
+          color: 'from-blue-600 to-cyan-600',
+          description: 'v4.0 time-based points formula with A/B/C event coefficients.',
+          features: ['Downhill', 'Slalom', 'Giant Slalom', 'Super-G', 'Alpine Combined']
+        },
+        {
+          id: 'snowboard-slopestyle',
+          name: 'Snowboard Slopestyle & Big Air',
+          nameEn: 'Snowboard Slopestyle & Big Air',
+          icon: 'snowboard',
+          color: 'from-orange-600 to-yellow-600',
+          description: '240/360/120 point tiers with judge scoring converted to rankings.',
+          features: ['Slopestyle', 'Big Air', 'Halfpipe']
+        },
+        {
+          id: 'snowboard-parallel',
+          name: 'Snowboard Parallel',
+          nameEn: 'Snowboard Parallel',
+          icon: 'snowboard',
+          color: 'from-purple-600 to-pink-600',
+          description: 'Time-based racing points with elimination brackets.',
+          features: ['Parallel GS (PGS)', 'Parallel SL (PSL)']
+        },
+        {
+          id: 'freeski-slopestyle',
+          name: 'Freeski Slopestyle & Big Air',
+          nameEn: 'Freeski Slopestyle & Big Air',
+          icon: 'freeski',
+          color: 'from-red-600 to-rose-600',
+          description: '240/360/120 point tiers with trick difficulty coefficients.',
+          features: ['Slopestyle', 'Big Air', 'Aerials']
+        }
+      ]
+    },
+    highlights: {
+      title: 'Core Platform Highlights',
+      items: [
+        {
+          id: 'independent',
+          icon: 'award',
+          title: 'Independent Rankings',
+          description: 'Dedicated rankings and analytics for each discipline.'
+        },
+        {
+          id: 'realtime',
+          icon: 'barChart',
+          title: 'Real-Time Calculations',
+          description: 'Points update automatically right after each competition.'
+        },
+        {
+          id: 'u-series',
+          icon: 'target',
+          title: 'U-Series Management',
+          description: 'Youth age groups for U12, U15, and U18 divisions.'
+        },
+        {
+          id: 'continuation',
+          icon: 'rotateCcw',
+          title: 'Carry-over Mechanism',
+          description: '50% of season points roll over for continuous evaluation.'
+        }
+      ]
+    }
+  },
+
+  // Athletes page
+  athletesPage: {
+    pageTitle: 'Athlete Management',
+    pageSubtitle: 'China ski athlete profiles and points analytics',
+    searchPlaceholder: 'Search by athlete name or province…',
+    filterOptions: {
+      all: 'All Disciplines',
+      alpine: 'Alpine Skiing',
+      freestyle: 'Freestyle Skiing',
+      snowboard: 'Snowboarding'
+    },
+    resultsSummary: 'Found {count} athletes',
+    exportLabel: 'Export List',
+    stats: [
+      { id: 'registered', value: '1,247', label: 'Registered Athletes', icon: 'user', theme: 'blue' },
+      { id: 'active', value: '563', label: 'Active Athletes', icon: 'trophy', theme: 'green' },
+      { id: 'awarded', value: '89', label: 'Medal Winners', icon: 'medal', theme: 'purple' },
+      { id: 'improved', value: '156', label: 'Points Improved', icon: 'trendingUp', theme: 'red' }
+    ],
+    tableHeaders: {
+      rank: 'Rank',
+      athlete: 'Athlete',
+      discipline: 'Discipline',
+      points: 'Points',
+      competitions: 'Events',
+      bestResult: 'Best Result',
+      province: 'Province'
+    },
+    list: [
+      {
+        id: 1,
+        name: 'Wei Zhang',
+        discipline: 'Alpine Skiing',
+        speciality: 'Giant Slalom',
+        points: 45.2,
+        rank: 1,
+        competitions: 12,
+        bestResult: '1st',
+        province: 'Heilongjiang'
+      },
+      {
+        id: 2,
+        name: 'Xiaoxue Li',
+        discipline: 'Freestyle Skiing',
+        speciality: 'Big Air',
+        points: 285.5,
+        rank: 2,
+        competitions: 8,
+        bestResult: '2nd',
+        province: 'Jilin'
+      },
+      {
+        id: 3,
+        name: 'Bingbing Wang',
+        discipline: 'Snowboarding',
+        speciality: 'Halfpipe',
+        points: 198.75,
+        rank: 3,
+        competitions: 15,
+        bestResult: '1st',
+        province: 'Beijing'
+      },
+      {
+        id: 4,
+        name: 'Xuehua Zhao',
+        discipline: 'Alpine Skiing',
+        speciality: 'Slalom',
+        points: 52.3,
+        rank: 4,
+        competitions: 10,
+        bestResult: '3rd',
+        province: 'Hebei'
+      },
+      {
+        id: 5,
+        name: 'Feixiang Chen',
+        discipline: 'Freestyle Skiing',
+        speciality: 'Slopestyle',
+        points: 240.15,
+        rank: 5,
+        competitions: 9,
+        bestResult: '2nd',
+        province: 'Xinjiang'
+      }
+    ]
   },
 
   // Language selector
   languageSelector: {
     title: 'Select Language',
-    chinese: '中文',
-    english: 'English',
-    japanese: '日本語',
-    korean: '한국어'
+    languages: {
+      zh: 'Chinese',
+      en: 'English',
+      ja: 'Japanese',
+      ko: 'Korean',
+      de: 'German',
+      fr: 'French',
+      it: 'Italian',
+      ru: 'Russian',
+      no: 'Norwegian',
+      sv: 'Swedish',
+      fi: 'Finnish',
+      es: 'Spanish'
+    }
   },
 
   // Coming soon component
@@ -378,6 +809,134 @@ export const en: Partial<TranslationKeys> = {
         youthSeries: { title: 'U-Series Youth Event Plan', category: 'Competition Rules' },
         fisPointsGuide: { title: 'FIS Points Calculation Guide', category: 'FIS Rules' }
       }
+    }
+  },
+
+  rulesPage: {
+    header: {
+      title: 'China Alpine Ski Rules Library',
+      description: 'Review the streamlined rules system covering points calculation, competition management, youth development and more.',
+      highlights: [
+        { icon: 'award', text: 'Official Standard' },
+        { icon: 'target', text: 'Simplified Calculations' },
+        { icon: 'users', text: 'Expanded Youth System' }
+      ]
+    },
+    headings: {
+      ruleModules: 'Rule Modules'
+    },
+    toc: {
+      toggleTitle: 'Toggle table of contents',
+      title: 'Page Outline',
+      download: 'Download PDF version',
+      items: {
+        coreFormula: 'Core Formula',
+        ruleModules: 'Rule Modules',
+        coreFeatures: 'Key Highlights',
+        quickLinks: 'Quick Links',
+        upgradeInfo: 'Upgrade Notes',
+        importantNotice: 'Important Notice'
+      }
+    },
+    formula: {
+      title: 'Core Formula',
+      expression: 'Final Points = (Base Event Points + Penalty Points) × Event Coefficient',
+      description: 'Compared with v2.0, complex quality, participation, and additional factors are removed. The streamlined three-step method improves efficiency and transparency.',
+      copyButton: 'Copy Formula',
+      copySuccess: 'Copied to clipboard!',
+      calculatorButton: 'Use Calculator'
+    },
+    ruleModules: {
+      points: {
+        title: 'China Alpine Ski Points Rules',
+        description: 'Streamlined points calculation system based on a three-step formula.',
+        features: ['Simplified three-step formula', 'Three-tier competition structure (A/B/C)', 'Expanded youth categories', 'Improved transparency'],
+        linkLabel: 'View details'
+      },
+      competition: {
+        title: 'Competition Regulations',
+        description: 'Understand the latest competition rules and youth system guidance.',
+        features: ['Event overview', 'Age group system', 'Participation guide', 'Safety and technical standards'],
+        linkLabel: 'View details'
+      },
+      comingSoon: {
+        title: {
+          zh: '竞赛规则说明',
+          en: 'Competition Regulations'
+        },
+        description: {
+          zh: '此页面功能正在开发中，敬请期待。',
+          en: 'This page is under construction. Please check back soon.'
+        },
+        backLabel: {
+          zh: '返回规则中心',
+          en: 'Back to Rules Overview'
+        }
+      },
+      comingSoon: {
+        title: 'Competition Regulations',
+        description: 'This page is under construction. Please check back soon.',
+        backLabel: 'Back to Rules Overview'
+      },
+      documents: {
+        title: 'China Points Documentation',
+        description: 'Access documents and tools for the streamlined points system.',
+        features: ['Detailed rule explanations', 'Formula component notes', 'Online calculator', 'Downloadable PDFs'],
+        linkLabel: 'View details'
+      }
+    },
+    v4Features: {
+      title: 'Key Highlights',
+      items: {
+        simplified: {
+          title: 'Simplified Calculations',
+          description: 'Removes complex quality, participation, and additional factors.'
+        },
+        tiers: {
+          title: 'Three-tier System',
+          description: 'Classes A (1.0), B (0.6), and C (0.3) provide clear management.'
+        },
+        youth: {
+          title: 'Expanded Youth',
+          description: 'Focused support for U15–U18 age brackets.'
+        },
+        efficiency: {
+          title: 'Efficient & Transparent',
+          description: 'Three-step method improves speed and clarity.'
+        }
+      }
+    },
+    quickLinks: {
+      title: 'Quick Links',
+      items: {
+        calculator: { label: 'Points Calculator' },
+        rankings: { label: 'Points Rankings' },
+        data: { label: 'Event Data Management' },
+        association: { label: 'China Ski Association', external: true }
+      }
+    },
+    upgradeInfo: {
+      title: 'Upgrade Notes',
+      improvements: {
+        title: 'Key Improvements',
+        items: ['Streamlined formula without complex factors', 'Three-tier event classification for clarity', 'Expanded youth age brackets with full support', 'Enhanced transparency and efficiency']
+      },
+      advantages: {
+        title: 'Technical Advantages',
+        items: ['Three-step calculation, easy to adopt', 'Standardised management aligned with international practices', 'Digital tools with comprehensive online support', 'Open and transparent competition environment']
+      }
+    },
+    importantNotice: {
+      title: 'Important Notice',
+      version: {
+        title: 'Rule Version',
+        items: ['Current version: latest release', 'Effective season: 2024–2025', 'Scope: domestic events in China', 'Update cycle: adjusted according to practice']
+      },
+      usage: {
+        title: 'Usage Guidance',
+        items: ['Start with the points rules overview', 'Use the online calculator for verification', 'Follow youth development policies closely', 'Stay informed on rule updates']
+      },
+      support: 'This rule framework builds upon international experience and China’s realities to provide accurate, fair, and efficient support for alpine skiing. For questions or suggestions, please contact us through the listed channels.'
     }
   },
 
@@ -456,6 +1015,13 @@ export const en: Partial<TranslationKeys> = {
           description: 'Visual points trend analytics tools coming soon',
           backLabel: 'Back to Alpine Skiing'
         }
+      }
+    },
+    rules: {
+      competition: {
+        title: 'Competition Regulations',
+        description: 'This page is under construction. Please check back soon.',
+        backLabel: 'Back to Rules Overview'
       }
     },
     'freestyle-slopestyle': {

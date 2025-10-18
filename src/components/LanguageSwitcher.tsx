@@ -1,23 +1,11 @@
 'use client';
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { useTranslation } from '@/contexts/LanguageContext';
 import { ChevronDown, Globe } from 'lucide-react';
 
-const languageNames = {
-  zh: '中文',
-  en: 'English',
-  ja: '日本語',
-  ko: '한국어',
-  de: 'Deutsch',
-  fr: 'Français',
-  it: 'Italiano',
-  ru: 'Русский',
-  no: 'Norsk',
-  sv: 'Svenska',
-  fi: 'Suomi',
-  es: 'Español'
-};
+const supportedLanguages = ['zh', 'en', 'ja', 'ko', 'de', 'fr', 'it', 'ru', 'no', 'sv', 'fi', 'es'] as const;
+type LanguageCode = (typeof supportedLanguages)[number];
 
 // 移除国旗图标，因为一种语言可能被多个国家使用
 
@@ -39,7 +27,19 @@ export default function LanguageSwitcher() {
     };
   }, []);
 
-  const handleLanguageChange = (lang: 'zh' | 'en' | 'ja' | 'ko' | 'de' | 'fr' | 'it' | 'ru' | 'no' | 'sv' | 'fi' | 'es') => {
+  const languageOptions = useMemo(
+    () =>
+      supportedLanguages.map((code) => ({
+        code,
+        label: t.languageSelector.languages[code] ?? code.toUpperCase()
+      })),
+    [t]
+  );
+
+  const currentLanguageLabel =
+    languageOptions.find((option) => option.code === language)?.label ?? language.toUpperCase();
+
+  const handleLanguageChange = (lang: LanguageCode) => {
     setLanguage(lang);
     setIsOpen(false);
   };
@@ -52,8 +52,8 @@ export default function LanguageSwitcher() {
         aria-label={t.languageSelector.title}
       >
         <Globe className="w-4 h-4" />
-        <span className="hidden sm:inline">{languageNames[language]}</span>
-        <span className="sm:hidden">{languageNames[language].substring(0, 2)}</span>
+        <span className="hidden sm:inline">{currentLanguageLabel}</span>
+        <span className="sm:hidden">{currentLanguageLabel.substring(0, 2)}</span>
         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
@@ -62,16 +62,16 @@ export default function LanguageSwitcher() {
           <div className="px-3 py-2 text-xs font-semibold text-gray-500 border-b border-gray-100 sticky top-0 bg-white">
             {t.languageSelector.title}
           </div>
-          {Object.entries(languageNames).map(([lang, name]) => (
+          {languageOptions.map(({ code, label }) => (
             <button
-              key={lang}
-              onClick={() => handleLanguageChange(lang as 'zh' | 'en' | 'ja' | 'ko' | 'de' | 'fr' | 'it' | 'ru' | 'no' | 'sv' | 'fi' | 'es')}
+              key={code}
+              onClick={() => handleLanguageChange(code)}
               className={`w-full text-left px-3 py-2 text-sm hover:bg-gray-50 transition-colors duration-150 flex items-center gap-3 ${
-                language === lang ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-700'
+                language === code ? 'bg-blue-50 text-blue-600 font-medium' : 'text-gray-700'
               }`}
             >
-              <span>{name}</span>
-              {language === lang && (
+              <span>{label}</span>
+              {language === code && (
                 <span className="ml-auto text-blue-600">✓</span>
               )}
             </button>

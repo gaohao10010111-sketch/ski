@@ -311,10 +311,20 @@ export const it: Partial<TranslationKeys> = {
   // Selettore lingua
   languageSelector: {
     title: 'Seleziona lingua',
-    chinese: '中文',
-    english: 'English',
-    japanese: '日本語',
-    korean: '한국어'
+    languages: {
+      zh: 'Cinese',
+      en: 'Inglese',
+      ja: 'Giapponese',
+      ko: 'Coreano',
+      de: 'Tedesco',
+      fr: 'Francese',
+      it: 'Italiano',
+      ru: 'Russo',
+      no: 'Norvegese',
+      sv: 'Svedese',
+      fi: 'Finlandese',
+      es: 'Spagnolo'
+    }
   },
 
   // Componente In arrivo
@@ -373,6 +383,115 @@ export const it: Partial<TranslationKeys> = {
         youthSeries: { title: 'Piano gare giovanili serie U', category: 'Regolamento tecnico' },
         fisPointsGuide: { title: 'Guida al calcolo dei punti FIS', category: 'Regole FIS' }
       }
+    }
+  },
+
+  rulesPage: {
+    header: {
+      title: 'Biblioteca delle regole dello sci alpino cinese',
+      description: 'Esplora il sistema di regole semplificato: calcolo dei punti, gestione delle gare e sviluppo giovanile.',
+      highlights: [
+        { icon: 'award', text: 'Standard ufficiale' },
+        { icon: 'target', text: 'Calcolo semplificato' },
+        { icon: 'users', text: 'Sistema giovanile ampliato' }
+      ]
+    },
+    headings: {
+      ruleModules: 'Moduli di regolamento'
+    },
+    toc: {
+      toggleTitle: 'Mostra/nascondi sommario',
+      title: 'Indice della pagina',
+      download: 'Scarica la versione PDF',
+      items: {
+        coreFormula: 'Formula principale',
+        ruleModules: 'Moduli di regolamento',
+        coreFeatures: 'Caratteristiche principali',
+        quickLinks: 'Link rapidi',
+        upgradeInfo: 'Note di aggiornamento',
+        importantNotice: 'Avvisi importanti'
+      }
+    },
+    formula: {
+      title: 'Formula principale',
+      expression: 'Punteggio finale = (Punteggio base + Penalità) × Coefficiente gara',
+      description: 'Rispetto alla versione 2.0 sono stati rimossi i fattori complessi. Il metodo in tre passaggi migliora efficienza e trasparenza.',
+      copyButton: 'Copia formula',
+      copySuccess: 'Copiato negli appunti!',
+      calculatorButton: 'Apri calcolatore'
+    },
+    ruleModules: {
+      points: {
+        title: 'Regole di punteggio cinesi',
+        description: 'Sistema di calcolo semplificato basato su tre fasi.',
+        features: ['Formula in tre passaggi', 'Struttura a tre livelli A/B/C', 'Categorie giovanili ampliate', 'Maggiore trasparenza'],
+        linkLabel: 'Dettagli'
+      },
+      competition: {
+        title: 'Guida alle competizioni',
+        description: 'Comprendi le regole aggiornate e il sistema giovanile con una guida pratica.',
+        features: ['Panoramica delle discipline', 'Categorie per età', 'Percorso di partecipazione', 'Standard di sicurezza e tecnici'],
+        linkLabel: 'Dettagli'
+      },
+      documents: {
+        title: 'Documentazione sui punti',
+        description: 'Accedi ai documenti e agli strumenti del sistema di punti semplificato.',
+        features: ['Spiegazioni dettagliate', 'Componenti della formula', 'Calcolatore online', 'Download PDF'],
+        linkLabel: 'Dettagli'
+      }
+    },
+    v4Features: {
+      title: 'Caratteristiche principali',
+      items: {
+        simplified: {
+          title: 'Calcolo semplificato',
+          description: 'Elimina fattori di qualità, partecipazione e bonus aggiuntivi.'
+        },
+        tiers: {
+          title: 'Sistema a tre livelli',
+          description: 'Categorie A (1.0), B (0.6) e C (0.3) per una gestione chiara.'
+        },
+        youth: {
+          title: 'Sviluppo giovanile',
+          description: 'Supporto mirato alle fasce U15–U18.'
+        },
+        efficiency: {
+          title: 'Efficiente e trasparente',
+          description: 'La procedura in tre fasi migliora velocità e chiarezza.'
+        }
+      }
+    },
+    quickLinks: {
+      title: 'Link rapidi',
+      items: {
+        calculator: { label: 'Calcolatore punti' },
+        rankings: { label: 'Classifiche punti' },
+        data: { label: 'Gestione dati gare' },
+        association: { label: 'China Ski Association', external: true }
+      }
+    },
+    upgradeInfo: {
+      title: 'Note di aggiornamento',
+      improvements: {
+        title: 'Principali miglioramenti',
+        items: ['Formula semplificata senza fattori complessi', 'Struttura delle gare su tre livelli', 'Categorie giovanili ampliate', 'Maggiore trasparenza ed efficienza']
+      },
+      advantages: {
+        title: 'Vantaggi tecnici',
+        items: ['Calcolo in tre passaggi facile da adottare', 'Gestione standardizzata in linea con gli standard internazionali', 'Strumenti digitali e supporto online completi', 'Ambiente di gara equo e trasparente']
+      }
+    },
+    importantNotice: {
+      title: 'Avvisi importanti',
+      version: {
+        title: 'Versione del regolamento',
+        items: ['Versione attuale: ultima edizione', 'Stagione di applicazione: 2024-2025', 'Ambito: gare nazionali in Cina', 'Ciclo di aggiornamento: secondo necessità']
+      },
+      usage: {
+        title: 'Suggerimenti d’uso',
+        items: ['Iniziare dalla panoramica delle regole di punteggio', 'Verificare i risultati con il calcolatore online', 'Seguire le politiche dedicate ai giovani', 'Rimanere aggiornati sulle revisioni delle regole']
+      },
+      support: 'Questo quadro normativo combina l’esperienza internazionale con le esigenze della Cina per offrire un supporto equo ed efficace allo sviluppo dello sci alpino. Per domande o suggerimenti, contattaci tramite i canali indicati.'
     }
   },
 
@@ -451,6 +570,13 @@ export const it: Partial<TranslationKeys> = {
           description: 'Strumenti di analisi delle tendenze dei punti in arrivo',
           backLabel: 'Torna allo sci alpino'
         }
+      }
+    },
+    rules: {
+      competition: {
+        title: 'Guida alle competizioni',
+        description: 'Questa pagina è in preparazione. Torna a trovarci a breve.',
+        backLabel: 'Torna alla sezione delle regole'
       }
     },
     'freestyle-slopestyle': {

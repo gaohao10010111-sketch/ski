@@ -128,6 +128,15 @@ export const zh = {
       }
     },
 
+    subDisciplines: [
+      { id: 'all', name: '全部项目', nameEn: 'All Events' },
+      { id: 'DH', name: '速降', nameEn: 'Downhill' },
+      { id: 'SL', name: '回转', nameEn: 'Slalom' },
+      { id: 'GS', name: '大回转', nameEn: 'Giant Slalom' },
+      { id: 'SG', name: '超级大回转', nameEn: 'Super-G' },
+      { id: 'AC', name: '全能', nameEn: 'Alpine Combined' }
+    ],
+
     quickAccess: {
       results: { title: '赛事成绩', nameEn: 'Results' },
       rankings: { title: '积分排名', nameEn: 'Rankings' },
@@ -138,15 +147,65 @@ export const zh = {
     },
 
     upcomingEvents: {
-      title: '即将进行'
+      title: '即将进行',
+      events: [
+        {
+          date: '12月20日',
+          event: '全国锦标赛',
+          discipline: '大回转',
+          location: '万龙雪场',
+          status: 'upcoming'
+        },
+        {
+          date: '12月22日',
+          event: '全国锦标赛',
+          discipline: '回转',
+          location: '万龙雪场',
+          status: 'upcoming'
+        },
+        {
+          date: '12月25日',
+          event: '中国杯公开赛',
+          discipline: '速降',
+          location: '长白山雪场',
+          status: 'upcoming'
+        }
+      ]
     },
 
     latestNews: {
-      title: '最新动态'
+      title: '最新动态',
+      items: [
+        {
+          title: '中国高山滑雪队冬训备战',
+          subtitle: '全力以赴迎接新赛季挑战',
+          time: '2小时前',
+          image: '/images/ski-bg.jpg'
+        },
+        {
+          title: '积分规则v4.0详解',
+          subtitle: '了解最新的积分计算标准',
+          time: '5小时前',
+          image: '/images/ski-bg.jpg'
+        },
+        {
+          title: '雪场认证工作全面展开',
+          subtitle: '确保比赛场地符合国际标准',
+          time: '1天前',
+          image: '/images/ski-bg.jpg'
+        }
+      ]
     },
 
     topAthletes: {
-      title: '积分排行'
+      title: '积分排行',
+      athletes: [
+        { rank: 1, name: '张伟', nation: '北京', points: 0.00, change: 0 },
+        { rank: 2, name: '李雪', nation: '黑龙江', points: 8.45, change: 1 },
+        { rank: 3, name: '王冰', nation: '吉林', points: 12.30, change: -1 },
+        { rank: 4, name: '刘强', nation: '河北', points: 15.67, change: 2 },
+        { rank: 5, name: '陈明', nation: '辽宁', points: 18.92, change: 0 }
+      ]
     }
   },
 
@@ -171,6 +230,12 @@ export const zh = {
       }
     },
 
+    subDisciplines: [
+      { id: 'all', name: '全部项目', nameEn: 'All Events' },
+      { id: 'SS', name: '坡面障碍技巧', nameEn: 'Slopestyle' },
+      { id: 'BA', name: '大跳台', nameEn: 'Big Air' }
+    ],
+
     quickAccess: {
       results: { title: '赛事成绩', nameEn: 'Results' },
       rankings: { title: '积分排名', nameEn: 'Rankings' },
@@ -181,15 +246,65 @@ export const zh = {
     },
 
     upcomingEvents: {
-      title: '即将进行'
+      title: '即将进行',
+      events: [
+        {
+          date: '12月19日',
+          event: '全国锦标赛',
+          discipline: '坡面障碍技巧',
+          location: '崇礼密苑云顶雪场',
+          status: 'upcoming'
+        },
+        {
+          date: '12月21日',
+          event: '全国锦标赛',
+          discipline: '大跳台',
+          location: '崇礼密苑云顶雪场',
+          status: 'upcoming'
+        },
+        {
+          date: '12月26日',
+          event: 'U系列青少年赛',
+          discipline: '坡面障碍技巧',
+          location: '北京石京龙雪场',
+          status: 'upcoming'
+        }
+      ]
     },
 
     latestNews: {
-      title: '最新动态'
+      title: '最新动态',
+      items: [
+        {
+          title: '中国自由式滑雪队冬训纪实',
+          subtitle: '突破技术难度，挑战极限动作',
+          time: '1小时前',
+          image: '/images/ski-bg.jpg'
+        },
+        {
+          title: '360分档积分规则权威解读',
+          subtitle: '了解最新的积分计算标准',
+          time: '4小时前',
+          image: '/images/ski-bg.jpg'
+        },
+        {
+          title: '新建自由式场地获国际认证',
+          subtitle: '符合FIS二级场地技术标准',
+          time: '1天前',
+          image: '/images/ski-bg.jpg'
+        }
+      ]
     },
 
     topAthletes: {
-      title: '积分排行'
+      title: '积分排行',
+      athletes: [
+        { rank: 1, name: '何金博', nation: '河北', points: 360.0, change: 0 },
+        { rank: 2, name: '杨文龙', nation: '黑龙江', points: 288.0, change: 1 },
+        { rank: 3, name: '孙佳旭', nation: '吉林', points: 216.0, change: -1 },
+        { rank: 4, name: '李爽', nation: '北京', points: 180.0, change: 2 },
+        { rank: 5, name: '齐广璞', nation: '辽宁', points: 162.0, change: 0 }
+      ]
     }
   },
 
@@ -214,6 +329,12 @@ export const zh = {
       }
     },
 
+    subDisciplines: [
+      { id: 'all', name: '全部项目', nameEn: 'All Events' },
+      { id: 'SS', name: '坡面障碍技巧', nameEn: 'Slopestyle' },
+      { id: 'BA', name: '大跳台', nameEn: 'Big Air' }
+    ],
+
     quickAccess: {
       results: { title: '赛事成绩', nameEn: 'Results' },
       rankings: { title: '积分排名', nameEn: 'Rankings' },
@@ -224,15 +345,65 @@ export const zh = {
     },
 
     upcomingEvents: {
-      title: '即将进行'
+      title: '即将进行',
+      events: [
+        {
+          date: '12月18日',
+          event: '全国锦标赛',
+          discipline: '坡面障碍技巧',
+          location: '崇礼云顶雪场',
+          status: 'upcoming'
+        },
+        {
+          date: '12月20日',
+          event: '全国锦标赛',
+          discipline: '大跳台',
+          location: '崇礼云顶雪场',
+          status: 'upcoming'
+        },
+        {
+          date: '12月28日',
+          event: 'U系列青少年赛',
+          discipline: '坡面障碍技巧',
+          location: '北京石京龙雪场',
+          status: 'upcoming'
+        }
+      ]
     },
 
     latestNews: {
-      title: '最新动态'
+      title: '最新动态',
+      items: [
+        {
+          title: '中国单板滑雪队冬训动态',
+          subtitle: '备战新赛季，提升技术难度',
+          time: '3小时前',
+          image: '/images/ski-bg.jpg'
+        },
+        {
+          title: '360分档积分规则详解',
+          subtitle: '了解最新的积分计算标准',
+          time: '6小时前',
+          image: '/images/ski-bg.jpg'
+        },
+        {
+          title: '新建大跳台场地通过认证',
+          subtitle: '符合二级场地技术标准',
+          time: '1天前',
+          image: '/images/ski-bg.jpg'
+        }
+      ]
     },
 
     topAthletes: {
-      title: '积分排行'
+      title: '积分排行',
+      athletes: [
+        { rank: 1, name: '李明', nation: '北京', points: 360.0, change: 0 },
+        { rank: 2, name: '王雪', nation: '河北', points: 288.0, change: 1 },
+        { rank: 3, name: '张强', nation: '吉林', points: 216.0, change: -1 },
+        { rank: 4, name: '刘冰', nation: '黑龙江', points: 180.0, change: 2 },
+        { rank: 5, name: '陈飞', nation: '辽宁', points: 162.0, change: 0 }
+      ]
     }
   },
 
@@ -257,6 +428,12 @@ export const zh = {
       }
     },
 
+    subDisciplines: [
+      { id: 'all', name: '全部项目', nameEn: 'All Events' },
+      { id: 'PGS', name: '平行大回转', nameEn: 'Parallel Giant Slalom' },
+      { id: 'PSL', name: '平行回转', nameEn: 'Parallel Slalom' }
+    ],
+
     quickAccess: {
       results: { title: '赛事成绩', nameEn: 'Results' },
       rankings: { title: '积分排名', nameEn: 'Rankings' },
@@ -267,25 +444,284 @@ export const zh = {
     },
 
     upcomingEvents: {
-      title: '即将进行'
+      title: '即将进行',
+      events: [
+        {
+          date: '12月16日',
+          event: '全国锦标赛',
+          discipline: '平行大回转',
+          location: '崇礼万龙雪场',
+          status: 'upcoming'
+        },
+        {
+          date: '12月17日',
+          event: '全国锦标赛',
+          discipline: '平行回转',
+          location: '崇礼万龙雪场',
+          status: 'upcoming'
+        },
+        {
+          date: '12月24日',
+          event: '区域积分赛',
+          discipline: '平行大回转',
+          location: '长白山雪场',
+          status: 'upcoming'
+        }
+      ]
     },
 
     latestNews: {
-      title: '最新动态'
+      title: '最新动态',
+      items: [
+        {
+          title: '中国单板平行项目队冬训报道',
+          subtitle: '强化体能，提升速度与精准度',
+          time: '2小时前',
+          image: '/images/ski-bg.jpg'
+        },
+        {
+          title: '淘汰赛制积分规则解析',
+          subtitle: '了解平行项目独特的积分计算方式',
+          time: '5小时前',
+          image: '/images/ski-bg.jpg'
+        },
+        {
+          title: '新建平行赛道通过认证',
+          subtitle: '符合国际竞赛技术标准',
+          time: '1天前',
+          image: '/images/ski-bg.jpg'
+        }
+      ]
     },
 
     topAthletes: {
-      title: '积分排行'
+      title: '积分排行',
+      athletes: [
+        { rank: 1, name: '赵雷', nation: '吉林', points: 380.0, change: 0 },
+        { rank: 2, name: '孙雪', nation: '黑龙江', points: 295.0, change: 1 },
+        { rank: 3, name: '周强', nation: '河北', points: 230.0, change: -1 },
+        { rank: 4, name: '吴冰', nation: '北京', points: 195.0, change: 2 },
+        { rank: 5, name: '郑飞', nation: '辽宁', points: 175.0, change: 0 }
+      ]
     }
+  },
+
+  // 项目总览页面
+  disciplinesPage: {
+    hero: {
+      backLabel: '返回首页',
+      title: '中国滑雪积分系统',
+      subtitle: '四大项目独立积分体系 | 专业赛事管理平台'
+    },
+    continuation: {
+      title: '四大项目积分延续机制',
+      description: '科学合理的积分延续策略，确保四大项目竞技水平的连续性评估',
+      cards: [
+        {
+          id: 'carry-forward',
+          value: '×50%',
+          title: '延续比例',
+          description: '赛季结束后，四大项目积分分别按照50%的比例延续到下一赛季',
+          accent: 'blue'
+        },
+        {
+          id: 'season',
+          value: '7.1-6.30',
+          title: '赛季周期',
+          description: '每年7月1日至次年6月30日为一个完整赛季，确保积分计算的时间统一性',
+          accent: 'green'
+        },
+        {
+          id: 'best-two',
+          value: 'Best 2',
+          title: '成绩计算',
+          description: '取赛季内各项目最好两次成绩平均值作为运动员的最终积分',
+          accent: 'purple'
+        }
+      ]
+    },
+    cardsSection: {
+      title: '选择你的项目',
+      ctaLabel: '进入项目系统',
+      cards: [
+        {
+          id: 'alpine',
+          name: '高山滑雪',
+          nameEn: 'Alpine Skiing',
+          icon: 'alpine',
+          color: 'from-blue-600 to-cyan-600',
+          description: 'v4.0时间基础积分计算 | A/B/C三级赛事系数',
+          features: ['速降', '回转', '大回转', '超级大回转', '全能']
+        },
+        {
+          id: 'snowboard-slopestyle',
+          name: '单板坡面障碍技巧 & 大跳台',
+          nameEn: 'Snowboard Slopestyle & Big Air',
+          icon: 'snowboard',
+          color: 'from-orange-600 to-yellow-600',
+          description: '240/360/120分档积分 | 裁判评分转排名',
+          features: ['坡面障碍技巧', '大跳台', 'U型场地']
+        },
+        {
+          id: 'snowboard-parallel',
+          name: '单板滑雪平行项目',
+          nameEn: 'Snowboard Parallel',
+          icon: 'snowboard',
+          color: 'from-purple-600 to-pink-600',
+          description: '竞速时间积分 | 淘汰赛制',
+          features: ['平行大回转(PGS)', '平行回转(PSL)']
+        },
+        {
+          id: 'freeski-slopestyle',
+          name: '自由式滑雪坡面障碍技巧 & 大跳台',
+          nameEn: 'Freeski Slopestyle & Big Air',
+          icon: 'freeski',
+          color: 'from-red-600 to-rose-600',
+          description: '240/360/120分档积分 | 技巧难度系数',
+          features: ['坡面障碍技巧', '大跳台', '空中技巧']
+        }
+      ]
+    },
+    highlights: {
+      title: '系统核心特点',
+      items: [
+        {
+          id: 'independent',
+          icon: 'award',
+          title: '独立积分体系',
+          description: '四个项目独立排名和统计'
+        },
+        {
+          id: 'realtime',
+          icon: 'barChart',
+          title: '实时积分计算',
+          description: '比赛结束后自动更新积分'
+        },
+        {
+          id: 'u-series',
+          icon: 'target',
+          title: 'U系列管理',
+          description: 'U12/U15/U18青少年分组'
+        },
+        {
+          id: 'continuation',
+          icon: 'rotateCcw',
+          title: '积分延续机制',
+          description: '赛季结束后×50%基础积分'
+        }
+      ]
+    }
+  },
+
+  // 运动员页面
+  athletesPage: {
+    pageTitle: '运动员管理',
+    pageSubtitle: '中国滑雪运动员档案与积分统计',
+    searchPlaceholder: '搜索运动员姓名或省份...',
+    filterOptions: [
+      { value: 'all', label: '所有项目' },
+      { value: 'alpine', label: '高山滑雪' },
+      { value: 'freestyle', label: '自由式滑雪' },
+      { value: 'snowboard', label: '单板滑雪' }
+    ],
+    resultsSummary: '找到 {count} 名运动员',
+    exportLabel: '导出列表',
+    stats: [
+      { id: 'registered', value: '1,247', label: '注册运动员', icon: 'user', theme: 'blue' },
+      { id: 'active', value: '563', label: '活跃运动员', icon: 'trophy', theme: 'green' },
+      { id: 'awarded', value: '89', label: '获奖运动员', icon: 'medal', theme: 'purple' },
+      { id: 'improved', value: '156', label: '积分提升', icon: 'trendingUp', theme: 'red' }
+    ],
+    tableHeaders: {
+      rank: '排名',
+      athlete: '运动员',
+      discipline: '项目',
+      points: '积分',
+      competitions: '参赛次数',
+      bestResult: '最佳成绩',
+      province: '所属省份'
+    },
+    list: [
+      {
+        id: 1,
+        name: '张伟',
+        disciplineKey: 'alpine',
+        discipline: '高山滑雪',
+        speciality: '大回转',
+        points: 45.2,
+        rank: 1,
+        competitions: 12,
+        bestResult: '第1名',
+        province: '黑龙江'
+      },
+      {
+        id: 2,
+        name: '李小雪',
+        disciplineKey: 'freestyle',
+        discipline: '自由式滑雪',
+        speciality: '大跳台',
+        points: 285.5,
+        rank: 2,
+        competitions: 8,
+        bestResult: '第2名',
+        province: '吉林'
+      },
+      {
+        id: 3,
+        name: '王冰冰',
+        disciplineKey: 'snowboard',
+        discipline: '单板滑雪',
+        speciality: 'U型场地',
+        points: 198.75,
+        rank: 3,
+        competitions: 15,
+        bestResult: '第1名',
+        province: '北京'
+      },
+      {
+        id: 4,
+        name: '赵雪花',
+        disciplineKey: 'alpine',
+        discipline: '高山滑雪',
+        speciality: '回转',
+        points: 52.3,
+        rank: 4,
+        competitions: 10,
+        bestResult: '第3名',
+        province: '河北'
+      },
+      {
+        id: 5,
+        name: '陈飞翔',
+        disciplineKey: 'freestyle',
+        discipline: '自由式滑雪',
+        speciality: '坡面障碍技巧',
+        points: 240.15,
+        rank: 5,
+        competitions: 9,
+        bestResult: '第2名',
+        province: '新疆'
+      }
+    ]
   },
 
   // 语言切换
   languageSelector: {
     title: '选择语言',
-    chinese: '中文',
-    english: 'English',
-    japanese: '日本語',
-    korean: '한국어'
+    languages: {
+      zh: '中文',
+      en: '英语',
+      ja: '日语',
+      ko: '韩语',
+      de: '德语',
+      fr: '法语',
+      it: '意大利语',
+      ru: '俄语',
+      no: '挪威语',
+      sv: '瑞典语',
+      fi: '芬兰语',
+      es: '西班牙语'
+    }
   },
 
   // 即将上线组件
@@ -344,6 +780,115 @@ export const zh = {
         youthSeries: { title: 'U系列青少年赛事管理办法', category: '竞赛规则' },
         fisPointsGuide: { title: 'FIS积分计算方法详解', category: 'FIS规则' }
       }
+    }
+  },
+
+  rulesPage: {
+    header: {
+      title: '中国高山滑雪规则文库',
+      description: '查看最新的简化规则体系，涵盖积分计算、竞赛管理、青少年培养等完整规则文档。',
+      highlights: [
+        { icon: 'award', text: '官方标准' },
+        { icon: 'target', text: '简化计算体系' },
+        { icon: 'users', text: '扩展青少年体系' }
+      ]
+    },
+    headings: {
+      ruleModules: '规则模块'
+    },
+    toc: {
+      toggleTitle: '显示/隐藏目录',
+      title: '页面目录',
+      download: '下载 PDF 版本',
+      items: {
+        coreFormula: '核心公式',
+        ruleModules: '规则模块',
+        coreFeatures: '核心特点',
+        quickLinks: '快速链接',
+        upgradeInfo: '升级说明',
+        importantNotice: '重要提示'
+      }
+    },
+    formula: {
+      title: '核心公式',
+      expression: '最终积分 = (基础比赛积分 + 判罚分) × 赛事系数',
+      description: '相比 v2.0 复杂体系，去除了质量系数、人数系数、附加分等复杂要素，采用简化三步计算法，提高效率和透明度。',
+      copyButton: '复制公式',
+      copySuccess: '已复制到剪贴板！',
+      calculatorButton: '使用计算器'
+    },
+    ruleModules: {
+      points: {
+        title: '中国高山滑雪积分规则',
+        description: '全新简化的积分计算体系，基于三步计算公式，去除复杂系数。',
+        features: ['简化三步计算公式', '三级赛事体系（A/B/C）', '扩展青少年年龄组', '提高计算透明度'],
+        linkLabel: '查看详情'
+      },
+      competition: {
+        title: '竞赛规则说明',
+        description: '了解新版竞赛规则和扩展青少年体系，获取完整参赛指导。',
+        features: ['比赛项目介绍', '年龄分组体系', '参赛指南流程', '安全技术规范'],
+        linkLabel: '查看详情'
+      },
+      documents: {
+        title: '中国积分规则文档',
+        description: '查看最新的简化积分规则文档与配套工具。',
+        features: ['规则详解', '公式组件说明', '在线积分计算器', 'PDF 文档下载'],
+        linkLabel: '查看详情'
+      }
+    },
+    v4Features: {
+      title: '核心特点',
+      items: {
+        simplified: {
+          title: '简化计算',
+          description: '去除复杂的质量系数、人数系数、附加分等要素。'
+        },
+        tiers: {
+          title: '三级体系',
+          description: 'A级（1.0）、B级（0.6）、C级（0.3）赛事分类。'
+        },
+        youth: {
+          title: '扩展青少年',
+          description: '聚焦 U15–U18 核心年龄段，提供精准培养支持。'
+        },
+        efficiency: {
+          title: '高效透明',
+          description: '三步计算公式，提高效率与透明度。'
+        }
+      }
+    },
+    quickLinks: {
+      title: '快速链接',
+      items: {
+        calculator: { label: '积分计算器' },
+        rankings: { label: '积分规则查询' },
+        data: { label: '赛事数据管理' },
+        association: { label: '中国滑雪协会', external: true }
+      }
+    },
+    upgradeInfo: {
+      title: '升级说明',
+      improvements: {
+        title: '主要改进',
+        items: ['简化积分计算公式，去除复杂系数', '三级赛事体系，管理更加清晰', '扩展青少年年龄组，全程培养支持', '提高计算透明度和效率']
+      },
+      advantages: {
+        title: '技术优势',
+        items: ['三步计算法，易于理解和实施', '标准化管理，与国际接轨', '数字化支持，在线工具完善', '开放透明，公平公正竞争']
+      }
+    },
+    importantNotice: {
+      title: '重要提示',
+      version: {
+        title: '规则版本',
+        items: ['当前版本：最新发布', '实施赛季：2024-2025 赛季', '适用范围：中国国内赛事', '更新周期：根据实践情况调整']
+      },
+      usage: {
+        title: '使用指南',
+        items: ['建议从积分规则开始了解', '使用在线计算器验证计算', '关注青少年体系扩展政策', '及时获取规则更新信息']
+      },
+      support: '本规则体系基于国际先进经验，结合中国实际情况制定，旨在为中国高山滑雪运动发展提供科学、公平、高效的规则支撑。如有疑问或建议，请通过相关渠道联系我们。'
     }
   },
 
@@ -422,6 +967,13 @@ export const zh = {
           description: '可视化积分变化趋势，数据分析工具即将上线',
           backLabel: '返回高山滑雪'
         }
+      }
+    },
+    rules: {
+      competition: {
+        title: '竞赛规则说明',
+        description: '此页面功能正在开发中，敬请期待。',
+        backLabel: '返回规则中心'
       }
     },
     'freestyle-slopestyle': {

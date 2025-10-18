@@ -311,10 +311,20 @@ export const es: Partial<TranslationKeys> = {
   // Selector de idioma
   languageSelector: {
     title: 'Seleccionar idioma',
-    chinese: '中文',
-    english: 'English',
-    japanese: '日本語',
-    korean: '한국어'
+    languages: {
+      zh: 'Chino',
+      en: 'Inglés',
+      ja: 'Japonés',
+      ko: 'Coreano',
+      de: 'Alemán',
+      fr: 'Francés',
+      it: 'Italiano',
+      ru: 'Ruso',
+      no: 'Noruego',
+      sv: 'Sueco',
+      fi: 'Finlandés',
+      es: 'Español'
+    }
   },
 
   // Componente Próximamente
@@ -373,6 +383,115 @@ export const es: Partial<TranslationKeys> = {
         youthSeries: { title: 'Plan de gestión de la serie juvenil U', category: 'Reglamento técnico' },
         fisPointsGuide: { title: 'Guía de cálculo de puntos FIS', category: 'Reglas FIS' }
       }
+    }
+  },
+
+  rulesPage: {
+    header: {
+      title: 'Biblioteca de reglas del esquí alpino chino',
+      description: 'Revisa el sistema de reglas simplificado: cálculo de puntos, gestión de competiciones y desarrollo juvenil.',
+      highlights: [
+        { icon: 'award', text: 'Estándar oficial' },
+        { icon: 'target', text: 'Cálculo simplificado' },
+        { icon: 'users', text: 'Sistema juvenil ampliado' }
+      ]
+    },
+    headings: {
+      ruleModules: 'Módulos de reglas'
+    },
+    toc: {
+      toggleTitle: 'Mostrar/ocultar índice',
+      title: 'Estructura de la página',
+      download: 'Descargar versión PDF',
+      items: {
+        coreFormula: 'Fórmula principal',
+        ruleModules: 'Módulos de reglas',
+        coreFeatures: 'Aspectos destacados',
+        quickLinks: 'Accesos rápidos',
+        upgradeInfo: 'Información de actualización',
+        importantNotice: 'Avisos importantes'
+      }
+    },
+    formula: {
+      title: 'Fórmula principal',
+      expression: 'Puntuación final = (Puntos base + Penalizaciones) × Coeficiente de la prueba',
+      description: 'Frente a la versión 2.0 se eliminaron factores complejos; el método en tres pasos mejora la eficiencia y la transparencia.',
+      copyButton: 'Copiar fórmula',
+      copySuccess: '¡Copiado al portapapeles!',
+      calculatorButton: 'Abrir calculadora'
+    },
+    ruleModules: {
+      points: {
+        title: 'Reglas de puntos de China',
+        description: 'Sistema simplificado de cálculo basado en tres etapas.',
+        features: ['Fórmula de tres pasos', 'Estructura de tres niveles A/B/C', 'Categorías juveniles ampliadas', 'Transparencia mejorada'],
+        linkLabel: 'Ver detalles'
+      },
+      competition: {
+        title: 'Guía de competiciones',
+        description: 'Comprende las reglas actualizadas y el sistema juvenil con una guía práctica.',
+        features: ['Resumen de las pruebas', 'Sistema de categorías por edad', 'Itinerario de participación', 'Normas de seguridad y técnicas'],
+        linkLabel: 'Ver detalles'
+      },
+      documents: {
+        title: 'Documentación de puntos',
+        description: 'Accede a los documentos y herramientas del sistema de puntos simplificado.',
+        features: ['Explicaciones detalladas', 'Componentes de la fórmula', 'Calculadora en línea', 'Descargas PDF'],
+        linkLabel: 'Ver detalles'
+      }
+    },
+    v4Features: {
+      title: 'Aspectos destacados',
+      items: {
+        simplified: {
+          title: 'Cálculo simplificado',
+          description: 'Elimina factores de calidad, participación y bonificaciones adicionales.'
+        },
+        tiers: {
+          title: 'Sistema de tres niveles',
+          description: 'Categorías A (1.0), B (0.6) y C (0.3) para una gestión clara.'
+        },
+        youth: {
+          title: 'Juventud ampliada',
+          description: 'Apoyo específico para las franjas U15-U18.'
+        },
+        efficiency: {
+          title: 'Eficiente y transparente',
+          description: 'El proceso de tres pasos mejora rapidez y claridad.'
+        }
+      }
+    },
+    quickLinks: {
+      title: 'Accesos rápidos',
+      items: {
+        calculator: { label: 'Calculadora de puntos' },
+        rankings: { label: 'Clasificación de puntos' },
+        data: { label: 'Gestión de datos de competiciones' },
+        association: { label: 'China Ski Association', external: true }
+      }
+    },
+    upgradeInfo: {
+      title: 'Información de actualización',
+      improvements: {
+        title: 'Mejoras principales',
+        items: ['Fórmula simplificada sin factores complejos', 'Estructura de competiciones en tres niveles', 'Categorías juveniles ampliadas', 'Mayor transparencia y eficiencia']
+      },
+      advantages: {
+        title: 'Ventajas técnicas',
+        items: ['Cálculo en tres pasos fácil de aplicar', 'Gestión estandarizada alineada con estándares internacionales', 'Herramientas digitales y soporte en línea completos', 'Entorno competitivo justo y transparente']
+      }
+    },
+    importantNotice: {
+      title: 'Avisos importantes',
+      version: {
+        title: 'Versión del reglamento',
+        items: ['Versión actual: última edición', 'Temporada de aplicación: 2024-2025', 'Ámbito: competiciones nacionales en China', 'Ciclo de actualización: según se requiera']
+      },
+      usage: {
+        title: 'Recomendaciones de uso',
+        items: ['Comienza por la visión general de las reglas de puntos', 'Verifica los resultados con la calculadora en línea', 'Sigue de cerca las políticas juveniles', 'Mantente al día con las actualizaciones de las reglas']
+      },
+      support: 'Este marco normativo combina la experiencia internacional con las necesidades de China para apoyar un desarrollo justo y eficiente del esquí alpino. Si tienes dudas o sugerencias, contáctanos a través de los canales indicados.'
     }
   },
 
@@ -451,6 +570,13 @@ export const es: Partial<TranslationKeys> = {
           description: 'Herramientas de análisis de tendencias de puntos disponibles próximamente',
           backLabel: 'Volver a Esquí Alpino'
         }
+      }
+    },
+    rules: {
+      competition: {
+        title: 'Guía de competiciones',
+        description: 'Esta página está en preparación. Vuelve a visitarnos pronto.',
+        backLabel: 'Volver a la sección de reglas'
       }
     },
     'freestyle-slopestyle': {

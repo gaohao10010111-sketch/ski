@@ -311,10 +311,20 @@ export const sv: Partial<TranslationKeys> = {
   // Språkväljare
   languageSelector: {
     title: 'Välj språk',
-    chinese: '中文',
-    english: 'English',
-    japanese: '日本語',
-    korean: '한국어'
+    languages: {
+      zh: 'Kinesiska',
+      en: 'Engelska',
+      ja: 'Japanska',
+      ko: 'Koreanska',
+      de: 'Tyska',
+      fr: 'Franska',
+      it: 'Italienska',
+      ru: 'Ryska',
+      no: 'Norska',
+      sv: 'Svenska',
+      fi: 'Finska',
+      es: 'Spanska'
+    }
   },
 
   // Kommer snart-komponent
@@ -373,6 +383,115 @@ export const sv: Partial<TranslationKeys> = {
         youthSeries: { title: 'U-serien ungdomsplan', category: 'Tävlingsregler' },
         fisPointsGuide: { title: 'Guide för FIS-poängberäkning', category: 'FIS-regler' }
       }
+    }
+  },
+
+  rulesPage: {
+    header: {
+      title: 'Bibliotek med regler för kinesisk alpin skidåkning',
+      description: 'Utforska det förenklade regelverket för poängberäkning, tävlingshantering och ungdomsutveckling.',
+      highlights: [
+        { icon: 'award', text: 'Officiell standard' },
+        { icon: 'target', text: 'Förenklade beräkningar' },
+        { icon: 'users', text: 'Utökat ungdomssystem' }
+      ]
+    },
+    headings: {
+      ruleModules: 'Regelmoduler'
+    },
+    toc: {
+      toggleTitle: 'Visa/dölj innehållsförteckning',
+      title: 'Sidöversikt',
+      download: 'Ladda ner PDF-version',
+      items: {
+        coreFormula: 'Grundformel',
+        ruleModules: 'Regelmoduler',
+        coreFeatures: 'Viktiga egenskaper',
+        quickLinks: 'Snabblänkar',
+        upgradeInfo: 'Uppgraderingsinformation',
+        importantNotice: 'Viktig information'
+      }
+    },
+    formula: {
+      title: 'Grundformel',
+      expression: 'Slutpoäng = (Grundpoäng + Straffpoäng) × Tävlingskoefficient',
+      description: 'Jämfört med version 2.0 har komplexa faktorer tagits bort. Den tredelade metoden ökar effektivitet och transparens.',
+      copyButton: 'Kopiera formel',
+      copySuccess: 'Kopierat till urklipp!',
+      calculatorButton: 'Öppna kalkylator'
+    },
+    ruleModules: {
+      points: {
+        title: 'Kinesiska poängregler',
+        description: 'Ett förenklat poängsystem baserat på tre steg.',
+        features: ['Tre-stegs beräkningsformel', 'Tre tävlingsnivåer A/B/C', 'Utökade ungdomskategorier', 'Ökad transparens'],
+        linkLabel: 'Visa detaljer'
+      },
+      competition: {
+        title: 'Tävlingguide',
+        description: 'Förstå de uppdaterade reglerna och ungdomssystemet med praktisk vägledning.',
+        features: ['Översikt över grenar', 'Ålderskategorier', 'Deltagarflöde', 'Säkerhets- och tekniska standarder'],
+        linkLabel: 'Visa detaljer'
+      },
+      documents: {
+        title: 'Poängdokumentation',
+        description: 'Få tillgång till dokument och verktyg för det förenklade poängsystemet.',
+        features: ['Detaljerade förklaringar', 'Beskrivning av formelkomponenter', 'Onlinekalkylator', 'PDF-nedladdningar'],
+        linkLabel: 'Visa detaljer'
+      }
+    },
+    v4Features: {
+      title: 'Viktiga egenskaper',
+      items: {
+        simplified: {
+          title: 'Förenklad beräkning',
+          description: 'Tar bort faktorer för kvalitet, deltagare och bonuspoäng.'
+        },
+        tiers: {
+          title: 'Tre nivåer',
+          description: 'Kategorierna A (1,0), B (0,6) och C (0,3) säkerställer tydlig struktur.'
+        },
+        youth: {
+          title: 'Utökad ungdom',
+          description: 'Riktat stöd för U15–U18.'
+        },
+        efficiency: {
+          title: 'Effektivt och transparent',
+          description: 'Tre-stegsprocessen förbättrar tempo och tydlighet.'
+        }
+      }
+    },
+    quickLinks: {
+      title: 'Snabblänkar',
+      items: {
+        calculator: { label: 'Poängkalkylator' },
+        rankings: { label: 'Poängtabell' },
+        data: { label: 'Tävlingsdatahantering' },
+        association: { label: 'China Ski Association', external: true }
+      }
+    },
+    upgradeInfo: {
+      title: 'Uppgraderingsinformation',
+      improvements: {
+        title: 'Viktiga förbättringar',
+        items: ['Förenklad formel utan komplexa faktorer', 'Tre nivåer för tävlingsstruktur', 'Utökade ungdomskategorier', 'Större transparens och effektivitet']
+      },
+      advantages: {
+        title: 'Tekniska fördelar',
+        items: ['Tre-stegs beräkning är lätt att använda', 'Standardiserad hantering i linje med internationella normer', 'Digitala verktyg och onlinesupport', 'Öppen och rättvis tävlingsmiljö']
+      }
+    },
+    importantNotice: {
+      title: 'Viktig information',
+      version: {
+        title: 'Regelversion',
+        items: ['Aktuell version: senaste utgåvan', 'Gäller säsongen 2024–2025', 'Omfattning: nationella tävlingar i Kina', 'Uppdateringscykel: efter behov']
+      },
+      usage: {
+        title: 'Användningstips',
+        items: ['Börja med en översikt av poängreglerna', 'Kontrollera resultat med onlinekalkylatorn', 'Följ ungdomssatsningar noga', 'Håll koll på regeluppdateringar']
+      },
+      support: 'Detta regelverk kombinerar internationell erfarenhet med Kinas behov för att stödja en rättvis och effektiv utveckling av alpin skidåkning. Kontakta oss via angivna kanaler vid frågor eller förslag.'
     }
   },
 
@@ -451,6 +570,13 @@ export const sv: Partial<TranslationKeys> = {
           description: 'Visualiseringsverktyg för poängtrender kommer snart',
           backLabel: 'Tillbaka till alpin skidåkning'
         }
+      }
+    },
+    rules: {
+      competition: {
+        title: 'Tävlingsguide',
+        description: 'Den här sidan håller på att färdigställas. Välkommen tillbaka snart.',
+        backLabel: 'Tillbaka till reglerna'
       }
     },
     'freestyle-slopestyle': {

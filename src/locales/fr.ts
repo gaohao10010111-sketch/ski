@@ -311,10 +311,20 @@ export const fr: Partial<TranslationKeys> = {
   // Sélecteur de langue
   languageSelector: {
     title: 'Sélectionner la langue',
-    chinese: '中文',
-    english: 'English',
-    japanese: '日本語',
-    korean: '한국어'
+    languages: {
+      zh: 'Chinois',
+      en: 'Anglais',
+      ja: 'Japonais',
+      ko: 'Coréen',
+      de: 'Allemand',
+      fr: 'Français',
+      it: 'Italien',
+      ru: 'Russe',
+      no: 'Norvégien',
+      sv: 'Suédois',
+      fi: 'Finnois',
+      es: 'Espagnol'
+    }
   },
 
   // Composant Bientôt disponible
@@ -373,6 +383,115 @@ export const fr: Partial<TranslationKeys> = {
         youthSeries: { title: 'Plan de gestion des compétitions U-Series', category: 'Règlement technique' },
         fisPointsGuide: { title: 'Guide de calcul des points FIS', category: 'Règles FIS' }
       }
+    }
+  },
+
+  rulesPage: {
+    header: {
+      title: 'Bibliothèque des règles du ski alpin chinois',
+      description: 'Consultez le système de règles simplifié couvrant le calcul des points, la gestion des compétitions et le développement des jeunes.',
+      highlights: [
+        { icon: 'award', text: 'Standard officiel' },
+        { icon: 'target', text: 'Calcul simplifié' },
+        { icon: 'users', text: 'Système jeunesse renforcé' }
+      ]
+    },
+    headings: {
+      ruleModules: 'Modules de règles'
+    },
+    toc: {
+      toggleTitle: 'Afficher/masquer le sommaire',
+      title: 'Plan de la page',
+      download: 'Télécharger la version PDF',
+      items: {
+        coreFormula: 'Formule principale',
+        ruleModules: 'Modules de règles',
+        coreFeatures: 'Points clés',
+        quickLinks: 'Liens rapides',
+        upgradeInfo: 'Informations de mise à jour',
+        importantNotice: 'Informations importantes'
+      }
+    },
+    formula: {
+      title: 'Formule principale',
+      expression: 'Points finaux = (Points de base + Points de pénalité) × Coefficient de l’épreuve',
+      description: 'Par rapport à la version 2.0, les facteurs de qualité, de participation et les bonus supplémentaires ont été supprimés. La méthode en trois étapes améliore l’efficacité et la transparence.',
+      copyButton: 'Copier la formule',
+      copySuccess: 'Copié dans le presse-papiers !',
+      calculatorButton: 'Ouvrir le calculateur'
+    },
+    ruleModules: {
+      points: {
+        title: 'Règles de points chinoises',
+        description: 'Système de calcul simplifié basé sur une formule en trois étapes.',
+        features: ['Méthode de calcul en trois étapes', 'Structure d’épreuves A/B/C', 'Catégories jeunesse étendues', 'Transparence renforcée'],
+        linkLabel: 'Voir les détails'
+      },
+      competition: {
+        title: 'Guide des compétitions',
+        description: 'Comprendre les règles actualisées et le système jeunesse élargi, avec un guide pratique de participation.',
+        features: ['Présentation des épreuves', 'Système de catégories d’âge', 'Parcours de participation', 'Normes de sécurité et techniques'],
+        linkLabel: 'Voir les détails'
+      },
+      documents: {
+        title: 'Documentation sur les points',
+        description: 'Accédez à l’ensemble des documents et outils relatifs au système de points simplifié.',
+        features: ['Explications détaillées', 'Description des composantes de la formule', 'Calculateur en ligne', 'Téléchargements PDF'],
+        linkLabel: 'Voir les détails'
+      }
+    },
+    v4Features: {
+      title: 'Points clés',
+      items: {
+        simplified: {
+          title: 'Calcul simplifié',
+          description: 'Suppression des facteurs de qualité, de participation et des bonus supplémentaires.'
+        },
+        tiers: {
+          title: 'Système à trois niveaux',
+          description: 'Catégories A (1,0), B (0,6) et C (0,3) pour une gestion claire.'
+        },
+        youth: {
+          title: 'Jeunesse renforcée',
+          description: 'Soutien ciblé pour les catégories U15 à U18.'
+        },
+        efficiency: {
+          title: 'Efficace et transparent',
+          description: 'Méthode en trois étapes améliorant vitesse et lisibilité.'
+        }
+      }
+    },
+    quickLinks: {
+      title: 'Liens rapides',
+      items: {
+        calculator: { label: 'Calculateur de points' },
+        rankings: { label: 'Classements de points' },
+        data: { label: 'Gestion des données d’épreuves' },
+        association: { label: 'China Ski Association', external: true }
+      }
+    },
+    upgradeInfo: {
+      title: 'Informations de mise à jour',
+      improvements: {
+        title: 'Principales améliorations',
+        items: ['Formule simplifiée sans facteurs complexes', 'Structure d’épreuves à trois niveaux', 'Extension des catégories jeunesse', 'Transparence et efficacité accrues']
+      },
+      advantages: {
+        title: 'Atouts techniques',
+        items: ['Calcul en trois étapes facile à appliquer', 'Gestion standardisée alignée sur les standards internationaux', 'Outils numériques et support en ligne complets', 'Environnement de compétition ouvert et équitable']
+      }
+    },
+    importantNotice: {
+      title: 'Informations importantes',
+      version: {
+        title: 'Version des règles',
+        items: ['Version actuelle : dernière édition', 'Saison d’application : 2024-2025', 'Portée : compétitions nationales en Chine', 'Cycle de mise à jour : ajustements selon les besoins']
+      },
+      usage: {
+        title: 'Recommandations d’utilisation',
+        items: ['Commencer par l’aperçu des règles de points', 'Vérifier les calculs avec l’outil en ligne', 'Suivre de près les politiques jeunesse', 'Rester informé des mises à jour']
+      },
+      support: 'Ce cadre réglementaire combine l’expérience internationale et les besoins chinois afin d’offrir un soutien équitable et efficace au développement du ski alpin. Pour toute question ou suggestion, contactez-nous via les canaux indiqués.'
     }
   },
 
@@ -451,6 +570,13 @@ export const fr: Partial<TranslationKeys> = {
           description: 'Outils d’analyse des tendances de points disponibles prochainement',
           backLabel: 'Retour au ski alpin'
         }
+      }
+    },
+    rules: {
+      competition: {
+        title: 'Guide des compétitions',
+        description: 'Cette page est en cours de préparation. Revenez prochainement.',
+        backLabel: 'Retour aux règles'
       }
     },
     'freestyle-slopestyle': {

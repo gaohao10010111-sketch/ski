@@ -311,10 +311,20 @@ export const ko: Partial<TranslationKeys> = {
   // 언어 선택기
   languageSelector: {
     title: '언어 선택',
-    chinese: '中文',
-    english: 'English',
-    japanese: '日本語',
-    korean: '한국어'
+    languages: {
+      zh: '중국어',
+      en: '영어',
+      ja: '일본어',
+      ko: '한국어',
+      de: '독일어',
+      fr: '프랑스어',
+      it: '이탈리아어',
+      ru: '러시아어',
+      no: '노르웨이어',
+      sv: '스웨덴어',
+      fi: '핀란드어',
+      es: '스페인어'
+    }
   },
 
   // 곧 공개 컴포넌트
@@ -373,6 +383,115 @@ export const ko: Partial<TranslationKeys> = {
         youthSeries: { title: 'U시리즈 청소년 대회 운영 지침', category: '경기 규정' },
         fisPointsGuide: { title: 'FIS 포인트 계산 가이드', category: 'FIS 규정' }
       }
+    }
+  },
+
+  rulesPage: {
+    header: {
+      title: '중국 알파인 스키 규정 라이브러리',
+      description: '포인트 계산, 경기 운영, 청소년 육성까지 간소화된 최신 규정을 한 곳에서 확인하세요.',
+      highlights: [
+        { icon: 'award', text: '공식 표준' },
+        { icon: 'target', text: '간소화된 계산 체계' },
+        { icon: 'users', text: '확장된 청소년 시스템' }
+      ]
+    },
+    headings: {
+      ruleModules: '규정 모듈'
+    },
+    toc: {
+      toggleTitle: '목차 표시/숨기기',
+      title: '페이지 목차',
+      download: 'PDF 버전 다운로드',
+      items: {
+        coreFormula: '핵심 공식',
+        ruleModules: '규정 모듈',
+        coreFeatures: '주요 특징',
+        quickLinks: '바로가기',
+        upgradeInfo: '업그레이드 안내',
+        importantNotice: '중요 안내'
+      }
+    },
+    formula: {
+      title: '핵심 공식',
+      expression: '최종 포인트 = (기본 경기 포인트 + 판정 포인트) × 경기 계수',
+      description: 'v2.0의 복잡한 체계와 달리 품질·참가·추가 포인트 요소를 제거하고, 3단계 계산 방식으로 효율과 투명성을 높였습니다.',
+      copyButton: '공식 복사',
+      copySuccess: '클립보드에 복사되었습니다!',
+      calculatorButton: '계산기 사용하기'
+    },
+    ruleModules: {
+      points: {
+        title: '중국 알파인 스키 포인트 규정',
+        description: '3단계 계산식에 기반한 간소화된 포인트 계산 체계입니다.',
+        features: ['3단계 계산 절차', 'A/B/C 3단계 대회 분류', '확장된 청소년 카테고리', '향상된 투명성'],
+        linkLabel: '자세히 보기'
+      },
+      competition: {
+        title: '경기 규정 가이드',
+        description: '최신 경기 규정과 청소년 시스템을 이해하고, 참가를 위한 실무 가이드를 제공합니다.',
+        features: ['경기 종목 소개', '연령별 카테고리', '참가 가이드 흐름', '안전 및 기술 기준'],
+        linkLabel: '자세히 보기'
+      },
+      documents: {
+        title: '중국 포인트 자료',
+        description: '간소화된 포인트 규정과 지원 도구를 한 번에 조회할 수 있습니다.',
+        features: ['규정 상세 해설', '공식 구성 설명', '온라인 계산 도구', 'PDF 문서 다운로드'],
+        linkLabel: '자세히 보기'
+      }
+    },
+    v4Features: {
+      title: '주요 특징',
+      items: {
+        simplified: {
+          title: '계산 간소화',
+          description: '품질·참가 계수와 추가 포인트 등 복잡한 요소를 제거했습니다.'
+        },
+        tiers: {
+          title: '3단계 체계',
+          description: 'A(1.0)·B(0.6)·C(0.3) 대회 분류로 명확하게 관리합니다.'
+        },
+        youth: {
+          title: '청소년 확대',
+          description: 'U15~U18 핵심 연령대를 집중적으로 지원합니다.'
+        },
+        efficiency: {
+          title: '효율과 투명성',
+          description: '3단계 계산법으로 속도와 투명성을 높입니다.'
+        }
+      }
+    },
+    quickLinks: {
+      title: '바로가기',
+      items: {
+        calculator: { label: '포인트 계산기' },
+        rankings: { label: '포인트 랭킹' },
+        data: { label: '대회 데이터 관리' },
+        association: { label: '중국 스키 협회', external: true }
+      }
+    },
+    upgradeInfo: {
+      title: '업그레이드 안내',
+      improvements: {
+        title: '주요 개선 사항',
+        items: ['복잡한 계수를 제거한 계산식', '3단계 대회 체계로 명확한 관리', '청소년 카테고리 확대 및 전 과정 지원', '계산 과정의 투명성과 효율 향상']
+      },
+      advantages: {
+        title: '기술적 강점',
+        items: ['3단계 계산으로 이해와 적용이 용이', '국제 기준과 연계된 표준화 관리', '디지털 도구 지원으로 온라인 운영 강화', '공정하고 투명한 경쟁 환경']
+      }
+    },
+    importantNotice: {
+      title: '중요 안내',
+      version: {
+        title: '규정 버전',
+        items: ['현재 버전: 최신 릴리스', '적용 시즌: 2024-2025', '적용 범위: 중국 국내 대회', '업데이트 주기: 운영 상황에 따라 조정']
+      },
+      usage: {
+        title: '이용 가이드',
+        items: ['포인트 규정 개요부터 확인하는 것을 권장', '온라인 계산기로 결과 검증', '청소년 확장 정책을 지속적으로 확인', '규정 업데이트 소식을 신속히 확인']
+      },
+      support: '본 규정 체계는 국제 경험과 중국의 실정을 결합해 공정하고 효율적인 경기 운영을 지원합니다. 문의나 제안 사항은 안내된 채널로 연락해 주십시오.'
     }
   },
 
@@ -451,6 +570,13 @@ export const ko: Partial<TranslationKeys> = {
           description: '포인트 추세 시각화 도구는 곧 제공됩니다',
           backLabel: '알파인 스키로 돌아가기'
         }
+      }
+    },
+    rules: {
+      competition: {
+        title: '경기 규정 안내',
+        description: '이 페이지는 현재 준비 중입니다. 잠시만 기다려 주세요.',
+        backLabel: '규정 센터로 돌아가기'
       }
     },
     'freestyle-slopestyle': {
