@@ -201,9 +201,11 @@ export default function HomePage() {
                 <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-2">
                   <span className="text-gradient bg-gradient-ski">{t.home?.hero?.title || 'China Ski Points System'}</span>
                 </div>
-                <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white">
-                  {t.home?.hero?.titleEn || 'China Skiing Points System'}
-                </div>
+                {language === 'en' && (
+                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white">
+                    {t.home?.hero?.titleEn || 'China Skiing Points System'}
+                  </div>
+                )}
               </h1>
               <div className="mb-8">
                 <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 leading-relaxed font-medium">

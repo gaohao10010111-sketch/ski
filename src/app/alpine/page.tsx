@@ -11,7 +11,7 @@ import { getImagePath } from '@/utils/paths';
 import { useTranslation } from '@/contexts/LanguageContext';
 
 export default function AlpinePage() {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // 英雄轮播内容
@@ -161,7 +161,9 @@ export default function AlpinePage() {
                   <Icon className="w-6 h-6 text-white" />
                 </div>
                 <div className="font-semibold text-gray-900 text-sm mb-1">{item.title}</div>
-                <div className="text-xs text-gray-500">{item.nameEn}</div>
+                  {language === 'en' && (
+                    <div className="text-xs text-gray-500">{item.nameEn}</div>
+                  )}
               </Link>
             );
           })}

@@ -112,7 +112,9 @@ export default function DisciplinesOverview() {
                     <div>
                       <div className="mb-2">{getIconComponent(discipline.icon)}</div>
                       <h2 className="text-2xl font-bold mb-1">{discipline.name}</h2>
-                      <p className="text-sm opacity-90">{discipline.nameEn}</p>
+                      {language === 'en' && (
+                        <p className="text-sm opacity-90">{discipline.nameEn}</p>
+                      )}
                     </div>
                     <div className="text-white/50 group-hover:text-white transition-colors">
                       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
