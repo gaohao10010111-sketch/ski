@@ -4,8 +4,9 @@ import { verifyToken, extractTokenFromHeader } from '@/lib/auth';
 
 const isStaticExport = process.env.GITHUB_PAGES === 'true';
 
-export const dynamic = isStaticExport ? 'force-static' : 'force-dynamic';
+export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
+export const revalidate = 0;
 
 export async function GET(request: NextRequest) {
   if (isStaticExport) {
