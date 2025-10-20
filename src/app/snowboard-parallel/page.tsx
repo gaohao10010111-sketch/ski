@@ -13,14 +13,6 @@ import { useTranslation } from '@/contexts/LanguageContext';
 export default function SnowboardParallelPage() {
   const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [activeSubDiscipline, setActiveSubDiscipline] = useState('all');
-
-  // 子项目导航
-  const subDisciplines = [
-    { id: 'all', name: '全部项目', nameEn: 'All Events' },
-    { id: 'PGS', name: '平行大回转', nameEn: 'Parallel Giant Slalom' },
-    { id: 'PSL', name: '平行回转', nameEn: 'Parallel Slalom' }
-  ];
 
   // 英雄轮播内容
   const heroSlides = [
@@ -54,61 +46,12 @@ export default function SnowboardParallelPage() {
     { title: t.snowboardParallel.quickAccess.documents.title, nameEn: t.snowboardParallel.quickAccess.documents.nameEn, icon: FileText, href: '/snowboard-parallel/docs/points-rules', color: 'from-indigo-400 to-indigo-500' }
   ];
 
-  // 即将进行的比赛
-  const upcomingEvents = [
-    {
-      date: '12月16日',
-      event: '全国锦标赛',
-      discipline: '平行大回转',
-      location: '崇礼万龙雪场',
-      status: 'upcoming'
-    },
-    {
-      date: '12月17日',
-      event: '全国锦标赛',
-      discipline: '平行回转',
-      location: '崇礼万龙雪场',
-      status: 'upcoming'
-    },
-    {
-      date: '12月24日',
-      event: '区域积分赛',
-      discipline: '平行大回转',
-      location: '长白山雪场',
-      status: 'upcoming'
-    }
-  ];
-
-  // 最新新闻
-  const latestNews = [
-    {
-      title: '中国单板平行项目队冬训报道',
-      subtitle: '强化体能，提升速度与精准度',
-      time: '2小时前',
-      image: getImagePath('/images/ski-bg.jpg')
-    },
-    {
-      title: '淘汰赛制积分规则解析',
-      subtitle: '了解平行项目独特的积分计算方式',
-      time: '5小时前',
-      image: getImagePath('/images/ski-bg.jpg')
-    },
-    {
-      title: '新建平行赛道通过认证',
-      subtitle: '符合国际竞赛技术标准',
-      time: '1天前',
-      image: getImagePath('/images/ski-bg.jpg')
-    }
-  ];
-
-  // 积分排行榜
-  const topAthletes = [
-    { rank: 1, name: '赵雷', nation: '吉林', points: 380.00, change: 0 },
-    { rank: 2, name: '孙雪', nation: '黑龙江', points: 295.00, change: 1 },
-    { rank: 3, name: '周强', nation: '河北', points: 230.00, change: -1 },
-    { rank: 4, name: '吴冰', nation: '北京', points: 195.00, change: 2 },
-    { rank: 5, name: '郑飞', nation: '辽宁', points: 175.00, change: 0 }
-  ];
+  const upcomingEvents = t.snowboardParallel.upcomingEvents?.events ?? [];
+  const latestNews = t.snowboardParallel.latestNews?.items?.map((news) => ({
+    ...news,
+    image: news.image ? getImagePath(news.image) : undefined
+  })) ?? [];
+  const topAthletes = t.snowboardParallel.topAthletes?.athletes ?? [];
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);

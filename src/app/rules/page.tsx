@@ -1,116 +1,385 @@
 'use client'
 
 import { useState } from 'react'
-import { Calculator, FileText, Trophy, Users, Award, Star, Target, Clock, BookOpen, ExternalLink, Copy, Download, Menu } from 'lucide-react'
 import Link from 'next/link'
+import {
+  Calculator,
+  FileText,
+  Trophy,
+  Users,
+  Award,
+  Star,
+  Target,
+  Clock,
+  BookOpen,
+  ExternalLink,
+  Copy,
+  Download,
+  Menu
+} from 'lucide-react'
+import { useTranslation } from '@/contexts/LanguageContext'
 
-// 规则模块
-const ruleModules = [
+type IconKey =
+  | 'calculator'
+  | 'file'
+  | 'trophy'
+  | 'users'
+  | 'award'
+  | 'star'
+  | 'target'
+  | 'clock'
+  | 'book'
+  | 'external'
+  | 'download'
+  | 'menu'
+
+const iconMap: Record<IconKey, typeof Calculator> = {
+  calculator: Calculator,
+  file: FileText,
+  trophy: Trophy,
+  users: Users,
+  award: Award,
+  star: Star,
+  target: Target,
+  clock: Clock,
+  book: BookOpen,
+  external: ExternalLink,
+  download: Download,
+  menu: Menu
+}
+
+const defaultContent = {
+  header: {
+    title: 'China Alpine Ski Rules Library',
+    description:
+      'Review the streamlined rules system covering points calculation, competition management, youth development and more.',
+    highlights: [
+      { icon: 'award' as IconKey, text: 'Official Standard' },
+      { icon: 'target' as IconKey, text: 'Simplified Calculations' },
+      { icon: 'users' as IconKey, text: 'Expanded Youth System' }
+    ]
+  },
+  toc: {
+    toggleTitle: 'Toggle table of contents',
+    title: 'Page Outline',
+    download: 'Download PDF version',
+    items: {
+      coreFormula: 'Core Formula',
+      ruleModules: 'Rule Modules',
+      coreFeatures: 'Key Highlights',
+      quickLinks: 'Quick Links',
+      upgradeInfo: 'Upgrade Notes',
+      importantNotice: 'Important Notice'
+    }
+  },
+  formula: {
+    title: 'Core Formula',
+    expression: 'Final Points = (Base Event Points + Penalty Points) × Event Coefficient',
+    description:
+      'Compared with the complex v2.0 system, quality factors, participation factors, and additional points are removed. The streamlined three-step method improves efficiency and transparency.',
+    copyButton: 'Copy Formula',
+    copySuccess: 'Copied to clipboard!',
+    calculatorButton: 'Use Calculator'
+  },
+  ruleModules: {
+    points: {
+      title: 'China Alpine Ski Points Rules',
+      description: 'Streamlined points calculation system based on a three-step formula.',
+      features: [
+        'Simplified three-step formula',
+        'Three-tier competition structure (A/B/C)',
+        'Expanded youth categories',
+        'Improved transparency'
+      ],
+      linkLabel: 'View details'
+    },
+    competition: {
+      title: 'Competition Regulations',
+      description: 'Understand the latest competition rules and youth system guidance.',
+      features: [
+        'Event overview',
+        'Age group system',
+        'Participation guide',
+        'Safety and technical standards'
+      ],
+      linkLabel: 'View details'
+    },
+    documents: {
+      title: 'China Points Documentation',
+      description: 'Access documents and tools for the streamlined points system.',
+      features: [
+        'Detailed rule explanations',
+        'Formula component notes',
+        'Online calculator',
+        'Downloadable PDFs'
+      ],
+      linkLabel: 'View details'
+    }
+  },
+  v4Features: {
+    title: 'Key Highlights',
+    items: {
+      simplified: {
+        title: 'Simplified Calculations',
+        description: 'Removes complex quality, participation, and additional factors.'
+      },
+      tiers: {
+        title: 'Three-tier System',
+        description: 'Event classes A (1.0), B (0.6), and C (0.3) for clear management.'
+      },
+      youth: {
+        title: 'Expanded Youth',
+        description: 'Focused support for U15–U18 age brackets.'
+      },
+      efficiency: {
+        title: 'Efficient & Transparent',
+        description: 'Three-step method improves speed and clarity.'
+      }
+    }
+  },
+  quickLinks: {
+    title: 'Quick Links',
+    items: {
+      calculator: { label: 'Points Calculator' },
+      rankings: { label: 'Points Rankings' },
+      data: { label: 'Event Data Management' },
+      association: { label: 'China Ski Association', external: true }
+    }
+  },
+  upgradeInfo: {
+    title: 'Upgrade Notes',
+    improvements: {
+      title: 'Key Improvements',
+      items: [
+        'Streamlined formula without complex factors',
+        'Three-tier event classification for clarity',
+        'Expanded youth age brackets with full support',
+        'Enhanced transparency and efficiency'
+      ]
+    },
+    advantages: {
+      title: 'Technical Advantages',
+      items: [
+        'Three-step calculation, easy to adopt',
+        'Standardised management aligned with international practices',
+        'Digital tools with comprehensive online support',
+        'Open and transparent competition environment'
+      ]
+    }
+  },
+  importantNotice: {
+    title: 'Important Notice',
+    version: {
+      title: 'Rule Version',
+      items: [
+        'Current version: latest release',
+        'Effective season: 2024–2025',
+        'Scope: domestic events in China',
+        'Update cycle: adjusted according to practice'
+      ]
+    },
+    usage: {
+      title: 'Usage Guidance',
+      items: [
+        'Start with the points rules overview',
+        'Use the online calculator for verification',
+        'Follow youth development policies closely',
+        'Stay informed on rule updates'
+      ]
+    },
+    support:
+      'This rule framework builds upon international experience and China’s realities to provide accurate, fair, and efficient support for the development of alpine skiing. For questions or suggestions, please contact us through the listed channels.'
+  }
+}
+
+const ruleModulesConfig = [
   {
-    title: '中国高山滑雪积分规则 ',
-    description: '全新简化的积分计算体系，基于三步计算公式，去除复杂系数',
-    icon: Calculator,
+    id: 'points',
+    icon: 'calculator' as IconKey,
     href: '/rules/points',
     color: 'text-blue-600',
     bgColor: 'bg-blue-50',
-    borderColor: 'border-blue-200',
-    features: [
-      '简化三步计算公式',
-      '三级赛事体系(A/B/C)',
-      '扩展青少年年龄组',
-      '提高计算透明度'
-    ]
+    borderColor: 'border-blue-200'
   },
   {
-    title: '竞赛规则说明 ',
-    description: '了解新版竞赛规则和扩展青少年体系，完整参赛指导',
-    icon: Trophy,
+    id: 'competition',
+    icon: 'trophy' as IconKey,
     href: '/rules/competition',
     color: 'text-green-600',
     bgColor: 'bg-green-50',
-    borderColor: 'border-green-200',
-    features: [
-      '比赛项目介绍',
-      '年龄分组体系',
-      '参赛指南流程',
-      '安全技术规范'
-    ]
+    borderColor: 'border-green-200'
   },
   {
-    title: '中国积分规则文档',
-    description: '查看最新的简化积分规则文档和计算器工具',
-    icon: FileText,
+    id: 'documents',
+    icon: 'file' as IconKey,
     href: '/rules/fis',
     color: 'text-purple-600',
     bgColor: 'bg-purple-50',
-    borderColor: 'border-purple-200',
-    features: [
-      '规则详解',
-      '公式组件说明',
-      '在线积分计算器',
-      'PDF文档下载'
-    ]
+    borderColor: 'border-purple-200'
   }
 ]
 
-// 核心特点
-const v4Features = [
-  {
-    title: '简化计算',
-    description: '去除复杂的质量系数、人数系数、附加分等要素',
-    icon: Target,
-    color: 'text-blue-600'
-  },
-  {
-    title: '三级体系',
-    description: 'A级(1.0)、B级(0.6)、C级(0.3)三级赛事分类',
-    icon: Star,
-    color: 'text-green-600'
-  },
-  {
-    title: '扩展青少年',
-    description: 'U15-U18核心年龄段，精准培养支持',
-    icon: Users,
-    color: 'text-purple-600'
-  },
-  {
-    title: '高效透明',
-    description: '三步计算公式，提高效率和透明度',
-    icon: Clock,
-    color: 'text-orange-600'
-  }
+const v4FeaturesConfig = [
+  { id: 'simplified', icon: 'target' as IconKey, color: 'text-blue-600' },
+  { id: 'tiers', icon: 'star' as IconKey, color: 'text-green-600' },
+  { id: 'youth', icon: 'users' as IconKey, color: 'text-purple-600' },
+  { id: 'efficiency', icon: 'clock' as IconKey, color: 'text-orange-600' }
 ]
 
-// 快速链接
-const quickLinks = [
-  { name: '积分计算器', href: '/points/calculator', icon: Calculator },
-  { name: '积分规则查询', href: '/points/rankings', icon: Award },
-  { name: '赛事数据管理', href: '/data', icon: FileText },
-  { name: '中国滑雪协会', href: 'https://www.csa.org.cn', icon: ExternalLink, external: true }
+const quickLinksConfig = [
+  { id: 'calculator', href: '/points/calculator', icon: 'calculator' as IconKey, external: false },
+  { id: 'rankings', href: '/points/rankings', icon: 'award' as IconKey, external: false },
+  { id: 'data', href: '/data', icon: 'file' as IconKey, external: false },
+  { id: 'association', href: 'https://www.csa.org.cn', icon: 'external' as IconKey, external: true }
+]
+
+const tocConfig = [
+  { id: 'core-formula', icon: 'calculator' as IconKey, key: 'coreFormula' },
+  { id: 'rule-modules', icon: 'book' as IconKey, key: 'ruleModules' },
+  { id: 'core-features', icon: 'star' as IconKey, key: 'coreFeatures' },
+  { id: 'quick-links', icon: 'external' as IconKey, key: 'quickLinks' },
+  { id: 'upgrade-info', icon: 'trophy' as IconKey, key: 'upgradeInfo' },
+  { id: 'important-notice', icon: 'award' as IconKey, key: 'importantNotice' }
 ]
 
 export default function RulesMainPage() {
+  const { t } = useTranslation()
+  const translations = t.rulesPage ?? {}
+
   const [copiedFormula, setCopiedFormula] = useState(false)
   const [showToc, setShowToc] = useState(false)
 
-  // 目录项
-  const tocItems = [
-    { id: 'core-formula', title: '核心公式', icon: Calculator },
-    { id: 'rule-modules', title: '规则模块', icon: BookOpen },
-    { id: 'core-features', title: '核心特点', icon: Star },
-    { id: 'quick-links', title: '快速链接', icon: ExternalLink },
-    { id: 'upgrade-info', title: '升级说明', icon: Trophy },
-    { id: 'important-notice', title: '重要提示', icon: Award }
-  ]
+  const header = {
+    title: translations.header?.title ?? defaultContent.header.title,
+    description: translations.header?.description ?? defaultContent.header.description,
+    highlights: (translations.header?.highlights ?? defaultContent.header.highlights).map((item) => ({
+      icon: iconMap[(item.icon as IconKey) || 'award'],
+      text: item.text ?? ''
+    }))
+  }
+
+  const toc = {
+    toggleTitle: translations.toc?.toggleTitle ?? defaultContent.toc.toggleTitle,
+    title: translations.toc?.title ?? defaultContent.toc.title,
+    download: translations.toc?.download ?? defaultContent.toc.download,
+    items: translations.toc?.items ?? defaultContent.toc.items
+  }
+
+  const formulaContent = {
+    title: translations.formula?.title ?? defaultContent.formula.title,
+    expression: translations.formula?.expression ?? defaultContent.formula.expression,
+    description: translations.formula?.description ?? defaultContent.formula.description,
+    copyButton: translations.formula?.copyButton ?? defaultContent.formula.copyButton,
+    copySuccess: translations.formula?.copySuccess ?? defaultContent.formula.copySuccess,
+    calculatorButton: translations.formula?.calculatorButton ?? defaultContent.formula.calculatorButton
+  }
+
+  const ruleModules = ruleModulesConfig.map((moduleConfig) => {
+    const content =
+      translations.ruleModules?.[moduleConfig.id] ??
+      (defaultContent.ruleModules as Record<string, any>)[moduleConfig.id]
+
+    const IconComponent = iconMap[moduleConfig.icon] ?? Calculator
+
+    return {
+      ...moduleConfig,
+      IconComponent,
+      title: content?.title ?? '',
+      description: content?.description ?? '',
+      features: (content?.features ?? []) as string[],
+      linkLabel: content?.linkLabel ?? defaultContent.ruleModules.points.linkLabel
+    }
+  })
+
+  const v4Features = v4FeaturesConfig.map((featureConfig) => {
+    const content =
+      translations.v4Features?.items?.[featureConfig.id] ??
+      (defaultContent.v4Features.items as Record<string, any>)[featureConfig.id]
+
+    const IconComponent = iconMap[featureConfig.icon] ?? Target
+
+    return {
+      ...featureConfig,
+      IconComponent,
+      title: content?.title ?? '',
+      description: content?.description ?? ''
+    }
+  })
+
+  const v4Title = translations.v4Features?.title ?? defaultContent.v4Features.title
+
+  const quickLinks = quickLinksConfig.map((linkConfig) => {
+    const content =
+      translations.quickLinks?.items?.[linkConfig.id] ??
+      (defaultContent.quickLinks.items as Record<string, any>)[linkConfig.id]
+
+    const IconComponent = iconMap[linkConfig.icon] ?? Calculator
+
+    return {
+      ...linkConfig,
+      IconComponent,
+      label: content?.label ?? '',
+      external: content?.external ?? linkConfig.external
+    }
+  })
+
+  const quickLinksTitle = translations.quickLinks?.title ?? defaultContent.quickLinks.title
+
+  const upgradeInfo = {
+    title: translations.upgradeInfo?.title ?? defaultContent.upgradeInfo.title,
+    improvements: {
+      title:
+        translations.upgradeInfo?.improvements?.title ??
+        defaultContent.upgradeInfo.improvements.title,
+      items:
+        translations.upgradeInfo?.improvements?.items ??
+        defaultContent.upgradeInfo.improvements.items
+    },
+    advantages: {
+      title:
+        translations.upgradeInfo?.advantages?.title ??
+        defaultContent.upgradeInfo.advantages.title,
+      items:
+        translations.upgradeInfo?.advantages?.items ??
+        defaultContent.upgradeInfo.advantages.items
+    }
+  }
+
+  const importantNotice = {
+    title: translations.importantNotice?.title ?? defaultContent.importantNotice.title,
+    version: {
+      title:
+        translations.importantNotice?.version?.title ??
+        defaultContent.importantNotice.version.title,
+      items:
+        translations.importantNotice?.version?.items ??
+        defaultContent.importantNotice.version.items
+    },
+    usage: {
+      title:
+        translations.importantNotice?.usage?.title ??
+        defaultContent.importantNotice.usage.title,
+      items:
+        translations.importantNotice?.usage?.items ??
+        defaultContent.importantNotice.usage.items
+    },
+    support:
+      translations.importantNotice?.support ?? defaultContent.importantNotice.support
+  }
+
+  const tocItems = tocConfig.map((item) => ({
+    ...item,
+    IconComponent: iconMap[item.icon] ?? Calculator,
+    label: toc.items?.[item.key as keyof typeof toc.items] ?? ''
+  }))
 
   const copyFormula = async () => {
-    const formula = '最终积分 = (基础比赛积分 + 判罚分) × 赛事系数'
     try {
-      await navigator.clipboard.writeText(formula)
+      await navigator.clipboard.writeText(formulaContent.expression)
       setCopiedFormula(true)
       setTimeout(() => setCopiedFormula(false), 2000)
     } catch (err) {
-      console.error('复制失败:', err)
+      console.error('Failed to copy formula:', err)
     }
   }
 
@@ -124,19 +393,19 @@ export default function RulesMainPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative">
-      {/* 目录侧边栏 */}
+      {/* Table of contents toggle */}
       <div className="fixed top-20 right-4 z-50">
         <button
           onClick={() => setShowToc(!showToc)}
           className="bg-ski-blue text-white p-2 rounded-lg shadow-lg hover:bg-ski-blue/90 transition-colors mb-2"
-          title="显示/隐藏目录"
+          title={toc.toggleTitle}
         >
           <Menu className="h-5 w-5" />
         </button>
 
         {showToc && (
           <div className="bg-white rounded-lg shadow-xl border border-gray-200 p-4 w-64 max-h-96 overflow-y-auto">
-            <h3 className="font-semibold text-gray-900 mb-4">页面目录</h3>
+            <h3 className="font-semibold text-gray-900 mb-4">{toc.title}</h3>
             <nav className="space-y-2">
               {tocItems.map((item) => (
                 <button
@@ -144,8 +413,8 @@ export default function RulesMainPage() {
                   onClick={() => scrollToSection(item.id)}
                   className="flex items-center w-full text-left text-sm text-gray-600 hover:text-ski-blue hover:bg-gray-50 p-2 rounded transition-colors"
                 >
-                  <item.icon className="h-4 w-4 mr-2 flex-shrink-0" />
-                  {item.title}
+                  <item.IconComponent className="h-4 w-4 mr-2 flex-shrink-0" />
+                  {item.label}
                 </button>
               ))}
             </nav>
@@ -156,97 +425,86 @@ export default function RulesMainPage() {
                 className="flex items-center w-full text-left text-sm text-green-600 hover:text-green-700 hover:bg-green-50 p-2 rounded transition-colors"
               >
                 <Download className="h-4 w-4 mr-2" />
-                下载PDF版本
+                {toc.download}
               </button>
             </div>
           </div>
         )}
       </div>
 
-      {/* Header */}
+      {/* Hero */}
       <div className="text-center mb-12" id="header">
-        <h1 className="text-4xl font-bold text-ski-navy mb-4">
-          中国高山滑雪规则文档
-        </h1>
+        <h1 className="text-4xl font-bold text-ski-navy mb-4">{header.title}</h1>
         <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-          查看最新的简化规则体系，包含积分计算、竞赛管理、青少年培养等完整规则文档
+          {header.description}
         </p>
         <div className="flex justify-center items-center space-x-4 mt-4 text-sm text-gray-500">
-          <span className="flex items-center">
-            <Award className="h-4 w-4 mr-1" />
-            官方标准
-          </span>
-          <span className="flex items-center">
-            <Target className="h-4 w-4 mr-1" />
-            简化计算体系
-          </span>
-          <span className="flex items-center">
-            <Users className="h-4 w-4 mr-1" />
-            扩展青少年体系
-          </span>
+          {header.highlights.map((item, index) => (
+            <span key={index} className="flex items-center">
+              <item.icon className="h-4 w-4 mr-1" />
+              {item.text}
+            </span>
+          ))}
         </div>
       </div>
 
-      {/* 简化公式展示 */}
+      {/* Formula */}
       <div id="core-formula" className="bg-gradient-to-r from-ski-blue to-primary-700 text-white rounded-lg p-8 mb-12">
         <div className="text-center">
-          <h2 className="text-3xl font-bold mb-4">核心公式</h2>
+          <h2 className="text-3xl font-bold mb-4">{formulaContent.title}</h2>
           <div className="relative">
             <div className="text-2xl font-mono font-bold mb-6 bg-white/20 rounded-lg py-4 px-6 relative">
-              最终积分 = (基础比赛积分 + 判罚分) × 赛事系数
+              {formulaContent.expression}
               <button
                 onClick={copyFormula}
                 className="absolute top-2 right-2 bg-white/20 hover:bg-white/30 p-2 rounded transition-colors"
-                title="复制公式"
+                title={formulaContent.copyButton}
               >
                 <Copy className="h-4 w-4" />
               </button>
             </div>
             {copiedFormula && (
               <div className="absolute top-0 right-0 bg-green-500 text-white px-3 py-1 rounded text-sm">
-                已复制到剪贴板！
+                {formulaContent.copySuccess}
               </div>
             )}
           </div>
-          <p className="text-lg opacity-90">
-            相比v2.0复杂体系，去除了质量系数、人数系数、附加分等复杂要素，
-            采用简化三步计算法，提高效率和透明度
-          </p>
+          <p className="text-lg opacity-90">{formulaContent.description}</p>
           <div className="mt-6 flex justify-center space-x-4">
             <button
               onClick={copyFormula}
               className="flex items-center px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
             >
               <Copy className="h-4 w-4 mr-2" />
-              复制公式
+              {formulaContent.copyButton}
             </button>
             <button
               onClick={() => window.open('/points/calculator', '_blank')}
               className="flex items-center px-4 py-2 bg-white/20 hover:bg-white/30 rounded-lg transition-colors"
             >
               <Calculator className="h-4 w-4 mr-2" />
-              使用计算器
+              {formulaContent.calculatorButton}
             </button>
           </div>
         </div>
       </div>
 
-      {/* 规则模块 */}
+      {/* Rule modules */}
       <div id="rule-modules" className="mb-12">
-        <h2 className="text-3xl font-bold text-ski-navy mb-8 text-center">规则模块</h2>
+        <h2 className="text-3xl font-bold text-ski-navy mb-8 text-center">
+          {translations.headings?.ruleModules ?? 'Rule Modules'}
+        </h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {ruleModules.map((module, index) => (
-            <Link key={index} href={module.href}>
+          {ruleModules.map((module) => (
+            <Link key={module.id} href={module.href}>
               <div className={`bg-white rounded-lg shadow-lg border-2 ${module.borderColor} p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full`}>
                 <div className="flex items-center mb-4">
                   <div className={`w-12 h-12 ${module.bgColor} rounded-lg flex items-center justify-center mr-4`}>
-                    <module.icon className={`h-6 w-6 ${module.color}`} />
+                    <module.IconComponent className={`h-6 w-6 ${module.color}`} />
                   </div>
                   <h3 className="text-xl font-bold text-ski-navy">{module.title}</h3>
                 </div>
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {module.description}
-                </p>
+                <p className="text-gray-600 mb-4 leading-relaxed">{module.description}</p>
                 <div className="space-y-2">
                   {module.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center text-sm text-gray-700">
@@ -257,7 +515,7 @@ export default function RulesMainPage() {
                 </div>
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <div className={`inline-flex items-center text-sm font-medium ${module.color}`}>
-                    查看详情
+                    {module.linkLabel}
                     <ExternalLink className="h-3 w-3 ml-1" />
                   </div>
                 </div>
@@ -267,25 +525,23 @@ export default function RulesMainPage() {
         </div>
       </div>
 
-      {/* 核心特点 */}
+      {/* Key highlights */}
       <div id="core-features" className="mb-12">
-        <h2 className="text-3xl font-bold text-ski-navy mb-8 text-center">核心特点</h2>
+        <h2 className="text-3xl font-bold text-ski-navy mb-8 text-center">{v4Title}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {v4Features.map((feature, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg p-6 text-center">
-              <feature.icon className={`h-12 w-12 ${feature.color} mx-auto mb-4`} />
+              <feature.IconComponent className={`h-12 w-12 ${feature.color} mx-auto mb-4`} />
               <h3 className="text-lg font-semibold text-ski-navy mb-3">{feature.title}</h3>
-              <p className="text-sm text-gray-600">
-                {feature.description}
-              </p>
+              <p className="text-sm text-gray-600">{feature.description}</p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* 快速链接 */}
+      {/* Quick links */}
       <div id="quick-links" className="mb-12">
-        <h2 className="text-3xl font-bold text-ski-navy mb-8 text-center">快速链接</h2>
+        <h2 className="text-3xl font-bold text-ski-navy mb-8 text-center">{quickLinksTitle}</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {quickLinks.map((link, index) => (
             link.external ? (
@@ -296,14 +552,14 @@ export default function RulesMainPage() {
                 rel="noopener noreferrer"
                 className="bg-white rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow duration-300"
               >
-                <link.icon className="h-8 w-8 text-ski-blue mx-auto mb-2" />
-                <span className="text-sm font-medium text-gray-900">{link.name}</span>
+                <link.IconComponent className="h-8 w-8 text-ski-blue mx-auto mb-2" />
+                <span className="text-sm font-medium text-gray-900">{link.label}</span>
               </a>
             ) : (
               <Link key={index} href={link.href}>
                 <div className="bg-white rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow duration-300 cursor-pointer">
-                  <link.icon className="h-8 w-8 text-ski-blue mx-auto mb-2" />
-                  <span className="text-sm font-medium text-gray-900">{link.name}</span>
+                  <link.IconComponent className="h-8 w-8 text-ski-blue mx-auto mb-2" />
+                  <span className="text-sm font-medium text-gray-900">{link.label}</span>
                 </div>
               </Link>
             )
@@ -311,60 +567,52 @@ export default function RulesMainPage() {
         </div>
       </div>
 
-      {/* 升级说明 */}
+      {/* Upgrade info */}
       <div id="upgrade-info" className="bg-gradient-to-r from-ski-navy to-gray-800 text-white rounded-lg p-8 mb-12">
-        <h2 className="text-3xl font-bold mb-6 text-center">升级说明</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center">{upgradeInfo.title}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
-            <h3 className="text-xl font-semibold mb-4">主要改进</h3>
+            <h3 className="text-xl font-semibold mb-4">{upgradeInfo.improvements.title}</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>• 简化积分计算公式，去除复杂系数</li>
-              <li>• 三级赛事体系，管理更加清晰</li>
-              <li>• 扩展青少年年龄组，全程培养支持</li>
-              <li>• 提高计算透明度和效率</li>
+              {upgradeInfo.improvements.items.map((item, idx) => (
+                <li key={idx}>• {item}</li>
+              ))}
             </ul>
           </div>
           <div>
-            <h3 className="text-xl font-semibold mb-4">技术优势</h3>
+            <h3 className="text-xl font-semibold mb-4">{upgradeInfo.advantages.title}</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>• 三步计算法，易于理解和实施</li>
-              <li>• 标准化管理，与国际接轨</li>
-              <li>• 数字化支持，在线工具完善</li>
-              <li>• 开放透明，公平公正竞争</li>
+              {upgradeInfo.advantages.items.map((item, idx) => (
+                <li key={idx}>• {item}</li>
+              ))}
             </ul>
           </div>
         </div>
       </div>
 
-      {/* 重要提示 */}
+      {/* Important notice */}
       <div id="important-notice" className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-        <h3 className="text-lg font-semibold text-blue-800 mb-4">重要提示</h3>
+        <h3 className="text-lg font-semibold text-blue-800 mb-4">{importantNotice.title}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-blue-700">
           <div>
-            <h4 className="font-semibold mb-2">规则版本</h4>
+            <h4 className="font-semibold mb-2">{importantNotice.version.title}</h4>
             <ul className="space-y-1">
-              <li>• 当前版本：（最新）</li>
-              <li>• 实施日期：2024-2025赛季</li>
-              <li>• 适用范围：中国国内赛事</li>
-              <li>• 更新周期：根据实践情况调整</li>
+              {importantNotice.version.items.map((item, idx) => (
+                <li key={idx}>• {item}</li>
+              ))}
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold mb-2">使用指南</h4>
+            <h4 className="font-semibold mb-2">{importantNotice.usage.title}</h4>
             <ul className="space-y-1">
-              <li>• 建议从积分规则开始了解</li>
-              <li>• 使用在线计算器验证计算</li>
-              <li>• 关注青少年体系扩展政策</li>
-              <li>• 及时获取规则更新信息</li>
+              {importantNotice.usage.items.map((item, idx) => (
+                <li key={idx}>• {item}</li>
+              ))}
             </ul>
           </div>
         </div>
         <div className="mt-6 p-4 bg-blue-100 rounded-lg">
-          <p className="text-blue-800 text-sm">
-            <strong>技术支持：</strong>
-            本规则体系基于国际先进经验，结合中国实际情况制定，旨在为中国高山滑雪运动发展提供科学、公平、高效的规则支撑。
-            如有疑问或建议，请通过相关渠道联系我们。
-          </p>
+          <p className="text-blue-800 text-sm">{importantNotice.support}</p>
         </div>
       </div>
     </div>

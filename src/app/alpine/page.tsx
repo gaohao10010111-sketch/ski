@@ -13,17 +13,6 @@ import { useTranslation } from '@/contexts/LanguageContext';
 export default function AlpinePage() {
   const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [activeSubDiscipline, setActiveSubDiscipline] = useState('all');
-
-  // 子项目导航
-  const subDisciplines = [
-    { id: 'all', name: '全部项目', nameEn: 'All Events' },
-    { id: 'DH', name: '速降', nameEn: 'Downhill' },
-    { id: 'SL', name: '回转', nameEn: 'Slalom' },
-    { id: 'GS', name: '大回转', nameEn: 'Giant Slalom' },
-    { id: 'SG', name: '超级大回转', nameEn: 'Super-G' },
-    { id: 'AC', name: '全能', nameEn: 'Alpine Combined' }
-  ];
 
   // 英雄轮播内容
   const heroSlides = [
@@ -57,61 +46,14 @@ export default function AlpinePage() {
     { title: t.alpine.quickAccess.documents.title, nameEn: t.alpine.quickAccess.documents.nameEn, icon: FileText, href: '/alpine/docs/points-rules', color: 'from-cyan-500 to-cyan-600' }
   ];
 
-  // 即将进行的比赛
-  const upcomingEvents = [
-    {
-      date: '12月20日',
-      event: '全国锦标赛',
-      discipline: '大回转',
-      location: '万龙雪场',
-      status: 'upcoming'
-    },
-    {
-      date: '12月22日',
-      event: '全国锦标赛',
-      discipline: '回转',
-      location: '万龙雪场',
-      status: 'upcoming'
-    },
-    {
-      date: '12月25日',
-      event: '中国杯公开赛',
-      discipline: '速降',
-      location: '长白山雪场',
-      status: 'upcoming'
-    }
-  ];
+  const upcomingEvents = t.alpine.upcomingEvents?.events ?? [];
 
-  // 最新新闻
-  const latestNews = [
-    {
-      title: '中国高山滑雪队冬训备战',
-      subtitle: '全力以赴迎接新赛季挑战',
-      time: '2小时前',
-      image: getImagePath('/images/ski-bg.jpg')
-    },
-    {
-      title: '积分规则v4.0详解',
-      subtitle: '了解最新的积分计算标准',
-      time: '5小时前',
-      image: getImagePath('/images/ski-bg.jpg')
-    },
-    {
-      title: '雪场认证工作全面展开',
-      subtitle: '确保比赛场地符合国际标准',
-      time: '1天前',
-      image: getImagePath('/images/ski-bg.jpg')
-    }
-  ];
+  const latestNews = t.alpine.latestNews?.items?.map((news) => ({
+    ...news,
+    image: news.image ? getImagePath(news.image) : undefined
+  })) ?? [];
 
-  // 积分排行榜
-  const topAthletes = [
-    { rank: 1, name: '张伟', nation: '北京', points: 0.00, change: 0 },
-    { rank: 2, name: '李雪', nation: '黑龙江', points: 8.45, change: 1 },
-    { rank: 3, name: '王冰', nation: '吉林', points: 12.30, change: -1 },
-    { rank: 4, name: '刘强', nation: '河北', points: 15.67, change: 2 },
-    { rank: 5, name: '陈明', nation: '辽宁', points: 18.92, change: 0 }
-  ];
+  const topAthletes = t.alpine.topAthletes?.athletes ?? [];
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);

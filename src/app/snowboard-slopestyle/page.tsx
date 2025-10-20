@@ -13,14 +13,6 @@ import { useTranslation } from '@/contexts/LanguageContext';
 export default function SnowboardSlopestylePage() {
   const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [activeSubDiscipline, setActiveSubDiscipline] = useState('all');
-
-  // 子项目导航
-  const subDisciplines = [
-    { id: 'all', name: '全部项目', nameEn: 'All Events' },
-    { id: 'SS', name: '坡面障碍技巧', nameEn: 'Slopestyle' },
-    { id: 'BA', name: '大跳台', nameEn: 'Big Air' }
-  ];
 
   // 英雄轮播内容
   const heroSlides = [
@@ -54,61 +46,12 @@ export default function SnowboardSlopestylePage() {
     { title: t.snowboardSlopestyle.quickAccess.documents.title, nameEn: t.snowboardSlopestyle.quickAccess.documents.nameEn, icon: FileText, href: '/snowboard-slopestyle/docs/points-rules', color: 'from-slate-500 to-slate-600' }
   ];
 
-  // 即将进行的比赛
-  const upcomingEvents = [
-    {
-      date: '12月18日',
-      event: '全国锦标赛',
-      discipline: '坡面障碍技巧',
-      location: '崇礼云顶雪场',
-      status: 'upcoming'
-    },
-    {
-      date: '12月20日',
-      event: '全国锦标赛',
-      discipline: '大跳台',
-      location: '崇礼云顶雪场',
-      status: 'upcoming'
-    },
-    {
-      date: '12月28日',
-      event: 'U系列青少年赛',
-      discipline: '坡面障碍技巧',
-      location: '北京石京龙雪场',
-      status: 'upcoming'
-    }
-  ];
-
-  // 最新新闻
-  const latestNews = [
-    {
-      title: '中国单板滑雪队冬训动态',
-      subtitle: '备战新赛季，提升技术难度',
-      time: '3小时前',
-      image: getImagePath('/images/ski-bg.jpg')
-    },
-    {
-      title: '360分档积分规则详解',
-      subtitle: '了解最新的积分计算标准',
-      time: '6小时前',
-      image: getImagePath('/images/ski-bg.jpg')
-    },
-    {
-      title: '新建大跳台场地通过认证',
-      subtitle: '符合二级场地技术标准',
-      time: '1天前',
-      image: getImagePath('/images/ski-bg.jpg')
-    }
-  ];
-
-  // 积分排行榜
-  const topAthletes = [
-    { rank: 1, name: '李明', nation: '北京', points: 360.00, change: 0 },
-    { rank: 2, name: '王雪', nation: '河北', points: 288.00, change: 1 },
-    { rank: 3, name: '张强', nation: '吉林', points: 216.00, change: -1 },
-    { rank: 4, name: '刘冰', nation: '黑龙江', points: 180.00, change: 2 },
-    { rank: 5, name: '陈飞', nation: '辽宁', points: 162.00, change: 0 }
-  ];
+  const upcomingEvents = t.snowboardSlopestyle.upcomingEvents?.events ?? [];
+  const latestNews = t.snowboardSlopestyle.latestNews?.items?.map((news) => ({
+    ...news,
+    image: news.image ? getImagePath(news.image) : undefined
+  })) ?? [];
+  const topAthletes = t.snowboardSlopestyle.topAthletes?.athletes ?? [];
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);

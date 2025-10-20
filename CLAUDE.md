@@ -266,3 +266,11 @@ npm test
 ---
 
 **注意**: 本文档为项目核心概述。详细技术规范、积分计算公式、UI设计细节等请参考 `docs/` 目录下的专项文档。
+
+## GitHub 推送命令
+
+使用个人 access token 推送示例：
+```bash
+git push https://<USERNAME>:<PERSONAL_ACCESS_TOKEN>@github.com/gaohao10010111-sketch/ski.git main
+```
+> 请将 `<USERNAME>` 与 `<PERSONAL_ACCESS_TOKEN>` 替换为当前有效凭证。

@@ -13,14 +13,6 @@ import { useTranslation } from '@/contexts/LanguageContext';
 export default function FreestyleSlopestylePage() {
   const { t } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [activeSubDiscipline, setActiveSubDiscipline] = useState('all');
-
-  // 子项目导航
-  const subDisciplines = [
-    { id: 'all', name: '全部项目', nameEn: 'All Events' },
-    { id: 'SS', name: '坡面障碍技巧', nameEn: 'Slopestyle' },
-    { id: 'BA', name: '大跳台', nameEn: 'Big Air' }
-  ];
 
   // 英雄轮播内容
   const heroSlides = [
@@ -54,61 +46,12 @@ export default function FreestyleSlopestylePage() {
     { title: t.freestyleSlopestyle.quickAccess.documents.title, nameEn: t.freestyleSlopestyle.quickAccess.documents.nameEn, icon: FileText, href: '/freestyle-slopestyle/docs/points-rules', color: 'from-cyan-400 to-cyan-500' }
   ];
 
-  // 即将进行的比赛
-  const upcomingEvents = [
-    {
-      date: '12月19日',
-      event: '全国锦标赛',
-      discipline: '坡面障碍技巧',
-      location: '崇礼密苑云顶雪场',
-      status: 'upcoming'
-    },
-    {
-      date: '12月21日',
-      event: '全国锦标赛',
-      discipline: '大跳台',
-      location: '崇礼密苑云顶雪场',
-      status: 'upcoming'
-    },
-    {
-      date: '12月26日',
-      event: 'U系列青少年赛',
-      discipline: '坡面障碍技巧',
-      location: '北京石京龙雪场',
-      status: 'upcoming'
-    }
-  ];
-
-  // 最新新闻
-  const latestNews = [
-    {
-      title: '中国自由式滑雪队冬训纪实',
-      subtitle: '突破技术难度，挑战极限动作',
-      time: '1小时前',
-      image: getImagePath('/images/ski-bg.jpg')
-    },
-    {
-      title: '360分档积分规则权威解读',
-      subtitle: '了解最新的积分计算标准',
-      time: '4小时前',
-      image: getImagePath('/images/ski-bg.jpg')
-    },
-    {
-      title: '新建自由式场地获国际认证',
-      subtitle: '符合FIS二级场地技术标准',
-      time: '1天前',
-      image: getImagePath('/images/ski-bg.jpg')
-    }
-  ];
-
-  // 积分排行榜
-  const topAthletes = [
-    { rank: 1, name: '何金博', nation: '河北', points: 360.00, change: 0 },
-    { rank: 2, name: '杨文龙', nation: '黑龙江', points: 288.00, change: 1 },
-    { rank: 3, name: '孙佳旭', nation: '吉林', points: 216.00, change: -1 },
-    { rank: 4, name: '李爽', nation: '北京', points: 180.00, change: 2 },
-    { rank: 5, name: '齐广璞', nation: '辽宁', points: 162.00, change: 0 }
-  ];
+  const upcomingEvents = t.freestyleSlopestyle.upcomingEvents?.events ?? [];
+  const latestNews = t.freestyleSlopestyle.latestNews?.items?.map((news) => ({
+    ...news,
+    image: news.image ? getImagePath(news.image) : undefined
+  })) ?? [];
+  const topAthletes = t.freestyleSlopestyle.topAthletes?.athletes ?? [];
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
