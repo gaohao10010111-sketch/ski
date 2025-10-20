@@ -19,7 +19,7 @@ const getIconComponent = (iconType: string) => {
 };
 
 export default function DisciplinesOverview() {
-  const { t } = useTranslation();
+  const { language, t } = useTranslation();
   const page = t.disciplinesPage;
   const disciplines = page?.cardsSection?.cards ?? [];
   const continuationCards = page?.continuation?.cards ?? [];
