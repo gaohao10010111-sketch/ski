@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Mountain, Award, BarChart3, Target, RotateCcw } from 'lucide-react';
 import { useTranslation } from '@/contexts/LanguageContext';
