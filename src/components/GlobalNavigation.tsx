@@ -110,7 +110,7 @@ export default function GlobalNavigation() {
     {
       key: 'disciplines',
       name: t.navigation?.disciplines || 'Disciplines',
-      href: '#',
+      href: '/disciplines',
       icon: Mountain,
       highlighted: true,
       children: [
@@ -278,7 +278,8 @@ export default function GlobalNavigation() {
                 >
                   {hasChildren ? (
                     <>
-                      <button
+                      <Link
+                        href={item.href}
                         className={`flex items-center gap-1 px-3 py-1.5 rounded text-xs font-medium transition-colors whitespace-nowrap ${
                           item.highlighted
                             ? 'bg-ski-blue text-white hover:bg-ski-blue/90 shadow-sm'
@@ -286,11 +287,12 @@ export default function GlobalNavigation() {
                             ? 'text-blue-600 bg-blue-50'
                             : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
                         }`}
+                        onClick={() => setActiveDropdown(null)}
                       >
                         {Icon && <Icon className="w-3 h-3" />}
                         <span>{isDisciplineMenu ? getCurrentDisciplineName() : item.name}</span>
                         <ChevronDown className="w-2.5 h-2.5" />
-                      </button>
+                      </Link>
 
                       {activeDropdown === dropdownKey && (
                         <div className="absolute left-0 top-full pt-2 z-50">
