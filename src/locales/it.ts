@@ -91,33 +91,6 @@ export const it: Partial<TranslationKeys> = {
 
       // More features
       moreFeatures: 'More'
-    },
-    docs: {
-      competitionRules: {
-        title: 'Regolamento tecnico',
-        description: 'Norme tecniche di gara e standard di arbitraggio',
-        backLabel: 'Torna alla knowledge base'
-      },
-      pointsRules: {
-        title: 'Regole di punteggio',
-        description: 'Documento sul calcolo dei punti',
-        backLabel: 'Torna alla knowledge base'
-      },
-      venueStandards: {
-        title: 'Standard delle sedi',
-        description: 'Requisiti delle strutture e linee guida di sicurezza',
-        backLabel: 'Torna alla knowledge base'
-      },
-      fisRules: {
-        title: 'Regole FIS',
-        description: 'Riferimenti della Federazione Internazionale di Sci',
-        backLabel: 'Torna alla knowledge base'
-      },
-      guide: {
-        title: 'Guida alla piattaforma',
-        description: 'Istruzioni d’uso e FAQ',
-        backLabel: 'Torna alla knowledge base'
-      }
     }
   },
 

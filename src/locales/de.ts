@@ -91,33 +91,6 @@ export const de: Partial<TranslationKeys> = {
 
       // More features
       moreFeatures: 'More'
-    },
-    docs: {
-      competitionRules: {
-        title: 'Wettkampftechnische Regeln',
-        description: 'Technische Wettkampfregeln und Schiedsrichterstandards',
-        backLabel: 'Zurück zur Wissensdatenbank'
-      },
-      pointsRules: {
-        title: 'Punkterichtlinien',
-        description: 'Dokument zur chinesischen Punkteberechnung',
-        backLabel: 'Zurück zur Wissensdatenbank'
-      },
-      venueStandards: {
-        title: 'Stättenstandards',
-        description: 'Anforderungen an Anlagen und Sicherheit',
-        backLabel: 'Zurück zur Wissensdatenbank'
-      },
-      fisRules: {
-        title: 'FIS-Regelwerk',
-        description: 'Regeln des Internationalen Skiverbandes',
-        backLabel: 'Zurück zur Wissensdatenbank'
-      },
-      guide: {
-        title: 'Plattformhandbuch',
-        description: 'Funktionsanleitungen und häufige Fragen',
-        backLabel: 'Zurück zur Wissensdatenbank'
-      }
     }
   },
 

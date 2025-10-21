@@ -91,33 +91,6 @@ export const en: Partial<TranslationKeys> = {
 
       // More Features
       moreFeatures: 'More'
-    },
-    docs: {
-      competitionRules: {
-        title: 'Competition Rules',
-        description: 'Technical rules and officiating standards',
-        backLabel: 'Back to Knowledge Base'
-      },
-      pointsRules: {
-        title: 'Points Rules',
-        description: 'Points calculation documentation',
-        backLabel: 'Back to Knowledge Base'
-      },
-      venueStandards: {
-        title: 'Venue Standards',
-        description: 'Facility requirements and safety guidelines',
-        backLabel: 'Back to Knowledge Base'
-      },
-      fisRules: {
-        title: 'FIS Rules',
-        description: 'International Ski Federation references',
-        backLabel: 'Back to Knowledge Base'
-      },
-      guide: {
-        title: 'Platform Guide',
-        description: 'Usage guides and FAQs',
-        backLabel: 'Back to Knowledge Base'
-      }
     }
   },
 

@@ -91,33 +91,6 @@ export const ru: Partial<TranslationKeys> = {
 
       // More features
       moreFeatures: 'More'
-    },
-    docs: {
-      competitionRules: {
-        title: 'Технический регламент',
-        description: 'Правила проведения соревнований и стандарты судейства',
-        backLabel: 'Назад к базе знаний'
-      },
-      pointsRules: {
-        title: 'Правила очков',
-        description: 'Документация по расчёту очков',
-        backLabel: 'Назад к базе знаний'
-      },
-      venueStandards: {
-        title: 'Стандарты площадок',
-        description: 'Требования к инфраструктуре и безопасности',
-        backLabel: 'Назад к базе знаний'
-      },
-      fisRules: {
-        title: 'Правила FIS',
-        description: 'Регламенты Международной федерации лыжного спорта',
-        backLabel: 'Назад к базе знаний'
-      },
-      guide: {
-        title: 'Руководство по платформе',
-        description: 'Инструкции по функциям и ответы на вопросы',
-        backLabel: 'Назад к базе знаний'
-      }
     }
   },
 

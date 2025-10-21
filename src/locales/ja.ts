@@ -91,33 +91,6 @@ export const ja: Partial<TranslationKeys> = {
 
       // その他の機能
       moreFeatures: 'その他'
-    },
-    docs: {
-      competitionRules: {
-        title: '競技技術規則',
-        description: '競技運営ルールと審判基準',
-        backLabel: 'ナレッジベースに戻る'
-      },
-      pointsRules: {
-        title: 'ポイント規則',
-        description: '中国スキーポイント計算ルール文書',
-        backLabel: 'ナレッジベースに戻る'
-      },
-      venueStandards: {
-        title: '会場基準',
-        description: '会場施設の要件と安全基準',
-        backLabel: 'ナレッジベースに戻る'
-      },
-      fisRules: {
-        title: 'FIS国際規則',
-        description: '国際スキー連盟の公式規則',
-        backLabel: 'ナレッジベースに戻る'
-      },
-      guide: {
-        title: 'プラットフォームガイド',
-        description: 'システム機能の使い方とFAQ',
-        backLabel: 'ナレッジベースに戻る'
-      }
     }
   },
 

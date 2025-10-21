@@ -91,33 +91,6 @@ export const sv: Partial<TranslationKeys> = {
 
       // More features
       moreFeatures: 'More'
-    },
-    docs: {
-      competitionRules: {
-        title: 'Tekniska tävlingsregler',
-        description: 'Tävlingsregler och domarstandarder',
-        backLabel: 'Tillbaka till kunskapsbanken'
-      },
-      pointsRules: {
-        title: 'Poängregler',
-        description: 'Dokument om poängberäkning',
-        backLabel: 'Tillbaka till kunskapsbanken'
-      },
-      venueStandards: {
-        title: 'Arenastandarder',
-        description: 'Krav på anläggningar och säkerhet',
-        backLabel: 'Tillbaka till kunskapsbanken'
-      },
-      fisRules: {
-        title: 'FIS-regelverk',
-        description: 'Regelverk från Internationella Skidförbundet',
-        backLabel: 'Tillbaka till kunskapsbanken'
-      },
-      guide: {
-        title: 'Plattformsguide',
-        description: 'Användarhandledning och vanliga frågor',
-        backLabel: 'Tillbaka till kunskapsbanken'
-      }
     }
   },
 

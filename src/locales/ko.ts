@@ -91,33 +91,6 @@ export const ko: Partial<TranslationKeys> = {
 
       // More features
       moreFeatures: 'More'
-    },
-    docs: {
-      competitionRules: {
-        title: '경기 기술 규정',
-        description: '스키 경기 기술 규정과 심판 기준',
-        backLabel: '지식 센터로 돌아가기'
-      },
-      pointsRules: {
-        title: '포인트 규정',
-        description: '중국 스키 포인트 계산 규칙 문서',
-        backLabel: '지식 센터로 돌아가기'
-      },
-      venueStandards: {
-        title: '경기장 기준',
-        description: '경기장 시설 요구 사항과 안전 기준',
-        backLabel: '지식 센터로 돌아가기'
-      },
-      fisRules: {
-        title: 'FIS 국제 규정',
-        description: '국제스키연맹 공식 규정',
-        backLabel: '지식 센터로 돌아가기'
-      },
-      guide: {
-        title: '플랫폼 가이드',
-        description: '시스템 기능 사용 방법과 FAQ',
-        backLabel: '지식 센터로 돌아가기'
-      }
     }
   },
 

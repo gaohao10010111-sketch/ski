@@ -91,33 +91,6 @@ export const fi: Partial<TranslationKeys> = {
 
       // More features
       moreFeatures: 'More'
-    },
-    docs: {
-      competitionRules: {
-        title: 'Kilpailusäännöt',
-        description: 'Tekniset kilpailusäännöt ja tuomaristandardit',
-        backLabel: 'Takaisin tietopankkiin'
-      },
-      pointsRules: {
-        title: 'Pistesäännöt',
-        description: 'Asiakirja pisteiden laskennasta',
-        backLabel: 'Takaisin tietopankkiin'
-      },
-      venueStandards: {
-        title: 'Ratastandardit',
-        description: 'Tilavaatimukset ja turvallisuusohjeet',
-        backLabel: 'Takaisin tietopankkiin'
-      },
-      fisRules: {
-        title: 'FIS-säännöt',
-        description: 'Kansainvälisen hiihtoliiton ohjeistus',
-        backLabel: 'Takaisin tietopankkiin'
-      },
-      guide: {
-        title: 'Alustan käyttöopas',
-        description: 'Toiminto-oppaat ja usein kysytyt kysymykset',
-        backLabel: 'Takaisin tietopankkiin'
-      }
     }
   },
 

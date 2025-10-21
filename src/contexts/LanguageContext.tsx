@@ -71,31 +71,44 @@ function deepClone<T>(value: T): T {
 }
 
 function mergeDeep<T>(base: T, override?: Partial<T>): T {
-  const result = deepClone(base);
-
-  if (!override) {
-    return result;
+  if (override === undefined) {
+    return deepClone(base);
   }
+
+  const baseIsObject = typeof base === 'object' && base !== null;
+  const overrideIsObject = typeof override === 'object' && override !== null && !Array.isArray(override);
+
+  if (!baseIsObject) {
+    if (overrideIsObject) {
+      return mergeDeep({} as unknown as T, override);
+    }
+    return override as T;
+  }
+
+  const result = deepClone(base) as Record<string, unknown>;
 
   for (const [key, overrideValue] of Object.entries(override as Record<string, unknown>)) {
     if (overrideValue === undefined) {
       continue;
     }
 
-    const currentValue = (result as Record<string, unknown>)[key];
-
     if (Array.isArray(overrideValue) || typeof overrideValue !== 'object' || overrideValue === null) {
-      (result as Record<string, unknown>)[key] = overrideValue;
+      result[key] = overrideValue;
+      continue;
+    }
+
+    const currentValue = result[key];
+    if (typeof currentValue !== 'object' || currentValue === null) {
+      result[key] = mergeDeep({}, overrideValue as Record<string, unknown>);
     } else {
-      const baseValue = (currentValue as Record<string, unknown>) ?? {};
-      (result as Record<string, unknown>)[key] = mergeDeep(
-        baseValue,
+      result[key] = mergeDeep(
+        currentValue as Record<string, unknown>,
         overrideValue as Record<string, unknown>
       );
     }
   }
 
-  return result;
+  return result as unknown as T;
 }
 
 function buildTranslation(language: Language): TranslationSchema {

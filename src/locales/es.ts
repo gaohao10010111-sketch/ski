@@ -91,33 +91,6 @@ export const es: Partial<TranslationKeys> = {
 
       // More features
       moreFeatures: 'More'
-    },
-    docs: {
-      competitionRules: {
-        title: 'Reglamento técnico',
-        description: 'Normas técnicas de competición y criterios de arbitraje',
-        backLabel: 'Volver a la base de conocimiento'
-      },
-      pointsRules: {
-        title: 'Reglas de puntos',
-        description: 'Documento sobre el cálculo de puntos',
-        backLabel: 'Volver a la base de conocimiento'
-      },
-      venueStandards: {
-        title: 'Normas de sedes',
-        description: 'Requisitos de instalaciones y seguridad',
-        backLabel: 'Volver a la base de conocimiento'
-      },
-      fisRules: {
-        title: 'Reglas FIS',
-        description: 'Referencias de la Federación Internacional de Esquí',
-        backLabel: 'Volver a la base de conocimiento'
-      },
-      guide: {
-        title: 'Guía de la plataforma',
-        description: 'Instrucciones de uso y preguntas frecuentes',
-        backLabel: 'Volver a la base de conocimiento'
-      }
     }
   },
 
