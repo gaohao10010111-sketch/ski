@@ -1243,9 +1243,14 @@ export const en: Partial<TranslationKeys> = {
       title: 'China Skiing Points System',
       titleEn: 'China Skiing Points System',
       subtitle: 'Authoritative · Professional · Accurate skiing points management platform',
-      exploreDisciplines: 'Explore Disciplines',
+      exploreDisciplines: 'Explore Points System',
       freeRegister: 'Free Registration',
-      platformIntro: 'First choice platform for professional athletes, coaches, and event organizers • Certified by General Administration of Sport'
+      platformIntro: 'First choice platform for professional athletes, coaches, and event organizers • Certified by General Administration of Sport',
+      highlights: [
+        { label: 'Four Integrated Points Systems', color: 'bg-ski-blue' },
+        { label: 'Certified by Winter Sports Center', color: 'bg-green-400' },
+        { label: 'U-Series & Mass Participation Events', color: 'bg-yellow-400' }
+      ]
     },
     features: {
       title: 'Core Platform Features',

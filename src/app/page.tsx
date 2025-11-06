@@ -14,15 +14,16 @@ import {
   Clock,
   CheckCircle,
   Lock,
-  LogIn
+  LogIn,
+  Pin,
+  TrendingUp
 } from 'lucide-react'
 import { getImagePath } from '@/utils/paths'
 import { useAuth } from '@/contexts/AuthContext'
 import { useTranslation } from '@/contexts/LanguageContext'
-import { Resource, Action } from '@/types/auth'
 
 export default function HomePage() {
-  const { hasPermission, isAuthenticated, user } = useAuth()
+  const { isAuthenticated, user } = useAuth()
   const { t, language } = useTranslation()
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
@@ -89,61 +90,115 @@ export default function HomePage() {
   const defaultRankingCardClass = 'bg-gray-50 border border-gray-200'
   const defaultRankingBadgeClass = 'bg-gray-300 text-gray-600'
 
-  const disciplineCards = [
-    {
-      key: 'alpine',
-      href: '/alpine',
-      accentClass: 'bg-ski-blue',
-      gradientClass: 'hover:bg-gradient-to-r hover:from-blue-500/80 hover:to-cyan-500/80',
-      label: t.navigation?.alpine || 'Alpine Skiing'
-    },
-    {
-      key: 'snowboard-slopestyle',
-      href: '/snowboard-slopestyle',
-      accentClass: 'bg-purple-400',
-      gradientClass: 'hover:bg-gradient-to-r hover:from-purple-500/80 hover:to-pink-500/80',
-      label: t.navigation?.snowboardSlopestyle || 'Snowboard Slopestyle'
-    },
-    {
-      key: 'snowboard-parallel',
-      href: '/snowboard-parallel',
-      accentClass: 'bg-indigo-400',
-      gradientClass: 'hover:bg-gradient-to-r hover:from-indigo-500/80 hover:to-blue-500/80',
-      label: t.navigation?.snowboardParallel || 'Snowboard Parallel'
-    },
-    {
-      key: 'freestyle-slopestyle',
-      href: '/freestyle-slopestyle',
-      accentClass: 'bg-cyan-400',
-      gradientClass: 'hover:bg-gradient-to-r hover:from-cyan-500/80 hover:to-teal-500/80',
-      label: t.navigation?.freestyleSlopestyle || 'Freestyle Slopestyle'
-    }
-  ]
+  const highlightFallbackColors = ['bg-ski-blue', 'bg-green-400', 'bg-yellow-400']
+  const heroHighlights = (t.home?.hero?.highlights ?? [
+    { label: '四大积分系统', color: highlightFallbackColors[0] },
+    { label: '冬运中心官方认证', color: highlightFallbackColors[1] },
+    { label: 'U系列·大众赛事', color: highlightFallbackColors[2] }
+  ]).map((item, index) => ({
+    label: item.label,
+    color: item.color || highlightFallbackColors[index % highlightFallbackColors.length]
+  }))
 
-  const stats = [
+  const statsCards = [
     {
-      label: t.home?.stats?.disciplines?.label || 'Ski Disciplines',
+      label: t.home?.stats?.disciplines?.label || '滑雪项目',
       value: t.home?.stats?.disciplines?.value || '15+',
-      description: t.home?.stats?.disciplines?.description || 'Alpine·Freestyle·Snowboard',
+      description: t.home?.stats?.disciplines?.description || '高山·自由式·单板',
       icon: Award
     },
     {
-      label: t.home?.stats?.pointsRules?.label || 'Points Rules',
+      label: t.home?.stats?.pointsRules?.label || '积分规则',
       value: t.home?.stats?.pointsRules?.value || '100%',
-      description: t.home?.stats?.pointsRules?.description || 'Compliant with China Standards',
+      description: t.home?.stats?.pointsRules?.description || '符合中国标准',
       icon: CheckCircle
     },
     {
-      label: t.home?.stats?.updateCycle?.label || 'Points Update',
-      value: t.home?.stats?.updateCycle?.value || '7 Days',
-      description: t.home?.stats?.updateCycle?.description || 'Weekly Updates',
+      label: t.home?.stats?.updateCycle?.label || '积分更新',
+      value: t.home?.stats?.updateCycle?.value || '7天',
+      description: t.home?.stats?.updateCycle?.description || '每周更新',
       icon: Clock
     },
     {
-      label: t.home?.stats?.users?.label || 'Registered Users',
+      label: t.home?.stats?.users?.label || '注册用户',
       value: t.home?.stats?.users?.value || '1,200+',
-      description: t.home?.stats?.users?.description || 'Athletes & Coaches',
+      description: t.home?.stats?.users?.description || '运动员教练',
       icon: Database
+    }
+  ]
+
+  const featureCards = [
+    {
+      key: 'platformIntro',
+      href: '/about',
+      icon: FileText,
+      title: t.home?.features?.platformIntro?.title || '平台介绍',
+      description: t.home?.features?.platformIntro?.description || '了解中国高山滑雪积分体系',
+      iconContainerClass: 'bg-blue-50',
+      iconColor: 'text-blue-600'
+    },
+    {
+      key: 'memberRegister',
+      href: '/register',
+      icon: UserPlus,
+      title: t.home?.features?.memberRegister?.title || '会员注册',
+      description: t.home?.features?.memberRegister?.description || '注册成为平台会员，查看个人积分',
+      iconContainerClass: 'bg-green-50',
+      iconColor: 'text-green-600'
+    },
+    {
+      key: 'eventAnnouncement',
+      href: '/events',
+      icon: Pin,
+      title: t.home?.features?.eventAnnouncement?.title || '赛事公告',
+      description: t.home?.features?.eventAnnouncement?.description || '查看最新的赛事安排和公告',
+      iconContainerClass: 'bg-yellow-50',
+      iconColor: 'text-yellow-600'
+    },
+    {
+      key: 'pointsRules',
+      href: '/rules/points',
+      icon: Calculator,
+      title: t.home?.features?.pointsRules?.title || '积分规则',
+      description: t.home?.features?.pointsRules?.description || '查看中国高山滑雪积分计算规则',
+      iconContainerClass: 'bg-purple-50',
+      iconColor: 'text-purple-600'
+    },
+    {
+      key: 'competitionManagement',
+      href: '/competitions',
+      icon: Trophy,
+      title: t.home?.features?.competitionManagement?.title || '竞赛管理',
+      description: t.home?.features?.competitionManagement?.description || '管理比赛信息、成绩录入和统计',
+      iconContainerClass: 'bg-red-50',
+      iconColor: 'text-red-500'
+    },
+    {
+      key: 'athleteProfiles',
+      href: '/athletes',
+      icon: Users,
+      title: t.home?.features?.athleteProfiles?.title || '运动员档案',
+      description: t.home?.features?.athleteProfiles?.description || '运动员信息管理和积分历史',
+      iconContainerClass: 'bg-indigo-50',
+      iconColor: 'text-indigo-600'
+    },
+    {
+      key: 'onlineRegistration',
+      href: '/registration',
+      icon: LogIn,
+      title: t.home?.features?.onlineRegistration?.title || '在线报名',
+      description: t.home?.features?.onlineRegistration?.description || '便捷的赛事报名和费用管理',
+      iconContainerClass: 'bg-orange-50',
+      iconColor: 'text-orange-500'
+    },
+    {
+      key: 'dataAnalysis',
+      href: '/competitions/stats',
+      icon: TrendingUp,
+      title: t.home?.features?.dataAnalysis?.title || '数据分析',
+      description: t.home?.features?.dataAnalysis?.description || '深度数据分析和可视化报表',
+      iconContainerClass: 'bg-teal-50',
+      iconColor: 'text-teal-600'
     }
   ]
 
@@ -211,16 +266,15 @@ export default function HomePage() {
                 <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 leading-relaxed font-medium">
                   {t.home?.hero?.subtitle || 'Authoritative · Professional · Accurate ski points platform'}
                 </p>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4 text-sm md:text-base lg:text-lg">
-                  {disciplineCards.map((card) => (
-                    <Link
-                      key={card.key}
-                      href={card.href}
-                      className={`flex flex-col items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20 transition-all duration-300 group transform hover:scale-105 ${card.gradientClass}`}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 text-sm md:text-base lg:text-lg">
+                  {heroHighlights.map((item, index) => (
+                    <div
+                      key={`${item.label}-${index}`}
+                      className="flex items-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20"
                     >
-                      <div className={`w-3 h-3 ${card.accentClass} rounded-full mb-2 flex-shrink-0`} />
-                      <span className="text-white font-medium whitespace-nowrap text-xs">{card.label}</span>
-                    </Link>
+                      <div className={`w-3 h-3 ${item.color} rounded-full mr-3 flex-shrink-0`} />
+                      <span className="text-white font-medium whitespace-nowrap text-xs sm:text-sm">{item.label}</span>
+                    </div>
                   ))}
                 </div>
 
@@ -229,11 +283,11 @@ export default function HomePage() {
                   <div className="mt-8">
                     <div className="flex flex-col sm:flex-row gap-4">
                       <Link
-                        href="/alpine"
+                        href="/scoring-systems"
                         className="inline-flex items-center justify-center px-6 py-3 bg-ski-blue text-white rounded-lg hover:bg-ski-blue/90 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
                         title={t.home?.hero?.exploreDisciplines || 'Explore Disciplines'}
                       >
-                        <Trophy className="h-5 w-5 mr-2" />
+                        <Calculator className="h-5 w-5 mr-2" />
                         {t.home?.hero?.exploreDisciplines || 'Explore Disciplines'}
                       </Link>
                       <Link
@@ -332,6 +386,40 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Feature Grid Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-ski-navy mb-4">
+              {t.home?.features?.title || '平台核心功能'}
+            </h2>
+            <p className="text-gray-600 text-sm md:text-base">
+              {t.home?.hero?.platformIntro || '专业运动员、教练员、赛事组织者的首选平台 • 国家体育总局认证标准'}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featureCards.map((card) => (
+              <Link
+                key={card.key}
+                href={card.href}
+                className="group bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${card.iconContainerClass}`}>
+                  <card.icon className={`h-6 w-6 ${card.iconColor}`} />
+                </div>
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <h3 className="text-lg font-semibold text-ski-navy mb-2">{card.title}</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">{card.description}</p>
+                  </div>
+                  <ChevronRight className="h-4 w-4 text-ski-blue opacity-0 group-hover:opacity-100 transition-opacity mt-1 flex-shrink-0" />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -340,7 +428,7 @@ export default function HomePage() {
             <p className="text-gray-600 text-sm md:text-base">{t.home?.stats?.subtitle || 'Real-time system data and status'}</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-            {stats.map((stat, index) => (
+            {statsCards.map((stat, index) => (
               <div key={index} className="text-center bg-gray-50 rounded-lg p-4 md:p-6 hover:shadow-lg transition-shadow">
                 <div className="flex justify-center mb-3 md:mb-4">
                   <div className={`p-2 md:p-3 rounded-full ${

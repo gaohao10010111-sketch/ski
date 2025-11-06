@@ -1249,9 +1249,14 @@ export const zh = {
       title: '中国滑雪积分系统',
       titleEn: 'China Skiing Points System',
       subtitle: '权威·专业·精准的中国滑雪运动积分管理平台',
-      exploreDisciplines: '探索滑雪项目',
+      exploreDisciplines: '探索积分系统',
       freeRegister: '免费注册',
-      platformIntro: '专业运动员、教练员、赛事组织者的首选平台 • 国家体育总局认证标准'
+      platformIntro: '专业运动员、教练员、赛事组织者的首选平台 • 国家体育总局认证标准',
+      highlights: [
+        { label: '四大积分系统', color: 'bg-ski-blue' },
+        { label: '冬运中心官方认证', color: 'bg-green-400' },
+        { label: 'U系列·大众赛事', color: 'bg-yellow-400' }
+      ]
     },
     features: {
       title: '平台核心功能',
