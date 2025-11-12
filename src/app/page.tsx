@@ -467,68 +467,66 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-ski-navy mb-4">
-              {isClient && isAuthenticated ? (t.home?.latestResults?.title || 'Latest Competition Results') : (t.home?.features?.title || 'Core Platform Features')}
+              {t.home?.latestResults?.title || '最新赛事成绩'}
             </h2>
             <p className="text-gray-600 text-sm md:text-base">
-              {isClient && isAuthenticated
-                ? (t.home?.latestResults?.subtitle || 'Real-time competition results and points standings')
-                : (t.home?.memberValue?.registerToUnlock || 'Register to unlock all professional features')
-              }
+              {t.home?.latestResults?.subtitle || '实时赛事成绩与积分排名'}
             </p>
           </div>
 
-          {isClient && isAuthenticated ? (
-            <div>
-              {/* 会员个人化欢迎 */}
-              <div className="bg-gradient-to-r from-ski-blue to-blue-600 rounded-lg p-6 mb-8 text-white">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className="text-xl font-bold mb-2">
-                      {t.home?.memberWelcome?.welcomeBack || 'Welcome Back'}, {user?.username || 'Member'}！
-                    </h3>
-                    <p className="text-blue-100">
-                      {user?.role === 'admin' ? (t.auth?.roles?.admin || 'Administrator') :
-                       user?.role === 'coach' ? (t.auth?.roles?.coach || 'Coach') : (t.auth?.roles?.athlete || 'Athlete')} ·
-                      {user?.status === 'active' ? (t.home?.memberWelcome?.accountStatus || 'Account Active') : (t.home?.memberWelcome?.pendingReview || 'Pending Review')}
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-2xl font-bold">
-                      {user?.role === 'athlete' ? '85.2' : '--'}
-                    </div>
-                    <div className="text-blue-100 text-sm">
-                      {user?.role === 'athlete' ? (t.home?.memberWelcome?.currentPoints || 'Current Points') : (t.home?.memberWelcome?.systemPermissions || 'System Permissions')}
-                    </div>
-                  </div>
+          {/* 会员个人化欢迎 - 仅登录用户显示 */}
+          {isClient && isAuthenticated && (
+            <div className="bg-gradient-to-r from-ski-blue to-blue-600 rounded-lg p-6 mb-8 text-white">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h3 className="text-xl font-bold mb-2">
+                    {t.home?.memberWelcome?.welcomeBack || 'Welcome Back'}, {user?.username || 'Member'}！
+                  </h3>
+                  <p className="text-blue-100">
+                    {user?.role === 'admin' ? (t.auth?.roles?.admin || 'Administrator') :
+                     user?.role === 'coach' ? (t.auth?.roles?.coach || 'Coach') : (t.auth?.roles?.athlete || 'Athlete')} ·
+                    {user?.status === 'active' ? (t.home?.memberWelcome?.accountStatus || 'Account Active') : (t.home?.memberWelcome?.pendingReview || 'Pending Review')}
+                  </p>
                 </div>
-                <div className="mt-4 flex space-x-4">
-                  <Link
-                    href="/my"
-                    className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm"
-                  >
-                    {t.home?.memberWelcome?.personalCenter || 'Personal Center'}
-                  </Link>
-                  {user?.role === 'athlete' && (
-                    <Link
-                      href="/my/points"
-                      className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm"
-                    >
-                      {t.home?.memberWelcome?.myPoints || 'My Points'}
-                    </Link>
-                  )}
-                  {user?.role === 'admin' && (
-                    <Link
-                      href="/admin"
-                      className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm"
-                    >
-                      {t.home?.memberWelcome?.adminPanel || 'Admin Panel'}
-                    </Link>
-                  )}
+                <div className="text-right">
+                  <div className="text-2xl font-bold">
+                    {user?.role === 'athlete' ? '85.2' : '--'}
+                  </div>
+                  <div className="text-blue-100 text-sm">
+                    {user?.role === 'athlete' ? (t.home?.memberWelcome?.currentPoints || 'Current Points') : (t.home?.memberWelcome?.systemPermissions || 'System Permissions')}
+                  </div>
                 </div>
               </div>
+              <div className="mt-4 flex space-x-4">
+                <Link
+                  href="/my"
+                  className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm"
+                >
+                  {t.home?.memberWelcome?.personalCenter || 'Personal Center'}
+                </Link>
+                {user?.role === 'athlete' && (
+                  <Link
+                    href="/my/points"
+                    className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm"
+                  >
+                    {t.home?.memberWelcome?.myPoints || 'My Points'}
+                  </Link>
+                )}
+                {user?.role === 'admin' && (
+                  <Link
+                    href="/admin"
+                    className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm"
+                  >
+                    {t.home?.memberWelcome?.adminPanel || 'Admin Panel'}
+                  </Link>
+                )}
+              </div>
+            </div>
+          )}
 
-              {/* 会员专享内容 */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+          {/* 赛事成绩和排行榜 - 所有用户可见 */}
+          <div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             {/* Recent Competition Results */}
             <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
               <div className="flex items-center justify-between mb-4 md:mb-6">
@@ -593,131 +591,38 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-            </div>
-            </div>
-          ) : (
-            // 未登录用户看到的会员价值展示
-            <div>
-              {/* 会员价值提醒条 */}
-              <div className="bg-gradient-to-r from-sky-100 to-blue-100 border border-sky-200 rounded-lg p-6 mb-8">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 bg-sky-500 rounded-full flex items-center justify-center mr-4">
-                      <Lock className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-sky-900 mb-1">
-                        {t.home?.memberValue?.unlockFeatures || 'Unlock All Professional Features'}
-                      </h3>
-                      <p className="text-sky-700 text-sm">
-                        {t.home?.memberValue?.registerToUnlock || 'Register to access full points and event services'}
-                      </p>
-                    </div>
+
+            {/* 注册引导 - 仅未登录用户显示 */}
+            {isClient && !isAuthenticated && (
+              <div className="mt-8 bg-gradient-to-r from-sky-50 to-blue-50 border border-sky-200 rounded-lg p-6">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                  <div className="text-center md:text-left">
+                    <h3 className="text-lg font-semibold text-ski-navy mb-2">
+                      {t.home?.memberValue?.unlockFeatures || '解锁更多专业功能'}
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      {t.home?.memberValue?.registerToUnlock || '注册成为会员，获取个人积分追踪、赛事报名、数据分析等专业服务'}
+                    </p>
                   </div>
-                  <div className="flex gap-3">
+                  <div className="flex gap-3 flex-shrink-0">
                     <Link
                       href="/login"
-                      className="px-4 py-2 border border-sky-300 text-sky-700 rounded-lg hover:bg-sky-50 transition-colors text-sm font-medium"
+                      className="px-6 py-2.5 border-2 border-ski-blue text-ski-blue rounded-lg hover:bg-ski-blue hover:text-white transition-colors text-sm font-medium"
                     >
-                      {t.common?.login || 'Login'}
+                      {t.common?.login || '登录'}
                     </Link>
                     <Link
                       href="/register"
-                      className="px-4 py-2 bg-sky-500 text-white rounded-lg hover:bg-sky-600 transition-colors text-sm font-medium"
+                      className="px-6 py-2.5 bg-ski-blue text-white rounded-lg hover:bg-ski-blue/90 transition-colors text-sm font-medium shadow-md"
                     >
-                      {t.home?.hero?.freeRegister || 'Free Registration'}
+                      {t.home?.hero?.freeRegister || '免费注册'}
                     </Link>
                   </div>
                 </div>
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* 积分系统 */}
-              <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-200 hover:border-ski-blue/50 transition-colors relative">
-                <div className="absolute top-4 right-4">
-                  <Lock className="h-5 w-5 text-gray-400" />
-                </div>
-                <div className="flex justify-center mb-4">
-                  <div className="p-3 bg-blue-100 rounded-full">
-                    <Calculator className="h-8 w-8 text-blue-600" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold text-ski-navy mb-3 text-center">{t.home?.memberValue?.pointsSystem?.title || 'Points System'}</h3>
-                <ul className="space-y-2 text-gray-600 text-sm">
-                  <li>• {t.home?.memberValue?.pointsSystem?.features?.[0] || 'Personal points history tracking'}</li>
-                  <li>• {t.home?.memberValue?.pointsSystem?.features?.[1] || 'Real-time points leaderboard'}</li>
-                  <li>• {t.home?.memberValue?.pointsSystem?.features?.[2] || 'Points calculator tool'}</li>
-                  <li>• {t.home?.memberValue?.pointsSystem?.features?.[3] || 'Points trend analysis'}</li>
-                </ul>
-                <div className="mt-6 text-center">
-                  <Link
-                    href="/register"
-                    className="inline-flex items-center px-4 py-2 bg-ski-blue text-white rounded-lg hover:bg-ski-blue/90 transition-colors"
-                  >
-                    <LogIn className="h-4 w-4 mr-2" />
-                    {t.home?.memberValue?.registerUnlock || 'Register to Unlock'}
-                  </Link>
-                </div>
-              </div>
-
-              {/* 赛事管理 */}
-              <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-200 hover:border-ski-blue/50 transition-colors relative">
-                <div className="absolute top-4 right-4">
-                  <Lock className="h-5 w-5 text-gray-400" />
-                </div>
-                <div className="flex justify-center mb-4">
-                  <div className="p-3 bg-green-100 rounded-full">
-                    <Trophy className="h-8 w-8 text-green-600" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold text-ski-navy mb-3 text-center">{t.home?.memberValue?.eventManagement?.title || 'Event Management'}</h3>
-                <ul className="space-y-2 text-gray-600 text-sm">
-                  <li>• {t.home?.memberValue?.eventManagement?.features?.[0] || 'View competition list and schedule'}</li>
-                  <li>• {t.home?.memberValue?.eventManagement?.features?.[1] || 'Register online for events'}</li>
-                  <li>• {t.home?.memberValue?.eventManagement?.features?.[2] || 'View live results'}</li>
-                  <li>• {t.home?.memberValue?.eventManagement?.features?.[3] || 'Event results notifications'}</li>
-                </ul>
-                <div className="mt-6 text-center">
-                  <Link
-                    href="/register"
-                    className="inline-flex items-center px-4 py-2 bg-ski-blue text-white rounded-lg hover:bg-ski-blue/90 transition-colors"
-                  >
-                    <LogIn className="h-4 w-4 mr-2" />
-                    {t.home?.memberValue?.registerUnlock || 'Register to Unlock'}
-                  </Link>
-                </div>
-              </div>
-
-              {/* 专业功能 */}
-              <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-200 hover:border-ski-blue/50 transition-colors relative">
-                <div className="absolute top-4 right-4">
-                  <Lock className="h-5 w-5 text-gray-400" />
-                </div>
-                <div className="flex justify-center mb-4">
-                  <div className="p-3 bg-purple-100 rounded-full">
-                    <Users className="h-8 w-8 text-purple-600" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold text-ski-navy mb-3 text-center">{t.home?.memberValue?.professionalFeatures?.title || 'Professional Features'}</h3>
-                <ul className="space-y-2 text-gray-600 text-sm">
-                  <li>• {t.home?.memberValue?.professionalFeatures?.features?.[0] || 'Athlete profile management'}</li>
-                  <li>• {t.home?.memberValue?.professionalFeatures?.features?.[1] || 'Detailed points rules'}</li>
-                  <li>• {t.home?.memberValue?.professionalFeatures?.features?.[2] || 'Data statistics and analysis'}</li>
-                  <li>• {t.home?.memberValue?.professionalFeatures?.features?.[3] || 'Technical support service'}</li>
-                </ul>
-                <div className="mt-6 text-center">
-                  <Link
-                    href="/register"
-                    className="inline-flex items-center px-4 py-2 bg-ski-blue text-white rounded-lg hover:bg-ski-blue/90 transition-colors"
-                  >
-                    <LogIn className="h-4 w-4 mr-2" />
-                    {t.home?.memberValue?.registerUnlock || 'Register to Unlock'}
-                  </Link>
-                </div>
-              </div>
+            )}
             </div>
-            </div>
-          )}
+          </div>
 
         </div>
       </section>
