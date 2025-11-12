@@ -1254,6 +1254,21 @@ export const en: Partial<TranslationKeys> = {
     },
     features: {
       title: 'Core Platform Features',
+      description: 'Complete ski competition management solution based on FIS International Ski Federation standards, covering all core aspects from points calculation and athlete management to event organization for alpine skiing',
+      online: 'Online',
+      useNow: 'Use Now',
+      fisPointsQuery: {
+        title: 'FIS Points Query',
+        description: 'Query athlete FIS points and ranking information'
+      },
+      pointsCalculator: {
+        title: 'Points Calculator',
+        description: 'Real-time calculation of ski points based on competition results'
+      },
+      pointsRankings: {
+        title: 'Points Rankings',
+        description: 'Real-time updated athlete points rankings'
+      },
       platformIntro: {
         title: 'Platform Introduction',
         description: 'Learn about China Alpine Skiing Points System'

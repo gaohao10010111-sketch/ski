@@ -6,19 +6,18 @@ import {
   Calculator,
   Trophy,
   Users,
-  FileText,
   UserPlus,
   Award,
   Database,
-  ChevronRight,
   Clock,
   CheckCircle,
   Lock,
   LogIn,
-  Pin,
-  TrendingUp,
   Search,
-  BarChart3
+  BarChart3,
+  FileText,
+  TrendingUp,
+  ChevronRight
 } from 'lucide-react'
 import { getImagePath } from '@/utils/paths'
 import { useAuth } from '@/contexts/AuthContext'
@@ -388,46 +387,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Feature Grid Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-ski-navy mb-6">
-              {t.home?.features?.title || '核心功能'}
-            </h2>
-            <p className="text-gray-600 text-base md:text-lg max-w-4xl mx-auto leading-relaxed">
-              {t.home?.features?.description || '基于FIS国际雪联标准的完整滑雪竞赛管理解决方案，从积分计算、运动员管理到赛事组织，覆盖高山滑雪运动的所有核心环节，为中国滑雪运动数字化发展提供强有力支持'}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featureCards.map((card) => (
-              <Link
-                key={card.key}
-                href={card.href}
-                className="group bg-white border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 ${card.iconContainerClass}`}>
-                    <card.icon className={`h-6 w-6 ${card.iconColor}`} />
-                  </div>
-                  <span className="px-2.5 py-1 bg-green-100 text-green-700 text-xs font-medium rounded-full">
-                    {t.home?.features?.online || '已上线'}
-                  </span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-ski-navy mb-2">{card.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed mb-4">{card.description}</p>
-                  <div className="flex items-center text-ski-blue text-sm font-medium group-hover:gap-2 transition-all">
-                    <span>{t.home?.features?.useNow || '立即使用'}</span>
-                    <ChevronRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Stats Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -470,71 +429,113 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Feature Grid Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-ski-navy mb-6">
+              {t.home?.features?.title || '平台核心功能'}
+            </h2>
+            <p className="text-gray-600 text-base md:text-lg max-w-4xl mx-auto leading-relaxed">
+              {t.home?.features?.description || '基于FIS国际雪联标准的完整滑雪竞赛管理解决方案，从积分计算、运动员管理到赛事组织，覆盖高山滑雪运动的所有核心环节'}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featureCards.map((card) => (
+              <Link
+                key={card.key}
+                href={card.href}
+                className="group bg-white border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 ${card.iconContainerClass}`}>
+                    <card.icon className={`h-6 w-6 ${card.iconColor}`} />
+                  </div>
+                  <span className="px-2.5 py-1 bg-green-100 text-green-700 text-xs font-medium rounded-full">
+                    {t.home?.features?.online || '已上线'}
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-ski-navy mb-2">{card.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-4">{card.description}</p>
+                  <div className="flex items-center text-ski-blue text-sm font-medium group-hover:gap-2 transition-all">
+                    <span>{t.home?.features?.useNow || '立即使用'}</span>
+                    <ChevronRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Live Competition Results Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-ski-navy mb-4">
-              {t.home?.latestResults?.title || '最新赛事成绩'}
+              {isClient && isAuthenticated ? (t.home?.latestResults?.title || '最新赛事成绩') : (t.home?.features?.title || '平台核心功能')}
             </h2>
             <p className="text-gray-600 text-sm md:text-base">
-              {t.home?.latestResults?.subtitle || '实时赛事成绩与积分排名'}
+              {isClient && isAuthenticated
+                ? (t.home?.latestResults?.subtitle || '实时更新的竞赛结果和积分排名')
+                : (t.home?.memberValue?.registerToUnlock || '注册成为会员，解锁所有专业功能')
+              }
             </p>
           </div>
 
-          {/* 会员个人化欢迎 - 仅登录用户显示 */}
-          {isClient && isAuthenticated && (
-            <div className="bg-gradient-to-r from-ski-blue to-blue-600 rounded-lg p-6 mb-8 text-white">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h3 className="text-xl font-bold mb-2">
-                    {t.home?.memberWelcome?.welcomeBack || 'Welcome Back'}, {user?.username || 'Member'}！
-                  </h3>
-                  <p className="text-blue-100">
-                    {user?.role === 'admin' ? (t.auth?.roles?.admin || 'Administrator') :
-                     user?.role === 'coach' ? (t.auth?.roles?.coach || 'Coach') : (t.auth?.roles?.athlete || 'Athlete')} ·
-                    {user?.status === 'active' ? (t.home?.memberWelcome?.accountStatus || 'Account Active') : (t.home?.memberWelcome?.pendingReview || 'Pending Review')}
-                  </p>
-                </div>
-                <div className="text-right">
-                  <div className="text-2xl font-bold">
-                    {user?.role === 'athlete' ? '85.2' : '--'}
+          {isClient && isAuthenticated ? (
+            <div>
+              {/* 会员个人化欢迎 */}
+              <div className="bg-gradient-to-r from-ski-blue to-blue-600 rounded-lg p-6 mb-8 text-white">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-xl font-bold mb-2">
+                      {t.home?.memberWelcome?.welcomeBack || '欢迎回来'}，{user?.username || '会员'}！
+                    </h3>
+                    <p className="text-blue-100">
+                      {user?.role === 'admin' ? (t.auth?.roles?.admin || '管理员') :
+                       user?.role === 'coach' ? (t.auth?.roles?.coach || '教练') : (t.auth?.roles?.athlete || '运动员')} ·
+                      {user?.status === 'active' ? (t.home?.memberWelcome?.accountStatus || '账户正常') : (t.home?.memberWelcome?.pendingReview || '待审核状态')}
+                    </p>
                   </div>
-                  <div className="text-blue-100 text-sm">
-                    {user?.role === 'athlete' ? (t.home?.memberWelcome?.currentPoints || 'Current Points') : (t.home?.memberWelcome?.systemPermissions || 'System Permissions')}
+                  <div className="text-right">
+                    <div className="text-2xl font-bold">
+                      {user?.role === 'athlete' ? '85.2' : '--'}
+                    </div>
+                    <div className="text-blue-100 text-sm">
+                      {user?.role === 'athlete' ? (t.home?.memberWelcome?.currentPoints || '当前积分') : (t.home?.memberWelcome?.systemPermissions || '系统权限')}
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="mt-4 flex space-x-4">
-                <Link
-                  href="/my"
-                  className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm"
-                >
-                  {t.home?.memberWelcome?.personalCenter || 'Personal Center'}
-                </Link>
-                {user?.role === 'athlete' && (
+                <div className="mt-4 flex space-x-4">
                   <Link
-                    href="/my/points"
+                    href="/my"
                     className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm"
                   >
-                    {t.home?.memberWelcome?.myPoints || 'My Points'}
+                    {t.home?.memberWelcome?.personalCenter || '个人中心'}
                   </Link>
-                )}
-                {user?.role === 'admin' && (
-                  <Link
-                    href="/admin"
-                    className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm"
-                  >
-                    {t.home?.memberWelcome?.adminPanel || 'Admin Panel'}
-                  </Link>
-                )}
+                  {user?.role === 'athlete' && (
+                    <Link
+                      href="/my/points"
+                      className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm"
+                    >
+                      {t.home?.memberWelcome?.myPoints || '积分详情'}
+                    </Link>
+                  )}
+                  {user?.role === 'admin' && (
+                    <Link
+                      href="/admin"
+                      className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-colors text-sm"
+                    >
+                      {t.home?.memberWelcome?.adminPanel || '管理后台'}
+                    </Link>
+                  )}
+                </div>
               </div>
-            </div>
-          )}
 
-          {/* 赛事成绩和排行榜 - 所有用户可见 */}
-          <div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+              {/* 会员专享内容 */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
             {/* Recent Competition Results */}
             <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
               <div className="flex items-center justify-between mb-4 md:mb-6">
@@ -599,38 +600,137 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
-
-            {/* 注册引导 - 仅未登录用户显示 */}
-            {isClient && !isAuthenticated && (
-              <div className="mt-8 bg-gradient-to-r from-sky-50 to-blue-50 border border-sky-200 rounded-lg p-6">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                  <div className="text-center md:text-left">
-                    <h3 className="text-lg font-semibold text-ski-navy mb-2">
-                      {t.home?.memberValue?.unlockFeatures || '解锁更多专业功能'}
-                    </h3>
-                    <p className="text-gray-600 text-sm">
-                      {t.home?.memberValue?.registerToUnlock || '注册成为会员，获取个人积分追踪、赛事报名、数据分析等专业服务'}
-                    </p>
+            </div>
+            </div>
+          ) : (
+            // 未登录用户看到的会员价值展示
+            <div>
+              {/* 会员价值提醒条 */}
+              <div className="bg-gradient-to-r from-sky-100 to-blue-100 border border-sky-200 rounded-lg p-6 mb-8">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-sky-500 rounded-full flex items-center justify-center mr-4">
+                      <Lock className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-sky-900 mb-1">
+                        {t.home?.memberValue?.unlockFeatures || '解锁所有专业功能'}
+                      </h3>
+                      <p className="text-sky-700 text-sm">
+                        {t.home?.memberValue?.registerToUnlock || '注册成为会员，享受完整的积分管理和赛事服务'}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex gap-3 flex-shrink-0">
+                  <div className="flex gap-3">
                     <Link
                       href="/login"
-                      className="px-6 py-2.5 border-2 border-ski-blue text-ski-blue rounded-lg hover:bg-ski-blue hover:text-white transition-colors text-sm font-medium"
+                      className="px-4 py-2 border border-sky-300 text-sky-700 rounded-lg hover:bg-sky-50 transition-colors text-sm font-medium"
                     >
                       {t.common?.login || '登录'}
                     </Link>
                     <Link
                       href="/register"
-                      className="px-6 py-2.5 bg-ski-blue text-white rounded-lg hover:bg-ski-blue/90 transition-colors text-sm font-medium shadow-md"
+                      className="px-4 py-2 bg-sky-500 text-white rounded-lg hover:bg-sky-600 transition-colors text-sm font-medium"
                     >
                       {t.home?.hero?.freeRegister || '免费注册'}
                     </Link>
                   </div>
                 </div>
               </div>
-            )}
+
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {/* 积分系统 */}
+              <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-200 hover:border-ski-blue/50 transition-colors relative">
+                <div className="absolute top-4 right-4">
+                  <Lock className="h-5 w-5 text-gray-400" />
+                </div>
+                <div className="flex justify-center mb-4">
+                  <div className="p-3 bg-blue-100 rounded-full">
+                    <Calculator className="h-8 w-8 text-blue-600" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-ski-navy mb-3 text-center">
+                  {t.home?.memberValue?.pointsSystem?.title || '积分系统'}
+                </h3>
+                <ul className="space-y-2 text-gray-600 text-sm">
+                  <li>• 个人积分查询与历史追踪</li>
+                  <li>• 实时积分排行榜</li>
+                  <li>• 积分计算器工具</li>
+                  <li>• 积分变化趋势分析</li>
+                </ul>
+                <div className="mt-6 text-center">
+                  <Link
+                    href="/register"
+                    className="inline-flex items-center px-4 py-2 bg-ski-blue text-white rounded-lg hover:bg-ski-blue/90 transition-colors"
+                  >
+                    <LogIn className="h-4 w-4 mr-2" />
+                    {t.home?.memberValue?.registerUnlock || '注册解锁'}
+                  </Link>
+                </div>
+              </div>
+
+              {/* 赛事管理 */}
+              <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-200 hover:border-ski-blue/50 transition-colors relative">
+                <div className="absolute top-4 right-4">
+                  <Lock className="h-5 w-5 text-gray-400" />
+                </div>
+                <div className="flex justify-center mb-4">
+                  <div className="p-3 bg-green-100 rounded-full">
+                    <Trophy className="h-8 w-8 text-green-600" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-ski-navy mb-3 text-center">
+                  {t.home?.memberValue?.eventManagement?.title || '赛事管理'}
+                </h3>
+                <ul className="space-y-2 text-gray-600 text-sm">
+                  <li>• 查看比赛列表和赛事日程</li>
+                  <li>• 在线报名参赛</li>
+                  <li>• 实时成绩查看</li>
+                  <li>• 赛事成绩通知</li>
+                </ul>
+                <div className="mt-6 text-center">
+                  <Link
+                    href="/register"
+                    className="inline-flex items-center px-4 py-2 bg-ski-blue text-white rounded-lg hover:bg-ski-blue/90 transition-colors"
+                  >
+                    <LogIn className="h-4 w-4 mr-2" />
+                    {t.home?.memberValue?.registerUnlock || '注册解锁'}
+                  </Link>
+                </div>
+              </div>
+
+              {/* 专业功能 */}
+              <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-gray-200 hover:border-ski-blue/50 transition-colors relative">
+                <div className="absolute top-4 right-4">
+                  <Lock className="h-5 w-5 text-gray-400" />
+                </div>
+                <div className="flex justify-center mb-4">
+                  <div className="p-3 bg-purple-100 rounded-full">
+                    <Users className="h-8 w-8 text-purple-600" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-semibold text-ski-navy mb-3 text-center">
+                  {t.home?.memberValue?.professionalFeatures?.title || '专业功能'}
+                </h3>
+                <ul className="space-y-2 text-gray-600 text-sm">
+                  <li>• 个人运动员档案管理</li>
+                  <li>• 积分规则详解</li>
+                  <li>• 数据统计分析</li>
+                  <li>• 技术支持服务</li>
+                </ul>
+                <div className="mt-6 text-center">
+                  <Link
+                    href="/register"
+                    className="inline-flex items-center px-4 py-2 bg-ski-blue text-white rounded-lg hover:bg-ski-blue/90 transition-colors"
+                  >
+                    <LogIn className="h-4 w-4 mr-2" />
+                    {t.home?.memberValue?.registerUnlock || '注册解锁'}
+                  </Link>
+                </div>
+              </div>
             </div>
-          </div>
+            </div>
+          )}
 
         </div>
       </section>

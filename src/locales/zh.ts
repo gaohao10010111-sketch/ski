@@ -1260,6 +1260,21 @@ export const zh = {
     },
     features: {
       title: '平台核心功能',
+      description: '基于FIS国际雪联标准的完整滑雪竞赛管理解决方案，从积分计算、运动员管理到赛事组织，覆盖高山滑雪运动的所有核心环节',
+      online: '已上线',
+      useNow: '立即使用',
+      fisPointsQuery: {
+        title: 'FIS积分查询',
+        description: '查询运动员FIS积分和排名信息'
+      },
+      pointsCalculator: {
+        title: '积分计算器',
+        description: '根据比赛成绩实时计算滑雪积分'
+      },
+      pointsRankings: {
+        title: '积分排行榜',
+        description: '实时更新的运动员积分排名'
+      },
       platformIntro: {
         title: '平台介绍',
         description: '了解中国高山滑雪积分体系'
