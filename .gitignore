@@ -73,3 +73,6 @@ ecosystem.config.js.backup
 fix_pg_hba.sh
 nginx-fix.conf
 test_connection.sql
+
+# Specify / Codex agent workspace
+.codex/
