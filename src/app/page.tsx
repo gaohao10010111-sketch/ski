@@ -16,7 +16,9 @@ import {
   Lock,
   LogIn,
   Pin,
-  TrendingUp
+  TrendingUp,
+  Search,
+  BarChart3
 } from 'lucide-react'
 import { getImagePath } from '@/utils/paths'
 import { useAuth } from '@/contexts/AuthContext'
@@ -129,38 +131,38 @@ export default function HomePage() {
 
   const featureCards = [
     {
-      key: 'platformIntro',
-      href: '/about',
-      icon: FileText,
-      title: t.home?.features?.platformIntro?.title || '平台介绍',
-      description: t.home?.features?.platformIntro?.description || '了解中国高山滑雪积分体系',
+      key: 'fisPointsQuery',
+      href: '/points/fis',
+      icon: Search,
+      title: t.home?.features?.fisPointsQuery?.title || 'FIS积分查询',
+      description: t.home?.features?.fisPointsQuery?.description || '查询运动员FIS积分和排名信息',
       iconContainerClass: 'bg-blue-50',
       iconColor: 'text-blue-600'
     },
     {
-      key: 'memberRegister',
-      href: '/register',
-      icon: UserPlus,
-      title: t.home?.features?.memberRegister?.title || '会员注册',
-      description: t.home?.features?.memberRegister?.description || '注册成为平台会员，查看个人积分',
+      key: 'pointsCalculator',
+      href: '/points/calculator',
+      icon: Calculator,
+      title: t.home?.features?.pointsCalculator?.title || '积分计算器',
+      description: t.home?.features?.pointsCalculator?.description || '根据比赛成绩实时计算滑雪积分',
       iconContainerClass: 'bg-green-50',
       iconColor: 'text-green-600'
     },
     {
-      key: 'eventAnnouncement',
-      href: '/events',
-      icon: Pin,
-      title: t.home?.features?.eventAnnouncement?.title || '赛事公告',
-      description: t.home?.features?.eventAnnouncement?.description || '查看最新的赛事安排和公告',
+      key: 'pointsRankings',
+      href: '/points/rankings',
+      icon: BarChart3,
+      title: t.home?.features?.pointsRankings?.title || '积分排行榜',
+      description: t.home?.features?.pointsRankings?.description || '实时更新的运动员积分排名',
       iconContainerClass: 'bg-yellow-50',
       iconColor: 'text-yellow-600'
     },
     {
       key: 'pointsRules',
       href: '/rules/points',
-      icon: Calculator,
-      title: t.home?.features?.pointsRules?.title || '积分规则',
-      description: t.home?.features?.pointsRules?.description || '查看中国高山滑雪积分计算规则',
+      icon: FileText,
+      title: t.home?.features?.pointsRules?.title || '积分规则文档',
+      description: t.home?.features?.pointsRules?.description || '查看详细的FIS积分计算规则',
       iconContainerClass: 'bg-purple-50',
       iconColor: 'text-purple-600'
     },
