@@ -389,14 +389,14 @@ export default function HomePage() {
       </section>
 
       {/* Feature Grid Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-ski-navy mb-4">
-              {t.home?.features?.title || '平台核心功能'}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-ski-navy mb-6">
+              {t.home?.features?.title || '核心功能'}
             </h2>
-            <p className="text-gray-600 text-sm md:text-base">
-              {t.home?.hero?.platformIntro || '专业运动员、教练员、赛事组织者的首选平台 • 国家体育总局认证标准'}
+            <p className="text-gray-600 text-base md:text-lg max-w-4xl mx-auto leading-relaxed">
+              {t.home?.features?.description || '基于FIS国际雪联标准的完整滑雪竞赛管理解决方案，从积分计算、运动员管理到赛事组织，覆盖高山滑雪运动的所有核心环节，为中国滑雪运动数字化发展提供强有力支持'}
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -404,17 +404,23 @@ export default function HomePage() {
               <Link
                 key={card.key}
                 href={card.href}
-                className="group bg-white border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                className="group bg-white border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${card.iconContainerClass}`}>
-                  <card.icon className={`h-6 w-6 ${card.iconColor}`} />
-                </div>
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <h3 className="text-lg font-semibold text-ski-navy mb-2">{card.title}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{card.description}</p>
+                <div className="flex items-start justify-between mb-4">
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 ${card.iconContainerClass}`}>
+                    <card.icon className={`h-6 w-6 ${card.iconColor}`} />
                   </div>
-                  <ChevronRight className="h-4 w-4 text-ski-blue opacity-0 group-hover:opacity-100 transition-opacity mt-1 flex-shrink-0" />
+                  <span className="px-2.5 py-1 bg-green-100 text-green-700 text-xs font-medium rounded-full">
+                    {t.home?.features?.online || '已上线'}
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-ski-navy mb-2">{card.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-4">{card.description}</p>
+                  <div className="flex items-center text-ski-blue text-sm font-medium group-hover:gap-2 transition-all">
+                    <span>{t.home?.features?.useNow || '立即使用'}</span>
+                    <ChevronRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                  </div>
                 </div>
               </Link>
             ))}
