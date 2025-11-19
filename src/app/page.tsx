@@ -99,6 +99,38 @@ export default function HomePage() {
     completed: 'text-green-600'
   }
 
+  // 四个项目的积分排行榜数据
+  const disciplineRankings = [
+    // 0: 高山滑雪
+    [
+      { rank: 1, name: '张伟', event: '男子大回转', points: '0.00' },
+      { rank: 2, name: '李雪', event: '女子回转', points: '8.45' },
+      { rank: 3, name: '王冰', event: '女子大回转', points: '12.30' },
+      { rank: 4, name: '刘强', event: '男子回转', points: '15.67' }
+    ],
+    // 1: 单板坡面障碍技巧/大跳台
+    [
+      { rank: 1, name: '苏翊鸣', event: '男子大跳台', points: '360' },
+      { rank: 2, name: '荣格', event: '男子坡面障碍技巧', points: '342' },
+      { rank: 3, name: '杨文龙', event: '男子大跳台', points: '318' },
+      { rank: 4, name: '高弘博', event: '男子坡面障碍技巧', points: '295' }
+    ],
+    // 2: 单板平行项目
+    [
+      { rank: 1, name: '宫乃莹', event: '女子平行大回转', points: '360' },
+      { rank: 2, name: '臧汝心', event: '女子平行回转', points: '345' },
+      { rank: 3, name: '毕野', event: '男子平行大回转', points: '328' },
+      { rank: 4, name: '张义威', event: '男子平行回转', points: '310' }
+    ],
+    // 3: 自由式坡面障碍技巧/大跳台
+    [
+      { rank: 1, name: '谷爱凌', event: '女子大跳台', points: '360' },
+      { rank: 2, name: '杨硕瑞', event: '男子坡面障碍技巧', points: '348' },
+      { rank: 3, name: '何金博', event: '男子大跳台', points: '325' },
+      { rank: 4, name: '李方慧', event: '女子坡面障碍技巧', points: '302' }
+    ]
+  ]
+
   const fallbackRankingEntries = [
     { rank: 1, name: 'Wei Zhang', event: 'Men Giant Slalom', points: '0.00' },
     { rank: 2, name: 'Xue Li', event: 'Women Slalom', points: '8.45' },
@@ -106,9 +138,7 @@ export default function HomePage() {
     { rank: 4, name: 'Qiang Liu', event: 'Men Slalom', points: '15.67' }
   ]
 
-  const rankingEntries = t.home?.rankings?.entries && t.home.rankings.entries.length > 0
-    ? t.home.rankings.entries
-    : fallbackRankingEntries
+  const rankingEntries = disciplineRankings[selectedDiscipline] || fallbackRankingEntries
 
   const rankingCardStyles = [
     'bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-200',
