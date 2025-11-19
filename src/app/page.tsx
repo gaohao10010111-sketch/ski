@@ -29,6 +29,7 @@ export default function HomePage() {
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   const [isClient, setIsClient] = useState(false)
+  const [selectedDiscipline, setSelectedDiscipline] = useState(0) // 0: 高山, 1: 单板坡障, 2: 单板平行, 3: 自由式
 
   const fallbackNewsItems = [
     { id: 'nc-men-gs', title: '2024 National Championships', subtitle: 'Giant Slalom · Live Now', status: 'live', pinned: true },
@@ -49,15 +50,44 @@ export default function HomePage() {
 
   const newsStatusLabels: Record<string, string> = t.home?.news?.statuses || {}
 
+  // 四个项目的赛事成绩数据
+  const disciplineResults = [
+    // 0: 高山滑雪
+    [
+      { id: 'alpine-nc-gs', title: '2024全国高山滑雪锦标赛', subtitle: '男子大回转 · 天池滑雪场', status: 'live', time: '12月15日 · 14:30' },
+      { id: 'alpine-cup-sl', title: '中国杯高山公开赛', subtitle: '女子回转 · 万龙滑雪场', status: 'completed', time: '12月14日 · 16:45' },
+      { id: 'alpine-northeast', title: '东北联赛', subtitle: '混合全能 · 亚布力滑雪场', status: 'completed', time: '12月13日 · 15:20' }
+    ],
+    // 1: 单板坡面障碍技巧/大跳台
+    [
+      { id: 'sb-ss-nc', title: '2024全国单板坡面障碍技巧锦标赛', subtitle: '男子坡面障碍技巧 · 密苑云顶', status: 'live', time: '12月15日 · 13:00' },
+      { id: 'sb-ba-open', title: '单板大跳台公开赛', subtitle: '女子大跳台 · 首钢滑雪大跳台', status: 'completed', time: '12月14日 · 19:30' },
+      { id: 'sb-ss-youth', title: 'U18单板坡障青少年赛', subtitle: '混合坡面障碍技巧 · 万龙滑雪场', status: 'completed', time: '12月12日 · 14:00' }
+    ],
+    // 2: 单板平行项目
+    [
+      { id: 'sb-pgs-nc', title: '2024全国单板平行大回转锦标赛', subtitle: '男子平行大回转 · 太舞滑雪场', status: 'live', time: '12月15日 · 10:30' },
+      { id: 'sb-psl-open', title: '单板平行回转公开赛', subtitle: '女子平行回转 · 云顶滑雪场', status: 'completed', time: '12月14日 · 15:15' },
+      { id: 'sb-p-team', title: '单板平行团体赛', subtitle: '混合团体 · 万龙滑雪场', status: 'completed', time: '12月13日 · 11:00' }
+    ],
+    // 3: 自由式坡面障碍技巧/大跳台
+    [
+      { id: 'fs-ss-nc', title: '2024全国自由式坡面障碍技巧锦标赛', subtitle: '男子坡面障碍技巧 · 太舞滑雪场', status: 'live', time: '12月15日 · 12:00' },
+      { id: 'fs-ba-open', title: '自由式大跳台公开赛', subtitle: '女子大跳台 · 首钢滑雪大跳台', status: 'completed', time: '12月14日 · 20:00' },
+      { id: 'fs-ss-youth', title: 'U15自由式坡障青少年赛', subtitle: '混合坡面障碍技巧 · 密苑云顶', status: 'completed', time: '12月12日 · 16:30' }
+    ]
+  ]
+
+  const disciplineNames = ['高山滑雪', '单板坡障/大跳台', '单板平行', '自由式坡障/大跳台']
+  const disciplineIcons = ['🎿', '🏂', '🏂', '⛷️']
+
   const fallbackResults = [
     { id: 'nc-men-gs', title: '2024 National Championships', subtitle: 'Men Giant Slalom · Tianchi Resort', status: 'live', time: 'Dec 15 · 14:30' },
     { id: 'china-cup-sl', title: 'China Cup Alpine Open', subtitle: 'Women Slalom · Wanlong Resort', status: 'completed', time: 'Dec 14 · 16:45' },
     { id: 'northeast-league', title: 'Northeast League', subtitle: 'Mixed Alpine Combined · Yabuli Resort', status: 'completed', time: 'Dec 13 · 15:20' }
   ]
 
-  const latestResults = t.home?.latestResults?.results && t.home.latestResults.results.length > 0
-    ? t.home.latestResults.results
-    : fallbackResults
+  const latestResults = disciplineResults[selectedDiscipline] || fallbackResults
 
   const latestResultStatusLabels: Record<string, string> = t.home?.latestResults?.statusLabels || {}
   const resultStatusStyles: Record<string, string> = {
@@ -387,88 +417,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-ski-navy mb-4">{t.home?.stats?.title || 'Platform Data Overview'}</h2>
-            <p className="text-gray-600 text-sm md:text-base">{t.home?.stats?.subtitle || 'Real-time system data and status'}</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-            {statsCards.map((stat, index) => (
-              <div key={index} className="text-center bg-gray-50 rounded-lg p-4 md:p-6 hover:shadow-lg transition-shadow">
-                <div className="flex justify-center mb-3 md:mb-4">
-                  <div className={`p-2 md:p-3 rounded-full ${
-                    index % 4 === 0 ? 'bg-blue-100' :
-                    index % 4 === 1 ? 'bg-green-100' :
-                    index % 4 === 2 ? 'bg-yellow-100' :
-                    'bg-purple-100'
-                  }`}>
-                    <stat.icon className={`h-5 w-5 md:h-6 md:w-6 ${
-                      index % 4 === 0 ? 'text-blue-600' :
-                      index % 4 === 1 ? 'text-green-600' :
-                      index % 4 === 2 ? 'text-yellow-600' :
-                      'text-purple-600'
-                    }`} />
-                  </div>
-                </div>
-                <div className="text-2xl md:text-3xl font-bold text-ski-navy mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-xs md:text-sm font-medium text-gray-900 mb-1">
-                  {stat.label}
-                </div>
-                {stat.description && (
-                  <div className="text-xs text-gray-500">
-                    {stat.description}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Feature Grid Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-ski-navy mb-6">
-              {t.home?.features?.title || '平台核心功能'}
-            </h2>
-            <p className="text-gray-600 text-base md:text-lg max-w-4xl mx-auto leading-relaxed">
-              {t.home?.features?.description || '基于FIS国际雪联标准的完整滑雪竞赛管理解决方案，从积分计算、运动员管理到赛事组织，覆盖高山滑雪运动的所有核心环节'}
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featureCards.map((card) => (
-              <Link
-                key={card.key}
-                href={card.href}
-                className="group bg-white border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 ${card.iconContainerClass}`}>
-                    <card.icon className={`h-6 w-6 ${card.iconColor}`} />
-                  </div>
-                  <span className="px-2.5 py-1 bg-green-100 text-green-700 text-xs font-medium rounded-full">
-                    {t.home?.features?.online || '已上线'}
-                  </span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-ski-navy mb-2">{card.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed mb-4">{card.description}</p>
-                  <div className="flex items-center text-ski-blue text-sm font-medium group-hover:gap-2 transition-all">
-                    <span>{t.home?.features?.useNow || '立即使用'}</span>
-                    <ChevronRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Latest Competition Results Section */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -476,9 +424,29 @@ export default function HomePage() {
             <h2 className="text-2xl md:text-3xl font-bold text-ski-navy mb-4">
               {t.home?.latestResults?.title || '最新赛事成绩'}
             </h2>
-            <p className="text-gray-600 text-sm md:text-base">
+            <p className="text-gray-600 text-sm md:text-base mb-6">
               {t.home?.latestResults?.subtitle || '实时更新的竞赛结果和积分排名'}
             </p>
+
+            {/* 项目切换 Tab */}
+            <div className="flex justify-center mb-8">
+              <div className="inline-flex bg-white rounded-lg shadow-md p-1 gap-1">
+                {disciplineNames.map((name, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedDiscipline(index)}
+                    className={`px-4 md:px-6 py-2.5 rounded-md text-sm md:text-base font-medium transition-all duration-300 whitespace-nowrap ${
+                      selectedDiscipline === index
+                        ? 'bg-ski-blue text-white shadow-md transform scale-105'
+                        : 'text-gray-600 hover:text-ski-blue hover:bg-gray-50'
+                    }`}
+                  >
+                    <span className="mr-1.5">{disciplineIcons[index]}</span>
+                    {name}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
@@ -546,6 +514,88 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature Grid Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-ski-navy mb-6">
+              {t.home?.features?.title || '平台核心功能'}
+            </h2>
+            <p className="text-gray-600 text-base md:text-lg max-w-4xl mx-auto leading-relaxed">
+              {t.home?.features?.description || '基于FIS国际雪联标准的完整滑雪竞赛管理解决方案，从积分计算、运动员管理到赛事组织，覆盖高山滑雪运动的所有核心环节'}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featureCards.map((card) => (
+              <Link
+                key={card.key}
+                href={card.href}
+                className="group bg-white border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 ${card.iconContainerClass}`}>
+                    <card.icon className={`h-6 w-6 ${card.iconColor}`} />
+                  </div>
+                  <span className="px-2.5 py-1 bg-green-100 text-green-700 text-xs font-medium rounded-full">
+                    {t.home?.features?.online || '已上线'}
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-ski-navy mb-2">{card.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-4">{card.description}</p>
+                  <div className="flex items-center text-ski-blue text-sm font-medium group-hover:gap-2 transition-all">
+                    <span>{t.home?.features?.useNow || '立即使用'}</span>
+                    <ChevronRight className="h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-ski-navy mb-4">{t.home?.stats?.title || 'Platform Data Overview'}</h2>
+            <p className="text-gray-600 text-sm md:text-base">{t.home?.stats?.subtitle || 'Real-time system data and status'}</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+            {statsCards.map((stat, index) => (
+              <div key={index} className="text-center bg-gray-50 rounded-lg p-4 md:p-6 hover:shadow-lg transition-shadow">
+                <div className="flex justify-center mb-3 md:mb-4">
+                  <div className={`p-2 md:p-3 rounded-full ${
+                    index % 4 === 0 ? 'bg-blue-100' :
+                    index % 4 === 1 ? 'bg-green-100' :
+                    index % 4 === 2 ? 'bg-yellow-100' :
+                    'bg-purple-100'
+                  }`}>
+                    <stat.icon className={`h-5 w-5 md:h-6 md:w-6 ${
+                      index % 4 === 0 ? 'text-blue-600' :
+                      index % 4 === 1 ? 'text-green-600' :
+                      index % 4 === 2 ? 'text-yellow-600' :
+                      'text-purple-600'
+                    }`} />
+                  </div>
+                </div>
+                <div className="text-2xl md:text-3xl font-bold text-ski-navy mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-xs md:text-sm font-medium text-gray-900 mb-1">
+                  {stat.label}
+                </div>
+                {stat.description && (
+                  <div className="text-xs text-gray-500">
+                    {stat.description}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
