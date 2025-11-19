@@ -17,7 +17,11 @@ import {
   BarChart3,
   FileText,
   TrendingUp,
-  ChevronRight
+  ChevronRight,
+  Mountain,
+  ArrowLeftRight,
+  Wind,
+  Sparkles
 } from 'lucide-react'
 import { getImagePath } from '@/utils/paths'
 import { useAuth } from '@/contexts/AuthContext'
@@ -79,7 +83,7 @@ export default function HomePage() {
   ]
 
   const disciplineNames = ['高山滑雪', '单板坡障/大跳台', '单板平行', '自由式坡障/大跳台']
-  const disciplineIcons = ['🎿', '🏂', '🏂', '⛷️']
+  const disciplineIcons = [Mountain, Sparkles, ArrowLeftRight, Wind]
 
   const fallbackResults = [
     { id: 'nc-men-gs', title: '2024 National Championships', subtitle: 'Men Giant Slalom · Tianchi Resort', status: 'live', time: 'Dec 15 · 14:30' },
@@ -431,20 +435,23 @@ export default function HomePage() {
             {/* 项目切换 Tab */}
             <div className="flex justify-center mb-8">
               <div className="inline-flex bg-white rounded-lg shadow-md p-1 gap-1">
-                {disciplineNames.map((name, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setSelectedDiscipline(index)}
-                    className={`px-4 md:px-6 py-2.5 rounded-md text-sm md:text-base font-medium transition-all duration-300 whitespace-nowrap ${
-                      selectedDiscipline === index
-                        ? 'bg-ski-blue text-white shadow-md transform scale-105'
-                        : 'text-gray-600 hover:text-ski-blue hover:bg-gray-50'
-                    }`}
-                  >
-                    <span className="mr-1.5">{disciplineIcons[index]}</span>
-                    {name}
-                  </button>
-                ))}
+                {disciplineNames.map((name, index) => {
+                  const Icon = disciplineIcons[index]
+                  return (
+                    <button
+                      key={index}
+                      onClick={() => setSelectedDiscipline(index)}
+                      className={`flex items-center gap-2 px-4 md:px-6 py-2.5 rounded-md text-sm md:text-base font-medium transition-all duration-300 whitespace-nowrap ${
+                        selectedDiscipline === index
+                          ? 'bg-ski-blue text-white shadow-md transform scale-105'
+                          : 'text-gray-600 hover:text-ski-blue hover:bg-gray-50'
+                      }`}
+                    >
+                      <Icon className="h-4 w-4" />
+                      {name}
+                    </button>
+                  )
+                })}
               </div>
             </div>
           </div>
