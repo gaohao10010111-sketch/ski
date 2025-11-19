@@ -63,7 +63,7 @@ export default function DocsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {categoryConfigs.map((category) => {
-            const translation = i18n.categories?.[category.key] || {}
+            const translation = (i18n.categories as any)?.[category.key] || {}
             const topics = translation.topics || []
 
             return (
@@ -98,7 +98,7 @@ export default function DocsPage() {
           <h2 className="text-xl font-semibold text-ski-navy mb-4">{i18n.popular?.title || 'Popular Documents'}</h2>
           <div className="space-y-3">
             {popularDocConfigs.map((doc) => {
-              const item = i18n.popular?.items?.[doc.key] || {}
+              const item = (i18n.popular?.items as any)?.[doc.key] || {}
               return (
                 <div key={doc.key} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                   <div className="flex items-center space-x-3">

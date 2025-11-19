@@ -33,9 +33,9 @@ export async function verifyPassword(
  * 生成JWT Token
  */
 export function generateToken(payload: JWTPayload): string {
-  return jwt.sign(payload, JWT_SECRET, {
+  return jwt.sign(payload, JWT_SECRET as string, {
     expiresIn: JWT_EXPIRES_IN,
-  });
+  } as any);
 }
 
 /**

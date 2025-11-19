@@ -1,4 +1,4 @@
-import { Pool, PoolClient, QueryResult } from 'pg';
+import { Pool, PoolClient, QueryResult, QueryResultRow } from 'pg';
 
 // PostgreSQL连接池配置
 const pool = new Pool({
@@ -20,7 +20,7 @@ pool.on('error', (err: Error) => {
 /**
  * 执行SQL查询
  */
-export async function query<T = any>(
+export async function query<T extends QueryResultRow = any>(
   text: string,
   params?: any[]
 ): Promise<QueryResult<T>> {

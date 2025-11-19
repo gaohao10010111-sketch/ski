@@ -130,6 +130,8 @@ export const de: Partial<TranslationKeys> = {
       }
     },
 
+    subDisciplines: [],
+
     quickAccess: {
       results: { title: 'Ergebnisse', nameEn: 'Results' },
       rankings: { title: 'Rangliste', nameEn: 'Rankings' },
@@ -140,15 +142,18 @@ export const de: Partial<TranslationKeys> = {
     },
 
     upcomingEvents: {
-      title: 'Bevorstehend'
+      title: 'Bevorstehend',
+      events: []
     },
 
     latestNews: {
-      title: 'Aktuelle Nachrichten'
+      title: 'Aktuelle Nachrichten',
+      items: []
     },
 
     topAthletes: {
-      title: 'Rangliste'
+      title: 'Rangliste',
+      athletes: []
     }
   },
 
@@ -173,6 +178,8 @@ export const de: Partial<TranslationKeys> = {
       }
     },
 
+    subDisciplines: [],
+
     quickAccess: {
       results: { title: 'Ergebnisse', nameEn: 'Results' },
       rankings: { title: 'Rangliste', nameEn: 'Rankings' },
@@ -183,15 +190,18 @@ export const de: Partial<TranslationKeys> = {
     },
 
     upcomingEvents: {
-      title: 'Bevorstehend'
+      title: 'Bevorstehend',
+      events: []
     },
 
     latestNews: {
-      title: 'Aktuelle Nachrichten'
+      title: 'Aktuelle Nachrichten',
+      items: []
     },
 
     topAthletes: {
-      title: 'Rangliste'
+      title: 'Rangliste',
+      athletes: []
     }
   },
 
@@ -216,6 +226,8 @@ export const de: Partial<TranslationKeys> = {
       }
     },
 
+    subDisciplines: [],
+
     quickAccess: {
       results: { title: 'Ergebnisse', nameEn: 'Results' },
       rankings: { title: 'Rangliste', nameEn: 'Rankings' },
@@ -226,15 +238,18 @@ export const de: Partial<TranslationKeys> = {
     },
 
     upcomingEvents: {
-      title: 'Bevorstehend'
+      title: 'Bevorstehend',
+      events: []
     },
 
     latestNews: {
-      title: 'Aktuelle Nachrichten'
+      title: 'Aktuelle Nachrichten',
+      items: []
     },
 
     topAthletes: {
-      title: 'Rangliste'
+      title: 'Rangliste',
+      athletes: []
     }
   },
 
@@ -259,6 +274,8 @@ export const de: Partial<TranslationKeys> = {
       }
     },
 
+    subDisciplines: [],
+
     quickAccess: {
       results: { title: 'Ergebnisse', nameEn: 'Results' },
       rankings: { title: 'Rangliste', nameEn: 'Rankings' },
@@ -269,15 +286,18 @@ export const de: Partial<TranslationKeys> = {
     },
 
     upcomingEvents: {
-      title: 'Bevorstehend'
+      title: 'Bevorstehend',
+      events: []
     },
 
     latestNews: {
-      title: 'Aktuelle Nachrichten'
+      title: 'Aktuelle Nachrichten',
+      items: []
     },
 
     topAthletes: {
-      title: 'Rangliste'
+      title: 'Rangliste',
+      athletes: []
     }
   },
 
@@ -800,10 +820,30 @@ export const de: Partial<TranslationKeys> = {
       subtitle: 'Authoritative · Professional · Accurate skiing points management platform',
       exploreDisciplines: 'Explore Disciplines',
       freeRegister: 'Free Registration',
-      platformIntro: 'First choice platform for professional athletes, coaches, and event organizers • Certified by General Administration of Sport'
+      platformIntro: 'First choice platform for professional athletes, coaches, and event organizers • Certified by General Administration of Sport',
+      highlights: [
+        { label: 'Four Points Systems', color: 'bg-ski-blue' },
+        { label: 'Official Certification', color: 'bg-green-400' },
+        { label: 'U-Series · Public Events', color: 'bg-yellow-400' }
+      ]
     },
     features: {
       title: 'Core Platform Features',
+      description: 'Complete skiing competition management solution based on FIS International Ski Federation standards',
+      online: 'Online',
+      useNow: 'Use Now',
+      fisPointsQuery: {
+        title: 'FIS Points Query',
+        description: 'Query athlete FIS points and ranking information'
+      },
+      pointsCalculator: {
+        title: 'Points Calculator',
+        description: 'Real-time calculation of skiing points based on race results'
+      },
+      pointsRankings: {
+        title: 'Points Rankings',
+        description: 'Real-time updated athlete points rankings'
+      },
       platformIntro: {
         title: 'Platform Introduction',
         description: 'Learn about China Alpine Skiing Points System'
@@ -848,20 +888,32 @@ export const de: Partial<TranslationKeys> = {
     news: {
       title: 'Latest Updates',
       pauseCarousel: 'Pause Carousel',
-      continueCarousel: 'Continue Carousel'
+      continueCarousel: 'Continue Carousel',
+      statuses: {
+        live: 'Live',
+        updated: 'Updated',
+        upcoming: 'Upcoming'
+      },
+      items: []
     },
     latestResults: {
       title: 'Latest Competition Results',
       subtitle: 'Real-time competition results and points rankings',
       recentResults: 'Recent Results',
       liveUpdate: 'Live Update',
-      viewMore: 'View More Events →'
+      viewMore: 'View More Events →',
+      statusLabels: {
+        live: 'Live',
+        completed: 'Completed'
+      },
+      results: []
     },
     rankings: {
       title: 'Points Leaderboard',
       updatedOn: 'Updated on',
       points: 'Points',
-      viewFullRankings: 'View Full Rankings →'
+      viewFullRankings: 'View Full Rankings →',
+      entries: []
     },
     memberWelcome: {
       welcomeBack: 'Welcome Back',
@@ -907,6 +959,32 @@ export const de: Partial<TranslationKeys> = {
       feature4: 'U12/U15/U18 Youth Series Event Management',
       feature5: 'General Administration of Sport Winter Sports Center Certified',
       feature6: 'Multi-discipline Points Rankings and Data Visualization'
+    }
+  },
+
+  // Page Metadata
+  pageMetadata: {
+    docs: {
+      competitionRules: {
+        title: 'Wettkampfregeln',
+        description: 'Technische Wettkampfregeln und Schiedsrichterstandards'
+      },
+      pointsRules: {
+        title: 'Punkterichtlinien',
+        description: 'Chinesische Ski-Punkteberechnungsregeln'
+      },
+      venueStandards: {
+        title: 'Stättenstandards',
+        description: 'Anforderungen an Veranstaltungsorte'
+      },
+      fisRules: {
+        title: 'FIS-Regelwerk',
+        description: 'Internationales Skiverband-Regelwerk'
+      },
+      guide: {
+        title: 'Plattformhandbuch',
+        description: 'Funktionsanleitungen und FAQ'
+      }
     }
   }
 };

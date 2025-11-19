@@ -276,7 +276,7 @@ export default function RulesMainPage() {
 
   const ruleModules = ruleModulesConfig.map((moduleConfig) => {
     const content =
-      translations.ruleModules?.[moduleConfig.id] ??
+      (translations.ruleModules as any)?.[moduleConfig.id] ??
       (defaultContent.ruleModules as Record<string, any>)[moduleConfig.id]
 
     const IconComponent = iconMap[moduleConfig.icon] ?? Calculator
@@ -293,7 +293,7 @@ export default function RulesMainPage() {
 
   const v4Features = v4FeaturesConfig.map((featureConfig) => {
     const content =
-      translations.v4Features?.items?.[featureConfig.id] ??
+      (translations.v4Features?.items as any)?.[featureConfig.id] ??
       (defaultContent.v4Features.items as Record<string, any>)[featureConfig.id]
 
     const IconComponent = iconMap[featureConfig.icon] ?? Target
@@ -310,7 +310,7 @@ export default function RulesMainPage() {
 
   const quickLinks = quickLinksConfig.map((linkConfig) => {
     const content =
-      translations.quickLinks?.items?.[linkConfig.id] ??
+      (translations.quickLinks?.items as any)?.[linkConfig.id] ??
       (defaultContent.quickLinks.items as Record<string, any>)[linkConfig.id]
 
     const IconComponent = iconMap[linkConfig.icon] ?? Calculator
