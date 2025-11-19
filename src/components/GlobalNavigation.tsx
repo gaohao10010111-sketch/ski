@@ -110,7 +110,7 @@ export default function GlobalNavigation() {
     {
       key: 'disciplines',
       name: t.navigation?.disciplines || 'Disciplines',
-      href: '/disciplines',
+      href: '#',
       icon: Mountain,
       highlighted: true,
       children: [
@@ -287,7 +287,12 @@ export default function GlobalNavigation() {
                             ? 'text-blue-600 bg-blue-50'
                             : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
                         }`}
-                        onClick={() => setActiveDropdown(null)}
+                        onClick={(e) => {
+                          if (item.href === '#') {
+                            e.preventDefault();
+                          }
+                          setActiveDropdown(null);
+                        }}
                       >
                         {Icon && <Icon className="w-3 h-3" />}
                         <span>{isDisciplineMenu ? getCurrentDisciplineName() : item.name}</span>
