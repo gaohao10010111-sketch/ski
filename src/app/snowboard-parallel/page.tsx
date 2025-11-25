@@ -75,8 +75,7 @@ export default function SnowboardParallelPage() {
     { id: 1, title: '宫乃莹夺得全国锦标赛平行回转冠军', summary: '在万龙滑雪场举行的2024中国杯单板公开赛上，宫乃莹以52.18秒的成绩夺得女子平行回转冠军...', time: '2小时前', image: '/images/ski-bg.jpg', category: '赛事' },
     { id: 2, title: '单板平行项目积分规则更新', summary: '中国滑雪协会发布了单板平行项目积分规则更新，优化了时间积分计算公式...', time: '5小时前', image: '/images/ski-bg.jpg', category: '规则' },
     { id: 3, title: '2024-25赛季赛程公布', summary: '新赛季将举办9站国家级赛事，涵盖PGS和PSL两大项目...', time: '1天前', image: '/images/ski-bg.jpg', category: '赛程' },
-    { id: 4, title: '毕野打破男子平行大回转赛道纪录', summary: '在云顶滑雪场进行的全国锦标赛上，毕野以1分05秒32的成绩刷新赛道纪录...', time: '2天前', image: '/images/ski-bg.jpg', category: '记录' },
-    { id: 5, title: '单板平行训练营开营', summary: '国家队单板平行集训营在云顶开营，35名优秀运动员参加为期20天的强化训练...', time: '3天前', image: '/images/ski-bg.jpg', category: '训练' }
+    { id: 4, title: '毕野打破男子平行大回转赛道纪录', summary: '在云顶滑雪场进行的全国锦标赛上，毕野以1分05秒32的成绩刷新赛道纪录...', time: '2天前', image: '/images/ski-bg.jpg', category: '记录' }
   ];
 
   // 精彩视频（增加到6个）
@@ -251,10 +250,10 @@ export default function SnowboardParallelPage() {
         </section>
 
         {/* 两栏布局：新闻动态 + 积分排行榜 */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 items-stretch">
           {/* 新闻动态 */}
-          <section className="lg:col-span-2">
-            <div className="bg-white rounded-lg p-6 shadow-sm">
+          <section className="flex">
+            <div className="bg-white rounded-lg p-6 shadow-sm w-full">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-xl font-bold text-gray-900 flex items-center">
                   <Newspaper className="w-5 h-5 mr-2 text-red-600" />
@@ -280,8 +279,8 @@ export default function SnowboardParallelPage() {
           </section>
 
           {/* 积分排行榜 */}
-          <section>
-            <div className="bg-white rounded-lg p-6 shadow-sm">
+          <section className="lg:col-span-2 flex">
+            <div className="bg-white rounded-lg p-6 shadow-sm w-full">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-xl font-bold text-gray-900 flex items-center">
                   <BarChart3 className="w-5 h-5 mr-2 text-green-600" />

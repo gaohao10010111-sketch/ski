@@ -75,8 +75,7 @@ export default function AlpinePage() {
     { id: 1, title: '张伟夺得全国锦标赛男子大回转冠军', summary: '在天池滑雪场举行的2024全国高山滑雪锦标赛上，张伟以1分23秒45的成绩夺得男子大回转项目冠军...', time: '2小时前', image: '/images/ski-bg.jpg', category: '赛事' },
     { id: 2, title: '高山滑雪积分规则v4.0正式发布', summary: '中国滑雪协会发布了最新版本的高山滑雪积分规则，新规则将于2025年1月1日起正式实施...', time: '5小时前', image: '/images/ski-bg.jpg', category: '规则' },
     { id: 3, title: '2024-25赛季赛程公布', summary: '新赛季将举办12站国家级赛事，覆盖全国8个省份的顶级滑雪场地...', time: '1天前', image: '/images/ski-bg.jpg', category: '赛程' },
-    { id: 4, title: '李雪打破女子回转全国纪录', summary: '在万龙滑雪场进行的中国杯公开赛上，李雪以58秒32的成绩刷新女子回转项目全国纪录...', time: '2天前', image: '/images/ski-bg.jpg', category: '记录' },
-    { id: 5, title: '高山滑雪训练营开营', summary: '国家队高山滑雪集训营在长白山开营，来自全国各地的50名优秀运动员参加为期30天的集训...', time: '3天前', image: '/images/ski-bg.jpg', category: '训练' }
+    { id: 4, title: '李雪打破女子回转全国纪录', summary: '在万龙滑雪场进行的中国杯公开赛上，李雪以58秒32的成绩刷新女子回转项目全国纪录...', time: '2天前', image: '/images/ski-bg.jpg', category: '记录' }
   ];
 
   // 精彩视频（增加到6个）
@@ -251,10 +250,10 @@ export default function AlpinePage() {
         </section>
 
         {/* 两栏布局：新闻动态 + 积分排行榜 */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 items-stretch">
           {/* 新闻动态 */}
-          <section className="lg:col-span-2">
-            <div className="bg-white rounded-lg p-6 shadow-sm">
+          <section className="flex">
+            <div className="bg-white rounded-lg p-6 shadow-sm w-full">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-xl font-bold text-gray-900 flex items-center">
                   <Newspaper className="w-5 h-5 mr-2 text-red-600" />
@@ -280,8 +279,8 @@ export default function AlpinePage() {
           </section>
 
           {/* 积分排行榜 */}
-          <section>
-            <div className="bg-white rounded-lg p-6 shadow-sm">
+          <section className="lg:col-span-2 flex">
+            <div className="bg-white rounded-lg p-6 shadow-sm w-full">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-xl font-bold text-gray-900 flex items-center">
                   <BarChart3 className="w-5 h-5 mr-2 text-green-600" />

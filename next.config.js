@@ -19,7 +19,17 @@ const nextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true,
-  }
+  },
+
+  // 性能优化
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+
+  // 压缩优化
+  swcMinify: true,
+
+
 }
 
 module.exports = nextConfig

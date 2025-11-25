@@ -1,5 +1,221 @@
 # 中国滑雪积分系统
 
+---
+
+## 🚨 Claude 工作流程规范（必读）
+
+**每次任务必须严格按照以下流程执行，不得跳过任何步骤。**
+
+### 第一步：置信度评估（ConfidenceChecker）
+
+在执行任何任务前，必须先评估置信度：
+
+| 置信度 | 行动 | 说明 |
+|:------|:-----|:-----|
+| **≥90%** | 直接执行 | 有充分证据支持，可立即行动 |
+| **70-89%** | 提供备选方案 | 存在不确定性，需列出选项供用户决策 |
+| **<70%** | 先提问澄清 | 信息不足，必须先向用户确认 |
+
+**输出格式**：
+```
+📊 置信度评估：XX%
+📋 评估依据：[列出判断依据]
+⚠️ 不确定因素：[如有]
+🎯 建议行动：[直接执行/提供方案/需要澄清]
+```
+
+### 第二步：选择正确的工具
+
+根据任务类型选择对应的 SuperClaude 命令或智能体：
+
+#### 常用命令
+| 场景 | 命令 | 说明 |
+|:----|:----|:----|
+| 不确定用什么命令 | `/sc:recommend` | 智能推荐最合适的命令 |
+| 技术调研 | `/sc:research` | 深度网络研究，多跳推理 |
+| 架构设计 | `/sc:design` | 系统架构设计 |
+| 功能实现 | `/sc:implement` | 代码实现 |
+| 代码分析 | `/sc:analyze` | 代码质量、安全、性能分析 |
+| 测试生成 | `/sc:test` | 自动生成测试用例 |
+| 问题诊断 | `/sc:troubleshoot` | Bug调试和问题排查 |
+| 并行任务 | `/sc:spawn` | 独立任务并行执行（3.5x速度） |
+| 代码改进 | `/sc:improve` | 性能优化、质量提升 |
+| 代码清理 | `/sc:cleanup` | 重构、删除死代码 |
+| 文档生成 | `/sc:document` | API文档、README |
+| Git操作 | `/sc:git` | 分支管理、提交 |
+
+#### 16个专业智能体（通过 `/sc:pm` 或 `--agent` 调用）
+| 智能体 | 专长领域 | 调用示例 |
+|:------|:--------|:--------|
+| PM Agent | 项目管理、置信度检查、自检协议 | 自动激活 |
+| Security Engineer | 安全漏洞、OWASP Top 10、安全审计 | `--agent security` |
+| **Frontend Architect** | **UI/UX、React/Vue、前端性能、组件架构** | `--agent frontend` |
+| Backend Engineer | API设计、数据库、微服务 | `--agent backend` |
+| **Mobile Developer** | **iOS/Android、React Native、移动UI** | `--agent mobile` |
+| DevOps Engineer | CI/CD、Docker/K8s、监控 | `--agent devops` |
+| Performance Engineer | 性能瓶颈、负载测试、优化 | `--agent performance` |
+| Database Architect | Schema设计、索引优化、查询调优 | `--agent database` |
+| QA Engineer | 测试策略、自动化测试 | `--agent qa` |
+| Code Reviewer | 代码审查、最佳实践 | `--agent reviewer` |
+| System Architect | 分布式系统、技术选型 | `--agent architect` |
+| API Designer | RESTful设计、OpenAPI规范 | `--agent api` |
+| Data Scientist | 数据分析、机器学习 | `--agent data` |
+| Technical Writer | API文档、用户手册 | `--agent writer` |
+| Research Agent | 深度研究、文献调研 | `/sc:research` |
+| Business Analyst | 需求分析、ROI评估 | `--agent business` |
+
+> **UI开发专用**：Frontend Architect + Mobile Developer + Magic MCP
+
+#### 智能体自动触发机制
+
+**大多数情况无需手动指定**，Claude 会根据任务关键词自动切换智能体视角：
+
+| 智能体 | 自动触发关键词 |
+|:------|:-------------|
+| **Frontend Architect** | UI、组件、页面、样式、React、Vue、CSS |
+| **Backend Engineer** | API、接口、服务端、数据库查询 |
+| **Security Engineer** | 安全、漏洞、认证、权限、XSS、SQL注入 |
+| **Performance Engineer** | 慢、优化、性能、加载时间、缓存 |
+| **Database Architect** | 数据库、Schema、索引、查询优化 |
+| **DevOps Engineer** | 部署、Docker、CI/CD、服务器、Nginx |
+| **QA Engineer** | 测试、单元测试、E2E、覆盖率 |
+| **Mobile Developer** | 小程序、App、移动端、React Native |
+| **System Architect** | 架构、微服务、技术选型、分布式 |
+
+**需要手动指定的情况**：
+1. 任务跨多个领域，需要明确重点
+2. 想要特定视角的分析
+3. Claude 判断错误时纠正
+
+**手动指定方式**：
+```bash
+# 方式1：通过 /sc:pm 调用
+/sc:pm "调用 Frontend Architect 设计积分页面组件结构"
+
+# 方式2：通过 --agent 参数
+/sc:implement "用户卡片组件" --agent frontend
+```
+
+### 第三步：研究优于猜测
+
+**核心原则**：遇到不确定的技术问题，必须用 `/sc:research` 获取准确信息，禁止基于训练数据推测。
+
+```bash
+# ❌ 错误做法
+直接基于记忆回答技术问题
+
+# ✅ 正确做法
+/sc:research "Next.js 15 静态导出配置最佳实践"
+```
+
+### 第四步：并行执行独立任务
+
+独立任务必须使用 `/sc:spawn` 并行执行：
+
+```bash
+# ❌ 顺序执行（慢）
+npm run typecheck
+npm run lint
+npm run build
+
+# ✅ 并行执行（3.5x快）
+/sc:spawn "并行执行 typecheck、lint、build"
+```
+
+### 第五步：自检协议（SelfCheckProtocol）
+
+任务完成后必须执行自检：
+
+```
+✅ 自检清单：
+□ 功能完整性 - 所有需求是否实现
+□ 代码质量 - 是否符合最佳实践
+□ 测试覆盖 - 测试是否通过
+□ 文档完整 - 是否需要更新文档
+□ 性能验证 - 是否满足性能要求
+□ 安全检查 - 是否存在安全漏洞
+```
+
+### 第六步：反思学习（ReflexionPattern）
+
+遇到错误时记录并学习：
+
+```
+🔴 错误记录：
+- 错误现象：[描述]
+- 根本原因：[分析]
+- 解决方案：[措施]
+- 预防措施：[下次如何避免]
+```
+
+---
+
+### 工作流程速查
+
+```
+新功能开发：/sc:pm → /sc:design → /sc:implement → /sc:test → /sc:document
+Bug修复：    /sc:troubleshoot → /sc:analyze → /sc:implement → /sc:test → /sc:reflect
+性能优化：   /sc:analyze → /sc:research → /sc:improve → /sc:test
+技术调研：   /sc:research → /sc:design
+代码重构：   /sc:analyze → /sc:cleanup → /sc:test
+UI开发：     /sc:pm(frontend) → /sc:implement --agent frontend → /sc:test
+```
+
+### 高级隐藏功能
+
+| 功能 | 命令 | 说明 |
+|:----|:----|:----|
+| 智能推荐 | `/sc:recommend "需求"` | 不知道用什么命令时使用 |
+| 多专家评审 | `/sc:spec-panel @文件 --mode critique` | 召集虚拟专家团评审 |
+| 并行执行 | `/sc:spawn "多任务"` | 3.5x速度提升 |
+| 深度研究 | `/sc:research "问题" --depth deep` | 多跳推理，最多5跳 |
+| 会话保存 | `/sc:save "进度名"` | 跨会话持久化 |
+| 仓库索引 | `/sc:index-repo` | 94% token减少 |
+
+### 错误处理协议
+
+```
+❌ 禁止行为：
+- 出错后直接重试相同方法
+- 忽略警告信息
+- 基于记忆猜测技术问题
+
+✅ 正确行为：
+1. 停止 - 不立即重新执行
+2. 调查 - /sc:research 或查阅文档
+3. 分析 - 形成假设并记录
+4. 设计新方案 - 必须与之前不同
+5. 执行并验证
+6. 记录学习 - 更新 docs/patterns/ 或 docs/mistakes/
+```
+
+📖 **完整功能手册**：见 `docs/SuperClaude完整功能手册.md`
+
+---
+
+### MCP 服务器配置（已安装）
+
+| MCP 服务器 | 功能 | 自动触发场景 |
+|:---------|:----|:-----------|
+| **Context7** | 官方框架文档实时查询 | `/sc:implement --framework react/vue/next` |
+| **Tavily** | 深度网络搜索 | `/sc:research` |
+| **Playwright** | 浏览器自动化、E2E测试 | `/sc:test --e2e` |
+| **Magic** | AI驱动UI组件生成 | `/sc:implement --type component` |
+
+**MCP 与智能体协作示例**：
+```bash
+# UI开发（Magic + Frontend Architect + Context7）
+/sc:implement "运动员积分卡片组件" --type component --framework react
+
+# 深度技术调研（Tavily + Research Agent）
+/sc:research "FIS积分算法最新变化" --depth deep
+
+# E2E测试（Playwright + QA Engineer）
+/sc:test "为积分排名页面生成完整测试套件" --e2e
+```
+
+---
+
 ## 项目概述
 中国综合性滑雪赛事积分管理系统，支持**高山滑雪**、**自由式滑雪**、**单板滑雪**三大项目的竞赛数据管理和积分计算。
 

@@ -75,8 +75,7 @@ export default function SnowboardSlopestylePage() {
     { id: 1, title: '苏翊鸣夺得全国锦标赛坡面障碍技巧冠军', summary: '在密苑云顶滑雪场举行的2024全国单板坡障锦标赛上，苏翊鸣以92.50分的成绩夺得男子坡障冠军...', time: '2小时前', image: '/images/ski-bg.jpg', category: '赛事' },
     { id: 2, title: '单板坡障积分规则360分制正式发布', summary: '中国滑雪协会发布了最新版本的单板坡障积分规则，新规则采用360分制，将于2025年1月1日起实施...', time: '5小时前', image: '/images/ski-bg.jpg', category: '规则' },
     { id: 3, title: '2024-25赛季赛程公布', summary: '新赛季将举办10站国家级赛事，覆盖全国6个省份的专业单板公园...', time: '1天前', image: '/images/ski-bg.jpg', category: '赛程' },
-    { id: 4, title: '荣格打破女子大跳台全国纪录', summary: '在首钢滑雪大跳台进行的中国杯公开赛上，荣格以88.75分的成绩刷新女子大跳台项目全国纪录...', time: '2天前', image: '/images/ski-bg.jpg', category: '记录' },
-    { id: 5, title: '单板坡障训练营开营', summary: '国家队单板坡障集训营在云顶开营，来自全国各地的40名优秀运动员参加为期25天的集训...', time: '3天前', image: '/images/ski-bg.jpg', category: '训练' }
+    { id: 4, title: '荣格打破女子大跳台全国纪录', summary: '在首钢滑雪大跳台进行的中国杯公开赛上，荣格以88.75分的成绩刷新女子大跳台项目全国纪录...', time: '2天前', image: '/images/ski-bg.jpg', category: '记录' }
   ];
 
   // 精彩视频（增加到6个）
@@ -251,10 +250,10 @@ export default function SnowboardSlopestylePage() {
         </section>
 
         {/* 两栏布局：新闻动态 + 积分排行榜 */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 items-stretch">
           {/* 新闻动态 */}
-          <section className="lg:col-span-2">
-            <div className="bg-white rounded-lg p-6 shadow-sm">
+          <section className="flex">
+            <div className="bg-white rounded-lg p-6 shadow-sm w-full">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-xl font-bold text-gray-900 flex items-center">
                   <Newspaper className="w-5 h-5 mr-2 text-red-600" />
@@ -280,8 +279,8 @@ export default function SnowboardSlopestylePage() {
           </section>
 
           {/* 积分排行榜 */}
-          <section>
-            <div className="bg-white rounded-lg p-6 shadow-sm">
+          <section className="lg:col-span-2 flex">
+            <div className="bg-white rounded-lg p-6 shadow-sm w-full">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-xl font-bold text-gray-900 flex items-center">
                   <BarChart3 className="w-5 h-5 mr-2 text-green-600" />

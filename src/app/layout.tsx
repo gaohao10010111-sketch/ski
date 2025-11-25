@@ -1,14 +1,20 @@
 import './globals.css'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { ClientProviders } from '@/components/ClientProviders'
 import GlobalNavigation from '@/components/GlobalNavigation'
 import Footer from '@/components/Footer'
 import StructuredData from '@/components/StructuredData'
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#1e40af',
+}
+
 export const metadata: Metadata = {
   title: {
-    default: '中国滑雪积分数据管理官方平台',
-    template: '%s | 中国滑雪积分数据管理官方平台'
+    default: '中国滑雪青少年积分排名官方平台',
+    template: '%s | 中国滑雪青少年积分排名官方平台'
   },
   description: '中国滑雪积分系统，支持高山滑雪、自由式滑雪、单板滑雪等项目的积分计算、赛事管理、运动员档案管理。基于官方标准，提供准确的积分计算和排名服务。',
   keywords: [
@@ -23,9 +29,9 @@ export const metadata: Metadata = {
     '滑雪赛事管理',
     '滑雪积分排名'
   ],
-  authors: [{ name: '中国滑雪积分数据管理官方平台' }],
-  creator: '中国滑雪积分数据管理官方平台',
-  publisher: '中国滑雪积分数据管理官方平台',
+  authors: [{ name: '中国滑雪青少年积分排名官方平台' }],
+  creator: '中国滑雪青少年积分排名官方平台',
+  publisher: '中国滑雪青少年积分排名官方平台',
   robots: {
     index: true,
     follow: true,
@@ -41,22 +47,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'zh_CN',
     url: 'https://gaohao10010111-sketch.github.io/ski/',
-    siteName: '中国滑雪积分数据管理官方平台',
-    title: '中国滑雪积分数据管理官方平台',
+    siteName: '中国滑雪青少年积分排名官方平台',
+    title: '中国滑雪青少年积分排名官方平台',
     description: '中国滑雪积分系统，支持高山滑雪、自由式滑雪、单板滑雪等项目的积分计算、赛事管理、运动员档案管理。',
     images: [
       {
         url: '/images/ski-bg.jpg',
         width: 1200,
         height: 630,
-        alt: '中国滑雪积分数据管理官方平台',
+        alt: '中国滑雪青少年积分排名官方平台',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '中国滑雪积分数据管理官方平台',
-    description: '中国滑雪积分数据管理官方平台',
+    title: '中国滑雪青少年积分排名官方平台',
+    description: '中国滑雪青少年积分排名官方平台',
     images: ['/images/ski-bg.jpg'],
   },
   alternates: {
@@ -76,8 +82,10 @@ export default function RootLayout({
     <html lang="zh-CN">
       <head>
         <StructuredData />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
       </head>
-      <body>
+      <body className="antialiased">
         <ClientProviders>
           <GlobalNavigation />
           <main className="min-h-screen">

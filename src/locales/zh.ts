@@ -33,7 +33,7 @@ export const zh = {
 
   // 导航
   navigation: {
-    title: '中国滑雪积分数据管理官方平台',
+    title: '中国滑雪青少年积分排名官方平台',
     titleShort: 'CSPS',
 
     // 项目切换器
@@ -510,7 +510,7 @@ export const zh = {
   disciplinesPage: {
     hero: {
       backLabel: '返回首页',
-      title: '中国滑雪积分数据管理官方平台',
+      title: '中国滑雪青少年积分排名官方平台',
       subtitle: '四大项目独立积分体系 | 专业赛事管理平台'
     },
     continuation: {
@@ -1246,7 +1246,7 @@ export const zh = {
   // 首页
   home: {
     hero: {
-      title: '中国滑雪积分数据管理官方平台',
+      title: '中国滑雪青少年积分排名官方平台',
       titleEn: 'China Skiing Points Data Management Platform',
       subtitle: '权威·专业·精准的中国滑雪运动积分管理平台',
       exploreDisciplines: '探索积分系统',
