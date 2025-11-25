@@ -158,7 +158,7 @@ export default function HomePage() {
   const highlightFallbackColors = ['bg-ski-blue', 'bg-green-400', 'bg-yellow-400']
   const heroHighlights = (t.home?.hero?.highlights ?? [
     { label: '四大积分系统', color: highlightFallbackColors[0] },
-    { label: '冬运中心官方认证', color: highlightFallbackColors[1] },
+    { label: '官方标准认证', color: highlightFallbackColors[1] },
     { label: 'U系列·大众赛事', color: highlightFallbackColors[2] }
   ]).map((item, index) => ({
     label: item.label,
@@ -486,11 +486,11 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-            {/* Recent Competition Results */}
-            <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+            {/* Recent Competition Results - 1/3 width */}
+            <div className="bg-white rounded-lg shadow-lg p-4 md:p-6 lg:col-span-1">
               <div className="flex items-center justify-between mb-4 md:mb-6">
-                <h3 className="text-lg md:text-xl font-semibold text-ski-navy">{t.home?.latestResults?.recentResults || '最新成绩'}</h3>
+                <h3 className="text-lg md:text-xl font-semibold text-ski-navy">{t.home?.latestResults?.recentResults || '最新比赛'}</h3>
                 <div className="flex items-center text-sm text-green-600">
                   <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
                   {t.home?.latestResults?.liveUpdate || '实时更新'}
@@ -519,8 +519,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Top Athletes Rankings */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            {/* Top Athletes Rankings - 2/3 width */}
+            <div className="bg-white rounded-lg shadow-lg p-6 lg:col-span-2">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-semibold text-ski-navy">{t.home?.rankings?.title || '积分排行榜'}</h3>
                 <div className="text-sm text-gray-500">{t.home?.rankings?.updatedOn || '更新于'}: 12-15</div>

@@ -33,7 +33,7 @@ export const zh = {
 
   // 导航
   navigation: {
-    title: '中国滑雪积分系统',
+    title: '中国滑雪积分数据管理官方平台',
     titleShort: 'CSPS',
 
     // 项目切换器
@@ -510,7 +510,7 @@ export const zh = {
   disciplinesPage: {
     hero: {
       backLabel: '返回首页',
-      title: '中国滑雪积分系统',
+      title: '中国滑雪积分数据管理官方平台',
       subtitle: '四大项目独立积分体系 | 专业赛事管理平台'
     },
     continuation: {
@@ -1246,15 +1246,15 @@ export const zh = {
   // 首页
   home: {
     hero: {
-      title: '中国滑雪积分系统',
-      titleEn: 'China Skiing Points System',
+      title: '中国滑雪积分数据管理官方平台',
+      titleEn: 'China Skiing Points Data Management Platform',
       subtitle: '权威·专业·精准的中国滑雪运动积分管理平台',
       exploreDisciplines: '探索积分系统',
       freeRegister: '免费注册',
-      platformIntro: '专业运动员、教练员、赛事组织者的首选平台 • 国家体育总局认证标准',
+      platformIntro: '专业运动员、教练员、赛事组织者的首选平台',
       highlights: [
         { label: '四大积分系统', color: 'bg-ski-blue' },
-        { label: '冬运中心官方认证', color: 'bg-green-400' },
+        { label: '官方标准认证', color: 'bg-green-400' },
         { label: 'U系列·大众赛事', color: 'bg-yellow-400' }
       ]
     },
@@ -1336,7 +1336,7 @@ export const zh = {
     latestResults: {
       title: '最新赛事成绩',
       subtitle: '实时更新的竞赛结果和积分排名',
-      recentResults: '最新成绩',
+      recentResults: '最新比赛',
       liveUpdate: '实时更新',
       viewMore: '查看更多赛事 →',
       statusLabels: {
@@ -1390,11 +1390,11 @@ export const zh = {
     },
     about: {
       title: '关于平台',
-      description1: '中国滑雪赛事积分系统是基于国家体育总局冬季运动管理中心标准打造的综合性竞赛管理平台。涵盖高山滑雪、自由式滑雪、单板滑雪全项目，采用符合中国标准的多档积分计算算法，为中国滑雪竞赛提供权威、准确的数据管理和积分计算服务。',
+      description1: '中国滑雪积分数据管理官方平台是基于官方标准打造的综合性竞赛管理平台。涵盖高山滑雪、自由式滑雪、单板滑雪全项目，采用符合中国标准的多档积分计算算法，为中国滑雪竞赛提供权威、准确的数据管理和积分计算服务。',
       description2: '我们致力于推动中国滑雪运动的数字化、标准化发展，为运动员、教练员、赛事组织者、竞赛裁判提供现代化的数据管理、积分计算、成绩统计工具，全面覆盖大跳台、坡面障碍技巧、平行项目等各类雪上项目，提升中国滑雪运动的组织水平和竞技水平。',
       multiTierPoints: { title: '多档积分体系', description: '360/240/120分档标准' },
       uSeries: { title: 'U系列赛事', description: 'U12/U15/U18全覆盖' },
-      officialCertification: { title: '权威认证', description: '冬运中心官方标准' },
+      officialCertification: { title: '权威认证', description: '官方标准' },
       allDisciplines: { title: '全项目支持', description: '高山·自由式·单板滑雪' }
     },
     systemFeatures: {
@@ -1403,7 +1403,7 @@ export const zh = {
       feature2: '自由式/单板滑雪360/240/120分档体系',
       feature3: '大跳台、坡面障碍技巧、平行项目全覆盖',
       feature4: 'U12/U15/U18青少年系列赛事管理',
-      feature5: '国家体育总局冬运中心标准认证',
+      feature5: '官方标准认证',
       feature6: '多项目积分排行榜和数据可视化'
     }
   },
