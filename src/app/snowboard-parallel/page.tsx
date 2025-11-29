@@ -203,6 +203,115 @@ export default function SnowboardParallelPage() {
           </div>
         </section>
 
+        {/* 两栏布局：新闻动态 + 积分排行榜 */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 items-stretch">
+          {/* 新闻动态 */}
+          <section className="flex">
+            <div className="bg-white rounded-lg p-6 shadow-sm w-full">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-xl font-bold text-gray-900 flex items-center">
+                  <Newspaper className="w-5 h-5 mr-2 text-red-600" />
+                  新闻动态
+                </h2>
+              </div>
+              <div className="space-y-4">
+                {latestNews.map((news) => (
+                  <div key={news.id} className="flex gap-4 pb-4 border-b border-gray-100 last:border-0 hover:bg-gray-50 p-3 rounded-lg transition-colors cursor-pointer">
+                    <img src={getImagePath(news.image)} alt={news.title} className="w-32 h-24 object-cover rounded-lg flex-shrink-0" />
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="px-2 py-0.5 bg-indigo-100 text-indigo-700 text-xs rounded">{news.category}</span>
+                        <span className="text-xs text-gray-500">{news.time}</span>
+                      </div>
+                      <h4 className="font-semibold text-gray-900 mb-1 hover:text-indigo-600">{news.title}</h4>
+                      <p className="text-sm text-gray-600 line-clamp-2">{news.summary}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* 积分排行榜 - 表格式样式 */}
+          <section className="lg:col-span-2 flex">
+            <div className="bg-white rounded-lg shadow-sm w-full overflow-hidden">
+              <div className="flex items-center justify-between p-6 pb-4">
+                <h2 className="text-xl font-bold text-gray-900 flex items-center">
+                  <Trophy className="w-5 h-5 mr-2 text-indigo-600" />
+                  积分排行榜
+                </h2>
+                <Link href="/snowboard-parallel/points/rankings" className="text-indigo-600 hover:text-indigo-700 text-sm font-medium">
+                  完整榜单 →
+                </Link>
+              </div>
+              <div className="overflow-x-auto">
+                <table className="min-w-full divide-y divide-gray-200">
+                  <thead className="bg-gray-50">
+                    <tr>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">排名</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">运动员</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">项目</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">积分</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">变化</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white divide-y divide-gray-200">
+                    {rankings.map((athlete) => (
+                      <tr key={athlete.rank} className="hover:bg-gray-50">
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          <div className="flex items-center">
+                            {athlete.rank <= 3 ? (
+                              <div className={`w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold ${
+                                athlete.rank === 1 ? 'bg-yellow-500' :
+                                athlete.rank === 2 ? 'bg-gray-400' :
+                                'bg-orange-500'
+                              }`}>
+                                {athlete.rank}
+                              </div>
+                            ) : (
+                              <div className="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-bold">
+                                {athlete.rank}
+                              </div>
+                            )}
+                          </div>
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          <div className="flex items-center">
+                            <div className="flex-shrink-0 h-8 w-8">
+                              <div className="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
+                                <span className="text-xs font-medium text-gray-600">{athlete.name.charAt(0)}</span>
+                              </div>
+                            </div>
+                            <div className="ml-3">
+                              <div className="text-sm font-medium text-gray-900">{athlete.name}</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          <div className="text-sm text-gray-600">{athlete.event}</div>
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          <div className="text-sm font-bold text-gray-900">{athlete.points}</div>
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          {athlete.change !== 0 ? (
+                            <div className={`flex items-center text-sm ${athlete.change > 0 ? 'text-green-600' : 'text-red-600'}`}>
+                              {athlete.change > 0 ? <TrendingUp className="w-4 h-4 mr-1" /> : <TrendingDown className="w-4 h-4 mr-1" />}
+                              {athlete.change > 0 ? '+' : ''}{athlete.change}
+                            </div>
+                          ) : (
+                            <span className="text-sm text-gray-500">-</span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </div>
+
         {/* 最新赛事成绩 */}
         <section className="mb-8">
           <div className="flex items-center justify-between mb-4">
@@ -248,82 +357,6 @@ export default function SnowboardParallelPage() {
             ))}
           </div>
         </section>
-
-        {/* 两栏布局：新闻动态 + 积分排行榜 */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 items-stretch">
-          {/* 新闻动态 */}
-          <section className="flex">
-            <div className="bg-white rounded-lg p-6 shadow-sm w-full">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold text-gray-900 flex items-center">
-                  <Newspaper className="w-5 h-5 mr-2 text-red-600" />
-                  新闻动态
-                </h2>
-              </div>
-              <div className="space-y-4">
-                {latestNews.map((news) => (
-                  <div key={news.id} className="flex gap-4 pb-4 border-b border-gray-100 last:border-0 hover:bg-gray-50 p-3 rounded-lg transition-colors cursor-pointer">
-                    <img src={getImagePath(news.image)} alt={news.title} className="w-32 h-24 object-cover rounded-lg flex-shrink-0" />
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="px-2 py-0.5 bg-indigo-100 text-indigo-700 text-xs rounded">{news.category}</span>
-                        <span className="text-xs text-gray-500">{news.time}</span>
-                      </div>
-                      <h4 className="font-semibold text-gray-900 mb-1 hover:text-indigo-600">{news.title}</h4>
-                      <p className="text-sm text-gray-600 line-clamp-2">{news.summary}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* 积分排行榜 */}
-          <section className="lg:col-span-2 flex">
-            <div className="bg-white rounded-lg p-6 shadow-sm w-full">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold text-gray-900 flex items-center">
-                  <BarChart3 className="w-5 h-5 mr-2 text-green-600" />
-                  积分排行榜
-                </h2>
-                <Link href="/snowboard-parallel/points/rankings" className="text-indigo-600 hover:text-indigo-700 text-sm font-medium">
-                  完整榜单 →
-                </Link>
-              </div>
-              <div className="space-y-2">
-                {rankings.map((athlete) => (
-                  <div key={athlete.rank} className={`flex items-center p-2.5 rounded-lg ${
-                    athlete.rank === 1 ? 'bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-200' :
-                    athlete.rank === 2 ? 'bg-gradient-to-r from-gray-50 to-gray-100 border border-gray-200' :
-                    athlete.rank === 3 ? 'bg-gradient-to-r from-orange-50 to-orange-100 border border-orange-200' :
-                    'bg-gray-50'
-                  }`}>
-                    <div className={`w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-bold mr-2 ${
-                      athlete.rank === 1 ? 'bg-yellow-500' :
-                      athlete.rank === 2 ? 'bg-gray-400' :
-                      athlete.rank === 3 ? 'bg-orange-500' :
-                      'bg-gray-300'
-                    }`}>
-                      {athlete.rank}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="font-semibold text-gray-900 text-sm truncate">{athlete.name}</div>
-                      <div className="text-xs text-gray-600 truncate">{athlete.event}</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="font-semibold text-gray-900 text-sm">{athlete.points}</div>
-                      {athlete.change !== 0 && (
-                        <div className={`text-xs ${athlete.change > 0 ? 'text-green-600' : 'text-red-600'}`}>
-                          {athlete.change > 0 ? '↑' : '↓'}{Math.abs(athlete.change)}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        </div>
 
         {/* 赛程日历 */}
         <section className="mb-8">
