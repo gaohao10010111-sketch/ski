@@ -1,18 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { Mountain, Github, Mail, Phone, Lock } from 'lucide-react'
-import { useAuth } from '@/contexts/AuthContext'
-import { Resource, Action } from '@/types/auth'
-import { useState, useEffect } from 'react'
+import { Mountain, Github, Mail, Phone } from 'lucide-react'
 
 export default function Footer() {
-  const { hasPermission, isAuthenticated } = useAuth()
-  const [isClient, setIsClient] = useState(false)
-
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
   return (
     <footer className="bg-ski-navy text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -55,54 +46,21 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">积分系统</h3>
             <ul className="space-y-2 text-sm">
-              {isClient && hasPermission(Resource.POINTS_QUERY, Action.READ) ? (
-                <li>
-                  <Link href="/points/fis" className="text-gray-300 hover:text-primary-400 transition-colors">
-                    中国积分查询
-                  </Link>
-                </li>
-              ) : null}
-
-              {isClient && hasPermission(Resource.POINTS_RANKING, Action.READ) ? (
-                <li>
-                  <Link href="/points/rankings" className="text-gray-300 hover:text-primary-400 transition-colors">
-                    积分排行榜
-                  </Link>
-                </li>
-              ) : null}
-
-              {isClient && hasPermission(Resource.POINTS_CALCULATOR, Action.READ) ? (
-                <li>
-                  <Link href="/points/calculator" className="text-gray-300 hover:text-primary-400 transition-colors">
-                    积分计算器
-                  </Link>
-                </li>
-              ) : null}
-
-              {isClient && hasPermission(Resource.POINTS_TRENDS, Action.READ) ? (
-                <li>
-                  <Link href="/points/trends" className="text-gray-300 hover:text-primary-400 transition-colors">
-                    积分变化趋势
-                  </Link>
-                </li>
-              ) : null}
-
-              {isClient && hasPermission(Resource.RULES_POINTS, Action.READ) ? (
-                <li>
-                  <Link href="/rules/points" className="text-gray-300 hover:text-primary-400 transition-colors">
-                    积分规则详解
-                  </Link>
-                </li>
-              ) : null}
-
-              {/* 未登录用户看到引导 */}
-              {isClient && !isAuthenticated && (
-                <li className="pt-2 border-t border-gray-600">
-                  <Link href="/login" className="text-sky-400 hover:text-sky-300 transition-colors text-sm">
-                    登录查看更多功能 →
-                  </Link>
-                </li>
-              )}
+              <li>
+                <Link href="/points/rankings" className="text-gray-300 hover:text-primary-400 transition-colors">
+                  积分排行榜
+                </Link>
+              </li>
+              <li>
+                <Link href="/rules/points" className="text-gray-300 hover:text-primary-400 transition-colors">
+                  积分规则详解
+                </Link>
+              </li>
+              <li>
+                <Link href="/athletes" className="text-gray-300 hover:text-primary-400 transition-colors">
+                  运动员查询
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -110,55 +68,21 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">赛事管理</h3>
             <ul className="space-y-2 text-sm">
-              {isClient && hasPermission(Resource.COMPETITIONS, Action.READ) ? (
-                <li>
-                  <Link href="/competitions" className="text-gray-300 hover:text-primary-400 transition-colors">
-                    比赛列表
-                  </Link>
-                </li>
-              ) : null}
-
-              {isClient && hasPermission(Resource.COMPETITIONS_SCHEDULE, Action.READ) ? (
-                <li>
-                  <Link href="/competitions/schedule" className="text-gray-300 hover:text-primary-400 transition-colors">
-                    赛事日程
-                  </Link>
-                </li>
-              ) : null}
-
-              {isClient && hasPermission(Resource.REGISTRATION, Action.READ) ? (
-                <li>
-                  <Link href="/registration" className="text-gray-300 hover:text-primary-400 transition-colors">
-                    在线报名
-                  </Link>
-                </li>
-              ) : null}
-
-              {/* 管理员功能 */}
-              {isClient && hasPermission(Resource.RESULTS_IMPORT, Action.READ) ? (
-                <li>
-                  <Link href="/results-import" className="text-gray-300 hover:text-primary-400 transition-colors">
-                    成绩导入
-                  </Link>
-                </li>
-              ) : null}
-
-              {isClient && hasPermission(Resource.RESULTS_ANNOUNCEMENT, Action.READ) ? (
-                <li>
-                  <Link href="/results-announcement" className="text-gray-300 hover:text-primary-400 transition-colors">
-                    成绩公布
-                  </Link>
-                </li>
-              ) : null}
-
-              {/* 未登录用户看到引导 */}
-              {isClient && !isAuthenticated && (
-                <li className="pt-2 border-t border-gray-600">
-                  <Link href="/register" className="text-sky-400 hover:text-sky-300 transition-colors text-sm">
-                    注册参与赛事 →
-                  </Link>
-                </li>
-              )}
+              <li>
+                <Link href="/competitions" className="text-gray-300 hover:text-primary-400 transition-colors">
+                  比赛成绩
+                </Link>
+              </li>
+              <li>
+                <Link href="/competitions/schedule" className="text-gray-300 hover:text-primary-400 transition-colors">
+                  赛事日程
+                </Link>
+              </li>
+              <li>
+                <Link href="/rules" className="text-gray-300 hover:text-primary-400 transition-colors">
+                  规则中心
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

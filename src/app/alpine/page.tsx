@@ -29,10 +29,10 @@ export default function AlpinePage() {
       link: '/rules/points'
     },
     {
-      title: t.alpine?.hero?.slide3?.title || '在线报名开启',
-      subtitle: t.alpine?.hero?.slide3?.subtitle || '2024-25赛季报名通道',
+      title: t.alpine?.hero?.slide3?.title || '积分排行榜',
+      subtitle: t.alpine?.hero?.slide3?.subtitle || '查看最新积分排名',
       image: getImagePath('/images/ski-bg.jpg'),
-      link: '/registration'
+      link: '/points/rankings'
     }
   ];
 

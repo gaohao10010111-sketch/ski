@@ -29,10 +29,10 @@ export default function SnowboardParallelPage() {
       link: '/rules/points'
     },
     {
-      title: '在线报名开启',
-      subtitle: '2024-25赛季报名通道',
+      title: '积分排行榜',
+      subtitle: '查看最新积分排名',
       image: getImagePath('/images/ski-bg.jpg'),
-      link: '/registration'
+      link: '/points/rankings'
     }
   ];
 

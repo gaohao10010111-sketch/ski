@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import {
-  Calculator,
   Trophy,
   Users,
   UserPlus,
@@ -11,12 +10,9 @@ import {
   Database,
   Clock,
   CheckCircle,
-  Lock,
-  LogIn,
   Search,
   BarChart3,
   FileText,
-  TrendingUp,
   ChevronRight,
   Mountain,
   ArrowLeftRight,
@@ -194,24 +190,6 @@ export default function HomePage() {
 
   const featureCards = [
     {
-      key: 'fisPointsQuery',
-      href: '/points/fis',
-      icon: Search,
-      title: t.home?.features?.fisPointsQuery?.title || 'FIS积分查询',
-      description: t.home?.features?.fisPointsQuery?.description || '查询运动员FIS积分和排名信息',
-      iconContainerClass: 'bg-blue-50',
-      iconColor: 'text-blue-600'
-    },
-    {
-      key: 'pointsCalculator',
-      href: '/points/calculator',
-      icon: Calculator,
-      title: t.home?.features?.pointsCalculator?.title || '积分计算器',
-      description: t.home?.features?.pointsCalculator?.description || '根据比赛成绩实时计算滑雪积分',
-      iconContainerClass: 'bg-green-50',
-      iconColor: 'text-green-600'
-    },
-    {
       key: 'pointsRankings',
       href: '/points/rankings',
       icon: BarChart3,
@@ -219,24 +197,6 @@ export default function HomePage() {
       description: t.home?.features?.pointsRankings?.description || '实时更新的运动员积分排名',
       iconContainerClass: 'bg-yellow-50',
       iconColor: 'text-yellow-600'
-    },
-    {
-      key: 'pointsRules',
-      href: '/rules/points',
-      icon: FileText,
-      title: t.home?.features?.pointsRules?.title || '积分规则文档',
-      description: t.home?.features?.pointsRules?.description || '查看详细的FIS积分计算规则',
-      iconContainerClass: 'bg-purple-50',
-      iconColor: 'text-purple-600'
-    },
-    {
-      key: 'competitionManagement',
-      href: '/competitions',
-      icon: Trophy,
-      title: t.home?.features?.competitionManagement?.title || '竞赛管理',
-      description: t.home?.features?.competitionManagement?.description || '管理比赛信息、成绩录入和统计',
-      iconContainerClass: 'bg-red-50',
-      iconColor: 'text-red-500'
     },
     {
       key: 'athleteProfiles',
@@ -248,22 +208,40 @@ export default function HomePage() {
       iconColor: 'text-indigo-600'
     },
     {
-      key: 'onlineRegistration',
-      href: '/registration',
-      icon: LogIn,
-      title: t.home?.features?.onlineRegistration?.title || '在线报名',
-      description: t.home?.features?.onlineRegistration?.description || '便捷的赛事报名和费用管理',
-      iconContainerClass: 'bg-orange-50',
-      iconColor: 'text-orange-500'
+      key: 'competitionManagement',
+      href: '/competitions',
+      icon: Trophy,
+      title: t.home?.features?.competitionManagement?.title || '赛事成绩',
+      description: t.home?.features?.competitionManagement?.description || '查看比赛信息和赛事成绩',
+      iconContainerClass: 'bg-red-50',
+      iconColor: 'text-red-500'
     },
     {
-      key: 'dataAnalysis',
-      href: '/competitions/stats',
-      icon: TrendingUp,
-      title: t.home?.features?.dataAnalysis?.title || '数据分析',
-      description: t.home?.features?.dataAnalysis?.description || '深度数据分析和可视化报表',
-      iconContainerClass: 'bg-teal-50',
-      iconColor: 'text-teal-600'
+      key: 'schedule',
+      href: '/competitions/schedule',
+      icon: Clock,
+      title: '赛程日历',
+      description: '查看即将举行的赛事安排',
+      iconContainerClass: 'bg-green-50',
+      iconColor: 'text-green-600'
+    },
+    {
+      key: 'pointsRules',
+      href: '/rules/points',
+      icon: FileText,
+      title: t.home?.features?.pointsRules?.title || '积分规则',
+      description: t.home?.features?.pointsRules?.description || '查看详细的积分计算规则',
+      iconContainerClass: 'bg-purple-50',
+      iconColor: 'text-purple-600'
+    },
+    {
+      key: 'about',
+      href: '/about',
+      icon: Search,
+      title: '关于平台',
+      description: '了解中国滑雪青少年积分排名官方平台',
+      iconContainerClass: 'bg-blue-50',
+      iconColor: 'text-blue-600'
     }
   ]
 
@@ -348,12 +326,12 @@ export default function HomePage() {
                   <div className="mt-8">
                     <div className="flex flex-col sm:flex-row gap-4">
                       <Link
-                        href="/scoring-systems"
+                        href="/points/rankings"
                         className="inline-flex items-center justify-center px-6 py-3 bg-ski-blue text-white rounded-lg hover:bg-ski-blue/90 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
-                        title={t.home?.hero?.exploreDisciplines || 'Explore Disciplines'}
+                        title={t.home?.hero?.exploreDisciplines || '查看积分排名'}
                       >
-                        <Calculator className="h-5 w-5 mr-2" />
-                        {t.home?.hero?.exploreDisciplines || 'Explore Disciplines'}
+                        <BarChart3 className="h-5 w-5 mr-2" />
+                        {t.home?.hero?.exploreDisciplines || '查看积分排名'}
                       </Link>
                       <Link
                         href="/register"
