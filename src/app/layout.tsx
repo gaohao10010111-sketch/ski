@@ -1,9 +1,11 @@
 import './globals.css'
 import type { Metadata, Viewport } from 'next'
+import { Suspense } from 'react'
 import { ClientProviders } from '@/components/ClientProviders'
 import GlobalNavigation from '@/components/GlobalNavigation'
 import Footer from '@/components/Footer'
 import StructuredData from '@/components/StructuredData'
+import NavigationProgress from '@/components/NavigationProgress'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -85,6 +87,9 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         <ClientProviders>
+          <Suspense fallback={null}>
+            <NavigationProgress />
+          </Suspense>
           <GlobalNavigation />
           <main className="min-h-screen">
             {children}
