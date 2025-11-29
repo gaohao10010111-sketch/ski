@@ -319,7 +319,7 @@ export default function SnowboardParallelPage() {
               <Trophy className="w-6 h-6 mr-2 text-indigo-600" />
               最新赛事成绩
             </h2>
-            <Link href="/snowboard-parallel/events/results" className="text-indigo-600 hover:text-indigo-700 text-sm font-medium flex items-center">
+            <Link href="/competitions" className="text-indigo-600 hover:text-indigo-700 text-sm font-medium flex items-center">
               查看全部 <ChevronRight className="w-4 h-4 ml-1" />
             </Link>
           </div>
@@ -366,7 +366,7 @@ export default function SnowboardParallelPage() {
                 <Calendar className="w-5 h-5 mr-2 text-indigo-600" />
                 赛程日历
               </h2>
-              <Link href="/snowboard-parallel/events/schedule" className="text-indigo-600 hover:text-indigo-700 text-sm font-medium">
+              <Link href="/competitions/schedule" className="text-indigo-600 hover:text-indigo-700 text-sm font-medium">
                 完整赛程 →
               </Link>
             </div>
@@ -415,7 +415,7 @@ export default function SnowboardParallelPage() {
               })}
             </div>
             <div className="mt-6 text-center">
-              <Link href="/snowboard-parallel/docs/points-rules" className="inline-flex items-center px-6 py-2 bg-white text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors font-medium">
+              <Link href="/rules/points" className="inline-flex items-center px-6 py-2 bg-white text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors font-medium">
                 查看完整规则 <ChevronRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
@@ -460,13 +460,13 @@ export default function SnowboardParallelPage() {
                   <Users className="w-5 h-5 mr-2 text-indigo-600" />
                   运动员名录
                 </h2>
-                <Link href="/snowboard-parallel/athletes/list" className="text-indigo-600 hover:text-indigo-700 text-sm font-medium">
+                <Link href="/athletes" className="text-indigo-600 hover:text-indigo-700 text-sm font-medium">
                   全部运动员 →
                 </Link>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {topAthletes.map((athlete) => (
-                  <Link key={athlete.id} href={`/snowboard-parallel/athletes/${athlete.id}`} className="flex items-center p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg hover:shadow-md transition-all border border-gray-200">
+                  <Link key={athlete.id} href="/athletes" className="flex items-center p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg hover:shadow-md transition-all border border-gray-200">
                     <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3 flex-shrink-0">
                       <Award className="w-5 h-5 text-indigo-600" />
                     </div>
@@ -523,7 +523,7 @@ export default function SnowboardParallelPage() {
               规则文档下载
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <a href="#" className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-indigo-400 hover:bg-indigo-50 transition-all group">
+              <Link href="/docs" className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-indigo-400 hover:bg-indigo-50 transition-all group">
                 <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center mr-3 group-hover:bg-red-200">
                   <FileText className="w-6 h-6 text-red-600" />
                 </div>
@@ -532,8 +532,8 @@ export default function SnowboardParallelPage() {
                   <div className="text-xs text-gray-500 mt-1">PDF · 2.1 MB</div>
                 </div>
                 <Download className="w-5 h-5 text-gray-400 group-hover:text-indigo-600" />
-              </a>
-              <a href="#" className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-indigo-400 hover:bg-indigo-50 transition-all group">
+              </Link>
+              <Link href="/docs" className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-indigo-400 hover:bg-indigo-50 transition-all group">
                 <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center mr-3 group-hover:bg-red-200">
                   <FileText className="w-6 h-6 text-red-600" />
                 </div>
@@ -542,8 +542,8 @@ export default function SnowboardParallelPage() {
                   <div className="text-xs text-gray-500 mt-1">PDF · 3.8 MB</div>
                 </div>
                 <Download className="w-5 h-5 text-gray-400 group-hover:text-indigo-600" />
-              </a>
-              <a href="#" className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-indigo-400 hover:bg-indigo-50 transition-all group">
+              </Link>
+              <Link href="/docs" className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-indigo-400 hover:bg-indigo-50 transition-all group">
                 <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center mr-3 group-hover:bg-red-200">
                   <FileText className="w-6 h-6 text-red-600" />
                 </div>
@@ -552,7 +552,7 @@ export default function SnowboardParallelPage() {
                   <div className="text-xs text-gray-500 mt-1">PDF · 1.5 MB</div>
                 </div>
                 <Download className="w-5 h-5 text-gray-400 group-hover:text-indigo-600" />
-              </a>
+              </Link>
             </div>
           </div>
         </section>

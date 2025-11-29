@@ -319,7 +319,7 @@ export default function AlpinePage() {
               <Trophy className="w-6 h-6 mr-2 text-blue-600" />
               最新赛事成绩
             </h2>
-            <Link href="/alpine/events/results" className="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center">
+            <Link href="/competitions" className="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center">
               查看全部 <ChevronRight className="w-4 h-4 ml-1" />
             </Link>
           </div>
@@ -366,7 +366,7 @@ export default function AlpinePage() {
                 <Calendar className="w-5 h-5 mr-2 text-purple-600" />
                 赛程日历
               </h2>
-              <Link href="/alpine/events/schedule" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
+              <Link href="/competitions/schedule" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
                 完整赛程 →
               </Link>
             </div>
@@ -415,7 +415,7 @@ export default function AlpinePage() {
               })}
             </div>
             <div className="mt-6 text-center">
-              <Link href="/alpine/docs/points-rules" className="inline-flex items-center px-6 py-2 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors font-medium">
+              <Link href="/rules/points" className="inline-flex items-center px-6 py-2 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors font-medium">
                 查看完整规则 <ChevronRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
@@ -460,13 +460,13 @@ export default function AlpinePage() {
                   <Users className="w-5 h-5 mr-2 text-indigo-600" />
                   运动员名录
                 </h2>
-                <Link href="/alpine/athletes/list" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                <Link href="/athletes" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
                   全部运动员 →
                 </Link>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {topAthletes.map((athlete) => (
-                  <Link key={athlete.id} href={`/alpine/athletes/${athlete.id}`} className="flex items-center p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg hover:shadow-md transition-all border border-gray-200">
+                  <Link key={athlete.id} href="/athletes" className="flex items-center p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg hover:shadow-md transition-all border border-gray-200">
                     <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 flex-shrink-0">
                       <Award className="w-5 h-5 text-blue-600" />
                     </div>
@@ -523,7 +523,7 @@ export default function AlpinePage() {
               规则文档下载
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <a href="#" className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-blue-400 hover:bg-blue-50 transition-all group">
+              <Link href="/docs" className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-blue-400 hover:bg-blue-50 transition-all group">
                 <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center mr-3 group-hover:bg-red-200">
                   <FileText className="w-6 h-6 text-red-600" />
                 </div>
@@ -532,8 +532,8 @@ export default function AlpinePage() {
                   <div className="text-xs text-gray-500 mt-1">PDF · 2.3 MB</div>
                 </div>
                 <Download className="w-5 h-5 text-gray-400 group-hover:text-blue-600" />
-              </a>
-              <a href="#" className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-blue-400 hover:bg-blue-50 transition-all group">
+              </Link>
+              <Link href="/docs" className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-blue-400 hover:bg-blue-50 transition-all group">
                 <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center mr-3 group-hover:bg-red-200">
                   <FileText className="w-6 h-6 text-red-600" />
                 </div>
@@ -542,8 +542,8 @@ export default function AlpinePage() {
                   <div className="text-xs text-gray-500 mt-1">PDF · 5.1 MB</div>
                 </div>
                 <Download className="w-5 h-5 text-gray-400 group-hover:text-blue-600" />
-              </a>
-              <a href="#" className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-blue-400 hover:bg-blue-50 transition-all group">
+              </Link>
+              <Link href="/docs" className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-blue-400 hover:bg-blue-50 transition-all group">
                 <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center mr-3 group-hover:bg-red-200">
                   <FileText className="w-6 h-6 text-red-600" />
                 </div>
@@ -552,7 +552,7 @@ export default function AlpinePage() {
                   <div className="text-xs text-gray-500 mt-1">PDF · 1.8 MB</div>
                 </div>
                 <Download className="w-5 h-5 text-gray-400 group-hover:text-blue-600" />
-              </a>
+              </Link>
             </div>
           </div>
         </section>
