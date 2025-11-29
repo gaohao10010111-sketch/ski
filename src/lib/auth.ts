@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs';
-import jwt from 'jsonwebtoken';
+import jwt, { SignOptions } from 'jsonwebtoken';
 
 // JWT配置
 const JWT_SECRET = process.env.JWT_SECRET || 'ski_points_jwt_secret_key_2024_production_change_this';
@@ -33,9 +33,11 @@ export async function verifyPassword(
  * 生成JWT Token
  */
 export function generateToken(payload: JWTPayload): string {
-  return jwt.sign(payload, JWT_SECRET as string, {
-    expiresIn: JWT_EXPIRES_IN,
-  } as any);
+  return jwt.sign(
+    payload,
+    JWT_SECRET,
+    { expiresIn: JWT_EXPIRES_IN } as SignOptions
+  );
 }
 
 /**
@@ -45,8 +47,7 @@ export function verifyToken(token: string): JWTPayload | null {
   try {
     const decoded = jwt.verify(token, JWT_SECRET) as JWTPayload;
     return decoded;
-  } catch (error) {
-    console.error('Token验证失败:', error);
+  } catch {
     return null;
   }
 }

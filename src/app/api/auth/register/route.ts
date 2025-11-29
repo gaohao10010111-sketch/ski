@@ -114,8 +114,7 @@ export async function POST(request: NextRequest) {
       },
       { status: 201 }
     );
-  } catch (error) {
-    console.error('注册错误:', error);
+  } catch {
     return NextResponse.json(
       { error: '注册失败，请稍后重试' },
       { status: 500 }

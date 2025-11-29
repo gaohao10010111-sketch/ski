@@ -51,7 +51,7 @@ export default function DisciplineNavigation({ discipline }: DisciplineNavigatio
       icon: Users,
       children: [
         { name: t.navigation?.submenus?.athletesList || '运动员查询', href: '/athletes' },
-        { name: t.navigation?.submenus?.athletesRankings || '积分排名', href: `/points/rankings?discipline=${discipline}` }
+        { name: t.navigation?.submenus?.pointsRankings || '积分排名', href: `/points/rankings?discipline=${discipline}` }
       ]
     },
     {
@@ -59,9 +59,9 @@ export default function DisciplineNavigation({ discipline }: DisciplineNavigatio
       href: '/rules',
       icon: FileText,
       children: [
-        { name: t.navigation?.submenus?.pointsRules || '积分规则', href: '/rules/points' },
-        { name: t.navigation?.submenus?.competitionRules || '竞赛规则', href: '/rules' },
-        { name: t.navigation?.submenus?.documents || '文档中心', href: '/docs' }
+        { name: t.navigation?.submenus?.docsPointsRules || '积分规则', href: '/rules/points' },
+        { name: t.navigation?.submenus?.docsCompetitionRules || '竞赛规则', href: '/rules' },
+        { name: t.navigation?.submenus?.docsGuide || '文档中心', href: '/docs' }
       ]
     }
   ];

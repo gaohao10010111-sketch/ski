@@ -12,32 +12,23 @@ const pool = new Pool({
   connectionTimeoutMillis: 2000,
 });
 
-// 监听连接池错误
-pool.on('error', (err: Error) => {
-  console.error('数据库连接池错误:', err);
+// 监听连接池错误 - 生产环境不输出到控制台
+pool.on('error', () => {
+  // 错误已被Pool处理，避免控制台输出
 });
 
 /**
  * 执行SQL查询
  */
-export async function query<T extends QueryResultRow = any>(
+export async function query<T extends QueryResultRow = QueryResultRow>(
   text: string,
-  params?: any[]
+  params?: unknown[]
 ): Promise<QueryResult<T>> {
-  const start = Date.now();
   try {
     const res = await pool.query<T>(text, params);
-    const duration = Date.now() - start;
-
-    if (process.env.NODE_ENV === 'development') {
-      console.log('执行查询:', { text, duration, rows: res.rowCount });
-    }
-
     return res;
   } catch (error) {
-    console.error('查询错误:', error);
-    console.error('SQL:', text);
-    console.error('参数:', params);
+    // 重新抛出错误，让调用方处理
     throw error;
   }
 }
@@ -76,11 +67,9 @@ export async function transaction<T>(
  */
 export async function testConnection(): Promise<boolean> {
   try {
-    const result = await query('SELECT NOW() as current_time, current_database() as database');
-    console.log('数据库连接成功:', result.rows[0]);
+    await query('SELECT NOW() as current_time, current_database() as database');
     return true;
-  } catch (error) {
-    console.error('数据库连接失败:', error);
+  } catch {
     return false;
   }
 }

@@ -95,6 +95,15 @@ export interface UniversalSeasonData {
   seasonBestCount?: number;
 }
 
+// 积分报告基础接口
+export interface PointsReportBase {
+  trend?: {
+    consistency?: number;
+    direction?: string;
+  };
+  [key: string]: unknown;
+}
+
 // 系统比较结果接口
 export interface SystemComparisonResult {
   athleteId: string;
@@ -313,7 +322,7 @@ export class FourSystemsManager {
     athleteId: string,
     seasonDataList: UniversalSeasonData[]
   ): {
-    individualReports: { [discipline: string]: any };
+    individualReports: { [discipline: string]: PointsReportBase };
     crossSystemComparison: SystemComparisonResult;
     overallSummary: {
       totalEvents: number;
@@ -323,7 +332,7 @@ export class FourSystemsManager {
       improvementPotential: string[];
     };
   } {
-    const individualReports: { [discipline: string]: any } = {};
+    const individualReports: { [discipline: string]: PointsReportBase } = {};
 
     // 生成各项目详细报告
     seasonDataList.forEach(seasonData => {

@@ -65,8 +65,7 @@ export const GET = isStaticExport
           },
           athlete
         });
-      } catch (error) {
-        console.error('获取用户信息错误:', error);
+      } catch {
         return NextResponse.json({ error: '获取用户信息失败' }, { status: 500 });
       }
     };

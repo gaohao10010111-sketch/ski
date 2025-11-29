@@ -73,8 +73,7 @@ export async function POST(request: NextRequest) {
       },
       token,
     });
-  } catch (error) {
-    console.error('登录错误:', error);
+  } catch {
     return NextResponse.json(
       { error: '登录失败，请稍后重试' },
       { status: 500 }

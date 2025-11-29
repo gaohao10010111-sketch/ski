@@ -23,8 +23,7 @@ export async function GET() {
       timestamp: new Date().toISOString(),
       environment: process.env.NODE_ENV,
     });
-  } catch (error) {
-    console.error('健康检查错误:', error);
+  } catch {
     return NextResponse.json(
       {
         status: 'unhealthy',

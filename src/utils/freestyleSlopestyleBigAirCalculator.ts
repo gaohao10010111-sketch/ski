@@ -6,6 +6,14 @@ import {
 } from '../types/fourSport';
 import { POINTS_ALLOCATION } from '../data/fourSportData';
 
+// 技巧信息接口
+interface TrickInfo {
+  name: string;
+  difficulty?: number;
+  score?: number;
+  execution?: number;
+}
+
 /**
  * 自由式滑雪坡面障碍技巧和大跳台积分计算器
  * 基于排名的240/360/120分档积分分配
@@ -86,7 +94,7 @@ export class FreestyleSlopestyleBigAirCalculator {
    * @returns 最佳成绩信息
    */
   static calculateBestScore(
-    scores: { round: number; score: number; rank: number; tricks?: any[] }[],
+    scores: { round: number; score: number; rank: number; tricks?: TrickInfo[] }[],
     competitionType: 'slopestyle' | 'bigair' = 'slopestyle'
   ): { bestScore: number; bestRound: number; finalRank: number; totalScore?: number } {
 
@@ -276,7 +284,7 @@ export class FreestyleSlopestyleBigAirCalculator {
     additionalInfo?: {
       competitionType?: 'slopestyle' | 'bigair';
       difficultyMultiplier?: number;
-      tricks?: any[];
+      tricks?: TrickInfo[];
     }
   ): string {
     const lines: string[] = [];

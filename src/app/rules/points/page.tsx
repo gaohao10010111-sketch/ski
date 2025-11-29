@@ -12,8 +12,8 @@ export default function PointsRulesDocuments() {
       await navigator.clipboard.writeText(text)
       setCopiedText(type)
       setTimeout(() => setCopiedText(''), 2000)
-    } catch (err) {
-      console.error('复制失败:', err)
+    } catch {
+      // 复制失败时静默处理
     }
   }
 

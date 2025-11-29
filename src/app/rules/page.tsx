@@ -378,8 +378,8 @@ export default function RulesMainPage() {
       await navigator.clipboard.writeText(formulaContent.expression)
       setCopiedFormula(true)
       setTimeout(() => setCopiedFormula(false), 2000)
-    } catch (err) {
-      console.error('Failed to copy formula:', err)
+    } catch {
+      // 复制失败时静默处理
     }
   }
 
