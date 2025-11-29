@@ -55,11 +55,11 @@ function getNestedTranslation(t: unknown, path: string | undefined): ComingSoonT
   }
 
   const segments = path.split('.').filter(Boolean);
-  let current: any = t;
+  let current: unknown = t;
 
   for (const segment of segments) {
     if (current && typeof current === 'object' && segment in current) {
-      current = current[segment];
+      current = (current as Record<string, unknown>)[segment];
     } else {
       return undefined;
     }

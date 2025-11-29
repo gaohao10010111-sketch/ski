@@ -1,7 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect, useMemo, ReactNode } from 'react';
-import { zh } from '@/locales/zh';
+import { zh, type PartialTranslationKeys } from '@/locales/zh';
 import { en } from '@/locales/en';
 import { ja } from '@/locales/ja';
 import { ko } from '@/locales/ko';
@@ -16,8 +16,6 @@ import { es } from '@/locales/es';
 
 type Language = 'zh' | 'en' | 'ja' | 'ko' | 'de' | 'fr' | 'it' | 'ru' | 'no' | 'sv' | 'fi' | 'es';
 type TranslationSchema = typeof zh;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type TranslationOverrides = any;
 
 interface LanguageContextType {
   language: Language;
@@ -42,7 +40,7 @@ const htmlLangMap: Record<Language, string> = {
   es: 'es'
 };
 
-const additionalTranslations: Record<Exclude<Language, 'zh' | 'en'>, TranslationOverrides> = {
+const additionalTranslations: Record<Exclude<Language, 'zh' | 'en'>, PartialTranslationKeys> = {
   ja,
   ko,
   de,
@@ -71,8 +69,7 @@ function deepClone<T>(value: T): T {
   return value;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function mergeDeep<T>(base: T, override?: any): T {
+function mergeDeep<T>(base: T, override?: PartialTranslationKeys | T): T {
   if (override === undefined) {
     return deepClone(base);
   }
