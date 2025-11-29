@@ -12,6 +12,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://gaohao10010111-sketch.github.io/ski'),
   title: {
     default: '中国滑雪青少年积分排名官方平台',
     template: '%s | 中国滑雪青少年积分排名官方平台'
@@ -67,9 +68,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://gaohao10010111-sketch.github.io/ski/',
-  },
-  verification: {
-    google: 'your-google-verification-code',
   },
 }
 
