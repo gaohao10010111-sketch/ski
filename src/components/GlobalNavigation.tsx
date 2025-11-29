@@ -124,7 +124,17 @@ export default function GlobalNavigation() {
     { key: 'schedule', name: t.navigation?.submenus?.eventsSchedule || 'Schedule', href: '/competitions/schedule', icon: Calendar },
     { key: 'live-results', name: t.navigation?.submenus?.resultsLive || 'Live Results', href: '/competitions', icon: Trophy },
     { key: 'athletes', name: t.navigation?.athletes || 'Athletes', href: '/athletes', icon: Users },
-    { key: 'rankings', name: t.navigation?.submenus?.pointsRankings || 'Rankings', href: '/points/rankings', icon: Trophy }
+    {
+      key: 'more',
+      name: t.navigation?.submenus?.moreFeatures || 'More',
+      href: '#',
+      icon: Menu,
+      children: [
+        { key: 'points-rankings', name: t.navigation?.submenus?.pointsRankings || 'Rankings', href: '/points/rankings' },
+        { key: 'points-trends', name: t.navigation?.submenus?.pointsTrends || 'Trends', href: '/points/trends' },
+        { key: 'results-import', name: t.navigation?.submenus?.resultsImport || 'Import Results', href: '/results-import' }
+      ]
+    }
   ];
 
   return (
