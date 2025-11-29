@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useCallback, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useCallback, useEffect, useRef, ReactNode } from 'react';
 import { X, CheckCircle, AlertCircle, Info, AlertTriangle } from 'lucide-react';
 
 type ToastType = 'success' | 'error' | 'info' | 'warning';
@@ -38,6 +38,8 @@ export function ToastProvider({ children }: ToastProviderProps) {
     setToasts((prev) => prev.filter((toast) => toast.id !== id));
   }, []);
 
+  const timeoutRefs = useRef<Map<string, NodeJS.Timeout>>(new Map());
+
   const showToast = useCallback((message: string, type: ToastType = 'info', duration: number = 4000) => {
     const id = `toast-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
     const newToast: Toast = { id, message, type, duration };
@@ -45,11 +47,21 @@ export function ToastProvider({ children }: ToastProviderProps) {
     setToasts((prev) => [...prev, newToast]);
 
     if (duration > 0) {
-      setTimeout(() => {
+      const timeoutId = setTimeout(() => {
         hideToast(id);
+        timeoutRefs.current.delete(id);
       }, duration);
+      timeoutRefs.current.set(id, timeoutId);
     }
   }, [hideToast]);
+
+  // 清理所有定时器
+  useEffect(() => {
+    return () => {
+      timeoutRefs.current.forEach((timeoutId) => clearTimeout(timeoutId));
+      timeoutRefs.current.clear();
+    };
+  }, []);
 
   return (
     <ToastContext.Provider value={{ showToast, hideToast }}>

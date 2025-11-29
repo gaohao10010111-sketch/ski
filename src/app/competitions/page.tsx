@@ -18,10 +18,10 @@ import {
   Mountain,
   Snowflake,
   Flag,
-  Award,
-  FileText
+  Award
 } from 'lucide-react'
-import { mockCompetitions, getStatistics } from '@/data/mockData'
+import { mockCompetitions } from '@/data/mockData'
+import { useToast } from '@/components/Toast'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
@@ -131,7 +131,9 @@ export default function CompetitionsPage() {
   const [selectedStatus, setSelectedStatus] = useState('all')
   const [selectedLevel, setSelectedLevel] = useState('all')
   const [searchTerm, setSearchTerm] = useState('')
+  const [isExporting, setIsExporting] = useState(false)
   const router = useRouter()
+  const { showToast } = useToast()
 
   // 合并转换后的数据和额外数据
   const allCompetitions = [...convertedCompetitions, ...additionalCompetitions]
@@ -143,6 +145,90 @@ export default function CompetitionsPage() {
                        competition.location.toLowerCase().includes(searchTerm.toLowerCase())
     return matchStatus && matchLevel && matchSearch
   })
+
+  // 新建比赛
+  const handleNewCompetition = () => {
+    showToast('新建比赛功能即将上线，敬请期待', 'info')
+  }
+
+  // 导出比赛列表
+  const handleExport = async () => {
+    if (filteredCompetitions.length === 0) {
+      showToast('没有数据可导出', 'warning')
+      return
+    }
+
+    setIsExporting(true)
+    try {
+      await new Promise(resolve => setTimeout(resolve, 1000))
+
+      const headers = ['比赛名称', '项目', '地点', '开始日期', '结束日期', '状态', '参赛人数', '主办方']
+      const rows = filteredCompetitions.map(c => [
+        c.name, c.discipline, c.location, c.startDate, c.endDate,
+        statusConfig[c.status as keyof typeof statusConfig]?.label || c.status,
+        c.participants, c.organizer
+      ])
+      const csvContent = [headers, ...rows].map(row => row.join(',')).join('\n')
+
+      const blob = new Blob(['\ufeff' + csvContent], { type: 'text/csv;charset=utf-8;' })
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = `比赛列表_${new Date().toISOString().split('T')[0]}.csv`
+      link.click()
+      URL.revokeObjectURL(url)
+
+      showToast(`成功导出 ${filteredCompetitions.length} 场比赛数据`, 'success')
+    } catch {
+      showToast('导出失败，请重试', 'error')
+    } finally {
+      setIsExporting(false)
+    }
+  }
+
+  // 查看比赛详情
+  const handleViewDetails = (competition: typeof allCompetitions[0]) => {
+    showToast(`正在查看「${competition.name}」详情`, 'info')
+    // TODO: 跳转到比赛详情页
+  }
+
+  // 编辑比赛
+  const handleEditCompetition = (competition: typeof allCompetitions[0]) => {
+    showToast(`编辑功能即将上线：${competition.name}`, 'info')
+    // TODO: 打开编辑弹窗或跳转编辑页
+  }
+
+  // 导出单场比赛数据
+  const handleExportSingle = async (competition: typeof allCompetitions[0]) => {
+    const headers = ['比赛名称', '项目', '地点', '开始日期', '结束日期', '状态', '参赛人数', '主办方']
+    const row = [
+      competition.name, competition.discipline, competition.location,
+      competition.startDate, competition.endDate,
+      statusConfig[competition.status as keyof typeof statusConfig]?.label || competition.status,
+      competition.participants, competition.organizer
+    ]
+    const csvContent = [headers, row].map(r => r.join(',')).join('\n')
+
+    const blob = new Blob(['\ufeff' + csvContent], { type: 'text/csv;charset=utf-8;' })
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.href = url
+    link.download = `${competition.name}_${new Date().toISOString().split('T')[0]}.csv`
+    link.click()
+    URL.revokeObjectURL(url)
+
+    showToast(`已导出「${competition.name}」数据`, 'success')
+  }
+
+  // 快速操作
+  const handleQuickAction = (action: 'create' | 'schedule' | 'stats') => {
+    const messages = {
+      create: '新建比赛功能即将上线，敬请期待',
+      schedule: '赛程安排功能即将上线，敬请期待',
+      stats: '成绩统计功能即将上线，敬请期待'
+    }
+    showToast(messages[action], 'info')
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative">
@@ -251,13 +337,20 @@ export default function CompetitionsPage() {
           </div>
 
           <div className="flex space-x-2">
-            <button className="btn-primary flex items-center shadow-sm hover:shadow-md transition-shadow">
+            <button
+              onClick={handleNewCompetition}
+              className="btn-primary flex items-center shadow-sm hover:shadow-md transition-shadow"
+            >
               <Plus className="h-4 w-4 mr-2" />
               新建比赛
             </button>
-            <button className="btn-secondary flex items-center shadow-sm hover:shadow-md transition-shadow">
+            <button
+              onClick={handleExport}
+              disabled={isExporting}
+              className="btn-secondary flex items-center shadow-sm hover:shadow-md transition-shadow disabled:opacity-50 disabled:cursor-not-allowed"
+            >
               <Download className="h-4 w-4 mr-2" />
-              导出
+              {isExporting ? '导出中...' : '导出'}
             </button>
           </div>
         </div>
@@ -336,7 +429,10 @@ export default function CompetitionsPage() {
 
                 {/* 操作按钮 */}
                 <div className="grid grid-cols-2 gap-2 pt-3 border-t border-gray-100">
-                  <button className="flex items-center justify-center py-2 px-3 text-sm bg-ski-blue text-white rounded-md hover:bg-primary-700 transition-colors">
+                  <button
+                    onClick={() => handleViewDetails(competition)}
+                    className="flex items-center justify-center py-2 px-3 text-sm bg-ski-blue text-white rounded-md hover:bg-primary-700 transition-colors"
+                  >
                     <Eye className="h-4 w-4 mr-1" />
                     查看详情
                   </button>
@@ -381,11 +477,17 @@ export default function CompetitionsPage() {
                     </button>
                   )}
 
-                  <button className="flex items-center justify-center py-2 px-3 text-sm border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
+                  <button
+                    onClick={() => handleEditCompetition(competition)}
+                    className="flex items-center justify-center py-2 px-3 text-sm border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+                  >
                     <Edit className="h-4 w-4 mr-1" />
                     编辑
                   </button>
-                  <button className="flex items-center justify-center py-2 px-3 text-sm border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
+                  <button
+                    onClick={() => handleExportSingle(competition)}
+                    className="flex items-center justify-center py-2 px-3 text-sm border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+                  >
                     <Download className="h-4 w-4 mr-1" />
                     导出
                   </button>
@@ -416,19 +518,28 @@ export default function CompetitionsPage() {
 
       {/* 快速操作 */}
       <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
-        <div className="card text-center hover:shadow-lg transition-shadow duration-200 cursor-pointer">
+        <div
+          onClick={() => handleQuickAction('create')}
+          className="card text-center hover:shadow-lg transition-shadow duration-200 cursor-pointer"
+        >
           <Plus className="h-12 w-12 text-ski-blue mx-auto mb-4" />
           <h3 className="text-lg font-semibold text-ski-navy mb-2">创建新比赛</h3>
           <p className="text-sm text-gray-600">设置比赛信息，管理报名和成绩</p>
         </div>
 
-        <div className="card text-center hover:shadow-lg transition-shadow duration-200 cursor-pointer">
+        <div
+          onClick={() => handleQuickAction('schedule')}
+          className="card text-center hover:shadow-lg transition-shadow duration-200 cursor-pointer"
+        >
           <Calendar className="h-12 w-12 text-green-600 mx-auto mb-4" />
           <h3 className="text-lg font-semibold text-ski-navy mb-2">赛程安排</h3>
           <p className="text-sm text-gray-600">查看和管理比赛日程安排</p>
         </div>
 
-        <div className="card text-center hover:shadow-lg transition-shadow duration-200 cursor-pointer">
+        <div
+          onClick={() => handleQuickAction('stats')}
+          className="card text-center hover:shadow-lg transition-shadow duration-200 cursor-pointer"
+        >
           <Trophy className="h-12 w-12 text-yellow-600 mx-auto mb-4" />
           <h3 className="text-lg font-semibold text-ski-navy mb-2">成绩统计</h3>
           <p className="text-sm text-gray-600">分析比赛数据和运动员表现</p>

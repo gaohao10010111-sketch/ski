@@ -1,11 +1,14 @@
 'use client'
 
 import { useState } from 'react'
-import { Search, User, Trophy, Medal, TrendingUp, Filter } from 'lucide-react'
+import { Search, User, Trophy, Medal, TrendingUp, Filter, Download } from 'lucide-react'
+import { useToast } from '@/components/Toast'
 
 export default function AthletesPage() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedDiscipline, setSelectedDiscipline] = useState('all')
+  const [isExporting, setIsExporting] = useState(false)
+  const { showToast } = useToast()
 
   // 模拟运动员数据
   const athletes = [
@@ -73,6 +76,42 @@ export default function AthletesPage() {
     return matchesSearch && matchesDiscipline
   })
 
+  // 导出运动员列表
+  const handleExport = async () => {
+    if (filteredAthletes.length === 0) {
+      showToast('没有数据可导出', 'warning')
+      return
+    }
+
+    setIsExporting(true)
+    try {
+      // 模拟导出过程
+      await new Promise(resolve => setTimeout(resolve, 1000))
+
+      // 生成CSV内容
+      const headers = ['排名', '姓名', '项目', '专项', '积分', '参赛次数', '最佳成绩', '省份']
+      const rows = filteredAthletes.map(a => [
+        a.rank, a.name, a.discipline, a.speciality, a.points, a.competitions, a.bestResult, a.province
+      ])
+      const csvContent = [headers, ...rows].map(row => row.join(',')).join('\n')
+
+      // 下载文件
+      const blob = new Blob(['\ufeff' + csvContent], { type: 'text/csv;charset=utf-8;' })
+      const url = URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = `运动员列表_${new Date().toISOString().split('T')[0]}.csv`
+      link.click()
+      URL.revokeObjectURL(url)
+
+      showToast(`成功导出 ${filteredAthletes.length} 名运动员数据`, 'success')
+    } catch {
+      showToast('导出失败，请重试', 'error')
+    } finally {
+      setIsExporting(false)
+    }
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -115,8 +154,13 @@ export default function AthletesPage() {
               <span className="text-sm text-gray-600 font-medium">
                 找到 <span className="text-ski-blue font-bold">{filteredAthletes.length}</span> 名运动员
               </span>
-              <button className="bg-ski-blue text-white px-4 py-2 rounded-md hover:bg-ski-blue/90 transition-colors shadow-sm hover:shadow-md">
-                导出列表
+              <button
+                onClick={handleExport}
+                disabled={isExporting}
+                className="bg-ski-blue text-white px-4 py-2 rounded-md hover:bg-ski-blue/90 transition-colors shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+              >
+                <Download className="h-4 w-4" />
+                {isExporting ? '导出中...' : '导出列表'}
               </button>
             </div>
           </div>

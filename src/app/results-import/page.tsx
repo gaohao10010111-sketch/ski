@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { getImagePath } from '@/utils/paths'
 import { XMLParser, CompetitionData } from '@/utils/xmlParser'
 import { exportToExcel } from '@/utils/exportUtils'
@@ -29,6 +30,7 @@ import {
 } from 'lucide-react'
 
 export default function ResultsImportPage() {
+  const router = useRouter()
   const [competitionData, setCompetitionData] = useState<CompetitionData | null>(null)
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedNation, setSelectedNation] = useState('all')
@@ -444,7 +446,7 @@ export default function ResultsImportPage() {
                 导入新成绩
               </button>
               <button
-                onClick={() => window.location.href = '/points/rankings'}
+                onClick={() => router.push('/points/rankings')}
                 className="btn-primary flex items-center"
               >
                 <Trophy className="h-4 w-4 mr-2" />
