@@ -67,9 +67,9 @@ export const fi: Partial<TranslationKeys> = {
       eventsRegister: 'Verkkorekisteröinti',
       eventsResults: 'Tuloskysely',
       eventsStats: 'Datatilastot',
-      resultsLive: 'Live Results',
-      resultsImport: 'Import Results',
-      resultsAnnouncement: 'Results Announcement',
+      resultsLive: 'Livetulokset',
+      resultsImport: 'Tuo tulokset',
+      resultsAnnouncement: 'Tulosten julkaisu',
 
       // Urheilijat alavalikot
       athletesList: 'Urheilijalista',
@@ -86,11 +86,11 @@ export const fi: Partial<TranslationKeys> = {
       myProfile: 'Henkilökohtainen keskus',
       myPoints: 'Omat pisteet',
       myRegistrations: 'Omat rekisteröinnit',
-      myAthlete: 'Athlete Profile',
-      myHistory: 'Results History',
+      myAthlete: 'Urheilijan profiili',
+      myHistory: 'Tuloshistoria',
 
-      // More features
-      moreFeatures: 'More'
+      // Lisää ominaisuuksia
+      moreFeatures: 'Lisää'
     }
   },
 

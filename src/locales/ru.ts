@@ -67,9 +67,9 @@ export const ru: Partial<TranslationKeys> = {
       eventsRegister: 'Регистрация',
       eventsResults: 'Результаты',
       eventsStats: 'Статистика',
-      resultsLive: 'Live Results',
-      resultsImport: 'Import Results',
-      resultsAnnouncement: 'Results Announcement',
+      resultsLive: 'Результаты в реальном времени',
+      resultsImport: 'Импорт результатов',
+      resultsAnnouncement: 'Публикация результатов',
 
       // Подменю спортсменов
       athletesList: 'Список Спортсменов',
@@ -86,11 +86,11 @@ export const ru: Partial<TranslationKeys> = {
       myProfile: 'Личный Центр',
       myPoints: 'Мои Очки',
       myRegistrations: 'Мои Регистрации',
-      myAthlete: 'Athlete Profile',
-      myHistory: 'Results History',
+      myAthlete: 'Профиль Спортсмена',
+      myHistory: 'История Результатов',
 
-      // More features
-      moreFeatures: 'More'
+      // Больше функций
+      moreFeatures: 'Ещё'
     }
   },
 

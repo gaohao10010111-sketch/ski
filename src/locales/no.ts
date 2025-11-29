@@ -67,9 +67,9 @@ export const no: Partial<TranslationKeys> = {
       eventsRegister: 'Registrering',
       eventsResults: 'Resultater',
       eventsStats: 'Statistikk',
-      resultsLive: 'Live Results',
-      resultsImport: 'Import Results',
-      resultsAnnouncement: 'Results Announcement',
+      resultsLive: 'Live Resultater',
+      resultsImport: 'Importer resultater',
+      resultsAnnouncement: 'Resultatpublisering',
 
       // Utøvere undermeny
       athletesList: 'Utøverliste',
@@ -86,11 +86,11 @@ export const no: Partial<TranslationKeys> = {
       myProfile: 'Personlig Senter',
       myPoints: 'Mine Poeng',
       myRegistrations: 'Mine Registreringer',
-      myAthlete: 'Athlete Profile',
-      myHistory: 'Results History',
+      myAthlete: 'Utøverprofil',
+      myHistory: 'Resultathistorikk',
 
-      // More features
-      moreFeatures: 'More'
+      // Flere funksjoner
+      moreFeatures: 'Mer'
     }
   },
 

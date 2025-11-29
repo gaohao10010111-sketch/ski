@@ -67,9 +67,9 @@ export const ko: Partial<TranslationKeys> = {
       eventsRegister: '온라인 등록',
       eventsResults: '결과 조회',
       eventsStats: '데이터 통계',
-      resultsLive: 'Live Results',
-      resultsImport: 'Import Results',
-      resultsAnnouncement: 'Results Announcement',
+      resultsLive: '실시간 결과',
+      resultsImport: '결과 가져오기',
+      resultsAnnouncement: '결과 발표',
 
       // 선수 서브메뉴
       athletesList: '선수 명단',
@@ -89,8 +89,8 @@ export const ko: Partial<TranslationKeys> = {
       myAthlete: '선수 프로필',
       myHistory: '성적 이력',
 
-      // More features
-      moreFeatures: 'More'
+      // 더 많은 기능
+      moreFeatures: '더보기'
     }
   },
 

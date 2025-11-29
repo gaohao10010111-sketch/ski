@@ -67,9 +67,9 @@ export const fr: Partial<TranslationKeys> = {
       eventsRegister: 'Inscription',
       eventsResults: 'Résultats',
       eventsStats: 'Statistiques',
-      resultsLive: 'Live Results',
-      resultsImport: 'Import Results',
-      resultsAnnouncement: 'Results Announcement',
+      resultsLive: 'Résultats en direct',
+      resultsImport: 'Importer les résultats',
+      resultsAnnouncement: 'Publication des résultats',
 
       // Sous-menu athlètes
       athletesList: 'Liste d\'Athlètes',
@@ -86,11 +86,11 @@ export const fr: Partial<TranslationKeys> = {
       myProfile: 'Centre Personnel',
       myPoints: 'Mes Points',
       myRegistrations: 'Mes Inscriptions',
-      myAthlete: 'Athlete Profile',
-      myHistory: 'Results History',
+      myAthlete: 'Profil Athlète',
+      myHistory: 'Historique des Résultats',
 
-      // More features
-      moreFeatures: 'More'
+      // Plus de fonctionnalités
+      moreFeatures: 'Plus'
     }
   },
 

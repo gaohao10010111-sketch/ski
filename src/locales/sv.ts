@@ -67,9 +67,9 @@ export const sv: Partial<TranslationKeys> = {
       eventsRegister: 'Onlineregistrering',
       eventsResults: 'Resultatförfrågan',
       eventsStats: 'Datastatistik',
-      resultsLive: 'Live Results',
-      resultsImport: 'Import Results',
-      resultsAnnouncement: 'Results Announcement',
+      resultsLive: 'Liveresultat',
+      resultsImport: 'Importera resultat',
+      resultsAnnouncement: 'Resultatpublicering',
 
       // Atlet undermenyer
       athletesList: 'Atletlista',
@@ -86,11 +86,11 @@ export const sv: Partial<TranslationKeys> = {
       myProfile: 'Personligt Center',
       myPoints: 'Mina Poäng',
       myRegistrations: 'Mina Registreringar',
-      myAthlete: 'Athlete Profile',
-      myHistory: 'Results History',
+      myAthlete: 'Atletprofil',
+      myHistory: 'Resultathistorik',
 
-      // More features
-      moreFeatures: 'More'
+      // Fler funktioner
+      moreFeatures: 'Mer'
     }
   },
 
