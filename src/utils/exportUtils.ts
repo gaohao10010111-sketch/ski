@@ -5,20 +5,24 @@
 
 export interface ExportData {
   filename: string;
-  data: any[];
+  data: Record<string, unknown>[];
   columns?: string[];
   title?: string;
+}
+
+export interface ExportResult {
+  success: boolean;
+  message: string;
 }
 
 /**
  * 导出为 CSV 格式
  */
-export function exportToCSV(exportData: ExportData): void {
+export function exportToCSV(exportData: ExportData): ExportResult {
   const { filename, data, columns } = exportData;
 
   if (!data || data.length === 0) {
-    alert('没有数据可导出');
-    return;
+    return { success: false, message: '没有数据可导出' };
   }
 
   // 获取列名
@@ -58,17 +62,17 @@ export function exportToCSV(exportData: ExportData): void {
 
   // 清理 URL 对象
   URL.revokeObjectURL(url);
+  return { success: true, message: '导出成功' };
 }
 
 /**
  * 导出为 Excel 格式 (简化版，生成 HTML 表格)
  */
-export function exportToExcel(exportData: ExportData): void {
+export function exportToExcel(exportData: ExportData): ExportResult {
   const { filename, data, columns, title } = exportData;
 
   if (!data || data.length === 0) {
-    alert('没有数据可导出');
-    return;
+    return { success: false, message: '没有数据可导出' };
   }
 
   const headers = columns || Object.keys(data[0]);
@@ -117,17 +121,17 @@ export function exportToExcel(exportData: ExportData): void {
   document.body.removeChild(link);
 
   URL.revokeObjectURL(url);
+  return { success: true, message: '导出成功' };
 }
 
 /**
  * 导出为 JSON 格式
  */
-export function exportToJSON(exportData: ExportData): void {
+export function exportToJSON(exportData: ExportData): ExportResult {
   const { filename, data } = exportData;
 
   if (!data || data.length === 0) {
-    alert('没有数据可导出');
-    return;
+    return { success: false, message: '没有数据可导出' };
   }
 
   const jsonContent = JSON.stringify(data, null, 2);
@@ -145,46 +149,55 @@ export function exportToJSON(exportData: ExportData): void {
   document.body.removeChild(link);
 
   URL.revokeObjectURL(url);
+  return { success: true, message: '导出成功' };
 }
 
 /**
  * 通用导出函数，根据格式自动选择导出方式
  */
-export function exportData(exportData: ExportData, format: 'csv' | 'excel' | 'json' = 'csv'): void {
+export function exportData(data: ExportData, format: 'csv' | 'excel' | 'json' = 'csv'): ExportResult {
   try {
     switch (format) {
       case 'csv':
-        exportToCSV(exportData);
-        break;
+        return exportToCSV(data);
       case 'excel':
-        exportToExcel(exportData);
-        break;
+        return exportToExcel(data);
       case 'json':
-        exportToJSON(exportData);
-        break;
+        return exportToJSON(data);
       default:
-        throw new Error(`不支持的导出格式: ${format}`);
+        return { success: false, message: `不支持的导出格式: ${format}` };
     }
   } catch (error) {
-    console.error('导出失败:', error);
-    alert('导出失败，请重试');
+    return { success: false, message: '导出失败，请重试' };
   }
+}
+
+interface RankingItem {
+  rank: number;
+  name: string;
+  nationality?: string;
+  discipline?: string;
+  points: number;
+  trend?: 'up' | 'down' | 'stable';
+  lastRace?: string;
+  totalRaces?: number;
+  bestResult?: string;
 }
 
 /**
  * 格式化积分排行榜数据用于导出
  */
-export function formatRankingsForExport(rankings: any[]): ExportData {
+export function formatRankingsForExport(rankings: RankingItem[]): ExportData {
   const data = rankings.map((item) => ({
     '排名': item.rank,
     '运动员': item.name,
-    '国家/地区': item.nationality,
-    '项目': item.discipline,
+    '国家/地区': item.nationality || '',
+    '项目': item.discipline || '',
     '中国积分': item.points,
     '趋势': item.trend === 'up' ? '上升' : item.trend === 'down' ? '下降' : '稳定',
-    '最近比赛': item.lastRace,
-    '参赛次数': item.totalRaces,
-    '最佳成绩': item.bestResult
+    '最近比赛': item.lastRace || '',
+    '参赛次数': item.totalRaces || 0,
+    '最佳成绩': item.bestResult || ''
   }));
 
   return {
@@ -194,20 +207,32 @@ export function formatRankingsForExport(rankings: any[]): ExportData {
   };
 }
 
+interface AthleteHistoryItem {
+  date: string;
+  competition: string;
+  discipline?: string;
+  rank: number;
+  time?: string;
+  racePoints?: number;
+  penalty?: number;
+  finalPoints?: number;
+  location?: string;
+}
+
 /**
  * 格式化运动员历史数据用于导出
  */
-export function formatAthleteHistoryForExport(history: any[], athleteName: string): ExportData {
+export function formatAthleteHistoryForExport(history: AthleteHistoryItem[], athleteName: string): ExportData {
   const data = history.map(item => ({
     '比赛日期': item.date,
     '比赛名称': item.competition,
-    '项目': item.discipline,
+    '项目': item.discipline || '',
     '排名': item.rank,
-    '成绩时间': item.time,
-    '比赛积分': item.racePoints,
-    '惩罚值': item.penalty,
-    '最终积分': item.finalPoints,
-    '比赛地点': item.location
+    '成绩时间': item.time || '',
+    '比赛积分': item.racePoints || 0,
+    '惩罚值': item.penalty || 0,
+    '最终积分': item.finalPoints || 0,
+    '比赛地点': item.location || ''
   }));
 
   return {
@@ -217,17 +242,26 @@ export function formatAthleteHistoryForExport(history: any[], athleteName: strin
   };
 }
 
+interface CompetitionResultItem {
+  rank: number;
+  athlete: string;
+  country?: string;
+  time?: string;
+  gap?: string;
+  fisPoints?: number;
+}
+
 /**
  * 格式化比赛结果数据用于导出
  */
-export function formatCompetitionResultsForExport(results: any[], competitionName: string): ExportData {
+export function formatCompetitionResultsForExport(results: CompetitionResultItem[], competitionName: string): ExportData {
   const data = results.map(item => ({
     '排名': item.rank,
     '运动员': item.athlete,
-    '国家/地区': item.country,
-    '成绩': item.time,
-    '差距': item.gap,
-    '中国积分': item.fisPoints
+    '国家/地区': item.country || '',
+    '成绩': item.time || '',
+    '差距': item.gap || '',
+    '中国积分': item.fisPoints || 0
   }));
 
   return {

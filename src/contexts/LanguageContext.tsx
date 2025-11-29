@@ -139,10 +139,14 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   const [language, setLanguageState] = useState<Language>('zh');
 
   useEffect(() => {
-    const savedLanguage = localStorage.getItem('ski-language') as Language | null;
-    if (savedLanguage && supportedLanguages.includes(savedLanguage)) {
-      setLanguageState(savedLanguage);
-      return;
+    try {
+      const savedLanguage = localStorage.getItem('ski-language') as Language | null;
+      if (savedLanguage && supportedLanguages.includes(savedLanguage)) {
+        setLanguageState(savedLanguage);
+        return;
+      }
+    } catch {
+      // localStorage not available (e.g., private browsing mode)
     }
 
     const browserLanguage = navigator.language.toLowerCase();
@@ -178,7 +182,11 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
-    localStorage.setItem('ski-language', lang);
+    try {
+      localStorage.setItem('ski-language', lang);
+    } catch {
+      // localStorage not available (e.g., private browsing mode)
+    }
   };
 
   const translation = useMemo(() => buildTranslation(language), [language]);

@@ -220,9 +220,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           lastLoginAt: new Date()
         }
         dispatch({ type: 'LOGIN_SUCCESS', payload: user })
-        if (typeof window !== 'undefined') {
-          localStorage.setItem('auth_user', JSON.stringify(user))
-        }
+        try {
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('auth_user', JSON.stringify(user))
+          }
+        } catch { /* localStorage not available */ }
       } else if (credentials.email === 'athlete@ski.com' && credentials.password === 'athlete123') {
         // 运动员账号 - 会员基础功能
         const user: User = {
@@ -236,9 +238,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           lastLoginAt: new Date()
         }
         dispatch({ type: 'LOGIN_SUCCESS', payload: user })
-        if (typeof window !== 'undefined') {
-          localStorage.setItem('auth_user', JSON.stringify(user))
-        }
+        try {
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('auth_user', JSON.stringify(user))
+          }
+        } catch { /* localStorage not available */ }
       } else if (credentials.email === 'coach@ski.com' && credentials.password === 'coach123') {
         // 教练账号 - 教练管理功能
         const user: User = {
@@ -252,9 +256,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           lastLoginAt: new Date()
         }
         dispatch({ type: 'LOGIN_SUCCESS', payload: user })
-        if (typeof window !== 'undefined') {
-          localStorage.setItem('auth_user', JSON.stringify(user))
-        }
+        try {
+          if (typeof window !== 'undefined') {
+            localStorage.setItem('auth_user', JSON.stringify(user))
+          }
+        } catch { /* localStorage not available */ }
       } else {
         throw new Error('邮箱或密码错误，请使用以下测试账号：\n管理员：admin@ski.com / admin123\n运动员：athlete@ski.com / athlete123\n教练：coach@ski.com / coach123')
       }
@@ -284,7 +290,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
 
       dispatch({ type: 'LOGIN_SUCCESS', payload: user })
-      localStorage.setItem('auth_user', JSON.stringify(user))
+      try {
+        localStorage.setItem('auth_user', JSON.stringify(user))
+      } catch { /* localStorage not available */ }
     } catch (error) {
       dispatch({ type: 'LOGIN_FAILURE', payload: error instanceof Error ? error.message : '注册失败' })
     }
@@ -292,9 +300,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   // 登出函数
   const logout = (): void => {
-    if (typeof window !== 'undefined') {
-      localStorage.removeItem('auth_user')
-    }
+    try {
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem('auth_user')
+      }
+    } catch { /* localStorage not available */ }
     dispatch({ type: 'LOGOUT' })
   }
 
@@ -307,15 +317,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     // 检查是否在浏览器环境
     if (typeof window !== 'undefined') {
-      const savedUser = localStorage.getItem('auth_user')
-      if (savedUser) {
-        try {
-          const user = JSON.parse(savedUser)
-          dispatch({ type: 'LOGIN_SUCCESS', payload: user })
-        } catch (error) {
-          localStorage.removeItem('auth_user')
+      try {
+        const savedUser = localStorage.getItem('auth_user')
+        if (savedUser) {
+          try {
+            const user = JSON.parse(savedUser)
+            dispatch({ type: 'LOGIN_SUCCESS', payload: user })
+          } catch {
+            localStorage.removeItem('auth_user')
+          }
         }
-      }
+      } catch { /* localStorage not available */ }
     }
   }, [])
 

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { getImagePath } from '@/utils/paths'
 import { exportToCSV, exportToExcel, exportToJSON, formatCompetitionResultsForExport } from '@/utils/exportUtils'
+import { useToast } from '@/components/Toast'
 import {
   BarChart3,
   TrendingUp,
@@ -78,6 +79,7 @@ const mockStats: CompetitionStats = {
 export default function CompetitionStatsPage() {
   const [selectedTimeRange, setSelectedTimeRange] = useState('season')
   const [selectedRegion, setSelectedRegion] = useState('all')
+  const { showToast } = useToast()
 
   const handleExport = (format: 'csv' | 'excel' | 'json' = 'csv') => {
     const mockCompetitionResults = mockStats.topPerformers.map((performer, index) => ({
@@ -283,7 +285,7 @@ export default function CompetitionStatsPage() {
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
 
-    alert('详细分析报告生成成功！已下载到本地。');
+    showToast('详细分析报告生成成功！已下载到本地。', 'success');
   }
 
   const getColorForIndex = (index: number) => {

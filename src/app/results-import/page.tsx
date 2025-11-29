@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import { getImagePath } from '@/utils/paths'
 import { XMLParser, CompetitionData } from '@/utils/xmlParser'
-import { exportToExcel, exportToCSV, exportToJSON } from '@/utils/exportUtils'
+import { exportToExcel } from '@/utils/exportUtils'
+import { useToast } from '@/components/Toast'
 import {
   Upload,
   FileText,
@@ -36,6 +37,7 @@ export default function ResultsImportPage() {
   const [error, setError] = useState<string | null>(null)
   const [currentStep, setCurrentStep] = useState<'upload' | 'review' | 'confirm'>('upload')
   const [isProcessing, setIsProcessing] = useState(false)
+  const { showToast } = useToast()
 
   // 确认导入成绩
   const handleConfirmImport = async () => {
@@ -47,9 +49,9 @@ export default function ResultsImportPage() {
       await new Promise(resolve => setTimeout(resolve, 2000))
 
       setCurrentStep('confirm')
-      alert(`成功导入 ${competitionData.competitors.length} 名运动员的比赛成绩！\n\n积分已自动计算完成，排名已更新。`)
-    } catch (error) {
-      alert('导入过程中发生错误，请重试')
+      showToast(`成功导入 ${competitionData.competitors.length} 名运动员的比赛成绩！积分已自动计算完成，排名已更新。`, 'success')
+    } catch {
+      showToast('导入过程中发生错误，请重试', 'error')
     } finally {
       setIsProcessing(false)
     }
@@ -64,7 +66,7 @@ export default function ResultsImportPage() {
 
   const handleExportExcel = () => {
     if (!competitionData?.competitors || competitionData.competitors.length === 0) {
-      alert('没有数据可导出')
+      showToast('没有数据可导出', 'warning')
       return
     }
 
@@ -81,12 +83,17 @@ export default function ResultsImportPage() {
       title: competitionData.raceHeader.eventName
     }
 
-    exportToExcel(exportData)
+    const result = exportToExcel(exportData)
+    if (result.success) {
+      showToast('导出成功', 'success')
+    } else {
+      showToast(result.message, 'error')
+    }
   }
 
   const handleGenerateReport = () => {
     if (!competitionData) {
-      alert('请先导入比赛数据')
+      showToast('请先导入比赛数据', 'warning')
       return
     }
 
@@ -221,7 +228,7 @@ export default function ResultsImportPage() {
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
 
-    alert('报告生成成功！已下载到本地。');
+    showToast('报告生成成功！已下载到本地。', 'success');
   }
 
   // 处理XML文件上传

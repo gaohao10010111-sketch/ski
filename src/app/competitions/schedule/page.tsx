@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { getImagePath } from '@/utils/paths'
+import { useToast } from '@/components/Toast'
 import {
   Calendar,
   MapPin,
@@ -141,6 +142,7 @@ export default function SchedulePage() {
   const [selectedMonth, setSelectedMonth] = useState('12')
   const [selectedLevel, setSelectedLevel] = useState('all')
   const [viewMode, setViewMode] = useState<'list' | 'calendar'>('list')
+  const { showToast } = useToast()
 
   const filteredSchedule = mockSchedule.filter(event => {
     const eventMonth = new Date(event.startDate).getMonth() + 1
@@ -150,11 +152,11 @@ export default function SchedulePage() {
   })
 
   const handleCreateEvent = () => {
-    alert('创建新赛事功能\n\n功能包括：\n- 赛事基本信息设置\n- 比赛日程安排\n- 参赛条件设定\n- 场地分配\n- 报名管理\n\n即将上线，敬请期待！')
+    showToast('创建新赛事功能即将上线，敬请期待！', 'info')
   }
 
   const handleExportSchedule = () => {
-    alert('导出赛事日程功能\n\n将导出：\n- 完整赛事日程表\n- 详细比赛安排\n- 参赛信息统计\n\n格式：PDF / Excel / iCal')
+    showToast('导出赛事日程功能即将上线，支持PDF/Excel/iCal格式', 'info')
   }
 
   return (

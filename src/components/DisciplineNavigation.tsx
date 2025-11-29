@@ -24,47 +24,44 @@ export default function DisciplineNavigation({ discipline }: DisciplineNavigatio
 
   const disciplineName = disciplineNames[discipline] || discipline;
 
-  // 每个项目的二级菜单结构（统一模板）
+  // 每个项目的二级菜单结构（统一模板）- 链接到现有页面
   const navigationItems = [
     {
       name: t.navigation?.points || '积分管理',
-      href: `/${discipline}/points`,
+      href: `/points/rankings?discipline=${discipline}`,
       icon: Calculator,
       children: [
-        { name: t.navigation?.submenus?.pointsCalculator || '积分计算器', href: `/${discipline}/points/calculator` },
         { name: t.navigation?.submenus?.pointsRankings || '积分排名', href: `/${discipline}/points/rankings` },
-        { name: t.navigation?.submenus?.pointsTrends || '积分趋势', href: `/${discipline}/points/trends` }
+        { name: t.navigation?.submenus?.pointsTrends || '积分趋势', href: `/points/trends?discipline=${discipline}` }
       ]
     },
     {
       name: t.navigation?.events || '赛事管理',
-      href: `/${discipline}/events`,
+      href: '/competitions',
       icon: Trophy,
       children: [
-        { name: t.navigation?.submenus?.eventsSchedule || '赛程日历', href: `/${discipline}/events/schedule` },
-        { name: t.navigation?.submenus?.eventsRegister || '在线报名', href: `/${discipline}/events/register` },
-        { name: t.navigation?.submenus?.eventsResults || '实时成绩', href: `/${discipline}/events/results` },
-        { name: t.navigation?.submenus?.eventsStats || '赛事统计', href: `/${discipline}/events/stats` }
+        { name: t.navigation?.submenus?.eventsSchedule || '赛程日历', href: '/competitions/schedule' },
+        { name: t.navigation?.submenus?.eventsResults || '比赛成绩', href: '/competitions' },
+        { name: t.navigation?.submenus?.eventsStats || '赛事统计', href: '/competitions/stats' }
       ]
     },
     {
       name: t.navigation?.athletes || '运动员',
-      href: `/${discipline}/athletes`,
+      href: '/athletes',
       icon: Users,
       children: [
-        { name: '运动员名录', href: `/${discipline}/athletes/list` },
-        { name: '运动员排名', href: `/${discipline}/athletes/rankings` },
-        { name: '运动员统计', href: `/${discipline}/athletes/stats` }
+        { name: t.navigation?.submenus?.athletesList || '运动员查询', href: '/athletes' },
+        { name: t.navigation?.submenus?.athletesRankings || '积分排名', href: `/points/rankings?discipline=${discipline}` }
       ]
     },
     {
       name: t.navigation?.docs || '规则文档',
-      href: `/${discipline}/docs`,
+      href: '/rules',
       icon: FileText,
       children: [
-        { name: '积分规则', href: `/${discipline}/docs/points-rules` },
-        { name: '竞赛规则', href: `/${discipline}/docs/competition-rules` },
-        { name: '场地标准', href: `/${discipline}/docs/venue-standards` }
+        { name: t.navigation?.submenus?.pointsRules || '积分规则', href: '/rules/points' },
+        { name: t.navigation?.submenus?.competitionRules || '竞赛规则', href: '/rules' },
+        { name: t.navigation?.submenus?.documents || '文档中心', href: '/docs' }
       ]
     }
   ];

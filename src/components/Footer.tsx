@@ -32,7 +32,7 @@ export default function Footer() {
                 <Phone className="h-5 w-5" />
               </a>
               <a
-                href="https://github.com/alpine-ski-points"
+                href="https://github.com/gaohao10010111-sketch/ski"
                 className="text-gray-300 hover:text-primary-400 transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -93,10 +93,10 @@ export default function Footer() {
               © 2024 中国滑雪青少年积分排名官方平台. 基于官方标准开发.
             </div>
             <div className="flex flex-wrap gap-6 text-sm">
-              <Link href="/privacy/" className="text-gray-300 hover:text-primary-400 transition-colors">
+              <Link href="/privacy" className="text-gray-300 hover:text-primary-400 transition-colors">
                 隐私政策
               </Link>
-              <Link href="/terms/" className="text-gray-300 hover:text-primary-400 transition-colors">
+              <Link href="/terms" className="text-gray-300 hover:text-primary-400 transition-colors">
                 使用条款
               </Link>
               <Link href="/rules" className="text-gray-300 hover:text-primary-400 transition-colors">
