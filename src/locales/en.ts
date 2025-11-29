@@ -1,7 +1,7 @@
 // English language pack
-import type { TranslationKeys } from './zh';
+import type { PartialTranslationKeys } from './zh';
 
-export const en: Partial<TranslationKeys> = {
+export const en: PartialTranslationKeys = {
   // Common
   common: {
     loading: 'Loading...',
@@ -620,12 +620,12 @@ export const en: Partial<TranslationKeys> = {
     pageTitle: 'Athlete Management',
     pageSubtitle: 'China ski athlete profiles and points analytics',
     searchPlaceholder: 'Search by athlete name or province…',
-    filterOptions: {
-      all: 'All Disciplines',
-      alpine: 'Alpine Skiing',
-      freestyle: 'Freestyle Skiing',
-      snowboard: 'Snowboarding'
-    },
+    filterOptions: [
+      { value: 'all', label: 'All Disciplines' },
+      { value: 'alpine', label: 'Alpine Skiing' },
+      { value: 'freestyle', label: 'Freestyle Skiing' },
+      { value: 'snowboard', label: 'Snowboarding' }
+    ],
     resultsSummary: 'Found {count} athletes',
     exportLabel: 'Export List',
     stats: [
@@ -647,6 +647,7 @@ export const en: Partial<TranslationKeys> = {
       {
         id: 1,
         name: 'Wei Zhang',
+        disciplineKey: 'alpine',
         discipline: 'Alpine Skiing',
         speciality: 'Giant Slalom',
         points: 45.2,
@@ -658,6 +659,7 @@ export const en: Partial<TranslationKeys> = {
       {
         id: 2,
         name: 'Xiaoxue Li',
+        disciplineKey: 'freestyle',
         discipline: 'Freestyle Skiing',
         speciality: 'Big Air',
         points: 285.5,
@@ -669,6 +671,7 @@ export const en: Partial<TranslationKeys> = {
       {
         id: 3,
         name: 'Bingbing Wang',
+        disciplineKey: 'snowboard',
         discipline: 'Snowboarding',
         speciality: 'Halfpipe',
         points: 198.75,
@@ -680,6 +683,7 @@ export const en: Partial<TranslationKeys> = {
       {
         id: 4,
         name: 'Xuehua Zhao',
+        disciplineKey: 'alpine',
         discipline: 'Alpine Skiing',
         speciality: 'Slalom',
         points: 52.3,
@@ -691,6 +695,7 @@ export const en: Partial<TranslationKeys> = {
       {
         id: 5,
         name: 'Feixiang Chen',
+        disciplineKey: 'freestyle',
         discipline: 'Freestyle Skiing',
         speciality: 'Slopestyle',
         points: 240.15,
@@ -831,25 +836,6 @@ export const en: Partial<TranslationKeys> = {
         description: 'Understand the latest competition rules and youth system guidance.',
         features: ['Event overview', 'Age group system', 'Participation guide', 'Safety and technical standards'],
         linkLabel: 'View details'
-      },
-      comingSoon: {
-        title: {
-          zh: '竞赛规则说明',
-          en: 'Competition Regulations'
-        },
-        description: {
-          zh: '此页面功能正在开发中，敬请期待。',
-          en: 'This page is under construction. Please check back soon.'
-        },
-        backLabel: {
-          zh: '返回规则中心',
-          en: 'Back to Rules Overview'
-        }
-      },
-      comingSoon: {
-        title: 'Competition Regulations',
-        description: 'This page is under construction. Please check back soon.',
-        backLabel: 'Back to Rules Overview'
       },
       documents: {
         title: 'China Points Documentation',
@@ -1220,6 +1206,33 @@ export const en: Partial<TranslationKeys> = {
           description: 'Visualise points trends with analytics tools',
           backLabel: 'Back to Snowboard Slopestyle'
         }
+      }
+    },
+    docs: {
+      competitionRules: {
+        title: 'Competition Rules',
+        description: 'Ski competition technical rules and officiating standards',
+        backLabel: 'Back to Knowledge Base'
+      },
+      pointsRules: {
+        title: 'Points Rules',
+        description: 'China ski points calculation rules documentation',
+        backLabel: 'Back to Knowledge Base'
+      },
+      venueStandards: {
+        title: 'Venue Standards',
+        description: 'Event venue facilities and technical requirements',
+        backLabel: 'Back to Knowledge Base'
+      },
+      fisRules: {
+        title: 'FIS International Rules',
+        description: 'International Ski Federation competition rules',
+        backLabel: 'Back to Knowledge Base'
+      },
+      guide: {
+        title: 'Platform User Guide',
+        description: 'System feature instructions and FAQs',
+        backLabel: 'Back to Knowledge Base'
       }
     }
   },

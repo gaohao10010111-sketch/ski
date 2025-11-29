@@ -1,7 +1,7 @@
 // Russian language pack - Русский языковой пакет
-import type { TranslationKeys } from './zh';
+import type { PartialTranslationKeys } from './zh';
 
-export const ru: Partial<TranslationKeys> = {
+export const ru: PartialTranslationKeys = {
   // Общие
   common: {
     loading: 'Загрузка...',

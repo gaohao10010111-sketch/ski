@@ -1,7 +1,7 @@
 // Korean language pack
-import type { TranslationKeys } from './zh';
+import type { PartialTranslationKeys } from './zh';
 
-export const ko: Partial<TranslationKeys> = {
+export const ko: PartialTranslationKeys = {
   // 공통
   common: {
     loading: '로딩 중...',

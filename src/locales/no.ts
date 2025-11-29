@@ -1,7 +1,7 @@
 // Norwegian language pack - Norsk språkpakke
-import type { TranslationKeys } from './zh';
+import type { PartialTranslationKeys } from './zh';
 
-export const no: Partial<TranslationKeys> = {
+export const no: PartialTranslationKeys = {
   // Felles
   common: {
     loading: 'Laster...',

@@ -1,7 +1,7 @@
 // French language pack - Pack de langue française
-import type { TranslationKeys } from './zh';
+import type { PartialTranslationKeys } from './zh';
 
-export const fr: Partial<TranslationKeys> = {
+export const fr: PartialTranslationKeys = {
   // Commun
   common: {
     loading: 'Chargement...',

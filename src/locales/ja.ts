@@ -1,7 +1,7 @@
 // Japanese language pack
-import type { TranslationKeys } from './zh';
+import type { PartialTranslationKeys } from './zh';
 
-export const ja: Partial<TranslationKeys> = {
+export const ja: PartialTranslationKeys = {
   // 共通
   common: {
     loading: '読み込み中...',

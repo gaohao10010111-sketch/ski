@@ -1,7 +1,7 @@
 // Swedish language pack - Svenska språkpaket
-import type { TranslationKeys } from './zh';
+import type { PartialTranslationKeys } from './zh';
 
-export const sv: Partial<TranslationKeys> = {
+export const sv: PartialTranslationKeys = {
   // Gemensamt
   common: {
     loading: 'Laddar...',

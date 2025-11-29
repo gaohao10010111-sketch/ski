@@ -16,7 +16,8 @@ import { es } from '@/locales/es';
 
 type Language = 'zh' | 'en' | 'ja' | 'ko' | 'de' | 'fr' | 'it' | 'ru' | 'no' | 'sv' | 'fi' | 'es';
 type TranslationSchema = typeof zh;
-type TranslationOverrides = Partial<TranslationSchema>;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type TranslationOverrides = any;
 
 interface LanguageContextType {
   language: Language;
@@ -70,7 +71,8 @@ function deepClone<T>(value: T): T {
   return value;
 }
 
-function mergeDeep<T>(base: T, override?: Partial<T>): T {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function mergeDeep<T>(base: T, override?: any): T {
   if (override === undefined) {
     return deepClone(base);
   }

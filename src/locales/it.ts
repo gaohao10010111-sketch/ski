@@ -1,7 +1,7 @@
 // Italian language pack - Pacchetto lingua italiana
-import type { TranslationKeys } from './zh';
+import type { PartialTranslationKeys } from './zh';
 
-export const it: Partial<TranslationKeys> = {
+export const it: PartialTranslationKeys = {
   // Comune
   common: {
     loading: 'Caricamento...',

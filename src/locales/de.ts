@@ -1,7 +1,7 @@
 // German language pack - Deutsche Sprachpaket
-import type { TranslationKeys } from './zh';
+import type { PartialTranslationKeys } from './zh';
 
-export const de: Partial<TranslationKeys> = {
+export const de: PartialTranslationKeys = {
   // Allgemein
   common: {
     loading: 'Lädt...',
@@ -796,6 +796,33 @@ export const de: Partial<TranslationKeys> = {
           backLabel: 'Zurück zu Snowboard Slopestyle'
         }
       }
+    },
+    docs: {
+      competitionRules: {
+        title: 'Wettkampfregeln',
+        description: 'Technische Wettkampfregeln und Schiedsrichterstandards',
+        backLabel: 'Zurück zur Wissensdatenbank'
+      },
+      pointsRules: {
+        title: 'Punkteregeln',
+        description: 'Dokumentation der chinesischen Ski-Punkteberechnung',
+        backLabel: 'Zurück zur Wissensdatenbank'
+      },
+      venueStandards: {
+        title: 'Stättenstandards',
+        description: 'Anforderungen an Veranstaltungsorte und Einrichtungen',
+        backLabel: 'Zurück zur Wissensdatenbank'
+      },
+      fisRules: {
+        title: 'FIS Internationale Regeln',
+        description: 'Wettkampfregeln des Internationalen Skiverbandes',
+        backLabel: 'Zurück zur Wissensdatenbank'
+      },
+      guide: {
+        title: 'Plattform-Benutzerhandbuch',
+        description: 'Systemfunktionen und häufig gestellte Fragen',
+        backLabel: 'Zurück zur Wissensdatenbank'
+      }
     }
   },
 
@@ -1179,32 +1206,6 @@ export const de: Partial<TranslationKeys> = {
       title: 'Geschäftskooperation',
       email: 'E-Mail: business@ski-points.com',
       wechat: 'WeChat: ski-points-service'
-    }
-  },
-
-  // Page Metadata
-  pageMetadata: {
-    docs: {
-      competitionRules: {
-        title: 'Wettkampfregeln',
-        description: 'Technische Wettkampfregeln und Schiedsrichterstandards'
-      },
-      pointsRules: {
-        title: 'Punkterichtlinien',
-        description: 'Chinesische Ski-Punkteberechnungsregeln'
-      },
-      venueStandards: {
-        title: 'Stättenstandards',
-        description: 'Anforderungen an Veranstaltungsorte'
-      },
-      fisRules: {
-        title: 'FIS-Regelwerk',
-        description: 'Internationales Skiverband-Regelwerk'
-      },
-      guide: {
-        title: 'Plattformhandbuch',
-        description: 'Funktionsanleitungen und FAQ'
-      }
     }
   }
 };

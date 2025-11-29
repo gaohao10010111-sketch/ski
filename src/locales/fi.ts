@@ -1,7 +1,7 @@
 // Finnish language pack - Suomalainen kielipaketti
-import type { TranslationKeys } from './zh';
+import type { PartialTranslationKeys } from './zh';
 
-export const fi: Partial<TranslationKeys> = {
+export const fi: PartialTranslationKeys = {
   // Yleiset
   common: {
     loading: 'Ladataan...',
