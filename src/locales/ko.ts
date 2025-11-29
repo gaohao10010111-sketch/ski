@@ -900,13 +900,233 @@ export const ko: Partial<TranslationKeys> = {
       allDisciplines: { title: 'All Disciplines Support', description: 'Alpine·Freestyle·Snowboard' }
     },
     systemFeatures: {
-      title: 'System Features',
-      feature1: 'China Alpine Skiing Points Rules Standard',
-      feature2: 'Freestyle/Snowboard 360/240/120 Points Tier System',
-      feature3: 'Big Air, Slopestyle, Parallel Events Full Coverage',
-      feature4: 'U12/U15/U18 Youth Series Event Management',
-      feature5: 'General Administration of Sport Winter Sports Center Certified',
-      feature6: 'Multi-discipline Points Rankings and Data Visualization'
+      title: '시스템 특징',
+      feature1: '중국 알파인 스키 포인트 규칙 표준',
+      feature2: '프리스타일/스노보드 360/240/120 포인트 등급 시스템',
+      feature3: '빅에어, 슬로프스타일, 패러렐 종목 완전 지원',
+      feature4: 'U12/U15/U18 유스 시리즈 이벤트 관리',
+      feature5: '동계스포츠센터 인증',
+      feature6: '다종목 포인트 순위 및 데이터 시각화'
+    }
+  },
+
+  // 종목 페이지
+  disciplinesPage: {
+    hero: {
+      backLabel: '홈으로 돌아가기',
+      title: '중국 유스 스키 포인트 순위 공식 플랫폼',
+      subtitle: '4개의 독립 포인트 시스템 | 전문 이벤트 관리 플랫폼'
+    },
+    continuation: {
+      title: '4개 종목 포인트 이월 메커니즘',
+      description: '일관된 성과 평가를 위한 과학적 이월 전략',
+      cards: [
+        {
+          id: 'carry-forward',
+          value: '×50%',
+          title: '이월 비율',
+          description: '시즌 종료 시 각 종목 포인트의 50%가 다음 시즌으로 이월',
+          accent: 'blue'
+        },
+        {
+          id: 'season',
+          value: '7/1-6/30',
+          title: '시즌 기간',
+          description: '7월 1일부터 6월 30일까지의 통일된 시즌 주기',
+          accent: 'green'
+        },
+        {
+          id: 'best-two',
+          value: '베스트 2',
+          title: '성적 계산',
+          description: '각 종목의 최고 2개 성적 평균이 시즌 포인트로 계산',
+          accent: 'purple'
+        }
+      ]
+    },
+    cardsSection: {
+      title: '종목 선택',
+      ctaLabel: '종목 시스템 열기',
+      cards: [
+        {
+          id: 'alpine',
+          name: '알파인 스키',
+          nameEn: 'Alpine Skiing',
+          icon: 'alpine',
+          color: 'from-blue-600 to-cyan-600',
+          description: 'v4.0 시간 기반 포인트 공식, A/B/C 등급 계수',
+          features: ['활강', '회전', '대회전', '슈퍼대회전', '복합']
+        },
+        {
+          id: 'snowboard-slopestyle',
+          name: '스노보드 슬로프스타일 & 빅에어',
+          nameEn: 'Snowboard Slopestyle & Big Air',
+          icon: 'snowboard',
+          color: 'from-orange-600 to-yellow-600',
+          description: '240/360/120 포인트 등급, 심판 점수를 순위로 전환',
+          features: ['슬로프스타일', '빅에어', '하프파이프']
+        },
+        {
+          id: 'snowboard-parallel',
+          name: '스노보드 패러렐',
+          nameEn: 'Snowboard Parallel',
+          icon: 'snowboard',
+          color: 'from-purple-600 to-pink-600',
+          description: '시간 기반 레이스 포인트, 토너먼트 방식',
+          features: ['패러렐대회전(PGS)', '패러렐회전(PSL)']
+        },
+        {
+          id: 'freeski-slopestyle',
+          name: '프리스키 슬로프스타일 & 빅에어',
+          nameEn: 'Freeski Slopestyle & Big Air',
+          icon: 'freeski',
+          color: 'from-red-600 to-rose-600',
+          description: '240/360/120 포인트 등급, 트릭 난이도 계수',
+          features: ['슬로프스타일', '빅에어', '에어리얼']
+        }
+      ]
+    },
+    highlights: {
+      title: '플랫폼 핵심 기능',
+      items: [
+        {
+          id: 'independent',
+          icon: 'award',
+          title: '독립 순위',
+          description: '각 종목별 전용 순위 및 분석'
+        },
+        {
+          id: 'realtime',
+          icon: 'barChart',
+          title: '실시간 계산',
+          description: '대회 후 자동 포인트 업데이트'
+        },
+        {
+          id: 'u-series',
+          icon: 'target',
+          title: 'U시리즈 관리',
+          description: 'U12, U15, U18 연령대별 그룹'
+        },
+        {
+          id: 'continuation',
+          icon: 'rotateCcw',
+          title: '이월 메커니즘',
+          description: '시즌 포인트의 50%가 지속 평가용으로 이월'
+        }
+      ]
+    }
+  },
+
+  // 선수 페이지
+  athletesPage: {
+    pageTitle: '선수 관리',
+    pageSubtitle: '중국 스키 선수 프로필 및 포인트 통계',
+    searchPlaceholder: '선수명 또는 성으로 검색...',
+    filterOptions: [
+      { value: 'all', label: '전체 종목' },
+      { value: 'alpine', label: '알파인 스키' },
+      { value: 'freestyle', label: '프리스타일 스키' },
+      { value: 'snowboard', label: '스노보드' }
+    ],
+    resultsSummary: '{count}명의 선수를 찾았습니다',
+    exportLabel: '목록 내보내기',
+    stats: [
+      { id: 'registered', value: '1,247', label: '등록 선수', icon: 'user', theme: 'blue' },
+      { id: 'active', value: '563', label: '활동 선수', icon: 'trophy', theme: 'green' },
+      { id: 'awarded', value: '89', label: '메달리스트', icon: 'medal', theme: 'purple' },
+      { id: 'improved', value: '156', label: '포인트 향상', icon: 'trendingUp', theme: 'red' }
+    ],
+    tableHeaders: {
+      rank: '순위',
+      athlete: '선수',
+      discipline: '종목',
+      points: '포인트',
+      competitions: '대회수',
+      bestResult: '최고 성적',
+      province: '소속 성'
+    },
+    list: []
+  },
+
+  // 소개 페이지
+  aboutPage: {
+    pageTitle: '소개',
+    heroDescription: '중국 스키 포인트 플랫폼은 스키 스포츠의 표준화와 전문화에 헌신하는 전문 포인트 관리 서비스입니다',
+
+    platformTitle: '플랫폼 소개',
+    platformDescription1: '중국 스키 포인트 플랫폼은 공식 포인트 계산 규칙과 유스 U시리즈 대회 프로그램을 기반으로 한 종합 스키 관리 플랫폼입니다.',
+    platformDescription2: '알파인 스키, 프리스타일 스키, 스노보드의 3대 종목을 지원하며, 활강, 회전, 대회전, 슈퍼대회전, 복합, 빅에어, 슬로프스타일, 하프파이프 등을 포함합니다.',
+    platformDescription3: '스키 스포츠에 전문적이고 정확하며 효율적인 디지털 관리 서비스를 제공하기 위해 노력합니다.',
+
+    stats: {
+      pointsSystems: { value: '4', label: '포인트 시스템' },
+      registeredAthletes: { value: '1000+', label: '등록 선수' },
+      annualEvents: { value: '50+', label: '연간 이벤트' },
+      onlineService: { value: '24/7', label: '온라인 서비스' }
+    },
+
+    coreFeaturesTitle: '핵심 기능',
+    coreFeaturesSubtitle: '전문적이고 포괄적이며 사용하기 쉬운 스키 이벤트 관리 솔루션',
+
+    pointsCalculation: {
+      title: '포인트 계산 시스템',
+      description: '듀얼 포인트 시스템으로 공식 규칙 기반 정밀 계산'
+    },
+    eventManagement: {
+      title: '이벤트 관리',
+      description: '등록부터 결과 발표까지 완전한 디지털 관리'
+    },
+    athleteManagement: {
+      title: '선수 관리',
+      description: '선수 등록, 자격 심사, 포인트 기록 관리'
+    },
+    dataAnalysis: {
+      title: '데이터 분석',
+      description: '전문 데이터 통계 및 시각화 보고서'
+    },
+
+    technicalFeaturesTitle: '기술 특징',
+
+    dualPointsEngine: {
+      title: '듀얼 포인트 계산 엔진',
+      features: [
+        '알파인 스키: 시간 기반 계산',
+        '프리스타일/스노보드: 순위 기반 240/360/120 등급',
+        '동적 페널티 포인트 계산',
+        '다종목 포인트 관리'
+      ]
+    },
+    rulesSupport: {
+      title: '규정 지원',
+      features: [
+        '알파인 스키 포인트 계산 규칙',
+        '전국 BA/SS 유스 U시리즈 프로그램',
+        'FIS 규정 호환성',
+        '시설 기술 표준 관리'
+      ]
+    },
+    userExperience: {
+      title: '사용자 경험',
+      features: [
+        '반응형 디자인, 멀티플랫폼 적응',
+        '실시간 데이터 업데이트',
+        '직관적인 데이터 시각화',
+        '편리한 워크플로우'
+      ]
+    },
+
+    contactTitle: '문의하기',
+    contactDescription: '질문이나 제안이 있으시면 언제든 연락주세요',
+
+    technicalSupport: {
+      title: '기술 지원',
+      email: '이메일: support@ski-points.com',
+      phone: '전화: 400-123-4567'
+    },
+    businessCooperation: {
+      title: '비즈니스 협력',
+      email: '이메일: business@ski-points.com',
+      wechat: 'WeChat: ski-points-service'
     }
   }
 };

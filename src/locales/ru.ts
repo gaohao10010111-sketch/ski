@@ -788,118 +788,118 @@ export const ru: Partial<TranslationKeys> = {
   // Homepage
   home: {
     hero: {
-      title: 'China Skiing Points System',
+      title: 'Китайская Система Очков в Лыжном Спорте',
       titleEn: 'China Skiing Points System',
-      subtitle: 'Authoritative · Professional · Accurate skiing points management platform',
-      exploreDisciplines: 'Explore Disciplines',
-      freeRegister: 'Free Registration',
-      platformIntro: 'First choice platform for professional athletes, coaches, and event organizers • Certified by General Administration of Sport'
+      subtitle: 'Авторитетная · Профессиональная · Точная платформа управления очками в лыжном спорте',
+      exploreDisciplines: 'Изучить Дисциплины',
+      freeRegister: 'Бесплатная Регистрация',
+      platformIntro: 'Платформа первого выбора для профессиональных спортсменов, тренеров и организаторов соревнований • Сертифицирована Главным управлением спорта'
     },
     features: {
-      title: 'Core Platform Features',
+      title: 'Основные Функции Платформы',
       platformIntro: {
-        title: 'Platform Introduction',
-        description: 'Learn about China Alpine Skiing Points System'
+        title: 'О Платформе',
+        description: 'Узнайте о Китайской системе очков горнолыжного спорта'
       },
       memberRegister: {
-        title: 'Member Registration',
-        description: 'Register as a platform member to view personal points'
+        title: 'Регистрация Участников',
+        description: 'Зарегистрируйтесь как участник платформы для просмотра личных очков'
       },
       eventAnnouncement: {
-        title: 'Event Announcements',
-        description: 'View the latest event schedules and announcements'
+        title: 'Объявления о Событиях',
+        description: 'Просматривайте последние расписания и объявления о соревнованиях'
       },
       pointsRules: {
-        title: 'Points Rules',
-        description: 'View China Alpine Skiing points calculation rules'
+        title: 'Правила Очков',
+        description: 'Ознакомьтесь с правилами расчёта очков горнолыжного спорта Китая'
       },
       competitionManagement: {
-        title: 'Competition Management',
-        description: 'Manage competition information, results entry and statistics'
+        title: 'Управление Соревнованиями',
+        description: 'Управление информацией о соревнованиях, внесение результатов и статистика'
       },
       athleteProfiles: {
-        title: 'Athlete Profiles',
-        description: 'Athlete information management and points history'
+        title: 'Профили Спортсменов',
+        description: 'Управление информацией о спортсменах и история очков'
       },
       onlineRegistration: {
-        title: 'Online Registration',
-        description: 'Convenient event registration and fee management'
+        title: 'Онлайн-Регистрация',
+        description: 'Удобная регистрация на соревнования и управление оплатой'
       },
       dataAnalysis: {
-        title: 'Data Analysis',
-        description: 'In-depth data analysis and visualization reports'
+        title: 'Анализ Данных',
+        description: 'Глубокий анализ данных и визуальные отчёты'
       }
     },
     stats: {
-      title: 'Platform Data Overview',
-      subtitle: 'Real-time system data and operational status',
-      disciplines: { label: 'Ski Disciplines', value: '15+', description: 'Alpine·Freestyle·Snowboard' },
-      pointsRules: { label: 'Points Rules', value: '100%', description: 'Compliant with China Standards' },
-      updateCycle: { label: 'Points Update', value: '7 Days', description: 'Weekly Updates' },
-      users: { label: 'Registered Users', value: '1,200+', description: 'Athletes & Coaches' }
+      title: 'Обзор Данных Платформы',
+      subtitle: 'Данные системы в реальном времени и операционный статус',
+      disciplines: { label: 'Лыжные Дисциплины', value: '15+', description: 'Горные·Фристайл·Сноуборд' },
+      pointsRules: { label: 'Правила Очков', value: '100%', description: 'Соответствуют стандартам Китая' },
+      updateCycle: { label: 'Обновление Очков', value: '7 Дней', description: 'Еженедельные обновления' },
+      users: { label: 'Зарегистрировано', value: '1 200+', description: 'Спортсменов и тренеров' }
     },
     news: {
-      title: 'Latest Updates',
-      pauseCarousel: 'Pause Carousel',
-      continueCarousel: 'Continue Carousel'
+      title: 'Последние Обновления',
+      pauseCarousel: 'Пауза',
+      continueCarousel: 'Продолжить'
     },
     latestResults: {
-      title: 'Latest Competition Results',
-      subtitle: 'Real-time competition results and points rankings',
-      recentResults: 'Recent Results',
-      liveUpdate: 'Live Update',
-      viewMore: 'View More Events →'
+      title: 'Последние Результаты Соревнований',
+      subtitle: 'Результаты соревнований и рейтинги очков в реальном времени',
+      recentResults: 'Недавние Результаты',
+      liveUpdate: 'Обновление в реальном времени',
+      viewMore: 'Больше Событий →'
     },
     rankings: {
-      title: 'Points Leaderboard',
-      updatedOn: 'Updated on',
-      points: 'Points',
-      viewFullRankings: 'View Full Rankings →'
+      title: 'Таблица Лидеров',
+      updatedOn: 'Обновлено',
+      points: 'Очки',
+      viewFullRankings: 'Полный Рейтинг →'
     },
     memberWelcome: {
-      welcomeBack: 'Welcome Back',
-      accountStatus: 'Account Active',
-      pendingReview: 'Pending Review',
-      currentPoints: 'Current Points',
-      systemPermissions: 'System Permissions',
-      personalCenter: 'Personal Center',
-      myPoints: 'My Points',
-      adminPanel: 'Admin Panel'
+      welcomeBack: 'С Возвращением',
+      accountStatus: 'Аккаунт Активен',
+      pendingReview: 'На Рассмотрении',
+      currentPoints: 'Текущие Очки',
+      systemPermissions: 'Разрешения Системы',
+      personalCenter: 'Личный Кабинет',
+      myPoints: 'Мои Очки',
+      adminPanel: 'Панель Администратора'
     },
     memberValue: {
-      unlockFeatures: 'Unlock All Professional Features',
-      registerToUnlock: 'Register as a member to enjoy complete points management and event services',
+      unlockFeatures: 'Разблокируйте Все Профессиональные Функции',
+      registerToUnlock: 'Зарегистрируйтесь как участник для полного управления очками и услуг соревнований',
       pointsSystem: {
-        title: 'Points System',
-        features: ['Personal points query and history tracking', 'Real-time points leaderboard', 'Points calculator tool', 'Points trend analysis']
+        title: 'Система Очков',
+        features: ['Запрос личных очков и отслеживание истории', 'Таблица лидеров в реальном времени', 'Калькулятор очков', 'Анализ трендов очков']
       },
       eventManagement: {
-        title: 'Event Management',
-        features: ['View competition list and event schedule', 'Online event registration', 'Real-time results viewing', 'Event result notifications']
+        title: 'Управление Событиями',
+        features: ['Просмотр списка соревнований и расписания', 'Онлайн-регистрация на события', 'Просмотр результатов в реальном времени', 'Уведомления о результатах']
       },
       professionalFeatures: {
-        title: 'Professional Features',
-        features: ['Personal athlete profile management', 'Detailed points rules', 'Data statistics and analysis', 'Technical support service']
+        title: 'Профессиональные Функции',
+        features: ['Управление личным профилем спортсмена', 'Подробные правила очков', 'Статистика и анализ данных', 'Техническая поддержка']
       },
-      registerUnlock: 'Register to Unlock'
+      registerUnlock: 'Зарегистрироваться'
     },
     about: {
-      title: 'About Platform',
-      description1: 'China Skiing Points System is a comprehensive competition management platform built based on the standards of the Winter Sports Management Center of the General Administration of Sport. Covering all disciplines of alpine skiing, freestyle skiing, and snowboarding, using multi-tier points calculation algorithms compliant with China standards, providing authoritative and accurate data management and points calculation services for Chinese skiing competitions.',
-      description2: 'We are committed to promoting the digital and standardized development of Chinese skiing sports, providing modern data management, points calculation, and results statistics tools for athletes, coaches, event organizers, and competition referees, comprehensively covering big air, slopestyle, parallel events and other snow sports, improving the organizational and competitive level of Chinese skiing.',
-      multiTierPoints: { title: 'Multi-tier Points System', description: '360/240/120 Points Tiers' },
-      uSeries: { title: 'U-Series Events', description: 'U12/U15/U18 Full Coverage' },
-      officialCertification: { title: 'Official Certification', description: 'Winter Sports Center Standards' },
-      allDisciplines: { title: 'All Disciplines Support', description: 'Alpine·Freestyle·Snowboard' }
+      title: 'О Платформе',
+      description1: 'Китайская Система Очков в Лыжном Спорте — это комплексная платформа управления соревнованиями, созданная на основе стандартов Центра зимних видов спорта Главного управления спорта. Охватывая все дисциплины горнолыжного спорта, фристайла и сноуборда, используя многоуровневые алгоритмы расчёта очков, соответствующие стандартам Китая, предоставляя авторитетные и точные услуги управления данными и расчёта очков для китайских лыжных соревнований.',
+      description2: 'Мы стремимся продвигать цифровое и стандартизированное развитие китайского лыжного спорта, предоставляя современные инструменты управления данными, расчёта очков и статистики результатов для спортсменов, тренеров, организаторов соревнований и судей, всесторонне охватывая биг-эйр, слоупстайл, параллельные дисциплины и другие зимние виды спорта, повышая организационный и соревновательный уровень китайского лыжного спорта.',
+      multiTierPoints: { title: 'Многоуровневая Система', description: 'Уровни 360/240/120 очков' },
+      uSeries: { title: 'События Серии U', description: 'Полный охват U12/U15/U18' },
+      officialCertification: { title: 'Официальная Сертификация', description: 'Стандарты Центра зимних видов спорта' },
+      allDisciplines: { title: 'Все Дисциплины', description: 'Горные·Фристайл·Сноуборд' }
     },
     systemFeatures: {
-      title: 'System Features',
-      feature1: 'China Alpine Skiing Points Rules Standard',
-      feature2: 'Freestyle/Snowboard 360/240/120 Points Tier System',
-      feature3: 'Big Air, Slopestyle, Parallel Events Full Coverage',
-      feature4: 'U12/U15/U18 Youth Series Event Management',
-      feature5: 'General Administration of Sport Winter Sports Center Certified',
-      feature6: 'Multi-discipline Points Rankings and Data Visualization'
+      title: 'Функции Системы',
+      feature1: 'Стандарт правил очков горнолыжного спорта Китая',
+      feature2: 'Система уровней очков 360/240/120 для фристайла/сноуборда',
+      feature3: 'Полный охват биг-эйр, слоупстайл, параллельных дисциплин',
+      feature4: 'Управление юношеской серией U12/U15/U18',
+      feature5: 'Сертификация Центра зимних видов спорта Главного управления спорта',
+      feature6: 'Мультидисциплинарные рейтинги и визуализация данных'
     }
   }
 };

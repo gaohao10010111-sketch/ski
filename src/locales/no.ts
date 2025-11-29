@@ -795,118 +795,118 @@ export const no: Partial<TranslationKeys> = {
   // Homepage
   home: {
     hero: {
-      title: 'China Skiing Points System',
+      title: 'Kinesisk Skipoeng System',
       titleEn: 'China Skiing Points System',
-      subtitle: 'Authoritative · Professional · Accurate skiing points management platform',
-      exploreDisciplines: 'Explore Disciplines',
-      freeRegister: 'Free Registration',
-      platformIntro: 'First choice platform for professional athletes, coaches, and event organizers • Certified by General Administration of Sport'
+      subtitle: 'Autoritativ · Profesjonell · Nøyaktig plattform for skipoengforvaltning',
+      exploreDisciplines: 'Utforsk Disipliner',
+      freeRegister: 'Gratis Registrering',
+      platformIntro: 'Førstevalgsplattformen for profesjonelle utøvere, trenere og arrangører • Sertifisert av Idrettsdepartementet'
     },
     features: {
-      title: 'Core Platform Features',
+      title: 'Plattformens Kjernefunksjoner',
       platformIntro: {
-        title: 'Platform Introduction',
-        description: 'Learn about China Alpine Skiing Points System'
+        title: 'Om Plattformen',
+        description: 'Lær om Kinas alpin skipoeng-system'
       },
       memberRegister: {
-        title: 'Member Registration',
-        description: 'Register as a platform member to view personal points'
+        title: 'Medlemsregistrering',
+        description: 'Registrer deg som plattformmedlem for å se dine personlige poeng'
       },
       eventAnnouncement: {
-        title: 'Event Announcements',
-        description: 'View the latest event schedules and announcements'
+        title: 'Arrangementsmeldinger',
+        description: 'Se de nyeste terminlistene og kunngjøringene'
       },
       pointsRules: {
-        title: 'Points Rules',
-        description: 'View China Alpine Skiing points calculation rules'
+        title: 'Poengregler',
+        description: 'Les om reglene for poengberegning i kinesisk alpint'
       },
       competitionManagement: {
-        title: 'Competition Management',
-        description: 'Manage competition information, results entry and statistics'
+        title: 'Konkurranseadministrasjon',
+        description: 'Administrer konkurranseinformasjon, resultatregistrering og statistikk'
       },
       athleteProfiles: {
-        title: 'Athlete Profiles',
-        description: 'Athlete information management and points history'
+        title: 'Utøverprofiler',
+        description: 'Utøverinformasjon og poenghistorikk'
       },
       onlineRegistration: {
-        title: 'Online Registration',
-        description: 'Convenient event registration and fee management'
+        title: 'Nettbasert Påmelding',
+        description: 'Enkel påmelding og avgiftshåndtering'
       },
       dataAnalysis: {
-        title: 'Data Analysis',
-        description: 'In-depth data analysis and visualization reports'
+        title: 'Dataanalyse',
+        description: 'Inngående dataanalyse og visuelle rapporter'
       }
     },
     stats: {
-      title: 'Platform Data Overview',
-      subtitle: 'Real-time system data and operational status',
-      disciplines: { label: 'Ski Disciplines', value: '15+', description: 'Alpine·Freestyle·Snowboard' },
-      pointsRules: { label: 'Points Rules', value: '100%', description: 'Compliant with China Standards' },
-      updateCycle: { label: 'Points Update', value: '7 Days', description: 'Weekly Updates' },
-      users: { label: 'Registered Users', value: '1,200+', description: 'Athletes & Coaches' }
+      title: 'Plattformstatistikk',
+      subtitle: 'Sanntidsdata og driftsstatus',
+      disciplines: { label: 'Skidisipliner', value: '15+', description: 'Alpint·Freeski·Snowboard' },
+      pointsRules: { label: 'Poengregler', value: '100%', description: 'I samsvar med kinesiske standarder' },
+      updateCycle: { label: 'Poengoppdatering', value: '7 Dager', description: 'Ukentlige oppdateringer' },
+      users: { label: 'Registrerte Brukere', value: '1 200+', description: 'Utøvere og trenere' }
     },
     news: {
-      title: 'Latest Updates',
-      pauseCarousel: 'Pause Carousel',
-      continueCarousel: 'Continue Carousel'
+      title: 'Siste Nytt',
+      pauseCarousel: 'Stopp Karusell',
+      continueCarousel: 'Fortsett Karusell'
     },
     latestResults: {
-      title: 'Latest Competition Results',
-      subtitle: 'Real-time competition results and points rankings',
-      recentResults: 'Recent Results',
-      liveUpdate: 'Live Update',
-      viewMore: 'View More Events →'
+      title: 'Siste Konkurranseresultater',
+      subtitle: 'Sanntids konkurranseresultater og poengrangeringer',
+      recentResults: 'Nylige Resultater',
+      liveUpdate: 'Live Oppdatering',
+      viewMore: 'Se Flere Arrangementer →'
     },
     rankings: {
-      title: 'Points Leaderboard',
-      updatedOn: 'Updated on',
-      points: 'Points',
-      viewFullRankings: 'View Full Rankings →'
+      title: 'Poengtabell',
+      updatedOn: 'Oppdatert',
+      points: 'Poeng',
+      viewFullRankings: 'Se Full Rangering →'
     },
     memberWelcome: {
-      welcomeBack: 'Welcome Back',
-      accountStatus: 'Account Active',
-      pendingReview: 'Pending Review',
-      currentPoints: 'Current Points',
-      systemPermissions: 'System Permissions',
-      personalCenter: 'Personal Center',
-      myPoints: 'My Points',
-      adminPanel: 'Admin Panel'
+      welcomeBack: 'Velkommen Tilbake',
+      accountStatus: 'Konto Aktiv',
+      pendingReview: 'Venter på Gjennomgang',
+      currentPoints: 'Nåværende Poeng',
+      systemPermissions: 'Systemtilganger',
+      personalCenter: 'Personlig Senter',
+      myPoints: 'Mine Poeng',
+      adminPanel: 'Administrasjonspanel'
     },
     memberValue: {
-      unlockFeatures: 'Unlock All Professional Features',
-      registerToUnlock: 'Register as a member to enjoy complete points management and event services',
+      unlockFeatures: 'Lås Opp Alle Profesjonelle Funksjoner',
+      registerToUnlock: 'Registrer deg som medlem for full poengadministrasjon og arrangementstjenester',
       pointsSystem: {
-        title: 'Points System',
-        features: ['Personal points query and history tracking', 'Real-time points leaderboard', 'Points calculator tool', 'Points trend analysis']
+        title: 'Poengsystem',
+        features: ['Personlig poengoversikt og historikksporing', 'Sanntids poengtabell', 'Poengkalkulator', 'Trendanalyse']
       },
       eventManagement: {
-        title: 'Event Management',
-        features: ['View competition list and event schedule', 'Online event registration', 'Real-time results viewing', 'Event result notifications']
+        title: 'Arrangementshåndtering',
+        features: ['Se konkurranseliste og kalender', 'Nettbasert påmelding', 'Sanntidsresultater', 'Resultatvarsler']
       },
       professionalFeatures: {
-        title: 'Professional Features',
-        features: ['Personal athlete profile management', 'Detailed points rules', 'Data statistics and analysis', 'Technical support service']
+        title: 'Profesjonelle Funksjoner',
+        features: ['Personlig utøverprofil', 'Detaljerte poengregler', 'Statistikk og analyse', 'Teknisk støtte']
       },
-      registerUnlock: 'Register to Unlock'
+      registerUnlock: 'Registrer for å Låse Opp'
     },
     about: {
-      title: 'About Platform',
-      description1: 'China Skiing Points System is a comprehensive competition management platform built based on the standards of the Winter Sports Management Center of the General Administration of Sport. Covering all disciplines of alpine skiing, freestyle skiing, and snowboarding, using multi-tier points calculation algorithms compliant with China standards, providing authoritative and accurate data management and points calculation services for Chinese skiing competitions.',
-      description2: 'We are committed to promoting the digital and standardized development of Chinese skiing sports, providing modern data management, points calculation, and results statistics tools for athletes, coaches, event organizers, and competition referees, comprehensively covering big air, slopestyle, parallel events and other snow sports, improving the organizational and competitive level of Chinese skiing.',
-      multiTierPoints: { title: 'Multi-tier Points System', description: '360/240/120 Points Tiers' },
-      uSeries: { title: 'U-Series Events', description: 'U12/U15/U18 Full Coverage' },
-      officialCertification: { title: 'Official Certification', description: 'Winter Sports Center Standards' },
-      allDisciplines: { title: 'All Disciplines Support', description: 'Alpine·Freestyle·Snowboard' }
+      title: 'Om Plattformen',
+      description1: 'Kinesisk Skipoeng System er en omfattende konkurranseforvaltningsplattform bygget etter standardene til Vintersportsenteret i Idrettsdepartementet. Den dekker alle disipliner innen alpint, freeski og snowboard, og bruker flernivå poengberegningsalgoritmer i samsvar med kinesiske standarder, og tilbyr autoritative og nøyaktige datatjenester for kinesiske skikonkurranser.',
+      description2: 'Vi er forpliktet til å fremme den digitale og standardiserte utviklingen av kinesisk skisport, og tilbyr moderne verktøy for dataadministrasjon, poengberegning og resultatstatistikk for utøvere, trenere, arrangører og dommere, med full dekning av big air, slopestyle, parallelle disipliner og andre snøsporter, for å heve organisasjons- og konkurransenivået i kinesisk skisport.',
+      multiTierPoints: { title: 'Flernivå Poengsystem', description: 'Poengnivåer 360/240/120' },
+      uSeries: { title: 'U-Serie Arrangementer', description: 'Full dekning U12/U15/U18' },
+      officialCertification: { title: 'Offisiell Sertifisering', description: 'Vintersportssenterets standarder' },
+      allDisciplines: { title: 'Alle Disipliner', description: 'Alpint·Freeski·Snowboard' }
     },
     systemFeatures: {
-      title: 'System Features',
-      feature1: 'China Alpine Skiing Points Rules Standard',
-      feature2: 'Freestyle/Snowboard 360/240/120 Points Tier System',
-      feature3: 'Big Air, Slopestyle, Parallel Events Full Coverage',
-      feature4: 'U12/U15/U18 Youth Series Event Management',
-      feature5: 'General Administration of Sport Winter Sports Center Certified',
-      feature6: 'Multi-discipline Points Rankings and Data Visualization'
+      title: 'Systemfunksjoner',
+      feature1: 'Kinesisk standard for alpin skipoeng',
+      feature2: 'Freeski/Snowboard 360/240/120 poengnivåsystem',
+      feature3: 'Full dekning av Big Air, Slopestyle og parallelle disipliner',
+      feature4: 'Administrasjon av U12/U15/U18 ungdomsserier',
+      feature5: 'Sertifisert av Idrettsdepartementets vintersportsenter',
+      feature6: 'Tverrfaglige poengrangeringer og datavisualisering'
     }
   }
 };

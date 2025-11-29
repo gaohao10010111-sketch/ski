@@ -900,13 +900,233 @@ export const it: Partial<TranslationKeys> = {
       allDisciplines: { title: 'All Disciplines Support', description: 'Alpine·Freestyle·Snowboard' }
     },
     systemFeatures: {
-      title: 'System Features',
-      feature1: 'China Alpine Skiing Points Rules Standard',
-      feature2: 'Freestyle/Snowboard 360/240/120 Points Tier System',
-      feature3: 'Big Air, Slopestyle, Parallel Events Full Coverage',
-      feature4: 'U12/U15/U18 Youth Series Event Management',
-      feature5: 'General Administration of Sport Winter Sports Center Certified',
-      feature6: 'Multi-discipline Points Rankings and Data Visualization'
+      title: 'Caratteristiche del Sistema',
+      feature1: 'Standard regole punti sci alpino cinese',
+      feature2: 'Sistema livelli punti Freestyle/Snowboard 360/240/120',
+      feature3: 'Big Air, Slopestyle, Eventi Paralleli coperti',
+      feature4: 'Gestione eventi Serie Giovanile U12/U15/U18',
+      feature5: 'Certificato dal Centro Sport Invernali',
+      feature6: 'Classifiche multi-disciplina e visualizzazione dati'
+    }
+  },
+
+  // Pagina discipline
+  disciplinesPage: {
+    hero: {
+      backLabel: 'Torna alla home',
+      title: 'Piattaforma ufficiale classifica sci giovanile cinese',
+      subtitle: 'Quattro sistemi di punti indipendenti | Piattaforma gestione eventi professionale'
+    },
+    continuation: {
+      title: 'Meccanismo di riporto punti per quattro discipline',
+      description: 'Strategia scientifica di riporto per valutazione prestazioni consistente',
+      cards: [
+        {
+          id: 'carry-forward',
+          value: '×50%',
+          title: 'Tasso di riporto',
+          description: 'A fine stagione, il 50% dei punti di ogni disciplina viene riportato alla stagione successiva',
+          accent: 'blue'
+        },
+        {
+          id: 'season',
+          value: '1/7-30/6',
+          title: 'Periodo stagione',
+          description: 'Ciclo stagionale unificato dal 1 luglio al 30 giugno',
+          accent: 'green'
+        },
+        {
+          id: 'best-two',
+          value: 'Migliori 2',
+          title: 'Calcolo risultati',
+          description: 'La media dei due migliori risultati di ogni disciplina costituisce i punti stagionali',
+          accent: 'purple'
+        }
+      ]
+    },
+    cardsSection: {
+      title: 'Scegli la tua disciplina',
+      ctaLabel: 'Accedi alla disciplina',
+      cards: [
+        {
+          id: 'alpine',
+          name: 'Sci Alpino',
+          nameEn: 'Alpine Skiing',
+          icon: 'alpine',
+          color: 'from-blue-600 to-cyan-600',
+          description: 'Formula punti basata sul tempo v4.0 con coefficienti A/B/C',
+          features: ['Discesa', 'Slalom', 'Slalom Gigante', 'Super-G', 'Combinata']
+        },
+        {
+          id: 'snowboard-slopestyle',
+          name: 'Snowboard Slopestyle & Big Air',
+          nameEn: 'Snowboard Slopestyle & Big Air',
+          icon: 'snowboard',
+          color: 'from-orange-600 to-yellow-600',
+          description: 'Livelli punti 240/360/120 con conversione giuria in classifica',
+          features: ['Slopestyle', 'Big Air', 'Halfpipe']
+        },
+        {
+          id: 'snowboard-parallel',
+          name: 'Snowboard Parallelo',
+          nameEn: 'Snowboard Parallel',
+          icon: 'snowboard',
+          color: 'from-purple-600 to-pink-600',
+          description: 'Punti gara basati sul tempo con eliminazioni',
+          features: ['Slalom Gigante Parallelo (PGS)', 'Slalom Parallelo (PSL)']
+        },
+        {
+          id: 'freeski-slopestyle',
+          name: 'Freeski Slopestyle & Big Air',
+          nameEn: 'Freeski Slopestyle & Big Air',
+          icon: 'freeski',
+          color: 'from-red-600 to-rose-600',
+          description: 'Livelli punti 240/360/120 con coefficienti difficoltà trick',
+          features: ['Slopestyle', 'Big Air', 'Aerials']
+        }
+      ]
+    },
+    highlights: {
+      title: 'Funzionalità principali',
+      items: [
+        {
+          id: 'independent',
+          icon: 'award',
+          title: 'Classifiche indipendenti',
+          description: 'Classifiche e analisi dedicate per ogni disciplina'
+        },
+        {
+          id: 'realtime',
+          icon: 'barChart',
+          title: 'Calcoli in tempo reale',
+          description: 'Punti aggiornati automaticamente dopo ogni gara'
+        },
+        {
+          id: 'u-series',
+          icon: 'target',
+          title: 'Gestione U-Serie',
+          description: 'Gruppi età giovanili U12, U15 e U18'
+        },
+        {
+          id: 'continuation',
+          icon: 'rotateCcw',
+          title: 'Meccanismo riporto',
+          description: '50% dei punti stagionali riportati per valutazione continua'
+        }
+      ]
+    }
+  },
+
+  // Pagina atleti
+  athletesPage: {
+    pageTitle: 'Gestione Atleti',
+    pageSubtitle: 'Profili e statistiche atleti sci cinese',
+    searchPlaceholder: 'Cerca per nome o provincia...',
+    filterOptions: [
+      { value: 'all', label: 'Tutte le discipline' },
+      { value: 'alpine', label: 'Sci Alpino' },
+      { value: 'freestyle', label: 'Sci Freestyle' },
+      { value: 'snowboard', label: 'Snowboard' }
+    ],
+    resultsSummary: '{count} atleti trovati',
+    exportLabel: 'Esporta lista',
+    stats: [
+      { id: 'registered', value: '1.247', label: 'Atleti registrati', icon: 'user', theme: 'blue' },
+      { id: 'active', value: '563', label: 'Atleti attivi', icon: 'trophy', theme: 'green' },
+      { id: 'awarded', value: '89', label: 'Medagliati', icon: 'medal', theme: 'purple' },
+      { id: 'improved', value: '156', label: 'Miglioramenti punti', icon: 'trendingUp', theme: 'red' }
+    ],
+    tableHeaders: {
+      rank: 'Posizione',
+      athlete: 'Atleta',
+      discipline: 'Disciplina',
+      points: 'Punti',
+      competitions: 'Gare',
+      bestResult: 'Miglior risultato',
+      province: 'Provincia'
+    },
+    list: []
+  },
+
+  // Pagina Chi siamo
+  aboutPage: {
+    pageTitle: 'Chi siamo',
+    heroDescription: 'La piattaforma punti sci cinese è un servizio professionale di gestione punti dedicato alla standardizzazione dello sci',
+
+    platformTitle: 'Presentazione piattaforma',
+    platformDescription1: 'La piattaforma punti sci cinese è una piattaforma completa basata sulle regole ufficiali di calcolo punti e programmi competizione U-Serie.',
+    platformDescription2: 'La piattaforma supporta tre discipline principali: sci alpino, sci freestyle e snowboard, inclusi discesa, slalom, gigante, super-G, combinata, big air, slopestyle, halfpipe e altro.',
+    platformDescription3: 'Ci impegniamo a fornire servizi di gestione digitale professionali, precisi ed efficienti per lo sci.',
+
+    stats: {
+      pointsSystems: { value: '4', label: 'Sistemi punti' },
+      registeredAthletes: { value: '1000+', label: 'Atleti registrati' },
+      annualEvents: { value: '50+', label: 'Eventi annuali' },
+      onlineService: { value: '24/7', label: 'Servizio online' }
+    },
+
+    coreFeaturesTitle: 'Funzionalità principali',
+    coreFeaturesSubtitle: 'Soluzione professionale e facile da usare per la gestione eventi sci',
+
+    pointsCalculation: {
+      title: 'Sistema calcolo punti',
+      description: 'Calcolo preciso basato su regole ufficiali con sistema duale'
+    },
+    eventManagement: {
+      title: 'Gestione eventi',
+      description: 'Gestione digitale completa dalla registrazione alla pubblicazione risultati'
+    },
+    athleteManagement: {
+      title: 'Gestione atleti',
+      description: 'Registrazione atleti, verifica qualifiche e gestione punti'
+    },
+    dataAnalysis: {
+      title: 'Analisi dati',
+      description: 'Statistiche professionali e report di visualizzazione'
+    },
+
+    technicalFeaturesTitle: 'Caratteristiche tecniche',
+
+    dualPointsEngine: {
+      title: 'Motore calcolo duale',
+      features: [
+        'Sci Alpino: Calcolo basato sul tempo',
+        'Freestyle/Snowboard: Livelli 240/360/120 basati sul ranking',
+        'Calcolo dinamico penalità',
+        'Gestione punti multi-disciplina'
+      ]
+    },
+    rulesSupport: {
+      title: 'Supporto regolamenti',
+      features: [
+        'Regole calcolo punti sci alpino',
+        'Programma nazionale U-Serie BA/SS',
+        'Compatibilità regolamento FIS',
+        'Gestione standard impianti'
+      ]
+    },
+    userExperience: {
+      title: 'Esperienza utente',
+      features: [
+        'Design responsive, multi-piattaforma',
+        'Aggiornamento dati in tempo reale',
+        'Visualizzazione intuitiva',
+        'Workflow conveniente'
+      ]
+    },
+
+    contactTitle: 'Contattaci',
+    contactDescription: 'Per domande o suggerimenti, non esitare a contattarci',
+
+    technicalSupport: {
+      title: 'Supporto tecnico',
+      email: 'Email: support@ski-points.com',
+      phone: 'Telefono: 400-123-4567'
+    },
+    businessCooperation: {
+      title: 'Cooperazione commerciale',
+      email: 'Email: business@ski-points.com',
+      wechat: 'WeChat: ski-points-service'
     }
   }
 };

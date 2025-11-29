@@ -815,150 +815,370 @@ export const de: Partial<TranslationKeys> = {
   // Homepage
   home: {
     hero: {
-      title: 'China Skiing Points System',
+      title: 'Chinesisches Ski-Punktesystem',
       titleEn: 'China Skiing Points System',
-      subtitle: 'Authoritative · Professional · Accurate skiing points management platform',
-      exploreDisciplines: 'Explore Disciplines',
-      freeRegister: 'Free Registration',
-      platformIntro: 'First choice platform for professional athletes, coaches, and event organizers • Certified by General Administration of Sport',
+      subtitle: 'Maßgeblich · Professionell · Präzise Punkte-Verwaltungsplattform',
+      exploreDisciplines: 'Disziplinen erkunden',
+      freeRegister: 'Kostenlos registrieren',
+      platformIntro: 'Erste Wahl für Profi-Athleten, Trainer und Veranstalter',
       highlights: [
-        { label: 'Four Points Systems', color: 'bg-ski-blue' },
-        { label: 'Official Certification', color: 'bg-green-400' },
-        { label: 'U-Series · Public Events', color: 'bg-yellow-400' }
+        { label: 'Vier Punktesysteme', color: 'bg-ski-blue' },
+        { label: 'Offizielle Zertifizierung', color: 'bg-green-400' },
+        { label: 'U-Serie · Öffentliche Events', color: 'bg-yellow-400' }
       ]
     },
     features: {
-      title: 'Core Platform Features',
-      description: 'Complete skiing competition management solution based on FIS International Ski Federation standards',
+      title: 'Kernfunktionen der Plattform',
+      description: 'Komplette Ski-Wettkampf-Management-Lösung basierend auf FIS-Standards',
       online: 'Online',
-      useNow: 'Use Now',
+      useNow: 'Jetzt nutzen',
       fisPointsQuery: {
-        title: 'FIS Points Query',
-        description: 'Query athlete FIS points and ranking information'
+        title: 'FIS-Punkte-Abfrage',
+        description: 'FIS-Punkte und Rankings von Athleten abfragen'
       },
       pointsCalculator: {
-        title: 'Points Calculator',
-        description: 'Real-time calculation of skiing points based on race results'
+        title: 'Punkterechner',
+        description: 'Echtzeit-Punkteberechnung basierend auf Rennergebnissen'
       },
       pointsRankings: {
-        title: 'Points Rankings',
-        description: 'Real-time updated athlete points rankings'
+        title: 'Punkterangliste',
+        description: 'Echtzeit aktualisierte Athleten-Punkterangliste'
       },
       platformIntro: {
-        title: 'Platform Introduction',
-        description: 'Learn about China Alpine Skiing Points System'
+        title: 'Plattformeinführung',
+        description: 'Erfahren Sie mehr über das China Ski-Punktesystem'
       },
       memberRegister: {
-        title: 'Member Registration',
-        description: 'Register as a platform member to view personal points'
+        title: 'Mitgliedschaftsregistrierung',
+        description: 'Registrieren Sie sich, um persönliche Punkte einzusehen'
       },
       eventAnnouncement: {
-        title: 'Event Announcements',
-        description: 'View the latest event schedules and announcements'
+        title: 'Veranstaltungsankündigungen',
+        description: 'Aktuelle Wettkampftermine und Ankündigungen'
       },
       pointsRules: {
-        title: 'Points Rules',
-        description: 'View China Alpine Skiing points calculation rules'
+        title: 'Punkteregeln',
+        description: 'Punkteberechnungsregeln des chinesischen Skisports'
       },
       competitionManagement: {
-        title: 'Competition Management',
-        description: 'Manage competition information, results entry and statistics'
+        title: 'Wettkampfverwaltung',
+        description: 'Wettkampfinfos, Ergebniseingabe und Statistiken verwalten'
       },
       athleteProfiles: {
-        title: 'Athlete Profiles',
-        description: 'Athlete information management and points history'
+        title: 'Athletenprofile',
+        description: 'Athletenverwaltung und Punktehistorie'
       },
       onlineRegistration: {
-        title: 'Online Registration',
-        description: 'Convenient event registration and fee management'
+        title: 'Online-Anmeldung',
+        description: 'Bequeme Veranstaltungsanmeldung und Gebührenverwaltung'
       },
       dataAnalysis: {
-        title: 'Data Analysis',
-        description: 'In-depth data analysis and visualization reports'
+        title: 'Datenanalyse',
+        description: 'Tiefgehende Datenanalyse und Visualisierungsberichte'
       }
     },
     stats: {
-      title: 'Platform Data Overview',
-      subtitle: 'Real-time system data and operational status',
-      disciplines: { label: 'Ski Disciplines', value: '15+', description: 'Alpine·Freestyle·Snowboard' },
-      pointsRules: { label: 'Points Rules', value: '100%', description: 'Compliant with China Standards' },
-      updateCycle: { label: 'Points Update', value: '7 Days', description: 'Weekly Updates' },
-      users: { label: 'Registered Users', value: '1,200+', description: 'Athletes & Coaches' }
+      title: 'Plattformdaten-Übersicht',
+      subtitle: 'Echtzeit-Systemdaten und Betriebsstatus',
+      disciplines: { label: 'Ski-Disziplinen', value: '15+', description: 'Alpin·Freestyle·Snowboard' },
+      pointsRules: { label: 'Punkteregeln', value: '100%', description: 'China-Standards konform' },
+      updateCycle: { label: 'Punkte-Update', value: '7 Tage', description: 'Wöchentliche Updates' },
+      users: { label: 'Registrierte Nutzer', value: '1.200+', description: 'Athleten & Trainer' }
     },
     news: {
-      title: 'Latest Updates',
-      pauseCarousel: 'Pause Carousel',
-      continueCarousel: 'Continue Carousel',
+      title: 'Aktuelle Meldungen',
+      pauseCarousel: 'Karussell pausieren',
+      continueCarousel: 'Karussell fortsetzen',
       statuses: {
         live: 'Live',
-        updated: 'Updated',
-        upcoming: 'Upcoming'
+        updated: 'Aktualisiert',
+        upcoming: 'Bevorstehend'
       },
       items: []
     },
     latestResults: {
-      title: 'Latest Competition Results',
-      subtitle: 'Real-time competition results and points rankings',
-      recentResults: 'Recent Results',
-      liveUpdate: 'Live Update',
-      viewMore: 'View More Events →',
+      title: 'Neueste Wettkampfergebnisse',
+      subtitle: 'Echtzeit-Ergebnisse und Punkteranglisten',
+      recentResults: 'Aktuelle Ergebnisse',
+      liveUpdate: 'Live-Update',
+      viewMore: 'Mehr Events ansehen →',
       statusLabels: {
         live: 'Live',
-        completed: 'Completed'
+        completed: 'Abgeschlossen'
       },
       results: []
     },
     rankings: {
-      title: 'Points Leaderboard',
-      updatedOn: 'Updated on',
-      points: 'Points',
-      viewFullRankings: 'View Full Rankings →',
+      title: 'Punktebestenliste',
+      updatedOn: 'Aktualisiert am',
+      points: 'Punkte',
+      viewFullRankings: 'Vollständige Rangliste →',
       entries: []
     },
     memberWelcome: {
-      welcomeBack: 'Welcome Back',
-      accountStatus: 'Account Active',
-      pendingReview: 'Pending Review',
-      currentPoints: 'Current Points',
-      systemPermissions: 'System Permissions',
-      personalCenter: 'Personal Center',
-      myPoints: 'My Points',
-      adminPanel: 'Admin Panel'
+      welcomeBack: 'Willkommen zurück',
+      accountStatus: 'Konto aktiv',
+      pendingReview: 'In Prüfung',
+      currentPoints: 'Aktuelle Punkte',
+      systemPermissions: 'Systemberechtigungen',
+      personalCenter: 'Persönlicher Bereich',
+      myPoints: 'Meine Punkte',
+      adminPanel: 'Admin-Panel'
     },
     memberValue: {
-      unlockFeatures: 'Unlock All Professional Features',
-      registerToUnlock: 'Register as a member to enjoy complete points management and event services',
+      unlockFeatures: 'Alle Profi-Funktionen freischalten',
+      registerToUnlock: 'Als Mitglied registrieren für vollständige Punkteverwaltung und Event-Services',
       pointsSystem: {
-        title: 'Points System',
-        features: ['Personal points query and history tracking', 'Real-time points leaderboard', 'Points calculator tool', 'Points trend analysis']
+        title: 'Punktesystem',
+        features: ['Persönliche Punkteabfrage und Historie', 'Echtzeit-Punktebestenliste', 'Punkterechner-Tool', 'Punktetrend-Analyse']
       },
       eventManagement: {
-        title: 'Event Management',
-        features: ['View competition list and event schedule', 'Online event registration', 'Real-time results viewing', 'Event result notifications']
+        title: 'Eventmanagement',
+        features: ['Wettkampfliste und Zeitplan', 'Online-Eventanmeldung', 'Echtzeit-Ergebnisansicht', 'Event-Benachrichtigungen']
       },
       professionalFeatures: {
-        title: 'Professional Features',
-        features: ['Personal athlete profile management', 'Detailed points rules', 'Data statistics and analysis', 'Technical support service']
+        title: 'Profi-Funktionen',
+        features: ['Persönliches Athletenprofil', 'Detaillierte Punkteregeln', 'Datenstatistik und Analyse', 'Technischer Support']
       },
-      registerUnlock: 'Register to Unlock'
+      registerUnlock: 'Registrieren zum Freischalten'
     },
     about: {
-      title: 'About Platform',
-      description1: 'China Skiing Points System is a comprehensive competition management platform built based on the standards of the Winter Sports Management Center of the General Administration of Sport. Covering all disciplines of alpine skiing, freestyle skiing, and snowboarding, using multi-tier points calculation algorithms compliant with China standards, providing authoritative and accurate data management and points calculation services for Chinese skiing competitions.',
-      description2: 'We are committed to promoting the digital and standardized development of Chinese skiing sports, providing modern data management, points calculation, and results statistics tools for athletes, coaches, event organizers, and competition referees, comprehensively covering big air, slopestyle, parallel events and other snow sports, improving the organizational and competitive level of Chinese skiing.',
-      multiTierPoints: { title: 'Multi-tier Points System', description: '360/240/120 Points Tiers' },
-      uSeries: { title: 'U-Series Events', description: 'U12/U15/U18 Full Coverage' },
-      officialCertification: { title: 'Official Certification', description: 'Winter Sports Center Standards' },
-      allDisciplines: { title: 'All Disciplines Support', description: 'Alpine·Freestyle·Snowboard' }
+      title: 'Über die Plattform',
+      description1: 'Das Chinesische Ski-Punktesystem ist eine umfassende Wettkampf-Management-Plattform basierend auf den Standards des Wintersport-Zentrums. Es deckt alle Disziplinen des Alpinen Skilaufs, Freestyle-Skifahrens und Snowboardens ab und bietet maßgebliche und präzise Datenverwaltung und Punkteberechnung für chinesische Skiwettkämpfe.',
+      description2: 'Wir setzen uns für die digitale und standardisierte Entwicklung des chinesischen Skisports ein und bieten moderne Datenverwaltung, Punkteberechnung und Ergebnisstatistik-Tools für Athleten, Trainer, Veranstalter und Wettkampfrichter.',
+      multiTierPoints: { title: 'Mehrstufiges Punktesystem', description: '360/240/120 Punktestufen' },
+      uSeries: { title: 'U-Serie Events', description: 'U12/U15/U18 vollständig' },
+      officialCertification: { title: 'Offizielle Zertifizierung', description: 'Wintersport-Zentrum Standards' },
+      allDisciplines: { title: 'Alle Disziplinen', description: 'Alpin·Freestyle·Snowboard' }
     },
     systemFeatures: {
-      title: 'System Features',
-      feature1: 'China Alpine Skiing Points Rules Standard',
-      feature2: 'Freestyle/Snowboard 360/240/120 Points Tier System',
-      feature3: 'Big Air, Slopestyle, Parallel Events Full Coverage',
-      feature4: 'U12/U15/U18 Youth Series Event Management',
-      feature5: 'General Administration of Sport Winter Sports Center Certified',
-      feature6: 'Multi-discipline Points Rankings and Data Visualization'
+      title: 'Systemmerkmale',
+      feature1: 'China Alpin-Ski Punkteregelwerk',
+      feature2: 'Freestyle/Snowboard 360/240/120 Punktestufensystem',
+      feature3: 'Big Air, Slopestyle, Parallel Events vollständig abgedeckt',
+      feature4: 'U12/U15/U18 Jugendserien-Eventmanagement',
+      feature5: 'Vom Wintersport-Zentrum zertifiziert',
+      feature6: 'Multi-Disziplin Punkteranglisten und Datenvisualisierung'
+    }
+  },
+
+  // Disziplinen-Übersicht
+  disciplinesPage: {
+    hero: {
+      backLabel: 'Zurück zur Startseite',
+      title: 'Chinesisches Jugend-Ski-Punktesystem',
+      subtitle: 'Vier unabhängige Punktesysteme | Professionelle Eventmanagement-Plattform'
+    },
+    continuation: {
+      title: 'Punkteübertragungs-Mechanismus für vier Disziplinen',
+      description: 'Wissenschaftlich fundierte Übertragungsstrategie für konsistente Leistungsbewertung',
+      cards: [
+        {
+          id: 'carry-forward',
+          value: '×50%',
+          title: 'Übertragungsrate',
+          description: 'Am Saisonende werden 50% der Punkte jeder Disziplin in die nächste Saison übertragen',
+          accent: 'blue'
+        },
+        {
+          id: 'season',
+          value: '1.7.–30.6.',
+          title: 'Saisonzeitraum',
+          description: 'Ein einheitlicher Saisonzyklus vom 1. Juli bis 30. Juni gewährleistet konsistente Berechnungen',
+          accent: 'green'
+        },
+        {
+          id: 'best-two',
+          value: 'Beste 2',
+          title: 'Ergebnisberechnung',
+          description: 'Der Durchschnitt der besten zwei Ergebnisse jeder Disziplin wird als Saisonpunkte gewertet',
+          accent: 'purple'
+        }
+      ]
+    },
+    cardsSection: {
+      title: 'Wähle deine Disziplin',
+      ctaLabel: 'Disziplin öffnen',
+      cards: [
+        {
+          id: 'alpine',
+          name: 'Ski Alpin',
+          nameEn: 'Alpine Skiing',
+          icon: 'alpine',
+          color: 'from-blue-600 to-cyan-600',
+          description: 'v4.0 zeitbasierte Punkteformel mit A/B/C Event-Koeffizienten',
+          features: ['Abfahrt', 'Slalom', 'Riesenslalom', 'Super-G', 'Kombination']
+        },
+        {
+          id: 'snowboard-slopestyle',
+          name: 'Snowboard Slopestyle & Big Air',
+          nameEn: 'Snowboard Slopestyle & Big Air',
+          icon: 'snowboard',
+          color: 'from-orange-600 to-yellow-600',
+          description: '240/360/120 Punktestufen mit Juryumwandlung in Rankings',
+          features: ['Slopestyle', 'Big Air', 'Halfpipe']
+        },
+        {
+          id: 'snowboard-parallel',
+          name: 'Snowboard Parallel',
+          nameEn: 'Snowboard Parallel',
+          icon: 'snowboard',
+          color: 'from-purple-600 to-pink-600',
+          description: 'Zeitbasierte Rennpunkte mit K.o.-Runden',
+          features: ['Parallel-Riesenslalom (PGS)', 'Parallel-Slalom (PSL)']
+        },
+        {
+          id: 'freeski-slopestyle',
+          name: 'Freeski Slopestyle & Big Air',
+          nameEn: 'Freeski Slopestyle & Big Air',
+          icon: 'freeski',
+          color: 'from-red-600 to-rose-600',
+          description: '240/360/120 Punktestufen mit Trick-Schwierigkeitskoeffizienten',
+          features: ['Slopestyle', 'Big Air', 'Aerials']
+        }
+      ]
+    },
+    highlights: {
+      title: 'Kernfunktionen der Plattform',
+      items: [
+        {
+          id: 'independent',
+          icon: 'award',
+          title: 'Unabhängige Rankings',
+          description: 'Dedizierte Rankings und Analysen für jede Disziplin'
+        },
+        {
+          id: 'realtime',
+          icon: 'barChart',
+          title: 'Echtzeit-Berechnungen',
+          description: 'Punkte werden automatisch nach jedem Wettkampf aktualisiert'
+        },
+        {
+          id: 'u-series',
+          icon: 'target',
+          title: 'U-Serie Management',
+          description: 'Jugend-Altersgruppen U12, U15 und U18'
+        },
+        {
+          id: 'continuation',
+          icon: 'rotateCcw',
+          title: 'Übertragungs-Mechanismus',
+          description: '50% der Saisonpunkte werden für kontinuierliche Bewertung übertragen'
+        }
+      ]
+    }
+  },
+
+  // Athletenseite
+  athletesPage: {
+    pageTitle: 'Athletenverwaltung',
+    pageSubtitle: 'Chinesische Ski-Athletenprofile und Punkteanalysen',
+    searchPlaceholder: 'Nach Athletenname oder Provinz suchen...',
+    filterOptions: [
+      { value: 'all', label: 'Alle Disziplinen' },
+      { value: 'alpine', label: 'Ski Alpin' },
+      { value: 'freestyle', label: 'Freestyle-Skifahren' },
+      { value: 'snowboard', label: 'Snowboarding' }
+    ],
+    resultsSummary: '{count} Athleten gefunden',
+    exportLabel: 'Liste exportieren',
+    stats: [
+      { id: 'registered', value: '1.247', label: 'Registrierte Athleten', icon: 'user', theme: 'blue' },
+      { id: 'active', value: '563', label: 'Aktive Athleten', icon: 'trophy', theme: 'green' },
+      { id: 'awarded', value: '89', label: 'Medaillengewinner', icon: 'medal', theme: 'purple' },
+      { id: 'improved', value: '156', label: 'Punkteverbesserungen', icon: 'trendingUp', theme: 'red' }
+    ],
+    tableHeaders: {
+      rank: 'Rang',
+      athlete: 'Athlet',
+      discipline: 'Disziplin',
+      points: 'Punkte',
+      competitions: 'Events',
+      bestResult: 'Bestes Ergebnis',
+      province: 'Provinz'
+    },
+    list: []
+  },
+
+  // Über-uns-Seite
+  aboutPage: {
+    pageTitle: 'Über uns',
+    heroDescription: 'Die China Ski-Punkteplattform ist ein professioneller Punkteverwaltungsdienst für Skisport, der sich der Standardisierung und Professionalisierung des Skisports widmet',
+
+    platformTitle: 'Plattformeinführung',
+    platformDescription1: 'Die China Ski-Punkteplattform ist eine umfassende Skisport-Management-Plattform basierend auf offiziellen Punkteberechnungsregeln und Jugend-U-Serie-Wettbewerbsprogrammen.',
+    platformDescription2: 'Die Plattform unterstützt drei Hauptdisziplinen: Ski Alpin, Freestyle-Skifahren und Snowboarding, einschließlich Abfahrt, Slalom, Riesenslalom, Super-G, Kombination, Big Air, Slopestyle, Halfpipe und mehr.',
+    platformDescription3: 'Wir sind bestrebt, professionelle, präzise und effiziente digitale Verwaltungsdienste für den Skisport bereitzustellen.',
+
+    stats: {
+      pointsSystems: { value: '4', label: 'Punktesysteme' },
+      registeredAthletes: { value: '1000+', label: 'Registrierte Athleten' },
+      annualEvents: { value: '50+', label: 'Jährliche Events' },
+      onlineService: { value: '24/7', label: 'Online-Service' }
+    },
+
+    coreFeaturesTitle: 'Kernfunktionen',
+    coreFeaturesSubtitle: 'Professionelle, umfassende und benutzerfreundliche Ski-Event-Management-Lösung',
+
+    pointsCalculation: {
+      title: 'Punkteberechnungssystem',
+      description: 'Präzise Punkteberechnung basierend auf offiziellen Regeln mit Dual-Punktesystem'
+    },
+    eventManagement: {
+      title: 'Eventmanagement',
+      description: 'Vollständig digitales Management von der Anmeldung bis zur Ergebnisveröffentlichung'
+    },
+    athleteManagement: {
+      title: 'Athletenverwaltung',
+      description: 'Athletenregistrierung, Qualifikationsprüfung und Punkteerfassung'
+    },
+    dataAnalysis: {
+      title: 'Datenanalyse',
+      description: 'Professionelle Datenstatistiken und Visualisierungsberichte'
+    },
+
+    technicalFeaturesTitle: 'Technische Merkmale',
+
+    dualPointsEngine: {
+      title: 'Dual-Punkteberechnungs-Engine',
+      features: [
+        'Ski Alpin: Zeitbasierte Punkteberechnung',
+        'Freestyle/Snowboard: Rangbasierte 240/360/120 Stufen',
+        'Dynamische Strafpunktberechnung',
+        'Multi-Disziplin-Punkteverwaltung'
+      ]
+    },
+    rulesSupport: {
+      title: 'Regelwerk-Unterstützung',
+      features: [
+        'Ski Alpin Punkteberechnungsregeln',
+        'Nationales BA/SS Jugend-U-Serie-Programm',
+        'FIS-Regelwerk-Kompatibilität',
+        'Stätten-Technikstandards-Verwaltung'
+      ]
+    },
+    userExperience: {
+      title: 'Benutzererfahrung',
+      features: [
+        'Responsives Design, Multi-Plattform-Anpassung',
+        'Echtzeit-Datenaktualisierung',
+        'Intuitive Datenvisualisierung',
+        'Bequemer Arbeitsablauf'
+      ]
+    },
+
+    contactTitle: 'Kontaktieren Sie uns',
+    contactDescription: 'Bei Fragen oder Anregungen kontaktieren Sie uns gerne',
+
+    technicalSupport: {
+      title: 'Technischer Support',
+      email: 'E-Mail: support@ski-points.com',
+      phone: 'Telefon: 400-123-4567'
+    },
+    businessCooperation: {
+      title: 'Geschäftskooperation',
+      email: 'E-Mail: business@ski-points.com',
+      wechat: 'WeChat: ski-points-service'
     }
   },
 

@@ -795,118 +795,118 @@ export const fi: Partial<TranslationKeys> = {
   // Homepage
   home: {
     hero: {
-      title: 'China Skiing Points System',
+      title: 'Kiinalainen Hiihtopistejärjestelmä',
       titleEn: 'China Skiing Points System',
-      subtitle: 'Authoritative · Professional · Accurate skiing points management platform',
-      exploreDisciplines: 'Explore Disciplines',
-      freeRegister: 'Free Registration',
-      platformIntro: 'First choice platform for professional athletes, coaches, and event organizers • Certified by General Administration of Sport'
+      subtitle: 'Auktoritatiivinen · Ammattitaitoinen · Tarkka hiihtopisteiden hallintaalusta',
+      exploreDisciplines: 'Tutustu Lajeihin',
+      freeRegister: 'Ilmainen Rekisteröinti',
+      platformIntro: 'Ensisijainen alusta ammattilaisurheilijoille, valmentajille ja tapahtumajärjestäjille • Urheiluministeriön sertifioima'
     },
     features: {
-      title: 'Core Platform Features',
+      title: 'Alustan Keskeiset Ominaisuudet',
       platformIntro: {
-        title: 'Platform Introduction',
-        description: 'Learn about China Alpine Skiing Points System'
+        title: 'Tietoa Alustasta',
+        description: 'Tutustu Kiinan alppihiihtopistejärjestelmään'
       },
       memberRegister: {
-        title: 'Member Registration',
-        description: 'Register as a platform member to view personal points'
+        title: 'Jäsenrekisteröinti',
+        description: 'Rekisteröidy jäseneksi nähdäksesi henkilökohtaiset pisteesi'
       },
       eventAnnouncement: {
-        title: 'Event Announcements',
-        description: 'View the latest event schedules and announcements'
+        title: 'Kilpailuilmoitukset',
+        description: 'Katso uusimmat kilpailukalenterit ja ilmoitukset'
       },
       pointsRules: {
-        title: 'Points Rules',
-        description: 'View China Alpine Skiing points calculation rules'
+        title: 'Pistesäännöt',
+        description: 'Tutustu Kiinan alppihiihdon pistelaskentasääntöihin'
       },
       competitionManagement: {
-        title: 'Competition Management',
-        description: 'Manage competition information, results entry and statistics'
+        title: 'Kilpailuhallinta',
+        description: 'Hallinnoi kilpailutietoja, tulosten syöttöä ja tilastoja'
       },
       athleteProfiles: {
-        title: 'Athlete Profiles',
-        description: 'Athlete information management and points history'
+        title: 'Urheilijaprofilit',
+        description: 'Urheilijoiden tiedot ja pistehistoria'
       },
       onlineRegistration: {
-        title: 'Online Registration',
-        description: 'Convenient event registration and fee management'
+        title: 'Verkkoilmoittautuminen',
+        description: 'Helppo ilmoittautuminen ja maksujenhallinta'
       },
       dataAnalysis: {
-        title: 'Data Analysis',
-        description: 'In-depth data analysis and visualization reports'
+        title: 'Data-analyysi',
+        description: 'Syvällinen data-analyysi ja visuaaliset raportit'
       }
     },
     stats: {
-      title: 'Platform Data Overview',
-      subtitle: 'Real-time system data and operational status',
-      disciplines: { label: 'Ski Disciplines', value: '15+', description: 'Alpine·Freestyle·Snowboard' },
-      pointsRules: { label: 'Points Rules', value: '100%', description: 'Compliant with China Standards' },
-      updateCycle: { label: 'Points Update', value: '7 Days', description: 'Weekly Updates' },
-      users: { label: 'Registered Users', value: '1,200+', description: 'Athletes & Coaches' }
+      title: 'Alustan Tilastot',
+      subtitle: 'Reaaliaikainen järjestelmädata ja toimintatila',
+      disciplines: { label: 'Hiihtolajit', value: '15+', description: 'Alppihiihto·Freeski·Lumilautailu' },
+      pointsRules: { label: 'Pistesäännöt', value: '100%', description: 'Kiinan standardien mukainen' },
+      updateCycle: { label: 'Pistepäivitys', value: '7 Päivää', description: 'Viikottaiset päivitykset' },
+      users: { label: 'Rekisteröityneet', value: '1 200+', description: 'Urheilijat ja valmentajat' }
     },
     news: {
-      title: 'Latest Updates',
-      pauseCarousel: 'Pause Carousel',
-      continueCarousel: 'Continue Carousel'
+      title: 'Uusimmat Uutiset',
+      pauseCarousel: 'Keskeytä Karuselli',
+      continueCarousel: 'Jatka Karusellia'
     },
     latestResults: {
-      title: 'Latest Competition Results',
-      subtitle: 'Real-time competition results and points rankings',
-      recentResults: 'Recent Results',
-      liveUpdate: 'Live Update',
-      viewMore: 'View More Events →'
+      title: 'Uusimmat Kilpailutulokset',
+      subtitle: 'Reaaliaikaiset kilpailutulokset ja pistesijoitukset',
+      recentResults: 'Viimeisimmät Tulokset',
+      liveUpdate: 'Live-päivitys',
+      viewMore: 'Katso Lisää Kilpailuja →'
     },
     rankings: {
-      title: 'Points Leaderboard',
-      updatedOn: 'Updated on',
-      points: 'Points',
-      viewFullRankings: 'View Full Rankings →'
+      title: 'Pistetaulukko',
+      updatedOn: 'Päivitetty',
+      points: 'Pisteet',
+      viewFullRankings: 'Näytä Koko Ranking →'
     },
     memberWelcome: {
-      welcomeBack: 'Welcome Back',
-      accountStatus: 'Account Active',
-      pendingReview: 'Pending Review',
-      currentPoints: 'Current Points',
-      systemPermissions: 'System Permissions',
-      personalCenter: 'Personal Center',
-      myPoints: 'My Points',
-      adminPanel: 'Admin Panel'
+      welcomeBack: 'Tervetuloa Takaisin',
+      accountStatus: 'Tili Aktiivinen',
+      pendingReview: 'Odottaa Tarkistusta',
+      currentPoints: 'Nykyiset Pisteet',
+      systemPermissions: 'Järjestelmäoikeudet',
+      personalCenter: 'Henkilökohtainen Keskus',
+      myPoints: 'Omat Pisteet',
+      adminPanel: 'Hallintapaneeli'
     },
     memberValue: {
-      unlockFeatures: 'Unlock All Professional Features',
-      registerToUnlock: 'Register as a member to enjoy complete points management and event services',
+      unlockFeatures: 'Avaa Kaikki Ammattiominaisuudet',
+      registerToUnlock: 'Rekisteröidy jäseneksi nauttiaksesi täydellisestä pisteidenhallinnasta ja kilpailupalveluista',
       pointsSystem: {
-        title: 'Points System',
-        features: ['Personal points query and history tracking', 'Real-time points leaderboard', 'Points calculator tool', 'Points trend analysis']
+        title: 'Pistejärjestelmä',
+        features: ['Henkilökohtainen pistekysely ja historian seuranta', 'Reaaliaikainen pistetaulukko', 'Pistelaskuri', 'Trendianalyysi']
       },
       eventManagement: {
-        title: 'Event Management',
-        features: ['View competition list and event schedule', 'Online event registration', 'Real-time results viewing', 'Event result notifications']
+        title: 'Tapahtumahallinta',
+        features: ['Näytä kilpailulista ja kalenteri', 'Verkkoilmoittautuminen', 'Reaaliaikaiset tulokset', 'Tulosilmoitukset']
       },
       professionalFeatures: {
-        title: 'Professional Features',
-        features: ['Personal athlete profile management', 'Detailed points rules', 'Data statistics and analysis', 'Technical support service']
+        title: 'Ammattiominaisuudet',
+        features: ['Henkilökohtainen urheilijaprofiili', 'Yksityiskohtaiset pistesäännöt', 'Tilastot ja analyysi', 'Tekninen tuki']
       },
-      registerUnlock: 'Register to Unlock'
+      registerUnlock: 'Rekisteröidy Avataksesi'
     },
     about: {
-      title: 'About Platform',
-      description1: 'China Skiing Points System is a comprehensive competition management platform built based on the standards of the Winter Sports Management Center of the General Administration of Sport. Covering all disciplines of alpine skiing, freestyle skiing, and snowboarding, using multi-tier points calculation algorithms compliant with China standards, providing authoritative and accurate data management and points calculation services for Chinese skiing competitions.',
-      description2: 'We are committed to promoting the digital and standardized development of Chinese skiing sports, providing modern data management, points calculation, and results statistics tools for athletes, coaches, event organizers, and competition referees, comprehensively covering big air, slopestyle, parallel events and other snow sports, improving the organizational and competitive level of Chinese skiing.',
-      multiTierPoints: { title: 'Multi-tier Points System', description: '360/240/120 Points Tiers' },
-      uSeries: { title: 'U-Series Events', description: 'U12/U15/U18 Full Coverage' },
-      officialCertification: { title: 'Official Certification', description: 'Winter Sports Center Standards' },
-      allDisciplines: { title: 'All Disciplines Support', description: 'Alpine·Freestyle·Snowboard' }
+      title: 'Tietoa Alustasta',
+      description1: 'Kiinalainen Hiihtopistejärjestelmä on kattava kilpailunhallinta-alusta, joka on rakennettu Urheiluministeriön Talviurheilukeskuksen standardien mukaan. Se kattaa kaikki alppihiihdon, freeskin ja lumilautailun lajit, käyttää monitasoisia pistelaskenta-algoritmeja Kiinan standardien mukaisesti ja tarjoaa auktoritatiivisia ja tarkkoja datapalveluita kiinalaisille hiihtokilpailuille.',
+      description2: 'Olemme sitoutuneet edistämään kiinalaisen hiihtourheilun digitaalista ja standardoitua kehitystä, tarjoamalla moderneja työkaluja tiedonhallintaan, pistelaskentaan ja tulosstatistiikkaan urheilijoille, valmentajille, järjestäjille ja tuomareille, kattaen laajasti big air, slopestyle, rinnakkais- ja muut talvilajit, parantaen kiinalaisen hiihtourheilun organisatorista ja kilpailullista tasoa.',
+      multiTierPoints: { title: 'Monitasoinen Pistejärjestelmä', description: 'Pistetasot 360/240/120' },
+      uSeries: { title: 'U-sarja Kilpailut', description: 'Täysi kattavuus U12/U15/U18' },
+      officialCertification: { title: 'Virallinen Sertifiointi', description: 'Talviurheilukeskuksen standardit' },
+      allDisciplines: { title: 'Kaikki Lajit', description: 'Alppihiihto·Freeski·Lumilautailu' }
     },
     systemFeatures: {
-      title: 'System Features',
-      feature1: 'China Alpine Skiing Points Rules Standard',
-      feature2: 'Freestyle/Snowboard 360/240/120 Points Tier System',
-      feature3: 'Big Air, Slopestyle, Parallel Events Full Coverage',
-      feature4: 'U12/U15/U18 Youth Series Event Management',
-      feature5: 'General Administration of Sport Winter Sports Center Certified',
-      feature6: 'Multi-discipline Points Rankings and Data Visualization'
+      title: 'Järjestelmän Ominaisuudet',
+      feature1: 'Kiinan alppihiihtopisteiden sääntöstandardi',
+      feature2: 'Freeski/Lumilautailu 360/240/120 pistetasojärjestelmä',
+      feature3: 'Täysi kattavuus Big Air, Slopestyle ja rinnakkaislajit',
+      feature4: 'U12/U15/U18 juniorisarjojen hallinta',
+      feature5: 'Urheiluministeriön Talviurheilukeskuksen sertifioima',
+      feature6: 'Monilajiset pistesijoitukset ja datavisualisointi'
     }
   }
 };

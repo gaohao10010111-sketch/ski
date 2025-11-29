@@ -900,13 +900,233 @@ export const ja: Partial<TranslationKeys> = {
       allDisciplines: { title: 'All Disciplines Support', description: 'Alpine·Freestyle·Snowboard' }
     },
     systemFeatures: {
-      title: 'System Features',
-      feature1: 'China Alpine Skiing Points Rules Standard',
-      feature2: 'Freestyle/Snowboard 360/240/120 Points Tier System',
-      feature3: 'Big Air, Slopestyle, Parallel Events Full Coverage',
-      feature4: 'U12/U15/U18 Youth Series Event Management',
-      feature5: 'General Administration of Sport Winter Sports Center Certified',
-      feature6: 'Multi-discipline Points Rankings and Data Visualization'
+      title: 'システム特徴',
+      feature1: '中国アルペンスキーポイントルール標準',
+      feature2: 'フリースタイル/スノーボード 360/240/120 ポイント階層システム',
+      feature3: 'ビッグエア、スロープスタイル、パラレル種目を網羅',
+      feature4: 'U12/U15/U18 ユースシリーズイベント管理',
+      feature5: 'ウィンタースポーツセンター認証',
+      feature6: '多種目ポイントランキングとデータ可視化'
+    }
+  },
+
+  // 種目ページ
+  disciplinesPage: {
+    hero: {
+      backLabel: 'ホームに戻る',
+      title: '中国ユーススキーポイントランキング公式プラットフォーム',
+      subtitle: '4つの独立したポイントシステム | プロフェッショナルイベント管理'
+    },
+    continuation: {
+      title: '4種目ポイント継続メカニズム',
+      description: '一貫したパフォーマンス評価のための科学的継続戦略',
+      cards: [
+        {
+          id: 'carry-forward',
+          value: '×50%',
+          title: '継続率',
+          description: 'シーズン終了時、各種目のポイントの50%が翌シーズンに継続',
+          accent: 'blue'
+        },
+        {
+          id: 'season',
+          value: '7/1-6/30',
+          title: 'シーズン期間',
+          description: '7月1日から6月30日までの統一シーズンサイクル',
+          accent: 'green'
+        },
+        {
+          id: 'best-two',
+          value: 'ベスト2',
+          title: '成績計算',
+          description: '各種目のベスト2成績の平均がシーズンポイント',
+          accent: 'purple'
+        }
+      ]
+    },
+    cardsSection: {
+      title: '種目を選択',
+      ctaLabel: '種目システムへ',
+      cards: [
+        {
+          id: 'alpine',
+          name: 'アルペンスキー',
+          nameEn: 'Alpine Skiing',
+          icon: 'alpine',
+          color: 'from-blue-600 to-cyan-600',
+          description: 'v4.0 タイムベースポイント計算式 A/B/C級係数',
+          features: ['滑降', '回転', '大回転', 'スーパーG', '複合']
+        },
+        {
+          id: 'snowboard-slopestyle',
+          name: 'スノーボード スロープスタイル & ビッグエア',
+          nameEn: 'Snowboard Slopestyle & Big Air',
+          icon: 'snowboard',
+          color: 'from-orange-600 to-yellow-600',
+          description: '240/360/120 ポイント階層、審判評価をランキングに変換',
+          features: ['スロープスタイル', 'ビッグエア', 'ハーフパイプ']
+        },
+        {
+          id: 'snowboard-parallel',
+          name: 'スノーボード パラレル',
+          nameEn: 'Snowboard Parallel',
+          icon: 'snowboard',
+          color: 'from-purple-600 to-pink-600',
+          description: 'タイムベースレースポイント、トーナメント方式',
+          features: ['パラレル大回転(PGS)', 'パラレル回転(PSL)']
+        },
+        {
+          id: 'freeski-slopestyle',
+          name: 'フリースキー スロープスタイル & ビッグエア',
+          nameEn: 'Freeski Slopestyle & Big Air',
+          icon: 'freeski',
+          color: 'from-red-600 to-rose-600',
+          description: '240/360/120 ポイント階層、トリック難易度係数',
+          features: ['スロープスタイル', 'ビッグエア', 'エアリアル']
+        }
+      ]
+    },
+    highlights: {
+      title: 'プラットフォームの特徴',
+      items: [
+        {
+          id: 'independent',
+          icon: 'award',
+          title: '独立ランキング',
+          description: '各種目の専用ランキングと分析'
+        },
+        {
+          id: 'realtime',
+          icon: 'barChart',
+          title: 'リアルタイム計算',
+          description: '大会後に自動ポイント更新'
+        },
+        {
+          id: 'u-series',
+          icon: 'target',
+          title: 'U系列管理',
+          description: 'U12、U15、U18年齢別グループ'
+        },
+        {
+          id: 'continuation',
+          icon: 'rotateCcw',
+          title: '継続メカニズム',
+          description: 'シーズンポイントの50%が継続評価用に継続'
+        }
+      ]
+    }
+  },
+
+  // 選手ページ
+  athletesPage: {
+    pageTitle: '選手管理',
+    pageSubtitle: '中国スキー選手プロファイルとポイント統計',
+    searchPlaceholder: '選手名または省で検索...',
+    filterOptions: [
+      { value: 'all', label: '全種目' },
+      { value: 'alpine', label: 'アルペンスキー' },
+      { value: 'freestyle', label: 'フリースタイルスキー' },
+      { value: 'snowboard', label: 'スノーボード' }
+    ],
+    resultsSummary: '{count} 名の選手が見つかりました',
+    exportLabel: 'リストをエクスポート',
+    stats: [
+      { id: 'registered', value: '1,247', label: '登録選手', icon: 'user', theme: 'blue' },
+      { id: 'active', value: '563', label: 'アクティブ選手', icon: 'trophy', theme: 'green' },
+      { id: 'awarded', value: '89', label: 'メダリスト', icon: 'medal', theme: 'purple' },
+      { id: 'improved', value: '156', label: 'ポイント向上', icon: 'trendingUp', theme: 'red' }
+    ],
+    tableHeaders: {
+      rank: '順位',
+      athlete: '選手',
+      discipline: '種目',
+      points: 'ポイント',
+      competitions: '大会数',
+      bestResult: '最高成績',
+      province: '所属省'
+    },
+    list: []
+  },
+
+  // 概要ページ
+  aboutPage: {
+    pageTitle: '概要',
+    heroDescription: '中国スキーポイントプラットフォームはスキースポーツの標準化と専門化に特化した専門ポイント管理サービスです',
+
+    platformTitle: 'プラットフォーム紹介',
+    platformDescription1: '中国スキーポイントプラットフォームは公式ポイント計算ルールとユースUシリーズ競技プログラムに基づく総合スキー管理プラットフォームです。',
+    platformDescription2: 'アルペンスキー、フリースタイルスキー、スノーボードの3大種目をサポートし、滑降、回転、大回転、スーパーG、複合、ビッグエア、スロープスタイル、ハーフパイプなどを含みます。',
+    platformDescription3: 'スキースポーツに専門的、正確、効率的なデジタル管理サービスを提供することに尽力しています。',
+
+    stats: {
+      pointsSystems: { value: '4', label: 'ポイントシステム' },
+      registeredAthletes: { value: '1000+', label: '登録選手' },
+      annualEvents: { value: '50+', label: '年間イベント' },
+      onlineService: { value: '24/7', label: 'オンラインサービス' }
+    },
+
+    coreFeaturesTitle: 'コア機能',
+    coreFeaturesSubtitle: '専門的で包括的かつ使いやすいスキーイベント管理ソリューション',
+
+    pointsCalculation: {
+      title: 'ポイント計算システム',
+      description: 'デュアルポイントシステムによる公式ルールベースの正確な計算'
+    },
+    eventManagement: {
+      title: 'イベント管理',
+      description: '登録から結果発表までの完全デジタル管理'
+    },
+    athleteManagement: {
+      title: '選手管理',
+      description: '選手登録、資格審査、ポイント記録管理'
+    },
+    dataAnalysis: {
+      title: 'データ分析',
+      description: '専門的なデータ統計と可視化レポート'
+    },
+
+    technicalFeaturesTitle: '技術特徴',
+
+    dualPointsEngine: {
+      title: 'デュアルポイント計算エンジン',
+      features: [
+        'アルペンスキー：タイムベース計算',
+        'フリースタイル/スノーボード：ランクベース240/360/120階層',
+        '動的ペナルティポイント計算',
+        '多種目ポイント管理'
+      ]
+    },
+    rulesSupport: {
+      title: 'ルールサポート',
+      features: [
+        'アルペンスキーポイント計算ルール',
+        '全国BA/SSユースUシリーズプログラム',
+        'FISルール互換性',
+        '施設技術基準管理'
+      ]
+    },
+    userExperience: {
+      title: 'ユーザー体験',
+      features: [
+        'レスポンシブデザイン、マルチプラットフォーム対応',
+        'リアルタイムデータ更新',
+        '直感的なデータ可視化',
+        '便利なワークフロー'
+      ]
+    },
+
+    contactTitle: 'お問い合わせ',
+    contactDescription: 'ご質問やご提案がございましたら、お気軽にお問い合わせください',
+
+    technicalSupport: {
+      title: '技術サポート',
+      email: 'メール：support@ski-points.com',
+      phone: '電話：400-123-4567'
+    },
+    businessCooperation: {
+      title: 'ビジネス協力',
+      email: 'メール：business@ski-points.com',
+      wechat: 'WeChat：ski-points-service'
     }
   }
 };

@@ -795,118 +795,118 @@ export const es: Partial<TranslationKeys> = {
   // Homepage
   home: {
     hero: {
-      title: 'China Skiing Points System',
+      title: 'Sistema de Puntos de Esquí de China',
       titleEn: 'China Skiing Points System',
-      subtitle: 'Authoritative · Professional · Accurate skiing points management platform',
-      exploreDisciplines: 'Explore Disciplines',
-      freeRegister: 'Free Registration',
-      platformIntro: 'First choice platform for professional athletes, coaches, and event organizers • Certified by General Administration of Sport'
+      subtitle: 'Autoritativo · Profesional · Plataforma precisa de gestión de puntos de esquí',
+      exploreDisciplines: 'Explorar Disciplinas',
+      freeRegister: 'Registro Gratuito',
+      platformIntro: 'Primera opción para atletas, entrenadores y organizadores profesionales • Certificado por la Administración General del Deporte'
     },
     features: {
-      title: 'Core Platform Features',
+      title: 'Funciones Principales de la Plataforma',
       platformIntro: {
-        title: 'Platform Introduction',
-        description: 'Learn about China Alpine Skiing Points System'
+        title: 'Introducción a la Plataforma',
+        description: 'Conoce el Sistema de Puntos de Esquí Alpino de China'
       },
       memberRegister: {
-        title: 'Member Registration',
-        description: 'Register as a platform member to view personal points'
+        title: 'Registro de Miembros',
+        description: 'Regístrate como miembro de la plataforma para ver tus puntos personales'
       },
       eventAnnouncement: {
-        title: 'Event Announcements',
-        description: 'View the latest event schedules and announcements'
+        title: 'Anuncios de Eventos',
+        description: 'Consulta los calendarios y anuncios de eventos más recientes'
       },
       pointsRules: {
-        title: 'Points Rules',
-        description: 'View China Alpine Skiing points calculation rules'
+        title: 'Reglas de Puntos',
+        description: 'Consulta las reglas de cálculo de puntos de esquí alpino de China'
       },
       competitionManagement: {
-        title: 'Competition Management',
-        description: 'Manage competition information, results entry and statistics'
+        title: 'Gestión de Competiciones',
+        description: 'Gestiona información de competiciones, entrada de resultados y estadísticas'
       },
       athleteProfiles: {
-        title: 'Athlete Profiles',
-        description: 'Athlete information management and points history'
+        title: 'Perfiles de Atletas',
+        description: 'Gestión de información de atletas e historial de puntos'
       },
       onlineRegistration: {
-        title: 'Online Registration',
-        description: 'Convenient event registration and fee management'
+        title: 'Inscripción en Línea',
+        description: 'Inscripción conveniente en eventos y gestión de tarifas'
       },
       dataAnalysis: {
-        title: 'Data Analysis',
-        description: 'In-depth data analysis and visualization reports'
+        title: 'Análisis de Datos',
+        description: 'Análisis de datos detallado e informes visuales'
       }
     },
     stats: {
-      title: 'Platform Data Overview',
-      subtitle: 'Real-time system data and operational status',
-      disciplines: { label: 'Ski Disciplines', value: '15+', description: 'Alpine·Freestyle·Snowboard' },
-      pointsRules: { label: 'Points Rules', value: '100%', description: 'Compliant with China Standards' },
-      updateCycle: { label: 'Points Update', value: '7 Days', description: 'Weekly Updates' },
-      users: { label: 'Registered Users', value: '1,200+', description: 'Athletes & Coaches' }
+      title: 'Datos de la Plataforma',
+      subtitle: 'Datos del sistema en tiempo real y estado operativo',
+      disciplines: { label: 'Disciplinas de Esquí', value: '15+', description: 'Alpino·Freestyle·Snowboard' },
+      pointsRules: { label: 'Reglas de Puntos', value: '100%', description: 'Conforme a Estándares de China' },
+      updateCycle: { label: 'Actualización de Puntos', value: '7 Días', description: 'Actualizaciones Semanales' },
+      users: { label: 'Usuarios Registrados', value: '1.200+', description: 'Atletas y Entrenadores' }
     },
     news: {
-      title: 'Latest Updates',
-      pauseCarousel: 'Pause Carousel',
-      continueCarousel: 'Continue Carousel'
+      title: 'Últimas Actualizaciones',
+      pauseCarousel: 'Pausar Carrusel',
+      continueCarousel: 'Continuar Carrusel'
     },
     latestResults: {
-      title: 'Latest Competition Results',
-      subtitle: 'Real-time competition results and points rankings',
-      recentResults: 'Recent Results',
-      liveUpdate: 'Live Update',
-      viewMore: 'View More Events →'
+      title: 'Últimos Resultados de Competiciones',
+      subtitle: 'Resultados y clasificaciones de puntos en tiempo real',
+      recentResults: 'Resultados Recientes',
+      liveUpdate: 'Actualización en Vivo',
+      viewMore: 'Ver Más Eventos →'
     },
     rankings: {
-      title: 'Points Leaderboard',
-      updatedOn: 'Updated on',
-      points: 'Points',
-      viewFullRankings: 'View Full Rankings →'
+      title: 'Clasificación de Puntos',
+      updatedOn: 'Actualizado el',
+      points: 'Puntos',
+      viewFullRankings: 'Ver Clasificación Completa →'
     },
     memberWelcome: {
-      welcomeBack: 'Welcome Back',
-      accountStatus: 'Account Active',
-      pendingReview: 'Pending Review',
-      currentPoints: 'Current Points',
-      systemPermissions: 'System Permissions',
-      personalCenter: 'Personal Center',
-      myPoints: 'My Points',
-      adminPanel: 'Admin Panel'
+      welcomeBack: 'Bienvenido de Nuevo',
+      accountStatus: 'Cuenta Activa',
+      pendingReview: 'Revisión Pendiente',
+      currentPoints: 'Puntos Actuales',
+      systemPermissions: 'Permisos del Sistema',
+      personalCenter: 'Centro Personal',
+      myPoints: 'Mis Puntos',
+      adminPanel: 'Panel de Administración'
     },
     memberValue: {
-      unlockFeatures: 'Unlock All Professional Features',
-      registerToUnlock: 'Register as a member to enjoy complete points management and event services',
+      unlockFeatures: 'Desbloquea Todas las Funciones Profesionales',
+      registerToUnlock: 'Regístrate como miembro para disfrutar de la gestión completa de puntos y servicios de eventos',
       pointsSystem: {
-        title: 'Points System',
-        features: ['Personal points query and history tracking', 'Real-time points leaderboard', 'Points calculator tool', 'Points trend analysis']
+        title: 'Sistema de Puntos',
+        features: ['Consulta de puntos personales y seguimiento de historial', 'Clasificación de puntos en tiempo real', 'Herramienta de calculadora de puntos', 'Análisis de tendencias de puntos']
       },
       eventManagement: {
-        title: 'Event Management',
-        features: ['View competition list and event schedule', 'Online event registration', 'Real-time results viewing', 'Event result notifications']
+        title: 'Gestión de Eventos',
+        features: ['Ver lista de competiciones y calendario', 'Inscripción en línea a eventos', 'Visualización de resultados en tiempo real', 'Notificaciones de resultados']
       },
       professionalFeatures: {
-        title: 'Professional Features',
-        features: ['Personal athlete profile management', 'Detailed points rules', 'Data statistics and analysis', 'Technical support service']
+        title: 'Funciones Profesionales',
+        features: ['Gestión de perfil personal de atleta', 'Reglas de puntos detalladas', 'Estadísticas y análisis de datos', 'Servicio de soporte técnico']
       },
-      registerUnlock: 'Register to Unlock'
+      registerUnlock: 'Registrarse para Desbloquear'
     },
     about: {
-      title: 'About Platform',
-      description1: 'China Skiing Points System is a comprehensive competition management platform built based on the standards of the Winter Sports Management Center of the General Administration of Sport. Covering all disciplines of alpine skiing, freestyle skiing, and snowboarding, using multi-tier points calculation algorithms compliant with China standards, providing authoritative and accurate data management and points calculation services for Chinese skiing competitions.',
-      description2: 'We are committed to promoting the digital and standardized development of Chinese skiing sports, providing modern data management, points calculation, and results statistics tools for athletes, coaches, event organizers, and competition referees, comprehensively covering big air, slopestyle, parallel events and other snow sports, improving the organizational and competitive level of Chinese skiing.',
-      multiTierPoints: { title: 'Multi-tier Points System', description: '360/240/120 Points Tiers' },
-      uSeries: { title: 'U-Series Events', description: 'U12/U15/U18 Full Coverage' },
-      officialCertification: { title: 'Official Certification', description: 'Winter Sports Center Standards' },
-      allDisciplines: { title: 'All Disciplines Support', description: 'Alpine·Freestyle·Snowboard' }
+      title: 'Acerca de la Plataforma',
+      description1: 'El Sistema de Puntos de Esquí de China es una plataforma integral de gestión de competiciones basada en los estándares del Centro de Deportes de Invierno de la Administración General del Deporte. Cubre todas las disciplinas de esquí alpino, esquí estilo libre y snowboard, utilizando algoritmos de cálculo de puntos multinivel conformes a los estándares de China, proporcionando servicios autorizados y precisos de gestión de datos y cálculo de puntos para las competiciones de esquí chinas.',
+      description2: 'Nos comprometemos a promover el desarrollo digital y estandarizado del esquí chino, proporcionando herramientas modernas de gestión de datos, cálculo de puntos y estadísticas de resultados para atletas, entrenadores, organizadores de eventos y árbitros, abarcando de manera integral big air, slopestyle, eventos paralelos y otros deportes de nieve, mejorando el nivel organizativo y competitivo del esquí chino.',
+      multiTierPoints: { title: 'Sistema de Puntos Multinivel', description: 'Niveles de Puntos 360/240/120' },
+      uSeries: { title: 'Eventos Serie U', description: 'Cobertura Completa U12/U15/U18' },
+      officialCertification: { title: 'Certificación Oficial', description: 'Estándares del Centro de Deportes de Invierno' },
+      allDisciplines: { title: 'Todas las Disciplinas', description: 'Alpino·Freestyle·Snowboard' }
     },
     systemFeatures: {
-      title: 'System Features',
-      feature1: 'China Alpine Skiing Points Rules Standard',
-      feature2: 'Freestyle/Snowboard 360/240/120 Points Tier System',
-      feature3: 'Big Air, Slopestyle, Parallel Events Full Coverage',
-      feature4: 'U12/U15/U18 Youth Series Event Management',
-      feature5: 'General Administration of Sport Winter Sports Center Certified',
-      feature6: 'Multi-discipline Points Rankings and Data Visualization'
+      title: 'Características del Sistema',
+      feature1: 'Estándar de Reglas de Puntos de Esquí Alpino de China',
+      feature2: 'Sistema de Niveles de Puntos 360/240/120 para Freestyle/Snowboard',
+      feature3: 'Cobertura Completa de Big Air, Slopestyle y Eventos Paralelos',
+      feature4: 'Gestión de Eventos de la Serie Juvenil U12/U15/U18',
+      feature5: 'Certificado por el Centro de Deportes de Invierno de la Administración General del Deporte',
+      feature6: 'Clasificaciones de Puntos Multidisciplina y Visualización de Datos'
     }
   }
 };
