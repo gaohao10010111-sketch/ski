@@ -8,7 +8,7 @@ export default function PointsPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">积分系统</h1>
           <p className="text-xl text-gray-600">
-            中国滑雪积分查询与管理平台
+            中国滑雪青少年积分排名查询与管理
           </p>
         </div>
 

@@ -8,8 +8,8 @@ export default function StructuredData({ type = 'sportsOrganization' }: Structur
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': type === 'website' ? 'WebSite' : 'SportsOrganization',
-    name: '中国高山滑雪积分管理平台',
-    alternateName: 'China Alpine Skiing Points Management',
+    name: '中国滑雪青少年积分排名官方平台',
+    alternateName: 'China Youth Skiing Points Ranking Platform',
     description: '基于简化积分规则的专业滑雪竞赛数据管理平台，为中国高山滑雪运动提供积分计算、成绩管理、赛事组织等一站式解决方案',
     url: 'https://guangyikeji.github.io/ski/',
     logo: 'https://guangyikeji.github.io/ski/images/logo.png',
@@ -32,12 +32,12 @@ export default function StructuredData({ type = 'sportsOrganization' }: Structur
       },
       offers: {
         '@type': 'Service',
-        name: '中国高山滑雪积分管理 ',
+        name: '中国滑雪青少年积分排名服务',
         description: '简化积分计算、运动员管理、赛事组织、成绩统计',
         serviceType: 'Sports Management Software',
         provider: {
           '@type': 'Organization',
-          name: '中国高山滑雪积分管理平台'
+          name: '中国滑雪青少年积分排名官方平台'
         }
       }
     }),

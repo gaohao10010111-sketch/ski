@@ -122,7 +122,7 @@ export default function LoginPage() {
           <div className="text-white text-center max-w-md">
             <h1 className="text-4xl font-bold mb-6">欢迎回来</h1>
             <p className="text-xl text-blue-100 mb-8">
-              登录您的中国高山滑雪积分管理平台账户
+              登录您的中国滑雪青少年积分排名官方平台账户
             </p>
             <div className="space-y-4">
               <div className="flex items-center text-blue-100">

@@ -147,7 +147,7 @@ export default function GlobalNavigation() {
                 <Mountain className="h-6 w-6 text-ski-blue" />
                 <span className="text-base lg:text-lg font-bold text-ski-navy">
                   {language === 'zh'
-                    ? t.navigation?.title || '中国滑雪积分系统'
+                    ? t.navigation?.title || '中国滑雪青少年积分排名官方平台'
                     : t.navigation?.titleShort || 'China Ski Points'}
                 </span>
               </Link>

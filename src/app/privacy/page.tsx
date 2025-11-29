@@ -93,7 +93,7 @@ export default function PrivacyPage() {
           </div>
 
           <p className="text-gray-600 leading-relaxed">
-            中国滑雪积分系统（以下简称&ldquo;本平台&rdquo;）非常重视用户的隐私保护。本隐私政策说明了我们如何收集、使用、存储和保护您的个人信息。
+            中国滑雪青少年积分排名官方平台（以下简称&ldquo;本平台&rdquo;）非常重视用户的隐私保护。本隐私政策说明了我们如何收集、使用、存储和保护您的个人信息。
           </p>
 
           <div className="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
@@ -143,7 +143,7 @@ export default function PrivacyPage() {
 
         {/* Footer */}
         <div className="mt-8 text-center text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} 中国滑雪积分系统 版权所有</p>
+          <p>© {new Date().getFullYear()} 中国滑雪青少年积分排名官方平台 版权所有</p>
         </div>
       </div>
     </div>

@@ -76,7 +76,7 @@ export default function RegisterPage() {
           <div className="text-white text-center max-w-md">
             <h1 className="text-4xl font-bold mb-6">加入我们</h1>
             <p className="text-xl text-green-100 mb-8">
-              成为中国高山滑雪积分管理平台会员
+              成为中国滑雪青少年积分排名官方平台会员
             </p>
             <div className="space-y-4">
               <div className="flex items-center text-green-100">

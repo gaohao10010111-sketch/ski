@@ -7,7 +7,21 @@ import { ChevronDown, Globe } from 'lucide-react';
 const supportedLanguages = ['zh', 'en', 'ja', 'ko', 'de', 'fr', 'it', 'ru', 'no', 'sv', 'fi', 'es'] as const;
 type LanguageCode = (typeof supportedLanguages)[number];
 
-// 移除国旗图标，因为一种语言可能被多个国家使用
+// 每种语言用其本地语言显示名称（不随界面语言变化）
+const nativeLanguageNames: Record<LanguageCode, string> = {
+  zh: '中文',
+  en: 'English',
+  ja: '日本語',
+  ko: '한국어',
+  de: 'Deutsch',
+  fr: 'Français',
+  it: 'Italiano',
+  ru: 'Русский',
+  no: 'Norsk',
+  sv: 'Svenska',
+  fi: 'Suomi',
+  es: 'Español'
+};
 
 export default function LanguageSwitcher() {
   const { language, setLanguage, t } = useTranslation();
@@ -27,13 +41,14 @@ export default function LanguageSwitcher() {
     };
   }, []);
 
+  // 使用本地语言名称，不随界面语言变化
   const languageOptions = useMemo(
     () =>
       supportedLanguages.map((code) => ({
         code,
-        label: t.languageSelector.languages[code] ?? code.toUpperCase()
+        label: nativeLanguageNames[code]
       })),
-    [t]
+    []
   );
 
   const currentLanguageLabel =

@@ -214,6 +214,17 @@ export default function PointsRankingsPage() {
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
+                {filteredRankings.length === 0 ? (
+                  <tr>
+                    <td colSpan={8} className="px-6 py-12 text-center">
+                      <div className="text-gray-500">
+                        <Trophy className="h-12 w-12 mx-auto mb-4 text-gray-300" />
+                        <p className="text-lg font-medium">暂无符合条件的运动员</p>
+                        <p className="text-sm mt-1">请尝试调整筛选条件</p>
+                      </div>
+                    </td>
+                  </tr>
+                ) : null}
                 {filteredRankings.map((athlete) => (
                   <tr key={athlete.rank} className="hover:bg-gray-50">
                     <td className="px-6 py-4 whitespace-nowrap">

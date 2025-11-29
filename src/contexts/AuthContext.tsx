@@ -291,7 +291,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
       dispatch({ type: 'LOGIN_SUCCESS', payload: user })
       try {
-        localStorage.setItem('auth_user', JSON.stringify(user))
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('auth_user', JSON.stringify(user))
+        }
       } catch { /* localStorage not available */ }
     } catch (error) {
       dispatch({ type: 'LOGIN_FAILURE', payload: error instanceof Error ? error.message : '注册失败' })

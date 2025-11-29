@@ -93,7 +93,7 @@ export default function TermsPage() {
           </div>
 
           <p className="text-gray-600 leading-relaxed">
-            欢迎使用中国滑雪积分系统（以下简称&ldquo;本平台&rdquo;）。在使用本平台服务前，请仔细阅读以下条款。使用本平台即表示您同意遵守这些条款。
+            欢迎使用中国滑雪青少年积分排名官方平台（以下简称&ldquo;本平台&rdquo;）。在使用本平台服务前，请仔细阅读以下条款。使用本平台即表示您同意遵守这些条款。
           </p>
 
           <div className="mt-4 p-3 bg-amber-50 rounded-lg border border-amber-200">
@@ -153,7 +153,7 @@ export default function TermsPage() {
 
         {/* Footer */}
         <div className="mt-8 text-center text-sm text-gray-500">
-          <p>© {new Date().getFullYear()} 中国滑雪积分系统 版权所有</p>
+          <p>© {new Date().getFullYear()} 中国滑雪青少年积分排名官方平台 版权所有</p>
         </div>
       </div>
     </div>
