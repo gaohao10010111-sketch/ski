@@ -186,16 +186,16 @@ export default function CompetitionsPage() {
     }
   }
 
-  // 查看比赛详情
+  // 查看比赛详情 - 跳转到比赛详情页（需要创建 /competitions/[id] 路由）
   const handleViewDetails = (competition: typeof allCompetitions[0]) => {
-    showToast(`正在查看「${competition.name}」详情`, 'info')
-    // TODO: 跳转到比赛详情页
+    // 比赛详情页路由待实现，暂时显示提示
+    router.push(`/competitions/${competition.id}`)
   }
 
-  // 编辑比赛
+  // 编辑比赛 - 跳转到编辑页（需要创建 /competitions/[id]/edit 路由）
   const handleEditCompetition = (competition: typeof allCompetitions[0]) => {
+    // 编辑页路由待实现，暂时显示提示
     showToast(`编辑功能即将上线：${competition.name}`, 'info')
-    // TODO: 打开编辑弹窗或跳转编辑页
   }
 
   // 导出单场比赛数据

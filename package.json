@@ -14,6 +14,9 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
     "demo": "bash scripts/quick-demo.sh",
     "share:vercel": "bash scripts/deploy-vercel.sh",
     "share:ngrok": "bash scripts/ngrok-share.sh",
@@ -44,9 +47,11 @@
     "@types/bcryptjs": "^2.4.6",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/pg": "^8.10.0",
+    "@vitejs/plugin-react": "^4.7.0",
     "eslint": "^8.0.0",
     "eslint-config-next": "^14.0.0",
     "exceljs": "^4.4.0",
+    "vitest": "^3.2.4",
     "xlsx": "^0.18.5"
   }
 }
