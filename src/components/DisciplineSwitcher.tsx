@@ -74,7 +74,7 @@ export default function DisciplineSwitcher() {
               >
                 <Icon className="w-3.5 h-3.5" />
                 <span className="text-sm">
-                  {(t.navigation as any)?.[discipline.key] || discipline.key}
+                  {String(t.navigation[discipline.key as keyof typeof t.navigation] ?? discipline.key)}
                 </span>
               </Link>
             );

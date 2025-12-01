@@ -6,7 +6,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'ski_points_jwt_secret_key_2024_pro
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || '7d';
 
 export interface JWTPayload {
-  userId: number;
+  userId: string;
   email: string;
   role: string;
 }

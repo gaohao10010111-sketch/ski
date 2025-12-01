@@ -61,6 +61,7 @@ export interface User {
   id: string
   username: string
   email: string
+  name?: string            // 用户真实姓名
   role: UserRole
   status: UserStatus
   athleteId?: string       // 运动员ID（如果是运动员）

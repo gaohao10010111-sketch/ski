@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import {
   Trophy,
   Users,
@@ -17,19 +17,94 @@ import {
   Mountain,
   ArrowLeftRight,
   Wind,
-  Sparkles
+  Sparkles,
+  Loader2
 } from 'lucide-react'
 import { getImagePath } from '@/utils/paths'
 import { useAuth } from '@/contexts/AuthContext'
 import { useTranslation } from '@/contexts/LanguageContext'
+import { statsApi, competitionsApi, rankingsApi, type StatsOverview, type Competition, type RankingItem } from '@/lib/api'
+
+// 运动类型映射
+const sportTypeMapping: Record<string, number> = {
+  ALPINE_SKI: 0,
+  SNOWBOARD_SLOPESTYLE_BIGAIR: 1,
+  SNOWBOARD_PARALLEL: 2,
+  FREESTYLE_SLOPESTYLE_BIGAIR: 3
+}
+
+const sportTypeKeys = ['ALPINE_SKI', 'SNOWBOARD_SLOPESTYLE_BIGAIR', 'SNOWBOARD_PARALLEL', 'FREESTYLE_SLOPESTYLE_BIGAIR']
+
+// 状态标签
+const statusLabels: Record<string, string> = {
+  SCHEDULED: '即将开始',
+  ONGOING: '进行中',
+  COMPLETED: '已完成',
+  CANCELLED: '已取消'
+}
+
+// 格式化日期
+function formatDate(dateString: string): string {
+  const date = new Date(dateString)
+  return `${date.getMonth() + 1}月${date.getDate()}日`
+}
 
 export default function HomePage() {
-  const { isAuthenticated, user } = useAuth()
+  const { isAuthenticated } = useAuth()
   const { t, language } = useTranslation()
   const [currentNewsIndex, setCurrentNewsIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   const [isClient, setIsClient] = useState(false)
   const [selectedDiscipline, setSelectedDiscipline] = useState(0) // 0: 高山, 1: 单板坡障, 2: 单板平行, 3: 自由式
+
+  // API数据状态
+  const [statsData, setStatsData] = useState<StatsOverview | null>(null)
+  const [competitions, setCompetitions] = useState<Competition[]>([])
+  const [rankings, setRankings] = useState<Record<string, RankingItem[]>>({})
+  const [isLoadingStats, setIsLoadingStats] = useState(true)
+
+  // 获取统计数据
+  const fetchData = useCallback(async () => {
+    setIsLoadingStats(true)
+    try {
+      // 并行获取数据
+      const [statsResponse, competitionsResponse] = await Promise.all([
+        statsApi.overview(),
+        competitionsApi.list({ pageSize: 12 })
+      ])
+
+      if (statsResponse.success && statsResponse.data) {
+        setStatsData(statsResponse.data)
+      }
+
+      if (competitionsResponse.success && competitionsResponse.data) {
+        setCompetitions(competitionsResponse.data)
+      }
+
+      // 获取各项目的排名数据
+      const rankingPromises = sportTypeKeys.map(sportType =>
+        rankingsApi.list({ sportType, pageSize: 4 })
+      )
+      const rankingResponses = await Promise.all(rankingPromises)
+
+      const newRankings: Record<string, RankingItem[]> = {}
+      sportTypeKeys.forEach((sportType, index) => {
+        const response = rankingResponses[index]
+        if (response.success && response.data) {
+          newRankings[sportType] = response.data
+        }
+      })
+      setRankings(newRankings)
+    } catch (error) {
+      console.error('获取首页数据错误:', error)
+    } finally {
+      setIsLoadingStats(false)
+    }
+  }, [])
+
+  useEffect(() => {
+    fetchData()
+  }, [fetchData])
 
   const fallbackNewsItems = [
     { id: 'nc-men-gs', title: '2024 National Championships', subtitle: 'Giant Slalom · Live Now', status: 'live', pinned: true },
@@ -50,91 +125,24 @@ export default function HomePage() {
 
   const newsStatusLabels: Record<string, string> = t.home?.news?.statuses || {}
 
-  // 四个项目的赛事成绩数据
-  const disciplineResults = [
-    // 0: 高山滑雪
-    [
-      { id: 'alpine-nc-gs', title: '2024全国高山滑雪锦标赛', subtitle: '男子大回转 · 天池滑雪场', status: 'live', time: '12月15日 · 14:30' },
-      { id: 'alpine-cup-sl', title: '中国杯高山公开赛', subtitle: '女子回转 · 万龙滑雪场', status: 'completed', time: '12月14日 · 16:45' },
-      { id: 'alpine-northeast', title: '东北联赛', subtitle: '混合全能 · 亚布力滑雪场', status: 'completed', time: '12月13日 · 15:20' }
-    ],
-    // 1: 单板坡面障碍技巧/大跳台
-    [
-      { id: 'sb-ss-nc', title: '2024全国单板坡面障碍技巧锦标赛', subtitle: '男子坡面障碍技巧 · 密苑云顶', status: 'live', time: '12月15日 · 13:00' },
-      { id: 'sb-ba-open', title: '单板大跳台公开赛', subtitle: '女子大跳台 · 首钢滑雪大跳台', status: 'completed', time: '12月14日 · 19:30' },
-      { id: 'sb-ss-youth', title: 'U18单板坡障青少年赛', subtitle: '混合坡面障碍技巧 · 万龙滑雪场', status: 'completed', time: '12月12日 · 14:00' }
-    ],
-    // 2: 单板平行项目
-    [
-      { id: 'sb-pgs-nc', title: '2024全国单板平行大回转锦标赛', subtitle: '男子平行大回转 · 太舞滑雪场', status: 'live', time: '12月15日 · 10:30' },
-      { id: 'sb-psl-open', title: '单板平行回转公开赛', subtitle: '女子平行回转 · 云顶滑雪场', status: 'completed', time: '12月14日 · 15:15' },
-      { id: 'sb-p-team', title: '单板平行团体赛', subtitle: '混合团体 · 万龙滑雪场', status: 'completed', time: '12月13日 · 11:00' }
-    ],
-    // 3: 自由式坡面障碍技巧/大跳台
-    [
-      { id: 'fs-ss-nc', title: '2024全国自由式坡面障碍技巧锦标赛', subtitle: '男子坡面障碍技巧 · 太舞滑雪场', status: 'live', time: '12月15日 · 12:00' },
-      { id: 'fs-ba-open', title: '自由式大跳台公开赛', subtitle: '女子大跳台 · 首钢滑雪大跳台', status: 'completed', time: '12月14日 · 20:00' },
-      { id: 'fs-ss-youth', title: 'U15自由式坡障青少年赛', subtitle: '混合坡面障碍技巧 · 密苑云顶', status: 'completed', time: '12月12日 · 16:30' }
-    ]
-  ]
-
   const disciplineNames = ['高山滑雪', '单板坡障/大跳台', '单板平行', '自由式坡障/大跳台']
   const disciplineIcons = [Mountain, Sparkles, ArrowLeftRight, Wind]
 
-  const fallbackResults = [
-    { id: 'nc-men-gs', title: '2024 National Championships', subtitle: 'Men Giant Slalom · Tianchi Resort', status: 'live', time: 'Dec 15 · 14:30' },
-    { id: 'china-cup-sl', title: 'China Cup Alpine Open', subtitle: 'Women Slalom · Wanlong Resort', status: 'completed', time: 'Dec 14 · 16:45' },
-    { id: 'northeast-league', title: 'Northeast League', subtitle: 'Mixed Alpine Combined · Yabuli Resort', status: 'completed', time: 'Dec 13 · 15:20' }
-  ]
+  // 根据选中的项目筛选比赛
+  const filteredCompetitions = competitions.filter(
+    comp => sportTypeMapping[comp.sportType] === selectedDiscipline
+  ).slice(0, 3)
 
-  const latestResults = disciplineResults[selectedDiscipline] || fallbackResults
+  // 获取当前项目的排名
+  const currentSportType = sportTypeKeys[selectedDiscipline]
+  const currentRankings = rankings[currentSportType] || []
 
   const latestResultStatusLabels: Record<string, string> = t.home?.latestResults?.statusLabels || {}
   const resultStatusStyles: Record<string, string> = {
-    live: 'text-ski-blue',
-    completed: 'text-green-600'
+    ONGOING: 'text-ski-blue',
+    SCHEDULED: 'text-yellow-600',
+    COMPLETED: 'text-green-600'
   }
-
-  // 四个项目的积分排行榜数据
-  const disciplineRankings = [
-    // 0: 高山滑雪
-    [
-      { rank: 1, name: '张伟', event: '男子大回转', points: '0.00' },
-      { rank: 2, name: '李雪', event: '女子回转', points: '8.45' },
-      { rank: 3, name: '王冰', event: '女子大回转', points: '12.30' },
-      { rank: 4, name: '刘强', event: '男子回转', points: '15.67' }
-    ],
-    // 1: 单板坡面障碍技巧/大跳台
-    [
-      { rank: 1, name: '苏翊鸣', event: '男子大跳台', points: '360' },
-      { rank: 2, name: '荣格', event: '男子坡面障碍技巧', points: '342' },
-      { rank: 3, name: '杨文龙', event: '男子大跳台', points: '318' },
-      { rank: 4, name: '高弘博', event: '男子坡面障碍技巧', points: '295' }
-    ],
-    // 2: 单板平行项目
-    [
-      { rank: 1, name: '宫乃莹', event: '女子平行大回转', points: '360' },
-      { rank: 2, name: '臧汝心', event: '女子平行回转', points: '345' },
-      { rank: 3, name: '毕野', event: '男子平行大回转', points: '328' },
-      { rank: 4, name: '张义威', event: '男子平行回转', points: '310' }
-    ],
-    // 3: 自由式坡面障碍技巧/大跳台
-    [
-      { rank: 1, name: '谷爱凌', event: '女子大跳台', points: '360' },
-      { rank: 2, name: '杨硕瑞', event: '男子坡面障碍技巧', points: '348' },
-      { rank: 3, name: '何金博', event: '男子大跳台', points: '325' },
-      { rank: 4, name: '李方慧', event: '女子坡面障碍技巧', points: '302' }
-    ]
-  ]
-
-  const fallbackRankingEntries = [
-    { rank: 1, name: 'Wei Zhang', event: 'Men Giant Slalom', points: '0.00' },
-    { rank: 2, name: 'Xue Li', event: 'Women Slalom', points: '8.45' },
-    { rank: 3, name: 'Bing Wang', event: 'Women Giant Slalom', points: '12.30' },
-    { rank: 4, name: 'Qiang Liu', event: 'Men Slalom', points: '15.67' }
-  ]
-
-  const rankingEntries = disciplineRankings[selectedDiscipline] || fallbackRankingEntries
 
   const rankingCardStyles = [
     'bg-gradient-to-r from-yellow-50 to-yellow-100 border border-yellow-200',
@@ -161,30 +169,31 @@ export default function HomePage() {
     color: item.color || highlightFallbackColors[index % highlightFallbackColors.length]
   }))
 
+  // 从API数据生成统计卡片
   const statsCards = [
     {
-      label: t.home?.stats?.disciplines?.label || '滑雪项目',
-      value: t.home?.stats?.disciplines?.value || '15+',
-      description: t.home?.stats?.disciplines?.description || '高山·自由式·单板',
-      icon: Award
+      label: t.home?.stats?.disciplines?.label || '注册运动员',
+      value: statsData?.overview?.totalAthletes?.toLocaleString() || '0',
+      description: `活跃 ${statsData?.overview?.activeAthletes || 0} 人`,
+      icon: Users
     },
     {
-      label: t.home?.stats?.pointsRules?.label || '积分规则',
-      value: t.home?.stats?.pointsRules?.value || '100%',
-      description: t.home?.stats?.pointsRules?.description || '符合中国标准',
-      icon: CheckCircle
+      label: t.home?.stats?.pointsRules?.label || '赛事总数',
+      value: statsData?.overview?.totalCompetitions?.toString() || '0',
+      description: `已完成 ${statsData?.overview?.completedCompetitions || 0} 场`,
+      icon: Trophy
     },
     {
-      label: t.home?.stats?.updateCycle?.label || '积分更新',
-      value: t.home?.stats?.updateCycle?.value || '7天',
-      description: t.home?.stats?.updateCycle?.description || '每周更新',
+      label: t.home?.stats?.updateCycle?.label || '即将举办',
+      value: statsData?.overview?.upcomingCompetitions?.toString() || '0',
+      description: '场赛事',
       icon: Clock
     },
     {
-      label: t.home?.stats?.users?.label || '注册用户',
-      value: t.home?.stats?.users?.value || '1,200+',
-      description: t.home?.stats?.users?.description || '运动员教练',
-      icon: Database
+      label: t.home?.stats?.users?.label || '当前赛季',
+      value: statsData?.overview?.currentSeason || '2024-25',
+      description: '赛季进行中',
+      icon: Award
     }
   ]
 
@@ -442,7 +451,7 @@ export default function HomePage() {
 
             {/* 项目切换 Tab */}
             <div className="flex justify-center mb-8">
-              <div className="inline-flex bg-white rounded-lg shadow-md p-1 gap-1">
+              <div className="inline-flex bg-white rounded-lg shadow-md p-1 gap-1 flex-wrap">
                 {disciplineNames.map((name, index) => {
                   const Icon = disciplineIcons[index]
                   return (
@@ -475,20 +484,34 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="space-y-4">
-                {latestResults.map((result) => (
-                  <div key={result.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-                    <div>
-                      <div className="font-semibold text-gray-900">{result.title}</div>
-                      <div className="text-sm text-gray-600">{result.subtitle}</div>
-                    </div>
-                    <div className="text-right">
-                      <div className={`text-sm font-medium ${resultStatusStyles[result.status] || 'text-gray-600'}`}>
-                        {latestResultStatusLabels[result.status] || (result.status === 'live' ? (t.home?.latestResults?.statusLabels?.live || '正在进行') : (t.home?.latestResults?.statusLabels?.completed || '已完成'))}
-                      </div>
-                      {result.time && <div className="text-xs text-gray-500">{result.time}</div>}
-                    </div>
+                {isLoadingStats ? (
+                  <div className="flex items-center justify-center py-8">
+                    <Loader2 className="w-6 h-6 text-ski-blue animate-spin" />
                   </div>
-                ))}
+                ) : filteredCompetitions.length > 0 ? (
+                  filteredCompetitions.map((comp) => (
+                    <Link
+                      key={comp.id}
+                      href={`/competitions/${comp.id}`}
+                      className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                    >
+                      <div>
+                        <div className="font-semibold text-gray-900">{comp.name}</div>
+                        <div className="text-sm text-gray-600">{comp.discipline || comp.location}</div>
+                      </div>
+                      <div className="text-right">
+                        <div className={`text-sm font-medium ${resultStatusStyles[comp.status] || 'text-gray-600'}`}>
+                          {latestResultStatusLabels[comp.status] || statusLabels[comp.status] || comp.status}
+                        </div>
+                        <div className="text-xs text-gray-500">{formatDate(comp.startDate)}</div>
+                      </div>
+                    </Link>
+                  ))
+                ) : (
+                  <div className="text-center py-8 text-gray-500">
+                    暂无该项目的比赛数据
+                  </div>
+                )}
               </div>
               <div className="mt-6 text-center">
                 <Link href="/competitions" className="text-ski-blue hover:text-ski-blue/80 font-medium">
@@ -501,27 +524,47 @@ export default function HomePage() {
             <div className="bg-white rounded-lg shadow-lg p-6">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-semibold text-ski-navy">{t.home?.rankings?.title || '积分排行榜'}</h3>
-                <div className="text-sm text-gray-500">{t.home?.rankings?.updatedOn || '更新于'}: 12-15</div>
+                <div className="text-sm text-gray-500">
+                  {statsData?.overview?.currentSeason || '2024-25'} 赛季
+                </div>
               </div>
               <div className="space-y-4">
-                {rankingEntries.map((entry, index) => {
-                  const cardClass = rankingCardStyles[index] || defaultRankingCardClass
-                  const badgeClass = rankingBadgeStyles[index] || defaultRankingBadgeClass
+                {isLoadingStats ? (
+                  <div className="flex items-center justify-center py-8">
+                    <Loader2 className="w-6 h-6 text-ski-blue animate-spin" />
+                  </div>
+                ) : currentRankings.length > 0 ? (
+                  currentRankings.map((entry, index) => {
+                    const cardClass = rankingCardStyles[index] || defaultRankingCardClass
+                    const badgeClass = rankingBadgeStyles[index] || defaultRankingBadgeClass
 
-                  return (
-                    <div key={entry.rank} className={`flex items-center p-4 rounded-lg ${cardClass}`}>
-                      <div className={`w-8 h-8 ${badgeClass} rounded-full flex items-center justify-center font-bold text-sm mr-4`}>{entry.rank}</div>
-                      <div className="flex-1">
-                        <div className="font-semibold text-gray-900">{entry.name}</div>
-                        <div className="text-sm text-gray-600">{entry.event}</div>
-                      </div>
-                      <div className="text-right">
-                        <div className="font-semibold text-ski-navy">{entry.points}</div>
-                        <div className="text-xs text-gray-500">{t.home?.rankings?.points || 'FIS积分'}</div>
-                      </div>
-                    </div>
-                  )
-                })}
+                    return (
+                      <Link
+                        key={entry.athleteId}
+                        href={`/athletes/${entry.athleteId}`}
+                        className={`flex items-center p-4 rounded-lg hover:shadow-md transition-shadow ${cardClass}`}
+                      >
+                        <div className={`w-8 h-8 ${badgeClass} rounded-full flex items-center justify-center font-bold text-sm mr-4`}>
+                          {entry.rank}
+                        </div>
+                        <div className="flex-1">
+                          <div className="font-semibold text-gray-900">{entry.athleteName}</div>
+                          <div className="text-sm text-gray-600">
+                            {entry.province || entry.club || entry.discipline || '-'}
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <div className="font-semibold text-ski-navy">{entry.totalPoints.toFixed(2)}</div>
+                          <div className="text-xs text-gray-500">{t.home?.rankings?.points || '积分'}</div>
+                        </div>
+                      </Link>
+                    )
+                  })
+                ) : (
+                  <div className="text-center py-8 text-gray-500">
+                    暂无该项目的排名数据
+                  </div>
+                )}
               </div>
               <div className="mt-6 text-center">
                 <Link href="/points/rankings" className="text-ski-blue hover:text-ski-blue/80 font-medium">
@@ -577,8 +620,8 @@ export default function HomePage() {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-ski-navy mb-4">{t.home?.stats?.title || 'Platform Data Overview'}</h2>
-            <p className="text-gray-600 text-sm md:text-base">{t.home?.stats?.subtitle || 'Real-time system data and status'}</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-ski-navy mb-4">{t.home?.stats?.title || '平台数据概览'}</h2>
+            <p className="text-gray-600 text-sm md:text-base">{t.home?.stats?.subtitle || '实时系统数据和状态'}</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
             {statsCards.map((stat, index) => (
@@ -599,7 +642,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="text-2xl md:text-3xl font-bold text-ski-navy mb-2">
-                  {stat.value}
+                  {isLoadingStats ? <Loader2 className="w-6 h-6 animate-spin mx-auto" /> : stat.value}
                 </div>
                 <div className="text-xs md:text-sm font-medium text-gray-900 mb-1">
                   {stat.label}

@@ -204,99 +204,107 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     dispatch({ type: 'SET_LOADING', payload: true })
 
     try {
-      // 模拟API调用
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: credentials.email, // API支持用户名或邮箱登录
+          password: credentials.password
+        })
+      })
 
-      // 模拟登录验证 - 4个权限级别测试账号
-      if (credentials.email === 'admin@ski.com' && credentials.password === 'admin123') {
-        // 管理员账号 - 完整权限
-        const user: User = {
-          id: '1',
-          username: 'admin',
-          email: credentials.email,
-          role: UserRole.ADMIN,
-          status: UserStatus.ACTIVE,
-          createdAt: new Date(),
-          lastLoginAt: new Date()
-        }
-        dispatch({ type: 'LOGIN_SUCCESS', payload: user })
-        try {
-          if (typeof window !== 'undefined') {
-            localStorage.setItem('auth_user', JSON.stringify(user))
-          }
-        } catch { /* localStorage not available */ }
-      } else if (credentials.email === 'athlete@ski.com' && credentials.password === 'athlete123') {
-        // 运动员账号 - 会员基础功能
-        const user: User = {
-          id: '2',
-          username: 'athlete_user',
-          email: credentials.email,
-          role: UserRole.ATHLETE,
-          status: UserStatus.ACTIVE,
-          athleteId: 'ATH001',
-          createdAt: new Date(),
-          lastLoginAt: new Date()
-        }
-        dispatch({ type: 'LOGIN_SUCCESS', payload: user })
-        try {
-          if (typeof window !== 'undefined') {
-            localStorage.setItem('auth_user', JSON.stringify(user))
-          }
-        } catch { /* localStorage not available */ }
-      } else if (credentials.email === 'coach@ski.com' && credentials.password === 'coach123') {
-        // 教练账号 - 教练管理功能
-        const user: User = {
-          id: '3',
-          username: 'coach_user',
-          email: credentials.email,
-          role: UserRole.COACH,
-          status: UserStatus.ACTIVE,
-          coachId: 'COACH001',
-          createdAt: new Date(),
-          lastLoginAt: new Date()
-        }
-        dispatch({ type: 'LOGIN_SUCCESS', payload: user })
-        try {
-          if (typeof window !== 'undefined') {
-            localStorage.setItem('auth_user', JSON.stringify(user))
-          }
-        } catch { /* localStorage not available */ }
-      } else {
-        throw new Error('邮箱或密码错误，请使用以下测试账号：\n管理员：admin@ski.com / admin123\n运动员：athlete@ski.com / athlete123\n教练：coach@ski.com / coach123')
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || '登录失败')
       }
+
+      // 将API返回的用户角色映射到前端枚举
+      const roleMap: Record<string, UserRole> = {
+        'USER': UserRole.ATHLETE, // 普通用户默认为运动员角色
+        'ATHLETE': UserRole.ATHLETE,
+        'COACH': UserRole.COACH,
+        'ADMIN': UserRole.ADMIN
+      }
+
+      const user: User = {
+        id: data.user.id,
+        username: data.user.username,
+        email: data.user.email,
+        name: data.user.name,
+        role: roleMap[data.user.role] || UserRole.ATHLETE,
+        status: UserStatus.ACTIVE,
+        createdAt: new Date(),
+        lastLoginAt: new Date()
+      }
+
+      // 保存token
+      try {
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('auth_token', data.token)
+          localStorage.setItem('auth_user', JSON.stringify(user))
+        }
+      } catch { /* localStorage not available */ }
+
+      dispatch({ type: 'LOGIN_SUCCESS', payload: user })
     } catch (error) {
       dispatch({ type: 'LOGIN_FAILURE', payload: error instanceof Error ? error.message : '登录失败' })
+      throw error
     }
   }
 
   // 注册函数
-  const register = async (data: RegisterRequest): Promise<void> => {
+  const register = async (registerData: RegisterRequest): Promise<void> => {
     dispatch({ type: 'SET_LOADING', payload: true })
 
     try {
-      // 模拟API调用
-      await new Promise(resolve => setTimeout(resolve, 1500))
+      const response = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: registerData.username,
+          email: registerData.email,
+          password: registerData.password,
+          name: registerData.realName || registerData.username
+        })
+      })
 
-      // 模拟注册成功
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || '注册失败')
+      }
+
+      // 将API返回的用户角色映射到前端枚举
+      const roleMap: Record<string, UserRole> = {
+        'USER': UserRole.ATHLETE,
+        'ATHLETE': UserRole.ATHLETE,
+        'COACH': UserRole.COACH,
+        'ADMIN': UserRole.ADMIN
+      }
+
       const user: User = {
-        id: Date.now().toString(),
-        username: data.username,
-        email: data.email,
-        role: data.userType === 'athlete' ? UserRole.ATHLETE : UserRole.COACH,
-        status: UserStatus.PENDING,
-        athleteId: data.userType === 'athlete' ? `ATH${Date.now()}` : undefined,
-        coachId: data.userType === 'coach' ? `COACH${Date.now()}` : undefined,
+        id: data.user.id,
+        username: data.user.username,
+        email: data.user.email,
+        name: data.user.name,
+        role: roleMap[data.user.role] || UserRole.ATHLETE,
+        status: UserStatus.ACTIVE,
         createdAt: new Date()
       }
 
-      dispatch({ type: 'LOGIN_SUCCESS', payload: user })
+      // 保存token
       try {
         if (typeof window !== 'undefined') {
+          localStorage.setItem('auth_token', data.token)
           localStorage.setItem('auth_user', JSON.stringify(user))
         }
       } catch { /* localStorage not available */ }
+
+      dispatch({ type: 'LOGIN_SUCCESS', payload: user })
     } catch (error) {
       dispatch({ type: 'LOGIN_FAILURE', payload: error instanceof Error ? error.message : '注册失败' })
+      throw error
     }
   }
 
@@ -305,6 +313,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       if (typeof window !== 'undefined') {
         localStorage.removeItem('auth_user')
+        localStorage.removeItem('auth_token')
       }
     } catch { /* localStorage not available */ }
     dispatch({ type: 'LOGOUT' })

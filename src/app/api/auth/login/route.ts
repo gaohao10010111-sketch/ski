@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
 
     // 更新最后登录时间
     await query(
-      'UPDATE users SET last_login = NOW() WHERE id = $1',
+      'UPDATE users SET last_login_at = NOW() WHERE id = $1',
       [user.id]
     );
 

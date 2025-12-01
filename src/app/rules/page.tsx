@@ -275,9 +275,9 @@ export default function RulesMainPage() {
   }
 
   const ruleModules = ruleModulesConfig.map((moduleConfig) => {
-    const content =
-      (translations.ruleModules as any)?.[moduleConfig.id] ??
-      (defaultContent.ruleModules as Record<string, any>)[moduleConfig.id]
+    const translatedModules = translations.ruleModules as Record<string, Record<string, unknown>> | undefined
+    const defaultModules = defaultContent.ruleModules as Record<string, Record<string, unknown>>
+    const content = translatedModules?.[moduleConfig.id] ?? defaultModules[moduleConfig.id]
 
     const IconComponent = iconMap[moduleConfig.icon] ?? Calculator
 
@@ -292,9 +292,9 @@ export default function RulesMainPage() {
   })
 
   const v4Features = v4FeaturesConfig.map((featureConfig) => {
-    const content =
-      (translations.v4Features?.items as any)?.[featureConfig.id] ??
-      (defaultContent.v4Features.items as Record<string, any>)[featureConfig.id]
+    const translatedItems = translations.v4Features?.items as Record<string, Record<string, unknown>> | undefined
+    const defaultItems = defaultContent.v4Features.items as Record<string, Record<string, unknown>>
+    const content = translatedItems?.[featureConfig.id] ?? defaultItems[featureConfig.id]
 
     const IconComponent = iconMap[featureConfig.icon] ?? Target
 
@@ -309,9 +309,9 @@ export default function RulesMainPage() {
   const v4Title = translations.v4Features?.title ?? defaultContent.v4Features.title
 
   const quickLinks = quickLinksConfig.map((linkConfig) => {
-    const content =
-      (translations.quickLinks?.items as any)?.[linkConfig.id] ??
-      (defaultContent.quickLinks.items as Record<string, any>)[linkConfig.id]
+    const translatedLinks = translations.quickLinks?.items as Record<string, Record<string, unknown>> | undefined
+    const defaultLinks = defaultContent.quickLinks.items as Record<string, Record<string, unknown>>
+    const content = translatedLinks?.[linkConfig.id] ?? defaultLinks[linkConfig.id]
 
     const IconComponent = iconMap[linkConfig.icon] ?? Calculator
 
@@ -502,9 +502,9 @@ export default function RulesMainPage() {
                   <div className={`w-12 h-12 ${module.bgColor} rounded-lg flex items-center justify-center mr-4`}>
                     <module.IconComponent className={`h-6 w-6 ${module.color}`} />
                   </div>
-                  <h3 className="text-xl font-bold text-ski-navy">{module.title}</h3>
+                  <h3 className="text-xl font-bold text-ski-navy">{String(module.title)}</h3>
                 </div>
-                <p className="text-gray-600 mb-4 leading-relaxed">{module.description}</p>
+                <p className="text-gray-600 mb-4 leading-relaxed">{String(module.description)}</p>
                 <div className="space-y-2">
                   {module.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center text-sm text-gray-700">
@@ -515,7 +515,7 @@ export default function RulesMainPage() {
                 </div>
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <div className={`inline-flex items-center text-sm font-medium ${module.color}`}>
-                    {module.linkLabel}
+                    {String(module.linkLabel)}
                     <ExternalLink className="h-3 w-3 ml-1" />
                   </div>
                 </div>
@@ -532,8 +532,8 @@ export default function RulesMainPage() {
           {v4Features.map((feature, index) => (
             <div key={index} className="bg-white rounded-lg shadow-lg p-6 text-center">
               <feature.IconComponent className={`h-12 w-12 ${feature.color} mx-auto mb-4`} />
-              <h3 className="text-lg font-semibold text-ski-navy mb-3">{feature.title}</h3>
-              <p className="text-sm text-gray-600">{feature.description}</p>
+              <h3 className="text-lg font-semibold text-ski-navy mb-3">{String(feature.title)}</h3>
+              <p className="text-sm text-gray-600">{String(feature.description)}</p>
             </div>
           ))}
         </div>
@@ -553,13 +553,13 @@ export default function RulesMainPage() {
                 className="bg-white rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow duration-300"
               >
                 <link.IconComponent className="h-8 w-8 text-ski-blue mx-auto mb-2" />
-                <span className="text-sm font-medium text-gray-900">{link.label}</span>
+                <span className="text-sm font-medium text-gray-900">{String(link.label)}</span>
               </a>
             ) : (
               <Link key={index} href={link.href}>
                 <div className="bg-white rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow duration-300 cursor-pointer">
                   <link.IconComponent className="h-8 w-8 text-ski-blue mx-auto mb-2" />
-                  <span className="text-sm font-medium text-gray-900">{link.label}</span>
+                  <span className="text-sm font-medium text-gray-900">{String(link.label)}</span>
                 </div>
               </Link>
             )

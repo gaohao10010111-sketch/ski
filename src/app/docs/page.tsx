@@ -63,8 +63,9 @@ export default function DocsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {categoryConfigs.map((category) => {
-            const translation = (i18n.categories as any)?.[category.key] || {}
-            const topics = translation.topics || []
+            const categories = i18n.categories as Record<string, Record<string, unknown>> | undefined
+            const translation = categories?.[category.key] || {}
+            const topics = (translation.topics || []) as string[]
 
             return (
               <Link
@@ -75,8 +76,8 @@ export default function DocsPage() {
                 <div className={`w-12 h-12 ${category.bgColor} rounded-lg flex items-center justify-center mb-4`}>
                   <category.icon className={`h-6 w-6 ${category.color}`} />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{translation.title || 'Docs Category'}</h3>
-                <p className="text-sm text-gray-600 mb-4">{translation.description || ''}</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{String(translation.title || 'Docs Category')}</h3>
+                <p className="text-sm text-gray-600 mb-4">{String(translation.description || '')}</p>
                 <div className="space-y-1">
                   {topics.map((topic: string, index: number) => (
                     <div key={index} className="flex items-center text-xs text-gray-500">
@@ -98,7 +99,8 @@ export default function DocsPage() {
           <h2 className="text-xl font-semibold text-ski-navy mb-4">{i18n.popular?.title || 'Popular Documents'}</h2>
           <div className="space-y-3">
             {popularDocConfigs.map((doc) => {
-              const item = (i18n.popular?.items as any)?.[doc.key] || {}
+              const popularItems = i18n.popular?.items as Record<string, Record<string, string>> | undefined
+              const item = popularItems?.[doc.key] || {}
               return (
                 <div key={doc.key} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                   <div className="flex items-center space-x-3">

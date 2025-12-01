@@ -77,3 +77,5 @@ test_connection.sql
 # Specify / Codex agent workspace
 .codex/
 reference_docs/
+
+/generated/prisma
