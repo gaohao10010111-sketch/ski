@@ -12,7 +12,6 @@ import {
 } from '@/lib/validators';
 import { Prisma } from '@prisma/client';
 
-export const dynamic = 'force-dynamic';
 
 // GET /api/competitions - 获取比赛列表
 export async function GET(request: NextRequest) {

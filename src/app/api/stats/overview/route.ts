@@ -5,7 +5,6 @@ import {
 } from '@/lib/api-utils';
 import { getCurrentSeason } from '@/lib/api-utils';
 
-export const dynamic = 'force-dynamic';
 
 // GET /api/stats/overview - 获取平台统计概览
 export async function GET() {

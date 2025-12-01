@@ -9,7 +9,6 @@ import { rankingsQuerySchema } from '@/lib/validators';
 import { getCurrentSeason } from '@/lib/api-utils';
 import { Prisma } from '@prisma/client';
 
-export const dynamic = 'force-dynamic';
 
 // GET /api/rankings - 获取积分排名
 export async function GET(request: NextRequest) {

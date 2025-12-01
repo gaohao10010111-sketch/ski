@@ -8,7 +8,6 @@ import {
 } from '@/lib/api-utils';
 import { idSchema } from '@/lib/validators';
 
-export const dynamic = 'force-dynamic';
 
 interface RouteParams {
   params: Promise<{ id: string }>;

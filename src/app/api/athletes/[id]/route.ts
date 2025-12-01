@@ -10,7 +10,6 @@ import {
 } from '@/lib/api-utils';
 import { updateAthleteSchema, idSchema } from '@/lib/validators';
 
-export const dynamic = 'force-dynamic';
 
 interface RouteParams {
   params: Promise<{ id: string }>;
