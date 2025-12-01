@@ -29,7 +29,18 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        // 系统字体栈 - 全部可商用，零加载
+        sans: [
+          'system-ui',           // 通用系统字体
+          '-apple-system',       // macOS/iOS (San Francisco)
+          'BlinkMacSystemFont',  // Chrome on macOS
+          '"Segoe UI"',          // Windows
+          '"PingFang SC"',       // macOS/iOS 中文 (苹方)
+          '"Microsoft YaHei"',   // Windows 中文 (微软雅黑)
+          '"Hiragino Sans GB"',  // macOS 中文备选
+          '"Noto Sans SC"',      // Linux/Android 中文
+          'sans-serif',          // 最终回退
+        ],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

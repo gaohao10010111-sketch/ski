@@ -108,7 +108,7 @@ export default function ResultsImportPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>${competitionData.raceHeader.eventName} - 比赛报告</title>
         <style>
-          body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+          body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans SC", sans-serif; margin: 20px; background: #f5f5f5; }
           .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
           .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid #2563eb; padding-bottom: 20px; }
           .title { color: #1e40af; font-size: 2.5em; margin: 0; }

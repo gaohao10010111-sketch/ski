@@ -82,8 +82,7 @@ export default function RootLayout({
     <html lang="zh-CN">
       <head>
         <StructuredData />
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        {/* 使用系统字体栈，无需加载外部字体 */}
       </head>
       <body className="antialiased">
         <ClientProviders>
