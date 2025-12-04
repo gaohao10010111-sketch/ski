@@ -12,7 +12,6 @@ import {
   Download,
   Eye,
   Search,
-  Filter,
   Calendar,
   MapPin,
   Users,
@@ -24,14 +23,41 @@ import {
   Award,
   Target,
   Activity,
-  Globe,
   Snowflake,
-  Wind
+  Wind,
+  FileUp,
+  Timer,
+  Star
 } from 'lucide-react'
+
+// 扩展CompetitionData类型以支持PDF解析的额外字段
+interface ExtendedCompetitor {
+  rank: number
+  order: number
+  bib: number
+  fisCode: string
+  lastname: string
+  firstname: string
+  sex: string
+  nation: string
+  yearOfBirth: number
+  status: string
+  points?: number
+  run1Time?: string
+  run2Time?: string
+  totalTime?: string
+  difference?: string
+  rounds?: { round: number; j1?: number; j2?: number; j3?: number; j4?: number; j5?: number; score: number }[]
+  finalScore?: number
+}
+
+interface ExtendedCompetitionData extends Omit<CompetitionData, 'competitors'> {
+  competitors: ExtendedCompetitor[]
+}
 
 export default function ResultsImportPage() {
   const router = useRouter()
-  const [competitionData, setCompetitionData] = useState<CompetitionData | null>(null)
+  const [competitionData, setCompetitionData] = useState<ExtendedCompetitionData | null>(null)
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedNation, setSelectedNation] = useState('all')
   const [showDetails, setShowDetails] = useState(true)
@@ -39,6 +65,8 @@ export default function ResultsImportPage() {
   const [error, setError] = useState<string | null>(null)
   const [currentStep, setCurrentStep] = useState<'upload' | 'review' | 'confirm'>('upload')
   const [isProcessing, setIsProcessing] = useState(false)
+  const [fileType, setFileType] = useState<'xml' | 'pdf' | null>(null)
+  const [uploadProgress, setUploadProgress] = useState(0)
   const { showToast } = useToast()
 
   // 确认导入成绩
@@ -64,6 +92,51 @@ export default function ResultsImportPage() {
     setCompetitionData(null)
     setCurrentStep('upload')
     setError(null)
+    setFileType(null)
+    setUploadProgress(0)
+  }
+
+  // 处理PDF文件上传
+  const handlePDFUpload = async (file: File) => {
+    setIsLoading(true)
+    setError(null)
+    setFileType('pdf')
+    setUploadProgress(10)
+
+    try {
+      const formData = new FormData()
+      formData.append('file', file)
+
+      setUploadProgress(30)
+
+      const response = await fetch('/api/results/parse-pdf', {
+        method: 'POST',
+        body: formData
+      })
+
+      setUploadProgress(70)
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || 'PDF解析失败')
+      }
+
+      const result = await response.json()
+      setUploadProgress(100)
+
+      if (result.success && result.data) {
+        setCompetitionData(result.data as ExtendedCompetitionData)
+        setCurrentStep('review')
+        showToast(`成功解析 ${result.data.competitors.length} 名运动员的成绩`, 'success')
+      } else {
+        throw new Error(result.error || '解析结果为空')
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'PDF解析失败，请检查文件格式')
+      showToast('PDF解析失败', 'error')
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const handleExportExcel = () => {
@@ -233,13 +306,23 @@ export default function ResultsImportPage() {
     showToast('报告生成成功！已下载到本地。', 'success');
   }
 
-  // 处理XML文件上传
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+  // 处理文件上传 - 支持XML和PDF
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
     if (!file) return
 
+    const fileName = file.name.toLowerCase()
+
+    // 检测文件类型并分发到对应处理函数
+    if (fileName.endsWith('.pdf')) {
+      await handlePDFUpload(file)
+      return
+    }
+
+    // XML文件处理
     setIsLoading(true)
     setError(null)
+    setFileType('xml')
 
     const reader = new FileReader()
     reader.onload = (e) => {
@@ -256,7 +339,7 @@ export default function ResultsImportPage() {
 
         // 解析比赛数据
         const parsedData = XMLParser.parseCompetitionXML(xmlContent)
-        setCompetitionData(parsedData)
+        setCompetitionData(parsedData as ExtendedCompetitionData)
         setCurrentStep('review') // 进入数据审核步骤
       } catch (err) {
         setError(err instanceof Error ? err.message : '文件解析失败，请检查XML格式是否正确')
@@ -357,35 +440,101 @@ export default function ResultsImportPage() {
       {currentStep === 'upload' && (
         <div className="card mb-8 relative z-10">
           <div className="text-center py-8">
-          <Upload className="h-16 w-16 text-ski-blue mx-auto mb-4" />
-          <h3 className="text-lg font-semibold text-ski-navy mb-2">上传比赛成绩文件</h3>
-          <p className="text-gray-600 mb-4">支持国际标准格式的比赛成绩文件，系统将使用简化公式自动解析并计算积分</p>
-
-          {error && (
-            <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
-              <p className="text-red-600 text-sm">{error}</p>
+            <div className="flex justify-center space-x-4 mb-6">
+              <div className="flex items-center justify-center w-16 h-16 bg-red-100 rounded-full">
+                <FileUp className="h-8 w-8 text-red-600" />
+              </div>
+              <div className="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full">
+                <FileText className="h-8 w-8 text-blue-600" />
+              </div>
             </div>
-          )}
+            <h3 className="text-lg font-semibold text-ski-navy mb-2">上传比赛成绩文件</h3>
+            <p className="text-gray-600 mb-6">
+              支持官方PDF成绩册和XML格式文件，系统将自动识别并解析
+            </p>
 
-          <div className="flex justify-center">
-            <label className="btn-primary flex items-center cursor-pointer">
-              <Upload className="h-4 w-4 mr-2" />
-              {isLoading ? '解析中...' : '选择XML文件'}
-              <input
-                type="file"
-                accept=".xml"
-                onChange={handleFileUpload}
-                className="hidden"
-                disabled={isLoading}
-              />
-            </label>
+            {error && (
+              <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <p className="text-red-600 text-sm">{error}</p>
+              </div>
+            )}
+
+            {/* 上传进度条 */}
+            {isLoading && uploadProgress > 0 && (
+              <div className="mb-6 max-w-md mx-auto">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm text-gray-600">
+                    {fileType === 'pdf' ? '正在解析PDF文件...' : '正在解析XML文件...'}
+                  </span>
+                  <span className="text-sm font-medium text-ski-blue">{uploadProgress}%</span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-2">
+                  <div
+                    className="bg-ski-blue h-2 rounded-full transition-all duration-300"
+                    style={{ width: `${uploadProgress}%` }}
+                  ></div>
+                </div>
+              </div>
+            )}
+
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              {/* PDF上传按钮 */}
+              <label className="btn-primary flex items-center justify-center cursor-pointer min-w-[180px]">
+                <FileUp className="h-4 w-4 mr-2" />
+                {isLoading && fileType === 'pdf' ? '解析中...' : '上传PDF成绩册'}
+                <input
+                  type="file"
+                  accept=".pdf"
+                  onChange={handleFileUpload}
+                  className="hidden"
+                  disabled={isLoading}
+                />
+              </label>
+
+              {/* XML上传按钮 */}
+              <label className="btn-secondary flex items-center justify-center cursor-pointer min-w-[180px]">
+                <FileText className="h-4 w-4 mr-2" />
+                {isLoading && fileType === 'xml' ? '解析中...' : '上传XML文件'}
+                <input
+                  type="file"
+                  accept=".xml"
+                  onChange={handleFileUpload}
+                  className="hidden"
+                  disabled={isLoading}
+                />
+              </label>
+            </div>
+
+            {/* 支持的格式说明 */}
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+              <div className="bg-red-50 rounded-lg p-4 text-left">
+                <div className="flex items-center mb-2">
+                  <FileUp className="h-5 w-5 text-red-600 mr-2" />
+                  <span className="font-semibold text-red-800">PDF成绩册</span>
+                  <span className="ml-2 text-xs bg-red-200 text-red-800 px-2 py-0.5 rounded">推荐</span>
+                </div>
+                <ul className="text-sm text-red-700 space-y-1">
+                  <li>• 高山滑雪U系列成绩（时间制）</li>
+                  <li>• 单板大跳台成绩（裁判评分制）</li>
+                  <li>• 自动识别比赛类型和年龄组</li>
+                  <li>• 支持官方成绩册格式</li>
+                </ul>
+              </div>
+              <div className="bg-blue-50 rounded-lg p-4 text-left">
+                <div className="flex items-center mb-2">
+                  <FileText className="h-5 w-5 text-blue-600 mr-2" />
+                  <span className="font-semibold text-blue-800">XML格式</span>
+                </div>
+                <ul className="text-sm text-blue-700 space-y-1">
+                  <li>• FIS标准XML格式</li>
+                  <li>• 国际比赛数据交换</li>
+                  <li>• 包含完整赛道信息</li>
+                  <li>• 支持多轮次成绩</li>
+                </ul>
+              </div>
+            </div>
           </div>
-
-          <p className="text-xs text-gray-500 mt-2">
-            请上传符合国际标准的XML格式比赛数据文件
-          </p>
         </div>
-      </div>
       )}
 
       {/* 数据审核阶段 - 操作按钮 */}
@@ -735,31 +884,69 @@ export default function ResultsImportPage() {
                 <Target className="h-8 w-8 text-red-600 mr-3" />
                 选手排名信息
               </h2>
-              <div className="text-sm text-gray-600">
-                共 {filteredCompetitors.length} 名选手
+              <div className="flex items-center space-x-4">
+                {fileType === 'pdf' && (
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                    <FileUp className="h-3 w-3 mr-1" />
+                    PDF导入
+                  </span>
+                )}
+                <span className="text-sm text-gray-600">
+                  共 {filteredCompetitors.length} 名选手
+                </span>
               </div>
             </div>
 
             <div className="overflow-hidden rounded-lg border border-gray-200">
-              <div className="overflow-x-auto max-h-96 overflow-y-auto">
+              <div className="overflow-x-auto max-h-[500px] overflow-y-auto">
                 <table className="w-full">
                   <thead className="bg-gray-50 sticky top-0 z-10">
                     <tr>
                       <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">排名</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">出发顺序</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">号码布</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">FIS代码</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">姓氏</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">名字</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">性别</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">国家</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">出生年份</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">号码</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">姓名</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">单位/国家</th>
+                      {/* 高山滑雪特有列 - 时间成绩 */}
+                      {filteredCompetitors.some(c => c.run1Time || c.totalTime) && (
+                        <>
+                          <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <div className="flex items-center">
+                              <Timer className="h-3 w-3 mr-1" />
+                              第一轮
+                            </div>
+                          </th>
+                          <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            <div className="flex items-center">
+                              <Timer className="h-3 w-3 mr-1" />
+                              第二轮
+                            </div>
+                          </th>
+                          <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">总成绩</th>
+                          <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">差距</th>
+                        </>
+                      )}
+                      {/* 大跳台特有列 - 最终得分 */}
+                      {filteredCompetitors.some(c => c.finalScore !== undefined) && (
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          <div className="flex items-center">
+                            <Star className="h-3 w-3 mr-1" />
+                            最终得分
+                          </div>
+                        </th>
+                      )}
+                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        <div className="flex items-center">
+                          <Award className="h-3 w-3 mr-1" />
+                          积分
+                        </div>
+                      </th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">状态</th>
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
                     {filteredCompetitors.map((competitor, index) => (
                       <tr
-                        key={competitor.fisCode}
+                        key={`${competitor.bib}-${index}`}
                         className={`hover:bg-gray-50 ${
                           competitor.rank <= 3 ? 'bg-yellow-50' : index % 2 === 0 ? 'bg-white' : 'bg-gray-50'
                         }`}
@@ -776,23 +963,60 @@ export default function ResultsImportPage() {
                             <span className="text-sm font-medium text-gray-900">{competitor.rank}</span>
                           </div>
                         </td>
-                        <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">{competitor.order}</td>
                         <td className="px-4 py-4 whitespace-nowrap">
                           <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                             {competitor.bib}
                           </span>
                         </td>
-                        <td className="px-4 py-4 whitespace-nowrap text-sm font-mono text-gray-900">{competitor.fisCode}</td>
-                        <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{competitor.lastname}</td>
-                        <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">{competitor.firstname}</td>
-                        <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">{XMLParser.getSexName(competitor.sex)}</td>
+                        <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                          {competitor.lastname}{competitor.firstname ? ` ${competitor.firstname}` : ''}
+                        </td>
                         <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">
                           <span className="flex items-center">
-                            {XMLParser.getNationFlag(competitor.nation)}
-                            <span className="ml-2">{competitor.nation}</span>
+                            {competitor.nation && XMLParser.getNationFlag(competitor.nation)}
+                            <span className="ml-1">{competitor.nation || '-'}</span>
                           </span>
                         </td>
-                        <td className="px-4 py-4 whitespace-nowrap text-sm text-gray-900">{competitor.yearOfBirth}</td>
+                        {/* 高山滑雪时间成绩 */}
+                        {filteredCompetitors.some(c => c.run1Time || c.totalTime) && (
+                          <>
+                            <td className="px-4 py-4 whitespace-nowrap text-sm font-mono text-gray-900">
+                              {competitor.run1Time || '-'}
+                            </td>
+                            <td className="px-4 py-4 whitespace-nowrap text-sm font-mono text-gray-900">
+                              {competitor.run2Time || '-'}
+                            </td>
+                            <td className="px-4 py-4 whitespace-nowrap text-sm font-mono font-semibold text-ski-blue">
+                              {competitor.totalTime || '-'}
+                            </td>
+                            <td className="px-4 py-4 whitespace-nowrap text-sm font-mono text-gray-500">
+                              {competitor.difference || '-'}
+                            </td>
+                          </>
+                        )}
+                        {/* 大跳台最终得分 */}
+                        {filteredCompetitors.some(c => c.finalScore !== undefined) && (
+                          <td className="px-4 py-4 whitespace-nowrap text-sm font-semibold text-ski-blue">
+                            {competitor.finalScore?.toFixed(2) || '-'}
+                          </td>
+                        )}
+                        <td className="px-4 py-4 whitespace-nowrap">
+                          <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                            (competitor.points || 0) >= 300 ? 'bg-yellow-100 text-yellow-800' :
+                            (competitor.points || 0) >= 200 ? 'bg-green-100 text-green-800' :
+                            (competitor.points || 0) >= 100 ? 'bg-blue-100 text-blue-800' :
+                            'bg-gray-100 text-gray-800'
+                          }`}>
+                            {competitor.points || 0} 分
+                          </span>
+                        </td>
+                        <td className="px-4 py-4 whitespace-nowrap text-sm">
+                          {competitor.status === '' || competitor.status === 'OK' ? (
+                            <span className="text-green-600">完赛</span>
+                          ) : (
+                            <span className="text-red-600">{competitor.status}</span>
+                          )}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
