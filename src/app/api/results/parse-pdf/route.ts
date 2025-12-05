@@ -1,36 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { PDFResultParser } from '@/utils/pdfParser'
-import * as pdfjs from 'pdfjs-dist'
 
-// 设置PDF.js worker
-if (typeof window === 'undefined') {
-  // 服务端环境，禁用worker
-  pdfjs.GlobalWorkerOptions.workerSrc = ''
-}
-
-// 从PDF文档中提取文本
-async function extractTextFromPDF(arrayBuffer: ArrayBuffer): Promise<{ text: string; numPages: number }> {
-  const uint8Array = new Uint8Array(arrayBuffer)
-  const loadingTask = pdfjs.getDocument({
-    data: uint8Array,
-    useSystemFonts: true,
-    standardFontDataUrl: undefined
-  })
-
-  const pdf = await loadingTask.promise
-  const numPages = pdf.numPages
-  let fullText = ''
-
-  for (let i = 1; i <= numPages; i++) {
-    const page = await pdf.getPage(i)
-    const textContent = await page.getTextContent()
-    const pageText = textContent.items
-      .map((item) => ('str' in item ? item.str : ''))
-      .join(' ')
-    fullText += pageText + '\n'
+// 动态导入pdf-parse以避免SSR问题
+async function extractTextFromPDF(buffer: Buffer): Promise<{ text: string; numPages: number }> {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const pdfParse = require('pdf-parse')
+  const data = await pdfParse(buffer)
+  return {
+    text: data.text,
+    numPages: data.numpages
   }
-
-  return { text: fullText, numPages }
 }
 
 // PDF解析API - 处理上传的PDF文件并返回解析后的比赛成绩
@@ -65,9 +44,10 @@ export async function POST(request: NextRequest) {
 
     // 读取文件内容
     const arrayBuffer = await file.arrayBuffer()
+    const buffer = Buffer.from(arrayBuffer)
 
-    // 使用pdfjs-dist提取文本
-    const { text, numPages } = await extractTextFromPDF(arrayBuffer)
+    // 使用pdf-parse提取文本
+    const { text, numPages } = await extractTextFromPDF(buffer)
 
     // 使用我们的解析器处理文本
     const parsedData = PDFResultParser.parseResults(text)
