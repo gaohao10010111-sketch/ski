@@ -2,11 +2,14 @@
 const isGitHubPages = process.env.GITHUB_PAGES === 'true';
 
 const nextConfig = {
+  // 始终使用/ski作为basePath（服务器和GitHub Pages都需要）
+  basePath: '/ski',
+  assetPrefix: '/ski/',
+  trailingSlash: true,
+
+  // GitHub Pages专用配置
   ...(isGitHubPages && {
     output: 'export',
-    trailingSlash: true,
-    basePath: '/ski',
-    assetPrefix: '/ski/',
     distDir: 'out',
   }),
 
