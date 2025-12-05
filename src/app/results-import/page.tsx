@@ -1,11 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { getImagePath } from '@/utils/paths'
 import { XMLParser, CompetitionData } from '@/utils/xmlParser'
 import { exportToExcel } from '@/utils/exportUtils'
 import { useToast } from '@/components/Toast'
+import { PDFResultParser } from '@/utils/pdfParser'
 import {
   Upload,
   FileText,
@@ -96,7 +97,7 @@ export default function ResultsImportPage() {
     setUploadProgress(0)
   }
 
-  // 处理PDF文件上传
+  // 处理PDF文件上传 - 使用前端解析
   const handlePDFUpload = async (file: File) => {
     setIsLoading(true)
     setError(null)
@@ -104,34 +105,55 @@ export default function ResultsImportPage() {
     setUploadProgress(10)
 
     try {
-      const formData = new FormData()
-      formData.append('file', file)
+      // 验证文件类型
+      if (!file.type.includes('pdf') && !file.name.toLowerCase().endsWith('.pdf')) {
+        throw new Error('请选择有效的PDF文件')
+      }
+
+      setUploadProgress(20)
+
+      // 动态导入pdfjs-dist并设置worker (使用3.x版本)
+      const pdfjs = await import('pdfjs-dist')
+      pdfjs.GlobalWorkerOptions.workerSrc = '/ski/pdf/pdf.worker.min.js'
 
       setUploadProgress(30)
 
-      const response = await fetch('/api/results/parse-pdf', {
-        method: 'POST',
-        body: formData
-      })
+      // 读取PDF文件
+      const arrayBuffer = await file.arrayBuffer()
+      const pdf = await pdfjs.getDocument({ data: arrayBuffer }).promise
 
-      setUploadProgress(70)
+      setUploadProgress(50)
 
-      if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.error || 'PDF解析失败')
+      // 提取所有页面的文本
+      let fullText = ''
+      for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+        const page = await pdf.getPage(pageNum)
+        const textContent = await page.getTextContent()
+        const pageText = textContent.items
+          .map((item: { str?: string }) => item.str || '')
+          .join(' ')
+        fullText += pageText + '\n'
       }
 
-      const result = await response.json()
+      setUploadProgress(80)
+
+      // 使用解析器解析文本
+      const parsed = PDFResultParser.parseResults(fullText)
+
+      if (!parsed.results || parsed.results.length === 0) {
+        throw new Error('无法从PDF中识别成绩数据，请确认文件格式正确')
+      }
+
+      // 转换为系统通用格式
+      const data = PDFResultParser.toCompetitionData(parsed)
+
       setUploadProgress(100)
 
-      if (result.success && result.data) {
-        setCompetitionData(result.data as ExtendedCompetitionData)
-        setCurrentStep('review')
-        showToast(`成功解析 ${result.data.competitors.length} 名运动员的成绩`, 'success')
-      } else {
-        throw new Error(result.error || '解析结果为空')
-      }
+      setCompetitionData(data as ExtendedCompetitionData)
+      setCurrentStep('review')
+      showToast(`成功解析 ${data.competitors.length} 名运动员的成绩`, 'success')
     } catch (err) {
+      console.error('PDF解析错误:', err)
       setError(err instanceof Error ? err.message : 'PDF解析失败，请检查文件格式')
       showToast('PDF解析失败', 'error')
     } finally {
