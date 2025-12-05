@@ -167,17 +167,41 @@ export default function ResultsImportPage() {
       return
     }
 
+    // 检测是否为高山滑雪（有时间成绩）或大跳台（有评分）
+    const hasTimeResults = competitionData.competitors.some(c => c.run1Time || c.totalTime)
+    const hasScoreResults = competitionData.competitors.some(c => c.finalScore !== undefined)
+
     const exportData = {
-      filename: `${competitionData.raceHeader.eventName}_${new Date().toISOString().split('T')[0]}`,
-      data: competitionData.competitors.map((competitor, index) => ({
-        '排名': index + 1,
-        '号码': competitor.bib,
-        '姓名': `${competitor.firstname} ${competitor.lastname}`,
-        '国家': competitor.nation,
-        'FIS编码': competitor.fisCode,
-        '状态': competitor.status
-      })),
-      title: competitionData.raceHeader.eventName
+      filename: `${competitionData.raceHeader.eventName || '比赛成绩'}_${new Date().toISOString().split('T')[0]}`,
+      data: competitionData.competitors.map((competitor) => {
+        // 基础字段 - 姓名在lastname中（中文名），firstname可能为空
+        const baseData: Record<string, string | number> = {
+          '排名': competitor.rank,
+          '号码布': competitor.bib,
+          '姓名': competitor.firstname ? `${competitor.lastname} ${competitor.firstname}` : competitor.lastname,
+          '单位/国家': competitor.nation || '-'
+        }
+
+        // 高山滑雪成绩（时间制）
+        if (hasTimeResults) {
+          baseData['第一轮'] = competitor.run1Time || '-'
+          baseData['第二轮'] = competitor.run2Time || '-'
+          baseData['总成绩'] = competitor.totalTime || '-'
+          baseData['差距'] = competitor.difference || '-'
+        }
+
+        // 大跳台成绩（评分制）
+        if (hasScoreResults) {
+          baseData['最终得分'] = competitor.finalScore?.toFixed(2) || '-'
+        }
+
+        // 积分和状态
+        baseData['积分'] = competitor.points || 0
+        baseData['状态'] = competitor.status === '' || competitor.status === 'OK' ? '完赛' : competitor.status
+
+        return baseData
+      }),
+      title: competitionData.raceHeader.eventName || '比赛成绩'
     }
 
     const result = exportToExcel(exportData)
@@ -261,43 +285,64 @@ export default function ResultsImportPage() {
               <div class="stat-label">总参赛人数</div>
             </div>
             <div class="stat-card">
-              <div class="stat-number">${competitionData.competitors.filter(c => c.status === 'OK').length}</div>
-              <div class="stat-label">正常状态</div>
+              <div class="stat-number">${competitionData.competitors.filter(c => c.status === 'OK' || c.status === '').length}</div>
+              <div class="stat-label">完赛人数</div>
             </div>
             <div class="stat-card">
               <div class="stat-number">${competitionData.competitors.filter(c => c.status === 'DNF').length}</div>
               <div class="stat-label">未完赛(DNF)</div>
             </div>
             <div class="stat-card">
-              <div class="stat-number">${competitionData.competitors.filter(c => c.status === 'DSQ').length}</div>
+              <div class="stat-number">${competitionData.competitors.filter(c => c.status === 'DSQ' || c.status === 'DQ').length}</div>
               <div class="stat-label">取消资格(DSQ)</div>
             </div>
           </div>
 
-          <h2>参赛名单</h2>
+          <h2>比赛成绩</h2>
           <table class="results-table">
             <thead>
               <tr>
                 <th>排名</th>
-                <th>号码</th>
+                <th>号码布</th>
                 <th>姓名</th>
-                <th>国家</th>
-                <th>FIS编码</th>
+                <th>单位/国家</th>
+                ${competitionData.competitors.some(c => c.run1Time || c.totalTime) ? `
+                <th>第一轮</th>
+                <th>第二轮</th>
+                <th>总成绩</th>
+                <th>差距</th>
+                ` : ''}
+                ${competitionData.competitors.some(c => c.finalScore !== undefined) ? `
+                <th>最终得分</th>
+                ` : ''}
+                <th>积分</th>
                 <th>状态</th>
               </tr>
             </thead>
             <tbody>
-              ${competitionData.competitors.map((competitor, index) => {
-                const rank = competitor.rank || index + 1;
+              ${competitionData.competitors.map((competitor) => {
+                const rank = competitor.rank;
                 const rowClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
+                const name = competitor.firstname ? `${competitor.lastname} ${competitor.firstname}` : competitor.lastname;
+                const hasTimeResults = competitionData.competitors.some(c => c.run1Time || c.totalTime);
+                const hasScoreResults = competitionData.competitors.some(c => c.finalScore !== undefined);
                 return `
                   <tr class="${rowClass}">
                     <td><strong>${rank}</strong></td>
                     <td>${competitor.bib}</td>
-                    <td><strong>${competitor.firstname} ${competitor.lastname}</strong></td>
-                    <td>${competitor.nation}</td>
-                    <td>${competitor.fisCode}</td>
-                    <td>${competitor.status}</td>
+                    <td><strong>${name}</strong></td>
+                    <td>${competitor.nation || '-'}</td>
+                    ${hasTimeResults ? `
+                    <td>${competitor.run1Time || '-'}</td>
+                    <td>${competitor.run2Time || '-'}</td>
+                    <td><strong>${competitor.totalTime || '-'}</strong></td>
+                    <td>${competitor.difference || '-'}</td>
+                    ` : ''}
+                    ${hasScoreResults ? `
+                    <td><strong>${competitor.finalScore?.toFixed(2) || '-'}</strong></td>
+                    ` : ''}
+                    <td>${competitor.points || 0}</td>
+                    <td>${competitor.status === '' || competitor.status === 'OK' ? '完赛' : competitor.status}</td>
                   </tr>
                 `;
               }).join('')}
