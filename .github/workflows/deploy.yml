@@ -1,8 +1,7 @@
 name: Deploy Next.js to GitHub Pages
 
+# 已禁用 - 只使用 sportscience.cn 服务器部署
 on:
-  push:
-    branches: [ main ]
   workflow_dispatch:
 
 permissions:
