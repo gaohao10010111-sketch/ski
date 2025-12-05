@@ -35,6 +35,11 @@ jobs:
         with:
           static_site_generator: next
 
+      - name: Remove API routes for static export
+        run: |
+          rm -rf src/app/api
+          echo "API routes removed for static export"
+
       - name: Build with Next.js
         run: |
           GITHUB_PAGES=true NODE_ENV=production timeout 300s npm run build
