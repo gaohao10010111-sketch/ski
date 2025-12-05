@@ -455,7 +455,7 @@ export class PDFResultParser {
         lastname: r.name,
         firstname: '',
         sex: parsed.competitionInfo.gender === '女子' ? 'L' : 'M',
-        nation: 'CHN',
+        nation: r.organization || 'CHN',  // 使用解析出的单位，默认CHN
         yearOfBirth: 'birthYear' in r ? r.birthYear || 0 : 0,
         status: r.status === 'OK' ? '' : r.status,
         points: r.points,

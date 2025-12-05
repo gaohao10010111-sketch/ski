@@ -36,6 +36,13 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },
+
+  // Webpack配置 - 忽略pdfjs-dist的可选依赖
+  webpack: (config) => {
+    config.resolve.alias.canvas = false;
+    config.resolve.alias.encoding = false;
+    return config;
+  },
 }
 
 module.exports = nextConfig
