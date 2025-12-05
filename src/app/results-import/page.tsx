@@ -440,17 +440,14 @@ export default function ResultsImportPage() {
       {currentStep === 'upload' && (
         <div className="card mb-8 relative z-10">
           <div className="text-center py-8">
-            <div className="flex justify-center space-x-4 mb-6">
-              <div className="flex items-center justify-center w-16 h-16 bg-red-100 rounded-full">
-                <FileUp className="h-8 w-8 text-red-600" />
-              </div>
-              <div className="flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full">
-                <FileText className="h-8 w-8 text-blue-600" />
+            <div className="flex justify-center mb-6">
+              <div className="flex items-center justify-center w-20 h-20 bg-blue-100 rounded-full">
+                <FileUp className="h-10 w-10 text-blue-600" />
               </div>
             </div>
-            <h3 className="text-lg font-semibold text-ski-navy mb-2">上传比赛成绩文件</h3>
+            <h3 className="text-xl font-semibold text-ski-navy mb-2">上传比赛成绩PDF</h3>
             <p className="text-gray-600 mb-6">
-              支持官方PDF成绩册和XML格式文件，系统将自动识别并解析
+              支持官方PDF成绩册，系统将自动识别并解析运动员成绩
             </p>
 
             {error && (
@@ -463,9 +460,7 @@ export default function ResultsImportPage() {
             {isLoading && uploadProgress > 0 && (
               <div className="mb-6 max-w-md mx-auto">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm text-gray-600">
-                    {fileType === 'pdf' ? '正在解析PDF文件...' : '正在解析XML文件...'}
-                  </span>
+                  <span className="text-sm text-gray-600">正在解析PDF文件...</span>
                   <span className="text-sm font-medium text-ski-blue">{uploadProgress}%</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
@@ -477,11 +472,11 @@ export default function ResultsImportPage() {
               </div>
             )}
 
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <div className="flex justify-center">
               {/* PDF上传按钮 */}
-              <label className="btn-primary flex items-center justify-center cursor-pointer min-w-[180px]">
-                <FileUp className="h-4 w-4 mr-2" />
-                {isLoading && fileType === 'pdf' ? '解析中...' : '上传PDF成绩册'}
+              <label className="btn-primary flex items-center justify-center cursor-pointer px-8 py-3 text-lg">
+                <FileUp className="h-5 w-5 mr-2" />
+                {isLoading ? '解析中...' : '选择PDF文件上传'}
                 <input
                   type="file"
                   accept=".pdf"
@@ -490,46 +485,20 @@ export default function ResultsImportPage() {
                   disabled={isLoading}
                 />
               </label>
-
-              {/* XML上传按钮 */}
-              <label className="btn-secondary flex items-center justify-center cursor-pointer min-w-[180px]">
-                <FileText className="h-4 w-4 mr-2" />
-                {isLoading && fileType === 'xml' ? '解析中...' : '上传XML文件'}
-                <input
-                  type="file"
-                  accept=".xml"
-                  onChange={handleFileUpload}
-                  className="hidden"
-                  disabled={isLoading}
-                />
-              </label>
             </div>
 
             {/* 支持的格式说明 */}
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
-              <div className="bg-red-50 rounded-lg p-4 text-left">
-                <div className="flex items-center mb-2">
-                  <FileUp className="h-5 w-5 text-red-600 mr-2" />
-                  <span className="font-semibold text-red-800">PDF成绩册</span>
-                  <span className="ml-2 text-xs bg-red-200 text-red-800 px-2 py-0.5 rounded">推荐</span>
-                </div>
-                <ul className="text-sm text-red-700 space-y-1">
-                  <li>• 高山滑雪U系列成绩（时间制）</li>
-                  <li>• 单板大跳台成绩（裁判评分制）</li>
-                  <li>• 自动识别比赛类型和年龄组</li>
-                  <li>• 支持官方成绩册格式</li>
-                </ul>
-              </div>
+            <div className="mt-8 max-w-md mx-auto">
               <div className="bg-blue-50 rounded-lg p-4 text-left">
-                <div className="flex items-center mb-2">
+                <div className="flex items-center mb-3">
                   <FileText className="h-5 w-5 text-blue-600 mr-2" />
-                  <span className="font-semibold text-blue-800">XML格式</span>
+                  <span className="font-semibold text-blue-800">支持的成绩格式</span>
                 </div>
                 <ul className="text-sm text-blue-700 space-y-1">
-                  <li>• FIS标准XML格式</li>
-                  <li>• 国际比赛数据交换</li>
-                  <li>• 包含完整赛道信息</li>
-                  <li>• 支持多轮次成绩</li>
+                  <li>• 高山滑雪U系列成绩（时间制）</li>
+                  <li>• 单板大跳台成绩（裁判评分制）</li>
+                  <li>• 自由式坡面障碍技巧成绩</li>
+                  <li>• 自动识别比赛类型和年龄组</li>
                 </ul>
               </div>
             </div>
