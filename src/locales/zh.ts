@@ -300,10 +300,10 @@ export const zh = {
       title: '积分排行',
       athletes: [
         { rank: 1, name: '何金博', nation: '河北', points: 360.0, change: 0 },
-        { rank: 2, name: '杨文龙', nation: '黑龙江', points: 288.0, change: 1 },
-        { rank: 3, name: '孙佳旭', nation: '吉林', points: 216.0, change: -1 },
-        { rank: 4, name: '李爽', nation: '北京', points: 180.0, change: 2 },
-        { rank: 5, name: '齐广璞', nation: '辽宁', points: 162.0, change: 0 }
+        { rank: 2, name: '杨文龙', nation: '黑龙江', points: 329.0, change: 1 },
+        { rank: 3, name: '孙佳旭', nation: '吉林', points: 303.0, change: -1 },
+        { rank: 4, name: '李爽', nation: '北京', points: 280.0, change: 2 },
+        { rank: 5, name: '齐广璞', nation: '辽宁', points: 260.0, change: 0 }
       ]
     }
   },
@@ -399,10 +399,10 @@ export const zh = {
       title: '积分排行',
       athletes: [
         { rank: 1, name: '李明', nation: '北京', points: 360.0, change: 0 },
-        { rank: 2, name: '王雪', nation: '河北', points: 288.0, change: 1 },
-        { rank: 3, name: '张强', nation: '吉林', points: 216.0, change: -1 },
-        { rank: 4, name: '刘冰', nation: '黑龙江', points: 180.0, change: 2 },
-        { rank: 5, name: '陈飞', nation: '辽宁', points: 162.0, change: 0 }
+        { rank: 2, name: '王雪', nation: '河北', points: 329.0, change: 1 },
+        { rank: 3, name: '张强', nation: '吉林', points: 303.0, change: -1 },
+        { rank: 4, name: '刘冰', nation: '黑龙江', points: 280.0, change: 2 },
+        { rank: 5, name: '陈飞', nation: '辽宁', points: 260.0, change: 0 }
       ]
     }
   },

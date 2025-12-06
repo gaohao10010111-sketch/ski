@@ -155,15 +155,35 @@ export async function POST(request: NextRequest, { params }: RouteParams) {
       const coefficient = competition.raceLevel === 'A' ? 1.0 : competition.raceLevel === 'B' ? 0.6 : 0.3;
       finalPoints = basePoints * coefficient;
     } else {
-      // 其他项目：排名积分
+      // 其他项目：统一排名积分表（四大项目通用）
+      // 当次比赛成绩排名为50名以后、未完赛、因伤退出等情况，当次比赛积分为0
       const pointsTable: Record<string, number[]> = {
-        TIER_360: [360, 288, 216, 173, 138, 110, 88, 70, 56, 45, 36, 29, 23, 18, 14, 11, 9, 7, 5, 4, 3, 2, 1],
-        TIER_240: [240, 192, 144, 115, 92, 74, 59, 47, 37, 30, 24, 19, 15, 12, 10, 7, 6, 5, 4, 3, 2, 1],
-        TIER_120: [120, 96, 72, 58, 46, 37, 29, 23, 19, 15, 12, 10, 8, 6, 5, 4, 3, 2, 1],
+        TIER_360: [
+          360, 329, 303, 280, 260, 242, 226, 212, 199, 187,
+          176, 166, 157, 149, 141, 134, 127, 121, 115, 110,
+          105, 100, 95, 91, 87, 83, 79, 75, 71, 67,
+          63, 59, 55, 51, 47, 43, 39, 35, 31, 27,
+          24, 21, 18, 15, 12, 9, 6, 3, 2, 1
+        ],
+        TIER_240: [
+          240, 219, 202, 187, 173, 161, 151, 141, 133, 125,
+          117, 111, 105, 99, 94, 89, 85, 81, 77, 73,
+          70, 67, 63, 61, 58, 55, 53, 50, 47, 45,
+          42, 39, 37, 34, 31, 29, 26, 23, 21, 18,
+          16, 14, 12, 10, 8, 6, 4, 2, 1, 1
+        ],
+        TIER_120: [
+          120, 110, 101, 93, 87, 81, 75, 71, 66, 62,
+          59, 55, 52, 50, 47, 45, 42, 40, 38, 37,
+          35, 33, 32, 30, 29, 28, 26, 25, 24, 22,
+          21, 20, 18, 17, 16, 14, 13, 12, 10, 9,
+          8, 7, 6, 5, 4, 3, 2, 1, 1, 1
+        ],
       };
       const tier = competition.pointsTier || 'TIER_360';
       const table = pointsTable[tier] || pointsTable.TIER_360;
-      basePoints = data.finalRank <= table.length ? table[data.finalRank - 1] : 0;
+      // 50名以后积分为0
+      basePoints = data.finalRank <= 50 && data.finalRank <= table.length ? table[data.finalRank - 1] : 0;
       finalPoints = basePoints;
     }
 

@@ -112,9 +112,10 @@ export default function ResultsImportPage() {
 
       setUploadProgress(20)
 
-      // 动态导入pdfjs-dist并设置worker (使用3.x版本)
+      // 动态导入pdfjs-dist并设置worker
       const pdfjs = await import('pdfjs-dist')
-      pdfjs.GlobalWorkerOptions.workerSrc = '/ski/pdf/pdf.worker.min.js'
+      // 使用CDN加载worker，避免部署路径问题
+      pdfjs.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'
 
       setUploadProgress(30)
 
@@ -130,7 +131,10 @@ export default function ResultsImportPage() {
         const page = await pdf.getPage(pageNum)
         const textContent = await page.getTextContent()
         const pageText = textContent.items
-          .map((item: { str?: string }) => item.str || '')
+          .map((item: unknown) => {
+            const textItem = item as { str?: string }
+            return textItem.str || ''
+          })
           .join(' ')
         fullText += pageText + '\n'
       }
@@ -171,9 +175,12 @@ export default function ResultsImportPage() {
     const hasTimeResults = competitionData.competitors.some(c => c.run1Time || c.totalTime)
     const hasScoreResults = competitionData.competitors.some(c => c.finalScore !== undefined)
 
+    // 按排名排序后导出
+    const sortedCompetitors = [...competitionData.competitors].sort((a, b) => a.rank - b.rank)
+
     const exportData = {
       filename: `${competitionData.raceHeader.eventName || '比赛成绩'}_${new Date().toISOString().split('T')[0]}`,
-      data: competitionData.competitors.map((competitor) => {
+      data: sortedCompetitors.map((competitor) => {
         // 基础字段 - 姓名在lastname中（中文名），firstname可能为空
         const baseData: Record<string, string | number> = {
           '排名': competitor.rank,
@@ -320,7 +327,7 @@ export default function ResultsImportPage() {
               </tr>
             </thead>
             <tbody>
-              ${competitionData.competitors.map((competitor) => {
+              ${[...competitionData.competitors].sort((a, b) => a.rank - b.rank).map((competitor) => {
                 const rank = competitor.rank;
                 const rowClass = rank === 1 ? 'rank-1' : rank === 2 ? 'rank-2' : rank === 3 ? 'rank-3' : '';
                 const name = competitor.firstname ? `${competitor.lastname} ${competitor.firstname}` : competitor.lastname;
@@ -423,14 +430,16 @@ export default function ResultsImportPage() {
     reader.readAsText(file, 'utf-8')
   }
 
-  // 筛选选手数据
-  const filteredCompetitors = competitionData?.competitors.filter(competitor => {
-    const matchSearch = competitor.lastname.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                       competitor.firstname.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                       competitor.fisCode.includes(searchTerm)
-    const matchNation = selectedNation === 'all' || competitor.nation === selectedNation
-    return matchSearch && matchNation
-  }) || []
+  // 筛选选手数据并按排名排序
+  const filteredCompetitors = competitionData?.competitors
+    .filter(competitor => {
+      const matchSearch = competitor.lastname.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         competitor.firstname.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         competitor.fisCode.includes(searchTerm)
+      const matchNation = selectedNation === 'all' || competitor.nation === selectedNation
+      return matchSearch && matchNation
+    })
+    .sort((a, b) => a.rank - b.rank) || []
 
   // 获取所有国家
   const allNations = Array.from(new Set(competitionData?.competitors.map(c => c.nation) || []))

@@ -15,14 +15,14 @@ describe('SnowboardSlopestyleBigAirCalculator', () => {
     it('should return correct points for rank 2 in TIER_360', () => {
       const result = SnowboardSlopestyleBigAirCalculator.calculatePoints(2, PointsTier.TIER_360)
 
-      expect(result.basePoints).toBe(288) // 360 × 80%
-      expect(result.finalPoints).toBe(288)
+      expect(result.basePoints).toBe(329) // 第2名329分
+      expect(result.finalPoints).toBe(329)
     })
 
     it('should return correct points for rank 3 in TIER_360', () => {
       const result = SnowboardSlopestyleBigAirCalculator.calculatePoints(3, PointsTier.TIER_360)
 
-      expect(result.basePoints).toBe(216) // 360 × 60%
+      expect(result.basePoints).toBe(303) // 第3名303分
     })
 
     it('should return correct points for rank 1 in TIER_240', () => {
@@ -39,11 +39,17 @@ describe('SnowboardSlopestyleBigAirCalculator', () => {
       expect(result.tier).toBe(PointsTier.TIER_120)
     })
 
-    it('should return reduced points for ranks beyond allocation table', () => {
-      // 假设积分表只到第15名，超出的获得最低分的50%
+    it('should return 1 point for rank 50 in TIER_360', () => {
       const result = SnowboardSlopestyleBigAirCalculator.calculatePoints(50, PointsTier.TIER_360)
 
-      expect(result.finalPoints).toBeLessThan(50)
+      expect(result.finalPoints).toBe(1) // 第50名1分
+    })
+
+    it('should return 0 points for ranks beyond 50', () => {
+      // 50名以后积分为0
+      const result = SnowboardSlopestyleBigAirCalculator.calculatePoints(51, PointsTier.TIER_360)
+
+      expect(result.finalPoints).toBe(0)
     })
   })
 

@@ -1,50 +1,60 @@
 #!/bin/bash
-# 静态构建脚本 - 用于 GitHub Pages 和其他静态托管
-# 临时移除不支持静态导出的目录，构建后恢复
+# 静态导出构建脚本
+# 临时移除API目录和动态路由以支持Next.js静态导出
 
 set -e
 
-echo "🔧 准备静态构建..."
+BACKUP_DIR=".build-backup"
 
-# 定义需要临时移除的目录
-API_DIR="src/app/api"
-API_BACKUP="src/app/_api_backup"
-ATHLETES_ID_DIR="src/app/athletes/[id]"
-ATHLETES_ID_BACKUP="src/app/athletes/_id_backup"
-COMPETITIONS_ID_DIR="src/app/competitions/[id]"
-COMPETITIONS_ID_BACKUP="src/app/competitions/_id_backup"
+# 需要备份的目录（API和动态路由）
+DIRS_TO_BACKUP=(
+  "src/app/api"
+  "src/app/athletes/[id]"
+  "src/app/competitions/[id]"
+)
 
-# 清理函数 - 确保恢复所有目录
-cleanup() {
-    echo "🔄 恢复临时移动的目录..."
-    [ -d "$API_BACKUP" ] && mv "$API_BACKUP" "$API_DIR"
-    [ -d "$ATHLETES_ID_BACKUP" ] && mv "$ATHLETES_ID_BACKUP" "$ATHLETES_ID_DIR"
-    [ -d "$COMPETITIONS_ID_BACKUP" ] && mv "$COMPETITIONS_ID_BACKUP" "$COMPETITIONS_ID_DIR"
-    echo "✅ 目录已恢复"
-}
+echo "🔧 准备静态导出构建..."
 
-# 设置 trap 确保即使出错也恢复目录
-trap cleanup EXIT
+# 创建备份目录
+mkdir -p "$BACKUP_DIR"
 
-# 清除旧的构建缓存
-echo "🗑️  清除构建缓存..."
-rm -rf .next out
-
-# 临时移除不支持静态导出的目录
-echo "📦 临时移除动态路由..."
-[ -d "$API_DIR" ] && mv "$API_DIR" "$API_BACKUP"
-[ -d "$ATHLETES_ID_DIR" ] && mv "$ATHLETES_ID_DIR" "$ATHLETES_ID_BACKUP"
-[ -d "$COMPETITIONS_ID_DIR" ] && mv "$COMPETITIONS_ID_DIR" "$COMPETITIONS_ID_BACKUP"
+# 备份需要排除的目录
+for dir in "${DIRS_TO_BACKUP[@]}"; do
+  if [ -d "$dir" ]; then
+    backup_path="$BACKUP_DIR/$(echo "$dir" | tr '/' '_')"
+    echo "📦 备份: $dir"
+    mv "$dir" "$backup_path"
+  fi
+done
 
 # 执行构建
-echo "🏗️  开始静态构建..."
+echo "🏗️ 执行静态导出构建..."
 GITHUB_PAGES=true npm run build
 
-echo ""
-echo "✅ 静态构建完成！"
+BUILD_STATUS=$?
+
+# 恢复备份的目录
+for dir in "${DIRS_TO_BACKUP[@]}"; do
+  backup_path="$BACKUP_DIR/$(echo "$dir" | tr '/' '_')"
+  if [ -d "$backup_path" ]; then
+    echo "📂 恢复: $dir"
+    # 确保父目录存在
+    parent_dir=$(dirname "$dir")
+    mkdir -p "$parent_dir"
+    mv "$backup_path" "$dir"
+  fi
+done
+
+# 清理备份目录
+rmdir "$BACKUP_DIR" 2>/dev/null || true
+
+if [ $BUILD_STATUS -ne 0 ]; then
+  echo "❌ 构建失败"
+  exit $BUILD_STATUS
+fi
+
+# 创建.nojekyll文件
+touch out/.nojekyll
+
+echo "✅ 静态导出构建完成！"
 echo "📁 输出目录: out/"
-echo ""
-echo "注意: 以下功能在静态版本中不可用:"
-echo "  - /api/* (需要服务端)"
-echo "  - /athletes/[id] (需要服务端)"
-echo "  - /competitions/[id] (需要服务端)"

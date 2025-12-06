@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:github": "GITHUB_PAGES=true npm run build",
+    "build:github": "bash scripts/build-static.sh",
     "build:direct": "DIRECT_DEPLOY=true npm run build",
     "export": "next export",
     "deploy:github": "npm run build:github && touch out/.nojekyll",

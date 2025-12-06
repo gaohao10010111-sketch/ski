@@ -302,10 +302,10 @@ export const en: PartialTranslationKeys = {
       title: 'Rankings',
       athletes: [
         { rank: 1, name: 'Jinbo He', nation: 'Hebei', points: 360.0, change: 0 },
-        { rank: 2, name: 'Wenlong Yang', nation: 'Heilongjiang', points: 288.0, change: 1 },
-        { rank: 3, name: 'Jiaxu Sun', nation: 'Jilin', points: 216.0, change: -1 },
-        { rank: 4, name: 'Shuang Li', nation: 'Beijing', points: 180.0, change: 2 },
-        { rank: 5, name: 'Guangpu Qi', nation: 'Liaoning', points: 162.0, change: 0 }
+        { rank: 2, name: 'Wenlong Yang', nation: 'Heilongjiang', points: 329.0, change: 1 },
+        { rank: 3, name: 'Jiaxu Sun', nation: 'Jilin', points: 303.0, change: -1 },
+        { rank: 4, name: 'Shuang Li', nation: 'Beijing', points: 280.0, change: 2 },
+        { rank: 5, name: 'Guangpu Qi', nation: 'Liaoning', points: 260.0, change: 0 }
       ]
     }
   },
@@ -401,10 +401,10 @@ export const en: PartialTranslationKeys = {
       title: 'Rankings',
       athletes: [
         { rank: 1, name: 'Ming Li', nation: 'Beijing', points: 360.0, change: 0 },
-        { rank: 2, name: 'Xue Wang', nation: 'Hebei', points: 288.0, change: 1 },
-        { rank: 3, name: 'Qiang Zhang', nation: 'Jilin', points: 216.0, change: -1 },
-        { rank: 4, name: 'Bing Liu', nation: 'Heilongjiang', points: 180.0, change: 2 },
-        { rank: 5, name: 'Fei Chen', nation: 'Liaoning', points: 162.0, change: 0 }
+        { rank: 2, name: 'Xue Wang', nation: 'Hebei', points: 329.0, change: 1 },
+        { rank: 3, name: 'Qiang Zhang', nation: 'Jilin', points: 303.0, change: -1 },
+        { rank: 4, name: 'Bing Liu', nation: 'Heilongjiang', points: 280.0, change: 2 },
+        { rank: 5, name: 'Fei Chen', nation: 'Liaoning', points: 260.0, change: 0 }
       ]
     }
   },

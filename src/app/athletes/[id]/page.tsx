@@ -1,6 +1,10 @@
 import AthleteDetailClient from './AthleteDetailClient'
 
-// 静态导出时生成空参数（动态页面需要服务端运行时）
+// 标记为动态路由 - 在静态导出时会被忽略
+export const dynamic = 'force-static'
+export const dynamicParams = false
+
+// 静态导出时不生成任何页面（页面通过客户端导航访问）
 export function generateStaticParams() {
   return []
 }

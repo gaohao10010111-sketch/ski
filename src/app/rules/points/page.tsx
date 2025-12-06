@@ -101,21 +101,62 @@ export default function PointsRulesDocuments() {
     }
   ]
 
-  // 积分表数据
+  // 统一积分表数据（四大项目通用）
+  // 当次比赛成绩排名为50名以后、未完赛、因伤退出等情况，当次比赛积分为0
   const pointsAllocation = {
     tier360: [
-      { rank: 1, percentage: 100, points: 360 },
-      { rank: 2, percentage: 80, points: 288 },
-      { rank: 3, percentage: 60, points: 216 },
-      { rank: 4, percentage: 50, points: 180 },
-      { rank: 5, percentage: 45, points: 162 }
+      { rank: 1, points: 360 },
+      { rank: 2, points: 329 },
+      { rank: 3, points: 303 },
+      { rank: 4, points: 280 },
+      { rank: 5, points: 260 },
+      { rank: 6, points: 242 },
+      { rank: 7, points: 226 },
+      { rank: 8, points: 212 },
+      { rank: 9, points: 199 },
+      { rank: 10, points: 187 }
     ],
-    tier240: [
-      { rank: 1, percentage: 100, points: 240 },
-      { rank: 2, percentage: 80, points: 192 },
-      { rank: 3, percentage: 60, points: 144 },
-      { rank: 4, percentage: 50, points: 120 },
-      { rank: 5, percentage: 45, points: 108 }
+    tier360Extended: [
+      { rank: 11, points: 176 },
+      { rank: 12, points: 166 },
+      { rank: 13, points: 157 },
+      { rank: 14, points: 149 },
+      { rank: 15, points: 141 },
+      { rank: 16, points: 134 },
+      { rank: 17, points: 127 },
+      { rank: 18, points: 121 },
+      { rank: 19, points: 115 },
+      { rank: 20, points: 110 },
+      { rank: 21, points: 105 },
+      { rank: 22, points: 100 },
+      { rank: 23, points: 95 },
+      { rank: 24, points: 91 },
+      { rank: 25, points: 87 },
+      { rank: 26, points: 83 },
+      { rank: 27, points: 79 },
+      { rank: 28, points: 75 },
+      { rank: 29, points: 71 },
+      { rank: 30, points: 67 },
+      { rank: 31, points: 63 },
+      { rank: 32, points: 59 },
+      { rank: 33, points: 55 },
+      { rank: 34, points: 51 },
+      { rank: 35, points: 47 },
+      { rank: 36, points: 43 },
+      { rank: 37, points: 39 },
+      { rank: 38, points: 35 },
+      { rank: 39, points: 31 },
+      { rank: 40, points: 27 },
+      { rank: 41, points: 24 },
+      { rank: 42, points: 21 },
+      { rank: 43, points: 18 },
+      { rank: 44, points: 15 },
+      { rank: 45, points: 12 },
+      { rank: 46, points: 9 },
+      { rank: 47, points: 6 },
+      { rank: 48, points: 3 },
+      { rank: 49, points: 2 },
+      { rank: 50, points: 1 }
     ]
   }
 
@@ -241,41 +282,73 @@ export default function PointsRulesDocuments() {
         ))}
       </div>
 
-      {/* 积分分配参考表 */}
+      {/* 统一积分分配表 */}
       <div className="mb-12">
         <h2 className="text-2xl font-bold mb-6 flex items-center">
           <Trophy className="h-6 w-6 mr-2 text-orange-600" />
-          积分分配参考表
+          统一积分分配表（四大项目通用）
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+          <p className="text-sm text-yellow-800">
+            <strong>重要说明：</strong>当次比赛成绩排名为50名以后、未完赛、因伤退出等情况，当次比赛积分为0。
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* 前10名 */}
           <div className="bg-white border border-gray-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-4 text-yellow-600">一类赛事 (360分档)</h3>
+            <h3 className="text-lg font-semibold mb-4 text-yellow-600">第1-10名</h3>
             <div className="space-y-2">
               {pointsAllocation.tier360.map((item, index) => (
                 <div key={index} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
-                  <span>第{item.rank}名</span>
-                  <div className="text-right">
-                    <span className="font-semibold">{item.points}分</span>
-                    <span className="text-sm text-gray-500 ml-2">({item.percentage}%)</span>
-                  </div>
+                  <span className="font-medium">第{item.rank}名</span>
+                  <span className="font-semibold text-blue-600">{item.points}分</span>
                 </div>
               ))}
             </div>
           </div>
 
+          {/* 11-25名 */}
           <div className="bg-white border border-gray-200 rounded-xl p-6">
-            <h3 className="text-lg font-semibold mb-4 text-orange-600">二类赛事 (240分档)</h3>
+            <h3 className="text-lg font-semibold mb-4 text-green-600">第11-25名</h3>
             <div className="space-y-2">
-              {pointsAllocation.tier240.map((item, index) => (
+              {pointsAllocation.tier360Extended.slice(0, 15).map((item, index) => (
                 <div key={index} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
-                  <span>第{item.rank}名</span>
-                  <div className="text-right">
-                    <span className="font-semibold">{item.points}分</span>
-                    <span className="text-sm text-gray-500 ml-2">({item.percentage}%)</span>
-                  </div>
+                  <span className="font-medium">第{item.rank}名</span>
+                  <span className="font-semibold text-green-600">{item.points}分</span>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* 26-38名 */}
+          <div className="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-4 text-orange-600">第26-38名</h3>
+            <div className="space-y-2">
+              {pointsAllocation.tier360Extended.slice(15, 28).map((item, index) => (
+                <div key={index} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
+                  <span className="font-medium">第{item.rank}名</span>
+                  <span className="font-semibold text-orange-600">{item.points}分</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 39-50名 */}
+          <div className="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 className="text-lg font-semibold mb-4 text-gray-600">第39-50名</h3>
+            <div className="space-y-2">
+              {pointsAllocation.tier360Extended.slice(28).map((item, index) => (
+                <div key={index} className="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
+                  <span className="font-medium">第{item.rank}名</span>
+                  <span className="font-semibold text-gray-600">{item.points}分</span>
+                </div>
+              ))}
+              <div className="flex justify-between items-center py-2 text-red-500">
+                <span className="font-medium">&gt;50名</span>
+                <span className="font-semibold">0分</span>
+              </div>
             </div>
           </div>
         </div>

@@ -17,20 +17,30 @@ export class SnowboardSlopestyleBigAirCalculator {
    * @param rank 最终排名
    * @param tier 积分档次 (240/360/120)
    * @returns 积分计算结果
+   * @description 当次比赛成绩排名为50名以后、未完赛、因伤退出等情况，当次比赛积分为0
    */
   static calculatePoints(rank: number, tier: PointsTier): PointsCalculationResult {
+    // 50名以后积分为0
+    if (rank > 50) {
+      return {
+        basePoints: 0,
+        adjustedPoints: 0,
+        finalPoints: 0,
+        tier
+      };
+    }
+
     const allocation = POINTS_ALLOCATION[tier];
 
     // 查找对应排名的积分
     const rankData = allocation.find(item => item.rank === rank);
 
     if (!rankData) {
-      // 超出积分表范围，给予最低分
-      const lowestPoints = allocation[allocation.length - 1].points * 0.5;
+      // 未找到对应排名数据，积分为0
       return {
-        basePoints: lowestPoints,
-        adjustedPoints: lowestPoints,
-        finalPoints: lowestPoints,
+        basePoints: 0,
+        adjustedPoints: 0,
+        finalPoints: 0,
         tier
       };
     }
