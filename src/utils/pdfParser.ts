@@ -289,8 +289,141 @@ export class PDFResultParser {
     return results
   }
 
+  // 积分表（1-50名的标准积分）
+  private static readonly POINTS_TABLE = [
+    360, 329, 303, 280, 260, 242, 226, 212, 199, 187,
+    176, 166, 157, 149, 141, 134, 127, 121, 115, 109,
+    104, 99, 94, 90, 86, 82, 78, 75, 72, 69,
+    66, 64, 62, 60, 58, 56, 54, 52, 50, 48,
+    46, 44, 42, 40, 38, 36, 34, 32, 30, 28,
+    26, 24, 22, 20, 18, 16, 14, 12, 10, 8,
+    6, 4, 2, 1
+  ]
+
   // 解析单板/自由式大跳台成绩表格
   static parseBigAirResults(text: string): BigAirResult[] {
+    const results: BigAirResult[] = []
+
+    // 检查是否包含成绩公告
+    const hasResults = text.includes('成 绩 公 告') || text.includes('成绩公告')
+    if (!hasResults) {
+      // 尝试旧的解析方法
+      return this.parseBigAirResultsLegacy(text)
+    }
+
+    // 新的解析方法：基于PDF文本流的连续解析
+    // 单板大跳台成绩格式: 排名 姓名 单位 号码 站姿 ...评分数据... 出生年 ...数据... 积分
+
+    // 1. 先找所有 "数字 中文姓名" 的模式作为起点
+    const starts: Array<{rank: number, name: string, position: number}> = []
+    const startRegex = /(\d{1,2})\s+([\u4e00-\u9fa5·]{2,4})\s+/g
+    let match
+
+    while ((match = startRegex.exec(text)) !== null) {
+      const rank = parseInt(match[1])
+      // 只接受1-50范围内的排名
+      if (rank >= 1 && rank <= 50) {
+        starts.push({
+          rank: rank,
+          name: match[2],
+          position: match.index
+        })
+      }
+    }
+
+    // 2. 过滤：只保留排名递增的序列（处理重复匹配）
+    const validStarts: Array<{rank: number, name: string, position: number}> = []
+    let lastRank = 0
+
+    for (const start of starts) {
+      // 检查是否是有效的新运动员
+      if (start.rank === 1 && validStarts.length === 0) {
+        validStarts.push(start)
+        lastRank = 1
+      } else if (start.rank > lastRank && start.rank <= lastRank + 3) {
+        // 允许跳过1-2个排名（可能有DNS/DNF）
+        validStarts.push(start)
+        lastRank = start.rank
+      } else if (start.rank === 1 && lastRank > 0) {
+        // 新的年龄组开始，重置
+        // 先保存之前的结果，再开始新组
+        validStarts.push(start)
+        lastRank = 1
+      }
+    }
+
+    // 3. 对每个运动员，提取从当前位置到下一个运动员之间的文本
+    for (let i = 0; i < validStarts.length; i++) {
+      const current = validStarts[i]
+      const nextPos = i < validStarts.length - 1 ? validStarts[i + 1].position : text.length
+      const athleteText = text.substring(current.position, nextPos)
+
+      // 从athleteText中提取信息
+      // 格式: 排名 姓名 单位 号码 站姿 ... 出生年 ... 积分
+
+      // 尝试多种单位名称匹配模式
+      const orgPatterns = [
+        /[\u4e00-\u9fa5·]+\s+([\u4e00-\u9fa5\s]+?(?:中心|个人|学院|学校|运动|奇迹|体育局|职业|管理))\s*(\d{1,3})\s+([GR])/,
+        /[\u4e00-\u9fa5·]+\s+([\u4e00-\u9fa5\s]+?省[\u4e00-\u9fa5\s]*?)\s*(\d{1,3})\s+([GR])/,
+        /[\u4e00-\u9fa5·]+\s+([\u4e00-\u9fa5\s]+?市[\u4e00-\u9fa5\s]*?)\s*(\d{1,3})\s+([GR])/,
+        /[\u4e00-\u9fa5·]+\s+([^\d]+?)\s*(\d{1,3})\s+([GR])/
+      ]
+
+      let detailMatch = null
+      for (const pattern of orgPatterns) {
+        detailMatch = athleteText.match(pattern)
+        if (detailMatch) break
+      }
+
+      // 提取出生年（4位数字，2000-2019范围）
+      const yearMatch = athleteText.match(/\b(201[0-9]|200[0-9])\b/g)
+      const birthYear = yearMatch ? yearMatch[yearMatch.length - 1] : null
+
+      // 根据排名确定积分
+      const expectedPoints = this.POINTS_TABLE[current.rank - 1] || 0
+
+      // 验证积分值是否在文本中
+      const hasExpectedPoints = athleteText.includes(String(expectedPoints))
+
+      if (detailMatch) {
+        const organization = detailMatch[1].replace(/\s+/g, '').trim()
+        const bib = parseInt(detailMatch[2])
+        const stance = detailMatch[3] as 'G' | 'R'
+
+        results.push({
+          rank: current.rank,
+          bib: bib,
+          name: current.name,
+          organization: organization,
+          birthYear: birthYear ? parseInt(birthYear) : undefined,
+          stance: stance,
+          rounds: [], // 简化处理，不解析详细轮次
+          finalScore: 0, // 可后续从积分反推
+          points: hasExpectedPoints ? expectedPoints : 0,
+          status: 'OK'
+        })
+      } else {
+        // 即使没有匹配到详细信息，也创建基本记录
+        results.push({
+          rank: current.rank,
+          bib: 0,
+          name: current.name,
+          organization: '',
+          birthYear: birthYear ? parseInt(birthYear) : undefined,
+          stance: undefined,
+          rounds: [],
+          finalScore: 0,
+          points: hasExpectedPoints ? expectedPoints : 0,
+          status: 'OK'
+        })
+      }
+    }
+
+    return results
+  }
+
+  // 旧的大跳台解析方法（兼容性）
+  private static parseBigAirResultsLegacy(text: string): BigAirResult[] {
     const results: BigAirResult[] = []
 
     // 大跳台成绩格式更复杂，包含多轮裁判评分
