@@ -163,28 +163,42 @@ export default function ResultsImportPage() {
       console.log('[PDF解析] 开始解析PDF, 总页数:', pdf.numPages)
 
       // 智能解析结果行的辅助函数
+      // 核心原则：同一行的信息才是一条信息，绝不从不同行拼凑数据
       // 支持两种格式：
-      // 1. 高山滑雪: 名次 号码 姓名 单位 第一轮 第二轮 总成绩 积分
+      // 1. 高山滑雪: 名次 号码 姓名 单位 第一轮 第二轮 总成绩 差值（无积分列）
       // 2. 大跳台/坡障: 名次 号码 姓名 单位 出生年 站姿 轮次 J1-J5 得分 最终成绩 积分
       const parseResultRow = (rowText: string, sportType: string = 'alpine'): AlpineResult | null => {
         // 清理行开头的 | 和空格
         const cleanText = rowText.replace(/^\s*\|\s*/, '').trim()
 
-        // 提取所有数字（包括小数和时间格式）
-        const numbers = cleanText.match(/\d+(?:\.\d+)?|\d{1,2}:\d{2}\.\d{2}/g) || []
         // 提取中文姓名（2-5个汉字，可能包含间隔号·）
         const nameMatch = cleanText.match(/[\u4e00-\u9fa5·]{2,5}/)
-
         if (!nameMatch) return null
         const name = nameMatch[0]
 
+        // 提取所有数字（包括小数和时间格式）
+        // 优先匹配时间格式 1:01.44，再匹配普通小数和整数
+        const numbers = cleanText.match(/\d{1,2}:\d{2}\.\d{2}|\d+\.\d+|\d+/g) || []
+
         // 对于大跳台/坡障格式，使用专门的解析逻辑
         if (sportType.includes('bigair') || sportType.includes('slopestyle') || sportType === 'freestyle') {
-          // 大跳台格式需要至少8个数字：名次、号码、出生年、轮次、5个评分、得分、最终成绩、积分
-          if (numbers.length < 8) return null
+          // 大跳台完整数据行的特征：
+          // - 必须包含姓名
+          // - 必须包含站姿标记 G 或 R
+          // - 必须包含积分（1-360的整数，在行末尾）
+          // - 必须是轮次1的行（如果是轮次2/3的行，只有评分数据，没有完整信息）
 
-          // 检查轮次 - 如果行中包含站姿(G/R)后面的轮次标记，且不是轮次1，跳过
-          const roundPattern = /[GR]\s*\|?\s*(\d)\s*\|?\s*(\d{1,2})\s*\|?\s*(\d{1,2})/
+          // 检查是否包含站姿标记（这是完整行的标志之一）
+          const hasStance = /[|\s][GR][|\s]/.test(cleanText) || cleanText.includes(' G ') || cleanText.includes(' R ')
+
+          // 如果没有站姿标记且数字很少，这可能是轮次2/3的行，跳过
+          if (!hasStance && numbers.length < 8) {
+            return null
+          }
+
+          // 检查轮次 - 查找格式如 "G | 1" 或 "R 1" 的模式
+          // 如果是轮次2或3的行（即使有姓名也跳过，因为那是从上一行继承的）
+          const roundPattern = /[GR]\s*\|?\s*(\d)\s*\|/
           const roundMatch = cleanText.match(roundPattern)
           if (roundMatch) {
             const round = parseInt(roundMatch[1])
@@ -192,6 +206,9 @@ export default function ResultsImportPage() {
               return null  // 跳过轮次2和3的行
             }
           }
+
+          // 大跳台格式需要足够多的数字来包含：名次、号码、出生年、轮次、评分、最终成绩、积分
+          if (numbers.length < 8) return null
 
           // 名次应该是第一个1-99之间的数字
           const firstNum = numbers[0]
@@ -204,6 +221,7 @@ export default function ResultsImportPage() {
           const bib = secondNum ? parseInt(secondNum) : rank
 
           // 从末尾提取积分（1-360之间的整数）
+          // 积分必须在这一行存在才能解析
           let points = 0
           let finalScore = '-'
 
@@ -219,9 +237,10 @@ export default function ResultsImportPage() {
             }
           }
 
+          // 如果这一行没有积分，说明不是完整的数据行
           if (points === 0) return null
 
-          // 提取单位 - 在姓名后面的中文
+          // 提取单位 - 在姓名后面的中文（必须在同一行）
           let organization = '-'
           const afterName = cleanText.substring(cleanText.indexOf(name) + name.length)
           const orgMatch = afterName.match(/[\u4e00-\u9fa5]{2,15}/)
@@ -242,38 +261,11 @@ export default function ResultsImportPage() {
           }
         }
 
-        // 高山滑雪等其他格式的原有解析逻辑
+        // 高山滑雪格式的解析逻辑
+        // 高山滑雪"总成绩"页格式：成绩排名 | 号码 | 姓名 | 单位 | 第一轮 | 第二轮 | 总成绩 | 差值
+        // 注意：高山滑雪的成绩页没有积分列，积分在"积分表"页面
+
         if (numbers.length < 3) return null
-
-        // 提取中文单位（姓名后面的较长中文，最多15个字符）
-        const orgMatch = cleanText.match(/[\u4e00-\u9fa5·]{2,5}\s+([\u4e00-\u9fa5\s]{2,15}?)(?:\s+\d|\s*$)/)
-        const organization = orgMatch ? orgMatch[1].trim().replace(/\s+/g, '') : '-'
-
-        // 尝试从末尾提取积分（通常是最后一个1-3位整数）
-        let points = 0
-        let totalScore = '-'
-        let runScore = '-'
-
-        // 从后向前查找积分（1-360之间的整数）
-        for (let i = numbers.length - 1; i >= 0; i--) {
-          const numStr = numbers[i]
-          if (!numStr) continue
-          const num = parseInt(numStr)
-          if (num >= 1 && num <= 360 && !numStr.includes('.') && !numStr.includes(':')) {
-            points = num
-            // 积分前面的数字可能是总成绩
-            if (i > 0 && numbers[i - 1]) {
-              totalScore = numbers[i - 1]
-            }
-            // 再前面可能是单轮得分
-            if (i > 1 && numbers[i - 2]) {
-              runScore = numbers[i - 2]
-            }
-            break
-          }
-        }
-
-        if (points === 0) return null  // 没有找到有效积分
 
         // 提取排名（第一个数字，1-99之间）
         const firstNum = numbers[0]
@@ -281,18 +273,66 @@ export default function ResultsImportPage() {
         const rank = parseInt(firstNum)
         if (rank < 1 || rank > 99) return null
 
-        // 提取号码（第二个数字，如果存在）
+        // 提取号码（第二个数字）
         const secondNum = numbers[1]
         const bib = secondNum ? parseInt(secondNum) : rank
+
+        // 提取单位 - 姓名后面的中文
+        let organization = '-'
+        const afterName = cleanText.substring(cleanText.indexOf(name) + name.length)
+        const orgMatch = afterName.match(/[\u4e00-\u9fa5]{2,15}/)
+        if (orgMatch) {
+          organization = orgMatch[0]
+        }
+
+        // 对于高山滑雪，尝试提取时间成绩和积分
+        // 积分在积分表页面的末尾
+        let points = 0
+        let run1Time = '-'
+        let run2Time = '-'
+        let totalTime = '-'
+
+        // 如果页面包含"积分表"，从末尾提取积分
+        // 否则提取时间成绩
+
+        // 查找时间格式（分:秒.毫秒 或 秒.毫秒）
+        const timeNumbers = numbers.filter(n => n.includes('.') || n.includes(':'))
+
+        if (timeNumbers.length >= 1) {
+          // 有时间格式的数字，这是成绩页
+          if (timeNumbers.length >= 3) {
+            run1Time = timeNumbers[0]
+            run2Time = timeNumbers[1]
+            totalTime = timeNumbers[2]
+          } else if (timeNumbers.length >= 1) {
+            totalTime = timeNumbers[timeNumbers.length - 1]
+          }
+        }
+
+        // 尝试从末尾提取积分（1-360之间的整数）
+        for (let i = numbers.length - 1; i >= 0; i--) {
+          const numStr = numbers[i]
+          if (!numStr) continue
+          // 跳过时间格式和小数
+          if (numStr.includes('.') || numStr.includes(':')) continue
+          const num = parseInt(numStr)
+          if (num >= 1 && num <= 360) {
+            points = num
+            break
+          }
+        }
+
+        // 高山滑雪成绩页可能没有积分，但有时间成绩也算有效
+        if (points === 0 && totalTime === '-') return null
 
         return {
           rank,
           bib: bib > 0 && bib < 1000 ? bib : rank,
           name: name.trim(),
           organization,
-          run1Time: runScore,
-          run2Time: '-',
-          totalTime: totalScore,
+          run1Time,
+          run2Time,
+          totalTime,
           points,
           status: 'OK'
         }
