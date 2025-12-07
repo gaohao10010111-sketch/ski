@@ -163,17 +163,90 @@ export default function ResultsImportPage() {
       console.log('[PDF解析] 开始解析PDF, 总页数:', pdf.numPages)
 
       // 智能解析结果行的辅助函数
-      const parseResultRow = (rowText: string): AlpineResult | null => {
+      // 支持两种格式：
+      // 1. 高山滑雪: 名次 号码 姓名 单位 第一轮 第二轮 总成绩 积分
+      // 2. 大跳台/坡障: 名次 号码 姓名 单位 出生年 站姿 轮次 J1-J5 得分 最终成绩 积分
+      const parseResultRow = (rowText: string, sportType: string = 'alpine'): AlpineResult | null => {
+        // 清理行开头的 | 和空格
+        const cleanText = rowText.replace(/^\s*\|\s*/, '').trim()
+
         // 提取所有数字（包括小数和时间格式）
-        const numbers = rowText.match(/\d+(?:\.\d+)?|\d{1,2}:\d{2}\.\d{2}/g) || []
+        const numbers = cleanText.match(/\d+(?:\.\d+)?|\d{1,2}:\d{2}\.\d{2}/g) || []
         // 提取中文姓名（2-5个汉字，可能包含间隔号·）
-        const nameMatch = rowText.match(/[\u4e00-\u9fa5·]{2,5}/)
-        // 提取中文单位（姓名后面的中文）
-        const orgMatch = rowText.match(/[\u4e00-\u9fa5·]{2,5}\s+([\u4e00-\u9fa5\s]+?)(?:\s+\d|\s*$)/)
+        const nameMatch = cleanText.match(/[\u4e00-\u9fa5·]{2,5}/)
 
-        if (!nameMatch || numbers.length < 3) return null
-
+        if (!nameMatch) return null
         const name = nameMatch[0]
+
+        // 对于大跳台/坡障格式，使用专门的解析逻辑
+        if (sportType.includes('bigair') || sportType.includes('slopestyle') || sportType === 'freestyle') {
+          // 大跳台格式需要至少8个数字：名次、号码、出生年、轮次、5个评分、得分、最终成绩、积分
+          if (numbers.length < 8) return null
+
+          // 检查轮次 - 如果行中包含站姿(G/R)后面的轮次标记，且不是轮次1，跳过
+          const roundPattern = /[GR]\s*\|?\s*(\d)\s*\|?\s*(\d{1,2})\s*\|?\s*(\d{1,2})/
+          const roundMatch = cleanText.match(roundPattern)
+          if (roundMatch) {
+            const round = parseInt(roundMatch[1])
+            if (round > 1) {
+              return null  // 跳过轮次2和3的行
+            }
+          }
+
+          // 名次应该是第一个1-99之间的数字
+          const firstNum = numbers[0]
+          if (!firstNum) return null
+          const rank = parseInt(firstNum)
+          if (rank < 1 || rank > 99) return null
+
+          // 号码是第二个数字
+          const secondNum = numbers[1]
+          const bib = secondNum ? parseInt(secondNum) : rank
+
+          // 从末尾提取积分（1-360之间的整数）
+          let points = 0
+          let finalScore = '-'
+
+          for (let i = numbers.length - 1; i >= 0; i--) {
+            const num = parseFloat(numbers[i])
+            if (Number.isInteger(num) && num >= 1 && num <= 360) {
+              points = num
+              // 积分前面是最终成绩（小数）
+              if (i > 0 && numbers[i - 1].includes('.')) {
+                finalScore = numbers[i - 1]
+              }
+              break
+            }
+          }
+
+          if (points === 0) return null
+
+          // 提取单位 - 在姓名后面的中文
+          let organization = '-'
+          const afterName = cleanText.substring(cleanText.indexOf(name) + name.length)
+          const orgMatch = afterName.match(/[\u4e00-\u9fa5]{2,15}/)
+          if (orgMatch) {
+            organization = orgMatch[0]
+          }
+
+          return {
+            rank,
+            bib: bib > 0 && bib < 1000 ? bib : rank,
+            name: name.trim(),
+            organization,
+            run1Time: '-',
+            run2Time: '-',
+            totalTime: finalScore,  // 最终成绩（最好两轮之和）
+            points,
+            status: 'OK'
+          }
+        }
+
+        // 高山滑雪等其他格式的原有解析逻辑
+        if (numbers.length < 3) return null
+
+        // 提取中文单位（姓名后面的较长中文，最多15个字符）
+        const orgMatch = cleanText.match(/[\u4e00-\u9fa5·]{2,5}\s+([\u4e00-\u9fa5\s]{2,15}?)(?:\s+\d|\s*$)/)
         const organization = orgMatch ? orgMatch[1].trim().replace(/\s+/g, '') : '-'
 
         // 尝试从末尾提取积分（通常是最后一个1-3位整数）
@@ -192,6 +265,7 @@ export default function ResultsImportPage() {
             if (i > 0 && numbers[i - 1]) {
               totalScore = numbers[i - 1]
             }
+            // 再前面可能是单轮得分
             if (i > 1 && numbers[i - 2]) {
               runScore = numbers[i - 2]
             }
@@ -356,21 +430,16 @@ export default function ResultsImportPage() {
       }
 
       // 第二遍：只解析需要的页面（有积分表用积分表，没有才用成绩公告）
+      // 对于跨多页的比赛，合并所有页面的结果
       const competitions: AlpineCompetitionResult[] = []
       let totalAthletes = 0
-      const processedCompetitions = new Set<string>()  // 防止重复处理
+      const competitionResultsMap = new Map<string, { results: AlpineResult[], pageNums: number[], ageGroup: string, gender: string, discipline: string, dataSource: 'pointsTable' | 'resultAnnouncement', sportType: string }>()
 
       console.log(`[PDF解析] 第二遍开始，共${allPages.length}个页面待处理`)
-      console.log(`[PDF解析] 有积分表的比赛: ${[...competitionsWithPointsTable].join(', ')}`)
+      console.log(`[PDF解析] 有积分表的比赛: ${Array.from(competitionsWithPointsTable).join(', ')}`)
 
       for (const pageInfo of allPages) {
         const competitionKey = `${pageInfo.ageGroup}-${pageInfo.gender}-${pageInfo.discipline}`
-
-        // 跳过已处理的比赛
-        if (processedCompetitions.has(competitionKey)) {
-          console.log(`[PDF解析] 跳过已处理: ${competitionKey} (页${pageInfo.pageNum})`)
-          continue
-        }
 
         // 如果该比赛有积分表，但当前页是成绩公告，跳过（优先用积分表）
         if (competitionsWithPointsTable.has(competitionKey) && !pageInfo.hasPointsTable) {
@@ -380,10 +449,7 @@ export default function ResultsImportPage() {
 
         console.log(`[PDF解析] 开始处理: ${competitionKey} (页${pageInfo.pageNum}, ${pageInfo.hasPointsTable ? '积分表' : '成绩公告'})`)
 
-        // 标记为已处理
-        processedCompetitions.add(competitionKey)
-
-        const { textContent, ageGroup, gender, discipline: finalDiscipline, hasPointsTable } = pageInfo
+        const { textContent, ageGroup, gender, discipline: finalDiscipline, hasPointsTable, sportType } = pageInfo
 
         // 按Y坐标分组文本项
         const items = textContent.items
@@ -423,8 +489,8 @@ export default function ResultsImportPage() {
           // 调试日志
           console.log(`[PDF解析] 尝试解析行: ${rowText.substring(0, 80)}...`)
 
-          // 智能解析：尝试多种模式
-          const parsedResult = parseResultRow(rowText)
+          // 智能解析：尝试多种模式，传入sportType来处理不同格式
+          const parsedResult = parseResultRow(rowText, sportType)
           if (parsedResult) {
             console.log(`[PDF解析] 解析成功: 排名=${parsedResult.rank}, 姓名=${parsedResult.name}, 积分=${parsedResult.points}`)
             results.push(parsedResult)
@@ -434,22 +500,49 @@ export default function ResultsImportPage() {
         }
 
         if (results.length > 0) {
-          competitions.push({
-            ageGroup,
-            gender,  // 已经在第一遍扫描时添加了"子"
-            discipline: finalDiscipline,
-            results,
-            dataSource: hasPointsTable ? 'pointsTable' : 'resultAnnouncement',
-            pageNum: pageInfo.pageNum
-          })
-          totalAthletes += results.length
+          // 合并到同一比赛的结果中
+          const existingCompetition = competitionResultsMap.get(competitionKey)
+          if (existingCompetition) {
+            // 合并结果，避免重复
+            const existingRanks = new Set(existingCompetition.results.map(r => r.rank))
+            const newResults = results.filter(r => !existingRanks.has(r.rank))
+            existingCompetition.results.push(...newResults)
+            existingCompetition.pageNums.push(pageInfo.pageNum)
+            console.log(`[PDF解析] 合并到现有比赛: ${competitionKey}, 新增 ${newResults.length}人`)
+          } else {
+            competitionResultsMap.set(competitionKey, {
+              results: [...results],
+              pageNums: [pageInfo.pageNum],
+              ageGroup,
+              gender,
+              discipline: finalDiscipline,
+              dataSource: hasPointsTable ? 'pointsTable' : 'resultAnnouncement',
+              sportType
+            })
+          }
         }
 
         // 更新进度
-        setUploadProgress(65 + Math.floor((processedCompetitions.size / allPages.length) * 30))
+        setUploadProgress(65 + Math.floor((competitionResultsMap.size / allPages.length) * 30))
       }
 
       setUploadProgress(95)
+
+      // 将Map转换为competitions数组，并按排名排序
+      Array.from(competitionResultsMap.entries()).forEach(([key, data]) => {
+        // 按排名排序
+        data.results.sort((a: AlpineResult, b: AlpineResult) => a.rank - b.rank)
+        competitions.push({
+          ageGroup: data.ageGroup,
+          gender: data.gender,
+          discipline: data.discipline,
+          results: data.results,
+          dataSource: data.dataSource,
+          pageNum: data.pageNums[0]  // 使用第一页的页码
+        })
+        totalAthletes += data.results.length
+        console.log(`[PDF解析] 最终结果: ${key} - ${data.results.length}人 (页${data.pageNums.join(',')})`)
+      })
 
       if (competitions.length === 0) {
         throw new Error('未找到有效的积分表页面，请确认PDF格式正确')
