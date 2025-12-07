@@ -35,13 +35,7 @@ const sportTypeMapping: Record<string, number> = {
 
 const sportTypeKeys = ['ALPINE_SKI', 'SNOWBOARD_SLOPESTYLE_BIGAIR', 'SNOWBOARD_PARALLEL', 'FREESTYLE_SLOPESTYLE_BIGAIR']
 
-// 状态标签
-const statusLabels: Record<string, string> = {
-  SCHEDULED: '即将开始',
-  ONGOING: '进行中',
-  COMPLETED: '已完成',
-  CANCELLED: '已取消'
-}
+// 状态标签 - 移到组件内使用翻译
 
 // 格式化日期
 function formatDate(dateString: string): string {
@@ -125,8 +119,22 @@ export default function HomePage() {
 
   const newsStatusLabels: Record<string, string> = t.home?.news?.statuses || {}
 
-  const disciplineNames = ['高山滑雪', '单板坡障/大跳台', '单板平行', '自由式坡障/大跳台']
+  // 项目名称从翻译中获取
+  const disciplineNames = [
+    t.navigation?.alpine || 'Alpine Skiing',
+    t.navigation?.snowboardSlopestyle || 'Snowboard Slopestyle',
+    t.navigation?.snowboardParallel || 'Snowboard Parallel',
+    t.navigation?.freestyleSlopestyle || 'Freestyle Slopestyle'
+  ]
   const disciplineIcons = [Mountain, Sparkles, ArrowLeftRight, Wind]
+
+  // 状态标签从翻译中获取
+  const statusLabels: Record<string, string> = {
+    SCHEDULED: t.home?.latestResults?.statusLabels?.upcoming || 'Upcoming',
+    ONGOING: t.home?.latestResults?.statusLabels?.live || 'Live',
+    COMPLETED: t.home?.latestResults?.statusLabels?.completed || 'Completed',
+    CANCELLED: t.common?.cancelled || 'Cancelled'
+  }
 
   // 根据选中的项目筛选比赛
   const filteredCompetitions = competitions.filter(
@@ -509,7 +517,7 @@ export default function HomePage() {
                   ))
                 ) : (
                   <div className="text-center py-8 text-gray-500">
-                    暂无该项目的比赛数据
+                    {t.home?.latestResults?.noData || 'No competition data available'}
                   </div>
                 )}
               </div>
@@ -525,7 +533,7 @@ export default function HomePage() {
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-xl font-semibold text-ski-navy">{t.home?.rankings?.title || '积分排行榜'}</h3>
                 <div className="text-sm text-gray-500">
-                  {statsData?.overview?.currentSeason || '2024-25'} 赛季
+                  {statsData?.overview?.currentSeason || '2024-25'} {t.home?.rankings?.season || 'Season'}
                 </div>
               </div>
               <div className="space-y-4">
@@ -562,7 +570,7 @@ export default function HomePage() {
                   })
                 ) : (
                   <div className="text-center py-8 text-gray-500">
-                    暂无该项目的排名数据
+                    {t.home?.rankings?.noData || 'No ranking data available'}
                   </div>
                 )}
               </div>

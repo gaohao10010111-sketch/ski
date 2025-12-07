@@ -30,7 +30,8 @@ export const en: PartialTranslationKeys = {
     viewDetails: 'View Details',
     viewFullSchedule: 'View Full Schedule →',
     viewFullRankings: 'View Full Rankings →',
-    readMore: 'Read More'
+    readMore: 'Read More',
+    cancelled: 'Cancelled'
   },
 
   // Navigation
@@ -1346,9 +1347,11 @@ export const en: PartialTranslationKeys = {
       recentResults: 'Recent Results',
       liveUpdate: 'Live Update',
       viewMore: 'View More Events →',
+      noData: 'No competition data available for this discipline',
       statusLabels: {
         live: 'Live',
-        completed: 'Completed'
+        completed: 'Completed',
+        upcoming: 'Upcoming'
       },
       results: [
         { id: 'nc-men-gs', title: '2024 National Championships', subtitle: 'Men Giant Slalom · Tianchi Resort', status: 'live', time: 'Dec 15 · 14:30' },
@@ -1361,6 +1364,8 @@ export const en: PartialTranslationKeys = {
       updatedOn: 'Updated on',
       points: 'Points',
       viewFullRankings: 'View Full Rankings →',
+      season: 'Season',
+      noData: 'No ranking data available for this discipline',
       entries: [
         { rank: 1, name: 'Wei Zhang', event: 'Men Giant Slalom', points: '0.00' },
         { rank: 2, name: 'Xue Li', event: 'Women Slalom', points: '8.45' },

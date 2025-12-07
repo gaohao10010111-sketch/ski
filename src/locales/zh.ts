@@ -28,7 +28,8 @@ export const zh = {
     viewDetails: '查看详情',
     viewFullSchedule: '查看完整赛程',
     viewFullRankings: '查看完整排名',
-    readMore: '阅读全文'
+    readMore: '阅读全文',
+    cancelled: '已取消'
   },
 
   // 导航
@@ -1339,9 +1340,11 @@ export const zh = {
       recentResults: '最新比赛',
       liveUpdate: '实时更新',
       viewMore: '查看更多赛事 →',
+      noData: '暂无该项目的比赛数据',
       statusLabels: {
         live: '正在进行',
-        completed: '已完成'
+        completed: '已完成',
+        upcoming: '即将开始'
       },
       results: [
         { id: 'nc-men-gs', title: '2024全国锦标赛', subtitle: '男子大回转 · 天池雪场', status: 'live', time: '12-15 14:30' },
@@ -1353,6 +1356,8 @@ export const zh = {
       title: '积分排行榜',
       updatedOn: '更新于',
       points: '积分',
+      season: '赛季',
+      noData: '暂无该项目的排名数据',
       viewFullRankings: '查看完整排名 →',
       entries: [
         { rank: 1, name: '张伟', event: '男子大回转', points: '0.00' },

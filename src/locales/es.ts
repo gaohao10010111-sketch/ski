@@ -30,7 +30,8 @@ export const es: PartialTranslationKeys = {
     viewDetails: 'Ver detalles',
     viewFullSchedule: 'Ver calendario completo →',
     viewFullRankings: 'Ver clasificación completa →',
-    readMore: 'Leer más'
+    readMore: 'Leer más',
+    cancelled: 'Cancelado'
   },
 
   // Navegación
@@ -983,9 +984,11 @@ export const es: PartialTranslationKeys = {
       recentResults: 'Resultados Recientes',
       liveUpdate: 'Actualización en Vivo',
       viewMore: 'Ver Más Eventos →',
+      noData: 'No hay datos de competición disponibles para esta disciplina',
       statusLabels: {
         live: 'En vivo',
-        completed: 'Completado'
+        completed: 'Completado',
+        upcoming: 'Próximamente'
       },
       results: [
         { id: 'nc-men-gs', title: 'Campeonato Nacional 2024', subtitle: 'Eslalom Gigante Masculino · Resort Tianchi', status: 'live', time: '15 Dic · 14:30' },
@@ -998,6 +1001,8 @@ export const es: PartialTranslationKeys = {
       updatedOn: 'Actualizado el',
       points: 'Puntos',
       viewFullRankings: 'Ver Clasificación Completa →',
+      season: 'Temporada',
+      noData: 'No hay datos de clasificación disponibles para esta disciplina',
       entries: [
         { rank: 1, name: 'Wei Zhang', event: 'Eslalom Gigante Masculino', points: '0.00' },
         { rank: 2, name: 'Xue Li', event: 'Eslalom Femenino', points: '8.45' },
