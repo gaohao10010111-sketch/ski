@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Menu,
   X,
@@ -42,6 +42,18 @@ export default function GlobalNavigation() {
   const router = useRouter();
   const { user, logout, isLoading } = useAuth();
   const { t, language } = useTranslation();
+  // 点击外部关闭下拉菜单
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      // 检查点击是否在任何下拉菜单容器内
+      if (!target.closest('[data-dropdown-container]')) {
+        setActiveDropdown(null);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const handleLogout = () => {
     logout();
@@ -268,13 +280,11 @@ export default function GlobalNavigation() {
                 <div
                   key={item.key}
                   className={`relative ${item.highlighted && isDisciplineMenu ? 'pr-2 mr-2 border-r border-gray-300' : ''}`}
-                  onMouseEnter={() => hasChildren && setActiveDropdown(dropdownKey)}
-                  onMouseLeave={() => hasChildren && setActiveDropdown(null)}
+                  data-dropdown-container={hasChildren ? 'true' : undefined}
                 >
                   {hasChildren ? (
                     <>
-                      <Link
-                        href={item.href}
+                      <button
                         className={`flex items-center gap-1 px-3 py-1.5 rounded text-xs font-medium transition-colors whitespace-nowrap ${
                           item.highlighted
                             ? 'bg-ski-blue text-white hover:bg-ski-blue/90 shadow-sm'
@@ -283,16 +293,14 @@ export default function GlobalNavigation() {
                             : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
                         }`}
                         onClick={(e) => {
-                          if (item.href === '#') {
-                            e.preventDefault();
-                          }
-                          setActiveDropdown(null);
+                          e.preventDefault();
+                          setActiveDropdown(activeDropdown === dropdownKey ? null : dropdownKey);
                         }}
                       >
                         {Icon && <Icon className="w-3 h-3" />}
                         <span>{isDisciplineMenu ? getCurrentDisciplineName() : item.name}</span>
                         <ChevronDown className="w-2.5 h-2.5" />
-                      </Link>
+                      </button>
 
                       {activeDropdown === dropdownKey && (
                         <div className="absolute left-0 top-full pt-2 z-50">
