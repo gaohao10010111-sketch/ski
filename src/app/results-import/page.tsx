@@ -158,6 +158,68 @@ export default function ResultsImportPage() {
 
       setUploadProgress(40)
 
+      // 智能解析结果行的辅助函数
+      const parseResultRow = (rowText: string): AlpineResult | null => {
+        // 提取所有数字（包括小数和时间格式）
+        const numbers = rowText.match(/\d+(?:\.\d+)?|\d{1,2}:\d{2}\.\d{2}/g) || []
+        // 提取中文姓名（2-5个汉字，可能包含间隔号·）
+        const nameMatch = rowText.match(/[\u4e00-\u9fa5·]{2,5}/)
+        // 提取中文单位（姓名后面的中文）
+        const orgMatch = rowText.match(/[\u4e00-\u9fa5·]{2,5}\s+([\u4e00-\u9fa5\s]+?)(?:\s+\d|\s*$)/)
+
+        if (!nameMatch || numbers.length < 3) return null
+
+        const name = nameMatch[0]
+        const organization = orgMatch ? orgMatch[1].trim().replace(/\s+/g, '') : '-'
+
+        // 尝试从末尾提取积分（通常是最后一个1-3位整数）
+        let points = 0
+        let totalScore = '-'
+        let runScore = '-'
+
+        // 从后向前查找积分（1-360之间的整数）
+        for (let i = numbers.length - 1; i >= 0; i--) {
+          const numStr = numbers[i]
+          if (!numStr) continue
+          const num = parseInt(numStr)
+          if (num >= 1 && num <= 360 && !numStr.includes('.') && !numStr.includes(':')) {
+            points = num
+            // 积分前面的数字可能是总成绩
+            if (i > 0 && numbers[i - 1]) {
+              totalScore = numbers[i - 1]
+            }
+            if (i > 1 && numbers[i - 2]) {
+              runScore = numbers[i - 2]
+            }
+            break
+          }
+        }
+
+        if (points === 0) return null  // 没有找到有效积分
+
+        // 提取排名（第一个数字，1-99之间）
+        const firstNum = numbers[0]
+        if (!firstNum) return null
+        const rank = parseInt(firstNum)
+        if (rank < 1 || rank > 99) return null
+
+        // 提取号码（第二个数字，如果存在）
+        const secondNum = numbers[1]
+        const bib = secondNum ? parseInt(secondNum) : rank
+
+        return {
+          rank,
+          bib: bib > 0 && bib < 1000 ? bib : rank,
+          name: name.trim(),
+          organization,
+          run1Time: runScore,
+          run2Time: '-',
+          totalTime: totalScore,
+          points,
+          status: 'OK'
+        }
+      }
+
       // 新的解析方法：按页面解析"积分表"
       const competitions: AlpineCompetitionResult[] = []
       let totalAthletes = 0
@@ -244,75 +306,23 @@ export default function ResultsImportPage() {
         // 按Y降序排列
         const sortedYs = Object.keys(rows).map(Number).sort((a, b) => b - a)
 
-        // 解析每一行
+        // 解析每一行 - 使用更灵活的解析策略
         const results: AlpineResult[] = []
 
         for (const y of sortedYs) {
           const row = rows[y].sort((a, b) => a.x - b.x)
           const rowText = row.map(item => item.str).join(' ').trim()
 
-          // 匹配成绩行 - 支持两种格式
-          // 格式1（积分表）: 排名 号码 姓名 单位 第一轮 第二轮 总成绩 积分
-          // 例: 1   29   王阳明   张家口乔与杨...   27.82   28.28   56.10   360
-          const resultMatch1 = rowText.match(
-            /^\s*(\d{1,2})\s+(\d{1,3})\s+([\u4e00-\u9fa5·]{2,4})\s+([\u4e00-\u9fa5\s]+?)\s+(\d+\.\d{2})\s+(\d+\.\d{2})\s+(\d{1,2}:\d{2}\.\d{2}|\d+\.\d{2})\s+(\d{1,3})\s*$/
-          )
+          // 跳过明显不是成绩行的内容
+          if (!rowText || rowText.length < 10) continue
+          if (!/^\s*\d/.test(rowText)) continue  // 必须以数字开头
+          if (/^[\d\s]+$/.test(rowText)) continue  // 不能全是数字和空格
+          if (rowText.includes('名次') || rowText.includes('排名') || rowText.includes('姓名')) continue  // 跳过表头
 
-          // 格式2（小程序成绩公告）: 名次 姓名 报名ID 总成绩 积分 总积分
-          // 例: 1   王阳明   5331X   00:56.10   360   360
-          // 报名ID可能以任意字母结尾（如X、S、I、Z、B等），也可能是纯数字
-          const resultMatch2 = rowText.match(
-            /^\s*(\d{1,3})\s+([\u4e00-\u9fa5·]{2,4})\s+(\d{4,5}[A-Za-z]?)\s+(\d{2}:\d{2}\.\d{2}|\d+\.\d{2})\s+(\d{1,3})\s+(\d{1,3})\s*$/
-          )
-
-          // 格式3（单板滑雪大跳台成绩公告）: 名次 号码 姓名 单位 出生年 站姿 轮次 [5个评分] 本轮成绩 总成绩 积分
-          // 例: 1    4   孙嘉怡   河北省体育局冬季运动中  2015   R    1  77 78  76  75 73  75.80   150.40  360
-          // 只匹配第一轮（轮次=1）的行，因为这是最终成绩行
-          const resultMatch3 = rowText.match(
-            /^\s*(\d{1,2})\s+(\d{1,3})\s+([\u4e00-\u9fa5·]{2,4})\s+([\u4e00-\u9fa5\s]+?)\s+(\d{4})\s+([GR])\s+1\s+.*?(\d+\.\d{2})\s+(\d+\.\d{2})\s+(\d{1,3})\s*$/
-          )
-
-          if (resultMatch1) {
-            const [, rank, bib, name, org, run1, run2, total, points] = resultMatch1
-            results.push({
-              rank: parseInt(rank),
-              bib: parseInt(bib),
-              name: name.trim(),
-              organization: org.trim().replace(/\s+/g, ''),
-              run1Time: run1,
-              run2Time: run2,
-              totalTime: total,
-              points: parseInt(points),
-              status: 'OK'
-            })
-          } else if (resultMatch2) {
-            // 格式2: 名次 姓名 报名ID 总成绩 积分 总积分
-            const [, rank, name, registrationId, total, points] = resultMatch2
-            results.push({
-              rank: parseInt(rank),
-              bib: parseInt(registrationId.replace(/[A-Za-z]$/, '')),  // 移除字母后缀
-              name: name.trim(),
-              organization: '-',  // 此格式无单位信息
-              run1Time: '-',
-              run2Time: '-',
-              totalTime: total,
-              points: parseInt(points),
-              status: 'OK'
-            })
-          } else if (resultMatch3) {
-            // 格式3: 单板滑雪大跳台成绩公告
-            const [, rank, bib, name, org, , , runScore, totalScore, points] = resultMatch3
-            results.push({
-              rank: parseInt(rank),
-              bib: parseInt(bib),
-              name: name.trim(),
-              organization: org.trim().replace(/\s+/g, ''),
-              run1Time: runScore,  // 本轮成绩
-              run2Time: '-',
-              totalTime: totalScore,  // 总成绩
-              points: parseInt(points),
-              status: 'OK'
-            })
+          // 智能解析：尝试多种模式
+          const parsedResult = parseResultRow(rowText)
+          if (parsedResult) {
+            results.push(parsedResult)
           }
         }
 
