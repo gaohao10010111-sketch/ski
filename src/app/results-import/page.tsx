@@ -64,6 +64,8 @@ interface AlpineCompetitionResult {
   gender: string      // 男子/女子
   discipline: string  // 回转/大回转
   results: AlpineResult[]
+  dataSource?: 'pointsTable' | 'resultAnnouncement'  // 数据来源：积分表/成绩公告
+  pageNum?: number    // 数据来源页码
 }
 
 // PDF解析结果（包含站点信息）
@@ -158,6 +160,8 @@ export default function ResultsImportPage() {
 
       setUploadProgress(40)
 
+      console.log('[PDF解析] 开始解析PDF, 总页数:', pdf.numPages)
+
       // 智能解析结果行的辅助函数
       const parseResultRow = (rowText: string): AlpineResult | null => {
         // 提取所有数字（包括小数和时间格式）
@@ -220,10 +224,25 @@ export default function ResultsImportPage() {
         }
       }
 
-      // 新的解析方法：按页面解析"积分表"
-      const competitions: AlpineCompetitionResult[] = []
-      let totalAthletes = 0
+      // 第一遍扫描：收集所有页面的信息，识别哪些比赛有积分表
+      interface PageInfo {
+        pageNum: number
+        pageText: string
+        textContent: Awaited<ReturnType<Awaited<ReturnType<typeof pdf.getPage>>['getTextContent']>>
+        hasPointsTable: boolean
+        hasResultAnnouncement: boolean
+        ageGroup: string
+        gender: string
+        discipline: string
+        sportType: string  // alpine/snowboard-bigair/snowboard-slopestyle/freestyle
+      }
 
+      const allPages: PageInfo[] = []
+      const competitionsWithPointsTable = new Set<string>()  // 记录哪些比赛有积分表
+
+      console.log('[PDF解析] 开始第一遍扫描, 总页数:', pdf.numPages)
+
+      // 第一遍扫描所有页面
       for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
         const page = await pdf.getPage(pageNum)
         const textContent = await page.getTextContent()
@@ -233,11 +252,12 @@ export default function ResultsImportPage() {
           .map(item => ('str' in item ? (item as { str: string }).str : ''))
           .join(' ')
 
+        // 调试：每10页输出一次进度，以及第7页（应该有积分表）的详细信息
+        if (pageNum <= 10) {
+          console.log(`[PDF解析] 页${pageNum} 文本长度: ${pageText.length}, 前100字符: ${pageText.substring(0, 100)}`)
+        }
+
         // 检查是否包含比赛信息（支持多种格式）
-        // 格式1: "U18男子组回转积分表"（高山滑雪积分表）
-        // 格式2: "高山滑雪-回转-男-U18"（微信小程序成绩公告格式）
-        // 格式3: "单板滑雪大跳台U系列比赛" + "U11女子组 成绩公告"（单板大跳台）
-        // 格式4: "自由式滑雪坡面障碍技巧" + "U15男子组"（自由式坡障）
         const hasPointsTable = pageText.includes('积分表')
         const hasAlpineFormat = pageText.includes('高山滑雪') && (pageText.includes('回转') || pageText.includes('大回转'))
         const hasSnowboardBigAir = pageText.includes('单板滑雪大跳台') || (pageText.includes('单板') && pageText.includes('大跳台'))
@@ -245,29 +265,43 @@ export default function ResultsImportPage() {
         const hasFreestyleFormat = pageText.includes('自由式') && (pageText.includes('坡面障碍') || pageText.includes('大跳台'))
         const hasResultAnnouncement = pageText.includes('成绩公告') || pageText.includes('成 绩 公 告')
 
-        if (!hasPointsTable && !hasAlpineFormat && !hasSnowboardBigAir && !hasSnowboardSlopestyle && !hasFreestyleFormat) continue
+        // 调试：如果是积分表页面，输出详细信息
+        if (hasPointsTable || hasAlpineFormat) {
+          console.log(`[PDF解析] 页${pageNum} 检测结果: 积分表=${hasPointsTable}, 高山格式=${hasAlpineFormat}`)
+        }
 
-        // 提取比赛信息 - 支持多种格式
+        // 跳过既没有积分表也没有比赛格式的页面
+        if (!hasPointsTable && !hasAlpineFormat && !hasSnowboardBigAir && !hasSnowboardSlopestyle && !hasFreestyleFormat && !hasResultAnnouncement) continue
+
+        // 提取比赛信息
         let matchInfo: RegExpMatchArray | null = null
         let discipline = ''
+        let sportType = ''
 
-        // 格式1: "U18男子组回转"（高山滑雪积分表）
-        matchInfo = pageText.match(/(U\d{2})(男|女)子组(回转|大回转|超级大回转)/)
+        // 格式1: "U18男子组回转"（高山滑雪积分表）- 注意中文空格问题
+        // 尝试多种可能的格式，包括带空格的情况
+        matchInfo = pageText.match(/(U\d{2})\s*(男|女)\s*子\s*组\s*(回转|大回转|超级大回转)/)
+        if (matchInfo) {
+          sportType = 'alpine'
+          console.log(`[PDF解析] 页${pageNum} 匹配格式1成功: ${matchInfo[0]}`)
+        }
 
         // 格式2: "高山滑雪-回转-男-U18" 或 "高山滑雪-大回转-女-U15"
         if (!matchInfo) {
           const format2Match = pageText.match(/高山滑雪[^\w]*(回转|大回转|超级大回转)[^\w]*(男|女)[^\w]*(U\d{2})/)
           if (format2Match) {
             matchInfo = [format2Match[0], format2Match[3], format2Match[2], format2Match[1]] as RegExpMatchArray
+            sportType = 'alpine'
           }
         }
 
         // 格式3: 单板滑雪大跳台 - "U11女子组" 或 "U15男子组"
-        if (!matchInfo && (hasSnowboardBigAir || hasResultAnnouncement)) {
+        if (!matchInfo && (hasSnowboardBigAir || (hasResultAnnouncement && pageText.includes('单板')))) {
           const bigAirMatch = pageText.match(/(U\d{2})(男|女)子组/)
           if (bigAirMatch) {
-            discipline = hasSnowboardBigAir ? '大跳台' : (hasSnowboardSlopestyle ? '坡面障碍' : (hasFreestyleFormat ? '自由式' : ''))
+            discipline = hasSnowboardBigAir ? '大跳台' : (hasSnowboardSlopestyle ? '坡面障碍' : '')
             matchInfo = [bigAirMatch[0], bigAirMatch[1], bigAirMatch[2], discipline] as RegExpMatchArray
+            sportType = hasSnowboardBigAir ? 'snowboard-bigair' : 'snowboard-slopestyle'
           }
         }
 
@@ -277,14 +311,79 @@ export default function ResultsImportPage() {
           if (freestyleMatch) {
             discipline = pageText.includes('大跳台') ? '大跳台' : '坡面障碍'
             matchInfo = [freestyleMatch[0], freestyleMatch[1], freestyleMatch[2], discipline] as RegExpMatchArray
+            sportType = 'freestyle'
           }
         }
 
-        if (!matchInfo) continue
+        if (!matchInfo) {
+          // 调试：积分表页面没有匹配成功时输出更多信息
+          if (hasPointsTable) {
+            console.log(`[PDF解析] 页${pageNum} 有积分表但没有匹配到比赛格式`)
+            console.log(`[PDF解析] 页${pageNum} 文本内容: ${pageText.substring(0, 200)}`)
+          }
+          continue
+        }
+
+        console.log(`[PDF解析] 页${pageNum} 成功添加到allPages: ${matchInfo[0]}`)
 
         const [, ageGroup, gender, extractedDiscipline] = matchInfo
-        // 使用已经提取的discipline，如果没有则使用matchInfo中的
         const finalDiscipline = discipline || extractedDiscipline || '未知项目'
+        const fullGender = gender + '子'  // 统一使用完整性别格式
+
+        // 生成唯一的比赛标识：年龄组+性别+项目（使用完整性别）
+        const competitionKey = `${ageGroup}-${fullGender}-${finalDiscipline}`
+
+        // 如果有积分表，记录下来
+        if (hasPointsTable) {
+          competitionsWithPointsTable.add(competitionKey)
+          console.log(`[PDF解析] 记录积分表比赛: ${competitionKey}`)
+        }
+
+        allPages.push({
+          pageNum,
+          pageText,
+          textContent,
+          hasPointsTable,
+          hasResultAnnouncement,
+          ageGroup,
+          gender: fullGender,
+          discipline: finalDiscipline,
+          sportType
+        })
+
+        // 更新进度
+        setUploadProgress(40 + Math.floor((pageNum / pdf.numPages) * 25))
+      }
+
+      // 第二遍：只解析需要的页面（有积分表用积分表，没有才用成绩公告）
+      const competitions: AlpineCompetitionResult[] = []
+      let totalAthletes = 0
+      const processedCompetitions = new Set<string>()  // 防止重复处理
+
+      console.log(`[PDF解析] 第二遍开始，共${allPages.length}个页面待处理`)
+      console.log(`[PDF解析] 有积分表的比赛: ${[...competitionsWithPointsTable].join(', ')}`)
+
+      for (const pageInfo of allPages) {
+        const competitionKey = `${pageInfo.ageGroup}-${pageInfo.gender}-${pageInfo.discipline}`
+
+        // 跳过已处理的比赛
+        if (processedCompetitions.has(competitionKey)) {
+          console.log(`[PDF解析] 跳过已处理: ${competitionKey} (页${pageInfo.pageNum})`)
+          continue
+        }
+
+        // 如果该比赛有积分表，但当前页是成绩公告，跳过（优先用积分表）
+        if (competitionsWithPointsTable.has(competitionKey) && !pageInfo.hasPointsTable) {
+          console.log(`[PDF解析] 跳过成绩公告（有积分表）: ${competitionKey} (页${pageInfo.pageNum})`)
+          continue
+        }
+
+        console.log(`[PDF解析] 开始处理: ${competitionKey} (页${pageInfo.pageNum}, ${pageInfo.hasPointsTable ? '积分表' : '成绩公告'})`)
+
+        // 标记为已处理
+        processedCompetitions.add(competitionKey)
+
+        const { textContent, ageGroup, gender, discipline: finalDiscipline, hasPointsTable } = pageInfo
 
         // 按Y坐标分组文本项
         const items = textContent.items
@@ -309,6 +408,8 @@ export default function ResultsImportPage() {
         // 解析每一行 - 使用更灵活的解析策略
         const results: AlpineResult[] = []
 
+        console.log(`[PDF解析] 开始解析页${pageInfo.pageNum}的${sortedYs.length}行`)
+
         for (const y of sortedYs) {
           const row = rows[y].sort((a, b) => a.x - b.x)
           const rowText = row.map(item => item.str).join(' ').trim()
@@ -317,27 +418,35 @@ export default function ResultsImportPage() {
           if (!rowText || rowText.length < 10) continue
           if (!/^\s*\d/.test(rowText)) continue  // 必须以数字开头
           if (/^[\d\s]+$/.test(rowText)) continue  // 不能全是数字和空格
-          if (rowText.includes('名次') || rowText.includes('排名') || rowText.includes('姓名')) continue  // 跳过表头
+          if (rowText.includes('名次') || rowText.includes('排名') || rowText.includes('姓名') || rowText.includes('成绩排名')) continue  // 跳过表头
+
+          // 调试日志
+          console.log(`[PDF解析] 尝试解析行: ${rowText.substring(0, 80)}...`)
 
           // 智能解析：尝试多种模式
           const parsedResult = parseResultRow(rowText)
           if (parsedResult) {
+            console.log(`[PDF解析] 解析成功: 排名=${parsedResult.rank}, 姓名=${parsedResult.name}, 积分=${parsedResult.points}`)
             results.push(parsedResult)
+          } else {
+            console.log(`[PDF解析] 解析失败`)
           }
         }
 
         if (results.length > 0) {
           competitions.push({
             ageGroup,
-            gender: gender + '子',
+            gender,  // 已经在第一遍扫描时添加了"子"
             discipline: finalDiscipline,
-            results
+            results,
+            dataSource: hasPointsTable ? 'pointsTable' : 'resultAnnouncement',
+            pageNum: pageInfo.pageNum
           })
           totalAthletes += results.length
         }
 
         // 更新进度
-        setUploadProgress(40 + Math.floor((pageNum / pdf.numPages) * 50))
+        setUploadProgress(65 + Math.floor((processedCompetitions.size / allPages.length) * 30))
       }
 
       setUploadProgress(95)
@@ -1453,6 +1562,18 @@ export default function ResultsImportPage() {
                       <span className="text-sm font-normal text-gray-500">
                         ({competition.results.length} 人)
                       </span>
+                      {/* 数据来源标签 */}
+                      {competition.dataSource && (
+                        <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs ${
+                          competition.dataSource === 'pointsTable'
+                            ? 'bg-yellow-100 text-yellow-800'
+                            : 'bg-orange-100 text-orange-800'
+                        }`}>
+                          <FileText className="h-3 w-3 mr-1" />
+                          {competition.dataSource === 'pointsTable' ? '积分表' : '成绩公告'}
+                          {competition.pageNum && ` (P${competition.pageNum})`}
+                        </span>
+                      )}
                     </h3>
                     <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
                       {isExpanded ? (
