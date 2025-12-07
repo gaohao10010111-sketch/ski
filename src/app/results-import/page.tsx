@@ -1,12 +1,12 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { getImagePath } from '@/utils/paths'
 import { XMLParser, CompetitionData } from '@/utils/xmlParser'
 import { exportToExcel } from '@/utils/exportUtils'
 import { useToast } from '@/components/Toast'
-import { PDFResultParser } from '@/utils/pdfParser'
+import { PDFResultParser, AlpineResult } from '@/utils/pdfParser'
 import {
   Upload,
   FileText,
@@ -28,7 +28,9 @@ import {
   Wind,
   FileUp,
   Timer,
-  Star
+  Star,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react'
 
 // 扩展CompetitionData类型以支持PDF解析的额外字段
@@ -56,9 +58,27 @@ interface ExtendedCompetitionData extends Omit<CompetitionData, 'competitors'> {
   competitors: ExtendedCompetitor[]
 }
 
+// 高山滑雪比赛结果（多组）
+interface AlpineCompetitionResult {
+  ageGroup: string    // U11/U15/U18
+  gender: string      // 男子/女子
+  discipline: string  // 回转/大回转
+  results: AlpineResult[]
+}
+
+// PDF解析结果（包含站点信息）
+interface ParsedPdfData {
+  stationName: string           // 站点名称（成都站、北京站等）
+  seasonName: string            // 赛季名称
+  competitions: AlpineCompetitionResult[]
+}
+
 export default function ResultsImportPage() {
   const router = useRouter()
   const [competitionData, setCompetitionData] = useState<ExtendedCompetitionData | null>(null)
+  const [alpineCompetitions, setAlpineCompetitions] = useState<AlpineCompetitionResult[]>([])
+  const [parsedPdfData, setParsedPdfData] = useState<ParsedPdfData | null>(null)
+  const [selectedCompetition, setSelectedCompetition] = useState<number>(0)
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedNation, setSelectedNation] = useState('all')
   const [showDetails, setShowDetails] = useState(true)
@@ -68,7 +88,13 @@ export default function ResultsImportPage() {
   const [isProcessing, setIsProcessing] = useState(false)
   const [fileType, setFileType] = useState<'xml' | 'pdf' | null>(null)
   const [uploadProgress, setUploadProgress] = useState(0)
+  const [expandedGroups, setExpandedGroups] = useState<Set<number>>(new Set([0]))
   const { showToast } = useToast()
+
+  // 筛选状态
+  const [filterDiscipline, setFilterDiscipline] = useState<string>('all')  // 项目筛选
+  const [filterAgeGroup, setFilterAgeGroup] = useState<string>('all')      // 年龄组筛选
+  const [filterGender, setFilterGender] = useState<string>('all')          // 性别筛选
 
   // 确认导入成绩
   const handleConfirmImport = async () => {
@@ -91,13 +117,20 @@ export default function ResultsImportPage() {
   // 重新开始导入
   const handleRestart = () => {
     setCompetitionData(null)
+    setAlpineCompetitions([])
+    setParsedPdfData(null)
+    setSelectedCompetition(0)
     setCurrentStep('upload')
     setError(null)
     setFileType(null)
     setUploadProgress(0)
+    setExpandedGroups(new Set([0]))
+    setFilterDiscipline('all')
+    setFilterAgeGroup('all')
+    setFilterGender('all')
   }
 
-  // 处理PDF文件上传 - 使用前端解析
+  // 处理PDF文件上传 - 使用前端解析（支持高山滑雪积分表）
   const handlePDFUpload = async (file: File) => {
     setIsLoading(true)
     setError(null)
@@ -123,39 +156,185 @@ export default function ResultsImportPage() {
       const arrayBuffer = await file.arrayBuffer()
       const pdf = await pdfjs.getDocument({ data: arrayBuffer }).promise
 
-      setUploadProgress(50)
+      setUploadProgress(40)
 
-      // 提取所有页面的文本
-      let fullText = ''
+      // 新的解析方法：按页面解析"积分表"
+      const competitions: AlpineCompetitionResult[] = []
+      let totalAthletes = 0
+
       for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
         const page = await pdf.getPage(pageNum)
         const textContent = await page.getTextContent()
+
+        // 构建页面文本
         const pageText = textContent.items
-          .map((item: unknown) => {
-            const textItem = item as { str?: string }
-            return textItem.str || ''
-          })
+          .map(item => ('str' in item ? (item as { str: string }).str : ''))
           .join(' ')
-        fullText += pageText + '\n'
+
+        // 检查是否包含比赛信息（支持两种格式）
+        // 格式1: "U18男子组回转积分表"
+        // 格式2: "高山滑雪-回转-男-U18"（微信小程序成绩公告格式）
+        const hasPointsTable = pageText.includes('积分表')
+        const hasResultFormat = pageText.includes('高山滑雪') && (pageText.includes('回转') || pageText.includes('大回转'))
+
+        if (!hasPointsTable && !hasResultFormat) continue
+
+        // 提取比赛信息 - 支持两种格式
+        // 格式1: "U18男子组回转"
+        let matchInfo = pageText.match(/(U\d{2})(男|女)子组(回转|大回转|超级大回转)/)
+
+        // 格式2: "高山滑雪-回转-男-U18" 或 "高山滑雪-大回转-女-U15"
+        if (!matchInfo) {
+          const format2Match = pageText.match(/高山滑雪[^\w]*(回转|大回转|超级大回转)[^\w]*(男|女)[^\w]*(U\d{2})/)
+          if (format2Match) {
+            // 重新排列以匹配格式1的结构: [full, ageGroup, gender, discipline]
+            matchInfo = [format2Match[0], format2Match[3], format2Match[2], format2Match[1]] as RegExpMatchArray
+          }
+        }
+        if (!matchInfo) continue
+
+        const [, ageGroup, gender, discipline] = matchInfo
+
+        // 按Y坐标分组文本项
+        const items = textContent.items
+          .filter(item => 'str' in item && 'transform' in item)
+          .map(item => ({
+            str: (item as { str: string }).str,
+            x: Math.round((item as { transform: number[] }).transform[4]),
+            y: Math.round((item as { transform: number[] }).transform[5])
+          }))
+
+        // 按Y坐标分行
+        const rows: Record<number, typeof items> = {}
+        items.forEach(item => {
+          const y = Math.round(item.y / 8) * 8
+          if (!rows[y]) rows[y] = []
+          rows[y].push(item)
+        })
+
+        // 按Y降序排列
+        const sortedYs = Object.keys(rows).map(Number).sort((a, b) => b - a)
+
+        // 解析每一行
+        const results: AlpineResult[] = []
+
+        for (const y of sortedYs) {
+          const row = rows[y].sort((a, b) => a.x - b.x)
+          const rowText = row.map(item => item.str).join(' ').trim()
+
+          // 匹配成绩行 - 支持两种格式
+          // 格式1（积分表）: 排名 号码 姓名 单位 第一轮 第二轮 总成绩 积分
+          // 例: 1   29   王阳明   张家口乔与杨...   27.82   28.28   56.10   360
+          const resultMatch1 = rowText.match(
+            /^\s*(\d{1,2})\s+(\d{1,3})\s+([\u4e00-\u9fa5·]{2,4})\s+([\u4e00-\u9fa5\s]+?)\s+(\d+\.\d{2})\s+(\d+\.\d{2})\s+(\d{1,2}:\d{2}\.\d{2}|\d+\.\d{2})\s+(\d{1,3})\s*$/
+          )
+
+          // 格式2（小程序成绩公告）: 名次 姓名 报名ID 总成绩 积分 总积分
+          // 例: 1   王阳明   5331X   00:56.10   360   360
+          // 报名ID可能以任意字母结尾（如X、S、I、Z、B等），也可能是纯数字
+          const resultMatch2 = rowText.match(
+            /^\s*(\d{1,3})\s+([\u4e00-\u9fa5·]{2,4})\s+(\d{4,5}[A-Za-z]?)\s+(\d{2}:\d{2}\.\d{2}|\d+\.\d{2})\s+(\d{1,3})\s+(\d{1,3})\s*$/
+          )
+
+          if (resultMatch1) {
+            const [, rank, bib, name, org, run1, run2, total, points] = resultMatch1
+            results.push({
+              rank: parseInt(rank),
+              bib: parseInt(bib),
+              name: name.trim(),
+              organization: org.trim().replace(/\s+/g, ''),
+              run1Time: run1,
+              run2Time: run2,
+              totalTime: total,
+              points: parseInt(points),
+              status: 'OK'
+            })
+          } else if (resultMatch2) {
+            // 格式2: 名次 姓名 报名ID 总成绩 积分 总积分
+            const [, rank, name, registrationId, total, points] = resultMatch2
+            results.push({
+              rank: parseInt(rank),
+              bib: parseInt(registrationId.replace(/[A-Za-z]$/, '')),  // 移除字母后缀
+              name: name.trim(),
+              organization: '-',  // 此格式无单位信息
+              run1Time: '-',
+              run2Time: '-',
+              totalTime: total,
+              points: parseInt(points),
+              status: 'OK'
+            })
+          }
+        }
+
+        if (results.length > 0) {
+          competitions.push({
+            ageGroup,
+            gender: gender + '子',
+            discipline,
+            results
+          })
+          totalAthletes += results.length
+        }
+
+        // 更新进度
+        setUploadProgress(40 + Math.floor((pageNum / pdf.numPages) * 50))
       }
 
-      setUploadProgress(80)
+      setUploadProgress(95)
 
-      // 使用解析器解析文本
-      const parsed = PDFResultParser.parseResults(fullText)
-
-      if (!parsed.results || parsed.results.length === 0) {
-        throw new Error('无法从PDF中识别成绩数据，请确认文件格式正确')
+      if (competitions.length === 0) {
+        throw new Error('未找到有效的积分表页面，请确认PDF格式正确')
       }
 
-      // 转换为系统通用格式
-      const data = PDFResultParser.toCompetitionData(parsed)
+      // 提取站点和赛季信息（从第一页或目录页）
+      let stationName = '未知站点'
+      let seasonName = '2025-2026赛季'
 
+      const firstPage = await pdf.getPage(1)
+      const firstPageContent = await firstPage.getTextContent()
+      const firstPageText = firstPageContent.items
+        .map(item => ('str' in item ? (item as { str: string }).str : ''))
+        .join(' ')
+
+      // 提取站点名称
+      const stationMatch = firstPageText.match(/（([^）]+站)）/) || firstPageText.match(/\(([^)]+站)\)/)
+      if (stationMatch) {
+        stationName = stationMatch[1]
+      }
+
+      // 提取赛季名称
+      const seasonMatch = firstPageText.match(/(\d{4}-\d{4})赛季/)
+      if (seasonMatch) {
+        seasonName = seasonMatch[0]
+      }
+
+      // 保存解析结果
+      const pdfData: ParsedPdfData = {
+        stationName,
+        seasonName,
+        competitions
+      }
+
+      setParsedPdfData(pdfData)
+      setAlpineCompetitions(competitions)
+      setExpandedGroups(new Set([0]))  // 默认展开第一组
       setUploadProgress(100)
 
-      setCompetitionData(data as ExtendedCompetitionData)
+      // 调试日志 - 追踪解析结果
+      console.log('[PDF解析调试]', {
+        competitionsCount: competitions.length,
+        totalAthletes,
+        stationName,
+        competitionDetails: competitions.map(c => ({
+          ageGroup: c.ageGroup,
+          gender: c.gender,
+          discipline: c.discipline,
+          resultsCount: c.results.length
+        }))
+      })
+
       setCurrentStep('review')
-      showToast(`成功解析 ${data.competitors.length} 名运动员的成绩`, 'success')
+      showToast(`成功解析 ${stationName} ${competitions.length} 场比赛，共 ${totalAthletes} 名运动员`, 'success')
     } catch (err) {
       console.error('PDF解析错误:', err)
       setError(err instanceof Error ? err.message : 'PDF解析失败，请检查文件格式')
@@ -583,12 +762,17 @@ export default function ResultsImportPage() {
       )}
 
       {/* 数据审核阶段 - 操作按钮 */}
-      {currentStep === 'review' && competitionData && (
+      {currentStep === 'review' && (competitionData || alpineCompetitions.length > 0) && (
         <div className="card mb-8 relative z-10">
           <div className="text-center py-6">
             <h3 className="text-lg font-semibold text-ski-navy mb-4">数据审核完成</h3>
             <p className="text-gray-600 mb-6">
-              已成功解析 <span className="font-semibold text-ski-blue">{competitionData.competitors.length}</span> 名运动员的比赛成绩
+              {alpineCompetitions.length > 0 ? (
+                <>已成功解析 <span className="font-semibold text-ski-blue">{alpineCompetitions.length}</span> 场比赛，
+                共 <span className="font-semibold text-ski-blue">{alpineCompetitions.reduce((sum, c) => sum + c.results.length, 0)}</span> 名运动员</>
+              ) : (
+                <>已成功解析 <span className="font-semibold text-ski-blue">{competitionData?.competitors.length || 0}</span> 名运动员的比赛成绩</>
+              )}
             </p>
             <div className="flex justify-center space-x-4">
               <button
@@ -1088,6 +1272,262 @@ export default function ResultsImportPage() {
             </button>
           </div>
         </>
+      )}
+
+      {/* 高山滑雪多组比赛结果显示 */}
+      {parsedPdfData && alpineCompetitions.length > 0 && (
+        <div className="space-y-6 relative z-10">
+          {/* 标题和统计信息 */}
+          <div className="card">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-2xl font-bold text-ski-navy flex items-center">
+                <Mountain className="h-8 w-8 text-blue-600 mr-3" />
+                {parsedPdfData.seasonName} 高山滑雪U系列比赛
+              </h2>
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                <MapPin className="h-4 w-4 mr-1" />
+                {parsedPdfData.stationName}
+              </span>
+            </div>
+            <p className="text-gray-600">
+              共解析到 <span className="font-semibold text-ski-blue">{alpineCompetitions.length}</span> 场比赛，
+              <span className="font-semibold text-ski-blue">{alpineCompetitions.reduce((sum, c) => sum + c.results.length, 0)}</span> 名运动员
+            </p>
+          </div>
+
+          {/* 筛选器 */}
+          <div className="card">
+            <div className="flex flex-wrap items-center gap-4">
+              <div className="flex items-center">
+                <label className="text-sm font-medium text-gray-700 mr-2">项目:</label>
+                <select
+                  value={filterDiscipline}
+                  onChange={(e) => setFilterDiscipline(e.target.value)}
+                  className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue text-sm"
+                >
+                  <option value="all">全部项目</option>
+                  <option value="回转">回转 (SL)</option>
+                  <option value="大回转">大回转 (GS)</option>
+                  <option value="超级大回转">超级大回转 (SG)</option>
+                </select>
+              </div>
+
+              <div className="flex items-center">
+                <label className="text-sm font-medium text-gray-700 mr-2">年龄组:</label>
+                <select
+                  value={filterAgeGroup}
+                  onChange={(e) => setFilterAgeGroup(e.target.value)}
+                  className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue text-sm"
+                >
+                  <option value="all">全部年龄组</option>
+                  <option value="U11">U11</option>
+                  <option value="U15">U15</option>
+                  <option value="U18">U18</option>
+                </select>
+              </div>
+
+              <div className="flex items-center">
+                <label className="text-sm font-medium text-gray-700 mr-2">性别:</label>
+                <select
+                  value={filterGender}
+                  onChange={(e) => setFilterGender(e.target.value)}
+                  className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue text-sm"
+                >
+                  <option value="all">全部</option>
+                  <option value="男子">男子</option>
+                  <option value="女子">女子</option>
+                </select>
+              </div>
+
+              {(filterDiscipline !== 'all' || filterAgeGroup !== 'all' || filterGender !== 'all') && (
+                <button
+                  onClick={() => {
+                    setFilterDiscipline('all')
+                    setFilterAgeGroup('all')
+                    setFilterGender('all')
+                  }}
+                  className="text-sm text-ski-blue hover:underline"
+                >
+                  清除筛选
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* 比赛列表 */}
+          {alpineCompetitions
+            .filter(c => filterDiscipline === 'all' || c.discipline === filterDiscipline)
+            .filter(c => filterAgeGroup === 'all' || c.ageGroup === filterAgeGroup)
+            .filter(c => filterGender === 'all' || c.gender === filterGender)
+            .map((competition, index) => {
+              const originalIndex = alpineCompetitions.indexOf(competition)
+              const isExpanded = expandedGroups.has(originalIndex)
+              const toggleExpand = () => {
+                const newSet = new Set(expandedGroups)
+                if (isExpanded) {
+                  newSet.delete(originalIndex)
+                } else {
+                  newSet.add(originalIndex)
+                }
+                setExpandedGroups(newSet)
+              }
+
+              return (
+                <div key={originalIndex} className="card">
+                  {/* 比赛标题栏 - 可点击展开/收起 */}
+                  <div
+                    className="flex items-center justify-between cursor-pointer py-2"
+                    onClick={toggleExpand}
+                  >
+                    <h3 className="text-xl font-semibold text-ski-navy flex items-center flex-wrap gap-2">
+                      <Trophy className={`h-6 w-6 ${index === 0 ? 'text-yellow-500' : 'text-gray-400'}`} />
+                      <span className="inline-flex items-center px-2 py-0.5 rounded bg-blue-100 text-blue-800 text-sm">
+                        {competition.discipline}
+                      </span>
+                      <span className="inline-flex items-center px-2 py-0.5 rounded bg-green-100 text-green-800 text-sm">
+                        {competition.gender}
+                      </span>
+                      <span className="inline-flex items-center px-2 py-0.5 rounded bg-purple-100 text-purple-800 text-sm">
+                        {competition.ageGroup}
+                      </span>
+                      <span className="text-sm font-normal text-gray-500">
+                        ({competition.results.length} 人)
+                      </span>
+                    </h3>
+                    <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                      {isExpanded ? (
+                        <ChevronUp className="h-5 w-5 text-gray-500" />
+                      ) : (
+                        <ChevronDown className="h-5 w-5 text-gray-500" />
+                      )}
+                    </button>
+                  </div>
+
+                  {/* 成绩表格 - 可展开/收起 */}
+                  {isExpanded && (
+                    <div className="mt-4 overflow-hidden rounded-lg border border-gray-200">
+                      <div className="overflow-x-auto">
+                        <table className="w-full">
+                          <thead className="bg-gray-50">
+                            <tr>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">排名</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">号码</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">姓名</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">单位</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                <div className="flex items-center">
+                                  <Timer className="h-3 w-3 mr-1" />
+                                  第一轮
+                                </div>
+                              </th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                <div className="flex items-center">
+                                  <Timer className="h-3 w-3 mr-1" />
+                                  第二轮
+                                </div>
+                              </th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">总成绩</th>
+                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                <div className="flex items-center">
+                                  <Award className="h-3 w-3 mr-1" />
+                                  积分
+                                </div>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody className="bg-white divide-y divide-gray-200">
+                            {competition.results.map((result, resultIndex) => (
+                              <tr
+                                key={resultIndex}
+                                className={`hover:bg-gray-50 ${
+                                  result.rank <= 3 ? 'bg-yellow-50' : resultIndex % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+                                }`}
+                              >
+                                <td className="px-4 py-3 whitespace-nowrap">
+                                  <div className="flex items-center">
+                                    {result.rank <= 3 && (
+                                      <Trophy className={`h-4 w-4 mr-1 ${
+                                        result.rank === 1 ? 'text-yellow-500' :
+                                        result.rank === 2 ? 'text-gray-400' :
+                                        'text-orange-600'
+                                      }`} />
+                                    )}
+                                    <span className="text-sm font-medium text-gray-900">{result.rank}</span>
+                                  </div>
+                                </td>
+                                <td className="px-4 py-3 whitespace-nowrap">
+                                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                    {result.bib}
+                                  </span>
+                                </td>
+                                <td className="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-900">
+                                  {result.name}
+                                </td>
+                                <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900 max-w-[200px] truncate" title={result.organization}>
+                                  {result.organization || '-'}
+                                </td>
+                                <td className="px-4 py-3 whitespace-nowrap text-sm font-mono text-gray-900">
+                                  {result.run1Time || '-'}
+                                </td>
+                                <td className="px-4 py-3 whitespace-nowrap text-sm font-mono text-gray-900">
+                                  {result.run2Time || '-'}
+                                </td>
+                                <td className="px-4 py-3 whitespace-nowrap text-sm font-mono font-semibold text-ski-blue">
+                                  {result.totalTime || '-'}
+                                </td>
+                                <td className="px-4 py-3 whitespace-nowrap">
+                                  <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                                    result.points >= 300 ? 'bg-yellow-100 text-yellow-800' :
+                                    result.points >= 200 ? 'bg-green-100 text-green-800' :
+                                    result.points >= 100 ? 'bg-blue-100 text-blue-800' :
+                                    'bg-gray-100 text-gray-800'
+                                  }`}>
+                                    {result.points} 分
+                                  </span>
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+
+          {/* 筛选结果为空提示 */}
+          {alpineCompetitions
+            .filter(c => filterDiscipline === 'all' || c.discipline === filterDiscipline)
+            .filter(c => filterAgeGroup === 'all' || c.ageGroup === filterAgeGroup)
+            .filter(c => filterGender === 'all' || c.gender === filterGender)
+            .length === 0 && (
+            <div className="card text-center py-8">
+              <p className="text-gray-500">没有符合筛选条件的比赛</p>
+              <button
+                onClick={() => {
+                  setFilterDiscipline('all')
+                  setFilterAgeGroup('all')
+                  setFilterGender('all')
+                }}
+                className="mt-2 text-ski-blue hover:underline"
+              >
+                清除筛选条件
+              </button>
+            </div>
+          )}
+
+          {/* 操作按钮 */}
+          <div className="flex justify-center space-x-4 mt-8">
+            <button
+              onClick={handleRestart}
+              className="btn-secondary flex items-center"
+            >
+              <Upload className="h-5 w-5 mr-2" />
+              重新上传
+            </button>
+          </div>
+        </div>
       )}
     </div>
   )
