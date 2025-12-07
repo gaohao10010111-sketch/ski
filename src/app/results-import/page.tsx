@@ -183,28 +183,30 @@ export default function ResultsImportPage() {
         // 对于大跳台/坡障格式，使用专门的解析逻辑
         if (sportType.includes('bigair') || sportType.includes('slopestyle') || sportType === 'freestyle') {
           // 大跳台完整数据行的特征：
-          // - 必须包含姓名
+          // - 必须包含中文姓名（2-5个汉字）
           // - 必须包含站姿标记 G 或 R
           // - 必须包含积分（1-360的整数，在行末尾）
-          // - 必须是轮次1的行（如果是轮次2/3的行，只有评分数据，没有完整信息）
+          // - 数据很多（排名、号码、姓名、单位、出生年、站姿、轮次、J1-J5评分、得分、最终成绩、积分）
+          //
+          // 轮次行的特征（需要跳过）：
+          // - 行首是轮次号（2或3）
+          // - 只有评分数据，没有完整的运动员信息
+          // - 没有站姿标记
+          // - 数字较少（只有7-8个：轮次、J1-J5、得分）
 
-          // 检查是否包含站姿标记（这是完整行的标志之一）
-          const hasStance = /[|\s][GR][|\s]/.test(cleanText) || cleanText.includes(' G ') || cleanText.includes(' R ')
-
-          // 如果没有站姿标记且数字很少，这可能是轮次2/3的行，跳过
-          if (!hasStance && numbers.length < 8) {
-            return null
+          // 首先检测是否是轮次行（行首以2或3开头，后面只有评分数据）
+          // 轮次行格式: "2 65  66  66  65  63  65.00" 或 "3 73  75  75  76  74  74.60"
+          const isRoundRow = /^\s*[23]\s+\d+\s+\d+\s+\d+/.test(cleanText) && !cleanText.includes(' G ') && !cleanText.includes(' R ')
+          if (isRoundRow) {
+            return null  // 跳过轮次2和3的行
           }
 
-          // 检查轮次 - 查找格式如 "G | 1" 或 "R 1" 的模式
-          // 如果是轮次2或3的行（即使有姓名也跳过，因为那是从上一行继承的）
-          const roundPattern = /[GR]\s*\|?\s*(\d)\s*\|/
-          const roundMatch = cleanText.match(roundPattern)
-          if (roundMatch) {
-            const round = parseInt(roundMatch[1])
-            if (round > 1) {
-              return null  // 跳过轮次2和3的行
-            }
+          // 检查是否包含站姿标记（这是完整数据行的必要条件）
+          const hasStance = /[|\s][GR][|\s]/.test(cleanText) || cleanText.includes(' G ') || cleanText.includes(' R ')
+
+          // 如果没有站姿标记，这不是完整的数据行
+          if (!hasStance) {
+            return null
           }
 
           // 大跳台格式需要足够多的数字来包含：名次、号码、出生年、轮次、评分、最终成绩、积分
@@ -1731,16 +1733,9 @@ export default function ResultsImportPage() {
                               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 <div className="flex items-center">
                                   <Timer className="h-3 w-3 mr-1" />
-                                  第一轮
+                                  总成绩
                                 </div>
                               </th>
-                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                <div className="flex items-center">
-                                  <Timer className="h-3 w-3 mr-1" />
-                                  第二轮
-                                </div>
-                              </th>
-                              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">总成绩</th>
                               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 <div className="flex items-center">
                                   <Award className="h-3 w-3 mr-1" />
@@ -1780,13 +1775,7 @@ export default function ResultsImportPage() {
                                 <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900 max-w-[200px] truncate" title={result.organization}>
                                   {result.organization || '-'}
                                 </td>
-                                <td className="px-4 py-3 whitespace-nowrap text-sm font-mono text-gray-900">
-                                  {result.run1Time || '-'}
-                                </td>
-                                <td className="px-4 py-3 whitespace-nowrap text-sm font-mono text-gray-900">
-                                  {result.run2Time || '-'}
-                                </td>
-                                <td className="px-4 py-3 whitespace-nowrap text-sm font-mono font-semibold text-ski-blue">
+                                <td className="px-4 py-3 text-sm font-mono font-semibold text-ski-blue min-w-[120px]">
                                   {result.totalTime || '-'}
                                 </td>
                                 <td className="px-4 py-3 whitespace-nowrap">
