@@ -171,29 +171,58 @@ export default function ResultsImportPage() {
           .map(item => ('str' in item ? (item as { str: string }).str : ''))
           .join(' ')
 
-        // 检查是否包含比赛信息（支持两种格式）
-        // 格式1: "U18男子组回转积分表"
+        // 检查是否包含比赛信息（支持多种格式）
+        // 格式1: "U18男子组回转积分表"（高山滑雪积分表）
         // 格式2: "高山滑雪-回转-男-U18"（微信小程序成绩公告格式）
+        // 格式3: "单板滑雪大跳台U系列比赛" + "U11女子组 成绩公告"（单板大跳台）
+        // 格式4: "自由式滑雪坡面障碍技巧" + "U15男子组"（自由式坡障）
         const hasPointsTable = pageText.includes('积分表')
-        const hasResultFormat = pageText.includes('高山滑雪') && (pageText.includes('回转') || pageText.includes('大回转'))
+        const hasAlpineFormat = pageText.includes('高山滑雪') && (pageText.includes('回转') || pageText.includes('大回转'))
+        const hasSnowboardBigAir = pageText.includes('单板滑雪大跳台') || (pageText.includes('单板') && pageText.includes('大跳台'))
+        const hasSnowboardSlopestyle = pageText.includes('单板') && pageText.includes('坡面障碍')
+        const hasFreestyleFormat = pageText.includes('自由式') && (pageText.includes('坡面障碍') || pageText.includes('大跳台'))
+        const hasResultAnnouncement = pageText.includes('成绩公告') || pageText.includes('成 绩 公 告')
 
-        if (!hasPointsTable && !hasResultFormat) continue
+        if (!hasPointsTable && !hasAlpineFormat && !hasSnowboardBigAir && !hasSnowboardSlopestyle && !hasFreestyleFormat) continue
 
-        // 提取比赛信息 - 支持两种格式
-        // 格式1: "U18男子组回转"
-        let matchInfo = pageText.match(/(U\d{2})(男|女)子组(回转|大回转|超级大回转)/)
+        // 提取比赛信息 - 支持多种格式
+        let matchInfo: RegExpMatchArray | null = null
+        let discipline = ''
+
+        // 格式1: "U18男子组回转"（高山滑雪积分表）
+        matchInfo = pageText.match(/(U\d{2})(男|女)子组(回转|大回转|超级大回转)/)
 
         // 格式2: "高山滑雪-回转-男-U18" 或 "高山滑雪-大回转-女-U15"
         if (!matchInfo) {
           const format2Match = pageText.match(/高山滑雪[^\w]*(回转|大回转|超级大回转)[^\w]*(男|女)[^\w]*(U\d{2})/)
           if (format2Match) {
-            // 重新排列以匹配格式1的结构: [full, ageGroup, gender, discipline]
             matchInfo = [format2Match[0], format2Match[3], format2Match[2], format2Match[1]] as RegExpMatchArray
           }
         }
+
+        // 格式3: 单板滑雪大跳台 - "U11女子组" 或 "U15男子组"
+        if (!matchInfo && (hasSnowboardBigAir || hasResultAnnouncement)) {
+          const bigAirMatch = pageText.match(/(U\d{2})(男|女)子组/)
+          if (bigAirMatch) {
+            discipline = hasSnowboardBigAir ? '大跳台' : (hasSnowboardSlopestyle ? '坡面障碍' : (hasFreestyleFormat ? '自由式' : ''))
+            matchInfo = [bigAirMatch[0], bigAirMatch[1], bigAirMatch[2], discipline] as RegExpMatchArray
+          }
+        }
+
+        // 格式4: 自由式滑雪坡面障碍/大跳台 - "U15男子组"
+        if (!matchInfo && hasFreestyleFormat) {
+          const freestyleMatch = pageText.match(/(U\d{2})(男|女)子组/)
+          if (freestyleMatch) {
+            discipline = pageText.includes('大跳台') ? '大跳台' : '坡面障碍'
+            matchInfo = [freestyleMatch[0], freestyleMatch[1], freestyleMatch[2], discipline] as RegExpMatchArray
+          }
+        }
+
         if (!matchInfo) continue
 
-        const [, ageGroup, gender, discipline] = matchInfo
+        const [, ageGroup, gender, extractedDiscipline] = matchInfo
+        // 使用已经提取的discipline，如果没有则使用matchInfo中的
+        const finalDiscipline = discipline || extractedDiscipline || '未知项目'
 
         // 按Y坐标分组文本项
         const items = textContent.items
@@ -236,6 +265,13 @@ export default function ResultsImportPage() {
             /^\s*(\d{1,3})\s+([\u4e00-\u9fa5·]{2,4})\s+(\d{4,5}[A-Za-z]?)\s+(\d{2}:\d{2}\.\d{2}|\d+\.\d{2})\s+(\d{1,3})\s+(\d{1,3})\s*$/
           )
 
+          // 格式3（单板滑雪大跳台成绩公告）: 名次 号码 姓名 单位 出生年 站姿 轮次 [5个评分] 本轮成绩 总成绩 积分
+          // 例: 1    4   孙嘉怡   河北省体育局冬季运动中  2015   R    1  77 78  76  75 73  75.80   150.40  360
+          // 只匹配第一轮（轮次=1）的行，因为这是最终成绩行
+          const resultMatch3 = rowText.match(
+            /^\s*(\d{1,2})\s+(\d{1,3})\s+([\u4e00-\u9fa5·]{2,4})\s+([\u4e00-\u9fa5\s]+?)\s+(\d{4})\s+([GR])\s+1\s+.*?(\d+\.\d{2})\s+(\d+\.\d{2})\s+(\d{1,3})\s*$/
+          )
+
           if (resultMatch1) {
             const [, rank, bib, name, org, run1, run2, total, points] = resultMatch1
             results.push({
@@ -263,6 +299,20 @@ export default function ResultsImportPage() {
               points: parseInt(points),
               status: 'OK'
             })
+          } else if (resultMatch3) {
+            // 格式3: 单板滑雪大跳台成绩公告
+            const [, rank, bib, name, org, , , runScore, totalScore, points] = resultMatch3
+            results.push({
+              rank: parseInt(rank),
+              bib: parseInt(bib),
+              name: name.trim(),
+              organization: org.trim().replace(/\s+/g, ''),
+              run1Time: runScore,  // 本轮成绩
+              run2Time: '-',
+              totalTime: totalScore,  // 总成绩
+              points: parseInt(points),
+              status: 'OK'
+            })
           }
         }
 
@@ -270,7 +320,7 @@ export default function ResultsImportPage() {
           competitions.push({
             ageGroup,
             gender: gender + '子',
-            discipline,
+            discipline: finalDiscipline,
             results
           })
           totalAthletes += results.length
