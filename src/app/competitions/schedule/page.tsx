@@ -425,9 +425,9 @@ export default function SchedulePage() {
         <div className="card">
           <h3 className="text-lg font-semibold text-ski-navy mb-3">联系方式</h3>
           <ul className="space-y-2 text-sm text-gray-600">
-            <li>• 赛事咨询：400-8888-8888</li>
-            <li>• 技术支持：tech@ski.org.cn</li>
-            <li>• 紧急联络：emergency@ski.org.cn</li>
+            <li>• 赛事咨询：请关注官方通知</li>
+            <li>• 技术支持：待配置</li>
+            <li>• 紧急联络：待配置</li>
             <li>• 工作时间：周一至周五 9:00-18:00</li>
           </ul>
         </div>

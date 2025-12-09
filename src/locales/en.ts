@@ -151,64 +151,18 @@ export const en: PartialTranslationKeys = {
 
     upcomingEvents: {
       title: 'Upcoming',
-      events: [
-        {
-          date: 'Dec 20',
-          event: 'National Championships',
-          discipline: 'Giant Slalom',
-          location: 'Wanlong Resort',
-          status: 'upcoming'
-        },
-        {
-          date: 'Dec 22',
-          event: 'National Championships',
-          discipline: 'Slalom',
-          location: 'Wanlong Resort',
-          status: 'upcoming'
-        },
-        {
-          date: 'Dec 25',
-          event: 'China Cup Open',
-          discipline: 'Downhill',
-          location: 'Changbaishan Resort',
-          status: 'upcoming'
-        }
-      ]
+      events: [],
+      emptyMessage: 'No events scheduled, please check official announcements'
     },
 
     latestNews: {
-      title: 'Latest News',
-      items: [
-        {
-          title: 'China Alpine Team Winter Training',
-          subtitle: 'All-out preparation for the new season',
-          time: '2 hours ago',
-          image: '/images/ski-bg.jpg'
-        },
-        {
-          title: 'Points Rules v4.0 Explained',
-          subtitle: 'Understand the latest calculation standards',
-          time: '5 hours ago',
-          image: '/images/ski-bg.jpg'
-        },
-        {
-          title: 'Venue Certification in Full Swing',
-          subtitle: 'Ensuring venues meet international standards',
-          time: '1 day ago',
-          image: '/images/ski-bg.jpg'
-        }
-      ]
+      title: 'Announcements',
+      items: []
     },
 
     topAthletes: {
       title: 'Rankings',
-      athletes: [
-        { rank: 1, name: 'Wei Zhang', nation: 'Beijing', points: 0.0, change: 0 },
-        { rank: 2, name: 'Xue Li', nation: 'Heilongjiang', points: 8.45, change: 1 },
-        { rank: 3, name: 'Bing Wang', nation: 'Jilin', points: 12.3, change: -1 },
-        { rank: 4, name: 'Qiang Liu', nation: 'Hebei', points: 15.67, change: 2 },
-        { rank: 5, name: 'Ming Chen', nation: 'Liaoning', points: 18.92, change: 0 }
-      ]
+      athletes: []
     }
   },
 
@@ -250,64 +204,18 @@ export const en: PartialTranslationKeys = {
 
     upcomingEvents: {
       title: 'Upcoming',
-      events: [
-        {
-          date: 'Dec 19',
-          event: 'National Championships',
-          discipline: 'Slopestyle',
-          location: 'Genting Resort, Chongli',
-          status: 'upcoming'
-        },
-        {
-          date: 'Dec 21',
-          event: 'National Championships',
-          discipline: 'Big Air',
-          location: 'Genting Resort, Chongli',
-          status: 'upcoming'
-        },
-        {
-          date: 'Dec 26',
-          event: 'U-Series Youth Event',
-          discipline: 'Slopestyle',
-          location: 'Shijinglong Resort, Beijing',
-          status: 'upcoming'
-        }
-      ]
+      events: [],
+      emptyMessage: 'No events scheduled, please check official announcements'
     },
 
     latestNews: {
-      title: 'Latest News',
-      items: [
-        {
-          title: 'China Freestyle Team Winter Training',
-          subtitle: 'Pushing difficulty limits with new tricks',
-          time: '1 hour ago',
-          image: '/images/ski-bg.jpg'
-        },
-        {
-          title: '360-Point Tier Rules Explained',
-          subtitle: 'Understand the latest scoring standards',
-          time: '4 hours ago',
-          image: '/images/ski-bg.jpg'
-        },
-        {
-          title: 'New Freestyle Venue Certified',
-          subtitle: 'Meets FIS level-two technical standards',
-          time: '1 day ago',
-          image: '/images/ski-bg.jpg'
-        }
-      ]
+      title: 'Announcements',
+      items: []
     },
 
     topAthletes: {
       title: 'Rankings',
-      athletes: [
-        { rank: 1, name: 'Jinbo He', nation: 'Hebei', points: 360.0, change: 0 },
-        { rank: 2, name: 'Wenlong Yang', nation: 'Heilongjiang', points: 329.0, change: 1 },
-        { rank: 3, name: 'Jiaxu Sun', nation: 'Jilin', points: 303.0, change: -1 },
-        { rank: 4, name: 'Shuang Li', nation: 'Beijing', points: 280.0, change: 2 },
-        { rank: 5, name: 'Guangpu Qi', nation: 'Liaoning', points: 260.0, change: 0 }
-      ]
+      athletes: []
     }
   },
 
@@ -349,64 +257,18 @@ export const en: PartialTranslationKeys = {
 
     upcomingEvents: {
       title: 'Upcoming',
-      events: [
-        {
-          date: 'Dec 18',
-          event: 'National Championships',
-          discipline: 'Slopestyle',
-          location: 'Genting Resort, Chongli',
-          status: 'upcoming'
-        },
-        {
-          date: 'Dec 20',
-          event: 'National Championships',
-          discipline: 'Big Air',
-          location: 'Genting Resort, Chongli',
-          status: 'upcoming'
-        },
-        {
-          date: 'Dec 28',
-          event: 'U-Series Youth Event',
-          discipline: 'Slopestyle',
-          location: 'Shijinglong Resort, Beijing',
-          status: 'upcoming'
-        }
-      ]
+      events: [],
+      emptyMessage: 'No events scheduled, please check official announcements'
     },
 
     latestNews: {
-      title: 'Latest News',
-      items: [
-        {
-          title: 'China Snowboard Team Winter Training',
-          subtitle: 'Preparing for the new season with advanced tricks',
-          time: '3 hours ago',
-          image: '/images/ski-bg.jpg'
-        },
-        {
-          title: '360-Point Tier Rules Explained',
-          subtitle: 'Understand the latest calculation standards',
-          time: '6 hours ago',
-          image: '/images/ski-bg.jpg'
-        },
-        {
-          title: 'New Big Air Venue Certified',
-          subtitle: 'Meets level-two venue technical standards',
-          time: '1 day ago',
-          image: '/images/ski-bg.jpg'
-        }
-      ]
+      title: 'Announcements',
+      items: []
     },
 
     topAthletes: {
       title: 'Rankings',
-      athletes: [
-        { rank: 1, name: 'Ming Li', nation: 'Beijing', points: 360.0, change: 0 },
-        { rank: 2, name: 'Xue Wang', nation: 'Hebei', points: 329.0, change: 1 },
-        { rank: 3, name: 'Qiang Zhang', nation: 'Jilin', points: 303.0, change: -1 },
-        { rank: 4, name: 'Bing Liu', nation: 'Heilongjiang', points: 280.0, change: 2 },
-        { rank: 5, name: 'Fei Chen', nation: 'Liaoning', points: 260.0, change: 0 }
-      ]
+      athletes: []
     }
   },
 
@@ -448,64 +310,17 @@ export const en: PartialTranslationKeys = {
 
     upcomingEvents: {
       title: 'Upcoming',
-      events: [
-        {
-          date: 'Dec 16',
-          event: 'National Championships',
-          discipline: 'Parallel Giant Slalom',
-          location: 'Wanlong Resort, Chongli',
-          status: 'upcoming'
-        },
-        {
-          date: 'Dec 17',
-          event: 'National Championships',
-          discipline: 'Parallel Slalom',
-          location: 'Wanlong Resort, Chongli',
-          status: 'upcoming'
-        },
-        {
-          date: 'Dec 24',
-          event: 'Regional Points Event',
-          discipline: 'Parallel Giant Slalom',
-          location: 'Changbaishan Resort',
-          status: 'upcoming'
-        }
-      ]
+      events: []
     },
 
     latestNews: {
       title: 'Latest News',
-      items: [
-        {
-          title: 'China Parallel Snowboard Team Winter Training',
-          subtitle: 'Building endurance and sharpening speed and precision',
-          time: '2 hours ago',
-          image: '/images/ski-bg.jpg'
-        },
-        {
-          title: 'Elimination Bracket Points Explained',
-          subtitle: 'Understand the unique points system for parallel events',
-          time: '5 hours ago',
-          image: '/images/ski-bg.jpg'
-        },
-        {
-          title: 'New Parallel Course Certified',
-          subtitle: 'Meets international competition technical standards',
-          time: '1 day ago',
-          image: '/images/ski-bg.jpg'
-        }
-      ]
+      items: []
     },
 
     topAthletes: {
       title: 'Rankings',
-      athletes: [
-        { rank: 1, name: 'Lei Zhao', nation: 'Jilin', points: 380.0, change: 0 },
-        { rank: 2, name: 'Xue Sun', nation: 'Heilongjiang', points: 295.0, change: 1 },
-        { rank: 3, name: 'Qiang Zhou', nation: 'Hebei', points: 230.0, change: -1 },
-        { rank: 4, name: 'Bing Wu', nation: 'Beijing', points: 195.0, change: 2 },
-        { rank: 5, name: 'Fei Zheng', nation: 'Liaoning', points: 175.0, change: 0 }
-      ]
+      athletes: []
     }
   },
 
@@ -630,10 +445,10 @@ export const en: PartialTranslationKeys = {
     resultsSummary: 'Found {count} athletes',
     exportLabel: 'Export List',
     stats: [
-      { id: 'registered', value: '1,247', label: 'Registered Athletes', icon: 'user', theme: 'blue' },
-      { id: 'active', value: '563', label: 'Active Athletes', icon: 'trophy', theme: 'green' },
-      { id: 'awarded', value: '89', label: 'Medal Winners', icon: 'medal', theme: 'purple' },
-      { id: 'improved', value: '156', label: 'Points Improved', icon: 'trendingUp', theme: 'red' }
+      { id: 'registered', value: '-', label: 'Registered Athletes', icon: 'user', theme: 'blue' },
+      { id: 'active', value: '-', label: 'Active Athletes', icon: 'trophy', theme: 'green' },
+      { id: 'awarded', value: '-', label: 'Medal Winners', icon: 'medal', theme: 'purple' },
+      { id: 'improved', value: '-', label: 'Points Improved', icon: 'trendingUp', theme: 'red' }
     ],
     tableHeaders: {
       rank: 'Rank',
@@ -644,68 +459,7 @@ export const en: PartialTranslationKeys = {
       bestResult: 'Best Result',
       province: 'Province'
     },
-    list: [
-      {
-        id: 1,
-        name: 'Wei Zhang',
-        disciplineKey: 'alpine',
-        discipline: 'Alpine Skiing',
-        speciality: 'Giant Slalom',
-        points: 45.2,
-        rank: 1,
-        competitions: 12,
-        bestResult: '1st',
-        province: 'Heilongjiang'
-      },
-      {
-        id: 2,
-        name: 'Xiaoxue Li',
-        disciplineKey: 'freestyle',
-        discipline: 'Freestyle Skiing',
-        speciality: 'Big Air',
-        points: 285.5,
-        rank: 2,
-        competitions: 8,
-        bestResult: '2nd',
-        province: 'Jilin'
-      },
-      {
-        id: 3,
-        name: 'Bingbing Wang',
-        disciplineKey: 'snowboard',
-        discipline: 'Snowboarding',
-        speciality: 'Halfpipe',
-        points: 198.75,
-        rank: 3,
-        competitions: 15,
-        bestResult: '1st',
-        province: 'Beijing'
-      },
-      {
-        id: 4,
-        name: 'Xuehua Zhao',
-        disciplineKey: 'alpine',
-        discipline: 'Alpine Skiing',
-        speciality: 'Slalom',
-        points: 52.3,
-        rank: 4,
-        competitions: 10,
-        bestResult: '3rd',
-        province: 'Hebei'
-      },
-      {
-        id: 5,
-        name: 'Feixiang Chen',
-        disciplineKey: 'freestyle',
-        discipline: 'Freestyle Skiing',
-        speciality: 'Slopestyle',
-        points: 240.15,
-        rank: 5,
-        competitions: 9,
-        bestResult: '2nd',
-        province: 'Xinjiang'
-      }
-    ]
+    list: []
   },
 
   // Language selector
@@ -1353,11 +1107,7 @@ export const en: PartialTranslationKeys = {
         completed: 'Completed',
         upcoming: 'Upcoming'
       },
-      results: [
-        { id: 'nc-men-gs', title: '2024 National Championships', subtitle: 'Men Giant Slalom · Tianchi Resort', status: 'live', time: 'Dec 15 · 14:30' },
-        { id: 'china-cup-sl', title: 'China Cup Alpine Open', subtitle: 'Women Slalom · Wanlong Resort', status: 'completed', time: 'Dec 14 · 16:45' },
-        { id: 'northeast-league', title: 'Northeast League', subtitle: 'Mixed Alpine Combined · Yabuli Resort', status: 'completed', time: 'Dec 13 · 15:20' }
-      ]
+      results: []
     },
     rankings: {
       title: 'Points Leaderboard',
@@ -1366,12 +1116,7 @@ export const en: PartialTranslationKeys = {
       viewFullRankings: 'View Full Rankings →',
       season: 'Season',
       noData: 'No ranking data available for this discipline',
-      entries: [
-        { rank: 1, name: 'Wei Zhang', event: 'Men Giant Slalom', points: '0.00' },
-        { rank: 2, name: 'Xue Li', event: 'Women Slalom', points: '8.45' },
-        { rank: 3, name: 'Bing Wang', event: 'Women Giant Slalom', points: '12.30' },
-        { rank: 4, name: 'Qiang Liu', event: 'Men Slalom', points: '15.67' }
-      ]
+      entries: []
     },
     memberWelcome: {
       welcomeBack: 'Welcome Back',

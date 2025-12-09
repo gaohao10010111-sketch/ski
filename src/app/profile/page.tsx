@@ -13,24 +13,20 @@ import {
 export default function ProfilePage() {
   const [activeTab, setActiveTab] = useState('overview')
 
-  // 模拟用户数据
+  // 用户数据（登录后从API获取）
   const userData = {
-    name: '张伟',
-    username: 'zhangwei_ski',
-    email: 'zhangwei@example.com',
-    phone: '138****8888',
-    userType: 'athlete',
+    name: '未登录',
+    username: '-',
+    email: '-',
+    phone: '-',
+    userType: 'guest',
     currentPoints: {
-      DH: 45.67,  // 滑降
-      SL: 32.45,  // 回转
-      GS: 38.90,  // 大回转
-      SG: 52.30,  // 超级大回转
+      DH: 0,
+      SL: 0,
+      GS: 0,
+      SG: 0,
     },
-    bestResults: [
-      { event: '2024全国锦标赛', discipline: '大回转', rank: 3, points: 38.90, date: '2024-03-15' },
-      { event: '2024冬季联赛第三站', discipline: '回转', rank: 5, points: 32.45, date: '2024-02-20' },
-      { event: '2024青少年杯', discipline: '滑降', rank: 2, points: 45.67, date: '2024-01-25' }
-    ]
+    bestResults: [] as { event: string; discipline: string; rank: number; points: number; date: string }[]
   }
 
   const tabs = [

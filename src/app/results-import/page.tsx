@@ -7,6 +7,7 @@ import { XMLParser, CompetitionData } from '@/utils/xmlParser'
 import { exportToExcel } from '@/utils/exportUtils'
 import { useToast } from '@/components/Toast'
 import { PDFResultParser, AlpineResult } from '@/utils/pdfParser'
+import { saveResults, type CompetitionInfo, type ResultRecord, type StoredResults } from '@/lib/resultsStorage'
 import {
   Upload,
   FileText,
@@ -68,10 +69,43 @@ interface AlpineCompetitionResult {
   pageNum?: number    // 数据来源页码
 }
 
+// 四大项目类型
+type SportType = 'alpine' | 'snowboard-slopestyle' | 'snowboard-parallel' | 'freestyle-slopestyle'
+
+// 大项中文名称映射
+const SPORT_TYPE_NAMES: Record<SportType, string> = {
+  'alpine': '高山滑雪',
+  'snowboard-slopestyle': '单板坡面障碍技巧',
+  'snowboard-parallel': '单板平行项目',
+  'freestyle-slopestyle': '自由式坡面障碍技巧'
+}
+
+// 各大项的子项选项
+const SPORT_DISCIPLINES: Record<SportType, { value: string; label: string }[]> = {
+  'alpine': [
+    { value: '回转', label: '回转 (SL)' },
+    { value: '大回转', label: '大回转 (GS)' },
+    { value: '超级大回转', label: '超级大回转 (SG)' }
+  ],
+  'snowboard-slopestyle': [
+    { value: '坡面障碍', label: '坡面障碍技巧 (SS)' },
+    { value: '大跳台', label: '大跳台 (BA)' }
+  ],
+  'snowboard-parallel': [
+    { value: '平行大回转', label: '平行大回转 (PGS)' },
+    { value: '平行回转', label: '平行回转 (PSL)' }
+  ],
+  'freestyle-slopestyle': [
+    { value: '坡面障碍', label: '坡面障碍技巧 (SS)' },
+    { value: '大跳台', label: '大跳台 (BA)' }
+  ]
+}
+
 // PDF解析结果（包含站点信息）
 interface ParsedPdfData {
   stationName: string           // 站点名称（成都站、北京站等）
   seasonName: string            // 赛季名称
+  sportType: SportType          // 大项类型
   competitions: AlpineCompetitionResult[]
 }
 
@@ -612,10 +646,36 @@ export default function ResultsImportPage() {
         seasonName = seasonMatch[0]
       }
 
+      // 检测大项类型（从PDF内容或第一个比赛中检测）
+      let detectedSportType: SportType = 'alpine'
+      if (firstPageText.includes('单板') && (firstPageText.includes('坡面障碍') || firstPageText.includes('大跳台'))) {
+        detectedSportType = 'snowboard-slopestyle'
+      } else if (firstPageText.includes('单板') && firstPageText.includes('平行')) {
+        detectedSportType = 'snowboard-parallel'
+      } else if (firstPageText.includes('自由式') && (firstPageText.includes('坡面障碍') || firstPageText.includes('大跳台'))) {
+        detectedSportType = 'freestyle-slopestyle'
+      } else if (competitions.length > 0) {
+        // 从第一个比赛的discipline检测
+        const firstDiscipline = competitions[0].discipline
+        if (firstDiscipline.includes('坡面') || firstDiscipline.includes('大跳')) {
+          // 需要进一步判断是单板还是自由式
+          if (firstPageText.includes('单板')) {
+            detectedSportType = 'snowboard-slopestyle'
+          } else if (firstPageText.includes('自由式')) {
+            detectedSportType = 'freestyle-slopestyle'
+          }
+        } else if (firstDiscipline.includes('平行')) {
+          detectedSportType = 'snowboard-parallel'
+        }
+      }
+
+      console.log(`[PDF解析] 检测到大项类型: ${detectedSportType} (${SPORT_TYPE_NAMES[detectedSportType]})`)
+
       // 保存解析结果
       const pdfData: ParsedPdfData = {
         stationName,
         seasonName,
+        sportType: detectedSportType,
         competitions
       }
 
@@ -638,7 +698,81 @@ export default function ResultsImportPage() {
       })
 
       setCurrentStep('review')
-      showToast(`成功解析 ${stationName} ${competitions.length} 场比赛，共 ${totalAthletes} 名运动员`, 'success')
+
+      // 保存解析的数据到 localStorage，供成绩公布页面使用
+      // 每个比赛组（年龄组+性别+项目）单独保存为一条比赛记录
+      let savedCount = 0
+      for (const comp of competitions) {
+        const competitionId = `${stationName}-${comp.ageGroup}-${comp.gender}-${comp.discipline}`.replace(/\s+/g, '-')
+
+        // 确定项目类型
+        let sportType = 'alpine'
+        if (comp.discipline.includes('坡面') || comp.discipline.includes('slopestyle')) {
+          sportType = comp.discipline.includes('单板') ? 'snowboard-slopestyle' : 'freestyle-slopestyle'
+        } else if (comp.discipline.includes('大跳') || comp.discipline.includes('bigair')) {
+          sportType = comp.discipline.includes('单板') ? 'snowboard-bigair' : 'freestyle-bigair'
+        } else if (comp.discipline.includes('平行')) {
+          sportType = 'snowboard-parallel'
+        }
+
+        const competitionInfo: CompetitionInfo = {
+          id: competitionId,
+          name: `${seasonName} ${stationName} ${comp.ageGroup} ${comp.gender} ${comp.discipline}`,
+          date: new Date().toISOString().split('T')[0],
+          location: stationName,
+          discipline: comp.discipline,
+          sportType,
+          participants: comp.results.length,
+          finishers: comp.results.filter(r => r.status === 'OK').length,
+          dns: comp.results.filter(r => r.status === 'DNS').length,
+          dnf: comp.results.filter(r => r.status === 'DNF').length,
+          dsq: comp.results.filter(r => r.status === 'DSQ').length,
+          importedAt: new Date().toISOString()
+        }
+
+        // 将结果转换为存储格式，按性别分类
+        const maleResults: ResultRecord[] = []
+        const femaleResults: ResultRecord[] = []
+
+        const isMale = comp.gender.includes('男')
+        const resultRecords: ResultRecord[] = comp.results.map(r => ({
+          competitionId,
+          rank: r.rank,
+          bibNumber: String(r.bib),
+          name: r.name,
+          team: r.organization,
+          gender: isMale ? 'male' as const : 'female' as const,
+          run1Time: r.run1Time || '-',
+          run2Time: r.run2Time || '-',
+          totalTime: r.totalTime || '-',
+          points: r.points,
+          status: r.status === 'OK' ? 'finished' as const :
+                  r.status === 'DNS' ? 'dns' as const :
+                  r.status === 'DNF' ? 'dnf' as const : 'dsq' as const
+        }))
+
+        if (isMale) {
+          maleResults.push(...resultRecords)
+        } else {
+          femaleResults.push(...resultRecords)
+        }
+
+        const storedData: StoredResults = {
+          competition: competitionInfo,
+          results: {
+            male: maleResults,
+            female: femaleResults
+          }
+        }
+
+        if (saveResults(storedData)) {
+          savedCount++
+        }
+      }
+
+      console.log('[数据存储] 已保存', savedCount, '场比赛到 localStorage')
+
+      showToast(`成功解析 ${stationName} ${competitions.length} 场比赛，共 ${totalAthletes} 名运动员，已保存到本地`, 'success')
     } catch (err) {
       console.error('PDF解析错误:', err)
       setError(err instanceof Error ? err.message : 'PDF解析失败，请检查文件格式')
@@ -1586,7 +1720,7 @@ export default function ResultsImportPage() {
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-2xl font-bold text-ski-navy flex items-center">
                 <Mountain className="h-8 w-8 text-blue-600 mr-3" />
-                {parsedPdfData.seasonName} 高山滑雪U系列比赛
+                {parsedPdfData.seasonName} {SPORT_TYPE_NAMES[parsedPdfData.sportType]}U系列比赛
               </h2>
               <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
                 <MapPin className="h-4 w-4 mr-1" />
@@ -1610,9 +1744,9 @@ export default function ResultsImportPage() {
                   className="px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue text-sm"
                 >
                   <option value="all">全部项目</option>
-                  <option value="回转">回转 (SL)</option>
-                  <option value="大回转">大回转 (GS)</option>
-                  <option value="超级大回转">超级大回转 (SG)</option>
+                  {SPORT_DISCIPLINES[parsedPdfData.sportType].map(d => (
+                    <option key={d.value} value={d.value}>{d.label}</option>
+                  ))}
                 </select>
               </div>
 

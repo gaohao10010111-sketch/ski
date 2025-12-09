@@ -116,16 +116,16 @@ export const zh = {
 
     hero: {
       slide1: {
-        title: '2024全国锦标赛精彩瞬间',
-        subtitle: '见证中国高山滑雪的辉煌时刻'
+        title: '2025-2026赛季U系列比赛',
+        subtitle: '中国青少年高山滑雪积分排名官方平台'
       },
       slide2: {
-        title: '积分系统全新升级',
-        subtitle: '基于v4.0规则，更精确的积分计算'
+        title: '积分规则v4.0',
+        subtitle: '时间基础公式，A/B/C级赛事系数'
       },
       slide3: {
-        title: '冬季训练营开始报名',
-        subtitle: '专业教练团队，助力技术提升'
+        title: '全国冬季项目赛事赛历已公布',
+        subtitle: '2025-2026赛季第一批赛历发布'
       }
     },
 
@@ -149,50 +149,29 @@ export const zh = {
 
     upcomingEvents: {
       title: '即将进行',
-      events: [
-        {
-          date: '12月20日',
-          event: '全国锦标赛',
-          discipline: '大回转',
-          location: '万龙雪场',
-          status: 'upcoming'
-        },
-        {
-          date: '12月22日',
-          event: '全国锦标赛',
-          discipline: '回转',
-          location: '万龙雪场',
-          status: 'upcoming'
-        },
-        {
-          date: '12月25日',
-          event: '中国杯公开赛',
-          discipline: '速降',
-          location: '长白山雪场',
-          status: 'upcoming'
-        }
-      ]
+      events: [],
+      emptyMessage: '暂无赛事安排，请关注官方通知'
     },
 
     latestNews: {
-      title: '最新动态',
+      title: '通知公告',
       items: [
         {
-          title: '中国高山滑雪队冬训备战',
-          subtitle: '全力以赴迎接新赛季挑战',
-          time: '2小时前',
+          title: '2025-2026赛季高山滑雪U系列比赛',
+          subtitle: '竞赛规程即将发布',
+          time: '2025-11',
           image: '/images/ski-bg.jpg'
         },
         {
-          title: '积分规则v4.0详解',
-          subtitle: '了解最新的积分计算标准',
-          time: '5小时前',
+          title: '全国冬季项目赛事赛历公布',
+          subtitle: '2025-2026赛季第一批赛历',
+          time: '2025-11-06',
           image: '/images/ski-bg.jpg'
         },
         {
-          title: '雪场认证工作全面展开',
-          subtitle: '确保比赛场地符合国际标准',
-          time: '1天前',
+          title: '中日韩冬季青少年运动会',
+          subtitle: '2026年运动员选拔方案发布',
+          time: '2025-11-18',
           image: '/images/ski-bg.jpg'
         }
       ]
@@ -201,11 +180,11 @@ export const zh = {
     topAthletes: {
       title: '积分排行',
       athletes: [
-        { rank: 1, name: '张伟', nation: '北京', points: 0.00, change: 0 },
-        { rank: 2, name: '李雪', nation: '黑龙江', points: 8.45, change: 1 },
-        { rank: 3, name: '王冰', nation: '吉林', points: 12.30, change: -1 },
-        { rank: 4, name: '刘强', nation: '河北', points: 15.67, change: 2 },
-        { rank: 5, name: '陈明', nation: '辽宁', points: 18.92, change: 0 }
+        { rank: 1, name: '待更新', nation: '-', points: 0, change: 0 },
+        { rank: 2, name: '待更新', nation: '-', points: 0, change: 0 },
+        { rank: 3, name: '待更新', nation: '-', points: 0, change: 0 },
+        { rank: 4, name: '待更新', nation: '-', points: 0, change: 0 },
+        { rank: 5, name: '待更新', nation: '-', points: 0, change: 0 }
       ]
     }
   },
@@ -218,16 +197,16 @@ export const zh = {
 
     hero: {
       slide1: {
-        title: '2024全国自由式滑雪坡面障碍技巧锦标赛',
-        subtitle: '见证中国自由式滑雪的极限突破'
+        title: '2025-2026赛季U系列比赛',
+        subtitle: '自由式滑雪大跳台和坡面障碍技巧竞赛规程已发布'
       },
       slide2: {
-        title: '360分档积分系统',
-        subtitle: '基于难度系数的公正评分机制'
+        title: '360分制积分系统',
+        subtitle: '第1名360分，统一青少年积分体系'
       },
       slide3: {
-        title: 'U系列青少年发展计划',
-        subtitle: 'U12/U15/U18梯队培养体系'
+        title: 'U系列青少年比赛',
+        subtitle: 'U12/U15/U18年龄组分组竞赛'
       }
     },
 
@@ -248,50 +227,29 @@ export const zh = {
 
     upcomingEvents: {
       title: '即将进行',
-      events: [
-        {
-          date: '12月19日',
-          event: '全国锦标赛',
-          discipline: '坡面障碍技巧',
-          location: '崇礼密苑云顶雪场',
-          status: 'upcoming'
-        },
-        {
-          date: '12月21日',
-          event: '全国锦标赛',
-          discipline: '大跳台',
-          location: '崇礼密苑云顶雪场',
-          status: 'upcoming'
-        },
-        {
-          date: '12月26日',
-          event: 'U系列青少年赛',
-          discipline: '坡面障碍技巧',
-          location: '北京石京龙雪场',
-          status: 'upcoming'
-        }
-      ]
+      events: [],
+      emptyMessage: '暂无赛事安排，请关注官方通知'
     },
 
     latestNews: {
-      title: '最新动态',
+      title: '通知公告',
       items: [
         {
-          title: '中国自由式滑雪队冬训纪实',
-          subtitle: '突破技术难度，挑战极限动作',
-          time: '1小时前',
+          title: '自由式滑雪U系列比赛竞赛规程',
+          subtitle: '2025-2026赛季大跳台和坡面障碍技巧',
+          time: '2025-11-07',
           image: '/images/ski-bg.jpg'
         },
         {
-          title: '360分档积分规则权威解读',
-          subtitle: '了解最新的积分计算标准',
-          time: '4小时前',
+          title: '自由式滑雪坡面障碍技巧青少年锦标赛',
+          subtitle: '2025-2026赛季竞赛规程已发布',
+          time: '2025-11-07',
           image: '/images/ski-bg.jpg'
         },
         {
-          title: '新建自由式场地获国际认证',
-          subtitle: '符合FIS二级场地技术标准',
-          time: '1天前',
+          title: '全国自由式滑雪空中技巧锦标赛',
+          subtitle: '2025-2026赛季竞赛规程',
+          time: '2025-11-27',
           image: '/images/ski-bg.jpg'
         }
       ]
@@ -300,11 +258,11 @@ export const zh = {
     topAthletes: {
       title: '积分排行',
       athletes: [
-        { rank: 1, name: '何金博', nation: '河北', points: 360.0, change: 0 },
-        { rank: 2, name: '杨文龙', nation: '黑龙江', points: 329.0, change: 1 },
-        { rank: 3, name: '孙佳旭', nation: '吉林', points: 303.0, change: -1 },
-        { rank: 4, name: '李爽', nation: '北京', points: 280.0, change: 2 },
-        { rank: 5, name: '齐广璞', nation: '辽宁', points: 260.0, change: 0 }
+        { rank: 1, name: '待更新', nation: '-', points: 0, change: 0 },
+        { rank: 2, name: '待更新', nation: '-', points: 0, change: 0 },
+        { rank: 3, name: '待更新', nation: '-', points: 0, change: 0 },
+        { rank: 4, name: '待更新', nation: '-', points: 0, change: 0 },
+        { rank: 5, name: '待更新', nation: '-', points: 0, change: 0 }
       ]
     }
   },
@@ -317,16 +275,16 @@ export const zh = {
 
     hero: {
       slide1: {
-        title: '2024全国单板坡面障碍技巧锦标赛',
-        subtitle: '见证中国单板滑雪的精彩时刻'
+        title: '2025-2026赛季U系列比赛',
+        subtitle: '单板滑雪大跳台和坡面障碍技巧竞赛规程已发布'
       },
       slide2: {
-        title: '360分档积分系统',
-        subtitle: '基于国际标准的积分计算规则'
+        title: '360分制积分系统',
+        subtitle: '第1名360分，统一青少年积分体系'
       },
       slide3: {
-        title: 'U系列青少年培养计划',
-        subtitle: 'U12/U15/U18三级培养体系'
+        title: 'U系列青少年比赛',
+        subtitle: 'U12/U15/U18年龄组分组竞赛'
       }
     },
 
@@ -347,50 +305,29 @@ export const zh = {
 
     upcomingEvents: {
       title: '即将进行',
-      events: [
-        {
-          date: '12月18日',
-          event: '全国锦标赛',
-          discipline: '坡面障碍技巧',
-          location: '崇礼云顶雪场',
-          status: 'upcoming'
-        },
-        {
-          date: '12月20日',
-          event: '全国锦标赛',
-          discipline: '大跳台',
-          location: '崇礼云顶雪场',
-          status: 'upcoming'
-        },
-        {
-          date: '12月28日',
-          event: 'U系列青少年赛',
-          discipline: '坡面障碍技巧',
-          location: '北京石京龙雪场',
-          status: 'upcoming'
-        }
-      ]
+      events: [],
+      emptyMessage: '暂无赛事安排，请关注官方通知'
     },
 
     latestNews: {
-      title: '最新动态',
+      title: '通知公告',
       items: [
         {
-          title: '中国单板滑雪队冬训动态',
-          subtitle: '备战新赛季，提升技术难度',
-          time: '3小时前',
+          title: '单板滑雪U系列比赛竞赛规程',
+          subtitle: '2025-2026赛季大跳台和坡面障碍技巧',
+          time: '2025-11-07',
           image: '/images/ski-bg.jpg'
         },
         {
-          title: '360分档积分规则详解',
-          subtitle: '了解最新的积分计算标准',
-          time: '6小时前',
+          title: '单板滑雪大跳台青少年锦标赛',
+          subtitle: '2025-2026赛季竞赛规程已发布',
+          time: '2025-11-07',
           image: '/images/ski-bg.jpg'
         },
         {
-          title: '新建大跳台场地通过认证',
-          subtitle: '符合二级场地技术标准',
-          time: '1天前',
+          title: '全国单板滑雪坡面障碍技巧青少年锦标赛',
+          subtitle: '2025-2026赛季竞赛规程',
+          time: '2025-11-07',
           image: '/images/ski-bg.jpg'
         }
       ]
@@ -399,11 +336,11 @@ export const zh = {
     topAthletes: {
       title: '积分排行',
       athletes: [
-        { rank: 1, name: '李明', nation: '北京', points: 360.0, change: 0 },
-        { rank: 2, name: '王雪', nation: '河北', points: 329.0, change: 1 },
-        { rank: 3, name: '张强', nation: '吉林', points: 303.0, change: -1 },
-        { rank: 4, name: '刘冰', nation: '黑龙江', points: 280.0, change: 2 },
-        { rank: 5, name: '陈飞', nation: '辽宁', points: 260.0, change: 0 }
+        { rank: 1, name: '待更新', nation: '-', points: 0, change: 0 },
+        { rank: 2, name: '待更新', nation: '-', points: 0, change: 0 },
+        { rank: 3, name: '待更新', nation: '-', points: 0, change: 0 },
+        { rank: 4, name: '待更新', nation: '-', points: 0, change: 0 },
+        { rank: 5, name: '待更新', nation: '-', points: 0, change: 0 }
       ]
     }
   },
@@ -416,16 +353,16 @@ export const zh = {
 
     hero: {
       slide1: {
-        title: '2024全国单板平行项目锦标赛',
-        subtitle: '竞速与技巧的完美结合'
+        title: '2025-2026赛季U系列比赛',
+        subtitle: '单板平行项目竞赛规程即将发布'
       },
       slide2: {
-        title: '淘汰赛制积分系统',
-        subtitle: '基于对决排名的公平积分计算'
+        title: '360分制积分系统',
+        subtitle: '平行大回转PGS、平行回转PSL'
       },
       slide3: {
-        title: '精英选手培养计划',
-        subtitle: '提升竞速水平，冲击国际赛事'
+        title: 'U系列青少年比赛',
+        subtitle: 'U12/U15/U18年龄组分组竞赛'
       }
     },
 
@@ -446,50 +383,29 @@ export const zh = {
 
     upcomingEvents: {
       title: '即将进行',
-      events: [
-        {
-          date: '12月16日',
-          event: '全国锦标赛',
-          discipline: '平行大回转',
-          location: '崇礼万龙雪场',
-          status: 'upcoming'
-        },
-        {
-          date: '12月17日',
-          event: '全国锦标赛',
-          discipline: '平行回转',
-          location: '崇礼万龙雪场',
-          status: 'upcoming'
-        },
-        {
-          date: '12月24日',
-          event: '区域积分赛',
-          discipline: '平行大回转',
-          location: '长白山雪场',
-          status: 'upcoming'
-        }
-      ]
+      events: [],
+      emptyMessage: '暂无赛事安排，请关注官方通知'
     },
 
     latestNews: {
-      title: '最新动态',
+      title: '通知公告',
       items: [
         {
-          title: '中国单板平行项目队冬训报道',
-          subtitle: '强化体能，提升速度与精准度',
-          time: '2小时前',
+          title: '单板平行项目U系列比赛',
+          subtitle: '2025-2026赛季竞赛规程待发布',
+          time: '2025-11',
           image: '/images/ski-bg.jpg'
         },
         {
-          title: '淘汰赛制积分规则解析',
-          subtitle: '了解平行项目独特的积分计算方式',
-          time: '5小时前',
+          title: '全国冬季项目赛事赛历',
+          subtitle: '2025-2026赛季第一批已公布',
+          time: '2025-11-06',
           image: '/images/ski-bg.jpg'
         },
         {
-          title: '新建平行赛道通过认证',
-          subtitle: '符合国际竞赛技术标准',
-          time: '1天前',
+          title: '第十二届全国大众冰雪季',
+          subtitle: '群众冰雪赛事活动进行中',
+          time: '2025-12-04',
           image: '/images/ski-bg.jpg'
         }
       ]
@@ -498,11 +414,11 @@ export const zh = {
     topAthletes: {
       title: '积分排行',
       athletes: [
-        { rank: 1, name: '赵雷', nation: '吉林', points: 380.0, change: 0 },
-        { rank: 2, name: '孙雪', nation: '黑龙江', points: 295.0, change: 1 },
-        { rank: 3, name: '周强', nation: '河北', points: 230.0, change: -1 },
-        { rank: 4, name: '吴冰', nation: '北京', points: 195.0, change: 2 },
-        { rank: 5, name: '郑飞', nation: '辽宁', points: 175.0, change: 0 }
+        { rank: 1, name: '待更新', nation: '-', points: 0, change: 0 },
+        { rank: 2, name: '待更新', nation: '-', points: 0, change: 0 },
+        { rank: 3, name: '待更新', nation: '-', points: 0, change: 0 },
+        { rank: 4, name: '待更新', nation: '-', points: 0, change: 0 },
+        { rank: 5, name: '待更新', nation: '-', points: 0, change: 0 }
       ]
     }
   },
@@ -628,10 +544,10 @@ export const zh = {
     resultsSummary: '找到 {count} 名运动员',
     exportLabel: '导出列表',
     stats: [
-      { id: 'registered', value: '1,247', label: '注册运动员', icon: 'user', theme: 'blue' },
-      { id: 'active', value: '563', label: '活跃运动员', icon: 'trophy', theme: 'green' },
-      { id: 'awarded', value: '89', label: '获奖运动员', icon: 'medal', theme: 'purple' },
-      { id: 'improved', value: '156', label: '积分提升', icon: 'trendingUp', theme: 'red' }
+      { id: 'registered', value: '-', label: '注册运动员', icon: 'user', theme: 'blue' },
+      { id: 'active', value: '-', label: '活跃运动员', icon: 'trophy', theme: 'green' },
+      { id: 'awarded', value: '-', label: '获奖运动员', icon: 'medal', theme: 'purple' },
+      { id: 'improved', value: '-', label: '积分提升', icon: 'trendingUp', theme: 'red' }
     ],
     tableHeaders: {
       rank: '排名',
@@ -642,68 +558,8 @@ export const zh = {
       bestResult: '最佳成绩',
       province: '所属省份'
     },
-    list: [
-      {
-        id: 1,
-        name: '张伟',
-        disciplineKey: 'alpine',
-        discipline: '高山滑雪',
-        speciality: '大回转',
-        points: 45.2,
-        rank: 1,
-        competitions: 12,
-        bestResult: '第1名',
-        province: '黑龙江'
-      },
-      {
-        id: 2,
-        name: '李小雪',
-        disciplineKey: 'freestyle',
-        discipline: '自由式滑雪',
-        speciality: '大跳台',
-        points: 285.5,
-        rank: 2,
-        competitions: 8,
-        bestResult: '第2名',
-        province: '吉林'
-      },
-      {
-        id: 3,
-        name: '王冰冰',
-        disciplineKey: 'snowboard',
-        discipline: '单板滑雪',
-        speciality: 'U型场地',
-        points: 198.75,
-        rank: 3,
-        competitions: 15,
-        bestResult: '第1名',
-        province: '北京'
-      },
-      {
-        id: 4,
-        name: '赵雪花',
-        disciplineKey: 'alpine',
-        discipline: '高山滑雪',
-        speciality: '回转',
-        points: 52.3,
-        rank: 4,
-        competitions: 10,
-        bestResult: '第3名',
-        province: '河北'
-      },
-      {
-        id: 5,
-        name: '陈飞翔',
-        disciplineKey: 'freestyle',
-        discipline: '自由式滑雪',
-        speciality: '坡面障碍技巧',
-        points: 240.15,
-        rank: 5,
-        competitions: 9,
-        bestResult: '第2名',
-        province: '新疆'
-      }
-    ]
+    list: [],
+    emptyMessage: '暂无运动员数据，请导入成绩后查看'
   },
 
   // 语言切换
@@ -1312,26 +1168,26 @@ export const zh = {
     stats: {
       title: '平台数据概览',
       subtitle: '实时更新的系统数据和运行状态',
-      disciplines: { label: '滑雪项目', value: '15+', description: '高山·自由式·单板' },
+      disciplines: { label: '滑雪项目', value: '4大项', description: '高山·自由式·单板' },
       pointsRules: { label: '积分规则', value: '100%', description: '符合中国标准' },
       updateCycle: { label: '积分更新', value: '7天', description: '每周更新' },
-      users: { label: '注册用户', value: '1,200+', description: '运动员教练' }
+      users: { label: '注册用户', value: '500+', description: '运动员教练' }
     },
     news: {
-      title: '实时动态',
+      title: '通知公告',
       pauseCarousel: '暂停轮播',
       continueCarousel: '继续轮播',
       statuses: {
         live: '进行中',
-        updated: '已更新',
+        updated: '已发布',
         upcoming: '即将开始'
       },
       items: [
-        { id: 'nc-men-gs', title: '2024全国锦标赛', subtitle: '大回转项目 · 正在进行', status: 'live', pinned: true },
-        { id: 'points-refresh', title: '积分排名更新', subtitle: '14天周期 · 已发布', status: 'updated', pinned: false },
-        { id: 'rules-update', title: '新赛季规则', subtitle: '技术委员会 · 已更新', status: 'updated', pinned: false },
-        { id: 'registration-open', title: '选手注册开启', subtitle: '2024-25赛季 · 开放报名', status: 'upcoming', pinned: false },
-        { id: 'camp', title: '训练营通知', subtitle: '冬训计划 · 即将开始', status: 'upcoming', pinned: false }
+        { id: 'u-series-2025', title: 'U系列比赛竞赛规程发布', subtitle: '2025-2026赛季 · 冬运中心', status: 'updated', pinned: true },
+        { id: 'bigair-ss-rules', title: '大跳台和坡面障碍技巧规程', subtitle: '自由式及单板滑雪 · 已发布', status: 'updated', pinned: false },
+        { id: 'season-calendar', title: '全国冬季项目赛事赛历', subtitle: '2025-2026赛季第一批 · 已公布', status: 'updated', pinned: false },
+        { id: 'youth-championship', title: '青少年锦标赛竞赛规程', subtitle: '坡面障碍技巧 · 已发布', status: 'updated', pinned: false },
+        { id: 'ice-snow-season', title: '第十二届全国大众冰雪季', subtitle: '群众冰雪赛事活动 · 进行中', status: 'live', pinned: false }
       ]
     },
     latestResults: {
@@ -1346,11 +1202,7 @@ export const zh = {
         completed: '已完成',
         upcoming: '即将开始'
       },
-      results: [
-        { id: 'nc-men-gs', title: '2024全国锦标赛', subtitle: '男子大回转 · 天池雪场', status: 'live', time: '12-15 14:30' },
-        { id: 'china-cup-sl', title: '中国杯高山滑雪公开赛', subtitle: '女子回转 · 万龙雪场', status: 'completed', time: '12-14 16:45' },
-        { id: 'northeast-league', title: '东北三省联赛', subtitle: '混合全能 · 亚布力雪场', status: 'completed', time: '12-13 15:20' }
-      ]
+      results: []
     },
     rankings: {
       title: '积分排行榜',
@@ -1359,12 +1211,7 @@ export const zh = {
       season: '赛季',
       noData: '暂无该项目的排名数据',
       viewFullRankings: '查看完整排名 →',
-      entries: [
-        { rank: 1, name: '张伟', event: '男子大回转', points: '0.00' },
-        { rank: 2, name: '李雪', event: '女子回转', points: '8.45' },
-        { rank: 3, name: '王冰', event: '女子大回转', points: '12.30' },
-        { rank: 4, name: '刘强', event: '男子回转', points: '15.67' }
-      ]
+      entries: []
     },
     memberWelcome: {
       welcomeBack: '欢迎回来',
@@ -1485,13 +1332,13 @@ export const zh = {
 
     technicalSupport: {
       title: '技术支持',
-      email: '邮箱：support@ski-points.com',
-      phone: '电话：400-123-4567'
+      email: '邮箱：待配置',
+      phone: '电话：待配置'
     },
     businessCooperation: {
       title: '合作咨询',
-      email: '邮箱：business@ski-points.com',
-      wechat: '微信：ski-points-service'
+      email: '邮箱：待配置',
+      wechat: '微信：待配置'
     }
   }
 };

@@ -142,31 +142,17 @@ export const es: PartialTranslationKeys = {
 
     upcomingEvents: {
       title: 'Próximos Eventos',
-      events: [
-        { date: '20 Dic', event: 'Campeonato Nacional', discipline: 'Eslalom Gigante', location: 'Resort Wanlong', status: 'upcoming' },
-        { date: '22 Dic', event: 'Campeonato Nacional', discipline: 'Eslalom', location: 'Resort Wanlong', status: 'upcoming' },
-        { date: '25 Dic', event: 'Copa China Open', discipline: 'Descenso', location: 'Resort Changbaishan', status: 'upcoming' }
-      ]
+      events: []
     },
 
     latestNews: {
       title: 'Últimas Noticias',
-      items: [
-        { title: 'Entrenamiento de Invierno del Equipo Alpino Chino', subtitle: 'Preparación completa para la nueva temporada', time: 'Hace 2 horas', image: '/images/ski-bg.jpg' },
-        { title: 'Explicación de Reglas de Puntos v4.0', subtitle: 'Comprende los últimos estándares de cálculo', time: 'Hace 5 horas', image: '/images/ski-bg.jpg' },
-        { title: 'Certificación de Sedes en Pleno Desarrollo', subtitle: 'Asegurando que las sedes cumplan estándares internacionales', time: 'Hace 1 día', image: '/images/ski-bg.jpg' }
-      ]
+      items: []
     },
 
     topAthletes: {
       title: 'Clasificación de Puntos',
-      athletes: [
-        { rank: 1, name: 'Wei Zhang', nation: 'Beijing', points: 0.0, change: 0 },
-        { rank: 2, name: 'Xue Li', nation: 'Heilongjiang', points: 8.45, change: 1 },
-        { rank: 3, name: 'Bing Wang', nation: 'Jilin', points: 12.3, change: -1 },
-        { rank: 4, name: 'Qiang Liu', nation: 'Hebei', points: 15.67, change: 2 },
-        { rank: 5, name: 'Ming Chen', nation: 'Liaoning', points: 18.92, change: 0 }
-      ]
+      athletes: []
     }
   },
 
@@ -202,31 +188,17 @@ export const es: PartialTranslationKeys = {
 
     upcomingEvents: {
       title: 'Próximos Eventos',
-      events: [
-        { date: '19 Dic', event: 'Campeonato Nacional', discipline: 'Slopestyle', location: 'Resort Genting, Chongli', status: 'upcoming' },
-        { date: '21 Dic', event: 'Campeonato Nacional', discipline: 'Big Air', location: 'Resort Genting, Chongli', status: 'upcoming' },
-        { date: '26 Dic', event: 'Evento Juvenil Serie U', discipline: 'Slopestyle', location: 'Resort Shijinglong, Beijing', status: 'upcoming' }
-      ]
+      events: []
     },
 
     latestNews: {
       title: 'Últimas Noticias',
-      items: [
-        { title: 'Entrenamiento de Invierno del Equipo de Freeski Chino', subtitle: 'Superando límites de dificultad con nuevos trucos', time: 'Hace 1 hora', image: '/images/ski-bg.jpg' },
-        { title: 'Explicación del Sistema de Puntos 360', subtitle: 'Comprende los últimos estándares de puntuación', time: 'Hace 4 horas', image: '/images/ski-bg.jpg' },
-        { title: 'Nueva Sede de Freeski Certificada', subtitle: 'Cumple estándares técnicos FIS nivel 2', time: 'Hace 1 día', image: '/images/ski-bg.jpg' }
-      ]
+      items: []
     },
 
     topAthletes: {
       title: 'Clasificación de Puntos',
-      athletes: [
-        { rank: 1, name: 'Jinbo He', nation: 'Hebei', points: 360.0, change: 0 },
-        { rank: 2, name: 'Wenlong Yang', nation: 'Heilongjiang', points: 329.0, change: 1 },
-        { rank: 3, name: 'Jiaxu Sun', nation: 'Jilin', points: 303.0, change: -1 },
-        { rank: 4, name: 'Shuang Li', nation: 'Beijing', points: 280.0, change: 2 },
-        { rank: 5, name: 'Guangpu Qi', nation: 'Liaoning', points: 260.0, change: 0 }
-      ]
+      athletes: []
     }
   },
 
@@ -262,31 +234,17 @@ export const es: PartialTranslationKeys = {
 
     upcomingEvents: {
       title: 'Próximos Eventos',
-      events: [
-        { date: '18 Dic', event: 'Campeonato Nacional', discipline: 'Slopestyle', location: 'Resort Genting, Chongli', status: 'upcoming' },
-        { date: '20 Dic', event: 'Campeonato Nacional', discipline: 'Big Air', location: 'Resort Genting, Chongli', status: 'upcoming' },
-        { date: '28 Dic', event: 'Evento Juvenil Serie U', discipline: 'Slopestyle', location: 'Resort Shijinglong, Beijing', status: 'upcoming' }
-      ]
+      events: []
     },
 
     latestNews: {
       title: 'Últimas Noticias',
-      items: [
-        { title: 'Entrenamiento de Invierno del Equipo de Snowboard Chino', subtitle: 'Preparando la nueva temporada con trucos avanzados', time: 'Hace 3 horas', image: '/images/ski-bg.jpg' },
-        { title: 'Explicación del Sistema de Puntos 360', subtitle: 'Comprende los últimos estándares de cálculo', time: 'Hace 6 horas', image: '/images/ski-bg.jpg' },
-        { title: 'Nueva Sede de Big Air Certificada', subtitle: 'Cumple estándares técnicos nivel 2', time: 'Hace 1 día', image: '/images/ski-bg.jpg' }
-      ]
+      items: []
     },
 
     topAthletes: {
       title: 'Clasificación de Puntos',
-      athletes: [
-        { rank: 1, name: 'Ming Li', nation: 'Beijing', points: 360.0, change: 0 },
-        { rank: 2, name: 'Xue Wang', nation: 'Hebei', points: 329.0, change: 1 },
-        { rank: 3, name: 'Qiang Zhang', nation: 'Jilin', points: 303.0, change: -1 },
-        { rank: 4, name: 'Bing Liu', nation: 'Heilongjiang', points: 280.0, change: 2 },
-        { rank: 5, name: 'Fei Chen', nation: 'Liaoning', points: 260.0, change: 0 }
-      ]
+      athletes: []
     }
   },
 
@@ -322,31 +280,17 @@ export const es: PartialTranslationKeys = {
 
     upcomingEvents: {
       title: 'Próximos Eventos',
-      events: [
-        { date: '16 Dic', event: 'Campeonato Nacional', discipline: 'Eslalom Gigante Paralelo', location: 'Resort Wanlong, Chongli', status: 'upcoming' },
-        { date: '17 Dic', event: 'Campeonato Nacional', discipline: 'Eslalom Paralelo', location: 'Resort Wanlong, Chongli', status: 'upcoming' },
-        { date: '24 Dic', event: 'Evento Regional de Puntos', discipline: 'Eslalom Gigante Paralelo', location: 'Resort Changbaishan', status: 'upcoming' }
-      ]
+      events: []
     },
 
     latestNews: {
       title: 'Últimas Noticias',
-      items: [
-        { title: 'Entrenamiento de Invierno del Equipo de Snowboard Paralelo Chino', subtitle: 'Fortaleciendo resistencia y mejorando velocidad y precisión', time: 'Hace 2 horas', image: '/images/ski-bg.jpg' },
-        { title: 'Explicación de Puntos por Eliminación', subtitle: 'Comprende el sistema único de puntos para eventos paralelos', time: 'Hace 5 horas', image: '/images/ski-bg.jpg' },
-        { title: 'Nueva Pista Paralela Certificada', subtitle: 'Cumple estándares técnicos de competición internacional', time: 'Hace 1 día', image: '/images/ski-bg.jpg' }
-      ]
+      items: []
     },
 
     topAthletes: {
       title: 'Clasificación de Puntos',
-      athletes: [
-        { rank: 1, name: 'Lei Zhao', nation: 'Jilin', points: 380.0, change: 0 },
-        { rank: 2, name: 'Xue Sun', nation: 'Heilongjiang', points: 295.0, change: 1 },
-        { rank: 3, name: 'Qiang Zhou', nation: 'Hebei', points: 230.0, change: -1 },
-        { rank: 4, name: 'Bing Wu', nation: 'Beijing', points: 195.0, change: 2 },
-        { rank: 5, name: 'Fei Zheng', nation: 'Liaoning', points: 175.0, change: 0 }
-      ]
+      athletes: []
     }
   },
 
@@ -956,10 +900,10 @@ export const es: PartialTranslationKeys = {
     stats: {
       title: 'Datos de la Plataforma',
       subtitle: 'Datos del sistema en tiempo real y estado operativo',
-      disciplines: { label: 'Disciplinas de Esquí', value: '15+', description: 'Alpino·Freestyle·Snowboard' },
-      pointsRules: { label: 'Reglas de Puntos', value: '100%', description: 'Conforme a Estándares de China' },
-      updateCycle: { label: 'Actualización de Puntos', value: '7 Días', description: 'Actualizaciones Semanales' },
-      users: { label: 'Usuarios Registrados', value: '1.200+', description: 'Atletas y Entrenadores' }
+      disciplines: { label: 'Disciplinas de Esquí', value: '4 Categorías', description: 'Alpino·Freestyle·Snowboard' },
+      pointsRules: { label: 'Reglas de Puntos', value: '-', description: 'Conforme a Estándares de China' },
+      updateCycle: { label: 'Actualización de Puntos', value: '-', description: 'Actualizaciones Semanales' },
+      users: { label: 'Usuarios Registrados', value: '-', description: 'Atletas y Entrenadores' }
     },
     news: {
       title: 'Últimas Actualizaciones',
@@ -970,13 +914,7 @@ export const es: PartialTranslationKeys = {
         updated: 'Actualizado',
         upcoming: 'Próximamente'
       },
-      items: [
-        { id: 'nc-men-gs', title: 'Campeonato Nacional 2024', subtitle: 'Eslalom Gigante · En vivo', status: 'live', pinned: true },
-        { id: 'points-refresh', title: 'Clasificación Actualizada', subtitle: 'Ciclo de 14 días · Publicado', status: 'updated', pinned: false },
-        { id: 'rules-update', title: 'Nuevas Reglas de Temporada', subtitle: 'Comité Técnico · Publicado', status: 'updated', pinned: false },
-        { id: 'registration-open', title: 'Registro de Atletas Abierto', subtitle: 'Temporada 2024-25 · Inscripción abierta', status: 'upcoming', pinned: false },
-        { id: 'camp', title: 'Aviso de Campo de Entrenamiento', subtitle: 'Programa de Invierno · Próximamente', status: 'upcoming', pinned: false }
-      ]
+      items: []
     },
     latestResults: {
       title: 'Últimos Resultados de Competiciones',
@@ -990,11 +928,7 @@ export const es: PartialTranslationKeys = {
         completed: 'Completado',
         upcoming: 'Próximamente'
       },
-      results: [
-        { id: 'nc-men-gs', title: 'Campeonato Nacional 2024', subtitle: 'Eslalom Gigante Masculino · Resort Tianchi', status: 'live', time: '15 Dic · 14:30' },
-        { id: 'china-cup-sl', title: 'Copa China Open', subtitle: 'Eslalom Femenino · Resort Wanlong', status: 'completed', time: '14 Dic · 16:45' },
-        { id: 'northeast-league', title: 'Liga Noreste', subtitle: 'Combinado Alpino Mixto · Resort Yabuli', status: 'completed', time: '13 Dic · 15:20' }
-      ]
+      results: []
     },
     rankings: {
       title: 'Clasificación de Puntos',
@@ -1003,12 +937,7 @@ export const es: PartialTranslationKeys = {
       viewFullRankings: 'Ver Clasificación Completa →',
       season: 'Temporada',
       noData: 'No hay datos de clasificación disponibles para esta disciplina',
-      entries: [
-        { rank: 1, name: 'Wei Zhang', event: 'Eslalom Gigante Masculino', points: '0.00' },
-        { rank: 2, name: 'Xue Li', event: 'Eslalom Femenino', points: '8.45' },
-        { rank: 3, name: 'Bing Wang', event: 'Eslalom Gigante Femenino', points: '12.30' },
-        { rank: 4, name: 'Qiang Liu', event: 'Eslalom Masculino', points: '15.67' }
-      ]
+      entries: []
     },
     memberWelcome: {
       welcomeBack: 'Bienvenido de Nuevo',
