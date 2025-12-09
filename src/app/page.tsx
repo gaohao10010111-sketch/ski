@@ -18,12 +18,17 @@ import {
   ArrowLeftRight,
   Wind,
   Sparkles,
-  Loader2
+  Loader2,
+  Medal,
+  Calendar,
+  MapPin,
+  ExternalLink
 } from 'lucide-react'
 import { getImagePath } from '@/utils/paths'
 import { useAuth } from '@/contexts/AuthContext'
 import { useTranslation } from '@/contexts/LanguageContext'
 import { statsApi, competitionsApi, rankingsApi, type StatsOverview, type Competition, type RankingItem } from '@/lib/api'
+import { latestResults } from '@/data/latestResults'
 
 // 运动类型映射
 const sportTypeMapping: Record<string, number> = {
@@ -100,12 +105,21 @@ export default function HomePage() {
     fetchData()
   }, [fetchData])
 
+  // 动态生成新闻条目，包含最新比赛成绩
+  const dynamicNewsFromResults = latestResults.competitions.slice(0, 2).map((comp, index) => ({
+    id: `result-${index}`,
+    title: comp.competition,
+    subtitle: `${comp.sport} · ${comp.events.length}个项目 · 已完赛`,
+    status: 'updated' as const,
+    pinned: index === 0,
+    href: `/results-announcement?sport=${comp.sportType}`
+  }))
+
   const fallbackNewsItems = [
-    { id: 'nc-men-gs', title: '2024 National Championships', subtitle: 'Giant Slalom · Live Now', status: 'live', pinned: true },
-    { id: 'points-refresh', title: 'Points Rankings Refreshed', subtitle: '14-Day Cycle · Published', status: 'updated', pinned: false },
-    { id: 'rules-update', title: 'New Season Regulations', subtitle: 'Technical Committee · Released', status: 'updated', pinned: false },
-    { id: 'registration-open', title: 'Athlete Registration Open', subtitle: '2024-25 Season · Open Enrollment', status: 'upcoming', pinned: false },
-    { id: 'camp', title: 'Training Camp Notice', subtitle: 'Winter Program · Starting Soon', status: 'upcoming', pinned: false }
+    ...dynamicNewsFromResults,
+    { id: 'schedule-2025', title: '2025-2026赛季赛程发布', subtitle: '119场比赛 · 已上线', status: 'updated', pinned: false, href: '/competitions/schedule' },
+    { id: 'points-refresh', title: '积分排名更新', subtitle: '四大项目 · 实时计算', status: 'live', pinned: false, href: '/points/rankings' },
+    { id: 'registration-open', title: '运动员注册开放', subtitle: '2025-26赛季 · 可报名', status: 'upcoming', pinned: false, href: '/register' }
   ]
 
   const newsItems = t.home?.news?.items && t.home.news.items.length > 0 ? t.home.news.items : fallbackNewsItems
@@ -385,39 +399,72 @@ export default function HomePage() {
                     </button>
                   </div>
                   <div className="space-y-4">
-                    <div className="flex items-center p-4 bg-white/10 rounded-lg border border-white/20">
-                      <div className="flex-1">
-                        <div className="text-white font-semibold">{currentNews.title}</div>
-                        <div className="text-gray-300 text-sm">{currentNews.subtitle}</div>
+                    {(currentNews as typeof fallbackNewsItems[0]).href ? (
+                      <Link
+                        href={(currentNews as typeof fallbackNewsItems[0]).href || '#'}
+                        className="flex items-center p-4 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-colors"
+                      >
+                        <div className="flex-1">
+                          <div className="text-white font-semibold">{currentNews.title}</div>
+                          <div className="text-gray-300 text-sm">{currentNews.subtitle}</div>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <div className={`w-3 h-3 rounded-full ${newsStatusColors[currentNews.status] || newsStatusColors.default}`}></div>
+                          <ChevronRight className="w-4 h-4 text-white/60" />
+                        </div>
+                      </Link>
+                    ) : (
+                      <div className="flex items-center p-4 bg-white/10 rounded-lg border border-white/20">
+                        <div className="flex-1">
+                          <div className="text-white font-semibold">{currentNews.title}</div>
+                          <div className="text-gray-300 text-sm">{currentNews.subtitle}</div>
+                        </div>
+                        <div className={`w-3 h-3 rounded-full ${newsStatusColors[currentNews.status] || newsStatusColors.default}`}></div>
                       </div>
-                      <div className={`w-3 h-3 rounded-full ${newsStatusColors[currentNews.status] || newsStatusColors.default}`}></div>
-                    </div>
+                    )}
 
                     {newsItems
                       .map((item, index) => ({ item, index }))
                       .filter(({ index }) => index !== currentNewsIndex)
                       .slice(0, 3)
                       .map(({ item, index }) => (
-                        <button
-                          key={item.id}
-                          type="button"
-                          className="flex items-center w-full p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
-                          onClick={() => goToNews(index)}
-                        >
-                          <div className="flex-1 text-left">
-                            <div className="text-white/80 font-medium text-sm">{item.title}</div>
-                            <div className="text-gray-400 text-xs">{item.subtitle}</div>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <span className={`inline-block w-2 h-2 rounded-full ${newsStatusColors[item.status] || newsStatusColors.default}`} />
-                            <span className="text-xs text-gray-400">
-                              {newsStatusLabels[item.status] ||
-                                (item.status === 'live'
-                                  ? (t.home?.news?.statuses?.live || 'Live')
-                                  : (t.home?.news?.statuses?.updated || 'Updated'))}
-                            </span>
-                          </div>
-                        </button>
+                        (item as typeof fallbackNewsItems[0]).href ? (
+                          <Link
+                            key={item.id}
+                            href={(item as typeof fallbackNewsItems[0]).href || '#'}
+                            className="flex items-center w-full p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
+                          >
+                            <div className="flex-1 text-left">
+                              <div className="text-white/80 font-medium text-sm">{item.title}</div>
+                              <div className="text-gray-400 text-xs">{item.subtitle}</div>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <span className={`inline-block w-2 h-2 rounded-full ${newsStatusColors[item.status] || newsStatusColors.default}`} />
+                              <ChevronRight className="w-4 h-4 text-white/40" />
+                            </div>
+                          </Link>
+                        ) : (
+                          <button
+                            key={item.id}
+                            type="button"
+                            className="flex items-center w-full p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
+                            onClick={() => goToNews(index)}
+                          >
+                            <div className="flex-1 text-left">
+                              <div className="text-white/80 font-medium text-sm">{item.title}</div>
+                              <div className="text-gray-400 text-xs">{item.subtitle}</div>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <span className={`inline-block w-2 h-2 rounded-full ${newsStatusColors[item.status] || newsStatusColors.default}`} />
+                              <span className="text-xs text-gray-400">
+                                {newsStatusLabels[item.status] ||
+                                  (item.status === 'live'
+                                    ? (t.home?.news?.statuses?.live || 'Live')
+                                    : (t.home?.news?.statuses?.updated || 'Updated'))}
+                              </span>
+                            </div>
+                          </button>
+                        )
                       ))}
                   </div>
 
@@ -445,6 +492,108 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* 🏆 刚刚结束的比赛 - 最高优先级展示区 */}
+      {latestResults.competitions.length > 0 && (
+        <section className="py-8 bg-gradient-to-r from-ski-navy via-ski-blue to-ski-navy">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center">
+                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse mr-3"></div>
+                <h2 className="text-xl md:text-2xl font-bold text-white">🏆 刚刚结束的比赛</h2>
+              </div>
+              <Link
+                href="/results-announcement"
+                className="flex items-center text-white/80 hover:text-white text-sm font-medium transition-colors"
+              >
+                查看全部成绩公告
+                <ExternalLink className="w-4 h-4 ml-1" />
+              </Link>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {latestResults.competitions.slice(0, 2).map((comp, compIndex) => (
+                <div key={compIndex} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 className="text-lg font-bold text-white mb-1">{comp.competition}</h3>
+                      <div className="flex items-center text-white/70 text-sm space-x-4">
+                        <span className="flex items-center">
+                          <MapPin className="w-4 h-4 mr-1" />
+                          {comp.location}
+                        </span>
+                        <span className="flex items-center">
+                          <Calendar className="w-4 h-4 mr-1" />
+                          {comp.date} ~ {comp.endDate}
+                        </span>
+                      </div>
+                    </div>
+                    <span className="px-3 py-1 bg-green-500 text-white text-xs font-bold rounded-full">
+                      已完赛
+                    </span>
+                  </div>
+
+                  {/* 项目分组展示 */}
+                  <div className="space-y-3">
+                    {comp.events.slice(0, 3).map((event, eventIndex) => (
+                      <div key={eventIndex} className="bg-white/5 rounded-lg p-3">
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-white/90 font-medium text-sm">
+                            {event.discipline} · {event.ageGroup} · {event.gender}
+                          </span>
+                          <span className="text-white/60 text-xs">
+                            共{event.athletes.length}人
+                          </span>
+                        </div>
+                        <div className="flex items-center space-x-4">
+                          {event.athletes.slice(0, 3).map((athlete, athleteIndex) => (
+                            <div key={athleteIndex} className="flex items-center">
+                              <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-2 ${
+                                athleteIndex === 0 ? 'bg-yellow-400 text-yellow-900' :
+                                athleteIndex === 1 ? 'bg-gray-300 text-gray-700' :
+                                'bg-orange-400 text-orange-900'
+                              }`}>
+                                {athleteIndex + 1}
+                              </div>
+                              <div>
+                                <div className="text-white text-sm font-medium">{athlete.name}</div>
+                                <div className="text-white/60 text-xs">
+                                  {athlete.time || (athlete.bestScore ? `${athlete.bestScore}分` : '')}
+                                  {athlete.points ? ` · ${athlete.points}积分` : ''}
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                    {comp.events.length > 3 && (
+                      <div className="text-center">
+                        <span className="text-white/60 text-sm">
+                          还有 {comp.events.length - 3} 个项目...
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="mt-4 pt-4 border-t border-white/10 flex justify-between items-center">
+                    <span className="text-white/60 text-xs">
+                      数据更新: {latestResults.lastUpdated}
+                    </span>
+                    <Link
+                      href={`/results-announcement?sport=${comp.sportType}`}
+                      className="text-white hover:text-ski-blue text-sm font-medium flex items-center"
+                    >
+                      查看完整成绩
+                      <ChevronRight className="w-4 h-4 ml-1" />
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Latest Competition Results Section */}
       <section className="py-16 bg-gray-50">
