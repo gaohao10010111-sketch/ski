@@ -64,7 +64,7 @@ function formatShortDate(dateString: string): string {
 // 项目筛选选项
 const filterOptions = [
   { value: 'all', label: '全部项目' },
-  { value: 'ours', label: '★ 我们的四大项目' },
+  { value: 'ours', label: '我们的四大项目' },
   { value: 'alpine', label: '高山滑雪' },
   { value: 'snowboard-slopestyle', label: '单板坡障/大跳台' },
   { value: 'snowboard-parallel', label: '单板平行项目' },
@@ -298,7 +298,7 @@ export default function SchedulePage() {
                       <div className="flex items-center gap-3 mb-2 flex-wrap">
                         {comp.isOurs && (
                           <span className="px-2 py-0.5 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">
-                            ★ 我们的项目
+                            重点项目
                           </span>
                         )}
                         <span className="text-lg font-semibold text-gray-900">
@@ -365,7 +365,7 @@ export default function SchedulePage() {
                           key={comp.id}
                           className={`text-sm p-2 rounded ${comp.isOurs ? 'bg-yellow-50 text-yellow-800' : 'text-gray-600'}`}
                         >
-                          {comp.isOurs && <span className="mr-1">★</span>}
+                          {comp.isOurs && <span className="mr-1 text-yellow-600 font-bold">[重点]</span>}
                           {comp.name.length > 25 ? comp.name.slice(0, 25) + '...' : comp.name}
                         </div>
                       ))}
@@ -389,7 +389,7 @@ export default function SchedulePage() {
           <h3 className="text-lg font-semibold text-ski-navy mb-3">数据说明</h3>
           <ul className="space-y-2 text-sm text-gray-600">
             <li>• 数据来源：国家体育总局冬季运动管理中心</li>
-            <li>• 标注 ★ 的为本系统支持的四大项目</li>
+            <li>• 标注 [重点] 的为本系统支持的四大项目</li>
             <li>• 赛事安排可能因天气等因素调整</li>
             <li>• 请以官方最新通知为准</li>
           </ul>

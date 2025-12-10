@@ -1452,7 +1452,7 @@ export const ourCompetitions = competitionSchedule2025.filter(e => e.isOurs);
 
 // 按项目分类的赛事
 export const competitionsByCategory = {
-  // ★ 我们的四大项目
+  // 我们的四大项目
   alpine: competitionSchedule2025.filter(e => e.category === 'alpine'),
   'snowboard-slopestyle': competitionSchedule2025.filter(e => e.category === 'snowboard-slopestyle'),
   'freestyle-slopestyle': competitionSchedule2025.filter(e => e.category === 'freestyle-slopestyle'),

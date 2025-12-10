@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import {
   Calculator,
@@ -11,9 +11,12 @@ import {
   Copy,
   Check,
   Info,
-  ChevronDown
+  ChevronDown,
+  Database,
+  Users
 } from 'lucide-react'
 import { useToast } from '@/components/Toast'
+import { getLatestResults, getCompetitions, type StoredResults, type CompetitionInfo } from '@/lib/resultsStorage'
 
 type SportType = 'alpine' | 'snowboard-slopestyle' | 'snowboard-parallel' | 'freestyle-slopestyle'
 
@@ -107,6 +110,20 @@ export default function PointsCalculatorPage() {
   // 排名积分状态
   const [rank, setRank] = useState('')
   const [tier, setTier] = useState(360)
+
+  // 导入的成绩数据
+  const [importedData, setImportedData] = useState<StoredResults | null>(null)
+  const [allCompetitions, setAllCompetitions] = useState<CompetitionInfo[]>([])
+  const [showImportedResults, setShowImportedResults] = useState(false)
+
+  // 加载导入的成绩
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const latest = getLatestResults()
+    const competitions = getCompetitions()
+    setImportedData(latest)
+    setAllCompetitions(competitions)
+  }, [])
 
   // 计算结果
   const [result, setResult] = useState<{
@@ -434,6 +451,131 @@ export default function PointsCalculatorPage() {
           <li>• 本计算器仅供参考，最终积分以官方公布为准</li>
         </ul>
       </div>
+
+      {/* 已导入的成绩数据 */}
+      {importedData && (
+        <div className="mt-8 bg-white rounded-xl shadow-md overflow-hidden">
+          <button
+            onClick={() => setShowImportedResults(!showImportedResults)}
+            className="w-full px-6 py-4 flex items-center justify-between bg-gradient-to-r from-green-50 to-blue-50 hover:from-green-100 hover:to-blue-100 transition-colors"
+          >
+            <div className="flex items-center gap-3">
+              <div className="bg-green-100 p-2 rounded-lg">
+                <Database className="w-5 h-5 text-green-600" />
+              </div>
+              <div className="text-left">
+                <h3 className="font-semibold text-gray-900">已导入的比赛成绩</h3>
+                <p className="text-sm text-gray-500">
+                  {importedData.competition.name} - {importedData.competition.date}
+                </p>
+              </div>
+            </div>
+            <ChevronDown className={`w-5 h-5 text-gray-400 transition-transform ${showImportedResults ? 'rotate-180' : ''}`} />
+          </button>
+
+          {showImportedResults && (
+            <div className="p-6 border-t border-gray-100">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                <div className="bg-gray-50 p-3 rounded-lg text-center">
+                  <div className="text-2xl font-bold text-gray-900">{importedData.competition.participants}</div>
+                  <div className="text-xs text-gray-500">参赛人数</div>
+                </div>
+                <div className="bg-green-50 p-3 rounded-lg text-center">
+                  <div className="text-2xl font-bold text-green-600">{importedData.competition.finishers}</div>
+                  <div className="text-xs text-gray-500">完赛人数</div>
+                </div>
+                <div className="bg-blue-50 p-3 rounded-lg text-center">
+                  <div className="text-2xl font-bold text-blue-600">{importedData.results.male.length}</div>
+                  <div className="text-xs text-gray-500">男子选手</div>
+                </div>
+                <div className="bg-pink-50 p-3 rounded-lg text-center">
+                  <div className="text-2xl font-bold text-pink-600">{importedData.results.female.length}</div>
+                  <div className="text-xs text-gray-500">女子选手</div>
+                </div>
+              </div>
+
+              {/* 男子成绩 */}
+              {importedData.results.male.length > 0 && (
+                <div className="mb-6">
+                  <h4 className="text-sm font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                    <Users className="w-4 h-4" />
+                    男子组成绩 (前10名)
+                  </h4>
+                  <div className="overflow-x-auto">
+                    <table className="min-w-full divide-y divide-gray-200 text-sm">
+                      <thead className="bg-gray-50">
+                        <tr>
+                          <th className="px-3 py-2 text-left text-xs font-medium text-gray-500">排名</th>
+                          <th className="px-3 py-2 text-left text-xs font-medium text-gray-500">姓名</th>
+                          <th className="px-3 py-2 text-left text-xs font-medium text-gray-500">代表队</th>
+                          <th className="px-3 py-2 text-left text-xs font-medium text-gray-500">成绩/得分</th>
+                          <th className="px-3 py-2 text-right text-xs font-medium text-gray-500">积分</th>
+                        </tr>
+                      </thead>
+                      <tbody className="bg-white divide-y divide-gray-200">
+                        {importedData.results.male.slice(0, 10).map((r) => (
+                          <tr key={`m-${r.rank}`} className="hover:bg-gray-50">
+                            <td className="px-3 py-2 font-medium">{r.rank}</td>
+                            <td className="px-3 py-2">{r.name}</td>
+                            <td className="px-3 py-2 text-gray-500">{r.team}</td>
+                            <td className="px-3 py-2 text-gray-500">{r.totalTime}</td>
+                            <td className="px-3 py-2 text-right font-bold text-green-600">{r.points.toFixed(2)}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+
+              {/* 女子成绩 */}
+              {importedData.results.female.length > 0 && (
+                <div>
+                  <h4 className="text-sm font-semibold text-gray-700 mb-3 flex items-center gap-2">
+                    <Users className="w-4 h-4" />
+                    女子组成绩 (前10名)
+                  </h4>
+                  <div className="overflow-x-auto">
+                    <table className="min-w-full divide-y divide-gray-200 text-sm">
+                      <thead className="bg-gray-50">
+                        <tr>
+                          <th className="px-3 py-2 text-left text-xs font-medium text-gray-500">排名</th>
+                          <th className="px-3 py-2 text-left text-xs font-medium text-gray-500">姓名</th>
+                          <th className="px-3 py-2 text-left text-xs font-medium text-gray-500">代表队</th>
+                          <th className="px-3 py-2 text-left text-xs font-medium text-gray-500">成绩/得分</th>
+                          <th className="px-3 py-2 text-right text-xs font-medium text-gray-500">积分</th>
+                        </tr>
+                      </thead>
+                      <tbody className="bg-white divide-y divide-gray-200">
+                        {importedData.results.female.slice(0, 10).map((r) => (
+                          <tr key={`f-${r.rank}`} className="hover:bg-gray-50">
+                            <td className="px-3 py-2 font-medium">{r.rank}</td>
+                            <td className="px-3 py-2">{r.name}</td>
+                            <td className="px-3 py-2 text-gray-500">{r.team}</td>
+                            <td className="px-3 py-2 text-gray-500">{r.totalTime}</td>
+                            <td className="px-3 py-2 text-right font-bold text-pink-600">{r.points.toFixed(2)}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+
+              {allCompetitions.length > 1 && (
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <p className="text-sm text-gray-500">
+                    共导入 {allCompetitions.length} 场比赛的成绩数据。
+                    <Link href="/results-announcement" className="text-ski-blue hover:underline ml-1">
+                      查看全部成绩
+                    </Link>
+                  </p>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   )
 }

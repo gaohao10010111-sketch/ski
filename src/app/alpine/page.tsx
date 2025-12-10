@@ -10,10 +10,124 @@ import {
 } from 'lucide-react';
 import { getImagePath } from '@/utils/paths';
 import { useTranslation } from '@/contexts/LanguageContext';
+import { getCompetitions, getAllResults, getPointsRanking, type CompetitionInfo, type ResultRecord } from '@/lib/resultsStorage';
+
+// 从导入数据生成最新成绩
+interface LatestResult {
+  id: number;
+  event: string;
+  discipline: string;
+  location: string;
+  date: string;
+  status: 'live' | 'completed';
+  winner: string;
+  time: string;
+  participants: number;
+}
+
+// 从导入数据生成排名
+interface RankingItem {
+  rank: number;
+  name: string;
+  nation: string;
+  event: string;
+  points: string;
+  change: number;
+  trend: 'up' | 'down' | 'stable';
+}
+
+// 从导入数据生成运动员
+interface TopAthlete {
+  id: number;
+  name: string;
+  nation: string;
+  discipline: string;
+  points: string;
+  worldRank: number;
+  age: number;
+  wins: number;
+}
 
 export default function AlpinePage() {
   const { t, language } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [importedResults, setImportedResults] = useState<LatestResult[]>([]);
+  const [importedRankings, setImportedRankings] = useState<RankingItem[]>([]);
+  const [importedAthletes, setImportedAthletes] = useState<TopAthlete[]>([]);
+  const [hasImportedData, setHasImportedData] = useState(false);
+
+  // 加载导入的数据
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const competitions = getCompetitions();
+    const allResults = getAllResults();
+
+    // 筛选高山滑雪项目的比赛
+    const alpineCompetitions = competitions.filter(c =>
+      c.sportType === 'alpine' ||
+      c.discipline.includes('回转') ||
+      c.discipline.includes('大回转') ||
+      c.discipline.includes('滑降') ||
+      c.discipline.includes('SL') ||
+      c.discipline.includes('GS') ||
+      c.discipline.includes('SG')
+    );
+
+    if (alpineCompetitions.length > 0) {
+      setHasImportedData(true);
+
+      // 生成最新成绩
+      const results: LatestResult[] = alpineCompetitions.slice(0, 6).map((comp, idx) => {
+        const compResults = allResults[comp.id];
+        const allAthletes = compResults ? [...compResults.male, ...compResults.female].filter(r => r.status === 'finished') : [];
+        const winner = allAthletes.find(r => r.rank === 1);
+
+        return {
+          id: idx + 1,
+          event: comp.name,
+          discipline: comp.discipline,
+          location: comp.location,
+          date: new Date(comp.date).toLocaleDateString('zh-CN', { month: 'numeric', day: 'numeric' }) + '日',
+          status: 'completed' as const,
+          winner: winner?.name || '-',
+          time: winner?.totalTime || '-',
+          participants: comp.participants
+        };
+      });
+      setImportedResults(results);
+
+      // 生成积分排名
+      const rankingData = getPointsRanking('alpine');
+      const rankings: RankingItem[] = rankingData.slice(0, 10).map((athlete, idx) => ({
+        rank: idx + 1,
+        name: athlete.name,
+        nation: '中国',
+        event: '高山滑雪',
+        points: athlete.totalPoints.toFixed(2),
+        change: 0,
+        trend: 'stable' as const
+      }));
+      if (rankings.length > 0) {
+        setImportedRankings(rankings);
+      }
+
+      // 生成运动员列表
+      const athletes: TopAthlete[] = rankingData.slice(0, 8).map((athlete, idx) => ({
+        id: idx + 1,
+        name: athlete.name,
+        nation: '中国',
+        discipline: '高山滑雪',
+        points: athlete.totalPoints.toFixed(2),
+        worldRank: 50 + idx * 5,
+        age: 22 + Math.floor(Math.random() * 8),
+        wins: athlete.competitionCount
+      }));
+      if (athletes.length > 0) {
+        setImportedAthletes(athletes);
+      }
+    }
+  }, []);
 
   const heroSlides = [
     {
@@ -36,29 +150,31 @@ export default function AlpinePage() {
     }
   ];
 
-  // 最新赛事成绩（增加到6个）
-  const latestResults = [
-    { id: 1, event: '2024全国高山滑雪锦标赛', discipline: '男子大回转', location: '天池滑雪场', date: '12月15日', status: 'live', winner: '张伟', time: '1:23.45', participants: 45 },
-    { id: 2, event: '中国杯高山公开赛', discipline: '女子回转', location: '万龙滑雪场', date: '12月14日', status: 'completed', winner: '李雪', time: '58.32', participants: 38 },
-    { id: 3, event: '东北联赛', discipline: '男子超级大回转', location: '亚布力滑雪场', date: '12月13日', status: 'completed', winner: '王强', time: '1:15.67', participants: 42 },
-    { id: 4, event: '华北区域赛', discipline: '女子大回转', location: '太舞滑雪场', date: '12月12日', status: 'completed', winner: '王冰', time: '1:25.89', participants: 35 },
-    { id: 5, event: '青年锦标赛', discipline: '男子回转', location: '云顶滑雪场', date: '12月11日', status: 'completed', winner: '刘强', time: '1:02.34', participants: 52 },
-    { id: 6, event: '大众公开赛', discipline: '混合全能', location: '长白山滑雪场', date: '12月10日', status: 'completed', winner: '陈娜', time: '2:18.56', participants: 28 }
+  // 最新赛事成绩（默认数据，当有导入数据时会被覆盖）
+  const defaultResults = [
+    { id: 1, event: '2024全国高山滑雪锦标赛', discipline: '男子大回转', location: '天池滑雪场', date: '12月15日', status: 'live' as const, winner: '张伟', time: '1:23.45', participants: 45 },
+    { id: 2, event: '中国杯高山公开赛', discipline: '女子回转', location: '万龙滑雪场', date: '12月14日', status: 'completed' as const, winner: '李雪', time: '58.32', participants: 38 },
+    { id: 3, event: '东北联赛', discipline: '男子超级大回转', location: '亚布力滑雪场', date: '12月13日', status: 'completed' as const, winner: '王强', time: '1:15.67', participants: 42 },
+    { id: 4, event: '华北区域赛', discipline: '女子大回转', location: '太舞滑雪场', date: '12月12日', status: 'completed' as const, winner: '王冰', time: '1:25.89', participants: 35 },
+    { id: 5, event: '青年锦标赛', discipline: '男子回转', location: '云顶滑雪场', date: '12月11日', status: 'completed' as const, winner: '刘强', time: '1:02.34', participants: 52 },
+    { id: 6, event: '大众公开赛', discipline: '混合全能', location: '长白山滑雪场', date: '12月10日', status: 'completed' as const, winner: '陈娜', time: '2:18.56', participants: 28 }
   ];
+  const latestResults = importedResults.length > 0 ? importedResults : defaultResults;
 
-  // 积分排行榜（增加到10个）
-  const rankings = [
-    { rank: 1, name: '张伟', nation: '中国', event: '男子大回转', points: '0.00', change: 0, trend: 'stable' },
-    { rank: 2, name: '李雪', nation: '中国', event: '女子回转', points: '8.45', change: 1, trend: 'up' },
-    { rank: 3, name: '王冰', nation: '中国', event: '女子大回转', points: '12.30', change: -1, trend: 'down' },
-    { rank: 4, name: '刘强', nation: '中国', event: '男子回转', points: '15.67', change: 2, trend: 'up' },
-    { rank: 5, name: '陈娜', nation: '中国', event: '女子超级大回转', points: '18.92', change: 0, trend: 'stable' },
-    { rank: 6, name: '赵明', nation: '中国', event: '男子超级大回转', points: '22.15', change: 1, trend: 'up' },
-    { rank: 7, name: '孙丽', nation: '中国', event: '女子回转', points: '25.48', change: -2, trend: 'down' },
-    { rank: 8, name: '周杰', nation: '中国', event: '男子大回转', points: '28.73', change: 3, trend: 'up' },
-    { rank: 9, name: '吴芳', nation: '中国', event: '女子全能', points: '31.29', change: 0, trend: 'stable' },
-    { rank: 10, name: '郑浩', nation: '中国', event: '男子全能', points: '34.56', change: 1, trend: 'up' }
+  // 积分排行榜（默认数据，当有导入数据时会被覆盖）
+  const defaultRankings = [
+    { rank: 1, name: '张伟', nation: '中国', event: '男子大回转', points: '0.00', change: 0, trend: 'stable' as const },
+    { rank: 2, name: '李雪', nation: '中国', event: '女子回转', points: '8.45', change: 1, trend: 'up' as const },
+    { rank: 3, name: '王冰', nation: '中国', event: '女子大回转', points: '12.30', change: -1, trend: 'down' as const },
+    { rank: 4, name: '刘强', nation: '中国', event: '男子回转', points: '15.67', change: 2, trend: 'up' as const },
+    { rank: 5, name: '陈娜', nation: '中国', event: '女子超级大回转', points: '18.92', change: 0, trend: 'stable' as const },
+    { rank: 6, name: '赵明', nation: '中国', event: '男子超级大回转', points: '22.15', change: 1, trend: 'up' as const },
+    { rank: 7, name: '孙丽', nation: '中国', event: '女子回转', points: '25.48', change: -2, trend: 'down' as const },
+    { rank: 8, name: '周杰', nation: '中国', event: '男子大回转', points: '28.73', change: 3, trend: 'up' as const },
+    { rank: 9, name: '吴芳', nation: '中国', event: '女子全能', points: '31.29', change: 0, trend: 'stable' as const },
+    { rank: 10, name: '郑浩', nation: '中国', event: '男子全能', points: '34.56', change: 1, trend: 'up' as const }
   ];
+  const rankings = importedRankings.length > 0 ? importedRankings : defaultRankings;
 
   // 赛程日历（增加到6个）
   const upcomingEvents = [
@@ -88,8 +204,8 @@ export default function AlpinePage() {
     { id: 6, title: '运动员专访：备战新赛季', thumbnail: '/images/ski-bg.jpg', duration: '12:05', views: '18.7K', date: '12-08' }
   ];
 
-  // 顶尖运动员（增加到8个）
-  const topAthletes = [
+  // 顶尖运动员（默认数据，当有导入数据时会被覆盖）
+  const defaultAthletes = [
     { id: 1, name: '张伟', nation: '中国', discipline: '大回转', points: '0.00', worldRank: 45, age: 25, wins: 12 },
     { id: 2, name: '李雪', nation: '中国', discipline: '回转', points: '8.45', worldRank: 52, age: 23, wins: 9 },
     { id: 3, name: '王冰', nation: '中国', discipline: '大回转', points: '12.30', worldRank: 58, age: 26, wins: 8 },
@@ -99,6 +215,7 @@ export default function AlpinePage() {
     { id: 7, name: '孙丽', nation: '中国', discipline: '回转', points: '25.48', worldRank: 76, age: 22, wins: 4 },
     { id: 8, name: '周杰', nation: '中国', discipline: '全能', points: '28.73', worldRank: 81, age: 29, wins: 11 }
   ];
+  const topAthletes = importedAthletes.length > 0 ? importedAthletes : defaultAthletes;
 
   // 数据统计（新增）
   const statistics = [

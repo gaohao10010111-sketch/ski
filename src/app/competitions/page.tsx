@@ -309,10 +309,10 @@ export default function CompetitionsPage() {
             className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue transition-all"
           >
             <option value="all">全部状态</option>
-            <option value="UPCOMING">⏳ 即将开始</option>
-            <option value="ONGOING">🏃 进行中</option>
-            <option value="COMPLETED">✅ 已结束</option>
-            <option value="CANCELLED">❌ 已取消</option>
+            <option value="UPCOMING">即将开始</option>
+            <option value="ONGOING">进行中</option>
+            <option value="COMPLETED">已结束</option>
+            <option value="CANCELLED">已取消</option>
           </select>
 
           <select
@@ -321,10 +321,10 @@ export default function CompetitionsPage() {
             className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue transition-all"
           >
             <option value="all">全部项目</option>
-            <option value="ALPINE_SKI">🏔️ 高山滑雪</option>
-            <option value="FREESTYLE_SLOPESTYLE_BIGAIR">🎿 自由式坡障/大跳台</option>
-            <option value="SNOWBOARD_SLOPESTYLE_BIGAIR">🏂 单板坡障/大跳台</option>
-            <option value="SNOWBOARD_PARALLEL">⛷️ 单板平行项目</option>
+            <option value="ALPINE_SKI">高山滑雪</option>
+            <option value="FREESTYLE_SLOPESTYLE_BIGAIR">自由式坡障/大跳台</option>
+            <option value="SNOWBOARD_SLOPESTYLE_BIGAIR">单板坡障/大跳台</option>
+            <option value="SNOWBOARD_PARALLEL">单板平行项目</option>
           </select>
 
           <div className="relative flex-1 max-w-md">

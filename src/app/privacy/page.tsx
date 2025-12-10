@@ -135,9 +135,9 @@ export default function PrivacyPage() {
             如果您对本隐私政策有任何疑问或建议，或希望行使您的数据权利，请通过以下方式联系我们：
           </p>
           <div className="space-y-2 text-gray-600">
-            <p>📧 邮箱：privacy@ski-points.com</p>
-            <p>📞 电话：400-123-4567</p>
-            <p>📍 地址：北京市朝阳区冬季运动中心</p>
+            <p>邮箱：privacy@ski-points.com</p>
+            <p>电话：400-123-4567</p>
+            <p>地址：北京市朝阳区冬季运动中心</p>
           </div>
         </div>
 

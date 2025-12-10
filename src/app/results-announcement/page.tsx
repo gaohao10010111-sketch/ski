@@ -11,26 +11,21 @@ import {
   Calendar,
   MapPin,
   Users,
-  Clock,
   Award,
   Share2,
-  Printer
+  Printer,
+  FileUp,
+  AlertCircle
 } from 'lucide-react'
 import { useToast } from '@/components/Toast'
-
-// 模拟成绩数据
-const mockResults = [
-  { rank: 1, name: '张伟', team: '北京队', time1: '52.34', time2: '51.89', total: '1:44.23', points: 100, medal: 'gold' },
-  { rank: 2, name: '李明', team: '黑龙江队', time1: '52.78', time2: '52.12', total: '1:44.90', points: 80, medal: 'silver' },
-  { rank: 3, name: '王强', team: '吉林队', time1: '53.01', time2: '52.45', total: '1:45.46', points: 60, medal: 'bronze' },
-  { rank: 4, name: '刘洋', team: '河北队', time1: '53.23', time2: '52.89', total: '1:46.12', points: 50, medal: null },
-  { rank: 5, name: '陈晨', team: '新疆队', time1: '53.45', time2: '53.12', total: '1:46.57', points: 45, medal: null },
-  { rank: 6, name: '杨帆', team: '内蒙古队', time1: '53.67', time2: '53.34', total: '1:47.01', points: 40, medal: null },
-  { rank: 7, name: '赵磊', team: '辽宁队', time1: '53.89', time2: '53.56', total: '1:47.45', points: 36, medal: null },
-  { rank: 8, name: '孙鹏', team: '山东队', time1: '54.12', time2: '53.78', total: '1:47.90', points: 32, medal: null },
-  { rank: 9, name: '周涛', team: '甘肃队', time1: '54.34', time2: '54.01', total: '1:48.35', points: 29, medal: null },
-  { rank: 10, name: '吴昊', team: '青海队', time1: '54.56', time2: '54.23', total: '1:48.79', points: 26, medal: null },
-]
+import {
+  getCompetitions,
+  getResultsByCompetitionId,
+  getCompetitionById,
+  getLatestResults,
+  type CompetitionInfo,
+  type ResultRecord
+} from '@/lib/resultsStorage'
 
 const medalConfig = {
   gold: { color: 'text-yellow-500', bg: 'bg-yellow-50', label: '金牌' },
@@ -40,33 +35,83 @@ const medalConfig = {
 
 function ResultsContent() {
   const searchParams = useSearchParams()
-  const competitionName = searchParams?.get('competition') ?? '比赛'
-  const competitionId = searchParams?.get('id') ?? '1'
+  const competitionId = searchParams?.get('id')
   const { showToast } = useToast()
-  const [activeTab, setActiveTab] = useState('men')
+  const [activeTab, setActiveTab] = useState<'male' | 'female'>('male')
+  const [competitions, setCompetitions] = useState<CompetitionInfo[]>([])
+  const [selectedCompetition, setSelectedCompetition] = useState<CompetitionInfo | null>(null)
+  const [results, setResults] = useState<{ male: ResultRecord[], female: ResultRecord[] } | null>(null)
+  const [loading, setLoading] = useState(true)
 
-  // 模拟比赛信息
-  const competitionInfo = {
-    name: decodeURIComponent(competitionName),
-    date: '2024-12-10 - 2024-12-12',
-    location: '亚布力滑雪场',
-    discipline: '大回转',
-    participants: 156,
-    finishers: 142,
-    dns: 8,
-    dnf: 6
+  // 加载数据
+  useEffect(() => {
+    const loadData = () => {
+      const allCompetitions = getCompetitions()
+      setCompetitions(allCompetitions)
+
+      if (competitionId) {
+        // 加载指定比赛
+        const competition = getCompetitionById(competitionId)
+        const competitionResults = getResultsByCompetitionId(competitionId)
+        setSelectedCompetition(competition)
+        setResults(competitionResults)
+      } else if (allCompetitions.length > 0) {
+        // 加载最新比赛
+        const latest = getLatestResults()
+        if (latest) {
+          setSelectedCompetition(latest.competition)
+          setResults(latest.results)
+        }
+      }
+
+      setLoading(false)
+    }
+
+    loadData()
+  }, [competitionId])
+
+  // 切换比赛
+  const handleCompetitionChange = (id: string) => {
+    const competition = getCompetitionById(id)
+    const competitionResults = getResultsByCompetitionId(id)
+    setSelectedCompetition(competition)
+    setResults(competitionResults)
+  }
+
+  // 获取当前显示的成绩
+  const currentResults = results ? results[activeTab] : []
+
+  // 获取奖牌信息
+  const getMedal = (rank: number) => {
+    if (rank === 1) return 'gold'
+    if (rank === 2) return 'silver'
+    if (rank === 3) return 'bronze'
+    return null
   }
 
   const handleExport = () => {
-    const headers = ['名次', '姓名', '代表队', '第一轮', '第二轮', '总成绩', '积分']
-    const rows = mockResults.map(r => [r.rank, r.name, r.team, r.time1, r.time2, r.total, r.points])
+    if (!currentResults.length || !selectedCompetition) {
+      showToast('没有可导出的数据', 'error')
+      return
+    }
+
+    const headers = ['名次', '号码', '姓名', '代表队', '总成绩', '积分', '状态']
+    const rows = currentResults.map(r => [
+      r.rank,
+      r.bibNumber,
+      r.name,
+      r.team,
+      r.totalTime,
+      r.points,
+      r.status === 'finished' ? '完赛' : r.status.toUpperCase()
+    ])
     const csvContent = [headers, ...rows].map(row => row.join(',')).join('\n')
 
     const blob = new Blob(['\ufeff' + csvContent], { type: 'text/csv;charset=utf-8;' })
     const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url
-    link.download = `${competitionInfo.name}_成绩表.csv`
+    link.download = `${selectedCompetition.name}_${activeTab === 'male' ? '男子' : '女子'}_成绩表.csv`
     link.click()
     URL.revokeObjectURL(url)
 
@@ -77,8 +122,8 @@ function ResultsContent() {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: `${competitionInfo.name} - 成绩公告`,
-          text: `查看${competitionInfo.name}的比赛成绩`,
+          title: `${selectedCompetition?.name || '比赛'} - 成绩公告`,
+          text: `查看${selectedCompetition?.name || '比赛'}的比赛成绩`,
           url: window.location.href,
         })
       } catch {
@@ -92,6 +137,51 @@ function ResultsContent() {
 
   const handlePrint = () => {
     window.print()
+  }
+
+  // 加载中状态
+  if (loading) {
+    return (
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="animate-pulse">
+          <div className="h-8 bg-gray-200 rounded w-1/4 mb-4"></div>
+          <div className="h-64 bg-gray-200 rounded mb-4"></div>
+          <div className="h-96 bg-gray-200 rounded"></div>
+        </div>
+      </div>
+    )
+  }
+
+  // 没有数据时显示提示
+  if (competitions.length === 0) {
+    return (
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <Link
+          href="/competitions"
+          className="inline-flex items-center text-gray-600 hover:text-ski-blue mb-6 transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          返回比赛列表
+        </Link>
+
+        <div className="text-center py-16">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-gray-100 rounded-full mb-6">
+            <AlertCircle className="w-10 h-10 text-gray-400" />
+          </div>
+          <h2 className="text-2xl font-bold text-gray-700 mb-4">暂无成绩数据</h2>
+          <p className="text-gray-500 mb-8 max-w-md mx-auto">
+            还没有导入任何比赛成绩。请先通过成绩导入功能上传比赛成绩PDF或XML文件。
+          </p>
+          <Link
+            href="/results-import"
+            className="inline-flex items-center px-6 py-3 bg-ski-blue text-white rounded-lg hover:bg-primary-700 transition-colors"
+          >
+            <FileUp className="w-5 h-5 mr-2" />
+            去导入成绩
+          </Link>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -111,57 +201,86 @@ function ResultsContent() {
           <Trophy className="w-8 h-8 text-white" />
         </div>
         <h1 className="text-3xl font-bold text-ski-navy mb-2">成绩公告</h1>
-        <p className="text-xl text-gray-600">{competitionInfo.name}</p>
+
+        {/* 比赛选择器 */}
+        {competitions.length > 1 && (
+          <div className="mt-4">
+            <select
+              value={selectedCompetition?.id || ''}
+              onChange={(e) => handleCompetitionChange(e.target.value)}
+              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue focus:border-ski-blue"
+            >
+              {competitions.map(c => (
+                <option key={c.id} value={c.id}>{c.name}</option>
+              ))}
+            </select>
+          </div>
+        )}
+
+        {selectedCompetition && (
+          <p className="text-xl text-gray-600 mt-2">{selectedCompetition.name}</p>
+        )}
       </div>
 
       {/* 比赛信息卡片 */}
-      <div className="bg-white rounded-xl shadow-md p-6 mb-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="flex items-center gap-3">
-            <Calendar className="w-5 h-5 text-ski-blue" />
-            <div>
-              <div className="text-sm text-gray-500">比赛日期</div>
-              <div className="font-medium">{competitionInfo.date}</div>
+      {selectedCompetition && (
+        <div className="bg-white rounded-xl shadow-md p-6 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="flex items-center gap-3">
+              <Calendar className="w-5 h-5 text-ski-blue" />
+              <div>
+                <div className="text-sm text-gray-500">比赛日期</div>
+                <div className="font-medium">{selectedCompetition.date}</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <MapPin className="w-5 h-5 text-green-600" />
+              <div>
+                <div className="text-sm text-gray-500">比赛地点</div>
+                <div className="font-medium">{selectedCompetition.location || '未知'}</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <Award className="w-5 h-5 text-purple-600" />
+              <div>
+                <div className="text-sm text-gray-500">比赛项目</div>
+                <div className="font-medium">{selectedCompetition.discipline}</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <Users className="w-5 h-5 text-orange-600" />
+              <div>
+                <div className="text-sm text-gray-500">参赛人数</div>
+                <div className="font-medium">{selectedCompetition.participants} 人</div>
+              </div>
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <MapPin className="w-5 h-5 text-green-600" />
-            <div>
-              <div className="text-sm text-gray-500">比赛地点</div>
-              <div className="font-medium">{competitionInfo.location}</div>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <Award className="w-5 h-5 text-purple-600" />
-            <div>
-              <div className="text-sm text-gray-500">比赛项目</div>
-              <div className="font-medium">{competitionInfo.discipline}</div>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <Users className="w-5 h-5 text-orange-600" />
-            <div>
-              <div className="text-sm text-gray-500">参赛人数</div>
-              <div className="font-medium">{competitionInfo.participants} 人</div>
-            </div>
-          </div>
-        </div>
 
-        {/* 完赛统计 */}
-        <div className="mt-6 pt-6 border-t border-gray-100">
-          <div className="flex flex-wrap gap-4 text-sm">
-            <span className="px-3 py-1 bg-green-50 text-green-700 rounded-full">
-              完赛: {competitionInfo.finishers} 人
-            </span>
-            <span className="px-3 py-1 bg-yellow-50 text-yellow-700 rounded-full">
-              DNS: {competitionInfo.dns} 人
-            </span>
-            <span className="px-3 py-1 bg-red-50 text-red-700 rounded-full">
-              DNF: {competitionInfo.dnf} 人
-            </span>
+          {/* 完赛统计 */}
+          <div className="mt-6 pt-6 border-t border-gray-100">
+            <div className="flex flex-wrap gap-4 text-sm">
+              <span className="px-3 py-1 bg-green-50 text-green-700 rounded-full">
+                完赛: {selectedCompetition.finishers} 人
+              </span>
+              {selectedCompetition.dns > 0 && (
+                <span className="px-3 py-1 bg-yellow-50 text-yellow-700 rounded-full">
+                  DNS: {selectedCompetition.dns} 人
+                </span>
+              )}
+              {selectedCompetition.dnf > 0 && (
+                <span className="px-3 py-1 bg-red-50 text-red-700 rounded-full">
+                  DNF: {selectedCompetition.dnf} 人
+                </span>
+              )}
+              {selectedCompetition.dsq > 0 && (
+                <span className="px-3 py-1 bg-gray-50 text-gray-700 rounded-full">
+                  DSQ: {selectedCompetition.dsq} 人
+                </span>
+              )}
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* 操作按钮 */}
       <div className="flex flex-wrap gap-3 mb-6">
@@ -186,137 +305,167 @@ function ResultsContent() {
           <Printer className="w-4 h-4 mr-2" />
           打印
         </button>
+        <Link
+          href="/results-import"
+          className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors print:hidden"
+        >
+          <FileUp className="w-4 h-4 mr-2" />
+          导入更多
+        </Link>
       </div>
 
       {/* 性别切换 */}
       <div className="flex gap-2 mb-6">
         <button
-          onClick={() => setActiveTab('men')}
+          onClick={() => setActiveTab('male')}
           className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-            activeTab === 'men'
+            activeTab === 'male'
               ? 'bg-ski-blue text-white'
               : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
           }`}
         >
-          男子组
+          男子组 ({results?.male.length || 0})
         </button>
         <button
-          onClick={() => setActiveTab('women')}
+          onClick={() => setActiveTab('female')}
           className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-            activeTab === 'women'
+            activeTab === 'female'
               ? 'bg-ski-blue text-white'
               : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
           }`}
         >
-          女子组
+          女子组 ({results?.female.length || 0})
         </button>
       </div>
 
-      {/* 领奖台 */}
-      <div className="bg-gradient-to-br from-ski-navy to-blue-900 rounded-xl p-8 mb-8 text-white">
-        <h2 className="text-xl font-bold text-center mb-8">领奖台</h2>
-        <div className="flex justify-center items-end gap-4">
-          {/* 银牌 - 第二名 */}
-          <div className="text-center">
-            <div className="w-20 h-20 mx-auto mb-3 bg-gray-300 rounded-full flex items-center justify-center shadow-lg">
-              <Medal className="w-10 h-10 text-gray-600" />
-            </div>
-            <div className="bg-gray-300 rounded-t-lg pt-4 pb-2 px-4 w-28">
-              <div className="text-gray-800 font-bold">{mockResults[1].name}</div>
-              <div className="text-gray-600 text-sm">{mockResults[1].team}</div>
-              <div className="text-gray-700 text-xs mt-1">{mockResults[1].total}</div>
-            </div>
-            <div className="bg-gray-400 h-16 w-28 flex items-center justify-center text-2xl font-bold text-gray-700">
-              2
-            </div>
-          </div>
+      {/* 领奖台 - 只有当有3名及以上完赛选手时显示 */}
+      {currentResults.filter(r => r.status === 'finished').length >= 3 && (
+        <div className="bg-gradient-to-br from-ski-navy to-blue-900 rounded-xl p-8 mb-8 text-white">
+          <h2 className="text-xl font-bold text-center mb-8">领奖台</h2>
+          <div className="flex justify-center items-end gap-4">
+            {/* 银牌 - 第二名 */}
+            {currentResults[1] && (
+              <div className="text-center">
+                <div className="w-20 h-20 mx-auto mb-3 bg-gray-300 rounded-full flex items-center justify-center shadow-lg">
+                  <Medal className="w-10 h-10 text-gray-600" />
+                </div>
+                <div className="bg-gray-300 rounded-t-lg pt-4 pb-2 px-4 w-28">
+                  <div className="text-gray-800 font-bold">{currentResults[1].name}</div>
+                  <div className="text-gray-600 text-sm">{currentResults[1].team}</div>
+                  <div className="text-gray-700 text-xs mt-1">{currentResults[1].totalTime}</div>
+                </div>
+                <div className="bg-gray-400 h-16 w-28 flex items-center justify-center text-2xl font-bold text-gray-700">
+                  2
+                </div>
+              </div>
+            )}
 
-          {/* 金牌 - 第一名 */}
-          <div className="text-center -mt-4">
-            <div className="w-24 h-24 mx-auto mb-3 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg animate-pulse">
-              <Trophy className="w-12 h-12 text-yellow-800" />
-            </div>
-            <div className="bg-yellow-400 rounded-t-lg pt-4 pb-2 px-4 w-32">
-              <div className="text-yellow-900 font-bold text-lg">{mockResults[0].name}</div>
-              <div className="text-yellow-800 text-sm">{mockResults[0].team}</div>
-              <div className="text-yellow-900 text-xs mt-1">{mockResults[0].total}</div>
-            </div>
-            <div className="bg-yellow-500 h-24 w-32 flex items-center justify-center text-3xl font-bold text-yellow-900">
-              1
-            </div>
-          </div>
+            {/* 金牌 - 第一名 */}
+            {currentResults[0] && (
+              <div className="text-center -mt-4">
+                <div className="w-24 h-24 mx-auto mb-3 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg animate-pulse">
+                  <Trophy className="w-12 h-12 text-yellow-800" />
+                </div>
+                <div className="bg-yellow-400 rounded-t-lg pt-4 pb-2 px-4 w-32">
+                  <div className="text-yellow-900 font-bold text-lg">{currentResults[0].name}</div>
+                  <div className="text-yellow-800 text-sm">{currentResults[0].team}</div>
+                  <div className="text-yellow-900 text-xs mt-1">{currentResults[0].totalTime}</div>
+                </div>
+                <div className="bg-yellow-500 h-24 w-32 flex items-center justify-center text-3xl font-bold text-yellow-900">
+                  1
+                </div>
+              </div>
+            )}
 
-          {/* 铜牌 - 第三名 */}
-          <div className="text-center">
-            <div className="w-20 h-20 mx-auto mb-3 bg-orange-400 rounded-full flex items-center justify-center shadow-lg">
-              <Medal className="w-10 h-10 text-orange-800" />
-            </div>
-            <div className="bg-orange-400 rounded-t-lg pt-4 pb-2 px-4 w-28">
-              <div className="text-orange-900 font-bold">{mockResults[2].name}</div>
-              <div className="text-orange-800 text-sm">{mockResults[2].team}</div>
-              <div className="text-orange-900 text-xs mt-1">{mockResults[2].total}</div>
-            </div>
-            <div className="bg-orange-500 h-12 w-28 flex items-center justify-center text-2xl font-bold text-orange-900">
-              3
-            </div>
+            {/* 铜牌 - 第三名 */}
+            {currentResults[2] && (
+              <div className="text-center">
+                <div className="w-20 h-20 mx-auto mb-3 bg-orange-400 rounded-full flex items-center justify-center shadow-lg">
+                  <Medal className="w-10 h-10 text-orange-800" />
+                </div>
+                <div className="bg-orange-400 rounded-t-lg pt-4 pb-2 px-4 w-28">
+                  <div className="text-orange-900 font-bold">{currentResults[2].name}</div>
+                  <div className="text-orange-800 text-sm">{currentResults[2].team}</div>
+                  <div className="text-orange-900 text-xs mt-1">{currentResults[2].totalTime}</div>
+                </div>
+                <div className="bg-orange-500 h-12 w-28 flex items-center justify-center text-2xl font-bold text-orange-900">
+                  3
+                </div>
+              </div>
+            )}
           </div>
         </div>
-      </div>
+      )}
 
       {/* 成绩表格 */}
-      <div className="bg-white rounded-xl shadow-md overflow-hidden">
-        <div className="overflow-x-auto">
-          <table className="w-full">
-            <thead className="bg-gray-50 sticky top-0">
-              <tr>
-                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600">名次</th>
-                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600">姓名</th>
-                <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600">代表队</th>
-                <th className="px-4 py-3 text-center text-sm font-semibold text-gray-600">第一轮</th>
-                <th className="px-4 py-3 text-center text-sm font-semibold text-gray-600">第二轮</th>
-                <th className="px-4 py-3 text-center text-sm font-semibold text-gray-600">总成绩</th>
-                <th className="px-4 py-3 text-center text-sm font-semibold text-gray-600">积分</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-100">
-              {mockResults.map((result) => {
-                const medal = result.medal ? medalConfig[result.medal as keyof typeof medalConfig] : null
-                return (
-                  <tr
-                    key={result.rank}
-                    className={`hover:bg-gray-50 transition-colors ${medal?.bg || ''}`}
-                  >
-                    <td className="px-4 py-3">
-                      <div className="flex items-center gap-2">
-                        {medal ? (
-                          <span className={`font-bold ${medal.color}`}>
-                            {result.rank}
-                          </span>
+      {currentResults.length > 0 ? (
+        <div className="bg-white rounded-xl shadow-md overflow-hidden">
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead className="bg-gray-50 sticky top-0">
+                <tr>
+                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600">名次</th>
+                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600">号码</th>
+                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600">姓名</th>
+                  <th className="px-4 py-3 text-left text-sm font-semibold text-gray-600">代表队</th>
+                  <th className="px-4 py-3 text-center text-sm font-semibold text-gray-600">总成绩</th>
+                  <th className="px-4 py-3 text-center text-sm font-semibold text-gray-600">积分</th>
+                  <th className="px-4 py-3 text-center text-sm font-semibold text-gray-600">状态</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {currentResults.map((result, idx) => {
+                  const medal = getMedal(result.rank)
+                  const medalStyle = medal ? medalConfig[medal] : null
+                  return (
+                    <tr
+                      key={`${result.name}-${idx}`}
+                      className={`hover:bg-gray-50 transition-colors ${medalStyle?.bg || ''}`}
+                    >
+                      <td className="px-4 py-3">
+                        <div className="flex items-center gap-2">
+                          {medalStyle ? (
+                            <span className={`font-bold ${medalStyle.color}`}>
+                              {result.rank}
+                            </span>
+                          ) : (
+                            <span className="text-gray-600">{result.rank}</span>
+                          )}
+                          {medalStyle && (
+                            <Medal className={`w-4 h-4 ${medalStyle.color}`} />
+                          )}
+                        </div>
+                      </td>
+                      <td className="px-4 py-3 text-gray-600">{result.bibNumber}</td>
+                      <td className="px-4 py-3 font-medium text-gray-900">{result.name}</td>
+                      <td className="px-4 py-3 text-gray-600">{result.team}</td>
+                      <td className="px-4 py-3 text-center font-mono font-semibold text-gray-900">
+                        {result.totalTime}
+                      </td>
+                      <td className="px-4 py-3 text-center">
+                        <span className="inline-flex items-center px-2 py-1 bg-ski-blue/10 text-ski-blue rounded font-medium">
+                          {result.points}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 text-center">
+                        {result.status === 'finished' ? (
+                          <span className="text-green-600">完赛</span>
                         ) : (
-                          <span className="text-gray-600">{result.rank}</span>
+                          <span className="text-red-500 font-medium">{result.status.toUpperCase()}</span>
                         )}
-                        {medal && (
-                          <Medal className={`w-4 h-4 ${medal.color}`} />
-                        )}
-                      </div>
-                    </td>
-                    <td className="px-4 py-3 font-medium text-gray-900">{result.name}</td>
-                    <td className="px-4 py-3 text-gray-600">{result.team}</td>
-                    <td className="px-4 py-3 text-center font-mono text-gray-700">{result.time1}</td>
-                    <td className="px-4 py-3 text-center font-mono text-gray-700">{result.time2}</td>
-                    <td className="px-4 py-3 text-center font-mono font-semibold text-gray-900">{result.total}</td>
-                    <td className="px-4 py-3 text-center">
-                      <span className="inline-flex items-center px-2 py-1 bg-ski-blue/10 text-ski-blue rounded font-medium">
-                        {result.points}
-                      </span>
-                    </td>
-                  </tr>
-                )
-              })}
-            </tbody>
-          </table>
+                      </td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="bg-white rounded-xl shadow-md p-8 text-center">
+          <p className="text-gray-500">该组别暂无成绩数据</p>
+        </div>
+      )}
 
       {/* 备注 */}
       <div className="mt-8 p-4 bg-gray-50 rounded-lg text-sm text-gray-600">

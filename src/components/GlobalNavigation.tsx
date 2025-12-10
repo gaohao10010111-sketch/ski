@@ -144,7 +144,10 @@ export default function GlobalNavigation() {
       children: [
         { key: 'points-rankings', name: t.navigation?.submenus?.pointsRankings || 'Rankings', href: '/points/rankings' },
         { key: 'points-trends', name: t.navigation?.submenus?.pointsTrends || 'Trends', href: '/points/trends' },
-        { key: 'results-import', name: t.navigation?.submenus?.resultsImport || 'Import Results', href: '/results-import' }
+        { key: 'results-import', name: t.navigation?.submenus?.resultsImport || 'Import Results', href: '/results-import' },
+        { key: 'coaches', name: '优秀教练', href: '/coaches' },
+        { key: 'venues', name: '优质雪场', href: '/venues' },
+        { key: 'clubs', name: '优质俱乐部', href: '/clubs' }
       ]
     }
   ];

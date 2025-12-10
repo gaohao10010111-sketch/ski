@@ -42,7 +42,7 @@ export default function CoachesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              推荐教练
+              优秀教练
             </h1>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
               精选国家级认证滑雪教练，助您快速提升滑雪技能

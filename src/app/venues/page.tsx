@@ -55,7 +55,7 @@ export default function VenuesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              推荐场馆
+              优质雪场
             </h1>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
               精选全国优质滑雪场馆，为您提供最佳滑雪体验

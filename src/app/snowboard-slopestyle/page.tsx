@@ -10,10 +10,117 @@ import {
 } from 'lucide-react';
 import { getImagePath } from '@/utils/paths';
 import { useTranslation } from '@/contexts/LanguageContext';
+import { getCompetitions, getAllResults, getPointsRanking } from '@/lib/resultsStorage';
+
+// 定义类型
+interface LatestResult {
+  id: number;
+  event: string;
+  discipline: string;
+  location: string;
+  date: string;
+  status: 'live' | 'completed';
+  winner: string;
+  time: string;
+  participants: number;
+}
+
+interface RankingItem {
+  rank: number;
+  name: string;
+  nation: string;
+  event: string;
+  points: string;
+  change: number;
+  trend: 'up' | 'down' | 'stable';
+}
+
+interface TopAthlete {
+  id: number;
+  name: string;
+  nation: string;
+  discipline: string;
+  points: string;
+  worldRank: number;
+  age: number;
+  wins: number;
+}
 
 export default function SnowboardSlopestylePage() {
   const { t, language } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [importedResults, setImportedResults] = useState<LatestResult[]>([]);
+  const [importedRankings, setImportedRankings] = useState<RankingItem[]>([]);
+  const [importedAthletes, setImportedAthletes] = useState<TopAthlete[]>([]);
+
+  // 加载导入的数据
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const competitions = getCompetitions();
+    const allResults = getAllResults();
+
+    // 筛选单板坡面障碍技巧/大跳台项目
+    const snowboardCompetitions = competitions.filter(c =>
+      c.sportType === 'snowboard-slopestyle' ||
+      c.discipline.includes('坡面') ||
+      c.discipline.includes('大跳台') ||
+      c.discipline.includes('SS') ||
+      c.discipline.includes('BA')
+    );
+
+    if (snowboardCompetitions.length > 0) {
+      // 生成最新成绩
+      const results: LatestResult[] = snowboardCompetitions.slice(0, 6).map((comp, idx) => {
+        const compResults = allResults[comp.id];
+        const allAthletes = compResults ? [...compResults.male, ...compResults.female].filter(r => r.status === 'finished') : [];
+        const winner = allAthletes.find(r => r.rank === 1);
+
+        return {
+          id: idx + 1,
+          event: comp.name,
+          discipline: comp.discipline,
+          location: comp.location,
+          date: new Date(comp.date).toLocaleDateString('zh-CN', { month: 'numeric', day: 'numeric' }) + '日',
+          status: 'completed' as const,
+          winner: winner?.name || '-',
+          time: winner?.totalTime || '-',
+          participants: comp.participants
+        };
+      });
+      setImportedResults(results);
+
+      // 生成积分排名
+      const rankingData = getPointsRanking('snowboard-slopestyle');
+      const rankings: RankingItem[] = rankingData.slice(0, 10).map((athlete, idx) => ({
+        rank: idx + 1,
+        name: athlete.name,
+        nation: '中国',
+        event: '单板坡障/大跳台',
+        points: athlete.totalPoints.toFixed(0),
+        change: 0,
+        trend: 'stable' as const
+      }));
+      if (rankings.length > 0) {
+        setImportedRankings(rankings);
+      }
+
+      // 生成运动员列表
+      const athletes: TopAthlete[] = rankingData.slice(0, 8).map((athlete, idx) => ({
+        id: idx + 1,
+        name: athlete.name,
+        nation: '中国',
+        discipline: '坡障/大跳台',
+        points: athlete.totalPoints.toFixed(0),
+        worldRank: 20 + idx * 5,
+        age: 20 + Math.floor(Math.random() * 8),
+        wins: athlete.competitionCount
+      }));
+      if (athletes.length > 0) {
+        setImportedAthletes(athletes);
+      }
+    }
+  }, []);
 
   const heroSlides = [
     {
@@ -36,29 +143,31 @@ export default function SnowboardSlopestylePage() {
     }
   ];
 
-  // 最新赛事成绩（增加到6个）
-  const latestResults = [
-    { id: 1, event: '2024全国单板坡障锦标赛', discipline: '男子坡面障碍技巧', location: '密苑云顶滑雪场', date: '12月15日', status: 'live', winner: '苏翊鸣', time: '92.50', participants: 42 },
-    { id: 2, event: '中国杯单板公开赛', discipline: '女子大跳台', location: '首钢滑雪大跳台', date: '12月14日', status: 'completed', winner: '荣格', time: '88.75', participants: 35 },
-    { id: 3, event: '东北联赛', discipline: '男子大跳台', location: '北大湖滑雪场', date: '12月13日', status: 'completed', winner: '杨文龙', time: '85.25', participants: 38 },
-    { id: 4, event: '华北区域赛', discipline: '女子坡面障碍技巧', location: '太舞滑雪场', date: '12月12日', status: 'completed', winner: '邵琪', time: '86.50', participants: 30 },
-    { id: 5, event: '青年锦标赛', discipline: '男子坡障', location: '万龙滑雪场', date: '12月11日', status: 'completed', winner: '何金博', time: '83.75', participants: 45 },
-    { id: 6, event: '大众公开赛', discipline: '混合大跳台', location: '长白山滑雪场', date: '12月10日', status: 'completed', winner: '李爽', time: '81.00', participants: 28 }
+  // 最新赛事成绩（默认数据）
+  const defaultResults = [
+    { id: 1, event: '2024全国单板坡障锦标赛', discipline: '男子坡面障碍技巧', location: '密苑云顶滑雪场', date: '12月15日', status: 'live' as const, winner: '苏翊鸣', time: '92.50', participants: 42 },
+    { id: 2, event: '中国杯单板公开赛', discipline: '女子大跳台', location: '首钢滑雪大跳台', date: '12月14日', status: 'completed' as const, winner: '荣格', time: '88.75', participants: 35 },
+    { id: 3, event: '东北联赛', discipline: '男子大跳台', location: '北大湖滑雪场', date: '12月13日', status: 'completed' as const, winner: '杨文龙', time: '85.25', participants: 38 },
+    { id: 4, event: '华北区域赛', discipline: '女子坡面障碍技巧', location: '太舞滑雪场', date: '12月12日', status: 'completed' as const, winner: '邵琪', time: '86.50', participants: 30 },
+    { id: 5, event: '青年锦标赛', discipline: '男子坡障', location: '万龙滑雪场', date: '12月11日', status: 'completed' as const, winner: '何金博', time: '83.75', participants: 45 },
+    { id: 6, event: '大众公开赛', discipline: '混合大跳台', location: '长白山滑雪场', date: '12月10日', status: 'completed' as const, winner: '李爽', time: '81.00', participants: 28 }
   ];
+  const latestResults = importedResults.length > 0 ? importedResults : defaultResults;
 
-  // 积分排行榜（增加到10个）
-  const rankings = [
-    { rank: 1, name: '苏翊鸣', nation: '中国', event: '男子坡障/大跳台', points: '360', change: 0, trend: 'stable' },
-    { rank: 2, name: '荣格', nation: '中国', event: '女子大跳台', points: '345', change: 1, trend: 'up' },
-    { rank: 3, name: '杨文龙', nation: '中国', event: '男子大跳台', points: '330', change: -1, trend: 'down' },
-    { rank: 4, name: '邵琪', nation: '中国', event: '女子坡障', points: '315', change: 2, trend: 'up' },
-    { rank: 5, name: '何金博', nation: '中国', event: '男子坡障', points: '300', change: 0, trend: 'stable' },
-    { rank: 6, name: '李爽', nation: '中国', event: '女子大跳台', points: '285', change: 1, trend: 'up' },
-    { rank: 7, name: '王海涛', nation: '中国', event: '男子坡障', points: '270', change: -2, trend: 'down' },
-    { rank: 8, name: '张可欣', nation: '中国', event: '女子坡障', points: '255', change: 3, trend: 'up' },
-    { rank: 9, name: '刘佳宇', nation: '中国', event: '女子大跳台', points: '240', change: 0, trend: 'stable' },
-    { rank: 10, name: '高弘博', nation: '中国', event: '男子大跳台', points: '225', change: 1, trend: 'up' }
+  // 积分排行榜（默认数据）
+  const defaultRankings = [
+    { rank: 1, name: '苏翊鸣', nation: '中国', event: '男子坡障/大跳台', points: '360', change: 0, trend: 'stable' as const },
+    { rank: 2, name: '荣格', nation: '中国', event: '女子大跳台', points: '345', change: 1, trend: 'up' as const },
+    { rank: 3, name: '杨文龙', nation: '中国', event: '男子大跳台', points: '330', change: -1, trend: 'down' as const },
+    { rank: 4, name: '邵琪', nation: '中国', event: '女子坡障', points: '315', change: 2, trend: 'up' as const },
+    { rank: 5, name: '何金博', nation: '中国', event: '男子坡障', points: '300', change: 0, trend: 'stable' as const },
+    { rank: 6, name: '李爽', nation: '中国', event: '女子大跳台', points: '285', change: 1, trend: 'up' as const },
+    { rank: 7, name: '王海涛', nation: '中国', event: '男子坡障', points: '270', change: -2, trend: 'down' as const },
+    { rank: 8, name: '张可欣', nation: '中国', event: '女子坡障', points: '255', change: 3, trend: 'up' as const },
+    { rank: 9, name: '刘佳宇', nation: '中国', event: '女子大跳台', points: '240', change: 0, trend: 'stable' as const },
+    { rank: 10, name: '高弘博', nation: '中国', event: '男子大跳台', points: '225', change: 1, trend: 'up' as const }
   ];
+  const rankings = importedRankings.length > 0 ? importedRankings : defaultRankings;
 
   // 赛程日历（增加到6个）
   const upcomingEvents = [
@@ -88,8 +197,8 @@ export default function SnowboardSlopestylePage() {
     { id: 6, title: '运动员专访：备战新赛季', thumbnail: '/images/ski-bg.jpg', duration: '11:20', views: '19.4K', date: '12-08' }
   ];
 
-  // 顶尖运动员（增加到8个）
-  const topAthletes = [
+  // 顶尖运动员（默认数据）
+  const defaultAthletes = [
     { id: 1, name: '苏翊鸣', nation: '中国', discipline: '坡障/大跳台', points: '360', worldRank: 12, age: 20, wins: 15 },
     { id: 2, name: '荣格', nation: '中国', discipline: '大跳台', points: '345', worldRank: 28, age: 22, wins: 11 },
     { id: 3, name: '杨文龙', nation: '中国', discipline: '大跳台', points: '330', worldRank: 35, age: 24, wins: 9 },
@@ -99,6 +208,7 @@ export default function SnowboardSlopestylePage() {
     { id: 7, name: '王海涛', nation: '中国', discipline: '坡障', points: '270', worldRank: 61, age: 22, wins: 5 },
     { id: 8, name: '张可欣', nation: '中国', discipline: '坡障', points: '255', worldRank: 68, age: 24, wins: 10 }
   ];
+  const topAthletes = importedAthletes.length > 0 ? importedAthletes : defaultAthletes;
 
   // 数据统计（新增）
   const statistics = [

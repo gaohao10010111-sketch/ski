@@ -58,7 +58,7 @@ export default function ClubsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              推荐俱乐部
+              优质俱乐部
             </h1>
             <p className="text-white/80 text-lg max-w-2xl mx-auto">
               精选全国优质滑雪俱乐部，为您的滑雪之旅找到最佳伙伴

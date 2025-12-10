@@ -145,9 +145,9 @@ export default function TermsPage() {
             如果您对本服务条款有任何疑问，请通过以下方式联系我们：
           </p>
           <div className="space-y-2 text-gray-600">
-            <p>📧 邮箱：service@ski-points.com</p>
-            <p>📞 电话：400-123-4567</p>
-            <p>📍 地址：北京市朝阳区冬季运动中心</p>
+            <p>邮箱：service@ski-points.com</p>
+            <p>电话：400-123-4567</p>
+            <p>地址：北京市朝阳区冬季运动中心</p>
           </div>
         </div>
 

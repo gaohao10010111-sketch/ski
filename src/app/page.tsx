@@ -14,6 +14,7 @@ import {
   BarChart3,
   FileText,
   ChevronRight,
+  ChevronLeft,
   Mountain,
   ArrowLeftRight,
   Wind,
@@ -44,6 +45,76 @@ const sportTypeMapping: Record<string, number> = {
 
 const sportTypeKeys = ['ALPINE_SKI', 'SNOWBOARD_SLOPESTYLE_BIGAIR', 'SNOWBOARD_PARALLEL', 'FREESTYLE_SLOPESTYLE_BIGAIR']
 
+// latestResults sportType 映射到首页 tab 索引
+const latestResultsSportTypeMap: Record<string, number> = {
+  'alpine': 0,
+  'snowboard-slopestyle': 1,
+  'snowboard-parallel': 2,
+  'freestyle-slopestyle': 3
+}
+
+// 从 latestResults 中获取所有事件列表
+function getEventsFromResults(sportTypeIndex: number): Array<{
+  eventName: string
+  discipline: string
+  ageGroup: string
+  gender: string
+  athletes: Array<{
+    athleteId: string
+    athleteName: string
+    rank: number
+    totalPoints: number
+    province?: string
+    score?: string
+  }>
+}> {
+  const sportTypeMapping: Record<number, string> = {
+    0: 'alpine',
+    1: 'snowboard-slopestyle',
+    2: 'snowboard-parallel',
+    3: 'freestyle-slopestyle'
+  }
+
+  const targetSportType = sportTypeMapping[sportTypeIndex]
+  const competition = latestResults.competitions.find(c => c.sportType === targetSportType)
+
+  if (!competition) return []
+
+  return competition.events.map(event => ({
+    eventName: `${event.discipline} ${event.ageGroup} ${event.gender}`,
+    discipline: event.discipline,
+    ageGroup: event.ageGroup,
+    gender: event.gender,
+    athletes: event.athletes.slice(0, 5).map(a => ({
+      athleteId: `${a.name}-${a.team}`,
+      athleteName: a.name,
+      rank: a.rank,
+      totalPoints: a.points || 0,
+      province: a.team,
+      score: a.time || (a.bestScore ? `${a.bestScore}分` : '')
+    }))
+  }))
+}
+
+// 兼容旧接口 - 从 latestResults 中提取各项目排行榜
+function getTopAthletesFromResults(sportTypeIndex: number): Array<{
+  athleteId: string
+  athleteName: string
+  rank: number
+  totalPoints: number
+  province?: string
+  discipline?: string
+}> {
+  const events = getEventsFromResults(sportTypeIndex)
+  if (events.length === 0) return []
+
+  // 取第一个事件的前4名
+  return events[0].athletes.slice(0, 4).map(a => ({
+    ...a,
+    discipline: events[0].eventName
+  }))
+}
+
 // 状态标签 - 移到组件内使用翻译
 
 // 格式化日期
@@ -59,6 +130,7 @@ export default function HomePage() {
   const [isPaused, setIsPaused] = useState(false)
   const [isClient, setIsClient] = useState(false)
   const [selectedDiscipline, setSelectedDiscipline] = useState(0) // 0: 高山, 1: 单板坡障, 2: 单板平行, 3: 自由式
+  const [currentEventIndex, setCurrentEventIndex] = useState(0) // 当前显示的事件索引
 
   // API数据状态
   const [statsData, setStatsData] = useState<StatsOverview | null>(null)
@@ -161,7 +233,19 @@ export default function HomePage() {
 
   // 获取当前项目的排名
   const currentSportType = sportTypeKeys[selectedDiscipline]
-  const currentRankings = rankings[currentSportType] || []
+  // 优先使用 API 数据，若为空则使用 latestResults 中的真实数据
+  const apiRankings = rankings[currentSportType] || []
+  const currentEvents = getEventsFromResults(selectedDiscipline)
+  const currentRankings = apiRankings.length > 0 ? apiRankings : getTopAthletesFromResults(selectedDiscipline)
+
+  // 当前显示的事件
+  const safeEventIndex = Math.min(currentEventIndex, Math.max(0, currentEvents.length - 1))
+  const currentEvent = currentEvents[safeEventIndex]
+
+  // 切换项目时重置事件索引
+  useEffect(() => {
+    setCurrentEventIndex(0)
+  }, [selectedDiscipline])
 
   const latestResultStatusLabels: Record<string, string> = t.home?.latestResults?.statusLabels || {}
   const resultStatusStyles: Record<string, string> = {
@@ -497,27 +581,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 🏆 刚刚结束的比赛 - 最高优先级展示区 */}
+      {/* 成绩快报 - 最高优先级展示区 */}
       {latestResults.competitions.length > 0 && (
-        <section className="py-8 bg-gradient-to-r from-ski-navy via-ski-blue to-ski-navy">
+        <section className="py-10 bg-gradient-to-b from-gray-900 to-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between mb-8">
               <div className="flex items-center">
-                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse mr-3"></div>
-                <h2 className="text-xl md:text-2xl font-bold text-white">🏆 刚刚结束的比赛</h2>
+                <Trophy className="w-6 h-6 text-yellow-400 mr-3" />
+                <h2 className="text-xl md:text-2xl font-bold text-white">成绩快报</h2>
+                <span className="ml-3 px-2 py-0.5 bg-green-500/20 text-green-400 text-xs font-medium rounded-full border border-green-500/30">
+                  最新发布
+                </span>
               </div>
               <Link
                 href="/results-announcement"
-                className="flex items-center text-white/80 hover:text-white text-sm font-medium transition-colors"
+                className="flex items-center text-gray-400 hover:text-white text-sm font-medium transition-colors"
               >
-                查看全部成绩公告
-                <ExternalLink className="w-4 h-4 ml-1" />
+                查看全部
+                <ChevronRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {latestResults.competitions.slice(0, 2).map((comp, compIndex) => (
-                <div key={compIndex} className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                <div key={compIndex} className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-colors">
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <h3 className="text-lg font-bold text-white mb-1">{comp.competition}</h3>
@@ -540,7 +627,7 @@ export default function HomePage() {
                   {/* 项目分组展示 */}
                   <div className="space-y-3">
                     {comp.events.slice(0, 3).map((event, eventIndex) => (
-                      <div key={eventIndex} className="bg-white/5 rounded-lg p-3">
+                      <div key={eventIndex} className="bg-gray-700/50 rounded-lg p-3">
                         <div className="flex items-center justify-between mb-2">
                           <span className="text-white/90 font-medium text-sm">
                             {event.discipline} · {event.ageGroup} · {event.gender}
@@ -635,7 +722,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-            {/* Recent Competition Results */}
+            {/* Recent Competition Results - 使用实际比赛数据 */}
             <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
               <div className="flex items-center justify-between mb-4 md:mb-6">
                 <h3 className="text-lg md:text-xl font-semibold text-ski-navy">{t.home?.latestResults?.recentResults || '最新比赛'}</h3>
@@ -645,91 +732,144 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="space-y-4">
-                {isLoadingStats ? (
-                  <div className="flex items-center justify-center py-8">
-                    <Loader2 className="w-6 h-6 text-ski-blue animate-spin" />
-                  </div>
-                ) : filteredCompetitions.length > 0 ? (
-                  filteredCompetitions.map((comp) => (
-                    <Link
-                      key={comp.id}
-                      href={`/competitions/${comp.id}`}
-                      className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-                    >
-                      <div>
-                        <div className="font-semibold text-gray-900">{comp.name}</div>
-                        <div className="text-sm text-gray-600">{comp.discipline || comp.location}</div>
-                      </div>
-                      <div className="text-right">
-                        <div className={`text-sm font-medium ${resultStatusStyles[comp.status] || 'text-gray-600'}`}>
-                          {latestResultStatusLabels[comp.status] || statusLabels[comp.status] || comp.status}
+                {(() => {
+                  // 根据选中的项目筛选比赛
+                  const sportTypeMap: Record<number, string> = {
+                    0: 'alpine',
+                    1: 'snowboard-slopestyle',
+                    2: 'snowboard-parallel',
+                    3: 'freestyle-slopestyle'
+                  }
+                  const selectedSportType = sportTypeMap[selectedDiscipline]
+                  const matchedCompetition = latestResults.competitions.find(c => c.sportType === selectedSportType)
+
+                  if (matchedCompetition) {
+                    return (
+                      <>
+                        <div className="p-4 bg-gradient-to-r from-ski-blue/5 to-ski-blue/10 rounded-lg border border-ski-blue/20">
+                          <div className="font-semibold text-gray-900 mb-1">{matchedCompetition.competition}</div>
+                          <div className="text-sm text-gray-600 mb-2">{matchedCompetition.location}</div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-xs text-gray-500">{matchedCompetition.date} ~ {matchedCompetition.endDate}</span>
+                            <span className="px-2 py-0.5 bg-green-100 text-green-700 text-xs rounded-full">已完赛</span>
+                          </div>
                         </div>
-                        <div className="text-xs text-gray-500">{formatDate(comp.startDate)}</div>
-                      </div>
-                    </Link>
-                  ))
-                ) : (
-                  <div className="text-center py-8 text-gray-500">
-                    {t.home?.latestResults?.noData || 'No competition data available'}
-                  </div>
-                )}
+                        {matchedCompetition.events.slice(0, 3).map((event, idx) => (
+                          <div key={idx} className="p-3 bg-gray-50 rounded-lg">
+                            <div className="flex items-center justify-between mb-2">
+                              <span className="font-medium text-gray-800 text-sm">
+                                {event.discipline} {event.ageGroup} {event.gender}
+                              </span>
+                              <span className="text-xs text-gray-500">{event.athletes.length}人参赛</span>
+                            </div>
+                            <div className="flex items-center gap-3 text-sm">
+                              {event.athletes.slice(0, 3).map((athlete, aIdx) => (
+                                <div key={aIdx} className="flex items-center">
+                                  <span className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold mr-1 ${
+                                    aIdx === 0 ? 'bg-yellow-400 text-yellow-900' :
+                                    aIdx === 1 ? 'bg-gray-300 text-gray-700' :
+                                    'bg-orange-400 text-orange-900'
+                                  }`}>{aIdx + 1}</span>
+                                  <span className="text-gray-700">{athlete.name}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </>
+                    )
+                  }
+
+                  return (
+                    <div className="text-center py-8 text-gray-500">
+                      该项目暂无比赛数据
+                    </div>
+                  )
+                })()}
               </div>
               <div className="mt-6 text-center">
-                <Link href="/competitions" className="text-ski-blue hover:text-ski-blue/80 font-medium">
-                  {t.home?.latestResults?.viewMore || '查看更多赛事 →'}
+                <Link href="/results-announcement" className="text-ski-blue hover:text-ski-blue/80 font-medium">
+                  {t.home?.latestResults?.viewMore || '查看更多赛事'} →
                 </Link>
               </div>
             </div>
 
-            {/* Top Athletes Rankings */}
+            {/* Top Athletes Rankings - 按小项分页 */}
             <div className="bg-white rounded-lg shadow-lg p-6">
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold text-ski-navy">{t.home?.rankings?.title || '积分排行榜'}</h3>
                 <div className="text-sm text-gray-500">
-                  {statsData?.overview?.currentSeason || '2024-25'} {t.home?.rankings?.season || 'Season'}
+                  {currentEvents.length > 0 ? `${safeEventIndex + 1}/${currentEvents.length}` : '0/0'}
                 </div>
               </div>
-              <div className="space-y-4">
+
+              {/* 事件选择器/翻页 */}
+              {currentEvents.length > 0 && currentEvent && (
+                <div className="flex items-center justify-between mb-4 p-3 bg-ski-blue/5 rounded-lg border border-ski-blue/20">
+                  <button
+                    onClick={() => setCurrentEventIndex(Math.max(0, safeEventIndex - 1))}
+                    disabled={safeEventIndex === 0}
+                    className="p-1.5 rounded-full hover:bg-ski-blue/10 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  >
+                    <ChevronLeft className="w-5 h-5 text-ski-blue" />
+                  </button>
+                  <div className="text-center flex-1 px-2">
+                    <div className="font-semibold text-ski-navy text-sm">
+                      {currentEvent.eventName}
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => setCurrentEventIndex(Math.min(currentEvents.length - 1, safeEventIndex + 1))}
+                    disabled={safeEventIndex >= currentEvents.length - 1}
+                    className="p-1.5 rounded-full hover:bg-ski-blue/10 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+                  >
+                    <ChevronRight className="w-5 h-5 text-ski-blue" />
+                  </button>
+                </div>
+              )}
+
+              <div className="space-y-3">
                 {isLoadingStats ? (
                   <div className="flex items-center justify-center py-8">
                     <Loader2 className="w-6 h-6 text-ski-blue animate-spin" />
                   </div>
-                ) : currentRankings.length > 0 ? (
-                  currentRankings.map((entry, index) => {
+                ) : currentEvent && currentEvent.athletes.length > 0 ? (
+                  currentEvent.athletes.map((athlete, index) => {
                     const cardClass = rankingCardStyles[index] || defaultRankingCardClass
                     const badgeClass = rankingBadgeStyles[index] || defaultRankingBadgeClass
 
                     return (
-                      <Link
-                        key={entry.athleteId}
-                        href={`/athletes/${entry.athleteId}`}
-                        className={`flex items-center p-4 rounded-lg hover:shadow-md transition-shadow ${cardClass}`}
+                      <div
+                        key={athlete.athleteId}
+                        className={`flex items-center p-3 rounded-lg ${cardClass}`}
                       >
-                        <div className={`w-8 h-8 ${badgeClass} rounded-full flex items-center justify-center font-bold text-sm mr-4`}>
-                          {entry.rank}
+                        <div className={`w-7 h-7 ${badgeClass} rounded-full flex items-center justify-center font-bold text-xs mr-3`}>
+                          {athlete.rank}
                         </div>
-                        <div className="flex-1">
-                          <div className="font-semibold text-gray-900">{entry.athleteName}</div>
-                          <div className="text-sm text-gray-600">
-                            {entry.province || entry.club || entry.discipline || '-'}
+                        <div className="flex-1 min-w-0">
+                          <div className="font-semibold text-gray-900 text-sm">{athlete.athleteName}</div>
+                          <div className="text-xs text-gray-500 truncate">{athlete.province}</div>
+                        </div>
+                        <div className="text-right ml-2">
+                          {athlete.score && (
+                            <div className="text-xs text-gray-600">{athlete.score}</div>
+                          )}
+                          <div className="font-bold text-ski-blue text-sm">
+                            {athlete.totalPoints > 0 ? `${athlete.totalPoints}分` : '-'}
                           </div>
                         </div>
-                        <div className="text-right">
-                          <div className="font-semibold text-ski-navy">{entry.totalPoints.toFixed(2)}</div>
-                          <div className="text-xs text-gray-500">{t.home?.rankings?.points || '积分'}</div>
-                        </div>
-                      </Link>
+                      </div>
                     )
                   })
                 ) : (
                   <div className="text-center py-8 text-gray-500">
-                    {t.home?.rankings?.noData || 'No ranking data available'}
+                    {t.home?.rankings?.noData || '该项目暂无排名数据'}
                   </div>
                 )}
               </div>
-              <div className="mt-6 text-center">
-                <Link href="/points/rankings" className="text-ski-blue hover:text-ski-blue/80 font-medium">
-                  {t.home?.rankings?.viewFullRankings || '查看完整排名 →'}
+              <div className="mt-4 text-center">
+                <Link href="/points/rankings" className="text-ski-blue hover:text-ski-blue/80 font-medium text-sm">
+                  {t.home?.rankings?.viewFullRankings || '查看完整排名'} →
                 </Link>
               </div>
             </div>
@@ -790,7 +930,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* 推荐教练 */}
+            {/* 优秀教练 */}
             <Link
               href="/coaches"
               className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
@@ -800,7 +940,7 @@ export default function HomePage() {
                   <GraduationCap className="w-20 h-20 text-white/20" />
                 </div>
                 <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-2xl font-bold text-white">推荐教练</h3>
+                  <h3 className="text-2xl font-bold text-white">优秀教练</h3>
                   <p className="text-white/80 text-sm">国家级认证教练团队</p>
                 </div>
               </div>
@@ -837,7 +977,7 @@ export default function HomePage() {
               </div>
             </Link>
 
-            {/* 推荐场馆 */}
+            {/* 优质雪场 */}
             <Link
               href="/venues"
               className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
@@ -847,7 +987,7 @@ export default function HomePage() {
                   <Building2 className="w-20 h-20 text-white/20" />
                 </div>
                 <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-2xl font-bold text-white">推荐场馆</h3>
+                  <h3 className="text-2xl font-bold text-white">优质雪场</h3>
                   <p className="text-white/80 text-sm">室内外优质滑雪场</p>
                 </div>
               </div>
@@ -876,7 +1016,7 @@ export default function HomePage() {
               </div>
             </Link>
 
-            {/* 推荐俱乐部 */}
+            {/* 优质俱乐部 */}
             <Link
               href="/clubs"
               className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
@@ -886,7 +1026,7 @@ export default function HomePage() {
                   <Shield className="w-20 h-20 text-white/20" />
                 </div>
                 <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-2xl font-bold text-white">推荐俱乐部</h3>
+                  <h3 className="text-2xl font-bold text-white">优质俱乐部</h3>
                   <p className="text-white/80 text-sm">专业培训机构</p>
                 </div>
               </div>

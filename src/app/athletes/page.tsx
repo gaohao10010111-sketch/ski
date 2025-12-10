@@ -1,9 +1,10 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
-import { Search, User, Trophy, Medal, TrendingUp, Filter, Download, Loader2, AlertCircle, RefreshCw } from 'lucide-react'
+import { Search, User, Trophy, Medal, TrendingUp, Filter, Download, Loader2, AlertCircle, RefreshCw, Database } from 'lucide-react'
 import { useToast } from '@/components/Toast'
 import { athletesApi, statsApi, type Athlete, type StatsOverview } from '@/lib/api'
+import { getPointsRanking, getStatsOverview, getCompetitions, type CompetitionInfo } from '@/lib/resultsStorage'
 import Link from 'next/link'
 
 // 项目类型映射
@@ -34,6 +35,14 @@ const statusColors: Record<string, string> = {
   RETIRED: 'bg-gray-100 text-gray-800',
 }
 
+// 本地到API格式的映射
+const localSportTypeMapping: Record<string, string> = {
+  'alpine': 'ALPINE_SKI',
+  'snowboard-slopestyle': 'SNOWBOARD_SLOPESTYLE_BIGAIR',
+  'snowboard-parallel': 'SNOWBOARD_PARALLEL',
+  'freestyle-slopestyle': 'FREESTYLE_SLOPESTYLE_BIGAIR',
+}
+
 export default function AthletesPage() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedSportType, setSelectedSportType] = useState('all')
@@ -46,11 +55,85 @@ export default function AthletesPage() {
   const [pageSize] = useState(20)
   const [total, setTotal] = useState(0)
   const { showToast } = useToast()
+  const [dataSource, setDataSource] = useState<'local' | 'api'>('local')
+  const [hasLocalData, setHasLocalData] = useState(false)
+  const [localCompetitions, setLocalCompetitions] = useState<CompetitionInfo[]>([])
+
+  // 从本地数据获取运动员列表
+  const fetchLocalAthletes = useCallback((): Athlete[] => {
+    if (typeof window === 'undefined') return []
+
+    // 获取所有导入的成绩数据中的运动员
+    const localRankings = getPointsRanking()
+    const competitions = getCompetitions()
+    setLocalCompetitions(competitions)
+
+    if (localRankings.length === 0) return []
+
+    // 将本地格式转换为 Athlete 格式
+    const converted: Athlete[] = localRankings.map((item, index) => {
+      // 根据team名称推断项目类型
+      const competition = competitions[0]
+      let sportType = 'SNOWBOARD_SLOPESTYLE_BIGAIR' // 默认
+      if (competition?.sportType) {
+        sportType = localSportTypeMapping[competition.sportType] || 'SNOWBOARD_SLOPESTYLE_BIGAIR'
+      }
+
+      return {
+        id: `local-athlete-${index}`,
+        name: item.name,
+        gender: 'MALE' as const, // 默认设为男性，因为本地数据可能没有性别信息
+        sportType,
+        status: 'ACTIVE' as const,
+        province: item.team,
+        club: null,
+        currentPoints: item.totalPoints,
+        currentRank: index + 1,
+        uSeriesGroup: null,
+        birthDate: '2000-01-01', // 占位值
+        nationality: 'CHN',
+        fisCode: '',
+      }
+    })
+
+    // 筛选
+    let filtered = converted
+    if (selectedSportType !== 'all') {
+      filtered = filtered.filter(a => a.sportType === selectedSportType)
+    }
+    if (searchTerm) {
+      const term = searchTerm.toLowerCase()
+      filtered = filtered.filter(a =>
+        a.name.toLowerCase().includes(term) ||
+        (a.province && a.province.toLowerCase().includes(term))
+      )
+    }
+
+    return filtered
+  }, [selectedSportType, searchTerm])
 
   // 获取运动员数据
   const fetchAthletes = useCallback(async () => {
     setIsLoading(true)
     setError(null)
+
+    // 首先尝试从本地获取数据
+    const localAthletes = fetchLocalAthletes()
+    if (localAthletes.length > 0) {
+      // 分页
+      const start = (page - 1) * pageSize
+      const end = start + pageSize
+      const pagedAthletes = localAthletes.slice(start, end)
+
+      setAthletes(pagedAthletes)
+      setTotal(localAthletes.length)
+      setHasLocalData(true)
+      setDataSource('local')
+      setIsLoading(false)
+      return
+    }
+
+    // 如果没有本地数据，使用API
     try {
       const params: Record<string, unknown> = {
         page,
@@ -63,6 +146,8 @@ export default function AthletesPage() {
       if (response.success && response.data) {
         setAthletes(response.data)
         setTotal(response.meta?.total || response.data.length)
+        setDataSource('api')
+        setHasLocalData(false)
       } else {
         setError(response.error?.message || '获取数据失败')
       }
@@ -72,10 +157,32 @@ export default function AthletesPage() {
     } finally {
       setIsLoading(false)
     }
-  }, [page, pageSize, searchTerm, selectedSportType])
+  }, [page, pageSize, searchTerm, selectedSportType, fetchLocalAthletes])
 
   // 获取统计数据
   const fetchStats = useCallback(async () => {
+    // 首先尝试从本地获取统计
+    if (typeof window !== 'undefined') {
+      const localStats = getStatsOverview()
+      if (localStats.totalCompetitions > 0 || localStats.totalAthletes > 0) {
+        setStats({
+          overview: {
+            totalAthletes: localStats.totalAthletes,
+            activeAthletes: localStats.totalAthletes, // 假设所有本地导入的运动员都是活跃的
+            totalCompetitions: localStats.totalCompetitions,
+            completedCompetitions: localStats.totalCompetitions,
+            upcomingCompetitions: 0,
+            currentSeason: '2024-2025',
+          },
+          athletesBySport: [],
+          recentCompetitions: [],
+          topAthletes: [],
+        } as StatsOverview)
+        return
+      }
+    }
+
+    // 如果没有本地数据，使用API
     try {
       const response = await statsApi.overview()
       if (response.success && response.data) {
@@ -151,6 +258,12 @@ export default function AthletesPage() {
           <p className="text-xl text-gray-600">
             中国滑雪运动员档案与积分统计
           </p>
+          {hasLocalData && (
+            <div className="mt-4 inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm">
+              <Database className="h-4 w-4" />
+              数据来源: 本地导入的比赛成绩 ({localCompetitions.length} 场比赛)
+            </div>
+          )}
         </div>
 
         {/* 搜索和筛选 - 吸顶 */}
