@@ -1183,11 +1183,11 @@ export const zh = {
         upcoming: '即将开始'
       },
       items: [
-        { id: 'u-series-2025', title: 'U系列比赛竞赛规程发布', subtitle: '2025-2026赛季 · 冬运中心', status: 'updated', pinned: true, href: '/rules/points' },
-        { id: 'bigair-ss-rules', title: '大跳台和坡面障碍技巧规程', subtitle: '自由式及单板滑雪 · 已发布', status: 'updated', pinned: false, href: '/rules' },
-        { id: 'season-calendar', title: '全国冬季项目赛事赛历', subtitle: '2025-2026赛季第一批 · 已公布', status: 'updated', pinned: false, href: '/competitions' },
-        { id: 'youth-championship', title: '青少年锦标赛竞赛规程', subtitle: '坡面障碍技巧 · 已发布', status: 'updated', pinned: false, href: '/rules' },
-        { id: 'ice-snow-season', title: '第十二届全国大众冰雪季', subtitle: '群众冰雪赛事活动 · 进行中', status: 'live', pinned: false, href: '/competitions' }
+        { id: 'u-series-2025', title: 'U系列比赛竞赛规程发布', subtitle: '2025-2026赛季 · 冬运中心', status: 'updated', pinned: true, href: 'https://www.sport.gov.cn/dyzx/n5169/index.html' },
+        { id: 'bigair-ss-rules', title: '大跳台和坡面障碍技巧规程', subtitle: '自由式及单板滑雪 · 已发布', status: 'updated', pinned: false, href: 'https://www.sport.gov.cn/dyzx/n5169/index.html' },
+        { id: 'season-calendar', title: '全国冬季项目赛事赛历', subtitle: '2025-2026赛季第一批 · 已公布', status: 'updated', pinned: false, href: 'https://www.sport.gov.cn/dyzx/n5169/index.html' },
+        { id: 'youth-championship', title: '青少年锦标赛竞赛规程', subtitle: '坡面障碍技巧 · 已发布', status: 'updated', pinned: false, href: 'https://www.sport.gov.cn/dyzx/n5169/index.html' },
+        { id: 'ice-snow-season', title: '第十二届全国大众冰雪季', subtitle: '群众冰雪赛事活动 · 进行中', status: 'live', pinned: false, href: 'https://www.sport.gov.cn/dyzx/n5169/index.html' }
       ]
     },
     latestResults: {

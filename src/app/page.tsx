@@ -488,19 +488,37 @@ export default function HomePage() {
                   </div>
                   <div className="space-y-4">
                     {(currentNews as typeof fallbackNewsItems[0]).href ? (
-                      <Link
-                        href={(currentNews as typeof fallbackNewsItems[0]).href || '#'}
-                        className="flex items-center p-4 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-colors"
-                      >
-                        <div className="flex-1">
-                          <div className="text-white font-semibold">{currentNews.title}</div>
-                          <div className="text-gray-300 text-sm">{currentNews.subtitle}</div>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <div className={`w-3 h-3 rounded-full ${newsStatusColors[currentNews.status] || newsStatusColors.default}`}></div>
-                          <ChevronRight className="w-4 h-4 text-white/60" />
-                        </div>
-                      </Link>
+                      (currentNews as typeof fallbackNewsItems[0]).href?.startsWith('http') ? (
+                        <a
+                          href={(currentNews as typeof fallbackNewsItems[0]).href || '#'}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center p-4 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-colors"
+                        >
+                          <div className="flex-1">
+                            <div className="text-white font-semibold">{currentNews.title}</div>
+                            <div className="text-gray-300 text-sm">{currentNews.subtitle}</div>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <div className={`w-3 h-3 rounded-full ${newsStatusColors[currentNews.status] || newsStatusColors.default}`}></div>
+                            <ChevronRight className="w-4 h-4 text-white/60" />
+                          </div>
+                        </a>
+                      ) : (
+                        <Link
+                          href={(currentNews as typeof fallbackNewsItems[0]).href || '#'}
+                          className="flex items-center p-4 bg-white/10 rounded-lg border border-white/20 hover:bg-white/20 transition-colors"
+                        >
+                          <div className="flex-1">
+                            <div className="text-white font-semibold">{currentNews.title}</div>
+                            <div className="text-gray-300 text-sm">{currentNews.subtitle}</div>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <div className={`w-3 h-3 rounded-full ${newsStatusColors[currentNews.status] || newsStatusColors.default}`}></div>
+                            <ChevronRight className="w-4 h-4 text-white/60" />
+                          </div>
+                        </Link>
+                      )
                     ) : (
                       <div className="flex items-center p-4 bg-white/10 rounded-lg border border-white/20">
                         <div className="flex-1">
@@ -517,20 +535,39 @@ export default function HomePage() {
                       .slice(0, 3)
                       .map(({ item, index }) => (
                         (item as typeof fallbackNewsItems[0]).href ? (
-                          <Link
-                            key={item.id}
-                            href={(item as typeof fallbackNewsItems[0]).href || '#'}
-                            className="flex items-center w-full p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
-                          >
-                            <div className="flex-1 text-left">
-                              <div className="text-white/80 font-medium text-sm">{item.title}</div>
-                              <div className="text-gray-400 text-xs">{item.subtitle}</div>
-                            </div>
-                            <div className="flex items-center gap-1">
-                              <span className={`inline-block w-2 h-2 rounded-full ${newsStatusColors[item.status] || newsStatusColors.default}`} />
-                              <ChevronRight className="w-4 h-4 text-white/40" />
-                            </div>
-                          </Link>
+                          (item as typeof fallbackNewsItems[0]).href?.startsWith('http') ? (
+                            <a
+                              key={item.id}
+                              href={(item as typeof fallbackNewsItems[0]).href || '#'}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center w-full p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
+                            >
+                              <div className="flex-1 text-left">
+                                <div className="text-white/80 font-medium text-sm">{item.title}</div>
+                                <div className="text-gray-400 text-xs">{item.subtitle}</div>
+                              </div>
+                              <div className="flex items-center gap-1">
+                                <span className={`inline-block w-2 h-2 rounded-full ${newsStatusColors[item.status] || newsStatusColors.default}`} />
+                                <ChevronRight className="w-4 h-4 text-white/40" />
+                              </div>
+                            </a>
+                          ) : (
+                            <Link
+                              key={item.id}
+                              href={(item as typeof fallbackNewsItems[0]).href || '#'}
+                              className="flex items-center w-full p-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors"
+                            >
+                              <div className="flex-1 text-left">
+                                <div className="text-white/80 font-medium text-sm">{item.title}</div>
+                                <div className="text-gray-400 text-xs">{item.subtitle}</div>
+                              </div>
+                              <div className="flex items-center gap-1">
+                                <span className={`inline-block w-2 h-2 rounded-full ${newsStatusColors[item.status] || newsStatusColors.default}`} />
+                                <ChevronRight className="w-4 h-4 text-white/40" />
+                              </div>
+                            </Link>
+                          )
                         ) : (
                           <button
                             key={item.id}
@@ -583,19 +620,19 @@ export default function HomePage() {
 
       {/* 成绩快报 - 最高优先级展示区 */}
       {latestResults.competitions.length > 0 && (
-        <section className="py-10 bg-gradient-to-b from-gray-900 to-gray-800">
+        <section className="py-10 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center">
-                <Trophy className="w-6 h-6 text-yellow-400 mr-3" />
-                <h2 className="text-xl md:text-2xl font-bold text-white">成绩快报</h2>
-                <span className="ml-3 px-2 py-0.5 bg-green-500/20 text-green-400 text-xs font-medium rounded-full border border-green-500/30">
+                <Trophy className="w-6 h-6 text-yellow-500 mr-3" />
+                <h2 className="text-xl md:text-2xl font-bold text-ski-navy">成绩快报</h2>
+                <span className="ml-3 px-2 py-0.5 bg-green-100 text-green-600 text-xs font-medium rounded-full border border-green-200">
                   最新发布
                 </span>
               </div>
               <Link
                 href="/results-announcement"
-                className="flex items-center text-gray-400 hover:text-white text-sm font-medium transition-colors"
+                className="flex items-center text-gray-500 hover:text-ski-blue text-sm font-medium transition-colors"
               >
                 查看全部
                 <ChevronRight className="w-4 h-4 ml-1" />
@@ -604,11 +641,11 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {latestResults.competitions.slice(0, 2).map((comp, compIndex) => (
-                <div key={compIndex} className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700 hover:border-gray-600 transition-colors">
+                <div key={compIndex} className="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-ski-blue hover:shadow-lg transition-all">
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <h3 className="text-lg font-bold text-white mb-1">{comp.competition}</h3>
-                      <div className="flex items-center text-white/70 text-sm space-x-4">
+                      <h3 className="text-lg font-bold text-ski-navy mb-1">{comp.competition}</h3>
+                      <div className="flex items-center text-gray-600 text-sm space-x-4">
                         <span className="flex items-center">
                           <MapPin className="w-4 h-4 mr-1" />
                           {comp.location}
@@ -627,12 +664,12 @@ export default function HomePage() {
                   {/* 项目分组展示 */}
                   <div className="space-y-3">
                     {comp.events.slice(0, 3).map((event, eventIndex) => (
-                      <div key={eventIndex} className="bg-gray-700/50 rounded-lg p-3">
+                      <div key={eventIndex} className="bg-gray-50 rounded-lg p-3">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-white/90 font-medium text-sm">
+                          <span className="text-gray-800 font-medium text-sm">
                             {event.discipline} · {event.ageGroup} · {event.gender}
                           </span>
-                          <span className="text-white/60 text-xs">
+                          <span className="text-gray-500 text-xs">
                             共{event.athletes.length}人
                           </span>
                         </div>
@@ -647,8 +684,8 @@ export default function HomePage() {
                                 {athleteIndex + 1}
                               </div>
                               <div>
-                                <div className="text-white text-sm font-medium">{athlete.name}</div>
-                                <div className="text-white/60 text-xs">
+                                <div className="text-gray-900 text-sm font-medium">{athlete.name}</div>
+                                <div className="text-gray-500 text-xs">
                                   {athlete.time || (athlete.bestScore ? `${athlete.bestScore}分` : '')}
                                   {athlete.points ? ` · ${athlete.points}积分` : ''}
                                 </div>
@@ -660,20 +697,20 @@ export default function HomePage() {
                     ))}
                     {comp.events.length > 3 && (
                       <div className="text-center">
-                        <span className="text-white/60 text-sm">
+                        <span className="text-gray-500 text-sm">
                           还有 {comp.events.length - 3} 个项目...
                         </span>
                       </div>
                     )}
                   </div>
 
-                  <div className="mt-4 pt-4 border-t border-white/10 flex justify-between items-center">
-                    <span className="text-white/60 text-xs">
+                  <div className="mt-4 pt-4 border-t border-gray-200 flex justify-between items-center">
+                    <span className="text-gray-500 text-xs">
                       数据更新: {latestResults.lastUpdated}
                     </span>
                     <Link
                       href={`/results-announcement?sport=${comp.sportType}`}
-                      className="text-white hover:text-ski-blue text-sm font-medium flex items-center"
+                      className="text-ski-blue hover:text-ski-navy text-sm font-medium flex items-center"
                     >
                       查看完整成绩
                       <ChevronRight className="w-4 h-4 ml-1" />
