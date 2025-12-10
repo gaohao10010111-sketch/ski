@@ -14,7 +14,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://gaohao10010111-sketch.github.io/ski'),
+  metadataBase: new URL('https://cnskipoints.com'),
   title: {
     default: '中国滑雪青少年积分排名官方平台',
     template: '%s | 中国滑雪青少年积分排名官方平台'
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'zh_CN',
-    url: 'https://gaohao10010111-sketch.github.io/ski/',
+    url: 'https://cnskipoints.com/',
     siteName: '中国滑雪青少年积分排名官方平台',
     title: '中国滑雪青少年积分排名官方平台',
     description: '中国滑雪积分系统，支持高山滑雪、自由式滑雪、单板滑雪等项目的积分计算、赛事管理、运动员档案管理。',
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     images: ['/images/ski-bg.jpg'],
   },
   alternates: {
-    canonical: 'https://gaohao10010111-sketch.github.io/ski/',
+    canonical: 'https://cnskipoints.com/',
   },
 }
 

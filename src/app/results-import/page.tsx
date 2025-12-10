@@ -1906,7 +1906,7 @@ export default function ResultsImportPage() {
                                 <td className="px-4 py-3 whitespace-nowrap text-sm font-medium text-gray-900">
                                   {result.name}
                                 </td>
-                                <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900 max-w-[200px] truncate" title={result.organization}>
+                                <td className="px-4 py-3 text-sm text-gray-900 min-w-[180px]" title={result.organization}>
                                   {result.organization || '-'}
                                 </td>
                                 <td className="px-4 py-3 text-sm font-mono font-semibold text-ski-blue min-w-[120px]">

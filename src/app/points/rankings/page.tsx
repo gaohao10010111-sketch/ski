@@ -417,7 +417,7 @@ export default function PointsRankingsPage() {
                               </div>
                             </div>
                           </td>
-                          <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-600 max-w-[200px] truncate" title={athlete.team}>
+                          <td className="px-4 py-3 text-sm text-gray-600 min-w-[180px]" title={athlete.team}>
                             {athlete.team}
                           </td>
                           {athlete.run1 && (

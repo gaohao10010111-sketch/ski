@@ -1,14 +1,30 @@
 /** @type {import('next').NextConfig} */
 const isGitHubPages = process.env.GITHUB_PAGES === 'true';
+const isStandalone = process.env.STANDALONE === 'true';
 
 const nextConfig = {
-  // 始终使用/ski作为basePath（服务器和GitHub Pages都需要）
-  basePath: '/ski',
-  assetPrefix: '/ski/',
+  // GitHub Pages需要/ski前缀，独立域名不需要
+  ...(isGitHubPages && {
+    basePath: '/ski',
+    assetPrefix: '/ski/',
+  }),
+
+  // 独立域名配置（cnskipoints.com）
+  ...(isStandalone && {
+    basePath: '',
+    assetPrefix: '',
+  }),
+
+  // 默认配置（如果都没设置，使用/ski）
+  ...(!isGitHubPages && !isStandalone && {
+    basePath: '/ski',
+    assetPrefix: '/ski/',
+  }),
+
   trailingSlash: true,
 
-  // GitHub Pages专用配置
-  ...(isGitHubPages && {
+  // 静态导出配置
+  ...((isGitHubPages || isStandalone) && {
     output: 'export',
     distDir: 'out',
   }),

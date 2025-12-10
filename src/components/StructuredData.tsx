@@ -11,12 +11,12 @@ export default function StructuredData({ type = 'sportsOrganization' }: Structur
     name: '中国滑雪青少年积分排名官方平台',
     alternateName: 'China Youth Skiing Points Ranking Platform',
     description: '基于简化积分规则的专业滑雪竞赛数据管理平台，为中国高山滑雪运动提供积分计算、成绩管理、赛事组织等一站式解决方案',
-    url: 'https://guangyikeji.github.io/ski/',
-    logo: 'https://guangyikeji.github.io/ski/images/logo.png',
-    image: 'https://guangyikeji.github.io/ski/images/ski-bg.jpg',
+    url: 'https://cnskipoints.com/',
+    logo: 'https://cnskipoints.com/images/logo.png',
+    image: 'https://cnskipoints.com/images/ski-bg.jpg',
     sameAs: [
-      'https://github.com/guangyikeji/ski',
-      'https://alpine-ski-points.vercel.app'
+      'https://github.com/gaohao10010111-sketch/ski',
+      'https://gaohao10010111-sketch.github.io/ski/'
     ],
     ...(type === 'sportsOrganization' && {
       sport: 'Alpine Skiing',
@@ -44,7 +44,7 @@ export default function StructuredData({ type = 'sportsOrganization' }: Structur
     ...(type === 'website' && {
       potentialAction: {
         '@type': 'SearchAction',
-        target: 'https://guangyikeji.github.io/ski/search?q={search_term_string}',
+        target: 'https://cnskipoints.com/search?q={search_term_string}',
         'query-input': 'required name=search_term_string'
       }
     }),
