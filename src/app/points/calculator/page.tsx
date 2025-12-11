@@ -25,19 +25,16 @@ const sportConfigs = {
     name: '高山滑雪',
     icon: Mountain,
     color: 'blue',
-    disciplines: ['SL', 'GS', 'SG', 'DH', 'AC'],
+    disciplines: ['SL', 'GS', 'SG'],
     disciplineNames: {
       SL: '回转',
       GS: '大回转',
-      SG: '超级大回转',
-      DH: '滑降',
-      AC: '全能'
+      SG: '超级大回转'
     },
-    factors: { DH: 1250, SL: 730, GS: 1010, SG: 1190, AC: 1360 },
-    levels: [
-      { value: 'A', label: 'A级 (系数 1.0)', coefficient: 1.0 },
-      { value: 'B', label: 'B级 (系数 0.6)', coefficient: 0.6 },
-      { value: 'C', label: 'C级 (系数 0.3)', coefficient: 0.3 }
+    tiers: [
+      { value: 360, label: '360分档 (一类赛事)' },
+      { value: 240, label: '240分档 (二类赛事)' },
+      { value: 120, label: '120分档 (三类赛事)' }
     ]
   },
   'snowboard-slopestyle': {
@@ -105,14 +102,7 @@ export default function PointsCalculatorPage() {
   const [copied, setCopied] = useState(false)
   const { showToast } = useToast()
 
-  // 高山滑雪状态
-  const [winnerTime, setWinnerTime] = useState('')
-  const [competitorTime, setCompetitorTime] = useState('')
-  const [discipline, setDiscipline] = useState('GS')
-  const [raceLevel, setRaceLevel] = useState('A')
-  const [penalty, setPenalty] = useState('')
-
-  // 排名积分状态
+  // 统一排名积分状态（四大项目通用）
   const [rank, setRank] = useState('')
   const [tier, setTier] = useState(360)
 
@@ -138,32 +128,7 @@ export default function PointsCalculatorPage() {
     formula: string
   } | null>(null)
 
-  const calculateAlpinePoints = () => {
-    const winner = parseFloat(winnerTime)
-    const competitor = parseFloat(competitorTime)
-    const penaltyVal = parseFloat(penalty) || 0
-
-    if (!winner || !competitor || competitor < winner) {
-      showToast('请输入有效的时间数据', 'error')
-      return
-    }
-
-    const config = sportConfigs['alpine']
-    const F = config.factors[discipline as keyof typeof config.factors]
-    const coef = config.levels.find(l => l.value === raceLevel)?.coefficient || 1.0
-
-    const basePoints = F * (competitor / winner - 1)
-    const adjustedPoints = basePoints + penaltyVal
-    const finalPoints = adjustedPoints * coef
-
-    setResult({
-      basePoints: Math.round(basePoints * 100) / 100,
-      adjustedPoints: Math.round(adjustedPoints * 100) / 100,
-      finalPoints: Math.round(finalPoints * 100) / 100,
-      formula: `${F} × (${competitor}/${winner} - 1) × ${coef} = ${Math.round(finalPoints * 100) / 100}`
-    })
-  }
-
+  // 统一排名积分计算（四大项目通用）
   const calculateRankPoints = () => {
     const rankVal = parseInt(rank)
     if (!rankVal || rankVal < 1) {
@@ -186,19 +151,13 @@ export default function PointsCalculatorPage() {
   }
 
   const handleCalculate = () => {
-    if (sportType === 'alpine') {
-      calculateAlpinePoints()
-    } else {
-      // 单板坡障/大跳台、单板平行项目、自由式坡障/大跳台都使用排名积分制
-      calculateRankPoints()
-    }
+    // 四大项目统一使用排名积分制
+    calculateRankPoints()
   }
 
   const handleReset = () => {
-    setWinnerTime('')
-    setCompetitorTime('')
-    setPenalty('')
     setRank('')
+    setTier(360)
     setResult(null)
   }
 
@@ -273,111 +232,36 @@ export default function PointsCalculatorPage() {
           {currentConfig.name}积分计算
         </h2>
 
-        {/* 高山滑雪表单（时间公式计算） */}
-        {sportType === 'alpine' && (
-          <div className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">获胜者时间 (秒)</label>
-                <input
-                  type="number"
-                  step="0.01"
-                  value={winnerTime}
-                  onChange={(e) => setWinnerTime(e.target.value)}
-                  placeholder="例如: 60.00"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue focus:border-transparent"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">参赛者时间 (秒)</label>
-                <input
-                  type="number"
-                  step="0.01"
-                  value={competitorTime}
-                  onChange={(e) => setCompetitorTime(e.target.value)}
-                  placeholder="例如: 62.50"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue focus:border-transparent"
-                />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">项目类型</label>
-                <select
-                  value={discipline}
-                  onChange={(e) => setDiscipline(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue"
-                >
-                  {sportConfigs.alpine.disciplines.map((d) => (
-                    <option key={d} value={d}>
-                      {sportConfigs.alpine.disciplineNames[d as keyof typeof sportConfigs.alpine.disciplineNames]} ({d})
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">赛事级别</label>
-                <select
-                  value={raceLevel}
-                  onChange={(e) => setRaceLevel(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue"
-                >
-                  {sportConfigs.alpine.levels.map((level) => (
-                    <option key={level.value} value={level.value}>
-                      {level.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
+        {/* 统一排名积分表单（四大项目通用） */}
+        <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">判罚分 (可选)</label>
+              <label className="block text-sm font-medium text-gray-700 mb-1">最终排名</label>
               <input
                 type="number"
-                step="0.01"
-                value={penalty}
-                onChange={(e) => setPenalty(e.target.value)}
-                placeholder="默认为0"
+                min="1"
+                value={rank}
+                onChange={(e) => setRank(e.target.value)}
+                placeholder="例如: 1"
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue focus:border-transparent"
               />
             </div>
-          </div>
-        )}
-
-        {/* 排名积分表单（单板坡障/大跳台、单板平行项目、自由式坡障/大跳台） */}
-        {(sportType === 'snowboard-slopestyle' || sportType === 'snowboard-parallel' || sportType === 'freestyle-slopestyle') && (
-          <div className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">最终排名</label>
-                <input
-                  type="number"
-                  min="1"
-                  value={rank}
-                  onChange={(e) => setRank(e.target.value)}
-                  placeholder="例如: 1"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue focus:border-transparent"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">积分档次</label>
-                <select
-                  value={tier}
-                  onChange={(e) => setTier(parseInt(e.target.value))}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue"
-                >
-                  {sportConfigs[sportType].tiers?.map((t) => (
-                    <option key={t.value} value={t.value}>
-                      {t.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">积分档次</label>
+              <select
+                value={tier}
+                onChange={(e) => setTier(parseInt(e.target.value))}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue"
+              >
+                {currentConfig.tiers?.map((t) => (
+                  <option key={t.value} value={t.value}>
+                    {t.label}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
-        )}
+        </div>
 
         {/* 操作按钮 */}
         <div className="flex gap-3 mt-6">
@@ -447,9 +331,9 @@ export default function PointsCalculatorPage() {
           计算说明
         </h4>
         <ul className="text-sm text-blue-800 space-y-1">
-          <li>• 高山滑雪: P = F × (Tx/To - 1) × 赛事系数，F为项目系数</li>
-          <li>• 单板/自由式: 基于最终排名查询对应分档积分表</li>
-          <li>• 积分越低越好（高山滑雪），排名积分越高越好</li>
+          <li>• 四大项目统一采用排名积分制：高山滑雪、单板坡障/大跳台、单板平行项目、自由式坡障/大跳台</li>
+          <li>• 积分档次：360分档(一类赛事)、240分档(二类赛事)、120分档(三类赛事)</li>
+          <li>• 第1名获得最高积分，递减至第50名(1分)，50名以后积分为0</li>
           <li>• 本计算器仅供参考，最终积分以官方公布为准</li>
         </ul>
       </div>
