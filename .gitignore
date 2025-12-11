@@ -47,6 +47,7 @@ Thumbs.db
 *.pdf
 *.mp4
 *.xml
+!public/sitemap.xml
 
 # Claude settings
 .claude/settings.local.json

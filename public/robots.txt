@@ -1,0 +1,14 @@
+# robots.txt for cnskipoints.com
+# 中国滑雪积分系统
+
+User-agent: *
+Allow: /
+
+# 允许搜索引擎爬取所有页面
+Disallow:
+
+# Sitemap 位置
+Sitemap: https://cnskipoints.com/sitemap.xml
+
+# 爬虫访问频率限制
+Crawl-delay: 1
