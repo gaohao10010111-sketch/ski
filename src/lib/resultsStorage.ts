@@ -79,7 +79,6 @@ export function saveResults(data: StoredResults): boolean {
 
     return true
   } catch (error) {
-    console.error('保存成绩数据失败:', error)
     return false
   }
 }

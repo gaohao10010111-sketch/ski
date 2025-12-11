@@ -65,7 +65,6 @@ export default function CompetitionStatsPage() {
         setTopAthletes(rankingsResponse.data)
       }
     } catch (err) {
-      console.error('获取统计数据错误:', err)
       setError('网络错误，请稍后重试')
     } finally {
       setIsLoading(false)

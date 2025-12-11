@@ -171,7 +171,6 @@ export default function HomePage() {
       })
       setRankings(newRankings)
     } catch (error) {
-      console.error('获取首页数据错误:', error)
     } finally {
       setIsLoadingStats(false)
     }

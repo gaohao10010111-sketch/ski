@@ -740,7 +740,6 @@ export default function ResultsImportPage() {
 
       showToast(`成功解析 ${stationName} ${competitions.length} 场比赛，共 ${totalAthletes} 名运动员，已保存到本地`, 'success')
     } catch (err) {
-      console.error('PDF解析错误:', err)
       setError(err instanceof Error ? err.message : 'PDF解析失败，请检查文件格式')
       showToast('PDF解析失败', 'error')
     } finally {

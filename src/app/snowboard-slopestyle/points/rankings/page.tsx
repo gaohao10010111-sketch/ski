@@ -95,7 +95,7 @@ export default function SnowboardSlopestyleRankingsPage() {
       ...group,
       athletes: group.athletes.filter(a =>
         a.name.toLowerCase().includes(term) ||
-        a.organization.toLowerCase().includes(term)
+        a.team.toLowerCase().includes(term)
       )
     })).filter(g => g.athletes.length > 0)
   }, [rankingGroups, searchTerm])
@@ -272,7 +272,7 @@ export default function SnowboardSlopestyleRankingsPage() {
                           <td className="px-4 py-3">
                             <span className="font-medium text-gray-900">{athlete.name}</span>
                           </td>
-                          <td className="px-4 py-3 text-gray-600">{athlete.organization}</td>
+                          <td className="px-4 py-3 text-gray-600">{athlete.team}</td>
                           <td className="px-4 py-3 text-right">
                             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
                               {athlete.points} 分

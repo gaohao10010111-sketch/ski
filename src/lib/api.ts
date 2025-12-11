@@ -217,7 +217,6 @@ async function request<T>(
 
     return data as ApiResponse<T>;
   } catch (error) {
-    console.error('API请求错误:', error);
     return {
       success: false,
       error: {

@@ -152,7 +152,6 @@ export default function AthletesPage() {
         setError(response.error?.message || '获取数据失败')
       }
     } catch (err) {
-      console.error('获取运动员数据失败:', err)
       setError('网络错误，请稍后重试')
     } finally {
       setIsLoading(false)
@@ -189,7 +188,6 @@ export default function AthletesPage() {
         setStats(response.data)
       }
     } catch (err) {
-      console.error('获取统计数据失败:', err)
     }
   }, [])
 

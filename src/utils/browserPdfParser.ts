@@ -175,7 +175,6 @@ export async function parseAlpinePointsTableFromPdf(file: File): Promise<{
       rawText: fullText
     }
   } catch (error) {
-    console.error('PDF解析错误:', error)
     return {
       success: false,
       competitions: [],
@@ -225,7 +224,6 @@ export async function parsePdfFile(file: File): Promise<{
       parsed
     }
   } catch (error) {
-    console.error('PDF解析错误:', error)
     return {
       success: false,
       error: error instanceof Error ? error.message : 'PDF解析失败'

@@ -36,9 +36,14 @@ export default function PointsCalculatorPage() {
   const { showToast } = useToast()
 
   const handleCalculate = () => {
-    const rankVal = parseInt(rank)
-    if (!rankVal || rankVal < 1) {
-      showToast('请输入有效的排名', 'error')
+    const trimmed = rank.trim()
+    if (!trimmed) {
+      showToast('请输入排名', 'error')
+      return
+    }
+    const rankVal = parseInt(trimmed, 10)
+    if (isNaN(rankVal) || rankVal < 1 || rankVal > 9999) {
+      showToast('请输入1-9999的有效排名', 'error')
       return
     }
     // 50名以后积分为0
