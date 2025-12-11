@@ -55,7 +55,12 @@ const sportConfigs = {
     icon: Snowflake,
     color: 'indigo',
     disciplines: ['PGS', 'PSL'],
-    disciplineNames: { PGS: '平行大回转', PSL: '平行回转' }
+    disciplineNames: { PGS: '平行大回转', PSL: '平行回转' },
+    tiers: [
+      { value: 360, label: '360分档 (一类赛事)' },
+      { value: 240, label: '240分档 (二类赛事)' },
+      { value: 120, label: '120分档 (三类赛事)' }
+    ]
   },
   'freestyle-slopestyle': {
     name: '自由式坡障/大跳台',
@@ -181,9 +186,10 @@ export default function PointsCalculatorPage() {
   }
 
   const handleCalculate = () => {
-    if (sportType === 'alpine' || sportType === 'snowboard-parallel') {
+    if (sportType === 'alpine') {
       calculateAlpinePoints()
     } else {
+      // 单板坡障/大跳台、单板平行项目、自由式坡障/大跳台都使用排名积分制
       calculateRankPoints()
     }
   }
@@ -267,8 +273,8 @@ export default function PointsCalculatorPage() {
           {currentConfig.name}积分计算
         </h2>
 
-        {/* 高山滑雪/单板平行项目表单 */}
-        {(sportType === 'alpine' || sportType === 'snowboard-parallel') && (
+        {/* 高山滑雪表单（时间公式计算） */}
+        {sportType === 'alpine' && (
           <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
@@ -295,57 +301,53 @@ export default function PointsCalculatorPage() {
               </div>
             </div>
 
-            {sportType === 'alpine' && (
-              <>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">项目类型</label>
-                    <select
-                      value={discipline}
-                      onChange={(e) => setDiscipline(e.target.value)}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue"
-                    >
-                      {sportConfigs.alpine.disciplines.map((d) => (
-                        <option key={d} value={d}>
-                          {sportConfigs.alpine.disciplineNames[d as keyof typeof sportConfigs.alpine.disciplineNames]} ({d})
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">赛事级别</label>
-                    <select
-                      value={raceLevel}
-                      onChange={(e) => setRaceLevel(e.target.value)}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue"
-                    >
-                      {sportConfigs.alpine.levels.map((level) => (
-                        <option key={level.value} value={level.value}>
-                          {level.label}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">项目类型</label>
+                <select
+                  value={discipline}
+                  onChange={(e) => setDiscipline(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue"
+                >
+                  {sportConfigs.alpine.disciplines.map((d) => (
+                    <option key={d} value={d}>
+                      {sportConfigs.alpine.disciplineNames[d as keyof typeof sportConfigs.alpine.disciplineNames]} ({d})
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">赛事级别</label>
+                <select
+                  value={raceLevel}
+                  onChange={(e) => setRaceLevel(e.target.value)}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue"
+                >
+                  {sportConfigs.alpine.levels.map((level) => (
+                    <option key={level.value} value={level.value}>
+                      {level.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">判罚分 (可选)</label>
-                  <input
-                    type="number"
-                    step="0.01"
-                    value={penalty}
-                    onChange={(e) => setPenalty(e.target.value)}
-                    placeholder="默认为0"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue focus:border-transparent"
-                  />
-                </div>
-              </>
-            )}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">判罚分 (可选)</label>
+              <input
+                type="number"
+                step="0.01"
+                value={penalty}
+                onChange={(e) => setPenalty(e.target.value)}
+                placeholder="默认为0"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue focus:border-transparent"
+              />
+            </div>
           </div>
         )}
 
-        {/* 排名积分表单 */}
-        {(sportType === 'snowboard-slopestyle' || sportType === 'freestyle-slopestyle') && (
+        {/* 排名积分表单（单板坡障/大跳台、单板平行项目、自由式坡障/大跳台） */}
+        {(sportType === 'snowboard-slopestyle' || sportType === 'snowboard-parallel' || sportType === 'freestyle-slopestyle') && (
           <div className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>

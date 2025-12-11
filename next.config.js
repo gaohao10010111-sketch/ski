@@ -45,9 +45,6 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
 
-  // 压缩优化
-  swcMinify: true,
-
   // 模块ID优化（更好的缓存）
   experimental: {
     optimizePackageImports: ['lucide-react'],

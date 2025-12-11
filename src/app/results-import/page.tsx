@@ -194,7 +194,6 @@ export default function ResultsImportPage() {
 
       setUploadProgress(40)
 
-      console.log('[PDF解析] 开始解析PDF, 总页数:', pdf.numPages)
 
       // 智能解析结果行的辅助函数
       // 核心原则：同一行的信息才是一条信息，绝不从不同行拼凑数据
@@ -390,7 +389,6 @@ export default function ResultsImportPage() {
       const allPages: PageInfo[] = []
       const competitionsWithPointsTable = new Set<string>()  // 记录哪些比赛有积分表
 
-      console.log('[PDF解析] 开始第一遍扫描, 总页数:', pdf.numPages)
 
       // 第一遍扫描所有页面
       for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
@@ -404,7 +402,6 @@ export default function ResultsImportPage() {
 
         // 调试：每10页输出一次进度，以及第7页（应该有积分表）的详细信息
         if (pageNum <= 10) {
-          console.log(`[PDF解析] 页${pageNum} 文本长度: ${pageText.length}, 前100字符: ${pageText.substring(0, 100)}`)
         }
 
         // 检查是否包含比赛信息（支持多种格式）
@@ -417,7 +414,6 @@ export default function ResultsImportPage() {
 
         // 调试：如果是积分表页面，输出详细信息
         if (hasPointsTable || hasAlpineFormat) {
-          console.log(`[PDF解析] 页${pageNum} 检测结果: 积分表=${hasPointsTable}, 高山格式=${hasAlpineFormat}`)
         }
 
         // 跳过既没有积分表也没有比赛格式的页面
@@ -433,7 +429,6 @@ export default function ResultsImportPage() {
         matchInfo = pageText.match(/(U\d{2})\s*(男|女)\s*子\s*组\s*(回转|大回转|超级大回转)/)
         if (matchInfo) {
           sportType = 'alpine'
-          console.log(`[PDF解析] 页${pageNum} 匹配格式1成功: ${matchInfo[0]}`)
         }
 
         // 格式2: "高山滑雪-回转-男-U18" 或 "高山滑雪-大回转-女-U15"
@@ -468,13 +463,10 @@ export default function ResultsImportPage() {
         if (!matchInfo) {
           // 调试：积分表页面没有匹配成功时输出更多信息
           if (hasPointsTable) {
-            console.log(`[PDF解析] 页${pageNum} 有积分表但没有匹配到比赛格式`)
-            console.log(`[PDF解析] 页${pageNum} 文本内容: ${pageText.substring(0, 200)}`)
           }
           continue
         }
 
-        console.log(`[PDF解析] 页${pageNum} 成功添加到allPages: ${matchInfo[0]}`)
 
         const [, ageGroup, gender, extractedDiscipline] = matchInfo
         const finalDiscipline = discipline || extractedDiscipline || '未知项目'
@@ -486,7 +478,6 @@ export default function ResultsImportPage() {
         // 如果有积分表，记录下来
         if (hasPointsTable) {
           competitionsWithPointsTable.add(competitionKey)
-          console.log(`[PDF解析] 记录积分表比赛: ${competitionKey}`)
         }
 
         allPages.push({
@@ -511,19 +502,15 @@ export default function ResultsImportPage() {
       let totalAthletes = 0
       const competitionResultsMap = new Map<string, { results: AlpineResult[], pageNums: number[], ageGroup: string, gender: string, discipline: string, dataSource: 'pointsTable' | 'resultAnnouncement', sportType: string }>()
 
-      console.log(`[PDF解析] 第二遍开始，共${allPages.length}个页面待处理`)
-      console.log(`[PDF解析] 有积分表的比赛: ${Array.from(competitionsWithPointsTable).join(', ')}`)
 
       for (const pageInfo of allPages) {
         const competitionKey = `${pageInfo.ageGroup}-${pageInfo.gender}-${pageInfo.discipline}`
 
         // 如果该比赛有积分表，但当前页是成绩公告，跳过（优先用积分表）
         if (competitionsWithPointsTable.has(competitionKey) && !pageInfo.hasPointsTable) {
-          console.log(`[PDF解析] 跳过成绩公告（有积分表）: ${competitionKey} (页${pageInfo.pageNum})`)
           continue
         }
 
-        console.log(`[PDF解析] 开始处理: ${competitionKey} (页${pageInfo.pageNum}, ${pageInfo.hasPointsTable ? '积分表' : '成绩公告'})`)
 
         const { textContent, ageGroup, gender, discipline: finalDiscipline, hasPointsTable, sportType } = pageInfo
 
@@ -550,7 +537,6 @@ export default function ResultsImportPage() {
         // 解析每一行 - 使用更灵活的解析策略
         const results: AlpineResult[] = []
 
-        console.log(`[PDF解析] 开始解析页${pageInfo.pageNum}的${sortedYs.length}行`)
 
         for (const y of sortedYs) {
           const row = rows[y].sort((a, b) => a.x - b.x)
@@ -563,15 +549,12 @@ export default function ResultsImportPage() {
           if (rowText.includes('名次') || rowText.includes('排名') || rowText.includes('姓名') || rowText.includes('成绩排名')) continue  // 跳过表头
 
           // 调试日志
-          console.log(`[PDF解析] 尝试解析行: ${rowText.substring(0, 80)}...`)
 
           // 智能解析：尝试多种模式，传入sportType来处理不同格式
           const parsedResult = parseResultRow(rowText, sportType)
           if (parsedResult) {
-            console.log(`[PDF解析] 解析成功: 排名=${parsedResult.rank}, 姓名=${parsedResult.name}, 积分=${parsedResult.points}`)
             results.push(parsedResult)
           } else {
-            console.log(`[PDF解析] 解析失败`)
           }
         }
 
@@ -584,7 +567,6 @@ export default function ResultsImportPage() {
             const newResults = results.filter(r => !existingRanks.has(r.rank))
             existingCompetition.results.push(...newResults)
             existingCompetition.pageNums.push(pageInfo.pageNum)
-            console.log(`[PDF解析] 合并到现有比赛: ${competitionKey}, 新增 ${newResults.length}人`)
           } else {
             competitionResultsMap.set(competitionKey, {
               results: [...results],
@@ -617,7 +599,6 @@ export default function ResultsImportPage() {
           pageNum: data.pageNums[0]  // 使用第一页的页码
         })
         totalAthletes += data.results.length
-        console.log(`[PDF解析] 最终结果: ${key} - ${data.results.length}人 (页${data.pageNums.join(',')})`)
       })
 
       if (competitions.length === 0) {
@@ -669,7 +650,6 @@ export default function ResultsImportPage() {
         }
       }
 
-      console.log(`[PDF解析] 检测到大项类型: ${detectedSportType} (${SPORT_TYPE_NAMES[detectedSportType]})`)
 
       // 保存解析结果
       const pdfData: ParsedPdfData = {
@@ -683,19 +663,6 @@ export default function ResultsImportPage() {
       setAlpineCompetitions(competitions)
       setExpandedGroups(new Set([0]))  // 默认展开第一组
       setUploadProgress(100)
-
-      // 调试日志 - 追踪解析结果
-      console.log('[PDF解析调试]', {
-        competitionsCount: competitions.length,
-        totalAthletes,
-        stationName,
-        competitionDetails: competitions.map(c => ({
-          ageGroup: c.ageGroup,
-          gender: c.gender,
-          discipline: c.discipline,
-          resultsCount: c.results.length
-        }))
-      })
 
       setCurrentStep('review')
 
@@ -770,7 +737,6 @@ export default function ResultsImportPage() {
         }
       }
 
-      console.log('[数据存储] 已保存', savedCount, '场比赛到 localStorage')
 
       showToast(`成功解析 ${stationName} ${competitions.length} 场比赛，共 ${totalAthletes} 名运动员，已保存到本地`, 'success')
     } catch (err) {
