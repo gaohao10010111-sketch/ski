@@ -1,10 +1,11 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import { Search, User, Trophy, Medal, TrendingUp, Filter, Download, Loader2, AlertCircle, RefreshCw, Database } from 'lucide-react'
 import { useToast } from '@/components/Toast'
 import { athletesApi, statsApi, type Athlete, type StatsOverview } from '@/lib/api'
 import { getPointsRanking, getStatsOverview, getCompetitions, type CompetitionInfo } from '@/lib/resultsStorage'
+import { latestResults } from '@/data/latestResults'
 import Link from 'next/link'
 
 // 项目类型映射
@@ -42,6 +43,72 @@ const localSportTypeMapping: Record<string, string> = {
   'snowboard-parallel': 'SNOWBOARD_PARALLEL',
   'freestyle-slopestyle': 'FREESTYLE_SLOPESTYLE_BIGAIR',
 }
+
+// 从静态数据提取运动员列表（模块级别，确保在导入时就执行）
+function buildStaticAthletesList(): Athlete[] {
+  const athleteMap = new Map<string, {
+    name: string
+    team: string
+    sportType: string
+    totalPoints: number
+    bestRank: number
+    competitions: number
+    gender: 'MALE' | 'FEMALE'
+  }>()
+
+  for (const competition of latestResults.competitions) {
+    const sportType = localSportTypeMapping[competition.sportType] || 'SNOWBOARD_SLOPESTYLE_BIGAIR'
+
+    for (const event of competition.events) {
+      const gender = event.gender.includes('女') ? 'FEMALE' as const : 'MALE' as const
+
+      for (const athlete of event.athletes) {
+        const key = `${athlete.name}-${athlete.team}`
+        const existing = athleteMap.get(key)
+
+        if (existing) {
+          existing.totalPoints += athlete.points || 0
+          existing.bestRank = Math.min(existing.bestRank, athlete.rank)
+          existing.competitions++
+        } else {
+          athleteMap.set(key, {
+            name: athlete.name,
+            team: athlete.team,
+            sportType,
+            totalPoints: athlete.points || 0,
+            bestRank: athlete.rank,
+            competitions: 1,
+            gender
+          })
+        }
+      }
+    }
+  }
+
+  // 转换为 Athlete[] 并按积分排序
+  const athletes = Array.from(athleteMap.values())
+    .sort((a, b) => b.totalPoints - a.totalPoints)
+    .map((a, index): Athlete => ({
+      id: `static-${index}`,
+      name: a.name,
+      gender: a.gender,
+      sportType: a.sportType,
+      status: 'ACTIVE' as const,
+      province: a.team,
+      club: null,
+      currentPoints: a.totalPoints,
+      currentRank: index + 1,
+      uSeriesGroup: null,
+      birthDate: '2010-01-01',
+      nationality: 'CHN',
+      fisCode: '',
+    }))
+
+  return athletes
+}
+
+// 预先构建静态运动员列表（在模块加载时执行）
+const STATIC_ATHLETES = buildStaticAthletesList()
 
 export default function AthletesPage() {
   const [searchTerm, setSearchTerm] = useState('')
@@ -117,7 +184,7 @@ export default function AthletesPage() {
     setIsLoading(true)
     setError(null)
 
-    // 首先尝试从本地获取数据
+    // 首先尝试从 localStorage 获取数据
     const localAthletes = fetchLocalAthletes()
     if (localAthletes.length > 0) {
       // 分页
@@ -133,7 +200,35 @@ export default function AthletesPage() {
       return
     }
 
-    // 如果没有本地数据，使用API
+    // 如果没有 localStorage 数据，使用预构建的静态数据
+    if (STATIC_ATHLETES.length > 0) {
+      // 筛选
+      let filtered = STATIC_ATHLETES
+      if (selectedSportType !== 'all') {
+        filtered = filtered.filter(a => a.sportType === selectedSportType)
+      }
+      if (searchTerm) {
+        const term = searchTerm.toLowerCase()
+        filtered = filtered.filter(a =>
+          a.name.toLowerCase().includes(term) ||
+          (a.province && a.province.toLowerCase().includes(term))
+        )
+      }
+
+      // 分页
+      const start = (page - 1) * pageSize
+      const end = start + pageSize
+      const pagedAthletes = filtered.slice(start, end)
+
+      setAthletes(pagedAthletes)
+      setTotal(filtered.length)
+      setHasLocalData(true)
+      setDataSource('local')
+      setIsLoading(false)
+      return
+    }
+
+    // 如果都没有数据，尝试 API（静态站点一般不会走到这里）
     try {
       const params: Record<string, unknown> = {
         page,
@@ -143,16 +238,21 @@ export default function AthletesPage() {
       }
 
       const response = await athletesApi.list(params)
-      if (response.success && response.data) {
+      if (response.success && response.data && Array.isArray(response.data)) {
         setAthletes(response.data)
         setTotal(response.meta?.total || response.data.length)
         setDataSource('api')
         setHasLocalData(false)
       } else {
-        setError(response.error?.message || '获取数据失败')
+        setAthletes([])
+        setTotal(0)
+        setHasLocalData(false)
+        setDataSource('api')
       }
-    } catch (err) {
-      setError('网络错误，请稍后重试')
+    } catch {
+      setAthletes([])
+      setTotal(0)
+      setHasLocalData(false)
     } finally {
       setIsLoading(false)
     }
@@ -160,14 +260,14 @@ export default function AthletesPage() {
 
   // 获取统计数据
   const fetchStats = useCallback(async () => {
-    // 首先尝试从本地获取统计
+    // 首先尝试从 localStorage 获取统计
     if (typeof window !== 'undefined') {
       const localStats = getStatsOverview()
       if (localStats.totalCompetitions > 0 || localStats.totalAthletes > 0) {
         setStats({
           overview: {
             totalAthletes: localStats.totalAthletes,
-            activeAthletes: localStats.totalAthletes, // 假设所有本地导入的运动员都是活跃的
+            activeAthletes: localStats.totalAthletes,
             totalCompetitions: localStats.totalCompetitions,
             completedCompetitions: localStats.totalCompetitions,
             upcomingCompetitions: 0,
@@ -181,13 +281,31 @@ export default function AthletesPage() {
       }
     }
 
-    // 如果没有本地数据，使用API
+    // 使用静态数据统计
+    if (STATIC_ATHLETES.length > 0) {
+      setStats({
+        overview: {
+          totalAthletes: STATIC_ATHLETES.length,
+          activeAthletes: STATIC_ATHLETES.length,
+          totalCompetitions: latestResults.competitions.length,
+          completedCompetitions: latestResults.competitions.filter(c => c.status === 'completed').length,
+          upcomingCompetitions: latestResults.competitions.filter(c => c.status === 'upcoming').length,
+          currentSeason: '2024-2025',
+        },
+        athletesBySport: [],
+        recentCompetitions: [],
+        topAthletes: [],
+      } as StatsOverview)
+      return
+    }
+
+    // 如果都没有，尝试 API
     try {
       const response = await statsApi.overview()
       if (response.success && response.data) {
         setStats(response.data)
       }
-    } catch (err) {
+    } catch {
     }
   }, [])
 

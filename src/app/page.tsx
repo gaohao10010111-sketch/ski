@@ -278,29 +278,43 @@ export default function HomePage() {
     color: item.color || highlightFallbackColors[index % highlightFallbackColors.length]
   }))
 
-  // 从API数据生成统计卡片
+  // 从本地数据计算统计信息（作为API数据的fallback）
+  const localTotalAthletes = (() => {
+    const athleteSet = new Set<string>()
+    latestResults.competitions.forEach(comp => {
+      comp.events.forEach(event => {
+        event.athletes.forEach(a => athleteSet.add(a.name))
+      })
+    })
+    return athleteSet.size
+  })()
+
+  const localTotalCompetitions = latestResults.competitions.length
+  const localCompletedCompetitions = latestResults.competitions.filter(c => c.status === 'completed').length
+
+  // 从API数据生成统计卡片，使用本地数据作为fallback
   const statsCards = [
     {
-      label: t.home?.stats?.disciplines?.label || '注册运动员',
-      value: statsData?.overview?.totalAthletes?.toLocaleString() || '0',
-      description: `活跃 ${statsData?.overview?.activeAthletes || 0} 人`,
+      label: t.home?.stats?.disciplines?.label || '参赛运动员',
+      value: statsData?.overview?.totalAthletes?.toLocaleString() || localTotalAthletes.toString(),
+      description: `来自 ${recommendationStats.totalClubs} 个俱乐部`,
       icon: Users
     },
     {
       label: t.home?.stats?.pointsRules?.label || '赛事总数',
-      value: statsData?.overview?.totalCompetitions?.toString() || '0',
-      description: `已完成 ${statsData?.overview?.completedCompetitions || 0} 场`,
+      value: statsData?.overview?.totalCompetitions?.toString() || localTotalCompetitions.toString(),
+      description: `已完成 ${statsData?.overview?.completedCompetitions || localCompletedCompetitions} 场`,
       icon: Trophy
     },
     {
-      label: t.home?.stats?.updateCycle?.label || '即将举办',
-      value: statsData?.overview?.upcomingCompetitions?.toString() || '0',
-      description: '场赛事',
-      icon: Clock
+      label: t.home?.stats?.updateCycle?.label || '认证教练',
+      value: statsData?.overview?.upcomingCompetitions?.toString() || recommendationStats.totalCoaches.toString(),
+      description: `累计学员 ${recommendationStats.totalStudents}+`,
+      icon: GraduationCap
     },
     {
       label: t.home?.stats?.users?.label || '当前赛季',
-      value: statsData?.overview?.currentSeason || '2024-25',
+      value: statsData?.overview?.currentSeason || '2025-26',
       description: '赛季进行中',
       icon: Award
     }

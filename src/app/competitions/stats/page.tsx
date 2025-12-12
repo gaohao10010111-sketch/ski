@@ -25,6 +25,62 @@ import {
   Wind
 } from 'lucide-react'
 import { statsApi, rankingsApi, type StatsOverview, type RankingItem } from '@/lib/api'
+import { latestResults } from '@/data/latestResults'
+
+// 从本地数据计算统计信息
+const calculateLocalStats = (): StatsOverview => {
+  // 收集所有运动员（去重）
+  const allAthletes = new Set<string>()
+  const athletesBySport: Record<string, Set<string>> = {
+    'ALPINE_SKI': new Set(),
+    'SNOWBOARD_SLOPESTYLE_BIGAIR': new Set(),
+    'SNOWBOARD_PARALLEL': new Set(),
+    'FREESTYLE_SLOPESTYLE_BIGAIR': new Set()
+  }
+
+  latestResults.competitions.forEach(comp => {
+    const sportKey = comp.sportType === 'alpine' ? 'ALPINE_SKI' :
+                     comp.sportType === 'snowboard-slopestyle' ? 'SNOWBOARD_SLOPESTYLE_BIGAIR' :
+                     comp.sportType === 'snowboard-parallel' ? 'SNOWBOARD_PARALLEL' :
+                     'FREESTYLE_SLOPESTYLE_BIGAIR'
+    comp.events.forEach(event => {
+      event.athletes.forEach(athlete => {
+        allAthletes.add(athlete.name)
+        athletesBySport[sportKey]?.add(athlete.name)
+      })
+    })
+  })
+
+  const completedCount = latestResults.competitions.filter(c => c.status === 'completed').length
+
+  return {
+    overview: {
+      totalAthletes: allAthletes.size,
+      activeAthletes: allAthletes.size,
+      totalCompetitions: latestResults.competitions.length,
+      completedCompetitions: completedCount,
+      upcomingCompetitions: latestResults.competitions.length - completedCount,
+      currentSeason: '2025-2026'
+    },
+    athletesBySport: Object.entries(athletesBySport).map(([sportType, athletes]) => ({
+      sportType,
+      count: athletes.size
+    })).filter(item => item.count > 0),
+    recentCompetitions: latestResults.competitions.slice(0, 5).map((comp, index) => ({
+      id: `local-${index}`,
+      name: comp.competition,
+      sportType: comp.sportType === 'alpine' ? 'ALPINE_SKI' :
+                 comp.sportType === 'snowboard-slopestyle' ? 'SNOWBOARD_SLOPESTYLE_BIGAIR' :
+                 comp.sportType === 'snowboard-parallel' ? 'SNOWBOARD_PARALLEL' :
+                 'FREESTYLE_SLOPESTYLE_BIGAIR',
+      date: comp.date,
+      status: comp.status === 'completed' ? 'COMPLETED' :
+              comp.status === 'ongoing' ? 'ONGOING' : 'UPCOMING',
+      participantCount: comp.events.reduce((sum, e) => sum + e.athletes.length, 0)
+    })),
+    topAthletes: []
+  }
+}
 
 // 运动类型配置
 const sportTypeConfig: Record<string, { label: string; icon: React.ComponentType<{ className?: string }>; color: string }> = {
@@ -58,14 +114,17 @@ export default function CompetitionStatsPage() {
       if (statsResponse.success && statsResponse.data) {
         setStatsData(statsResponse.data)
       } else {
-        setError(statsResponse.error?.message || '获取统计数据失败')
+        // API返回失败，使用本地数据
+        setStatsData(calculateLocalStats())
       }
 
       if (rankingsResponse.success && rankingsResponse.data) {
         setTopAthletes(rankingsResponse.data)
       }
     } catch (err) {
-      setError('网络错误，请稍后重试')
+      // 网络错误，使用本地数据回退
+      setStatsData(calculateLocalStats())
+      setTopAthletes([])
     } finally {
       setIsLoading(false)
     }

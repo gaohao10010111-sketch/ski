@@ -27,6 +27,29 @@ import { useToast } from '@/components/Toast'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { competitionsApi, statsApi, type Competition, type StatsOverview } from '@/lib/api'
+import { latestResults } from '@/data/latestResults'
+
+// 将本地数据转换为Competition格式
+const localCompetitions: Competition[] = latestResults.competitions.map((comp, index) => ({
+  id: `local-${index}`,
+  name: comp.competition,
+  sportType: comp.sportType === 'alpine' ? 'ALPINE_SKI' :
+             comp.sportType === 'snowboard-slopestyle' ? 'SNOWBOARD_SLOPESTYLE_BIGAIR' :
+             comp.sportType === 'snowboard-parallel' ? 'SNOWBOARD_PARALLEL' :
+             'FREESTYLE_SLOPESTYLE_BIGAIR',
+  discipline: null,
+  location: comp.location,
+  venue: null,
+  startDate: comp.date,
+  endDate: comp.endDate,
+  format: 'U系列',
+  status: comp.status === 'completed' ? 'COMPLETED' :
+          comp.status === 'ongoing' ? 'ONGOING' : 'UPCOMING',
+  participantCount: comp.events.reduce((sum, e) => sum + e.athletes.length, 0),
+  organizer: '中国滑雪协会',
+  raceLevel: 'A',
+  pointsTier: 'TIER_360',
+}))
 
 // 项目类型映射
 const sportTypeLabels: Record<string, string> = {
@@ -93,7 +116,7 @@ export default function CompetitionsPage() {
       }
 
       const response = await competitionsApi.list(params)
-      if (response.success && response.data) {
+      if (response.success && response.data && response.data.length > 0) {
         // 前端搜索过滤
         let filtered = response.data
         if (searchTerm) {
@@ -105,14 +128,66 @@ export default function CompetitionsPage() {
         setCompetitions(filtered)
         setTotal(response.meta?.total || filtered.length)
       } else {
-        setError(response.error?.message || '获取数据失败')
+        // API无数据时使用本地数据
+        let filtered = localCompetitions
+        // 项目筛选
+        if (selectedSportType !== 'all') {
+          filtered = filtered.filter(c => c.sportType === selectedSportType)
+        }
+        // 状态筛选
+        if (selectedStatus !== 'all') {
+          filtered = filtered.filter(c => c.status === selectedStatus)
+        }
+        // 搜索过滤
+        if (searchTerm) {
+          const term = searchTerm.toLowerCase()
+          filtered = filtered.filter(
+            c => c.name.toLowerCase().includes(term) || c.location.toLowerCase().includes(term)
+          )
+        }
+        setCompetitions(filtered)
+        setTotal(filtered.length)
       }
     } catch (err) {
-      setError('网络错误，请稍后重试')
+      // API错误时使用本地数据
+      let filtered = localCompetitions
+      // 项目筛选
+      if (selectedSportType !== 'all') {
+        filtered = filtered.filter(c => c.sportType === selectedSportType)
+      }
+      // 状态筛选
+      if (selectedStatus !== 'all') {
+        filtered = filtered.filter(c => c.status === selectedStatus)
+      }
+      // 搜索过滤
+      if (searchTerm) {
+        const term = searchTerm.toLowerCase()
+        filtered = filtered.filter(
+          c => c.name.toLowerCase().includes(term) || c.location.toLowerCase().includes(term)
+        )
+      }
+      setCompetitions(filtered)
+      setTotal(filtered.length)
     } finally {
       setIsLoading(false)
     }
   }, [page, pageSize, selectedSportType, selectedStatus, searchTerm])
+
+  // 计算本地统计数据
+  const localStats = {
+    totalCompetitions: localCompetitions.length,
+    totalAthletes: (() => {
+      const athleteSet = new Set<string>()
+      latestResults.competitions.forEach(comp => {
+        comp.events.forEach(event => {
+          event.athletes.forEach(a => athleteSet.add(a.name))
+        })
+      })
+      return athleteSet.size
+    })(),
+    completedCompetitions: localCompetitions.filter(c => c.status === 'COMPLETED').length,
+    upcomingCompetitions: localCompetitions.filter(c => c.status === 'UPCOMING').length,
+  }
 
   // 获取统计数据
   const fetchStats = useCallback(async () => {
@@ -122,6 +197,7 @@ export default function CompetitionsPage() {
         setStats(response.data)
       }
     } catch (err) {
+      // API失败时不设置stats，使用本地数据
     }
   }, [])
 
@@ -266,28 +342,28 @@ export default function CompetitionsPage() {
         <div className="card text-center">
           <Calendar className="h-8 w-8 text-ski-blue mx-auto mb-2" />
           <div className="text-2xl font-bold text-ski-navy">
-            {stats?.overview.totalCompetitions ?? '-'}
+            {stats?.overview.totalCompetitions ?? localStats.totalCompetitions}
           </div>
           <div className="text-sm text-gray-600">本季比赛</div>
         </div>
         <div className="card text-center">
           <Users className="h-8 w-8 text-green-600 mx-auto mb-2" />
           <div className="text-2xl font-bold text-ski-navy">
-            {stats?.overview.totalAthletes ?? '-'}
+            {stats?.overview.totalAthletes ?? localStats.totalAthletes}
           </div>
           <div className="text-sm text-gray-600">注册运动员</div>
         </div>
         <div className="card text-center">
           <Trophy className="h-8 w-8 text-yellow-600 mx-auto mb-2" />
           <div className="text-2xl font-bold text-ski-navy">
-            {stats?.overview.completedCompetitions ?? '-'}
+            {stats?.overview.completedCompetitions ?? localStats.completedCompetitions}
           </div>
           <div className="text-sm text-gray-600">已完赛事</div>
         </div>
         <div className="card text-center">
           <Clock className="h-8 w-8 text-purple-600 mx-auto mb-2" />
           <div className="text-2xl font-bold text-ski-navy">
-            {stats?.overview.upcomingCompetitions ?? '-'}
+            {stats?.overview.upcomingCompetitions ?? localStats.upcomingCompetitions}
           </div>
           <div className="text-sm text-gray-600">即将开始</div>
         </div>
