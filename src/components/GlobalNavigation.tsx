@@ -18,7 +18,8 @@ import {
   Info,
   Calendar,
   Home,
-  Search
+  Search,
+  Briefcase
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
@@ -104,17 +105,24 @@ export default function GlobalNavigation() {
       href: '/about',
       icon: Info
     },
-    {
-      key: 'docs',
-      name: t.navigation?.docs || 'Docs',
-      href: '/rules',
-      icon: FileText
-    },
+    // 文档部分暂时隐藏，待文档体系确定后上线
+    // {
+    //   key: 'docs',
+    //   name: t.navigation?.docs || 'Docs',
+    //   href: '/rules',
+    //   icon: FileText
+    // },
     {
       key: 'profile',
       name: t.navigation?.submenus?.myProfile || t.common?.profile || 'Profile',
       href: '/profile',
       icon: User
+    },
+    {
+      key: 'cooperation',
+      name: '合作咨询',
+      href: '/cooperation',
+      icon: Briefcase
     }
   ];
 
@@ -143,11 +151,12 @@ export default function GlobalNavigation() {
       icon: Menu,
       children: [
         { key: 'points-rankings', name: t.navigation?.submenus?.pointsRankings || 'Rankings', href: '/points/rankings' },
-        { key: 'points-trends', name: t.navigation?.submenus?.pointsTrends || 'Trends', href: '/points/trends' },
-        { key: 'results-import', name: t.navigation?.submenus?.resultsImport || 'Import Results', href: '/results-import' },
-        { key: 'coaches', name: '优秀教练', href: '/coaches' },
-        { key: 'venues', name: '优质雪场', href: '/venues' },
-        { key: 'clubs', name: '优质俱乐部', href: '/clubs' }
+        { key: 'points-trends', name: t.navigation?.submenus?.pointsTrends || 'Trends', href: '/points/trends' }
+        // 以下项目暂时隐藏，待平台稳定后上线
+        // { key: 'results-import', name: t.navigation?.submenus?.resultsImport || 'Import Results', href: '/results-import' },
+        // { key: 'coaches', name: '优秀教练', href: '/coaches' },
+        // { key: 'venues', name: '优质雪场', href: '/venues' },
+        // { key: 'clubs', name: '优质俱乐部', href: '/clubs' }
       ]
     }
   ];

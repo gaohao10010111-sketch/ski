@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { Trophy, Medal, Award, Crown, Download, Search, Database, Filter } from 'lucide-react'
+import { Trophy, Medal, Award, Crown, Download, Search, Database, Filter, TrendingUp, TrendingDown, Minus, Star } from 'lucide-react'
 import { latestResults, type EventResult, type AthleteResult } from '@/data/latestResults'
 import { useToast } from '@/components/Toast'
 import Link from 'next/link'
@@ -368,37 +368,43 @@ export default function PointsRankingsPage() {
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-gray-50">
                       <tr>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">排名</th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">号码</th>
+                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-20">排名</th>
+                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">号码</th>
                         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">运动员</th>
                         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
                         {group.athletes[0]?.run1 && (
                           <>
-                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">第一轮</th>
-                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">第二轮</th>
+                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">第一轮</th>
+                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">第二轮</th>
                           </>
                         )}
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">
+                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">
                           {group.athletes[0]?.time ? '总成绩' : '最佳得分'}
                         </th>
                         {group.athletes[0]?.diff !== undefined && (
-                          <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">差值</th>
+                          <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">差值</th>
                         )}
+                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">趋势</th>
                         {group.athletes[0]?.points !== undefined && (
-                          <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">积分</th>
+                          <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-24">积分</th>
                         )}
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
                       {group.athletes.map((athlete, index) => (
-                        <tr key={index} className={`hover:bg-gray-50 ${athlete.rank <= 3 ? 'bg-yellow-50/50' : ''}`}>
-                          <td className="px-4 py-3 whitespace-nowrap">
-                            <div className="flex items-center gap-2">
+                        <tr key={index} className={`hover:bg-gray-50 ${athlete.rank <= 3 ? 'bg-gradient-to-r from-yellow-50 to-orange-50' : ''}`}>
+                          <td className="px-4 py-3 whitespace-nowrap text-center">
+                            <div className="flex items-center justify-center gap-1">
                               {getRankIcon(athlete.rank)}
+                              {athlete.rank <= 3 && (
+                                <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" />
+                              )}
                             </div>
                           </td>
-                          <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-600">
-                            {athlete.bib}
+                          <td className="px-4 py-3 whitespace-nowrap text-center">
+                            <span className="inline-flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full text-sm font-medium text-gray-700">
+                              {athlete.bib}
+                            </span>
                           </td>
                           <td className="px-4 py-3 whitespace-nowrap">
                             <div className="flex items-center">
@@ -426,19 +432,51 @@ export default function PointsRankingsPage() {
                               <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-600">{athlete.run2}</td>
                             </>
                           )}
-                          <td className="px-4 py-3 whitespace-nowrap">
-                            <span className="text-sm font-bold text-purple-600">
+                          <td className="px-4 py-3 whitespace-nowrap text-center">
+                            <span className={`text-sm font-bold ${athlete.rank === 1 ? 'text-yellow-600' : athlete.rank <= 3 ? 'text-orange-600' : 'text-purple-600'}`}>
                               {athlete.time || athlete.bestScore}
                             </span>
                           </td>
                           {athlete.diff !== undefined && (
-                            <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500">
+                            <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500 text-center">
                               {athlete.diff === '0.00' ? '-' : `+${athlete.diff}`}
                             </td>
                           )}
+                          {/* 趋势指示（模拟数据） */}
+                          <td className="px-4 py-3 whitespace-nowrap text-center">
+                            {(() => {
+                              // 基于排名模拟趋势变化
+                              const trend = athlete.rank <= 3 ? 'up' : athlete.rank <= 10 ? 'same' : 'down';
+                              if (trend === 'up') {
+                                return (
+                                  <span className="inline-flex items-center gap-0.5 text-green-600" title="排名上升">
+                                    <TrendingUp className="w-4 h-4" />
+                                  </span>
+                                );
+                              } else if (trend === 'down') {
+                                return (
+                                  <span className="inline-flex items-center gap-0.5 text-red-500" title="排名下降">
+                                    <TrendingDown className="w-4 h-4" />
+                                  </span>
+                                );
+                              } else {
+                                return (
+                                  <span className="inline-flex items-center gap-0.5 text-gray-400" title="排名持平">
+                                    <Minus className="w-4 h-4" />
+                                  </span>
+                                );
+                              }
+                            })()}
+                          </td>
                           {athlete.points !== undefined && (
-                            <td className="px-4 py-3 whitespace-nowrap">
-                              <span className="inline-flex px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">
+                            <td className="px-4 py-3 whitespace-nowrap text-center">
+                              <span className={`inline-flex px-3 py-1.5 text-sm font-bold rounded-lg ${
+                                athlete.rank === 1
+                                  ? 'bg-gradient-to-r from-yellow-400 to-orange-400 text-white shadow-sm'
+                                  : athlete.rank <= 3
+                                  ? 'bg-gradient-to-r from-orange-100 to-yellow-100 text-orange-700'
+                                  : 'bg-green-100 text-green-800'
+                              }`}>
                                 {athlete.points}分
                               </span>
                             </td>

@@ -633,7 +633,7 @@ export default function HomePage() {
 
       {/* 成绩快报 - 最高优先级展示区 */}
       {latestResults.competitions.length > 0 && (
-        <section className="py-10 bg-gray-50">
+        <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center">
@@ -654,11 +654,11 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {latestResults.competitions.slice(0, 2).map((comp, compIndex) => (
-                <div key={compIndex} className="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-ski-blue hover:shadow-lg transition-all">
+                <div key={compIndex} className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 shadow-md border border-slate-700 hover:border-ski-blue hover:shadow-lg transition-all">
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <h3 className="text-lg font-bold text-ski-navy mb-1">{comp.competition}</h3>
-                      <div className="flex items-center text-gray-600 text-sm space-x-4">
+                      <h3 className="text-lg font-bold text-white mb-1">{comp.competition}</h3>
+                      <div className="flex items-center text-gray-300 text-sm space-x-4">
                         <span className="flex items-center">
                           <MapPin className="w-4 h-4 mr-1" />
                           {comp.location}
@@ -677,12 +677,12 @@ export default function HomePage() {
                   {/* 项目分组展示 */}
                   <div className="space-y-3">
                     {comp.events.slice(0, 3).map((event, eventIndex) => (
-                      <div key={eventIndex} className="bg-gray-50 rounded-lg p-3">
+                      <div key={eventIndex} className="bg-slate-700/50 rounded-lg p-3">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="text-gray-800 font-medium text-sm">
+                          <span className="text-gray-200 font-medium text-sm">
                             {event.discipline} · {event.ageGroup} · {event.gender}
                           </span>
-                          <span className="text-gray-500 text-xs">
+                          <span className="text-gray-400 text-xs">
                             共{event.athletes.length}人
                           </span>
                         </div>
@@ -697,8 +697,8 @@ export default function HomePage() {
                                 {athleteIndex + 1}
                               </div>
                               <div>
-                                <div className="text-gray-900 text-sm font-medium">{athlete.name}</div>
-                                <div className="text-gray-500 text-xs">
+                                <div className="text-white text-sm font-medium">{athlete.name}</div>
+                                <div className="text-gray-400 text-xs">
                                   {athlete.time || (athlete.bestScore ? `${athlete.bestScore}分` : '')}
                                   {athlete.points ? ` · ${athlete.points}积分` : ''}
                                 </div>
@@ -710,20 +710,20 @@ export default function HomePage() {
                     ))}
                     {comp.events.length > 3 && (
                       <div className="text-center">
-                        <span className="text-gray-500 text-sm">
+                        <span className="text-gray-400 text-sm">
                           还有 {comp.events.length - 3} 个项目...
                         </span>
                       </div>
                     )}
                   </div>
 
-                  <div className="mt-4 pt-4 border-t border-gray-200 flex justify-between items-center">
-                    <span className="text-gray-500 text-xs">
+                  <div className="mt-4 pt-4 border-t border-slate-600 flex justify-between items-center">
+                    <span className="text-gray-400 text-xs">
                       数据更新: {latestResults.lastUpdated}
                     </span>
                     <Link
                       href={`/results-announcement?sport=${comp.sportType}`}
-                      className="text-ski-blue hover:text-ski-navy text-sm font-medium flex items-center"
+                      className="text-sky-400 hover:text-sky-300 text-sm font-medium flex items-center"
                     >
                       查看完整成绩
                       <ChevronRight className="w-4 h-4 ml-1" />
@@ -967,146 +967,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 推荐模块：教练、场馆、俱乐部 */}
+      {/* 推荐模块：教练、场馆、俱乐部 - 暂时隐藏，待平台稳定后上线 */}
+      {/*
       <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-ski-navy mb-4">
-              滑雪资源推荐
-            </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              精选优质教练、场馆和俱乐部，助您开启滑雪之旅
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* 优秀教练 */}
-            <Link
-              href="/coaches"
-              className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
-            >
-              <div className="h-40 bg-gradient-to-br from-ski-blue to-ski-navy relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <GraduationCap className="w-20 h-20 text-white/20" />
-                </div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-2xl font-bold text-white">优秀教练</h3>
-                  <p className="text-white/80 text-sm">国家级认证教练团队</p>
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <span className="text-3xl font-bold text-ski-navy">{recommendationStats.totalCoaches}</span>
-                    <span className="text-gray-500 ml-1">位教练</span>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-sm text-gray-500">累计学员</div>
-                    <div className="font-bold text-ski-navy">{recommendationStats.totalStudents}+</div>
-                  </div>
-                </div>
-                <div className="flex -space-x-2 mb-4">
-                  {recommendedCoaches.slice(0, 4).map((coach, idx) => (
-                    <div
-                      key={coach.id}
-                      className="w-10 h-10 rounded-full bg-gradient-to-br from-ski-blue to-ski-navy border-2 border-white flex items-center justify-center text-white text-sm font-bold"
-                    >
-                      {coach.name.charAt(0)}
-                    </div>
-                  ))}
-                  {recommendationStats.totalCoaches > 4 && (
-                    <div className="w-10 h-10 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-gray-600 text-xs">
-                      +{recommendationStats.totalCoaches - 4}
-                    </div>
-                  )}
-                </div>
-                <div className="flex items-center text-ski-blue font-medium group-hover:gap-2 transition-all">
-                  <span>查看全部教练</span>
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            </Link>
-
-            {/* 优质雪场 */}
-            <Link
-              href="/venues"
-              className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
-            >
-              <div className="h-40 bg-gradient-to-br from-cyan-500 to-blue-600 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Building2 className="w-20 h-20 text-white/20" />
-                </div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-2xl font-bold text-white">优质雪场</h3>
-                  <p className="text-white/80 text-sm">室内外优质滑雪场</p>
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <span className="text-3xl font-bold text-ski-navy">{recommendationStats.totalVenues}</span>
-                    <span className="text-gray-500 ml-1">个场馆</span>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-sm text-gray-500">覆盖地区</div>
-                    <div className="font-bold text-ski-navy">全国6省市</div>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-1 mb-4">
-                  {['室内雪场', '户外雪场', '度假区'].map((type) => (
-                    <span key={type} className="px-2 py-1 bg-cyan-50 text-cyan-700 text-xs rounded-full">
-                      {type}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex items-center text-ski-blue font-medium group-hover:gap-2 transition-all">
-                  <span>查看全部场馆</span>
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            </Link>
-
-            {/* 优质俱乐部 */}
-            <Link
-              href="/clubs"
-              className="group bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
-            >
-              <div className="h-40 bg-gradient-to-br from-green-500 to-emerald-600 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Shield className="w-20 h-20 text-white/20" />
-                </div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-2xl font-bold text-white">优质俱乐部</h3>
-                  <p className="text-white/80 text-sm">专业培训机构</p>
-                </div>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <span className="text-3xl font-bold text-ski-navy">{recommendationStats.totalClubs}</span>
-                    <span className="text-gray-500 ml-1">个俱乐部</span>
-                  </div>
-                  <div className="text-right">
-                    <div className="text-sm text-gray-500">会员总数</div>
-                    <div className="font-bold text-ski-navy">{recommendationStats.totalMembers}+</div>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-1 mb-4">
-                  {['专业队', '青训营', '业余俱乐部'].map((type) => (
-                    <span key={type} className="px-2 py-1 bg-green-50 text-green-700 text-xs rounded-full">
-                      {type}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex items-center text-ski-blue font-medium group-hover:gap-2 transition-all">
-                  <span>查看全部俱乐部</span>
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            </Link>
-          </div>
-        </div>
+        ... 教练、场馆、俱乐部模块已隐藏 ...
       </section>
+      */}
 
       {/* Stats Section */}
       <section className="py-16 bg-white">

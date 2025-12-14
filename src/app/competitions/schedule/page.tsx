@@ -19,7 +19,10 @@ import {
   Wind,
   Medal,
   Users,
-  Filter
+  Filter,
+  ArrowUpDown,
+  ArrowUp,
+  ArrowDown
 } from 'lucide-react'
 import { competitionSchedule2025, categoryNames, type Competition } from '@/data/competitionSchedule'
 
@@ -74,10 +77,19 @@ const filterOptions = [
   { value: 'sled', label: '雪车雪橇' }
 ]
 
+// 排序选项
+type SortOrder = 'asc' | 'desc' | 'upcoming';
+const sortOptions: { value: SortOrder; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
+  { value: 'upcoming', label: '即将开始', icon: Calendar },
+  { value: 'asc', label: '时间正序', icon: ArrowUp },
+  { value: 'desc', label: '时间倒序', icon: ArrowDown }
+];
+
 export default function SchedulePage() {
   const [selectedMonth, setSelectedMonth] = useState('all')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [viewMode, setViewMode] = useState<'list' | 'calendar'>('list')
+  const [sortOrder, setSortOrder] = useState<SortOrder>('upcoming')
   const { showToast } = useToast()
 
   // 筛选比赛
@@ -109,10 +121,30 @@ export default function SchedulePage() {
 
   // 按日期排序
   const sortedCompetitions = useMemo(() => {
-    return [...filteredCompetitions].sort(
-      (a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
-    )
-  }, [filteredCompetitions])
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    return [...filteredCompetitions].sort((a, b) => {
+      const dateA = new Date(a.startDate).getTime();
+      const dateB = new Date(b.startDate).getTime();
+
+      if (sortOrder === 'upcoming') {
+        // 即将开始排序：未来的比赛按时间正序，已结束的排在后面
+        const aIsFuture = new Date(a.endDate || a.startDate).getTime() >= today.getTime();
+        const bIsFuture = new Date(b.endDate || b.startDate).getTime() >= today.getTime();
+
+        if (aIsFuture && !bIsFuture) return -1;
+        if (!aIsFuture && bIsFuture) return 1;
+        return dateA - dateB;
+      } else if (sortOrder === 'desc') {
+        // 时间倒序
+        return dateB - dateA;
+      } else {
+        // 时间正序
+        return dateA - dateB;
+      }
+    });
+  }, [filteredCompetitions, sortOrder])
 
   // 统计数据
   const stats = useMemo(() => ({
@@ -246,6 +278,28 @@ export default function SchedulePage() {
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
               ))}
             </select>
+            {/* 排序选择器 */}
+            <div className="flex items-center gap-2">
+              <ArrowUpDown className="w-4 h-4 text-gray-500" />
+              <span className="text-sm text-gray-600">排序:</span>
+            </div>
+            <div className="flex bg-gray-100 rounded-lg p-1">
+              {sortOptions.map(opt => {
+                const Icon = opt.icon;
+                return (
+                  <button
+                    key={opt.value}
+                    onClick={() => setSortOrder(opt.value)}
+                    className={`px-3 py-1 rounded-md text-sm font-medium transition-colors flex items-center gap-1 ${
+                      sortOrder === opt.value ? 'bg-white text-ski-blue shadow-sm' : 'text-gray-600 hover:text-gray-900'
+                    }`}
+                  >
+                    <Icon className="w-3.5 h-3.5" />
+                    {opt.label}
+                  </button>
+                );
+              })}
+            </div>
             <div className="flex bg-gray-100 rounded-lg p-1">
               <button
                 onClick={() => setViewMode('list')}
