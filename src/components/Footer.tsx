@@ -1,15 +1,15 @@
 'use client'
 
 import Link from 'next/link'
-import { Mountain, Github, Mail, Phone } from 'lucide-react'
+import { Mountain } from 'lucide-react'
 
 export default function Footer() {
   return (
     <footer className="bg-ski-navy text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and Description */}
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1 md:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <Mountain className="h-8 w-8 text-primary-400" />
               <span className="text-xl font-bold">中国滑雪青少年积分排名官方平台</span>
@@ -18,28 +18,6 @@ export default function Footer() {
               专业滑雪竞赛数据管理平台，涵盖高山滑雪、自由式滑雪、单板滑雪全项目积分计算、成绩管理、赛事组织等一站式解决方案，
               致力于推动中国滑雪运动的数字化、标准化发展。
             </p>
-            <div className="flex space-x-4 mt-6">
-              <a
-                href="mailto:contact@alpine-ski-points.com"
-                className="text-gray-300 hover:text-primary-400 transition-colors"
-              >
-                <Mail className="h-5 w-5" />
-              </a>
-              <a
-                href="tel:+86-400-123-4567"
-                className="text-gray-300 hover:text-primary-400 transition-colors"
-              >
-                <Phone className="h-5 w-5" />
-              </a>
-              <a
-                href="https://github.com/gaohao10010111-sketch/ski"
-                className="text-gray-300 hover:text-primary-400 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github className="h-5 w-5" />
-              </a>
-            </div>
           </div>
 
           {/* 积分系统 */}
@@ -52,13 +30,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/rules/points" className="text-gray-300 hover:text-primary-400 transition-colors">
-                  积分规则详解
-                </Link>
-              </li>
-              <li>
-                <Link href="/athletes" className="text-gray-300 hover:text-primary-400 transition-colors">
-                  运动员查询
+                <Link href="/results-announcement" className="text-gray-300 hover:text-primary-400 transition-colors">
+                  成绩公告
                 </Link>
               </li>
             </ul>
@@ -78,11 +51,6 @@ export default function Footer() {
                   赛事日程
                 </Link>
               </li>
-              <li>
-                <Link href="/rules" className="text-gray-300 hover:text-primary-400 transition-colors">
-                  规则中心
-                </Link>
-              </li>
             </ul>
           </div>
         </div>
@@ -90,20 +58,14 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
             <div className="text-sm text-gray-300 mb-4 md:mb-0">
-              © 2024 中国滑雪青少年积分排名官方平台. 基于官方标准开发.
+              © 2024-2025 中国滑雪青少年积分排名官方平台. 基于官方标准开发.
             </div>
             <div className="flex flex-wrap gap-6 text-sm">
-              <Link href="/privacy" className="text-gray-300 hover:text-primary-400 transition-colors">
-                隐私政策
-              </Link>
-              <Link href="/terms" className="text-gray-300 hover:text-primary-400 transition-colors">
-                使用条款
-              </Link>
-              <Link href="/rules" className="text-gray-300 hover:text-primary-400 transition-colors">
-                技术规范
-              </Link>
               <Link href="/about" className="text-gray-300 hover:text-primary-400 transition-colors">
-                联系我们
+                关于平台
+              </Link>
+              <Link href="/cooperation" className="text-gray-300 hover:text-primary-400 transition-colors">
+                合作咨询
               </Link>
             </div>
           </div>

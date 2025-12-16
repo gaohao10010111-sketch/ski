@@ -330,15 +330,16 @@ export default function HomePage() {
       iconContainerClass: 'bg-yellow-50',
       iconColor: 'text-yellow-600'
     },
-    {
-      key: 'athleteProfiles',
-      href: '/athletes',
-      icon: Users,
-      title: t.home?.features?.athleteProfiles?.title || '运动员档案',
-      description: t.home?.features?.athleteProfiles?.description || '运动员信息管理和积分历史',
-      iconContainerClass: 'bg-indigo-50',
-      iconColor: 'text-indigo-600'
-    },
+    // 运动员档案暂时隐藏，待数据完善后上线
+    // {
+    //   key: 'athleteProfiles',
+    //   href: '/athletes',
+    //   icon: Users,
+    //   title: t.home?.features?.athleteProfiles?.title || '运动员档案',
+    //   description: t.home?.features?.athleteProfiles?.description || '运动员信息管理和积分历史',
+    //   iconContainerClass: 'bg-indigo-50',
+    //   iconColor: 'text-indigo-600'
+    // },
     {
       key: 'competitionManagement',
       href: '/competitions',
@@ -357,15 +358,16 @@ export default function HomePage() {
       iconContainerClass: 'bg-green-50',
       iconColor: 'text-green-600'
     },
-    {
-      key: 'pointsRules',
-      href: '/rules/points',
-      icon: FileText,
-      title: t.home?.features?.pointsRules?.title || '积分规则',
-      description: t.home?.features?.pointsRules?.description || '查看详细的积分计算规则',
-      iconContainerClass: 'bg-purple-50',
-      iconColor: 'text-purple-600'
-    },
+    // 积分规则暂时隐藏，待规则确定后上线
+    // {
+    //   key: 'pointsRules',
+    //   href: '/rules/points',
+    //   icon: FileText,
+    //   title: t.home?.features?.pointsRules?.title || '积分规则',
+    //   description: t.home?.features?.pointsRules?.description || '查看详细的积分计算规则',
+    //   iconContainerClass: 'bg-purple-50',
+    //   iconColor: 'text-purple-600'
+    // },
     {
       key: 'about',
       href: '/about',
@@ -453,8 +455,8 @@ export default function HomePage() {
                   ))}
                 </div>
 
-                {/* 平台介绍引导 */}
-                {isClient && !isAuthenticated && (
+                {/* 平台介绍引导 - 注册按钮暂时隐藏 */}
+                {isClient && (
                   <div className="mt-8">
                     <div className="flex flex-col sm:flex-row gap-4">
                       <Link
@@ -465,6 +467,8 @@ export default function HomePage() {
                         <BarChart3 className="h-5 w-5 mr-2" />
                         {t.home?.hero?.exploreDisciplines || '查看积分排名'}
                       </Link>
+                      {/* 注册按钮暂时隐藏 */}
+                      {/*
                       <Link
                         href="/register"
                         className="inline-flex items-center justify-center px-6 py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-ski-navy transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
@@ -473,6 +477,7 @@ export default function HomePage() {
                         <UserPlus className="h-5 w-5 mr-2" />
                         {t.home?.hero?.freeRegister || 'Free Registration'}
                       </Link>
+                      */}
                     </div>
 
                     <p className="text-gray-300 text-sm mt-4">
@@ -974,7 +979,8 @@ export default function HomePage() {
       </section>
       */}
 
-      {/* Stats Section */}
+      {/* Stats Section - 暂时隐藏，数据待准确后上线 */}
+      {/*
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
@@ -1015,6 +1021,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Features Section */}
 

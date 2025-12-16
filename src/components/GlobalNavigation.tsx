@@ -112,12 +112,13 @@ export default function GlobalNavigation() {
     //   href: '/rules',
     //   icon: FileText
     // },
-    {
-      key: 'profile',
-      name: t.navigation?.submenus?.myProfile || t.common?.profile || 'Profile',
-      href: '/profile',
-      icon: User
-    },
+    // 个人中心暂时隐藏，待用户系统完善后上线
+    // {
+    //   key: 'profile',
+    //   name: t.navigation?.submenus?.myProfile || t.common?.profile || 'Profile',
+    //   href: '/profile',
+    //   icon: User
+    // },
     {
       key: 'cooperation',
       name: '合作咨询',
@@ -143,7 +144,8 @@ export default function GlobalNavigation() {
     { key: 'home', name: t.common?.home || 'Home', href: '/', icon: Home },
     { key: 'schedule', name: t.navigation?.submenus?.eventsSchedule || 'Schedule', href: '/competitions/schedule', icon: Calendar },
     { key: 'live-results', name: t.navigation?.submenus?.resultsLive || 'Live Results', href: '/competitions', icon: Trophy },
-    { key: 'athletes', name: t.navigation?.athletes || 'Athletes', href: '/athletes', icon: Users },
+    // 运动员页面暂时隐藏，待数据完善后上线
+    // { key: 'athletes', name: t.navigation?.athletes || 'Athletes', href: '/athletes', icon: Users },
     {
       key: 'more',
       name: t.navigation?.submenus?.moreFeatures || 'More',
@@ -202,6 +204,8 @@ export default function GlobalNavigation() {
                 })}
               </div>
 
+              {/* 登录注册和语言切换暂时隐藏，待用户系统完善后上线 */}
+              {/*
               <div className="flex items-center space-x-2 whitespace-nowrap">
                 <LanguageSwitcher />
                 {isLoading ? (
@@ -263,10 +267,12 @@ export default function GlobalNavigation() {
                   </>
                 )}
               </div>
+              */}
             </div>
 
             <div className="md:hidden flex items-center space-x-1.5">
-              <LanguageSwitcher />
+              {/* 语言切换暂时隐藏 */}
+              {/* <LanguageSwitcher /> */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="text-gray-700 hover:text-ski-blue p-1.5"
@@ -421,6 +427,8 @@ export default function GlobalNavigation() {
               );
             })}
 
+            {/* 用户登录/注册区域暂时隐藏 */}
+            {/*
             <div className="border-t border-gray-200 pt-3 mt-3">
               {user ? (
                 <>
@@ -473,6 +481,7 @@ export default function GlobalNavigation() {
                 </>
               )}
             </div>
+            */}
           </div>
         </div>
       )}
