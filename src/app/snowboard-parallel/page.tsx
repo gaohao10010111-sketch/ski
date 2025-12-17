@@ -10,116 +10,105 @@ import {
 } from 'lucide-react';
 import { getImagePath } from '@/utils/paths';
 import { useTranslation } from '@/contexts/LanguageContext';
-import { getCompetitions, getAllResults, getPointsRanking } from '@/lib/resultsStorage';
+import { resultsBySport } from '@/data/latestResults';
 
-// 定义类型
-interface LatestResult {
-  id: number;
-  event: string;
-  discipline: string;
-  location: string;
-  date: string;
-  status: 'live' | 'completed';
-  winner: string;
-  time: string;
-  participants: number;
-}
-
-interface RankingItem {
-  rank: number;
-  name: string;
-  nation: string;
-  event: string;
-  points: string;
-  change: number;
-  trend: 'up' | 'down' | 'stable';
-}
-
-interface TopAthlete {
-  id: number;
-  name: string;
-  nation: string;
-  discipline: string;
-  points: string;
-  worldRank: number;
-  age: number;
-  wins: number;
-}
+// 获取单板平行项目的真实数据
+const parallelCompetitions = resultsBySport['snowboard-parallel'] || [];
 
 export default function SnowboardParallelPage() {
   const { t, language } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [importedResults, setImportedResults] = useState<LatestResult[]>([]);
-  const [importedRankings, setImportedRankings] = useState<RankingItem[]>([]);
-  const [importedAthletes, setImportedAthletes] = useState<TopAthlete[]>([]);
 
-  // 加载导入的数据
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
+  // 从真实数据生成积分排行榜
+  const generateRankings = () => {
+    const athletePoints: { [key: string]: { name: string; team: string; points: number; events: number } } = {};
 
-    const competitions = getCompetitions();
-    const allResults = getAllResults();
-
-    // 筛选单板平行项目
-    const parallelCompetitions = competitions.filter(c =>
-      c.sportType === 'snowboard-parallel' ||
-      c.discipline.includes('平行') ||
-      c.discipline.includes('PGS') ||
-      c.discipline.includes('PSL')
-    );
-
-    if (parallelCompetitions.length > 0) {
-      // 生成最新成绩
-      const results: LatestResult[] = parallelCompetitions.slice(0, 6).map((comp, idx) => {
-        const compResults = allResults[comp.id];
-        const allAthletes = compResults ? [...compResults.male, ...compResults.female].filter(r => r.status === 'finished') : [];
-        const winner = allAthletes.find(r => r.rank === 1);
-
-        return {
-          id: idx + 1,
-          event: comp.name,
-          discipline: comp.discipline,
-          location: comp.location,
-          date: new Date(comp.date).toLocaleDateString('zh-CN', { month: 'numeric', day: 'numeric' }) + '日',
-          status: 'completed' as const,
-          winner: winner?.name || '-',
-          time: winner?.totalTime || '-',
-          participants: comp.participants
-        };
+    parallelCompetitions.forEach(comp => {
+      comp.events.forEach(event => {
+        event.athletes.forEach(athlete => {
+          const key = athlete.name;
+          if (!athletePoints[key]) {
+            athletePoints[key] = { name: athlete.name, team: athlete.team, points: 0, events: 0 };
+          }
+          const points = athlete.points || (athlete.rank <= 50 ? Math.max(360 - (athlete.rank - 1) * 7, 1) : 0);
+          athletePoints[key].points += points;
+          athletePoints[key].events += 1;
+        });
       });
-      setImportedResults(results);
+    });
 
-      // 生成积分排名
-      const rankingData = getPointsRanking('snowboard-parallel');
-      const rankings: RankingItem[] = rankingData.slice(0, 10).map((athlete, idx) => ({
+    return Object.values(athletePoints)
+      .sort((a, b) => b.points - a.points)
+      .slice(0, 10)
+      .map((a, idx) => ({
         rank: idx + 1,
-        name: athlete.name,
+        name: a.name,
         nation: '中国',
         event: '单板平行',
-        points: athlete.totalPoints.toFixed(2),
+        points: a.points.toString(),
         change: 0,
         trend: 'stable' as const
       }));
-      if (rankings.length > 0) {
-        setImportedRankings(rankings);
-      }
+  };
 
-      // 生成运动员列表
-      const athletes: TopAthlete[] = rankingData.slice(0, 8).map((athlete, idx) => ({
+  const rankings = generateRankings();
+
+  // 从真实数据生成顶尖运动员列表
+  const generateTopAthletes = () => {
+    const athleteData: { [key: string]: { name: string; team: string; points: number; events: number } } = {};
+
+    parallelCompetitions.forEach(comp => {
+      comp.events.forEach(event => {
+        event.athletes.forEach(athlete => {
+          const key = athlete.name;
+          if (!athleteData[key]) {
+            athleteData[key] = { name: athlete.name, team: athlete.team, points: 0, events: 0 };
+          }
+          const points = athlete.points || (athlete.rank <= 50 ? Math.max(360 - (athlete.rank - 1) * 7, 1) : 0);
+          athleteData[key].points += points;
+          athleteData[key].events += 1;
+        });
+      });
+    });
+
+    return Object.values(athleteData)
+      .sort((a, b) => b.points - a.points)
+      .slice(0, 8)
+      .map((a, idx) => ({
         id: idx + 1,
-        name: athlete.name,
+        name: a.name,
         nation: '中国',
-        discipline: '平行项目',
-        points: athlete.totalPoints.toFixed(2),
-        worldRank: 15 + idx * 5,
-        age: 23 + Math.floor(Math.random() * 8),
-        wins: athlete.competitionCount
+        discipline: '单板平行',
+        points: a.points.toString(),
+        worldRank: idx + 1,
+        wins: a.events
       }));
-      if (athletes.length > 0) {
-        setImportedAthletes(athletes);
-      }
-    }
-  }, []);
+  };
+
+  const topAthletes = generateTopAthletes();
+
+  // 从真实数据生成赛事冠军
+  const generateChampions = () => {
+    const champList: { year: string; name: string; discipline: string; score: string }[] = [];
+
+    parallelCompetitions.forEach(comp => {
+      comp.events.forEach(event => {
+        const winner = event.athletes.find(a => a.rank === 1);
+        if (winner) {
+          champList.push({
+            year: comp.date.split('-')[0],
+            name: winner.name,
+            discipline: `${event.gender} ${event.ageGroup} ${event.discipline}`,
+            score: winner.time || '-'
+          });
+        }
+      });
+    });
+
+    return champList.slice(0, 4);
+  };
+
+  const champions = generateChampions();
 
   const heroSlides = [
     {
@@ -142,31 +131,6 @@ export default function SnowboardParallelPage() {
     }
   ];
 
-  // 最新赛事成绩（默认数据）
-  const defaultResults = [
-    { id: 1, event: '2024全国单板平行锦标赛', discipline: '男子平行大回转', location: '云顶滑雪场', date: '12月15日', status: 'live' as const, winner: '毕野', time: '1:05.32', participants: 40 },
-    { id: 2, event: '中国杯单板公开赛', discipline: '女子平行回转', location: '万龙滑雪场', date: '12月14日', status: 'completed' as const, winner: '宫乃莹', time: '52.18', participants: 32 },
-    { id: 3, event: '东北联赛', discipline: '男子平行回转', location: '北大湖滑雪场', date: '12月13日', status: 'completed' as const, winner: '臧汝心', time: '54.67', participants: 36 },
-    { id: 4, event: '华北区域赛', discipline: '女子平行大回转', location: '太舞滑雪场', date: '12月12日', status: 'completed' as const, winner: '冯贺', time: '1:08.25', participants: 28 },
-    { id: 5, event: '青年锦标赛', discipline: '男子混合赛', location: '长白山滑雪场', date: '12月11日', status: 'completed' as const, winner: '张义威', time: '56.89', participants: 42 },
-    { id: 6, event: '大众公开赛', discipline: '混合平行赛', location: '亚布力滑雪场', date: '12月10日', status: 'completed' as const, winner: '徐小小', time: '1:02.45', participants: 25 }
-  ];
-  const latestResults = importedResults.length > 0 ? importedResults : defaultResults;
-
-  // 积分排行榜（默认数据）
-  const defaultRankings = [
-    { rank: 1, name: '宫乃莹', nation: '中国', event: '女子平行', points: '0.00', change: 0, trend: 'stable' as const },
-    { rank: 2, name: '毕野', nation: '中国', event: '男子平行大回转', points: '12.58', change: 1, trend: 'up' as const },
-    { rank: 3, name: '臧汝心', nation: '中国', event: '男子平行回转', points: '18.92', change: -1, trend: 'down' as const },
-    { rank: 4, name: '冯贺', nation: '中国', event: '女子平行大回转', points: '25.34', change: 2, trend: 'up' as const },
-    { rank: 5, name: '张义威', nation: '中国', event: '男子平行', points: '32.67', change: 0, trend: 'stable' as const },
-    { rank: 6, name: '徐小小', nation: '中国', event: '女子平行', points: '38.15', change: 1, trend: 'up' as const },
-    { rank: 7, name: '吴少聪', nation: '中国', event: '男子平行回转', points: '45.28', change: -2, trend: 'down' as const },
-    { rank: 8, name: '李爽', nation: '中国', event: '女子平行回转', points: '52.43', change: 3, trend: 'up' as const },
-    { rank: 9, name: '王鑫磊', nation: '中国', event: '男子平行大回转', points: '58.76', change: 0, trend: 'stable' as const },
-    { rank: 10, name: '陈思宇', nation: '中国', event: '女子平行', points: '65.12', change: 1, trend: 'up' as const }
-  ];
-  const rankings = importedRankings.length > 0 ? importedRankings : defaultRankings;
 
   // 赛程日历（增加到6个）
   const upcomingEvents = [
@@ -178,36 +142,6 @@ export default function SnowboardParallelPage() {
     { event: '全国冬季运动会', discipline: '全能', date: '2025-01-15', location: '张家口赛区', level: 'A级', prize: '110万' }
   ];
 
-  // 新闻动态（新增）
-  const latestNews = [
-    { id: 1, title: '宫乃莹夺得全国锦标赛平行回转冠军', summary: '在万龙滑雪场举行的2024中国杯单板公开赛上，宫乃莹以52.18秒的成绩夺得女子平行回转冠军...', time: '2小时前', image: '/images/ski-bg.jpg', category: '赛事' },
-    { id: 2, title: '单板平行项目积分规则更新', summary: '中国滑雪协会发布了单板平行项目积分规则更新，优化了时间积分计算公式...', time: '5小时前', image: '/images/ski-bg.jpg', category: '规则' },
-    { id: 3, title: '2024-25赛季赛程公布', summary: '新赛季将举办9站国家级赛事，涵盖PGS和PSL两大项目...', time: '1天前', image: '/images/ski-bg.jpg', category: '赛程' },
-    { id: 4, title: '毕野打破男子平行大回转赛道纪录', summary: '在云顶滑雪场进行的全国锦标赛上，毕野以1分05秒32的成绩刷新赛道纪录...', time: '2天前', image: '/images/ski-bg.jpg', category: '记录' }
-  ];
-
-  // 精彩视频（增加到6个）
-  const videos = [
-    { id: 1, title: '2024全国锦标赛平行大回转精彩集锦', thumbnail: '/images/ski-bg.jpg', duration: '5:48', views: '16.8K', date: '12-15' },
-    { id: 2, title: '宫乃莹夺冠瞬间回顾', thumbnail: '/images/ski-bg.jpg', duration: '3:25', views: '13.2K', date: '12-14' },
-    { id: 3, title: '单板平行技术要领讲解', thumbnail: '/images/ski-bg.jpg', duration: '8:52', views: '28.4K', date: '12-10' },
-    { id: 4, title: '毕野破纪录全程回放', thumbnail: '/images/ski-bg.jpg', duration: '4:38', views: '18.9K', date: '12-15' },
-    { id: 5, title: '云顶赛道难度分析', thumbnail: '/images/ski-bg.jpg', duration: '6:45', views: '11.7K', date: '12-12' },
-    { id: 6, title: '运动员专访：备战新赛季', thumbnail: '/images/ski-bg.jpg', duration: '10:15', views: '17.3K', date: '12-08' }
-  ];
-
-  // 顶尖运动员（默认数据）
-  const defaultAthletes = [
-    { id: 1, name: '宫乃莹', nation: '中国', discipline: '平行回转', points: '0.00', worldRank: 8, age: 28, wins: 18 },
-    { id: 2, name: '毕野', nation: '中国', discipline: '平行大回转', points: '12.58', worldRank: 22, age: 26, wins: 13 },
-    { id: 3, name: '臧汝心', nation: '中国', discipline: '平行回转', points: '18.92', worldRank: 31, age: 25, wins: 10 },
-    { id: 4, name: '冯贺', nation: '中国', discipline: '平行大回转', points: '25.34', worldRank: 38, age: 24, wins: 9 },
-    { id: 5, name: '张义威', nation: '中国', discipline: '平行全能', points: '32.67', worldRank: 45, age: 29, wins: 12 },
-    { id: 6, name: '徐小小', nation: '中国', discipline: '平行回转', points: '38.15', worldRank: 52, age: 23, wins: 7 },
-    { id: 7, name: '吴少聪', nation: '中国', discipline: '平行回转', points: '45.28', worldRank: 58, age: 27, wins: 6 },
-    { id: 8, name: '李爽', nation: '中国', discipline: '平行回转', points: '52.43', worldRank: 64, age: 26, wins: 11 }
-  ];
-  const topAthletes = importedAthletes.length > 0 ? importedAthletes : defaultAthletes;
 
   // 数据统计（新增）
   const statistics = [
@@ -225,13 +159,6 @@ export default function SnowboardParallelPage() {
     { title: '淘汰赛制', desc: '单淘汰制，两次滑行累计时间', icon: Award }
   ];
 
-  // 历史冠军（新增）
-  const champions = [
-    { year: '2023', name: '宫乃莹', discipline: '女子平行回转', points: '0.00' },
-    { year: '2023', name: '毕野', discipline: '男子平行大回转', points: '8.45' },
-    { year: '2022', name: '臧汝心', discipline: '男子平行回转', points: '15.23' },
-    { year: '2022', name: '冯贺', discipline: '女子平行大回转', points: '22.67' }
-  ];
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
@@ -312,160 +239,130 @@ export default function SnowboardParallelPage() {
           </div>
         </section>
 
-        {/* 两栏布局：新闻动态 + 积分排行榜 */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 items-stretch">
-          {/* 新闻动态 */}
-          <section className="flex">
-            <div className="bg-white rounded-lg p-6 shadow-sm w-full">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold text-gray-900 flex items-center">
-                  <Newspaper className="w-5 h-5 mr-2 text-red-600" />
-                  新闻动态
-                </h2>
-              </div>
-              <div className="space-y-4">
-                {latestNews.map((news) => (
-                  <div key={news.id} className="flex gap-4 pb-4 border-b border-gray-100 last:border-0 hover:bg-gray-50 p-3 rounded-lg transition-colors cursor-pointer">
-                    <img src={getImagePath(news.image)} alt={news.title} className="w-32 h-24 object-cover rounded-lg flex-shrink-0" />
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="px-2 py-0.5 bg-indigo-100 text-indigo-700 text-xs rounded">{news.category}</span>
-                        <span className="text-xs text-gray-500">{news.time}</span>
-                      </div>
-                      <h4 className="font-semibold text-gray-900 mb-1 hover:text-indigo-600">{news.title}</h4>
-                      <p className="text-sm text-gray-600 line-clamp-2">{news.summary}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* 积分排行榜 - 表格式样式 */}
-          <section className="lg:col-span-2 flex">
-            <div className="bg-white rounded-lg shadow-sm w-full overflow-hidden">
-              <div className="flex items-center justify-between p-6 pb-4">
-                <h2 className="text-xl font-bold text-gray-900 flex items-center">
-                  <Trophy className="w-5 h-5 mr-2 text-indigo-600" />
-                  积分排行榜
-                </h2>
-                <Link href="/snowboard-parallel/points/rankings" className="text-indigo-600 hover:text-indigo-700 text-sm font-medium">
-                  完整榜单 →
-                </Link>
-              </div>
-              <div className="overflow-x-auto">
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">排名</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">运动员</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">项目</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">积分</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">变化</th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
-                    {rankings.map((athlete) => (
-                      <tr key={athlete.rank} className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          <div className="flex items-center">
-                            {athlete.rank <= 3 ? (
-                              <div className={`w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold ${
-                                athlete.rank === 1 ? 'bg-yellow-500' :
-                                athlete.rank === 2 ? 'bg-gray-400' :
-                                'bg-orange-500'
-                              }`}>
-                                {athlete.rank}
+        {/* 积分排行榜 - 仅当有真实数据时显示 */}
+        {rankings.length > 0 && (
+          <div className="mb-8">
+            <section className="flex">
+              <div className="bg-white rounded-lg shadow-sm w-full overflow-hidden">
+                <div className="flex items-center justify-between p-6 pb-4">
+                  <h2 className="text-xl font-bold text-gray-900 flex items-center">
+                    <Trophy className="w-5 h-5 mr-2 text-indigo-600" />
+                    积分排行榜
+                  </h2>
+                  <Link href="/snowboard-parallel/points/rankings" className="text-indigo-600 hover:text-indigo-700 text-sm font-medium">
+                    完整榜单 →
+                  </Link>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="min-w-full divide-y divide-gray-200">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">排名</th>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">运动员</th>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">项目</th>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">积分</th>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">变化</th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-white divide-y divide-gray-200">
+                      {rankings.map((athlete) => (
+                        <tr key={athlete.rank} className="hover:bg-gray-50">
+                          <td className="px-4 py-3 whitespace-nowrap">
+                            <div className="flex items-center">
+                              {athlete.rank <= 3 ? (
+                                <div className={`w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold ${
+                                  athlete.rank === 1 ? 'bg-yellow-500' :
+                                  athlete.rank === 2 ? 'bg-gray-400' :
+                                  'bg-orange-500'
+                                }`}>
+                                  {athlete.rank}
+                                </div>
+                              ) : (
+                                <div className="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-bold">
+                                  {athlete.rank}
+                                </div>
+                              )}
+                            </div>
+                          </td>
+                          <td className="px-4 py-3 whitespace-nowrap">
+                            <div className="flex items-center">
+                              <div className="flex-shrink-0 h-8 w-8">
+                                <div className="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
+                                  <span className="text-xs font-medium text-gray-600">{athlete.name.charAt(0)}</span>
+                                </div>
+                              </div>
+                              <div className="ml-3">
+                                <div className="text-sm font-medium text-gray-900">{athlete.name}</div>
+                              </div>
+                            </div>
+                          </td>
+                          <td className="px-4 py-3 whitespace-nowrap">
+                            <div className="text-sm text-gray-600">{athlete.event}</div>
+                          </td>
+                          <td className="px-4 py-3 whitespace-nowrap">
+                            <div className="text-sm font-bold text-gray-900">{athlete.points}</div>
+                          </td>
+                          <td className="px-4 py-3 whitespace-nowrap">
+                            {athlete.change !== 0 ? (
+                              <div className={`flex items-center text-sm ${athlete.change > 0 ? 'text-green-600' : 'text-red-600'}`}>
+                                {athlete.change > 0 ? <TrendingUp className="w-4 h-4 mr-1" /> : <TrendingDown className="w-4 h-4 mr-1" />}
+                                {athlete.change > 0 ? '+' : ''}{athlete.change}
                               </div>
                             ) : (
-                              <div className="w-6 h-6 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-bold">
-                                {athlete.rank}
-                              </div>
+                              <span className="text-sm text-gray-500">-</span>
                             )}
-                          </div>
-                        </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          <div className="flex items-center">
-                            <div className="flex-shrink-0 h-8 w-8">
-                              <div className="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
-                                <span className="text-xs font-medium text-gray-600">{athlete.name.charAt(0)}</span>
-                              </div>
-                            </div>
-                            <div className="ml-3">
-                              <div className="text-sm font-medium text-gray-900">{athlete.name}</div>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          <div className="text-sm text-gray-600">{athlete.event}</div>
-                        </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          <div className="text-sm font-bold text-gray-900">{athlete.points}</div>
-                        </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          {athlete.change !== 0 ? (
-                            <div className={`flex items-center text-sm ${athlete.change > 0 ? 'text-green-600' : 'text-red-600'}`}>
-                              {athlete.change > 0 ? <TrendingUp className="w-4 h-4 mr-1" /> : <TrendingDown className="w-4 h-4 mr-1" />}
-                              {athlete.change > 0 ? '+' : ''}{athlete.change}
-                            </div>
-                          ) : (
-                            <span className="text-sm text-gray-500">-</span>
-                          )}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
+            </section>
+          </div>
+        )}
+
+        {/* 最新赛事成绩 - 仅当有真实数据时显示 */}
+        {parallelCompetitions.length > 0 && (
+          <section className="mb-8">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 flex items-center">
+                <Trophy className="w-6 h-6 mr-2 text-indigo-600" />
+                最新赛事成绩
+              </h2>
+              <Link href="/results-import" className="text-indigo-600 hover:text-indigo-700 text-sm font-medium flex items-center">
+                查看全部 <ChevronRight className="w-4 h-4 ml-1" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {parallelCompetitions.map((comp) => (
+                <div key={comp.competition} className="bg-white rounded-lg p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex-1">
+                      <div className="text-sm font-semibold text-gray-900">{comp.competition}</div>
+                      <div className="text-xs text-gray-600 mt-1">{comp.sport}</div>
+                    </div>
+                    <span className="px-2 py-1 rounded text-xs font-medium bg-green-100 text-green-700">
+                      已完成
+                    </span>
+                  </div>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center text-gray-600"><MapPin className="w-4 h-4 mr-2" />{comp.location}</div>
+                    <div className="flex items-center text-gray-600"><Clock className="w-4 h-4 mr-2" />{comp.date} ~ {comp.endDate}</div>
+                    <div className="flex items-center justify-between pt-2 border-t">
+                      <span className="text-gray-600">小项数：</span>
+                      <span className="font-semibold text-gray-900">{comp.events.length}个</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-600">参赛人次：</span>
+                      <span className="font-semibold text-indigo-600">{comp.events.reduce((sum, e) => sum + e.athletes.length, 0)}人次</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
-        </div>
-
-        {/* 最新赛事成绩 */}
-        <section className="mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-2xl font-bold text-gray-900 flex items-center">
-              <Trophy className="w-6 h-6 mr-2 text-indigo-600" />
-              最新赛事成绩
-            </h2>
-            <Link href="/competitions" className="text-indigo-600 hover:text-indigo-700 text-sm font-medium flex items-center">
-              查看全部 <ChevronRight className="w-4 h-4 ml-1" />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {latestResults.map((result) => (
-              <div key={result.id} className="bg-white rounded-lg p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex-1">
-                    <div className="text-sm font-semibold text-gray-900">{result.event}</div>
-                    <div className="text-xs text-gray-600 mt-1">{result.discipline}</div>
-                  </div>
-                  <span className={`px-2 py-1 rounded text-xs font-medium ${
-                    result.status === 'live' ? 'bg-red-100 text-red-700 animate-pulse' : 'bg-green-100 text-green-700'
-                  }`}>
-                    {result.status === 'live' ? '进行中' : '已完成'}
-                  </span>
-                </div>
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center text-gray-600"><MapPin className="w-4 h-4 mr-2" />{result.location}</div>
-                  <div className="flex items-center text-gray-600"><Clock className="w-4 h-4 mr-2" />{result.date}</div>
-                  <div className="flex items-center justify-between pt-2 border-t">
-                    <span className="text-gray-600">冠军：</span>
-                    <span className="font-semibold text-gray-900">{result.winner}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-600">成绩：</span>
-                    <span className="font-semibold text-indigo-600">{result.time}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-600">参赛：</span>
-                    <span className="text-gray-900">{result.participants}人</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+        )}
 
         {/* 赛程日历 */}
         <section className="mb-8">
@@ -531,98 +428,72 @@ export default function SnowboardParallelPage() {
           </div>
         </section>
 
-        {/* 视频中心 */}
-        <section className="mb-8">
-          <div className="bg-white rounded-lg p-6 shadow-sm">
-            <h2 className="text-xl font-bold text-gray-900 flex items-center mb-4">
-              <Video className="w-5 h-5 mr-2 text-red-600" />
-              视频中心
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {videos.map((video) => (
-                <div key={video.id} className="group cursor-pointer">
-                  <div className="relative rounded-lg overflow-hidden mb-2">
-                    <img src={getImagePath(video.thumbnail)} alt={video.title} className="w-full h-48 object-cover" />
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex items-center justify-center">
-                      <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center">
-                        <Play className="w-6 h-6 text-gray-900 ml-1" />
-                      </div>
-                    </div>
-                    <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">{video.duration}</div>
-                    <div className="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded">{video.date}</div>
-                  </div>
-                  <h3 className="font-semibold text-gray-900 text-sm group-hover:text-indigo-600 line-clamp-2 mb-1">{video.title}</h3>
-                  <p className="text-xs text-gray-500">{video.views} 次观看</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 两栏：运动员名录 + 历史冠军 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          {/* 运动员名录 */}
-          <section>
-            <div className="bg-white rounded-lg p-6 shadow-sm">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold text-gray-900 flex items-center">
-                  <Users className="w-5 h-5 mr-2 text-indigo-600" />
-                  运动员名录
-                </h2>
-                <Link href="/athletes" className="text-indigo-600 hover:text-indigo-700 text-sm font-medium">
-                  全部运动员 →
-                </Link>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {topAthletes.map((athlete) => (
-                  <Link key={athlete.id} href="/athletes" className="flex items-center p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg hover:shadow-md transition-all border border-gray-200">
-                    <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3 flex-shrink-0">
-                      <Award className="w-5 h-5 text-indigo-600" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="font-semibold text-gray-900 text-sm">{athlete.name}</div>
-                      <div className="text-xs text-gray-600">{athlete.discipline} · {athlete.age}岁</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-xs text-gray-500">积分</div>
-                      <div className="font-semibold text-indigo-600 text-sm">{athlete.points}</div>
-                    </div>
+        {/* 两栏：运动员名录 + 历史冠军 - 仅当有真实数据时显示 */}
+        {parallelCompetitions.length > 0 && (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            {/* 运动员名录 */}
+            <section>
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-xl font-bold text-gray-900 flex items-center">
+                    <Users className="w-5 h-5 mr-2 text-indigo-600" />
+                    运动员名录
+                  </h2>
+                  <Link href="/athletes" className="text-indigo-600 hover:text-indigo-700 text-sm font-medium">
+                    全部运动员 →
                   </Link>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* 历史冠军 */}
-          <section>
-            <div className="bg-white rounded-lg p-6 shadow-sm">
-              <h2 className="text-xl font-bold text-gray-900 flex items-center mb-4">
-                <History className="w-5 h-5 mr-2 text-yellow-600" />
-                历史冠军
-              </h2>
-              <div className="space-y-3">
-                {champions.map((champion, index) => (
-                  <div key={index} className="flex items-center p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border border-yellow-200">
-                    <div className="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center mr-4 flex-shrink-0">
-                      <Trophy className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="px-2 py-0.5 bg-yellow-600 text-white text-xs rounded font-bold">{champion.year}</span>
-                        <span className="font-semibold text-gray-900">{champion.name}</span>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {topAthletes.map((athlete) => (
+                    <Link key={athlete.id} href="/athletes" className="flex items-center p-3 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg hover:shadow-md transition-all border border-gray-200">
+                      <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3 flex-shrink-0">
+                        <Award className="w-5 h-5 text-indigo-600" />
                       </div>
-                      <div className="text-sm text-gray-600">{champion.discipline}</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-xs text-gray-500">最终积分</div>
-                      <div className="font-bold text-yellow-600">{champion.points}</div>
-                    </div>
-                  </div>
-                ))}
+                      <div className="flex-1 min-w-0">
+                        <div className="font-semibold text-gray-900 text-sm">{athlete.name}</div>
+                        <div className="text-xs text-gray-600">{athlete.discipline} · {athlete.wins}场</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xs text-gray-500">积分</div>
+                        <div className="font-semibold text-indigo-600 text-sm">{athlete.points}</div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
-          </section>
-        </div>
+            </section>
+
+            {/* 历史冠军 */}
+            <section>
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <h2 className="text-xl font-bold text-gray-900 flex items-center mb-4">
+                  <History className="w-5 h-5 mr-2 text-yellow-600" />
+                  历史冠军
+                </h2>
+                <div className="space-y-3">
+                  {champions.map((champion, index) => (
+                    <div key={index} className="flex items-center p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border border-yellow-200">
+                      <div className="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center mr-4 flex-shrink-0">
+                        <Trophy className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="px-2 py-0.5 bg-yellow-600 text-white text-xs rounded font-bold">{champion.year}</span>
+                          <span className="font-semibold text-gray-900">{champion.name}</span>
+                        </div>
+                        <div className="text-sm text-gray-600">{champion.discipline}</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xs text-gray-500">成绩</div>
+                        <div className="font-bold text-yellow-600">{champion.score}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </div>
+        )}
 
         {/* 规则文档 */}
         <section>

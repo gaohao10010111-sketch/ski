@@ -10,117 +10,106 @@ import {
 } from 'lucide-react';
 import { getImagePath } from '@/utils/paths';
 import { useTranslation } from '@/contexts/LanguageContext';
-import { getCompetitions, getAllResults, getPointsRanking } from '@/lib/resultsStorage';
+import { resultsBySport } from '@/data/latestResults';
 
-// 定义类型
-interface LatestResult {
-  id: number;
-  event: string;
-  discipline: string;
-  location: string;
-  date: string;
-  status: 'live' | 'completed';
-  winner: string;
-  time: string;
-  participants: number;
-}
-
-interface RankingItem {
-  rank: number;
-  name: string;
-  nation: string;
-  event: string;
-  points: string;
-  change: number;
-  trend: 'up' | 'down' | 'stable';
-}
-
-interface TopAthlete {
-  id: number;
-  name: string;
-  nation: string;
-  discipline: string;
-  points: string;
-  worldRank: number;
-  age: number;
-  wins: number;
-}
+// 获取单板坡障/大跳台的真实数据
+const snowboardCompetitions = resultsBySport['snowboard-slopestyle'] || [];
 
 export default function SnowboardSlopestylePage() {
   const { t, language } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [importedResults, setImportedResults] = useState<LatestResult[]>([]);
-  const [importedRankings, setImportedRankings] = useState<RankingItem[]>([]);
-  const [importedAthletes, setImportedAthletes] = useState<TopAthlete[]>([]);
 
-  // 加载导入的数据
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
+  // 从真实数据生成积分排行榜
+  const generateRankings = () => {
+    const athletePoints: { [key: string]: { name: string; team: string; points: number; events: number } } = {};
 
-    const competitions = getCompetitions();
-    const allResults = getAllResults();
-
-    // 筛选单板坡面障碍技巧/大跳台项目
-    const snowboardCompetitions = competitions.filter(c =>
-      c.sportType === 'snowboard-slopestyle' ||
-      c.discipline.includes('坡面') ||
-      c.discipline.includes('大跳台') ||
-      c.discipline.includes('SS') ||
-      c.discipline.includes('BA')
-    );
-
-    if (snowboardCompetitions.length > 0) {
-      // 生成最新成绩
-      const results: LatestResult[] = snowboardCompetitions.slice(0, 6).map((comp, idx) => {
-        const compResults = allResults[comp.id];
-        const allAthletes = compResults ? [...compResults.male, ...compResults.female].filter(r => r.status === 'finished') : [];
-        const winner = allAthletes.find(r => r.rank === 1);
-
-        return {
-          id: idx + 1,
-          event: comp.name,
-          discipline: comp.discipline,
-          location: comp.location,
-          date: new Date(comp.date).toLocaleDateString('zh-CN', { month: 'numeric', day: 'numeric' }) + '日',
-          status: 'completed' as const,
-          winner: winner?.name || '-',
-          time: winner?.totalTime || '-',
-          participants: comp.participants
-        };
+    snowboardCompetitions.forEach(comp => {
+      comp.events.forEach(event => {
+        event.athletes.forEach(athlete => {
+          const key = athlete.name;
+          if (!athletePoints[key]) {
+            athletePoints[key] = { name: athlete.name, team: athlete.team, points: 0, events: 0 };
+          }
+          const points = athlete.points || (athlete.rank <= 50 ? Math.max(360 - (athlete.rank - 1) * 7, 1) : 0);
+          athletePoints[key].points += points;
+          athletePoints[key].events += 1;
+        });
       });
-      setImportedResults(results);
+    });
 
-      // 生成积分排名
-      const rankingData = getPointsRanking('snowboard-slopestyle');
-      const rankings: RankingItem[] = rankingData.slice(0, 10).map((athlete, idx) => ({
+    return Object.values(athletePoints)
+      .sort((a, b) => b.points - a.points)
+      .slice(0, 10)
+      .map((a, idx) => ({
         rank: idx + 1,
-        name: athlete.name,
+        name: a.name,
         nation: '中国',
-        event: '单板坡障/大跳台',
-        points: athlete.totalPoints.toFixed(0),
+        event: '单板大跳台/坡障',
+        points: a.points.toString(),
         change: 0,
         trend: 'stable' as const
       }));
-      if (rankings.length > 0) {
-        setImportedRankings(rankings);
-      }
+  };
 
-      // 生成运动员列表
-      const athletes: TopAthlete[] = rankingData.slice(0, 8).map((athlete, idx) => ({
+  const rankings = generateRankings();
+
+  // 从真实数据生成顶尖运动员列表
+  const generateTopAthletes = () => {
+    const athleteData: { [key: string]: { name: string; team: string; points: number; events: number } } = {};
+
+    snowboardCompetitions.forEach(comp => {
+      comp.events.forEach(event => {
+        event.athletes.forEach(athlete => {
+          const key = athlete.name;
+          if (!athleteData[key]) {
+            athleteData[key] = { name: athlete.name, team: athlete.team, points: 0, events: 0 };
+          }
+          const points = athlete.points || (athlete.rank <= 50 ? Math.max(360 - (athlete.rank - 1) * 7, 1) : 0);
+          athleteData[key].points += points;
+          athleteData[key].events += 1;
+        });
+      });
+    });
+
+    return Object.values(athleteData)
+      .sort((a, b) => b.points - a.points)
+      .slice(0, 8)
+      .map((a, idx) => ({
         id: idx + 1,
-        name: athlete.name,
+        name: a.name,
         nation: '中国',
-        discipline: '坡障/大跳台',
-        points: athlete.totalPoints.toFixed(0),
-        worldRank: 20 + idx * 5,
-        age: 20 + Math.floor(Math.random() * 8),
-        wins: athlete.competitionCount
+        discipline: '单板大跳台/坡障',
+        points: a.points.toString(),
+        worldRank: idx + 1,
+        age: 0,
+        wins: a.events
       }));
-      if (athletes.length > 0) {
-        setImportedAthletes(athletes);
-      }
-    }
-  }, []);
+  };
+
+  const topAthletes = generateTopAthletes();
+
+  // 从真实数据生成赛事冠军
+  const generateChampions = () => {
+    const champList: { year: string; name: string; discipline: string; score: string }[] = [];
+
+    snowboardCompetitions.forEach(comp => {
+      comp.events.forEach(event => {
+        const winner = event.athletes.find(a => a.rank === 1);
+        if (winner) {
+          champList.push({
+            year: comp.date.split('-')[0],
+            name: winner.name,
+            discipline: `${event.gender} ${event.ageGroup} ${event.discipline}`,
+            score: winner.bestScore?.toString() || '-'
+          });
+        }
+      });
+    });
+
+    return champList.slice(0, 4);
+  };
+
+  const champions = generateChampions();
 
   const heroSlides = [
     {
@@ -143,31 +132,6 @@ export default function SnowboardSlopestylePage() {
     }
   ];
 
-  // 最新赛事成绩（默认数据）
-  const defaultResults = [
-    { id: 1, event: '2024全国单板坡障锦标赛', discipline: '男子坡面障碍技巧', location: '密苑云顶滑雪场', date: '12月15日', status: 'live' as const, winner: '苏翊鸣', time: '92.50', participants: 42 },
-    { id: 2, event: '中国杯单板公开赛', discipline: '女子大跳台', location: '首钢滑雪大跳台', date: '12月14日', status: 'completed' as const, winner: '荣格', time: '88.75', participants: 35 },
-    { id: 3, event: '东北联赛', discipline: '男子大跳台', location: '北大湖滑雪场', date: '12月13日', status: 'completed' as const, winner: '杨文龙', time: '85.25', participants: 38 },
-    { id: 4, event: '华北区域赛', discipline: '女子坡面障碍技巧', location: '太舞滑雪场', date: '12月12日', status: 'completed' as const, winner: '邵琪', time: '86.50', participants: 30 },
-    { id: 5, event: '青年锦标赛', discipline: '男子坡障', location: '万龙滑雪场', date: '12月11日', status: 'completed' as const, winner: '何金博', time: '83.75', participants: 45 },
-    { id: 6, event: '大众公开赛', discipline: '混合大跳台', location: '长白山滑雪场', date: '12月10日', status: 'completed' as const, winner: '李爽', time: '81.00', participants: 28 }
-  ];
-  const latestResults = importedResults.length > 0 ? importedResults : defaultResults;
-
-  // 积分排行榜（默认数据）
-  const defaultRankings = [
-    { rank: 1, name: '苏翊鸣', nation: '中国', event: '男子坡障/大跳台', points: '360', change: 0, trend: 'stable' as const },
-    { rank: 2, name: '荣格', nation: '中国', event: '女子大跳台', points: '345', change: 1, trend: 'up' as const },
-    { rank: 3, name: '杨文龙', nation: '中国', event: '男子大跳台', points: '330', change: -1, trend: 'down' as const },
-    { rank: 4, name: '邵琪', nation: '中国', event: '女子坡障', points: '315', change: 2, trend: 'up' as const },
-    { rank: 5, name: '何金博', nation: '中国', event: '男子坡障', points: '300', change: 0, trend: 'stable' as const },
-    { rank: 6, name: '李爽', nation: '中国', event: '女子大跳台', points: '285', change: 1, trend: 'up' as const },
-    { rank: 7, name: '王海涛', nation: '中国', event: '男子坡障', points: '270', change: -2, trend: 'down' as const },
-    { rank: 8, name: '张可欣', nation: '中国', event: '女子坡障', points: '255', change: 3, trend: 'up' as const },
-    { rank: 9, name: '刘佳宇', nation: '中国', event: '女子大跳台', points: '240', change: 0, trend: 'stable' as const },
-    { rank: 10, name: '高弘博', nation: '中国', event: '男子大跳台', points: '225', change: 1, trend: 'up' as const }
-  ];
-  const rankings = importedRankings.length > 0 ? importedRankings : defaultRankings;
 
   // 赛程日历（增加到6个）
   const upcomingEvents = [
@@ -179,36 +143,6 @@ export default function SnowboardSlopestylePage() {
     { event: '全国冬季运动会', discipline: '全能', date: '2025-01-15', location: '张家口赛区', level: 'A级', prize: '120万' }
   ];
 
-  // 新闻动态（新增）
-  const latestNews = [
-    { id: 1, title: '苏翊鸣夺得全国锦标赛坡面障碍技巧冠军', summary: '在密苑云顶滑雪场举行的2024全国单板坡障锦标赛上，苏翊鸣以92.50分的成绩夺得男子坡障冠军...', time: '2小时前', image: '/images/ski-bg.jpg', category: '赛事' },
-    { id: 2, title: '单板坡障积分规则360分制正式发布', summary: '中国滑雪协会发布了最新版本的单板坡障积分规则，新规则采用360分制，将于2025年1月1日起实施...', time: '5小时前', image: '/images/ski-bg.jpg', category: '规则' },
-    { id: 3, title: '2024-25赛季赛程公布', summary: '新赛季将举办10站国家级赛事，覆盖全国6个省份的专业单板公园...', time: '1天前', image: '/images/ski-bg.jpg', category: '赛程' },
-    { id: 4, title: '荣格打破女子大跳台全国纪录', summary: '在首钢滑雪大跳台进行的中国杯公开赛上，荣格以88.75分的成绩刷新女子大跳台项目全国纪录...', time: '2天前', image: '/images/ski-bg.jpg', category: '记录' }
-  ];
-
-  // 精彩视频（增加到6个）
-  const videos = [
-    { id: 1, title: '2024全国锦标赛坡障精彩集锦', thumbnail: '/images/ski-bg.jpg', duration: '6:15', views: '18.2K', date: '12-15' },
-    { id: 2, title: '苏翊鸣夺冠瞬间回顾', thumbnail: '/images/ski-bg.jpg', duration: '3:42', views: '15.6K', date: '12-15' },
-    { id: 3, title: '单板坡障技术要领讲解', thumbnail: '/images/ski-bg.jpg', duration: '9:28', views: '32.5K', date: '12-10' },
-    { id: 4, title: '荣格破纪录全程回放', thumbnail: '/images/ski-bg.jpg', duration: '4:15', views: '22.8K', date: '12-14' },
-    { id: 5, title: '云顶公园道具分析', thumbnail: '/images/ski-bg.jpg', duration: '7:30', views: '12.3K', date: '12-12' },
-    { id: 6, title: '运动员专访：备战新赛季', thumbnail: '/images/ski-bg.jpg', duration: '11:20', views: '19.4K', date: '12-08' }
-  ];
-
-  // 顶尖运动员（默认数据）
-  const defaultAthletes = [
-    { id: 1, name: '苏翊鸣', nation: '中国', discipline: '坡障/大跳台', points: '360', worldRank: 12, age: 20, wins: 15 },
-    { id: 2, name: '荣格', nation: '中国', discipline: '大跳台', points: '345', worldRank: 28, age: 22, wins: 11 },
-    { id: 3, name: '杨文龙', nation: '中国', discipline: '大跳台', points: '330', worldRank: 35, age: 24, wins: 9 },
-    { id: 4, name: '邵琪', nation: '中国', discipline: '坡障', points: '315', worldRank: 42, age: 21, wins: 8 },
-    { id: 5, name: '何金博', nation: '中国', discipline: '坡障', points: '300', worldRank: 48, age: 23, wins: 7 },
-    { id: 6, name: '李爽', nation: '中国', discipline: '大跳台', points: '285', worldRank: 55, age: 25, wins: 6 },
-    { id: 7, name: '王海涛', nation: '中国', discipline: '坡障', points: '270', worldRank: 61, age: 22, wins: 5 },
-    { id: 8, name: '张可欣', nation: '中国', discipline: '坡障', points: '255', worldRank: 68, age: 24, wins: 10 }
-  ];
-  const topAthletes = importedAthletes.length > 0 ? importedAthletes : defaultAthletes;
 
   // 数据统计（新增）
   const statistics = [
@@ -226,13 +160,6 @@ export default function SnowboardSlopestylePage() {
     { title: '评分标准', desc: '技巧难度、完成度、创新性综合评定', icon: Award }
   ];
 
-  // 历史冠军（新增）
-  const champions = [
-    { year: '2023', name: '苏翊鸣', discipline: '男子坡障', points: '360' },
-    { year: '2023', name: '荣格', discipline: '女子大跳台', points: '350' },
-    { year: '2022', name: '杨文龙', discipline: '男子大跳台', points: '338' },
-    { year: '2022', name: '邵琪', discipline: '女子坡障', points: '325' }
-  ];
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
@@ -313,37 +240,9 @@ export default function SnowboardSlopestylePage() {
           </div>
         </section>
 
-        {/* 两栏布局：新闻动态 + 积分排行榜 */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 items-stretch">
-          {/* 新闻动态 */}
+        {/* 积分排行榜 */}
+        <div className="mb-8">
           <section className="flex">
-            <div className="bg-white rounded-lg p-6 shadow-sm w-full">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold text-gray-900 flex items-center">
-                  <Newspaper className="w-5 h-5 mr-2 text-red-600" />
-                  新闻动态
-                </h2>
-              </div>
-              <div className="space-y-4">
-                {latestNews.map((news) => (
-                  <div key={news.id} className="flex gap-4 pb-4 border-b border-gray-100 last:border-0 hover:bg-gray-50 p-3 rounded-lg transition-colors cursor-pointer">
-                    <img src={getImagePath(news.image)} alt={news.title} className="w-32 h-24 object-cover rounded-lg flex-shrink-0" />
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs rounded">{news.category}</span>
-                        <span className="text-xs text-gray-500">{news.time}</span>
-                      </div>
-                      <h4 className="font-semibold text-gray-900 mb-1 hover:text-purple-600">{news.title}</h4>
-                      <p className="text-sm text-gray-600 line-clamp-2">{news.summary}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* 积分排行榜 - 表格式样式 */}
-          <section className="lg:col-span-2 flex">
             <div className="bg-white rounded-lg shadow-sm w-full overflow-hidden">
               <div className="flex items-center justify-between p-6 pb-4">
                 <h2 className="text-xl font-bold text-gray-900 flex items-center">
@@ -422,51 +321,47 @@ export default function SnowboardSlopestylePage() {
           </section>
         </div>
 
-        {/* 最新赛事成绩 */}
-        <section className="mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-2xl font-bold text-gray-900 flex items-center">
-              <Trophy className="w-6 h-6 mr-2 text-purple-600" />
-              最新赛事成绩
-            </h2>
-            <Link href="/competitions" className="text-purple-600 hover:text-purple-700 text-sm font-medium flex items-center">
-              查看全部 <ChevronRight className="w-4 h-4 ml-1" />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {latestResults.map((result) => (
-              <div key={result.id} className="bg-white rounded-lg p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex-1">
-                    <div className="text-sm font-semibold text-gray-900">{result.event}</div>
-                    <div className="text-xs text-gray-600 mt-1">{result.discipline}</div>
+        {/* 最新赛事成绩 - 仅当有真实数据时显示 */}
+        {snowboardCompetitions.length > 0 && (
+          <section className="mb-8">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 flex items-center">
+                <Trophy className="w-6 h-6 mr-2 text-purple-600" />
+                最新赛事成绩
+              </h2>
+              <Link href="/results-import" className="text-purple-600 hover:text-purple-700 text-sm font-medium flex items-center">
+                查看全部 <ChevronRight className="w-4 h-4 ml-1" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {snowboardCompetitions.map((comp) => (
+                <div key={comp.competition} className="bg-white rounded-lg p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex-1">
+                      <div className="text-sm font-semibold text-gray-900">{comp.competition}</div>
+                      <div className="text-xs text-gray-600 mt-1">{comp.sport}</div>
+                    </div>
+                    <span className="px-2 py-1 rounded text-xs font-medium bg-green-100 text-green-700">
+                      已完成
+                    </span>
                   </div>
-                  <span className={`px-2 py-1 rounded text-xs font-medium ${
-                    result.status === 'live' ? 'bg-red-100 text-red-700 animate-pulse' : 'bg-green-100 text-green-700'
-                  }`}>
-                    {result.status === 'live' ? '进行中' : '已完成'}
-                  </span>
-                </div>
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center text-gray-600"><MapPin className="w-4 h-4 mr-2" />{result.location}</div>
-                  <div className="flex items-center text-gray-600"><Clock className="w-4 h-4 mr-2" />{result.date}</div>
-                  <div className="flex items-center justify-between pt-2 border-t">
-                    <span className="text-gray-600">冠军：</span>
-                    <span className="font-semibold text-gray-900">{result.winner}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-600">分数：</span>
-                    <span className="font-semibold text-purple-600">{result.time}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-600">参赛：</span>
-                    <span className="text-gray-900">{result.participants}人</span>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center text-gray-600"><MapPin className="w-4 h-4 mr-2" />{comp.location}</div>
+                    <div className="flex items-center text-gray-600"><Clock className="w-4 h-4 mr-2" />{comp.date} ~ {comp.endDate}</div>
+                    <div className="flex items-center justify-between pt-2 border-t">
+                      <span className="text-gray-600">小项数：</span>
+                      <span className="font-semibold text-gray-900">{comp.events.length}个</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-600">参赛人次：</span>
+                      <span className="font-semibold text-purple-600">{comp.events.reduce((sum, e) => sum + e.athletes.length, 0)}人次</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* 赛程日历 */}
         <section className="mb-8">
@@ -532,34 +427,6 @@ export default function SnowboardSlopestylePage() {
           </div>
         </section>
 
-        {/* 视频中心 */}
-        <section className="mb-8">
-          <div className="bg-white rounded-lg p-6 shadow-sm">
-            <h2 className="text-xl font-bold text-gray-900 flex items-center mb-4">
-              <Video className="w-5 h-5 mr-2 text-red-600" />
-              视频中心
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {videos.map((video) => (
-                <div key={video.id} className="group cursor-pointer">
-                  <div className="relative rounded-lg overflow-hidden mb-2">
-                    <img src={getImagePath(video.thumbnail)} alt={video.title} className="w-full h-48 object-cover" />
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex items-center justify-center">
-                      <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center">
-                        <Play className="w-6 h-6 text-gray-900 ml-1" />
-                      </div>
-                    </div>
-                    <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">{video.duration}</div>
-                    <div className="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded">{video.date}</div>
-                  </div>
-                  <h3 className="font-semibold text-gray-900 text-sm group-hover:text-purple-600 line-clamp-2 mb-1">{video.title}</h3>
-                  <p className="text-xs text-gray-500">{video.views} 次观看</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* 两栏：运动员名录 + 历史冠军 */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           {/* 运动员名录 */}
@@ -582,7 +449,7 @@ export default function SnowboardSlopestylePage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="font-semibold text-gray-900 text-sm">{athlete.name}</div>
-                      <div className="text-xs text-gray-600">{athlete.discipline} · {athlete.age}岁</div>
+                      <div className="text-xs text-gray-600">{athlete.discipline} · {athlete.wins}场</div>
                     </div>
                     <div className="text-right">
                       <div className="text-xs text-gray-500">积分</div>
@@ -616,7 +483,7 @@ export default function SnowboardSlopestylePage() {
                     </div>
                     <div className="text-right">
                       <div className="text-xs text-gray-500">最终积分</div>
-                      <div className="font-bold text-yellow-600">{champion.points}</div>
+                      <div className="font-bold text-yellow-600">{champion.score}</div>
                     </div>
                   </div>
                 ))}

@@ -1105,7 +1105,7 @@ export const zh = {
     hero: {
       title: '中国滑雪青少年积分排名官方平台',
       titleEn: 'China Skiing Points Data Management Platform',
-      subtitle: '权威·专业·精准的中国滑雪运动积分管理平台',
+      subtitle: '全国滑雪青少年U系列赛事积分排名指定发布平台',
       exploreDisciplines: '探索积分系统',
       freeRegister: '免费注册',
       platformIntro: '专业运动员、教练员、赛事组织者的首选平台',

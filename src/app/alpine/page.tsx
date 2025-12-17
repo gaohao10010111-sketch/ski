@@ -10,124 +10,14 @@ import {
 } from 'lucide-react';
 import { getImagePath } from '@/utils/paths';
 import { useTranslation } from '@/contexts/LanguageContext';
-import { getCompetitions, getAllResults, getPointsRanking, type CompetitionInfo, type ResultRecord } from '@/lib/resultsStorage';
+import { resultsBySport, type CompetitionResult, type EventResult } from '@/data/latestResults';
 
-// 从导入数据生成最新成绩
-interface LatestResult {
-  id: number;
-  event: string;
-  discipline: string;
-  location: string;
-  date: string;
-  status: 'live' | 'completed';
-  winner: string;
-  time: string;
-  participants: number;
-}
-
-// 从导入数据生成排名
-interface RankingItem {
-  rank: number;
-  name: string;
-  nation: string;
-  event: string;
-  points: string;
-  change: number;
-  trend: 'up' | 'down' | 'stable';
-}
-
-// 从导入数据生成运动员
-interface TopAthlete {
-  id: number;
-  name: string;
-  nation: string;
-  discipline: string;
-  points: string;
-  worldRank: number;
-  age: number;
-  wins: number;
-}
+// 获取高山滑雪的真实数据
+const alpineCompetitions = resultsBySport.alpine || [];
 
 export default function AlpinePage() {
   const { t, language } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [importedResults, setImportedResults] = useState<LatestResult[]>([]);
-  const [importedRankings, setImportedRankings] = useState<RankingItem[]>([]);
-  const [importedAthletes, setImportedAthletes] = useState<TopAthlete[]>([]);
-  const [hasImportedData, setHasImportedData] = useState(false);
-
-  // 加载导入的数据
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const competitions = getCompetitions();
-    const allResults = getAllResults();
-
-    // 筛选高山滑雪项目的比赛
-    const alpineCompetitions = competitions.filter(c =>
-      c.sportType === 'alpine' ||
-      c.discipline.includes('回转') ||
-      c.discipline.includes('大回转') ||
-      c.discipline.includes('滑降') ||
-      c.discipline.includes('SL') ||
-      c.discipline.includes('GS') ||
-      c.discipline.includes('SG')
-    );
-
-    if (alpineCompetitions.length > 0) {
-      setHasImportedData(true);
-
-      // 生成最新成绩
-      const results: LatestResult[] = alpineCompetitions.slice(0, 6).map((comp, idx) => {
-        const compResults = allResults[comp.id];
-        const allAthletes = compResults ? [...compResults.male, ...compResults.female].filter(r => r.status === 'finished') : [];
-        const winner = allAthletes.find(r => r.rank === 1);
-
-        return {
-          id: idx + 1,
-          event: comp.name,
-          discipline: comp.discipline,
-          location: comp.location,
-          date: new Date(comp.date).toLocaleDateString('zh-CN', { month: 'numeric', day: 'numeric' }) + '日',
-          status: 'completed' as const,
-          winner: winner?.name || '-',
-          time: winner?.totalTime || '-',
-          participants: comp.participants
-        };
-      });
-      setImportedResults(results);
-
-      // 生成积分排名
-      const rankingData = getPointsRanking('alpine');
-      const rankings: RankingItem[] = rankingData.slice(0, 10).map((athlete, idx) => ({
-        rank: idx + 1,
-        name: athlete.name,
-        nation: '中国',
-        event: '高山滑雪',
-        points: athlete.totalPoints.toFixed(2),
-        change: 0,
-        trend: 'stable' as const
-      }));
-      if (rankings.length > 0) {
-        setImportedRankings(rankings);
-      }
-
-      // 生成运动员列表
-      const athletes: TopAthlete[] = rankingData.slice(0, 8).map((athlete, idx) => ({
-        id: idx + 1,
-        name: athlete.name,
-        nation: '中国',
-        discipline: '高山滑雪',
-        points: athlete.totalPoints.toFixed(2),
-        worldRank: 50 + idx * 5,
-        age: 22 + Math.floor(Math.random() * 8),
-        wins: athlete.competitionCount
-      }));
-      if (athletes.length > 0) {
-        setImportedAthletes(athletes);
-      }
-    }
-  }, []);
 
   const heroSlides = [
     {
@@ -150,31 +40,40 @@ export default function AlpinePage() {
     }
   ];
 
-  // 最新赛事成绩（默认数据，当有导入数据时会被覆盖）
-  const defaultResults = [
-    { id: 1, event: '2024全国高山滑雪锦标赛', discipline: '男子大回转', location: '天池滑雪场', date: '12月15日', status: 'live' as const, winner: '张伟', time: '1:23.45', participants: 45 },
-    { id: 2, event: '中国杯高山公开赛', discipline: '女子回转', location: '万龙滑雪场', date: '12月14日', status: 'completed' as const, winner: '李雪', time: '58.32', participants: 38 },
-    { id: 3, event: '东北联赛', discipline: '男子超级大回转', location: '亚布力滑雪场', date: '12月13日', status: 'completed' as const, winner: '王强', time: '1:15.67', participants: 42 },
-    { id: 4, event: '华北区域赛', discipline: '女子大回转', location: '太舞滑雪场', date: '12月12日', status: 'completed' as const, winner: '王冰', time: '1:25.89', participants: 35 },
-    { id: 5, event: '青年锦标赛', discipline: '男子回转', location: '云顶滑雪场', date: '12月11日', status: 'completed' as const, winner: '刘强', time: '1:02.34', participants: 52 },
-    { id: 6, event: '大众公开赛', discipline: '混合全能', location: '长白山滑雪场', date: '12月10日', status: 'completed' as const, winner: '陈娜', time: '2:18.56', participants: 28 }
-  ];
-  const latestResults = importedResults.length > 0 ? importedResults : defaultResults;
+  // 从真实数据生成积分排行榜（基于成绩生成）
+  const generateRankings = () => {
+    const athletePoints: { [key: string]: { name: string; team: string; points: number; events: number } } = {};
 
-  // 积分排行榜（默认数据，当有导入数据时会被覆盖）
-  const defaultRankings = [
-    { rank: 1, name: '张伟', nation: '中国', event: '男子大回转', points: '0.00', change: 0, trend: 'stable' as const },
-    { rank: 2, name: '李雪', nation: '中国', event: '女子回转', points: '8.45', change: 1, trend: 'up' as const },
-    { rank: 3, name: '王冰', nation: '中国', event: '女子大回转', points: '12.30', change: -1, trend: 'down' as const },
-    { rank: 4, name: '刘强', nation: '中国', event: '男子回转', points: '15.67', change: 2, trend: 'up' as const },
-    { rank: 5, name: '陈娜', nation: '中国', event: '女子超级大回转', points: '18.92', change: 0, trend: 'stable' as const },
-    { rank: 6, name: '赵明', nation: '中国', event: '男子超级大回转', points: '22.15', change: 1, trend: 'up' as const },
-    { rank: 7, name: '孙丽', nation: '中国', event: '女子回转', points: '25.48', change: -2, trend: 'down' as const },
-    { rank: 8, name: '周杰', nation: '中国', event: '男子大回转', points: '28.73', change: 3, trend: 'up' as const },
-    { rank: 9, name: '吴芳', nation: '中国', event: '女子全能', points: '31.29', change: 0, trend: 'stable' as const },
-    { rank: 10, name: '郑浩', nation: '中国', event: '男子全能', points: '34.56', change: 1, trend: 'up' as const }
-  ];
-  const rankings = importedRankings.length > 0 ? importedRankings : defaultRankings;
+    alpineCompetitions.forEach(comp => {
+      comp.events.forEach(event => {
+        event.athletes.forEach(athlete => {
+          const key = athlete.name;
+          if (!athletePoints[key]) {
+            athletePoints[key] = { name: athlete.name, team: athlete.team, points: 0, events: 0 };
+          }
+          // 根据排名计算积分（第1名360分，递减）
+          const points = athlete.rank <= 50 ? Math.max(360 - (athlete.rank - 1) * 7, 1) : 0;
+          athletePoints[key].points += points;
+          athletePoints[key].events += 1;
+        });
+      });
+    });
+
+    return Object.values(athletePoints)
+      .sort((a, b) => b.points - a.points)
+      .slice(0, 10)
+      .map((a, idx) => ({
+        rank: idx + 1,
+        name: a.name,
+        nation: '中国',
+        event: '高山滑雪',
+        points: a.points.toString(),
+        change: 0,
+        trend: 'stable' as const
+      }));
+  };
+
+  const rankings = generateRankings();
 
   // 赛程日历（增加到6个）
   const upcomingEvents = [
@@ -186,36 +85,40 @@ export default function AlpinePage() {
     { event: '全国冬季运动会', discipline: '全能', date: '2025-01-15', location: '吉林北大湖', level: 'A级', prize: '100万' }
   ];
 
-  // 新闻动态（新增）
-  const latestNews = [
-    { id: 1, title: '张伟夺得全国锦标赛男子大回转冠军', summary: '在天池滑雪场举行的2024全国高山滑雪锦标赛上，张伟以1分23秒45的成绩夺得男子大回转项目冠军...', time: '2小时前', image: '/images/ski-bg.jpg', category: '赛事' },
-    { id: 2, title: '高山滑雪积分规则v4.0正式发布', summary: '中国滑雪协会发布了最新版本的高山滑雪积分规则，新规则将于2025年1月1日起正式实施...', time: '5小时前', image: '/images/ski-bg.jpg', category: '规则' },
-    { id: 3, title: '2024-25赛季赛程公布', summary: '新赛季将举办12站国家级赛事，覆盖全国8个省份的顶级滑雪场地...', time: '1天前', image: '/images/ski-bg.jpg', category: '赛程' },
-    { id: 4, title: '李雪打破女子回转全国纪录', summary: '在万龙滑雪场进行的中国杯公开赛上，李雪以58秒32的成绩刷新女子回转项目全国纪录...', time: '2天前', image: '/images/ski-bg.jpg', category: '记录' }
-  ];
+  // 从真实数据生成顶尖运动员列表
+  const generateTopAthletes = () => {
+    const athleteData: { [key: string]: { name: string; team: string; points: number; events: number } } = {};
 
-  // 精彩视频（增加到6个）
-  const videos = [
-    { id: 1, title: '2024全国锦标赛男子大回转精彩集锦', thumbnail: '/images/ski-bg.jpg', duration: '5:32', views: '12.5K', date: '12-15' },
-    { id: 2, title: '张伟夺冠瞬间回顾', thumbnail: '/images/ski-bg.jpg', duration: '2:15', views: '8.3K', date: '12-15' },
-    { id: 3, title: '高山滑雪技术要领讲解', thumbnail: '/images/ski-bg.jpg', duration: '8:47', views: '25.1K', date: '12-10' },
-    { id: 4, title: '李雪破纪录全程回放', thumbnail: '/images/ski-bg.jpg', duration: '3:28', views: '15.2K', date: '12-14' },
-    { id: 5, title: '赛道分析：天池滑雪场难度解析', thumbnail: '/images/ski-bg.jpg', duration: '6:15', views: '9.8K', date: '12-12' },
-    { id: 6, title: '运动员专访：备战新赛季', thumbnail: '/images/ski-bg.jpg', duration: '12:05', views: '18.7K', date: '12-08' }
-  ];
+    alpineCompetitions.forEach(comp => {
+      comp.events.forEach(event => {
+        event.athletes.forEach(athlete => {
+          const key = athlete.name;
+          if (!athleteData[key]) {
+            athleteData[key] = { name: athlete.name, team: athlete.team, points: 0, events: 0 };
+          }
+          const points = athlete.rank <= 50 ? Math.max(360 - (athlete.rank - 1) * 7, 1) : 0;
+          athleteData[key].points += points;
+          athleteData[key].events += 1;
+        });
+      });
+    });
 
-  // 顶尖运动员（默认数据，当有导入数据时会被覆盖）
-  const defaultAthletes = [
-    { id: 1, name: '张伟', nation: '中国', discipline: '大回转', points: '0.00', worldRank: 45, age: 25, wins: 12 },
-    { id: 2, name: '李雪', nation: '中国', discipline: '回转', points: '8.45', worldRank: 52, age: 23, wins: 9 },
-    { id: 3, name: '王冰', nation: '中国', discipline: '大回转', points: '12.30', worldRank: 58, age: 26, wins: 8 },
-    { id: 4, name: '刘强', nation: '中国', discipline: '回转', points: '15.67', worldRank: 63, age: 24, wins: 7 },
-    { id: 5, name: '陈娜', nation: '中国', discipline: '超级大回转', points: '18.92', worldRank: 68, age: 27, wins: 6 },
-    { id: 6, name: '赵明', nation: '中国', discipline: '超级大回转', points: '22.15', worldRank: 72, age: 28, wins: 5 },
-    { id: 7, name: '孙丽', nation: '中国', discipline: '回转', points: '25.48', worldRank: 76, age: 22, wins: 4 },
-    { id: 8, name: '周杰', nation: '中国', discipline: '全能', points: '28.73', worldRank: 81, age: 29, wins: 11 }
-  ];
-  const topAthletes = importedAthletes.length > 0 ? importedAthletes : defaultAthletes;
+    return Object.values(athleteData)
+      .sort((a, b) => b.points - a.points)
+      .slice(0, 8)
+      .map((a, idx) => ({
+        id: idx + 1,
+        name: a.name,
+        nation: '中国',
+        discipline: '高山滑雪',
+        points: a.points.toString(),
+        worldRank: idx + 1,
+        age: 0,
+        wins: a.events
+      }));
+  };
+
+  const topAthletes = generateTopAthletes();
 
   // 数据统计（新增）
   const statistics = [
@@ -233,13 +136,28 @@ export default function AlpinePage() {
     { title: '伤病保护', desc: '特殊情况下的积分保护机制', icon: Award }
   ];
 
-  // 历史冠军（新增）
-  const champions = [
-    { year: '2023', name: '张伟', discipline: '男子大回转', points: '0.00' },
-    { year: '2023', name: '李雪', discipline: '女子回转', points: '5.23' },
-    { year: '2022', name: '王冰', discipline: '女子大回转', points: '8.91' },
-    { year: '2022', name: '刘强', discipline: '男子回转', points: '12.45' }
-  ];
+  // 从真实数据生成历史冠军
+  const generateChampions = () => {
+    const champList: { year: string; name: string; discipline: string; time: string }[] = [];
+
+    alpineCompetitions.forEach(comp => {
+      comp.events.forEach(event => {
+        const winner = event.athletes.find(a => a.rank === 1);
+        if (winner) {
+          champList.push({
+            year: comp.date.split('-')[0],
+            name: winner.name,
+            discipline: `${event.gender} ${event.ageGroup} ${event.discipline}`,
+            time: winner.time || '-'
+          });
+        }
+      });
+    });
+
+    return champList.slice(0, 4);
+  };
+
+  const champions = generateChampions();
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
@@ -320,37 +238,9 @@ export default function AlpinePage() {
           </div>
         </section>
 
-        {/* 两栏布局：新闻动态 + 积分排行榜 */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 items-stretch">
-          {/* 新闻动态 */}
+        {/* 积分排行榜 */}
+        <div className="mb-8">
           <section className="flex">
-            <div className="bg-white rounded-lg p-6 shadow-sm w-full">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold text-gray-900 flex items-center">
-                  <Newspaper className="w-5 h-5 mr-2 text-red-600" />
-                  新闻动态
-                </h2>
-              </div>
-              <div className="space-y-4">
-                {latestNews.map((news) => (
-                  <div key={news.id} className="flex gap-4 pb-4 border-b border-gray-100 last:border-0 hover:bg-gray-50 p-3 rounded-lg transition-colors cursor-pointer">
-                    <img src={getImagePath(news.image)} alt={news.title} className="w-32 h-24 object-cover rounded-lg flex-shrink-0" />
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded">{news.category}</span>
-                        <span className="text-xs text-gray-500">{news.time}</span>
-                      </div>
-                      <h4 className="font-semibold text-gray-900 mb-1 hover:text-blue-600">{news.title}</h4>
-                      <p className="text-sm text-gray-600 line-clamp-2">{news.summary}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* 积分排行榜 - 表格式样式 */}
-          <section className="lg:col-span-2 flex">
             <div className="bg-white rounded-lg shadow-sm w-full overflow-hidden">
               <div className="flex items-center justify-between p-6 pb-4">
                 <h2 className="text-xl font-bold text-gray-900 flex items-center">
@@ -429,51 +319,47 @@ export default function AlpinePage() {
           </section>
         </div>
 
-        {/* 最新赛事成绩 */}
-        <section className="mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-2xl font-bold text-gray-900 flex items-center">
-              <Trophy className="w-6 h-6 mr-2 text-blue-600" />
-              最新赛事成绩
-            </h2>
-            <Link href="/competitions" className="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center">
-              查看全部 <ChevronRight className="w-4 h-4 ml-1" />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {latestResults.map((result) => (
-              <div key={result.id} className="bg-white rounded-lg p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex-1">
-                    <div className="text-sm font-semibold text-gray-900">{result.event}</div>
-                    <div className="text-xs text-gray-600 mt-1">{result.discipline}</div>
+        {/* 最新赛事成绩 - 仅当有真实数据时显示 */}
+        {alpineCompetitions.length > 0 && (
+          <section className="mb-8">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 flex items-center">
+                <Trophy className="w-6 h-6 mr-2 text-blue-600" />
+                最新赛事成绩
+              </h2>
+              <Link href="/results-import" className="text-blue-600 hover:text-blue-700 text-sm font-medium flex items-center">
+                查看全部 <ChevronRight className="w-4 h-4 ml-1" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {alpineCompetitions.map((comp) => (
+                <div key={comp.competition} className="bg-white rounded-lg p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="flex-1">
+                      <div className="text-sm font-semibold text-gray-900">{comp.competition}</div>
+                      <div className="text-xs text-gray-600 mt-1">{comp.sport}</div>
+                    </div>
+                    <span className="px-2 py-1 rounded text-xs font-medium bg-green-100 text-green-700">
+                      已完成
+                    </span>
                   </div>
-                  <span className={`px-2 py-1 rounded text-xs font-medium ${
-                    result.status === 'live' ? 'bg-red-100 text-red-700 animate-pulse' : 'bg-green-100 text-green-700'
-                  }`}>
-                    {result.status === 'live' ? '进行中' : '已完成'}
-                  </span>
-                </div>
-                <div className="space-y-2 text-sm">
-                  <div className="flex items-center text-gray-600"><MapPin className="w-4 h-4 mr-2" />{result.location}</div>
-                  <div className="flex items-center text-gray-600"><Clock className="w-4 h-4 mr-2" />{result.date}</div>
-                  <div className="flex items-center justify-between pt-2 border-t">
-                    <span className="text-gray-600">冠军：</span>
-                    <span className="font-semibold text-gray-900">{result.winner}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-600">成绩：</span>
-                    <span className="font-semibold text-blue-600">{result.time}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-gray-600">参赛：</span>
-                    <span className="text-gray-900">{result.participants}人</span>
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center text-gray-600"><MapPin className="w-4 h-4 mr-2" />{comp.location}</div>
+                    <div className="flex items-center text-gray-600"><Clock className="w-4 h-4 mr-2" />{comp.date} ~ {comp.endDate}</div>
+                    <div className="flex items-center justify-between pt-2 border-t">
+                      <span className="text-gray-600">小项数：</span>
+                      <span className="font-semibold text-gray-900">{comp.events.length}个</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-600">参赛人次：</span>
+                      <span className="font-semibold text-blue-600">{comp.events.reduce((sum, e) => sum + e.athletes.length, 0)}人次</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* 赛程日历 */}
         <section className="mb-8">
@@ -539,34 +425,6 @@ export default function AlpinePage() {
           </div>
         </section>
 
-        {/* 视频中心 */}
-        <section className="mb-8">
-          <div className="bg-white rounded-lg p-6 shadow-sm">
-            <h2 className="text-xl font-bold text-gray-900 flex items-center mb-4">
-              <Video className="w-5 h-5 mr-2 text-red-600" />
-              视频中心
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {videos.map((video) => (
-                <div key={video.id} className="group cursor-pointer">
-                  <div className="relative rounded-lg overflow-hidden mb-2">
-                    <img src={getImagePath(video.thumbnail)} alt={video.title} className="w-full h-48 object-cover" />
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-colors flex items-center justify-center">
-                      <div className="w-12 h-12 rounded-full bg-white/90 flex items-center justify-center">
-                        <Play className="w-6 h-6 text-gray-900 ml-1" />
-                      </div>
-                    </div>
-                    <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">{video.duration}</div>
-                    <div className="absolute top-2 left-2 bg-red-600 text-white text-xs px-2 py-1 rounded">{video.date}</div>
-                  </div>
-                  <h3 className="font-semibold text-gray-900 text-sm group-hover:text-blue-600 line-clamp-2 mb-1">{video.title}</h3>
-                  <p className="text-xs text-gray-500">{video.views} 次观看</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* 两栏：运动员名录 + 历史冠军 */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           {/* 运动员名录 */}
@@ -589,7 +447,7 @@ export default function AlpinePage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="font-semibold text-gray-900 text-sm">{athlete.name}</div>
-                      <div className="text-xs text-gray-600">{athlete.discipline} · {athlete.age}岁</div>
+                      <div className="text-xs text-gray-600">{athlete.discipline} · {athlete.wins}场</div>
                     </div>
                     <div className="text-right">
                       <div className="text-xs text-gray-500">积分</div>
@@ -601,35 +459,37 @@ export default function AlpinePage() {
             </div>
           </section>
 
-          {/* 历史冠军 */}
-          <section>
-            <div className="bg-white rounded-lg p-6 shadow-sm">
-              <h2 className="text-xl font-bold text-gray-900 flex items-center mb-4">
-                <History className="w-5 h-5 mr-2 text-yellow-600" />
-                历史冠军
-              </h2>
-              <div className="space-y-3">
-                {champions.map((champion, index) => (
-                  <div key={index} className="flex items-center p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border border-yellow-200">
-                    <div className="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center mr-4 flex-shrink-0">
-                      <Trophy className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="px-2 py-0.5 bg-yellow-600 text-white text-xs rounded font-bold">{champion.year}</span>
-                        <span className="font-semibold text-gray-900">{champion.name}</span>
+          {/* 历史冠军 - 仅当有真实数据时显示 */}
+          {champions.length > 0 && (
+            <section>
+              <div className="bg-white rounded-lg p-6 shadow-sm">
+                <h2 className="text-xl font-bold text-gray-900 flex items-center mb-4">
+                  <History className="w-5 h-5 mr-2 text-yellow-600" />
+                  赛事冠军
+                </h2>
+                <div className="space-y-3">
+                  {champions.map((champion, index) => (
+                    <div key={index} className="flex items-center p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border border-yellow-200">
+                      <div className="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center mr-4 flex-shrink-0">
+                        <Trophy className="w-6 h-6 text-white" />
                       </div>
-                      <div className="text-sm text-gray-600">{champion.discipline}</div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="px-2 py-0.5 bg-yellow-600 text-white text-xs rounded font-bold">{champion.year}</span>
+                          <span className="font-semibold text-gray-900">{champion.name}</span>
+                        </div>
+                        <div className="text-sm text-gray-600">{champion.discipline}</div>
+                      </div>
+                      <div className="text-right">
+                        <div className="text-xs text-gray-500">成绩</div>
+                        <div className="font-bold text-yellow-600">{champion.time}</div>
+                      </div>
                     </div>
-                    <div className="text-right">
-                      <div className="text-xs text-gray-500">最终积分</div>
-                      <div className="font-bold text-yellow-600">{champion.points}</div>
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+          )}
         </div>
 
         {/* 规则文档 */}
