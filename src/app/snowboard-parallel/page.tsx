@@ -3,10 +3,10 @@
 import Link from 'next/link';
 import { useState, useEffect, useCallback } from 'react';
 import {
-  Calculator, Trophy, Users, FileText, TrendingUp, Calendar,
-  Video, BarChart3, ChevronLeft, ChevronRight, ExternalLink,
-  Clock, MapPin, Medal, Award, Play, Download, Newspaper,
-  Target, Zap, BookOpen, History, Star, TrendingDown
+  Trophy, Users, TrendingUp, Calendar,
+  ChevronLeft, ChevronRight,
+  Clock, MapPin, Award,
+  Target, History, TrendingDown
 } from 'lucide-react';
 import { getImagePath } from '@/utils/paths';
 import { useTranslation } from '@/contexts/LanguageContext';
@@ -132,14 +132,11 @@ export default function SnowboardParallelPage() {
   ];
 
 
-  // 赛程日历（增加到6个）
+  // 赛程日历 - 待确认真实数据
   const upcomingEvents = [
-    { event: '全国单板平行锦标赛', discipline: '平行大回转', date: '2024-12-20', location: '密苑云顶滑雪场', level: 'A级', prize: '55万' },
-    { event: '中国杯单板公开赛', discipline: '平行回转', date: '2024-12-22', location: '崇礼万龙滑雪场', level: 'A级', prize: '45万' },
-    { event: '华北区域赛', discipline: 'PGS+PSL', date: '2024-12-25', location: '太舞滑雪场', level: 'B级', prize: '22万' },
-    { event: '青年锦标赛', discipline: '混合平行', date: '2024-12-28', location: '北大湖滑雪场', level: 'B级', prize: '18万' },
-    { event: '东北联赛', discipline: '平行大回转', date: '2025-01-05', location: '长白山滑雪场', level: 'B级', prize: '20万' },
-    { event: '全国冬季运动会', discipline: '全能', date: '2025-01-15', location: '张家口赛区', level: 'A级', prize: '110万' }
+    { event: '全国单板平行U系列比赛', discipline: 'PGS/PSL', date: '2025-01', location: '待定', level: 'U系列' },
+    { event: '全国单板平行锦标赛', discipline: '平行大回转', date: '2025-02', location: '待定', level: 'A级' },
+    { event: '全国青少年单板平行锦标赛', discipline: '平行回转', date: '2025-02', location: '待定', level: 'B级' }
   ];
 
 
@@ -151,13 +148,6 @@ export default function SnowboardParallelPage() {
     { label: '参赛人次', value: '1.8K', unit: '+', icon: Target, color: 'purple' }
   ];
 
-  // 积分规则简介（新增）
-  const pointsRules = [
-    { title: '积分计算', desc: '基于时间差的竞速积分系统', icon: Calculator },
-    { title: '赛事分级', desc: 'A级系数1.0，B级0.6，C级0.3', icon: Star },
-    { title: '积分延续', desc: '上赛季积分×50%计入新赛季', icon: TrendingUp },
-    { title: '淘汰赛制', desc: '单淘汰制，两次滑行累计时间', icon: Award }
-  ];
 
 
   const nextSlide = useCallback(() => {
@@ -382,48 +372,20 @@ export default function SnowboardParallelPage() {
                   <div className="flex items-center justify-between mb-2">
                     <div className="font-semibold text-gray-900">{event.event}</div>
                     <span className={`px-2 py-0.5 text-xs font-medium rounded ${
-                      event.level === 'A级' ? 'bg-red-100 text-red-700' : 'bg-blue-100 text-blue-700'
+                      event.level === 'A级' ? 'bg-red-100 text-red-700' :
+                      event.level === 'U系列' ? 'bg-green-100 text-green-700' :
+                      'bg-blue-100 text-blue-700'
                     }`}>{event.level}</span>
                   </div>
                   <div className="text-sm text-gray-600 mb-2">{event.discipline}</div>
                   <div className="flex items-center text-sm text-gray-500 mb-1">
                     <Clock className="w-4 h-4 mr-1" />{event.date}
                   </div>
-                  <div className="flex items-center text-sm text-gray-500 mb-1">
+                  <div className="flex items-center text-sm text-gray-500">
                     <MapPin className="w-4 h-4 mr-1" />{event.location}
-                  </div>
-                  <div className="flex items-center text-sm text-orange-600 font-medium">
-                    <Award className="w-4 h-4 mr-1" />奖金 {event.prize}
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 积分规则简介 */}
-        <section className="mb-8">
-          <div className="bg-gradient-to-r from-indigo-600 to-indigo-700 rounded-lg p-6 text-white shadow-lg">
-            <h2 className="text-2xl font-bold mb-6 flex items-center">
-              <BookOpen className="w-6 h-6 mr-2" />
-              积分规则简介
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {pointsRules.map((rule, index) => {
-                const Icon = rule.icon;
-                return (
-                  <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-colors">
-                    <Icon className="w-8 h-8 mb-3" />
-                    <div className="font-semibold mb-1">{rule.title}</div>
-                    <div className="text-sm text-indigo-100">{rule.desc}</div>
-                  </div>
-                );
-              })}
-            </div>
-            <div className="mt-6 text-center">
-              <Link href="/rules/points" className="inline-flex items-center px-6 py-2 bg-white text-indigo-600 rounded-lg hover:bg-indigo-50 transition-colors font-medium">
-                查看完整规则 <ChevronRight className="w-4 h-4 ml-1" />
-              </Link>
             </div>
           </div>
         </section>
@@ -495,47 +457,6 @@ export default function SnowboardParallelPage() {
           </div>
         )}
 
-        {/* 规则文档 */}
-        <section>
-          <div className="bg-white rounded-lg p-6 shadow-sm">
-            <h2 className="text-xl font-bold text-gray-900 flex items-center mb-4">
-              <FileText className="w-5 h-5 mr-2 text-cyan-600" />
-              规则文档下载
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Link href="/docs" className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-indigo-400 hover:bg-indigo-50 transition-all group">
-                <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center mr-3 group-hover:bg-red-200">
-                  <FileText className="w-6 h-6 text-red-600" />
-                </div>
-                <div className="flex-1">
-                  <div className="font-semibold text-gray-900 text-sm group-hover:text-indigo-600">单板平行项目积分规则</div>
-                  <div className="text-xs text-gray-500 mt-1">PDF · 2.1 MB</div>
-                </div>
-                <Download className="w-5 h-5 text-gray-400 group-hover:text-indigo-600" />
-              </Link>
-              <Link href="/docs" className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-indigo-400 hover:bg-indigo-50 transition-all group">
-                <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center mr-3 group-hover:bg-red-200">
-                  <FileText className="w-6 h-6 text-red-600" />
-                </div>
-                <div className="flex-1">
-                  <div className="font-semibold text-gray-900 text-sm group-hover:text-indigo-600">FIS单板平行竞赛规则</div>
-                  <div className="text-xs text-gray-500 mt-1">PDF · 3.8 MB</div>
-                </div>
-                <Download className="w-5 h-5 text-gray-400 group-hover:text-indigo-600" />
-              </Link>
-              <Link href="/docs" className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-indigo-400 hover:bg-indigo-50 transition-all group">
-                <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center mr-3 group-hover:bg-red-200">
-                  <FileText className="w-6 h-6 text-red-600" />
-                </div>
-                <div className="flex-1">
-                  <div className="font-semibold text-gray-900 text-sm group-hover:text-indigo-600">赛道设置标准要求</div>
-                  <div className="text-xs text-gray-500 mt-1">PDF · 1.5 MB</div>
-                </div>
-                <Download className="w-5 h-5 text-gray-400 group-hover:text-indigo-600" />
-              </Link>
-            </div>
-          </div>
-        </section>
       </div>
     </div>
   );

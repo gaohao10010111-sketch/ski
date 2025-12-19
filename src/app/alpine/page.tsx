@@ -3,10 +3,10 @@
 import Link from 'next/link';
 import { useState, useEffect, useCallback } from 'react';
 import {
-  Calculator, Trophy, Users, FileText, TrendingUp, Calendar,
-  Video, BarChart3, ChevronLeft, ChevronRight, ExternalLink,
-  Clock, MapPin, Medal, Award, Play, Download, Newspaper,
-  Target, Zap, BookOpen, History, Star, TrendingDown
+  Trophy, Users, TrendingUp, Calendar,
+  ChevronLeft, ChevronRight,
+  Clock, MapPin, Award,
+  Target, History, TrendingDown
 } from 'lucide-react';
 import { getImagePath } from '@/utils/paths';
 import { useTranslation } from '@/contexts/LanguageContext';
@@ -75,14 +75,11 @@ export default function AlpinePage() {
 
   const rankings = generateRankings();
 
-  // 赛程日历（增加到6个）
+  // 赛程日历 - 待确认真实数据
   const upcomingEvents = [
-    { event: '全国高山滑雪锦标赛', discipline: '大回转', date: '2024-12-20', location: '长白山万达滑雪场', level: 'A级', prize: '50万' },
-    { event: '中国杯高山滑雪公开赛', discipline: '回转', date: '2024-12-22', location: '崇礼云顶滑雪场', level: 'A级', prize: '40万' },
-    { event: '华北区域赛', discipline: '超级大回转', date: '2024-12-25', location: '太舞滑雪场', level: 'B级', prize: '20万' },
-    { event: '青年锦标赛', discipline: '全能', date: '2024-12-28', location: '万龙滑雪场', level: 'B级', prize: '15万' },
-    { event: '东北联赛', discipline: '大回转', date: '2025-01-05', location: '亚布力滑雪场', level: 'B级', prize: '18万' },
-    { event: '全国冬季运动会', discipline: '全能', date: '2025-01-15', location: '吉林北大湖', level: 'A级', prize: '100万' }
+    { event: '全国高山滑雪U系列比赛', discipline: '回转/大回转', date: '2025-01', location: '待定', level: 'U系列' },
+    { event: '全国高山滑雪锦标赛', discipline: '全能', date: '2025-02', location: '待定', level: 'A级' },
+    { event: '全国青少年高山滑雪锦标赛', discipline: '回转', date: '2025-02', location: '待定', level: 'B级' }
   ];
 
   // 从真实数据生成顶尖运动员列表
@@ -128,13 +125,6 @@ export default function AlpinePage() {
     { label: '参赛人次', value: '2.8K', unit: '+', icon: Target, color: 'purple' }
   ];
 
-  // 积分规则简介（新增）
-  const pointsRules = [
-    { title: '积分计算', desc: '基于时间差和竞赛系数的v4.0公式', icon: Calculator },
-    { title: '赛事分级', desc: 'A级系数1.0，B级0.6，C级0.3', icon: Star },
-    { title: '积分延续', desc: '上赛季积分×50%计入新赛季', icon: TrendingUp },
-    { title: '伤病保护', desc: '特殊情况下的积分保护机制', icon: Award }
-  ];
 
   // 从真实数据生成历史冠军
   const generateChampions = () => {
@@ -379,48 +369,20 @@ export default function AlpinePage() {
                   <div className="flex items-center justify-between mb-2">
                     <div className="font-semibold text-gray-900">{event.event}</div>
                     <span className={`px-2 py-0.5 text-xs font-medium rounded ${
-                      event.level === 'A级' ? 'bg-red-100 text-red-700' : 'bg-blue-100 text-blue-700'
+                      event.level === 'A级' ? 'bg-red-100 text-red-700' :
+                      event.level === 'U系列' ? 'bg-green-100 text-green-700' :
+                      'bg-blue-100 text-blue-700'
                     }`}>{event.level}</span>
                   </div>
                   <div className="text-sm text-gray-600 mb-2">{event.discipline}</div>
                   <div className="flex items-center text-sm text-gray-500 mb-1">
                     <Clock className="w-4 h-4 mr-1" />{event.date}
                   </div>
-                  <div className="flex items-center text-sm text-gray-500 mb-1">
+                  <div className="flex items-center text-sm text-gray-500">
                     <MapPin className="w-4 h-4 mr-1" />{event.location}
-                  </div>
-                  <div className="flex items-center text-sm text-orange-600 font-medium">
-                    <Award className="w-4 h-4 mr-1" />奖金 {event.prize}
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 积分规则简介 */}
-        <section className="mb-8">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg p-6 text-white shadow-lg">
-            <h2 className="text-2xl font-bold mb-6 flex items-center">
-              <BookOpen className="w-6 h-6 mr-2" />
-              积分规则简介
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {pointsRules.map((rule, index) => {
-                const Icon = rule.icon;
-                return (
-                  <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-colors">
-                    <Icon className="w-8 h-8 mb-3" />
-                    <div className="font-semibold mb-1">{rule.title}</div>
-                    <div className="text-sm text-blue-100">{rule.desc}</div>
-                  </div>
-                );
-              })}
-            </div>
-            <div className="mt-6 text-center">
-              <Link href="/rules/points" className="inline-flex items-center px-6 py-2 bg-white text-blue-600 rounded-lg hover:bg-blue-50 transition-colors font-medium">
-                查看完整规则 <ChevronRight className="w-4 h-4 ml-1" />
-              </Link>
             </div>
           </div>
         </section>
@@ -492,47 +454,6 @@ export default function AlpinePage() {
           )}
         </div>
 
-        {/* 规则文档 */}
-        <section>
-          <div className="bg-white rounded-lg p-6 shadow-sm">
-            <h2 className="text-xl font-bold text-gray-900 flex items-center mb-4">
-              <FileText className="w-5 h-5 mr-2 text-cyan-600" />
-              规则文档下载
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Link href="/docs" className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-blue-400 hover:bg-blue-50 transition-all group">
-                <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center mr-3 group-hover:bg-red-200">
-                  <FileText className="w-6 h-6 text-red-600" />
-                </div>
-                <div className="flex-1">
-                  <div className="font-semibold text-gray-900 text-sm group-hover:text-blue-600">中国高山滑雪积分规则v4.0</div>
-                  <div className="text-xs text-gray-500 mt-1">PDF · 2.3 MB</div>
-                </div>
-                <Download className="w-5 h-5 text-gray-400 group-hover:text-blue-600" />
-              </Link>
-              <Link href="/docs" className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-blue-400 hover:bg-blue-50 transition-all group">
-                <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center mr-3 group-hover:bg-red-200">
-                  <FileText className="w-6 h-6 text-red-600" />
-                </div>
-                <div className="flex-1">
-                  <div className="font-semibold text-gray-900 text-sm group-hover:text-blue-600">FIS国际雪联竞赛规则</div>
-                  <div className="text-xs text-gray-500 mt-1">PDF · 5.1 MB</div>
-                </div>
-                <Download className="w-5 h-5 text-gray-400 group-hover:text-blue-600" />
-              </Link>
-              <Link href="/docs" className="flex items-center p-4 border border-gray-200 rounded-lg hover:border-blue-400 hover:bg-blue-50 transition-all group">
-                <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center mr-3 group-hover:bg-red-200">
-                  <FileText className="w-6 h-6 text-red-600" />
-                </div>
-                <div className="flex-1">
-                  <div className="font-semibold text-gray-900 text-sm group-hover:text-blue-600">场地标准与认证要求</div>
-                  <div className="text-xs text-gray-500 mt-1">PDF · 1.8 MB</div>
-                </div>
-                <Download className="w-5 h-5 text-gray-400 group-hover:text-blue-600" />
-              </Link>
-            </div>
-          </div>
-        </section>
       </div>
     </div>
   );
