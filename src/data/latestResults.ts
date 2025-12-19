@@ -60,7 +60,7 @@ export const latestResults: ResultsData = {
               "rank": 1,
               "bib": 4,
               "name": "孙嘉怡",
-              "team": "河北省体育局冬季运动中",
+              "team": "河北省体育局冬季运动中心",
               "birthYear": "2015",
               "bestScore": 150.4,
               "points": 360
@@ -87,7 +87,7 @@ export const latestResults: ResultsData = {
               "rank": 4,
               "bib": 13,
               "name": "张诗涵",
-              "team": "石家庄市冰雪与足球运动",
+              "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2017",
               "bestScore": 108.2,
               "points": 280
@@ -105,7 +105,7 @@ export const latestResults: ResultsData = {
               "rank": 6,
               "bib": 6,
               "name": "杨茗然",
-              "team": "河北省体育局冬季运动中",
+              "team": "河北省体育局冬季运动中心",
               "birthYear": "2015",
               "bestScore": 87.8,
               "points": 242
@@ -132,7 +132,7 @@ export const latestResults: ResultsData = {
               "rank": 9,
               "bib": 7,
               "name": "冷昕莲",
-              "team": "河北省体育局冬季运动中",
+              "team": "河北省体育局冬季运动中心",
               "birthYear": "2014",
               "bestScore": 1,
               "points": 199
@@ -148,7 +148,7 @@ export const latestResults: ResultsData = {
               "rank": 1,
               "bib": 8,
               "name": "鱼嘉怡",
-              "team": "河北省体育局冬季运动中",
+              "team": "河北省体育局冬季运动中心",
               "birthYear": "2010",
               "bestScore": 168.2,
               "points": 360
@@ -166,7 +166,7 @@ export const latestResults: ResultsData = {
               "rank": 3,
               "bib": 18,
               "name": "杨可轩",
-              "team": "广西射击射箭运动发展中",
+              "team": "广西射击射箭运动发展中心",
               "birthYear": "2010",
               "bestScore": 122,
               "points": 303
@@ -175,7 +175,7 @@ export const latestResults: ResultsData = {
               "rank": 4,
               "bib": 9,
               "name": "贺舒玉",
-              "team": "重庆市沙坪坝区体育运动",
+              "team": "重庆市沙坪坝区体育运动中心",
               "birthYear": "2011",
               "bestScore": 108.4,
               "points": 280
@@ -193,7 +193,7 @@ export const latestResults: ResultsData = {
               "rank": 6,
               "bib": 17,
               "name": "周雨辰",
-              "team": "广西射击射箭运动发展中",
+              "team": "广西射击射箭运动发展中心",
               "birthYear": "2012",
               "bestScore": 94.4,
               "points": 242
@@ -202,7 +202,7 @@ export const latestResults: ResultsData = {
               "rank": 7,
               "bib": 10,
               "name": "王若西",
-              "team": "重庆市沙坪坝区体育运动",
+              "team": "重庆市沙坪坝区体育运动中心",
               "birthYear": "2013",
               "bestScore": 79.6,
               "points": 226
@@ -211,7 +211,7 @@ export const latestResults: ResultsData = {
               "rank": 8,
               "bib": 16,
               "name": "周雨欣",
-              "team": "广西射击射箭运动发展中",
+              "team": "广西射击射箭运动发展中心",
               "birthYear": "2012",
               "bestScore": 67.4,
               "points": 212
@@ -220,7 +220,7 @@ export const latestResults: ResultsData = {
               "rank": 9,
               "bib": 5,
               "name": "苏常格",
-              "team": "河北省体育局冬季运动中",
+              "team": "河北省体育局冬季运动中心",
               "birthYear": "2013",
               "bestScore": 43.2,
               "points": 199
@@ -281,7 +281,7 @@ export const latestResults: ResultsData = {
               "rank": 6,
               "bib": 3,
               "name": "刘沐泽",
-              "team": "石家庄市冰雪与足球运动",
+              "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2014",
               "bestScore": 119.4,
               "points": 242
@@ -290,7 +290,7 @@ export const latestResults: ResultsData = {
               "rank": 7,
               "bib": 9,
               "name": "赵严诺",
-              "team": "河北省体育局冬季运动中",
+              "team": "河北省体育局冬季运动中心",
               "birthYear": "2014",
               "bestScore": 115.2,
               "points": 226
@@ -396,7 +396,7 @@ export const latestResults: ResultsData = {
               "rank": 8,
               "bib": 22,
               "name": "梁嘉俊",
-              "team": "石家庄市冰雪与足球运动",
+              "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2013",
               "bestScore": 112,
               "points": 212
@@ -405,7 +405,7 @@ export const latestResults: ResultsData = {
               "rank": 9,
               "bib": 7,
               "name": "麦冠航",
-              "team": "河北省体育局冬季运动中",
+              "team": "河北省体育局冬季运动中心",
               "birthYear": "2010",
               "bestScore": 110.4,
               "points": 199
@@ -414,7 +414,7 @@ export const latestResults: ResultsData = {
               "rank": 10,
               "bib": 15,
               "name": "于瀚",
-              "team": "重庆市沙坪坝区体育运动",
+              "team": "重庆市沙坪坝区体育运动中心",
               "birthYear": "2012",
               "bestScore": 73,
               "points": 187
@@ -430,7 +430,7 @@ export const latestResults: ResultsData = {
               "rank": 1,
               "bib": 13,
               "name": "封树渝",
-              "team": "重庆市沙坪坝区体育运动",
+              "team": "重庆市沙坪坝区体育运动中心",
               "birthYear": "2008",
               "bestScore": 152.6,
               "points": 360
@@ -448,7 +448,7 @@ export const latestResults: ResultsData = {
               "rank": 3,
               "bib": 21,
               "name": "米馥豪",
-              "team": "石家庄市冰雪与足球运动",
+              "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2009",
               "bestScore": 128.4,
               "points": 303
@@ -457,7 +457,7 @@ export const latestResults: ResultsData = {
               "rank": 4,
               "bib": 10,
               "name": "罗皓桉",
-              "team": "湖北省武术和冬季运动管",
+              "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2007",
               "bestScore": 86.8,
               "points": 280
@@ -466,7 +466,7 @@ export const latestResults: ResultsData = {
               "rank": 5,
               "bib": 11,
               "name": "黄子剑",
-              "team": "湖北省武术和冬季运动管",
+              "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2008",
               "bestScore": 82.6,
               "points": 260
@@ -475,7 +475,7 @@ export const latestResults: ResultsData = {
               "rank": 6,
               "bib": 12,
               "name": "倪文凯",
-              "team": "湖北省武术和冬季运动管",
+              "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2009",
               "bestScore": 78.6,
               "points": 242
@@ -484,7 +484,7 @@ export const latestResults: ResultsData = {
               "rank": 7,
               "bib": 17,
               "name": "雷涵文",
-              "team": "重庆市沙坪坝区体育运动",
+              "team": "重庆市沙坪坝区体育运动中心",
               "birthYear": "2009",
               "bestScore": 40.6,
               "points": 226
