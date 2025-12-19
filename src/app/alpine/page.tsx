@@ -117,13 +117,6 @@ export default function AlpinePage() {
 
   const topAthletes = generateTopAthletes();
 
-  // 数据统计（新增）
-  const statistics = [
-    { label: '本赛季赛事', value: '12', unit: '场', icon: Trophy, color: 'blue' },
-    { label: '注册运动员', value: '486', unit: '人', icon: Users, color: 'green' },
-    { label: '总奖金池', value: '385', unit: '万', icon: Award, color: 'yellow' },
-    { label: '参赛人次', value: '2.8K', unit: '+', icon: Target, color: 'purple' }
-  ];
 
 
   // 从真实数据生成历史冠军
@@ -202,32 +195,6 @@ export default function AlpinePage() {
       </div>
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px] py-8">
-        {/* 数据统计 */}
-        <section className="mb-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {statistics.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <div key={index} className={`bg-white rounded-lg p-6 text-center shadow-sm border-t-4 ${
-                  stat.color === 'blue' ? 'border-blue-500' :
-                  stat.color === 'green' ? 'border-green-500' :
-                  stat.color === 'yellow' ? 'border-yellow-500' :
-                  'border-purple-500'
-                }`}>
-                  <Icon className={`w-8 h-8 mx-auto mb-3 ${
-                    stat.color === 'blue' ? 'text-blue-600' :
-                    stat.color === 'green' ? 'text-green-600' :
-                    stat.color === 'yellow' ? 'text-yellow-600' :
-                    'text-purple-600'
-                  }`} />
-                  <div className="text-3xl font-bold text-gray-900 mb-1">{stat.value}<span className="text-lg text-gray-500">{stat.unit}</span></div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
         {/* 积分排行榜 */}
         <div className="mb-8">
           <section className="flex">
