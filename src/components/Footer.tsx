@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { Mountain } from 'lucide-react'
 import { commonPartners, brandPartners, resortPartners, Partner } from '@/data/partners'
 
-// 主办/承办单位Logo组件 - 统一大尺寸白色方框
-function OrganizerLogo({ partner, label }: { partner: Partner; label: string }) {
+// 主办/承办单位Logo组件 - 统一大尺寸白色圆角矩形框
+function OrganizerLogo({ partner, label, showLabel = true }: { partner: Partner; label: string; showLabel?: boolean }) {
   const [basePath, setBasePath] = useState('/ski');
   const [imgError, setImgError] = useState(false);
 
@@ -20,7 +20,8 @@ function OrganizerLogo({ partner, label }: { partner: Partner; label: string }) 
 
   const content = (
     <div className="flex flex-col items-center">
-      <span className="text-xs text-gray-400 mb-2">{label}</span>
+      {showLabel && <span className="text-xs text-gray-400 mb-2">{label}</span>}
+      {!showLabel && <span className="text-xs text-gray-400 mb-2 invisible">{label}</span>}
       <div className="bg-white rounded-2xl px-6 py-5 w-[220px] h-[100px] flex items-center justify-center hover:scale-105 transition-transform shadow-sm">
         {(hasLogo && !imgError) ? (
           // eslint-disable-next-line @next/next/no-img-element
@@ -194,7 +195,7 @@ export default function Footer() {
           <div className="text-center mb-6">
             <div className="flex flex-wrap items-end justify-center gap-8 mb-8">
               <OrganizerLogo partner={commonPartners.csa} label="主办单位" />
-              <OrganizerLogo partner={commonPartners.huati} label="承办单位" />
+              <OrganizerLogo partner={commonPartners.huati} label="承办单位" showLabel={false} />
             </div>
           </div>
         </div>
