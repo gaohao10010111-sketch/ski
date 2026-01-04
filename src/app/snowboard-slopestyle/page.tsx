@@ -1,16 +1,17 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import {
   Trophy, Users, TrendingUp, Calendar,
   ChevronLeft, ChevronRight,
   Clock, MapPin, Award,
-  Target, History, TrendingDown
+  Target, History, TrendingDown, Crown, Medal
 } from 'lucide-react';
 import { getImagePath } from '@/utils/paths';
 import { useTranslation } from '@/contexts/LanguageContext';
-import { resultsBySport } from '@/data/latestResults';
+import { latestResults, resultsBySport } from '@/data/latestResults';
 
 // 获取单板坡障/大跳台的真实数据
 const snowboardCompetitions = resultsBySport['snowboard-slopestyle'] || [];
@@ -19,42 +20,39 @@ export default function SnowboardSlopestylePage() {
   const { t, language } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // 从真实数据生成积分排行榜
-  const generateRankings = () => {
-    const athletePoints: { [key: string]: { name: string; team: string; points: number; events: number } } = {};
+  // 从 latestResults 获取最新比赛的前10名运动员
+  const rankings = useMemo(() => {
+    const allAthletes: { rank: number; name: string; team: string; points: number; discipline: string; ageGroup: string; gender: string; bestScore?: number }[] = [];
 
-    snowboardCompetitions.forEach(comp => {
-      comp.events.forEach(event => {
-        event.athletes.forEach(athlete => {
-          const key = athlete.name;
-          if (!athletePoints[key]) {
-            athletePoints[key] = { name: athlete.name, team: athlete.team, points: 0, events: 0 };
+    for (const competition of latestResults.competitions) {
+      if (competition.sportType !== 'snowboard-slopestyle') continue;
+
+      for (const event of competition.events) {
+        for (const athlete of event.athletes) {
+          if (athlete.points) {
+            allAthletes.push({
+              rank: athlete.rank,
+              name: athlete.name,
+              team: athlete.team,
+              points: athlete.points,
+              discipline: event.discipline,
+              ageGroup: event.ageGroup,
+              gender: event.gender,
+              bestScore: athlete.bestScore
+            });
           }
-          const points = athlete.points || (athlete.rank <= 50 ? Math.max(360 - (athlete.rank - 1) * 7, 1) : 0);
-          athletePoints[key].points += points;
-          athletePoints[key].events += 1;
-        });
-      });
-    });
+        }
+      }
+    }
 
-    return Object.values(athletePoints)
+    // 按积分排序，取前10名
+    return allAthletes
       .sort((a, b) => b.points - a.points)
-      .slice(0, 10)
-      .map((a, idx) => ({
-        rank: idx + 1,
-        name: a.name,
-        nation: '中国',
-        event: '单板大跳台/坡障',
-        points: a.points.toString(),
-        change: 0,
-        trend: 'stable' as const
-      }));
-  };
+      .slice(0, 10);
+  }, []);
 
-  const rankings = generateRankings();
-
-  // 从真实数据生成顶尖运动员列表
-  const generateTopAthletes = () => {
+  // 从真实数据生成顶尖运动员列表 - 使用 useMemo 缓存
+  const topAthletes = useMemo(() => {
     const athleteData: { [key: string]: { name: string; team: string; points: number; events: number } } = {};
 
     snowboardCompetitions.forEach(comp => {
@@ -64,7 +62,7 @@ export default function SnowboardSlopestylePage() {
           if (!athleteData[key]) {
             athleteData[key] = { name: athlete.name, team: athlete.team, points: 0, events: 0 };
           }
-          const points = athlete.points || (athlete.rank <= 50 ? Math.max(360 - (athlete.rank - 1) * 7, 1) : 0);
+          const points = athlete.points || 0;
           athleteData[key].points += points;
           athleteData[key].events += 1;
         });
@@ -84,12 +82,10 @@ export default function SnowboardSlopestylePage() {
         age: 0,
         wins: a.events
       }));
-  };
+  }, []);
 
-  const topAthletes = generateTopAthletes();
-
-  // 从真实数据生成赛事冠军
-  const generateChampions = () => {
+  // 从真实数据生成赛事冠军 - 使用 useMemo 缓存
+  const champions = useMemo(() => {
     const champList: { year: string; name: string; discipline: string; score: string }[] = [];
 
     snowboardCompetitions.forEach(comp => {
@@ -107,9 +103,7 @@ export default function SnowboardSlopestylePage() {
     });
 
     return champList.slice(0, 4);
-  };
-
-  const champions = generateChampions();
+  }, []);
 
   const heroSlides = [
     {
@@ -140,10 +134,6 @@ export default function SnowboardSlopestylePage() {
     { event: '全国青少年单板滑雪锦标赛', discipline: '大跳台/坡障', date: '2025-02', location: '待定', level: 'B级' }
   ];
 
-
-
-
-
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
   }, [heroSlides.length]);
@@ -164,7 +154,14 @@ export default function SnowboardSlopestylePage() {
       {/* 英雄展示区 */}
       <div className="relative bg-gray-900 h-[400px] overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroSlides[currentSlide].image} alt={heroSlides[currentSlide].title} className="w-full h-full object-cover" />
+          <Image
+            src={heroSlides[currentSlide].image}
+            alt={heroSlides[currentSlide].title}
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30"></div>
         </div>
 
@@ -198,85 +195,82 @@ export default function SnowboardSlopestylePage() {
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px] py-8">
         {/* 积分排行榜 */}
-        <div className="mb-8">
-          <section className="flex">
-            <div className="bg-white rounded-lg shadow-sm w-full overflow-hidden">
-              <div className="flex items-center justify-between p-6 pb-4">
-                <h2 className="text-xl font-bold text-gray-900 flex items-center">
-                  <Trophy className="w-5 h-5 mr-2 text-purple-600" />
-                  积分排行榜
-                </h2>
-                <Link href="/snowboard-slopestyle/points/rankings" className="text-purple-600 hover:text-purple-700 text-sm font-medium">
-                  完整榜单 →
-                </Link>
-              </div>
-              <div className="overflow-x-auto">
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">排名</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">运动员</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">项目</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">积分</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">变化</th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
-                    {rankings.map((athlete) => (
-                      <tr key={athlete.rank} className="hover:bg-gray-50">
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          <div className="flex items-center">
-                            {athlete.rank <= 3 ? (
-                              <div className={`w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold ${
-                                athlete.rank === 1 ? 'bg-yellow-500' :
-                                athlete.rank === 2 ? 'bg-gray-400' :
-                                'bg-orange-500'
-                              }`}>
-                                {athlete.rank}
-                              </div>
-                            ) : (
-                              <div className="w-6 h-6 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-xs font-bold">
-                                {athlete.rank}
-                              </div>
-                            )}
-                          </div>
-                        </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          <div className="flex items-center">
-                            <div className="flex-shrink-0 h-8 w-8">
-                              <div className="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
-                                <span className="text-xs font-medium text-gray-600">{athlete.name.charAt(0)}</span>
-                              </div>
-                            </div>
-                            <div className="ml-3">
-                              <div className="text-sm font-medium text-gray-900">{athlete.name}</div>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          <div className="text-sm text-gray-600">{athlete.event}</div>
-                        </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          <div className="text-sm font-bold text-gray-900">{athlete.points}</div>
-                        </td>
-                        <td className="px-4 py-3 whitespace-nowrap">
-                          {athlete.change !== 0 ? (
-                            <div className={`flex items-center text-sm ${athlete.change > 0 ? 'text-green-600' : 'text-red-600'}`}>
-                              {athlete.change > 0 ? <TrendingUp className="w-4 h-4 mr-1" /> : <TrendingDown className="w-4 h-4 mr-1" />}
-                              {athlete.change > 0 ? '+' : ''}{athlete.change}
-                            </div>
-                          ) : (
-                            <span className="text-sm text-gray-500">-</span>
-                          )}
-                        </td>
+        {rankings.length > 0 && (
+          <div className="mb-8">
+            <section className="flex">
+              <div className="bg-white rounded-lg shadow-sm w-full overflow-hidden">
+                <div className="flex items-center justify-between p-6 pb-4">
+                  <h2 className="text-xl font-bold text-gray-900 flex items-center">
+                    <Trophy className="w-5 h-5 mr-2 text-purple-600" />
+                    积分排行榜
+                  </h2>
+                  <Link href="/snowboard-slopestyle/points/rankings" className="text-purple-600 hover:text-purple-700 text-sm font-medium">
+                    完整榜单 →
+                  </Link>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="min-w-full divide-y divide-gray-200">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-16">排名</th>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">运动员</th>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">单位</th>
+                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">组别</th>
+                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-24">积分</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody className="bg-white divide-y divide-gray-200">
+                      {rankings.map((athlete, index) => (
+                        <tr key={`${athlete.name}-${index}`} className={`hover:bg-gray-50 ${index < 3 ? 'bg-gradient-to-r from-yellow-50 to-orange-50' : ''}`}>
+                          <td className="px-4 py-3 whitespace-nowrap text-center">
+                            <div className="flex items-center justify-center">
+                              {index === 0 ? (
+                                <Crown className="w-5 h-5 text-yellow-500" />
+                              ) : index === 1 ? (
+                                <Medal className="w-5 h-5 text-gray-400" />
+                              ) : index === 2 ? (
+                                <Award className="w-5 h-5 text-orange-500" />
+                              ) : (
+                                <span className="w-5 h-5 flex items-center justify-center text-sm font-medium text-gray-500">{index + 1}</span>
+                              )}
+                            </div>
+                          </td>
+                          <td className="px-4 py-3 whitespace-nowrap">
+                            <div className="flex items-center">
+                              <div className="flex-shrink-0 h-8 w-8">
+                                <div className="h-8 w-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                  <span className="text-xs font-medium text-purple-600">{athlete.name.charAt(0)}</span>
+                                </div>
+                              </div>
+                              <div className="ml-3">
+                                <div className="text-sm font-medium text-gray-900">{athlete.name}</div>
+                              </div>
+                            </div>
+                          </td>
+                          <td className="px-4 py-3 text-sm text-gray-600">{athlete.team}</td>
+                          <td className="px-4 py-3 whitespace-nowrap text-center">
+                            <span className="text-xs text-gray-500">{athlete.gender} {athlete.ageGroup}</span>
+                          </td>
+                          <td className="px-4 py-3 whitespace-nowrap text-center">
+                            <span className={`inline-flex px-2.5 py-1 text-sm font-bold rounded-lg ${
+                              index === 0
+                                ? 'bg-gradient-to-r from-yellow-400 to-orange-400 text-white'
+                                : index < 3
+                                ? 'bg-orange-100 text-orange-700'
+                                : 'bg-purple-100 text-purple-800'
+                            }`}>
+                              {athlete.points}分
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
-            </div>
-          </section>
-        </div>
+            </section>
+          </div>
+        )}
 
         {/* 最新赛事成绩 - 仅当有真实数据时显示 */}
         {snowboardCompetitions.length > 0 && (

@@ -42,12 +42,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://cnskipoints.com/points/trends</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
   <!-- 比赛管理 -->
   <url>
     <loc>https://cnskipoints.com/competitions</loc>

@@ -15,8 +15,8 @@ export default function Footer() {
               <span className="text-xl font-bold">中国滑雪青少年积分排名官方平台</span>
             </div>
             <p className="text-gray-300 text-sm max-w-2xl leading-relaxed">
-              专业滑雪竞赛数据管理平台，涵盖高山滑雪、自由式滑雪、单板滑雪全项目积分计算、成绩管理、赛事组织等一站式解决方案，
-              致力于推动中国滑雪运动的数字化、标准化发展。
+              基于官方标准打造的综合性竞赛管理平台，涵盖高山滑雪、自由式滑雪、单板滑雪全项目，采用符合中国标准的多档积分计算算法，
+              为中国滑雪竞赛提供权威、准确的数据管理和积分计算服务。
             </p>
           </div>
 
@@ -24,6 +24,11 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">积分系统</h3>
             <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/points/total-rankings" className="text-gray-300 hover:text-primary-400 transition-colors">
+                  总积分排行榜
+                </Link>
+              </li>
               <li>
                 <Link href="/points/rankings" className="text-gray-300 hover:text-primary-400 transition-colors">
                   积分排行榜

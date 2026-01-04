@@ -8,7 +8,7 @@ const globalForPrisma = globalThis as unknown as {
 export const prisma =
   globalForPrisma.prisma ??
   new PrismaClient({
-    log: process.env.NODE_ENV === 'development' ? ['query', 'error', 'warn'] : ['error'],
+    log: process.env.NODE_ENV === 'development' ? ['error', 'warn'] : ['error'],
   });
 
 if (process.env.NODE_ENV !== 'production') {
@@ -17,28 +17,12 @@ if (process.env.NODE_ENV !== 'production') {
 
 export default prisma;
 
-// 导出类型以便在其他地方使用
+// 导出Prisma生成的类型
 export type {
-  User,
   Athlete,
   Competition,
-  CompetitionResult,
-  AthleteSeasonPoints,
-  PointsHistory,
-  PenaltyCalculation,
-  AuditLog
-} from '@prisma/client';
-
-export {
-  UserRole,
-  UserStatus,
-  Gender,
-  AthleteStatus,
-  SportType,
-  USeriesGroup,
-  RaceLevel,
-  PointsTier,
-  CompetitionFormat,
-  CompetitionStatus,
-  ResultStatus
+  Result,
+  SeasonTotal,
+  ImportLog,
+  AthleteAlias,
 } from '@prisma/client';

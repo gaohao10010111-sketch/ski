@@ -1,310 +1,127 @@
-// 中国滑雪积分系统 - Prisma Schema
-// 支持四大项目：高山滑雪、单板坡障/大跳台、单板平行、自由式坡障/大跳台
+// 中国滑雪积分系统 - 核心成绩数据库
+// SQLite 数据库 - 存储所有运动员、比赛、成绩数据
 
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./ski.db"
 }
 
-// ========== 用户和认证 ==========
-
-model User {
-  id            String     @id @default(cuid())
-  username      String     @unique
-  email         String     @unique
-  passwordHash  String     @map("password_hash")
-  name          String?
-  phone         String?
-  role          UserRole   @default(USER)
-  status        UserStatus @default(ACTIVE)
-  createdAt     DateTime   @default(now()) @map("created_at")
-  updatedAt     DateTime   @updatedAt @map("updated_at")
-  lastLoginAt   DateTime?  @map("last_login_at")
-
-  athlete   Athlete?
-  auditLogs AuditLog[]
-
-  @@map("users")
-}
-
-// ========== 运动员 ==========
-
+// ========== 运动员表 ==========
 model Athlete {
-  id           String         @id @default(cuid())
-  userId       String?        @unique @map("user_id")
-  user         User?          @relation(fields: [userId], references: [id], onDelete: SetNull)
+  id        String   @id @default(cuid())
+  name      String                    // 姓名
+  team      String                    // 单位
+  gender    String                    // 性别：男/女
+  birthYear String?                   // 出生年份
+  idNumber  String?                   // 身份证号（可选）
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  name         String
-  gender       Gender
-  birthDate    DateTime       @map("birth_date")
-  idNumber     String?        @unique @map("id_number") // 身份证号
-  nationality  String         @default("中国")
-  province     String?
-  club         String?
-  fisCode      String?        @unique @map("fis_code")
+  results      Result[]
+  seasonTotals SeasonTotal[]
 
-  sportType    SportType      @map("sport_type")
-  uSeriesGroup USeriesGroup?  @map("u_series_group") // U12/U15/U18
-  status       AthleteStatus  @default(ACTIVE)
-
-  createdAt    DateTime       @default(now()) @map("created_at")
-  updatedAt    DateTime       @updatedAt @map("updated_at")
-
-  results       CompetitionResult[]
-  pointsHistory PointsHistory[]
-  seasonPoints  AthleteSeasonPoints[]
-
-  @@index([sportType])
-  @@index([province])
-  @@index([uSeriesGroup])
-  @@map("athletes")
+  @@unique([name, team])              // 姓名+单位唯一
+  @@index([name])
 }
 
-// ========== 比赛 ==========
-
+// ========== 比赛表 ==========
 model Competition {
-  id          String            @id @default(cuid())
-  name        String
-  sportType   SportType         @map("sport_type")
-  discipline  String?           // SL/GS/SG/DH for Alpine, Jumps/Rails for Slopestyle
+  id        String   @id @default(cuid())
+  name      String                    // 比赛名称
+  sportType String                    // snowboard-parallel/freestyle-slopestyle等
+  sport     String                    // 中文项目名：单板平行项目/自由式坡面障碍技巧等
+  location  String                    // 比赛地点
+  date      String                    // 开始日期
+  endDate   String                    // 结束日期
+  status    String   @default("completed")
+  pdfSource String?                   // PDF来源文件名
+  createdAt DateTime @default(now())
 
-  startDate   DateTime          @map("start_date")
-  endDate     DateTime          @map("end_date")
-  location    String
-  venue       String?
-
-  raceLevel   RaceLevel?        @map("race_level") // A/B/C for Alpine
-  pointsTier  PointsTier?       @map("points_tier") // 360/240/120
-  format      CompetitionFormat
-  status      CompetitionStatus @default(UPCOMING)
-
-  organizer   String?
-  description String?
-
-  // 比赛参数（高山滑雪）
-  winnerTime  Decimal?          @db.Decimal(10, 3) @map("winner_time")
-
-  createdAt   DateTime          @default(now()) @map("created_at")
-  updatedAt   DateTime          @updatedAt @map("updated_at")
-
-  results     CompetitionResult[]
-  penaltyCalc PenaltyCalculation?
+  results   Result[]
 
   @@index([sportType])
-  @@index([status])
-  @@index([startDate])
-  @@map("competitions")
+  @@index([date])
 }
 
-// ========== 比赛成绩 ==========
-
-model CompetitionResult {
+// ========== 成绩表（核心） ==========
+model Result {
   id            String      @id @default(cuid())
 
-  athleteId     String      @map("athlete_id")
+  athleteId     String
   athlete       Athlete     @relation(fields: [athleteId], references: [id], onDelete: Cascade)
-  competitionId String      @map("competition_id")
+
+  competitionId String
   competition   Competition @relation(fields: [competitionId], references: [id], onDelete: Cascade)
 
-  finalRank     Int         @map("final_rank")
-  status        ResultStatus @default(OK)
+  discipline    String      // 小项：平行大回转/大跳台/坡面障碍技巧
+  ageGroup      String      // U11/U15/U18
+  gender        String      // 男子组/女子组
 
-  // 时间类数据（高山/平行）
-  totalTime     Decimal?    @db.Decimal(10, 3) @map("total_time")
-  run1Time      Decimal?    @db.Decimal(10, 3) @map("run1_time")
-  run2Time      Decimal?    @db.Decimal(10, 3) @map("run2_time")
+  rank          Int         // 最终排名
+  bib           Int         // 号码布
+  run1          String?     // 第一轮成绩
+  run2          String?     // 第二轮成绩
+  time          String?     // 总时间
+  diff          String?     // 与冠军差值
+  bestScore     Float?      // 最佳得分（技巧类）
+  points        Int         // 获得积分
 
-  // 评分类数据（坡障/大跳台）
-  scores        Json?       // [{round: number, score: number, rank: number}]
+  createdAt     DateTime    @default(now())
 
-  // 积分计算结果
-  basePoints     Decimal    @db.Decimal(10, 2) @map("base_points")
-  adjustedPoints Decimal?   @db.Decimal(10, 2) @map("adjusted_points")
-  finalPoints    Decimal    @db.Decimal(10, 2) @map("final_points")
-
-  // 计算参数
-  raceCoefficient Decimal?  @db.Decimal(3, 2) @map("race_coefficient") // 1.0/0.6/0.3
-  penalty         Decimal?  @db.Decimal(10, 2)
-  difficultyMult  Decimal?  @db.Decimal(5, 3) @map("difficulty_mult")
-
-  createdAt     DateTime    @default(now()) @map("created_at")
-  updatedAt     DateTime    @updatedAt @map("updated_at")
-
-  @@unique([athleteId, competitionId])
+  @@unique([athleteId, competitionId, discipline, ageGroup, gender])
   @@index([competitionId])
-  @@index([finalPoints(sort: Desc)])
-  @@map("competition_results")
+  @@index([ageGroup, gender])
+  @@index([discipline])
 }
 
-// ========== 赛季积分汇总 ==========
+// ========== 赛季积分汇总表 ==========
+model SeasonTotal {
+  id               String   @id @default(cuid())
 
-model AthleteSeasonPoints {
-  id               String    @id @default(cuid())
+  athleteId        String
+  athlete          Athlete  @relation(fields: [athleteId], references: [id], onDelete: Cascade)
 
-  athleteId        String    @map("athlete_id")
-  athlete          Athlete   @relation(fields: [athleteId], references: [id], onDelete: Cascade)
+  season           String   // 2024-2025
+  ageGroup         String   // U11/U15/U18
+  gender           String   // 男子组/女子组
 
-  season           String    // "2024-2025"
-  sportType        SportType @map("sport_type")
-  discipline       String?
+  totalPoints      Int      @default(0)   // 总积分
+  competitionCount Int      @default(0)   // 参赛次数
+  avgPoints        Float    @default(0)   // 平均积分
+  bestRank         Int?                   // 最佳名次
+  rank             Int?                   // 总排名
 
-  totalPoints      Decimal   @db.Decimal(10, 2) @map("total_points")
-  competitionCount Int       @map("competition_count")
+  updatedAt        DateTime @updatedAt
 
-  // BL/NL积分（U系列）
-  blPoints         Decimal?  @db.Decimal(10, 2) @map("bl_points")
-  nlPoints         Decimal?  @db.Decimal(10, 2) @map("nl_points")
-  carryoverPoints  Decimal?  @db.Decimal(10, 2) @map("carryover_points") // 上赛季延续
-
-  rank             Int?
-
-  createdAt        DateTime  @default(now()) @map("created_at")
-  updatedAt        DateTime  @updatedAt @map("updated_at")
-
-  @@unique([athleteId, season, sportType, discipline])
-  @@index([season, sportType, totalPoints(sort: Desc)])
-  @@map("athlete_season_points")
+  @@unique([athleteId, season, ageGroup, gender])
+  @@index([season, ageGroup, gender])
 }
 
-// ========== 积分变化历史 ==========
-
-model PointsHistory {
-  id             String    @id @default(cuid())
-
-  athleteId      String    @map("athlete_id")
-  athlete        Athlete   @relation(fields: [athleteId], references: [id], onDelete: Cascade)
-
-  date           DateTime
-  sportType      SportType @map("sport_type")
-  discipline     String?
-
-  previousPoints Decimal   @db.Decimal(10, 2) @map("previous_points")
-  newPoints      Decimal   @db.Decimal(10, 2) @map("new_points")
-  change         Decimal   @db.Decimal(10, 2)
-  reason         String    // "比赛积分"/"赛季延续"/"手动调整"
-
-  competitionId  String?   @map("competition_id")
-
-  createdAt      DateTime  @default(now()) @map("created_at")
-
-  @@index([athleteId, date(sort: Desc)])
-  @@map("points_history")
+// ========== 导入日志表 ==========
+model ImportLog {
+  id           String    @id @default(cuid())
+  filename     String                  // PDF文件名
+  status       String                  // pending/processing/completed/failed
+  totalRows    Int       @default(0)
+  importedRows Int       @default(0)
+  errorMessage String?
+  createdAt    DateTime  @default(now())
+  completedAt  DateTime?
 }
 
-// ========== 高山滑雪判罚分计算 ==========
+// ========== 运动员合并记录表 ==========
+// 用于记录运动员换单位后的合并历史
+model AthleteAlias {
+  id               String   @id @default(cuid())
+  primaryAthleteId String                  // 主运动员ID（保留的）
+  oldName          String                  // 合并前的姓名
+  oldTeam          String                  // 合并前的单位
+  mergedAt         DateTime @default(now()) // 合并时间
+  mergedBy         String                  // 操作人
 
-model PenaltyCalculation {
-  id            String      @id @default(cuid())
-
-  competitionId String      @unique @map("competition_id")
-  competition   Competition @relation(fields: [competitionId], references: [id], onDelete: Cascade)
-
-  sumA          Decimal     @db.Decimal(10, 2) @map("sum_a") // 前10名最好5名积分之和
-  sumB          Decimal     @db.Decimal(10, 2) @map("sum_b") // 所有参赛最好5名积分之和
-  sumC          Decimal     @db.Decimal(10, 2) @map("sum_c") // 对应Sum B的5名本场基础积分之和
-  penalty       Decimal     @db.Decimal(10, 2) // (Sum A + Sum B - Sum C) / 10
-
-  details       Json?       // 详细计算数据
-
-  createdAt     DateTime    @default(now()) @map("created_at")
-
-  @@map("penalty_calculations")
-}
-
-// ========== 审计日志 ==========
-
-model AuditLog {
-  id         String   @id @default(cuid())
-
-  userId     String?  @map("user_id")
-  user       User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
-
-  action     String   // user_login, user_register, athlete_create, etc.
-  entityType String   @map("entity_type") // users, athletes, competitions
-  entityId   String?  @map("entity_id")
-  oldValue   Json?    @map("old_value")
-  newValue   Json?    @map("new_value")
-  ipAddress  String?  @map("ip_address")
-
-  createdAt  DateTime @default(now()) @map("created_at")
-
-  @@index([userId])
-  @@index([createdAt(sort: Desc)])
-  @@index([entityType, entityId])
-  @@map("audit_logs")
-}
-
-// ========== 枚举定义 ==========
-
-enum UserRole {
-  USER
-  ATHLETE
-  COACH
-  ADMIN
-}
-
-enum UserStatus {
-  ACTIVE
-  INACTIVE
-  PENDING
-}
-
-enum Gender {
-  MALE
-  FEMALE
-}
-
-enum AthleteStatus {
-  ACTIVE
-  INJURED
-  RETIRED
-}
-
-enum SportType {
-  ALPINE_SKI                    // 高山滑雪
-  SNOWBOARD_SLOPESTYLE_BIGAIR   // 单板坡面障碍/大跳台
-  SNOWBOARD_PARALLEL            // 单板平行项目
-  FREESTYLE_SLOPESTYLE_BIGAIR   // 自由式坡面障碍/大跳台
-}
-
-enum USeriesGroup {
-  U12  // 8-11岁
-  U15  // 12-14岁
-  U18  // 15-17岁
-}
-
-enum RaceLevel {
-  A  // A级赛事，系数1.0
-  B  // B级赛事，系数0.6
-  C  // C级赛事，系数0.3
-}
-
-enum PointsTier {
-  TIER_360  // 360分档
-  TIER_240  // 240分档
-  TIER_120  // 120分档
-}
-
-enum CompetitionFormat {
-  QUALIFICATION_FINAL  // 预赛+决赛
-  ELIMINATION          // 淘汰赛（平行项目）
-  TIME_TRIAL           // 计时赛（高山滑雪）
-}
-
-enum CompetitionStatus {
-  UPCOMING   // 即将开始
-  ONGOING    // 进行中
-  COMPLETED  // 已完成
-  CANCELLED  // 已取消
-}
-
-enum ResultStatus {
-  OK   // 正常完赛
-  DNS  // 未出发
-  DNF  // 未完赛
-  DQ   // 取消资格
+  @@index([primaryAthleteId])
 }

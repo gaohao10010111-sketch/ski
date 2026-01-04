@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import {
   Trophy, Users, TrendingUp, Calendar,
   ChevronLeft, ChevronRight,
@@ -10,7 +11,8 @@ import {
 } from 'lucide-react';
 import { getImagePath } from '@/utils/paths';
 import { useTranslation } from '@/contexts/LanguageContext';
-import { resultsBySport } from '@/data/latestResults';
+import { resultsBySport, latestResults } from '@/data/latestResults';
+import { Crown, Medal } from 'lucide-react';
 
 // 获取自由式坡障/大跳台的真实数据
 const freestyleCompetitions = resultsBySport['freestyle-slopestyle'] || [];
@@ -19,42 +21,38 @@ export default function FreestyleSlopestylePage() {
   const { t, language } = useTranslation();
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // 从真实数据生成积分排行榜
-  const generateRankings = () => {
-    const athletePoints: { [key: string]: { name: string; team: string; points: number; events: number } } = {};
+  // 从真实数据生成积分排行榜 - 使用 useMemo 缓存
+  const rankings = useMemo(() => {
+    const allAthletes: { rank: number; name: string; team: string; points: number; discipline: string; ageGroup: string; gender: string; bestScore?: number }[] = [];
 
-    freestyleCompetitions.forEach(comp => {
-      comp.events.forEach(event => {
-        event.athletes.forEach(athlete => {
-          const key = athlete.name;
-          if (!athletePoints[key]) {
-            athletePoints[key] = { name: athlete.name, team: athlete.team, points: 0, events: 0 };
+    for (const competition of latestResults.competitions) {
+      if (competition.sportType !== 'freestyle-slopestyle') continue;
+
+      for (const event of competition.events) {
+        for (const athlete of event.athletes) {
+          if (athlete.points) {
+            allAthletes.push({
+              rank: athlete.rank,
+              name: athlete.name,
+              team: athlete.team,
+              points: athlete.points,
+              discipline: event.discipline,
+              ageGroup: event.ageGroup,
+              gender: event.gender,
+              bestScore: athlete.bestScore
+            });
           }
-          const points = athlete.points || (athlete.rank <= 50 ? Math.max(360 - (athlete.rank - 1) * 7, 1) : 0);
-          athletePoints[key].points += points;
-          athletePoints[key].events += 1;
-        });
-      });
-    });
+        }
+      }
+    }
 
-    return Object.values(athletePoints)
+    return allAthletes
       .sort((a, b) => b.points - a.points)
-      .slice(0, 10)
-      .map((a, idx) => ({
-        rank: idx + 1,
-        name: a.name,
-        nation: '中国',
-        event: '自由式坡障/大跳台',
-        points: a.points.toString(),
-        change: 0,
-        trend: 'stable' as const
-      }));
-  };
+      .slice(0, 10);
+  }, []);
 
-  const rankings = generateRankings();
-
-  // 从真实数据生成顶尖运动员列表
-  const generateTopAthletes = () => {
+  // 从真实数据生成顶尖运动员列表 - 使用 useMemo 缓存
+  const topAthletes = useMemo(() => {
     const athleteData: { [key: string]: { name: string; team: string; points: number; events: number } } = {};
 
     freestyleCompetitions.forEach(comp => {
@@ -83,12 +81,10 @@ export default function FreestyleSlopestylePage() {
         worldRank: idx + 1,
         wins: a.events
       }));
-  };
+  }, []);
 
-  const topAthletes = generateTopAthletes();
-
-  // 从真实数据生成赛事冠军
-  const generateChampions = () => {
+  // 从真实数据生成赛事冠军 - 使用 useMemo 缓存
+  const champions = useMemo(() => {
     const champList: { year: string; name: string; discipline: string; score: string }[] = [];
 
     freestyleCompetitions.forEach(comp => {
@@ -106,9 +102,7 @@ export default function FreestyleSlopestylePage() {
     });
 
     return champList.slice(0, 4);
-  };
-
-  const champions = generateChampions();
+  }, []);
 
   const heroSlides = [
     {
@@ -139,10 +133,6 @@ export default function FreestyleSlopestylePage() {
     { event: '全国青少年自由式滑雪锦标赛', discipline: '大跳台', date: '2025-02', location: '待定', level: 'B级' }
   ];
 
-
-
-
-
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
   }, [heroSlides.length]);
@@ -163,7 +153,14 @@ export default function FreestyleSlopestylePage() {
       {/* 英雄展示区 */}
       <div className="relative bg-gray-900 h-[400px] overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroSlides[currentSlide].image} alt={heroSlides[currentSlide].title} className="w-full h-full object-cover" />
+          <Image
+            src={heroSlides[currentSlide].image}
+            alt={heroSlides[currentSlide].title}
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30"></div>
         </div>
 
@@ -216,58 +213,38 @@ export default function FreestyleSlopestylePage() {
                       <tr>
                         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">排名</th>
                         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">运动员</th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">项目</th>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">单位</th>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">组别</th>
                         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">积分</th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">变化</th>
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
-                      {rankings.map((athlete) => (
-                        <tr key={athlete.rank} className="hover:bg-gray-50">
+                      {rankings.map((athlete, idx) => (
+                        <tr key={idx} className={`hover:bg-gray-50 ${idx < 3 ? 'bg-gradient-to-r from-yellow-50/50 to-transparent' : ''}`}>
                           <td className="px-4 py-3 whitespace-nowrap">
-                            <div className="flex items-center">
-                              {athlete.rank <= 3 ? (
-                                <div className={`w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold ${
-                                  athlete.rank === 1 ? 'bg-yellow-500' :
-                                  athlete.rank === 2 ? 'bg-gray-400' :
-                                  'bg-orange-500'
-                                }`}>
-                                  {athlete.rank}
-                                </div>
+                            <div className="flex items-center gap-2">
+                              {idx === 0 ? (
+                                <Crown className="w-5 h-5 text-yellow-500" />
+                              ) : idx === 1 ? (
+                                <Medal className="w-5 h-5 text-gray-400" />
+                              ) : idx === 2 ? (
+                                <Medal className="w-5 h-5 text-amber-600" />
                               ) : (
-                                <div className="w-6 h-6 rounded-full bg-cyan-100 text-cyan-600 flex items-center justify-center text-xs font-bold">
-                                  {athlete.rank}
-                                </div>
+                                <span className="w-5 h-5 flex items-center justify-center text-sm font-medium text-gray-500">{idx + 1}</span>
                               )}
                             </div>
                           </td>
                           <td className="px-4 py-3 whitespace-nowrap">
-                            <div className="flex items-center">
-                              <div className="flex-shrink-0 h-8 w-8">
-                                <div className="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
-                                  <span className="text-xs font-medium text-gray-600">{athlete.name.charAt(0)}</span>
-                                </div>
-                              </div>
-                              <div className="ml-3">
-                                <div className="text-sm font-medium text-gray-900">{athlete.name}</div>
-                              </div>
-                            </div>
+                            <span className={`font-medium ${idx < 3 ? 'text-gray-900 font-semibold' : 'text-gray-900'}`}>{athlete.name}</span>
+                          </td>
+                          <td className="px-4 py-3 whitespace-nowrap text-gray-600">{athlete.team}</td>
+                          <td className="px-4 py-3 whitespace-nowrap">
+                            <span className="text-sm text-gray-600">{athlete.gender} {athlete.ageGroup}</span>
                           </td>
                           <td className="px-4 py-3 whitespace-nowrap">
-                            <div className="text-sm text-gray-600">{athlete.event}</div>
-                          </td>
-                          <td className="px-4 py-3 whitespace-nowrap">
-                            <div className="text-sm font-bold text-gray-900">{athlete.points}</div>
-                          </td>
-                          <td className="px-4 py-3 whitespace-nowrap">
-                            {athlete.change !== 0 ? (
-                              <div className={`flex items-center text-sm ${athlete.change > 0 ? 'text-green-600' : 'text-red-600'}`}>
-                                {athlete.change > 0 ? <TrendingUp className="w-4 h-4 mr-1" /> : <TrendingDown className="w-4 h-4 mr-1" />}
-                                {athlete.change > 0 ? '+' : ''}{athlete.change}
-                              </div>
-                            ) : (
-                              <span className="text-sm text-gray-500">-</span>
-                            )}
+                            <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-medium ${idx < 3 ? 'bg-cyan-100 text-cyan-800' : 'bg-gray-100 text-gray-800'}`}>
+                              {athlete.points} 分
+                            </span>
                           </td>
                         </tr>
                       ))}

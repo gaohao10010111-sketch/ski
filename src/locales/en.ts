@@ -1168,12 +1168,12 @@ export const en: PartialTranslationKeys = {
   // About Page
   aboutPage: {
     pageTitle: 'About Us',
-    heroDescription: 'China Skiing Points Management Platform is a professional ski sports points management service, committed to promoting the standardization and professionalization of skiing sports',
+    heroDescription: 'China Youth Skiing Points Ranking Official Platform is a comprehensive competition management platform built on official standards, providing authoritative and accurate data management and points calculation services for Chinese skiing competitions',
 
     platformTitle: 'Platform Introduction',
-    platformDescription1: 'China Skiing Points Management Platform is a comprehensive skiing sports management platform established based on official points calculation rules and youth U-series competition programs.',
-    platformDescription2: 'The platform supports three major disciplines: alpine skiing, freestyle skiing, and snowboarding, covering multiple sub-disciplines including downhill, slalom, giant slalom, super-G, combined, big air, slopestyle, halfpipe and other events for points calculation and event management.',
-    platformDescription3: 'We are committed to providing professional, accurate, and efficient digital management services for skiing sports, promoting the standardized development of skiing.',
+    platformDescription1: 'According to the official announcement on the website of the Winter Sports Management Center of the General Administration of Sport of China, Beijing Huati Ice & Snow Industry Development Co., Ltd. ("Huati Ice & Snow") has officially become the organizer for the 2025-2028 three-season National Snowboard Slopestyle & Big Air Youth U-Series, Snowboard Parallel Youth U-Series, Freestyle Skiing Slopestyle & Big Air Youth U-Series, and Alpine Skiing Youth U-Series competitions.',
+    platformDescription2: 'Authorized by Huati Ice & Snow, this platform serves as the designated operator of the competition points platform, responsible for event data collection, points calculation, and ranking publication. This platform is the designated official release platform for the National Youth Skiing U-Series competition points rankings, aiming to provide authoritative, fair, and timely competition information services for athletes, coaches, and all stakeholders.',
+    platformDescription3: 'We are committed to promoting the digitalization and standardization of Chinese skiing sports, providing modern data management, points calculation, and results statistics tools for athletes, coaches, event organizers, and competition referees, comprehensively covering big air, slopestyle, parallel events, and other snow sports to enhance the organizational and competitive level of Chinese skiing.',
 
     stats: {
       pointsSystems: { value: '4', label: 'Points Systems' },

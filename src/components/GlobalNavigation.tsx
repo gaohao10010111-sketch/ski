@@ -152,8 +152,8 @@ export default function GlobalNavigation() {
       href: '#',
       icon: Menu,
       children: [
-        { key: 'points-rankings', name: t.navigation?.submenus?.pointsRankings || 'Rankings', href: '/points/rankings' },
-        { key: 'points-trends', name: t.navigation?.submenus?.pointsTrends || 'Trends', href: '/points/trends' }
+        { key: 'total-rankings', name: '总积分排行榜', href: '/points/total-rankings' },
+        { key: 'points-rankings', name: t.navigation?.submenus?.pointsRankings || 'Rankings', href: '/points/rankings' }
         // 以下项目暂时隐藏，待平台稳定后上线
         // { key: 'results-import', name: t.navigation?.submenus?.resultsImport || 'Import Results', href: '/results-import' },
         // { key: 'coaches', name: '优秀教练', href: '/coaches' },
