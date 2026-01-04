@@ -145,7 +145,7 @@ export default function Footer() {
               <span className="text-xl font-bold">中国滑雪青少年积分排名官方平台</span>
             </div>
             <p className="text-gray-300 text-sm max-w-2xl leading-relaxed">
-              经华体冰雪授权，本平台为全国滑雪青少年U系列赛事积分排名的指定官方发布平台，为运动员、教练员及各界提供权威、公正、及时的竞赛信息服务。
+              基于官方标准打造的综合性竞赛管理平台，涵盖高山滑雪、自由式滑雪、单板滑雪全项目，采用符合中国标准的多档积分计算算法，为中国滑雪竞赛提供权威、准确的数据管理和积分计算服务。
             </p>
           </div>
 
