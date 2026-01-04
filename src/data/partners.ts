@@ -40,7 +40,7 @@ export const commonPartners = {
     id: 'huati',
     name: '华体冰雪',
     nameEn: 'Huati Ice & Snow',
-    logo: '/logos/huati.png',  // 需要转换AI文件
+    logo: '/logos/huati-vertical.png',  // 竖版logo
     url: 'http://www.cnsgroup.cn/',
     type: 'host' as const,
   },
