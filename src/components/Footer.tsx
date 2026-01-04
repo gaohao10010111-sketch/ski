@@ -219,7 +219,7 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
             <div className="text-sm text-gray-300 mb-4 md:mb-0">
-              © 2024-2025 中国滑雪青少年积分排名官方平台. 基于官方标准开发.
+              © 2025 中国滑雪青少年积分排名官方平台 版权所有
             </div>
             <div className="flex flex-wrap gap-6 text-sm">
               <Link href="/about" className="text-gray-300 hover:text-primary-400 transition-colors">
