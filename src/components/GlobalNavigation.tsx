@@ -25,6 +25,7 @@ import type { LucideIcon } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useTranslation } from '@/contexts/LanguageContext';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { commonPartners } from '@/data/partners';
 
 interface NavigationItem {
   key: string;
@@ -39,10 +40,17 @@ export default function GlobalNavigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [basePath, setBasePath] = useState('/ski');
   const pathname = usePathname();
   const router = useRouter();
   const { user, logout, isLoading } = useAuth();
   const { t, language } = useTranslation();
+
+  // 检测basePath
+  useEffect(() => {
+    const detectedBasePath = window.location.pathname.startsWith('/ski') ? '/ski' : '';
+    setBasePath(detectedBasePath);
+  }, []);
   // 点击外部关闭下拉菜单
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -168,7 +176,39 @@ export default function GlobalNavigation() {
       <nav className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px]">
           <div className="flex justify-between h-14">
-            <div className="flex items-center">
+            <div className="flex items-center gap-4">
+              {/* 主办/承办方Logo */}
+              <div className="hidden sm:flex items-center gap-2">
+                <a
+                  href={commonPartners.csa.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="中国滑雪协会"
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`${basePath}${commonPartners.csa.logo}`}
+                    alt="中国滑雪协会"
+                    className="h-9 w-auto object-contain"
+                  />
+                </a>
+                <a
+                  href={commonPartners.huati.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="华体冰雪"
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`${basePath}${commonPartners.huati.logo}`}
+                    alt="华体冰雪"
+                    className="h-8 w-auto object-contain"
+                  />
+                </a>
+                <div className="h-6 w-px bg-gray-300 mx-1" />
+              </div>
               <Link href="/" className="flex items-center space-x-2 hover:opacity-90 transition-opacity">
                 <Mountain className="h-6 w-6 text-ski-blue" />
                 <span className="text-base lg:text-lg font-bold text-ski-navy">

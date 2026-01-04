@@ -83,13 +83,13 @@ export const resortPartners = {
     url: 'https://www.lakesonghua.com/',
     type: 'resort' as const,
   },
-  aoshan: {
-    id: 'aoshan',
-    name: '陕西鳌山滑雪场',
-    nameEn: 'Aoshan Ski Resort',
-    logo: '/logos/aoshan.png',  // 需要补充
-    type: 'resort' as const,
-  },
+  // aoshan: {
+  //   id: 'aoshan',
+  //   name: '陕西鳌山滑雪场',
+  //   nameEn: 'Aoshan Ski Resort',
+  //   logo: '/logos/aoshan.png',  // 待补充logo后启用
+  //   type: 'resort' as const,
+  // },
   xueruyi: {
     id: 'xueruyi',
     name: '雪如意滑雪场',
@@ -97,20 +97,20 @@ export const resortPartners = {
     logo: '/logos/xueruyi.png',  // 需要补充
     type: 'resort' as const,
   },
-  dongbeiya: {
-    id: 'dongbeiya',
-    name: '沈阳东北亚滑雪场',
-    nameEn: 'Northeast Asia Ski Resort',
-    logo: '/logos/dongbeiya.png',  // 需要补充
-    type: 'resort' as const,
-  },
-  yunding: {
-    id: 'yunding',
-    name: '云顶滑雪场',
-    nameEn: 'Genting Resort Secret Garden',
-    logo: '/logos/yunding.png',  // 需要补充
-    type: 'resort' as const,
-  },
+  // dongbeiya: {
+  //   id: 'dongbeiya',
+  //   name: '沈阳东北亚滑雪场',
+  //   nameEn: 'Northeast Asia Ski Resort',
+  //   logo: '/logos/dongbeiya.png',  // 待补充logo后启用
+  //   type: 'resort' as const,
+  // },
+  // yunding: {
+  //   id: 'yunding',
+  //   name: '云顶滑雪场',
+  //   nameEn: 'Genting Resort Secret Garden',
+  //   logo: '/logos/yunding.png',  // 待补充logo后启用
+  //   type: 'resort' as const,
+  // },
   fulong: {
     id: 'fulong',
     name: '富龙滑雪场',
@@ -132,7 +132,7 @@ export const sportPartnersMap: Record<string, SportPartners> = {
     resorts: [
       resortPartners.rexueqiji,
       resortPartners.songhuahu,
-      resortPartners.aoshan,
+      // resortPartners.aoshan,  // 待补充logo后启用
     ],
   },
 
@@ -143,8 +143,8 @@ export const sportPartnersMap: Record<string, SportPartners> = {
     brands: [brandPartners.liski],
     resorts: [
       resortPartners.xueruyi,
-      resortPartners.dongbeiya,
-      resortPartners.yunding,
+      // resortPartners.dongbeiya,  // 待补充logo后启用
+      // resortPartners.yunding,    // 待补充logo后启用
     ],
   },
 
