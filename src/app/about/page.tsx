@@ -102,6 +102,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">{t.aboutPage?.platformTitle || 'Platform Overview'}</h2>
               <div className="space-y-4 text-gray-600">
+                <p className="text-lg font-medium text-gray-800">{t.aboutPage?.platformIntro || 'China Ski Youth Points Ranking Official Platform is a comprehensive competition management platform built on official standards.'}</p>
                 <p>{t.aboutPage?.platformDescription1 || 'Built on official scoring rules and the national youth U-series programme, the platform delivers comprehensive ski event management.'}</p>
                 <p>{t.aboutPage?.platformDescription2 || 'Supporting alpine, freestyle, and snowboard disciplines, it covers downhill, slalom, giant slalom, super-G, combined, big air, slopestyle, halfpipe, and more.'}</p>
                 <p>{t.aboutPage?.platformDescription3 || 'We focus on accurate, efficient digital services that elevate the organisation and competitiveness of Chinese skiing.'}</p>

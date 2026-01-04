@@ -1105,10 +1105,10 @@ export const zh = {
     hero: {
       title: '中国滑雪青少年积分排名官方平台',
       titleEn: 'China Skiing Points Data Management Platform',
-      subtitle: '全国滑雪青少年U系列赛事积分排名指定发布平台',
-      exploreDisciplines: '探索积分系统',
+      subtitle: '全国滑雪青少年U系列赛事积分排名指定官方发布平台',
+      exploreDisciplines: '查看积分排名',
       freeRegister: '免费注册',
-      platformIntro: '专业运动员、教练员、赛事组织者的首选平台',
+      platformIntro: '为运动员、教练员及各界提供权威、公正、及时的竞赛信息服务',
       highlights: [
         { label: '四大积分系统', color: 'bg-ski-blue' },
         { label: '官方标准认证', color: 'bg-green-400' },
@@ -1117,7 +1117,7 @@ export const zh = {
     },
     features: {
       title: '平台核心功能',
-      description: '基于FIS国际雪联标准的完整滑雪竞赛管理解决方案，从积分计算、运动员管理到赛事组织，覆盖高山滑雪运动的所有核心环节',
+      description: '基于官方标准的综合性竞赛管理平台，涵盖高山滑雪、自由式滑雪、单板滑雪全项目，采用符合中国标准的多档积分计算算法',
       online: '已上线',
       useNow: '立即使用',
       fisPointsQuery: {
@@ -1243,10 +1243,10 @@ export const zh = {
     about: {
       title: '关于平台',
       description1: '中国滑雪青少年积分排名官方平台是基于官方标准打造的综合性竞赛管理平台。涵盖高山滑雪、自由式滑雪、单板滑雪全项目，采用符合中国标准的多档积分计算算法，为中国滑雪竞赛提供权威、准确的数据管理和积分计算服务。',
-      description2: '我们致力于推动中国滑雪运动的数字化、标准化发展，为运动员、教练员、赛事组织者、竞赛裁判提供现代化的数据管理、积分计算、成绩统计工具，全面覆盖大跳台、坡面障碍技巧、平行项目等各类雪上项目，提升中国滑雪运动的组织水平和竞技水平。',
+      description2: '根据国家体育总局冬季运动管理中心官网公示，北京华体冰雪产业发展有限公司正式成为2025-2028三个赛季全国青少年U系列比赛的官方承办单位。经华体冰雪授权，本平台为全国滑雪青少年U系列赛事积分排名的指定官方发布平台。',
       multiTierPoints: { title: '多档积分体系', description: '360/240/120分档标准' },
       uSeries: { title: 'U系列赛事', description: 'U12/U15/U18全覆盖' },
-      officialCertification: { title: '权威认证', description: '官方标准' },
+      officialCertification: { title: '官方授权', description: '华体冰雪指定平台' },
       allDisciplines: { title: '全项目支持', description: '高山·自由式·单板滑雪' }
     },
     systemFeatures: {
@@ -1262,10 +1262,11 @@ export const zh = {
 
   // 关于页面
   aboutPage: {
-    pageTitle: '关于我们',
-    heroDescription: '中国滑雪青少年积分排名官方平台是基于官方标准打造的综合性竞赛管理平台，为中国滑雪竞赛提供权威、准确的数据管理和积分计算服务',
+    pageTitle: '关于平台',
+    heroDescription: '全国滑雪青少年U系列赛事积分排名指定官方发布平台',
 
     platformTitle: '平台简介',
+    platformIntro: '中国滑雪青少年积分排名官方平台是基于官方标准打造的综合性竞赛管理平台。涵盖高山滑雪、自由式滑雪、单板滑雪全项目，采用符合中国标准的多档积分计算算法，为中国滑雪竞赛提供权威、准确的数据管理和积分计算服务。',
     platformDescription1: '根据国家体育总局冬季运动管理中心官网公示，北京华体冰雪产业发展有限公司（以下简称"华体冰雪"）正式成为2025-2028三个赛季全国单板滑雪坡面障碍技巧和大跳台青少年U系列比赛、单板滑雪平行项目青少年U系列比赛、自由式滑雪坡面障碍技巧和大跳台青少年U系列比赛、高山滑雪青少年U系列比赛的官方承办单位。',
     platformDescription2: '经华体冰雪授权，本平台作为赛事积分平台的指定运营方，负责赛事数据的采集、积分计算与排名发布。本平台为全国滑雪青少年U系列赛事积分排名的指定官方发布平台，旨在为运动员、教练员及各界提供权威、公正、及时的竞赛信息服务。',
     platformDescription3: '我们致力于推动中国滑雪运动的数字化、标准化发展，为运动员、教练员、赛事组织者、竞赛裁判提供现代化的数据管理、积分计算、成绩统计工具，全面覆盖大跳台、坡面障碍技巧、平行项目等各类雪上项目，提升中国滑雪运动的组织水平和竞技水平。',
