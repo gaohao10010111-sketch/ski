@@ -176,9 +176,22 @@ export default function GlobalNavigation() {
       <nav className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px]">
           <div className="flex justify-between h-14">
-            <div className="flex items-center gap-4">
+            {/* 左侧：平台名称 */}
+            <div className="flex items-center">
+              <Link href="/" className="flex items-center space-x-2 hover:opacity-90 transition-opacity">
+                <Mountain className="h-6 w-6 text-ski-blue" />
+                <span className="text-base lg:text-lg font-bold text-ski-navy">
+                  {language === 'zh'
+                    ? t.navigation?.title || '中国滑雪青少年积分排名官方平台'
+                    : t.navigation?.titleShort || 'China Ski Points'}
+                </span>
+              </Link>
+            </div>
+
+            {/* 右侧：主办方Logo + 导航菜单 */}
+            <div className="hidden md:flex items-center space-x-4">
               {/* 主办/承办方Logo */}
-              <div className="hidden sm:flex items-center gap-2">
+              <div className="flex items-center gap-3">
                 <a
                   href={commonPartners.csa.url}
                   target="_blank"
@@ -190,7 +203,7 @@ export default function GlobalNavigation() {
                   <img
                     src={`${basePath}${commonPartners.csa.logo}`}
                     alt="中国滑雪协会"
-                    className="h-11 w-auto object-contain"
+                    className="h-10 w-auto object-contain"
                   />
                 </a>
                 <a
@@ -204,22 +217,12 @@ export default function GlobalNavigation() {
                   <img
                     src={`${basePath}${commonPartners.huati.logo}`}
                     alt="华体冰雪"
-                    className="h-10 w-auto object-contain"
+                    className="h-9 w-auto object-contain"
                   />
                 </a>
-                <div className="h-6 w-px bg-gray-300 mx-1" />
               </div>
-              <Link href="/" className="flex items-center space-x-2 hover:opacity-90 transition-opacity">
-                <Mountain className="h-6 w-6 text-ski-blue" />
-                <span className="text-base lg:text-lg font-bold text-ski-navy">
-                  {language === 'zh'
-                    ? t.navigation?.title || '中国滑雪青少年积分排名官方平台'
-                    : t.navigation?.titleShort || 'China Ski Points'}
-                </span>
-              </Link>
-            </div>
-
-            <div className="hidden md:flex items-center space-x-4">
+              <div className="h-6 w-px bg-gray-300" />
+              {/* 导航菜单 */}
               <div className="flex items-center space-x-3">
                 {globalMenuItems.map((item) => {
                   const isActive = pathname?.startsWith(item.href) && item.href !== '#';
