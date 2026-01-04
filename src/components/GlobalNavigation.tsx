@@ -190,7 +190,7 @@ export default function GlobalNavigation() {
                   <img
                     src={`${basePath}${commonPartners.csa.logo}`}
                     alt="中国滑雪协会"
-                    className="h-9 w-auto object-contain"
+                    className="h-11 w-auto object-contain"
                   />
                 </a>
                 <a
@@ -204,7 +204,7 @@ export default function GlobalNavigation() {
                   <img
                     src={`${basePath}${commonPartners.huati.logo}`}
                     alt="华体冰雪"
-                    className="h-8 w-auto object-contain"
+                    className="h-10 w-auto object-contain"
                   />
                 </a>
                 <div className="h-6 w-px bg-gray-300 mx-1" />

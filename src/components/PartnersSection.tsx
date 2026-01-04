@@ -22,15 +22,15 @@ interface PartnerLogoProps {
  */
 function PartnerLogo({ partner, size = 'md' }: PartnerLogoProps) {
   const sizeClasses = {
-    sm: 'h-8 w-auto max-w-[80px] max-h-8',
-    md: 'h-10 w-auto max-w-[100px] max-h-10',
-    lg: 'h-12 w-auto max-w-[120px] max-h-12',
+    sm: 'h-12 w-auto max-w-[140px] max-h-12',
+    md: 'h-16 w-auto max-w-[180px] max-h-16',
+    lg: 'h-20 w-auto max-w-[220px] max-h-20',
   };
 
   const placeholderSizeClasses = {
-    sm: 'h-8 px-3 text-xs',
-    md: 'h-12 px-4 text-sm',
-    lg: 'h-16 px-6 text-base',
+    sm: 'h-10 px-3 text-sm',
+    md: 'h-14 px-4 text-base',
+    lg: 'h-18 px-6 text-lg',
   };
 
   const [basePath, setBasePath] = useState('/ski');

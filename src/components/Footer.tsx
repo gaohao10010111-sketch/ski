@@ -18,12 +18,18 @@ function PartnerLogo({ partner }: { partner: Partner }) {
   const hasLogo = partner.logo && !partner.logo.includes('placeholder');
   const logoSrc = hasLogo ? `${basePath}${partner.logo}` : '';
 
+  // 主办/承办方logo更大更突出
+  const isMainPartner = partner.type === 'organizer' || partner.type === 'host';
+  const logoClass = isMainPartner
+    ? "h-16 w-auto max-w-[200px] object-contain bg-white rounded px-3 py-2 hover:scale-105 transition-transform"
+    : "h-14 w-auto max-w-[160px] object-contain bg-white rounded px-2 py-1 hover:scale-105 transition-transform";
+
   const content = (hasLogo && !imgError) ? (
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src={logoSrc}
       alt={partner.name}
-      className="h-10 w-auto max-w-[120px] object-contain bg-white rounded px-2 py-1 hover:scale-105 transition-transform"
+      className={logoClass}
       onError={() => setImgError(true)}
     />
   ) : (
@@ -32,6 +38,7 @@ function PartnerLogo({ partner }: { partner: Partner }) {
     </span>
   );
 
+  // 只有有url的才添加超链接
   if (partner.url) {
     return (
       <a
@@ -46,6 +53,7 @@ function PartnerLogo({ partner }: { partner: Partner }) {
     );
   }
 
+  // 没有url的不添加超链接
   return <span className="inline-flex items-center" title={partner.name}>{content}</span>;
 }
 
