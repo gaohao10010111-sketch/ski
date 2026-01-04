@@ -1,25 +1,30 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Mountain } from 'lucide-react'
 import { commonPartners, brandPartners, resortPartners, Partner } from '@/data/partners'
 
 // 合作伙伴Logo组件
 function PartnerLogo({ partner }: { partner: Partner }) {
-  const hasLogo = partner.logo && !partner.logo.includes('placeholder');
+  const [basePath, setBasePath] = useState('/ski');
+  const [imgError, setImgError] = useState(false);
 
-  const content = hasLogo ? (
-    <Image
-      src={partner.logo}
+  useEffect(() => {
+    const detectedBasePath = window.location.pathname.startsWith('/ski') ? '/ski' : '';
+    setBasePath(detectedBasePath);
+  }, []);
+
+  const hasLogo = partner.logo && !partner.logo.includes('placeholder');
+  const logoSrc = hasLogo ? `${basePath}${partner.logo}` : '';
+
+  const content = (hasLogo && !imgError) ? (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={logoSrc}
       alt={partner.name}
-      width={100}
-      height={40}
-      className="h-8 w-auto max-w-[100px] object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity"
-      onError={(e) => {
-        const target = e.target as HTMLImageElement;
-        target.style.display = 'none';
-      }}
+      className="h-10 w-auto max-w-[120px] object-contain bg-white rounded px-2 py-1 hover:scale-105 transition-transform"
+      onError={() => setImgError(true)}
     />
   ) : (
     <span className="text-xs text-gray-400 px-2 py-1 border border-gray-600 rounded whitespace-nowrap">

@@ -1,7 +1,16 @@
 'use client';
 
-import Image from 'next/image';
+import { useState, useEffect } from 'react';
 import { Partner, SportPartners, partnerTypeLabels } from '@/data/partners';
+
+// 获取basePath - 使用环境检测
+function getBasePath(): string {
+  if (typeof window !== 'undefined') {
+    return window.location.pathname.startsWith('/ski') ? '/ski' : '';
+  }
+  // 服务端渲染时默认返回/ski（因为主要部署在GitHub Pages）
+  return '/ski';
+}
 
 interface PartnerLogoProps {
   partner: Partner;
@@ -13,9 +22,9 @@ interface PartnerLogoProps {
  */
 function PartnerLogo({ partner, size = 'md' }: PartnerLogoProps) {
   const sizeClasses = {
-    sm: 'h-8 w-auto max-w-[80px]',
-    md: 'h-12 w-auto max-w-[120px]',
-    lg: 'h-16 w-auto max-w-[160px]',
+    sm: 'h-8 w-auto max-w-[80px] max-h-8',
+    md: 'h-10 w-auto max-w-[100px] max-h-10',
+    lg: 'h-12 w-auto max-w-[120px] max-h-12',
   };
 
   const placeholderSizeClasses = {
@@ -24,28 +33,29 @@ function PartnerLogo({ partner, size = 'md' }: PartnerLogoProps) {
     lg: 'h-16 px-6 text-base',
   };
 
+  const [basePath, setBasePath] = useState('/ski');
+  const [imgError, setImgError] = useState(false);
+
+  useEffect(() => {
+    // 客户端检测basePath
+    const detectedBasePath = window.location.pathname.startsWith('/ski') ? '/ski' : '';
+    setBasePath(detectedBasePath);
+  }, []);
+
   // 检查logo文件是否存在（简单判断：以.png/.jpg/.svg结尾且非placeholder）
   const hasLogo = partner.logo && !partner.logo.includes('placeholder');
 
-  const content = hasLogo ? (
-    <Image
-      src={partner.logo}
+  // 构建完整的logo路径
+  const logoSrc = hasLogo ? `${basePath}${partner.logo}` : '';
+
+  const content = (hasLogo && !imgError) ? (
+    // 使用原生img标签避免Next.js Image的basePath问题
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={logoSrc}
       alt={partner.name}
-      width={160}
-      height={64}
-      className={`${sizeClasses[size]} object-contain filter grayscale hover:grayscale-0 transition-all duration-300`}
-      onError={(e) => {
-        // 如果图片加载失败，显示文字
-        const target = e.target as HTMLImageElement;
-        target.style.display = 'none';
-        const parent = target.parentElement;
-        if (parent) {
-          const textEl = document.createElement('span');
-          textEl.className = `${placeholderSizeClasses[size]} bg-gray-100 rounded flex items-center justify-center text-gray-600 font-medium whitespace-nowrap`;
-          textEl.textContent = partner.name;
-          parent.appendChild(textEl);
-        }
-      }}
+      className={`${sizeClasses[size]} object-contain hover:scale-105 transition-transform duration-300`}
+      onError={() => setImgError(true)}
     />
   ) : (
     <span className={`${placeholderSizeClasses[size]} bg-gray-100 rounded flex items-center justify-center text-gray-600 font-medium whitespace-nowrap`}>
