@@ -5,6 +5,57 @@ import Link from 'next/link'
 import { Mountain } from 'lucide-react'
 import { commonPartners, brandPartners, resortPartners, Partner } from '@/data/partners'
 
+// 主办/承办单位Logo组件 - 统一大尺寸白色方框
+function OrganizerLogo({ partner, label }: { partner: Partner; label: string }) {
+  const [basePath, setBasePath] = useState('/ski');
+  const [imgError, setImgError] = useState(false);
+
+  useEffect(() => {
+    const detectedBasePath = window.location.pathname.startsWith('/ski') ? '/ski' : '';
+    setBasePath(detectedBasePath);
+  }, []);
+
+  const hasLogo = partner.logo && !partner.logo.includes('placeholder');
+  const logoSrc = hasLogo ? `${basePath}${partner.logo}` : '';
+
+  const content = (
+    <div className="flex flex-col items-center">
+      <span className="text-xs text-gray-400 mb-2">{label}</span>
+      <div className="bg-white rounded-lg px-5 py-4 w-[200px] h-[90px] flex items-center justify-center hover:scale-105 transition-transform">
+        {(hasLogo && !imgError) ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={logoSrc}
+            alt={partner.name}
+            className="h-16 w-auto max-w-[180px] object-contain"
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <span className="text-base text-gray-600 font-medium whitespace-nowrap">
+            {partner.name}
+          </span>
+        )}
+      </div>
+    </div>
+  );
+
+  if (partner.url) {
+    return (
+      <a
+        href={partner.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center"
+        title={partner.name}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return <span className="inline-flex items-center" title={partner.name}>{content}</span>;
+}
+
 // 合作伙伴Logo组件
 function PartnerLogo({ partner }: { partner: Partner }) {
   const [basePath, setBasePath] = useState('/ski');
@@ -18,18 +69,12 @@ function PartnerLogo({ partner }: { partner: Partner }) {
   const hasLogo = partner.logo && !partner.logo.includes('placeholder');
   const logoSrc = hasLogo ? `${basePath}${partner.logo}` : '';
 
-  // 主办/承办方logo更大更突出
-  const isMainPartner = partner.type === 'organizer' || partner.type === 'host';
-  const logoClass = isMainPartner
-    ? "h-16 w-auto max-w-[200px] object-contain bg-white rounded px-3 py-2 hover:scale-105 transition-transform"
-    : "h-14 w-auto max-w-[160px] object-contain bg-white rounded px-2 py-1 hover:scale-105 transition-transform";
-
   const content = (hasLogo && !imgError) ? (
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src={logoSrc}
       alt={partner.name}
-      className={logoClass}
+      className="h-12 w-auto max-w-[140px] object-contain bg-white rounded px-2 py-1 hover:scale-105 transition-transform"
       onError={() => setImgError(true)}
     />
   ) : (
@@ -86,8 +131,7 @@ export default function Footer() {
     }
   });
 
-  // 按类型分组
-  const organizers = allPartners.filter(p => p.type === 'organizer' || p.type === 'host');
+  // 只获取合作品牌和雪场
   const partners = allPartners.filter(p => p.type === 'brand' || p.type === 'resort');
 
   return (
@@ -146,26 +190,31 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* 合作伙伴 */}
+        {/* 主办/承办单位 */}
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="text-center mb-6">
-            <h4 className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-4">
-              合作伙伴 Partners
-            </h4>
-            {/* 主办/承办 */}
-            <div className="flex flex-wrap items-center justify-center gap-6 mb-4">
-              {organizers.map((partner) => (
-                <PartnerLogo key={partner.id} partner={partner} />
-              ))}
-            </div>
-            {/* 品牌/雪场 */}
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              {partners.map((partner) => (
-                <PartnerLogo key={partner.id} partner={partner} />
-              ))}
+            <div className="flex flex-wrap items-end justify-center gap-8 mb-8">
+              <OrganizerLogo partner={commonPartners.csa} label="主办单位" />
+              <OrganizerLogo partner={commonPartners.huati} label="承办单位" />
             </div>
           </div>
         </div>
+
+        {/* 合作伙伴 */}
+        {partners.length > 0 && (
+          <div className="border-t border-gray-700 pt-6">
+            <div className="text-center mb-6">
+              <h4 className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-4">
+                合作伙伴 Partners
+              </h4>
+              <div className="flex flex-wrap items-center justify-center gap-4">
+                {partners.map((partner) => (
+                  <PartnerLogo key={partner.id} partner={partner} />
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center">

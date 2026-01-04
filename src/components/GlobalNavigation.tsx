@@ -217,7 +217,7 @@ export default function GlobalNavigation() {
                   <img
                     src={`${basePath}${commonPartners.huati.logo}`}
                     alt="华体冰雪"
-                    className="h-9 w-auto object-contain"
+                    className="h-10 w-auto object-contain"
                   />
                 </a>
               </div>
