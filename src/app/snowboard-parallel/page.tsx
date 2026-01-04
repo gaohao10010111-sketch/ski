@@ -13,6 +13,8 @@ import { getImagePath } from '@/utils/paths';
 import { useTranslation } from '@/contexts/LanguageContext';
 import { resultsBySport, latestResults } from '@/data/latestResults';
 import { Crown, Medal } from 'lucide-react';
+import PartnersSection from '@/components/PartnersSection';
+import { getPartnersBySport } from '@/data/partners';
 
 // 获取单板平行项目的真实数据
 const parallelCompetitions = resultsBySport['snowboard-parallel'] || [];
@@ -400,6 +402,9 @@ export default function SnowboardParallelPage() {
             </section>
           </div>
         )}
+
+        {/* 赛事合作伙伴 */}
+        <PartnersSection partners={getPartnersBySport('snowboard-parallel')} />
 
       </div>
     </div>

@@ -1,9 +1,82 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Mountain } from 'lucide-react'
+import { commonPartners, brandPartners, resortPartners, Partner } from '@/data/partners'
+
+// 合作伙伴Logo组件
+function PartnerLogo({ partner }: { partner: Partner }) {
+  const hasLogo = partner.logo && !partner.logo.includes('placeholder');
+
+  const content = hasLogo ? (
+    <Image
+      src={partner.logo}
+      alt={partner.name}
+      width={100}
+      height={40}
+      className="h-8 w-auto max-w-[100px] object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity"
+      onError={(e) => {
+        const target = e.target as HTMLImageElement;
+        target.style.display = 'none';
+      }}
+    />
+  ) : (
+    <span className="text-xs text-gray-400 px-2 py-1 border border-gray-600 rounded whitespace-nowrap">
+      {partner.name}
+    </span>
+  );
+
+  if (partner.url) {
+    return (
+      <a
+        href={partner.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center"
+        title={partner.name}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return <span className="inline-flex items-center" title={partner.name}>{content}</span>;
+}
 
 export default function Footer() {
+  // 获取所有唯一的合作伙伴
+  const allPartners: Partner[] = [];
+  const seenIds = new Set<string>();
+
+  // 添加通用合作伙伴（主办/承办）
+  Object.values(commonPartners).forEach((p) => {
+    if (!seenIds.has(p.id)) {
+      seenIds.add(p.id);
+      allPartners.push(p);
+    }
+  });
+
+  // 添加品牌合作伙伴
+  Object.values(brandPartners).forEach((p) => {
+    if (!seenIds.has(p.id)) {
+      seenIds.add(p.id);
+      allPartners.push(p);
+    }
+  });
+
+  // 添加雪场合作伙伴
+  Object.values(resortPartners).forEach((p) => {
+    if (!seenIds.has(p.id)) {
+      seenIds.add(p.id);
+      allPartners.push(p);
+    }
+  });
+
+  // 按类型分组
+  const organizers = allPartners.filter(p => p.type === 'organizer' || p.type === 'host');
+  const partners = allPartners.filter(p => p.type === 'brand' || p.type === 'resort');
+
   return (
     <footer className="bg-ski-navy text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -60,7 +133,28 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-12 pt-8">
+        {/* 合作伙伴 */}
+        <div className="border-t border-gray-700 mt-8 pt-8">
+          <div className="text-center mb-6">
+            <h4 className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-4">
+              合作伙伴 Partners
+            </h4>
+            {/* 主办/承办 */}
+            <div className="flex flex-wrap items-center justify-center gap-6 mb-4">
+              {organizers.map((partner) => (
+                <PartnerLogo key={partner.id} partner={partner} />
+              ))}
+            </div>
+            {/* 品牌/雪场 */}
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              {partners.map((partner) => (
+                <PartnerLogo key={partner.id} partner={partner} />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
             <div className="text-sm text-gray-300 mb-4 md:mb-0">
               © 2024-2025 中国滑雪青少年积分排名官方平台. 基于官方标准开发.

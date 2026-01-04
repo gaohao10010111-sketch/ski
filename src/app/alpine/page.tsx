@@ -12,6 +12,8 @@ import {
 import { getImagePath } from '@/utils/paths';
 import { useTranslation } from '@/contexts/LanguageContext';
 import { latestResults, resultsBySport, type CompetitionResult, type EventResult } from '@/data/latestResults';
+import PartnersSection from '@/components/PartnersSection';
+import { getPartnersBySport } from '@/data/partners';
 
 // 获取高山滑雪的真实数据
 const alpineCompetitions = resultsBySport.alpine || [];
@@ -417,6 +419,9 @@ export default function AlpinePage() {
             </section>
           )}
         </div>
+
+        {/* 赛事合作伙伴 */}
+        <PartnersSection partners={getPartnersBySport('alpine')} />
 
       </div>
     </div>
