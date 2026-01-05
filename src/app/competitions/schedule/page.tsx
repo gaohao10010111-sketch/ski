@@ -193,7 +193,7 @@ export default function SchedulePage() {
       <div className="mb-8 relative z-10">
         <h1 className="section-title">2025-2026赛季全国冬季项目赛事日历</h1>
         <p className="text-gray-600 text-lg">
-          数据来源：国家体育总局冬季运动管理中心 | 共 {stats.total} 场赛事，其中我们系统相关 {stats.ours} 场
+          数据来源：国家体育总局冬季运动管理中心
         </p>
       </div>
 
