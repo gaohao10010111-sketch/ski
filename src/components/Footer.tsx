@@ -22,17 +22,17 @@ function OrganizerLogo({ partner, label, showLabel = true }: { partner: Partner;
     <div className="flex flex-col items-center">
       {showLabel && <span className="text-xs text-gray-400 mb-2">{label}</span>}
       {!showLabel && <span className="text-xs text-gray-400 mb-2 invisible">{label}</span>}
-      <div className="bg-white rounded-xl px-4 py-3 flex items-center justify-center hover:scale-105 transition-transform shadow-sm">
+      <div className="bg-white rounded-xl w-[140px] h-[70px] flex items-center justify-center hover:scale-105 transition-transform shadow-sm">
         {(hasLogo && !imgError) ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={logoSrc}
             alt={partner.name}
-            className="h-[56px] w-auto max-w-[160px] object-contain"
+            className="h-[50px] w-auto max-w-[120px] object-contain"
             onError={() => setImgError(true)}
           />
         ) : (
-          <span className="text-base text-gray-700 font-semibold whitespace-nowrap">
+          <span className="text-sm text-gray-700 font-semibold whitespace-nowrap">
             {partner.name}
           </span>
         )}
