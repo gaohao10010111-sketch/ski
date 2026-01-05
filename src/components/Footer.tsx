@@ -148,7 +148,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/competitions/schedule" className="text-gray-300 hover:text-primary-400 transition-colors">
-                  赛事日程
+                  赛程安排
                 </Link>
               </li>
             </ul>

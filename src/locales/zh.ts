@@ -62,11 +62,11 @@ export const zh = {
       pointsTrends: '积分趋势',
 
       // 赛事管理子菜单
-      eventsSchedule: '赛程日历',
+      eventsSchedule: '赛程安排',
       eventsRegister: '在线报名',
       eventsResults: '成绩查询',
       eventsStats: '数据统计',
-      resultsLive: '实时成绩',
+      resultsLive: '比赛成绩',
       resultsImport: '成绩录入',
       resultsAnnouncement: '成绩发布',
 

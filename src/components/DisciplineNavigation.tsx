@@ -40,7 +40,7 @@ export default function DisciplineNavigation({ discipline }: DisciplineNavigatio
       href: '/competitions',
       icon: Trophy,
       children: [
-        { name: t.navigation?.submenus?.eventsSchedule || '赛程日历', href: '/competitions/schedule' },
+        { name: t.navigation?.submenus?.eventsSchedule || '赛程安排', href: '/competitions/schedule' },
         { name: t.navigation?.submenus?.eventsResults || '比赛成绩', href: '/competitions' },
         { name: t.navigation?.submenus?.eventsStats || '赛事统计', href: '/competitions/stats' }
       ]
