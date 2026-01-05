@@ -63,20 +63,6 @@ function PartnerLogo({ partner, size = 'md' }: PartnerLogoProps) {
     </span>
   );
 
-  if (partner.url) {
-    return (
-      <a
-        href={partner.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center justify-center hover:opacity-80 transition-opacity"
-        title={partner.nameEn ? `${partner.name} (${partner.nameEn})` : partner.name}
-      >
-        {content}
-      </a>
-    );
-  }
-
   return (
     <div
       className="inline-flex items-center justify-center"
@@ -91,22 +77,25 @@ interface PartnerRowProps {
   label: string;
   partners: Partner[];
   size?: 'sm' | 'md' | 'lg';
+  isMain?: boolean;
 }
 
 /**
  * 合作伙伴行（一类合作伙伴）
  */
-function PartnerRow({ label, partners, size = 'md' }: PartnerRowProps) {
+function PartnerRow({ label, partners, size = 'md', isMain = false }: PartnerRowProps) {
   if (partners.length === 0) return null;
 
   return (
-    <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
-      <span className="text-gray-500 text-sm font-medium whitespace-nowrap min-w-[80px]">
+    <div className={`flex flex-col items-center gap-3 ${isMain ? 'pb-4 border-b border-gray-200' : ''}`}>
+      <span className={`text-xs font-medium uppercase tracking-wider ${isMain ? 'text-gray-600' : 'text-gray-400'}`}>
         {label}
       </span>
-      <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+      <div className="flex flex-wrap items-center justify-center gap-6">
         {partners.map((partner) => (
-          <PartnerLogo key={partner.id} partner={partner} size={size} />
+          <div key={partner.id} className="bg-white rounded-lg px-4 py-3 shadow-sm hover:shadow-md transition-shadow">
+            <PartnerLogo partner={partner} size={size} />
+          </div>
         ))}
       </div>
     </div>
@@ -172,36 +161,81 @@ export default function PartnersSection({
 
   // 完整模式
   return (
-    <div className={`bg-gray-50 rounded-xl p-6 sm:p-8 ${className}`}>
-      <h3 className="text-center text-lg font-semibold text-gray-800 mb-6">
-        赛事合作伙伴
-      </h3>
-      <div className="space-y-5">
-        <PartnerRow
-          label={partnerTypeLabels.organizer}
-          partners={organizers}
-          size="lg"
-        />
-        <PartnerRow
-          label={partnerTypeLabels.host}
-          partners={hosts}
-          size="lg"
-        />
-        {brands.length > 0 && (
-          <PartnerRow
-            label={partnerTypeLabels.brand}
-            partners={brands}
-            size="md"
-          />
+    <div className={`bg-gradient-to-b from-gray-50 to-gray-100 rounded-2xl p-8 sm:p-10 ${className}`}>
+      <div className="text-center mb-8">
+        <h3 className="text-xl font-bold text-gray-800 mb-2">
+          赛事合作伙伴
+        </h3>
+        <p className="text-sm text-gray-500">Event Partners</p>
+      </div>
+
+      {/* 主办/承办单位 - 突出显示 */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        {organizers.length > 0 && (
+          <div className="text-center">
+            <span className="text-xs font-medium text-gray-500 uppercase tracking-wider block mb-3">
+              {partnerTypeLabels.organizer}
+            </span>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              {organizers.map((partner) => (
+                <div key={partner.id} className="bg-white rounded-xl px-5 py-4 shadow-sm hover:shadow-md transition-shadow">
+                  <PartnerLogo partner={partner} size="lg" />
+                </div>
+              ))}
+            </div>
+          </div>
         )}
-        {resorts.length > 0 && (
-          <PartnerRow
-            label={partnerTypeLabels.resort}
-            partners={resorts}
-            size="md"
-          />
+        {hosts.length > 0 && (
+          <div className="text-center">
+            <span className="text-xs font-medium text-gray-500 uppercase tracking-wider block mb-3">
+              {partnerTypeLabels.host}
+            </span>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              {hosts.map((partner) => (
+                <div key={partner.id} className="bg-white rounded-xl px-5 py-4 shadow-sm hover:shadow-md transition-shadow">
+                  <PartnerLogo partner={partner} size="lg" />
+                </div>
+              ))}
+            </div>
+          </div>
         )}
       </div>
+
+      {/* 合作品牌和雪场 */}
+      {(brands.length > 0 || resorts.length > 0) && (
+        <div className="border-t border-gray-200 pt-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {brands.length > 0 && (
+              <div className="text-center">
+                <span className="text-xs font-medium text-gray-400 uppercase tracking-wider block mb-3">
+                  {partnerTypeLabels.brand}
+                </span>
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  {brands.map((partner) => (
+                    <div key={partner.id} className="bg-white rounded-lg px-3 py-2 shadow-sm hover:shadow-md transition-shadow">
+                      <PartnerLogo partner={partner} size="md" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {resorts.length > 0 && (
+              <div className="text-center">
+                <span className="text-xs font-medium text-gray-400 uppercase tracking-wider block mb-3">
+                  {partnerTypeLabels.resort}
+                </span>
+                <div className="flex flex-wrap items-center justify-center gap-3">
+                  {resorts.map((partner) => (
+                    <div key={partner.id} className="bg-white rounded-lg px-3 py-2 shadow-sm hover:shadow-md transition-shadow">
+                      <PartnerLogo partner={partner} size="md" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
