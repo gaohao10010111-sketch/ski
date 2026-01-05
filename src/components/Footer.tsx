@@ -195,7 +195,7 @@ export default function Footer() {
           <div className="text-center mb-6">
             <div className="flex flex-wrap items-end justify-center gap-8 mb-8">
               <OrganizerLogo partner={commonPartners.csa} label="U系列赛事主办单位" />
-              <OrganizerLogo partner={commonPartners.huati} label="U系列赛事承办单位" showLabel={false} />
+              <OrganizerLogo partner={commonPartners.huati} label="U系列赛事承办单位" />
             </div>
           </div>
         </div>
