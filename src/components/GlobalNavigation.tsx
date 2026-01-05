@@ -154,21 +154,8 @@ export default function GlobalNavigation() {
     { key: 'live-results', name: t.navigation?.submenus?.resultsLive || 'Live Results', href: '/competitions', icon: Trophy },
     // 运动员页面暂时隐藏，待数据完善后上线
     // { key: 'athletes', name: t.navigation?.athletes || 'Athletes', href: '/athletes', icon: Users },
-    {
-      key: 'more',
-      name: t.navigation?.submenus?.moreFeatures || 'More',
-      href: '#',
-      icon: Menu,
-      children: [
-        { key: 'total-rankings', name: '总积分排行榜', href: '/points/total-rankings' },
-        { key: 'points-rankings', name: t.navigation?.submenus?.pointsRankings || 'Rankings', href: '/points/rankings' }
-        // 以下项目暂时隐藏，待平台稳定后上线
-        // { key: 'results-import', name: t.navigation?.submenus?.resultsImport || 'Import Results', href: '/results-import' },
-        // { key: 'coaches', name: '优秀教练', href: '/coaches' },
-        // { key: 'venues', name: '优质雪场', href: '/venues' },
-        // { key: 'clubs', name: '优质俱乐部', href: '/clubs' }
-      ]
-    }
+    { key: 'total-rankings', name: '总积分排行榜', href: '/points/total-rankings', icon: Trophy },
+    { key: 'points-rankings', name: t.navigation?.submenus?.pointsRankings || 'Rankings', href: '/points/rankings', icon: Trophy }
   ];
 
   return (
