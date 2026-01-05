@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { Trophy, Medal, Award, Crown, Download, Search, Database, Filter, TrendingUp, TrendingDown, Minus, Star } from 'lucide-react'
+import { Trophy, Medal, Award, Crown, Download, Search, Database, Filter, Star } from 'lucide-react'
 import { latestResults, type EventResult, type AthleteResult } from '@/data/latestResults'
 import { useToast } from '@/components/Toast'
 import Link from 'next/link'
@@ -384,7 +384,6 @@ export default function PointsRankingsPage() {
                         {group.athletes[0]?.diff !== undefined && (
                           <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">差值</th>
                         )}
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">趋势</th>
                         {group.athletes[0]?.points !== undefined && (
                           <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-24">积分</th>
                         )}
@@ -442,32 +441,6 @@ export default function PointsRankingsPage() {
                               {athlete.diff === '0.00' ? '-' : `+${athlete.diff}`}
                             </td>
                           )}
-                          {/* 趋势指示（模拟数据） */}
-                          <td className="px-4 py-3 whitespace-nowrap text-center">
-                            {(() => {
-                              // 基于排名模拟趋势变化
-                              const trend = athlete.rank <= 3 ? 'up' : athlete.rank <= 10 ? 'same' : 'down';
-                              if (trend === 'up') {
-                                return (
-                                  <span className="inline-flex items-center gap-0.5 text-green-600" title="排名上升">
-                                    <TrendingUp className="w-4 h-4" />
-                                  </span>
-                                );
-                              } else if (trend === 'down') {
-                                return (
-                                  <span className="inline-flex items-center gap-0.5 text-red-500" title="排名下降">
-                                    <TrendingDown className="w-4 h-4" />
-                                  </span>
-                                );
-                              } else {
-                                return (
-                                  <span className="inline-flex items-center gap-0.5 text-gray-400" title="排名持平">
-                                    <Minus className="w-4 h-4" />
-                                  </span>
-                                );
-                              }
-                            })()}
-                          </td>
                           {athlete.points !== undefined && (
                             <td className="px-4 py-3 whitespace-nowrap text-center">
                               <span className={`inline-flex px-3 py-1.5 text-sm font-bold rounded-lg ${
