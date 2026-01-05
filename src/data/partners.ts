@@ -32,7 +32,7 @@ export const commonPartners = {
     name: '中国滑雪协会',
     nameEn: 'Chinese Ski Association',
     logo: '/logos/csa.jpg',
-    url: 'http://www.ski.org.cn/',
+    url: 'https://www.sport.gov.cn/dyzx/',
     type: 'organizer' as const,
   },
   // 承办方 - 华体冰雪
