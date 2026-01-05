@@ -247,7 +247,7 @@ export default function TotalRankingsPage() {
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {filteredRankings.slice(0, 100).map((item) => (
+                  {filteredRankings.map((item) => (
                     <tr
                       key={`${item.athleteId}-${item.ageGroup}-${item.gender}`}
                       className={`hover:bg-gray-50 ${item.rank <= 3 ? 'bg-gradient-to-r from-yellow-50 to-orange-50' : ''}`}
@@ -322,11 +322,6 @@ export default function TotalRankingsPage() {
               </table>
             </div>
 
-            {filteredRankings.length > 100 && (
-              <div className="px-6 py-4 bg-gray-50 text-center text-sm text-gray-600">
-                显示前 100 名，共 {filteredRankings.length} 名运动员
-              </div>
-            )}
           </div>
         )}
 
