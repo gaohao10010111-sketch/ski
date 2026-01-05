@@ -1266,16 +1266,16 @@ export const zh = {
     heroDescription: '全国滑雪青少年U系列赛事积分排名指定官方发布平台',
 
     platformTitle: '平台简介',
-    platformIntro: '中国滑雪青少年积分排名官方平台是基于官方标准打造的综合性竞赛管理平台。涵盖高山滑雪、自由式滑雪、单板滑雪全项目，采用符合中国标准的多档积分计算算法，为中国滑雪竞赛提供权威、准确的数据管理和积分计算服务。',
+    platformIntro: '中国滑雪青少年积分排名官方平台是基于官方标准打造的综合性竞赛管理平台。涵盖高山滑雪、自由式滑雪、单板滑雪全项目，采用符合中国标准的360分制积分计算算法，为中国滑雪竞赛提供权威、准确的数据管理和积分计算服务。',
     platformDescription1: '根据国家体育总局冬季运动管理中心官网公示，北京华体冰雪产业发展有限公司（以下简称"华体冰雪"）正式成为2025-2028三个赛季全国单板滑雪坡面障碍技巧和大跳台青少年U系列比赛、单板滑雪平行项目青少年U系列比赛、自由式滑雪坡面障碍技巧和大跳台青少年U系列比赛、高山滑雪青少年U系列比赛的官方承办单位。',
     platformDescription2: '经华体冰雪授权，本平台作为赛事积分平台的指定运营方，负责赛事数据的采集、积分计算与排名发布。本平台为全国滑雪青少年U系列赛事积分排名的指定官方发布平台，旨在为运动员、教练员及各界提供权威、公正、及时的竞赛信息服务。',
     platformDescription3: '我们致力于推动中国滑雪运动的数字化、标准化发展，为运动员、教练员、赛事组织者、竞赛裁判提供现代化的数据管理、积分计算、成绩统计工具，全面覆盖大跳台、坡面障碍技巧、平行项目等各类雪上项目，提升中国滑雪运动的组织水平和竞技水平。',
 
     stats: {
-      pointsSystems: { value: '4', label: '积分系统' },
-      registeredAthletes: { value: '1000+', label: '注册运动员' },
-      annualEvents: { value: '50+', label: '年度赛事' },
-      onlineService: { value: '24/7', label: '在线服务' }
+      pointsSystems: { value: '4', label: '赛事项目' },
+      registeredAthletes: { value: '360', label: '最高积分' },
+      annualEvents: { value: 'U系列', label: '赛事类型' },
+      onlineService: { value: '官方', label: '平台授权' }
     },
 
     coreFeaturesTitle: '核心功能',
@@ -1283,7 +1283,7 @@ export const zh = {
 
     pointsCalculation: {
       title: '积分计算系统',
-      description: '基于官方规则的精确积分计算，支持双积分体系'
+      description: '基于360分制官方规则的精确积分计算'
     },
     eventManagement: {
       title: '赛事管理',
@@ -1301,21 +1301,21 @@ export const zh = {
     technicalFeaturesTitle: '技术特色',
 
     dualPointsEngine: {
-      title: '双积分计算引擎',
+      title: '360分制积分体系',
       features: [
-        '高山滑雪：基于时间的积分计算',
-        '自由式/单板：基于排名的240/360/120分档',
-        '动态判罚分计算',
-        '多项目积分管理'
+        '统一360分制：第1名360分',
+        '递减积分：第50名1分',
+        '基础分(BL)+赛季滚动分(NL)',
+        '支持多项目独立计算'
       ]
     },
     rulesSupport: {
-      title: '规则体系支持',
+      title: '赛事项目支持',
       features: [
-        '高山滑雪积分计算规则',
-        '全国BA、SS青少年U系列方案',
-        'FIS国际雪联规则兼容',
-        '场地技术标准管理'
+        '高山滑雪青少年U系列比赛',
+        '单板坡面障碍技巧和大跳台U系列比赛',
+        '单板平行项目U系列比赛',
+        '自由式坡面障碍技巧和大跳台U系列比赛'
       ]
     },
     userExperience: {
@@ -1333,13 +1333,13 @@ export const zh = {
 
     technicalSupport: {
       title: '技术支持',
-      email: '邮箱：待配置',
-      phone: '电话：待配置'
+      email: '邮箱：cnskipoints@sportscience.cn',
+      phone: '电话：13921269829'
     },
     businessCooperation: {
       title: '合作咨询',
-      email: '邮箱：待配置',
-      wechat: '微信：待配置'
+      email: '邮箱：cnskipoints@sportscience.cn',
+      wechat: '电话：13921269829'
     }
   }
 };
