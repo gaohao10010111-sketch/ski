@@ -217,7 +217,7 @@ export default function CompetitionsPage() {
 
   // 新建比赛
   const handleNewCompetition = () => {
-    showToast('新建比赛功能即将上线，敬请期待', 'info')
+    showToast('新建比赛功能开发中', 'info')
   }
 
   // 导出比赛列表为PDF
@@ -428,7 +428,7 @@ export default function CompetitionsPage() {
 </head>
 <body>
   <div class="header">
-    <h1>🏂 比赛数据报告</h1>
+    <h1>比赛数据报告</h1>
     <div class="subtitle">中国滑雪积分系统 · 2024-2025赛季</div>
     <div class="date">导出时间：${new Date().toLocaleString('zh-CN')}</div>
   </div>
@@ -536,7 +536,7 @@ export default function CompetitionsPage() {
 
   // 编辑比赛
   const handleEditCompetition = (competition: Competition) => {
-    showToast(`编辑功能即将上线：${competition.name}`, 'info')
+    showToast(`编辑功能开发中`, 'info')
   }
 
   // 导出单场比赛数据
@@ -568,9 +568,9 @@ export default function CompetitionsPage() {
   // 快速操作
   const handleQuickAction = (action: 'create' | 'schedule' | 'stats') => {
     const messages = {
-      create: '新建比赛功能即将上线，敬请期待',
-      schedule: '赛程安排功能即将上线，敬请期待',
-      stats: '成绩统计功能即将上线，敬请期待',
+      create: '新建比赛功能开发中',
+      schedule: '赛程安排功能开发中',
+      stats: '成绩统计功能开发中',
     }
     showToast(messages[action], 'info')
   }
@@ -762,7 +762,7 @@ export default function CompetitionsPage() {
                 {/* 比赛图片 */}
                 <div className="relative h-48 rounded-lg overflow-hidden mb-4 bg-gradient-to-br from-ski-blue to-ski-navy">
                   <img
-                    src={getImagePath('/images/ski-bg.jpg')}
+                    src={getImagePath('/images/freestyle-skiing.jpg')}
                     alt={competition.name}
                     className="w-full h-full object-cover opacity-80"
                   />

@@ -99,7 +99,7 @@ function buildStaticAthletesList(): Athlete[] {
       currentPoints: a.totalPoints,
       currentRank: index + 1,
       uSeriesGroup: null,
-      birthDate: '2010-01-01',
+      birthDate: null, // 真实数据中无出生日期
       nationality: 'CHN',
       fisCode: '',
     }))
@@ -157,7 +157,7 @@ export default function AthletesPage() {
         currentPoints: item.totalPoints,
         currentRank: index + 1,
         uSeriesGroup: null,
-        birthDate: '2000-01-01', // 占位值
+        birthDate: null, // 真实数据中无出生日期
         nationality: 'CHN',
         fisCode: '',
       }

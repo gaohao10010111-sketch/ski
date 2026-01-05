@@ -49,23 +49,23 @@ export default function CooperationPage() {
   const cooperationHighlights = [
     {
       icon: Users,
-      title: '覆盖全国运动员',
-      description: '平台服务全国青少年滑雪运动员，影响力广泛'
+      title: '服务全国运动员',
+      description: '平台服务全国青少年滑雪运动员'
     },
     {
       icon: Trophy,
       title: '官方赛事数据',
-      description: '提供权威的积分排名和比赛成绩数据服务'
+      description: '提供积分排名和比赛成绩数据'
     },
     {
       icon: Target,
-      title: '精准目标群体',
-      description: '直接触达滑雪爱好者、家长和专业教练群体'
+      title: '目标群体明确',
+      description: '滑雪运动员、家长和教练群体'
     },
     {
       icon: Star,
-      title: '品牌曝光机会',
-      description: '在赛事报道和平台展示中获得品牌露出机会'
+      title: '品牌展示',
+      description: '在平台和赛事中展示合作品牌'
     }
   ];
 

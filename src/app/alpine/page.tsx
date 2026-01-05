@@ -14,9 +14,16 @@ import { useTranslation } from '@/contexts/LanguageContext';
 import { latestResults, resultsBySport, type CompetitionResult, type EventResult } from '@/data/latestResults';
 import PartnersSection from '@/components/PartnersSection';
 import { getPartnersBySport } from '@/data/partners';
+import { competitionSchedule2025 } from '@/data/competitionSchedule';
 
 // 获取高山滑雪的真实数据
 const alpineCompetitions = resultsBySport.alpine || [];
+
+// 获取高山滑雪的真实赛程 - 取最近3场未来比赛
+const alpineSchedule = competitionSchedule2025
+  .filter(c => c.category === 'alpine' && c.isOurs)
+  .sort((a, b) => a.startDate.localeCompare(b.startDate))
+  .slice(0, 3);
 
 export default function AlpinePage() {
   const { t, language } = useTranslation();
@@ -24,21 +31,21 @@ export default function AlpinePage() {
 
   const heroSlides = [
     {
-      title: t.alpine?.hero?.slide1?.title || '2024全国高山滑雪锦标赛',
-      subtitle: t.alpine?.hero?.slide1?.subtitle || '大回转项目 · 正在进行',
-      image: getImagePath('/images/ski-bg.jpg'),
+      title: t.alpine?.hero?.slide1?.title || '高山滑雪',
+      subtitle: t.alpine?.hero?.slide1?.subtitle || '全国青少年U系列赛事',
+      image: getImagePath('/images/alpine-race.jpg'),
       link: '/competitions'
     },
     {
-      title: t.alpine?.hero?.slide2?.title || '积分规则v4.0',
-      subtitle: t.alpine?.hero?.slide2?.subtitle || '全新积分计算系统',
-      image: getImagePath('/images/ski-bg.jpg'),
+      title: t.alpine?.hero?.slide2?.title || '积分规则 - 360分制',
+      subtitle: t.alpine?.hero?.slide2?.subtitle || '青少年U系列积分体系',
+      image: getImagePath('/images/ski-mountain.jpg'),
       link: '/rules/points'
     },
     {
       title: t.alpine?.hero?.slide3?.title || '积分排行榜',
       subtitle: t.alpine?.hero?.slide3?.subtitle || '查看最新积分排名',
-      image: getImagePath('/images/ski-bg.jpg'),
+      image: getImagePath('/images/winter-sport.jpg'),
       link: '/points/rankings'
     }
   ];
@@ -74,12 +81,6 @@ export default function AlpinePage() {
       .slice(0, 10);
   }, []);
 
-  // 赛程日历 - 待确认真实数据
-  const upcomingEvents = [
-    { event: '全国高山滑雪U系列比赛', discipline: '回转/大回转', date: '2025-01', location: '待定', level: 'U系列' },
-    { event: '全国高山滑雪锦标赛', discipline: '全能', date: '2025-02', location: '待定', level: 'A级' },
-    { event: '全国青少年高山滑雪锦标赛', discipline: '回转', date: '2025-02', location: '待定', level: 'B级' }
-  ];
 
   // 从真实数据生成顶尖运动员列表 - 使用 useMemo 缓存
   const topAthletes = useMemo(() => {
@@ -317,41 +318,39 @@ export default function AlpinePage() {
           </section>
         )}
 
-        {/* 赛程日历 */}
-        <section className="mb-8">
-          <div className="bg-white rounded-lg p-6 shadow-sm">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-bold text-gray-900 flex items-center">
-                <Calendar className="w-5 h-5 mr-2 text-purple-600" />
-                赛程日历
-              </h2>
-              <Link href="/competitions/schedule" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
-                完整赛程 →
-              </Link>
+        {/* 赛程安排 */}
+        {alpineSchedule.length > 0 && (
+          <section className="mb-8">
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-xl font-bold text-gray-900 flex items-center">
+                  <Calendar className="w-5 h-5 mr-2 text-blue-600" />
+                  赛程安排
+                </h2>
+                <Link href="/competitions/schedule" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
+                  完整赛程 →
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {alpineSchedule.map((comp) => (
+                  <div key={comp.id} className="border-l-4 border-blue-600 pl-4 py-3 bg-blue-50 rounded-r-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="font-semibold text-gray-900 text-sm leading-tight">{comp.name}</div>
+                    </div>
+                    <div className="flex items-center text-sm text-gray-500 mb-1">
+                      <Clock className="w-4 h-4 mr-1 flex-shrink-0" />
+                      <span>{comp.startDate} ~ {comp.endDate}</span>
+                    </div>
+                    <div className="flex items-center text-sm text-gray-500">
+                      <MapPin className="w-4 h-4 mr-1 flex-shrink-0" />
+                      <span className="truncate">{comp.location}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {upcomingEvents.map((event, index) => (
-                <div key={index} className="border-l-4 border-purple-600 pl-4 py-3 bg-purple-50 rounded-r-lg">
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="font-semibold text-gray-900">{event.event}</div>
-                    <span className={`px-2 py-0.5 text-xs font-medium rounded ${
-                      event.level === 'A级' ? 'bg-red-100 text-red-700' :
-                      event.level === 'U系列' ? 'bg-green-100 text-green-700' :
-                      'bg-blue-100 text-blue-700'
-                    }`}>{event.level}</span>
-                  </div>
-                  <div className="text-sm text-gray-600 mb-2">{event.discipline}</div>
-                  <div className="flex items-center text-sm text-gray-500 mb-1">
-                    <Clock className="w-4 h-4 mr-1" />{event.date}
-                  </div>
-                  <div className="flex items-center text-sm text-gray-500">
-                    <MapPin className="w-4 h-4 mr-1" />{event.location}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* 两栏：运动员名录 + 历史冠军 */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">

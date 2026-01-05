@@ -315,7 +315,7 @@ function ResultsContent() {
                 {/* 比赛图片头部 */}
                 <div className="relative h-48 bg-gradient-to-br from-ski-blue to-ski-navy">
                   <img
-                    src={getImagePath('/images/ski-bg.jpg')}
+                    src={getImagePath('/images/snowboard-halfpipe.jpg')}
                     alt={competition.competition}
                     className="w-full h-full object-cover opacity-60"
                   />

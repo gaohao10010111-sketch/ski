@@ -159,81 +159,70 @@ export default function PartnersSection({
     );
   }
 
-  // 完整模式
+  // 完整模式 - 紧凑布局
   return (
-    <div className={`bg-gradient-to-b from-gray-50 to-gray-100 rounded-2xl p-8 sm:p-10 ${className}`}>
-      <div className="text-center mb-8">
-        <h3 className="text-xl font-bold text-gray-800 mb-2">
+    <div className={`bg-gradient-to-b from-gray-50 to-gray-100 rounded-xl p-5 sm:p-6 ${className}`}>
+      <div className="text-center mb-4">
+        <h3 className="text-lg font-bold text-gray-800">
           赛事合作伙伴
         </h3>
-        <p className="text-sm text-gray-500">Event Partners</p>
       </div>
 
-      {/* 主办/承办单位 - 突出显示 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      {/* 主办/承办单位 - 单行紧凑展示 */}
+      <div className="flex flex-wrap items-center justify-center gap-3 mb-4">
         {organizers.length > 0 && (
-          <div className="text-center">
-            <span className="text-xs font-medium text-gray-500 uppercase tracking-wider block mb-3">
-              {partnerTypeLabels.organizer}
+          <>
+            <span className="text-xs text-gray-500 whitespace-nowrap">
+              {partnerTypeLabels.organizer}:
             </span>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              {organizers.map((partner) => (
-                <div key={partner.id} className="bg-white rounded-xl px-5 py-4 shadow-sm hover:shadow-md transition-shadow">
-                  <PartnerLogo partner={partner} size="lg" />
-                </div>
-              ))}
-            </div>
-          </div>
+            {organizers.map((partner) => (
+              <div key={partner.id} className="bg-white rounded-lg px-3 py-2 shadow-sm">
+                <PartnerLogo partner={partner} size="md" />
+              </div>
+            ))}
+          </>
         )}
         {hosts.length > 0 && (
-          <div className="text-center">
-            <span className="text-xs font-medium text-gray-500 uppercase tracking-wider block mb-3">
-              {partnerTypeLabels.host}
+          <>
+            <span className="text-xs text-gray-500 whitespace-nowrap ml-2">
+              {partnerTypeLabels.host}:
             </span>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              {hosts.map((partner) => (
-                <div key={partner.id} className="bg-white rounded-xl px-5 py-4 shadow-sm hover:shadow-md transition-shadow">
-                  <PartnerLogo partner={partner} size="lg" />
-                </div>
-              ))}
-            </div>
-          </div>
+            {hosts.map((partner) => (
+              <div key={partner.id} className="bg-white rounded-lg px-3 py-2 shadow-sm">
+                <PartnerLogo partner={partner} size="md" />
+              </div>
+            ))}
+          </>
         )}
       </div>
 
-      {/* 合作品牌和雪场 */}
+      {/* 合作品牌和雪场 - 单行紧凑展示 */}
       {(brands.length > 0 || resorts.length > 0) && (
-        <div className="border-t border-gray-200 pt-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {brands.length > 0 && (
-              <div className="text-center">
-                <span className="text-xs font-medium text-gray-400 uppercase tracking-wider block mb-3">
-                  {partnerTypeLabels.brand}
-                </span>
-                <div className="flex flex-wrap items-center justify-center gap-3">
-                  {brands.map((partner) => (
-                    <div key={partner.id} className="bg-white rounded-lg px-3 py-2 shadow-sm hover:shadow-md transition-shadow">
-                      <PartnerLogo partner={partner} size="md" />
-                    </div>
-                  ))}
+        <div className="flex flex-wrap items-center justify-center gap-2 pt-3 border-t border-gray-200">
+          {brands.length > 0 && (
+            <>
+              <span className="text-xs text-gray-400 whitespace-nowrap">
+                {partnerTypeLabels.brand}:
+              </span>
+              {brands.map((partner) => (
+                <div key={partner.id} className="bg-white rounded px-2 py-1 shadow-sm">
+                  <PartnerLogo partner={partner} size="sm" />
                 </div>
-              </div>
-            )}
-            {resorts.length > 0 && (
-              <div className="text-center">
-                <span className="text-xs font-medium text-gray-400 uppercase tracking-wider block mb-3">
-                  {partnerTypeLabels.resort}
-                </span>
-                <div className="flex flex-wrap items-center justify-center gap-3">
-                  {resorts.map((partner) => (
-                    <div key={partner.id} className="bg-white rounded-lg px-3 py-2 shadow-sm hover:shadow-md transition-shadow">
-                      <PartnerLogo partner={partner} size="md" />
-                    </div>
-                  ))}
+              ))}
+            </>
+          )}
+          {resorts.length > 0 && (
+            <>
+              <span className="text-xs text-gray-400 whitespace-nowrap ml-2">
+                {partnerTypeLabels.resort}:
+              </span>
+              {resorts.map((partner) => (
+                <div key={partner.id} className="bg-white rounded px-2 py-1 shadow-sm">
+                  <PartnerLogo partner={partner} size="sm" />
                 </div>
-              </div>
-            )}
-          </div>
+              ))}
+            </>
+          )}
         </div>
       )}
     </div>

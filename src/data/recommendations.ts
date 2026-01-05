@@ -323,7 +323,7 @@ export const recommendedClubs: Club[] = [
     coaches: 25,
     ageGroups: ['U12', 'U15', 'U18', '成年'],
     fee: '年费12000-25000元',
-    description: '北京市官方青少年滑雪培训机构，拥有最专业的教练团队和训练体系。已向国家队输送多名优秀运动员。'
+    description: '北京市青少年滑雪培训机构，曾向国家队输送多名运动员。'
   },
   {
     id: 'club-002',
@@ -341,7 +341,7 @@ export const recommendedClubs: Club[] = [
     coaches: 18,
     ageGroups: ['U11', 'U15', 'U18'],
     fee: '年费8000-18000元',
-    description: '东北地区最专业的单板和自由式滑雪俱乐部，依托长白山优质雪资源，培养了大批优秀青少年运动员。'
+    description: '东北地区单板和自由式滑雪俱乐部，依托长白山雪场资源开展培训。'
   },
   {
     id: 'club-003',

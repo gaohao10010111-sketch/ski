@@ -10,7 +10,7 @@ export default function StructuredData({ type = 'sportsOrganization' }: Structur
     '@type': type === 'website' ? 'WebSite' : 'SportsOrganization',
     name: '中国滑雪青少年积分排名官方平台',
     alternateName: 'China Youth Skiing Points Ranking Platform',
-    description: '基于简化积分规则的专业滑雪竞赛数据管理平台，为中国高山滑雪运动提供积分计算、成绩管理、赛事组织等一站式解决方案',
+    description: '全国滑雪青少年U系列赛事积分排名指定发布平台，提供积分查询、成绩公布、赛程安排等服务',
     url: 'https://cnskipoints.com/',
     logo: 'https://cnskipoints.com/images/logo.png',
     image: 'https://cnskipoints.com/images/ski-bg.jpg',

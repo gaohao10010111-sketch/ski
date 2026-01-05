@@ -449,7 +449,7 @@ export default function SchedulePage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative">
       {/* 背景装饰 */}
       <div className="absolute top-0 right-0 w-40 h-40 opacity-15 rounded-full overflow-hidden">
-        <img src={getImagePath("/images/ski-bg.jpg")} alt="" className="w-full h-full object-cover" />
+        <img src={getImagePath("/images/winter-sport.jpg")} alt="" className="w-full h-full object-cover" />
       </div>
 
       {/* Header */}

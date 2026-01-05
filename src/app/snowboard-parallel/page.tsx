@@ -15,9 +15,16 @@ import { resultsBySport, latestResults } from '@/data/latestResults';
 import { Crown, Medal } from 'lucide-react';
 import PartnersSection from '@/components/PartnersSection';
 import { getPartnersBySport } from '@/data/partners';
+import { competitionSchedule2025 } from '@/data/competitionSchedule';
 
 // 获取单板平行项目的真实数据
 const parallelCompetitions = resultsBySport['snowboard-parallel'] || [];
+
+// 获取单板平行项目的真实赛程 - 取最近3场未来比赛
+const parallelSchedule = competitionSchedule2025
+  .filter(c => c.category === 'snowboard-parallel' && c.isOurs)
+  .sort((a, b) => a.startDate.localeCompare(b.startDate))
+  .slice(0, 3);
 
 export default function SnowboardParallelPage() {
   const { t, language } = useTranslation();
@@ -108,32 +115,26 @@ export default function SnowboardParallelPage() {
 
   const heroSlides = [
     {
-      title: '2024全国单板平行项目锦标赛',
-      subtitle: '平行大回转 · 正在进行',
-      image: getImagePath('/images/ski-bg.jpg'),
+      title: '单板平行项目',
+      subtitle: '全国青少年U系列赛事',
+      image: getImagePath('/images/snowboard-halfpipe.jpg'),
       link: '/competitions'
     },
     {
-      title: '积分规则 - 竞速系统',
-      subtitle: '基于时间的积分计算',
-      image: getImagePath('/images/ski-bg.jpg'),
+      title: '积分规则 - 360分制',
+      subtitle: '青少年U系列积分体系',
+      image: getImagePath('/images/ski-mountain.jpg'),
       link: '/rules/points'
     },
     {
       title: '积分排行榜',
       subtitle: '查看最新积分排名',
-      image: getImagePath('/images/ski-bg.jpg'),
+      image: getImagePath('/images/snowboard-jump.png'),
       link: '/points/rankings'
     }
   ];
 
 
-  // 赛程日历 - 待确认真实数据
-  const upcomingEvents = [
-    { event: '全国单板平行U系列比赛', discipline: 'PGS/PSL', date: '2025-01', location: '待定', level: 'U系列' },
-    { event: '全国单板平行锦标赛', discipline: '平行大回转', date: '2025-02', location: '待定', level: 'A级' },
-    { event: '全国青少年单板平行锦标赛', discipline: '平行回转', date: '2025-02', location: '待定', level: 'B级' }
-  ];
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
@@ -300,41 +301,39 @@ export default function SnowboardParallelPage() {
           </section>
         )}
 
-        {/* 赛程日历 */}
-        <section className="mb-8">
-          <div className="bg-white rounded-lg p-6 shadow-sm">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-bold text-gray-900 flex items-center">
-                <Calendar className="w-5 h-5 mr-2 text-indigo-600" />
-                赛程日历
-              </h2>
-              <Link href="/competitions/schedule" className="text-indigo-600 hover:text-indigo-700 text-sm font-medium">
-                完整赛程 →
-              </Link>
+        {/* 赛程安排 */}
+        {parallelSchedule.length > 0 && (
+          <section className="mb-8">
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-xl font-bold text-gray-900 flex items-center">
+                  <Calendar className="w-5 h-5 mr-2 text-indigo-600" />
+                  赛程安排
+                </h2>
+                <Link href="/competitions/schedule" className="text-indigo-600 hover:text-indigo-700 text-sm font-medium">
+                  完整赛程 →
+                </Link>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {parallelSchedule.map((comp) => (
+                  <div key={comp.id} className="border-l-4 border-indigo-600 pl-4 py-3 bg-indigo-50 rounded-r-lg">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="font-semibold text-gray-900 text-sm leading-tight">{comp.name}</div>
+                    </div>
+                    <div className="flex items-center text-sm text-gray-500 mb-1">
+                      <Clock className="w-4 h-4 mr-1 flex-shrink-0" />
+                      <span>{comp.startDate} ~ {comp.endDate}</span>
+                    </div>
+                    <div className="flex items-center text-sm text-gray-500">
+                      <MapPin className="w-4 h-4 mr-1 flex-shrink-0" />
+                      <span className="truncate">{comp.location}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {upcomingEvents.map((event, index) => (
-                <div key={index} className="border-l-4 border-indigo-600 pl-4 py-3 bg-indigo-50 rounded-r-lg">
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="font-semibold text-gray-900">{event.event}</div>
-                    <span className={`px-2 py-0.5 text-xs font-medium rounded ${
-                      event.level === 'A级' ? 'bg-red-100 text-red-700' :
-                      event.level === 'U系列' ? 'bg-green-100 text-green-700' :
-                      'bg-blue-100 text-blue-700'
-                    }`}>{event.level}</span>
-                  </div>
-                  <div className="text-sm text-gray-600 mb-2">{event.discipline}</div>
-                  <div className="flex items-center text-sm text-gray-500 mb-1">
-                    <Clock className="w-4 h-4 mr-1" />{event.date}
-                  </div>
-                  <div className="flex items-center text-sm text-gray-500">
-                    <MapPin className="w-4 h-4 mr-1" />{event.location}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* 两栏：运动员名录 + 历史冠军 - 仅当有真实数据时显示 */}
         {parallelCompetitions.length > 0 && (

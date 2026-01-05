@@ -422,7 +422,7 @@ export default function HomePage() {
           <div
             className="w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url('${getImagePath('/images/ski-bg.jpg')}')`
+              backgroundImage: `url('${getImagePath('/images/alpine-race.jpg')}')`
             }}
           ></div>
         </div>

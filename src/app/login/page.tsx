@@ -115,7 +115,7 @@ export default function LoginPage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('${getImagePath('/images/ski-bg.jpg')}')`
+            backgroundImage: `url('${getImagePath('/images/ski-mountain.jpg')}')`
           }}
         ></div>
         <div className="absolute inset-0 flex items-center justify-center p-12">

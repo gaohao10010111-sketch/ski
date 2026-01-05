@@ -583,15 +583,15 @@ export const zh = {
 
   // 即将上线组件
   comingSoon: {
-    title: '即将上线',
-    description: '此功能正在开发中，敬请期待。',
+    title: '功能开发中',
+    description: '该功能正在开发中。',
     backLabel: '返回首页',
     learnMoreLabel: '了解更多',
     progressLabel: '开发进度',
     progressValue: '30%',
-    eta: '预计上线时间：2-4周',
-    upcomingFeaturesTitle: '即将推出的功能：',
-    upcomingFeatures: ['实时数据更新', '智能分析', '个性化推荐', '移动端优化']
+    eta: '',
+    upcomingFeaturesTitle: '计划功能：',
+    upcomingFeatures: ['数据更新', '统计分析', '移动端适配']
   },
 
   // 文档中心
@@ -1104,20 +1104,20 @@ export const zh = {
   home: {
     hero: {
       title: '中国滑雪青少年积分排名官方平台',
-      titleEn: 'China Skiing Points Data Management Platform',
-      subtitle: '全国滑雪青少年U系列赛事积分排名指定官方发布平台',
+      titleEn: 'China Youth Skiing Points Ranking Platform',
+      subtitle: '全国滑雪青少年U系列赛事积分排名指定发布平台',
       exploreDisciplines: '查看积分排名',
-      freeRegister: '免费注册',
-      platformIntro: '为运动员、教练员及各界提供权威、公正、及时的竞赛信息服务',
+      freeRegister: '注册账号',
+      platformIntro: '为运动员、教练员及各界提供竞赛信息服务',
       highlights: [
-        { label: '四大积分系统', color: 'bg-ski-blue' },
-        { label: '官方标准认证', color: 'bg-green-400' },
-        { label: 'U系列·大众赛事', color: 'bg-yellow-400' }
+        { label: '四大项目', color: 'bg-ski-blue' },
+        { label: '官方数据', color: 'bg-green-400' },
+        { label: 'U系列赛事', color: 'bg-yellow-400' }
       ]
     },
     features: {
-      title: '平台核心功能',
-      description: '涵盖高山滑雪、自由式滑雪、单板滑雪全项目，采用符合中国标准的多档积分计算算法，为中国滑雪竞赛提供权威、准确的数据管理和积分计算服务',
+      title: '功能服务',
+      description: '涵盖高山滑雪、自由式滑雪、单板滑雪全项目，提供积分计算、成绩查询、赛程安排等服务',
       online: '已上线',
       useNow: '立即使用',
       fisPointsQuery: {
@@ -1166,11 +1166,11 @@ export const zh = {
       }
     },
     stats: {
-      title: '平台数据概览',
-      subtitle: '实时更新的系统数据和运行状态',
-      disciplines: { label: '滑雪项目', value: '4大项', description: '高山·自由式·单板' },
-      pointsRules: { label: '积分规则', value: '100%', description: '符合中国标准' },
-      updateCycle: { label: '积分更新', value: '7天', description: '每周更新' },
+      title: '数据统计',
+      subtitle: '',
+      disciplines: { label: '项目', value: '4大项', description: '高山·自由式·单板' },
+      pointsRules: { label: '积分规则', value: '360分制', description: 'U系列标准' },
+      updateCycle: { label: '数据更新', value: '赛后', description: '成绩公布后更新' },
       users: { label: '注册用户', value: '500+', description: '运动员教练' }
     },
     news: {
@@ -1191,12 +1191,12 @@ export const zh = {
       ]
     },
     latestResults: {
-      title: '最新赛事成绩',
-      subtitle: '实时更新的竞赛结果和积分排名',
+      title: '最新成绩',
+      subtitle: '各项目比赛成绩',
       recentResults: '最新比赛',
-      liveUpdate: '实时更新',
-      viewMore: '查看更多赛事 →',
-      noData: '暂无该项目的比赛数据',
+      liveUpdate: '已更新',
+      viewMore: '查看更多 →',
+      noData: '暂无比赛数据',
       statusLabels: {
         live: '正在进行',
         completed: '已完成',

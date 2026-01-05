@@ -33,7 +33,7 @@ export interface Athlete {
   id: string;
   name: string;
   gender: 'MALE' | 'FEMALE';
-  birthDate: string;
+  birthDate: string | null;
   age?: number;
   nationality: string;
   province: string | null;

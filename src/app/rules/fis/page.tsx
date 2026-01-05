@@ -141,7 +141,7 @@ export default function ChinaSkiRulesPage() {
                       {rule.status === 'active' ? (
                         <span className="badge badge-active text-xs">可查看</span>
                       ) : (
-                        <span className="badge badge-coming-soon text-xs">即将上线</span>
+                        <span className="badge badge-coming-soon text-xs">开发中</span>
                       )}
                     </div>
                     <p className="text-sm text-gray-600">{rule.description}</p>
@@ -220,8 +220,7 @@ export default function ChinaSkiRulesPage() {
               Q: 青少年体系有什么特点？
             </h3>
             <p className="text-gray-600">
-              A: 精简了青少年年龄组别，聚焦U15、U18两个核心组别，
-              所有组别均使用正式积分计算，为青少年发展提供更精准的支持。
+              A: 精简了青少年年龄组别，聚焦U15、U18两个核心组别，所有组别均使用正式积分计算。
             </p>
           </div>
 
@@ -230,8 +229,7 @@ export default function ChinaSkiRulesPage() {
               Q: 相比v2.0有什么优势？
             </h3>
             <p className="text-gray-600">
-              A: 简化了计算流程，去除了质量系数、人数系数、附加分等复杂要素，
-              提高了计算效率和透明度，同时扩展了青少年体系，更加高效、透明。
+              A: 简化了计算流程，去除了质量系数、人数系数、附加分等复杂要素，提高了计算透明度。
             </p>
           </div>
         </div>
