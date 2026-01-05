@@ -174,25 +174,16 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-ski-blue text-white">
+      <section className="py-16 bg-ski-blue text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">{t.aboutPage?.contactTitle || 'Contact Us'}</h2>
-          <p className="text-xl text-blue-100 mb-8">
-            {t.aboutPage?.contactDescription || 'We welcome your questions and suggestions.'}
+          <h2 className="text-2xl font-bold mb-4">{t.aboutPage?.contactTitle || '联系我们'}</h2>
+          <p className="text-blue-100 mb-6">
+            {t.aboutPage?.contactDescription || '技术支持与合作咨询'}
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-            <div>
-              <h3 className="text-lg font-semibold mb-3">{t.aboutPage?.technicalSupport?.title || 'Technical Support'}</h3>
-              <p className="text-blue-100 whitespace-pre-line">
-                {(t.aboutPage?.technicalSupport?.email || 'Email: support@ski-points.com') + '\n' + (t.aboutPage?.technicalSupport?.phone || 'Phone: 400-123-4567')}
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold mb-3">{t.aboutPage?.businessCooperation?.title || 'Business Cooperation'}</h3>
-              <p className="text-blue-100 whitespace-pre-line">
-                {(t.aboutPage?.businessCooperation?.email || 'Email: business@ski-points.com') + '\n' + (t.aboutPage?.businessCooperation?.wechat || 'WeChat: ski-points-service')}
-              </p>
-            </div>
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 text-blue-100">
+            <span>邮箱: support@cnskipoints.com</span>
+            <span className="hidden sm:inline">|</span>
+            <span>微信: cnskipoints</span>
           </div>
         </div>
       </section>
