@@ -40,20 +40,6 @@ function OrganizerLogo({ partner, label, showLabel = true }: { partner: Partner;
     </div>
   );
 
-  if (partner.url) {
-    return (
-      <a
-        href={partner.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center"
-        title={partner.name}
-      >
-        {content}
-      </a>
-    );
-  }
-
   return <span className="inline-flex items-center" title={partner.name}>{content}</span>;
 }
 
@@ -84,22 +70,6 @@ function PartnerLogo({ partner }: { partner: Partner }) {
     </span>
   );
 
-  // 只有有url的才添加超链接
-  if (partner.url) {
-    return (
-      <a
-        href={partner.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center"
-        title={partner.name}
-      >
-        {content}
-      </a>
-    );
-  }
-
-  // 没有url的不添加超链接
   return <span className="inline-flex items-center" title={partner.name}>{content}</span>;
 }
 
