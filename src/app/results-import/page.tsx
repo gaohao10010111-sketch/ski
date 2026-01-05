@@ -1048,7 +1048,7 @@ export default function ResultsImportPage() {
       </div>
       <div className="absolute top-1/3 right-1/4 w-24 h-24 opacity-10 rounded-full overflow-hidden">
         <img
-          src={getImagePath("/images/skiing-1.jpg")}
+          src={getImagePath("/images/ski-action-2.jpg")}
           alt=""
           className="w-full h-full object-cover"
         />

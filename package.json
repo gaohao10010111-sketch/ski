@@ -16,59 +16,30 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage",
-    "demo": "bash scripts/quick-demo.sh",
-    "share:vercel": "bash scripts/deploy-vercel.sh",
-    "share:ngrok": "bash scripts/ngrok-share.sh",
-    "audit": "node tools/audit.js",
-    "db:generate": "prisma generate",
-    "db:push": "prisma db push",
-    "db:migrate": "prisma migrate dev",
-    "db:migrate:prod": "prisma migrate deploy",
-    "db:seed": "npx ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts",
-    "db:studio": "prisma studio",
-    "db:reset": "prisma migrate reset"
-  },
-  "prisma": {
-    "seed": "npx ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@prisma/client": "^6.19.0",
     "@types/node": "^20.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "@vercel/speed-insights": "^1.2.0",
     "autoprefixer": "^10.4.0",
-    "bcryptjs": "^2.4.3",
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
-    "dotenv": "^16.0.0",
-    "jsonwebtoken": "^9.0.0",
     "lucide-react": "^0.292.0",
     "next": "^14.0.0",
-    "pdf-parse": "^2.2.2",
-    "pdfjs-dist": "3.11.174",
-    "pg": "^8.11.0",
+    "pdfjs-dist": "^3.11.174",
     "postcss": "^8.4.0",
-    "prisma": "^6.19.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5.0.0",
-    "zod": "^4.1.13"
+    "typescript": "^5.0.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
-    "@types/bcryptjs": "^2.4.6",
-    "@types/jsonwebtoken": "^9.0.5",
-    "@types/pdf-parse": "^1.1.5",
-    "@types/pg": "^8.10.0",
     "@vitejs/plugin-react": "^4.7.0",
     "eslint": "^8.0.0",
     "eslint-config-next": "^14.0.0",
-    "exceljs": "^4.4.0",
     "ts-node": "^10.9.2",
-    "vitest": "^3.2.4",
-    "xlsx": "^0.18.5"
+    "vitest": "^3.2.4"
   }
 }

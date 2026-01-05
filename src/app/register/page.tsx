@@ -69,7 +69,7 @@ export default function RegisterPage() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('${getImagePath('/images/skiing-1.jpg')}')`
+            backgroundImage: `url('${getImagePath('/images/ski-action-2.jpg')}')`
           }}
         ></div>
         <div className="absolute inset-0 flex items-center justify-center p-12">
