@@ -194,8 +194,8 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="text-center mb-6">
             <div className="flex flex-wrap items-end justify-center gap-8 mb-8">
-              <OrganizerLogo partner={commonPartners.csa} label="主办单位" />
-              <OrganizerLogo partner={commonPartners.huati} label="承办单位" showLabel={false} />
+              <OrganizerLogo partner={commonPartners.csa} label="U系列赛事主办单位" />
+              <OrganizerLogo partner={commonPartners.huati} label="U系列赛事承办单位" showLabel={false} />
             </div>
           </div>
         </div>
@@ -205,7 +205,7 @@ export default function Footer() {
           <div className="border-t border-gray-700 pt-6">
             <div className="text-center mb-6">
               <h4 className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-4">
-                合作伙伴 Partners
+                U系列赛事合作伙伴
               </h4>
               <div className="flex flex-wrap items-center justify-center gap-4">
                 {partners.map((partner) => (
