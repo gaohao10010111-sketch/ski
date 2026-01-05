@@ -154,8 +154,7 @@ export default function GlobalNavigation() {
     { key: 'live-results', name: t.navigation?.submenus?.resultsLive || 'Live Results', href: '/competitions', icon: Trophy },
     // 运动员页面暂时隐藏，待数据完善后上线
     // { key: 'athletes', name: t.navigation?.athletes || 'Athletes', href: '/athletes', icon: Users },
-    { key: 'total-rankings', name: '总积分排行榜', href: '/points/total-rankings', icon: Trophy },
-    { key: 'points-rankings', name: t.navigation?.submenus?.pointsRankings || 'Rankings', href: '/points/rankings', icon: Trophy }
+    { key: 'points-rankings', name: '积分排行榜', href: '/points/rankings', icon: Trophy }
   ];
 
   return (

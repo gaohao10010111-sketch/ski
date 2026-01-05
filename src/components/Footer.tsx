@@ -125,11 +125,6 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">积分系统</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/points/total-rankings" className="text-gray-300 hover:text-primary-400 transition-colors">
-                  总积分排行榜
-                </Link>
-              </li>
-              <li>
                 <Link href="/points/rankings" className="text-gray-300 hover:text-primary-400 transition-colors">
                   积分排行榜
                 </Link>
