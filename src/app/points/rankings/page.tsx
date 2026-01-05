@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { Trophy, Medal, Award, Crown, Download, Search, Database, Filter, Star } from 'lucide-react'
+import { Trophy, Medal, Award, Crown, Download, Search } from 'lucide-react'
 import { latestResults, type AthleteResult } from '@/data/latestResults'
 import { useToast } from '@/components/Toast'
 import { totalRankingsData } from '@/data/totalRankings'
@@ -262,26 +262,19 @@ export default function PointsRankingsPage() {
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 标题 */}
-        <div className="text-center mb-12">
-          <div className="bg-gradient-to-r from-yellow-400 to-orange-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-            <Trophy className="h-10 w-10 text-white" />
-          </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">积分排行榜</h1>
-          <p className="text-xl text-gray-600">中国滑雪青少年U系列赛事积分排名 · 2025-2026赛季</p>
-          <div className="mt-4 inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm">
-            <Database className="h-4 w-4" />
-            数据来源: 官方成绩公告
-          </div>
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">积分排行榜</h1>
+          <p className="text-gray-600">2025-2026赛季 · 全国青少年U系列赛事</p>
         </div>
 
         {/* 视图切换 */}
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex rounded-lg border border-gray-200 bg-white p-1 shadow-sm">
+        <div className="flex justify-center mb-6">
+          <div className="inline-flex rounded-lg border border-gray-200 bg-white p-1">
             <button
               onClick={() => setViewMode('total')}
-              className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`px-5 py-2 rounded-md text-sm font-medium ${
                 viewMode === 'total'
-                  ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white shadow-sm'
+                  ? 'bg-ski-blue text-white'
                   : 'text-gray-600 hover:bg-gray-100'
               }`}
             >
@@ -289,9 +282,9 @@ export default function PointsRankingsPage() {
             </button>
             <button
               onClick={() => setViewMode('competition')}
-              className={`px-6 py-2 rounded-md text-sm font-medium transition-colors ${
+              className={`px-5 py-2 rounded-md text-sm font-medium ${
                 viewMode === 'competition'
-                  ? 'bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-sm'
+                  ? 'bg-ski-blue text-white'
                   : 'text-gray-600 hover:bg-gray-100'
               }`}
             >
@@ -301,24 +294,14 @@ export default function PointsRankingsPage() {
         </div>
 
         {/* 说明提示 */}
-        <div className={`border rounded-lg p-4 mb-8 ${viewMode === 'total' ? 'bg-blue-50 border-blue-200' : 'bg-yellow-50 border-yellow-200'}`}>
-          <div className="flex items-start gap-3">
-            <Filter className={`h-5 w-5 mt-0.5 ${viewMode === 'total' ? 'text-blue-600' : 'text-yellow-600'}`} />
-            <div>
-              <h3 className={`font-semibold ${viewMode === 'total' ? 'text-blue-800' : 'text-yellow-800'}`}>
-                {viewMode === 'total' ? '总积分说明' : '排名规则说明'}
-              </h3>
-              <p className={`text-sm mt-1 ${viewMode === 'total' ? 'text-blue-700' : 'text-yellow-700'}`}>
-                {viewMode === 'total'
-                  ? '总积分 = 同一运动员在不同比赛中获得的积分累加。可按年龄组、性别进行筛选查看。'
-                  : '积分排名需在相同比赛、相同小项、相同年龄组、相同性别内比较。请使用下方筛选器选择具体的比赛类别查看对应排名。'}
-              </p>
-            </div>
-          </div>
+        <div className="bg-gray-100 rounded-lg p-3 mb-6 text-sm text-gray-600">
+          {viewMode === 'total'
+            ? '总积分 = 同一运动员在不同比赛中获得的积分累加'
+            : '积分排名需在相同比赛、相同小项、相同年龄组、相同性别内比较'}
         </div>
 
         {/* 筛选器 */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8 border border-gray-200">
+        <div className="bg-white rounded-lg shadow p-4 mb-6">
           <div className={`grid grid-cols-1 gap-4 ${viewMode === 'total' ? 'md:grid-cols-4' : 'md:grid-cols-6'}`}>
             {/* 搜索框 */}
             <div className="relative md:col-span-2">
@@ -416,26 +399,26 @@ export default function PointsRankingsPage() {
         </div>
 
         {/* 统计卡片 */}
-        <div className={`grid gap-4 mb-8 ${viewMode === 'total' ? 'grid-cols-3' : 'grid-cols-2 md:grid-cols-4'}`}>
-          <div className="bg-white p-4 rounded-lg shadow-md text-center">
-            <div className="text-2xl font-bold text-yellow-500">{stats.totalCompetitions}</div>
-            <div className="text-sm text-gray-600">场比赛</div>
+        <div className={`grid gap-3 mb-6 ${viewMode === 'total' ? 'grid-cols-3' : 'grid-cols-2 md:grid-cols-4'}`}>
+          <div className="bg-white p-3 rounded-lg shadow text-center">
+            <div className="text-xl font-bold text-gray-800">{stats.totalCompetitions}</div>
+            <div className="text-xs text-gray-500">场比赛</div>
           </div>
           {viewMode === 'competition' && (
-            <div className="bg-white p-4 rounded-lg shadow-md text-center">
-              <div className="text-2xl font-bold text-blue-500">{stats.totalEvents}</div>
-              <div className="text-sm text-gray-600">个小项</div>
+            <div className="bg-white p-3 rounded-lg shadow text-center">
+              <div className="text-xl font-bold text-gray-800">{stats.totalEvents}</div>
+              <div className="text-xs text-gray-500">个小项</div>
             </div>
           )}
-          <div className="bg-white p-4 rounded-lg shadow-md text-center">
-            <div className="text-2xl font-bold text-green-500">{stats.uniqueAthletes}</div>
-            <div className="text-sm text-gray-600">名运动员</div>
+          <div className="bg-white p-3 rounded-lg shadow text-center">
+            <div className="text-xl font-bold text-gray-800">{stats.uniqueAthletes}</div>
+            <div className="text-xs text-gray-500">名运动员</div>
           </div>
-          <div className="bg-white p-4 rounded-lg shadow-md text-center">
-            <div className="text-2xl font-bold text-purple-500">
+          <div className="bg-white p-3 rounded-lg shadow text-center">
+            <div className="text-xl font-bold text-gray-800">
               {viewMode === 'total' ? totalRankingsData.stats.totalResults : stats.totalAthletes}
             </div>
-            <div className="text-sm text-gray-600">人次参赛</div>
+            <div className="text-xs text-gray-500">人次参赛</div>
           </div>
         </div>
 
@@ -449,15 +432,9 @@ export default function PointsRankingsPage() {
                 <p className="text-sm text-gray-400 mt-1">请调整筛选条件后重试</p>
               </div>
             ) : (
-              <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                <div className="bg-gradient-to-r from-yellow-500 to-orange-500 px-6 py-4 text-white">
-                  <h2 className="text-xl font-semibold flex items-center gap-2">
-                    <Trophy className="h-6 w-6" />
-                    总积分排名
-                  </h2>
-                  <p className="text-yellow-100 text-sm mt-1">
-                    2025-2026赛季 · 跨项目累计积分
-                  </p>
+              <div className="bg-white rounded-lg shadow overflow-hidden">
+                <div className="bg-ski-blue px-4 py-3 text-white">
+                  <h2 className="text-lg font-medium">总积分排名</h2>
                 </div>
 
                 <div className="overflow-x-auto">
@@ -478,74 +455,33 @@ export default function PointsRankingsPage() {
                       {filteredTotalRankings.map((item) => (
                         <tr
                           key={`${item.athleteId}-${item.ageGroup}-${item.gender}`}
-                          className={`hover:bg-gray-50 ${item.rank <= 3 ? 'bg-gradient-to-r from-yellow-50 to-orange-50' : ''}`}
+                          className="hover:bg-gray-50"
                         >
-                          <td className="px-4 py-4 whitespace-nowrap text-center">
-                            <div className="flex items-center justify-center gap-1">
-                              {getRankIcon(item.rank)}
-                              {item.rank <= 3 && (
-                                <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                              )}
-                            </div>
+                          <td className="px-4 py-3 whitespace-nowrap text-center">
+                            {getRankIcon(item.rank)}
                           </td>
-                          <td className="px-4 py-4 whitespace-nowrap">
-                            <div className="flex items-center">
-                              <div className="flex-shrink-0 h-10 w-10">
-                                <div className={`h-10 w-10 rounded-full flex items-center justify-center ${
-                                  item.rank === 1 ? 'bg-gradient-to-r from-yellow-400 to-orange-400 text-white' :
-                                  item.rank === 2 ? 'bg-gray-200 text-gray-600' :
-                                  item.rank === 3 ? 'bg-orange-200 text-orange-700' :
-                                  'bg-blue-100 text-blue-600'
-                                }`}>
-                                  <span className="text-sm font-bold">
-                                    {item.athleteName.charAt(0)}
-                                  </span>
-                                </div>
-                              </div>
-                              <div className="ml-3">
-                                <div className="text-sm font-medium text-gray-900">{item.athleteName}</div>
-                              </div>
-                            </div>
+                          <td className="px-4 py-3 whitespace-nowrap">
+                            <span className="text-sm font-medium text-gray-900">{item.athleteName}</span>
                           </td>
-                          <td className="px-4 py-4 text-sm text-gray-600" title={item.team}>
+                          <td className="px-4 py-3 text-sm text-gray-600" title={item.team}>
                             {item.team}
                           </td>
-                          <td className="px-4 py-4 whitespace-nowrap text-center">
-                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
-                              {item.ageGroup}
-                            </span>
+                          <td className="px-4 py-3 whitespace-nowrap text-center">
+                            <span className="text-sm text-gray-600">{item.ageGroup}</span>
                           </td>
-                          <td className="px-4 py-4 whitespace-nowrap text-center">
-                            <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                              item.gender === '男子组' ? 'bg-blue-100 text-blue-800' : 'bg-pink-100 text-pink-800'
-                            }`}>
+                          <td className="px-4 py-3 whitespace-nowrap text-center">
+                            <span className="text-sm text-gray-600">
                               {item.gender === '男子组' ? '男' : '女'}
                             </span>
                           </td>
-                          <td className="px-4 py-4 whitespace-nowrap text-center">
-                            <span className="text-sm text-gray-700">
-                              {item.competitionCount}场
-                            </span>
+                          <td className="px-4 py-3 whitespace-nowrap text-center">
+                            <span className="text-sm text-gray-600">{item.competitionCount}</span>
                           </td>
-                          <td className="px-4 py-4 whitespace-nowrap text-center">
-                            <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                              item.bestRank === 1 ? 'bg-yellow-100 text-yellow-800' :
-                              item.bestRank <= 3 ? 'bg-orange-100 text-orange-800' :
-                              'bg-gray-100 text-gray-800'
-                            }`}>
-                              第{item.bestRank}名
-                            </span>
+                          <td className="px-4 py-3 whitespace-nowrap text-center">
+                            <span className="text-sm text-gray-600">{item.bestRank}</span>
                           </td>
-                          <td className="px-4 py-4 whitespace-nowrap text-center">
-                            <span className={`inline-flex px-4 py-2 text-sm font-bold rounded-lg ${
-                              item.rank === 1
-                                ? 'bg-gradient-to-r from-yellow-400 to-orange-400 text-white shadow-md'
-                                : item.rank <= 3
-                                ? 'bg-gradient-to-r from-orange-100 to-yellow-100 text-orange-700'
-                                : 'bg-green-100 text-green-800'
-                            }`}>
-                              {item.totalPoints}分
-                            </span>
+                          <td className="px-4 py-3 whitespace-nowrap text-center">
+                            <span className="text-sm font-bold text-ski-blue">{item.totalPoints}</span>
                           </td>
                         </tr>
                       ))}
@@ -569,16 +505,18 @@ export default function PointsRankingsPage() {
             ) : (
               <div className="space-y-6">
                 {filteredGroups.map((group, groupIndex) => (
-                  <div key={groupIndex} className="bg-white rounded-lg shadow-md overflow-hidden">
+                  <div key={groupIndex} className="bg-white rounded-lg shadow overflow-hidden">
                     {/* 组别标题 */}
-                    <div className="bg-gradient-to-r from-purple-600 to-purple-700 px-6 py-4 text-white">
-                      <h2 className="text-lg font-semibold">{group.competition}</h2>
-                      <div className="flex flex-wrap gap-3 mt-2 text-sm text-purple-100">
-                        <span className="bg-white/20 px-2 py-0.5 rounded">{sportTypeLabels[group.sportType] || group.sportType}</span>
-                        <span className="bg-white/20 px-2 py-0.5 rounded">{group.discipline}</span>
-                        <span className="bg-white/20 px-2 py-0.5 rounded">{group.ageGroup}</span>
-                        <span className="bg-white/20 px-2 py-0.5 rounded">{group.gender}</span>
-                        <span className="text-purple-200">{group.date} · {group.location}</span>
+                    <div className="bg-ski-blue px-4 py-3 text-white">
+                      <h2 className="text-base font-medium">{group.competition}</h2>
+                      <div className="flex flex-wrap gap-2 mt-1 text-sm text-blue-100">
+                        <span>{sportTypeLabels[group.sportType] || group.sportType}</span>
+                        <span>·</span>
+                        <span>{group.discipline}</span>
+                        <span>·</span>
+                        <span>{group.ageGroup}</span>
+                        <span>·</span>
+                        <span>{group.gender}</span>
                       </div>
                     </div>
 
@@ -607,36 +545,15 @@ export default function PointsRankingsPage() {
                         </thead>
                         <tbody className="bg-white divide-y divide-gray-200">
                           {group.athletes.map((athlete, index) => (
-                            <tr key={index} className={`hover:bg-gray-50 ${athlete.rank <= 3 ? 'bg-gradient-to-r from-yellow-50 to-orange-50' : ''}`}>
+                            <tr key={index} className="hover:bg-gray-50">
                               <td className="px-4 py-3 whitespace-nowrap text-center">
-                                <div className="flex items-center justify-center gap-1">
-                                  {getRankIcon(athlete.rank)}
-                                  {athlete.rank <= 3 && (
-                                    <Star className="w-3 h-3 text-yellow-500 fill-yellow-500" />
-                                  )}
-                                </div>
+                                {getRankIcon(athlete.rank)}
                               </td>
-                              <td className="px-4 py-3 whitespace-nowrap text-center">
-                                <span className="inline-flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full text-sm font-medium text-gray-700">
-                                  {athlete.bib}
-                                </span>
+                              <td className="px-4 py-3 whitespace-nowrap text-center text-sm text-gray-600">
+                                {athlete.bib}
                               </td>
                               <td className="px-4 py-3 whitespace-nowrap">
-                                <div className="flex items-center">
-                                  <div className="flex-shrink-0 h-8 w-8">
-                                    <div className="h-8 w-8 rounded-full bg-purple-100 flex items-center justify-center">
-                                      <span className="text-xs font-medium text-purple-600">
-                                        {athlete.name.charAt(0)}
-                                      </span>
-                                    </div>
-                                  </div>
-                                  <div className="ml-3">
-                                    <div className="text-sm font-medium text-gray-900">{athlete.name}</div>
-                                    {athlete.birthYear && (
-                                      <div className="text-xs text-gray-500">{athlete.birthYear}年</div>
-                                    )}
-                                  </div>
-                                </div>
+                                <span className="text-sm font-medium text-gray-900">{athlete.name}</span>
                               </td>
                               <td className="px-4 py-3 text-sm text-gray-600 whitespace-nowrap" title={athlete.team}>
                                 {athlete.team}
@@ -648,21 +565,13 @@ export default function PointsRankingsPage() {
                                 </>
                               )}
                               <td className="px-4 py-3 whitespace-nowrap text-center">
-                                <span className={`text-sm font-bold ${athlete.rank === 1 ? 'text-yellow-600' : athlete.rank <= 3 ? 'text-orange-600' : 'text-purple-600'}`}>
+                                <span className="text-sm font-medium text-gray-900">
                                   {athlete.time || athlete.bestScore}
                                 </span>
                               </td>
                               {athlete.points !== undefined && (
                                 <td className="px-4 py-3 whitespace-nowrap text-center">
-                                  <span className={`inline-flex px-3 py-1.5 text-sm font-bold rounded-lg ${
-                                    athlete.rank === 1
-                                      ? 'bg-gradient-to-r from-yellow-400 to-orange-400 text-white shadow-sm'
-                                      : athlete.rank <= 3
-                                      ? 'bg-gradient-to-r from-orange-100 to-yellow-100 text-orange-700'
-                                      : 'bg-green-100 text-green-800'
-                                  }`}>
-                                    {athlete.points}分
-                                  </span>
+                                  <span className="text-sm font-bold text-ski-blue">{athlete.points}</span>
                                 </td>
                               )}
                             </tr>
@@ -678,39 +587,10 @@ export default function PointsRankingsPage() {
         )}
 
         {/* 排行榜说明 */}
-        <div className="mt-8 bg-white rounded-lg shadow-md p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">积分规则说明</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-600">
-            <div>
-              <h4 className="font-medium text-gray-900 mb-2">U系列统一积分体系（360分制）</h4>
-              <ul className="space-y-1">
-                <li>• 第1名：360分</li>
-                <li>• 第2名：329分</li>
-                <li>• 第3名：303分</li>
-                <li>• 第4-50名：递减至1分</li>
-                <li>• 50名后：计0分</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium text-gray-900 mb-2">{viewMode === 'total' ? '总积分计算规则' : '排名比较规则'}</h4>
-              <ul className="space-y-1">
-                {viewMode === 'total' ? (
-                  <>
-                    <li>• 总积分 = 所有参赛场次积分之和</li>
-                    <li>• 支持按年龄组、性别筛选</li>
-                    <li>• 同一运动员的不同比赛积分累加</li>
-                    <li>• 跨项目（单板/自由式/高山）均计入</li>
-                  </>
-                ) : (
-                  <>
-                    <li>• 高山滑雪：按时间排名（时间越短越好）</li>
-                    <li>• 单板/自由式：按得分排名（得分越高越好）</li>
-                    <li>• 同一比赛、同一小项、同一年龄组、同一性别内比较</li>
-                    <li>• 赛季积分 = 最佳站积分之和</li>
-                  </>
-                )}
-              </ul>
-            </div>
+        <div className="mt-6 bg-white rounded-lg shadow p-4">
+          <h3 className="text-sm font-medium text-gray-900 mb-2">积分规则</h3>
+          <div className="text-sm text-gray-600">
+            <p>U系列统一采用360分制：第1名360分，第2名329分，第3名303分，递减至第50名1分。</p>
           </div>
         </div>
       </div>
