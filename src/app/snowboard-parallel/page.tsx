@@ -117,19 +117,19 @@ export default function SnowboardParallelPage() {
     {
       title: '单板平行项目',
       subtitle: '全国青少年U系列赛事',
-      image: getImagePath('/images/snowboard-halfpipe.jpg'),
+      image: getImagePath('/images/ski-bg.jpg'),
       link: '/competitions'
     },
     {
       title: '积分规则 - 360分制',
       subtitle: '青少年U系列积分体系',
-      image: getImagePath('/images/ski-mountain.jpg'),
+      image: getImagePath('/images/ski-bg.jpg'),
       link: '/rules/points'
     },
     {
       title: '积分排行榜',
       subtitle: '查看最新积分排名',
-      image: getImagePath('/images/snowboard-jump.png'),
+      image: getImagePath('/images/ski-bg.jpg'),
       link: '/points/rankings'
     }
   ];
