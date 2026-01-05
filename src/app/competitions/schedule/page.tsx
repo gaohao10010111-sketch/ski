@@ -159,27 +159,290 @@ export default function SchedulePage() {
       return
     }
 
-    const headers = ['序号', '项目', '比赛名称', '开始日期', '结束日期', '承办单位', '地点', '是否我们项目']
-    const rows = sortedCompetitions.map(comp => [
-      comp.id,
-      comp.sport,
-      comp.name,
-      comp.startDate,
-      comp.endDate,
-      comp.organizer,
-      comp.location,
-      comp.isOurs ? '是' : '否'
-    ])
+    // 生成美观的PDF格式HTML
+    const today = new Date().toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })
 
-    const csvContent = [headers, ...rows].map(row => row.map(cell => `"${cell}"`).join(',')).join('\n')
-    const blob = new Blob(['\ufeff' + csvContent], { type: 'text/csv;charset=utf-8' })
-    const link = document.createElement('a')
-    link.href = URL.createObjectURL(blob)
-    link.download = `2025-2026赛季赛程_${new Date().toISOString().split('T')[0]}.csv`
-    link.click()
-    URL.revokeObjectURL(link.href)
+    // 按月份分组
+    const competitionsByMonth: Record<string, typeof sortedCompetitions> = {}
+    sortedCompetitions.forEach(comp => {
+      const month = comp.startDate.substring(0, 7) // YYYY-MM
+      if (!competitionsByMonth[month]) {
+        competitionsByMonth[month] = []
+      }
+      competitionsByMonth[month].push(comp)
+    })
 
-    showToast('赛程日程导出成功！', 'success')
+    const htmlContent = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>2025-2026赛季全国冬季项目赛事日历</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 15mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Microsoft YaHei", "SimHei", Arial, sans-serif;
+      color: #333;
+      line-height: 1.5;
+      background: #fff;
+    }
+    .header {
+      text-align: center;
+      padding: 20px 0 30px;
+      border-bottom: 3px solid #1e40af;
+      margin-bottom: 25px;
+    }
+    .header h1 {
+      font-size: 24px;
+      color: #1e3a5f;
+      margin-bottom: 8px;
+    }
+    .header .subtitle {
+      font-size: 14px;
+      color: #666;
+    }
+    .header .source {
+      font-size: 12px;
+      color: #888;
+      margin-top: 8px;
+    }
+    .month-section {
+      margin-bottom: 25px;
+      page-break-inside: avoid;
+    }
+    .month-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #1e40af;
+      padding: 8px 15px;
+      background: linear-gradient(90deg, #eff6ff, #fff);
+      border-left: 4px solid #1e40af;
+      margin-bottom: 12px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+    }
+    th {
+      background: #f8fafc;
+      color: #475569;
+      font-weight: 600;
+      text-align: left;
+      padding: 10px 8px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+    td {
+      padding: 10px 8px;
+      border-bottom: 1px solid #f1f5f9;
+      vertical-align: top;
+    }
+    tr:hover {
+      background: #f8fafc;
+    }
+    .highlight-row {
+      background: #fef3c7 !important;
+    }
+    .highlight-row td {
+      border-bottom-color: #fde68a;
+    }
+    .sport-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 10px;
+      font-weight: 500;
+    }
+    .tag-alpine { background: #dbeafe; color: #1d4ed8; }
+    .tag-snowboard { background: #f3e8ff; color: #7c3aed; }
+    .tag-freestyle { background: #ffedd5; color: #c2410c; }
+    .tag-other { background: #f1f5f9; color: #64748b; }
+    .key-badge {
+      display: inline-block;
+      background: #fef08a;
+      color: #854d0e;
+      padding: 1px 6px;
+      border-radius: 8px;
+      font-size: 9px;
+      font-weight: 600;
+      margin-left: 5px;
+    }
+    .comp-name {
+      font-weight: 500;
+      color: #1e293b;
+    }
+    .date-range {
+      white-space: nowrap;
+      color: #059669;
+      font-weight: 500;
+    }
+    .location {
+      color: #6b7280;
+    }
+    .organizer {
+      color: #9ca3af;
+      font-size: 10px;
+    }
+    .footer {
+      margin-top: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #e5e7eb;
+      text-align: center;
+      font-size: 11px;
+      color: #9ca3af;
+    }
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 15px 0;
+      font-size: 12px;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 20px;
+      font-weight: bold;
+      color: #1e40af;
+    }
+    .stat-label {
+      color: #6b7280;
+    }
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      font-size: 11px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .legend-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>2025-2026赛季全国冬季项目赛事日历</h1>
+    <div class="subtitle">中国滑雪青少年积分排名官方平台</div>
+    <div class="source">数据来源：国家体育总局冬季运动管理中心 | 导出日期：${today}</div>
+  </div>
+
+  <div class="stats">
+    <div class="stat-item">
+      <div class="stat-value">${sortedCompetitions.length}</div>
+      <div class="stat-label">赛事总数</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">${sortedCompetitions.filter(c => c.isOurs).length}</div>
+      <div class="stat-label">重点项目</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">${Object.keys(competitionsByMonth).length}</div>
+      <div class="stat-label">跨越月份</div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-color" style="background: #fef3c7;"></div>
+      <span>重点关注项目</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color tag-alpine"></div>
+      <span>高山滑雪</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color tag-snowboard"></div>
+      <span>单板滑雪</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color tag-freestyle"></div>
+      <span>自由式滑雪</span>
+    </div>
+  </div>
+
+  ${Object.entries(competitionsByMonth).map(([month, comps]) => {
+    const [year, m] = month.split('-')
+    const monthName = `${year}年${parseInt(m)}月`
+    return `
+    <div class="month-section">
+      <div class="month-title">${monthName}（${comps.length}场赛事）</div>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 15%">日期</th>
+            <th style="width: 12%">项目</th>
+            <th style="width: 35%">比赛名称</th>
+            <th style="width: 18%">地点</th>
+            <th style="width: 20%">承办单位</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${comps.map(comp => {
+            const tagClass = comp.category.includes('alpine') ? 'tag-alpine' :
+                            comp.category.includes('snowboard') ? 'tag-snowboard' :
+                            comp.category.includes('freestyle') ? 'tag-freestyle' : 'tag-other'
+            const startDate = formatShortDate(comp.startDate)
+            const endDate = comp.endDate && comp.endDate !== comp.startDate ? formatShortDate(comp.endDate) : ''
+            const dateStr = endDate ? `${startDate} - ${endDate}` : startDate
+            return `
+            <tr class="${comp.isOurs ? 'highlight-row' : ''}">
+              <td class="date-range">${dateStr}</td>
+              <td><span class="sport-tag ${tagClass}">${comp.sport}</span></td>
+              <td>
+                <span class="comp-name">${comp.name}</span>
+                ${comp.isOurs ? '<span class="key-badge">重点</span>' : ''}
+              </td>
+              <td class="location">${comp.location}</td>
+              <td class="organizer">${comp.organizer}</td>
+            </tr>
+            `
+          }).join('')}
+        </tbody>
+      </table>
+    </div>
+    `
+  }).join('')}
+
+  <div class="footer">
+    <p>本日程由中国滑雪青少年积分排名官方平台生成</p>
+    <p>赛事安排可能因天气等因素调整，请以官方最新通知为准</p>
+  </div>
+</body>
+</html>
+    `
+
+    // 创建新窗口打印PDF
+    const printWindow = window.open('', '_blank')
+    if (printWindow) {
+      printWindow.document.write(htmlContent)
+      printWindow.document.close()
+
+      // 等待内容加载完成后打印
+      printWindow.onload = () => {
+        setTimeout(() => {
+          printWindow.print()
+        }, 500)
+      }
+    }
+
+    showToast('PDF导出窗口已打开，请在打印对话框中选择"保存为PDF"', 'success')
   }
 
   return (
@@ -323,7 +586,7 @@ export default function SchedulePage() {
             <span className="text-sm text-gray-500">显示 {stats.filtered} 场</span>
             <button onClick={handleExportSchedule} className="btn-secondary flex items-center">
               <Download className="h-4 w-4 mr-2" />
-              导出日程
+              导出PDF
             </button>
           </div>
         </div>
