@@ -12,7 +12,8 @@ import {
   Users,
   Trophy,
   Target,
-  Star
+  Star,
+  AlertCircle
 } from 'lucide-react';
 
 interface FormData {
@@ -68,25 +69,43 @@ export default function CooperationPage() {
     }
   ];
 
+  const [submitError, setSubmitError] = useState<string>('');
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError('');
 
-    // 模拟提交
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch('/api/cooperation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      const result = await response.json();
 
-    // 重置表单
-    setFormData({
-      name: '',
-      company: '',
-      email: '',
-      phone: '',
-      cooperationType: '',
-      message: ''
-    });
+      if (!response.ok) {
+        throw new Error(result.error || '提交失败');
+      }
+
+      setIsSubmitted(true);
+      // 重置表单
+      setFormData({
+        name: '',
+        company: '',
+        email: '',
+        phone: '',
+        cooperationType: '',
+        message: ''
+      });
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : '提交失败，请稍后重试');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -152,6 +171,12 @@ export default function CooperationPage() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
+                {submitError && (
+                  <div className="flex items-center gap-2 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                    <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                    <span>{submitError}</span>
+                  </div>
+                )}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">

@@ -125,3 +125,22 @@ model AthleteAlias {
 
   @@index([primaryAthleteId])
 }
+
+// ========== 合作意向表 ==========
+// 存储合作咨询页面提交的合作意向
+model CooperationInquiry {
+  id              String   @id @default(cuid())
+  name            String                  // 联系人姓名
+  company         String                  // 公司/机构名称
+  email           String                  // 电子邮箱
+  phone           String                  // 联系电话
+  cooperationType String                  // 合作类型：sponsor/venue/training/media/technology/other
+  message         String                  // 合作意向说明
+  status          String   @default("pending") // pending/contacted/completed/rejected
+  notes           String?                 // 后台备注
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+}
