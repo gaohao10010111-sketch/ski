@@ -1,98 +1,48 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useMemo } from 'react'
 import { Trophy, Medal, Award, Crown, Download, Search, Database, Filter, Star } from 'lucide-react'
 import { useToast } from '@/components/Toast'
-
-interface RankingItem {
-  rank: number
-  athleteId: string
-  athleteName: string
-  team: string
-  totalPoints: number
-  competitionCount: number
-  bestRank: number
-  avgPoints: number
-}
-
-interface RankingData {
-  rankings: RankingItem[]
-  total: number
-  filters: {
-    ageGroups: string[]
-    genders: string[]
-    disciplines: string[]
-    locations: string[]
-  }
-  stats: {
-    athleteCount: number
-    competitionCount: number
-    totalResults: number
-  }
-  pagination: {
-    limit: number
-    offset: number
-    hasMore: boolean
-  }
-}
+import { totalRankingsData, TotalRankingItem } from '@/data/totalRankings'
 
 export default function TotalRankingsPage() {
-  const [data, setData] = useState<RankingData | null>(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-
   // 筛选状态
   const [selectedAgeGroup, setSelectedAgeGroup] = useState('all')
   const [selectedGender, setSelectedGender] = useState('all')
-  const [selectedDiscipline, setSelectedDiscipline] = useState('all')
-  const [selectedLocation, setSelectedLocation] = useState('all')
   const [searchTerm, setSearchTerm] = useState('')
   const [isExporting, setIsExporting] = useState(false)
 
   const { showToast } = useToast()
 
-  // 获取排名数据
-  const fetchRankings = useCallback(async () => {
-    setLoading(true)
-    setError(null)
+  // 筛选后的排名数据
+  const filteredRankings = useMemo(() => {
+    let result = totalRankingsData.rankings
 
-    try {
-      const params = new URLSearchParams({
-        season: '2025-2026',
-        ageGroup: selectedAgeGroup,
-        gender: selectedGender,
-        discipline: selectedDiscipline,
-        location: selectedLocation,
-        limit: '100',
-        offset: '0'
-      })
-
-      const response = await fetch(`/api/rankings/total?${params}`)
-      const result = await response.json()
-
-      if (result.success) {
-        setData(result.data)
-      } else {
-        setError(result.error || '获取数据失败')
-      }
-    } catch {
-      setError('网络请求失败')
-    } finally {
-      setLoading(false)
+    // 按年龄组筛选
+    if (selectedAgeGroup !== 'all') {
+      result = result.filter(r => r.ageGroup === selectedAgeGroup)
     }
-  }, [selectedAgeGroup, selectedGender, selectedDiscipline, selectedLocation])
 
-  useEffect(() => {
-    fetchRankings()
-  }, [fetchRankings])
+    // 按性别筛选
+    if (selectedGender !== 'all') {
+      result = result.filter(r => r.gender === selectedGender)
+    }
 
-  // 搜索过滤
-  const filteredRankings = data?.rankings.filter(item => {
-    if (!searchTerm) return true
-    const term = searchTerm.toLowerCase()
-    return item.athleteName.toLowerCase().includes(term) ||
-           item.team.toLowerCase().includes(term)
-  }) || []
+    // 搜索过滤
+    if (searchTerm) {
+      const term = searchTerm.toLowerCase()
+      result = result.filter(r =>
+        r.athleteName.toLowerCase().includes(term) ||
+        r.team.toLowerCase().includes(term)
+      )
+    }
+
+    // 重新计算排名
+    return result.map((item, index) => ({
+      ...item,
+      rank: index + 1
+    }))
+  }, [selectedAgeGroup, selectedGender, searchTerm])
 
   // 导出CSV
   const handleExport = async () => {
@@ -104,13 +54,15 @@ export default function TotalRankingsPage() {
     setIsExporting(true)
     try {
       const rows: string[][] = []
-      rows.push(['排名', '运动员', '单位', '总积分', '参赛次数', '最佳名次', '平均积分'])
+      rows.push(['排名', '运动员', '单位', '年龄组', '性别', '总积分', '参赛次数', '最佳名次', '平均积分'])
 
       for (const item of filteredRankings) {
         rows.push([
           String(item.rank),
           item.athleteName,
           item.team,
+          item.ageGroup,
+          item.gender,
           String(item.totalPoints),
           String(item.competitionCount),
           String(item.bestRank),
@@ -176,7 +128,7 @@ export default function TotalRankingsPage() {
               <h3 className="font-semibold text-blue-800">总积分说明</h3>
               <p className="text-sm text-blue-700 mt-1">
                 总积分 = 同一运动员在不同比赛中获得的积分累加。
-                可按<strong>年龄组、性别、子项、站点</strong>进行筛选查看。
+                可按<strong>年龄组、性别</strong>进行筛选查看。
               </p>
             </div>
           </div>
@@ -184,7 +136,7 @@ export default function TotalRankingsPage() {
 
         {/* 筛选器 */}
         <div className="bg-white rounded-lg shadow-md p-6 mb-8 border border-gray-200">
-          <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {/* 搜索框 */}
             <div className="relative md:col-span-2">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
@@ -205,7 +157,7 @@ export default function TotalRankingsPage() {
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
               >
                 <option value="all">所有年龄组</option>
-                {data?.filters.ageGroups.map(ag => (
+                {totalRankingsData.filters.ageGroups.map(ag => (
                   <option key={ag} value={ag}>{ag}</option>
                 ))}
               </select>
@@ -219,36 +171,8 @@ export default function TotalRankingsPage() {
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
               >
                 <option value="all">所有性别</option>
-                {data?.filters.genders.map(g => (
+                {totalRankingsData.filters.genders.map(g => (
                   <option key={g} value={g}>{g}</option>
-                ))}
-              </select>
-            </div>
-
-            {/* 子项 */}
-            <div>
-              <select
-                value={selectedDiscipline}
-                onChange={(e) => setSelectedDiscipline(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
-              >
-                <option value="all">所有子项</option>
-                {data?.filters.disciplines.map(d => (
-                  <option key={d} value={d}>{d}</option>
-                ))}
-              </select>
-            </div>
-
-            {/* 站点 */}
-            <div>
-              <select
-                value={selectedLocation}
-                onChange={(e) => setSelectedLocation(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
-              >
-                <option value="all">所有站点</option>
-                {data?.filters.locations.map(l => (
-                  <option key={l} value={l}>{l}</option>
                 ))}
               </select>
             </div>
@@ -271,55 +195,32 @@ export default function TotalRankingsPage() {
         </div>
 
         {/* 统计卡片 */}
-        {data?.stats && (
-          <div className="grid grid-cols-3 gap-4 mb-8">
-            <div className="bg-white p-4 rounded-lg shadow-md text-center">
-              <div className="text-2xl font-bold text-yellow-500">{data.stats.athleteCount}</div>
-              <div className="text-sm text-gray-600">参赛运动员</div>
-            </div>
-            <div className="bg-white p-4 rounded-lg shadow-md text-center">
-              <div className="text-2xl font-bold text-blue-500">{data.stats.competitionCount}</div>
-              <div className="text-sm text-gray-600">已录入比赛</div>
-            </div>
-            <div className="bg-white p-4 rounded-lg shadow-md text-center">
-              <div className="text-2xl font-bold text-green-500">{data.stats.totalResults}</div>
-              <div className="text-sm text-gray-600">参赛记录</div>
-            </div>
+        <div className="grid grid-cols-3 gap-4 mb-8">
+          <div className="bg-white p-4 rounded-lg shadow-md text-center">
+            <div className="text-2xl font-bold text-yellow-500">{totalRankingsData.stats.athleteCount}</div>
+            <div className="text-sm text-gray-600">参赛运动员</div>
           </div>
-        )}
-
-        {/* 加载状态 */}
-        {loading && (
-          <div className="bg-white rounded-lg shadow-md p-12 text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-500 mx-auto"></div>
-            <p className="mt-4 text-gray-500">加载中...</p>
+          <div className="bg-white p-4 rounded-lg shadow-md text-center">
+            <div className="text-2xl font-bold text-blue-500">{totalRankingsData.stats.competitionCount}</div>
+            <div className="text-sm text-gray-600">已录入比赛</div>
           </div>
-        )}
-
-        {/* 错误状态 */}
-        {error && !loading && (
-          <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
-            <p className="text-red-600">{error}</p>
-            <button
-              onClick={fetchRankings}
-              className="mt-4 px-4 py-2 bg-red-100 text-red-700 rounded-md hover:bg-red-200"
-            >
-              重试
-            </button>
+          <div className="bg-white p-4 rounded-lg shadow-md text-center">
+            <div className="text-2xl font-bold text-green-500">{totalRankingsData.stats.totalResults}</div>
+            <div className="text-sm text-gray-600">参赛记录</div>
           </div>
-        )}
+        </div>
 
         {/* 空数据状态 */}
-        {!loading && !error && filteredRankings.length === 0 && (
+        {filteredRankings.length === 0 && (
           <div className="bg-white rounded-lg shadow-md p-12 text-center">
             <Trophy className="h-12 w-12 text-gray-300 mx-auto mb-4" />
-            <p className="text-lg font-medium text-gray-500">暂无排名数据</p>
-            <p className="text-sm text-gray-400 mt-1">数据库中还没有成绩数据，请先导入PDF成绩</p>
+            <p className="text-lg font-medium text-gray-500">暂无符合条件的排名数据</p>
+            <p className="text-sm text-gray-400 mt-1">请调整筛选条件后重试</p>
           </div>
         )}
 
         {/* 排名表格 */}
-        {!loading && !error && filteredRankings.length > 0 && (
+        {filteredRankings.length > 0 && (
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <div className="bg-gradient-to-r from-yellow-500 to-orange-500 px-6 py-4 text-white">
               <h2 className="text-xl font-semibold flex items-center gap-2">
@@ -338,6 +239,7 @@ export default function TotalRankingsPage() {
                     <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-20">排名</th>
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">运动员</th>
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
+                    <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">年龄组</th>
                     <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">参赛次数</th>
                     <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">最佳名次</th>
                     <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">平均积分</th>
@@ -345,9 +247,9 @@ export default function TotalRankingsPage() {
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {filteredRankings.map((item) => (
+                  {filteredRankings.slice(0, 100).map((item) => (
                     <tr
-                      key={item.athleteId}
+                      key={`${item.athleteId}-${item.ageGroup}-${item.gender}`}
                       className={`hover:bg-gray-50 ${item.rank <= 3 ? 'bg-gradient-to-r from-yellow-50 to-orange-50' : ''}`}
                     >
                       <td className="px-4 py-4 whitespace-nowrap text-center">
@@ -374,11 +276,17 @@ export default function TotalRankingsPage() {
                           </div>
                           <div className="ml-3">
                             <div className="text-sm font-medium text-gray-900">{item.athleteName}</div>
+                            <div className="text-xs text-gray-500">{item.gender}</div>
                           </div>
                         </div>
                       </td>
                       <td className="px-4 py-4 text-sm text-gray-600" title={item.team}>
                         {item.team.length > 15 ? item.team.substring(0, 15) + '...' : item.team}
+                      </td>
+                      <td className="px-4 py-4 whitespace-nowrap text-center">
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+                          {item.ageGroup}
+                        </span>
                       </td>
                       <td className="px-4 py-4 whitespace-nowrap text-center">
                         <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
@@ -413,6 +321,12 @@ export default function TotalRankingsPage() {
                 </tbody>
               </table>
             </div>
+
+            {filteredRankings.length > 100 && (
+              <div className="px-6 py-4 bg-gray-50 text-center text-sm text-gray-600">
+                显示前 100 名，共 {filteredRankings.length} 名运动员
+              </div>
+            )}
           </div>
         )}
 
@@ -434,7 +348,7 @@ export default function TotalRankingsPage() {
               <h4 className="font-medium text-gray-900 mb-2">总积分计算规则</h4>
               <ul className="space-y-1">
                 <li>• 总积分 = 所有参赛场次积分之和</li>
-                <li>• 支持按年龄组、性别、子项、站点筛选</li>
+                <li>• 支持按年龄组、性别筛选</li>
                 <li>• 同一运动员的不同比赛积分累加</li>
                 <li>• 跨项目（单板/自由式/高山）均计入</li>
               </ul>
