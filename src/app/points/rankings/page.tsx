@@ -342,7 +342,7 @@ export default function PointsRankingsPage() {
                     onChange={(e) => setSelectedSportType(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                   >
-                    <option value="all">所有项目</option>
+                    <option value="all">全部项目</option>
                     {filterOptions.sportTypes.map(st => (
                       <option key={st} value={st}>{sportTypeLabels[st] || st}</option>
                     ))}
@@ -356,7 +356,7 @@ export default function PointsRankingsPage() {
                     onChange={(e) => setSelectedDiscipline(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                   >
-                    <option value="all">所有小项</option>
+                    <option value="all">全部小项</option>
                     {filterOptions.disciplines.map(d => (
                       <option key={d} value={d}>{d}</option>
                     ))}
@@ -372,7 +372,7 @@ export default function PointsRankingsPage() {
                 onChange={(e) => setSelectedAgeGroup(e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
               >
-                <option value="all">所有年龄组</option>
+                <option value="all">全部年龄组</option>
                 {(viewMode === 'total' ? totalRankingsData.filters.ageGroups : filterOptions.ageGroups).map(ag => (
                   <option key={ag} value={ag}>{ag}</option>
                 ))}
@@ -386,7 +386,7 @@ export default function PointsRankingsPage() {
                 onChange={(e) => setSelectedGender(e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
               >
-                <option value="all">所有性别</option>
+                <option value="all">男女不限</option>
                 {(viewMode === 'total' ? totalRankingsData.filters.genders : filterOptions.genders).map(g => (
                   <option key={g} value={g}>{g}</option>
                 ))}
@@ -398,10 +398,10 @@ export default function PointsRankingsPage() {
           <div className="mt-4 flex items-center justify-between">
             <span className="text-sm text-gray-600">
               {viewMode === 'total' ? (
-                <>找到 <span className="font-bold text-yellow-600">{filteredTotalRankings.length}</span> 名运动员</>
+                <>共 <span className="font-bold text-yellow-600">{filteredTotalRankings.length}</span> 名运动员</>
               ) : (
-                <>找到 <span className="font-bold text-purple-600">{stats.totalEvents}</span> 个比赛组别，
-                共 <span className="font-bold text-purple-600">{stats.totalAthletes}</span> 人次</>
+                <>共 <span className="font-bold text-purple-600">{stats.totalEvents}</span> 个小项，
+                <span className="font-bold text-purple-600">{stats.totalAthletes}</span> 人次参赛</>
               )}
             </span>
             <button
@@ -419,23 +419,23 @@ export default function PointsRankingsPage() {
         <div className={`grid gap-4 mb-8 ${viewMode === 'total' ? 'grid-cols-3' : 'grid-cols-2 md:grid-cols-4'}`}>
           <div className="bg-white p-4 rounded-lg shadow-md text-center">
             <div className="text-2xl font-bold text-yellow-500">{stats.totalCompetitions}</div>
-            <div className="text-sm text-gray-600">已录入比赛</div>
+            <div className="text-sm text-gray-600">场比赛</div>
           </div>
           {viewMode === 'competition' && (
             <div className="bg-white p-4 rounded-lg shadow-md text-center">
               <div className="text-2xl font-bold text-blue-500">{stats.totalEvents}</div>
-              <div className="text-sm text-gray-600">比赛组别</div>
+              <div className="text-sm text-gray-600">个小项</div>
             </div>
           )}
           <div className="bg-white p-4 rounded-lg shadow-md text-center">
             <div className="text-2xl font-bold text-green-500">{stats.uniqueAthletes}</div>
-            <div className="text-sm text-gray-600">参赛运动员</div>
+            <div className="text-sm text-gray-600">名运动员</div>
           </div>
           <div className="bg-white p-4 rounded-lg shadow-md text-center">
             <div className="text-2xl font-bold text-purple-500">
               {viewMode === 'total' ? totalRankingsData.stats.totalResults : stats.totalAthletes}
             </div>
-            <div className="text-sm text-gray-600">参赛{viewMode === 'total' ? '记录' : '人次'}</div>
+            <div className="text-sm text-gray-600">人次参赛</div>
           </div>
         </div>
 
@@ -464,12 +464,13 @@ export default function PointsRankingsPage() {
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-gray-50">
                       <tr>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-20">排名</th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">运动员</th>
+                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-20">名次</th>
+                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
                         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">年龄组</th>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">参赛次数</th>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">最佳名次</th>
+                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">组别</th>
+                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">性别</th>
+                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">参赛</th>
+                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">最佳</th>
                         <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-28">总积分</th>
                       </tr>
                     </thead>
@@ -503,7 +504,6 @@ export default function PointsRankingsPage() {
                               </div>
                               <div className="ml-3">
                                 <div className="text-sm font-medium text-gray-900">{item.athleteName}</div>
-                                <div className="text-xs text-gray-500">{item.gender}</div>
                               </div>
                             </div>
                           </td>
@@ -516,8 +516,15 @@ export default function PointsRankingsPage() {
                             </span>
                           </td>
                           <td className="px-4 py-4 whitespace-nowrap text-center">
-                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                              {item.competitionCount} 次
+                            <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                              item.gender === '男子组' ? 'bg-blue-100 text-blue-800' : 'bg-pink-100 text-pink-800'
+                            }`}>
+                              {item.gender === '男子组' ? '男' : '女'}
+                            </span>
+                          </td>
+                          <td className="px-4 py-4 whitespace-nowrap text-center">
+                            <span className="text-sm text-gray-700">
+                              {item.competitionCount}场
                             </span>
                           </td>
                           <td className="px-4 py-4 whitespace-nowrap text-center">
@@ -526,7 +533,7 @@ export default function PointsRankingsPage() {
                               item.bestRank <= 3 ? 'bg-orange-100 text-orange-800' :
                               'bg-gray-100 text-gray-800'
                             }`}>
-                              第 {item.bestRank} 名
+                              第{item.bestRank}名
                             </span>
                           </td>
                           <td className="px-4 py-4 whitespace-nowrap text-center">
@@ -537,7 +544,7 @@ export default function PointsRankingsPage() {
                                 ? 'bg-gradient-to-r from-orange-100 to-yellow-100 text-orange-700'
                                 : 'bg-green-100 text-green-800'
                             }`}>
-                              {item.totalPoints} 分
+                              {item.totalPoints}分
                             </span>
                           </td>
                         </tr>
@@ -580,9 +587,9 @@ export default function PointsRankingsPage() {
                       <table className="min-w-full divide-y divide-gray-200">
                         <thead className="bg-gray-50">
                           <tr>
-                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-20">排名</th>
-                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">号码</th>
-                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">运动员</th>
+                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-20">名次</th>
+                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">号码布</th>
+                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
                             <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
                             {group.athletes[0]?.run1 && (
                               <>
@@ -591,7 +598,7 @@ export default function PointsRankingsPage() {
                               </>
                             )}
                             <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">
-                              {group.athletes[0]?.time ? '总成绩' : '最佳得分'}
+                              {group.athletes[0]?.time ? '成绩' : '得分'}
                             </th>
                             {group.athletes[0]?.points !== undefined && (
                               <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-24">积分</th>
