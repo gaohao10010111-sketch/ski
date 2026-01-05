@@ -317,11 +317,11 @@ export default function CooperationPage() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
             <div className="flex items-center gap-3 text-gray-600">
               <Mail className="w-5 h-5 text-ski-blue" />
-              <span>cooperation@cnskipoints.com</span>
+              <span>cnskipoints@sportscience.cn</span>
             </div>
             <div className="flex items-center gap-3 text-gray-600">
               <Phone className="w-5 h-5 text-ski-blue" />
-              <span>400-XXX-XXXX</span>
+              <span>13921269829</span>
             </div>
           </div>
         </div>
