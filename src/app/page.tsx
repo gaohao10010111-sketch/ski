@@ -883,69 +883,10 @@ export default function HomePage() {
                 </div>
               )}
 
-              {/* 颁奖台样式排行榜 */}
+              {/* 列表样式排行榜 */}
               {isLoadingStats ? (
                 <div className="flex items-center justify-center py-8">
                   <Loader2 className="w-6 h-6 text-ski-blue animate-spin" />
-                </div>
-              ) : currentEvent && currentEvent.athletes.length >= 3 ? (
-                <div className="flex items-end justify-center gap-2 py-4">
-                  {/* 第2名 - 左边银牌 */}
-                  <div className="flex flex-col items-center w-1/3">
-                    <div className="text-center mb-2">
-                      <div className="font-semibold text-gray-900 text-sm truncate max-w-full">{currentEvent.athletes[1]?.athleteName}</div>
-                      <div className="text-xs text-gray-500 truncate">{currentEvent.athletes[1]?.province}</div>
-                      <div className="font-bold text-ski-blue text-sm mt-1">
-                        {currentEvent.athletes[1]?.totalPoints > 0 ? `${currentEvent.athletes[1]?.totalPoints}分` : '-'}
-                      </div>
-                    </div>
-                    <div className="w-full bg-gradient-to-t from-gray-300 to-gray-200 rounded-t-lg flex flex-col items-center justify-end" style={{ height: '80px' }}>
-                      <div className="flex flex-col items-center mb-2">
-                        <span className="text-xl">🥈</span>
-                        <div className="w-8 h-8 bg-gray-400 rounded-full flex items-center justify-center font-bold text-white text-sm shadow-lg -mt-1">
-                          2
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 第1名 - 中间金牌（最高） */}
-                  <div className="flex flex-col items-center w-1/3">
-                    <div className="text-center mb-2">
-                      <div className="font-semibold text-gray-900 text-sm truncate max-w-full">{currentEvent.athletes[0]?.athleteName}</div>
-                      <div className="text-xs text-gray-500 truncate">{currentEvent.athletes[0]?.province}</div>
-                      <div className="font-bold text-ski-blue text-sm mt-1">
-                        {currentEvent.athletes[0]?.totalPoints > 0 ? `${currentEvent.athletes[0]?.totalPoints}分` : '-'}
-                      </div>
-                    </div>
-                    <div className="w-full bg-gradient-to-t from-yellow-500 to-yellow-400 rounded-t-lg flex flex-col items-center justify-end" style={{ height: '100px' }}>
-                      <div className="flex flex-col items-center mb-2">
-                        <span className="text-2xl">🥇</span>
-                        <div className="w-9 h-9 bg-yellow-600 rounded-full flex items-center justify-center font-bold text-white text-base shadow-lg ring-2 ring-yellow-300 -mt-1">
-                          1
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* 第3名 - 右边铜牌 */}
-                  <div className="flex flex-col items-center w-1/3">
-                    <div className="text-center mb-2">
-                      <div className="font-semibold text-gray-900 text-sm truncate max-w-full">{currentEvent.athletes[2]?.athleteName}</div>
-                      <div className="text-xs text-gray-500 truncate">{currentEvent.athletes[2]?.province}</div>
-                      <div className="font-bold text-ski-blue text-sm mt-1">
-                        {currentEvent.athletes[2]?.totalPoints > 0 ? `${currentEvent.athletes[2]?.totalPoints}分` : '-'}
-                      </div>
-                    </div>
-                    <div className="w-full bg-gradient-to-t from-amber-700 to-amber-600 rounded-t-lg flex flex-col items-center justify-end" style={{ height: '60px' }}>
-                      <div className="flex flex-col items-center mb-1">
-                        <span className="text-lg">🥉</span>
-                        <div className="w-7 h-7 bg-amber-800 rounded-full flex items-center justify-center font-bold text-white text-xs shadow-lg -mt-1">
-                          3
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               ) : currentEvent && currentEvent.athletes.length > 0 ? (
                 <div className="space-y-3">
