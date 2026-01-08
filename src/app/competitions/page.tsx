@@ -11,8 +11,6 @@ import {
   Plus,
   Search,
   Filter,
-  Download,
-  Edit,
   Eye,
   Star,
   Mountain,
@@ -20,8 +18,7 @@ import {
   Flag,
   Award,
   Loader2,
-  AlertCircle,
-  RefreshCw
+  AlertCircle
 } from 'lucide-react'
 import { useToast } from '@/components/Toast'
 import Link from 'next/link'
@@ -92,7 +89,6 @@ export default function CompetitionsPage() {
   const [selectedStatus, setSelectedStatus] = useState('all')
   const [selectedSportType, setSelectedSportType] = useState('all')
   const [searchTerm, setSearchTerm] = useState('')
-  const [isExporting, setIsExporting] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [competitions, setCompetitions] = useState<Competition[]>([])
@@ -215,354 +211,9 @@ export default function CompetitionsPage() {
     return () => clearTimeout(timer)
   }, [searchTerm, selectedStatus, selectedSportType])
 
-  // 新建比赛
-  const handleNewCompetition = () => {
-    showToast('新建比赛功能开发中', 'info')
-  }
-
-  // 导出比赛列表为PDF
-  const handleExport = async () => {
-    if (competitions.length === 0) {
-      showToast('没有数据可导出', 'warning')
-      return
-    }
-
-    setIsExporting(true)
-    try {
-      // 按状态分组
-      const groupedByStatus: Record<string, Competition[]> = {}
-      competitions.forEach(comp => {
-        const status = comp.status
-        if (!groupedByStatus[status]) {
-          groupedByStatus[status] = []
-        }
-        groupedByStatus[status].push(comp)
-      })
-
-      // 统计数据
-      const totalParticipants = competitions.reduce((sum, c) => sum + (c.participantCount || 0), 0)
-      const sportTypes = [...new Set(competitions.map(c => sportTypeLabels[c.sportType] || c.sportType))]
-      const locations = [...new Set(competitions.map(c => c.location))]
-
-      // 生成HTML
-      const htmlContent = `
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <title>比赛数据 - 中国滑雪积分系统</title>
-  <style>
-    @page {
-      size: A4;
-      margin: 15mm;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
-      font-size: 12px;
-      line-height: 1.5;
-      color: #333;
-      background: white;
-    }
-    .header {
-      text-align: center;
-      padding: 20px 0;
-      border-bottom: 3px solid #1e3a5f;
-      margin-bottom: 20px;
-    }
-    .header h1 {
-      font-size: 24px;
-      color: #1e3a5f;
-      margin-bottom: 8px;
-    }
-    .header .subtitle {
-      font-size: 14px;
-      color: #666;
-    }
-    .header .date {
-      font-size: 12px;
-      color: #999;
-      margin-top: 8px;
-    }
-    .stats-section {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 25px;
-      padding: 15px;
-      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-      border-radius: 10px;
-    }
-    .stat-item {
-      text-align: center;
-      padding: 10px 20px;
-    }
-    .stat-value {
-      font-size: 28px;
-      font-weight: bold;
-      color: #1e3a5f;
-    }
-    .stat-label {
-      font-size: 12px;
-      color: #666;
-      margin-top: 4px;
-    }
-    .legend {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 20px;
-      padding: 10px;
-      background: #f9fafb;
-      border-radius: 8px;
-    }
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-    }
-    .legend-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 3px;
-    }
-    .legend-dot.completed { background: #9ca3af; }
-    .legend-dot.ongoing { background: #22c55e; }
-    .legend-dot.upcoming { background: #3b82f6; }
-    .legend-dot.cancelled { background: #ef4444; }
-    .section {
-      margin-bottom: 25px;
-    }
-    .section-title {
-      font-size: 16px;
-      font-weight: bold;
-      color: #1e3a5f;
-      padding: 8px 15px;
-      background: linear-gradient(90deg, #e0f2fe 0%, #f0f9ff 100%);
-      border-left: 4px solid #0ea5e9;
-      border-radius: 0 8px 8px 0;
-      margin-bottom: 15px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 15px;
-      font-size: 11px;
-    }
-    th {
-      background: #1e3a5f;
-      color: white;
-      padding: 10px 8px;
-      text-align: left;
-      font-weight: 600;
-    }
-    th:first-child {
-      border-radius: 6px 0 0 0;
-    }
-    th:last-child {
-      border-radius: 0 6px 0 0;
-    }
-    td {
-      padding: 10px 8px;
-      border-bottom: 1px solid #e5e7eb;
-      vertical-align: middle;
-    }
-    tr:nth-child(even) {
-      background: #f9fafb;
-    }
-    tr:hover {
-      background: #f0f9ff;
-    }
-    .status-badge {
-      display: inline-block;
-      padding: 3px 8px;
-      border-radius: 12px;
-      font-size: 10px;
-      font-weight: 500;
-    }
-    .status-completed { background: #f3f4f6; color: #4b5563; }
-    .status-ongoing { background: #dcfce7; color: #166534; }
-    .status-upcoming { background: #dbeafe; color: #1e40af; }
-    .status-cancelled { background: #fee2e2; color: #991b1b; }
-    .level-badge {
-      display: inline-block;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 10px;
-      font-weight: 600;
-    }
-    .level-a { background: #fef2f2; color: #dc2626; }
-    .level-b { background: #eff6ff; color: #2563eb; }
-    .level-c { background: #f0fdf4; color: #16a34a; }
-    .footer {
-      margin-top: 30px;
-      padding-top: 15px;
-      border-top: 1px solid #e5e7eb;
-      text-align: center;
-      font-size: 10px;
-      color: #9ca3af;
-    }
-    .comp-name {
-      font-weight: 600;
-      color: #1e3a5f;
-    }
-    .comp-location {
-      color: #6b7280;
-      font-size: 10px;
-    }
-    .participants {
-      text-align: center;
-      font-weight: 600;
-      color: #0ea5e9;
-    }
-    @media print {
-      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .section { page-break-inside: avoid; }
-    }
-  </style>
-</head>
-<body>
-  <div class="header">
-    <h1>比赛数据报告</h1>
-    <div class="subtitle">中国滑雪积分系统 · 2024-2025赛季</div>
-    <div class="date">导出时间：${new Date().toLocaleString('zh-CN')}</div>
-  </div>
-
-  <div class="stats-section">
-    <div class="stat-item">
-      <div class="stat-value">${competitions.length}</div>
-      <div class="stat-label">比赛总数</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-value">${totalParticipants}</div>
-      <div class="stat-label">参赛人次</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-value">${sportTypes.length}</div>
-      <div class="stat-label">项目类型</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-value">${locations.length}</div>
-      <div class="stat-label">比赛场地</div>
-    </div>
-  </div>
-
-  <div class="legend">
-    <div class="legend-item"><div class="legend-dot completed"></div>已结束</div>
-    <div class="legend-item"><div class="legend-dot ongoing"></div>进行中</div>
-    <div class="legend-item"><div class="legend-dot upcoming"></div>即将开始</div>
-    <div class="legend-item"><div class="legend-dot cancelled"></div>已取消</div>
-  </div>
-
-  ${Object.entries(groupedByStatus).map(([status, comps]) => `
-    <div class="section">
-      <div class="section-title">${statusConfig[status]?.label || status}（${comps.length}场）</div>
-      <table>
-        <thead>
-          <tr>
-            <th style="width: 5%">序号</th>
-            <th style="width: 30%">比赛名称</th>
-            <th style="width: 15%">项目</th>
-            <th style="width: 12%">地点</th>
-            <th style="width: 15%">日期</th>
-            <th style="width: 8%">级别</th>
-            <th style="width: 8%">人数</th>
-            <th style="width: 7%">状态</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${comps.map((comp, idx) => `
-            <tr>
-              <td style="text-align: center">${idx + 1}</td>
-              <td>
-                <div class="comp-name">${comp.name}</div>
-                ${comp.organizer ? `<div class="comp-location">主办：${comp.organizer}</div>` : ''}
-              </td>
-              <td>${sportTypeLabels[comp.sportType] || comp.sportType}</td>
-              <td>${comp.location}</td>
-              <td>${comp.startDate}${comp.startDate !== comp.endDate ? ` ~ ${comp.endDate}` : ''}</td>
-              <td>
-                <span class="level-badge level-${(comp.raceLevel || 'c').toLowerCase()}">
-                  ${levelConfig[comp.raceLevel || '']?.label || tierConfig[comp.pointsTier || '']?.label || '普通'}
-                </span>
-              </td>
-              <td class="participants">${comp.participantCount || 0}</td>
-              <td>
-                <span class="status-badge status-${status.toLowerCase()}">${statusConfig[status]?.label || status}</span>
-              </td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-    </div>
-  `).join('')}
-
-  <div class="footer">
-    <p>中国滑雪积分系统 · 数据来源：国家体育总局冬季运动管理中心</p>
-    <p>本文档仅供参考，以官方公布数据为准</p>
-  </div>
-</body>
-</html>
-      `
-
-      // 创建新窗口并打印
-      const printWindow = window.open('', '_blank')
-      if (printWindow) {
-        printWindow.document.write(htmlContent)
-        printWindow.document.close()
-        printWindow.focus()
-        setTimeout(() => {
-          printWindow.print()
-        }, 500)
-      }
-
-      showToast(`已生成 ${competitions.length} 场比赛数据报告`, 'success')
-    } catch {
-      showToast('导出失败，请重试', 'error')
-    } finally {
-      setIsExporting(false)
-    }
-  }
-
-  // 查看比赛详情
+  // 查看比赛详情 - 跳转到成绩公告页面
   const handleViewDetails = (competition: Competition) => {
-    router.push(`/competitions/${competition.id}`)
-  }
-
-  // 编辑比赛
-  const handleEditCompetition = (competition: Competition) => {
-    showToast(`编辑功能开发中`, 'info')
-  }
-
-  // 导出单场比赛数据
-  const handleExportSingle = async (competition: Competition) => {
-    const headers = ['比赛名称', '项目', '地点', '开始日期', '结束日期', '状态', '参赛人数', '主办方']
-    const row = [
-      competition.name,
-      sportTypeLabels[competition.sportType] || competition.sportType,
-      competition.location,
-      competition.startDate,
-      competition.endDate,
-      statusConfig[competition.status]?.label || competition.status,
-      competition.participantCount || 0,
-      competition.organizer || '-',
-    ]
-    const csvContent = [headers, row].map(r => r.join(',')).join('\n')
-
-    const blob = new Blob(['\ufeff' + csvContent], { type: 'text/csv;charset=utf-8;' })
-    const url = URL.createObjectURL(blob)
-    const link = document.createElement('a')
-    link.href = url
-    link.download = `${competition.name}_${new Date().toISOString().split('T')[0]}.csv`
-    link.click()
-    URL.revokeObjectURL(url)
-
-    showToast(`已导出「${competition.name}」数据`, 'success')
+    router.push(`/results-announcement?competition=${encodeURIComponent(competition.name)}&id=${competition.id}`)
   }
 
   // 快速操作
@@ -689,24 +340,6 @@ export default function CompetitionsPage() {
             </span>
           </div>
 
-          <div className="flex space-x-2">
-            <button
-              onClick={fetchCompetitions}
-              disabled={isLoading}
-              className="px-3 py-2 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors disabled:opacity-50"
-              title="刷新数据"
-            >
-              <RefreshCw className={`h-4 w-4 ${isLoading ? 'animate-spin' : ''}`} />
-            </button>
-            <button
-              onClick={handleExport}
-              disabled={isExporting || competitions.length === 0}
-              className="btn-secondary flex items-center shadow-sm hover:shadow-md transition-shadow disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <Download className="h-4 w-4 mr-2" />
-              {isExporting ? '导出中...' : '导出PDF'}
-            </button>
-          </div>
         </div>
       </div>
 
@@ -824,10 +457,10 @@ export default function CompetitionsPage() {
                   )}
 
                   {/* 操作按钮 */}
-                  <div className="grid grid-cols-2 gap-2 pt-3 border-t border-gray-100">
+                  <div className="flex gap-2 pt-3 border-t border-gray-100">
                     <button
                       onClick={() => handleViewDetails(competition)}
-                      className="flex items-center justify-center py-2 px-3 text-sm bg-ski-blue text-white rounded-md hover:bg-primary-700 transition-colors"
+                      className="flex-1 flex items-center justify-center py-2 px-3 text-sm bg-ski-blue text-white rounded-md hover:bg-primary-700 transition-colors"
                     >
                       <Eye className="h-4 w-4 mr-1" />
                       查看详情
@@ -836,7 +469,7 @@ export default function CompetitionsPage() {
                     {competition.status === 'COMPLETED' && (
                       <Link
                         href={`/results-announcement?competition=${encodeURIComponent(competition.name)}&id=${competition.id}`}
-                        className="flex items-center justify-center py-2 px-3 text-sm bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors shadow-sm hover:shadow-md"
+                        className="flex-1 flex items-center justify-center py-2 px-3 text-sm bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors shadow-sm hover:shadow-md"
                       >
                         <Award className="h-4 w-4 mr-1" />
                         成绩公告
@@ -845,7 +478,7 @@ export default function CompetitionsPage() {
 
                     {competition.status === 'ONGOING' && (
                       <button
-                        className="flex items-center justify-center py-2 px-3 text-sm bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition-colors shadow-sm"
+                        className="flex-1 flex items-center justify-center py-2 px-3 text-sm bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition-colors shadow-sm"
                         title="比赛进行中，即将发布成绩"
                       >
                         <Clock className="h-4 w-4 mr-1" />
@@ -855,7 +488,7 @@ export default function CompetitionsPage() {
 
                     {competition.status === 'UPCOMING' && (
                       <button
-                        className="flex items-center justify-center py-2 px-3 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors shadow-sm"
+                        className="flex-1 flex items-center justify-center py-2 px-3 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors shadow-sm"
                         title="比赛即将开始"
                       >
                         <Calendar className="h-4 w-4 mr-1" />
@@ -865,27 +498,12 @@ export default function CompetitionsPage() {
 
                     {competition.status === 'CANCELLED' && (
                       <button
-                        className="flex items-center justify-center py-2 px-3 text-sm bg-red-600 text-white rounded-md cursor-not-allowed"
+                        className="flex-1 flex items-center justify-center py-2 px-3 text-sm bg-red-600 text-white rounded-md cursor-not-allowed"
                         disabled
                       >
                         已取消
                       </button>
                     )}
-
-                    <button
-                      onClick={() => handleEditCompetition(competition)}
-                      className="flex items-center justify-center py-2 px-3 text-sm border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
-                    >
-                      <Edit className="h-4 w-4 mr-1" />
-                      编辑
-                    </button>
-                    <button
-                      onClick={() => handleExportSingle(competition)}
-                      className="flex items-center justify-center py-2 px-3 text-sm border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
-                    >
-                      <Download className="h-4 w-4 mr-1" />
-                      导出
-                    </button>
                   </div>
                 </div>
               </div>
