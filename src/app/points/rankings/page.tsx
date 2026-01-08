@@ -125,7 +125,7 @@ export default function PointsRankingsPage() {
     })).filter(group => group.athletes.length > 0)
   }, [rankingGroups, searchTerm])
 
-  // 按项目分组的总积分排名筛选
+  // 按项目和子项分组的总积分排名筛选
   const filteredSportRankings = useMemo(() => {
     // 获取要显示的项目列表
     let sportRankings = totalRankingsData.sportRankings
@@ -134,42 +134,50 @@ export default function PointsRankingsPage() {
       sportRankings = sportRankings.filter(sr => sr.sportType === selectedTotalSportType)
     }
 
-    // 对每个项目应用年龄组、性别、搜索筛选
+    // 对每个项目的每个子项应用年龄组、性别、搜索筛选
     return sportRankings.map(sr => {
-      let rankings = sr.rankings
+      const filteredDisciplineRankings = sr.disciplineRankings.map(dr => {
+        let rankings = dr.rankings
 
-      if (selectedAgeGroup !== 'all') {
-        rankings = rankings.filter(r => r.ageGroup === selectedAgeGroup)
-      }
+        if (selectedAgeGroup !== 'all') {
+          rankings = rankings.filter(r => r.ageGroup === selectedAgeGroup)
+        }
 
-      if (selectedGender !== 'all') {
-        rankings = rankings.filter(r => r.gender === selectedGender)
-      }
+        if (selectedGender !== 'all') {
+          rankings = rankings.filter(r => r.gender === selectedGender)
+        }
 
-      if (searchTerm) {
-        const term = searchTerm.toLowerCase()
-        rankings = rankings.filter(r =>
-          r.athleteName.toLowerCase().includes(term) ||
-          r.team.toLowerCase().includes(term)
-        )
-      }
+        if (searchTerm) {
+          const term = searchTerm.toLowerCase()
+          rankings = rankings.filter(r =>
+            r.athleteName.toLowerCase().includes(term) ||
+            r.team.toLowerCase().includes(term)
+          )
+        }
 
-      // 重新计算排名
+        // 重新计算排名
+        return {
+          ...dr,
+          rankings: rankings.map((item, index) => ({
+            ...item,
+            rank: index + 1
+          })),
+          total: rankings.length
+        }
+      }).filter(dr => dr.rankings.length > 0) // 过滤掉没有数据的子项
+
       return {
         ...sr,
-        rankings: rankings.map((item, index) => ({
-          ...item,
-          rank: index + 1
-        })),
-        total: rankings.length
+        disciplineRankings: filteredDisciplineRankings,
+        total: filteredDisciplineRankings.reduce((sum, dr) => sum + dr.total, 0)
       }
-    }).filter(sr => sr.rankings.length > 0) // 过滤掉没有数据的项目
+    }).filter(sr => sr.disciplineRankings.length > 0) // 过滤掉没有数据的项目
   }, [selectedTotalSportType, selectedAgeGroup, selectedGender, searchTerm])
 
   // 总积分排名筛选（兼容旧格式，用于导出等）
   const filteredTotalRankings = useMemo(() => {
-    // 合并所有筛选后的项目排名
-    return filteredSportRankings.flatMap(sr => sr.rankings)
+    // 合并所有筛选后的项目和子项排名
+    return filteredSportRankings.flatMap(sr => sr.disciplineRankings.flatMap(dr => dr.rankings))
   }, [filteredSportRankings])
 
   // 分页计算
@@ -190,23 +198,23 @@ export default function PointsRankingsPage() {
     setSportPages({}) // 重置所有项目的分页
   }
 
-  // 获取某个项目的当前页码
-  const getSportPage = (sportType: string) => sportPages[sportType] || 1
+  // 获取某个子项的当前页码（key: sportType-discipline）
+  const getDisciplinePage = (sportType: string, discipline: string) => sportPages[`${sportType}-${discipline}`] || 1
 
-  // 设置某个项目的页码
-  const setSportPage = (sportType: string, page: number) => {
-    setSportPages(prev => ({ ...prev, [sportType]: page }))
+  // 设置某个子项的页码
+  const setDisciplinePage = (sportType: string, discipline: string, page: number) => {
+    setSportPages(prev => ({ ...prev, [`${sportType}-${discipline}`]: page }))
   }
 
-  // 计算某个项目的分页数据
-  const getPaginatedRankings = (rankings: typeof filteredSportRankings[0]['rankings'], sportType: string) => {
-    const page = getSportPage(sportType)
+  // 计算某个子项的分页数据
+  const getPaginatedRankings = (rankings: any[], sportType: string, discipline: string) => {
+    const page = getDisciplinePage(sportType, discipline)
     const start = (page - 1) * sportPageSize
     const end = start + sportPageSize
     return rankings.slice(start, end)
   }
 
-  // 计算某个项目的总页数
+  // 计算总页数
   const getTotalPages = (totalCount: number) => Math.ceil(totalCount / sportPageSize)
 
   // 统计信息
@@ -493,163 +501,177 @@ export default function PointsRankingsPage() {
                 <p className="text-sm text-gray-400 mt-1">请调整筛选条件后重试</p>
               </div>
             ) : (
-              <div className="space-y-6">
+              <div className="space-y-8">
                 {filteredSportRankings.map((sportRanking) => (
-                  <div key={sportRanking.sportType} className="bg-white rounded-lg shadow overflow-hidden">
-                    {/* 项目标题 */}
-                    <div className="bg-ski-blue px-4 py-3 text-white flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <Trophy className="h-5 w-5" />
-                        <h2 className="text-lg font-medium">{sportRanking.sportName}</h2>
-                      </div>
-                      <span className="text-sm bg-blue-500 px-3 py-1 rounded-full">
-                        {sportRanking.total} 名运动员
+                  <div key={sportRanking.sportType} className="space-y-4">
+                    {/* 大项标题 */}
+                    <div className="flex items-center gap-3">
+                      <div className="w-1 h-8 bg-ski-blue rounded-full"></div>
+                      <h2 className="text-xl font-bold text-ski-navy">{sportRanking.sportName}</h2>
+                      <span className="text-sm text-gray-500">
+                        {sportRanking.disciplineRankings.length} 个子项 · {sportRanking.total} 名运动员
                       </span>
                     </div>
 
-                    <div className="overflow-x-auto">
-                      <table className="min-w-full divide-y divide-gray-200">
-                        <thead className="bg-gray-50">
-                          <tr>
-                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-20">名次</th>
-                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
-                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
-                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">组别</th>
-                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">性别</th>
-                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">参赛</th>
-                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">最佳</th>
-                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-28">总积分</th>
-                          </tr>
-                        </thead>
-                        <tbody className="bg-white divide-y divide-gray-200">
-                          {getPaginatedRankings(sportRanking.rankings, sportRanking.sportType).map((item) => (
-                            <tr
-                              key={`${sportRanking.sportType}-${item.athleteId}-${item.ageGroup}-${item.gender}`}
-                              className={`hover:bg-blue-50 transition-colors ${
-                                item.rank === 1 ? 'bg-yellow-50' :
-                                item.rank === 2 ? 'bg-gray-50' :
-                                item.rank === 3 ? 'bg-orange-50' : ''
-                              }`}
-                            >
-                              <td className="px-4 py-3 whitespace-nowrap text-center">
-                                {getRankIcon(item.rank)}
-                              </td>
-                              <td className="px-4 py-3 whitespace-nowrap">
-                                <span className={`text-sm font-medium ${item.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
-                                  {item.athleteName}
-                                </span>
-                              </td>
-                              <td className="px-4 py-3 text-sm text-gray-600" title={item.team}>
-                                {item.team}
-                              </td>
-                              <td className="px-4 py-3 whitespace-nowrap text-center">
-                                <span className={`inline-flex px-2 py-0.5 rounded-full text-xs font-medium ${
-                                  item.ageGroup === 'U12' ? 'bg-green-100 text-green-700' :
-                                  item.ageGroup === 'U15' ? 'bg-blue-100 text-blue-700' :
-                                  'bg-purple-100 text-purple-700'
-                                }`}>
-                                  {item.ageGroup}
-                                </span>
-                              </td>
-                              <td className="px-4 py-3 whitespace-nowrap text-center">
-                                <span className={`text-sm ${item.gender === '男子组' ? 'text-blue-600' : 'text-pink-600'}`}>
-                                  {item.gender === '男子组' ? '男' : '女'}
-                                </span>
-                              </td>
-                              <td className="px-4 py-3 whitespace-nowrap text-center">
-                                <span className="text-sm text-gray-600">{item.competitionCount}</span>
-                              </td>
-                              <td className="px-4 py-3 whitespace-nowrap text-center">
-                                <span className={`text-sm font-medium ${
-                                  item.bestRank === 1 ? 'text-yellow-600' :
-                                  item.bestRank <= 3 ? 'text-orange-600' : 'text-gray-600'
-                                }`}>
-                                  {item.bestRank}
-                                </span>
-                              </td>
-                              <td className="px-4 py-3 whitespace-nowrap text-center">
-                                <span className={`inline-flex px-3 py-1 rounded-lg text-sm font-bold ${
-                                  item.rank === 1 ? 'bg-yellow-400 text-yellow-900' :
-                                  item.rank === 2 ? 'bg-gray-300 text-gray-800' :
-                                  item.rank === 3 ? 'bg-orange-300 text-orange-900' :
-                                  'bg-blue-100 text-blue-700'
-                                }`}>
-                                  {item.totalPoints}
-                                </span>
-                              </td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
+                    {/* 子项列表 */}
+                    <div className="space-y-4">
+                      {sportRanking.disciplineRankings.map((disciplineRanking) => (
+                        <div key={`${sportRanking.sportType}-${disciplineRanking.discipline}`} className="bg-white rounded-lg shadow overflow-hidden">
+                          {/* 子项标题 */}
+                          <div className="bg-gradient-to-r from-ski-blue to-blue-600 px-4 py-3 text-white flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                              <Award className="h-5 w-5" />
+                              <h3 className="text-base font-medium">{disciplineRanking.discipline}</h3>
+                            </div>
+                            <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
+                              {disciplineRanking.total} 名运动员
+                            </span>
+                          </div>
 
-                    {/* 分页控件 */}
-                    {sportRanking.rankings.length > sportPageSize && (
-                      <div className="px-4 py-3 bg-gray-50 flex items-center justify-between">
-                        <div className="text-sm text-gray-500">
-                          第 {getSportPage(sportRanking.sportType)} / {getTotalPages(sportRanking.rankings.length)} 页，
-                          共 {sportRanking.rankings.length} 名运动员
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <button
-                            onClick={() => setSportPage(sportRanking.sportType, getSportPage(sportRanking.sportType) - 1)}
-                            disabled={getSportPage(sportRanking.sportType) === 1}
-                            className="px-3 py-1 rounded border border-gray-300 text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
-                          >
-                            <ChevronLeft className="h-4 w-4" />
-                            上一页
-                          </button>
-                          {/* 页码按钮 */}
-                          <div className="flex items-center gap-1">
-                            {(() => {
-                              const totalPages = getTotalPages(sportRanking.rankings.length)
-                              const currentPage = getSportPage(sportRanking.sportType)
-                              const pages: (number | string)[] = []
-
-                              if (totalPages <= 7) {
-                                // 少于7页，全部显示
-                                for (let i = 1; i <= totalPages; i++) pages.push(i)
-                              } else {
-                                // 多于7页，显示省略
-                                if (currentPage <= 4) {
-                                  pages.push(1, 2, 3, 4, 5, '...', totalPages)
-                                } else if (currentPage >= totalPages - 3) {
-                                  pages.push(1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages)
-                                } else {
-                                  pages.push(1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages)
-                                }
-                              }
-
-                              return pages.map((page, idx) => (
-                                page === '...' ? (
-                                  <span key={`ellipsis-${idx}`} className="px-2 text-gray-400">...</span>
-                                ) : (
-                                  <button
-                                    key={page}
-                                    onClick={() => setSportPage(sportRanking.sportType, page as number)}
-                                    className={`w-8 h-8 rounded text-sm ${
-                                      currentPage === page
-                                        ? 'bg-ski-blue text-white'
-                                        : 'border border-gray-300 text-gray-600 hover:bg-gray-100'
+                          <div className="overflow-x-auto">
+                            <table className="min-w-full divide-y divide-gray-200">
+                              <thead className="bg-gray-50">
+                                <tr>
+                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-20">名次</th>
+                                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
+                                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
+                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">组别</th>
+                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">性别</th>
+                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">参赛</th>
+                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">最佳</th>
+                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-28">总积分</th>
+                                </tr>
+                              </thead>
+                              <tbody className="bg-white divide-y divide-gray-200">
+                                {getPaginatedRankings(disciplineRanking.rankings, sportRanking.sportType, disciplineRanking.discipline).map((item) => (
+                                  <tr
+                                    key={`${sportRanking.sportType}-${disciplineRanking.discipline}-${item.athleteId}-${item.ageGroup}-${item.gender}`}
+                                    className={`hover:bg-blue-50 transition-colors ${
+                                      item.rank === 1 ? 'bg-yellow-50' :
+                                      item.rank === 2 ? 'bg-gray-50' :
+                                      item.rank === 3 ? 'bg-orange-50' : ''
                                     }`}
                                   >
-                                    {page}
-                                  </button>
-                                )
-                              ))
-                            })()}
+                                    <td className="px-4 py-3 whitespace-nowrap text-center">
+                                      {getRankIcon(item.rank)}
+                                    </td>
+                                    <td className="px-4 py-3 whitespace-nowrap">
+                                      <span className={`text-sm font-medium ${item.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
+                                        {item.athleteName}
+                                      </span>
+                                    </td>
+                                    <td className="px-4 py-3 text-sm text-gray-600" title={item.team}>
+                                      {item.team}
+                                    </td>
+                                    <td className="px-4 py-3 whitespace-nowrap text-center">
+                                      <span className={`inline-flex px-2 py-0.5 rounded-full text-xs font-medium ${
+                                        item.ageGroup === 'U12' ? 'bg-green-100 text-green-700' :
+                                        item.ageGroup === 'U15' ? 'bg-blue-100 text-blue-700' :
+                                        'bg-purple-100 text-purple-700'
+                                      }`}>
+                                        {item.ageGroup}
+                                      </span>
+                                    </td>
+                                    <td className="px-4 py-3 whitespace-nowrap text-center">
+                                      <span className={`text-sm ${item.gender === '男子组' ? 'text-blue-600' : 'text-pink-600'}`}>
+                                        {item.gender === '男子组' ? '男' : '女'}
+                                      </span>
+                                    </td>
+                                    <td className="px-4 py-3 whitespace-nowrap text-center">
+                                      <span className="text-sm text-gray-600">{item.competitionCount}</span>
+                                    </td>
+                                    <td className="px-4 py-3 whitespace-nowrap text-center">
+                                      <span className={`text-sm font-medium ${
+                                        item.bestRank === 1 ? 'text-yellow-600' :
+                                        item.bestRank <= 3 ? 'text-orange-600' : 'text-gray-600'
+                                      }`}>
+                                        {item.bestRank}
+                                      </span>
+                                    </td>
+                                    <td className="px-4 py-3 whitespace-nowrap text-center">
+                                      <span className={`inline-flex px-3 py-1 rounded-lg text-sm font-bold ${
+                                        item.rank === 1 ? 'bg-yellow-400 text-yellow-900' :
+                                        item.rank === 2 ? 'bg-gray-300 text-gray-800' :
+                                        item.rank === 3 ? 'bg-orange-300 text-orange-900' :
+                                        'bg-blue-100 text-blue-700'
+                                      }`}>
+                                        {item.totalPoints}
+                                      </span>
+                                    </td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
                           </div>
-                          <button
-                            onClick={() => setSportPage(sportRanking.sportType, getSportPage(sportRanking.sportType) + 1)}
-                            disabled={getSportPage(sportRanking.sportType) >= getTotalPages(sportRanking.rankings.length)}
-                            className="px-3 py-1 rounded border border-gray-300 text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
-                          >
-                            下一页
-                            <ChevronRight className="h-4 w-4" />
-                          </button>
+
+                          {/* 分页控件 */}
+                          {disciplineRanking.rankings.length > sportPageSize && (
+                            <div className="px-4 py-3 bg-gray-50 flex items-center justify-between">
+                              <div className="text-sm text-gray-500">
+                                第 {getDisciplinePage(sportRanking.sportType, disciplineRanking.discipline)} / {getTotalPages(disciplineRanking.rankings.length)} 页，
+                                共 {disciplineRanking.rankings.length} 名运动员
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <button
+                                  onClick={() => setDisciplinePage(sportRanking.sportType, disciplineRanking.discipline, getDisciplinePage(sportRanking.sportType, disciplineRanking.discipline) - 1)}
+                                  disabled={getDisciplinePage(sportRanking.sportType, disciplineRanking.discipline) === 1}
+                                  className="px-3 py-1 rounded border border-gray-300 text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
+                                >
+                                  <ChevronLeft className="h-4 w-4" />
+                                  上一页
+                                </button>
+                                {/* 页码按钮 */}
+                                <div className="flex items-center gap-1">
+                                  {(() => {
+                                    const totalPagesCount = getTotalPages(disciplineRanking.rankings.length)
+                                    const currentPageNum = getDisciplinePage(sportRanking.sportType, disciplineRanking.discipline)
+                                    const pages: (number | string)[] = []
+
+                                    if (totalPagesCount <= 7) {
+                                      for (let i = 1; i <= totalPagesCount; i++) pages.push(i)
+                                    } else {
+                                      if (currentPageNum <= 4) {
+                                        pages.push(1, 2, 3, 4, 5, '...', totalPagesCount)
+                                      } else if (currentPageNum >= totalPagesCount - 3) {
+                                        pages.push(1, '...', totalPagesCount - 4, totalPagesCount - 3, totalPagesCount - 2, totalPagesCount - 1, totalPagesCount)
+                                      } else {
+                                        pages.push(1, '...', currentPageNum - 1, currentPageNum, currentPageNum + 1, '...', totalPagesCount)
+                                      }
+                                    }
+
+                                    return pages.map((page, idx) => (
+                                      page === '...' ? (
+                                        <span key={`ellipsis-${idx}`} className="px-2 text-gray-400">...</span>
+                                      ) : (
+                                        <button
+                                          key={page}
+                                          onClick={() => setDisciplinePage(sportRanking.sportType, disciplineRanking.discipline, page as number)}
+                                          className={`w-8 h-8 rounded text-sm ${
+                                            currentPageNum === page
+                                              ? 'bg-ski-blue text-white'
+                                              : 'border border-gray-300 text-gray-600 hover:bg-gray-100'
+                                          }`}
+                                        >
+                                          {page}
+                                        </button>
+                                      )
+                                    ))
+                                  })()}
+                                </div>
+                                <button
+                                  onClick={() => setDisciplinePage(sportRanking.sportType, disciplineRanking.discipline, getDisciplinePage(sportRanking.sportType, disciplineRanking.discipline) + 1)}
+                                  disabled={getDisciplinePage(sportRanking.sportType, disciplineRanking.discipline) >= getTotalPages(disciplineRanking.rankings.length)}
+                                  className="px-3 py-1 rounded border border-gray-300 text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
+                                >
+                                  下一页
+                                  <ChevronRight className="h-4 w-4" />
+                                </button>
+                              </div>
+                            </div>
+                          )}
                         </div>
-                      </div>
-                    )}
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
