@@ -263,7 +263,10 @@ export default function PointsRankingsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 标题 */}
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">积分排行榜</h1>
+          <div className="inline-flex items-center gap-3 mb-3">
+            <Trophy className="h-8 w-8 text-yellow-500" />
+            <h1 className="text-3xl font-bold text-gray-900">积分排行榜</h1>
+          </div>
           <p className="text-gray-600">2025-2026赛季 · 全国青少年U系列赛事</p>
         </div>
 
@@ -400,22 +403,22 @@ export default function PointsRankingsPage() {
 
         {/* 统计卡片 */}
         <div className={`grid gap-3 mb-6 ${viewMode === 'total' ? 'grid-cols-3' : 'grid-cols-2 md:grid-cols-4'}`}>
-          <div className="bg-white p-3 rounded-lg shadow text-center">
-            <div className="text-xl font-bold text-gray-800">{stats.totalCompetitions}</div>
+          <div className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-orange-400">
+            <div className="text-2xl font-bold text-orange-500">{stats.totalCompetitions}</div>
             <div className="text-xs text-gray-500">场比赛</div>
           </div>
           {viewMode === 'competition' && (
-            <div className="bg-white p-3 rounded-lg shadow text-center">
-              <div className="text-xl font-bold text-gray-800">{stats.totalEvents}</div>
+            <div className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-purple-400">
+              <div className="text-2xl font-bold text-purple-500">{stats.totalEvents}</div>
               <div className="text-xs text-gray-500">个小项</div>
             </div>
           )}
-          <div className="bg-white p-3 rounded-lg shadow text-center">
-            <div className="text-xl font-bold text-gray-800">{stats.uniqueAthletes}</div>
+          <div className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-green-400">
+            <div className="text-2xl font-bold text-green-500">{stats.uniqueAthletes}</div>
             <div className="text-xs text-gray-500">名运动员</div>
           </div>
-          <div className="bg-white p-3 rounded-lg shadow text-center">
-            <div className="text-xl font-bold text-gray-800">
+          <div className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-blue-400">
+            <div className="text-2xl font-bold text-blue-500">
               {viewMode === 'total' ? totalRankingsData.stats.totalResults : stats.totalAthletes}
             </div>
             <div className="text-xs text-gray-500">人次参赛</div>
@@ -455,22 +458,34 @@ export default function PointsRankingsPage() {
                       {filteredTotalRankings.map((item) => (
                         <tr
                           key={`${item.athleteId}-${item.ageGroup}-${item.gender}`}
-                          className="hover:bg-gray-50"
+                          className={`hover:bg-blue-50 transition-colors ${
+                            item.rank === 1 ? 'bg-yellow-50' :
+                            item.rank === 2 ? 'bg-gray-50' :
+                            item.rank === 3 ? 'bg-orange-50' : ''
+                          }`}
                         >
                           <td className="px-4 py-3 whitespace-nowrap text-center">
                             {getRankIcon(item.rank)}
                           </td>
                           <td className="px-4 py-3 whitespace-nowrap">
-                            <span className="text-sm font-medium text-gray-900">{item.athleteName}</span>
+                            <span className={`text-sm font-medium ${item.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
+                              {item.athleteName}
+                            </span>
                           </td>
                           <td className="px-4 py-3 text-sm text-gray-600" title={item.team}>
                             {item.team}
                           </td>
                           <td className="px-4 py-3 whitespace-nowrap text-center">
-                            <span className="text-sm text-gray-600">{item.ageGroup}</span>
+                            <span className={`inline-flex px-2 py-0.5 rounded-full text-xs font-medium ${
+                              item.ageGroup === 'U12' ? 'bg-green-100 text-green-700' :
+                              item.ageGroup === 'U15' ? 'bg-blue-100 text-blue-700' :
+                              'bg-purple-100 text-purple-700'
+                            }`}>
+                              {item.ageGroup}
+                            </span>
                           </td>
                           <td className="px-4 py-3 whitespace-nowrap text-center">
-                            <span className="text-sm text-gray-600">
+                            <span className={`text-sm ${item.gender === '男子组' ? 'text-blue-600' : 'text-pink-600'}`}>
                               {item.gender === '男子组' ? '男' : '女'}
                             </span>
                           </td>
@@ -478,10 +493,22 @@ export default function PointsRankingsPage() {
                             <span className="text-sm text-gray-600">{item.competitionCount}</span>
                           </td>
                           <td className="px-4 py-3 whitespace-nowrap text-center">
-                            <span className="text-sm text-gray-600">{item.bestRank}</span>
+                            <span className={`text-sm font-medium ${
+                              item.bestRank === 1 ? 'text-yellow-600' :
+                              item.bestRank <= 3 ? 'text-orange-600' : 'text-gray-600'
+                            }`}>
+                              {item.bestRank}
+                            </span>
                           </td>
                           <td className="px-4 py-3 whitespace-nowrap text-center">
-                            <span className="text-sm font-bold text-ski-blue">{item.totalPoints}</span>
+                            <span className={`inline-flex px-3 py-1 rounded-lg text-sm font-bold ${
+                              item.rank === 1 ? 'bg-yellow-400 text-yellow-900' :
+                              item.rank === 2 ? 'bg-gray-300 text-gray-800' :
+                              item.rank === 3 ? 'bg-orange-300 text-orange-900' :
+                              'bg-blue-100 text-blue-700'
+                            }`}>
+                              {item.totalPoints}
+                            </span>
                           </td>
                         </tr>
                       ))}
@@ -545,33 +572,59 @@ export default function PointsRankingsPage() {
                         </thead>
                         <tbody className="bg-white divide-y divide-gray-200">
                           {group.athletes.map((athlete, index) => (
-                            <tr key={index} className="hover:bg-gray-50">
+                            <tr
+                              key={index}
+                              className={`hover:bg-blue-50 transition-colors ${
+                                athlete.rank === 1 ? 'bg-yellow-50' :
+                                athlete.rank === 2 ? 'bg-gray-50' :
+                                athlete.rank === 3 ? 'bg-orange-50' : ''
+                              }`}
+                            >
                               <td className="px-4 py-3 whitespace-nowrap text-center">
                                 {getRankIcon(athlete.rank)}
                               </td>
-                              <td className="px-4 py-3 whitespace-nowrap text-center text-sm text-gray-600">
-                                {athlete.bib}
+                              <td className="px-4 py-3 whitespace-nowrap text-center">
+                                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 text-sm font-medium text-gray-600">
+                                  {athlete.bib}
+                                </span>
                               </td>
                               <td className="px-4 py-3 whitespace-nowrap">
-                                <span className="text-sm font-medium text-gray-900">{athlete.name}</span>
+                                <span className={`text-sm font-medium ${athlete.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
+                                  {athlete.name}
+                                </span>
                               </td>
                               <td className="px-4 py-3 text-sm text-gray-600 whitespace-nowrap" title={athlete.team}>
                                 {athlete.team}
                               </td>
                               {athlete.run1 && (
                                 <>
-                                  <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-600 text-center">{athlete.run1}</td>
-                                  <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-600 text-center">{athlete.run2}</td>
+                                  <td className="px-4 py-3 whitespace-nowrap text-center">
+                                    <span className="text-sm text-gray-600">{athlete.run1}</span>
+                                  </td>
+                                  <td className="px-4 py-3 whitespace-nowrap text-center">
+                                    <span className="text-sm text-gray-600">{athlete.run2}</span>
+                                  </td>
                                 </>
                               )}
                               <td className="px-4 py-3 whitespace-nowrap text-center">
-                                <span className="text-sm font-medium text-gray-900">
+                                <span className={`text-sm font-medium ${
+                                  athlete.rank === 1 ? 'text-yellow-600' :
+                                  athlete.rank === 2 ? 'text-gray-700' :
+                                  athlete.rank === 3 ? 'text-orange-600' : 'text-gray-900'
+                                }`}>
                                   {athlete.time || athlete.bestScore}
                                 </span>
                               </td>
                               {athlete.points !== undefined && (
                                 <td className="px-4 py-3 whitespace-nowrap text-center">
-                                  <span className="text-sm font-bold text-ski-blue">{athlete.points}</span>
+                                  <span className={`inline-flex px-3 py-1 rounded-lg text-sm font-bold ${
+                                    athlete.rank === 1 ? 'bg-yellow-400 text-yellow-900' :
+                                    athlete.rank === 2 ? 'bg-gray-300 text-gray-800' :
+                                    athlete.rank === 3 ? 'bg-orange-300 text-orange-900' :
+                                    'bg-blue-100 text-blue-700'
+                                  }`}>
+                                    {athlete.points}
+                                  </span>
                                 </td>
                               )}
                             </tr>
