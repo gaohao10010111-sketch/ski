@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { Trophy, Medal, Award, Crown, Download, Search } from 'lucide-react'
+import { Trophy, Medal, Award, Crown, Download, Search, ChevronLeft, ChevronRight } from 'lucide-react'
 import { latestResults, type AthleteResult } from '@/data/latestResults'
 import { useToast } from '@/components/Toast'
 import { totalRankingsData } from '@/data/totalRankings'
@@ -96,6 +96,8 @@ export default function PointsRankingsPage() {
   const [selectedGender, setSelectedGender] = useState('all')
   const [searchTerm, setSearchTerm] = useState('')
   const [isExporting, setIsExporting] = useState(false)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [pageSize, setPageSize] = useState(20)
   const { showToast } = useToast()
 
   const filterOptions = useMemo(() => extractFilterOptions(), [])
@@ -143,6 +145,21 @@ export default function PointsRankingsPage() {
       rank: index + 1
     }))
   }, [selectedAgeGroup, selectedGender, searchTerm])
+
+  // 分页计算
+  const totalPages = useMemo(() => {
+    return Math.ceil(filteredTotalRankings.length / pageSize)
+  }, [filteredTotalRankings.length, pageSize])
+
+  // 当前页数据
+  const paginatedRankings = useMemo(() => {
+    const start = (currentPage - 1) * pageSize
+    const end = start + pageSize
+    return filteredTotalRankings.slice(start, end)
+  }, [filteredTotalRankings, currentPage, pageSize])
+
+  // 筛选条件变化时重置页码
+  const resetPage = () => setCurrentPage(1)
 
   // 统计信息
   const stats = useMemo(() => {
@@ -313,7 +330,7 @@ export default function PointsRankingsPage() {
                 type="text"
                 placeholder="搜索运动员或单位..."
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={(e) => { setSearchTerm(e.target.value); resetPage(); }}
                 className="pl-10 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
               />
             </div>
@@ -355,7 +372,7 @@ export default function PointsRankingsPage() {
             <div>
               <select
                 value={selectedAgeGroup}
-                onChange={(e) => setSelectedAgeGroup(e.target.value)}
+                onChange={(e) => { setSelectedAgeGroup(e.target.value); resetPage(); }}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
               >
                 <option value="all">全部年龄组</option>
@@ -369,7 +386,7 @@ export default function PointsRankingsPage() {
             <div>
               <select
                 value={selectedGender}
-                onChange={(e) => setSelectedGender(e.target.value)}
+                onChange={(e) => { setSelectedGender(e.target.value); resetPage(); }}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
               >
                 <option value="all">男女不限</option>
@@ -455,7 +472,7 @@ export default function PointsRankingsPage() {
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
-                      {filteredTotalRankings.map((item) => (
+                      {paginatedRankings.map((item) => (
                         <tr
                           key={`${item.athleteId}-${item.ageGroup}-${item.gender}`}
                           className={`hover:bg-blue-50 transition-colors ${
@@ -515,6 +532,87 @@ export default function PointsRankingsPage() {
                     </tbody>
                   </table>
                 </div>
+
+                {/* 分页控件 */}
+                {totalPages > 1 && (
+                  <div className="px-4 py-4 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div className="flex items-center gap-4">
+                      <span className="text-sm text-gray-600">
+                        第 {currentPage} / {totalPages} 页，共 {filteredTotalRankings.length} 条
+                      </span>
+                      <select
+                        value={pageSize}
+                        onChange={(e) => { setPageSize(Number(e.target.value)); setCurrentPage(1); }}
+                        className="px-2 py-1 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                      >
+                        <option value={10}>10条/页</option>
+                        <option value={20}>20条/页</option>
+                        <option value={50}>50条/页</option>
+                        <option value={100}>100条/页</option>
+                      </select>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => setCurrentPage(1)}
+                        disabled={currentPage === 1}
+                        className="px-3 py-1 rounded border border-gray-300 text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        首页
+                      </button>
+                      <button
+                        onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+                        disabled={currentPage === 1}
+                        className="p-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        <ChevronLeft className="h-5 w-5" />
+                      </button>
+
+                      {/* 页码按钮 */}
+                      <div className="flex items-center gap-1">
+                        {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                          let pageNum: number
+                          if (totalPages <= 5) {
+                            pageNum = i + 1
+                          } else if (currentPage <= 3) {
+                            pageNum = i + 1
+                          } else if (currentPage >= totalPages - 2) {
+                            pageNum = totalPages - 4 + i
+                          } else {
+                            pageNum = currentPage - 2 + i
+                          }
+                          return (
+                            <button
+                              key={pageNum}
+                              onClick={() => setCurrentPage(pageNum)}
+                              className={`w-8 h-8 rounded text-sm font-medium ${
+                                currentPage === pageNum
+                                  ? 'bg-ski-blue text-white'
+                                  : 'border border-gray-300 text-gray-600 hover:bg-gray-100'
+                              }`}
+                            >
+                              {pageNum}
+                            </button>
+                          )
+                        })}
+                      </div>
+
+                      <button
+                        onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+                        disabled={currentPage === totalPages}
+                        className="p-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        <ChevronRight className="h-5 w-5" />
+                      </button>
+                      <button
+                        onClick={() => setCurrentPage(totalPages)}
+                        disabled={currentPage === totalPages}
+                        className="px-3 py-1 rounded border border-gray-300 text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        末页
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             )}
           </>
