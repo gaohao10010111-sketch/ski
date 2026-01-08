@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { Trophy, Medal, Award, Crown, Download, Search, ChevronLeft, ChevronRight, ArrowLeft, Users } from 'lucide-react'
+import { Trophy, Medal, Award, Crown, Download, Search, ChevronLeft, ChevronRight, ArrowLeft } from 'lucide-react'
 import { latestResults, type AthleteResult } from '@/data/latestResults'
 import { useToast } from '@/components/Toast'
 import { totalRankingsData } from '@/data/totalRankings'
@@ -334,34 +334,6 @@ export default function PointsRankingsPage() {
           <ArrowLeft className="w-4 h-4 mr-2" />
           返回首页
         </Link>
-
-        {/* 页面标题 */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full mb-4 shadow-lg">
-            <Trophy className="w-8 h-8 text-white" />
-          </div>
-          <h1 className="text-3xl font-bold text-ski-navy mb-2">积分排行榜</h1>
-          <p className="text-gray-500 text-sm">2025-2026赛季 · 全国青少年U系列赛事</p>
-        </div>
-
-        {/* 统计卡片 */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white rounded-lg shadow-md p-6 text-center">
-            <Trophy className="h-8 w-8 text-yellow-500 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-ski-navy">{stats.totalCompetitions}</div>
-            <div className="text-sm text-gray-600">场比赛</div>
-          </div>
-          <div className="bg-white rounded-lg shadow-md p-6 text-center">
-            <Award className="h-8 w-8 text-green-600 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-ski-navy">{filteredSportRankings.length}</div>
-            <div className="text-sm text-gray-600">个项目</div>
-          </div>
-          <div className="bg-white rounded-lg shadow-md p-6 text-center">
-            <Users className="h-8 w-8 text-blue-600 mx-auto mb-2" />
-            <div className="text-2xl font-bold text-ski-navy">{stats.uniqueAthletes}</div>
-            <div className="text-sm text-gray-600">名运动员</div>
-          </div>
-        </div>
 
         {/* 视图切换 */}
         <div className="flex justify-center mb-6">
