@@ -637,30 +637,51 @@ export default function HomePage() {
       </section>
 
       {/* 赛事报名入口 - 滑cool合作方 */}
-      <section className="py-8 bg-gradient-to-r from-orange-500 via-orange-600 to-red-500">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-6">
-              <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl p-2 shadow-lg flex-shrink-0">
-                <img
-                  src={getImagePath('/images/huacool-logo.png')}
-                  alt="滑cool"
-                  className="w-full h-full object-contain"
-                />
+      <section className="py-12 bg-gradient-to-br from-ski-navy via-blue-900 to-slate-900 relative overflow-hidden">
+        {/* 背景装饰 */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 md:p-8">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+              {/* 左侧信息 */}
+              <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+                <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl p-2.5 shadow-xl flex-shrink-0 ring-4 ring-orange-500/20">
+                  <img
+                    src={getImagePath('/images/huacool-logo.png')}
+                    alt="滑cool"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="text-white">
+                  <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
+                    <span className="px-2.5 py-0.5 bg-orange-500/20 text-orange-400 text-xs font-semibold rounded-full border border-orange-500/30">
+                      官方合作
+                    </span>
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-2">赛事报名入口</h3>
+                  <p className="text-white/70 text-sm md:text-base max-w-md">
+                    全国青少年U系列滑雪赛事官方报名平台，微信扫码即可报名参赛
+                  </p>
+                </div>
               </div>
-              <div className="text-white">
-                <h3 className="text-2xl md:text-3xl font-bold mb-2">赛事报名入口</h3>
-                <p className="text-white/90 text-sm md:text-base">官方合作报名平台 · 扫码即可报名参赛</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-6">
-              <div className="bg-white rounded-xl p-3 shadow-lg">
-                <img
-                  src={getImagePath('/images/huacool-qrcode.jpg')}
-                  alt="滑cool小程序码"
-                  className="w-32 h-32 md:w-40 md:h-40"
-                />
-                <p className="text-center text-gray-600 text-xs mt-2 font-medium">微信扫码报名</p>
+
+              {/* 右侧二维码 */}
+              <div className="flex-shrink-0">
+                <div className="bg-white rounded-2xl p-4 shadow-2xl transform hover:scale-105 transition-transform duration-300">
+                  <img
+                    src={getImagePath('/images/huacool-qrcode.jpg')}
+                    alt="滑cool小程序码"
+                    className="w-36 h-36 md:w-44 md:h-44 rounded-lg"
+                  />
+                  <div className="mt-3 text-center">
+                    <p className="text-gray-800 text-sm font-semibold">微信扫码报名</p>
+                    <p className="text-gray-500 text-xs mt-0.5">滑cool小程序</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

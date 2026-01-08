@@ -125,7 +125,7 @@ export default function PointsRankingsPage() {
     })).filter(group => group.athletes.length > 0)
   }, [rankingGroups, searchTerm])
 
-  // 按项目和子项分组的总积分排名筛选
+  // 按项目和小子项分组的总积分排名筛选
   const filteredSportRankings = useMemo(() => {
     // 获取要显示的项目列表
     let sportRankings = totalRankingsData.sportRankings
@@ -134,19 +134,23 @@ export default function PointsRankingsPage() {
       sportRankings = sportRankings.filter(sr => sr.sportType === selectedTotalSportType)
     }
 
-    // 对每个项目的每个子项应用年龄组、性别、搜索筛选
+    // 对每个项目的每个小子项应用年龄组、性别、搜索筛选
     return sportRankings.map(sr => {
-      const filteredDisciplineRankings = sr.disciplineRankings.map(dr => {
-        let rankings = dr.rankings
-
-        if (selectedAgeGroup !== 'all') {
-          rankings = rankings.filter(r => r.ageGroup === selectedAgeGroup)
+      // 使用 subEventRankings（小子项）代替 disciplineRankings
+      const filteredSubEventRankings = (sr.subEventRankings || []).filter(se => {
+        // 按年龄组筛选（小子项已经包含具体的年龄组）
+        if (selectedAgeGroup !== 'all' && se.ageGroup !== selectedAgeGroup) {
+          return false
         }
-
-        if (selectedGender !== 'all') {
-          rankings = rankings.filter(r => r.gender === selectedGender)
+        // 按性别筛选（小子项已经包含具体的性别）
+        if (selectedGender !== 'all' && se.gender !== selectedGender) {
+          return false
         }
+        return true
+      }).map(se => {
+        let rankings = se.rankings
 
+        // 搜索筛选
         if (searchTerm) {
           const term = searchTerm.toLowerCase()
           rankings = rankings.filter(r =>
@@ -157,27 +161,27 @@ export default function PointsRankingsPage() {
 
         // 重新计算排名
         return {
-          ...dr,
+          ...se,
           rankings: rankings.map((item, index) => ({
             ...item,
             rank: index + 1
           })),
           total: rankings.length
         }
-      }).filter(dr => dr.rankings.length > 0) // 过滤掉没有数据的子项
+      }).filter(se => se.rankings.length > 0) // 过滤掉没有数据的小子项
 
       return {
         ...sr,
-        disciplineRankings: filteredDisciplineRankings,
-        total: filteredDisciplineRankings.reduce((sum, dr) => sum + dr.total, 0)
+        subEventRankings: filteredSubEventRankings,
+        total: filteredSubEventRankings.reduce((sum, se) => sum + se.total, 0)
       }
-    }).filter(sr => sr.disciplineRankings.length > 0) // 过滤掉没有数据的项目
+    }).filter(sr => sr.subEventRankings && sr.subEventRankings.length > 0) // 过滤掉没有数据的项目
   }, [selectedTotalSportType, selectedAgeGroup, selectedGender, searchTerm])
 
   // 总积分排名筛选（兼容旧格式，用于导出等）
   const filteredTotalRankings = useMemo(() => {
-    // 合并所有筛选后的项目和子项排名
-    return filteredSportRankings.flatMap(sr => sr.disciplineRankings.flatMap(dr => dr.rankings))
+    // 合并所有筛选后的项目和小子项排名
+    return filteredSportRankings.flatMap(sr => (sr.subEventRankings || []).flatMap(se => se.rankings))
   }, [filteredSportRankings])
 
   // 分页计算
@@ -198,17 +202,17 @@ export default function PointsRankingsPage() {
     setSportPages({}) // 重置所有项目的分页
   }
 
-  // 获取某个子项的当前页码（key: sportType-discipline）
-  const getDisciplinePage = (sportType: string, discipline: string) => sportPages[`${sportType}-${discipline}`] || 1
+  // 获取某个小子项的当前页码（key: sportType-subEventName）
+  const getSubEventPage = (sportType: string, subEventName: string) => sportPages[`${sportType}-${subEventName}`] || 1
 
-  // 设置某个子项的页码
-  const setDisciplinePage = (sportType: string, discipline: string, page: number) => {
-    setSportPages(prev => ({ ...prev, [`${sportType}-${discipline}`]: page }))
+  // 设置某个小子项的页码
+  const setSubEventPage = (sportType: string, subEventName: string, page: number) => {
+    setSportPages(prev => ({ ...prev, [`${sportType}-${subEventName}`]: page }))
   }
 
-  // 计算某个子项的分页数据
-  const getPaginatedRankings = (rankings: any[], sportType: string, discipline: string) => {
-    const page = getDisciplinePage(sportType, discipline)
+  // 计算某个小子项的分页数据
+  const getPaginatedRankings = (rankings: any[], sportType: string, subEventName: string) => {
+    const page = getSubEventPage(sportType, subEventName)
     const start = (page - 1) * sportPageSize
     const end = start + sportPageSize
     return rankings.slice(start, end)
@@ -474,6 +478,7 @@ export default function PointsRankingsPage() {
             <span className="text-sm text-gray-600">
               {viewMode === 'total' ? (
                 <>共 <span className="font-bold text-yellow-600">{filteredSportRankings.length}</span> 个项目，
+                <span className="font-bold text-yellow-600">{filteredSportRankings.reduce((sum, sr) => sum + (sr.subEventRankings?.length || 0), 0)}</span> 个小子项，
                 <span className="font-bold text-yellow-600">{filteredTotalRankings.length}</span> 名运动员</>
               ) : (
                 <>共 <span className="font-bold text-purple-600">{stats.totalEvents}</span> 个小项，
@@ -509,76 +514,77 @@ export default function PointsRankingsPage() {
                       <div className="w-1 h-8 bg-ski-blue rounded-full"></div>
                       <h2 className="text-xl font-bold text-ski-navy">{sportRanking.sportName}</h2>
                       <span className="text-sm text-gray-500">
-                        {sportRanking.disciplineRankings.length} 个子项 · {sportRanking.total} 名运动员
+                        {sportRanking.subEventRankings?.length || 0} 个小子项 · {sportRanking.total} 名运动员
                       </span>
                     </div>
 
-                    {/* 子项列表 */}
+                    {/* 小子项列表 */}
                     <div className="space-y-4">
-                      {sportRanking.disciplineRankings.map((disciplineRanking) => {
+                      {(sportRanking.subEventRankings || []).map((subEvent) => {
                         // 获取前三名用于领奖台展示
-                        const top3 = disciplineRanking.rankings.slice(0, 3)
+                        const top3 = subEvent.rankings.slice(0, 3)
                         const hasTop3 = top3.length >= 3
 
                         return (
-                        <div key={`${sportRanking.sportType}-${disciplineRanking.discipline}`} className="bg-white rounded-lg shadow overflow-hidden">
-                          {/* 子项标题 */}
+                        <div key={`${sportRanking.sportType}-${subEvent.subEventName}`} className="bg-white rounded-lg shadow overflow-hidden">
+                          {/* 小子项标题 - 显示完整的子项名称（如：回转 U11 男子组） */}
                           <div className="bg-gradient-to-r from-ski-blue to-blue-600 px-4 py-3 text-white flex items-center justify-between">
                             <div className="flex items-center gap-3">
                               <Award className="h-5 w-5" />
-                              <h3 className="text-base font-medium">{disciplineRanking.discipline}</h3>
+                              <h3 className="text-base font-medium">{subEvent.subEventName}</h3>
                             </div>
                             <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
-                              {disciplineRanking.total} 名运动员
+                              {subEvent.total} 名运动员
                             </span>
                           </div>
 
-                          {/* 领奖台展示 - 前三名 */}
+                          {/* 领奖台展示 - 前三名（参考 results-announcement 页面样式） */}
                           {hasTop3 && (
-                            <div className="bg-gradient-to-b from-gray-50 to-white py-6 px-4">
-                              <div className="flex items-end justify-center gap-4 max-w-lg mx-auto">
-                                {/* 第二名 - 银牌 */}
-                                <div className="flex flex-col items-center">
-                                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gray-200 to-gray-400 flex items-center justify-center mb-2 shadow-lg ring-2 ring-gray-300">
-                                    <span className="text-2xl font-bold text-white">2</span>
+                            <div className="bg-gradient-to-br from-ski-navy to-blue-900 rounded-b-none p-8 text-white">
+                              <h4 className="text-lg font-bold text-center mb-6">领奖台</h4>
+                              <div className="flex justify-center items-end gap-4">
+                                {/* 银牌 - 第二名 */}
+                                <div className="text-center">
+                                  <div className="w-20 h-20 mx-auto mb-3 bg-gray-300 rounded-full flex items-center justify-center shadow-lg">
+                                    <Medal className="w-10 h-10 text-gray-600" />
                                   </div>
-                                  <div className="text-center mb-2">
-                                    <p className="font-bold text-gray-800 text-sm">{top3[1].athleteName}</p>
-                                    <p className="text-xs text-gray-500 truncate max-w-[80px]" title={top3[1].team}>{top3[1].team}</p>
-                                    <p className="text-sm font-bold text-gray-600 mt-1">{top3[1].totalPoints}分</p>
+                                  <div className="bg-gray-300 rounded-t-lg pt-4 pb-2 px-4 w-28">
+                                    <div className="text-gray-800 font-bold truncate">{top3[1].athleteName}</div>
+                                    <div className="text-gray-600 text-sm truncate">{top3[1].team}</div>
+                                    <div className="text-gray-700 text-xs mt-1">{top3[1].totalPoints}分</div>
                                   </div>
-                                  <div className="w-20 h-16 bg-gradient-to-t from-gray-300 to-gray-200 rounded-t-lg flex items-center justify-center">
-                                    <Medal className="h-6 w-6 text-gray-500" />
-                                  </div>
-                                </div>
-
-                                {/* 第一名 - 金牌 */}
-                                <div className="flex flex-col items-center -mt-4">
-                                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-300 to-yellow-500 flex items-center justify-center mb-2 shadow-xl ring-4 ring-yellow-200">
-                                    <Crown className="h-8 w-8 text-yellow-800" />
-                                  </div>
-                                  <div className="text-center mb-2">
-                                    <p className="font-bold text-gray-900">{top3[0].athleteName}</p>
-                                    <p className="text-xs text-gray-500 truncate max-w-[100px]" title={top3[0].team}>{top3[0].team}</p>
-                                    <p className="text-lg font-bold text-yellow-600 mt-1">{top3[0].totalPoints}分</p>
-                                  </div>
-                                  <div className="w-24 h-20 bg-gradient-to-t from-yellow-400 to-yellow-300 rounded-t-lg flex items-center justify-center">
-                                    <Trophy className="h-8 w-8 text-yellow-700" />
+                                  <div className="bg-gray-400 h-16 w-28 flex items-center justify-center text-2xl font-bold text-gray-700">
+                                    2
                                   </div>
                                 </div>
 
-                                {/* 第三名 - 铜牌 */}
-                                <div className="flex flex-col items-center">
-                                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-300 to-orange-500 flex items-center justify-center mb-2 shadow-lg ring-2 ring-orange-200">
-                                    <span className="text-2xl font-bold text-white">3</span>
+                                {/* 金牌 - 第一名 */}
+                                <div className="text-center -mt-4">
+                                  <div className="w-24 h-24 mx-auto mb-3 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg animate-pulse">
+                                    <Trophy className="w-12 h-12 text-yellow-800" />
                                   </div>
-                                  <div className="text-center mb-2">
-                                    <p className="font-bold text-gray-800 text-sm">{top3[2].athleteName}</p>
-                                    <p className="text-xs text-gray-500 truncate max-w-[80px]" title={top3[2].team}>{top3[2].team}</p>
-                                    <p className="text-sm font-bold text-orange-600 mt-1">{top3[2].totalPoints}分</p>
+                                  <div className="bg-yellow-400 rounded-t-lg pt-4 pb-2 px-4 w-32">
+                                    <div className="text-yellow-900 font-bold text-lg truncate">{top3[0].athleteName}</div>
+                                    <div className="text-yellow-800 text-sm truncate">{top3[0].team}</div>
+                                    <div className="text-yellow-900 text-xs mt-1">{top3[0].totalPoints}分</div>
                                   </div>
-                                  <div className="w-20 h-12 bg-gradient-to-t from-orange-400 to-orange-300 rounded-t-lg flex items-center justify-center">
-                                    <Award className="h-5 w-5 text-orange-700" />
+                                  <div className="bg-yellow-500 h-24 w-32 flex items-center justify-center text-3xl font-bold text-yellow-900">
+                                    1
+                                  </div>
+                                </div>
+
+                                {/* 铜牌 - 第三名 */}
+                                <div className="text-center">
+                                  <div className="w-20 h-20 mx-auto mb-3 bg-orange-400 rounded-full flex items-center justify-center shadow-lg">
+                                    <Medal className="w-10 h-10 text-orange-800" />
+                                  </div>
+                                  <div className="bg-orange-400 rounded-t-lg pt-4 pb-2 px-4 w-28">
+                                    <div className="text-orange-900 font-bold truncate">{top3[2].athleteName}</div>
+                                    <div className="text-orange-800 text-sm truncate">{top3[2].team}</div>
+                                    <div className="text-orange-900 text-xs mt-1">{top3[2].totalPoints}分</div>
+                                  </div>
+                                  <div className="bg-orange-500 h-12 w-28 flex items-center justify-center text-2xl font-bold text-orange-900">
+                                    3
                                   </div>
                                 </div>
                               </div>
@@ -592,17 +598,15 @@ export default function PointsRankingsPage() {
                                   <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-20">名次</th>
                                   <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
                                   <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
-                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">组别</th>
-                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">性别</th>
                                   <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">参赛</th>
                                   <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">最佳</th>
                                   <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-28">总积分</th>
                                 </tr>
                               </thead>
                               <tbody className="bg-white divide-y divide-gray-200">
-                                {getPaginatedRankings(disciplineRanking.rankings, sportRanking.sportType, disciplineRanking.discipline).map((item) => (
+                                {getPaginatedRankings(subEvent.rankings, sportRanking.sportType, subEvent.subEventName).map((item) => (
                                   <tr
-                                    key={`${sportRanking.sportType}-${disciplineRanking.discipline}-${item.athleteId}-${item.ageGroup}-${item.gender}`}
+                                    key={`${sportRanking.sportType}-${subEvent.subEventName}-${item.athleteId}`}
                                     className={`hover:bg-blue-50 transition-colors ${
                                       item.rank === 1 ? 'bg-yellow-50' :
                                       item.rank === 2 ? 'bg-gray-50' :
@@ -619,20 +623,6 @@ export default function PointsRankingsPage() {
                                     </td>
                                     <td className="px-4 py-3 text-sm text-gray-600" title={item.team}>
                                       {item.team}
-                                    </td>
-                                    <td className="px-4 py-3 whitespace-nowrap text-center">
-                                      <span className={`inline-flex px-2 py-0.5 rounded-full text-xs font-medium ${
-                                        item.ageGroup === 'U12' ? 'bg-green-100 text-green-700' :
-                                        item.ageGroup === 'U15' ? 'bg-blue-100 text-blue-700' :
-                                        'bg-purple-100 text-purple-700'
-                                      }`}>
-                                        {item.ageGroup}
-                                      </span>
-                                    </td>
-                                    <td className="px-4 py-3 whitespace-nowrap text-center">
-                                      <span className={`text-sm ${item.gender === '男子组' ? 'text-blue-600' : 'text-pink-600'}`}>
-                                        {item.gender === '男子组' ? '男' : '女'}
-                                      </span>
                                     </td>
                                     <td className="px-4 py-3 whitespace-nowrap text-center">
                                       <span className="text-sm text-gray-600">{item.competitionCount}</span>
@@ -662,16 +652,16 @@ export default function PointsRankingsPage() {
                           </div>
 
                           {/* 分页控件 */}
-                          {disciplineRanking.rankings.length > sportPageSize && (
+                          {subEvent.rankings.length > sportPageSize && (
                             <div className="px-4 py-3 bg-gray-50 flex items-center justify-between">
                               <div className="text-sm text-gray-500">
-                                第 {getDisciplinePage(sportRanking.sportType, disciplineRanking.discipline)} / {getTotalPages(disciplineRanking.rankings.length)} 页，
-                                共 {disciplineRanking.rankings.length} 名运动员
+                                第 {getSubEventPage(sportRanking.sportType, subEvent.subEventName)} / {getTotalPages(subEvent.rankings.length)} 页，
+                                共 {subEvent.rankings.length} 名运动员
                               </div>
                               <div className="flex items-center gap-2">
                                 <button
-                                  onClick={() => setDisciplinePage(sportRanking.sportType, disciplineRanking.discipline, getDisciplinePage(sportRanking.sportType, disciplineRanking.discipline) - 1)}
-                                  disabled={getDisciplinePage(sportRanking.sportType, disciplineRanking.discipline) === 1}
+                                  onClick={() => setSubEventPage(sportRanking.sportType, subEvent.subEventName, getSubEventPage(sportRanking.sportType, subEvent.subEventName) - 1)}
+                                  disabled={getSubEventPage(sportRanking.sportType, subEvent.subEventName) === 1}
                                   className="px-3 py-1 rounded border border-gray-300 text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
                                 >
                                   <ChevronLeft className="h-4 w-4" />
@@ -680,8 +670,8 @@ export default function PointsRankingsPage() {
                                 {/* 页码按钮 */}
                                 <div className="flex items-center gap-1">
                                   {(() => {
-                                    const totalPagesCount = getTotalPages(disciplineRanking.rankings.length)
-                                    const currentPageNum = getDisciplinePage(sportRanking.sportType, disciplineRanking.discipline)
+                                    const totalPagesCount = getTotalPages(subEvent.rankings.length)
+                                    const currentPageNum = getSubEventPage(sportRanking.sportType, subEvent.subEventName)
                                     const pages: (number | string)[] = []
 
                                     if (totalPagesCount <= 7) {
@@ -702,7 +692,7 @@ export default function PointsRankingsPage() {
                                       ) : (
                                         <button
                                           key={page}
-                                          onClick={() => setDisciplinePage(sportRanking.sportType, disciplineRanking.discipline, page as number)}
+                                          onClick={() => setSubEventPage(sportRanking.sportType, subEvent.subEventName, page as number)}
                                           className={`w-8 h-8 rounded text-sm ${
                                             currentPageNum === page
                                               ? 'bg-ski-blue text-white'
@@ -716,8 +706,8 @@ export default function PointsRankingsPage() {
                                   })()}
                                 </div>
                                 <button
-                                  onClick={() => setDisciplinePage(sportRanking.sportType, disciplineRanking.discipline, getDisciplinePage(sportRanking.sportType, disciplineRanking.discipline) + 1)}
-                                  disabled={getDisciplinePage(sportRanking.sportType, disciplineRanking.discipline) >= getTotalPages(disciplineRanking.rankings.length)}
+                                  onClick={() => setSubEventPage(sportRanking.sportType, subEvent.subEventName, getSubEventPage(sportRanking.sportType, subEvent.subEventName) + 1)}
+                                  disabled={getSubEventPage(sportRanking.sportType, subEvent.subEventName) >= getTotalPages(subEvent.rankings.length)}
                                   className="px-3 py-1 rounded border border-gray-300 text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
                                 >
                                   下一页

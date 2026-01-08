@@ -1,6 +1,7 @@
 /**
- * 生成按项目和子项分类的总积分排名静态数据
- * 先按四大项目分组，再按子项（discipline）细分
+ * 生成按项目和小子项分类的总积分排名静态数据
+ * 先按四大项目分组，再按小子项（discipline + ageGroup + gender）细分
+ * 每个小子项只包含一个年龄组和一个性别的运动员排名
  *
  * 运行: node scripts/generate-total-rankings-by-sport.js
  */
@@ -37,8 +38,14 @@ const sportTypeOrder = [
   'freestyle-slopestyle-bigair'
 ];
 
+// 年龄组排序顺序
+const ageGroupOrder = ['U11', 'U12', 'U15', 'U18'];
+
+// 性别排序顺序
+const genderOrder = ['男子组', '女子组'];
+
 function generateTotalRankingsBySport() {
-  console.log('开始生成按项目和子项分类的总积分排名数据...');
+  console.log('开始生成按项目和小子项分类的总积分排名数据...');
 
   // 获取所有比赛
   const competitions = db.prepare('SELECT * FROM Competition').all();
@@ -57,14 +64,14 @@ function generateTotalRankingsBySport() {
   `).all();
   console.log(`找到 ${results.length} 条成绩记录`);
 
-  // 按 sportType + discipline + athleteId + ageGroup + gender 分组统计
-  // key: `${mergedSportType}-${discipline}-${athleteId}-${ageGroup}-${gender}`
+  // 按 sportType + discipline + ageGroup + gender + athleteId 分组统计
+  // key: `${mergedSportType}-${discipline}-${ageGroup}-${gender}-${athleteId}`
   const athleteStatsMap = new Map();
 
   results.forEach(r => {
     // 将原始sportType映射到四大项目
     const mergedSportType = sportTypeMergeMap[r.sportType] || r.sportType;
-    const key = `${mergedSportType}-${r.discipline}-${r.athleteId}-${r.ageGroup}-${r.gender}`;
+    const key = `${mergedSportType}-${r.discipline}-${r.ageGroup}-${r.gender}-${r.athleteId}`;
 
     if (!athleteStatsMap.has(key)) {
       athleteStatsMap.set(key, {
@@ -91,35 +98,50 @@ function generateTotalRankingsBySport() {
     stats.results.push({ points: r.points, rank: r.rank });
   });
 
-  // 获取所有 sportType + discipline 组合
-  const sportDisciplineSet = new Set();
+  // 获取所有 sportType + discipline + ageGroup + gender 组合（小子项）
+  const subEventSet = new Set();
   Array.from(athleteStatsMap.values()).forEach(s => {
-    sportDisciplineSet.add(`${s.sportType}|||${s.discipline}`);
+    subEventSet.add(`${s.sportType}|||${s.discipline}|||${s.ageGroup}|||${s.gender}`);
   });
-  const sportDisciplines = Array.from(sportDisciplineSet).map(sd => {
-    const [sportType, discipline] = sd.split('|||');
-    return { sportType, discipline };
+  const subEvents = Array.from(subEventSet).map(se => {
+    const [sportType, discipline, ageGroup, gender] = se.split('|||');
+    return { sportType, discipline, ageGroup, gender };
   });
 
   // 按四大项目分组
   const sportRankingsList = [];
 
   for (const mainSportType of sportTypeOrder) {
-    // 找出该大项下的所有子项
-    const disciplinesForSport = sportDisciplines
-      .filter(sd => sd.sportType === mainSportType)
-      .map(sd => sd.discipline)
-      .sort();
+    // 找出该大项下的所有小子项，按 discipline -> ageGroup -> gender 排序
+    const subEventsForSport = subEvents
+      .filter(se => se.sportType === mainSportType)
+      .sort((a, b) => {
+        // 先按 discipline 排序
+        if (a.discipline !== b.discipline) return a.discipline.localeCompare(b.discipline);
+        // 再按 ageGroup 排序
+        const aAgeIdx = ageGroupOrder.indexOf(a.ageGroup);
+        const bAgeIdx = ageGroupOrder.indexOf(b.ageGroup);
+        if (aAgeIdx !== bAgeIdx) return aAgeIdx - bAgeIdx;
+        // 最后按 gender 排序
+        const aGenderIdx = genderOrder.indexOf(a.gender);
+        const bGenderIdx = genderOrder.indexOf(b.gender);
+        return aGenderIdx - bGenderIdx;
+      });
 
-    if (disciplinesForSport.length === 0) continue;
+    if (subEventsForSport.length === 0) continue;
 
-    // 生成该大项下各子项的排名
-    const disciplineRankings = [];
+    // 生成该大项下各小子项的排名
+    const subEventRankings = [];
 
-    for (const discipline of disciplinesForSport) {
-      // 筛选该子项的运动员
+    for (const subEvent of subEventsForSport) {
+      // 筛选该小子项的运动员（同一 discipline + ageGroup + gender）
       const athleteStats = Array.from(athleteStatsMap.values())
-        .filter(s => s.sportType === mainSportType && s.discipline === discipline)
+        .filter(s =>
+          s.sportType === mainSportType &&
+          s.discipline === subEvent.discipline &&
+          s.ageGroup === subEvent.ageGroup &&
+          s.gender === subEvent.gender
+        )
         .sort((a, b) => b.totalPoints - a.totalPoints);
 
       const rankings = athleteStats.map((stats, index) => ({
@@ -135,23 +157,29 @@ function generateTotalRankingsBySport() {
         gender: stats.gender
       }));
 
-      disciplineRankings.push({
-        discipline,
+      // 小子项名称：如 "回转 U11 男子组"
+      const subEventName = `${subEvent.discipline} ${subEvent.ageGroup} ${subEvent.gender}`;
+
+      subEventRankings.push({
+        discipline: subEvent.discipline,
+        ageGroup: subEvent.ageGroup,
+        gender: subEvent.gender,
+        subEventName,
         rankings,
         total: rankings.length
       });
 
-      console.log(`  ${sportTypeNames[mainSportType]} - ${discipline}: ${rankings.length} 名运动员`);
+      console.log(`  ${sportTypeNames[mainSportType]} - ${subEventName}: ${rankings.length} 名运动员`);
     }
 
     sportRankingsList.push({
       sportType: mainSportType,
       sportName: sportTypeNames[mainSportType] || mainSportType,
-      disciplineRankings,
-      total: disciplineRankings.reduce((sum, dr) => sum + dr.total, 0)
+      subEventRankings,
+      total: subEventRankings.reduce((sum, se) => sum + se.total, 0)
     });
 
-    console.log(`${sportTypeNames[mainSportType]}: ${disciplineRankings.length} 个子项`);
+    console.log(`${sportTypeNames[mainSportType]}: ${subEventRankings.length} 个小子项`);
   }
 
   // 获取筛选选项
@@ -169,7 +197,7 @@ function generateTotalRankingsBySport() {
 
   // 合并所有项目的排名（兼容旧格式）
   const allRankings = sportRankingsList
-    .flatMap(sr => sr.disciplineRankings.flatMap(dr => dr.rankings))
+    .flatMap(sr => sr.subEventRankings.flatMap(se => se.rankings))
     .sort((a, b) => b.totalPoints - a.totalPoints)
     .map((r, i) => ({ ...r, rank: i + 1 }));
 
@@ -211,8 +239,11 @@ export interface TotalRankingItem {
   gender: string;
 }
 
-export interface DisciplineRankings {
+export interface SubEventRankings {
   discipline: string;
+  ageGroup: string;
+  gender: string;
+  subEventName: string;
   rankings: TotalRankingItem[];
   total: number;
 }
@@ -220,7 +251,7 @@ export interface DisciplineRankings {
 export interface SportRankings {
   sportType: string;
   sportName: string;
-  disciplineRankings: DisciplineRankings[];
+  subEventRankings: SubEventRankings[];
   total: number;
 }
 
@@ -253,12 +284,12 @@ export const totalRankingsData: TotalRankingsData = ${JSON.stringify(data, null,
   console.log(`比赛数: ${stats.competitionCount}`);
 
   // 输出每个子项前3名
-  console.log('\n各子项前3名:');
+  console.log('\n各小子项前3名:');
   for (const sr of sportRankingsList) {
     console.log(`\n【${sr.sportName}】`);
-    for (const dr of sr.disciplineRankings) {
-      console.log(`  [${dr.discipline}]`);
-      dr.rankings.slice(0, 3).forEach(r => {
+    for (const se of sr.subEventRankings) {
+      console.log(`  [${se.subEventName}]`);
+      se.rankings.slice(0, 3).forEach(r => {
         console.log(`    ${r.rank}. ${r.athleteName} (${r.team}) - ${r.totalPoints}分`);
       });
     }
