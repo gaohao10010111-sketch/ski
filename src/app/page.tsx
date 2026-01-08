@@ -636,53 +636,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 赛事报名入口 - 滑cool合作方 */}
-      <section className="py-12 bg-gradient-to-br from-ski-navy via-blue-900 to-slate-900 relative overflow-hidden">
-        {/* 背景装饰 */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
-        </div>
+      {/* 赛事报名入口 - 精致紧凑版 */}
+      <section className="py-6 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center gap-6 md:gap-10">
+            {/* Logo */}
+            <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-xl p-1.5 shadow-md flex-shrink-0 border border-gray-100">
+              <img
+                src={getImagePath('/images/huacool-logo.png')}
+                alt="滑cool"
+                className="w-full h-full object-contain"
+              />
+            </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 md:p-8">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-              {/* 左侧信息 */}
-              <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
-                <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-2xl p-2.5 shadow-xl flex-shrink-0 ring-4 ring-orange-500/20">
-                  <img
-                    src={getImagePath('/images/huacool-logo.png')}
-                    alt="滑cool"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <div className="text-white">
-                  <div className="flex items-center justify-center md:justify-start gap-2 mb-2">
-                    <span className="px-2.5 py-0.5 bg-orange-500/20 text-orange-400 text-xs font-semibold rounded-full border border-orange-500/30">
-                      官方合作
-                    </span>
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-2">赛事报名入口</h3>
-                  <p className="text-white/70 text-sm md:text-base max-w-md">
-                    全国青少年U系列滑雪赛事官方报名平台，微信扫码即可报名参赛
-                  </p>
-                </div>
+            {/* 文字信息 */}
+            <div className="text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
+                <h3 className="text-base md:text-lg font-bold text-gray-900">赛事报名入口</h3>
+                <span className="px-1.5 py-0.5 bg-orange-100 text-orange-600 text-[10px] font-medium rounded">
+                  官方
+                </span>
               </div>
+              <p className="text-gray-500 text-xs md:text-sm">
+                微信扫码进入滑cool小程序报名参赛
+              </p>
+            </div>
 
-              {/* 右侧二维码 */}
-              <div className="flex-shrink-0">
-                <div className="bg-white rounded-2xl p-4 shadow-2xl transform hover:scale-105 transition-transform duration-300">
-                  <img
-                    src={getImagePath('/images/huacool-qrcode.jpg')}
-                    alt="滑cool小程序码"
-                    className="w-36 h-36 md:w-44 md:h-44 rounded-lg"
-                  />
-                  <div className="mt-3 text-center">
-                    <p className="text-gray-800 text-sm font-semibold">微信扫码报名</p>
-                    <p className="text-gray-500 text-xs mt-0.5">滑cool小程序</p>
-                  </div>
-                </div>
+            {/* 分隔线 */}
+            <div className="hidden md:block w-px h-12 bg-gray-200"></div>
+
+            {/* 二维码 */}
+            <div className="flex-shrink-0 group">
+              <div className="bg-white rounded-xl p-2 shadow-sm border border-gray-100 group-hover:shadow-md group-hover:border-orange-200 transition-all duration-200">
+                <img
+                  src={getImagePath('/images/huacool-qrcode.jpg')}
+                  alt="滑cool小程序码"
+                  className="w-20 h-20 md:w-24 md:h-24 rounded-lg"
+                />
               </div>
+              <p className="text-center text-gray-400 text-[10px] mt-1.5">微信扫码</p>
             </div>
           </div>
         </div>
