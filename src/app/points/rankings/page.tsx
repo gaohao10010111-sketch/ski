@@ -634,14 +634,25 @@ export default function PointsRankingsPage() {
                     {/* 组别标题 */}
                     <div className="bg-ski-blue px-4 py-3 text-white">
                       <h2 className="text-base font-medium">{group.competition}</h2>
-                      <div className="flex flex-wrap gap-2 mt-1 text-sm text-blue-100">
-                        <span>{sportTypeLabels[group.sportType] || group.sportType}</span>
-                        <span>·</span>
-                        <span>{group.discipline}</span>
-                        <span>·</span>
-                        <span>{group.ageGroup}</span>
-                        <span>·</span>
-                        <span>{group.gender}</span>
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        <span className="inline-flex px-2 py-0.5 rounded bg-blue-500 text-xs">
+                          {sportTypeLabels[group.sportType] || group.sportType}
+                        </span>
+                        <span className="inline-flex px-2 py-0.5 rounded bg-blue-500 text-xs">
+                          {group.discipline}
+                        </span>
+                        <span className={`inline-flex px-2 py-0.5 rounded text-xs ${
+                          group.ageGroup === 'U12' ? 'bg-green-500' :
+                          group.ageGroup === 'U15' ? 'bg-yellow-500 text-yellow-900' :
+                          'bg-purple-500'
+                        }`}>
+                          {group.ageGroup}
+                        </span>
+                        <span className={`inline-flex px-2 py-0.5 rounded text-xs ${
+                          group.gender === '男子组' ? 'bg-sky-400' : 'bg-pink-400'
+                        }`}>
+                          {group.gender}
+                        </span>
                       </div>
                     </div>
 
