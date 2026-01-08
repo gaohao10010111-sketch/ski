@@ -296,7 +296,8 @@ export const latestResults: ResultsData = {
               "run1": "29.56",
               "run2": "29.88",
               "time": "59.44",
-              "diff": "0.00"
+              "diff": "0.00",
+              "points": 360
             },
             {
               "rank": 2,
@@ -306,7 +307,8 @@ export const latestResults: ResultsData = {
               "run1": "30.70",
               "run2": "30.74",
               "time": "1:01.44",
-              "diff": "2.00"
+              "diff": "2.00",
+              "points": 329
             },
             {
               "rank": 3,
@@ -316,7 +318,8 @@ export const latestResults: ResultsData = {
               "run1": "30.95",
               "run2": "31.51",
               "time": "1:02.46",
-              "diff": "3.02"
+              "diff": "3.02",
+              "points": 303
             }
           ]
         },
@@ -333,7 +336,8 @@ export const latestResults: ResultsData = {
               "run1": "27.82",
               "run2": "28.28",
               "time": "56.10",
-              "diff": "0.00"
+              "diff": "0.00",
+              "points": 360
             },
             {
               "rank": 2,
@@ -343,7 +347,8 @@ export const latestResults: ResultsData = {
               "run1": "28.53",
               "run2": "28.41",
               "time": "56.94",
-              "diff": "0.84"
+              "diff": "0.84",
+              "points": 329
             },
             {
               "rank": 3,
@@ -353,7 +358,8 @@ export const latestResults: ResultsData = {
               "run1": "28.67",
               "run2": "28.43",
               "time": "57.10",
-              "diff": "1.00"
+              "diff": "1.00",
+              "points": 303
             },
             {
               "rank": 4,
@@ -363,7 +369,8 @@ export const latestResults: ResultsData = {
               "run1": "28.61",
               "run2": "28.65",
               "time": "57.26",
-              "diff": "1.16"
+              "diff": "1.16",
+              "points": 280
             },
             {
               "rank": 5,
@@ -373,7 +380,8 @@ export const latestResults: ResultsData = {
               "run1": "28.64",
               "run2": "28.67",
               "time": "57.31",
-              "diff": "1.21"
+              "diff": "1.21",
+              "points": 260
             },
             {
               "rank": 6,
@@ -383,7 +391,8 @@ export const latestResults: ResultsData = {
               "run1": "28.70",
               "run2": "28.63",
               "time": "57.33",
-              "diff": "1.23"
+              "diff": "1.23",
+              "points": 242
             },
             {
               "rank": 7,
@@ -393,7 +402,8 @@ export const latestResults: ResultsData = {
               "run1": "29.16",
               "run2": "28.60",
               "time": "57.76",
-              "diff": "1.66"
+              "diff": "1.66",
+              "points": 226
             },
             {
               "rank": 8,
@@ -403,7 +413,8 @@ export const latestResults: ResultsData = {
               "run1": "29.04",
               "run2": "29.55",
               "time": "58.59",
-              "diff": "2.49"
+              "diff": "2.49",
+              "points": 212
             },
             {
               "rank": 9,
@@ -413,7 +424,8 @@ export const latestResults: ResultsData = {
               "run1": "30.32",
               "run2": "30.41",
               "time": "1:00.73",
-              "diff": "4.63"
+              "diff": "4.63",
+              "points": 199
             },
             {
               "rank": 10,
@@ -423,7 +435,8 @@ export const latestResults: ResultsData = {
               "run1": "33.39",
               "run2": "31.61",
               "time": "1:05.00",
-              "diff": "8.90"
+              "diff": "8.90",
+              "points": 187
             }
           ]
         },
@@ -440,7 +453,8 @@ export const latestResults: ResultsData = {
               "run1": "35.56",
               "run2": "35.40",
               "time": "1:10.96",
-              "diff": "0.00"
+              "diff": "0.00",
+              "points": 360
             },
             {
               "rank": 2,
@@ -450,7 +464,8 @@ export const latestResults: ResultsData = {
               "run1": "36.12",
               "run2": "36.89",
               "time": "1:13.01",
-              "diff": "2.05"
+              "diff": "2.05",
+              "points": 329
             },
             {
               "rank": 3,
@@ -460,7 +475,8 @@ export const latestResults: ResultsData = {
               "run1": "38.06",
               "run2": "39.94",
               "time": "1:18.00",
-              "diff": "7.04"
+              "diff": "7.04",
+              "points": 303
             },
             {
               "rank": 4,
@@ -470,7 +486,8 @@ export const latestResults: ResultsData = {
               "run1": "39.03",
               "run2": "39.44",
               "time": "1:18.47",
-              "diff": "7.51"
+              "diff": "7.51",
+              "points": 280
             },
             {
               "rank": 5,
@@ -480,7 +497,8 @@ export const latestResults: ResultsData = {
               "run1": "39.72",
               "run2": "39.15",
               "time": "1:18.87",
-              "diff": "7.91"
+              "diff": "7.91",
+              "points": 260
             },
             {
               "rank": 6,
@@ -490,7 +508,8 @@ export const latestResults: ResultsData = {
               "run1": "40.10",
               "run2": "39.71",
               "time": "1:19.81",
-              "diff": "8.85"
+              "diff": "8.85",
+              "points": 242
             },
             {
               "rank": 7,
@@ -500,7 +519,8 @@ export const latestResults: ResultsData = {
               "run1": "46.10",
               "run2": "41.73",
               "time": "1:27.83",
-              "diff": "16.87"
+              "diff": "16.87",
+              "points": 226
             }
           ]
         },
@@ -527,7 +547,8 @@ export const latestResults: ResultsData = {
               "run1": "33.93",
               "run2": "33.82",
               "time": "1:07.75",
-              "diff": "5.90"
+              "diff": "5.90",
+              "points": 329
             },
             {
               "rank": 3,
@@ -537,7 +558,8 @@ export const latestResults: ResultsData = {
               "run1": "34.56",
               "run2": "33.24",
               "time": "1:07.80",
-              "diff": "5.95"
+              "diff": "5.95",
+              "points": 303
             },
             {
               "rank": 4,
@@ -547,7 +569,8 @@ export const latestResults: ResultsData = {
               "run1": "40.62",
               "run2": "37.16",
               "time": "1:17.78",
-              "diff": "15.93"
+              "diff": "15.93",
+              "points": 280
             }
           ]
         },
@@ -564,7 +587,8 @@ export const latestResults: ResultsData = {
               "run1": "31.05",
               "run2": "30.75",
               "time": "1:01.80",
-              "diff": "0.00"
+              "diff": "0.00",
+              "points": 360
             },
             {
               "rank": 2,
@@ -574,7 +598,8 @@ export const latestResults: ResultsData = {
               "run1": "31.23",
               "run2": "30.92",
               "time": "1:02.15",
-              "diff": "0.35"
+              "diff": "0.35",
+              "points": 329
             },
             {
               "rank": 3,
@@ -584,7 +609,8 @@ export const latestResults: ResultsData = {
               "run1": "35.31",
               "run2": "34.83",
               "time": "1:10.14",
-              "diff": "8.34"
+              "diff": "8.34",
+              "points": 303
             },
             {
               "rank": 4,
@@ -594,7 +620,8 @@ export const latestResults: ResultsData = {
               "run1": "39.42",
               "run2": "36.93",
               "time": "1:16.35",
-              "diff": "14.55"
+              "diff": "14.55",
+              "points": 280
             },
             {
               "rank": 5,
@@ -604,7 +631,8 @@ export const latestResults: ResultsData = {
               "run1": "41.97",
               "run2": "43.99",
               "time": "1:25.96",
-              "diff": "24.16"
+              "diff": "24.16",
+              "points": 260
             }
           ]
         },
@@ -621,7 +649,8 @@ export const latestResults: ResultsData = {
               "run1": "31.47",
               "run2": "31.39",
               "time": "1:02.86",
-              "diff": "0.00"
+              "diff": "0.00",
+              "points": 360
             },
             {
               "rank": 2,
@@ -631,7 +660,8 @@ export const latestResults: ResultsData = {
               "run1": "31.78",
               "run2": "32.19",
               "time": "1:03.97",
-              "diff": "1.11"
+              "diff": "1.11",
+              "points": 329
             },
             {
               "rank": 3,
@@ -641,7 +671,8 @@ export const latestResults: ResultsData = {
               "run1": "32.89",
               "run2": "31.82",
               "time": "1:04.71",
-              "diff": "1.85"
+              "diff": "1.85",
+              "points": 303
             },
             {
               "rank": 4,
@@ -651,7 +682,8 @@ export const latestResults: ResultsData = {
               "run1": "34.42",
               "run2": "34.13",
               "time": "1:08.55",
-              "diff": "5.69"
+              "diff": "5.69",
+              "points": 280
             },
             {
               "rank": 5,
@@ -661,7 +693,8 @@ export const latestResults: ResultsData = {
               "run1": "35.24",
               "run2": "35.46",
               "time": "1:10.70",
-              "diff": "7.84"
+              "diff": "7.84",
+              "points": 260
             },
             {
               "rank": 6,
@@ -671,7 +704,8 @@ export const latestResults: ResultsData = {
               "run1": "37.09",
               "run2": "36.82",
               "time": "1:13.91",
-              "diff": "11.05"
+              "diff": "11.05",
+              "points": 242
             }
           ]
         },
@@ -688,7 +722,8 @@ export const latestResults: ResultsData = {
               "run1": "21.90",
               "run2": "21.95",
               "time": "43.85",
-              "diff": "0.00"
+              "diff": "0.00",
+              "points": 360
             },
             {
               "rank": 2,
@@ -698,7 +733,8 @@ export const latestResults: ResultsData = {
               "run1": "22.46",
               "run2": "22.12",
               "time": "44.58",
-              "diff": "0.73"
+              "diff": "0.73",
+              "points": 329
             },
             {
               "rank": 3,
@@ -708,7 +744,8 @@ export const latestResults: ResultsData = {
               "run1": "22.43",
               "run2": "22.45",
               "time": "44.88",
-              "diff": "1.03"
+              "diff": "1.03",
+              "points": 303
             },
             {
               "rank": 4,
@@ -718,7 +755,8 @@ export const latestResults: ResultsData = {
               "run1": "22.87",
               "run2": "22.79",
               "time": "45.66",
-              "diff": "1.81"
+              "diff": "1.81",
+              "points": 280
             },
             {
               "rank": 5,
@@ -728,7 +766,8 @@ export const latestResults: ResultsData = {
               "run1": "23.54",
               "run2": "23.81",
               "time": "47.35",
-              "diff": "3.50"
+              "diff": "3.50",
+              "points": 260
             },
             {
               "rank": 6,
@@ -738,7 +777,8 @@ export const latestResults: ResultsData = {
               "run1": "25.22",
               "run2": "24.57",
               "time": "49.79",
-              "diff": "5.94"
+              "diff": "5.94",
+              "points": 242
             }
           ]
         },
@@ -755,7 +795,8 @@ export const latestResults: ResultsData = {
               "run1": "20.73",
               "run2": "20.90",
               "time": "41.63",
-              "diff": "0.00"
+              "diff": "0.00",
+              "points": 360
             },
             {
               "rank": 2,
@@ -765,7 +806,8 @@ export const latestResults: ResultsData = {
               "run1": "21.20",
               "run2": "20.92",
               "time": "42.12",
-              "diff": "0.49"
+              "diff": "0.49",
+              "points": 329
             },
             {
               "rank": 3,
@@ -775,7 +817,8 @@ export const latestResults: ResultsData = {
               "run1": "21.42",
               "run2": "20.90",
               "time": "42.32",
-              "diff": "0.69"
+              "diff": "0.69",
+              "points": 303
             },
             {
               "rank": 4,
@@ -785,7 +828,8 @@ export const latestResults: ResultsData = {
               "run1": "21.40",
               "run2": "21.07",
               "time": "42.47",
-              "diff": "0.84"
+              "diff": "0.84",
+              "points": 280
             },
             {
               "rank": 5,
@@ -795,7 +839,8 @@ export const latestResults: ResultsData = {
               "run1": "21.37",
               "run2": "21.16",
               "time": "42.53",
-              "diff": "0.90"
+              "diff": "0.90",
+              "points": 260
             },
             {
               "rank": 6,
@@ -805,7 +850,8 @@ export const latestResults: ResultsData = {
               "run1": "21.41",
               "run2": "21.18",
               "time": "42.59",
-              "diff": "0.96"
+              "diff": "0.96",
+              "points": 242
             },
             {
               "rank": 7,
@@ -815,7 +861,8 @@ export const latestResults: ResultsData = {
               "run1": "21.30",
               "run2": "21.38",
               "time": "42.68",
-              "diff": "1.05"
+              "diff": "1.05",
+              "points": 226
             },
             {
               "rank": 8,
@@ -825,7 +872,8 @@ export const latestResults: ResultsData = {
               "run1": "21.32",
               "run2": "21.50",
               "time": "42.82",
-              "diff": "1.19"
+              "diff": "1.19",
+              "points": 212
             },
             {
               "rank": 9,
@@ -835,7 +883,8 @@ export const latestResults: ResultsData = {
               "run1": "21.68",
               "run2": "21.30",
               "time": "42.98",
-              "diff": "1.35"
+              "diff": "1.35",
+              "points": 199
             },
             {
               "rank": 10,
@@ -845,7 +894,8 @@ export const latestResults: ResultsData = {
               "run1": "21.94",
               "run2": "21.35",
               "time": "43.29",
-              "diff": "1.66"
+              "diff": "1.66",
+              "points": 187
             }
           ]
         },
@@ -862,7 +912,8 @@ export const latestResults: ResultsData = {
               "run1": "24.52",
               "run2": "24.75",
               "time": "49.27",
-              "diff": "0.00"
+              "diff": "0.00",
+              "points": 360
             },
             {
               "rank": 2,
@@ -872,7 +923,8 @@ export const latestResults: ResultsData = {
               "run1": "25.36",
               "run2": "25.12",
               "time": "50.48",
-              "diff": "1.21"
+              "diff": "1.21",
+              "points": 329
             },
             {
               "rank": 3,
@@ -882,7 +934,8 @@ export const latestResults: ResultsData = {
               "run1": "26.08",
               "run2": "25.73",
               "time": "51.81",
-              "diff": "2.54"
+              "diff": "2.54",
+              "points": 303
             },
             {
               "rank": 4,
@@ -892,7 +945,8 @@ export const latestResults: ResultsData = {
               "run1": "26.06",
               "run2": "26.02",
               "time": "52.08",
-              "diff": "2.81"
+              "diff": "2.81",
+              "points": 280
             },
             {
               "rank": 5,
@@ -902,7 +956,8 @@ export const latestResults: ResultsData = {
               "run1": "25.93",
               "run2": "26.35",
               "time": "52.28",
-              "diff": "3.01"
+              "diff": "3.01",
+              "points": 260
             },
             {
               "rank": 6,
@@ -912,7 +967,8 @@ export const latestResults: ResultsData = {
               "run1": "26.93",
               "run2": "26.27",
               "time": "53.20",
-              "diff": "3.93"
+              "diff": "3.93",
+              "points": 242
             },
             {
               "rank": 7,
@@ -922,7 +978,8 @@ export const latestResults: ResultsData = {
               "run1": "27.24",
               "run2": "26.65",
               "time": "53.89",
-              "diff": "4.62"
+              "diff": "4.62",
+              "points": 226
             }
           ]
         },
@@ -939,7 +996,8 @@ export const latestResults: ResultsData = {
               "run1": "23.03",
               "run2": "23.07",
               "time": "46.10",
-              "diff": "0.00"
+              "diff": "0.00",
+              "points": 360
             },
             {
               "rank": 2,
@@ -949,7 +1007,8 @@ export const latestResults: ResultsData = {
               "run1": "24.47",
               "run2": "23.77",
               "time": "48.24",
-              "diff": "2.14"
+              "diff": "2.14",
+              "points": 329
             },
             {
               "rank": 3,
@@ -959,7 +1018,8 @@ export const latestResults: ResultsData = {
               "run1": "24.52",
               "run2": "24.45",
               "time": "48.97",
-              "diff": "2.87"
+              "diff": "2.87",
+              "points": 303
             },
             {
               "rank": 4,
@@ -969,7 +1029,8 @@ export const latestResults: ResultsData = {
               "run1": "24.66",
               "run2": "24.63",
               "time": "49.29",
-              "diff": "3.19"
+              "diff": "3.19",
+              "points": 280
             },
             {
               "rank": 5,
@@ -979,7 +1040,8 @@ export const latestResults: ResultsData = {
               "run1": "24.70",
               "run2": "24.69",
               "time": "49.39",
-              "diff": "3.29"
+              "diff": "3.29",
+              "points": 260
             },
             {
               "rank": 6,
@@ -989,7 +1051,8 @@ export const latestResults: ResultsData = {
               "run1": "24.75",
               "run2": "24.87",
               "time": "49.62",
-              "diff": "3.52"
+              "diff": "3.52",
+              "points": 242
             },
             {
               "rank": 7,
@@ -999,7 +1062,8 @@ export const latestResults: ResultsData = {
               "run1": "27.30",
               "run2": "27.25",
               "time": "54.55",
-              "diff": "8.45"
+              "diff": "8.45",
+              "points": 226
             },
             {
               "rank": 8,
@@ -1009,7 +1073,8 @@ export const latestResults: ResultsData = {
               "run1": "29.62",
               "run2": "29.94",
               "time": "59.56",
-              "diff": "13.46"
+              "diff": "13.46",
+              "points": 212
             }
           ]
         },
@@ -1026,7 +1091,8 @@ export const latestResults: ResultsData = {
               "run1": "23.26",
               "run2": "23.02",
               "time": "46.28",
-              "diff": "0.00"
+              "diff": "0.00",
+              "points": 360
             },
             {
               "rank": 2,
@@ -1036,7 +1102,8 @@ export const latestResults: ResultsData = {
               "run1": "23.66",
               "run2": "23.53",
               "time": "47.19",
-              "diff": "0.91"
+              "diff": "0.91",
+              "points": 329
             },
             {
               "rank": 3,
@@ -1046,7 +1113,8 @@ export const latestResults: ResultsData = {
               "run1": "23.92",
               "run2": "23.48",
               "time": "47.40",
-              "diff": "1.12"
+              "diff": "1.12",
+              "points": 303
             },
             {
               "rank": 4,
@@ -1056,7 +1124,8 @@ export const latestResults: ResultsData = {
               "run1": "25.98",
               "run2": "25.93",
               "time": "51.91",
-              "diff": "5.63"
+              "diff": "5.63",
+              "points": 280
             },
             {
               "rank": 5,
@@ -1066,7 +1135,8 @@ export const latestResults: ResultsData = {
               "run1": "27.34",
               "run2": "25.56",
               "time": "52.90",
-              "diff": "6.62"
+              "diff": "6.62",
+              "points": 260
             }
           ]
         },
@@ -1083,7 +1153,8 @@ export const latestResults: ResultsData = {
               "run1": "22.81",
               "run2": "22.48",
               "time": "45.29",
-              "diff": "0.00"
+              "diff": "0.00",
+              "points": 360
             },
             {
               "rank": 2,
@@ -1093,7 +1164,8 @@ export const latestResults: ResultsData = {
               "run1": "22.57",
               "run2": "22.83",
               "time": "45.40",
-              "diff": "0.11"
+              "diff": "0.11",
+              "points": 329
             },
             {
               "rank": 3,
@@ -1103,7 +1175,8 @@ export const latestResults: ResultsData = {
               "run1": "22.92",
               "run2": "23.35",
               "time": "46.27",
-              "diff": "0.98"
+              "diff": "0.98",
+              "points": 303
             },
             {
               "rank": 4,
@@ -1113,7 +1186,8 @@ export const latestResults: ResultsData = {
               "run1": "23.22",
               "run2": "23.18",
               "time": "46.40",
-              "diff": "1.11"
+              "diff": "1.11",
+              "points": 280
             },
             {
               "rank": 5,
@@ -1123,7 +1197,8 @@ export const latestResults: ResultsData = {
               "run1": "23.59",
               "run2": "23.39",
               "time": "46.98",
-              "diff": "1.69"
+              "diff": "1.69",
+              "points": 260
             },
             {
               "rank": 6,
@@ -1133,7 +1208,8 @@ export const latestResults: ResultsData = {
               "run1": "23.64",
               "run2": "23.53",
               "time": "47.17",
-              "diff": "1.88"
+              "diff": "1.88",
+              "points": 242
             },
             {
               "rank": 7,
@@ -1143,7 +1219,8 @@ export const latestResults: ResultsData = {
               "run1": "23.79",
               "run2": "24.38",
               "time": "48.17",
-              "diff": "2.88"
+              "diff": "2.88",
+              "points": 226
             },
             {
               "rank": 8,
@@ -1153,7 +1230,8 @@ export const latestResults: ResultsData = {
               "run1": "25.36",
               "run2": "24.99",
               "time": "50.35",
-              "diff": "5.06"
+              "diff": "5.06",
+              "points": 212
             },
             {
               "rank": 9,
@@ -1163,7 +1241,8 @@ export const latestResults: ResultsData = {
               "run1": "29.21",
               "run2": "27.45",
               "time": "56.66",
-              "diff": "11.37"
+              "diff": "11.37",
+              "points": 199
             }
           ]
         }

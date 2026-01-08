@@ -91,6 +91,7 @@ export default function PointsRankingsPage() {
   const [viewMode, setViewMode] = useState<'competition' | 'total'>('total')
 
   const [selectedSportType, setSelectedSportType] = useState('all')
+  const [selectedTotalSportType, setSelectedTotalSportType] = useState('all') // 总积分视图的项目筛选
   const [selectedDiscipline, setSelectedDiscipline] = useState('all')
   const [selectedAgeGroup, setSelectedAgeGroup] = useState('all')
   const [selectedGender, setSelectedGender] = useState('all')
@@ -120,31 +121,52 @@ export default function PointsRankingsPage() {
     })).filter(group => group.athletes.length > 0)
   }, [rankingGroups, searchTerm])
 
-  // 总积分排名筛选
+  // 按项目分组的总积分排名筛选
+  const filteredSportRankings = useMemo(() => {
+    // 获取要显示的项目列表
+    let sportRankings = totalRankingsData.sportRankings
+
+    if (selectedTotalSportType !== 'all') {
+      sportRankings = sportRankings.filter(sr => sr.sportType === selectedTotalSportType)
+    }
+
+    // 对每个项目应用年龄组、性别、搜索筛选
+    return sportRankings.map(sr => {
+      let rankings = sr.rankings
+
+      if (selectedAgeGroup !== 'all') {
+        rankings = rankings.filter(r => r.ageGroup === selectedAgeGroup)
+      }
+
+      if (selectedGender !== 'all') {
+        rankings = rankings.filter(r => r.gender === selectedGender)
+      }
+
+      if (searchTerm) {
+        const term = searchTerm.toLowerCase()
+        rankings = rankings.filter(r =>
+          r.athleteName.toLowerCase().includes(term) ||
+          r.team.toLowerCase().includes(term)
+        )
+      }
+
+      // 重新计算排名
+      return {
+        ...sr,
+        rankings: rankings.map((item, index) => ({
+          ...item,
+          rank: index + 1
+        })),
+        total: rankings.length
+      }
+    }).filter(sr => sr.rankings.length > 0) // 过滤掉没有数据的项目
+  }, [selectedTotalSportType, selectedAgeGroup, selectedGender, searchTerm])
+
+  // 总积分排名筛选（兼容旧格式，用于导出等）
   const filteredTotalRankings = useMemo(() => {
-    let result = totalRankingsData.rankings
-
-    if (selectedAgeGroup !== 'all') {
-      result = result.filter(r => r.ageGroup === selectedAgeGroup)
-    }
-
-    if (selectedGender !== 'all') {
-      result = result.filter(r => r.gender === selectedGender)
-    }
-
-    if (searchTerm) {
-      const term = searchTerm.toLowerCase()
-      result = result.filter(r =>
-        r.athleteName.toLowerCase().includes(term) ||
-        r.team.toLowerCase().includes(term)
-      )
-    }
-
-    return result.map((item, index) => ({
-      ...item,
-      rank: index + 1
-    }))
-  }, [selectedAgeGroup, selectedGender, searchTerm])
+    // 合并所有筛选后的项目排名
+    return filteredSportRankings.flatMap(sr => sr.rankings)
+  }, [filteredSportRankings])
 
   // 分页计算
   const totalPages = useMemo(() => {
@@ -322,7 +344,7 @@ export default function PointsRankingsPage() {
 
         {/* 筛选器 */}
         <div className="bg-white rounded-lg shadow p-4 mb-6">
-          <div className={`grid grid-cols-1 gap-4 ${viewMode === 'total' ? 'md:grid-cols-4' : 'md:grid-cols-6'}`}>
+          <div className={`grid grid-cols-1 gap-4 ${viewMode === 'total' ? 'md:grid-cols-5' : 'md:grid-cols-6'}`}>
             {/* 搜索框 */}
             <div className="relative md:col-span-2">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
@@ -334,6 +356,22 @@ export default function PointsRankingsPage() {
                 className="pl-10 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
               />
             </div>
+
+            {/* 总积分视图的项目筛选 */}
+            {viewMode === 'total' && (
+              <div>
+                <select
+                  value={selectedTotalSportType}
+                  onChange={(e) => { setSelectedTotalSportType(e.target.value); resetPage(); }}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                >
+                  <option value="all">全部项目</option>
+                  {totalRankingsData.filters.sportTypes.map(st => (
+                    <option key={st.value} value={st.value}>{st.label}</option>
+                  ))}
+                </select>
+              </div>
+            )}
 
             {/* 按比赛视图的额外筛选 */}
             {viewMode === 'competition' && (
@@ -401,7 +439,8 @@ export default function PointsRankingsPage() {
           <div className="mt-4 flex items-center justify-between">
             <span className="text-sm text-gray-600">
               {viewMode === 'total' ? (
-                <>共 <span className="font-bold text-yellow-600">{filteredTotalRankings.length}</span> 名运动员</>
+                <>共 <span className="font-bold text-yellow-600">{filteredSportRankings.length}</span> 个项目，
+                <span className="font-bold text-yellow-600">{filteredTotalRankings.length}</span> 名运动员</>
               ) : (
                 <>共 <span className="font-bold text-purple-600">{stats.totalEvents}</span> 个小项，
                 <span className="font-bold text-purple-600">{stats.totalAthletes}</span> 人次参赛</>
@@ -442,177 +481,114 @@ export default function PointsRankingsPage() {
           </div>
         </div>
 
-        {/* 总积分排名视图 */}
+        {/* 总积分排名视图 - 按项目分别显示 */}
         {viewMode === 'total' && (
           <>
-            {filteredTotalRankings.length === 0 ? (
+            {filteredSportRankings.length === 0 ? (
               <div className="bg-white rounded-lg shadow-md p-12 text-center">
                 <Trophy className="h-12 w-12 text-gray-300 mx-auto mb-4" />
                 <p className="text-lg font-medium text-gray-500">暂无符合条件的排名数据</p>
                 <p className="text-sm text-gray-400 mt-1">请调整筛选条件后重试</p>
               </div>
             ) : (
-              <div className="bg-white rounded-lg shadow overflow-hidden">
-                <div className="bg-ski-blue px-4 py-3 text-white">
-                  <h2 className="text-lg font-medium">总积分排名</h2>
-                </div>
-
-                <div className="overflow-x-auto">
-                  <table className="min-w-full divide-y divide-gray-200">
-                    <thead className="bg-gray-50">
-                      <tr>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-20">名次</th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">组别</th>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">性别</th>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">参赛</th>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">最佳</th>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-28">总积分</th>
-                      </tr>
-                    </thead>
-                    <tbody className="bg-white divide-y divide-gray-200">
-                      {paginatedRankings.map((item) => (
-                        <tr
-                          key={`${item.athleteId}-${item.ageGroup}-${item.gender}`}
-                          className={`hover:bg-blue-50 transition-colors ${
-                            item.rank === 1 ? 'bg-yellow-50' :
-                            item.rank === 2 ? 'bg-gray-50' :
-                            item.rank === 3 ? 'bg-orange-50' : ''
-                          }`}
-                        >
-                          <td className="px-4 py-3 whitespace-nowrap text-center">
-                            {getRankIcon(item.rank)}
-                          </td>
-                          <td className="px-4 py-3 whitespace-nowrap">
-                            <span className={`text-sm font-medium ${item.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
-                              {item.athleteName}
-                            </span>
-                          </td>
-                          <td className="px-4 py-3 text-sm text-gray-600" title={item.team}>
-                            {item.team}
-                          </td>
-                          <td className="px-4 py-3 whitespace-nowrap text-center">
-                            <span className={`inline-flex px-2 py-0.5 rounded-full text-xs font-medium ${
-                              item.ageGroup === 'U12' ? 'bg-green-100 text-green-700' :
-                              item.ageGroup === 'U15' ? 'bg-blue-100 text-blue-700' :
-                              'bg-purple-100 text-purple-700'
-                            }`}>
-                              {item.ageGroup}
-                            </span>
-                          </td>
-                          <td className="px-4 py-3 whitespace-nowrap text-center">
-                            <span className={`text-sm ${item.gender === '男子组' ? 'text-blue-600' : 'text-pink-600'}`}>
-                              {item.gender === '男子组' ? '男' : '女'}
-                            </span>
-                          </td>
-                          <td className="px-4 py-3 whitespace-nowrap text-center">
-                            <span className="text-sm text-gray-600">{item.competitionCount}</span>
-                          </td>
-                          <td className="px-4 py-3 whitespace-nowrap text-center">
-                            <span className={`text-sm font-medium ${
-                              item.bestRank === 1 ? 'text-yellow-600' :
-                              item.bestRank <= 3 ? 'text-orange-600' : 'text-gray-600'
-                            }`}>
-                              {item.bestRank}
-                            </span>
-                          </td>
-                          <td className="px-4 py-3 whitespace-nowrap text-center">
-                            <span className={`inline-flex px-3 py-1 rounded-lg text-sm font-bold ${
-                              item.rank === 1 ? 'bg-yellow-400 text-yellow-900' :
-                              item.rank === 2 ? 'bg-gray-300 text-gray-800' :
-                              item.rank === 3 ? 'bg-orange-300 text-orange-900' :
-                              'bg-blue-100 text-blue-700'
-                            }`}>
-                              {item.totalPoints}
-                            </span>
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-
-                {/* 分页控件 */}
-                {totalPages > 1 && (
-                  <div className="px-4 py-4 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <div className="flex items-center gap-4">
-                      <span className="text-sm text-gray-600">
-                        第 {currentPage} / {totalPages} 页，共 {filteredTotalRankings.length} 条
+              <div className="space-y-6">
+                {filteredSportRankings.map((sportRanking) => (
+                  <div key={sportRanking.sportType} className="bg-white rounded-lg shadow overflow-hidden">
+                    {/* 项目标题 */}
+                    <div className="bg-ski-blue px-4 py-3 text-white flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <Trophy className="h-5 w-5" />
+                        <h2 className="text-lg font-medium">{sportRanking.sportName}</h2>
+                      </div>
+                      <span className="text-sm bg-blue-500 px-3 py-1 rounded-full">
+                        {sportRanking.total} 名运动员
                       </span>
-                      <select
-                        value={pageSize}
-                        onChange={(e) => { setPageSize(Number(e.target.value)); setCurrentPage(1); }}
-                        className="px-2 py-1 border border-gray-300 rounded text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                      >
-                        <option value={10}>10条/页</option>
-                        <option value={20}>20条/页</option>
-                        <option value={50}>50条/页</option>
-                        <option value={100}>100条/页</option>
-                      </select>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <button
-                        onClick={() => setCurrentPage(1)}
-                        disabled={currentPage === 1}
-                        className="px-3 py-1 rounded border border-gray-300 text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
-                        首页
-                      </button>
-                      <button
-                        onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
-                        disabled={currentPage === 1}
-                        className="p-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
-                        <ChevronLeft className="h-5 w-5" />
-                      </button>
 
-                      {/* 页码按钮 */}
-                      <div className="flex items-center gap-1">
-                        {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-                          let pageNum: number
-                          if (totalPages <= 5) {
-                            pageNum = i + 1
-                          } else if (currentPage <= 3) {
-                            pageNum = i + 1
-                          } else if (currentPage >= totalPages - 2) {
-                            pageNum = totalPages - 4 + i
-                          } else {
-                            pageNum = currentPage - 2 + i
-                          }
-                          return (
-                            <button
-                              key={pageNum}
-                              onClick={() => setCurrentPage(pageNum)}
-                              className={`w-8 h-8 rounded text-sm font-medium ${
-                                currentPage === pageNum
-                                  ? 'bg-ski-blue text-white'
-                                  : 'border border-gray-300 text-gray-600 hover:bg-gray-100'
+                    <div className="overflow-x-auto">
+                      <table className="min-w-full divide-y divide-gray-200">
+                        <thead className="bg-gray-50">
+                          <tr>
+                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-20">名次</th>
+                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
+                            <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
+                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">组别</th>
+                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">性别</th>
+                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">参赛</th>
+                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">最佳</th>
+                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-28">总积分</th>
+                          </tr>
+                        </thead>
+                        <tbody className="bg-white divide-y divide-gray-200">
+                          {sportRanking.rankings.slice(0, 50).map((item) => (
+                            <tr
+                              key={`${sportRanking.sportType}-${item.athleteId}-${item.ageGroup}-${item.gender}`}
+                              className={`hover:bg-blue-50 transition-colors ${
+                                item.rank === 1 ? 'bg-yellow-50' :
+                                item.rank === 2 ? 'bg-gray-50' :
+                                item.rank === 3 ? 'bg-orange-50' : ''
                               }`}
                             >
-                              {pageNum}
-                            </button>
-                          )
-                        })}
-                      </div>
-
-                      <button
-                        onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
-                        disabled={currentPage === totalPages}
-                        className="p-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
-                        <ChevronRight className="h-5 w-5" />
-                      </button>
-                      <button
-                        onClick={() => setCurrentPage(totalPages)}
-                        disabled={currentPage === totalPages}
-                        className="px-3 py-1 rounded border border-gray-300 text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
-                      >
-                        末页
-                      </button>
+                              <td className="px-4 py-3 whitespace-nowrap text-center">
+                                {getRankIcon(item.rank)}
+                              </td>
+                              <td className="px-4 py-3 whitespace-nowrap">
+                                <span className={`text-sm font-medium ${item.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
+                                  {item.athleteName}
+                                </span>
+                              </td>
+                              <td className="px-4 py-3 text-sm text-gray-600" title={item.team}>
+                                {item.team}
+                              </td>
+                              <td className="px-4 py-3 whitespace-nowrap text-center">
+                                <span className={`inline-flex px-2 py-0.5 rounded-full text-xs font-medium ${
+                                  item.ageGroup === 'U12' ? 'bg-green-100 text-green-700' :
+                                  item.ageGroup === 'U15' ? 'bg-blue-100 text-blue-700' :
+                                  'bg-purple-100 text-purple-700'
+                                }`}>
+                                  {item.ageGroup}
+                                </span>
+                              </td>
+                              <td className="px-4 py-3 whitespace-nowrap text-center">
+                                <span className={`text-sm ${item.gender === '男子组' ? 'text-blue-600' : 'text-pink-600'}`}>
+                                  {item.gender === '男子组' ? '男' : '女'}
+                                </span>
+                              </td>
+                              <td className="px-4 py-3 whitespace-nowrap text-center">
+                                <span className="text-sm text-gray-600">{item.competitionCount}</span>
+                              </td>
+                              <td className="px-4 py-3 whitespace-nowrap text-center">
+                                <span className={`text-sm font-medium ${
+                                  item.bestRank === 1 ? 'text-yellow-600' :
+                                  item.bestRank <= 3 ? 'text-orange-600' : 'text-gray-600'
+                                }`}>
+                                  {item.bestRank}
+                                </span>
+                              </td>
+                              <td className="px-4 py-3 whitespace-nowrap text-center">
+                                <span className={`inline-flex px-3 py-1 rounded-lg text-sm font-bold ${
+                                  item.rank === 1 ? 'bg-yellow-400 text-yellow-900' :
+                                  item.rank === 2 ? 'bg-gray-300 text-gray-800' :
+                                  item.rank === 3 ? 'bg-orange-300 text-orange-900' :
+                                  'bg-blue-100 text-blue-700'
+                                }`}>
+                                  {item.totalPoints}
+                                </span>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
                     </div>
+
+                    {/* 显示更多提示 */}
+                    {sportRanking.rankings.length > 50 && (
+                      <div className="px-4 py-3 bg-gray-50 text-center text-sm text-gray-500">
+                        仅显示前50名，共 {sportRanking.rankings.length} 名运动员
+                      </div>
+                    )}
                   </div>
-                )}
+                ))}
               </div>
             )}
           </>

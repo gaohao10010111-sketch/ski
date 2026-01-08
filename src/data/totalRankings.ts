@@ -1,7 +1,7 @@
 /**
- * 总积分排名静态数据
+ * 总积分排名静态数据（按项目分类）
  * 自动生成，请勿手动修改
- * 生成时间: 2026-01-05T08:54:46.678Z
+ * 生成时间: 2026-01-08T03:49:16.322Z
  */
 
 export interface TotalRankingItem {
@@ -17,14 +17,23 @@ export interface TotalRankingItem {
   gender: string;
 }
 
-export interface TotalRankingsData {
+export interface SportRankings {
+  sportType: string;
+  sportName: string;
   rankings: TotalRankingItem[];
+  total: number;
+}
+
+export interface TotalRankingsData {
+  sportRankings: SportRankings[];
+  rankings: TotalRankingItem[];  // 兼容旧格式
   total: number;
   filters: {
     ageGroups: string[];
     genders: string[];
     disciplines: string[];
     locations: string[];
+    sportTypes: { value: string; label: string }[];
   };
   stats: {
     athleteCount: number;
@@ -35,21 +44,4803 @@ export interface TotalRankingsData {
 }
 
 export const totalRankingsData: TotalRankingsData = {
+  "sportRankings": [
+    {
+      "sportType": "snowboard-parallel",
+      "sportName": "单板平行项目",
+      "rankings": [
+        {
+          "rank": 1,
+          "athleteId": "cmjzpdk120000bfhogt7ct1il",
+          "athleteName": "李禹潭",
+          "team": "重庆埃尔派体育文化传播有限公司",
+          "totalPoints": 360,
+          "competitionCount": 1,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 2,
+          "athleteId": "cmjzpdk3v001ubfhorz5wf7hs",
+          "athleteName": "王一臣",
+          "team": "MAYA TEAM",
+          "totalPoints": 360,
+          "competitionCount": 1,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 3,
+          "athleteId": "cmjzpdk79004rbfhooqi32wqr",
+          "athleteName": "邱嘉晴",
+          "team": "北京虎村竞技体育有限公司",
+          "totalPoints": 360,
+          "competitionCount": 1,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 4,
+          "athleteId": "cmjzpdkad007fbfho5yptlw6j",
+          "athleteName": "高佳钇",
+          "team": "速森体育",
+          "totalPoints": 360,
+          "competitionCount": 1,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 5,
+          "athleteId": "cmjzpdkex00b6bfho71gr5qj3",
+          "athleteName": "李妙涵",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 360,
+          "competitionCount": 1,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 6,
+          "athleteId": "cmjzpdkgv00cxbfhohvvnjx3w",
+          "athleteName": "窦羿",
+          "team": "MAYA TEAM",
+          "totalPoints": 360,
+          "competitionCount": 1,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 7,
+          "athleteId": "cmjzpdk190003bfhodyfd3ttw",
+          "athleteName": "于忱汐",
+          "team": "太原市第二少年体育学校",
+          "totalPoints": 329,
+          "competitionCount": 1,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 8,
+          "athleteId": "cmjzpdk3y001xbfhocfpqhm9n",
+          "athleteName": "周翎",
+          "team": "重庆埃尔派体育文化传播有限公司",
+          "totalPoints": 329,
+          "competitionCount": 1,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 9,
+          "athleteId": "cmjzpdk7c004ubfhoayny1i0x",
+          "athleteName": "沈凌羽",
+          "team": "MAYA TEAM",
+          "totalPoints": 329,
+          "competitionCount": 1,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 10,
+          "athleteId": "cmjzpdkah007ibfhoakn9j359",
+          "athleteName": "陈清桦",
+          "team": "MAYA TEAM",
+          "totalPoints": 329,
+          "competitionCount": 1,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 11,
+          "athleteId": "cmjzpdkf000b9bfho3gs0l1zy",
+          "athleteName": "臧怡然",
+          "team": "个人",
+          "totalPoints": 329,
+          "competitionCount": 1,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 12,
+          "athleteId": "cmjzpdkgy00d0bfho9vble00l",
+          "athleteName": "张鑫泽",
+          "team": "速森体育",
+          "totalPoints": 329,
+          "competitionCount": 1,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 13,
+          "athleteId": "cmjzpdk1d0006bfhokdvat4q3",
+          "athleteName": "肖金茂",
+          "team": "四川体育职业学院",
+          "totalPoints": 303,
+          "competitionCount": 1,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 14,
+          "athleteId": "cmjzpdk420020bfhodtt3x27o",
+          "athleteName": "韩赫洺",
+          "team": "四川体育职业学院",
+          "totalPoints": 303,
+          "competitionCount": 1,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 15,
+          "athleteId": "cmjzpdk7g004xbfhordq0746d",
+          "athleteName": "韦苗茵",
+          "team": "大连雨彤体育赛事俱乐部",
+          "totalPoints": 303,
+          "competitionCount": 1,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 16,
+          "athleteId": "cmjzpdkak007lbfho9nwb723l",
+          "athleteName": "张雨曈",
+          "team": "MAYA TEAM",
+          "totalPoints": 303,
+          "competitionCount": 1,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 17,
+          "athleteId": "cmjzpdkf300bcbfhoptyf96dp",
+          "athleteName": "丁小苏",
+          "team": "MAYA TEAM",
+          "totalPoints": 303,
+          "competitionCount": 1,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 18,
+          "athleteId": "cmjzpdkh100d3bfhojzgo7pr4",
+          "athleteName": "李嘉祺",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 303,
+          "competitionCount": 1,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 19,
+          "athleteId": "cmjzpdk1g0009bfhohs29gxqf",
+          "athleteName": "须星漫",
+          "team": "北京虎村竞技体育有限公司",
+          "totalPoints": 280,
+          "competitionCount": 1,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 20,
+          "athleteId": "cmjzpdk450023bfhoh5itp0hi",
+          "athleteName": "李承桓",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 280,
+          "competitionCount": 1,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 21,
+          "athleteId": "cmjzpdk7k0050bfhof32r335m",
+          "athleteName": "刘妍梦",
+          "team": "中麟体育",
+          "totalPoints": 280,
+          "competitionCount": 1,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 22,
+          "athleteId": "cmjzpdkan007obfhov8p3d9ke",
+          "athleteName": "贾子一南",
+          "team": "重庆埃尔派体育文化传播有限公司",
+          "totalPoints": 280,
+          "competitionCount": 1,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 23,
+          "athleteId": "cmjzpdkf700bfbfhosv5aak4b",
+          "athleteName": "王子怡",
+          "team": "个人",
+          "totalPoints": 280,
+          "competitionCount": 1,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 24,
+          "athleteId": "cmjzpdkh500d6bfhogif50da9",
+          "athleteName": "马凯涛",
+          "team": "新疆维吾尔自治区冬季运动训练中心",
+          "totalPoints": 280,
+          "competitionCount": 1,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 25,
+          "athleteId": "cmjzpdk1r000cbfho49uldr41",
+          "athleteName": "古庭钰",
+          "team": "中麟体育",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 26,
+          "athleteId": "cmjzpdk4a0026bfhow0uq57v3",
+          "athleteName": "陈鼎钧",
+          "team": "北京虎村竞技体育有限公司",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 27,
+          "athleteId": "cmjzpdk7o0053bfhopj22d7t9",
+          "athleteName": "赵南茜",
+          "team": "太原市第二少年体育学校",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 28,
+          "athleteId": "cmjzpdkar007rbfhoke7nk1ap",
+          "athleteName": "李天圆",
+          "team": "MAYA TEAM",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 29,
+          "athleteId": "cmjzpdkfa00bibfho2rfh2opo",
+          "athleteName": "张芊凝",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 30,
+          "athleteId": "cmjzpdkh800d9bfho23y46y7o",
+          "athleteName": "尚久智",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 31,
+          "athleteId": "cmjzpdk1u000fbfhou88cqxsm",
+          "athleteName": "周子翕",
+          "team": "成都热雪奇迹",
+          "totalPoints": 242,
+          "competitionCount": 1,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 32,
+          "athleteId": "cmjzpdk4d0029bfhowuueorwu",
+          "athleteName": "聂榕辰",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 242,
+          "competitionCount": 1,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 33,
+          "athleteId": "cmjzpdk7s0056bfhouamezkf4",
+          "athleteName": "刘沛怡",
+          "team": "MAYA TEAM",
+          "totalPoints": 242,
+          "competitionCount": 1,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 34,
+          "athleteId": "cmjzpdkav007ubfho0ossatdk",
+          "athleteName": "王子兮",
+          "team": "四川体育职业学院",
+          "totalPoints": 242,
+          "competitionCount": 1,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 35,
+          "athleteId": "cmjzpdkfd00blbfho7svp8try",
+          "athleteName": "李雨濛",
+          "team": "大连雨彤体育赛事俱乐部",
+          "totalPoints": 242,
+          "competitionCount": 1,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 36,
+          "athleteId": "cmjzpdkhb00dcbfho0ww5obv1",
+          "athleteName": "吴凯",
+          "team": "中麟体育",
+          "totalPoints": 242,
+          "competitionCount": 1,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 37,
+          "athleteId": "cmjzpdk21000ibfhojbpxew23",
+          "athleteName": "ALBEESU",
+          "team": "张家口市足球和冰雪运动学校",
+          "totalPoints": 226,
+          "competitionCount": 1,
+          "bestRank": 7,
+          "avgPoints": 226,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 38,
+          "athleteId": "cmjzpdk4h002cbfho72bud3ju",
+          "athleteName": "罗晓野",
+          "team": "个人",
+          "totalPoints": 226,
+          "competitionCount": 1,
+          "bestRank": 7,
+          "avgPoints": 226,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 39,
+          "athleteId": "cmjzpdk7w0059bfhoqf1tul7a",
+          "athleteName": "邰淼",
+          "team": "内蒙古嘉灏体育",
+          "totalPoints": 226,
+          "competitionCount": 1,
+          "bestRank": 7,
+          "avgPoints": 226,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 40,
+          "athleteId": "cmjzpdkay007xbfhogkqgc8hp",
+          "athleteName": "阿琪勒图",
+          "team": "内蒙古嘉灏体育",
+          "totalPoints": 226,
+          "competitionCount": 1,
+          "bestRank": 7,
+          "avgPoints": 226,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 41,
+          "athleteId": "cmjzpdkff00bobfhoseh0eifz",
+          "athleteName": "张允童",
+          "team": "个人",
+          "totalPoints": 226,
+          "competitionCount": 1,
+          "bestRank": 7,
+          "avgPoints": 226,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 42,
+          "athleteId": "cmjzpdkhf00dfbfhoxmumwieq",
+          "athleteName": "杨武胜俊",
+          "team": "四川体育职业学院",
+          "totalPoints": 226,
+          "competitionCount": 1,
+          "bestRank": 7,
+          "avgPoints": 226,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 43,
+          "athleteId": "cmjzpdk28000lbfhofq439jkr",
+          "athleteName": "焦阳云朵",
+          "team": "北京虎村竞技体育有限公司",
+          "totalPoints": 212,
+          "competitionCount": 1,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 44,
+          "athleteId": "cmjzpdk4k002fbfhoetv2avcp",
+          "athleteName": "薛景尧",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 212,
+          "competitionCount": 1,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 45,
+          "athleteId": "cmjzpdk80005cbfhoxp1aexei",
+          "athleteName": "张诺笒",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 212,
+          "competitionCount": 1,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 46,
+          "athleteId": "cmjzpdkb20080bfhokp36urcp",
+          "athleteName": "叶庆安",
+          "team": "新疆维吾尔自治区冬季运动训练中心",
+          "totalPoints": 212,
+          "competitionCount": 1,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 47,
+          "athleteId": "cmjzpdkfj00brbfhoma9b5hn6",
+          "athleteName": "袁丽文",
+          "team": "上海市静安区滑雪协会",
+          "totalPoints": 212,
+          "competitionCount": 1,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 48,
+          "athleteId": "cmjzpdkhi00dibfhokox5yuvz",
+          "athleteName": "付壡喆",
+          "team": "四川体育职业学院",
+          "totalPoints": 212,
+          "competitionCount": 1,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 49,
+          "athleteId": "cmjzpdk2d000obfhodusp02c8",
+          "athleteName": "李汶瑾",
+          "team": "MAYA TEAM",
+          "totalPoints": 199,
+          "competitionCount": 1,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 50,
+          "athleteId": "cmjzpdk4o002ibfhom3xfw7t5",
+          "athleteName": "马昊文",
+          "team": "MAYA TEAM",
+          "totalPoints": 199,
+          "competitionCount": 1,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 51,
+          "athleteId": "cmjzpdk84005fbfhocwqzec0v",
+          "athleteName": "高宇宣",
+          "team": "北京虎村竞技体育有限公司",
+          "totalPoints": 199,
+          "competitionCount": 1,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 52,
+          "athleteId": "cmjzpdkb50083bfhoc0bflgh2",
+          "athleteName": "高琢皓",
+          "team": "重庆埃尔派体育文化传播有限公司",
+          "totalPoints": 199,
+          "competitionCount": 1,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 53,
+          "athleteId": "cmjzpdkfm00bubfhoxikrrhxg",
+          "athleteName": "王婧霏",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 199,
+          "competitionCount": 1,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 54,
+          "athleteId": "cmjzpdkhm00dlbfhoh1eef7a9",
+          "athleteName": "廉钰洁",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 199,
+          "competitionCount": 1,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 55,
+          "athleteId": "cmjzpdk2g000rbfhodm7jwa0h",
+          "athleteName": "朱安然",
+          "team": "上海雪酷滑雪竞技队",
+          "totalPoints": 187,
+          "competitionCount": 1,
+          "bestRank": 10,
+          "avgPoints": 187,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 56,
+          "athleteId": "cmjzpdk4r002lbfhoazgg5gnu",
+          "athleteName": "周天朗",
+          "team": "北京虎村竞技体育有限公司",
+          "totalPoints": 187,
+          "competitionCount": 1,
+          "bestRank": 10,
+          "avgPoints": 187,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 57,
+          "athleteId": "cmjzpdk87005ibfhohu5zegc3",
+          "athleteName": "汪昱诺",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 187,
+          "competitionCount": 1,
+          "bestRank": 10,
+          "avgPoints": 187,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 58,
+          "athleteId": "cmjzpdkb80086bfhocqooy0qe",
+          "athleteName": "马赛",
+          "team": "四川体育职业学院",
+          "totalPoints": 187,
+          "competitionCount": 1,
+          "bestRank": 10,
+          "avgPoints": 187,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 59,
+          "athleteId": "cmjzpdkfq00bxbfho3nqtwyo2",
+          "athleteName": "邵菲梵",
+          "team": "北京天高云淡体育有限公司",
+          "totalPoints": 187,
+          "competitionCount": 1,
+          "bestRank": 10,
+          "avgPoints": 187,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 60,
+          "athleteId": "cmjzpdkhq00dobfhogqrw3gj7",
+          "athleteName": "苗誉镨",
+          "team": "速森体育",
+          "totalPoints": 187,
+          "competitionCount": 1,
+          "bestRank": 10,
+          "avgPoints": 187,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 61,
+          "athleteId": "cmjzpdk2l000ubfhoux0a5q2h",
+          "athleteName": "李宛凝",
+          "team": "大连雨彤体育赛事俱乐部",
+          "totalPoints": 176,
+          "competitionCount": 1,
+          "bestRank": 11,
+          "avgPoints": 176,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 62,
+          "athleteId": "cmjzpdk4v002obfho9tmsoz86",
+          "athleteName": "马昊迪",
+          "team": "MAYA TEAM",
+          "totalPoints": 176,
+          "competitionCount": 1,
+          "bestRank": 11,
+          "avgPoints": 176,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 63,
+          "athleteId": "cmjzpdk8b005lbfho4c97oyke",
+          "athleteName": "杨卓尔",
+          "team": "中麟体育",
+          "totalPoints": 176,
+          "competitionCount": 1,
+          "bestRank": 11,
+          "avgPoints": 176,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 64,
+          "athleteId": "cmjzpdkbc0089bfhow3t9kyiy",
+          "athleteName": "徐承昊",
+          "team": "上海市静安区滑雪协会",
+          "totalPoints": 176,
+          "competitionCount": 1,
+          "bestRank": 11,
+          "avgPoints": 176,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 65,
+          "athleteId": "cmjzpdkft00c0bfhofpnn2mnq",
+          "athleteName": "贾釉茜",
+          "team": "吉林省阔展体育服务有限公司",
+          "totalPoints": 176,
+          "competitionCount": 1,
+          "bestRank": 11,
+          "avgPoints": 176,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 66,
+          "athleteId": "cmjzpdkht00drbfhoo183z471",
+          "athleteName": "王嘉崎",
+          "team": "新疆维吾尔自治区冬季运动训练中心",
+          "totalPoints": 176,
+          "competitionCount": 1,
+          "bestRank": 11,
+          "avgPoints": 176,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 67,
+          "athleteId": "cmjzpdk2r000xbfho3kcj25v9",
+          "athleteName": "刘和一",
+          "team": "北京天高云淡体育有限公司",
+          "totalPoints": 166,
+          "competitionCount": 1,
+          "bestRank": 12,
+          "avgPoints": 166,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 68,
+          "athleteId": "cmjzpdk4y002rbfho4iulm870",
+          "athleteName": "蒋文栋",
+          "team": "MAYA TEAM",
+          "totalPoints": 166,
+          "competitionCount": 1,
+          "bestRank": 12,
+          "avgPoints": 166,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 69,
+          "athleteId": "cmjzpdk8f005obfhos0k3gyvq",
+          "athleteName": "黄卫瑄",
+          "team": "吉林省阔展体育服务有限公司",
+          "totalPoints": 166,
+          "competitionCount": 1,
+          "bestRank": 12,
+          "avgPoints": 166,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 70,
+          "athleteId": "cmjzpdkbg008cbfhoy1byx6zt",
+          "athleteName": "刘宸卓",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 166,
+          "competitionCount": 1,
+          "bestRank": 12,
+          "avgPoints": 166,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 71,
+          "athleteId": "cmjzpdkfw00c3bfhocx32ry78",
+          "athleteName": "叶香菲",
+          "team": "大连雨彤体育赛事俱乐部",
+          "totalPoints": 166,
+          "competitionCount": 1,
+          "bestRank": 12,
+          "avgPoints": 166,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 72,
+          "athleteId": "cmjzpdkhx00dubfhogq1rb5ct",
+          "athleteName": "杨伯伦",
+          "team": "个人",
+          "totalPoints": 166,
+          "competitionCount": 1,
+          "bestRank": 12,
+          "avgPoints": 166,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 73,
+          "athleteId": "cmjzpdk2v0010bfhoaewhfwuy",
+          "athleteName": "李子纯",
+          "team": "个人",
+          "totalPoints": 157,
+          "competitionCount": 1,
+          "bestRank": 13,
+          "avgPoints": 157,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 74,
+          "athleteId": "cmjzpdk52002ubfho239nfqzd",
+          "athleteName": "高宇承",
+          "team": "北京虎村竞技体育有限公司",
+          "totalPoints": 157,
+          "competitionCount": 1,
+          "bestRank": 13,
+          "avgPoints": 157,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 75,
+          "athleteId": "cmjzpdk8i005rbfho2oo4b7sh",
+          "athleteName": "赵浛西",
+          "team": "爱上雪体育产业发展（北京）有限公司",
+          "totalPoints": 157,
+          "competitionCount": 1,
+          "bestRank": 13,
+          "avgPoints": 157,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 76,
+          "athleteId": "cmjzpdkbi008fbfhogpqphcae",
+          "athleteName": "吉淏辰",
+          "team": "北京虎村竞技体育有限公司",
+          "totalPoints": 157,
+          "competitionCount": 1,
+          "bestRank": 13,
+          "avgPoints": 157,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 77,
+          "athleteId": "cmjzpdkg000c6bfhoihmgqo4f",
+          "athleteName": "刘墨晗",
+          "team": "北京虎村竞技体育有限公司",
+          "totalPoints": 157,
+          "competitionCount": 1,
+          "bestRank": 13,
+          "avgPoints": 157,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 78,
+          "athleteId": "cmjzpdki100dxbfhozwyr4wjz",
+          "athleteName": "常一鸣",
+          "team": "锐冠青少年竞技滑雪队",
+          "totalPoints": 157,
+          "competitionCount": 1,
+          "bestRank": 13,
+          "avgPoints": 157,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 79,
+          "athleteId": "cmjzpdk2z0013bfho4korkuwl",
+          "athleteName": "李获稻",
+          "team": "成都热雪奇迹",
+          "totalPoints": 149,
+          "competitionCount": 1,
+          "bestRank": 14,
+          "avgPoints": 149,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 80,
+          "athleteId": "cmjzpdk55002xbfhookyfbfz5",
+          "athleteName": "刘昱辰",
+          "team": "MAYA TEAM",
+          "totalPoints": 149,
+          "competitionCount": 1,
+          "bestRank": 14,
+          "avgPoints": 149,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 81,
+          "athleteId": "cmjzpdk8m005ubfhou7sh1nue",
+          "athleteName": "邹齐",
+          "team": "个人",
+          "totalPoints": 149,
+          "competitionCount": 1,
+          "bestRank": 14,
+          "avgPoints": 149,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 82,
+          "athleteId": "cmjzpdkbm008ibfhod1hwvi59",
+          "athleteName": "邢子瀚",
+          "team": "纳西亚",
+          "totalPoints": 149,
+          "competitionCount": 1,
+          "bestRank": 14,
+          "avgPoints": 149,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 83,
+          "athleteId": "cmjzpdkg300c9bfhov8mzyq6r",
+          "athleteName": "朱珈仪",
+          "team": "吉林市冬季运动管理中心",
+          "totalPoints": 149,
+          "competitionCount": 1,
+          "bestRank": 14,
+          "avgPoints": 149,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 84,
+          "athleteId": "cmjzpdki500e0bfho3yo046wx",
+          "athleteName": "杨一丁",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 149,
+          "competitionCount": 1,
+          "bestRank": 14,
+          "avgPoints": 149,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 85,
+          "athleteId": "cmjzpdk320016bfhoxp3pgkx8",
+          "athleteName": "武子蓉",
+          "team": "太原市第二少年体育学校",
+          "totalPoints": 141,
+          "competitionCount": 1,
+          "bestRank": 15,
+          "avgPoints": 141,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 86,
+          "athleteId": "cmjzpdk590030bfho0px3f8sf",
+          "athleteName": "张朔源",
+          "team": "个人",
+          "totalPoints": 141,
+          "competitionCount": 1,
+          "bestRank": 15,
+          "avgPoints": 141,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 87,
+          "athleteId": "cmjzpdk8q005xbfhoxswwnnkl",
+          "athleteName": "刘姝廷",
+          "team": "中麟体育",
+          "totalPoints": 141,
+          "competitionCount": 1,
+          "bestRank": 15,
+          "avgPoints": 141,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 88,
+          "athleteId": "cmjzpdkbq008lbfhoegwsywal",
+          "athleteName": "于谨赫",
+          "team": "速森体育",
+          "totalPoints": 141,
+          "competitionCount": 1,
+          "bestRank": 15,
+          "avgPoints": 141,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 89,
+          "athleteId": "cmjzpdkg700ccbfhossdgz9de",
+          "athleteName": "韩非桐",
+          "team": "速森体育",
+          "totalPoints": 141,
+          "competitionCount": 1,
+          "bestRank": 15,
+          "avgPoints": 141,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 90,
+          "athleteId": "cmjzpdki900e3bfho6qc9ewhq",
+          "athleteName": "郑研伟",
+          "team": "个人",
+          "totalPoints": 141,
+          "competitionCount": 1,
+          "bestRank": 15,
+          "avgPoints": 141,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 91,
+          "athleteId": "cmjzpdk360019bfho7kcuehdp",
+          "athleteName": "张语珊",
+          "team": "个人",
+          "totalPoints": 134,
+          "competitionCount": 1,
+          "bestRank": 16,
+          "avgPoints": 134,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 92,
+          "athleteId": "cmjzpdk5d0033bfhoh5d8fwx8",
+          "athleteName": "张睦然",
+          "team": "MAYA TEAM",
+          "totalPoints": 134,
+          "competitionCount": 1,
+          "bestRank": 16,
+          "avgPoints": 134,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 93,
+          "athleteId": "cmjzpdk8u0060bfho1vg3hn2i",
+          "athleteName": "周焕熙",
+          "team": "爱上雪体育产业发展（北京）有限公司",
+          "totalPoints": 134,
+          "competitionCount": 1,
+          "bestRank": 16,
+          "avgPoints": 134,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 94,
+          "athleteId": "cmjzpdkbu008obfhondaq2opk",
+          "athleteName": "刘哲鸣",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 134,
+          "competitionCount": 1,
+          "bestRank": 16,
+          "avgPoints": 134,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 95,
+          "athleteId": "cmjzpdkga00cfbfhoyfzzm0hh",
+          "athleteName": "杨笑语",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 134,
+          "competitionCount": 1,
+          "bestRank": 16,
+          "avgPoints": 134,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 96,
+          "athleteId": "cmjzpdkid00e6bfho99rqbw7s",
+          "athleteName": "樊冠序",
+          "team": "吉林省阔展体育服务有限公司",
+          "totalPoints": 134,
+          "competitionCount": 1,
+          "bestRank": 16,
+          "avgPoints": 134,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 97,
+          "athleteId": "cmjzpdk3a001cbfhosbj1b2bo",
+          "athleteName": "李墨涵",
+          "team": "中麟体育",
+          "totalPoints": 127,
+          "competitionCount": 1,
+          "bestRank": 17,
+          "avgPoints": 127,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 98,
+          "athleteId": "cmjzpdk5g0036bfhojj36lkyb",
+          "athleteName": "白雨奇",
+          "team": "大连雨彤体育赛事俱乐部",
+          "totalPoints": 127,
+          "competitionCount": 1,
+          "bestRank": 17,
+          "avgPoints": 127,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 99,
+          "athleteId": "cmjzpdk8x0063bfhobic6c948",
+          "athleteName": "闫艺宸",
+          "team": "个人",
+          "totalPoints": 127,
+          "competitionCount": 1,
+          "bestRank": 17,
+          "avgPoints": 127,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 100,
+          "athleteId": "cmjzpdkbx008rbfho8v83oc7a",
+          "athleteName": "孙屹卓",
+          "team": "MAYA TEAM",
+          "totalPoints": 127,
+          "competitionCount": 1,
+          "bestRank": 17,
+          "avgPoints": 127,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 101,
+          "athleteId": "cmjzpdkge00cibfhoiniuvbof",
+          "athleteName": "房洢伊",
+          "team": "个人",
+          "totalPoints": 127,
+          "competitionCount": 1,
+          "bestRank": 17,
+          "avgPoints": 127,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 102,
+          "athleteId": "cmjzpdkih00e9bfholi22uh9o",
+          "athleteName": "曲星铭",
+          "team": "个人",
+          "totalPoints": 127,
+          "competitionCount": 1,
+          "bestRank": 17,
+          "avgPoints": 127,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 103,
+          "athleteId": "cmjzpdk3e001fbfho3hhippx7",
+          "athleteName": "李雨萱",
+          "team": "个人",
+          "totalPoints": 121,
+          "competitionCount": 1,
+          "bestRank": 18,
+          "avgPoints": 121,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 104,
+          "athleteId": "cmjzpdk5j0039bfho0a2ww5j0",
+          "athleteName": "王子溪",
+          "team": "KingProTeam",
+          "totalPoints": 121,
+          "competitionCount": 1,
+          "bestRank": 18,
+          "avgPoints": 121,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 105,
+          "athleteId": "cmjzpdk900066bfho8yqnek9e",
+          "athleteName": "徐紫馨",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 121,
+          "competitionCount": 1,
+          "bestRank": 18,
+          "avgPoints": 121,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 106,
+          "athleteId": "cmjzpdkc1008ubfho003mc70z",
+          "athleteName": "嘎日玛盖",
+          "team": "新疆维吾尔自治区冬季运动训练中心",
+          "totalPoints": 121,
+          "competitionCount": 1,
+          "bestRank": 18,
+          "avgPoints": 121,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 107,
+          "athleteId": "cmjzpdkgh00clbfhozrtx7frf",
+          "athleteName": "白默函",
+          "team": "重庆埃尔派体育文化传播有限公司",
+          "totalPoints": 121,
+          "competitionCount": 1,
+          "bestRank": 18,
+          "avgPoints": 121,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 108,
+          "athleteId": "cmjzpdkik00ecbfho4luzmtsp",
+          "athleteName": "付若洵",
+          "team": "KingProTeam",
+          "totalPoints": 121,
+          "competitionCount": 1,
+          "bestRank": 18,
+          "avgPoints": 121,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 109,
+          "athleteId": "cmjzpdk3h001ibfho4lvkrl73",
+          "athleteName": "马音霓",
+          "team": "爱上雪体育产业发展（北京）有限公司",
+          "totalPoints": 115,
+          "competitionCount": 1,
+          "bestRank": 19,
+          "avgPoints": 115,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 110,
+          "athleteId": "cmjzpdk5m003cbfhosvizw7ep",
+          "athleteName": "黄益航",
+          "team": "四川体育职业学院",
+          "totalPoints": 115,
+          "competitionCount": 1,
+          "bestRank": 19,
+          "avgPoints": 115,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 111,
+          "athleteId": "cmjzpdk930069bfho54mrsdcb",
+          "athleteName": "王艺潼",
+          "team": "个人",
+          "totalPoints": 115,
+          "competitionCount": 1,
+          "bestRank": 19,
+          "avgPoints": 115,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 112,
+          "athleteId": "cmjzpdkc4008xbfhoyml7rqhz",
+          "athleteName": "崔承泽",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 115,
+          "competitionCount": 1,
+          "bestRank": 19,
+          "avgPoints": 115,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 113,
+          "athleteId": "cmjzpdkgl00cobfhobsdhpr93",
+          "athleteName": "刘怡廷",
+          "team": "张家口市足球和冰雪运动学校",
+          "totalPoints": 115,
+          "competitionCount": 1,
+          "bestRank": 19,
+          "avgPoints": 115,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 114,
+          "athleteId": "cmjzpdkio00efbfho8e577j04",
+          "athleteName": "吴保江",
+          "team": "零战单板滑雪俱乐部",
+          "totalPoints": 115,
+          "competitionCount": 1,
+          "bestRank": 19,
+          "avgPoints": 115,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 115,
+          "athleteId": "cmjzpdk3k001lbfho3ro7vqgl",
+          "athleteName": "张兆檬",
+          "team": "KingProTeam",
+          "totalPoints": 110,
+          "competitionCount": 1,
+          "bestRank": 20,
+          "avgPoints": 110,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 116,
+          "athleteId": "cmjzpdk5q003fbfho5e0w98bk",
+          "athleteName": "夏誉领",
+          "team": "上海雪酷滑雪竞技队",
+          "totalPoints": 110,
+          "competitionCount": 1,
+          "bestRank": 20,
+          "avgPoints": 110,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 117,
+          "athleteId": "cmjzpdk96006cbfho14znv0uq",
+          "athleteName": "徐艺玮",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 110,
+          "competitionCount": 1,
+          "bestRank": 20,
+          "avgPoints": 110,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 118,
+          "athleteId": "cmjzpdkc80090bfhouqhl68vg",
+          "athleteName": "王子嘉",
+          "team": "内蒙古嘉灏体育",
+          "totalPoints": 110,
+          "competitionCount": 1,
+          "bestRank": 20,
+          "avgPoints": 110,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 119,
+          "athleteId": "cmjzpdkgo00crbfhoj3jtd3nu",
+          "athleteName": "范芮希",
+          "team": "个人",
+          "totalPoints": 110,
+          "competitionCount": 1,
+          "bestRank": 20,
+          "avgPoints": 110,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 120,
+          "athleteId": "cmjzpdkiv00eibfhomj9j7tlk",
+          "athleteName": "辛博",
+          "team": "重庆埃尔派体育文化传播有限公司",
+          "totalPoints": 110,
+          "competitionCount": 1,
+          "bestRank": 20,
+          "avgPoints": 110,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 121,
+          "athleteId": "cmjzpdk3o001obfhodbkhcpfl",
+          "athleteName": "高怡雯",
+          "team": "北京天高云淡体育有限公司",
+          "totalPoints": 105,
+          "competitionCount": 1,
+          "bestRank": 21,
+          "avgPoints": 105,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 122,
+          "athleteId": "cmjzpdk5t003ibfhocx6w9f2u",
+          "athleteName": "周豫",
+          "team": "北京虎村竞技体育有限公司",
+          "totalPoints": 105,
+          "competitionCount": 1,
+          "bestRank": 21,
+          "avgPoints": 105,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 123,
+          "athleteId": "cmjzpdk99006fbfhowh2pew1l",
+          "athleteName": "史怀竺",
+          "team": "大连雨彤体育赛事俱乐部",
+          "totalPoints": 105,
+          "competitionCount": 1,
+          "bestRank": 21,
+          "avgPoints": 105,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 124,
+          "athleteId": "cmjzpdkcb0093bfho0ocki2j0",
+          "athleteName": "江显晨",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 105,
+          "competitionCount": 1,
+          "bestRank": 21,
+          "avgPoints": 105,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 125,
+          "athleteId": "cmjzpdkgs00cubfho86ndwawc",
+          "athleteName": "杜美佳妮",
+          "team": "北京佩士体育有限公司",
+          "totalPoints": 105,
+          "competitionCount": 1,
+          "bestRank": 21,
+          "avgPoints": 105,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 126,
+          "athleteId": "cmjzpdkiz00elbfhowy5fi3bf",
+          "athleteName": "黄铸轩",
+          "team": "个人",
+          "totalPoints": 105,
+          "competitionCount": 1,
+          "bestRank": 21,
+          "avgPoints": 105,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 127,
+          "athleteId": "cmjzpdk3s001rbfhonoy1krhm",
+          "athleteName": "周芸溪",
+          "team": "MAYA TEAM",
+          "totalPoints": 100,
+          "competitionCount": 1,
+          "bestRank": 22,
+          "avgPoints": 100,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 128,
+          "athleteId": "cmjzpdk5w003lbfho6honytan",
+          "athleteName": "张柏轩",
+          "team": "MAYA TEAM",
+          "totalPoints": 100,
+          "competitionCount": 1,
+          "bestRank": 22,
+          "avgPoints": 100,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 129,
+          "athleteId": "cmjzpdk9d006ibfho62rtb6mv",
+          "athleteName": "叶丽扎·别克苏力坦",
+          "team": "新疆维吾尔自治区冬季运动训练中心",
+          "totalPoints": 100,
+          "competitionCount": 1,
+          "bestRank": 22,
+          "avgPoints": 100,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 130,
+          "athleteId": "cmjzpdkce0096bfho9w4cv43j",
+          "athleteName": "孟裕皓",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 100,
+          "competitionCount": 1,
+          "bestRank": 22,
+          "avgPoints": 100,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 131,
+          "athleteId": "cmjzpdkj200eobfhou82m9qil",
+          "athleteName": "唐鸿博",
+          "team": "KingProTeam",
+          "totalPoints": 100,
+          "competitionCount": 1,
+          "bestRank": 22,
+          "avgPoints": 100,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 132,
+          "athleteId": "cmjzpdk5z003obfhomuy5i56z",
+          "athleteName": "朱朗灿",
+          "team": "个人",
+          "totalPoints": 95,
+          "competitionCount": 1,
+          "bestRank": 23,
+          "avgPoints": 95,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 133,
+          "athleteId": "cmjzpdk9g006lbfhonossoltj",
+          "athleteName": "刘于靖璇",
+          "team": "丝绸之路青少年俱乐部",
+          "totalPoints": 95,
+          "competitionCount": 1,
+          "bestRank": 23,
+          "avgPoints": 95,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 134,
+          "athleteId": "cmjzpdkci0099bfhoj2fomk7j",
+          "athleteName": "李柏翔",
+          "team": "MAYA TEAM",
+          "totalPoints": 95,
+          "competitionCount": 1,
+          "bestRank": 23,
+          "avgPoints": 95,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 135,
+          "athleteId": "cmjzpdkj600erbfhoagwamkpg",
+          "athleteName": "杜鑫",
+          "team": "张家口市足球和冰雪运动学校",
+          "totalPoints": 95,
+          "competitionCount": 1,
+          "bestRank": 23,
+          "avgPoints": 95,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 136,
+          "athleteId": "cmjzpdk62003rbfho276bqrn6",
+          "athleteName": "程子航",
+          "team": "北京虎村竞技体育有限公司",
+          "totalPoints": 91,
+          "competitionCount": 1,
+          "bestRank": 24,
+          "avgPoints": 91,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 137,
+          "athleteId": "cmjzpdk9j006obfhor1vkbpvi",
+          "athleteName": "王羽佳",
+          "team": "重庆埃尔派体育文化传播有限公司",
+          "totalPoints": 91,
+          "competitionCount": 1,
+          "bestRank": 24,
+          "avgPoints": 91,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 138,
+          "athleteId": "cmjzpdkcm009cbfhotv2stqaf",
+          "athleteName": "陶勃遇",
+          "team": "锐冠青少年竞技滑雪队",
+          "totalPoints": 91,
+          "competitionCount": 1,
+          "bestRank": 24,
+          "avgPoints": 91,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 139,
+          "athleteId": "cmjzpdkja00eubfho4y4pipqd",
+          "athleteName": "刘馨泽",
+          "team": "吉林省阔展体育服务有限公司",
+          "totalPoints": 91,
+          "competitionCount": 1,
+          "bestRank": 24,
+          "avgPoints": 91,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 140,
+          "athleteId": "cmjzpdk65003ubfhov0tbtt6p",
+          "athleteName": "聂铭熙",
+          "team": "MAYA TEAM",
+          "totalPoints": 87,
+          "competitionCount": 1,
+          "bestRank": 25,
+          "avgPoints": 87,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 141,
+          "athleteId": "cmjzpdk9n006rbfhoom69d3b4",
+          "athleteName": "黎若水",
+          "team": "个人",
+          "totalPoints": 87,
+          "competitionCount": 1,
+          "bestRank": 25,
+          "avgPoints": 87,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 142,
+          "athleteId": "cmjzpdkcq009fbfhoxa5ipl1g",
+          "athleteName": "仲作成",
+          "team": "MAYA TEAM",
+          "totalPoints": 87,
+          "competitionCount": 1,
+          "bestRank": 25,
+          "avgPoints": 87,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 143,
+          "athleteId": "cmjzpdk69003xbfhomaabax6c",
+          "athleteName": "金子彦",
+          "team": "个人",
+          "totalPoints": 83,
+          "competitionCount": 1,
+          "bestRank": 26,
+          "avgPoints": 83,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 144,
+          "athleteId": "cmjzpdk9q006ubfhol25rw40e",
+          "athleteName": "刘芊焱",
+          "team": "个人",
+          "totalPoints": 83,
+          "competitionCount": 1,
+          "bestRank": 26,
+          "avgPoints": 83,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 145,
+          "athleteId": "cmjzpdkct009ibfhoibkwcoe4",
+          "athleteName": "郭天泽",
+          "team": "MAYA TEAM",
+          "totalPoints": 83,
+          "competitionCount": 1,
+          "bestRank": 26,
+          "avgPoints": 83,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 146,
+          "athleteId": "cmjzpdk6c0040bfhor621ft1n",
+          "athleteName": "陈鑫艺",
+          "team": "四川体育职业学院",
+          "totalPoints": 79,
+          "competitionCount": 1,
+          "bestRank": 27,
+          "avgPoints": 79,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 147,
+          "athleteId": "cmjzpdk9t006xbfhobc0rcef9",
+          "athleteName": "吴宛霖",
+          "team": "北京天高云淡体育有限公司",
+          "totalPoints": 79,
+          "competitionCount": 1,
+          "bestRank": 27,
+          "avgPoints": 79,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 148,
+          "athleteId": "cmjzpdkcx009lbfhovbf8c77r",
+          "athleteName": "袁子宸",
+          "team": "重庆巴蜀科学城中学校",
+          "totalPoints": 79,
+          "competitionCount": 1,
+          "bestRank": 27,
+          "avgPoints": 79,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 149,
+          "athleteId": "cmjzpdk6f0043bfhotms7f5yw",
+          "athleteName": "孙奥荣",
+          "team": "四川体育职业学院",
+          "totalPoints": 75,
+          "competitionCount": 1,
+          "bestRank": 28,
+          "avgPoints": 75,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 150,
+          "athleteId": "cmjzpdk9w0070bfhojofn6m13",
+          "athleteName": "赵天冉",
+          "team": "KingProTeam",
+          "totalPoints": 75,
+          "competitionCount": 1,
+          "bestRank": 28,
+          "avgPoints": 75,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 151,
+          "athleteId": "cmjzpdkd0009obfhoo2lnifjm",
+          "athleteName": "张亚琨",
+          "team": "大连雨彤体育赛事俱乐部",
+          "totalPoints": 75,
+          "competitionCount": 1,
+          "bestRank": 28,
+          "avgPoints": 75,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 152,
+          "athleteId": "cmjzpdk6j0046bfhov1sarue5",
+          "athleteName": "赵梓聿",
+          "team": "MAYA TEAM",
+          "totalPoints": 71,
+          "competitionCount": 1,
+          "bestRank": 29,
+          "avgPoints": 71,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 153,
+          "athleteId": "cmjzpdka00073bfhovx3noqyi",
+          "athleteName": "周琪",
+          "team": "锐冠青少年竞技滑雪队",
+          "totalPoints": 71,
+          "competitionCount": 1,
+          "bestRank": 29,
+          "avgPoints": 71,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 154,
+          "athleteId": "cmjzpdkd4009rbfhoi14egzfo",
+          "athleteName": "贾博翔",
+          "team": "锐冠青少年竞技滑雪队",
+          "totalPoints": 71,
+          "competitionCount": 1,
+          "bestRank": 29,
+          "avgPoints": 71,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 155,
+          "athleteId": "cmjzpdk6m0049bfho5dxuehct",
+          "athleteName": "闫慕垚",
+          "team": "大连雨彤体育赛事俱乐部",
+          "totalPoints": 67,
+          "competitionCount": 1,
+          "bestRank": 30,
+          "avgPoints": 67,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 156,
+          "athleteId": "cmjzpdka40076bfhorgd2m8ou",
+          "athleteName": "亢正熙",
+          "team": "四川体育职业学院",
+          "totalPoints": 67,
+          "competitionCount": 1,
+          "bestRank": 30,
+          "avgPoints": 67,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 157,
+          "athleteId": "cmjzpdkd8009ubfhotio8k1cy",
+          "athleteName": "井诚",
+          "team": "中麟体育",
+          "totalPoints": 67,
+          "competitionCount": 1,
+          "bestRank": 30,
+          "avgPoints": 67,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 158,
+          "athleteId": "cmjzpdk6q004cbfhod35sxrf6",
+          "athleteName": "杨滨睿",
+          "team": "MAYA TEAM",
+          "totalPoints": 63,
+          "competitionCount": 1,
+          "bestRank": 31,
+          "avgPoints": 63,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 159,
+          "athleteId": "cmjzpdka70079bfho3f7ql9v4",
+          "athleteName": "王奕棽",
+          "team": "速森体育",
+          "totalPoints": 63,
+          "competitionCount": 1,
+          "bestRank": 31,
+          "avgPoints": 63,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 160,
+          "athleteId": "cmjzpdkdc009xbfhoo2klfjap",
+          "athleteName": "洪戬",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 63,
+          "competitionCount": 1,
+          "bestRank": 31,
+          "avgPoints": 63,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 161,
+          "athleteId": "cmjzpdk6t004fbfhoynftnzxa",
+          "athleteName": "景子融",
+          "team": "中麟体育",
+          "totalPoints": 59,
+          "competitionCount": 1,
+          "bestRank": 32,
+          "avgPoints": 59,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 162,
+          "athleteId": "cmjzpdkaa007cbfho0t5qqqm9",
+          "athleteName": "陈卓",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 59,
+          "competitionCount": 1,
+          "bestRank": 32,
+          "avgPoints": 59,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 163,
+          "athleteId": "cmjzpdkdh00a0bfho4wxoxzvt",
+          "athleteName": "张晧泽",
+          "team": "太原市第二少年体育学校",
+          "totalPoints": 59,
+          "competitionCount": 1,
+          "bestRank": 32,
+          "avgPoints": 59,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 164,
+          "athleteId": "cmjzpdk6w004ibfhowp9zh349",
+          "athleteName": "祖与辰",
+          "team": "秦皇岛狂雪滑雪俱乐部",
+          "totalPoints": 55,
+          "competitionCount": 1,
+          "bestRank": 33,
+          "avgPoints": 55,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 165,
+          "athleteId": "cmjzpdkdl00a3bfhobgcrmoxf",
+          "athleteName": "郭芮名",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 55,
+          "competitionCount": 1,
+          "bestRank": 33,
+          "avgPoints": 55,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 166,
+          "athleteId": "cmjzpdk70004lbfhoemd7yndw",
+          "athleteName": "吕毅",
+          "team": "太原市第二少年体育学校",
+          "totalPoints": 51,
+          "competitionCount": 1,
+          "bestRank": 34,
+          "avgPoints": 51,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 167,
+          "athleteId": "cmjzpdkdq00a6bfhooeygbvcg",
+          "athleteName": "李钊羽",
+          "team": "个人",
+          "totalPoints": 51,
+          "competitionCount": 1,
+          "bestRank": 34,
+          "avgPoints": 51,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 168,
+          "athleteId": "cmjzpdk74004obfhof6076pvg",
+          "athleteName": "王博晨昊",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 47,
+          "competitionCount": 1,
+          "bestRank": 35,
+          "avgPoints": 47,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 169,
+          "athleteId": "cmjzpdkdu00a9bfhoglttsdpp",
+          "athleteName": "谢书敖",
+          "team": "零站单板滑雪俱乐部",
+          "totalPoints": 47,
+          "competitionCount": 1,
+          "bestRank": 35,
+          "avgPoints": 47,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 170,
+          "athleteId": "cmjzpdkdy00acbfhof8j22w6u",
+          "athleteName": "王浩然",
+          "team": "中麟体育",
+          "totalPoints": 43,
+          "competitionCount": 1,
+          "bestRank": 36,
+          "avgPoints": 43,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 171,
+          "athleteId": "cmjzpdke200afbfho46pb1bph",
+          "athleteName": "陈浩铭",
+          "team": "四川体育职业学院",
+          "totalPoints": 39,
+          "competitionCount": 1,
+          "bestRank": 37,
+          "avgPoints": 39,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 172,
+          "athleteId": "cmjzpdke600aibfhorlv0ah7f",
+          "athleteName": "徐悦宾",
+          "team": "北京虎村竞技体育有限公司",
+          "totalPoints": 35,
+          "competitionCount": 1,
+          "bestRank": 38,
+          "avgPoints": 35,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 173,
+          "athleteId": "cmjzpdke900albfhoigjeyd76",
+          "athleteName": "暴城睿",
+          "team": "辽宁极限体育发展有限公司",
+          "totalPoints": 31,
+          "competitionCount": 1,
+          "bestRank": 39,
+          "avgPoints": 31,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 174,
+          "athleteId": "cmjzpdked00aobfhobpgyq4nt",
+          "athleteName": "靳淏宬",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 27,
+          "competitionCount": 1,
+          "bestRank": 40,
+          "avgPoints": 27,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 175,
+          "athleteId": "cmjzpdkeg00arbfhofvp5x8xt",
+          "athleteName": "熊品超",
+          "team": "重庆埃尔派体育文化传播有限公司",
+          "totalPoints": 24,
+          "competitionCount": 1,
+          "bestRank": 41,
+          "avgPoints": 24,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 176,
+          "athleteId": "cmjzpdkek00aubfhonxqvxggw",
+          "athleteName": "孙裕恒",
+          "team": "北京市朝阳区第三少儿业余体校",
+          "totalPoints": 21,
+          "competitionCount": 1,
+          "bestRank": 42,
+          "avgPoints": 21,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 177,
+          "athleteId": "cmjzpdken00axbfhox6zhp4mo",
+          "athleteName": "陈羿同",
+          "team": "零站体育",
+          "totalPoints": 18,
+          "competitionCount": 1,
+          "bestRank": 43,
+          "avgPoints": 18,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 178,
+          "athleteId": "cmjzpdker00b0bfhocrpgfxmf",
+          "athleteName": "陈宥廷",
+          "team": "上海雪酷滑雪竞技队",
+          "totalPoints": 15,
+          "competitionCount": 1,
+          "bestRank": 44,
+          "avgPoints": 15,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 179,
+          "athleteId": "cmjzpdkeu00b3bfhoz7xisfn9",
+          "athleteName": "杨昊泽",
+          "team": "速森体育",
+          "totalPoints": 12,
+          "competitionCount": 1,
+          "bestRank": 45,
+          "avgPoints": 12,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        }
+      ],
+      "total": 179
+    },
+    {
+      "sportType": "alpine",
+      "sportName": "高山滑雪",
+      "rankings": [
+        {
+          "rank": 1,
+          "athleteId": "cmjzpdkop00iobfhokthvam34",
+          "athleteName": "李金润",
+          "team": "四川体育职业学院",
+          "totalPoints": 720,
+          "competitionCount": 2,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 2,
+          "athleteId": "cmjzpdkq000jrbfhovq39ke3q",
+          "athleteName": "李若瑜",
+          "team": "中关村一小",
+          "totalPoints": 720,
+          "competitionCount": 2,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 3,
+          "athleteId": "cmjzpdkqp00kcbfho4at9jl9k",
+          "athleteName": "赵酌",
+          "team": "四川体育职业学院",
+          "totalPoints": 720,
+          "competitionCount": 2,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 4,
+          "athleteId": "cmjzpdkr100kobfhorssp9cun",
+          "athleteName": "张雨馨",
+          "team": "四川体育职业学院",
+          "totalPoints": 720,
+          "competitionCount": 2,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 5,
+          "athleteId": "cmjzpdkrp00l9bfhoebj1petm",
+          "athleteName": "黄子歌",
+          "team": "四川体育职业学院",
+          "totalPoints": 663,
+          "competitionCount": 2,
+          "bestRank": 1,
+          "avgPoints": 331.5,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 6,
+          "athleteId": "cmjzpdkp000ixbfhoom4nz6ao",
+          "athleteName": "王阳明",
+          "team": "张家口乔与杨体育服务有限公司",
+          "totalPoints": 640,
+          "competitionCount": 2,
+          "bestRank": 1,
+          "avgPoints": 320,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 7,
+          "athleteId": "cmjzpdkri00l3bfhogfhne4tr",
+          "athleteName": "肖瑞林",
+          "team": "重庆市冬季运动管理中心",
+          "totalPoints": 640,
+          "competitionCount": 2,
+          "bestRank": 1,
+          "avgPoints": 320,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 8,
+          "athleteId": "cmjzpdkot00irbfhoyhtlvzya",
+          "athleteName": "杨蓝戈",
+          "team": "个人",
+          "totalPoints": 632,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 316,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 9,
+          "athleteId": "cmjzpdkow00iubfhojkdi817d",
+          "athleteName": "庞予涵",
+          "team": "张家口乔与杨体育服务有限公司",
+          "totalPoints": 632,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 316,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 10,
+          "athleteId": "cmjzpdkp700j3bfhoni6zgejk",
+          "athleteName": "高琦硕",
+          "team": "高峰",
+          "totalPoints": 632,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 316,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 11,
+          "athleteId": "cmjzpdkqv00kibfhosfplepf9",
+          "athleteName": "苏一豪",
+          "team": "重庆市冬季运动管理中心",
+          "totalPoints": 632,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 316,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 12,
+          "athleteId": "cmjzpdkr500krbfhoaxpqfzp4",
+          "athleteName": "杨子骞",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 632,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 316,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 13,
+          "athleteId": "cmjzpdkr800kubfho15rzjdm7",
+          "athleteName": "罗梓瑜",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 632,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 316,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 14,
+          "athleteId": "cmjzpdkrm00l6bfho179zhn19",
+          "athleteName": "刘彦钧凯",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 632,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 316,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 15,
+          "athleteId": "cmjzpdkpd00j9bfho5ceqs1fb",
+          "athleteName": "王润钰",
+          "team": "张家口乔与杨体育服务有限公司",
+          "totalPoints": 620,
+          "competitionCount": 2,
+          "bestRank": 1,
+          "avgPoints": 310,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 16,
+          "athleteId": "cmjzpdkqb00k0bfhow3hoof01",
+          "athleteName": "蔡沛琳",
+          "team": "成都热雪奇迹",
+          "totalPoints": 609,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 304.5,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 17,
+          "athleteId": "cmjzpdkqs00kfbfhoekaf7a8k",
+          "athleteName": "竹禹丞",
+          "team": "成都热雪奇迹",
+          "totalPoints": 609,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 304.5,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 18,
+          "athleteId": "cmjzpdkq700jxbfhog679cr7g",
+          "athleteName": "吴凌萱",
+          "team": "华发冰雪热雪奇迹",
+          "totalPoints": 606,
+          "competitionCount": 2,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 19,
+          "athleteId": "cmjzpdkq400jubfhoejwo7naf",
+          "athleteName": "罗暄晴",
+          "team": "成都热雪奇迹",
+          "totalPoints": 589,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 294.5,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 20,
+          "athleteId": "cmjzpdkpa00j6bfholp1nby8r",
+          "athleteName": "郭一远",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 583,
+          "competitionCount": 2,
+          "bestRank": 3,
+          "avgPoints": 291.5,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 21,
+          "athleteId": "cmjzpdkp300j0bfhohn94zbb3",
+          "athleteName": "艾思铭",
+          "team": "张家口乔与杨体育服务有限公司",
+          "totalPoints": 571,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 285.5,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 22,
+          "athleteId": "cmjzpdkqe00k3bfhoo18nnq3z",
+          "athleteName": "李昊汐",
+          "team": "西安热雪奇迹",
+          "totalPoints": 540,
+          "competitionCount": 2,
+          "bestRank": 4,
+          "avgPoints": 270,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 23,
+          "athleteId": "cmjzpdkrb00kxbfhoqtbsgmzj",
+          "athleteName": "张雅琪",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 540,
+          "competitionCount": 2,
+          "bestRank": 4,
+          "avgPoints": 270,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 24,
+          "athleteId": "cmjzpdkqy00klbfho0qckaxmt",
+          "athleteName": "于镇赫",
+          "team": "成都热雪奇迹",
+          "totalPoints": 522,
+          "competitionCount": 2,
+          "bestRank": 4,
+          "avgPoints": 261,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 25,
+          "athleteId": "cmjzpdkrw00lfbfhonz2a0d3b",
+          "athleteName": "吕浩源",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 520,
+          "competitionCount": 2,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 26,
+          "athleteId": "cmjzpdkrt00lcbfhofvlcdm8r",
+          "athleteName": "王梓丞",
+          "team": "重庆市冬季运动管理中心",
+          "totalPoints": 506,
+          "competitionCount": 2,
+          "bestRank": 4,
+          "avgPoints": 253,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 27,
+          "athleteId": "cmjzpdkqi00k6bfhotz0ghplg",
+          "athleteName": "吴玟颐",
+          "team": "华发冰雪热雪奇迹",
+          "totalPoints": 484,
+          "competitionCount": 2,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 28,
+          "athleteId": "cmjzpdks000libfhouk369qbh",
+          "athleteName": "林朗",
+          "team": "哈尔滨热雪奇迹",
+          "totalPoints": 484,
+          "competitionCount": 2,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 29,
+          "athleteId": "cmjzpdkph00jcbfho8tsz6f9a",
+          "athleteName": "左子正",
+          "team": "左子正",
+          "totalPoints": 468,
+          "competitionCount": 2,
+          "bestRank": 6,
+          "avgPoints": 234,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 30,
+          "athleteId": "cmjzpdkql00k9bfhodvj2cshf",
+          "athleteName": "卢彦伊",
+          "team": "成都热雪奇迹",
+          "totalPoints": 452,
+          "competitionCount": 2,
+          "bestRank": 7,
+          "avgPoints": 226,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 31,
+          "athleteId": "cmjzpdkpk00jfbfhoiy6rykkw",
+          "athleteName": "常冠廷",
+          "team": "吉林市丰满区滑雪协会",
+          "totalPoints": 438,
+          "competitionCount": 2,
+          "bestRank": 7,
+          "avgPoints": 219,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 32,
+          "athleteId": "cmjzpdkul00nybfhosbxa0gbd",
+          "athleteName": "张芝豪",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 329,
+          "competitionCount": 1,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 33,
+          "athleteId": "cmjzpdkto00n5bfho4j8lt3fl",
+          "athleteName": "郑捷铭",
+          "team": "重庆市冬季运动管理中心",
+          "totalPoints": 303,
+          "competitionCount": 1,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 34,
+          "athleteId": "cmjzpdks900lrbfho41ykduoi",
+          "athleteName": "周昱含",
+          "team": "沈阳王伟滑雪管理咨询服务有限公司",
+          "totalPoints": 280,
+          "competitionCount": 1,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 35,
+          "athleteId": "cmjzpdkue00nrbfhoad1f9vqw",
+          "athleteName": "叶涵汐",
+          "team": "成都热雪奇迹",
+          "totalPoints": 280,
+          "competitionCount": 1,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 36,
+          "athleteId": "cmjzpdkrf00l0bfhoi24xpm3k",
+          "athleteName": "陈奕霏",
+          "team": "个人",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 37,
+          "athleteId": "cmjzpdksc00lubfho18uchde6",
+          "athleteName": "杨睿怡",
+          "team": "华发冰雪热雪奇迹",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 38,
+          "athleteId": "cmjzpdksr00m8bfhorh0gxvtl",
+          "athleteName": "李彦博",
+          "team": "四川体育职业学院",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 39,
+          "athleteId": "cmjzpdktv00nabfhomuj9q4hs",
+          "athleteName": "杨宗葆",
+          "team": "个人",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 40,
+          "athleteId": "cmjzpdksg00lxbfhopa5j9xjd",
+          "athleteName": "刘子歌",
+          "team": "张家口乔与杨体育服务有限公司",
+          "totalPoints": 242,
+          "competitionCount": 1,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 41,
+          "athleteId": "cmjzpdku000nfbfhod6ac8ew5",
+          "athleteName": "冯一晗",
+          "team": "成都热雪奇迹",
+          "totalPoints": 226,
+          "competitionCount": 1,
+          "bestRank": 7,
+          "avgPoints": 226,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 42,
+          "athleteId": "cmjzpdkpp00jibfho6rmhufv0",
+          "athleteName": "王冠霖",
+          "team": "吉林坤伦滑雪俱乐部",
+          "totalPoints": 212,
+          "competitionCount": 1,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 43,
+          "athleteId": "cmjzpdku400nibfholr4qu1hr",
+          "athleteName": "顾羽宸",
+          "team": "成都热雪奇迹",
+          "totalPoints": 212,
+          "competitionCount": 1,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 44,
+          "athleteId": "cmjzpdkuz00obbfho0os6d2tq",
+          "athleteName": "肖辰俊熙",
+          "team": "成都热雪奇迹",
+          "totalPoints": 212,
+          "competitionCount": 1,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 45,
+          "athleteId": "cmjzpdkpt00jlbfho1kgjxby2",
+          "athleteName": "王宏轩",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 199,
+          "competitionCount": 1,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 46,
+          "athleteId": "cmjzpdksz00mhbfhojzwb0bac",
+          "athleteName": "李京和",
+          "team": "个人",
+          "totalPoints": 199,
+          "competitionCount": 1,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 47,
+          "athleteId": "cmjzpdkv200oebfhojl3ujfok",
+          "athleteName": "何心远",
+          "team": "成都热雪奇迹",
+          "totalPoints": 199,
+          "competitionCount": 1,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 48,
+          "athleteId": "cmjzpdkpw00jobfho96ief0p6",
+          "athleteName": "马健剀",
+          "team": "吉林坤伦滑雪俱乐部",
+          "totalPoints": 187,
+          "competitionCount": 1,
+          "bestRank": 10,
+          "avgPoints": 187,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 49,
+          "athleteId": "cmjzpdkt300mkbfhogytw8qz1",
+          "athleteName": "熊泽瑞",
+          "team": "张家口乔与杨体育服务有限公司",
+          "totalPoints": 187,
+          "competitionCount": 1,
+          "bestRank": 10,
+          "avgPoints": 187,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        }
+      ],
+      "total": 49
+    },
+    {
+      "sportType": "freestyle-slopestyle-bigair",
+      "sportName": "自由式坡面障碍技巧/大跳台",
+      "rankings": [
+        {
+          "rank": 1,
+          "athleteId": "cmjzpdkv900ohbfhojesum95s",
+          "athleteName": "赵紫琪",
+          "team": "四川体育职业学院",
+          "totalPoints": 720,
+          "competitionCount": 2,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 2,
+          "athleteId": "cmjzpdkwu00pqbfhojhnxffpm",
+          "athleteName": "常嘉林",
+          "team": "广西射击射箭运动发展中心",
+          "totalPoints": 720,
+          "competitionCount": 2,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 3,
+          "athleteId": "cmjzpdkyk00r5bfhoikmy4e16",
+          "athleteName": "周英杰",
+          "team": "四川体育职业学院",
+          "totalPoints": 720,
+          "competitionCount": 2,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 4,
+          "athleteId": "cmjzpdkzn00rzbfhozmvs8hx9",
+          "athleteName": "夏可馨",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 720,
+          "competitionCount": 2,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 5,
+          "athleteId": "cmjzpdkzy00s8bfhoiv0z32ls",
+          "athleteName": "田嘉译",
+          "team": "沈阳体育学院",
+          "totalPoints": 720,
+          "competitionCount": 2,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 6,
+          "athleteId": "cmjzpdkvc00okbfhoitspibck",
+          "athleteName": "王淑哲",
+          "team": "河南省体育局",
+          "totalPoints": 658,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 7,
+          "athleteId": "cmjzpdkzr00s2bfhoszo6feyy",
+          "athleteName": "余思源",
+          "team": "四川体育职业学院",
+          "totalPoints": 658,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 8,
+          "athleteId": "cmjzpdkwz00ptbfho9l5fo4g2",
+          "athleteName": "张墨凡",
+          "team": "北京市冬季运动管理中心",
+          "totalPoints": 632,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 316,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 9,
+          "athleteId": "cmjzpdkx200pwbfhonl48w33h",
+          "athleteName": "赵铠轩",
+          "team": "河南省体育局",
+          "totalPoints": 632,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 316,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 10,
+          "athleteId": "cmjzpdkxv00qkbfhogyt55uun",
+          "athleteName": "王珈绮",
+          "team": "四川体育职业学院",
+          "totalPoints": 632,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 316,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 11,
+          "athleteId": "cmjzpdkxy00qnbfhoi0fohlcs",
+          "athleteName": "叶欣悦",
+          "team": "四川体育职业学院",
+          "totalPoints": 632,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 316,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 12,
+          "athleteId": "cmjzpdkyn00r8bfho5hxp5a6u",
+          "athleteName": "张乔淳佑",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 632,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 316,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 13,
+          "athleteId": "cmjzpdkyr00rbbfhon1ylf1wi",
+          "athleteName": "欧阳聚勇",
+          "team": "广西射击射箭运动发展中心",
+          "totalPoints": 632,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 316,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 14,
+          "athleteId": "cmjzpdl0200sbbfho4oyc84yi",
+          "athleteName": "孙金隆",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 632,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 316,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 15,
+          "athleteId": "cmjzpdl0900sebfhochiz1nog",
+          "athleteName": "张天迈",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 632,
+          "competitionCount": 2,
+          "bestRank": 2,
+          "avgPoints": 316,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 16,
+          "athleteId": "cmjzpdky600qtbfhoiwp2kmsc",
+          "athleteName": "平梓涵",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 620,
+          "competitionCount": 2,
+          "bestRank": 1,
+          "avgPoints": 310,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 17,
+          "athleteId": "cmjzpdkzu00s5bfhojnktcfby",
+          "athleteName": "高梓曦",
+          "team": "个人",
+          "totalPoints": 606,
+          "competitionCount": 2,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U18",
+          "gender": "女子组"
+        },
+        {
+          "rank": 18,
+          "athleteId": "cmjzpdkxs00qhbfhoqhlhgnkz",
+          "athleteName": "周绮润",
+          "team": "个人",
+          "totalPoints": 586,
+          "competitionCount": 2,
+          "bestRank": 1,
+          "avgPoints": 293,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 19,
+          "athleteId": "cmjzpdkvk00oqbfhotqaedvcn",
+          "athleteName": "武温暖",
+          "team": "石家庄市冰雪与足球运动推广训练中心",
+          "totalPoints": 583,
+          "competitionCount": 2,
+          "bestRank": 3,
+          "avgPoints": 291.5,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 20,
+          "athleteId": "cmjzpdkx700pzbfholzzypp6c",
+          "athleteName": "张梓童",
+          "team": "河南省体育局",
+          "totalPoints": 560,
+          "competitionCount": 2,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 21,
+          "athleteId": "cmjzpdkyu00rebfhoup8aq1ld",
+          "athleteName": "王翊宁",
+          "team": "北京市冬季运动管理中心",
+          "totalPoints": 560,
+          "competitionCount": 2,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 22,
+          "athleteId": "cmjzpdl0e00shbfhoc5njd0lb",
+          "athleteName": "王晨",
+          "team": "个人",
+          "totalPoints": 560,
+          "competitionCount": 2,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 23,
+          "athleteId": "cmjzpdkvn00otbfho8ze6lnnz",
+          "athleteName": "李诗沫",
+          "team": "石家庄市冰雪与足球运动推广训练中心",
+          "totalPoints": 540,
+          "competitionCount": 2,
+          "bestRank": 4,
+          "avgPoints": 270,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 24,
+          "athleteId": "cmjzpdkvg00onbfhog8ooajnb",
+          "athleteName": "任可心",
+          "team": "四川体育职业学院",
+          "totalPoints": 529,
+          "competitionCount": 2,
+          "bestRank": 3,
+          "avgPoints": 264.5,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 25,
+          "athleteId": "cmjzpdkyy00rhbfhomuo5xnnw",
+          "athleteName": "宇威琦",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 520,
+          "competitionCount": 2,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 26,
+          "athleteId": "cmjzpdkyc00qzbfhoa03c1g4b",
+          "athleteName": "杨芷妍",
+          "team": "四川体育职业学院",
+          "totalPoints": 506,
+          "competitionCount": 2,
+          "bestRank": 4,
+          "avgPoints": 253,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 27,
+          "athleteId": "cmjzpdkxa00q2bfhoqpmx31h0",
+          "athleteName": "王俊熙",
+          "team": "河南省体育局",
+          "totalPoints": 502,
+          "competitionCount": 2,
+          "bestRank": 5,
+          "avgPoints": 251,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 28,
+          "athleteId": "cmjzpdkxe00q5bfho8r60z791",
+          "athleteName": "崔芃森",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 502,
+          "competitionCount": 2,
+          "bestRank": 5,
+          "avgPoints": 251,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 29,
+          "athleteId": "cmjzpdky900qwbfhouv7qekds",
+          "athleteName": "李明灿",
+          "team": "广西射击射箭运动发展中心",
+          "totalPoints": 502,
+          "competitionCount": 2,
+          "bestRank": 5,
+          "avgPoints": 251,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 30,
+          "athleteId": "cmjzpdky200qqbfhojspykxzi",
+          "athleteName": "王珠彤",
+          "team": "石家庄市冰雪与足球运动推广训练中心",
+          "totalPoints": 492,
+          "competitionCount": 2,
+          "bestRank": 4,
+          "avgPoints": 246,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 31,
+          "athleteId": "cmjzpdkvv00ozbfho9q5gtmko",
+          "athleteName": "闫妍",
+          "team": "个人",
+          "totalPoints": 486,
+          "competitionCount": 2,
+          "bestRank": 5,
+          "avgPoints": 243,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 32,
+          "athleteId": "cmjzpdkvr00owbfhobsujiv88",
+          "athleteName": "孙焕轶",
+          "team": "个人",
+          "totalPoints": 484,
+          "competitionCount": 2,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 33,
+          "athleteId": "cmjzpdkz200rkbfho59mnqt4a",
+          "athleteName": "刘栩辰",
+          "team": "重庆市沙坪坝区体育运动学校",
+          "totalPoints": 484,
+          "competitionCount": 2,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 34,
+          "athleteId": "cmjzpdkyg00r2bfhonpfve5v0",
+          "athleteName": "李雅馨",
+          "team": "北京市冬季运动管理中心",
+          "totalPoints": 454,
+          "competitionCount": 2,
+          "bestRank": 6,
+          "avgPoints": 227,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 35,
+          "athleteId": "cmjzpdkxh00q8bfho5kg4losu",
+          "athleteName": "卢彦词",
+          "team": "四川体育职业学院",
+          "totalPoints": 438,
+          "competitionCount": 2,
+          "bestRank": 7,
+          "avgPoints": 219,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 36,
+          "athleteId": "cmjzpdkxl00qbbfhowxx5v1fm",
+          "athleteName": "赵子钰",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 438,
+          "competitionCount": 2,
+          "bestRank": 7,
+          "avgPoints": 219,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 37,
+          "athleteId": "cmjzpdkzb00rqbfhozbj66j9r",
+          "athleteName": "王冬杰",
+          "team": "广西射击射箭运动发展中心",
+          "totalPoints": 424,
+          "competitionCount": 2,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 38,
+          "athleteId": "cmjzpdkzj00rwbfhoyoxomh3h",
+          "athleteName": "梁跃飞",
+          "team": "广西射击射箭运动发展中心",
+          "totalPoints": 413,
+          "competitionCount": 2,
+          "bestRank": 7,
+          "avgPoints": 206.5,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 39,
+          "athleteId": "cmjzpdkz700rnbfhorz1h81nt",
+          "athleteName": "李霁开",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 402,
+          "competitionCount": 2,
+          "bestRank": 7,
+          "avgPoints": 201,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 40,
+          "athleteId": "cmjzpdkw300p5bfhodr0bg1op",
+          "athleteName": "韩小贝",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 398,
+          "competitionCount": 2,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 41,
+          "athleteId": "cmjzpdkxo00qebfhomrlq3drg",
+          "athleteName": "李雪聪",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 398,
+          "competitionCount": 2,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 42,
+          "athleteId": "cmjzpdkzf00rtbfhou6ca98ui",
+          "athleteName": "程楚阳",
+          "team": "广西射击射箭运动发展中心",
+          "totalPoints": 398,
+          "competitionCount": 2,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 43,
+          "athleteId": "cmjzpdkwb00pbbfhok5m4shmm",
+          "athleteName": "孙焕轲",
+          "team": "个人",
+          "totalPoints": 388,
+          "competitionCount": 2,
+          "bestRank": 8,
+          "avgPoints": 194,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 44,
+          "athleteId": "cmjzpdkvz00p2bfhobxqhq2ex",
+          "athleteName": "甄芝漫",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 369,
+          "competitionCount": 2,
+          "bestRank": 8,
+          "avgPoints": 184.5,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 45,
+          "athleteId": "cmjzpdkw600p8bfhouhcl0616",
+          "athleteName": "袁芮涵",
+          "team": "河南省体育局",
+          "totalPoints": 353,
+          "competitionCount": 2,
+          "bestRank": 10,
+          "avgPoints": 176.5,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 46,
+          "athleteId": "cmjzpdkwf00pebfhoy6f0kq3d",
+          "athleteName": "欧子娴",
+          "team": "成都热雪奇迹",
+          "totalPoints": 353,
+          "competitionCount": 2,
+          "bestRank": 10,
+          "avgPoints": 176.5,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 47,
+          "athleteId": "cmjzpdkwi00phbfho8f0ltvne",
+          "athleteName": "陈科羽",
+          "team": "四川体育职业学院",
+          "totalPoints": 333,
+          "competitionCount": 2,
+          "bestRank": 11,
+          "avgPoints": 166.5,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 48,
+          "athleteId": "cmjzpdkwq00pnbfhozuu1pwmh",
+          "athleteName": "孙婉迪",
+          "team": "个人",
+          "totalPoints": 290,
+          "competitionCount": 2,
+          "bestRank": 14,
+          "avgPoints": 145,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 49,
+          "athleteId": "cmjzpdl3200uvbfho4hlumf98",
+          "athleteName": "徐思远",
+          "team": "沈阳体育学院",
+          "totalPoints": 187,
+          "competitionCount": 1,
+          "bestRank": 10,
+          "avgPoints": 187,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 50,
+          "athleteId": "cmjzpdkwn00pkbfhoanaefh2j",
+          "athleteName": "万洛辰",
+          "team": "个人",
+          "totalPoints": 149,
+          "competitionCount": 1,
+          "bestRank": 14,
+          "avgPoints": 149,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 51,
+          "athleteId": "cmjzpdl1f00tcbfhowslhbsqq",
+          "athleteName": "李佳馨",
+          "team": "个人",
+          "totalPoints": 141,
+          "competitionCount": 1,
+          "bestRank": 15,
+          "avgPoints": 141,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        }
+      ],
+      "total": 51
+    },
+    {
+      "sportType": "snowboard-slopestyle-bigair",
+      "sportName": "单板坡面障碍技巧/大跳台",
+      "rankings": [
+        {
+          "rank": 1,
+          "athleteId": "cmjzpdl3l00vebfho3uelbuun",
+          "athleteName": "牛安芷芸",
+          "team": "滑雪兔俱乐部",
+          "totalPoints": 360,
+          "competitionCount": 1,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 2,
+          "athleteId": "cmjzpdl4g00w5bfho5cwg19at",
+          "athleteName": "鱼嘉怡",
+          "team": "西安市竞技体育学校",
+          "totalPoints": 360,
+          "competitionCount": 1,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 3,
+          "athleteId": "cmjzpdl5m00x2bfhom0fcxhyh",
+          "athleteName": "刘翰泽",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 360,
+          "competitionCount": 1,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 4,
+          "athleteId": "cmjzpdl7800yhbfhowphrxay1",
+          "athleteName": "袁梓程",
+          "team": "万域芳菲俱乐部",
+          "totalPoints": 360,
+          "competitionCount": 1,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 5,
+          "athleteId": "cmjzpdl8r00zqbfhozlyjravq",
+          "athleteName": "李俊辛",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 360,
+          "competitionCount": 1,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 6,
+          "athleteId": "cmjzpdkjm00exbfhon8q764e7",
+          "athleteName": "孙嘉怡",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 360,
+          "competitionCount": 1,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 7,
+          "athleteId": "cmjzpdkkt00fobfhovt7it0m5",
+          "athleteName": "鱼嘉怡",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 360,
+          "competitionCount": 1,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 8,
+          "athleteId": "cmjzpdkly00gfbfhof1a75ldx",
+          "athleteName": "陈宇垚",
+          "team": "四川体育职业学院",
+          "totalPoints": 360,
+          "competitionCount": 1,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 9,
+          "athleteId": "cmjzpdkmy00h9bfho81478919",
+          "athleteName": "王恒宇",
+          "team": "个人",
+          "totalPoints": 360,
+          "competitionCount": 1,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 10,
+          "athleteId": "cmjzpdldm013ebfhokhnmfzq7",
+          "athleteName": "封树渝",
+          "team": "重庆市沙坪坝区体育运动学校",
+          "totalPoints": 360,
+          "competitionCount": 1,
+          "bestRank": 1,
+          "avgPoints": 360,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 11,
+          "athleteId": "cmjzpdl3p00vhbfhoeqoogtsn",
+          "athleteName": "孙嘉怡",
+          "team": "哈尔滨市冬季运动与水上运动中心",
+          "totalPoints": 329,
+          "competitionCount": 1,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 12,
+          "athleteId": "cmjzpdl4k00w8bfhovnob9dk5",
+          "athleteName": "赖文悦",
+          "team": "万域芳菲俱乐部",
+          "totalPoints": 329,
+          "competitionCount": 1,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 13,
+          "athleteId": "cmjzpdl5q00x5bfhoc7l1c0cm",
+          "athleteName": "王祖安",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 329,
+          "competitionCount": 1,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 14,
+          "athleteId": "cmjzpdl7c00ykbfhomlewbdfx",
+          "athleteName": "王恒宇",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 329,
+          "competitionCount": 1,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 15,
+          "athleteId": "cmjzpdl8v00ztbfhoazbpz7z0",
+          "athleteName": "封树渝",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 329,
+          "competitionCount": 1,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 16,
+          "athleteId": "cmjzpdkjq00f0bfho7lddp0tk",
+          "athleteName": "牛安芷芸",
+          "team": "个人",
+          "totalPoints": 329,
+          "competitionCount": 1,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 17,
+          "athleteId": "cmjzpdkkx00frbfhonb81p7bu",
+          "athleteName": "叶欣瑞",
+          "team": "四川体育职业学院",
+          "totalPoints": 329,
+          "competitionCount": 1,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 18,
+          "athleteId": "cmjzpdkm300gibfhob9a22der",
+          "athleteName": "刘翰泽",
+          "team": "个人",
+          "totalPoints": 329,
+          "competitionCount": 1,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 19,
+          "athleteId": "cmjzpdkn100hcbfho2br834hq",
+          "athleteName": "袁梓程",
+          "team": "四川体育职业学院",
+          "totalPoints": 329,
+          "competitionCount": 1,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 20,
+          "athleteId": "cmjzpdko000i6bfho6pikfiix",
+          "athleteName": "李俊辛",
+          "team": "四川体育职业学院",
+          "totalPoints": 329,
+          "competitionCount": 1,
+          "bestRank": 2,
+          "avgPoints": 329,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 21,
+          "athleteId": "cmjzpdl3s00vkbfhozbgej4oo",
+          "athleteName": "翟姝涵",
+          "team": "哈尔滨市冬季运动与水上运动中心",
+          "totalPoints": 303,
+          "competitionCount": 1,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 22,
+          "athleteId": "cmjzpdl4o00wbbfho34yo81x7",
+          "athleteName": "叶欣瑞",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 303,
+          "competitionCount": 1,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 23,
+          "athleteId": "cmjzpdl5u00x8bfho8spdatnb",
+          "athleteName": "刘沐泽",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 303,
+          "competitionCount": 1,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 24,
+          "athleteId": "cmjzpdl7g00ynbfho45blccup",
+          "athleteName": "谭凯元",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 303,
+          "competitionCount": 1,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 25,
+          "athleteId": "cmjzpdl8y00zwbfhoyforb4hq",
+          "athleteName": "米馥豪",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 303,
+          "competitionCount": 1,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 26,
+          "athleteId": "cmjzpdkjw00f3bfhoswtiqk6b",
+          "athleteName": "周斯言",
+          "team": "个人",
+          "totalPoints": 303,
+          "competitionCount": 1,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 27,
+          "athleteId": "cmjzpdkl100fubfho8tg9xa1r",
+          "athleteName": "杨可轩",
+          "team": "广西射击射箭运动发展中心",
+          "totalPoints": 303,
+          "competitionCount": 1,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 28,
+          "athleteId": "cmjzpdkm700glbfhoigv6cvu9",
+          "athleteName": "王祖安",
+          "team": "河南省体育局",
+          "totalPoints": 303,
+          "competitionCount": 1,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 29,
+          "athleteId": "cmjzpdkn400hfbfhowdqphedz",
+          "athleteName": "谭凯元",
+          "team": "谭凯元",
+          "totalPoints": 303,
+          "competitionCount": 1,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 30,
+          "athleteId": "cmjzpdldr013jbfhops2vyapx",
+          "athleteName": "米馥豪",
+          "team": "石家庄市冰雪与足球运动推广训练中心",
+          "totalPoints": 303,
+          "competitionCount": 1,
+          "bestRank": 3,
+          "avgPoints": 303,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 31,
+          "athleteId": "cmjzpdl3v00vnbfhosnyeji4m",
+          "athleteName": "姜子悦",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 280,
+          "competitionCount": 1,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 32,
+          "athleteId": "cmjzpdl4r00webfho0i331lns",
+          "athleteName": "鲁淼",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 280,
+          "competitionCount": 1,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 33,
+          "athleteId": "cmjzpdl5y00xbbfhos8fn9jes",
+          "athleteName": "戴宸熠",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 280,
+          "competitionCount": 1,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 34,
+          "athleteId": "cmjzpdl7j00yqbfho51mw9qqo",
+          "athleteName": "李奕泽",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 280,
+          "competitionCount": 1,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 35,
+          "athleteId": "cmjzpdl9100zzbfhoe6g8bjfo",
+          "athleteName": "李俣辛",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 280,
+          "competitionCount": 1,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 36,
+          "athleteId": "cmjzpdl9q010jbfhoiwnoqnw1",
+          "athleteName": "张诗涵",
+          "team": "石家庄市冰雪与足球运动推广训练中心",
+          "totalPoints": 280,
+          "competitionCount": 1,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 37,
+          "athleteId": "cmjzpdlad0112bfhomaplljnp",
+          "athleteName": "贺舒玉",
+          "team": "重庆市沙坪坝区体育运动学校",
+          "totalPoints": 280,
+          "competitionCount": 1,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 38,
+          "athleteId": "cmjzpdkma00gobfhoa7jwls5r",
+          "athleteName": "王曌霖",
+          "team": "河南省体育局",
+          "totalPoints": 280,
+          "competitionCount": 1,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 39,
+          "athleteId": "cmjzpdkn800hibfho8h61j0ao",
+          "athleteName": "刘子俊",
+          "team": "四川体育职业学院",
+          "totalPoints": 280,
+          "competitionCount": 1,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 40,
+          "athleteId": "cmjzpdko800icbfho0ujbn9cl",
+          "athleteName": "罗皓桉",
+          "team": "湖北省武术和冬季运动管理中心",
+          "totalPoints": 280,
+          "competitionCount": 1,
+          "bestRank": 4,
+          "avgPoints": 280,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 41,
+          "athleteId": "cmjzpdl3y00vqbfho1jpzm9my",
+          "athleteName": "王迎紫",
+          "team": "万域芳菲俱乐部",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 42,
+          "athleteId": "cmjzpdl4v00whbfhoqb4c47yx",
+          "athleteName": "刘心雅",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 43,
+          "athleteId": "cmjzpdl6100xebfhoyxhqpnwq",
+          "athleteName": "范家睿",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 44,
+          "athleteId": "cmjzpdl7n00ytbfhovb95z3d0",
+          "athleteName": "吴昊隆",
+          "team": "哈尔滨市冬季运动与水上运动中心",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 45,
+          "athleteId": "cmjzpdl950102bfho492pljcc",
+          "athleteName": "冯晨峰",
+          "team": "沈阳体育学院",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 46,
+          "athleteId": "cmjzpdkk700f9bfhoa69ugr1p",
+          "athleteName": "姚予希",
+          "team": "成都热雪奇迹",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 47,
+          "athleteId": "cmjzpdklb00g0bfhoygeoy8ua",
+          "athleteName": "赖文悦",
+          "team": "四川体育职业学院",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 48,
+          "athleteId": "cmjzpdkme00grbfhokxgnro49",
+          "athleteName": "范天成",
+          "team": "个人",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 49,
+          "athleteId": "cmjzpdknb00hlbfhoeja6849z",
+          "athleteName": "张家睿",
+          "team": "四川体育职业学院",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 50,
+          "athleteId": "cmjzpdkoc00ifbfhogzsxfk2n",
+          "athleteName": "黄子剑",
+          "team": "湖北省武术和冬季运动管理中心",
+          "totalPoints": 260,
+          "competitionCount": 1,
+          "bestRank": 5,
+          "avgPoints": 260,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 51,
+          "athleteId": "cmjzpdl4100vtbfhodt352vf0",
+          "athleteName": "傅诗宸",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 242,
+          "competitionCount": 1,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 52,
+          "athleteId": "cmjzpdl5000wkbfhocx121wgy",
+          "athleteName": "王雪宸",
+          "team": "长春市冬季运动管理中心",
+          "totalPoints": 242,
+          "competitionCount": 1,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 53,
+          "athleteId": "cmjzpdl6400xhbfhoxutlhyxn",
+          "athleteName": "赵一翔",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 242,
+          "competitionCount": 1,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 54,
+          "athleteId": "cmjzpdl7q00ywbfhorj0y439x",
+          "athleteName": "王小虎",
+          "team": "哈尔滨市冬季运动与水上运动中心",
+          "totalPoints": 242,
+          "competitionCount": 1,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 55,
+          "athleteId": "cmjzpdl980105bfhowaz22rhr",
+          "athleteName": "耿浩然",
+          "team": "长春市冬季运动管理中心",
+          "totalPoints": 242,
+          "competitionCount": 1,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 56,
+          "athleteId": "cmjzpdkkb00fcbfhogaawq06u",
+          "athleteName": "杨茗然",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 242,
+          "competitionCount": 1,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 57,
+          "athleteId": "cmjzpdklg00g3bfhopeqe1sgz",
+          "athleteName": "周雨辰",
+          "team": "广西射击射箭运动发展中心",
+          "totalPoints": 242,
+          "competitionCount": 1,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 58,
+          "athleteId": "cmjzpdlbj011qbfholf7jdt25",
+          "athleteName": "刘沐泽",
+          "team": "石家庄市冰雪与足球运动推广与训练中心",
+          "totalPoints": 242,
+          "competitionCount": 1,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 59,
+          "athleteId": "cmjzpdknf00hobfho0vnutqs9",
+          "athleteName": "高翊博",
+          "team": "北京市冬季运动管理中心",
+          "totalPoints": 242,
+          "competitionCount": 1,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 60,
+          "athleteId": "cmjzpdkog00iibfhotxzpqno2",
+          "athleteName": "倪文凯",
+          "team": "湖北省武术和冬季运动管理中心",
+          "totalPoints": 242,
+          "competitionCount": 1,
+          "bestRank": 6,
+          "avgPoints": 242,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 61,
+          "athleteId": "cmjzpdl4500vwbfhof9h7fpmt",
+          "athleteName": "郭涵钰",
+          "team": "个人",
+          "totalPoints": 226,
+          "competitionCount": 1,
+          "bestRank": 7,
+          "avgPoints": 226,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 62,
+          "athleteId": "cmjzpdl5400wnbfhonij1rfxe",
+          "athleteName": "何芷昕",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 226,
+          "competitionCount": 1,
+          "bestRank": 7,
+          "avgPoints": 226,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 63,
+          "athleteId": "cmjzpdl6700xkbfhog299ru7s",
+          "athleteName": "王梓铭",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 226,
+          "competitionCount": 1,
+          "bestRank": 7,
+          "avgPoints": 226,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 64,
+          "athleteId": "cmjzpdl7t00yzbfho1iuq4hpl",
+          "athleteName": "张子骁",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 226,
+          "competitionCount": 1,
+          "bestRank": 7,
+          "avgPoints": 226,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 65,
+          "athleteId": "cmjzpdl9c0108bfhobi5x26qe",
+          "athleteName": "李汶轩",
+          "team": "长春市冬季运动管理中心",
+          "totalPoints": 226,
+          "competitionCount": 1,
+          "bestRank": 7,
+          "avgPoints": 226,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 66,
+          "athleteId": "cmjzpdkkf00ffbfhovtl6y82z",
+          "athleteName": "翟姝涵",
+          "team": "北京市冬季运动管理中心",
+          "totalPoints": 226,
+          "competitionCount": 1,
+          "bestRank": 7,
+          "avgPoints": 226,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 67,
+          "athleteId": "cmjzpdlas0119bfhobak518p5",
+          "athleteName": "王若西",
+          "team": "重庆市沙坪坝区体育运动学校",
+          "totalPoints": 226,
+          "competitionCount": 1,
+          "bestRank": 7,
+          "avgPoints": 226,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 68,
+          "athleteId": "cmjzpdkmk00gxbfho34o28xv8",
+          "athleteName": "赵严诺",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 226,
+          "competitionCount": 1,
+          "bestRank": 7,
+          "avgPoints": 226,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 69,
+          "athleteId": "cmjzpdkni00hrbfho3hln2uza",
+          "athleteName": "郭彧铭",
+          "team": "四川体育职业学院",
+          "totalPoints": 226,
+          "competitionCount": 1,
+          "bestRank": 7,
+          "avgPoints": 226,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 70,
+          "athleteId": "cmjzpdle0013sbfho3jgfbpad",
+          "athleteName": "雷涵文",
+          "team": "重庆市沙坪坝区体育运动学校",
+          "totalPoints": 226,
+          "competitionCount": 1,
+          "bestRank": 7,
+          "avgPoints": 226,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 71,
+          "athleteId": "cmjzpdl4900vzbfhonmuyxvkn",
+          "athleteName": "张曦彤",
+          "team": "个人",
+          "totalPoints": 212,
+          "competitionCount": 1,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 72,
+          "athleteId": "cmjzpdl5700wqbfhokaor4wmd",
+          "athleteName": "包雨彤",
+          "team": "沈阳体育学院",
+          "totalPoints": 212,
+          "competitionCount": 1,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 73,
+          "athleteId": "cmjzpdl6b00xnbfhodbirxnv7",
+          "athleteName": "翁晨皓",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 212,
+          "competitionCount": 1,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 74,
+          "athleteId": "cmjzpdl7x00z2bfhoq20wf501",
+          "athleteName": "申桐",
+          "team": "沈阳体育学院",
+          "totalPoints": 212,
+          "competitionCount": 1,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 75,
+          "athleteId": "cmjzpdkzy00s8bfhoiv0z32ls",
+          "athleteName": "田嘉译",
+          "team": "沈阳体育学院",
+          "totalPoints": 212,
+          "competitionCount": 1,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U18",
+          "gender": "男子组"
+        },
+        {
+          "rank": 76,
+          "athleteId": "cmjzpdkkk00fibfhornkfaegp",
+          "athleteName": "蒋柠萱",
+          "team": "北京市冬季运动管理中心",
+          "totalPoints": 212,
+          "competitionCount": 1,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 77,
+          "athleteId": "cmjzpdklq00g9bfhoyym4yvox",
+          "athleteName": "周雨欣",
+          "team": "广西射击射箭运动发展中心",
+          "totalPoints": 212,
+          "competitionCount": 1,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 78,
+          "athleteId": "cmjzpdkmo00h0bfho8q8f5myc",
+          "athleteName": "魏子博",
+          "team": "河南省体育局",
+          "totalPoints": 212,
+          "competitionCount": 1,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 79,
+          "athleteId": "cmjzpdlcz012ubfho66j36j88",
+          "athleteName": "梁嘉俊",
+          "team": "石家庄市冰雪与足球运动推广训练中心",
+          "totalPoints": 212,
+          "competitionCount": 1,
+          "bestRank": 8,
+          "avgPoints": 212,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 80,
+          "athleteId": "cmjzpdl4c00w2bfhokl4nmyi0",
+          "athleteName": "张瑾苒",
+          "team": "内蒙古体育职业学院",
+          "totalPoints": 199,
+          "competitionCount": 1,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 81,
+          "athleteId": "cmjzpdl5b00wtbfhok8xo24ek",
+          "athleteName": "栾智媛",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 199,
+          "competitionCount": 1,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 82,
+          "athleteId": "cmjzpdl6e00xqbfhoshn2l5ll",
+          "athleteName": "侯胤翔",
+          "team": "万域芳菲俱乐部",
+          "totalPoints": 199,
+          "competitionCount": 1,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 83,
+          "athleteId": "cmjzpdl8000z5bfhof416yoli",
+          "athleteName": "霍圣康",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 199,
+          "competitionCount": 1,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 84,
+          "athleteId": "cmjzpdkkp00flbfho4fw9ataz",
+          "athleteName": "冷昕莲",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 199,
+          "competitionCount": 1,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U11",
+          "gender": "女子组"
+        },
+        {
+          "rank": 85,
+          "athleteId": "cmjzpdklu00gcbfhoyosgjvcs",
+          "athleteName": "苏常格",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 199,
+          "competitionCount": 1,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 86,
+          "athleteId": "cmjzpdkmr00h3bfhom6eectsq",
+          "athleteName": "石昊桐",
+          "team": "北京市冬季运动管理中心",
+          "totalPoints": 199,
+          "competitionCount": 1,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 87,
+          "athleteId": "cmjzpdknp00hxbfho2se1dzm8",
+          "athleteName": "麦冠航",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 199,
+          "competitionCount": 1,
+          "bestRank": 9,
+          "avgPoints": 199,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 88,
+          "athleteId": "cmjzpdl5f00wwbfhoxyrpjrpk",
+          "athleteName": "刘宣成",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 187,
+          "competitionCount": 1,
+          "bestRank": 10,
+          "avgPoints": 187,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 89,
+          "athleteId": "cmjzpdl6h00xtbfhod637cmn5",
+          "athleteName": "周珈禾",
+          "team": "黑龙江冰雪体育职业学院",
+          "totalPoints": 187,
+          "competitionCount": 1,
+          "bestRank": 10,
+          "avgPoints": 187,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 90,
+          "athleteId": "cmjzpdl8300z8bfhoclhueadd",
+          "athleteName": "曾国强",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 187,
+          "competitionCount": 1,
+          "bestRank": 10,
+          "avgPoints": 187,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 91,
+          "athleteId": "cmjzpdkmu00h6bfhoz183j346",
+          "athleteName": "宁浩然",
+          "team": "成都热雪奇迹",
+          "totalPoints": 187,
+          "competitionCount": 1,
+          "bestRank": 10,
+          "avgPoints": 187,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 92,
+          "athleteId": "cmjzpdld4012zbfhoeg1jphpu",
+          "athleteName": "于瀚",
+          "team": "重庆市沙坪坝区体育运动学校",
+          "totalPoints": 187,
+          "competitionCount": 1,
+          "bestRank": 10,
+          "avgPoints": 187,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 93,
+          "athleteId": "cmjzpdl5j00wzbfho4iy8wvyi",
+          "athleteName": "王籽童",
+          "team": "辽宁省体育事业发展中心",
+          "totalPoints": 176,
+          "competitionCount": 1,
+          "bestRank": 11,
+          "avgPoints": 176,
+          "ageGroup": "U15",
+          "gender": "女子组"
+        },
+        {
+          "rank": 94,
+          "athleteId": "cmjzpdl6l00xwbfhowjl65bn5",
+          "athleteName": "林佳易",
+          "team": "哈尔滨市冬季运动与水上运动中心",
+          "totalPoints": 176,
+          "competitionCount": 1,
+          "bestRank": 11,
+          "avgPoints": 176,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 95,
+          "athleteId": "cmjzpdl8700zbbfhohn1861h0",
+          "athleteName": "孙琪翔",
+          "team": "哈尔滨市冬季运动与水上运动中心",
+          "totalPoints": 176,
+          "competitionCount": 1,
+          "bestRank": 11,
+          "avgPoints": 176,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 96,
+          "athleteId": "cmjzpdlbz0121bfhoofrhg803",
+          "athleteName": "曾星越",
+          "team": "个人",
+          "totalPoints": 176,
+          "competitionCount": 1,
+          "bestRank": 11,
+          "avgPoints": 176,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 97,
+          "athleteId": "cmjzpdld80132bfhoadlpmpwp",
+          "athleteName": "邓与骜",
+          "team": "成都热雪奇迹",
+          "totalPoints": 176,
+          "competitionCount": 1,
+          "bestRank": 11,
+          "avgPoints": 176,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 98,
+          "athleteId": "cmjzpdl6o00xzbfhoj6u9bsim",
+          "athleteName": "王泊文",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 166,
+          "competitionCount": 1,
+          "bestRank": 12,
+          "avgPoints": 166,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 99,
+          "athleteId": "cmjzpdl8b00zebfhoaawem8yw",
+          "athleteName": "李星翰",
+          "team": "沈阳体育学院",
+          "totalPoints": 166,
+          "competitionCount": 1,
+          "bestRank": 12,
+          "avgPoints": 166,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 100,
+          "athleteId": "cmjzpdlc30124bfho0cnhg41y",
+          "athleteName": "马泰铭",
+          "team": "成都热雪奇迹",
+          "totalPoints": 166,
+          "competitionCount": 1,
+          "bestRank": 12,
+          "avgPoints": 166,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 101,
+          "athleteId": "cmjzpdldb0135bfhoenavjvdu",
+          "athleteName": "罗知腾",
+          "team": "重庆市沙坪坝区体育运动学校",
+          "totalPoints": 166,
+          "competitionCount": 1,
+          "bestRank": 12,
+          "avgPoints": 166,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 102,
+          "athleteId": "cmjzpdl6r00y2bfhojet9qq4z",
+          "athleteName": "杨翔宇",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 157,
+          "competitionCount": 1,
+          "bestRank": 13,
+          "avgPoints": 157,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 103,
+          "athleteId": "cmjzpdl8f00zhbfho8fu1sd6q",
+          "athleteName": "刘济豪",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 157,
+          "competitionCount": 1,
+          "bestRank": 13,
+          "avgPoints": 157,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 104,
+          "athleteId": "cmjzpdlc90127bfho5v74jhb5",
+          "athleteName": "程锦辰",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 157,
+          "competitionCount": 1,
+          "bestRank": 13,
+          "avgPoints": 157,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 105,
+          "athleteId": "cmjzpdldf0138bfho188a6k3t",
+          "athleteName": "张钊宁",
+          "team": "重庆市沙坪坝区体育运动学校",
+          "totalPoints": 157,
+          "competitionCount": 1,
+          "bestRank": 13,
+          "avgPoints": 157,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 106,
+          "athleteId": "cmjzpdl6v00y5bfhoikyoooch",
+          "athleteName": "刘泽琛",
+          "team": "哈尔滨市冬季运动与水上运动中心",
+          "totalPoints": 149,
+          "competitionCount": 1,
+          "bestRank": 14,
+          "avgPoints": 149,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 107,
+          "athleteId": "cmjzpdl8j00zkbfhohoc9ab91",
+          "athleteName": "贺天佑",
+          "team": "四川体育职业学院",
+          "totalPoints": 149,
+          "competitionCount": 1,
+          "bestRank": 14,
+          "avgPoints": 149,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 108,
+          "athleteId": "cmjzpdlcc012abfhogtiodmxg",
+          "athleteName": "朱秋霖",
+          "team": "个人",
+          "totalPoints": 149,
+          "competitionCount": 1,
+          "bestRank": 14,
+          "avgPoints": 149,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 109,
+          "athleteId": "cmjzpdldi013bbfhoor5kxh26",
+          "athleteName": "王天磊",
+          "team": "河北省体育局冬季运动中心",
+          "totalPoints": 149,
+          "competitionCount": 1,
+          "bestRank": 14,
+          "avgPoints": 149,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 110,
+          "athleteId": "cmjzpdl6y00y8bfho0nmikypo",
+          "athleteName": "蒲彦西",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 142,
+          "competitionCount": 1,
+          "bestRank": 15,
+          "avgPoints": 142,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 111,
+          "athleteId": "cmjzpdl8n00znbfhovc4w60l6",
+          "athleteName": "陈宥呈",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 142,
+          "competitionCount": 1,
+          "bestRank": 15,
+          "avgPoints": 142,
+          "ageGroup": "U15",
+          "gender": "男子组"
+        },
+        {
+          "rank": 112,
+          "athleteId": "cmjzpdlcg012dbfho7kz6iwv3",
+          "athleteName": "林芮锋",
+          "team": "四川体育职业学院",
+          "totalPoints": 141,
+          "competitionCount": 1,
+          "bestRank": 15,
+          "avgPoints": 141,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 113,
+          "athleteId": "cmjzpdl7100ybbfhoo3p1hnvm",
+          "athleteName": "王梓伊",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 135,
+          "competitionCount": 1,
+          "bestRank": 16,
+          "avgPoints": 135,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        },
+        {
+          "rank": 114,
+          "athleteId": "cmjzpdl7500yebfhon5cb75ux",
+          "athleteName": "冯翊瀚",
+          "team": "成都市武侯区滑雪运动协会",
+          "totalPoints": 129,
+          "competitionCount": 1,
+          "bestRank": 17,
+          "avgPoints": 129,
+          "ageGroup": "U11",
+          "gender": "男子组"
+        }
+      ],
+      "total": 114
+    }
+  ],
   "rankings": [
     {
       "rank": 1,
-      "athleteId": "cmjzpdkzy00s8bfhoiv0z32ls",
-      "athleteName": "田嘉译",
-      "team": "沈阳体育学院",
-      "totalPoints": 932,
-      "competitionCount": 3,
+      "athleteId": "cmjzpdkop00iobfhokthvam34",
+      "athleteName": "李金润",
+      "team": "四川体育职业学院",
+      "totalPoints": 720,
+      "competitionCount": 2,
       "bestRank": 1,
-      "avgPoints": 310.6666666666667,
+      "avgPoints": 360,
       "ageGroup": "U18",
-      "gender": "男子组"
+      "gender": "女子组"
     },
     {
       "rank": 2,
+      "athleteId": "cmjzpdkq000jrbfhovq39ke3q",
+      "athleteName": "李若瑜",
+      "team": "中关村一小",
+      "totalPoints": 720,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 360,
+      "ageGroup": "U11",
+      "gender": "女子组"
+    },
+    {
+      "rank": 3,
+      "athleteId": "cmjzpdkqp00kcbfho4at9jl9k",
+      "athleteName": "赵酌",
+      "team": "四川体育职业学院",
+      "totalPoints": 720,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 360,
+      "ageGroup": "U11",
+      "gender": "男子组"
+    },
+    {
+      "rank": 4,
+      "athleteId": "cmjzpdkr100kobfhorssp9cun",
+      "athleteName": "张雨馨",
+      "team": "四川体育职业学院",
+      "totalPoints": 720,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 360,
+      "ageGroup": "U15",
+      "gender": "女子组"
+    },
+    {
+      "rank": 5,
       "athleteId": "cmjzpdkv900ohbfhojesum95s",
       "athleteName": "赵紫琪",
       "team": "四川体育职业学院",
@@ -61,7 +4852,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 3,
+      "rank": 6,
       "athleteId": "cmjzpdkwu00pqbfhojhnxffpm",
       "athleteName": "常嘉林",
       "team": "广西射击射箭运动发展中心",
@@ -73,7 +4864,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 4,
+      "rank": 7,
       "athleteId": "cmjzpdkyk00r5bfhoikmy4e16",
       "athleteName": "周英杰",
       "team": "四川体育职业学院",
@@ -85,7 +4876,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 5,
+      "rank": 8,
       "athleteId": "cmjzpdkzn00rzbfhozmvs8hx9",
       "athleteName": "夏可馨",
       "team": "河北省体育局冬季运动中心",
@@ -97,7 +4888,31 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 6,
+      "rank": 9,
+      "athleteId": "cmjzpdkzy00s8bfhoiv0z32ls",
+      "athleteName": "田嘉译",
+      "team": "沈阳体育学院",
+      "totalPoints": 720,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 360,
+      "ageGroup": "U18",
+      "gender": "男子组"
+    },
+    {
+      "rank": 10,
+      "athleteId": "cmjzpdkrp00l9bfhoebj1petm",
+      "athleteName": "黄子歌",
+      "team": "四川体育职业学院",
+      "totalPoints": 663,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 331.5,
+      "ageGroup": "U15",
+      "gender": "男子组"
+    },
+    {
+      "rank": 11,
       "athleteId": "cmjzpdkvc00okbfhoitspibck",
       "athleteName": "王淑哲",
       "team": "河南省体育局",
@@ -109,7 +4924,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 7,
+      "rank": 12,
       "athleteId": "cmjzpdkzr00s2bfhoszo6feyy",
       "athleteName": "余思源",
       "team": "四川体育职业学院",
@@ -121,7 +4936,115 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 8,
+      "rank": 13,
+      "athleteId": "cmjzpdkp000ixbfhoom4nz6ao",
+      "athleteName": "王阳明",
+      "team": "张家口乔与杨体育服务有限公司",
+      "totalPoints": 640,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 320,
+      "ageGroup": "U18",
+      "gender": "男子组"
+    },
+    {
+      "rank": 14,
+      "athleteId": "cmjzpdkri00l3bfhogfhne4tr",
+      "athleteName": "肖瑞林",
+      "team": "重庆市冬季运动管理中心",
+      "totalPoints": 640,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 320,
+      "ageGroup": "U15",
+      "gender": "男子组"
+    },
+    {
+      "rank": 15,
+      "athleteId": "cmjzpdkot00irbfhoyhtlvzya",
+      "athleteName": "杨蓝戈",
+      "team": "个人",
+      "totalPoints": 632,
+      "competitionCount": 2,
+      "bestRank": 2,
+      "avgPoints": 316,
+      "ageGroup": "U18",
+      "gender": "女子组"
+    },
+    {
+      "rank": 16,
+      "athleteId": "cmjzpdkow00iubfhojkdi817d",
+      "athleteName": "庞予涵",
+      "team": "张家口乔与杨体育服务有限公司",
+      "totalPoints": 632,
+      "competitionCount": 2,
+      "bestRank": 2,
+      "avgPoints": 316,
+      "ageGroup": "U18",
+      "gender": "女子组"
+    },
+    {
+      "rank": 17,
+      "athleteId": "cmjzpdkp700j3bfhoni6zgejk",
+      "athleteName": "高琦硕",
+      "team": "高峰",
+      "totalPoints": 632,
+      "competitionCount": 2,
+      "bestRank": 2,
+      "avgPoints": 316,
+      "ageGroup": "U18",
+      "gender": "男子组"
+    },
+    {
+      "rank": 18,
+      "athleteId": "cmjzpdkqv00kibfhosfplepf9",
+      "athleteName": "苏一豪",
+      "team": "重庆市冬季运动管理中心",
+      "totalPoints": 632,
+      "competitionCount": 2,
+      "bestRank": 2,
+      "avgPoints": 316,
+      "ageGroup": "U11",
+      "gender": "男子组"
+    },
+    {
+      "rank": 19,
+      "athleteId": "cmjzpdkr500krbfhoaxpqfzp4",
+      "athleteName": "杨子骞",
+      "team": "河北省体育局冬季运动中心",
+      "totalPoints": 632,
+      "competitionCount": 2,
+      "bestRank": 2,
+      "avgPoints": 316,
+      "ageGroup": "U15",
+      "gender": "女子组"
+    },
+    {
+      "rank": 20,
+      "athleteId": "cmjzpdkr800kubfho15rzjdm7",
+      "athleteName": "罗梓瑜",
+      "team": "河北省体育局冬季运动中心",
+      "totalPoints": 632,
+      "competitionCount": 2,
+      "bestRank": 2,
+      "avgPoints": 316,
+      "ageGroup": "U15",
+      "gender": "女子组"
+    },
+    {
+      "rank": 21,
+      "athleteId": "cmjzpdkrm00l6bfho179zhn19",
+      "athleteName": "刘彦钧凯",
+      "team": "河北省体育局冬季运动中心",
+      "totalPoints": 632,
+      "competitionCount": 2,
+      "bestRank": 2,
+      "avgPoints": 316,
+      "ageGroup": "U15",
+      "gender": "男子组"
+    },
+    {
+      "rank": 22,
       "athleteId": "cmjzpdkwz00ptbfho9l5fo4g2",
       "athleteName": "张墨凡",
       "team": "北京市冬季运动管理中心",
@@ -133,7 +5056,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 9,
+      "rank": 23,
       "athleteId": "cmjzpdkx200pwbfhonl48w33h",
       "athleteName": "赵铠轩",
       "team": "河南省体育局",
@@ -145,7 +5068,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 10,
+      "rank": 24,
       "athleteId": "cmjzpdkxv00qkbfhogyt55uun",
       "athleteName": "王珈绮",
       "team": "四川体育职业学院",
@@ -157,7 +5080,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 11,
+      "rank": 25,
       "athleteId": "cmjzpdkxy00qnbfhoi0fohlcs",
       "athleteName": "叶欣悦",
       "team": "四川体育职业学院",
@@ -169,7 +5092,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 12,
+      "rank": 26,
       "athleteId": "cmjzpdkyn00r8bfho5hxp5a6u",
       "athleteName": "张乔淳佑",
       "team": "河北省体育局冬季运动中心",
@@ -181,7 +5104,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 13,
+      "rank": 27,
       "athleteId": "cmjzpdkyr00rbbfhon1ylf1wi",
       "athleteName": "欧阳聚勇",
       "team": "广西射击射箭运动发展中心",
@@ -193,7 +5116,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 14,
+      "rank": 28,
       "athleteId": "cmjzpdl0200sbbfho4oyc84yi",
       "athleteName": "孙金隆",
       "team": "河北省体育局冬季运动中心",
@@ -205,7 +5128,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 15,
+      "rank": 29,
       "athleteId": "cmjzpdl0900sebfhochiz1nog",
       "athleteName": "张天迈",
       "team": "河北省体育局冬季运动中心",
@@ -217,7 +5140,19 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 16,
+      "rank": 30,
+      "athleteId": "cmjzpdkpd00j9bfho5ceqs1fb",
+      "athleteName": "王润钰",
+      "team": "张家口乔与杨体育服务有限公司",
+      "totalPoints": 620,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 310,
+      "ageGroup": "U18",
+      "gender": "男子组"
+    },
+    {
+      "rank": 31,
       "athleteId": "cmjzpdky600qtbfhoiwp2kmsc",
       "athleteName": "平梓涵",
       "team": "河北省体育局冬季运动中心",
@@ -229,7 +5164,43 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 17,
+      "rank": 32,
+      "athleteId": "cmjzpdkqb00k0bfhow3hoof01",
+      "athleteName": "蔡沛琳",
+      "team": "成都热雪奇迹",
+      "totalPoints": 609,
+      "competitionCount": 2,
+      "bestRank": 2,
+      "avgPoints": 304.5,
+      "ageGroup": "U11",
+      "gender": "女子组"
+    },
+    {
+      "rank": 33,
+      "athleteId": "cmjzpdkqs00kfbfhoekaf7a8k",
+      "athleteName": "竹禹丞",
+      "team": "成都热雪奇迹",
+      "totalPoints": 609,
+      "competitionCount": 2,
+      "bestRank": 2,
+      "avgPoints": 304.5,
+      "ageGroup": "U11",
+      "gender": "男子组"
+    },
+    {
+      "rank": 34,
+      "athleteId": "cmjzpdkq700jxbfhog679cr7g",
+      "athleteName": "吴凌萱",
+      "team": "华发冰雪热雪奇迹",
+      "totalPoints": 606,
+      "competitionCount": 2,
+      "bestRank": 3,
+      "avgPoints": 303,
+      "ageGroup": "U11",
+      "gender": "女子组"
+    },
+    {
+      "rank": 35,
       "athleteId": "cmjzpdkzu00s5bfhojnktcfby",
       "athleteName": "高梓曦",
       "team": "个人",
@@ -241,7 +5212,19 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 18,
+      "rank": 36,
+      "athleteId": "cmjzpdkq400jubfhoejwo7naf",
+      "athleteName": "罗暄晴",
+      "team": "成都热雪奇迹",
+      "totalPoints": 589,
+      "competitionCount": 2,
+      "bestRank": 2,
+      "avgPoints": 294.5,
+      "ageGroup": "U11",
+      "gender": "女子组"
+    },
+    {
+      "rank": 37,
       "athleteId": "cmjzpdkxs00qhbfhoqhlhgnkz",
       "athleteName": "周绮润",
       "team": "个人",
@@ -253,7 +5236,19 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 19,
+      "rank": 38,
+      "athleteId": "cmjzpdkpa00j6bfholp1nby8r",
+      "athleteName": "郭一远",
+      "team": "河北省体育局冬季运动中心",
+      "totalPoints": 583,
+      "competitionCount": 2,
+      "bestRank": 3,
+      "avgPoints": 291.5,
+      "ageGroup": "U18",
+      "gender": "男子组"
+    },
+    {
+      "rank": 39,
       "athleteId": "cmjzpdkvk00oqbfhotqaedvcn",
       "athleteName": "武温暖",
       "team": "石家庄市冰雪与足球运动推广训练中心",
@@ -265,7 +5260,19 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 20,
+      "rank": 40,
+      "athleteId": "cmjzpdkp300j0bfhohn94zbb3",
+      "athleteName": "艾思铭",
+      "team": "张家口乔与杨体育服务有限公司",
+      "totalPoints": 571,
+      "competitionCount": 2,
+      "bestRank": 2,
+      "avgPoints": 285.5,
+      "ageGroup": "U18",
+      "gender": "男子组"
+    },
+    {
+      "rank": 41,
       "athleteId": "cmjzpdkx700pzbfholzzypp6c",
       "athleteName": "张梓童",
       "team": "河南省体育局",
@@ -277,7 +5284,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 21,
+      "rank": 42,
       "athleteId": "cmjzpdkyu00rebfhoup8aq1ld",
       "athleteName": "王翊宁",
       "team": "北京市冬季运动管理中心",
@@ -289,7 +5296,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 22,
+      "rank": 43,
       "athleteId": "cmjzpdl0e00shbfhoc5njd0lb",
       "athleteName": "王晨",
       "team": "个人",
@@ -301,7 +5308,31 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 23,
+      "rank": 44,
+      "athleteId": "cmjzpdkqe00k3bfhoo18nnq3z",
+      "athleteName": "李昊汐",
+      "team": "西安热雪奇迹",
+      "totalPoints": 540,
+      "competitionCount": 2,
+      "bestRank": 4,
+      "avgPoints": 270,
+      "ageGroup": "U11",
+      "gender": "女子组"
+    },
+    {
+      "rank": 45,
+      "athleteId": "cmjzpdkrb00kxbfhoqtbsgmzj",
+      "athleteName": "张雅琪",
+      "team": "河北省体育局冬季运动中心",
+      "totalPoints": 540,
+      "competitionCount": 2,
+      "bestRank": 4,
+      "avgPoints": 270,
+      "ageGroup": "U15",
+      "gender": "女子组"
+    },
+    {
+      "rank": 46,
       "athleteId": "cmjzpdkvn00otbfho8ze6lnnz",
       "athleteName": "李诗沫",
       "team": "石家庄市冰雪与足球运动推广训练中心",
@@ -313,7 +5344,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 24,
+      "rank": 47,
       "athleteId": "cmjzpdkvg00onbfhog8ooajnb",
       "athleteName": "任可心",
       "team": "四川体育职业学院",
@@ -325,7 +5356,31 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 25,
+      "rank": 48,
+      "athleteId": "cmjzpdkqy00klbfho0qckaxmt",
+      "athleteName": "于镇赫",
+      "team": "成都热雪奇迹",
+      "totalPoints": 522,
+      "competitionCount": 2,
+      "bestRank": 4,
+      "avgPoints": 261,
+      "ageGroup": "U11",
+      "gender": "男子组"
+    },
+    {
+      "rank": 49,
+      "athleteId": "cmjzpdkrw00lfbfhonz2a0d3b",
+      "athleteName": "吕浩源",
+      "team": "河北省体育局冬季运动中心",
+      "totalPoints": 520,
+      "competitionCount": 2,
+      "bestRank": 5,
+      "avgPoints": 260,
+      "ageGroup": "U15",
+      "gender": "男子组"
+    },
+    {
+      "rank": 50,
       "athleteId": "cmjzpdkyy00rhbfhomuo5xnnw",
       "athleteName": "宇威琦",
       "team": "河北省体育局冬季运动中心",
@@ -337,7 +5392,19 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 26,
+      "rank": 51,
+      "athleteId": "cmjzpdkrt00lcbfhofvlcdm8r",
+      "athleteName": "王梓丞",
+      "team": "重庆市冬季运动管理中心",
+      "totalPoints": 506,
+      "competitionCount": 2,
+      "bestRank": 4,
+      "avgPoints": 253,
+      "ageGroup": "U15",
+      "gender": "男子组"
+    },
+    {
+      "rank": 52,
       "athleteId": "cmjzpdkyc00qzbfhoa03c1g4b",
       "athleteName": "杨芷妍",
       "team": "四川体育职业学院",
@@ -349,7 +5416,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 27,
+      "rank": 53,
       "athleteId": "cmjzpdkxa00q2bfhoqpmx31h0",
       "athleteName": "王俊熙",
       "team": "河南省体育局",
@@ -361,7 +5428,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 28,
+      "rank": 54,
       "athleteId": "cmjzpdkxe00q5bfho8r60z791",
       "athleteName": "崔芃森",
       "team": "河北省体育局冬季运动中心",
@@ -373,7 +5440,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 29,
+      "rank": 55,
       "athleteId": "cmjzpdky900qwbfhouv7qekds",
       "athleteName": "李明灿",
       "team": "广西射击射箭运动发展中心",
@@ -385,7 +5452,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 30,
+      "rank": 56,
       "athleteId": "cmjzpdky200qqbfhojspykxzi",
       "athleteName": "王珠彤",
       "team": "石家庄市冰雪与足球运动推广训练中心",
@@ -397,7 +5464,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 31,
+      "rank": 57,
       "athleteId": "cmjzpdkvv00ozbfho9q5gtmko",
       "athleteName": "闫妍",
       "team": "个人",
@@ -409,7 +5476,31 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 32,
+      "rank": 58,
+      "athleteId": "cmjzpdkqi00k6bfhotz0ghplg",
+      "athleteName": "吴玟颐",
+      "team": "华发冰雪热雪奇迹",
+      "totalPoints": 484,
+      "competitionCount": 2,
+      "bestRank": 6,
+      "avgPoints": 242,
+      "ageGroup": "U11",
+      "gender": "女子组"
+    },
+    {
+      "rank": 59,
+      "athleteId": "cmjzpdks000libfhouk369qbh",
+      "athleteName": "林朗",
+      "team": "哈尔滨热雪奇迹",
+      "totalPoints": 484,
+      "competitionCount": 2,
+      "bestRank": 6,
+      "avgPoints": 242,
+      "ageGroup": "U15",
+      "gender": "男子组"
+    },
+    {
+      "rank": 60,
       "athleteId": "cmjzpdkvr00owbfhobsujiv88",
       "athleteName": "孙焕轶",
       "team": "个人",
@@ -421,7 +5512,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 33,
+      "rank": 61,
       "athleteId": "cmjzpdkz200rkbfho59mnqt4a",
       "athleteName": "刘栩辰",
       "team": "重庆市沙坪坝区体育运动学校",
@@ -433,7 +5524,19 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 34,
+      "rank": 62,
+      "athleteId": "cmjzpdkph00jcbfho8tsz6f9a",
+      "athleteName": "左子正",
+      "team": "左子正",
+      "totalPoints": 468,
+      "competitionCount": 2,
+      "bestRank": 6,
+      "avgPoints": 234,
+      "ageGroup": "U18",
+      "gender": "男子组"
+    },
+    {
+      "rank": 63,
       "athleteId": "cmjzpdkyg00r2bfhonpfve5v0",
       "athleteName": "李雅馨",
       "team": "北京市冬季运动管理中心",
@@ -445,7 +5548,31 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 35,
+      "rank": 64,
+      "athleteId": "cmjzpdkql00k9bfhodvj2cshf",
+      "athleteName": "卢彦伊",
+      "team": "成都热雪奇迹",
+      "totalPoints": 452,
+      "competitionCount": 2,
+      "bestRank": 7,
+      "avgPoints": 226,
+      "ageGroup": "U11",
+      "gender": "女子组"
+    },
+    {
+      "rank": 65,
+      "athleteId": "cmjzpdkpk00jfbfhoiy6rykkw",
+      "athleteName": "常冠廷",
+      "team": "吉林市丰满区滑雪协会",
+      "totalPoints": 438,
+      "competitionCount": 2,
+      "bestRank": 7,
+      "avgPoints": 219,
+      "ageGroup": "U18",
+      "gender": "男子组"
+    },
+    {
+      "rank": 66,
       "athleteId": "cmjzpdkxh00q8bfho5kg4losu",
       "athleteName": "卢彦词",
       "team": "四川体育职业学院",
@@ -457,7 +5584,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 36,
+      "rank": 67,
       "athleteId": "cmjzpdkxl00qbbfhowxx5v1fm",
       "athleteName": "赵子钰",
       "team": "河北省体育局冬季运动中心",
@@ -469,7 +5596,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 37,
+      "rank": 68,
       "athleteId": "cmjzpdkzb00rqbfhozbj66j9r",
       "athleteName": "王冬杰",
       "team": "广西射击射箭运动发展中心",
@@ -481,7 +5608,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 38,
+      "rank": 69,
       "athleteId": "cmjzpdkzj00rwbfhoyoxomh3h",
       "athleteName": "梁跃飞",
       "team": "广西射击射箭运动发展中心",
@@ -493,7 +5620,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 39,
+      "rank": 70,
       "athleteId": "cmjzpdkz700rnbfhorz1h81nt",
       "athleteName": "李霁开",
       "team": "河北省体育局冬季运动中心",
@@ -505,7 +5632,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 40,
+      "rank": 71,
       "athleteId": "cmjzpdkw300p5bfhodr0bg1op",
       "athleteName": "韩小贝",
       "team": "河北省体育局冬季运动中心",
@@ -517,7 +5644,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 41,
+      "rank": 72,
       "athleteId": "cmjzpdkxo00qebfhomrlq3drg",
       "athleteName": "李雪聪",
       "team": "河北省体育局冬季运动中心",
@@ -529,7 +5656,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 42,
+      "rank": 73,
       "athleteId": "cmjzpdkzf00rtbfhou6ca98ui",
       "athleteName": "程楚阳",
       "team": "广西射击射箭运动发展中心",
@@ -541,7 +5668,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 43,
+      "rank": 74,
       "athleteId": "cmjzpdkwb00pbbfhok5m4shmm",
       "athleteName": "孙焕轲",
       "team": "个人",
@@ -553,7 +5680,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 44,
+      "rank": 75,
       "athleteId": "cmjzpdkvz00p2bfhobxqhq2ex",
       "athleteName": "甄芝漫",
       "team": "河北省体育局冬季运动中心",
@@ -565,7 +5692,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 45,
+      "rank": 76,
       "athleteId": "cmjzpdk120000bfhogt7ct1il",
       "athleteName": "李禹潭",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -577,7 +5704,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 46,
+      "rank": 77,
       "athleteId": "cmjzpdk3v001ubfhorz5wf7hs",
       "athleteName": "王一臣",
       "team": "MAYA TEAM",
@@ -589,7 +5716,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 47,
+      "rank": 78,
       "athleteId": "cmjzpdk79004rbfhooqi32wqr",
       "athleteName": "邱嘉晴",
       "team": "北京虎村竞技体育有限公司",
@@ -601,7 +5728,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 48,
+      "rank": 79,
       "athleteId": "cmjzpdkad007fbfho5yptlw6j",
       "athleteName": "高佳钇",
       "team": "速森体育",
@@ -613,7 +5740,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 49,
+      "rank": 80,
       "athleteId": "cmjzpdkex00b6bfho71gr5qj3",
       "athleteName": "李妙涵",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -625,7 +5752,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 50,
+      "rank": 81,
       "athleteId": "cmjzpdkgv00cxbfhohvvnjx3w",
       "athleteName": "窦羿",
       "team": "MAYA TEAM",
@@ -637,55 +5764,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 51,
-      "athleteId": "cmjzpdkjm00exbfhon8q764e7",
-      "athleteName": "孙嘉怡",
-      "team": "河北省体育局冬季运动中心",
-      "totalPoints": 360,
-      "competitionCount": 1,
-      "bestRank": 1,
-      "avgPoints": 360,
-      "ageGroup": "U11",
-      "gender": "女子组"
-    },
-    {
-      "rank": 52,
-      "athleteId": "cmjzpdkkt00fobfhovt7it0m5",
-      "athleteName": "鱼嘉怡",
-      "team": "河北省体育局冬季运动中心",
-      "totalPoints": 360,
-      "competitionCount": 1,
-      "bestRank": 1,
-      "avgPoints": 360,
-      "ageGroup": "U15",
-      "gender": "女子组"
-    },
-    {
-      "rank": 53,
-      "athleteId": "cmjzpdkly00gfbfhof1a75ldx",
-      "athleteName": "陈宇垚",
-      "team": "四川体育职业学院",
-      "totalPoints": 360,
-      "competitionCount": 1,
-      "bestRank": 1,
-      "avgPoints": 360,
-      "ageGroup": "U11",
-      "gender": "男子组"
-    },
-    {
-      "rank": 54,
-      "athleteId": "cmjzpdkmy00h9bfho81478919",
-      "athleteName": "王恒宇",
-      "team": "个人",
-      "totalPoints": 360,
-      "competitionCount": 1,
-      "bestRank": 1,
-      "avgPoints": 360,
-      "ageGroup": "U15",
-      "gender": "男子组"
-    },
-    {
-      "rank": 55,
+      "rank": 82,
       "athleteId": "cmjzpdl3l00vebfho3uelbuun",
       "athleteName": "牛安芷芸",
       "team": "滑雪兔俱乐部",
@@ -697,7 +5776,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 56,
+      "rank": 83,
       "athleteId": "cmjzpdl4g00w5bfho5cwg19at",
       "athleteName": "鱼嘉怡",
       "team": "西安市竞技体育学校",
@@ -709,7 +5788,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 57,
+      "rank": 84,
       "athleteId": "cmjzpdl5m00x2bfhom0fcxhyh",
       "athleteName": "刘翰泽",
       "team": "成都市武侯区滑雪运动协会",
@@ -721,7 +5800,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 58,
+      "rank": 85,
       "athleteId": "cmjzpdl7800yhbfhowphrxay1",
       "athleteName": "袁梓程",
       "team": "万域芳菲俱乐部",
@@ -733,7 +5812,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 59,
+      "rank": 86,
       "athleteId": "cmjzpdl8r00zqbfhozlyjravq",
       "athleteName": "李俊辛",
       "team": "河北省体育局冬季运动中心",
@@ -745,7 +5824,55 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 60,
+      "rank": 87,
+      "athleteId": "cmjzpdkjm00exbfhon8q764e7",
+      "athleteName": "孙嘉怡",
+      "team": "河北省体育局冬季运动中心",
+      "totalPoints": 360,
+      "competitionCount": 1,
+      "bestRank": 1,
+      "avgPoints": 360,
+      "ageGroup": "U11",
+      "gender": "女子组"
+    },
+    {
+      "rank": 88,
+      "athleteId": "cmjzpdkkt00fobfhovt7it0m5",
+      "athleteName": "鱼嘉怡",
+      "team": "河北省体育局冬季运动中心",
+      "totalPoints": 360,
+      "competitionCount": 1,
+      "bestRank": 1,
+      "avgPoints": 360,
+      "ageGroup": "U15",
+      "gender": "女子组"
+    },
+    {
+      "rank": 89,
+      "athleteId": "cmjzpdkly00gfbfhof1a75ldx",
+      "athleteName": "陈宇垚",
+      "team": "四川体育职业学院",
+      "totalPoints": 360,
+      "competitionCount": 1,
+      "bestRank": 1,
+      "avgPoints": 360,
+      "ageGroup": "U11",
+      "gender": "男子组"
+    },
+    {
+      "rank": 90,
+      "athleteId": "cmjzpdkmy00h9bfho81478919",
+      "athleteName": "王恒宇",
+      "team": "个人",
+      "totalPoints": 360,
+      "competitionCount": 1,
+      "bestRank": 1,
+      "avgPoints": 360,
+      "ageGroup": "U15",
+      "gender": "男子组"
+    },
+    {
+      "rank": 91,
       "athleteId": "cmjzpdldm013ebfhokhnmfzq7",
       "athleteName": "封树渝",
       "team": "重庆市沙坪坝区体育运动学校",
@@ -757,7 +5884,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 61,
+      "rank": 92,
       "athleteId": "cmjzpdkw600p8bfhouhcl0616",
       "athleteName": "袁芮涵",
       "team": "河南省体育局",
@@ -769,7 +5896,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 62,
+      "rank": 93,
       "athleteId": "cmjzpdkwf00pebfhoy6f0kq3d",
       "athleteName": "欧子娴",
       "team": "成都热雪奇迹",
@@ -781,7 +5908,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 63,
+      "rank": 94,
       "athleteId": "cmjzpdkwi00phbfho8f0ltvne",
       "athleteName": "陈科羽",
       "team": "四川体育职业学院",
@@ -793,7 +5920,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 64,
+      "rank": 95,
       "athleteId": "cmjzpdk190003bfhodyfd3ttw",
       "athleteName": "于忱汐",
       "team": "太原市第二少年体育学校",
@@ -805,7 +5932,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 65,
+      "rank": 96,
       "athleteId": "cmjzpdk3y001xbfhocfpqhm9n",
       "athleteName": "周翎",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -817,7 +5944,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 66,
+      "rank": 97,
       "athleteId": "cmjzpdk7c004ubfhoayny1i0x",
       "athleteName": "沈凌羽",
       "team": "MAYA TEAM",
@@ -829,7 +5956,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 67,
+      "rank": 98,
       "athleteId": "cmjzpdkah007ibfhoakn9j359",
       "athleteName": "陈清桦",
       "team": "MAYA TEAM",
@@ -841,7 +5968,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 68,
+      "rank": 99,
       "athleteId": "cmjzpdkf000b9bfho3gs0l1zy",
       "athleteName": "臧怡然",
       "team": "个人",
@@ -853,7 +5980,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 69,
+      "rank": 100,
       "athleteId": "cmjzpdkgy00d0bfho9vble00l",
       "athleteName": "张鑫泽",
       "team": "速森体育",
@@ -865,46 +5992,10 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 70,
-      "athleteId": "cmjzpdkjq00f0bfho7lddp0tk",
-      "athleteName": "牛安芷芸",
-      "team": "个人",
-      "totalPoints": 329,
-      "competitionCount": 1,
-      "bestRank": 2,
-      "avgPoints": 329,
-      "ageGroup": "U11",
-      "gender": "女子组"
-    },
-    {
-      "rank": 71,
-      "athleteId": "cmjzpdkkx00frbfhonb81p7bu",
-      "athleteName": "叶欣瑞",
-      "team": "四川体育职业学院",
-      "totalPoints": 329,
-      "competitionCount": 1,
-      "bestRank": 2,
-      "avgPoints": 329,
-      "ageGroup": "U15",
-      "gender": "女子组"
-    },
-    {
-      "rank": 72,
-      "athleteId": "cmjzpdkm300gibfhob9a22der",
-      "athleteName": "刘翰泽",
-      "team": "个人",
-      "totalPoints": 329,
-      "competitionCount": 1,
-      "bestRank": 2,
-      "avgPoints": 329,
-      "ageGroup": "U11",
-      "gender": "男子组"
-    },
-    {
-      "rank": 73,
-      "athleteId": "cmjzpdkn100hcbfho2br834hq",
-      "athleteName": "袁梓程",
-      "team": "四川体育职业学院",
+      "rank": 101,
+      "athleteId": "cmjzpdkul00nybfhosbxa0gbd",
+      "athleteName": "张芝豪",
+      "team": "河北省体育局冬季运动中心",
       "totalPoints": 329,
       "competitionCount": 1,
       "bestRank": 2,
@@ -913,19 +6004,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 74,
-      "athleteId": "cmjzpdko000i6bfho6pikfiix",
-      "athleteName": "李俊辛",
-      "team": "四川体育职业学院",
-      "totalPoints": 329,
-      "competitionCount": 1,
-      "bestRank": 2,
-      "avgPoints": 329,
-      "ageGroup": "U18",
-      "gender": "男子组"
-    },
-    {
-      "rank": 75,
+      "rank": 102,
       "athleteId": "cmjzpdl3p00vhbfhoeqoogtsn",
       "athleteName": "孙嘉怡",
       "team": "哈尔滨市冬季运动与水上运动中心",
@@ -937,7 +6016,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 76,
+      "rank": 103,
       "athleteId": "cmjzpdl4k00w8bfhovnob9dk5",
       "athleteName": "赖文悦",
       "team": "万域芳菲俱乐部",
@@ -949,7 +6028,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 77,
+      "rank": 104,
       "athleteId": "cmjzpdl5q00x5bfhoc7l1c0cm",
       "athleteName": "王祖安",
       "team": "河北省体育局冬季运动中心",
@@ -961,7 +6040,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 78,
+      "rank": 105,
       "athleteId": "cmjzpdl7c00ykbfhomlewbdfx",
       "athleteName": "王恒宇",
       "team": "河北省体育局冬季运动中心",
@@ -973,7 +6052,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 79,
+      "rank": 106,
       "athleteId": "cmjzpdl8v00ztbfhoazbpz7z0",
       "athleteName": "封树渝",
       "team": "河北省体育局冬季运动中心",
@@ -985,7 +6064,67 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 80,
+      "rank": 107,
+      "athleteId": "cmjzpdkjq00f0bfho7lddp0tk",
+      "athleteName": "牛安芷芸",
+      "team": "个人",
+      "totalPoints": 329,
+      "competitionCount": 1,
+      "bestRank": 2,
+      "avgPoints": 329,
+      "ageGroup": "U11",
+      "gender": "女子组"
+    },
+    {
+      "rank": 108,
+      "athleteId": "cmjzpdkkx00frbfhonb81p7bu",
+      "athleteName": "叶欣瑞",
+      "team": "四川体育职业学院",
+      "totalPoints": 329,
+      "competitionCount": 1,
+      "bestRank": 2,
+      "avgPoints": 329,
+      "ageGroup": "U15",
+      "gender": "女子组"
+    },
+    {
+      "rank": 109,
+      "athleteId": "cmjzpdkm300gibfhob9a22der",
+      "athleteName": "刘翰泽",
+      "team": "个人",
+      "totalPoints": 329,
+      "competitionCount": 1,
+      "bestRank": 2,
+      "avgPoints": 329,
+      "ageGroup": "U11",
+      "gender": "男子组"
+    },
+    {
+      "rank": 110,
+      "athleteId": "cmjzpdkn100hcbfho2br834hq",
+      "athleteName": "袁梓程",
+      "team": "四川体育职业学院",
+      "totalPoints": 329,
+      "competitionCount": 1,
+      "bestRank": 2,
+      "avgPoints": 329,
+      "ageGroup": "U15",
+      "gender": "男子组"
+    },
+    {
+      "rank": 111,
+      "athleteId": "cmjzpdko000i6bfho6pikfiix",
+      "athleteName": "李俊辛",
+      "team": "四川体育职业学院",
+      "totalPoints": 329,
+      "competitionCount": 1,
+      "bestRank": 2,
+      "avgPoints": 329,
+      "ageGroup": "U18",
+      "gender": "男子组"
+    },
+    {
+      "rank": 112,
       "athleteId": "cmjzpdk1d0006bfhokdvat4q3",
       "athleteName": "肖金茂",
       "team": "四川体育职业学院",
@@ -997,7 +6136,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 81,
+      "rank": 113,
       "athleteId": "cmjzpdk420020bfhodtt3x27o",
       "athleteName": "韩赫洺",
       "team": "四川体育职业学院",
@@ -1009,7 +6148,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 82,
+      "rank": 114,
       "athleteId": "cmjzpdk7g004xbfhordq0746d",
       "athleteName": "韦苗茵",
       "team": "大连雨彤体育赛事俱乐部",
@@ -1021,7 +6160,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 83,
+      "rank": 115,
       "athleteId": "cmjzpdkak007lbfho9nwb723l",
       "athleteName": "张雨曈",
       "team": "MAYA TEAM",
@@ -1033,7 +6172,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 84,
+      "rank": 116,
       "athleteId": "cmjzpdkf300bcbfhoptyf96dp",
       "athleteName": "丁小苏",
       "team": "MAYA TEAM",
@@ -1045,7 +6184,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 85,
+      "rank": 117,
       "athleteId": "cmjzpdkh100d3bfhojzgo7pr4",
       "athleteName": "李嘉祺",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -1057,34 +6196,10 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 86,
-      "athleteId": "cmjzpdkjw00f3bfhoswtiqk6b",
-      "athleteName": "周斯言",
-      "team": "个人",
-      "totalPoints": 303,
-      "competitionCount": 1,
-      "bestRank": 3,
-      "avgPoints": 303,
-      "ageGroup": "U11",
-      "gender": "女子组"
-    },
-    {
-      "rank": 87,
-      "athleteId": "cmjzpdkl100fubfho8tg9xa1r",
-      "athleteName": "杨可轩",
-      "team": "广西射击射箭运动发展中心",
-      "totalPoints": 303,
-      "competitionCount": 1,
-      "bestRank": 3,
-      "avgPoints": 303,
-      "ageGroup": "U15",
-      "gender": "女子组"
-    },
-    {
-      "rank": 88,
-      "athleteId": "cmjzpdkm700glbfhoigv6cvu9",
-      "athleteName": "王祖安",
-      "team": "河南省体育局",
+      "rank": 118,
+      "athleteId": "cmjzpdkto00n5bfho4j8lt3fl",
+      "athleteName": "郑捷铭",
+      "team": "重庆市冬季运动管理中心",
       "totalPoints": 303,
       "competitionCount": 1,
       "bestRank": 3,
@@ -1093,19 +6208,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 89,
-      "athleteId": "cmjzpdkn400hfbfhowdqphedz",
-      "athleteName": "谭凯元",
-      "team": "谭凯元",
-      "totalPoints": 303,
-      "competitionCount": 1,
-      "bestRank": 3,
-      "avgPoints": 303,
-      "ageGroup": "U15",
-      "gender": "男子组"
-    },
-    {
-      "rank": 90,
+      "rank": 119,
       "athleteId": "cmjzpdl3s00vkbfhozbgej4oo",
       "athleteName": "翟姝涵",
       "team": "哈尔滨市冬季运动与水上运动中心",
@@ -1117,7 +6220,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 91,
+      "rank": 120,
       "athleteId": "cmjzpdl4o00wbbfho34yo81x7",
       "athleteName": "叶欣瑞",
       "team": "河北省体育局冬季运动中心",
@@ -1129,7 +6232,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 92,
+      "rank": 121,
       "athleteId": "cmjzpdl5u00x8bfho8spdatnb",
       "athleteName": "刘沐泽",
       "team": "成都市武侯区滑雪运动协会",
@@ -1141,7 +6244,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 93,
+      "rank": 122,
       "athleteId": "cmjzpdl7g00ynbfho45blccup",
       "athleteName": "谭凯元",
       "team": "成都市武侯区滑雪运动协会",
@@ -1153,7 +6256,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 94,
+      "rank": 123,
       "athleteId": "cmjzpdl8y00zwbfhoyforb4hq",
       "athleteName": "米馥豪",
       "team": "河北省体育局冬季运动中心",
@@ -1165,7 +6268,55 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 95,
+      "rank": 124,
+      "athleteId": "cmjzpdkjw00f3bfhoswtiqk6b",
+      "athleteName": "周斯言",
+      "team": "个人",
+      "totalPoints": 303,
+      "competitionCount": 1,
+      "bestRank": 3,
+      "avgPoints": 303,
+      "ageGroup": "U11",
+      "gender": "女子组"
+    },
+    {
+      "rank": 125,
+      "athleteId": "cmjzpdkl100fubfho8tg9xa1r",
+      "athleteName": "杨可轩",
+      "team": "广西射击射箭运动发展中心",
+      "totalPoints": 303,
+      "competitionCount": 1,
+      "bestRank": 3,
+      "avgPoints": 303,
+      "ageGroup": "U15",
+      "gender": "女子组"
+    },
+    {
+      "rank": 126,
+      "athleteId": "cmjzpdkm700glbfhoigv6cvu9",
+      "athleteName": "王祖安",
+      "team": "河南省体育局",
+      "totalPoints": 303,
+      "competitionCount": 1,
+      "bestRank": 3,
+      "avgPoints": 303,
+      "ageGroup": "U11",
+      "gender": "男子组"
+    },
+    {
+      "rank": 127,
+      "athleteId": "cmjzpdkn400hfbfhowdqphedz",
+      "athleteName": "谭凯元",
+      "team": "谭凯元",
+      "totalPoints": 303,
+      "competitionCount": 1,
+      "bestRank": 3,
+      "avgPoints": 303,
+      "ageGroup": "U15",
+      "gender": "男子组"
+    },
+    {
+      "rank": 128,
       "athleteId": "cmjzpdldr013jbfhops2vyapx",
       "athleteName": "米馥豪",
       "team": "石家庄市冰雪与足球运动推广训练中心",
@@ -1177,7 +6328,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 96,
+      "rank": 129,
       "athleteId": "cmjzpdkwq00pnbfhozuu1pwmh",
       "athleteName": "孙婉迪",
       "team": "个人",
@@ -1189,7 +6340,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 97,
+      "rank": 130,
       "athleteId": "cmjzpdk1g0009bfhohs29gxqf",
       "athleteName": "须星漫",
       "team": "北京虎村竞技体育有限公司",
@@ -1201,7 +6352,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 98,
+      "rank": 131,
       "athleteId": "cmjzpdk450023bfhoh5itp0hi",
       "athleteName": "李承桓",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -1213,7 +6364,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 99,
+      "rank": 132,
       "athleteId": "cmjzpdk7k0050bfhof32r335m",
       "athleteName": "刘妍梦",
       "team": "中麟体育",
@@ -1225,7 +6376,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 100,
+      "rank": 133,
       "athleteId": "cmjzpdkan007obfhov8p3d9ke",
       "athleteName": "贾子一南",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -1237,7 +6388,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 101,
+      "rank": 134,
       "athleteId": "cmjzpdkf700bfbfhosv5aak4b",
       "athleteName": "王子怡",
       "team": "个人",
@@ -1249,7 +6400,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 102,
+      "rank": 135,
       "athleteId": "cmjzpdkh500d6bfhogif50da9",
       "athleteName": "马凯涛",
       "team": "新疆维吾尔自治区冬季运动训练中心",
@@ -1261,43 +6412,31 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 103,
-      "athleteId": "cmjzpdkma00gobfhoa7jwls5r",
-      "athleteName": "王曌霖",
-      "team": "河南省体育局",
-      "totalPoints": 280,
-      "competitionCount": 1,
-      "bestRank": 4,
-      "avgPoints": 280,
-      "ageGroup": "U11",
-      "gender": "男子组"
-    },
-    {
-      "rank": 104,
-      "athleteId": "cmjzpdkn800hibfho8h61j0ao",
-      "athleteName": "刘子俊",
-      "team": "四川体育职业学院",
-      "totalPoints": 280,
-      "competitionCount": 1,
-      "bestRank": 4,
-      "avgPoints": 280,
-      "ageGroup": "U15",
-      "gender": "男子组"
-    },
-    {
-      "rank": 105,
-      "athleteId": "cmjzpdko800icbfho0ujbn9cl",
-      "athleteName": "罗皓桉",
-      "team": "湖北省武术和冬季运动管理中心",
+      "rank": 136,
+      "athleteId": "cmjzpdks900lrbfho41ykduoi",
+      "athleteName": "周昱含",
+      "team": "沈阳王伟滑雪管理咨询服务有限公司",
       "totalPoints": 280,
       "competitionCount": 1,
       "bestRank": 4,
       "avgPoints": 280,
       "ageGroup": "U18",
-      "gender": "男子组"
+      "gender": "女子组"
     },
     {
-      "rank": 106,
+      "rank": 137,
+      "athleteId": "cmjzpdkue00nrbfhoad1f9vqw",
+      "athleteName": "叶涵汐",
+      "team": "成都热雪奇迹",
+      "totalPoints": 280,
+      "competitionCount": 1,
+      "bestRank": 4,
+      "avgPoints": 280,
+      "ageGroup": "U15",
+      "gender": "女子组"
+    },
+    {
+      "rank": 138,
       "athleteId": "cmjzpdl3v00vnbfhosnyeji4m",
       "athleteName": "姜子悦",
       "team": "成都市武侯区滑雪运动协会",
@@ -1309,7 +6448,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 107,
+      "rank": 139,
       "athleteId": "cmjzpdl4r00webfho0i331lns",
       "athleteName": "鲁淼",
       "team": "成都市武侯区滑雪运动协会",
@@ -1321,7 +6460,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 108,
+      "rank": 140,
       "athleteId": "cmjzpdl5y00xbbfhos8fn9jes",
       "athleteName": "戴宸熠",
       "team": "成都市武侯区滑雪运动协会",
@@ -1333,7 +6472,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 109,
+      "rank": 141,
       "athleteId": "cmjzpdl7j00yqbfho51mw9qqo",
       "athleteName": "李奕泽",
       "team": "成都市武侯区滑雪运动协会",
@@ -1345,7 +6484,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 110,
+      "rank": 142,
       "athleteId": "cmjzpdl9100zzbfhoe6g8bjfo",
       "athleteName": "李俣辛",
       "team": "河北省体育局冬季运动中心",
@@ -1357,7 +6496,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 111,
+      "rank": 143,
       "athleteId": "cmjzpdl9q010jbfhoiwnoqnw1",
       "athleteName": "张诗涵",
       "team": "石家庄市冰雪与足球运动推广训练中心",
@@ -1369,7 +6508,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 112,
+      "rank": 144,
       "athleteId": "cmjzpdlad0112bfhomaplljnp",
       "athleteName": "贺舒玉",
       "team": "重庆市沙坪坝区体育运动学校",
@@ -1381,7 +6520,43 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 113,
+      "rank": 145,
+      "athleteId": "cmjzpdkma00gobfhoa7jwls5r",
+      "athleteName": "王曌霖",
+      "team": "河南省体育局",
+      "totalPoints": 280,
+      "competitionCount": 1,
+      "bestRank": 4,
+      "avgPoints": 280,
+      "ageGroup": "U11",
+      "gender": "男子组"
+    },
+    {
+      "rank": 146,
+      "athleteId": "cmjzpdkn800hibfho8h61j0ao",
+      "athleteName": "刘子俊",
+      "team": "四川体育职业学院",
+      "totalPoints": 280,
+      "competitionCount": 1,
+      "bestRank": 4,
+      "avgPoints": 280,
+      "ageGroup": "U15",
+      "gender": "男子组"
+    },
+    {
+      "rank": 147,
+      "athleteId": "cmjzpdko800icbfho0ujbn9cl",
+      "athleteName": "罗皓桉",
+      "team": "湖北省武术和冬季运动管理中心",
+      "totalPoints": 280,
+      "competitionCount": 1,
+      "bestRank": 4,
+      "avgPoints": 280,
+      "ageGroup": "U18",
+      "gender": "男子组"
+    },
+    {
+      "rank": 148,
       "athleteId": "cmjzpdk1r000cbfho49uldr41",
       "athleteName": "古庭钰",
       "team": "中麟体育",
@@ -1393,7 +6568,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 114,
+      "rank": 149,
       "athleteId": "cmjzpdk4a0026bfhow0uq57v3",
       "athleteName": "陈鼎钧",
       "team": "北京虎村竞技体育有限公司",
@@ -1405,7 +6580,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 115,
+      "rank": 150,
       "athleteId": "cmjzpdk7o0053bfhopj22d7t9",
       "athleteName": "赵南茜",
       "team": "太原市第二少年体育学校",
@@ -1417,7 +6592,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 116,
+      "rank": 151,
       "athleteId": "cmjzpdkar007rbfhoke7nk1ap",
       "athleteName": "李天圆",
       "team": "MAYA TEAM",
@@ -1429,7 +6604,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 117,
+      "rank": 152,
       "athleteId": "cmjzpdkfa00bibfho2rfh2opo",
       "athleteName": "张芊凝",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -1441,7 +6616,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 118,
+      "rank": 153,
       "athleteId": "cmjzpdkh800d9bfho23y46y7o",
       "athleteName": "尚久智",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -1453,22 +6628,10 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 119,
-      "athleteId": "cmjzpdkk700f9bfhoa69ugr1p",
-      "athleteName": "姚予希",
-      "team": "成都热雪奇迹",
-      "totalPoints": 260,
-      "competitionCount": 1,
-      "bestRank": 5,
-      "avgPoints": 260,
-      "ageGroup": "U11",
-      "gender": "女子组"
-    },
-    {
-      "rank": 120,
-      "athleteId": "cmjzpdklb00g0bfhoygeoy8ua",
-      "athleteName": "赖文悦",
-      "team": "四川体育职业学院",
+      "rank": 154,
+      "athleteId": "cmjzpdkrf00l0bfhoi24xpm3k",
+      "athleteName": "陈奕霏",
+      "team": "个人",
       "totalPoints": 260,
       "competitionCount": 1,
       "bestRank": 5,
@@ -1477,9 +6640,33 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 121,
-      "athleteId": "cmjzpdkme00grbfhokxgnro49",
-      "athleteName": "范天成",
+      "rank": 155,
+      "athleteId": "cmjzpdksc00lubfho18uchde6",
+      "athleteName": "杨睿怡",
+      "team": "华发冰雪热雪奇迹",
+      "totalPoints": 260,
+      "competitionCount": 1,
+      "bestRank": 5,
+      "avgPoints": 260,
+      "ageGroup": "U18",
+      "gender": "女子组"
+    },
+    {
+      "rank": 156,
+      "athleteId": "cmjzpdksr00m8bfhorh0gxvtl",
+      "athleteName": "李彦博",
+      "team": "四川体育职业学院",
+      "totalPoints": 260,
+      "competitionCount": 1,
+      "bestRank": 5,
+      "avgPoints": 260,
+      "ageGroup": "U18",
+      "gender": "男子组"
+    },
+    {
+      "rank": 157,
+      "athleteId": "cmjzpdktv00nabfhomuj9q4hs",
+      "athleteName": "杨宗葆",
       "team": "个人",
       "totalPoints": 260,
       "competitionCount": 1,
@@ -1489,31 +6676,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 122,
-      "athleteId": "cmjzpdknb00hlbfhoeja6849z",
-      "athleteName": "张家睿",
-      "team": "四川体育职业学院",
-      "totalPoints": 260,
-      "competitionCount": 1,
-      "bestRank": 5,
-      "avgPoints": 260,
-      "ageGroup": "U15",
-      "gender": "男子组"
-    },
-    {
-      "rank": 123,
-      "athleteId": "cmjzpdkoc00ifbfhogzsxfk2n",
-      "athleteName": "黄子剑",
-      "team": "湖北省武术和冬季运动管理中心",
-      "totalPoints": 260,
-      "competitionCount": 1,
-      "bestRank": 5,
-      "avgPoints": 260,
-      "ageGroup": "U18",
-      "gender": "男子组"
-    },
-    {
-      "rank": 124,
+      "rank": 158,
       "athleteId": "cmjzpdl3y00vqbfho1jpzm9my",
       "athleteName": "王迎紫",
       "team": "万域芳菲俱乐部",
@@ -1525,7 +6688,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 125,
+      "rank": 159,
       "athleteId": "cmjzpdl4v00whbfhoqb4c47yx",
       "athleteName": "刘心雅",
       "team": "成都市武侯区滑雪运动协会",
@@ -1537,7 +6700,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 126,
+      "rank": 160,
       "athleteId": "cmjzpdl6100xebfhoyxhqpnwq",
       "athleteName": "范家睿",
       "team": "河北省体育局冬季运动中心",
@@ -1549,7 +6712,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 127,
+      "rank": 161,
       "athleteId": "cmjzpdl7n00ytbfhovb95z3d0",
       "athleteName": "吴昊隆",
       "team": "哈尔滨市冬季运动与水上运动中心",
@@ -1561,7 +6724,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 128,
+      "rank": 162,
       "athleteId": "cmjzpdl950102bfho492pljcc",
       "athleteName": "冯晨峰",
       "team": "沈阳体育学院",
@@ -1573,7 +6736,67 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 129,
+      "rank": 163,
+      "athleteId": "cmjzpdkk700f9bfhoa69ugr1p",
+      "athleteName": "姚予希",
+      "team": "成都热雪奇迹",
+      "totalPoints": 260,
+      "competitionCount": 1,
+      "bestRank": 5,
+      "avgPoints": 260,
+      "ageGroup": "U11",
+      "gender": "女子组"
+    },
+    {
+      "rank": 164,
+      "athleteId": "cmjzpdklb00g0bfhoygeoy8ua",
+      "athleteName": "赖文悦",
+      "team": "四川体育职业学院",
+      "totalPoints": 260,
+      "competitionCount": 1,
+      "bestRank": 5,
+      "avgPoints": 260,
+      "ageGroup": "U15",
+      "gender": "女子组"
+    },
+    {
+      "rank": 165,
+      "athleteId": "cmjzpdkme00grbfhokxgnro49",
+      "athleteName": "范天成",
+      "team": "个人",
+      "totalPoints": 260,
+      "competitionCount": 1,
+      "bestRank": 5,
+      "avgPoints": 260,
+      "ageGroup": "U11",
+      "gender": "男子组"
+    },
+    {
+      "rank": 166,
+      "athleteId": "cmjzpdknb00hlbfhoeja6849z",
+      "athleteName": "张家睿",
+      "team": "四川体育职业学院",
+      "totalPoints": 260,
+      "competitionCount": 1,
+      "bestRank": 5,
+      "avgPoints": 260,
+      "ageGroup": "U15",
+      "gender": "男子组"
+    },
+    {
+      "rank": 167,
+      "athleteId": "cmjzpdkoc00ifbfhogzsxfk2n",
+      "athleteName": "黄子剑",
+      "team": "湖北省武术和冬季运动管理中心",
+      "totalPoints": 260,
+      "competitionCount": 1,
+      "bestRank": 5,
+      "avgPoints": 260,
+      "ageGroup": "U18",
+      "gender": "男子组"
+    },
+    {
+      "rank": 168,
       "athleteId": "cmjzpdk1u000fbfhou88cqxsm",
       "athleteName": "周子翕",
       "team": "成都热雪奇迹",
@@ -1585,7 +6808,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 130,
+      "rank": 169,
       "athleteId": "cmjzpdk4d0029bfhowuueorwu",
       "athleteName": "聂榕辰",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -1597,7 +6820,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 131,
+      "rank": 170,
       "athleteId": "cmjzpdk7s0056bfhouamezkf4",
       "athleteName": "刘沛怡",
       "team": "MAYA TEAM",
@@ -1609,7 +6832,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 132,
+      "rank": 171,
       "athleteId": "cmjzpdkav007ubfho0ossatdk",
       "athleteName": "王子兮",
       "team": "四川体育职业学院",
@@ -1621,7 +6844,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 133,
+      "rank": 172,
       "athleteId": "cmjzpdkfd00blbfho7svp8try",
       "athleteName": "李雨濛",
       "team": "大连雨彤体育赛事俱乐部",
@@ -1633,7 +6856,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 134,
+      "rank": 173,
       "athleteId": "cmjzpdkhb00dcbfho0ww5obv1",
       "athleteName": "吴凯",
       "team": "中麟体育",
@@ -1645,55 +6868,19 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 135,
-      "athleteId": "cmjzpdkkb00fcbfhogaawq06u",
-      "athleteName": "杨茗然",
-      "team": "河北省体育局冬季运动中心",
-      "totalPoints": 242,
-      "competitionCount": 1,
-      "bestRank": 6,
-      "avgPoints": 242,
-      "ageGroup": "U11",
-      "gender": "女子组"
-    },
-    {
-      "rank": 136,
-      "athleteId": "cmjzpdklg00g3bfhopeqe1sgz",
-      "athleteName": "周雨辰",
-      "team": "广西射击射箭运动发展中心",
-      "totalPoints": 242,
-      "competitionCount": 1,
-      "bestRank": 6,
-      "avgPoints": 242,
-      "ageGroup": "U15",
-      "gender": "女子组"
-    },
-    {
-      "rank": 137,
-      "athleteId": "cmjzpdknf00hobfho0vnutqs9",
-      "athleteName": "高翊博",
-      "team": "北京市冬季运动管理中心",
-      "totalPoints": 242,
-      "competitionCount": 1,
-      "bestRank": 6,
-      "avgPoints": 242,
-      "ageGroup": "U15",
-      "gender": "男子组"
-    },
-    {
-      "rank": 138,
-      "athleteId": "cmjzpdkog00iibfhotxzpqno2",
-      "athleteName": "倪文凯",
-      "team": "湖北省武术和冬季运动管理中心",
+      "rank": 174,
+      "athleteId": "cmjzpdksg00lxbfhopa5j9xjd",
+      "athleteName": "刘子歌",
+      "team": "张家口乔与杨体育服务有限公司",
       "totalPoints": 242,
       "competitionCount": 1,
       "bestRank": 6,
       "avgPoints": 242,
       "ageGroup": "U18",
-      "gender": "男子组"
+      "gender": "女子组"
     },
     {
-      "rank": 139,
+      "rank": 175,
       "athleteId": "cmjzpdl4100vtbfhodt352vf0",
       "athleteName": "傅诗宸",
       "team": "成都市武侯区滑雪运动协会",
@@ -1705,7 +6892,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 140,
+      "rank": 176,
       "athleteId": "cmjzpdl5000wkbfhocx121wgy",
       "athleteName": "王雪宸",
       "team": "长春市冬季运动管理中心",
@@ -1717,7 +6904,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 141,
+      "rank": 177,
       "athleteId": "cmjzpdl6400xhbfhoxutlhyxn",
       "athleteName": "赵一翔",
       "team": "河北省体育局冬季运动中心",
@@ -1729,7 +6916,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 142,
+      "rank": 178,
       "athleteId": "cmjzpdl7q00ywbfhorj0y439x",
       "athleteName": "王小虎",
       "team": "哈尔滨市冬季运动与水上运动中心",
@@ -1741,7 +6928,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 143,
+      "rank": 179,
       "athleteId": "cmjzpdl980105bfhowaz22rhr",
       "athleteName": "耿浩然",
       "team": "长春市冬季运动管理中心",
@@ -1753,7 +6940,31 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 144,
+      "rank": 180,
+      "athleteId": "cmjzpdkkb00fcbfhogaawq06u",
+      "athleteName": "杨茗然",
+      "team": "河北省体育局冬季运动中心",
+      "totalPoints": 242,
+      "competitionCount": 1,
+      "bestRank": 6,
+      "avgPoints": 242,
+      "ageGroup": "U11",
+      "gender": "女子组"
+    },
+    {
+      "rank": 181,
+      "athleteId": "cmjzpdklg00g3bfhopeqe1sgz",
+      "athleteName": "周雨辰",
+      "team": "广西射击射箭运动发展中心",
+      "totalPoints": 242,
+      "competitionCount": 1,
+      "bestRank": 6,
+      "avgPoints": 242,
+      "ageGroup": "U15",
+      "gender": "女子组"
+    },
+    {
+      "rank": 182,
       "athleteId": "cmjzpdlbj011qbfholf7jdt25",
       "athleteName": "刘沐泽",
       "team": "石家庄市冰雪与足球运动推广与训练中心",
@@ -1765,7 +6976,31 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 145,
+      "rank": 183,
+      "athleteId": "cmjzpdknf00hobfho0vnutqs9",
+      "athleteName": "高翊博",
+      "team": "北京市冬季运动管理中心",
+      "totalPoints": 242,
+      "competitionCount": 1,
+      "bestRank": 6,
+      "avgPoints": 242,
+      "ageGroup": "U15",
+      "gender": "男子组"
+    },
+    {
+      "rank": 184,
+      "athleteId": "cmjzpdkog00iibfhotxzpqno2",
+      "athleteName": "倪文凯",
+      "team": "湖北省武术和冬季运动管理中心",
+      "totalPoints": 242,
+      "competitionCount": 1,
+      "bestRank": 6,
+      "avgPoints": 242,
+      "ageGroup": "U18",
+      "gender": "男子组"
+    },
+    {
+      "rank": 185,
       "athleteId": "cmjzpdk21000ibfhojbpxew23",
       "athleteName": "ALBEESU",
       "team": "张家口市足球和冰雪运动学校",
@@ -1777,7 +7012,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 146,
+      "rank": 186,
       "athleteId": "cmjzpdk4h002cbfho72bud3ju",
       "athleteName": "罗晓野",
       "team": "个人",
@@ -1789,7 +7024,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 147,
+      "rank": 187,
       "athleteId": "cmjzpdk7w0059bfhoqf1tul7a",
       "athleteName": "邰淼",
       "team": "内蒙古嘉灏体育",
@@ -1801,7 +7036,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 148,
+      "rank": 188,
       "athleteId": "cmjzpdkay007xbfhogkqgc8hp",
       "athleteName": "阿琪勒图",
       "team": "内蒙古嘉灏体育",
@@ -1813,7 +7048,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 149,
+      "rank": 189,
       "athleteId": "cmjzpdkff00bobfhoseh0eifz",
       "athleteName": "张允童",
       "team": "个人",
@@ -1825,7 +7060,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 150,
+      "rank": 190,
       "athleteId": "cmjzpdkhf00dfbfhoxmumwieq",
       "athleteName": "杨武胜俊",
       "team": "四川体育职业学院",
@@ -1837,22 +7072,10 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 151,
-      "athleteId": "cmjzpdkkf00ffbfhovtl6y82z",
-      "athleteName": "翟姝涵",
-      "team": "北京市冬季运动管理中心",
-      "totalPoints": 226,
-      "competitionCount": 1,
-      "bestRank": 7,
-      "avgPoints": 226,
-      "ageGroup": "U11",
-      "gender": "女子组"
-    },
-    {
-      "rank": 152,
-      "athleteId": "cmjzpdkmk00gxbfho34o28xv8",
-      "athleteName": "赵严诺",
-      "team": "河北省体育局冬季运动中心",
+      "rank": 191,
+      "athleteId": "cmjzpdku000nfbfhod6ac8ew5",
+      "athleteName": "冯一晗",
+      "team": "成都热雪奇迹",
       "totalPoints": 226,
       "competitionCount": 1,
       "bestRank": 7,
@@ -1861,19 +7084,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 153,
-      "athleteId": "cmjzpdkni00hrbfho3hln2uza",
-      "athleteName": "郭彧铭",
-      "team": "四川体育职业学院",
-      "totalPoints": 226,
-      "competitionCount": 1,
-      "bestRank": 7,
-      "avgPoints": 226,
-      "ageGroup": "U15",
-      "gender": "男子组"
-    },
-    {
-      "rank": 154,
+      "rank": 192,
       "athleteId": "cmjzpdl4500vwbfhof9h7fpmt",
       "athleteName": "郭涵钰",
       "team": "个人",
@@ -1885,7 +7096,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 155,
+      "rank": 193,
       "athleteId": "cmjzpdl5400wnbfhonij1rfxe",
       "athleteName": "何芷昕",
       "team": "成都市武侯区滑雪运动协会",
@@ -1897,7 +7108,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 156,
+      "rank": 194,
       "athleteId": "cmjzpdl6700xkbfhog299ru7s",
       "athleteName": "王梓铭",
       "team": "成都市武侯区滑雪运动协会",
@@ -1909,7 +7120,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 157,
+      "rank": 195,
       "athleteId": "cmjzpdl7t00yzbfho1iuq4hpl",
       "athleteName": "张子骁",
       "team": "河北省体育局冬季运动中心",
@@ -1921,7 +7132,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 158,
+      "rank": 196,
       "athleteId": "cmjzpdl9c0108bfhobi5x26qe",
       "athleteName": "李汶轩",
       "team": "长春市冬季运动管理中心",
@@ -1933,7 +7144,19 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 159,
+      "rank": 197,
+      "athleteId": "cmjzpdkkf00ffbfhovtl6y82z",
+      "athleteName": "翟姝涵",
+      "team": "北京市冬季运动管理中心",
+      "totalPoints": 226,
+      "competitionCount": 1,
+      "bestRank": 7,
+      "avgPoints": 226,
+      "ageGroup": "U11",
+      "gender": "女子组"
+    },
+    {
+      "rank": 198,
       "athleteId": "cmjzpdlas0119bfhobak518p5",
       "athleteName": "王若西",
       "team": "重庆市沙坪坝区体育运动学校",
@@ -1945,7 +7168,31 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 160,
+      "rank": 199,
+      "athleteId": "cmjzpdkmk00gxbfho34o28xv8",
+      "athleteName": "赵严诺",
+      "team": "河北省体育局冬季运动中心",
+      "totalPoints": 226,
+      "competitionCount": 1,
+      "bestRank": 7,
+      "avgPoints": 226,
+      "ageGroup": "U11",
+      "gender": "男子组"
+    },
+    {
+      "rank": 200,
+      "athleteId": "cmjzpdkni00hrbfho3hln2uza",
+      "athleteName": "郭彧铭",
+      "team": "四川体育职业学院",
+      "totalPoints": 226,
+      "competitionCount": 1,
+      "bestRank": 7,
+      "avgPoints": 226,
+      "ageGroup": "U15",
+      "gender": "男子组"
+    },
+    {
+      "rank": 201,
       "athleteId": "cmjzpdle0013sbfho3jgfbpad",
       "athleteName": "雷涵文",
       "team": "重庆市沙坪坝区体育运动学校",
@@ -1957,7 +7204,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 161,
+      "rank": 202,
       "athleteId": "cmjzpdk28000lbfhofq439jkr",
       "athleteName": "焦阳云朵",
       "team": "北京虎村竞技体育有限公司",
@@ -1969,7 +7216,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 162,
+      "rank": 203,
       "athleteId": "cmjzpdk4k002fbfhoetv2avcp",
       "athleteName": "薛景尧",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -1981,7 +7228,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 163,
+      "rank": 204,
       "athleteId": "cmjzpdk80005cbfhoxp1aexei",
       "athleteName": "张诺笒",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -1993,7 +7240,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 164,
+      "rank": 205,
       "athleteId": "cmjzpdkb20080bfhokp36urcp",
       "athleteName": "叶庆安",
       "team": "新疆维吾尔自治区冬季运动训练中心",
@@ -2005,7 +7252,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 165,
+      "rank": 206,
       "athleteId": "cmjzpdkfj00brbfhoma9b5hn6",
       "athleteName": "袁丽文",
       "team": "上海市静安区滑雪协会",
@@ -2017,7 +7264,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 166,
+      "rank": 207,
       "athleteId": "cmjzpdkhi00dibfhokox5yuvz",
       "athleteName": "付壡喆",
       "team": "四川体育职业学院",
@@ -2029,34 +7276,22 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 167,
-      "athleteId": "cmjzpdkkk00fibfhornkfaegp",
-      "athleteName": "蒋柠萱",
-      "team": "北京市冬季运动管理中心",
+      "rank": 208,
+      "athleteId": "cmjzpdkpp00jibfho6rmhufv0",
+      "athleteName": "王冠霖",
+      "team": "吉林坤伦滑雪俱乐部",
       "totalPoints": 212,
       "competitionCount": 1,
       "bestRank": 8,
       "avgPoints": 212,
-      "ageGroup": "U11",
-      "gender": "女子组"
+      "ageGroup": "U18",
+      "gender": "男子组"
     },
     {
-      "rank": 168,
-      "athleteId": "cmjzpdklq00g9bfhoyym4yvox",
-      "athleteName": "周雨欣",
-      "team": "广西射击射箭运动发展中心",
-      "totalPoints": 212,
-      "competitionCount": 1,
-      "bestRank": 8,
-      "avgPoints": 212,
-      "ageGroup": "U15",
-      "gender": "女子组"
-    },
-    {
-      "rank": 169,
-      "athleteId": "cmjzpdkmo00h0bfho8q8f5myc",
-      "athleteName": "魏子博",
-      "team": "河南省体育局",
+      "rank": 209,
+      "athleteId": "cmjzpdku400nibfholr4qu1hr",
+      "athleteName": "顾羽宸",
+      "team": "成都热雪奇迹",
       "totalPoints": 212,
       "competitionCount": 1,
       "bestRank": 8,
@@ -2065,7 +7300,19 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 170,
+      "rank": 210,
+      "athleteId": "cmjzpdkuz00obbfho0os6d2tq",
+      "athleteName": "肖辰俊熙",
+      "team": "成都热雪奇迹",
+      "totalPoints": 212,
+      "competitionCount": 1,
+      "bestRank": 8,
+      "avgPoints": 212,
+      "ageGroup": "U15",
+      "gender": "男子组"
+    },
+    {
+      "rank": 211,
       "athleteId": "cmjzpdl4900vzbfhonmuyxvkn",
       "athleteName": "张曦彤",
       "team": "个人",
@@ -2077,7 +7324,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 171,
+      "rank": 212,
       "athleteId": "cmjzpdl5700wqbfhokaor4wmd",
       "athleteName": "包雨彤",
       "team": "沈阳体育学院",
@@ -2089,7 +7336,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 172,
+      "rank": 213,
       "athleteId": "cmjzpdl6b00xnbfhodbirxnv7",
       "athleteName": "翁晨皓",
       "team": "成都市武侯区滑雪运动协会",
@@ -2101,7 +7348,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 173,
+      "rank": 214,
       "athleteId": "cmjzpdl7x00z2bfhoq20wf501",
       "athleteName": "申桐",
       "team": "沈阳体育学院",
@@ -2113,7 +7360,55 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 174,
+      "rank": 215,
+      "athleteId": "cmjzpdkzy00s8bfhoiv0z32ls",
+      "athleteName": "田嘉译",
+      "team": "沈阳体育学院",
+      "totalPoints": 212,
+      "competitionCount": 1,
+      "bestRank": 8,
+      "avgPoints": 212,
+      "ageGroup": "U18",
+      "gender": "男子组"
+    },
+    {
+      "rank": 216,
+      "athleteId": "cmjzpdkkk00fibfhornkfaegp",
+      "athleteName": "蒋柠萱",
+      "team": "北京市冬季运动管理中心",
+      "totalPoints": 212,
+      "competitionCount": 1,
+      "bestRank": 8,
+      "avgPoints": 212,
+      "ageGroup": "U11",
+      "gender": "女子组"
+    },
+    {
+      "rank": 217,
+      "athleteId": "cmjzpdklq00g9bfhoyym4yvox",
+      "athleteName": "周雨欣",
+      "team": "广西射击射箭运动发展中心",
+      "totalPoints": 212,
+      "competitionCount": 1,
+      "bestRank": 8,
+      "avgPoints": 212,
+      "ageGroup": "U15",
+      "gender": "女子组"
+    },
+    {
+      "rank": 218,
+      "athleteId": "cmjzpdkmo00h0bfho8q8f5myc",
+      "athleteName": "魏子博",
+      "team": "河南省体育局",
+      "totalPoints": 212,
+      "competitionCount": 1,
+      "bestRank": 8,
+      "avgPoints": 212,
+      "ageGroup": "U11",
+      "gender": "男子组"
+    },
+    {
+      "rank": 219,
       "athleteId": "cmjzpdlcz012ubfho66j36j88",
       "athleteName": "梁嘉俊",
       "team": "石家庄市冰雪与足球运动推广训练中心",
@@ -2125,7 +7420,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 175,
+      "rank": 220,
       "athleteId": "cmjzpdk2d000obfhodusp02c8",
       "athleteName": "李汶瑾",
       "team": "MAYA TEAM",
@@ -2137,7 +7432,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 176,
+      "rank": 221,
       "athleteId": "cmjzpdk4o002ibfhom3xfw7t5",
       "athleteName": "马昊文",
       "team": "MAYA TEAM",
@@ -2149,7 +7444,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 177,
+      "rank": 222,
       "athleteId": "cmjzpdk84005fbfhocwqzec0v",
       "athleteName": "高宇宣",
       "team": "北京虎村竞技体育有限公司",
@@ -2161,7 +7456,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 178,
+      "rank": 223,
       "athleteId": "cmjzpdkb50083bfhoc0bflgh2",
       "athleteName": "高琢皓",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -2173,7 +7468,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 179,
+      "rank": 224,
       "athleteId": "cmjzpdkfm00bubfhoxikrrhxg",
       "athleteName": "王婧霏",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -2185,7 +7480,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 180,
+      "rank": 225,
       "athleteId": "cmjzpdkhm00dlbfhoh1eef7a9",
       "athleteName": "廉钰洁",
       "team": "河北省体育局冬季运动中心",
@@ -2197,46 +7492,34 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 181,
-      "athleteId": "cmjzpdkkp00flbfho4fw9ataz",
-      "athleteName": "冷昕莲",
+      "rank": 226,
+      "athleteId": "cmjzpdkpt00jlbfho1kgjxby2",
+      "athleteName": "王宏轩",
       "team": "河北省体育局冬季运动中心",
       "totalPoints": 199,
       "competitionCount": 1,
       "bestRank": 9,
       "avgPoints": 199,
-      "ageGroup": "U11",
-      "gender": "女子组"
-    },
-    {
-      "rank": 182,
-      "athleteId": "cmjzpdklu00gcbfhoyosgjvcs",
-      "athleteName": "苏常格",
-      "team": "河北省体育局冬季运动中心",
-      "totalPoints": 199,
-      "competitionCount": 1,
-      "bestRank": 9,
-      "avgPoints": 199,
-      "ageGroup": "U15",
-      "gender": "女子组"
-    },
-    {
-      "rank": 183,
-      "athleteId": "cmjzpdkmr00h3bfhom6eectsq",
-      "athleteName": "石昊桐",
-      "team": "北京市冬季运动管理中心",
-      "totalPoints": 199,
-      "competitionCount": 1,
-      "bestRank": 9,
-      "avgPoints": 199,
-      "ageGroup": "U11",
+      "ageGroup": "U18",
       "gender": "男子组"
     },
     {
-      "rank": 184,
-      "athleteId": "cmjzpdknp00hxbfho2se1dzm8",
-      "athleteName": "麦冠航",
-      "team": "河北省体育局冬季运动中心",
+      "rank": 227,
+      "athleteId": "cmjzpdksz00mhbfhojzwb0bac",
+      "athleteName": "李京和",
+      "team": "个人",
+      "totalPoints": 199,
+      "competitionCount": 1,
+      "bestRank": 9,
+      "avgPoints": 199,
+      "ageGroup": "U18",
+      "gender": "男子组"
+    },
+    {
+      "rank": 228,
+      "athleteId": "cmjzpdkv200oebfhojl3ujfok",
+      "athleteName": "何心远",
+      "team": "成都热雪奇迹",
       "totalPoints": 199,
       "competitionCount": 1,
       "bestRank": 9,
@@ -2245,7 +7528,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 185,
+      "rank": 229,
       "athleteId": "cmjzpdl4c00w2bfhokl4nmyi0",
       "athleteName": "张瑾苒",
       "team": "内蒙古体育职业学院",
@@ -2257,7 +7540,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 186,
+      "rank": 230,
       "athleteId": "cmjzpdl5b00wtbfhok8xo24ek",
       "athleteName": "栾智媛",
       "team": "河北省体育局冬季运动中心",
@@ -2269,7 +7552,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 187,
+      "rank": 231,
       "athleteId": "cmjzpdl6e00xqbfhoshn2l5ll",
       "athleteName": "侯胤翔",
       "team": "万域芳菲俱乐部",
@@ -2281,7 +7564,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 188,
+      "rank": 232,
       "athleteId": "cmjzpdl8000z5bfhof416yoli",
       "athleteName": "霍圣康",
       "team": "成都市武侯区滑雪运动协会",
@@ -2293,7 +7576,55 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 189,
+      "rank": 233,
+      "athleteId": "cmjzpdkkp00flbfho4fw9ataz",
+      "athleteName": "冷昕莲",
+      "team": "河北省体育局冬季运动中心",
+      "totalPoints": 199,
+      "competitionCount": 1,
+      "bestRank": 9,
+      "avgPoints": 199,
+      "ageGroup": "U11",
+      "gender": "女子组"
+    },
+    {
+      "rank": 234,
+      "athleteId": "cmjzpdklu00gcbfhoyosgjvcs",
+      "athleteName": "苏常格",
+      "team": "河北省体育局冬季运动中心",
+      "totalPoints": 199,
+      "competitionCount": 1,
+      "bestRank": 9,
+      "avgPoints": 199,
+      "ageGroup": "U15",
+      "gender": "女子组"
+    },
+    {
+      "rank": 235,
+      "athleteId": "cmjzpdkmr00h3bfhom6eectsq",
+      "athleteName": "石昊桐",
+      "team": "北京市冬季运动管理中心",
+      "totalPoints": 199,
+      "competitionCount": 1,
+      "bestRank": 9,
+      "avgPoints": 199,
+      "ageGroup": "U11",
+      "gender": "男子组"
+    },
+    {
+      "rank": 236,
+      "athleteId": "cmjzpdknp00hxbfho2se1dzm8",
+      "athleteName": "麦冠航",
+      "team": "河北省体育局冬季运动中心",
+      "totalPoints": 199,
+      "competitionCount": 1,
+      "bestRank": 9,
+      "avgPoints": 199,
+      "ageGroup": "U15",
+      "gender": "男子组"
+    },
+    {
+      "rank": 237,
       "athleteId": "cmjzpdk2g000rbfhodm7jwa0h",
       "athleteName": "朱安然",
       "team": "上海雪酷滑雪竞技队",
@@ -2305,7 +7636,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 190,
+      "rank": 238,
       "athleteId": "cmjzpdk4r002lbfhoazgg5gnu",
       "athleteName": "周天朗",
       "team": "北京虎村竞技体育有限公司",
@@ -2317,7 +7648,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 191,
+      "rank": 239,
       "athleteId": "cmjzpdk87005ibfhohu5zegc3",
       "athleteName": "汪昱诺",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -2329,7 +7660,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 192,
+      "rank": 240,
       "athleteId": "cmjzpdkb80086bfhocqooy0qe",
       "athleteName": "马赛",
       "team": "四川体育职业学院",
@@ -2341,7 +7672,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 193,
+      "rank": 241,
       "athleteId": "cmjzpdkfq00bxbfho3nqtwyo2",
       "athleteName": "邵菲梵",
       "team": "北京天高云淡体育有限公司",
@@ -2353,7 +7684,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 194,
+      "rank": 242,
       "athleteId": "cmjzpdkhq00dobfhogqrw3gj7",
       "athleteName": "苗誉镨",
       "team": "速森体育",
@@ -2365,19 +7696,31 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 195,
-      "athleteId": "cmjzpdkmu00h6bfhoz183j346",
-      "athleteName": "宁浩然",
-      "team": "成都热雪奇迹",
+      "rank": 243,
+      "athleteId": "cmjzpdkpw00jobfho96ief0p6",
+      "athleteName": "马健剀",
+      "team": "吉林坤伦滑雪俱乐部",
       "totalPoints": 187,
       "competitionCount": 1,
       "bestRank": 10,
       "avgPoints": 187,
-      "ageGroup": "U11",
+      "ageGroup": "U18",
       "gender": "男子组"
     },
     {
-      "rank": 196,
+      "rank": 244,
+      "athleteId": "cmjzpdkt300mkbfhogytw8qz1",
+      "athleteName": "熊泽瑞",
+      "team": "张家口乔与杨体育服务有限公司",
+      "totalPoints": 187,
+      "competitionCount": 1,
+      "bestRank": 10,
+      "avgPoints": 187,
+      "ageGroup": "U18",
+      "gender": "男子组"
+    },
+    {
+      "rank": 245,
       "athleteId": "cmjzpdl3200uvbfho4hlumf98",
       "athleteName": "徐思远",
       "team": "沈阳体育学院",
@@ -2389,7 +7732,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 197,
+      "rank": 246,
       "athleteId": "cmjzpdl5f00wwbfhoxyrpjrpk",
       "athleteName": "刘宣成",
       "team": "成都市武侯区滑雪运动协会",
@@ -2401,7 +7744,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 198,
+      "rank": 247,
       "athleteId": "cmjzpdl6h00xtbfhod637cmn5",
       "athleteName": "周珈禾",
       "team": "黑龙江冰雪体育职业学院",
@@ -2413,7 +7756,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 199,
+      "rank": 248,
       "athleteId": "cmjzpdl8300z8bfhoclhueadd",
       "athleteName": "曾国强",
       "team": "成都市武侯区滑雪运动协会",
@@ -2425,7 +7768,19 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 200,
+      "rank": 249,
+      "athleteId": "cmjzpdkmu00h6bfhoz183j346",
+      "athleteName": "宁浩然",
+      "team": "成都热雪奇迹",
+      "totalPoints": 187,
+      "competitionCount": 1,
+      "bestRank": 10,
+      "avgPoints": 187,
+      "ageGroup": "U11",
+      "gender": "男子组"
+    },
+    {
+      "rank": 250,
       "athleteId": "cmjzpdld4012zbfhoeg1jphpu",
       "athleteName": "于瀚",
       "team": "重庆市沙坪坝区体育运动学校",
@@ -2437,7 +7792,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 201,
+      "rank": 251,
       "athleteId": "cmjzpdk2l000ubfhoux0a5q2h",
       "athleteName": "李宛凝",
       "team": "大连雨彤体育赛事俱乐部",
@@ -2449,7 +7804,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 202,
+      "rank": 252,
       "athleteId": "cmjzpdk4v002obfho9tmsoz86",
       "athleteName": "马昊迪",
       "team": "MAYA TEAM",
@@ -2461,7 +7816,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 203,
+      "rank": 253,
       "athleteId": "cmjzpdk8b005lbfho4c97oyke",
       "athleteName": "杨卓尔",
       "team": "中麟体育",
@@ -2473,7 +7828,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 204,
+      "rank": 254,
       "athleteId": "cmjzpdkbc0089bfhow3t9kyiy",
       "athleteName": "徐承昊",
       "team": "上海市静安区滑雪协会",
@@ -2485,7 +7840,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 205,
+      "rank": 255,
       "athleteId": "cmjzpdkft00c0bfhofpnn2mnq",
       "athleteName": "贾釉茜",
       "team": "吉林省阔展体育服务有限公司",
@@ -2497,7 +7852,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 206,
+      "rank": 256,
       "athleteId": "cmjzpdkht00drbfhoo183z471",
       "athleteName": "王嘉崎",
       "team": "新疆维吾尔自治区冬季运动训练中心",
@@ -2509,7 +7864,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 207,
+      "rank": 257,
       "athleteId": "cmjzpdl5j00wzbfho4iy8wvyi",
       "athleteName": "王籽童",
       "team": "辽宁省体育事业发展中心",
@@ -2521,7 +7876,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 208,
+      "rank": 258,
       "athleteId": "cmjzpdl6l00xwbfhowjl65bn5",
       "athleteName": "林佳易",
       "team": "哈尔滨市冬季运动与水上运动中心",
@@ -2533,7 +7888,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 209,
+      "rank": 259,
       "athleteId": "cmjzpdl8700zbbfhohn1861h0",
       "athleteName": "孙琪翔",
       "team": "哈尔滨市冬季运动与水上运动中心",
@@ -2545,7 +7900,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 210,
+      "rank": 260,
       "athleteId": "cmjzpdlbz0121bfhoofrhg803",
       "athleteName": "曾星越",
       "team": "个人",
@@ -2557,7 +7912,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 211,
+      "rank": 261,
       "athleteId": "cmjzpdld80132bfhoadlpmpwp",
       "athleteName": "邓与骜",
       "team": "成都热雪奇迹",
@@ -2569,7 +7924,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 212,
+      "rank": 262,
       "athleteId": "cmjzpdk2r000xbfho3kcj25v9",
       "athleteName": "刘和一",
       "team": "北京天高云淡体育有限公司",
@@ -2581,7 +7936,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 213,
+      "rank": 263,
       "athleteId": "cmjzpdk4y002rbfho4iulm870",
       "athleteName": "蒋文栋",
       "team": "MAYA TEAM",
@@ -2593,7 +7948,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 214,
+      "rank": 264,
       "athleteId": "cmjzpdk8f005obfhos0k3gyvq",
       "athleteName": "黄卫瑄",
       "team": "吉林省阔展体育服务有限公司",
@@ -2605,7 +7960,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 215,
+      "rank": 265,
       "athleteId": "cmjzpdkbg008cbfhoy1byx6zt",
       "athleteName": "刘宸卓",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -2617,7 +7972,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 216,
+      "rank": 266,
       "athleteId": "cmjzpdkfw00c3bfhocx32ry78",
       "athleteName": "叶香菲",
       "team": "大连雨彤体育赛事俱乐部",
@@ -2629,7 +7984,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 217,
+      "rank": 267,
       "athleteId": "cmjzpdkhx00dubfhogq1rb5ct",
       "athleteName": "杨伯伦",
       "team": "个人",
@@ -2641,7 +7996,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 218,
+      "rank": 268,
       "athleteId": "cmjzpdl6o00xzbfhoj6u9bsim",
       "athleteName": "王泊文",
       "team": "成都市武侯区滑雪运动协会",
@@ -2653,7 +8008,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 219,
+      "rank": 269,
       "athleteId": "cmjzpdl8b00zebfhoaawem8yw",
       "athleteName": "李星翰",
       "team": "沈阳体育学院",
@@ -2665,7 +8020,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 220,
+      "rank": 270,
       "athleteId": "cmjzpdlc30124bfho0cnhg41y",
       "athleteName": "马泰铭",
       "team": "成都热雪奇迹",
@@ -2677,7 +8032,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 221,
+      "rank": 271,
       "athleteId": "cmjzpdldb0135bfhoenavjvdu",
       "athleteName": "罗知腾",
       "team": "重庆市沙坪坝区体育运动学校",
@@ -2689,7 +8044,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 222,
+      "rank": 272,
       "athleteId": "cmjzpdk2v0010bfhoaewhfwuy",
       "athleteName": "李子纯",
       "team": "个人",
@@ -2701,7 +8056,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 223,
+      "rank": 273,
       "athleteId": "cmjzpdk52002ubfho239nfqzd",
       "athleteName": "高宇承",
       "team": "北京虎村竞技体育有限公司",
@@ -2713,7 +8068,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 224,
+      "rank": 274,
       "athleteId": "cmjzpdk8i005rbfho2oo4b7sh",
       "athleteName": "赵浛西",
       "team": "爱上雪体育产业发展（北京）有限公司",
@@ -2725,7 +8080,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 225,
+      "rank": 275,
       "athleteId": "cmjzpdkbi008fbfhogpqphcae",
       "athleteName": "吉淏辰",
       "team": "北京虎村竞技体育有限公司",
@@ -2737,7 +8092,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 226,
+      "rank": 276,
       "athleteId": "cmjzpdkg000c6bfhoihmgqo4f",
       "athleteName": "刘墨晗",
       "team": "北京虎村竞技体育有限公司",
@@ -2749,7 +8104,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 227,
+      "rank": 277,
       "athleteId": "cmjzpdki100dxbfhozwyr4wjz",
       "athleteName": "常一鸣",
       "team": "锐冠青少年竞技滑雪队",
@@ -2761,7 +8116,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 228,
+      "rank": 278,
       "athleteId": "cmjzpdl6r00y2bfhojet9qq4z",
       "athleteName": "杨翔宇",
       "team": "成都市武侯区滑雪运动协会",
@@ -2773,7 +8128,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 229,
+      "rank": 279,
       "athleteId": "cmjzpdl8f00zhbfho8fu1sd6q",
       "athleteName": "刘济豪",
       "team": "河北省体育局冬季运动中心",
@@ -2785,7 +8140,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 230,
+      "rank": 280,
       "athleteId": "cmjzpdlc90127bfho5v74jhb5",
       "athleteName": "程锦辰",
       "team": "河北省体育局冬季运动中心",
@@ -2797,7 +8152,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 231,
+      "rank": 281,
       "athleteId": "cmjzpdldf0138bfho188a6k3t",
       "athleteName": "张钊宁",
       "team": "重庆市沙坪坝区体育运动学校",
@@ -2809,7 +8164,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 232,
+      "rank": 282,
       "athleteId": "cmjzpdk2z0013bfho4korkuwl",
       "athleteName": "李获稻",
       "team": "成都热雪奇迹",
@@ -2821,7 +8176,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 233,
+      "rank": 283,
       "athleteId": "cmjzpdk55002xbfhookyfbfz5",
       "athleteName": "刘昱辰",
       "team": "MAYA TEAM",
@@ -2833,7 +8188,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 234,
+      "rank": 284,
       "athleteId": "cmjzpdk8m005ubfhou7sh1nue",
       "athleteName": "邹齐",
       "team": "个人",
@@ -2845,7 +8200,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 235,
+      "rank": 285,
       "athleteId": "cmjzpdkbm008ibfhod1hwvi59",
       "athleteName": "邢子瀚",
       "team": "纳西亚",
@@ -2857,7 +8212,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 236,
+      "rank": 286,
       "athleteId": "cmjzpdkg300c9bfhov8mzyq6r",
       "athleteName": "朱珈仪",
       "team": "吉林市冬季运动管理中心",
@@ -2869,7 +8224,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 237,
+      "rank": 287,
       "athleteId": "cmjzpdki500e0bfho3yo046wx",
       "athleteName": "杨一丁",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -2881,7 +8236,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 238,
+      "rank": 288,
       "athleteId": "cmjzpdkwn00pkbfhoanaefh2j",
       "athleteName": "万洛辰",
       "team": "个人",
@@ -2893,7 +8248,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 239,
+      "rank": 289,
       "athleteId": "cmjzpdl6v00y5bfhoikyoooch",
       "athleteName": "刘泽琛",
       "team": "哈尔滨市冬季运动与水上运动中心",
@@ -2905,7 +8260,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 240,
+      "rank": 290,
       "athleteId": "cmjzpdl8j00zkbfhohoc9ab91",
       "athleteName": "贺天佑",
       "team": "四川体育职业学院",
@@ -2917,7 +8272,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 241,
+      "rank": 291,
       "athleteId": "cmjzpdlcc012abfhogtiodmxg",
       "athleteName": "朱秋霖",
       "team": "个人",
@@ -2929,7 +8284,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 242,
+      "rank": 292,
       "athleteId": "cmjzpdldi013bbfhoor5kxh26",
       "athleteName": "王天磊",
       "team": "河北省体育局冬季运动中心",
@@ -2941,7 +8296,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 243,
+      "rank": 293,
       "athleteId": "cmjzpdl6y00y8bfho0nmikypo",
       "athleteName": "蒲彦西",
       "team": "成都市武侯区滑雪运动协会",
@@ -2953,7 +8308,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 244,
+      "rank": 294,
       "athleteId": "cmjzpdl8n00znbfhovc4w60l6",
       "athleteName": "陈宥呈",
       "team": "成都市武侯区滑雪运动协会",
@@ -2965,7 +8320,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 245,
+      "rank": 295,
       "athleteId": "cmjzpdk320016bfhoxp3pgkx8",
       "athleteName": "武子蓉",
       "team": "太原市第二少年体育学校",
@@ -2977,7 +8332,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 246,
+      "rank": 296,
       "athleteId": "cmjzpdk590030bfho0px3f8sf",
       "athleteName": "张朔源",
       "team": "个人",
@@ -2989,7 +8344,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 247,
+      "rank": 297,
       "athleteId": "cmjzpdk8q005xbfhoxswwnnkl",
       "athleteName": "刘姝廷",
       "team": "中麟体育",
@@ -3001,7 +8356,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 248,
+      "rank": 298,
       "athleteId": "cmjzpdkbq008lbfhoegwsywal",
       "athleteName": "于谨赫",
       "team": "速森体育",
@@ -3013,7 +8368,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 249,
+      "rank": 299,
       "athleteId": "cmjzpdkg700ccbfhossdgz9de",
       "athleteName": "韩非桐",
       "team": "速森体育",
@@ -3025,7 +8380,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 250,
+      "rank": 300,
       "athleteId": "cmjzpdki900e3bfho6qc9ewhq",
       "athleteName": "郑研伟",
       "team": "个人",
@@ -3037,7 +8392,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 251,
+      "rank": 301,
       "athleteId": "cmjzpdl1f00tcbfhowslhbsqq",
       "athleteName": "李佳馨",
       "team": "个人",
@@ -3049,7 +8404,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 252,
+      "rank": 302,
       "athleteId": "cmjzpdlcg012dbfho7kz6iwv3",
       "athleteName": "林芮锋",
       "team": "四川体育职业学院",
@@ -3061,7 +8416,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 253,
+      "rank": 303,
       "athleteId": "cmjzpdl7100ybbfhoo3p1hnvm",
       "athleteName": "王梓伊",
       "team": "成都市武侯区滑雪运动协会",
@@ -3073,7 +8428,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 254,
+      "rank": 304,
       "athleteId": "cmjzpdk360019bfho7kcuehdp",
       "athleteName": "张语珊",
       "team": "个人",
@@ -3085,7 +8440,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 255,
+      "rank": 305,
       "athleteId": "cmjzpdk5d0033bfhoh5d8fwx8",
       "athleteName": "张睦然",
       "team": "MAYA TEAM",
@@ -3097,7 +8452,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 256,
+      "rank": 306,
       "athleteId": "cmjzpdk8u0060bfho1vg3hn2i",
       "athleteName": "周焕熙",
       "team": "爱上雪体育产业发展（北京）有限公司",
@@ -3109,7 +8464,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 257,
+      "rank": 307,
       "athleteId": "cmjzpdkbu008obfhondaq2opk",
       "athleteName": "刘哲鸣",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -3121,7 +8476,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 258,
+      "rank": 308,
       "athleteId": "cmjzpdkga00cfbfhoyfzzm0hh",
       "athleteName": "杨笑语",
       "team": "河北省体育局冬季运动中心",
@@ -3133,7 +8488,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 259,
+      "rank": 309,
       "athleteId": "cmjzpdkid00e6bfho99rqbw7s",
       "athleteName": "樊冠序",
       "team": "吉林省阔展体育服务有限公司",
@@ -3145,7 +8500,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 260,
+      "rank": 310,
       "athleteId": "cmjzpdl7500yebfhon5cb75ux",
       "athleteName": "冯翊瀚",
       "team": "成都市武侯区滑雪运动协会",
@@ -3157,7 +8512,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 261,
+      "rank": 311,
       "athleteId": "cmjzpdk3a001cbfhosbj1b2bo",
       "athleteName": "李墨涵",
       "team": "中麟体育",
@@ -3169,7 +8524,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 262,
+      "rank": 312,
       "athleteId": "cmjzpdk5g0036bfhojj36lkyb",
       "athleteName": "白雨奇",
       "team": "大连雨彤体育赛事俱乐部",
@@ -3181,7 +8536,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 263,
+      "rank": 313,
       "athleteId": "cmjzpdk8x0063bfhobic6c948",
       "athleteName": "闫艺宸",
       "team": "个人",
@@ -3193,7 +8548,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 264,
+      "rank": 314,
       "athleteId": "cmjzpdkbx008rbfho8v83oc7a",
       "athleteName": "孙屹卓",
       "team": "MAYA TEAM",
@@ -3205,7 +8560,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 265,
+      "rank": 315,
       "athleteId": "cmjzpdkge00cibfhoiniuvbof",
       "athleteName": "房洢伊",
       "team": "个人",
@@ -3217,7 +8572,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 266,
+      "rank": 316,
       "athleteId": "cmjzpdkih00e9bfholi22uh9o",
       "athleteName": "曲星铭",
       "team": "个人",
@@ -3229,7 +8584,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 267,
+      "rank": 317,
       "athleteId": "cmjzpdk3e001fbfho3hhippx7",
       "athleteName": "李雨萱",
       "team": "个人",
@@ -3241,7 +8596,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 268,
+      "rank": 318,
       "athleteId": "cmjzpdk5j0039bfho0a2ww5j0",
       "athleteName": "王子溪",
       "team": "KingProTeam",
@@ -3253,7 +8608,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 269,
+      "rank": 319,
       "athleteId": "cmjzpdk900066bfho8yqnek9e",
       "athleteName": "徐紫馨",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -3265,7 +8620,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 270,
+      "rank": 320,
       "athleteId": "cmjzpdkc1008ubfho003mc70z",
       "athleteName": "嘎日玛盖",
       "team": "新疆维吾尔自治区冬季运动训练中心",
@@ -3277,7 +8632,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 271,
+      "rank": 321,
       "athleteId": "cmjzpdkgh00clbfhozrtx7frf",
       "athleteName": "白默函",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -3289,7 +8644,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 272,
+      "rank": 322,
       "athleteId": "cmjzpdkik00ecbfho4luzmtsp",
       "athleteName": "付若洵",
       "team": "KingProTeam",
@@ -3301,7 +8656,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 273,
+      "rank": 323,
       "athleteId": "cmjzpdk3h001ibfho4lvkrl73",
       "athleteName": "马音霓",
       "team": "爱上雪体育产业发展（北京）有限公司",
@@ -3313,7 +8668,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 274,
+      "rank": 324,
       "athleteId": "cmjzpdk5m003cbfhosvizw7ep",
       "athleteName": "黄益航",
       "team": "四川体育职业学院",
@@ -3325,7 +8680,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 275,
+      "rank": 325,
       "athleteId": "cmjzpdk930069bfho54mrsdcb",
       "athleteName": "王艺潼",
       "team": "个人",
@@ -3337,7 +8692,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 276,
+      "rank": 326,
       "athleteId": "cmjzpdkc4008xbfhoyml7rqhz",
       "athleteName": "崔承泽",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -3349,7 +8704,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 277,
+      "rank": 327,
       "athleteId": "cmjzpdkgl00cobfhobsdhpr93",
       "athleteName": "刘怡廷",
       "team": "张家口市足球和冰雪运动学校",
@@ -3361,7 +8716,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 278,
+      "rank": 328,
       "athleteId": "cmjzpdkio00efbfho8e577j04",
       "athleteName": "吴保江",
       "team": "零战单板滑雪俱乐部",
@@ -3373,7 +8728,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 279,
+      "rank": 329,
       "athleteId": "cmjzpdk3k001lbfho3ro7vqgl",
       "athleteName": "张兆檬",
       "team": "KingProTeam",
@@ -3385,7 +8740,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 280,
+      "rank": 330,
       "athleteId": "cmjzpdk5q003fbfho5e0w98bk",
       "athleteName": "夏誉领",
       "team": "上海雪酷滑雪竞技队",
@@ -3397,7 +8752,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 281,
+      "rank": 331,
       "athleteId": "cmjzpdk96006cbfho14znv0uq",
       "athleteName": "徐艺玮",
       "team": "河北省体育局冬季运动中心",
@@ -3409,7 +8764,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 282,
+      "rank": 332,
       "athleteId": "cmjzpdkc80090bfhouqhl68vg",
       "athleteName": "王子嘉",
       "team": "内蒙古嘉灏体育",
@@ -3421,7 +8776,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 283,
+      "rank": 333,
       "athleteId": "cmjzpdkgo00crbfhoj3jtd3nu",
       "athleteName": "范芮希",
       "team": "个人",
@@ -3433,7 +8788,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 284,
+      "rank": 334,
       "athleteId": "cmjzpdkiv00eibfhomj9j7tlk",
       "athleteName": "辛博",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -3445,7 +8800,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 285,
+      "rank": 335,
       "athleteId": "cmjzpdk3o001obfhodbkhcpfl",
       "athleteName": "高怡雯",
       "team": "北京天高云淡体育有限公司",
@@ -3457,7 +8812,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 286,
+      "rank": 336,
       "athleteId": "cmjzpdk5t003ibfhocx6w9f2u",
       "athleteName": "周豫",
       "team": "北京虎村竞技体育有限公司",
@@ -3469,7 +8824,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 287,
+      "rank": 337,
       "athleteId": "cmjzpdk99006fbfhowh2pew1l",
       "athleteName": "史怀竺",
       "team": "大连雨彤体育赛事俱乐部",
@@ -3481,7 +8836,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 288,
+      "rank": 338,
       "athleteId": "cmjzpdkcb0093bfho0ocki2j0",
       "athleteName": "江显晨",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -3493,7 +8848,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 289,
+      "rank": 339,
       "athleteId": "cmjzpdkgs00cubfho86ndwawc",
       "athleteName": "杜美佳妮",
       "team": "北京佩士体育有限公司",
@@ -3505,7 +8860,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 290,
+      "rank": 340,
       "athleteId": "cmjzpdkiz00elbfhowy5fi3bf",
       "athleteName": "黄铸轩",
       "team": "个人",
@@ -3517,7 +8872,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 291,
+      "rank": 341,
       "athleteId": "cmjzpdk3s001rbfhonoy1krhm",
       "athleteName": "周芸溪",
       "team": "MAYA TEAM",
@@ -3529,7 +8884,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 292,
+      "rank": 342,
       "athleteId": "cmjzpdk5w003lbfho6honytan",
       "athleteName": "张柏轩",
       "team": "MAYA TEAM",
@@ -3541,7 +8896,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 293,
+      "rank": 343,
       "athleteId": "cmjzpdk9d006ibfho62rtb6mv",
       "athleteName": "叶丽扎·别克苏力坦",
       "team": "新疆维吾尔自治区冬季运动训练中心",
@@ -3553,7 +8908,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 294,
+      "rank": 344,
       "athleteId": "cmjzpdkce0096bfho9w4cv43j",
       "athleteName": "孟裕皓",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -3565,7 +8920,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 295,
+      "rank": 345,
       "athleteId": "cmjzpdkj200eobfhou82m9qil",
       "athleteName": "唐鸿博",
       "team": "KingProTeam",
@@ -3577,7 +8932,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 296,
+      "rank": 346,
       "athleteId": "cmjzpdk5z003obfhomuy5i56z",
       "athleteName": "朱朗灿",
       "team": "个人",
@@ -3589,7 +8944,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 297,
+      "rank": 347,
       "athleteId": "cmjzpdk9g006lbfhonossoltj",
       "athleteName": "刘于靖璇",
       "team": "丝绸之路青少年俱乐部",
@@ -3601,7 +8956,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 298,
+      "rank": 348,
       "athleteId": "cmjzpdkci0099bfhoj2fomk7j",
       "athleteName": "李柏翔",
       "team": "MAYA TEAM",
@@ -3613,7 +8968,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 299,
+      "rank": 349,
       "athleteId": "cmjzpdkj600erbfhoagwamkpg",
       "athleteName": "杜鑫",
       "team": "张家口市足球和冰雪运动学校",
@@ -3625,7 +8980,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 300,
+      "rank": 350,
       "athleteId": "cmjzpdk62003rbfho276bqrn6",
       "athleteName": "程子航",
       "team": "北京虎村竞技体育有限公司",
@@ -3637,7 +8992,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 301,
+      "rank": 351,
       "athleteId": "cmjzpdk9j006obfhor1vkbpvi",
       "athleteName": "王羽佳",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -3649,7 +9004,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 302,
+      "rank": 352,
       "athleteId": "cmjzpdkcm009cbfhotv2stqaf",
       "athleteName": "陶勃遇",
       "team": "锐冠青少年竞技滑雪队",
@@ -3661,7 +9016,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 303,
+      "rank": 353,
       "athleteId": "cmjzpdkja00eubfho4y4pipqd",
       "athleteName": "刘馨泽",
       "team": "吉林省阔展体育服务有限公司",
@@ -3673,7 +9028,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 304,
+      "rank": 354,
       "athleteId": "cmjzpdk65003ubfhov0tbtt6p",
       "athleteName": "聂铭熙",
       "team": "MAYA TEAM",
@@ -3685,7 +9040,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 305,
+      "rank": 355,
       "athleteId": "cmjzpdk9n006rbfhoom69d3b4",
       "athleteName": "黎若水",
       "team": "个人",
@@ -3697,7 +9052,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 306,
+      "rank": 356,
       "athleteId": "cmjzpdkcq009fbfhoxa5ipl1g",
       "athleteName": "仲作成",
       "team": "MAYA TEAM",
@@ -3709,7 +9064,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 307,
+      "rank": 357,
       "athleteId": "cmjzpdk69003xbfhomaabax6c",
       "athleteName": "金子彦",
       "team": "个人",
@@ -3721,7 +9076,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 308,
+      "rank": 358,
       "athleteId": "cmjzpdk9q006ubfhol25rw40e",
       "athleteName": "刘芊焱",
       "team": "个人",
@@ -3733,7 +9088,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 309,
+      "rank": 359,
       "athleteId": "cmjzpdkct009ibfhoibkwcoe4",
       "athleteName": "郭天泽",
       "team": "MAYA TEAM",
@@ -3745,7 +9100,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 310,
+      "rank": 360,
       "athleteId": "cmjzpdk6c0040bfhor621ft1n",
       "athleteName": "陈鑫艺",
       "team": "四川体育职业学院",
@@ -3757,7 +9112,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 311,
+      "rank": 361,
       "athleteId": "cmjzpdk9t006xbfhobc0rcef9",
       "athleteName": "吴宛霖",
       "team": "北京天高云淡体育有限公司",
@@ -3769,7 +9124,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 312,
+      "rank": 362,
       "athleteId": "cmjzpdkcx009lbfhovbf8c77r",
       "athleteName": "袁子宸",
       "team": "重庆巴蜀科学城中学校",
@@ -3781,7 +9136,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 313,
+      "rank": 363,
       "athleteId": "cmjzpdk6f0043bfhotms7f5yw",
       "athleteName": "孙奥荣",
       "team": "四川体育职业学院",
@@ -3793,7 +9148,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 314,
+      "rank": 364,
       "athleteId": "cmjzpdk9w0070bfhojofn6m13",
       "athleteName": "赵天冉",
       "team": "KingProTeam",
@@ -3805,7 +9160,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 315,
+      "rank": 365,
       "athleteId": "cmjzpdkd0009obfhoo2lnifjm",
       "athleteName": "张亚琨",
       "team": "大连雨彤体育赛事俱乐部",
@@ -3817,7 +9172,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 316,
+      "rank": 366,
       "athleteId": "cmjzpdk6j0046bfhov1sarue5",
       "athleteName": "赵梓聿",
       "team": "MAYA TEAM",
@@ -3829,7 +9184,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 317,
+      "rank": 367,
       "athleteId": "cmjzpdka00073bfhovx3noqyi",
       "athleteName": "周琪",
       "team": "锐冠青少年竞技滑雪队",
@@ -3841,7 +9196,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 318,
+      "rank": 368,
       "athleteId": "cmjzpdkd4009rbfhoi14egzfo",
       "athleteName": "贾博翔",
       "team": "锐冠青少年竞技滑雪队",
@@ -3853,7 +9208,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 319,
+      "rank": 369,
       "athleteId": "cmjzpdk6m0049bfho5dxuehct",
       "athleteName": "闫慕垚",
       "team": "大连雨彤体育赛事俱乐部",
@@ -3865,7 +9220,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 320,
+      "rank": 370,
       "athleteId": "cmjzpdka40076bfhorgd2m8ou",
       "athleteName": "亢正熙",
       "team": "四川体育职业学院",
@@ -3877,7 +9232,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 321,
+      "rank": 371,
       "athleteId": "cmjzpdkd8009ubfhotio8k1cy",
       "athleteName": "井诚",
       "team": "中麟体育",
@@ -3889,7 +9244,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 322,
+      "rank": 372,
       "athleteId": "cmjzpdk6q004cbfhod35sxrf6",
       "athleteName": "杨滨睿",
       "team": "MAYA TEAM",
@@ -3901,7 +9256,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 323,
+      "rank": 373,
       "athleteId": "cmjzpdka70079bfho3f7ql9v4",
       "athleteName": "王奕棽",
       "team": "速森体育",
@@ -3913,7 +9268,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 324,
+      "rank": 374,
       "athleteId": "cmjzpdkdc009xbfhoo2klfjap",
       "athleteName": "洪戬",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -3925,7 +9280,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 325,
+      "rank": 375,
       "athleteId": "cmjzpdk6t004fbfhoynftnzxa",
       "athleteName": "景子融",
       "team": "中麟体育",
@@ -3937,7 +9292,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 326,
+      "rank": 376,
       "athleteId": "cmjzpdkaa007cbfho0t5qqqm9",
       "athleteName": "陈卓",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -3949,7 +9304,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "女子组"
     },
     {
-      "rank": 327,
+      "rank": 377,
       "athleteId": "cmjzpdkdh00a0bfho4wxoxzvt",
       "athleteName": "张晧泽",
       "team": "太原市第二少年体育学校",
@@ -3961,7 +9316,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 328,
+      "rank": 378,
       "athleteId": "cmjzpdk6w004ibfhowp9zh349",
       "athleteName": "祖与辰",
       "team": "秦皇岛狂雪滑雪俱乐部",
@@ -3973,7 +9328,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 329,
+      "rank": 379,
       "athleteId": "cmjzpdkdl00a3bfhobgcrmoxf",
       "athleteName": "郭芮名",
       "team": "河北省体育局冬季运动中心",
@@ -3985,7 +9340,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 330,
+      "rank": 380,
       "athleteId": "cmjzpdk70004lbfhoemd7yndw",
       "athleteName": "吕毅",
       "team": "太原市第二少年体育学校",
@@ -3997,7 +9352,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 331,
+      "rank": 381,
       "athleteId": "cmjzpdkdq00a6bfhooeygbvcg",
       "athleteName": "李钊羽",
       "team": "个人",
@@ -4009,7 +9364,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 332,
+      "rank": 382,
       "athleteId": "cmjzpdk74004obfhof6076pvg",
       "athleteName": "王博晨昊",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -4021,7 +9376,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 333,
+      "rank": 383,
       "athleteId": "cmjzpdkdu00a9bfhoglttsdpp",
       "athleteName": "谢书敖",
       "team": "零站单板滑雪俱乐部",
@@ -4033,7 +9388,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 334,
+      "rank": 384,
       "athleteId": "cmjzpdkdy00acbfhof8j22w6u",
       "athleteName": "王浩然",
       "team": "中麟体育",
@@ -4045,7 +9400,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 335,
+      "rank": 385,
       "athleteId": "cmjzpdke200afbfho46pb1bph",
       "athleteName": "陈浩铭",
       "team": "四川体育职业学院",
@@ -4057,7 +9412,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 336,
+      "rank": 386,
       "athleteId": "cmjzpdke600aibfhorlv0ah7f",
       "athleteName": "徐悦宾",
       "team": "北京虎村竞技体育有限公司",
@@ -4069,7 +9424,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 337,
+      "rank": 387,
       "athleteId": "cmjzpdke900albfhoigjeyd76",
       "athleteName": "暴城睿",
       "team": "辽宁极限体育发展有限公司",
@@ -4081,7 +9436,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 338,
+      "rank": 388,
       "athleteId": "cmjzpdked00aobfhobpgyq4nt",
       "athleteName": "靳淏宬",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -4093,7 +9448,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 339,
+      "rank": 389,
       "athleteId": "cmjzpdkeg00arbfhofvp5x8xt",
       "athleteName": "熊品超",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -4105,7 +9460,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 340,
+      "rank": 390,
       "athleteId": "cmjzpdkek00aubfhonxqvxggw",
       "athleteName": "孙裕恒",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -4117,7 +9472,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 341,
+      "rank": 391,
       "athleteId": "cmjzpdken00axbfhox6zhp4mo",
       "athleteName": "陈羿同",
       "team": "零站体育",
@@ -4129,7 +9484,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 342,
+      "rank": 392,
       "athleteId": "cmjzpdker00b0bfhocrpgfxmf",
       "athleteName": "陈宥廷",
       "team": "上海雪酷滑雪竞技队",
@@ -4141,7 +9496,7 @@ export const totalRankingsData: TotalRankingsData = {
       "gender": "男子组"
     },
     {
-      "rank": 343,
+      "rank": 393,
       "athleteId": "cmjzpdkeu00b3bfhoz7xisfn9",
       "athleteName": "杨昊泽",
       "team": "速森体育",
@@ -4151,597 +9506,9 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 12,
       "ageGroup": "U15",
       "gender": "男子组"
-    },
-    {
-      "rank": 344,
-      "athleteId": "cmjzpdkop00iobfhokthvam34",
-      "athleteName": "李金润",
-      "team": "四川体育职业学院",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 1,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "女子组"
-    },
-    {
-      "rank": 345,
-      "athleteId": "cmjzpdkot00irbfhoyhtlvzya",
-      "athleteName": "杨蓝戈",
-      "team": "个人",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 2,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "女子组"
-    },
-    {
-      "rank": 346,
-      "athleteId": "cmjzpdkow00iubfhojkdi817d",
-      "athleteName": "庞予涵",
-      "team": "张家口乔与杨体育服务有限公司",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 2,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "女子组"
-    },
-    {
-      "rank": 347,
-      "athleteId": "cmjzpdkp000ixbfhoom4nz6ao",
-      "athleteName": "王阳明",
-      "team": "张家口乔与杨体育服务有限公司",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 1,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "男子组"
-    },
-    {
-      "rank": 348,
-      "athleteId": "cmjzpdkp300j0bfhohn94zbb3",
-      "athleteName": "艾思铭",
-      "team": "张家口乔与杨体育服务有限公司",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 2,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "男子组"
-    },
-    {
-      "rank": 349,
-      "athleteId": "cmjzpdkp700j3bfhoni6zgejk",
-      "athleteName": "高琦硕",
-      "team": "高峰",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 2,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "男子组"
-    },
-    {
-      "rank": 350,
-      "athleteId": "cmjzpdkpa00j6bfholp1nby8r",
-      "athleteName": "郭一远",
-      "team": "河北省体育局冬季运动中心",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 3,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "男子组"
-    },
-    {
-      "rank": 351,
-      "athleteId": "cmjzpdkpd00j9bfho5ceqs1fb",
-      "athleteName": "王润钰",
-      "team": "张家口乔与杨体育服务有限公司",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 1,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "男子组"
-    },
-    {
-      "rank": 352,
-      "athleteId": "cmjzpdkph00jcbfho8tsz6f9a",
-      "athleteName": "左子正",
-      "team": "左子正",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 6,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "男子组"
-    },
-    {
-      "rank": 353,
-      "athleteId": "cmjzpdkpk00jfbfhoiy6rykkw",
-      "athleteName": "常冠廷",
-      "team": "吉林市丰满区滑雪协会",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 7,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "男子组"
-    },
-    {
-      "rank": 354,
-      "athleteId": "cmjzpdkpp00jibfho6rmhufv0",
-      "athleteName": "王冠霖",
-      "team": "吉林坤伦滑雪俱乐部",
-      "totalPoints": 0,
-      "competitionCount": 1,
-      "bestRank": 8,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "男子组"
-    },
-    {
-      "rank": 355,
-      "athleteId": "cmjzpdkpt00jlbfho1kgjxby2",
-      "athleteName": "王宏轩",
-      "team": "河北省体育局冬季运动中心",
-      "totalPoints": 0,
-      "competitionCount": 1,
-      "bestRank": 9,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "男子组"
-    },
-    {
-      "rank": 356,
-      "athleteId": "cmjzpdkpw00jobfho96ief0p6",
-      "athleteName": "马健剀",
-      "team": "吉林坤伦滑雪俱乐部",
-      "totalPoints": 0,
-      "competitionCount": 1,
-      "bestRank": 10,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "男子组"
-    },
-    {
-      "rank": 357,
-      "athleteId": "cmjzpdkq000jrbfhovq39ke3q",
-      "athleteName": "李若瑜",
-      "team": "中关村一小",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 1,
-      "avgPoints": 0,
-      "ageGroup": "U11",
-      "gender": "女子组"
-    },
-    {
-      "rank": 358,
-      "athleteId": "cmjzpdkq400jubfhoejwo7naf",
-      "athleteName": "罗暄晴",
-      "team": "成都热雪奇迹",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 2,
-      "avgPoints": 0,
-      "ageGroup": "U11",
-      "gender": "女子组"
-    },
-    {
-      "rank": 359,
-      "athleteId": "cmjzpdkq700jxbfhog679cr7g",
-      "athleteName": "吴凌萱",
-      "team": "华发冰雪热雪奇迹",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 3,
-      "avgPoints": 0,
-      "ageGroup": "U11",
-      "gender": "女子组"
-    },
-    {
-      "rank": 360,
-      "athleteId": "cmjzpdkqb00k0bfhow3hoof01",
-      "athleteName": "蔡沛琳",
-      "team": "成都热雪奇迹",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 2,
-      "avgPoints": 0,
-      "ageGroup": "U11",
-      "gender": "女子组"
-    },
-    {
-      "rank": 361,
-      "athleteId": "cmjzpdkqe00k3bfhoo18nnq3z",
-      "athleteName": "李昊汐",
-      "team": "西安热雪奇迹",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 4,
-      "avgPoints": 0,
-      "ageGroup": "U11",
-      "gender": "女子组"
-    },
-    {
-      "rank": 362,
-      "athleteId": "cmjzpdkqi00k6bfhotz0ghplg",
-      "athleteName": "吴玟颐",
-      "team": "华发冰雪热雪奇迹",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 6,
-      "avgPoints": 0,
-      "ageGroup": "U11",
-      "gender": "女子组"
-    },
-    {
-      "rank": 363,
-      "athleteId": "cmjzpdkql00k9bfhodvj2cshf",
-      "athleteName": "卢彦伊",
-      "team": "成都热雪奇迹",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 7,
-      "avgPoints": 0,
-      "ageGroup": "U11",
-      "gender": "女子组"
-    },
-    {
-      "rank": 364,
-      "athleteId": "cmjzpdkqp00kcbfho4at9jl9k",
-      "athleteName": "赵酌",
-      "team": "四川体育职业学院",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 1,
-      "avgPoints": 0,
-      "ageGroup": "U11",
-      "gender": "男子组"
-    },
-    {
-      "rank": 365,
-      "athleteId": "cmjzpdkqs00kfbfhoekaf7a8k",
-      "athleteName": "竹禹丞",
-      "team": "成都热雪奇迹",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 2,
-      "avgPoints": 0,
-      "ageGroup": "U11",
-      "gender": "男子组"
-    },
-    {
-      "rank": 366,
-      "athleteId": "cmjzpdkqv00kibfhosfplepf9",
-      "athleteName": "苏一豪",
-      "team": "重庆市冬季运动管理中心",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 2,
-      "avgPoints": 0,
-      "ageGroup": "U11",
-      "gender": "男子组"
-    },
-    {
-      "rank": 367,
-      "athleteId": "cmjzpdkqy00klbfho0qckaxmt",
-      "athleteName": "于镇赫",
-      "team": "成都热雪奇迹",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 4,
-      "avgPoints": 0,
-      "ageGroup": "U11",
-      "gender": "男子组"
-    },
-    {
-      "rank": 368,
-      "athleteId": "cmjzpdkr100kobfhorssp9cun",
-      "athleteName": "张雨馨",
-      "team": "四川体育职业学院",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 1,
-      "avgPoints": 0,
-      "ageGroup": "U15",
-      "gender": "女子组"
-    },
-    {
-      "rank": 369,
-      "athleteId": "cmjzpdkr500krbfhoaxpqfzp4",
-      "athleteName": "杨子骞",
-      "team": "河北省体育局冬季运动中心",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 2,
-      "avgPoints": 0,
-      "ageGroup": "U15",
-      "gender": "女子组"
-    },
-    {
-      "rank": 370,
-      "athleteId": "cmjzpdkr800kubfho15rzjdm7",
-      "athleteName": "罗梓瑜",
-      "team": "河北省体育局冬季运动中心",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 2,
-      "avgPoints": 0,
-      "ageGroup": "U15",
-      "gender": "女子组"
-    },
-    {
-      "rank": 371,
-      "athleteId": "cmjzpdkrb00kxbfhoqtbsgmzj",
-      "athleteName": "张雅琪",
-      "team": "河北省体育局冬季运动中心",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 4,
-      "avgPoints": 0,
-      "ageGroup": "U15",
-      "gender": "女子组"
-    },
-    {
-      "rank": 372,
-      "athleteId": "cmjzpdkrf00l0bfhoi24xpm3k",
-      "athleteName": "陈奕霏",
-      "team": "个人",
-      "totalPoints": 0,
-      "competitionCount": 1,
-      "bestRank": 5,
-      "avgPoints": 0,
-      "ageGroup": "U15",
-      "gender": "女子组"
-    },
-    {
-      "rank": 373,
-      "athleteId": "cmjzpdkri00l3bfhogfhne4tr",
-      "athleteName": "肖瑞林",
-      "team": "重庆市冬季运动管理中心",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 1,
-      "avgPoints": 0,
-      "ageGroup": "U15",
-      "gender": "男子组"
-    },
-    {
-      "rank": 374,
-      "athleteId": "cmjzpdkrm00l6bfho179zhn19",
-      "athleteName": "刘彦钧凯",
-      "team": "河北省体育局冬季运动中心",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 2,
-      "avgPoints": 0,
-      "ageGroup": "U15",
-      "gender": "男子组"
-    },
-    {
-      "rank": 375,
-      "athleteId": "cmjzpdkrp00l9bfhoebj1petm",
-      "athleteName": "黄子歌",
-      "team": "四川体育职业学院",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 1,
-      "avgPoints": 0,
-      "ageGroup": "U15",
-      "gender": "男子组"
-    },
-    {
-      "rank": 376,
-      "athleteId": "cmjzpdkrt00lcbfhofvlcdm8r",
-      "athleteName": "王梓丞",
-      "team": "重庆市冬季运动管理中心",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 4,
-      "avgPoints": 0,
-      "ageGroup": "U15",
-      "gender": "男子组"
-    },
-    {
-      "rank": 377,
-      "athleteId": "cmjzpdkrw00lfbfhonz2a0d3b",
-      "athleteName": "吕浩源",
-      "team": "河北省体育局冬季运动中心",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 5,
-      "avgPoints": 0,
-      "ageGroup": "U15",
-      "gender": "男子组"
-    },
-    {
-      "rank": 378,
-      "athleteId": "cmjzpdks000libfhouk369qbh",
-      "athleteName": "林朗",
-      "team": "哈尔滨热雪奇迹",
-      "totalPoints": 0,
-      "competitionCount": 2,
-      "bestRank": 6,
-      "avgPoints": 0,
-      "ageGroup": "U15",
-      "gender": "男子组"
-    },
-    {
-      "rank": 379,
-      "athleteId": "cmjzpdks900lrbfho41ykduoi",
-      "athleteName": "周昱含",
-      "team": "沈阳王伟滑雪管理咨询服务有限公司",
-      "totalPoints": 0,
-      "competitionCount": 1,
-      "bestRank": 4,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "女子组"
-    },
-    {
-      "rank": 380,
-      "athleteId": "cmjzpdksc00lubfho18uchde6",
-      "athleteName": "杨睿怡",
-      "team": "华发冰雪热雪奇迹",
-      "totalPoints": 0,
-      "competitionCount": 1,
-      "bestRank": 5,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "女子组"
-    },
-    {
-      "rank": 381,
-      "athleteId": "cmjzpdksg00lxbfhopa5j9xjd",
-      "athleteName": "刘子歌",
-      "team": "张家口乔与杨体育服务有限公司",
-      "totalPoints": 0,
-      "competitionCount": 1,
-      "bestRank": 6,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "女子组"
-    },
-    {
-      "rank": 382,
-      "athleteId": "cmjzpdksr00m8bfhorh0gxvtl",
-      "athleteName": "李彦博",
-      "team": "四川体育职业学院",
-      "totalPoints": 0,
-      "competitionCount": 1,
-      "bestRank": 5,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "男子组"
-    },
-    {
-      "rank": 383,
-      "athleteId": "cmjzpdksz00mhbfhojzwb0bac",
-      "athleteName": "李京和",
-      "team": "个人",
-      "totalPoints": 0,
-      "competitionCount": 1,
-      "bestRank": 9,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "男子组"
-    },
-    {
-      "rank": 384,
-      "athleteId": "cmjzpdkt300mkbfhogytw8qz1",
-      "athleteName": "熊泽瑞",
-      "team": "张家口乔与杨体育服务有限公司",
-      "totalPoints": 0,
-      "competitionCount": 1,
-      "bestRank": 10,
-      "avgPoints": 0,
-      "ageGroup": "U18",
-      "gender": "男子组"
-    },
-    {
-      "rank": 385,
-      "athleteId": "cmjzpdkto00n5bfho4j8lt3fl",
-      "athleteName": "郑捷铭",
-      "team": "重庆市冬季运动管理中心",
-      "totalPoints": 0,
-      "competitionCount": 1,
-      "bestRank": 3,
-      "avgPoints": 0,
-      "ageGroup": "U11",
-      "gender": "男子组"
-    },
-    {
-      "rank": 386,
-      "athleteId": "cmjzpdktv00nabfhomuj9q4hs",
-      "athleteName": "杨宗葆",
-      "team": "个人",
-      "totalPoints": 0,
-      "competitionCount": 1,
-      "bestRank": 5,
-      "avgPoints": 0,
-      "ageGroup": "U11",
-      "gender": "男子组"
-    },
-    {
-      "rank": 387,
-      "athleteId": "cmjzpdku000nfbfhod6ac8ew5",
-      "athleteName": "冯一晗",
-      "team": "成都热雪奇迹",
-      "totalPoints": 0,
-      "competitionCount": 1,
-      "bestRank": 7,
-      "avgPoints": 0,
-      "ageGroup": "U11",
-      "gender": "男子组"
-    },
-    {
-      "rank": 388,
-      "athleteId": "cmjzpdku400nibfholr4qu1hr",
-      "athleteName": "顾羽宸",
-      "team": "成都热雪奇迹",
-      "totalPoints": 0,
-      "competitionCount": 1,
-      "bestRank": 8,
-      "avgPoints": 0,
-      "ageGroup": "U11",
-      "gender": "男子组"
-    },
-    {
-      "rank": 389,
-      "athleteId": "cmjzpdkue00nrbfhoad1f9vqw",
-      "athleteName": "叶涵汐",
-      "team": "成都热雪奇迹",
-      "totalPoints": 0,
-      "competitionCount": 1,
-      "bestRank": 4,
-      "avgPoints": 0,
-      "ageGroup": "U15",
-      "gender": "女子组"
-    },
-    {
-      "rank": 390,
-      "athleteId": "cmjzpdkul00nybfhosbxa0gbd",
-      "athleteName": "张芝豪",
-      "team": "河北省体育局冬季运动中心",
-      "totalPoints": 0,
-      "competitionCount": 1,
-      "bestRank": 2,
-      "avgPoints": 0,
-      "ageGroup": "U15",
-      "gender": "男子组"
-    },
-    {
-      "rank": 391,
-      "athleteId": "cmjzpdkuz00obbfho0os6d2tq",
-      "athleteName": "肖辰俊熙",
-      "team": "成都热雪奇迹",
-      "totalPoints": 0,
-      "competitionCount": 1,
-      "bestRank": 8,
-      "avgPoints": 0,
-      "ageGroup": "U15",
-      "gender": "男子组"
-    },
-    {
-      "rank": 392,
-      "athleteId": "cmjzpdkv200oebfhojl3ujfok",
-      "athleteName": "何心远",
-      "team": "成都热雪奇迹",
-      "totalPoints": 0,
-      "competitionCount": 1,
-      "bestRank": 9,
-      "avgPoints": 0,
-      "ageGroup": "U15",
-      "gender": "男子组"
     }
   ],
-  "total": 392,
+  "total": 393,
   "filters": {
     "ageGroups": [
       "U11",
@@ -4762,6 +9529,24 @@ export const totalRankingsData: TotalRankingsData = {
     "locations": [
       "成都热雪奇迹室内滑雪场",
       "雪如意滑雪场"
+    ],
+    "sportTypes": [
+      {
+        "value": "snowboard-parallel",
+        "label": "单板平行项目"
+      },
+      {
+        "value": "alpine",
+        "label": "高山滑雪"
+      },
+      {
+        "value": "freestyle-slopestyle-bigair",
+        "label": "自由式坡面障碍技巧/大跳台"
+      },
+      {
+        "value": "snowboard-slopestyle-bigair",
+        "label": "单板坡面障碍技巧/大跳台"
+      }
     ]
   },
   "stats": {
@@ -4769,5 +9554,5 @@ export const totalRankingsData: TotalRankingsData = {
     "competitionCount": 6,
     "totalResults": 472
   },
-  "generatedAt": "2026-01-05T08:54:46.677Z"
+  "generatedAt": "2026-01-08T03:49:16.322Z"
 };
