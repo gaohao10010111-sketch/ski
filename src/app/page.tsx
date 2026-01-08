@@ -636,6 +636,37 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 赛事报名入口 - 滑cool合作方 */}
+      <section className="py-8 bg-gradient-to-r from-orange-500 via-orange-600 to-red-500">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-6">
+              <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl p-2 shadow-lg flex-shrink-0">
+                <img
+                  src={getImagePath('/images/huacool-logo.png')}
+                  alt="滑cool"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <div className="text-white">
+                <h3 className="text-2xl md:text-3xl font-bold mb-2">赛事报名入口</h3>
+                <p className="text-white/90 text-sm md:text-base">官方合作报名平台 · 扫码即可报名参赛</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-6">
+              <div className="bg-white rounded-xl p-3 shadow-lg">
+                <img
+                  src={getImagePath('/images/huacool-qrcode.jpg')}
+                  alt="滑cool小程序码"
+                  className="w-32 h-32 md:w-40 md:h-40"
+                />
+                <p className="text-center text-gray-600 text-xs mt-2 font-medium">微信扫码报名</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 成绩快报 - 最高优先级展示区 */}
       {latestResults.competitions.length > 0 && (
         <section className="py-10 bg-white">
