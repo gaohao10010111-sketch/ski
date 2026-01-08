@@ -1,7 +1,8 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { Trophy, Medal, Award, Crown, Download, Search, ChevronLeft, ChevronRight } from 'lucide-react'
+import Link from 'next/link'
+import { Trophy, Medal, Award, Crown, Download, Search, ChevronLeft, ChevronRight, ArrowLeft, Users } from 'lucide-react'
 import { latestResults, type AthleteResult } from '@/data/latestResults'
 import { useToast } from '@/components/Toast'
 import { totalRankingsData } from '@/data/totalRankings'
@@ -99,6 +100,9 @@ export default function PointsRankingsPage() {
   const [isExporting, setIsExporting] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
   const [pageSize, setPageSize] = useState(20)
+  // 每个项目的分页状态
+  const [sportPages, setSportPages] = useState<Record<string, number>>({})
+  const sportPageSize = 20 // 每页显示20条
   const { showToast } = useToast()
 
   const filterOptions = useMemo(() => extractFilterOptions(), [])
@@ -181,7 +185,29 @@ export default function PointsRankingsPage() {
   }, [filteredTotalRankings, currentPage, pageSize])
 
   // 筛选条件变化时重置页码
-  const resetPage = () => setCurrentPage(1)
+  const resetPage = () => {
+    setCurrentPage(1)
+    setSportPages({}) // 重置所有项目的分页
+  }
+
+  // 获取某个项目的当前页码
+  const getSportPage = (sportType: string) => sportPages[sportType] || 1
+
+  // 设置某个项目的页码
+  const setSportPage = (sportType: string, page: number) => {
+    setSportPages(prev => ({ ...prev, [sportType]: page }))
+  }
+
+  // 计算某个项目的分页数据
+  const getPaginatedRankings = (rankings: typeof filteredSportRankings[0]['rankings'], sportType: string) => {
+    const page = getSportPage(sportType)
+    const start = (page - 1) * sportPageSize
+    const end = start + sportPageSize
+    return rankings.slice(start, end)
+  }
+
+  // 计算某个项目的总页数
+  const getTotalPages = (totalCount: number) => Math.ceil(totalCount / sportPageSize)
 
   // 统计信息
   const stats = useMemo(() => {
@@ -298,15 +324,43 @@ export default function PointsRankingsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* 标题 */}
+        {/* 返回按钮 */}
+        <Link
+          href="/"
+          className="inline-flex items-center text-gray-600 hover:text-ski-blue mb-6 transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          返回首页
+        </Link>
+
+        {/* 页面标题 */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center gap-3 mb-3">
-            <Trophy className="h-8 w-8 text-yellow-500" />
-            <h1 className="text-3xl font-bold text-gray-900">积分排行榜</h1>
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full mb-4 shadow-lg">
+            <Trophy className="w-8 h-8 text-white" />
           </div>
-          <p className="text-gray-600">2025-2026赛季 · 全国青少年U系列赛事</p>
+          <h1 className="text-3xl font-bold text-ski-navy mb-2">积分排行榜</h1>
+          <p className="text-gray-500 text-sm">2025-2026赛季 · 全国青少年U系列赛事</p>
+        </div>
+
+        {/* 统计卡片 */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="bg-white rounded-lg shadow-md p-6 text-center">
+            <Trophy className="h-8 w-8 text-yellow-500 mx-auto mb-2" />
+            <div className="text-2xl font-bold text-ski-navy">{stats.totalCompetitions}</div>
+            <div className="text-sm text-gray-600">场比赛</div>
+          </div>
+          <div className="bg-white rounded-lg shadow-md p-6 text-center">
+            <Award className="h-8 w-8 text-green-600 mx-auto mb-2" />
+            <div className="text-2xl font-bold text-ski-navy">{filteredSportRankings.length}</div>
+            <div className="text-sm text-gray-600">个项目</div>
+          </div>
+          <div className="bg-white rounded-lg shadow-md p-6 text-center">
+            <Users className="h-8 w-8 text-blue-600 mx-auto mb-2" />
+            <div className="text-2xl font-bold text-ski-navy">{stats.uniqueAthletes}</div>
+            <div className="text-sm text-gray-600">名运动员</div>
+          </div>
         </div>
 
         {/* 视图切换 */}
@@ -457,30 +511,6 @@ export default function PointsRankingsPage() {
           </div>
         </div>
 
-        {/* 统计卡片 */}
-        <div className={`grid gap-3 mb-6 ${viewMode === 'total' ? 'grid-cols-3' : 'grid-cols-2 md:grid-cols-4'}`}>
-          <div className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-orange-400">
-            <div className="text-2xl font-bold text-orange-500">{stats.totalCompetitions}</div>
-            <div className="text-xs text-gray-500">场比赛</div>
-          </div>
-          {viewMode === 'competition' && (
-            <div className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-purple-400">
-              <div className="text-2xl font-bold text-purple-500">{stats.totalEvents}</div>
-              <div className="text-xs text-gray-500">个小项</div>
-            </div>
-          )}
-          <div className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-green-400">
-            <div className="text-2xl font-bold text-green-500">{stats.uniqueAthletes}</div>
-            <div className="text-xs text-gray-500">名运动员</div>
-          </div>
-          <div className="bg-white p-4 rounded-xl shadow-sm border-l-4 border-blue-400">
-            <div className="text-2xl font-bold text-blue-500">
-              {viewMode === 'total' ? totalRankingsData.stats.totalResults : stats.totalAthletes}
-            </div>
-            <div className="text-xs text-gray-500">人次参赛</div>
-          </div>
-        </div>
-
         {/* 总积分排名视图 - 按项目分别显示 */}
         {viewMode === 'total' && (
           <>
@@ -520,7 +550,7 @@ export default function PointsRankingsPage() {
                           </tr>
                         </thead>
                         <tbody className="bg-white divide-y divide-gray-200">
-                          {sportRanking.rankings.slice(0, 50).map((item) => (
+                          {getPaginatedRankings(sportRanking.rankings, sportRanking.sportType).map((item) => (
                             <tr
                               key={`${sportRanking.sportType}-${item.athleteId}-${item.ageGroup}-${item.gender}`}
                               className={`hover:bg-blue-50 transition-colors ${
@@ -581,10 +611,71 @@ export default function PointsRankingsPage() {
                       </table>
                     </div>
 
-                    {/* 显示更多提示 */}
-                    {sportRanking.rankings.length > 50 && (
-                      <div className="px-4 py-3 bg-gray-50 text-center text-sm text-gray-500">
-                        仅显示前50名，共 {sportRanking.rankings.length} 名运动员
+                    {/* 分页控件 */}
+                    {sportRanking.rankings.length > sportPageSize && (
+                      <div className="px-4 py-3 bg-gray-50 flex items-center justify-between">
+                        <div className="text-sm text-gray-500">
+                          第 {getSportPage(sportRanking.sportType)} / {getTotalPages(sportRanking.rankings.length)} 页，
+                          共 {sportRanking.rankings.length} 名运动员
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <button
+                            onClick={() => setSportPage(sportRanking.sportType, getSportPage(sportRanking.sportType) - 1)}
+                            disabled={getSportPage(sportRanking.sportType) === 1}
+                            className="px-3 py-1 rounded border border-gray-300 text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
+                          >
+                            <ChevronLeft className="h-4 w-4" />
+                            上一页
+                          </button>
+                          {/* 页码按钮 */}
+                          <div className="flex items-center gap-1">
+                            {(() => {
+                              const totalPages = getTotalPages(sportRanking.rankings.length)
+                              const currentPage = getSportPage(sportRanking.sportType)
+                              const pages: (number | string)[] = []
+
+                              if (totalPages <= 7) {
+                                // 少于7页，全部显示
+                                for (let i = 1; i <= totalPages; i++) pages.push(i)
+                              } else {
+                                // 多于7页，显示省略
+                                if (currentPage <= 4) {
+                                  pages.push(1, 2, 3, 4, 5, '...', totalPages)
+                                } else if (currentPage >= totalPages - 3) {
+                                  pages.push(1, '...', totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages)
+                                } else {
+                                  pages.push(1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages)
+                                }
+                              }
+
+                              return pages.map((page, idx) => (
+                                page === '...' ? (
+                                  <span key={`ellipsis-${idx}`} className="px-2 text-gray-400">...</span>
+                                ) : (
+                                  <button
+                                    key={page}
+                                    onClick={() => setSportPage(sportRanking.sportType, page as number)}
+                                    className={`w-8 h-8 rounded text-sm ${
+                                      currentPage === page
+                                        ? 'bg-ski-blue text-white'
+                                        : 'border border-gray-300 text-gray-600 hover:bg-gray-100'
+                                    }`}
+                                  >
+                                    {page}
+                                  </button>
+                                )
+                              ))
+                            })()}
+                          </div>
+                          <button
+                            onClick={() => setSportPage(sportRanking.sportType, getSportPage(sportRanking.sportType) + 1)}
+                            disabled={getSportPage(sportRanking.sportType) >= getTotalPages(sportRanking.rankings.length)}
+                            className="px-3 py-1 rounded border border-gray-300 text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
+                          >
+                            下一页
+                            <ChevronRight className="h-4 w-4" />
+                          </button>
+                        </div>
                       </div>
                     )}
                   </div>

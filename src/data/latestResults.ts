@@ -537,7 +537,8 @@ export const latestResults: ResultsData = {
               "run1": "30.80",
               "run2": "31.05",
               "time": "1:01.85",
-              "diff": "0.00"
+              "diff": "0.00",
+              "points": 360
             },
             {
               "rank": 2,
