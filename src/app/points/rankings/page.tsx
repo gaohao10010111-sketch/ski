@@ -515,7 +515,12 @@ export default function PointsRankingsPage() {
 
                     {/* 子项列表 */}
                     <div className="space-y-4">
-                      {sportRanking.disciplineRankings.map((disciplineRanking) => (
+                      {sportRanking.disciplineRankings.map((disciplineRanking) => {
+                        // 获取前三名用于领奖台展示
+                        const top3 = disciplineRanking.rankings.slice(0, 3)
+                        const hasTop3 = top3.length >= 3
+
+                        return (
                         <div key={`${sportRanking.sportType}-${disciplineRanking.discipline}`} className="bg-white rounded-lg shadow overflow-hidden">
                           {/* 子项标题 */}
                           <div className="bg-gradient-to-r from-ski-blue to-blue-600 px-4 py-3 text-white flex items-center justify-between">
@@ -527,6 +532,58 @@ export default function PointsRankingsPage() {
                               {disciplineRanking.total} 名运动员
                             </span>
                           </div>
+
+                          {/* 领奖台展示 - 前三名 */}
+                          {hasTop3 && (
+                            <div className="bg-gradient-to-b from-gray-50 to-white py-6 px-4">
+                              <div className="flex items-end justify-center gap-4 max-w-lg mx-auto">
+                                {/* 第二名 - 银牌 */}
+                                <div className="flex flex-col items-center">
+                                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gray-200 to-gray-400 flex items-center justify-center mb-2 shadow-lg ring-2 ring-gray-300">
+                                    <span className="text-2xl font-bold text-white">2</span>
+                                  </div>
+                                  <div className="text-center mb-2">
+                                    <p className="font-bold text-gray-800 text-sm">{top3[1].athleteName}</p>
+                                    <p className="text-xs text-gray-500 truncate max-w-[80px]" title={top3[1].team}>{top3[1].team}</p>
+                                    <p className="text-sm font-bold text-gray-600 mt-1">{top3[1].totalPoints}分</p>
+                                  </div>
+                                  <div className="w-20 h-16 bg-gradient-to-t from-gray-300 to-gray-200 rounded-t-lg flex items-center justify-center">
+                                    <Medal className="h-6 w-6 text-gray-500" />
+                                  </div>
+                                </div>
+
+                                {/* 第一名 - 金牌 */}
+                                <div className="flex flex-col items-center -mt-4">
+                                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-300 to-yellow-500 flex items-center justify-center mb-2 shadow-xl ring-4 ring-yellow-200">
+                                    <Crown className="h-8 w-8 text-yellow-800" />
+                                  </div>
+                                  <div className="text-center mb-2">
+                                    <p className="font-bold text-gray-900">{top3[0].athleteName}</p>
+                                    <p className="text-xs text-gray-500 truncate max-w-[100px]" title={top3[0].team}>{top3[0].team}</p>
+                                    <p className="text-lg font-bold text-yellow-600 mt-1">{top3[0].totalPoints}分</p>
+                                  </div>
+                                  <div className="w-24 h-20 bg-gradient-to-t from-yellow-400 to-yellow-300 rounded-t-lg flex items-center justify-center">
+                                    <Trophy className="h-8 w-8 text-yellow-700" />
+                                  </div>
+                                </div>
+
+                                {/* 第三名 - 铜牌 */}
+                                <div className="flex flex-col items-center">
+                                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-300 to-orange-500 flex items-center justify-center mb-2 shadow-lg ring-2 ring-orange-200">
+                                    <span className="text-2xl font-bold text-white">3</span>
+                                  </div>
+                                  <div className="text-center mb-2">
+                                    <p className="font-bold text-gray-800 text-sm">{top3[2].athleteName}</p>
+                                    <p className="text-xs text-gray-500 truncate max-w-[80px]" title={top3[2].team}>{top3[2].team}</p>
+                                    <p className="text-sm font-bold text-orange-600 mt-1">{top3[2].totalPoints}分</p>
+                                  </div>
+                                  <div className="w-20 h-12 bg-gradient-to-t from-orange-400 to-orange-300 rounded-t-lg flex items-center justify-center">
+                                    <Award className="h-5 w-5 text-orange-700" />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          )}
 
                           <div className="overflow-x-auto">
                             <table className="min-w-full divide-y divide-gray-200">
@@ -670,7 +727,8 @@ export default function PointsRankingsPage() {
                             </div>
                           )}
                         </div>
-                      ))}
+                        )
+                      })}
                     </div>
                   </div>
                 ))}
