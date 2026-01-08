@@ -658,6 +658,14 @@ export default function PointsRankingsPage() {
 
                     {/* 排名表格 */}
                     <div className="overflow-x-auto">
+                      {(() => {
+                        // 预先计算列配置，确保表头和数据行一致
+                        const hasRun = group.athletes.some(a => a.run1)
+                        const hasTime = group.athletes.some(a => a.time)
+                        const hasBestScore = group.athletes.some(a => a.bestScore !== undefined)
+                        const hasPoints = group.athletes.some(a => a.points !== undefined)
+
+                        return (
                       <table className="min-w-full divide-y divide-gray-200">
                         <thead className="bg-gray-50">
                           <tr>
@@ -665,16 +673,18 @@ export default function PointsRankingsPage() {
                             <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">号码布</th>
                             <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
                             <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
-                            {group.athletes[0]?.run1 && (
+                            {hasRun && (
                               <>
                                 <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">第一轮</th>
                                 <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">第二轮</th>
                               </>
                             )}
-                            <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">
-                              {group.athletes[0]?.time ? '成绩' : '得分'}
-                            </th>
-                            {group.athletes[0]?.points !== undefined && (
+                            {(hasTime || hasBestScore) && (
+                              <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">
+                                {hasTime ? '成绩' : '得分'}
+                              </th>
+                            )}
+                            {hasPoints && (
                               <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-24">积分</th>
                             )}
                           </tr>
@@ -705,26 +715,28 @@ export default function PointsRankingsPage() {
                               <td className="px-4 py-3 text-sm text-gray-600 whitespace-nowrap" title={athlete.team}>
                                 {athlete.team}
                               </td>
-                              {athlete.run1 && (
+                              {hasRun && (
                                 <>
                                   <td className="px-4 py-3 whitespace-nowrap text-center">
-                                    <span className="text-sm text-gray-600">{athlete.run1}</span>
+                                    <span className="text-sm text-gray-600">{athlete.run1 || '-'}</span>
                                   </td>
                                   <td className="px-4 py-3 whitespace-nowrap text-center">
-                                    <span className="text-sm text-gray-600">{athlete.run2}</span>
+                                    <span className="text-sm text-gray-600">{athlete.run2 || '-'}</span>
                                   </td>
                                 </>
                               )}
-                              <td className="px-4 py-3 whitespace-nowrap text-center">
-                                <span className={`text-sm font-medium ${
-                                  athlete.rank === 1 ? 'text-yellow-600' :
-                                  athlete.rank === 2 ? 'text-gray-700' :
-                                  athlete.rank === 3 ? 'text-orange-600' : 'text-gray-900'
-                                }`}>
-                                  {athlete.time || athlete.bestScore}
-                                </span>
-                              </td>
-                              {athlete.points !== undefined && (
+                              {(hasTime || hasBestScore) && (
+                                <td className="px-4 py-3 whitespace-nowrap text-center">
+                                  <span className={`text-sm font-medium ${
+                                    athlete.rank === 1 ? 'text-yellow-600' :
+                                    athlete.rank === 2 ? 'text-gray-700' :
+                                    athlete.rank === 3 ? 'text-orange-600' : 'text-gray-900'
+                                  }`}>
+                                    {athlete.time || athlete.bestScore || '-'}
+                                  </span>
+                                </td>
+                              )}
+                              {hasPoints && (
                                 <td className="px-4 py-3 whitespace-nowrap text-center">
                                   <span className={`inline-flex px-3 py-1 rounded-lg text-sm font-bold ${
                                     athlete.rank === 1 ? 'bg-yellow-400 text-yellow-900' :
@@ -732,7 +744,7 @@ export default function PointsRankingsPage() {
                                     athlete.rank === 3 ? 'bg-orange-300 text-orange-900' :
                                     'bg-blue-100 text-blue-700'
                                   }`}>
-                                    {athlete.points}
+                                    {athlete.points ?? '-'}
                                   </span>
                                 </td>
                               )}
@@ -740,6 +752,8 @@ export default function PointsRankingsPage() {
                           ))}
                         </tbody>
                       </table>
+                        )
+                      })()}
                     </div>
                   </div>
                 ))}
