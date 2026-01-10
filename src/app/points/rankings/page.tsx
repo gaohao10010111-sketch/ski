@@ -2,10 +2,10 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { Trophy, Medal, Award, Crown, Download, Search, ChevronLeft, ChevronRight, ArrowLeft } from 'lucide-react'
+import { Trophy, Medal, Award, Crown, Download, Search, ChevronLeft, ChevronRight, ArrowLeft, ChevronDown, ChevronUp, Users } from 'lucide-react'
 import { latestResults, type AthleteResult } from '@/data/latestResults'
 import { useToast } from '@/components/Toast'
-import { totalRankingsData } from '@/data/totalRankings'
+import { totalRankingsData, type TotalRankingItem } from '@/data/totalRankings'
 
 // 项目类型映射
 const sportTypeLabels: Record<string, string> = {
@@ -87,6 +87,81 @@ function getRankingGroups(
   return groups
 }
 
+// 积分构成提示组件
+function PointsBreakdownTooltip({ item }: { item: TotalRankingItem }) {
+  const [isOpen, setIsOpen] = useState(false)
+
+  // 检查是否有积分构成数据
+  const breakdown = (item as any).pointsBreakdown as Array<{
+    competition: string
+    location: string
+    points: number
+    rank: number
+  }> | undefined
+
+  if (!breakdown || breakdown.length === 0) {
+    return (
+      <span className={`inline-flex px-3 py-1 rounded-lg text-sm font-bold ${
+        item.rank === 1 ? 'bg-yellow-400 text-yellow-900' :
+        item.rank === 2 ? 'bg-gray-300 text-gray-800' :
+        item.rank === 3 ? 'bg-orange-300 text-orange-900' :
+        'bg-blue-100 text-blue-700'
+      }`}>
+        {item.totalPoints}
+      </span>
+    )
+  }
+
+  return (
+    <div
+      className="relative inline-block"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <span className={`inline-flex px-3 py-1 rounded-lg text-sm font-bold cursor-help transition-transform ${
+        item.rank === 1 ? 'bg-yellow-400 text-yellow-900 hover:bg-yellow-500' :
+        item.rank === 2 ? 'bg-gray-300 text-gray-800 hover:bg-gray-400' :
+        item.rank === 3 ? 'bg-orange-300 text-orange-900 hover:bg-orange-400' :
+        'bg-blue-100 text-blue-700 hover:bg-blue-200'
+      } ${isOpen ? 'scale-105' : ''}`}>
+        {item.totalPoints}
+      </span>
+
+      {/* 工具提示 */}
+      {isOpen && (
+        <div className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 min-w-[240px]">
+          <div className="bg-gray-900 text-white rounded-lg shadow-xl p-3 text-left">
+            <div className="text-xs font-medium text-gray-400 mb-2">积分构成明细</div>
+            <div className="space-y-1.5">
+              {breakdown.map((b, i) => (
+                <div key={i} className="flex items-center justify-between gap-3 text-sm">
+                  <div className="flex-1 min-w-0">
+                    <div className="truncate text-gray-200" title={b.competition}>
+                      {b.location || b.competition}
+                    </div>
+                    <div className="text-xs text-gray-500">第{b.rank}名</div>
+                  </div>
+                  <div className="font-bold text-yellow-400 whitespace-nowrap">
+                    +{b.points}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-2 pt-2 border-t border-gray-700 flex justify-between text-sm">
+              <span className="text-gray-400">总计</span>
+              <span className="font-bold text-white">{item.totalPoints}分</span>
+            </div>
+            {/* 箭头 */}
+            <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-px">
+              <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-gray-900"></div>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function PointsRankingsPage() {
   // 视图模式：'competition' 按比赛查看，'total' 总积分排行
   const [viewMode, setViewMode] = useState<'competition' | 'total'>('total')
@@ -103,7 +178,34 @@ export default function PointsRankingsPage() {
   // 每个项目的分页状态
   const [sportPages, setSportPages] = useState<Record<string, number>>({})
   const sportPageSize = 20 // 每页显示20条
+  // 展开的小子项（用于紧凑模式）
+  const [expandedSubEvents, setExpandedSubEvents] = useState<Set<string>>(new Set())
   const { showToast } = useToast()
+
+  // 切换小子项展开/收起
+  const toggleSubEvent = (key: string) => {
+    setExpandedSubEvents(prev => {
+      const newSet = new Set(prev)
+      if (newSet.has(key)) {
+        newSet.delete(key)
+      } else {
+        newSet.add(key)
+      }
+      return newSet
+    })
+  }
+
+  // 全部展开/收起
+  const expandAll = () => {
+    const allKeys = filteredSportRankings.flatMap(sr =>
+      (sr.subEventRankings || []).map(se => `${sr.sportType}-${se.subEventName}`)
+    )
+    setExpandedSubEvents(new Set(allKeys))
+  }
+
+  const collapseAll = () => {
+    setExpandedSubEvents(new Set())
+  }
 
   const filterOptions = useMemo(() => extractFilterOptions(), [])
 
@@ -496,7 +598,7 @@ export default function PointsRankingsPage() {
           </div>
         </div>
 
-        {/* 总积分排名视图 - 按项目分别显示 */}
+        {/* 总积分排名视图 - 紧凑模式，点击展开 */}
         {viewMode === 'total' && (
           <>
             {filteredSportRankings.length === 0 ? (
@@ -506,101 +608,167 @@ export default function PointsRankingsPage() {
                 <p className="text-sm text-gray-400 mt-1">请调整筛选条件后重试</p>
               </div>
             ) : (
-              <div className="space-y-8">
+              <div className="space-y-6">
+                {/* 全部展开/收起按钮 */}
+                <div className="flex justify-end gap-2">
+                  <button
+                    onClick={expandAll}
+                    className="text-sm text-ski-blue hover:text-primary-700 flex items-center gap-1"
+                  >
+                    <ChevronDown className="h-4 w-4" />
+                    全部展开
+                  </button>
+                  <span className="text-gray-300">|</span>
+                  <button
+                    onClick={collapseAll}
+                    className="text-sm text-ski-blue hover:text-primary-700 flex items-center gap-1"
+                  >
+                    <ChevronUp className="h-4 w-4" />
+                    全部收起
+                  </button>
+                </div>
+
                 {filteredSportRankings.map((sportRanking) => (
-                  <div key={sportRanking.sportType} className="space-y-4">
+                  <div key={sportRanking.sportType} className="bg-white rounded-lg shadow overflow-hidden">
                     {/* 大项标题 */}
-                    <div className="flex items-center gap-3">
-                      <div className="w-1 h-8 bg-ski-blue rounded-full"></div>
-                      <h2 className="text-xl font-bold text-ski-navy">{sportRanking.sportName}</h2>
-                      <span className="text-sm text-gray-500">
-                        {sportRanking.subEventRankings?.length || 0} 个小子项 · {sportRanking.total} 名运动员
-                      </span>
+                    <div className="bg-gradient-to-r from-ski-navy to-blue-800 px-4 py-4 text-white">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-3">
+                          <Trophy className="h-6 w-6" />
+                          <h2 className="text-lg font-bold">{sportRanking.sportName}</h2>
+                        </div>
+                        <div className="flex items-center gap-4 text-sm">
+                          <span className="bg-white/20 px-3 py-1 rounded-full">
+                            {sportRanking.subEventRankings?.length || 0} 个小子项
+                          </span>
+                          <span className="bg-white/20 px-3 py-1 rounded-full flex items-center gap-1">
+                            <Users className="h-4 w-4" />
+                            {sportRanking.total} 人
+                          </span>
+                        </div>
+                      </div>
                     </div>
 
-                    {/* 小子项列表 */}
-                    <div className="space-y-4">
-                      {(sportRanking.subEventRankings || []).map((subEvent) => {
-                        // 获取前三名用于领奖台展示
-                        const top3 = subEvent.rankings.slice(0, 3)
-                        const hasTop3 = top3.length >= 3
+                    {/* 小子项网格 - 紧凑显示 */}
+                    <div className="p-4">
+                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                        {(sportRanking.subEventRankings || []).map((subEvent) => {
+                          const subEventKey = `${sportRanking.sportType}-${subEvent.subEventName}`
+                          const isExpanded = expandedSubEvents.has(subEventKey)
+                          const top3 = subEvent.rankings.slice(0, 3)
 
-                        return (
-                        <div key={`${sportRanking.sportType}-${subEvent.subEventName}`} className="bg-white rounded-lg shadow overflow-hidden">
-                          {/* 小子项标题 - 显示完整的子项名称（如：回转 U11 男子组） */}
+                          return (
+                            <button
+                              key={subEventKey}
+                              onClick={() => toggleSubEvent(subEventKey)}
+                              className={`p-3 rounded-lg text-left transition-all ${
+                                isExpanded
+                                  ? 'bg-ski-blue text-white shadow-md ring-2 ring-ski-blue ring-offset-2'
+                                  : 'bg-gray-50 hover:bg-gray-100 text-gray-700 hover:shadow'
+                              }`}
+                            >
+                              <div className="flex items-center justify-between">
+                                <div className="font-medium text-sm truncate flex-1">{subEvent.subEventName}</div>
+                                {isExpanded ? (
+                                  <ChevronUp className="h-4 w-4 flex-shrink-0" />
+                                ) : (
+                                  <ChevronDown className="h-4 w-4 flex-shrink-0" />
+                                )}
+                              </div>
+                              <div className={`text-xs mt-1 ${isExpanded ? 'text-white/80' : 'text-gray-500'}`}>
+                                {subEvent.total}人 · 冠军: {top3[0]?.athleteName || '-'}
+                              </div>
+                            </button>
+                          )
+                        })}
+                      </div>
+                    </div>
+
+                    {/* 展开的小子项详情 */}
+                    {(sportRanking.subEventRankings || []).map((subEvent) => {
+                      const subEventKey = `${sportRanking.sportType}-${subEvent.subEventName}`
+                      const isExpanded = expandedSubEvents.has(subEventKey)
+                      const top3 = subEvent.rankings.slice(0, 3)
+                      const hasTop3 = top3.length >= 3
+
+                      if (!isExpanded) return null
+
+                      return (
+                        <div key={`detail-${subEventKey}`} className="border-t border-gray-200">
+                          {/* 小子项标题 */}
                           <div className="bg-gradient-to-r from-ski-blue to-blue-600 px-4 py-3 text-white flex items-center justify-between">
                             <div className="flex items-center gap-3">
                               <Award className="h-5 w-5" />
                               <h3 className="text-base font-medium">{subEvent.subEventName}</h3>
                             </div>
-                            <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
-                              {subEvent.total} 名运动员
-                            </span>
+                            <div className="flex items-center gap-2">
+                              <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
+                                {subEvent.total} 名运动员
+                              </span>
+                              <button
+                                onClick={(e) => { e.stopPropagation(); toggleSubEvent(subEventKey); }}
+                                className="p-1 hover:bg-white/20 rounded"
+                              >
+                                <ChevronUp className="h-4 w-4" />
+                              </button>
+                            </div>
                           </div>
 
-                          {/* 领奖台展示 - 前三名（参考 results-announcement 页面样式） */}
+                          {/* 领奖台展示 - 前三名（紧凑版） */}
                           {hasTop3 && (
-                            <div className="bg-gradient-to-br from-ski-navy to-blue-900 rounded-b-none p-8 text-white">
-                              <h4 className="text-lg font-bold text-center mb-6">领奖台</h4>
-                              <div className="flex justify-center items-end gap-4">
-                                {/* 银牌 - 第二名 */}
+                            <div className="bg-gradient-to-br from-ski-navy to-blue-900 p-6 text-white">
+                              <div className="flex justify-center items-end gap-3">
+                                {/* 银牌 */}
                                 <div className="text-center">
-                                  <div className="w-20 h-20 mx-auto mb-3 bg-gray-300 rounded-full flex items-center justify-center shadow-lg">
-                                    <Medal className="w-10 h-10 text-gray-600" />
+                                  <div className="w-14 h-14 mx-auto mb-2 bg-gray-300 rounded-full flex items-center justify-center shadow">
+                                    <Medal className="w-7 h-7 text-gray-600" />
                                   </div>
-                                  <div className="bg-gray-300 rounded-t-lg pt-4 pb-2 px-4 w-28">
-                                    <div className="text-gray-800 font-bold truncate">{top3[1].athleteName}</div>
-                                    <div className="text-gray-600 text-sm truncate">{top3[1].team}</div>
-                                    <div className="text-gray-700 text-xs mt-1">{top3[1].totalPoints}分</div>
+                                  <div className="bg-gray-300 rounded-t-lg pt-2 pb-1 px-2 w-20">
+                                    <div className="text-gray-800 font-bold text-xs truncate">{top3[1].athleteName}</div>
+                                    <div className="text-gray-600 text-xs truncate">{top3[1].team}</div>
+                                    <div className="text-gray-700 text-xs">{top3[1].totalPoints}分</div>
                                   </div>
-                                  <div className="bg-gray-400 h-16 w-28 flex items-center justify-center text-2xl font-bold text-gray-700">
-                                    2
-                                  </div>
+                                  <div className="bg-gray-400 h-10 w-20 flex items-center justify-center text-lg font-bold text-gray-700">2</div>
                                 </div>
-
-                                {/* 金牌 - 第一名 */}
-                                <div className="text-center -mt-4">
-                                  <div className="w-24 h-24 mx-auto mb-3 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg animate-pulse">
-                                    <Trophy className="w-12 h-12 text-yellow-800" />
+                                {/* 金牌 */}
+                                <div className="text-center -mt-3">
+                                  <div className="w-16 h-16 mx-auto mb-2 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
+                                    <Trophy className="w-8 h-8 text-yellow-800" />
                                   </div>
-                                  <div className="bg-yellow-400 rounded-t-lg pt-4 pb-2 px-4 w-32">
-                                    <div className="text-yellow-900 font-bold text-lg truncate">{top3[0].athleteName}</div>
-                                    <div className="text-yellow-800 text-sm truncate">{top3[0].team}</div>
-                                    <div className="text-yellow-900 text-xs mt-1">{top3[0].totalPoints}分</div>
+                                  <div className="bg-yellow-400 rounded-t-lg pt-2 pb-1 px-2 w-24">
+                                    <div className="text-yellow-900 font-bold text-sm truncate">{top3[0].athleteName}</div>
+                                    <div className="text-yellow-800 text-xs truncate">{top3[0].team}</div>
+                                    <div className="text-yellow-900 text-xs">{top3[0].totalPoints}分</div>
                                   </div>
-                                  <div className="bg-yellow-500 h-24 w-32 flex items-center justify-center text-3xl font-bold text-yellow-900">
-                                    1
-                                  </div>
+                                  <div className="bg-yellow-500 h-16 w-24 flex items-center justify-center text-xl font-bold text-yellow-900">1</div>
                                 </div>
-
-                                {/* 铜牌 - 第三名 */}
+                                {/* 铜牌 */}
                                 <div className="text-center">
-                                  <div className="w-20 h-20 mx-auto mb-3 bg-orange-400 rounded-full flex items-center justify-center shadow-lg">
-                                    <Medal className="w-10 h-10 text-orange-800" />
+                                  <div className="w-14 h-14 mx-auto mb-2 bg-orange-400 rounded-full flex items-center justify-center shadow">
+                                    <Medal className="w-7 h-7 text-orange-800" />
                                   </div>
-                                  <div className="bg-orange-400 rounded-t-lg pt-4 pb-2 px-4 w-28">
-                                    <div className="text-orange-900 font-bold truncate">{top3[2].athleteName}</div>
-                                    <div className="text-orange-800 text-sm truncate">{top3[2].team}</div>
-                                    <div className="text-orange-900 text-xs mt-1">{top3[2].totalPoints}分</div>
+                                  <div className="bg-orange-400 rounded-t-lg pt-2 pb-1 px-2 w-20">
+                                    <div className="text-orange-900 font-bold text-xs truncate">{top3[2].athleteName}</div>
+                                    <div className="text-orange-800 text-xs truncate">{top3[2].team}</div>
+                                    <div className="text-orange-900 text-xs">{top3[2].totalPoints}分</div>
                                   </div>
-                                  <div className="bg-orange-500 h-12 w-28 flex items-center justify-center text-2xl font-bold text-orange-900">
-                                    3
-                                  </div>
+                                  <div className="bg-orange-500 h-8 w-20 flex items-center justify-center text-lg font-bold text-orange-900">3</div>
                                 </div>
                               </div>
                             </div>
                           )}
 
+                          {/* 排名表格 */}
                           <div className="overflow-x-auto">
                             <table className="min-w-full divide-y divide-gray-200">
                               <thead className="bg-gray-50">
                                 <tr>
-                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-20">名次</th>
+                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">名次</th>
                                   <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
                                   <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
-                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">参赛</th>
-                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">最佳</th>
-                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-28">总积分</th>
+                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">参赛</th>
+                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">最佳</th>
+                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-24">总积分</th>
                                 </tr>
                               </thead>
                               <tbody className="bg-white divide-y divide-gray-200">
@@ -613,21 +781,21 @@ export default function PointsRankingsPage() {
                                       item.rank === 3 ? 'bg-orange-50' : ''
                                     }`}
                                   >
-                                    <td className="px-4 py-3 whitespace-nowrap text-center">
+                                    <td className="px-4 py-2 whitespace-nowrap text-center">
                                       {getRankIcon(item.rank)}
                                     </td>
-                                    <td className="px-4 py-3 whitespace-nowrap">
+                                    <td className="px-4 py-2 whitespace-nowrap">
                                       <span className={`text-sm font-medium ${item.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
                                         {item.athleteName}
                                       </span>
                                     </td>
-                                    <td className="px-4 py-3 text-sm text-gray-600" title={item.team}>
+                                    <td className="px-4 py-2 text-sm text-gray-600" title={item.team}>
                                       {item.team}
                                     </td>
-                                    <td className="px-4 py-3 whitespace-nowrap text-center">
+                                    <td className="px-4 py-2 whitespace-nowrap text-center">
                                       <span className="text-sm text-gray-600">{item.competitionCount}</span>
                                     </td>
-                                    <td className="px-4 py-3 whitespace-nowrap text-center">
+                                    <td className="px-4 py-2 whitespace-nowrap text-center">
                                       <span className={`text-sm font-medium ${
                                         item.bestRank === 1 ? 'text-yellow-600' :
                                         item.bestRank <= 3 ? 'text-orange-600' : 'text-gray-600'
@@ -635,15 +803,8 @@ export default function PointsRankingsPage() {
                                         {item.bestRank}
                                       </span>
                                     </td>
-                                    <td className="px-4 py-3 whitespace-nowrap text-center">
-                                      <span className={`inline-flex px-3 py-1 rounded-lg text-sm font-bold ${
-                                        item.rank === 1 ? 'bg-yellow-400 text-yellow-900' :
-                                        item.rank === 2 ? 'bg-gray-300 text-gray-800' :
-                                        item.rank === 3 ? 'bg-orange-300 text-orange-900' :
-                                        'bg-blue-100 text-blue-700'
-                                      }`}>
-                                        {item.totalPoints}
-                                      </span>
+                                    <td className="px-4 py-2 whitespace-nowrap text-center">
+                                      <PointsBreakdownTooltip item={item} />
                                     </td>
                                   </tr>
                                 ))}
@@ -653,73 +814,34 @@ export default function PointsRankingsPage() {
 
                           {/* 分页控件 */}
                           {subEvent.rankings.length > sportPageSize && (
-                            <div className="px-4 py-3 bg-gray-50 flex items-center justify-between">
-                              <div className="text-sm text-gray-500">
-                                第 {getSubEventPage(sportRanking.sportType, subEvent.subEventName)} / {getTotalPages(subEvent.rankings.length)} 页，
-                                共 {subEvent.rankings.length} 名运动员
+                            <div className="px-4 py-2 bg-gray-50 flex items-center justify-between text-sm">
+                              <div className="text-gray-500">
+                                第 {getSubEventPage(sportRanking.sportType, subEvent.subEventName)} / {getTotalPages(subEvent.rankings.length)} 页
                               </div>
-                              <div className="flex items-center gap-2">
+                              <div className="flex items-center gap-1">
                                 <button
                                   onClick={() => setSubEventPage(sportRanking.sportType, subEvent.subEventName, getSubEventPage(sportRanking.sportType, subEvent.subEventName) - 1)}
                                   disabled={getSubEventPage(sportRanking.sportType, subEvent.subEventName) === 1}
-                                  className="px-3 py-1 rounded border border-gray-300 text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
+                                  className="px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                   <ChevronLeft className="h-4 w-4" />
-                                  上一页
                                 </button>
-                                {/* 页码按钮 */}
-                                <div className="flex items-center gap-1">
-                                  {(() => {
-                                    const totalPagesCount = getTotalPages(subEvent.rankings.length)
-                                    const currentPageNum = getSubEventPage(sportRanking.sportType, subEvent.subEventName)
-                                    const pages: (number | string)[] = []
-
-                                    if (totalPagesCount <= 7) {
-                                      for (let i = 1; i <= totalPagesCount; i++) pages.push(i)
-                                    } else {
-                                      if (currentPageNum <= 4) {
-                                        pages.push(1, 2, 3, 4, 5, '...', totalPagesCount)
-                                      } else if (currentPageNum >= totalPagesCount - 3) {
-                                        pages.push(1, '...', totalPagesCount - 4, totalPagesCount - 3, totalPagesCount - 2, totalPagesCount - 1, totalPagesCount)
-                                      } else {
-                                        pages.push(1, '...', currentPageNum - 1, currentPageNum, currentPageNum + 1, '...', totalPagesCount)
-                                      }
-                                    }
-
-                                    return pages.map((page, idx) => (
-                                      page === '...' ? (
-                                        <span key={`ellipsis-${idx}`} className="px-2 text-gray-400">...</span>
-                                      ) : (
-                                        <button
-                                          key={page}
-                                          onClick={() => setSubEventPage(sportRanking.sportType, subEvent.subEventName, page as number)}
-                                          className={`w-8 h-8 rounded text-sm ${
-                                            currentPageNum === page
-                                              ? 'bg-ski-blue text-white'
-                                              : 'border border-gray-300 text-gray-600 hover:bg-gray-100'
-                                          }`}
-                                        >
-                                          {page}
-                                        </button>
-                                      )
-                                    ))
-                                  })()}
-                                </div>
+                                <span className="px-2 text-gray-600">
+                                  {getSubEventPage(sportRanking.sportType, subEvent.subEventName)}
+                                </span>
                                 <button
                                   onClick={() => setSubEventPage(sportRanking.sportType, subEvent.subEventName, getSubEventPage(sportRanking.sportType, subEvent.subEventName) + 1)}
                                   disabled={getSubEventPage(sportRanking.sportType, subEvent.subEventName) >= getTotalPages(subEvent.rankings.length)}
-                                  className="px-3 py-1 rounded border border-gray-300 text-sm text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1"
+                                  className="px-2 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                  下一页
                                   <ChevronRight className="h-4 w-4" />
                                 </button>
                               </div>
                             </div>
                           )}
                         </div>
-                        )
-                      })}
-                    </div>
+                      )
+                    })}
                   </div>
                 ))}
               </div>

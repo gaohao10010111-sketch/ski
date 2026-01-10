@@ -57,7 +57,9 @@ function generateTotalRankingsBySport() {
       r.*,
       a.name as athleteName,
       a.team as athleteTeam,
-      c.sportType
+      c.sportType,
+      c.name as competitionName,
+      c.location as competitionLocation
     FROM Result r
     JOIN Athlete a ON r.athleteId = a.id
     JOIN Competition c ON r.competitionId = c.id
@@ -95,7 +97,12 @@ function generateTotalRankingsBySport() {
     if (r.rank < stats.bestRank) {
       stats.bestRank = r.rank;
     }
-    stats.results.push({ points: r.points, rank: r.rank });
+    stats.results.push({
+      points: r.points,
+      rank: r.rank,
+      competitionName: r.competitionName,
+      location: r.competitionLocation
+    });
   });
 
   // 获取所有 sportType + discipline + ageGroup + gender 组合（小子项）
@@ -154,7 +161,14 @@ function generateTotalRankingsBySport() {
         bestRank: stats.bestRank === 999 ? 1 : stats.bestRank,
         avgPoints: stats.competitionCount > 0 ? Math.round(stats.totalPoints / stats.competitionCount * 100) / 100 : 0,
         ageGroup: stats.ageGroup,
-        gender: stats.gender
+        gender: stats.gender,
+        // 积分构成明细
+        pointsBreakdown: stats.results.map(r => ({
+          competition: r.competitionName,
+          location: r.location,
+          points: r.points,
+          rank: r.rank
+        }))
       }));
 
       // 小子项名称：如 "回转 U11 男子组"
@@ -226,6 +240,13 @@ function generateTotalRankingsBySport() {
  * 生成时间: ${new Date().toISOString()}
  */
 
+export interface PointsBreakdownItem {
+  competition: string;
+  location: string;
+  points: number;
+  rank: number;
+}
+
 export interface TotalRankingItem {
   rank: number;
   athleteId: string;
@@ -237,6 +258,7 @@ export interface TotalRankingItem {
   avgPoints: number;
   ageGroup: string;
   gender: string;
+  pointsBreakdown: PointsBreakdownItem[];
 }
 
 export interface SubEventRankings {

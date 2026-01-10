@@ -43,6 +43,50 @@ function OrganizerLogo({ partner, label, showLabel = true }: { partner: Partner;
   return <span className="inline-flex items-center" title={partner.name}>{content}</span>;
 }
 
+// 滑cool报名平台组件
+function HuacoolSection() {
+  const [basePath, setBasePath] = useState('/ski');
+
+  useEffect(() => {
+    const detectedBasePath = window.location.pathname.startsWith('/ski') ? '/ski' : '';
+    setBasePath(detectedBasePath);
+  }, []);
+
+  return (
+    <div className="border-t border-gray-700 pt-6">
+      <div className="text-center">
+        <h4 className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-4">
+          U系列赛事报名平台
+        </h4>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          {/* 滑cool Logo */}
+          <div className="flex flex-col items-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`${basePath}/images/huacool-logo.png`}
+              alt="滑cool"
+              className="h-16 w-auto object-contain rounded-lg"
+            />
+            <span className="text-xs text-gray-400 mt-2">滑cool</span>
+          </div>
+          {/* 小程序二维码 */}
+          <div className="flex flex-col items-center">
+            <div className="bg-white p-2 rounded-lg">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`${basePath}/images/huacool-qrcode.jpg`}
+                alt="滑cool小程序二维码"
+                className="h-24 w-24 object-contain"
+              />
+            </div>
+            <span className="text-xs text-gray-400 mt-2">扫码进入小程序报名</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // 合作伙伴Logo组件
 function PartnerLogo({ partner }: { partner: Partner }) {
   const [basePath, setBasePath] = useState('/ski');
@@ -180,6 +224,9 @@ export default function Footer() {
             </div>
           </div>
         )}
+
+        {/* 滑cool报名平台 */}
+        <HuacoolSection />
 
         <div className="border-t border-gray-700 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
