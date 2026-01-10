@@ -54,14 +54,59 @@ const sportTypeConfig: Record<string, { label: string; icon: React.ComponentType
   'other': { label: '其他', icon: Snowflake, color: 'text-gray-500', bgColor: 'bg-gray-50' }
 }
 
-// 格式化日期
-function formatShortDate(dateString: string): string {
+// 格式化日期 - 包含年份
+function formatShortDate(dateString: string, includeYear: boolean = true): string {
   if (!dateString || dateString === '-') return '-'
   const parts = dateString.split('-')
   if (parts.length >= 3) {
-    return `${parseInt(parts[1])}月${parseInt(parts[2])}日`
+    const year = parts[0]
+    const month = parseInt(parts[1])
+    const day = parseInt(parts[2])
+    if (includeYear) {
+      return `${year}年${month}月${day}日`
+    }
+    return `${month}月${day}日`
   }
   return dateString
+}
+
+// 格式化日期范围 - 智能显示年份
+function formatDateRange(startDate: string, endDate: string): string {
+  if (!startDate) return '-'
+  const startParts = startDate.split('-')
+  const endParts = endDate ? endDate.split('-') : startParts
+
+  const startYear = startParts[0]
+  const startMonth = parseInt(startParts[1])
+  const startDay = parseInt(startParts[2])
+  const endYear = endParts[0]
+  const endMonth = parseInt(endParts[1])
+  const endDay = parseInt(endParts[2])
+
+  // 如果开始和结束是同一天
+  if (startDate === endDate) {
+    return `${startYear}年${startMonth}月${startDay}日`
+  }
+
+  // 如果年份相同
+  if (startYear === endYear) {
+    // 如果月份也相同
+    if (startMonth === endMonth) {
+      return `${startYear}年${startMonth}月${startDay}日-${endDay}日`
+    }
+    return `${startYear}年${startMonth}月${startDay}日-${endMonth}月${endDay}日`
+  }
+
+  // 跨年
+  return `${startYear}年${startMonth}月${startDay}日-${endYear}年${endMonth}月${endDay}日`
+}
+
+// 检查比赛是否已结束
+function isCompetitionEnded(endDate: string): boolean {
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  const compEndDate = new Date(endDate)
+  return compEndDate < today
 }
 
 // 项目筛选选项
@@ -90,11 +135,17 @@ export default function SchedulePage() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [viewMode, setViewMode] = useState<'list' | 'calendar'>('list')
   const [sortOrder, setSortOrder] = useState<SortOrder>('upcoming')
+  const [showPast, setShowPast] = useState(false) // 默认不显示已结束的比赛
   const { showToast } = useToast()
 
   // 筛选比赛
   const filteredCompetitions = useMemo(() => {
     return competitionSchedule2025.filter(comp => {
+      // 默认过滤掉已结束的比赛
+      if (!showPast && isCompetitionEnded(comp.endDate || comp.startDate)) {
+        return false
+      }
+
       // 月份筛选
       if (selectedMonth !== 'all') {
         const startMonth = comp.startDate.split('-')[1]
@@ -117,7 +168,7 @@ export default function SchedulePage() {
 
       return true
     })
-  }, [selectedMonth, selectedCategory])
+  }, [selectedMonth, selectedCategory, showPast])
 
   // 按日期排序
   const sortedCompetitions = useMemo(() => {
@@ -581,9 +632,19 @@ export default function SchedulePage() {
                 日历视图
               </button>
             </div>
+            {/* 显示往期比赛开关 */}
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={showPast}
+                onChange={(e) => setShowPast(e.target.checked)}
+                className="w-4 h-4 rounded border-gray-300 text-ski-blue focus:ring-ski-blue"
+              />
+              <span className="text-sm text-gray-600">显示往期</span>
+            </label>
           </div>
           <div className="flex gap-3 items-center">
-            <span className="text-sm text-gray-500">显示 {stats.filtered} 场</span>
+            <span className="text-sm text-gray-500">显示 {stats.filtered} 场{!showPast && '（未结束）'}</span>
             <button onClick={handleExportSchedule} className="btn-secondary flex items-center">
               <Download className="h-4 w-4 mr-2" />
               导出PDF
@@ -625,8 +686,7 @@ export default function SchedulePage() {
                       <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
                         <div className="flex items-center">
                           <Calendar className="h-4 w-4 mr-1 text-gray-400" />
-                          {formatShortDate(comp.startDate)}
-                          {comp.startDate !== comp.endDate && ` - ${formatShortDate(comp.endDate)}`}
+                          {formatDateRange(comp.startDate, comp.endDate)}
                         </div>
                         <div className="flex items-center">
                           <MapPin className="h-4 w-4 mr-1 text-gray-400" />
