@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { Trophy, Medal, Award, Crown, Download, Search, ChevronLeft, ChevronRight, ArrowLeft, ChevronDown, ChevronUp, Users } from 'lucide-react'
+import { Trophy, Medal, Award, Crown, Download, Search, ChevronLeft, ChevronRight, ArrowLeft, ChevronDown, ChevronUp, Users, Sparkles, Target, TrendingUp, Calendar } from 'lucide-react'
 import { latestResults, type AthleteResult } from '@/data/latestResults'
 import { useToast } from '@/components/Toast'
 import { totalRankingsData, type TotalRankingItem } from '@/data/totalRankings'
@@ -438,48 +438,115 @@ export default function PointsRankingsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* 返回按钮 */}
-        <Link
-          href="/"
-          className="inline-flex items-center text-gray-600 hover:text-ski-blue mb-6 transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          返回首页
-        </Link>
-
-        {/* 视图切换 */}
-        <div className="flex justify-center mb-6">
-          <div className="inline-flex rounded-lg border border-gray-200 bg-white p-1">
-            <button
-              onClick={() => setViewMode('total')}
-              className={`px-5 py-2 rounded-md text-sm font-medium ${
-                viewMode === 'total'
-                  ? 'bg-ski-blue text-white'
-                  : 'text-gray-600 hover:bg-gray-100'
-              }`}
-            >
-              总积分排名
-            </button>
-            <button
-              onClick={() => setViewMode('competition')}
-              className={`px-5 py-2 rounded-md text-sm font-medium ${
-                viewMode === 'competition'
-                  ? 'bg-ski-blue text-white'
-                  : 'text-gray-600 hover:bg-gray-100'
-              }`}
-            >
-              按比赛查看
-            </button>
-          </div>
+    <div className="min-h-screen bg-gray-50">
+      {/* 顶部大标题区域 - 活泼风格 */}
+      <div className="bg-gradient-to-br from-ski-blue via-blue-600 to-purple-600 text-white relative overflow-hidden">
+        {/* 装饰性背景元素 */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+          <div className="absolute top-20 -left-10 w-32 h-32 bg-yellow-400/20 rounded-full blur-xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-24 h-24 bg-pink-400/15 rounded-full blur-lg"></div>
         </div>
 
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative">
+          {/* 返回按钮 */}
+          <Link
+            href="/"
+            className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            返回首页
+          </Link>
+
+          {/* 主标题 */}
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center gap-3 mb-4">
+              <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg transform -rotate-6">
+                <Trophy className="w-8 h-8 text-white" />
+              </div>
+              <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-red-500 rounded-xl flex items-center justify-center shadow-lg transform rotate-6">
+                <Sparkles className="w-6 h-6 text-white" />
+              </div>
+            </div>
+            <h1 className="text-3xl md:text-4xl font-bold mb-2">
+              积分排行榜
+            </h1>
+            <p className="text-white/80 text-lg">
+              2024-2025赛季 · 全国青少年U系列赛事
+            </p>
+          </div>
+
+          {/* 统计卡片 */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-white/20 transition-colors">
+              <div className="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Users className="w-5 h-5 text-yellow-900" />
+              </div>
+              <div className="text-2xl font-bold">{stats.uniqueAthletes}</div>
+              <div className="text-white/70 text-sm">参赛运动员</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-white/20 transition-colors">
+              <div className="w-10 h-10 bg-green-400 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Calendar className="w-5 h-5 text-green-900" />
+              </div>
+              <div className="text-2xl font-bold">{stats.totalCompetitions}</div>
+              <div className="text-white/70 text-sm">已完赛事</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-white/20 transition-colors">
+              <div className="w-10 h-10 bg-purple-400 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <Target className="w-5 h-5 text-purple-900" />
+              </div>
+              <div className="text-2xl font-bold">{filteredSportRankings.reduce((sum, sr) => sum + (sr.subEventRankings?.length || 0), 0)}</div>
+              <div className="text-white/70 text-sm">比赛小项</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center hover:bg-white/20 transition-colors">
+              <div className="w-10 h-10 bg-orange-400 rounded-lg flex items-center justify-center mx-auto mb-2">
+                <TrendingUp className="w-5 h-5 text-orange-900" />
+              </div>
+              <div className="text-2xl font-bold">{stats.totalAthletes}</div>
+              <div className="text-white/70 text-sm">总参赛人次</div>
+            </div>
+          </div>
+
+          {/* 视图切换 */}
+          <div className="flex justify-center">
+            <div className="inline-flex rounded-xl bg-white/10 backdrop-blur-sm p-1">
+              <button
+                onClick={() => setViewMode('total')}
+                className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                  viewMode === 'total'
+                    ? 'bg-white text-ski-blue shadow-lg'
+                    : 'text-white hover:bg-white/10'
+                }`}
+              >
+                🏆 总积分排名
+              </button>
+              <button
+                onClick={() => setViewMode('competition')}
+                className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                  viewMode === 'competition'
+                    ? 'bg-white text-ski-blue shadow-lg'
+                    : 'text-white hover:bg-white/10'
+                }`}
+              >
+                🎿 按比赛查看
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* 说明提示 */}
-        <div className="bg-gray-100 rounded-lg p-3 mb-6 text-sm text-gray-600">
-          {viewMode === 'total'
-            ? '总积分 = 同一运动员在不同比赛中获得的积分累加'
-            : '积分排名需在相同比赛、相同小项、相同年龄组、相同性别内比较'}
+        <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 rounded-xl p-4 mb-6 flex items-center gap-3">
+          <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+            <Sparkles className="w-4 h-4 text-blue-600" />
+          </div>
+          <div className="text-sm text-gray-700">
+            {viewMode === 'total'
+              ? <><span className="font-medium text-blue-700">积分规则：</span>总积分 = 同一运动员在不同比赛中获得的积分累加，点击小项卡片查看详细排名</>
+              : <><span className="font-medium text-blue-700">积分规则：</span>积分排名需在相同比赛、相同小项、相同年龄组、相同性别内比较</>}
+          </div>
         </div>
 
         {/* 筛选器 */}
