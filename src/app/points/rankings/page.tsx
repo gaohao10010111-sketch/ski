@@ -11,8 +11,10 @@ import { totalRankingsData, type TotalRankingItem } from '@/data/totalRankings'
 const sportTypeLabels: Record<string, string> = {
   'alpine': '高山滑雪',
   'snowboard-slopestyle': '单板坡障/大跳台',
+  'snowboard-bigair': '单板大跳台',
   'snowboard-parallel': '单板平行项目',
   'freestyle-slopestyle': '自由式坡障/大跳台',
+  'freestyle-bigair': '自由式大跳台',
 }
 
 // 从数据中提取所有可用的筛选选项
