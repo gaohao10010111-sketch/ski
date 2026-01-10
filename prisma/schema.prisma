@@ -126,6 +126,32 @@ model AthleteAlias {
   @@index([primaryAthleteId])
 }
 
+// ========== 排名历史快照表 ==========
+// 每场比赛结束后记录一次排名快照，用于计算排名变化
+model RankingSnapshot {
+  id               String   @id @default(cuid())
+
+  athleteId        String                  // 运动员ID
+  athleteName      String                  // 运动员姓名（冗余，方便查询）
+  team             String                  // 单位
+
+  sportType        String?                 // 项目类型（可选，null表示总排名）
+  ageGroup         String                  // 年龄组
+  gender           String                  // 性别
+
+  rank             Int                     // 排名
+  totalPoints      Int                     // 总积分
+  competitionCount Int                     // 参赛次数
+
+  snapshotDate     DateTime @default(now()) // 快照时间
+  triggeredBy      String?                 // 触发快照的比赛ID（可选）
+  season           String   @default("2024-2025") // 赛季
+
+  @@index([athleteId, sportType, ageGroup, gender])
+  @@index([snapshotDate])
+  @@index([season, sportType, ageGroup, gender, rank])
+}
+
 // ========== 合作意向表 ==========
 // 存储合作咨询页面提交的合作意向
 model CooperationInquiry {

@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { Trophy, Medal, Award, Crown, Download, Search, ChevronLeft, ChevronRight, ArrowLeft, ChevronDown, ChevronUp, Users, Sparkles, Target, TrendingUp, Calendar } from 'lucide-react'
+import { Trophy, Medal, Award, Crown, Download, Search, ChevronLeft, ChevronRight, ArrowLeft, ChevronDown, ChevronUp, Users, Sparkles, Target, TrendingUp, Calendar, ArrowUpRight, ArrowDownRight, Minus } from 'lucide-react'
 import { latestResults, type AthleteResult } from '@/data/latestResults'
 import { useToast } from '@/components/Toast'
 import { totalRankingsData, type TotalRankingItem } from '@/data/totalRankings'
@@ -87,6 +87,46 @@ function getRankingGroups(
   }
 
   return groups
+}
+
+// 排名变化显示组件
+function RankChangeDisplay({ change }: { change?: number | null }) {
+  if (change === undefined || change === null) {
+    // 新进榜
+    return (
+      <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-xs font-medium bg-purple-100 text-purple-700">
+        NEW
+      </span>
+    )
+  }
+
+  if (change === 0) {
+    // 持平
+    return (
+      <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-500">
+        <Minus className="w-3 h-3" />
+        <span>-</span>
+      </span>
+    )
+  }
+
+  if (change > 0) {
+    // 上升
+    return (
+      <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-xs font-medium bg-green-100 text-green-700">
+        <ArrowUpRight className="w-3 h-3" />
+        <span>{change}</span>
+      </span>
+    )
+  }
+
+  // 下降
+  return (
+    <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded text-xs font-medium bg-red-100 text-red-700">
+      <ArrowDownRight className="w-3 h-3" />
+      <span>{Math.abs(change)}</span>
+    </span>
+  )
 }
 
 // 积分构成提示组件
@@ -885,6 +925,7 @@ export default function PointsRankingsPage() {
                               <thead className="bg-gray-50">
                                 <tr>
                                   <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">名次</th>
+                                  <th className="px-3 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">变化</th>
                                   <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
                                   <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
                                   <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">参赛</th>
@@ -904,6 +945,9 @@ export default function PointsRankingsPage() {
                                   >
                                     <td className="px-4 py-2 whitespace-nowrap text-center">
                                       {getRankIcon(item.rank)}
+                                    </td>
+                                    <td className="px-3 py-2 whitespace-nowrap text-center">
+                                      <RankChangeDisplay change={(item as any).rankChange} />
                                     </td>
                                     <td className="px-4 py-2 whitespace-nowrap">
                                       <span className={`text-sm font-medium ${item.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>

@@ -36,6 +36,7 @@ export interface AthletePointsSummary {
 /** 总排名项 */
 export interface TotalRankingItem extends AthletePointsSummary {
   rank: number
+  rankChange?: number | null  // 排名变化：正数表示上升，负数表示下降，null表示新进榜
 }
 
 /** 筛选参数 */
@@ -424,4 +425,276 @@ export function getRankingStats(): {
   const totalResults = (db.prepare('SELECT COUNT(*) as count FROM Result').get() as { count: number }).count
 
   return { athleteCount, competitionCount, totalResults }
+}
+
+// ========== 排名快照相关函数 ==========
+
+/** 排名快照项 */
+export interface RankingSnapshotItem {
+  id: string
+  athleteId: string
+  athleteName: string
+  team: string
+  sportType: string | null
+  ageGroup: string
+  gender: string
+  rank: number
+  totalPoints: number
+  competitionCount: number
+  snapshotDate: string
+  triggeredBy: string | null
+  season: string
+}
+
+/**
+ * 保存当前排名快照
+ * 在每场比赛结束后调用，记录当前排名状态
+ * @param triggeredBy 触发快照的比赛ID（可选）
+ * @param sportType 项目类型（可选，null表示总排名）
+ */
+export function saveRankingSnapshot(
+  triggeredBy?: string,
+  sportType?: string
+): { success: boolean; count: number } {
+  const db = getDatabase()
+  const season = '2024-2025'
+
+  // 获取当前排名（根据sportType筛选）
+  const { rankings } = getTotalRankings({ sportType, limit: 1000 })
+
+  if (rankings.length === 0) {
+    return { success: true, count: 0 }
+  }
+
+  // 生成唯一ID的函数
+  const generateId = () => {
+    return 'snap_' + Date.now().toString(36) + Math.random().toString(36).substring(2, 9)
+  }
+
+  // 准备插入语句
+  const insertStmt = db.prepare(`
+    INSERT INTO RankingSnapshot (
+      id, athleteId, athleteName, team, sportType, ageGroup, gender,
+      rank, totalPoints, competitionCount, snapshotDate, triggeredBy, season
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, datetime('now'), ?, ?)
+  `)
+
+  // 批量插入
+  const insertMany = db.transaction((items: TotalRankingItem[]) => {
+    for (const item of items) {
+      insertStmt.run(
+        generateId(),
+        item.athleteId,
+        item.athleteName,
+        item.team,
+        sportType || null,
+        item.ageGroup,
+        item.gender,
+        item.rank,
+        item.totalPoints,
+        item.competitionCount,
+        triggeredBy || null,
+        season
+      )
+    }
+  })
+
+  insertMany(rankings)
+
+  return { success: true, count: rankings.length }
+}
+
+/**
+ * 获取上一次排名快照
+ * @param sportType 项目类型（可选）
+ * @param ageGroup 年龄组（可选）
+ * @param gender 性别（可选）
+ */
+export function getLastSnapshot(
+  sportType?: string,
+  ageGroup?: string,
+  gender?: string
+): Map<string, number> {
+  const db = getDatabase()
+
+  // 构建查询条件
+  let whereClause = 'WHERE 1=1'
+  const params: (string | null)[] = []
+
+  if (sportType) {
+    whereClause += ' AND sportType = ?'
+    params.push(sportType)
+  } else {
+    whereClause += ' AND sportType IS NULL'
+  }
+
+  if (ageGroup) {
+    whereClause += ' AND ageGroup = ?'
+    params.push(ageGroup)
+  }
+
+  if (gender) {
+    whereClause += ' AND gender = ?'
+    params.push(gender)
+  }
+
+  // 获取最新快照时间
+  const latestSnapshot = db.prepare(`
+    SELECT MAX(snapshotDate) as latestDate
+    FROM RankingSnapshot
+    ${whereClause}
+  `).get(...params) as { latestDate: string | null }
+
+  if (!latestSnapshot?.latestDate) {
+    return new Map()
+  }
+
+  // 获取该时间点的所有排名
+  const snapshots = db.prepare(`
+    SELECT athleteId, ageGroup, gender, rank
+    FROM RankingSnapshot
+    ${whereClause} AND snapshotDate = ?
+  `).all(...params, latestSnapshot.latestDate) as Array<{
+    athleteId: string
+    ageGroup: string
+    gender: string
+    rank: number
+  }>
+
+  // 构建映射：athleteId-ageGroup-gender -> rank
+  const rankMap = new Map<string, number>()
+  snapshots.forEach(s => {
+    const key = `${s.athleteId}-${s.ageGroup}-${s.gender}`
+    rankMap.set(key, s.rank)
+  })
+
+  return rankMap
+}
+
+/**
+ * 获取带排名变化的总积分排名列表
+ * @param filters 筛选条件
+ */
+export function getTotalRankingsWithChange(filters: RankingFilters = {}): {
+  rankings: TotalRankingItem[]
+  total: number
+  filters: {
+    sportTypes: { value: string; label: string }[]
+    disciplines: string[]
+    ageGroups: string[]
+    genders: string[]
+  }
+  lastUpdateTime: string | null
+} {
+  const db = getDatabase()
+  const { sportType, ageGroup, gender } = filters
+
+  // 获取当前排名
+  const result = getTotalRankings(filters)
+
+  // 获取上一次快照的排名
+  const lastRankMap = getLastSnapshot(sportType, ageGroup, gender)
+
+  // 计算排名变化
+  const rankingsWithChange: TotalRankingItem[] = result.rankings.map(item => {
+    const key = `${item.athleteId}-${item.ageGroup}-${item.gender}`
+    const lastRank = lastRankMap.get(key)
+
+    let rankChange: number | null = null
+    if (lastRank !== undefined) {
+      // 排名变化 = 上次排名 - 当前排名（正数表示上升）
+      rankChange = lastRank - item.rank
+    }
+    // 如果lastRank为undefined，表示新进榜，rankChange保持null
+
+    return {
+      ...item,
+      rankChange
+    }
+  })
+
+  // 获取最后更新时间
+  let whereClause = 'WHERE 1=1'
+  const params: (string | null)[] = []
+
+  if (sportType) {
+    whereClause += ' AND sportType = ?'
+    params.push(sportType)
+  } else {
+    whereClause += ' AND sportType IS NULL'
+  }
+
+  const lastUpdate = db.prepare(`
+    SELECT MAX(snapshotDate) as lastDate
+    FROM RankingSnapshot
+    ${whereClause}
+  `).get(...params) as { lastDate: string | null }
+
+  return {
+    rankings: rankingsWithChange,
+    total: result.total,
+    filters: result.filters,
+    lastUpdateTime: lastUpdate?.lastDate || null
+  }
+}
+
+/**
+ * 获取所有快照记录（用于管理界面）
+ */
+export function getSnapshotHistory(limit: number = 20): Array<{
+  snapshotDate: string
+  triggeredBy: string | null
+  count: number
+  sportType: string | null
+}> {
+  const db = getDatabase()
+
+  const snapshots = db.prepare(`
+    SELECT
+      snapshotDate,
+      triggeredBy,
+      sportType,
+      COUNT(*) as count
+    FROM RankingSnapshot
+    GROUP BY snapshotDate, sportType
+    ORDER BY snapshotDate DESC
+    LIMIT ?
+  `).all(limit) as Array<{
+    snapshotDate: string
+    triggeredBy: string | null
+    sportType: string | null
+    count: number
+  }>
+
+  return snapshots
+}
+
+/**
+ * 删除旧的快照记录（只保留最近N次）
+ * @param keepCount 保留的快照次数
+ */
+export function cleanOldSnapshots(keepCount: number = 10): number {
+  const db = getDatabase()
+
+  // 获取需要保留的快照日期
+  const keepDates = db.prepare(`
+    SELECT DISTINCT snapshotDate
+    FROM RankingSnapshot
+    ORDER BY snapshotDate DESC
+    LIMIT ?
+  `).all(keepCount) as Array<{ snapshotDate: string }>
+
+  if (keepDates.length < keepCount) {
+    return 0 // 不需要清理
+  }
+
+  const oldestKeepDate = keepDates[keepDates.length - 1].snapshotDate
+
+  // 删除比保留日期更旧的记录
+  const result = db.prepare(`
+    DELETE FROM RankingSnapshot
+    WHERE snapshotDate < ?
+  `).run(oldestKeepDate)
+
+  return result.changes
 }

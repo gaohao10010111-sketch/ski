@@ -9,10 +9,11 @@
  * - gender: 性别 (男子组, 女子组)
  * - limit: 每页条数 (默认100)
  * - offset: 偏移量 (默认0)
+ * - withChange: 是否返回排名变化 (默认true)
  */
 
 import { NextRequest, NextResponse } from 'next/server'
-import { getTotalRankings, getRankingStats } from '@/lib/db/rankingService'
+import { getTotalRankings, getTotalRankingsWithChange, getRankingStats } from '@/lib/db/rankingService'
 
 export async function GET(request: NextRequest) {
   try {
@@ -27,8 +28,10 @@ export async function GET(request: NextRequest) {
       offset: searchParams.get('offset') ? parseInt(searchParams.get('offset')!) : 0,
     }
 
+    const withChange = searchParams.get('withChange') !== 'false'
+
     const [rankingsData, stats] = await Promise.all([
-      getTotalRankings(filters),
+      withChange ? getTotalRankingsWithChange(filters) : getTotalRankings(filters),
       getRankingStats()
     ])
 
@@ -38,7 +41,8 @@ export async function GET(request: NextRequest) {
         rankings: rankingsData.rankings,
         total: rankingsData.total,
         filters: rankingsData.filters,
-        stats
+        stats,
+        lastUpdateTime: 'lastUpdateTime' in rankingsData ? rankingsData.lastUpdateTime : null
       }
     })
   } catch (error) {
