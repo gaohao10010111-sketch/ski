@@ -636,50 +636,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 赛事报名入口 - 精致紧凑版 */}
-      <section className="py-6 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center gap-6 md:gap-10">
-            {/* Logo */}
-            <div className="w-14 h-14 md:w-16 md:h-16 bg-white rounded-xl p-1.5 shadow-md flex-shrink-0 border border-gray-100">
-              <img
-                src={getImagePath('/images/huacool-logo.png')}
-                alt="滑cool"
-                className="w-full h-full object-contain"
-              />
-            </div>
-
-            {/* 文字信息 */}
-            <div className="text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
-                <h3 className="text-base md:text-lg font-bold text-gray-900">赛事报名入口</h3>
-                <span className="px-1.5 py-0.5 bg-orange-100 text-orange-600 text-[10px] font-medium rounded">
-                  官方
-                </span>
-              </div>
-              <p className="text-gray-500 text-xs md:text-sm">
-                微信扫码进入滑cool小程序报名参赛
-              </p>
-            </div>
-
-            {/* 分隔线 */}
-            <div className="hidden md:block w-px h-12 bg-gray-200"></div>
-
-            {/* 二维码 */}
-            <div className="flex-shrink-0 group">
-              <div className="bg-white rounded-xl p-2 shadow-sm border border-gray-100 group-hover:shadow-md group-hover:border-orange-200 transition-all duration-200">
-                <img
-                  src={getImagePath('/images/huacool-qrcode.jpg')}
-                  alt="滑cool小程序码"
-                  className="w-20 h-20 md:w-24 md:h-24 rounded-lg"
-                />
-              </div>
-              <p className="text-center text-gray-400 text-[10px] mt-1.5">微信扫码</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 成绩快报 - 最高优先级展示区 */}
       {latestResults.competitions.length > 0 && (
         <section className="py-10 bg-white">
