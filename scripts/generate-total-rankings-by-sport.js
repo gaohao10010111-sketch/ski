@@ -13,6 +13,62 @@ const path = require('path');
 const dbPath = path.join(__dirname, '../prisma/ski.db');
 const db = new Database(dbPath);
 
+/**
+ * 获取上一次快照数据，用于计算排名变化
+ * 返回一个Map: key = `${sportType}-${ageGroup}-${gender}-${athleteId}`, value = rank
+ *
+ * 注意：快照存储的是原始 sportType（如 snowboard-slopestyle），
+ * 而静态数据使用合并后的 sportType（如 snowboard-slopestyle-bigair），
+ * 所以在匹配时需要将原始类型也映射到合并类型
+ */
+function getLastSnapshotRankMap() {
+  const snapshotMap = new Map();
+
+  // 快照sportType到合并sportType的映射
+  const snapshotSportTypeMergeMap = {
+    'alpine': 'alpine',
+    'snowboard-slopestyle': 'snowboard-slopestyle-bigair',
+    'snowboard-bigair': 'snowboard-slopestyle-bigair',
+    'snowboard-parallel': 'snowboard-parallel',
+    'freestyle-slopestyle': 'freestyle-slopestyle-bigair',
+    'freestyle-bigair': 'freestyle-slopestyle-bigair'
+  };
+
+  // 获取最近一次快照的时间
+  const lastSnapshot = db.prepare(`
+    SELECT DISTINCT snapshotDate
+    FROM RankingSnapshot
+    ORDER BY snapshotDate DESC
+    LIMIT 1
+  `).get();
+
+  if (!lastSnapshot) {
+    console.log('没有找到历史快照数据，所有运动员将显示为"新进榜"');
+    return snapshotMap;
+  }
+
+  console.log(`使用快照时间: ${lastSnapshot.snapshotDate}`);
+
+  // 获取该快照时间的所有排名记录
+  const snapshots = db.prepare(`
+    SELECT athleteId, sportType, ageGroup, gender, rank
+    FROM RankingSnapshot
+    WHERE snapshotDate = ?
+  `).all(lastSnapshot.snapshotDate);
+
+  console.log(`找到 ${snapshots.length} 条快照记录`);
+
+  // 构建快照Map
+  // 将原始sportType映射到合并后的sportType
+  snapshots.forEach(s => {
+    const mergedSportType = snapshotSportTypeMergeMap[s.sportType] || s.sportType || 'total';
+    const key = `${mergedSportType}-${s.ageGroup}-${s.gender}-${s.athleteId}`;
+    snapshotMap.set(key, s.rank);
+  });
+
+  return snapshotMap;
+}
+
 // 四大项目分类映射（将数据库的sportType映射到四大项目）
 const sportTypeMergeMap = {
   'alpine': 'alpine',
@@ -46,6 +102,9 @@ const genderOrder = ['男子组', '女子组'];
 
 function generateTotalRankingsBySport() {
   console.log('开始生成按项目和小子项分类的总积分排名数据...');
+
+  // 获取上一次快照数据用于计算排名变化
+  const lastSnapshotRankMap = getLastSnapshotRankMap();
 
   // 获取所有比赛
   const competitions = db.prepare('SELECT * FROM Competition').all();
@@ -151,25 +210,41 @@ function generateTotalRankingsBySport() {
         )
         .sort((a, b) => b.totalPoints - a.totalPoints);
 
-      const rankings = athleteStats.map((stats, index) => ({
-        rank: index + 1,
-        athleteId: stats.athleteId,
-        athleteName: stats.athleteName,
-        team: stats.team,
-        totalPoints: stats.totalPoints,
-        competitionCount: stats.competitionCount,
-        bestRank: stats.bestRank === 999 ? 1 : stats.bestRank,
-        avgPoints: stats.competitionCount > 0 ? Math.round(stats.totalPoints / stats.competitionCount * 100) / 100 : 0,
-        ageGroup: stats.ageGroup,
-        gender: stats.gender,
-        // 积分构成明细
-        pointsBreakdown: stats.results.map(r => ({
-          competition: r.competitionName,
-          location: r.location,
-          points: r.points,
-          rank: r.rank
-        }))
-      }));
+      const rankings = athleteStats.map((stats, index) => {
+        const currentRank = index + 1;
+        // 尝试查找上次快照中的排名
+        // 先尝试按 sportType + ageGroup + gender + athleteId 查找
+        const snapshotKey = `${mainSportType}-${stats.ageGroup}-${stats.gender}-${stats.athleteId}`;
+        const lastRank = lastSnapshotRankMap.get(snapshotKey);
+
+        // 计算排名变化：lastRank - currentRank（上升为正，下降为负）
+        // null 表示新进榜
+        let rankChange = null;
+        if (lastRank !== undefined) {
+          rankChange = lastRank - currentRank;
+        }
+
+        return {
+          rank: currentRank,
+          athleteId: stats.athleteId,
+          athleteName: stats.athleteName,
+          team: stats.team,
+          totalPoints: stats.totalPoints,
+          competitionCount: stats.competitionCount,
+          bestRank: stats.bestRank === 999 ? 1 : stats.bestRank,
+          avgPoints: stats.competitionCount > 0 ? Math.round(stats.totalPoints / stats.competitionCount * 100) / 100 : 0,
+          ageGroup: stats.ageGroup,
+          gender: stats.gender,
+          rankChange: rankChange,  // 排名变化：正数=上升，负数=下降，0=持平，null=新进榜
+          // 积分构成明细
+          pointsBreakdown: stats.results.map(r => ({
+            competition: r.competitionName,
+            location: r.location,
+            points: r.points,
+            rank: r.rank
+          }))
+        };
+      });
 
       // 小子项名称：如 "回转 U11 男子组"
       const subEventName = `${subEvent.discipline} ${subEvent.ageGroup} ${subEvent.gender}`;
@@ -258,6 +333,7 @@ export interface TotalRankingItem {
   avgPoints: number;
   ageGroup: string;
   gender: string;
+  rankChange: number | null;  // 排名变化：正数=上升，负数=下降，0=持平，null=新进榜
   pointsBreakdown: PointsBreakdownItem[];
 }
 

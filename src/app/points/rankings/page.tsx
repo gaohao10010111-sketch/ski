@@ -947,7 +947,7 @@ export default function PointsRankingsPage() {
                                       {getRankIcon(item.rank)}
                                     </td>
                                     <td className="px-3 py-2 whitespace-nowrap text-center">
-                                      <RankChangeDisplay change={(item as any).rankChange} />
+                                      <RankChangeDisplay change={item.rankChange} />
                                     </td>
                                     <td className="px-4 py-2 whitespace-nowrap">
                                       <span className={`text-sm font-medium ${item.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>

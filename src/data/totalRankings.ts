@@ -1,7 +1,7 @@
 /**
  * 总积分排名静态数据（按项目和子项分类）
  * 自动生成，请勿手动修改
- * 生成时间: 2026-01-08T14:49:07.694Z
+ * 生成时间: 2026-01-10T13:29:22.296Z
  */
 
 export interface PointsBreakdownItem {
@@ -22,6 +22,7 @@ export interface TotalRankingItem {
   avgPoints: number;
   ageGroup: string;
   gender: string;
+  rankChange: number | null;  // 排名变化：正数=上升，负数=下降，0=持平，null=新进榜
   pointsBreakdown: PointsBreakdownItem[];
 }
 
@@ -83,6 +84,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -103,6 +105,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -123,6 +126,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -143,6 +147,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -172,6 +177,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -192,6 +198,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -212,6 +219,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -232,6 +240,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -252,6 +261,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -272,6 +282,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -292,6 +303,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -321,6 +333,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -341,6 +354,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -361,6 +375,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -381,6 +396,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -401,6 +417,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -421,6 +438,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -450,6 +468,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -470,6 +489,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -490,6 +510,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -510,6 +531,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -530,6 +552,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -559,6 +582,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -579,6 +603,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -599,6 +624,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -619,6 +645,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -639,6 +666,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -659,6 +687,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -679,6 +708,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -699,6 +729,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -719,6 +750,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -739,6 +771,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 187,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -768,6 +801,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -788,6 +822,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -808,6 +843,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -837,6 +873,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -857,6 +894,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -877,6 +915,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -897,6 +936,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -917,6 +957,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -937,6 +978,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -957,6 +999,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -977,6 +1020,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1006,6 +1050,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1026,6 +1071,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1046,6 +1092,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1066,6 +1113,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1086,6 +1134,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1106,6 +1155,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1126,6 +1176,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1155,6 +1206,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1175,6 +1227,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1195,6 +1248,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1215,6 +1269,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1235,6 +1290,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1255,6 +1311,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1275,6 +1332,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1295,6 +1353,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1315,6 +1374,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1344,6 +1404,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1364,6 +1425,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1384,6 +1446,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1404,6 +1467,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1424,6 +1488,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1453,6 +1518,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1473,6 +1539,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1493,6 +1560,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1513,6 +1581,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1533,6 +1602,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1553,6 +1623,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1573,6 +1644,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1593,6 +1665,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1613,6 +1686,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1633,6 +1707,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 187,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1662,6 +1737,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1682,6 +1758,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1702,6 +1779,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1722,6 +1800,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1742,6 +1821,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1762,6 +1842,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -1798,6 +1879,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -1818,6 +1900,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -1838,6 +1921,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -1858,6 +1942,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -1878,6 +1963,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -1898,6 +1984,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -1918,6 +2005,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -1938,6 +2026,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -1958,6 +2047,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -1978,6 +2068,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 187,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -1998,6 +2089,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 176,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2018,6 +2110,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 166,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2038,6 +2131,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 157,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2058,6 +2152,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 149,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2078,6 +2173,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 142,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2098,6 +2194,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 135,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2118,6 +2215,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 129,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2147,6 +2245,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2167,6 +2266,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2187,6 +2287,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2207,6 +2308,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2227,6 +2329,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2247,6 +2350,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2267,6 +2371,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2287,6 +2392,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2307,6 +2413,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2336,6 +2443,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2356,6 +2464,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2376,6 +2485,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2396,6 +2506,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2416,6 +2527,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2436,6 +2548,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2456,6 +2569,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2476,6 +2590,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2496,6 +2611,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2516,6 +2632,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 187,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2536,6 +2653,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 176,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2556,6 +2674,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 166,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2576,6 +2695,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 157,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2596,6 +2716,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 149,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2616,6 +2737,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 142,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2645,6 +2767,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2665,6 +2788,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2685,6 +2809,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2705,6 +2830,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2725,6 +2851,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2745,6 +2872,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2765,6 +2893,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2785,6 +2914,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2805,6 +2935,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2825,6 +2956,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 187,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2845,6 +2977,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 176,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2874,6 +3007,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2894,6 +3028,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2914,6 +3049,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2934,6 +3070,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2954,6 +3091,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2974,6 +3112,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -2994,6 +3133,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -3014,6 +3154,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -3043,6 +3184,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3063,6 +3205,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3083,6 +3226,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3103,6 +3247,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3123,6 +3268,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3143,6 +3289,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3163,6 +3310,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3183,6 +3331,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3203,6 +3352,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3223,6 +3373,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 187,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3243,6 +3394,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 176,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3263,6 +3415,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 166,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3283,6 +3436,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 157,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3303,6 +3457,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 149,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3323,6 +3478,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 141,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3352,6 +3508,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3372,6 +3529,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3392,6 +3550,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3412,6 +3571,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3432,6 +3592,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3452,6 +3613,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3472,6 +3634,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3492,6 +3655,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3512,6 +3676,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3541,6 +3706,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3561,6 +3727,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3581,6 +3748,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3601,6 +3769,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3621,6 +3790,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3641,6 +3811,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3661,6 +3832,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3681,6 +3853,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3701,6 +3874,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3721,6 +3895,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 187,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3741,6 +3916,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 176,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3761,6 +3937,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 166,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3781,6 +3958,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 157,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3801,6 +3979,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 149,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3830,6 +4009,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3850,6 +4030,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3870,6 +4051,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3890,6 +4072,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3910,6 +4093,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3930,6 +4114,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3950,6 +4135,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3970,6 +4156,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -3990,6 +4177,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -4019,6 +4207,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -4039,6 +4228,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -4059,6 +4249,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -4079,6 +4270,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -4099,6 +4291,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -4119,6 +4312,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -4139,6 +4333,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -4175,6 +4370,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4195,6 +4391,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4215,6 +4412,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4235,6 +4433,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4255,6 +4454,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4275,6 +4475,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4295,6 +4496,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4315,6 +4517,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4335,6 +4538,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4355,6 +4559,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 187,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4375,6 +4580,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 176,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4395,6 +4601,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 166,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4415,6 +4622,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 157,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4435,6 +4643,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 149,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4455,6 +4664,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 141,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4475,6 +4685,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 134,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4495,6 +4706,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 127,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4515,6 +4727,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 121,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4535,6 +4748,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 115,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4555,6 +4769,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 110,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4575,6 +4790,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 105,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4595,6 +4811,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 100,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4615,6 +4832,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 95,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4635,6 +4853,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 91,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4655,6 +4874,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 87,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4675,6 +4895,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 83,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4695,6 +4916,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 79,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4715,6 +4937,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 75,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4735,6 +4958,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 71,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4755,6 +4979,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 67,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4775,6 +5000,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 63,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4795,6 +5021,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 59,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4815,6 +5042,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 55,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4835,6 +5063,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 51,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4855,6 +5084,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 47,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4884,6 +5114,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4904,6 +5135,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4924,6 +5156,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4944,6 +5177,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4964,6 +5198,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -4984,6 +5219,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5004,6 +5240,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5024,6 +5261,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5044,6 +5282,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5064,6 +5303,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 187,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5084,6 +5324,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 176,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5104,6 +5345,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 166,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5124,6 +5366,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 157,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5144,6 +5387,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 149,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5164,6 +5408,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 141,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5184,6 +5429,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 134,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5204,6 +5450,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 127,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5224,6 +5471,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 121,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5244,6 +5492,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 115,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5264,6 +5513,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 110,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5284,6 +5534,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 105,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5304,6 +5555,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 100,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5333,6 +5585,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5353,6 +5606,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5373,6 +5627,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5393,6 +5648,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5413,6 +5669,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5433,6 +5690,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5453,6 +5711,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5473,6 +5732,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5493,6 +5753,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5513,6 +5774,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 187,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5533,6 +5795,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 176,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5553,6 +5816,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 166,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5573,6 +5837,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 157,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5593,6 +5858,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 149,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5613,6 +5879,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 141,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5633,6 +5900,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 134,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5653,6 +5921,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 127,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5673,6 +5942,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 121,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5693,6 +5963,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 115,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5713,6 +5984,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 110,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5733,6 +6005,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 105,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5753,6 +6026,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 100,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5773,6 +6047,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 95,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5793,6 +6068,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 91,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5813,6 +6089,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 87,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5833,6 +6110,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 83,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5853,6 +6131,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 79,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5873,6 +6152,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 75,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5893,6 +6173,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 71,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5913,6 +6194,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 67,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5933,6 +6215,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 63,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5953,6 +6236,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 59,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5973,6 +6257,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 55,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -5993,6 +6278,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 51,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6013,6 +6299,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 47,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6033,6 +6320,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 43,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6053,6 +6341,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 39,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6073,6 +6362,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 35,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6093,6 +6383,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 31,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6113,6 +6404,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 27,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6133,6 +6425,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 24,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6153,6 +6446,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 21,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6173,6 +6467,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 18,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6193,6 +6488,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 15,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6213,6 +6509,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 12,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6242,6 +6539,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6262,6 +6560,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6282,6 +6581,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6302,6 +6602,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6322,6 +6623,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6342,6 +6644,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6362,6 +6665,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6382,6 +6686,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6402,6 +6707,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6422,6 +6728,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 187,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6442,6 +6749,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 176,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6462,6 +6770,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 166,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6482,6 +6791,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 157,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6502,6 +6812,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 149,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6522,6 +6833,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 141,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6542,6 +6854,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 134,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6562,6 +6875,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 127,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6582,6 +6896,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 121,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6602,6 +6917,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 115,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6622,6 +6938,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 110,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6642,6 +6959,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 105,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6662,6 +6980,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 100,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6682,6 +7001,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 95,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6702,6 +7022,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 91,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6722,6 +7043,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 87,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6742,6 +7064,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 83,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6762,6 +7085,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 79,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6782,6 +7106,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 75,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6802,6 +7127,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 71,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6822,6 +7148,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 67,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6842,6 +7169,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 63,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6862,6 +7190,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 59,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6891,6 +7220,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6911,6 +7241,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6931,6 +7262,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6951,6 +7283,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6971,6 +7304,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -6991,6 +7325,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7011,6 +7346,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7031,6 +7367,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7051,6 +7388,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7071,6 +7409,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 187,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7091,6 +7430,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 176,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7111,6 +7451,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 166,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7131,6 +7472,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 157,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7151,6 +7493,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 149,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7171,6 +7514,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 141,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7191,6 +7535,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 134,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7211,6 +7556,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 127,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7231,6 +7577,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 121,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7251,6 +7598,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 115,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7271,6 +7619,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 110,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7291,6 +7640,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 105,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7311,6 +7661,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 100,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7331,6 +7682,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 95,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7351,6 +7703,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 91,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7380,6 +7733,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7400,6 +7754,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7420,6 +7775,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7440,6 +7796,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7460,6 +7817,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7480,6 +7838,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7500,6 +7859,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7520,6 +7880,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7540,6 +7901,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7560,6 +7922,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 187,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7580,6 +7943,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 176,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7600,6 +7964,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 166,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7620,6 +7985,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 157,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7640,6 +8006,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 149,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7660,6 +8027,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 141,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7680,6 +8048,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 134,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7700,6 +8069,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 127,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7720,6 +8090,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 121,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7740,6 +8111,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 115,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7760,6 +8132,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 110,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7780,6 +8153,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 105,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -7816,6 +8190,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -7836,6 +8211,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -7856,6 +8232,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -7876,6 +8253,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -7896,6 +8274,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -7916,6 +8295,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -7936,6 +8316,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -7956,6 +8337,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -7976,6 +8358,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8005,6 +8388,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8025,6 +8409,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8045,6 +8430,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8065,6 +8451,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8085,6 +8472,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8105,6 +8493,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8125,6 +8514,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8145,6 +8535,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8165,6 +8556,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8185,6 +8577,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 187,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8205,6 +8598,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 176,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8225,6 +8619,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 166,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8245,6 +8640,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 157,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8265,6 +8661,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 149,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8285,6 +8682,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 141,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8314,6 +8712,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8334,6 +8733,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8354,6 +8754,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8374,6 +8775,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8394,6 +8796,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8414,6 +8817,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8434,6 +8838,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8454,6 +8859,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8474,6 +8880,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8494,6 +8901,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 187,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8523,6 +8931,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8543,6 +8952,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8563,6 +8973,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8583,6 +8994,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8603,6 +9015,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8623,6 +9036,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8643,6 +9057,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8663,6 +9078,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8692,6 +9108,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8712,6 +9129,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8732,6 +9150,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8752,6 +9171,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8781,6 +9201,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8801,6 +9222,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8821,6 +9243,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -8850,6 +9273,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -8870,6 +9294,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -8890,6 +9315,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -8910,6 +9336,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -8930,6 +9357,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -8950,6 +9378,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -8970,6 +9399,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -8990,6 +9420,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9010,6 +9441,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U11",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9039,6 +9471,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9059,6 +9492,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9079,6 +9513,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9099,6 +9534,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9119,6 +9555,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9139,6 +9576,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9159,6 +9597,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9179,6 +9618,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9199,6 +9639,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9219,6 +9660,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 187,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9239,6 +9681,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 176,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9259,6 +9702,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 166,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9279,6 +9723,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 157,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9299,6 +9744,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 149,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9319,6 +9765,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 141,
               "ageGroup": "U11",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9348,6 +9795,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9368,6 +9816,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9388,6 +9837,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9408,6 +9858,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9428,6 +9879,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9448,6 +9900,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9468,6 +9921,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9488,6 +9942,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9508,6 +9963,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 199,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9528,6 +9984,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 187,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9548,6 +10005,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 176,
               "ageGroup": "U15",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9577,6 +10035,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9597,6 +10056,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9617,6 +10077,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9637,6 +10098,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9657,6 +10119,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 260,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9677,6 +10140,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 242,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9697,6 +10161,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 226,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9717,6 +10182,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 212,
               "ageGroup": "U15",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9746,6 +10212,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9766,6 +10233,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9786,6 +10254,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9806,6 +10275,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 280,
               "ageGroup": "U18",
               "gender": "男子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9835,6 +10305,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 360,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9855,6 +10326,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9875,6 +10347,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 303,
               "ageGroup": "U18",
               "gender": "女子组",
+              "rankChange": null,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -9903,6 +10376,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -9923,6 +10397,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -9943,6 +10418,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -9963,6 +10439,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -9983,6 +10460,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10003,6 +10481,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10023,6 +10502,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10043,6 +10523,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10063,6 +10544,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10083,6 +10565,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10103,6 +10586,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10123,6 +10607,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10143,6 +10628,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -10163,6 +10649,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -10183,6 +10670,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -10203,6 +10691,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -10223,6 +10712,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -10243,6 +10733,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -10263,6 +10754,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -10283,6 +10775,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -10303,6 +10796,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -10323,6 +10817,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -10343,6 +10838,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -10363,6 +10859,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -10383,6 +10880,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -10403,6 +10901,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -10423,6 +10922,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -10443,6 +10943,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -10463,6 +10964,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -10483,6 +10985,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -10503,6 +11006,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -10523,6 +11027,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -10543,6 +11048,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -10563,6 +11069,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -10583,6 +11090,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -10603,6 +11111,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -10623,6 +11132,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -10643,6 +11153,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -10663,6 +11174,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -10683,6 +11195,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 360,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -10703,6 +11216,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10723,6 +11237,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10743,6 +11258,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10763,6 +11279,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10783,6 +11300,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10803,6 +11321,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10823,6 +11342,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10843,6 +11363,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10863,6 +11384,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10883,6 +11405,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10903,6 +11426,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10923,6 +11447,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -10943,6 +11468,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -10963,6 +11489,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -10983,6 +11510,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -11003,6 +11531,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -11023,6 +11552,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -11043,6 +11573,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -11063,6 +11594,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -11083,6 +11615,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -11103,6 +11636,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -11123,6 +11657,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -11143,6 +11678,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -11163,6 +11699,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -11183,6 +11720,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -11203,6 +11741,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -11223,6 +11762,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -11243,6 +11783,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -11263,6 +11804,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -11283,6 +11825,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -11303,6 +11846,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -11323,6 +11867,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -11343,6 +11888,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -11363,6 +11909,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -11383,6 +11930,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -11403,6 +11951,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -11423,6 +11972,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -11443,6 +11993,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -11463,6 +12014,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -11483,6 +12035,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -11503,6 +12056,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -11523,6 +12077,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -11543,6 +12098,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -11563,6 +12119,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -11583,6 +12140,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -11603,6 +12161,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -11623,6 +12182,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -11643,6 +12203,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -11663,6 +12224,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -11683,6 +12245,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -11703,6 +12266,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -11723,6 +12287,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -11743,6 +12308,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -11763,6 +12329,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -11783,6 +12350,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -11803,6 +12371,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -11823,6 +12392,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -11843,6 +12413,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -11863,6 +12434,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -11883,6 +12455,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -11903,6 +12476,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -11923,6 +12497,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -11943,6 +12518,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -11963,6 +12539,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -11983,6 +12560,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -12003,6 +12581,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -12023,6 +12602,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -12043,6 +12623,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -12063,6 +12644,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -12083,6 +12665,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -12103,6 +12686,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -12123,6 +12707,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -12143,6 +12728,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -12163,6 +12749,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -12183,6 +12770,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -12203,6 +12791,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -12223,6 +12812,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -12243,6 +12833,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -12263,6 +12854,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -12283,6 +12875,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 303,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -12303,6 +12896,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -12323,6 +12917,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -12343,6 +12938,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -12363,6 +12959,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -12383,6 +12980,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -12403,6 +13001,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -12423,6 +13022,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -12443,6 +13043,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -12463,6 +13064,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -12483,6 +13085,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -12503,6 +13106,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -12523,6 +13127,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -12543,6 +13148,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -12563,6 +13169,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -12583,6 +13190,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -12603,6 +13211,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -12623,6 +13232,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -12643,6 +13253,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -12663,6 +13274,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -12683,6 +13295,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -12703,6 +13316,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -12723,6 +13337,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -12743,6 +13358,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -12763,6 +13379,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -12783,6 +13400,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -12803,6 +13421,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -12823,6 +13442,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -12843,6 +13463,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -12863,6 +13484,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -12883,6 +13505,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -12903,6 +13526,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -12923,6 +13547,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -12943,6 +13568,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -12963,6 +13589,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -12983,6 +13610,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -13003,6 +13631,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -13023,6 +13652,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 280,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -13043,6 +13673,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -13063,6 +13694,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -13083,6 +13715,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -13103,6 +13736,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -13123,6 +13757,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -13143,6 +13778,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -13163,6 +13799,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -13183,6 +13820,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -13203,6 +13841,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -13223,6 +13862,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -13243,6 +13883,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -13263,6 +13904,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -13283,6 +13925,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -13303,6 +13946,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -13323,6 +13967,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -13343,6 +13988,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -13363,6 +14009,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -13383,6 +14030,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -13403,6 +14051,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -13423,6 +14072,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -13443,6 +14093,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -13463,6 +14114,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -13483,6 +14135,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -13503,6 +14156,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -13523,6 +14177,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -13543,6 +14198,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -13563,6 +14219,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -13583,6 +14240,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -13603,6 +14261,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -13623,6 +14282,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -13643,6 +14303,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -13663,6 +14324,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -13683,6 +14345,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -13703,6 +14366,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 260,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -13723,6 +14387,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -13743,6 +14408,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -13763,6 +14429,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -13783,6 +14450,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -13803,6 +14471,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -13823,6 +14492,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -13843,6 +14513,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -13863,6 +14534,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -13883,6 +14555,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -13903,6 +14576,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -13923,6 +14597,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -13943,6 +14618,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -13963,6 +14639,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -13983,6 +14660,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -14003,6 +14681,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -14023,6 +14702,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -14043,6 +14723,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -14063,6 +14744,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -14083,6 +14765,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -14103,6 +14786,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -14123,6 +14807,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -14143,6 +14828,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -14163,6 +14849,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -14183,6 +14870,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -14203,6 +14891,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -14223,6 +14912,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -14243,6 +14933,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -14263,6 +14954,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -14283,6 +14975,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -14303,6 +14996,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -14323,6 +15017,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -14343,6 +15038,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 242,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -14363,6 +15059,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -14383,6 +15080,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -14403,6 +15101,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -14423,6 +15122,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -14443,6 +15143,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -14463,6 +15164,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -14483,6 +15185,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -14503,6 +15206,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -14523,6 +15227,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -14543,6 +15248,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -14563,6 +15269,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -14583,6 +15290,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -14603,6 +15311,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -14623,6 +15332,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -14643,6 +15353,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -14663,6 +15374,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -14683,6 +15395,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -14703,6 +15416,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -14723,6 +15437,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -14743,6 +15458,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -14763,6 +15479,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -14783,6 +15500,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -14803,6 +15521,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -14823,6 +15542,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -14843,6 +15563,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -14863,6 +15584,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -14883,6 +15605,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -14903,6 +15626,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -14923,6 +15647,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -14943,6 +15668,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 226,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -14963,6 +15689,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -14983,6 +15710,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -15003,6 +15731,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -15023,6 +15752,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -15043,6 +15773,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -15063,6 +15794,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -15083,6 +15815,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -15103,6 +15836,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -15123,6 +15857,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -15143,6 +15878,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -15163,6 +15899,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -15183,6 +15920,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -15203,6 +15941,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -15223,6 +15962,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -15243,6 +15983,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -15263,6 +16004,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -15283,6 +16025,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -15303,6 +16046,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -15323,6 +16067,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -15343,6 +16088,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -15363,6 +16109,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -15383,6 +16130,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -15403,6 +16151,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -15423,6 +16172,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -15443,6 +16193,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -15463,6 +16214,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -15483,6 +16235,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 212,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -15503,6 +16256,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -15523,6 +16277,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -15543,6 +16298,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -15563,6 +16319,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -15583,6 +16340,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -15603,6 +16361,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -15623,6 +16382,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -15643,6 +16403,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -15663,6 +16424,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -15683,6 +16445,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -15703,6 +16466,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -15723,6 +16487,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -15743,6 +16508,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -15763,6 +16529,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -15783,6 +16550,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -15803,6 +16571,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -15823,6 +16592,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -15843,6 +16613,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -15863,6 +16634,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -15883,6 +16655,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -15903,6 +16676,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -15923,6 +16697,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -15943,6 +16718,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 199,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -15963,6 +16739,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 187,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -15983,6 +16760,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 187,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
@@ -16003,6 +16781,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 187,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -16023,6 +16802,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 187,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -16043,6 +16823,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 187,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -16063,6 +16844,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 187,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -16083,6 +16865,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 187,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -16103,6 +16886,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 187,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16123,6 +16907,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 187,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16143,6 +16928,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 187,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16163,6 +16949,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 187,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16183,6 +16970,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 187,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16203,6 +16991,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 187,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16223,6 +17012,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 187,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -16243,6 +17033,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 187,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -16263,6 +17054,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 187,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -16283,6 +17075,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 187,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -16303,6 +17096,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 176,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -16323,6 +17117,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 176,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -16343,6 +17138,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 176,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -16363,6 +17159,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 176,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -16383,6 +17180,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 176,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -16403,6 +17201,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 176,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16423,6 +17222,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 176,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16443,6 +17243,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 176,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16463,6 +17264,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 176,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16483,6 +17285,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 176,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16503,6 +17306,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 176,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16523,6 +17327,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 176,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -16543,6 +17348,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 176,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -16563,6 +17369,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 176,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -16583,6 +17390,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 166,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -16603,6 +17411,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 166,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -16623,6 +17432,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 166,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -16643,6 +17453,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 166,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -16663,6 +17474,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 166,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16683,6 +17495,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 166,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16703,6 +17516,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 166,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16723,6 +17537,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 166,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16743,6 +17558,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 166,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16763,6 +17579,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 166,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16783,6 +17600,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 166,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -16803,6 +17621,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 166,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -16823,6 +17642,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 157,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -16843,6 +17663,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 157,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -16863,6 +17684,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 157,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -16883,6 +17705,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 157,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -16903,6 +17726,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 157,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16923,6 +17747,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 157,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16943,6 +17768,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 157,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16963,6 +17789,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 157,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -16983,6 +17810,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 157,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17003,6 +17831,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 157,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17023,6 +17852,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 157,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -17043,6 +17873,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 157,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -17063,6 +17894,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 149,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -17083,6 +17915,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 149,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -17103,6 +17936,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 149,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -17123,6 +17957,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 149,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -17143,6 +17978,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 149,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17163,6 +17999,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 149,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17183,6 +18020,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 149,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17203,6 +18041,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 149,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17223,6 +18062,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 149,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17243,6 +18083,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 149,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17263,6 +18104,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 149,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -17283,6 +18125,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 149,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -17303,6 +18146,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 142,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -17323,6 +18167,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 142,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -17343,6 +18188,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 141,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（成都站）",
@@ -17363,6 +18209,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 141,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17383,6 +18230,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 141,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17403,6 +18251,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 141,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17423,6 +18272,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 141,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17443,6 +18293,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 141,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17463,6 +18314,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 141,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17483,6 +18335,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 141,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -17503,6 +18356,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 141,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（成都站）",
@@ -17523,6 +18377,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 135,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -17543,6 +18398,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 134,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17563,6 +18419,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 134,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17583,6 +18440,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 134,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17603,6 +18461,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 134,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17623,6 +18482,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 134,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17643,6 +18503,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 134,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17663,6 +18524,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 129,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪坡面障碍技巧U系列比赛（成都站）",
@@ -17683,6 +18545,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 127,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17703,6 +18566,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 127,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17723,6 +18587,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 127,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17743,6 +18608,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 127,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17763,6 +18629,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 127,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17783,6 +18650,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 127,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17803,6 +18671,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 121,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17823,6 +18692,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 121,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17843,6 +18713,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 121,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17863,6 +18734,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 121,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17883,6 +18755,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 121,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17903,6 +18776,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 121,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17923,6 +18797,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 115,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17943,6 +18818,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 115,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17963,6 +18839,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 115,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -17983,6 +18860,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 115,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18003,6 +18881,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 115,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18023,6 +18902,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 115,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18043,6 +18923,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 110,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18063,6 +18944,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 110,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18083,6 +18965,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 110,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18103,6 +18986,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 110,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18123,6 +19007,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 110,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18143,6 +19028,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 110,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18163,6 +19049,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 105,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18183,6 +19070,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 105,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18203,6 +19091,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 105,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18223,6 +19112,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 105,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18243,6 +19133,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 105,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18263,6 +19154,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 105,
       "ageGroup": "U18",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18283,6 +19175,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 100,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18303,6 +19196,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 100,
       "ageGroup": "U11",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18323,6 +19217,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 100,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18343,6 +19238,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 100,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18363,6 +19259,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 100,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18383,6 +19280,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 95,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18403,6 +19301,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 95,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18423,6 +19322,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 95,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18443,6 +19343,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 95,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18463,6 +19364,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 91,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18483,6 +19385,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 91,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18503,6 +19406,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 91,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18523,6 +19427,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 91,
       "ageGroup": "U18",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18543,6 +19448,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 87,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18563,6 +19469,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 87,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18583,6 +19490,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 87,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18603,6 +19511,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 83,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18623,6 +19532,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 83,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18643,6 +19553,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 83,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18663,6 +19574,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 79,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18683,6 +19595,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 79,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18703,6 +19616,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 79,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18723,6 +19637,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 75,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18743,6 +19658,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 75,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18763,6 +19679,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 75,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18783,6 +19700,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 71,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18803,6 +19721,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 71,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18823,6 +19742,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 71,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18843,6 +19763,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 67,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18863,6 +19784,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 67,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18883,6 +19805,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 67,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18903,6 +19826,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 63,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18923,6 +19847,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 63,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18943,6 +19868,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 63,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18963,6 +19889,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 59,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -18983,6 +19910,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 59,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -19003,6 +19931,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 59,
       "ageGroup": "U15",
       "gender": "女子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -19023,6 +19952,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 55,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -19043,6 +19973,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 55,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -19063,6 +19994,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 51,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -19083,6 +20015,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 51,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -19103,6 +20036,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 47,
       "ageGroup": "U11",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -19123,6 +20057,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 47,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -19143,6 +20078,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 43,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -19163,6 +20099,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 39,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -19183,6 +20120,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 35,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -19203,6 +20141,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 31,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -19223,6 +20162,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 27,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -19243,6 +20183,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 24,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -19263,6 +20204,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 21,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -19283,6 +20225,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 18,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -19303,6 +20246,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 15,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -19323,6 +20267,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 12,
       "ageGroup": "U15",
       "gender": "男子组",
+      "rankChange": null,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（雪如意站）",
@@ -19379,5 +20324,5 @@ export const totalRankingsData: TotalRankingsData = {
     "competitionCount": 6,
     "totalResults": 472
   },
-  "generatedAt": "2026-01-08T14:49:07.693Z"
+  "generatedAt": "2026-01-10T13:29:22.295Z"
 };
