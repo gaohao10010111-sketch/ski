@@ -573,7 +573,7 @@ export default function PointsRankingsPage() {
                 </div>
                 <div>
                   <h1 className="text-xl font-bold text-gray-900">积分排行榜</h1>
-                  <p className="text-xs text-gray-500">2024-2025赛季 · 全国青少年U系列</p>
+                  <p className="text-xs text-gray-500">2025-2026赛季 · 全国青少年U系列</p>
                 </div>
               </div>
             </div>
@@ -606,6 +606,46 @@ export default function PointsRankingsPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        {/* 统计卡片 - 四色标签 */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-xl p-4">
+            <div className="flex items-center">
+              <Users className="w-8 h-8 text-blue-600 mr-3" />
+              <div>
+                <div className="text-2xl font-bold text-blue-700">{stats.uniqueAthletes}</div>
+                <div className="text-sm text-blue-600">参赛运动员</div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-xl p-4">
+            <div className="flex items-center">
+              <Calendar className="w-8 h-8 text-green-600 mr-3" />
+              <div>
+                <div className="text-2xl font-bold text-green-700">{stats.totalCompetitions}</div>
+                <div className="text-sm text-green-600">已完赛事</div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 rounded-xl p-4">
+            <div className="flex items-center">
+              <Target className="w-8 h-8 text-purple-600 mr-3" />
+              <div>
+                <div className="text-2xl font-bold text-purple-700">{totalRankingsData.sportRankings.reduce((sum, sr) => sum + (sr.subEventRankings?.length || 0), 0)}</div>
+                <div className="text-sm text-purple-600">比赛小项</div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-200 rounded-xl p-4">
+            <div className="flex items-center">
+              <TrendingUp className="w-8 h-8 text-orange-600 mr-3" />
+              <div>
+                <div className="text-2xl font-bold text-orange-700">{stats.totalAthletes}</div>
+                <div className="text-sm text-orange-600">总参赛人次</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* ========== 总积分排名视图 ========== */}
         {viewMode === 'total' && (
           <>
