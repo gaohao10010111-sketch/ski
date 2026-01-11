@@ -555,87 +555,50 @@ export default function PointsRankingsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* 顶部标题区域 - 简洁白底风格 */}
-      <div className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          {/* 返回按钮 */}
-          <Link
-            href="/"
-            className="inline-flex items-center text-gray-500 hover:text-ski-blue mb-4 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            返回首页
-          </Link>
+      {/* 顶部标题区域 - 精简 */}
+      <div className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-between">
+            {/* 左侧：返回+标题 */}
+            <div className="flex items-center gap-4">
+              <Link
+                href="/"
+                className="inline-flex items-center text-gray-500 hover:text-ski-blue transition-colors"
+              >
+                <ArrowLeft className="w-5 h-5" />
+              </Link>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-ski-blue rounded-lg flex items-center justify-center">
+                  <Trophy className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h1 className="text-xl font-bold text-gray-900">积分排行榜</h1>
+                  <p className="text-xs text-gray-500">2024-2025赛季 · 全国青少年U系列</p>
+                </div>
+              </div>
+            </div>
 
-          {/* 主标题 */}
-          <div className="text-center mb-6">
-            <div className="inline-flex items-center justify-center gap-3 mb-3">
-              <div className="w-12 h-12 bg-ski-blue rounded-xl flex items-center justify-center shadow-sm">
-                <Trophy className="w-6 h-6 text-white" />
-              </div>
-            </div>
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
-              积分排行榜
-            </h1>
-            <p className="text-gray-500 text-sm md:text-base">
-              2024-2025赛季 · 全国青少年U系列赛事
-            </p>
-          </div>
-
-          {/* 统计卡片 */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-            <div className="bg-gray-50 rounded-xl p-4 text-center hover:bg-gray-100 transition-colors border border-gray-100">
-              <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Users className="w-5 h-5 text-blue-600" />
-              </div>
-              <div className="text-xl font-bold text-gray-900">{stats.uniqueAthletes}</div>
-              <div className="text-gray-500 text-sm">参赛运动员</div>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-4 text-center hover:bg-gray-100 transition-colors border border-gray-100">
-              <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Calendar className="w-5 h-5 text-green-600" />
-              </div>
-              <div className="text-xl font-bold text-gray-900">{stats.totalCompetitions}</div>
-              <div className="text-gray-500 text-sm">已完赛事</div>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-4 text-center hover:bg-gray-100 transition-colors border border-gray-100">
-              <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <Target className="w-5 h-5 text-purple-600" />
-              </div>
-              <div className="text-xl font-bold text-gray-900">{filteredSportRankings.reduce((sum, sr) => sum + (sr.subEventRankings?.length || 0), 0)}</div>
-              <div className="text-gray-500 text-sm">比赛小项</div>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-4 text-center hover:bg-gray-100 transition-colors border border-gray-100">
-              <div className="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-2">
-                <TrendingUp className="w-5 h-5 text-orange-600" />
-              </div>
-              <div className="text-xl font-bold text-gray-900">{stats.totalAthletes}</div>
-              <div className="text-gray-500 text-sm">总参赛人次</div>
-            </div>
-          </div>
-
-          {/* 视图切换 */}
-          <div className="flex justify-center">
-            <div className="inline-flex rounded-xl bg-gray-100 p-1">
+            {/* 右侧：视图切换 */}
+            <div className="inline-flex rounded-lg bg-gray-100 p-1">
               <button
                 onClick={() => setViewMode('total')}
-                className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
                   viewMode === 'total'
                     ? 'bg-white text-ski-blue shadow-sm'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
-                🏆 总积分排名
+                总积分排名
               </button>
               <button
                 onClick={() => setViewMode('competition')}
-                className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all ${
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
                   viewMode === 'competition'
                     ? 'bg-white text-ski-blue shadow-sm'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
-                🎿 按比赛查看
+                按比赛查看
               </button>
             </div>
           </div>
@@ -643,230 +606,143 @@ export default function PointsRankingsPage() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        {/* 说明提示 */}
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 rounded-xl p-4 mb-6 flex items-center gap-3">
-          <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-            <Sparkles className="w-4 h-4 text-blue-600" />
-          </div>
-          <div className="text-sm text-gray-700">
-            {viewMode === 'total'
-              ? <><span className="font-medium text-blue-700">积分规则：</span>总积分 = 同一运动员在不同比赛中获得的积分累加，点击小项卡片查看详细排名</>
-              : <><span className="font-medium text-blue-700">积分规则：</span>积分排名需在相同比赛、相同小项、相同年龄组、相同性别内比较</>}
-          </div>
-        </div>
-
-        {/* 总积分视图的四大项目滑动Tab */}
-        {viewMode === 'total' && (
-          <div className="flex justify-center mb-6">
-            <div className="inline-flex bg-white rounded-lg shadow-md p-1 gap-1 flex-wrap">
-              {sportTypeConfig.map((config) => {
-                const Icon = config.icon
-                const isSelected = selectedTotalSportType === config.value
-                return (
-                  <button
-                    key={config.value}
-                    onClick={() => { setSelectedTotalSportType(config.value); resetPage(); expandFirstSubEvent(config.value); }}
-                    className={`flex items-center gap-2 px-4 md:px-6 py-2.5 rounded-md text-sm md:text-base font-medium transition-all duration-300 whitespace-nowrap ${
-                      isSelected
-                        ? 'bg-ski-blue text-white shadow-md transform scale-105'
-                        : 'text-gray-600 hover:text-ski-blue hover:bg-gray-50'
-                    }`}
-                  >
-                    <Icon className="h-4 w-4" />
-                    {config.label}
-                  </button>
-                )
-              })}
-            </div>
-          </div>
-        )}
-
-        {/* 筛选器 */}
-        <div className="bg-white rounded-lg shadow p-4 mb-6">
-          <div className={`grid grid-cols-1 gap-4 ${viewMode === 'total' ? 'md:grid-cols-4' : 'md:grid-cols-6'}`}>
-            {/* 搜索框 */}
-            <div className="relative md:col-span-2">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-              <input
-                type="text"
-                placeholder="搜索运动员或单位..."
-                value={searchTerm}
-                onChange={(e) => { setSearchTerm(e.target.value); resetPage(); }}
-                className="pl-10 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
-              />
-            </div>
-
-            {/* 按比赛视图的额外筛选 */}
-            {viewMode === 'competition' && (
-              <>
-                {/* 项目类型 */}
-                <div>
-                  <select
-                    value={selectedSportType}
-                    onChange={(e) => setSelectedSportType(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-                  >
-                    <option value="all">全部项目</option>
-                    {filterOptions.sportTypes.map(st => (
-                      <option key={st} value={st}>{sportTypeLabels[st] || st}</option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* 小项 */}
-                <div>
-                  <select
-                    value={selectedDiscipline}
-                    onChange={(e) => setSelectedDiscipline(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
-                  >
-                    <option value="all">全部小项</option>
-                    {filterOptions.disciplines.map(d => (
-                      <option key={d} value={d}>{d}</option>
-                    ))}
-                  </select>
-                </div>
-              </>
-            )}
-
-            {/* 年龄组 */}
-            <div>
-              <select
-                value={selectedAgeGroup}
-                onChange={(e) => { setSelectedAgeGroup(e.target.value); resetPage(); }}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
-              >
-                <option value="all">全部年龄组</option>
-                {(viewMode === 'total' ? totalRankingsData.filters.ageGroups : filterOptions.ageGroups).map(ag => (
-                  <option key={ag} value={ag}>{ag}</option>
-                ))}
-              </select>
-            </div>
-
-            {/* 性别 */}
-            <div>
-              <select
-                value={selectedGender}
-                onChange={(e) => { setSelectedGender(e.target.value); resetPage(); }}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
-              >
-                <option value="all">男女不限</option>
-                {(viewMode === 'total' ? totalRankingsData.filters.genders : filterOptions.genders).map(g => (
-                  <option key={g} value={g}>{g}</option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          {/* 筛选结果和导出 */}
-          <div className="mt-4 flex items-center justify-between">
-            <span className="text-sm text-gray-600">
-              {viewMode === 'total' ? (
-                <>共 <span className="font-bold text-yellow-600">{filteredSportRankings.length}</span> 个项目，
-                <span className="font-bold text-yellow-600">{filteredSportRankings.reduce((sum, sr) => sum + (sr.subEventRankings?.length || 0), 0)}</span> 个小子项，
-                <span className="font-bold text-yellow-600">{filteredTotalRankings.length}</span> 名运动员</>
-              ) : (
-                <>共 <span className="font-bold text-purple-600">{stats.totalEvents}</span> 个小项，
-                <span className="font-bold text-purple-600">{stats.totalAthletes}</span> 人次参赛</>
-              )}
-            </span>
-            <button
-              onClick={handleExport}
-              disabled={isExporting || (viewMode === 'total' ? filteredTotalRankings.length === 0 : filteredGroups.length === 0)}
-              className="bg-yellow-500 text-white py-2 px-4 rounded-md hover:bg-yellow-600 transition-colors disabled:opacity-50 flex items-center gap-2"
-            >
-              <Download className="h-4 w-4" />
-              {isExporting ? '导出中...' : '导出CSV'}
-            </button>
-          </div>
-        </div>
-
-        {/* 总积分排名视图 - 紧凑模式，点击展开 */}
+        {/* ========== 总积分排名视图 ========== */}
         {viewMode === 'total' && (
           <>
+            {/* 第一行：四大项目Tab */}
+            <div className="flex justify-center mb-4">
+              <div className="inline-flex bg-white rounded-lg shadow p-1 gap-1 flex-wrap">
+                {sportTypeConfig.map((config) => {
+                  const Icon = config.icon
+                  const isSelected = selectedTotalSportType === config.value
+                  return (
+                    <button
+                      key={config.value}
+                      onClick={() => { setSelectedTotalSportType(config.value); resetPage(); expandFirstSubEvent(config.value); }}
+                      className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all whitespace-nowrap ${
+                        isSelected
+                          ? 'bg-ski-blue text-white shadow'
+                          : 'text-gray-600 hover:text-ski-blue hover:bg-gray-50'
+                      }`}
+                    >
+                      <Icon className="h-4 w-4" />
+                      {config.label}
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+
+            {/* 第二行：筛选器（一行排列） */}
+            <div className="bg-white rounded-lg shadow p-3 mb-4">
+              <div className="flex flex-wrap items-center gap-3">
+                {/* 搜索框 */}
+                <div className="relative flex-1 min-w-[180px]">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="搜索运动员或单位..."
+                    value={searchTerm}
+                    onChange={(e) => { setSearchTerm(e.target.value); resetPage(); }}
+                    className="pl-9 w-full px-3 py-2 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue focus:border-transparent"
+                  />
+                </div>
+
+                {/* 年龄组 */}
+                <select
+                  value={selectedAgeGroup}
+                  onChange={(e) => { setSelectedAgeGroup(e.target.value); resetPage(); }}
+                  className="px-3 py-2 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue"
+                >
+                  <option value="all">全部年龄组</option>
+                  {totalRankingsData.filters.ageGroups.map(ag => (
+                    <option key={ag} value={ag}>{ag}</option>
+                  ))}
+                </select>
+
+                {/* 性别 */}
+                <select
+                  value={selectedGender}
+                  onChange={(e) => { setSelectedGender(e.target.value); resetPage(); }}
+                  className="px-3 py-2 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue"
+                >
+                  <option value="all">男女不限</option>
+                  {totalRankingsData.filters.genders.map(g => (
+                    <option key={g} value={g}>{g}</option>
+                  ))}
+                </select>
+
+                {/* 导出按钮 */}
+                <button
+                  onClick={handleExport}
+                  disabled={isExporting || filteredTotalRankings.length === 0}
+                  className="bg-ski-blue text-white py-2 px-4 text-sm rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 flex items-center gap-2"
+                >
+                  <Download className="h-4 w-4" />
+                  导出
+                </button>
+              </div>
+            </div>
+
+            {/* 第三行：小子项选择（横向滚动） */}
+            {filteredSportRankings.length > 0 && filteredSportRankings[0].subEventRankings && (
+              <div className="bg-white rounded-lg shadow p-4 mb-4">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-sm font-medium text-gray-700">
+                    选择小项查看排名 ({filteredSportRankings[0].subEventRankings.length} 个)
+                  </span>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={expandAll}
+                      className="text-xs text-ski-blue hover:underline"
+                    >
+                      全部展开
+                    </button>
+                    <span className="text-gray-300">|</span>
+                    <button
+                      onClick={collapseAll}
+                      className="text-xs text-ski-blue hover:underline"
+                    >
+                      全部收起
+                    </button>
+                  </div>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {filteredSportRankings[0].subEventRankings.map((subEvent) => {
+                    const subEventKey = `${filteredSportRankings[0].sportType}-${subEvent.subEventName}`
+                    const isExpanded = expandedSubEvents.has(subEventKey)
+                    return (
+                      <button
+                        key={subEventKey}
+                        onClick={() => toggleSubEvent(subEventKey)}
+                        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
+                          isExpanded
+                            ? 'bg-ski-blue text-white'
+                            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                        }`}
+                      >
+                        {subEvent.subEventName}
+                        <span className={`ml-1.5 text-xs ${isExpanded ? 'text-white/70' : 'text-gray-400'}`}>
+                          ({subEvent.total})
+                        </span>
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
+
+            {/* 排名数据展示区域 */}
             {filteredSportRankings.length === 0 ? (
-              <div className="bg-white rounded-lg shadow-md p-12 text-center">
+              <div className="bg-white rounded-lg shadow p-12 text-center">
                 <Trophy className="h-12 w-12 text-gray-300 mx-auto mb-4" />
                 <p className="text-lg font-medium text-gray-500">暂无符合条件的排名数据</p>
                 <p className="text-sm text-gray-400 mt-1">请调整筛选条件后重试</p>
               </div>
             ) : (
-              <div className="space-y-6">
-                {/* 全部展开/收起按钮 */}
-                <div className="flex justify-end gap-2">
-                  <button
-                    onClick={expandAll}
-                    className="text-sm text-ski-blue hover:text-primary-700 flex items-center gap-1"
-                  >
-                    <ChevronDown className="h-4 w-4" />
-                    全部展开
-                  </button>
-                  <span className="text-gray-300">|</span>
-                  <button
-                    onClick={collapseAll}
-                    className="text-sm text-ski-blue hover:text-primary-700 flex items-center gap-1"
-                  >
-                    <ChevronUp className="h-4 w-4" />
-                    全部收起
-                  </button>
-                </div>
-
+              <div className="space-y-4">
                 {filteredSportRankings.map((sportRanking) => (
-                  <div key={sportRanking.sportType} className="bg-white rounded-lg shadow overflow-hidden">
-                    {/* 大项标题 */}
-                    <div className="bg-gradient-to-r from-ski-navy to-blue-800 px-4 py-4 text-white">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3">
-                          <Trophy className="h-6 w-6" />
-                          <h2 className="text-lg font-bold">{sportRanking.sportName}</h2>
-                        </div>
-                        <div className="flex items-center gap-4 text-sm">
-                          <span className="bg-white/20 px-3 py-1 rounded-full">
-                            {sportRanking.subEventRankings?.length || 0} 个小子项
-                          </span>
-                          <span className="bg-white/20 px-3 py-1 rounded-full flex items-center gap-1">
-                            <Users className="h-4 w-4" />
-                            {sportRanking.total} 人
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* 小子项网格 - 紧凑显示 */}
-                    <div className="p-4">
-                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                        {(sportRanking.subEventRankings || []).map((subEvent) => {
-                          const subEventKey = `${sportRanking.sportType}-${subEvent.subEventName}`
-                          const isExpanded = expandedSubEvents.has(subEventKey)
-                          const top3 = subEvent.rankings.slice(0, 3)
-
-                          return (
-                            <button
-                              key={subEventKey}
-                              onClick={() => toggleSubEvent(subEventKey)}
-                              className={`p-3 rounded-lg text-left transition-all ${
-                                isExpanded
-                                  ? 'bg-ski-blue text-white shadow-md ring-2 ring-ski-blue ring-offset-2'
-                                  : 'bg-gray-50 hover:bg-gray-100 text-gray-700 hover:shadow'
-                              }`}
-                            >
-                              <div className="flex items-center justify-between">
-                                <div className="font-medium text-sm truncate flex-1">{subEvent.subEventName}</div>
-                                {isExpanded ? (
-                                  <ChevronUp className="h-4 w-4 flex-shrink-0" />
-                                ) : (
-                                  <ChevronDown className="h-4 w-4 flex-shrink-0" />
-                                )}
-                              </div>
-                              <div className={`text-xs mt-1 ${isExpanded ? 'text-white/80' : 'text-gray-500'}`}>
-                                {subEvent.total}人 · 冠军: {top3[0]?.athleteName || '-'}
-                              </div>
-                            </button>
-                          )
-                        })}
-                      </div>
-                    </div>
-
+                  <div key={sportRanking.sportType}>
                     {/* 展开的小子项详情 */}
                     {(sportRanking.subEventRankings || []).map((subEvent) => {
                       const subEventKey = `${sportRanking.sportType}-${subEvent.subEventName}`
@@ -877,65 +753,63 @@ export default function PointsRankingsPage() {
                       if (!isExpanded) return null
 
                       return (
-                        <div key={`detail-${subEventKey}`} className="border-t border-gray-200">
+                        <div key={`detail-${subEventKey}`} className="bg-white rounded-lg shadow overflow-hidden mb-4">
                           {/* 小子项标题 */}
-                          <div className="bg-gradient-to-r from-ski-blue to-blue-600 px-4 py-3 text-white flex items-center justify-between">
+                          <div className="bg-ski-blue px-4 py-3 text-white flex items-center justify-between">
                             <div className="flex items-center gap-3">
                               <Award className="h-5 w-5" />
                               <h3 className="text-base font-medium">{subEvent.subEventName}</h3>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
-                                {subEvent.total} 名运动员
+                              <span className="text-sm bg-white/20 px-2 py-0.5 rounded-full">
+                                {subEvent.total} 人
                               </span>
-                              <button
-                                onClick={(e) => { e.stopPropagation(); toggleSubEvent(subEventKey); }}
-                                className="p-1 hover:bg-white/20 rounded"
-                              >
-                                <ChevronUp className="h-4 w-4" />
-                              </button>
                             </div>
+                            <button
+                              onClick={(e) => { e.stopPropagation(); toggleSubEvent(subEventKey); }}
+                              className="p-1 hover:bg-white/20 rounded flex items-center gap-1 text-sm"
+                            >
+                              收起 <ChevronUp className="h-4 w-4" />
+                            </button>
                           </div>
 
-                          {/* 领奖台展示 - 前三名（紧凑版） */}
+                          {/* 领奖台展示 - 前三名 */}
                           {hasTop3 && (
-                            <div className="bg-gradient-to-br from-ski-navy to-blue-900 p-6 text-white">
-                              <div className="flex justify-center items-end gap-3">
-                                {/* 银牌 */}
+                            <div className="bg-gradient-to-br from-slate-800 to-slate-900 p-6">
+                              <div className="flex justify-center items-end gap-4">
+                                {/* 银牌 - 第2名 */}
                                 <div className="text-center">
-                                  <div className="w-14 h-14 mx-auto mb-2 bg-gray-300 rounded-full flex items-center justify-center shadow">
+                                  <div className="w-14 h-14 mx-auto mb-2 bg-gradient-to-br from-gray-200 to-gray-400 rounded-full flex items-center justify-center shadow-lg">
                                     <Medal className="w-7 h-7 text-gray-600" />
                                   </div>
-                                  <div className="bg-gray-300 rounded-t-lg pt-2 pb-1 px-2 w-20">
-                                    <div className="text-gray-800 font-bold text-xs truncate">{top3[1].athleteName}</div>
+                                  <div className="bg-gradient-to-b from-gray-200 to-gray-300 rounded-t-lg pt-2 pb-1 px-3 w-24">
+                                    <div className="text-gray-800 font-bold text-sm truncate">{top3[1].athleteName}</div>
                                     <div className="text-gray-600 text-xs truncate">{top3[1].team}</div>
-                                    <div className="text-gray-700 text-xs">{top3[1].totalPoints}分</div>
+                                    <div className="text-gray-700 font-medium text-sm">{top3[1].totalPoints}分</div>
                                   </div>
-                                  <div className="bg-gray-400 h-10 w-20 flex items-center justify-center text-lg font-bold text-gray-700">2</div>
+                                  <div className="bg-gray-400 h-12 w-24 flex items-center justify-center text-2xl font-bold text-gray-700 rounded-b-sm">2</div>
                                 </div>
-                                {/* 金牌 */}
-                                <div className="text-center -mt-3">
-                                  <div className="w-16 h-16 mx-auto mb-2 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
-                                    <Trophy className="w-8 h-8 text-yellow-800" />
+                                {/* 金牌 - 第1名 */}
+                                <div className="text-center -mt-4">
+                                  <div className="w-16 h-16 mx-auto mb-2 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full flex items-center justify-center shadow-lg ring-4 ring-yellow-300/50">
+                                    <Trophy className="w-8 h-8 text-yellow-700" />
                                   </div>
-                                  <div className="bg-yellow-400 rounded-t-lg pt-2 pb-1 px-2 w-24">
+                                  <div className="bg-gradient-to-b from-yellow-300 to-yellow-400 rounded-t-lg pt-2 pb-1 px-3 w-28">
                                     <div className="text-yellow-900 font-bold text-sm truncate">{top3[0].athleteName}</div>
                                     <div className="text-yellow-800 text-xs truncate">{top3[0].team}</div>
-                                    <div className="text-yellow-900 text-xs">{top3[0].totalPoints}分</div>
+                                    <div className="text-yellow-900 font-medium text-sm">{top3[0].totalPoints}分</div>
                                   </div>
-                                  <div className="bg-yellow-500 h-16 w-24 flex items-center justify-center text-xl font-bold text-yellow-900">1</div>
+                                  <div className="bg-yellow-500 h-20 w-28 flex items-center justify-center text-3xl font-bold text-yellow-900 rounded-b-sm">1</div>
                                 </div>
-                                {/* 铜牌 */}
+                                {/* 铜牌 - 第3名 */}
                                 <div className="text-center">
-                                  <div className="w-14 h-14 mx-auto mb-2 bg-orange-400 rounded-full flex items-center justify-center shadow">
-                                    <Medal className="w-7 h-7 text-orange-800" />
+                                  <div className="w-14 h-14 mx-auto mb-2 bg-gradient-to-br from-orange-300 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                                    <Medal className="w-7 h-7 text-orange-700" />
                                   </div>
-                                  <div className="bg-orange-400 rounded-t-lg pt-2 pb-1 px-2 w-20">
-                                    <div className="text-orange-900 font-bold text-xs truncate">{top3[2].athleteName}</div>
+                                  <div className="bg-gradient-to-b from-orange-300 to-orange-400 rounded-t-lg pt-2 pb-1 px-3 w-24">
+                                    <div className="text-orange-900 font-bold text-sm truncate">{top3[2].athleteName}</div>
                                     <div className="text-orange-800 text-xs truncate">{top3[2].team}</div>
-                                    <div className="text-orange-900 text-xs">{top3[2].totalPoints}分</div>
+                                    <div className="text-orange-900 font-medium text-sm">{top3[2].totalPoints}分</div>
                                   </div>
-                                  <div className="bg-orange-500 h-8 w-20 flex items-center justify-center text-lg font-bold text-orange-900">3</div>
+                                  <div className="bg-orange-500 h-8 w-24 flex items-center justify-center text-2xl font-bold text-orange-900 rounded-b-sm">3</div>
                                 </div>
                               </div>
                             </div>
