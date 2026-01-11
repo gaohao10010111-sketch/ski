@@ -770,6 +770,19 @@ export default function PointsRankingsPage() {
               </div>
             )}
 
+            {/* 积分排行榜标题 */}
+            {filteredSportRankings.length > 0 && (
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                  <Trophy className="h-5 w-5 text-yellow-500" />
+                  积分排行榜
+                </h2>
+                <span className="text-sm text-gray-500">
+                  已选择 {expandedSubEvents.size} 个小项
+                </span>
+              </div>
+            )}
+
             {/* 排名数据展示区域 */}
             {filteredSportRankings.length === 0 ? (
               <div className="bg-white rounded-lg shadow p-12 text-center">
