@@ -724,54 +724,6 @@ export default function PointsRankingsPage() {
               </div>
             </div>
 
-            {/* 第三行：全部小项选择（卡片式布局） */}
-            {filteredSportRankings.length > 0 && filteredSportRankings[0].subEventRankings && (
-              <div className="bg-white rounded-lg shadow p-4 mb-4">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-base font-medium text-gray-900">全部小项</h3>
-                  <div className="flex gap-2">
-                    <button
-                      onClick={expandAll}
-                      className="text-xs text-ski-blue hover:underline"
-                    >
-                      全部展开
-                    </button>
-                    <span className="text-gray-300">|</span>
-                    <button
-                      onClick={collapseAll}
-                      className="text-xs text-ski-blue hover:underline"
-                    >
-                      全部收起
-                    </button>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-                  {filteredSportRankings[0].subEventRankings.map((subEvent) => {
-                    const subEventKey = `${filteredSportRankings[0].sportType}-${subEvent.subEventName}`
-                    const isExpanded = expandedSubEvents.has(subEventKey)
-                    return (
-                      <button
-                        key={subEventKey}
-                        onClick={() => toggleSubEvent(subEventKey)}
-                        className={`p-3 rounded-lg text-left transition-all border ${
-                          isExpanded
-                            ? 'bg-ski-blue text-white border-ski-blue shadow-md'
-                            : 'bg-gray-50 hover:bg-gray-100 text-gray-700 border-gray-200 hover:border-gray-300'
-                        }`}
-                      >
-                        <div className="font-medium text-sm truncate">
-                          {subEvent.discipline}
-                        </div>
-                        <div className={`text-xs mt-1 ${isExpanded ? 'text-white/80' : 'text-gray-500'}`}>
-                          {subEvent.ageGroup} · {subEvent.gender} · {subEvent.total}人
-                        </div>
-                      </button>
-                    )
-                  })}
-                </div>
-              </div>
-            )}
-
             {/* 排名数据展示区域 */}
             {filteredSportRankings.length === 0 ? (
               <div className="bg-white rounded-lg shadow p-12 text-center">
@@ -945,6 +897,54 @@ export default function PointsRankingsPage() {
                     })}
                   </div>
                 ))}
+              </div>
+            )}
+
+            {/* 全部小项选择（卡片式布局）- 放在排名数据下方 */}
+            {filteredSportRankings.length > 0 && filteredSportRankings[0].subEventRankings && (
+              <div className="bg-white rounded-lg shadow p-4 mt-6">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-base font-medium text-gray-900">全部小项</h3>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={expandAll}
+                      className="text-xs text-ski-blue hover:underline"
+                    >
+                      全部展开
+                    </button>
+                    <span className="text-gray-300">|</span>
+                    <button
+                      onClick={collapseAll}
+                      className="text-xs text-ski-blue hover:underline"
+                    >
+                      全部收起
+                    </button>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+                  {filteredSportRankings[0].subEventRankings.map((subEvent) => {
+                    const subEventKey = `${filteredSportRankings[0].sportType}-${subEvent.subEventName}`
+                    const isExpanded = expandedSubEvents.has(subEventKey)
+                    return (
+                      <button
+                        key={subEventKey}
+                        onClick={() => toggleSubEvent(subEventKey)}
+                        className={`p-3 rounded-lg text-left transition-all border ${
+                          isExpanded
+                            ? 'bg-ski-blue text-white border-ski-blue shadow-md'
+                            : 'bg-gray-50 hover:bg-gray-100 text-gray-700 border-gray-200 hover:border-gray-300'
+                        }`}
+                      >
+                        <div className="font-medium text-sm truncate">
+                          {subEvent.discipline}
+                        </div>
+                        <div className={`text-xs mt-1 ${isExpanded ? 'text-white/80' : 'text-gray-500'}`}>
+                          {subEvent.ageGroup} · {subEvent.gender} · {subEvent.total}人
+                        </div>
+                      </button>
+                    )
+                  })}
+                </div>
               </div>
             )}
           </>
