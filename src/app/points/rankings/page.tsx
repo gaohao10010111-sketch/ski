@@ -19,7 +19,6 @@ const sportTypeLabels: Record<string, string> = {
 
 // 四大项目配置（用于总积分视图的滑动Tab）
 const sportTypeConfig = [
-  { value: 'all', label: '全部项目', icon: Trophy },
   { value: 'alpine', label: '高山滑雪', icon: Mountain },
   { value: 'snowboard-slopestyle-bigair', label: '单板坡障/大跳台', icon: Sparkles },
   { value: 'snowboard-parallel', label: '单板平行项目', icon: ArrowLeftRight },
@@ -218,7 +217,7 @@ export default function PointsRankingsPage() {
   const [viewMode, setViewMode] = useState<'competition' | 'total'>('total')
 
   const [selectedSportType, setSelectedSportType] = useState('all')
-  const [selectedTotalSportType, setSelectedTotalSportType] = useState('all') // 总积分视图的项目筛选
+  const [selectedTotalSportType, setSelectedTotalSportType] = useState('alpine') // 总积分视图的项目筛选，默认高山滑雪
   const [selectedDiscipline, setSelectedDiscipline] = useState('all')
   const [selectedAgeGroup, setSelectedAgeGroup] = useState('all')
   const [selectedGender, setSelectedGender] = useState('all')
@@ -332,12 +331,8 @@ export default function PointsRankingsPage() {
 
   // 按项目和小子项分组的总积分排名筛选
   const filteredSportRankings = useMemo(() => {
-    // 获取要显示的项目列表
-    let sportRankings = totalRankingsData.sportRankings
-
-    if (selectedTotalSportType !== 'all') {
-      sportRankings = sportRankings.filter(sr => sr.sportType === selectedTotalSportType)
-    }
+    // 获取要显示的项目列表（按选中的项目筛选）
+    const sportRankings = totalRankingsData.sportRankings.filter(sr => sr.sportType === selectedTotalSportType)
 
     // 对每个项目的每个小子项应用年龄组、性别、搜索筛选
     return sportRankings.map(sr => {
