@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
-import { Trophy, Medal, Award, Crown, Download, Search, ChevronLeft, ChevronRight, ArrowLeft, ChevronDown, ChevronUp, Users, Sparkles, Target, TrendingUp, Calendar, ArrowUpRight, ArrowDownRight, Minus } from 'lucide-react'
+import { Trophy, Medal, Award, Crown, Download, Search, ChevronLeft, ChevronRight, ArrowLeft, ChevronDown, ChevronUp, Users, Sparkles, Target, TrendingUp, Calendar, ArrowUpRight, ArrowDownRight, Minus, Mountain, ArrowLeftRight, Wind } from 'lucide-react'
 import { latestResults, type AthleteResult } from '@/data/latestResults'
 import { useToast } from '@/components/Toast'
 import { totalRankingsData, type TotalRankingItem } from '@/data/totalRankings'
@@ -16,6 +16,15 @@ const sportTypeLabels: Record<string, string> = {
   'freestyle-slopestyle': '自由式坡障/大跳台',
   'freestyle-bigair': '自由式大跳台',
 }
+
+// 四大项目配置（用于总积分视图的滑动Tab）
+const sportTypeConfig = [
+  { value: 'all', label: '全部项目', icon: Trophy },
+  { value: 'alpine', label: '高山滑雪', icon: Mountain },
+  { value: 'snowboard-slopestyle-bigair', label: '单板坡障/大跳台', icon: Sparkles },
+  { value: 'snowboard-parallel', label: '单板平行项目', icon: ArrowLeftRight },
+  { value: 'freestyle-slopestyle-bigair', label: '自由式坡障/大跳台', icon: Wind },
+]
 
 // 从数据中提取所有可用的筛选选项
 function extractFilterOptions() {
@@ -643,9 +652,35 @@ export default function PointsRankingsPage() {
           </div>
         </div>
 
+        {/* 总积分视图的四大项目滑动Tab */}
+        {viewMode === 'total' && (
+          <div className="flex justify-center mb-6">
+            <div className="inline-flex bg-white rounded-lg shadow-md p-1 gap-1 flex-wrap">
+              {sportTypeConfig.map((config) => {
+                const Icon = config.icon
+                const isSelected = selectedTotalSportType === config.value
+                return (
+                  <button
+                    key={config.value}
+                    onClick={() => { setSelectedTotalSportType(config.value); resetPage(); }}
+                    className={`flex items-center gap-2 px-4 md:px-6 py-2.5 rounded-md text-sm md:text-base font-medium transition-all duration-300 whitespace-nowrap ${
+                      isSelected
+                        ? 'bg-ski-blue text-white shadow-md transform scale-105'
+                        : 'text-gray-600 hover:text-ski-blue hover:bg-gray-50'
+                    }`}
+                  >
+                    <Icon className="h-4 w-4" />
+                    {config.label}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+        )}
+
         {/* 筛选器 */}
         <div className="bg-white rounded-lg shadow p-4 mb-6">
-          <div className={`grid grid-cols-1 gap-4 ${viewMode === 'total' ? 'md:grid-cols-5' : 'md:grid-cols-6'}`}>
+          <div className={`grid grid-cols-1 gap-4 ${viewMode === 'total' ? 'md:grid-cols-4' : 'md:grid-cols-6'}`}>
             {/* 搜索框 */}
             <div className="relative md:col-span-2">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
@@ -657,22 +692,6 @@ export default function PointsRankingsPage() {
                 className="pl-10 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
               />
             </div>
-
-            {/* 总积分视图的项目筛选 */}
-            {viewMode === 'total' && (
-              <div>
-                <select
-                  value={selectedTotalSportType}
-                  onChange={(e) => { setSelectedTotalSportType(e.target.value); resetPage(); }}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                >
-                  <option value="all">全部项目</option>
-                  {totalRankingsData.filters.sportTypes.map(st => (
-                    <option key={st.value} value={st.value}>{st.label}</option>
-                  ))}
-                </select>
-              </div>
-            )}
 
             {/* 按比赛视图的额外筛选 */}
             {viewMode === 'competition' && (
