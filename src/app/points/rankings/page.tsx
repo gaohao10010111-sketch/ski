@@ -724,6 +724,23 @@ export default function PointsRankingsPage() {
               </div>
             </div>
 
+            {/* 当前项目标题 */}
+            {filteredSportRankings.length > 0 && (
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <h2 className="text-lg font-bold text-gray-900">
+                    {sportTypeConfig.find(c => c.value === selectedTotalSportType)?.label || '排名数据'}
+                  </h2>
+                  <span className="text-sm text-gray-500">
+                    已展开 {expandedSubEvents.size} / {filteredSportRankings[0].subEventRankings?.length || 0} 个小项
+                  </span>
+                </div>
+                {expandedSubEvents.size === 0 && (
+                  <p className="text-sm text-gray-500">请在下方"全部小项"中选择要查看的排名</p>
+                )}
+              </div>
+            )}
+
             {/* 排名数据展示区域 */}
             {filteredSportRankings.length === 0 ? (
               <div className="bg-white rounded-lg shadow p-12 text-center">
