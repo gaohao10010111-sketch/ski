@@ -16,8 +16,11 @@ import PartnersSection from '@/components/PartnersSection';
 import { getPartnersBySport } from '@/data/partners';
 import { competitionSchedule2025 } from '@/data/competitionSchedule';
 
-// 获取单板坡障/大跳台的真实数据
-const snowboardCompetitions = resultsBySport['snowboard-slopestyle'] || [];
+// 获取单板坡障/大跳台的真实数据（合并slopestyle和bigair两个子项）
+const snowboardCompetitions = [
+  ...(resultsBySport['snowboard-slopestyle'] || []),
+  ...(resultsBySport['snowboard-bigair'] || [])
+];
 
 // 获取单板坡障/大跳台的真实赛程 - 取最近3场未来比赛
 const snowboardSlopestyleSchedule = competitionSchedule2025
@@ -34,7 +37,7 @@ export default function SnowboardSlopestylePage() {
     const allAthletes: { rank: number; name: string; team: string; points: number; discipline: string; ageGroup: string; gender: string; bestScore?: number }[] = [];
 
     for (const competition of latestResults.competitions) {
-      if (competition.sportType !== 'snowboard-slopestyle') continue;
+      if (competition.sportType !== 'snowboard-slopestyle' && competition.sportType !== 'snowboard-bigair') continue;
 
       for (const event of competition.events) {
         for (const athlete of event.athletes) {

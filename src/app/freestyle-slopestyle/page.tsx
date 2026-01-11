@@ -17,8 +17,11 @@ import PartnersSection from '@/components/PartnersSection';
 import { getPartnersBySport } from '@/data/partners';
 import { competitionSchedule2025 } from '@/data/competitionSchedule';
 
-// 获取自由式坡障/大跳台的真实数据
-const freestyleCompetitions = resultsBySport['freestyle-slopestyle'] || [];
+// 获取自由式坡障/大跳台的真实数据（合并slopestyle和bigair两个子项）
+const freestyleCompetitions = [
+  ...(resultsBySport['freestyle-slopestyle'] || []),
+  ...(resultsBySport['freestyle-bigair'] || [])
+];
 
 // 获取自由式坡障/大跳台的真实赛程 - 取最近3场未来比赛
 const freestyleSchedule = competitionSchedule2025
@@ -35,7 +38,7 @@ export default function FreestyleSlopestylePage() {
     const allAthletes: { rank: number; name: string; team: string; points: number; discipline: string; ageGroup: string; gender: string; bestScore?: number }[] = [];
 
     for (const competition of latestResults.competitions) {
-      if (competition.sportType !== 'freestyle-slopestyle') continue;
+      if (competition.sportType !== 'freestyle-slopestyle' && competition.sportType !== 'freestyle-bigair') continue;
 
       for (const event of competition.events) {
         for (const athlete of event.athletes) {
