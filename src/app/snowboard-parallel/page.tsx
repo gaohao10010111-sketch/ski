@@ -276,13 +276,13 @@ export default function SnowboardParallelPage() {
                 <Trophy className="w-6 h-6 mr-2 text-indigo-600" />
                 最新赛事成绩
               </h2>
-              <Link href="/results-import" className="text-indigo-600 hover:text-indigo-700 text-sm font-medium flex items-center">
+              <Link href="/competitions" className="text-indigo-600 hover:text-indigo-700 text-sm font-medium flex items-center">
                 查看全部 <ChevronRight className="w-4 h-4 ml-1" />
               </Link>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {parallelCompetitions.map((comp) => (
-                <div key={comp.competition} className="bg-white rounded-lg p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                <Link key={comp.competition} href="/competitions" className="bg-white rounded-lg p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow block">
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex-1">
                       <div className="text-sm font-semibold text-gray-900">{comp.competition}</div>
@@ -304,7 +304,7 @@ export default function SnowboardParallelPage() {
                       <span className="font-semibold text-indigo-600">{comp.events.reduce((sum, e) => sum + e.athletes.length, 0)}人次</span>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </section>
