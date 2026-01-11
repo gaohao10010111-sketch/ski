@@ -160,15 +160,18 @@ export default function GlobalNavigation() {
       <nav className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px]">
           <div className="flex justify-between h-14">
-            {/* 左侧：平台名称 */}
+            {/* 左侧：平台名称 + 网址 */}
             <div className="flex items-center">
               <Link href="/" className="flex items-center space-x-2 hover:opacity-90 transition-opacity">
                 <Mountain className="h-6 w-6 text-ski-blue" />
-                <span className="text-base lg:text-lg font-bold text-ski-navy">
-                  {language === 'zh'
-                    ? t.navigation?.title || '中国滑雪青少年积分排名官方平台'
-                    : t.navigation?.titleShort || 'China Ski Points'}
-                </span>
+                <div className="flex flex-col">
+                  <span className="text-base lg:text-lg font-bold text-ski-navy leading-tight">
+                    {language === 'zh'
+                      ? t.navigation?.title || '中国滑雪青少年积分排名官方平台'
+                      : t.navigation?.titleShort || 'China Ski Points'}
+                  </span>
+                  <span className="text-xs text-gray-500">www.cnskipoints.com</span>
+                </div>
               </Link>
             </div>
 
