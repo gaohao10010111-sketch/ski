@@ -149,11 +149,10 @@ export default function GlobalNavigation() {
         { key: 'freestyle-slopestyle', name: t.navigation?.freestyleSlopestyle || 'Freestyle Slopestyle', href: '/freestyle-slopestyle' }
       ]
     },
-    { key: 'home', name: t.common?.home || 'Home', href: '/', icon: Home },
     { key: 'points-rankings', name: '积分排行榜', href: '/points/rankings', icon: Trophy },
-    { key: 'athletes', name: '运动员名录', href: '/athletes', icon: Users },
-    { key: 'schedule', name: t.navigation?.submenus?.eventsSchedule || 'Schedule', href: '/competitions/schedule', icon: Calendar },
-    { key: 'live-results', name: t.navigation?.submenus?.resultsLive || 'Live Results', href: '/competitions', icon: Trophy }
+    { key: 'results', name: '比赛成绩', href: '/competitions', icon: Trophy },
+    { key: 'schedule', name: '赛程', href: '/competitions/schedule', icon: Calendar },
+    { key: 'athletes', name: '运动员名录', href: '/athletes', icon: Users }
   ];
 
   return (
