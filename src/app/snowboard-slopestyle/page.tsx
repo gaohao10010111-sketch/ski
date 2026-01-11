@@ -111,7 +111,7 @@ export default function SnowboardSlopestylePage() {
       });
     });
 
-    return champList.slice(0, 4);
+    return champList.slice(0, 8);
   }, []);
 
   const heroSlides = [
@@ -387,27 +387,23 @@ export default function SnowboardSlopestylePage() {
 
           {/* 历史冠军 */}
           <section>
-            <div className="bg-white rounded-lg p-6 shadow-sm">
+            <div className="bg-white rounded-lg p-6 shadow-sm h-full">
               <h2 className="text-xl font-bold text-gray-900 flex items-center mb-4">
                 <History className="w-5 h-5 mr-2 text-yellow-600" />
-                历史冠军
+                赛事冠军
               </h2>
-              <div className="space-y-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {champions.map((champion, index) => (
-                  <div key={index} className="flex items-center p-4 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border border-yellow-200">
-                    <div className="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center mr-4 flex-shrink-0">
-                      <Trophy className="w-6 h-6 text-white" />
+                  <div key={index} className="flex items-center p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border border-yellow-200">
+                    <div className="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center mr-3 flex-shrink-0">
+                      <Trophy className="w-5 h-5 text-white" />
                     </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="px-2 py-0.5 bg-yellow-600 text-white text-xs rounded font-bold">{champion.year}</span>
-                        <span className="font-semibold text-gray-900">{champion.name}</span>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-0.5">
+                        <span className="px-1.5 py-0.5 bg-yellow-600 text-white text-xs rounded font-bold">{champion.year}</span>
+                        <span className="font-semibold text-gray-900 text-sm truncate">{champion.name}</span>
                       </div>
-                      <div className="text-sm text-gray-600">{champion.discipline}</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-xs text-gray-500">最终积分</div>
-                      <div className="font-bold text-yellow-600">{champion.score}</div>
+                      <div className="text-xs text-gray-600 truncate">{champion.discipline}</div>
                     </div>
                   </div>
                 ))}
