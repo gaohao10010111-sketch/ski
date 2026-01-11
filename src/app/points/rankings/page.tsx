@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import Link from 'next/link'
 import { Trophy, Medal, Award, Crown, Download, Search, ChevronLeft, ChevronRight, ArrowLeft, ChevronDown, ChevronUp, Users, Sparkles, Target, TrendingUp, Calendar, ArrowUpRight, ArrowDownRight, Minus, Mountain, ArrowLeftRight, Wind } from 'lucide-react'
 import { latestResults, type AthleteResult } from '@/data/latestResults'
@@ -258,6 +258,24 @@ export default function PointsRankingsPage() {
   const collapseAll = () => {
     setExpandedSubEvents(new Set())
   }
+
+  // 当切换项目Tab时，自动展开第一个小子项
+  const expandFirstSubEvent = (sportType: string) => {
+    const sportRanking = totalRankingsData.sportRankings.find(sr => sr.sportType === sportType)
+    if (sportRanking && sportRanking.subEventRankings && sportRanking.subEventRankings.length > 0) {
+      const firstSubEvent = sportRanking.subEventRankings[0]
+      const key = `${sportType}-${firstSubEvent.subEventName}`
+      setExpandedSubEvents(new Set([key]))
+    } else {
+      setExpandedSubEvents(new Set())
+    }
+  }
+
+  // 页面初次加载时，展开默认项目的第一个小子项
+  useEffect(() => {
+    expandFirstSubEvent(selectedTotalSportType)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   // 切换按比赛视图的组展开/收起
   const toggleCompetitionGroup = (key: string) => {
@@ -657,7 +675,7 @@ export default function PointsRankingsPage() {
                 return (
                   <button
                     key={config.value}
-                    onClick={() => { setSelectedTotalSportType(config.value); resetPage(); }}
+                    onClick={() => { setSelectedTotalSportType(config.value); resetPage(); expandFirstSubEvent(config.value); }}
                     className={`flex items-center gap-2 px-4 md:px-6 py-2.5 rounded-md text-sm md:text-base font-medium transition-all duration-300 whitespace-nowrap ${
                       isSelected
                         ? 'bg-ski-blue text-white shadow-md transform scale-105'
