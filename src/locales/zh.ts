@@ -633,7 +633,7 @@ export const zh = {
       viewsLabel: '次查看',
       items: {
         alpineRulesV4: { title: '中国高山滑雪积分规则v4.0', category: '积分规则' },
-        seasonGrading: { title: '2024-2025赛季赛事分级标准', category: '竞赛规则' },
+        seasonGrading: { title: '2025-2026赛季赛事分级标准', category: '竞赛规则' },
         youthSeries: { title: 'U系列青少年赛事管理办法', category: '竞赛规则' },
         fisPointsGuide: { title: 'FIS积分计算方法详解', category: 'FIS规则' }
       }
@@ -739,7 +739,7 @@ export const zh = {
       title: '重要提示',
       version: {
         title: '规则版本',
-        items: ['当前版本：最新发布', '实施赛季：2024-2025 赛季', '适用范围：中国国内赛事', '更新周期：根据实践情况调整']
+        items: ['当前版本：最新发布', '实施赛季：2025-2026 赛季', '适用范围：中国国内赛事', '更新周期：根据实践情况调整']
       },
       usage: {
         title: '使用指南',

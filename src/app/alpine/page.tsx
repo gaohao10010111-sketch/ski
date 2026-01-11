@@ -19,9 +19,10 @@ import { competitionSchedule2025 } from '@/data/competitionSchedule';
 // 获取高山滑雪的真实数据
 const alpineCompetitions = resultsBySport.alpine || [];
 
-// 获取高山滑雪的真实赛程 - 取最近3场未来比赛
+// 获取高山滑雪的真实赛程 - 取最近3场未来比赛（过滤掉已结束的比赛）
+const today = new Date().toISOString().split('T')[0]; // 获取今天日期 YYYY-MM-DD
 const alpineSchedule = competitionSchedule2025
-  .filter(c => c.category === 'alpine' && c.isOurs)
+  .filter(c => c.category === 'alpine' && c.isOurs && c.endDate >= today)
   .sort((a, b) => a.startDate.localeCompare(b.startDate))
   .slice(0, 3);
 
@@ -83,17 +84,20 @@ export default function AlpinePage() {
 
 
   // 从真实数据生成顶尖运动员列表 - 使用 useMemo 缓存
+  // 注意：积分只在同一子项内累加，不跨子项（回转和大回转分开统计）
   const topAthletes = useMemo(() => {
-    const athleteData: { [key: string]: { name: string; team: string; points: number; events: number } } = {};
+    const athleteData: { [key: string]: { name: string; team: string; points: number; events: number; discipline: string } } = {};
 
     alpineCompetitions.forEach(comp => {
       comp.events.forEach(event => {
         event.athletes.forEach(athlete => {
-          const key = athlete.name;
+          // 使用 name + discipline 作为 key，确保同一子项内累加，不跨子项
+          const key = `${athlete.name}-${event.discipline}`;
           if (!athleteData[key]) {
-            athleteData[key] = { name: athlete.name, team: athlete.team, points: 0, events: 0 };
+            athleteData[key] = { name: athlete.name, team: athlete.team, points: 0, events: 0, discipline: event.discipline };
           }
-          const points = athlete.rank <= 50 ? Math.max(360 - (athlete.rank - 1) * 7, 1) : 0;
+          // 优先使用数据中的积分，如果没有则使用公式计算
+          const points = athlete.points || (athlete.rank <= 50 ? Math.max(360 - (athlete.rank - 1) * 7, 1) : 0);
           athleteData[key].points += points;
           athleteData[key].events += 1;
         });
@@ -107,7 +111,7 @@ export default function AlpinePage() {
         id: idx + 1,
         name: a.name,
         nation: '中国',
-        discipline: '高山滑雪',
+        discipline: a.discipline,
         points: a.points.toString(),
         worldRank: idx + 1,
         age: 0,

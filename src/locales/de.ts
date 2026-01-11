@@ -372,7 +372,7 @@ export const de: PartialTranslationKeys = {
       viewsLabel: 'Aufrufe',
       items: {
         alpineRulesV4: { title: 'China Alpin-Punkteregelwerk v4.0', category: 'Punkterichtlinien' },
-        seasonGrading: { title: 'Wettkampfeinstufung 2024-2025', category: 'Wettkampfregeln' },
+        seasonGrading: { title: 'Wettkampfeinstufung 2025-2026', category: 'Wettkampfregeln' },
         youthSeries: { title: 'U-Serie Jugend-Wettkampfkonzept', category: 'Wettkampfregeln' },
         fisPointsGuide: { title: 'FIS Punkterechner Leitfaden', category: 'FIS-Regeln' }
       }

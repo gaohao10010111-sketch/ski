@@ -352,7 +352,7 @@ export const fi: PartialTranslationKeys = {
       viewsLabel: 'katselua',
       items: {
         alpineRulesV4: { title: 'Kiina alppipistesäännöt v4.0', category: 'Pistesäännöt' },
-        seasonGrading: { title: 'Kauden 2024-2025 kilpailuluokitus', category: 'Kilpailusäännöt' },
+        seasonGrading: { title: 'Kauden 2025-2026 kilpailuluokitus', category: 'Kilpailusäännöt' },
         youthSeries: { title: 'U-sarjan nuorisokilpailujen suunnitelma', category: 'Kilpailusäännöt' },
         fisPointsGuide: { title: 'FIS-pisteiden laskentaopas', category: 'FIS-säännöt' }
       }

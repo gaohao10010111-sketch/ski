@@ -85,7 +85,7 @@ model SeasonTotal {
   athleteId        String
   athlete          Athlete  @relation(fields: [athleteId], references: [id], onDelete: Cascade)
 
-  season           String   // 2024-2025
+  season           String   // 2025-2026
   ageGroup         String   // U11/U15/U18
   gender           String   // 男子组/女子组
 
@@ -145,7 +145,7 @@ model RankingSnapshot {
 
   snapshotDate     DateTime @default(now()) // 快照时间
   triggeredBy      String?                 // 触发快照的比赛ID（可选）
-  season           String   @default("2024-2025") // 赛季
+  season           String   @default("2025-2026") // 赛季
 
   @@index([athleteId, sportType, ageGroup, gender])
   @@index([snapshotDate])

@@ -71,7 +71,7 @@ function getTotalRankings(db, sportType = null) {
 }
 
 // 保存快照
-function saveSnapshot(db, triggeredBy = null, sportType = null, season = '2024-2025') {
+function saveSnapshot(db, triggeredBy = null, sportType = null, season = '2025-2026') {
   const rankings = getTotalRankings(db, sportType)
 
   if (rankings.length === 0) {

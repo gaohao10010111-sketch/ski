@@ -20,9 +20,10 @@ import { competitionSchedule2025 } from '@/data/competitionSchedule';
 // 获取单板平行项目的真实数据
 const parallelCompetitions = resultsBySport['snowboard-parallel'] || [];
 
-// 获取单板平行项目的真实赛程 - 取最近3场未来比赛
+// 获取单板平行项目的真实赛程 - 取最近3场未来比赛（过滤掉已结束的比赛）
+const today = new Date().toISOString().split('T')[0]; // 获取今天日期 YYYY-MM-DD
 const parallelSchedule = competitionSchedule2025
-  .filter(c => c.category === 'snowboard-parallel' && c.isOurs)
+  .filter(c => c.category === 'snowboard-parallel' && c.isOurs && c.endDate >= today)
   .sort((a, b) => a.startDate.localeCompare(b.startDate))
   .slice(0, 3);
 
@@ -61,15 +62,17 @@ export default function SnowboardParallelPage() {
   }, []);
 
   // 从真实数据生成顶尖运动员列表 - 使用 useMemo 缓存
+  // 注意：积分只在同一子项内累加，不跨子项（平行大回转和平行回转分开统计）
   const topAthletes = useMemo(() => {
-    const athleteData: { [key: string]: { name: string; team: string; points: number; events: number } } = {};
+    const athleteData: { [key: string]: { name: string; team: string; points: number; events: number; discipline: string } } = {};
 
     parallelCompetitions.forEach(comp => {
       comp.events.forEach(event => {
         event.athletes.forEach(athlete => {
-          const key = athlete.name;
+          // 使用 name + discipline 作为 key，确保同一子项内累加，不跨子项
+          const key = `${athlete.name}-${event.discipline}`;
           if (!athleteData[key]) {
-            athleteData[key] = { name: athlete.name, team: athlete.team, points: 0, events: 0 };
+            athleteData[key] = { name: athlete.name, team: athlete.team, points: 0, events: 0, discipline: event.discipline };
           }
           const points = athlete.points || (athlete.rank <= 50 ? Math.max(360 - (athlete.rank - 1) * 7, 1) : 0);
           athleteData[key].points += points;
@@ -85,7 +88,7 @@ export default function SnowboardParallelPage() {
         id: idx + 1,
         name: a.name,
         nation: '中国',
-        discipline: '单板平行',
+        discipline: a.discipline,
         points: a.points.toString(),
         worldRank: idx + 1,
         wins: a.events

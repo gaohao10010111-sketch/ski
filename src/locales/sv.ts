@@ -352,7 +352,7 @@ export const sv: PartialTranslationKeys = {
       viewsLabel: 'visningar',
       items: {
         alpineRulesV4: { title: 'Kinesiska alpina poängregler v4.0', category: 'Poängregler' },
-        seasonGrading: { title: 'Tävlingsklassning 2024-2025', category: 'Tävlingsregler' },
+        seasonGrading: { title: 'Tävlingsklassning 2025-2026', category: 'Tävlingsregler' },
         youthSeries: { title: 'U-serien ungdomsplan', category: 'Tävlingsregler' },
         fisPointsGuide: { title: 'Guide för FIS-poängberäkning', category: 'FIS-regler' }
       }

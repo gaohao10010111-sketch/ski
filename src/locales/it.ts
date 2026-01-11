@@ -352,7 +352,7 @@ export const it: PartialTranslationKeys = {
       viewsLabel: 'visualizzazioni',
       items: {
         alpineRulesV4: { title: 'Regole punti sci alpino Cina v4.0', category: 'Regole di punteggio' },
-        seasonGrading: { title: 'Standard di classificazione 2024-2025', category: 'Regolamento tecnico' },
+        seasonGrading: { title: 'Standard di classificazione 2025-2026', category: 'Regolamento tecnico' },
         youthSeries: { title: 'Piano gare giovanili serie U', category: 'Regolamento tecnico' },
         fisPointsGuide: { title: 'Guida al calcolo dei punti FIS', category: 'Regole FIS' }
       }
@@ -458,7 +458,7 @@ export const it: PartialTranslationKeys = {
       title: 'Avvisi importanti',
       version: {
         title: 'Versione del regolamento',
-        items: ['Versione attuale: ultima edizione', 'Stagione di applicazione: 2024-2025', 'Ambito: gare nazionali in Cina', 'Ciclo di aggiornamento: secondo necessità']
+        items: ['Versione attuale: ultima edizione', 'Stagione di applicazione: 2025-2026', 'Ambito: gare nazionali in Cina', 'Ciclo di aggiornamento: secondo necessità']
       },
       usage: {
         title: 'Suggerimenti d’uso',

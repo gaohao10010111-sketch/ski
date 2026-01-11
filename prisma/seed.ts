@@ -64,7 +64,7 @@ async function main() {
     // 高山滑雪比赛
     {
       id: 'comp-alpine-gs-2024',
-      name: '2024-2025赛季全国高山滑雪锦标赛（大回转）',
+      name: '2025-2026赛季全国高山滑雪锦标赛（大回转）',
       sportType: SportType.ALPINE_SKI,
       discipline: 'GS',
       startDate: new Date('2024-12-15'),
@@ -78,7 +78,7 @@ async function main() {
     },
     {
       id: 'comp-alpine-sl-2024',
-      name: '2024-2025赛季全国高山滑雪锦标赛（回转）',
+      name: '2025-2026赛季全国高山滑雪锦标赛（回转）',
       sportType: SportType.ALPINE_SKI,
       discipline: 'SL',
       startDate: new Date('2024-12-17'),
@@ -94,7 +94,7 @@ async function main() {
     // 单板坡障比赛
     {
       id: 'comp-sb-ss-2024',
-      name: '2024-2025赛季全国单板滑雪坡面障碍技巧锦标赛',
+      name: '2025-2026赛季全国单板滑雪坡面障碍技巧锦标赛',
       sportType: SportType.SNOWBOARD_SLOPESTYLE_BIGAIR,
       discipline: 'SS',
       startDate: new Date('2025-01-10'),
@@ -110,7 +110,7 @@ async function main() {
     // 单板平行比赛
     {
       id: 'comp-sb-pgs-2024',
-      name: '2024-2025赛季全国单板滑雪平行大回转锦标赛',
+      name: '2025-2026赛季全国单板滑雪平行大回转锦标赛',
       sportType: SportType.SNOWBOARD_PARALLEL,
       discipline: 'PGS',
       startDate: new Date('2025-01-20'),
@@ -126,7 +126,7 @@ async function main() {
     // 自由式比赛
     {
       id: 'comp-fs-ba-2024',
-      name: '2024-2025赛季全国自由式滑雪大跳台锦标赛',
+      name: '2025-2026赛季全国自由式滑雪大跳台锦标赛',
       sportType: SportType.FREESTYLE_SLOPESTYLE_BIGAIR,
       discipline: 'BA',
       startDate: new Date('2025-02-01'),
@@ -176,9 +176,9 @@ async function main() {
 
   // 5. 创建赛季积分记录
   const seasonPoints = [
-    { athleteId: 'seed-张伟-ALPINE_SKI', season: '2024-2025', sportType: SportType.ALPINE_SKI, discipline: 'GS', totalPoints: 0, competitionCount: 1, rank: 1 },
-    { athleteId: 'seed-王强-ALPINE_SKI', season: '2024-2025', sportType: SportType.ALPINE_SKI, discipline: 'GS', totalPoints: 12.23, competitionCount: 1, rank: 2 },
-    { athleteId: 'seed-李娜-ALPINE_SKI', season: '2024-2025', sportType: SportType.ALPINE_SKI, discipline: 'GS', totalPoints: 23.28, competitionCount: 1, rank: 3 },
+    { athleteId: 'seed-张伟-ALPINE_SKI', season: '2025-2026', sportType: SportType.ALPINE_SKI, discipline: 'GS', totalPoints: 0, competitionCount: 1, rank: 1 },
+    { athleteId: 'seed-王强-ALPINE_SKI', season: '2025-2026', sportType: SportType.ALPINE_SKI, discipline: 'GS', totalPoints: 12.23, competitionCount: 1, rank: 2 },
+    { athleteId: 'seed-李娜-ALPINE_SKI', season: '2025-2026', sportType: SportType.ALPINE_SKI, discipline: 'GS', totalPoints: 23.28, competitionCount: 1, rank: 3 },
   ];
 
   for (const pointsData of seasonPoints) {

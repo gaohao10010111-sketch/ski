@@ -352,7 +352,7 @@ export const fr: PartialTranslationKeys = {
       viewsLabel: 'vues',
       items: {
         alpineRulesV4: { title: 'Règles de points du ski alpin chinois v4.0', category: 'Règles de points' },
-        seasonGrading: { title: 'Normes de classement 2024-2025', category: 'Règlement technique' },
+        seasonGrading: { title: 'Normes de classement 2025-2026', category: 'Règlement technique' },
         youthSeries: { title: 'Plan de gestion des compétitions U-Series', category: 'Règlement technique' },
         fisPointsGuide: { title: 'Guide de calcul des points FIS', category: 'Règles FIS' }
       }
@@ -458,13 +458,13 @@ export const fr: PartialTranslationKeys = {
       title: 'Informations importantes',
       version: {
         title: 'Version des règles',
-        items: ['Version actuelle : dernière édition', 'Saison d’application : 2024-2025', 'Portée : compétitions nationales en Chine', 'Cycle de mise à jour : ajustements selon les besoins']
+        items: ['Version actuelle : dernière édition', 'Saison d\'application : 2025-2026', 'Portée : compétitions nationales en Chine', 'Cycle de mise à jour : ajustements selon les besoins']
       },
       usage: {
-        title: 'Recommandations d’utilisation',
-        items: ['Commencer par l’aperçu des règles de points', 'Vérifier les calculs avec l’outil en ligne', 'Suivre de près les politiques jeunesse', 'Rester informé des mises à jour']
+        title: 'Recommandations d\'utilisation',
+        items: ['Commencer par l\'aperçu des règles de points', 'Vérifier les calculs avec l\'outil en ligne', 'Suivre de près les politiques jeunesse', 'Rester informé des mises à jour']
       },
-      support: 'Ce cadre réglementaire combine l’expérience internationale et les besoins chinois afin d’offrir un soutien équitable et efficace au développement du ski alpin. Pour toute question ou suggestion, contactez-nous via les canaux indiqués.'
+      support: 'Ce cadre réglementaire combine l\'expérience internationale et les besoins chinois afin d\'offrir un soutien équitable et efficace au développement du ski alpin. Pour toute question ou suggestion, contactez-nous via les canaux indiqués.'
     }
   },
 

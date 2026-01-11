@@ -538,7 +538,7 @@ export const en: PartialTranslationKeys = {
       viewsLabel: 'views',
       items: {
         alpineRulesV4: { title: 'China Alpine Ski Points Rules v4.0', category: 'Points Rules' },
-        seasonGrading: { title: '2024-2025 Event Tier Standards', category: 'Competition Rules' },
+        seasonGrading: { title: '2025-2026 Event Tier Standards', category: 'Competition Rules' },
         youthSeries: { title: 'U-Series Youth Event Plan', category: 'Competition Rules' },
         fisPointsGuide: { title: 'FIS Points Calculation Guide', category: 'FIS Rules' }
       }

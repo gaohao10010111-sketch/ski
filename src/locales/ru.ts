@@ -352,7 +352,7 @@ export const ru: PartialTranslationKeys = {
       viewsLabel: 'просмотров',
       items: {
         alpineRulesV4: { title: 'Правила очков по горным лыжам (Китай) v4.0', category: 'Правила очков' },
-        seasonGrading: { title: 'Стандарты классификации сезона 2024-2025', category: 'Технический регламент' },
+        seasonGrading: { title: 'Стандарты классификации сезона 2025-2026', category: 'Технический регламент' },
         youthSeries: { title: 'Программа соревнований серии U для юниоров', category: 'Технический регламент' },
         fisPointsGuide: { title: 'Руководство по расчёту очков FIS', category: 'Правила FIS' }
       }

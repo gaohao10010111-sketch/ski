@@ -365,7 +365,7 @@ export const es: PartialTranslationKeys = {
       viewsLabel: 'visualizaciones',
       items: {
         alpineRulesV4: { title: 'Reglas de puntos de esquí alpino en China v4.0', category: 'Reglas de puntos' },
-        seasonGrading: { title: 'Estándares de clasificación 2024-2025', category: 'Reglamento técnico' },
+        seasonGrading: { title: 'Estándares de clasificación 2025-2026', category: 'Reglamento técnico' },
         youthSeries: { title: 'Plan de gestión de la serie juvenil U', category: 'Reglamento técnico' },
         fisPointsGuide: { title: 'Guía de cálculo de puntos FIS', category: 'Reglas FIS' }
       }
@@ -471,7 +471,7 @@ export const es: PartialTranslationKeys = {
       title: 'Avisos importantes',
       version: {
         title: 'Versión del reglamento',
-        items: ['Versión actual: última edición', 'Temporada de aplicación: 2024-2025', 'Ámbito: competiciones nacionales en China', 'Ciclo de actualización: según se requiera']
+        items: ['Versión actual: última edición', 'Temporada de aplicación: 2025-2026', 'Ámbito: competiciones nacionales en China', 'Ciclo de actualización: según se requiera']
       },
       usage: {
         title: 'Recomendaciones de uso',

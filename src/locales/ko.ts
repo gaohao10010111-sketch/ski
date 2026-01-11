@@ -352,7 +352,7 @@ export const ko: PartialTranslationKeys = {
       viewsLabel: '회 조회',
       items: {
         alpineRulesV4: { title: '중국 알파인 스키 포인트 규정 v4.0', category: '포인트 규정' },
-        seasonGrading: { title: '2024-2025 시즌 대회 등급 기준', category: '경기 규정' },
+        seasonGrading: { title: '2025-2026 시즌 대회 등급 기준', category: '경기 규정' },
         youthSeries: { title: 'U시리즈 청소년 대회 운영 지침', category: '경기 규정' },
         fisPointsGuide: { title: 'FIS 포인트 계산 가이드', category: 'FIS 규정' }
       }
@@ -458,7 +458,7 @@ export const ko: PartialTranslationKeys = {
       title: '중요 안내',
       version: {
         title: '규정 버전',
-        items: ['현재 버전: 최신 릴리스', '적용 시즌: 2024-2025', '적용 범위: 중국 국내 대회', '업데이트 주기: 운영 상황에 따라 조정']
+        items: ['현재 버전: 최신 릴리스', '적용 시즌: 2025-2026', '적용 범위: 중국 국내 대회', '업데이트 주기: 운영 상황에 따라 조정']
       },
       usage: {
         title: '이용 가이드',

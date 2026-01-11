@@ -45,11 +45,13 @@ const localSportTypeMapping: Record<string, string> = {
 }
 
 // 从静态数据提取运动员列表（模块级别，确保在导入时就执行）
+// 注意：积分只在同一子项内累加，不跨子项（坡面障碍技巧和大跳台分开统计）
 function buildStaticAthletesList(): Athlete[] {
   const athleteMap = new Map<string, {
     name: string
     team: string
     sportType: string
+    discipline: string
     totalPoints: number
     bestRank: number
     competitions: number
@@ -63,7 +65,8 @@ function buildStaticAthletesList(): Athlete[] {
       const gender = event.gender.includes('女') ? 'FEMALE' as const : 'MALE' as const
 
       for (const athlete of event.athletes) {
-        const key = `${athlete.name}-${athlete.team}`
+        // 使用 name + team + discipline 作为 key，确保同一子项内累加，不跨子项
+        const key = `${athlete.name}-${athlete.team}-${event.discipline}`
         const existing = athleteMap.get(key)
 
         if (existing) {
@@ -75,6 +78,7 @@ function buildStaticAthletesList(): Athlete[] {
             name: athlete.name,
             team: athlete.team,
             sportType,
+            discipline: event.discipline,
             totalPoints: athlete.points || 0,
             bestRank: athlete.rank,
             competitions: 1,
@@ -95,7 +99,7 @@ function buildStaticAthletesList(): Athlete[] {
       sportType: a.sportType,
       status: 'ACTIVE' as const,
       province: a.team,
-      club: null,
+      club: a.discipline, // 使用 club 字段存储子项信息
       currentPoints: a.totalPoints,
       currentRank: index + 1,
       uSeriesGroup: null,
@@ -271,7 +275,7 @@ export default function AthletesPage() {
             totalCompetitions: localStats.totalCompetitions,
             completedCompetitions: localStats.totalCompetitions,
             upcomingCompetitions: 0,
-            currentSeason: '2024-2025',
+            currentSeason: '2025-2026',
           },
           athletesBySport: [],
           recentCompetitions: [],
@@ -290,7 +294,7 @@ export default function AthletesPage() {
           totalCompetitions: latestResults.competitions.length,
           completedCompetitions: latestResults.competitions.filter(c => c.status === 'completed').length,
           upcomingCompetitions: latestResults.competitions.filter(c => c.status === 'upcoming').length,
-          currentSeason: '2024-2025',
+          currentSeason: '2025-2026',
         },
         athletesBySport: [],
         recentCompetitions: [],

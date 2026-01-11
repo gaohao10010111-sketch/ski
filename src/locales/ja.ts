@@ -352,7 +352,7 @@ export const ja: PartialTranslationKeys = {
       viewsLabel: '件の閲覧',
       items: {
         alpineRulesV4: { title: '中国アルペンスキー ポイント規則 v4.0', category: 'ポイント規則' },
-        seasonGrading: { title: '2024-2025シーズン大会グレード基準', category: '競技規則' },
+        seasonGrading: { title: '2025-2026シーズン大会グレード基準', category: '競技規則' },
         youthSeries: { title: 'Uシリーズジュニア大会管理ガイド', category: '競技規則' },
         fisPointsGuide: { title: 'FISポイント計算ガイド', category: 'FIS規則' }
       }
@@ -458,7 +458,7 @@ export const ja: PartialTranslationKeys = {
       title: '重要なお知らせ',
       version: {
         title: '規則バージョン',
-        items: ['現行バージョン：最新リリース', '適用シーズン：2024-2025', '適用範囲：中国国内大会', '更新サイクル：運用状況に応じて調整']
+        items: ['現行バージョン：最新リリース', '適用シーズン：2025-2026', '適用範囲：中国国内大会', '更新サイクル：運用状況に応じて調整']
       },
       usage: {
         title: '利用ガイド',

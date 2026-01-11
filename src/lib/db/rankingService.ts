@@ -457,7 +457,7 @@ export function saveRankingSnapshot(
   sportType?: string
 ): { success: boolean; count: number } {
   const db = getDatabase()
-  const season = '2024-2025'
+  const season = '2025-2026'
 
   // 获取当前排名（根据sportType筛选）
   const { rankings } = getTotalRankings({ sportType, limit: 1000 })
