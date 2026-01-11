@@ -13,6 +13,8 @@ import { getImagePath } from '@/utils/paths';
 import { useTranslation } from '@/contexts/LanguageContext';
 import { resultsBySport, latestResults } from '@/data/latestResults';
 import { Crown, Medal } from 'lucide-react';
+import PartnersSection from '@/components/PartnersSection';
+import { getPartnersBySport } from '@/data/partners';
 import { competitionSchedule2025 } from '@/data/competitionSchedule';
 
 // 获取自由式坡障/大跳台的真实数据
@@ -399,6 +401,9 @@ export default function FreestyleSlopestylePage() {
             </section>
           </div>
         )}
+
+        {/* 赛事合作伙伴 */}
+        <PartnersSection partners={getPartnersBySport('freestyle-slopestyle')} />
 
       </div>
     </div>
