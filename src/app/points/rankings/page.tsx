@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from 'react'
 import Link from 'next/link'
-import { Trophy, Medal, Award, Crown, Download, Search, ChevronLeft, ChevronRight, ArrowLeft, ChevronDown, ChevronUp, Users, Sparkles, Target, TrendingUp, Calendar, ArrowUpRight, ArrowDownRight, Minus, Mountain, ArrowLeftRight, Wind } from 'lucide-react'
+import { Trophy, Medal, Award, Crown, Download, Search, ChevronLeft, ChevronRight, ArrowLeft, ChevronDown, ChevronUp, Users, Sparkles, Target, TrendingUp, Calendar, ArrowUpRight, ArrowDownRight, Minus, Mountain, ArrowLeftRight, Wind, Star } from 'lucide-react'
 import { latestResults, type AthleteResult } from '@/data/latestResults'
 import { useToast } from '@/components/Toast'
 import { totalRankingsData, type TotalRankingItem } from '@/data/totalRankings'
@@ -555,47 +555,80 @@ export default function PointsRankingsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* 顶部标题区域 - 精简 */}
-      <div className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      {/* 顶部标题区域 - 增强设计感 */}
+      <div className="relative bg-gradient-to-r from-ski-blue via-blue-600 to-indigo-600 overflow-hidden">
+        {/* 装饰背景元素 */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-72 h-72 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/3 translate-y-1/2"></div>
+          <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-white rounded-full opacity-50"></div>
+        </div>
+        {/* 雪花装饰 */}
+        <div className="absolute inset-0 opacity-20">
+          <svg className="absolute top-4 right-20 w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L12 24M0 12L24 12M3.5 3.5L20.5 20.5M20.5 3.5L3.5 20.5" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+          </svg>
+          <svg className="absolute bottom-6 left-1/4 w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L12 24M0 12L24 12M3.5 3.5L20.5 20.5M20.5 3.5L3.5 20.5" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+          </svg>
+          <svg className="absolute top-1/3 right-1/3 w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0L12 24M0 12L24 12M3.5 3.5L20.5 20.5M20.5 3.5L3.5 20.5" stroke="currentColor" strokeWidth="1.5" fill="none"/>
+          </svg>
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             {/* 左侧：返回+标题 */}
             <div className="flex items-center gap-4">
               <Link
                 href="/"
-                className="inline-flex items-center text-gray-500 hover:text-ski-blue transition-colors"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors backdrop-blur-sm"
               >
                 <ArrowLeft className="w-5 h-5" />
               </Link>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-ski-blue rounded-lg flex items-center justify-center">
-                  <Trophy className="w-5 h-5 text-white" />
+              <div className="flex items-center gap-4">
+                {/* 奖杯图标 - 更大更醒目 */}
+                <div className="relative">
+                  <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-2xl flex items-center justify-center shadow-lg shadow-amber-500/30 rotate-3 hover:rotate-0 transition-transform">
+                    <Trophy className="w-8 h-8 text-white drop-shadow-md" />
+                  </div>
+                  <div className="absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow">
+                    <Star className="w-3 h-3 text-amber-500 fill-amber-500" />
+                  </div>
                 </div>
                 <div>
-                  <h1 className="text-xl font-bold text-gray-900">积分排行榜</h1>
-                  <p className="text-xs text-gray-500">2025-2026赛季 · 全国青少年U系列</p>
+                  <h1 className="text-2xl md:text-3xl font-bold text-white drop-shadow-sm">
+                    积分排行榜
+                  </h1>
+                  <div className="flex items-center gap-2 mt-1">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/20 text-white backdrop-blur-sm">
+                      <Calendar className="w-3 h-3 mr-1" />
+                      2025-2026赛季
+                    </span>
+                    <span className="text-white/80 text-sm">全国青少年U系列</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* 右侧：视图切换 */}
-            <div className="inline-flex rounded-lg bg-gray-100 p-1">
+            <div className="inline-flex rounded-xl bg-white/20 backdrop-blur-sm p-1">
               <button
                 onClick={() => setViewMode('total')}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   viewMode === 'total'
-                    ? 'bg-white text-ski-blue shadow-sm'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'bg-white text-ski-blue shadow-md'
+                    : 'text-white hover:bg-white/20'
                 }`}
               >
                 总积分排名
               </button>
               <button
                 onClick={() => setViewMode('competition')}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                   viewMode === 'competition'
-                    ? 'bg-white text-ski-blue shadow-sm'
-                    : 'text-gray-600 hover:text-gray-900'
+                    ? 'bg-white text-ski-blue shadow-md'
+                    : 'text-white hover:bg-white/20'
                 }`}
               >
                 按比赛查看
