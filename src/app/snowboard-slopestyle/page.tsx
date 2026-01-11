@@ -417,7 +417,7 @@ export default function SnowboardSlopestylePage() {
         </div>
 
         {/* 赛事合作伙伴 */}
-        <PartnersSection partners={getPartnersBySport('snowboard-slopestyle')} />
+        <PartnersSection partners={getPartnersBySport('snowboard-slopestyle')} showOrganizers={false} />
 
       </div>
     </div>

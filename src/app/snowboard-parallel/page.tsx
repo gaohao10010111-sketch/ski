@@ -403,7 +403,7 @@ export default function SnowboardParallelPage() {
         )}
 
         {/* 赛事合作伙伴 */}
-        <PartnersSection partners={getPartnersBySport('snowboard-parallel')} />
+        <PartnersSection partners={getPartnersBySport('snowboard-parallel')} showOrganizers={false} />
 
       </div>
     </div>

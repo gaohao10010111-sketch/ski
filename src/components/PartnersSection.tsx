@@ -106,6 +106,7 @@ interface PartnersSectionProps {
   partners: SportPartners;
   variant?: 'full' | 'compact' | 'inline';
   showLabels?: boolean;
+  showOrganizers?: boolean;  // 是否显示主办/承办单位，默认true
   className?: string;
 }
 
@@ -121,6 +122,7 @@ export default function PartnersSection({
   partners,
   variant = 'full',
   showLabels = true,
+  showOrganizers = true,
   className = '',
 }: PartnersSectionProps) {
   const { organizers, hosts, brands, resorts } = partners;
@@ -168,37 +170,39 @@ export default function PartnersSection({
         </h3>
       </div>
 
-      {/* 主办/承办单位 - 单行紧凑展示 */}
-      <div className="flex flex-wrap items-center justify-center gap-3 mb-4">
-        {organizers.length > 0 && (
-          <>
-            <span className="text-xs text-gray-500 whitespace-nowrap">
-              {partnerTypeLabels.organizer}:
-            </span>
-            {organizers.map((partner) => (
-              <div key={partner.id} className="bg-white rounded-lg px-3 py-2 shadow-sm">
-                <PartnerLogo partner={partner} size="md" />
-              </div>
-            ))}
-          </>
-        )}
-        {hosts.length > 0 && (
-          <>
-            <span className="text-xs text-gray-500 whitespace-nowrap ml-2">
-              {partnerTypeLabels.host}:
-            </span>
-            {hosts.map((partner) => (
-              <div key={partner.id} className="bg-white rounded-lg px-3 py-2 shadow-sm">
-                <PartnerLogo partner={partner} size="md" />
-              </div>
-            ))}
-          </>
-        )}
-      </div>
+      {/* 主办/承办单位 - 单行紧凑展示（可通过 showOrganizers 控制） */}
+      {showOrganizers && (organizers.length > 0 || hosts.length > 0) && (
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-4">
+          {organizers.length > 0 && (
+            <>
+              <span className="text-xs text-gray-500 whitespace-nowrap">
+                {partnerTypeLabels.organizer}:
+              </span>
+              {organizers.map((partner) => (
+                <div key={partner.id} className="bg-white rounded-lg px-3 py-2 shadow-sm">
+                  <PartnerLogo partner={partner} size="md" />
+                </div>
+              ))}
+            </>
+          )}
+          {hosts.length > 0 && (
+            <>
+              <span className="text-xs text-gray-500 whitespace-nowrap ml-2">
+                {partnerTypeLabels.host}:
+              </span>
+              {hosts.map((partner) => (
+                <div key={partner.id} className="bg-white rounded-lg px-3 py-2 shadow-sm">
+                  <PartnerLogo partner={partner} size="md" />
+                </div>
+              ))}
+            </>
+          )}
+        </div>
+      )}
 
       {/* 合作品牌和雪场 - 单行紧凑展示 */}
       {(brands.length > 0 || resorts.length > 0) && (
-        <div className="flex flex-wrap items-center justify-center gap-2 pt-3 border-t border-gray-200">
+        <div className={`flex flex-wrap items-center justify-center gap-2 ${showOrganizers && (organizers.length > 0 || hosts.length > 0) ? 'pt-3 border-t border-gray-200' : ''}`}>
           {brands.length > 0 && (
             <>
               <span className="text-xs text-gray-400 whitespace-nowrap">

@@ -420,7 +420,7 @@ export default function AlpinePage() {
         </div>
 
         {/* 赛事合作伙伴 */}
-        <PartnersSection partners={getPartnersBySport('alpine')} />
+        <PartnersSection partners={getPartnersBySport('alpine')} showOrganizers={false} />
 
       </div>
     </div>

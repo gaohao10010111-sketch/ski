@@ -403,7 +403,7 @@ export default function FreestyleSlopestylePage() {
         )}
 
         {/* 赛事合作伙伴 */}
-        <PartnersSection partners={getPartnersBySport('freestyle-slopestyle')} />
+        <PartnersSection partners={getPartnersBySport('freestyle-slopestyle')} showOrganizers={false} />
 
       </div>
     </div>
