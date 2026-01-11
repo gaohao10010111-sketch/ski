@@ -355,8 +355,8 @@ export default function AlpinePage() {
         {/* 两栏：运动员名录 + 历史冠军 */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           {/* 运动员名录 */}
-          <section>
-            <div className="bg-white rounded-lg p-6 shadow-sm">
+          <section className="h-full">
+            <div className="bg-white rounded-lg p-6 shadow-sm h-full">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-xl font-bold text-gray-900 flex items-center">
                   <Users className="w-5 h-5 mr-2 text-indigo-600" />
@@ -388,7 +388,7 @@ export default function AlpinePage() {
 
           {/* 历史冠军 - 仅当有真实数据时显示 */}
           {champions.length > 0 && (
-            <section>
+            <section className="h-full">
               <div className="bg-white rounded-lg p-6 shadow-sm h-full">
                 <h2 className="text-xl font-bold text-gray-900 flex items-center mb-4">
                   <History className="w-5 h-5 mr-2 text-yellow-600" />
