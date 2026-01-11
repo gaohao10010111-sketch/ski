@@ -995,7 +995,7 @@ export default function PointsRankingsPage() {
           </>
         )}
 
-        {/* 按比赛视图 - 紧凑网格模式 */}
+        {/* 按比赛视图 - 优化布局 */}
         {viewMode === 'competition' && (
           <>
             {groupedByCompetition.length === 0 ? (
@@ -1005,281 +1005,228 @@ export default function PointsRankingsPage() {
                 <p className="text-sm text-gray-400 mt-1">请尝试调整筛选条件</p>
               </div>
             ) : (
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {/* 全部展开/收起按钮 */}
-                <div className="flex justify-end gap-2">
-                  <button
-                    onClick={expandAllCompetitionGroups}
-                    className="text-sm text-ski-blue hover:text-primary-700 flex items-center gap-1"
-                  >
-                    <ChevronDown className="h-4 w-4" />
-                    全部展开
-                  </button>
-                  <span className="text-gray-300">|</span>
-                  <button
-                    onClick={collapseAllCompetitionGroups}
-                    className="text-sm text-ski-blue hover:text-primary-700 flex items-center gap-1"
-                  >
-                    <ChevronUp className="h-4 w-4" />
-                    全部收起
-                  </button>
+                <div className="flex justify-between items-center">
+                  <div className="text-sm text-gray-500">
+                    共 {groupedByCompetition.length} 场比赛，{filteredGroups.length} 个小项
+                  </div>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={expandAllCompetitionGroups}
+                      className="text-sm text-ski-blue hover:text-blue-700 flex items-center gap-1 px-3 py-1.5 rounded-md hover:bg-blue-50 transition-colors"
+                    >
+                      <ChevronDown className="h-4 w-4" />
+                      全部展开
+                    </button>
+                    <button
+                      onClick={collapseAllCompetitionGroups}
+                      className="text-sm text-ski-blue hover:text-blue-700 flex items-center gap-1 px-3 py-1.5 rounded-md hover:bg-blue-50 transition-colors"
+                    >
+                      <ChevronUp className="h-4 w-4" />
+                      全部收起
+                    </button>
+                  </div>
                 </div>
 
                 {groupedByCompetition.map((competitionData) => (
-                  <div key={competitionData.competition} className="bg-white rounded-lg shadow overflow-hidden">
-                    {/* 比赛标题 */}
-                    <div className="bg-gradient-to-r from-ski-navy to-blue-800 px-4 py-4 text-white">
+                  <div key={competitionData.competition} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                    {/* 比赛标题 - 更紧凑 */}
+                    <div className="bg-gradient-to-r from-ski-blue to-blue-600 px-5 py-3 text-white">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <Trophy className="h-6 w-6" />
+                          <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                            <Trophy className="h-5 w-5" />
+                          </div>
                           <div>
-                            <h2 className="text-lg font-bold">{competitionData.competition}</h2>
-                            <div className="text-white/70 text-sm mt-1">
-                              {competitionData.location} · {competitionData.date}
+                            <h2 className="text-base font-bold">{competitionData.competition}</h2>
+                            <div className="text-white/80 text-xs mt-0.5 flex items-center gap-2">
+                              <span>{competitionData.location}</span>
+                              <span>·</span>
+                              <span>{competitionData.date}</span>
                             </div>
                           </div>
                         </div>
-                        <div className="flex items-center gap-4 text-sm">
-                          <span className="bg-white/20 px-3 py-1 rounded-full">
+                        <div className="flex items-center gap-2 text-xs">
+                          <span className="bg-white/20 px-2.5 py-1 rounded-full">
                             {sportTypeLabels[competitionData.sportType] || competitionData.sportType}
                           </span>
-                          <span className="bg-white/20 px-3 py-1 rounded-full flex items-center gap-1">
-                            <Users className="h-4 w-4" />
+                          <span className="bg-white/20 px-2.5 py-1 rounded-full">
                             {competitionData.groups.length} 个小项
                           </span>
                         </div>
                       </div>
                     </div>
 
-                    {/* 小项网格 - 紧凑显示 */}
-                    <div className="p-4">
-                      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                        {competitionData.groups.map((group) => {
-                          const groupKey = `${group.competition}-${group.discipline}-${group.ageGroup}-${group.gender}`
-                          const isExpanded = expandedCompetitionGroups.has(groupKey)
-                          const top3 = group.athletes.slice(0, 3)
+                    {/* 小项列表 - 表格形式更清晰 */}
+                    <div className="divide-y divide-gray-100">
+                      {competitionData.groups.map((group) => {
+                        const groupKey = `${group.competition}-${group.discipline}-${group.ageGroup}-${group.gender}`
+                        const isExpanded = expandedCompetitionGroups.has(groupKey)
+                        const top3 = group.athletes.slice(0, 3)
 
-                          return (
+                        // 预先计算列配置
+                        const hasRun = group.athletes.some(a => a.run1)
+                        const hasTime = group.athletes.some(a => a.time)
+                        const hasBestScore = group.athletes.some(a => a.bestScore !== undefined)
+                        const hasPoints = group.athletes.some(a => a.points !== undefined)
+
+                        return (
+                          <div key={groupKey}>
+                            {/* 小项行 - 可点击展开 */}
                             <button
-                              key={groupKey}
                               onClick={() => toggleCompetitionGroup(groupKey)}
-                              className={`p-3 rounded-lg text-left transition-all ${
-                                isExpanded
-                                  ? 'bg-ski-blue text-white shadow-md ring-2 ring-ski-blue ring-offset-2'
-                                  : 'bg-gray-50 hover:bg-gray-100 text-gray-700 hover:shadow'
+                              className={`w-full px-5 py-3 flex items-center justify-between hover:bg-gray-50 transition-colors ${
+                                isExpanded ? 'bg-blue-50' : ''
                               }`}
                             >
-                              <div className="flex items-center justify-between">
-                                <div className="font-medium text-sm truncate flex-1">
-                                  {group.discipline}
+                              <div className="flex items-center gap-4">
+                                <div className="flex items-center gap-2">
+                                  <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                                    group.ageGroup === 'U12' ? 'bg-green-100 text-green-700' :
+                                    group.ageGroup === 'U15' ? 'bg-yellow-100 text-yellow-700' :
+                                    'bg-purple-100 text-purple-700'
+                                  }`}>
+                                    {group.ageGroup}
+                                  </span>
+                                  <span className={`px-2 py-0.5 rounded text-xs font-medium ${
+                                    group.gender === '男子组' ? 'bg-sky-100 text-sky-700' : 'bg-pink-100 text-pink-700'
+                                  }`}>
+                                    {group.gender}
+                                  </span>
+                                </div>
+                                <span className="font-medium text-gray-900">{group.discipline}</span>
+                                <span className="text-sm text-gray-500">({group.athletes.length}人)</span>
+                              </div>
+                              <div className="flex items-center gap-4">
+                                {/* 前三名预览 */}
+                                <div className="hidden sm:flex items-center gap-3 text-sm">
+                                  {top3.slice(0, 3).map((athlete, i) => (
+                                    <div key={i} className="flex items-center gap-1.5">
+                                      <span className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${
+                                        i === 0 ? 'bg-yellow-400 text-yellow-900' :
+                                        i === 1 ? 'bg-gray-300 text-gray-700' :
+                                        'bg-orange-300 text-orange-800'
+                                      }`}>
+                                        {i + 1}
+                                      </span>
+                                      <span className="text-gray-700 max-w-[80px] truncate">{athlete.name}</span>
+                                    </div>
+                                  ))}
                                 </div>
                                 {isExpanded ? (
-                                  <ChevronUp className="h-4 w-4 flex-shrink-0" />
+                                  <ChevronUp className="h-5 w-5 text-ski-blue" />
                                 ) : (
-                                  <ChevronDown className="h-4 w-4 flex-shrink-0" />
+                                  <ChevronDown className="h-5 w-5 text-gray-400" />
                                 )}
                               </div>
-                              <div className={`flex items-center gap-2 mt-1 text-xs ${isExpanded ? 'text-white/80' : 'text-gray-500'}`}>
-                                <span className={`px-1.5 py-0.5 rounded ${
-                                  isExpanded
-                                    ? 'bg-white/20'
-                                    : group.ageGroup === 'U12' ? 'bg-green-100 text-green-700' :
-                                      group.ageGroup === 'U15' ? 'bg-yellow-100 text-yellow-700' :
-                                      'bg-purple-100 text-purple-700'
-                                }`}>
-                                  {group.ageGroup}
-                                </span>
-                                <span className={`px-1.5 py-0.5 rounded ${
-                                  isExpanded
-                                    ? 'bg-white/20'
-                                    : group.gender === '男子组' ? 'bg-sky-100 text-sky-700' : 'bg-pink-100 text-pink-700'
-                                }`}>
-                                  {group.gender}
-                                </span>
-                              </div>
-                              <div className={`text-xs mt-1 ${isExpanded ? 'text-white/80' : 'text-gray-500'}`}>
-                                {group.athletes.length}人 · 冠军: {top3[0]?.name || '-'}
-                              </div>
                             </button>
-                          )
-                        })}
-                      </div>
-                    </div>
 
-                    {/* 展开的小项详情 */}
-                    {competitionData.groups.map((group) => {
-                      const groupKey = `${group.competition}-${group.discipline}-${group.ageGroup}-${group.gender}`
-                      const isExpanded = expandedCompetitionGroups.has(groupKey)
-                      const top3 = group.athletes.slice(0, 3)
-                      const hasTop3 = top3.length >= 3
-
-                      if (!isExpanded) return null
-
-                      // 预先计算列配置
-                      const hasRun = group.athletes.some(a => a.run1)
-                      const hasTime = group.athletes.some(a => a.time)
-                      const hasBestScore = group.athletes.some(a => a.bestScore !== undefined)
-                      const hasPoints = group.athletes.some(a => a.points !== undefined)
-
-                      return (
-                        <div key={`detail-${groupKey}`} className="border-t border-gray-200">
-                          {/* 小项标题 */}
-                          <div className="bg-gradient-to-r from-ski-blue to-blue-600 px-4 py-3 text-white flex items-center justify-between">
-                            <div className="flex items-center gap-3">
-                              <Award className="h-5 w-5" />
-                              <h3 className="text-base font-medium">
-                                {group.discipline} · {group.ageGroup} · {group.gender}
-                              </h3>
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <span className="text-sm bg-white/20 px-3 py-1 rounded-full">
-                                {group.athletes.length} 名运动员
-                              </span>
-                              <button
-                                onClick={(e) => { e.stopPropagation(); toggleCompetitionGroup(groupKey); }}
-                                className="p-1 hover:bg-white/20 rounded"
-                              >
-                                <ChevronUp className="h-4 w-4" />
-                              </button>
-                            </div>
-                          </div>
-
-                          {/* 领奖台展示 - 前三名（紧凑版） */}
-                          {hasTop3 && (
-                            <div className="bg-gradient-to-br from-ski-navy to-blue-900 p-6 text-white">
-                              <div className="flex justify-center items-end gap-3">
-                                {/* 银牌 */}
-                                <div className="text-center">
-                                  <div className="w-14 h-14 mx-auto mb-2 bg-gray-300 rounded-full flex items-center justify-center shadow">
-                                    <Medal className="w-7 h-7 text-gray-600" />
-                                  </div>
-                                  <div className="bg-gray-300 rounded-t-lg pt-2 pb-1 px-2 w-20">
-                                    <div className="text-gray-800 font-bold text-xs truncate">{top3[1].name}</div>
-                                    <div className="text-gray-600 text-xs truncate">{top3[1].team}</div>
-                                    <div className="text-gray-700 text-xs">{top3[1].points || top3[1].time || top3[1].bestScore}</div>
-                                  </div>
-                                  <div className="bg-gray-400 h-10 w-20 flex items-center justify-center text-lg font-bold text-gray-700">2</div>
-                                </div>
-                                {/* 金牌 */}
-                                <div className="text-center -mt-3">
-                                  <div className="w-16 h-16 mx-auto mb-2 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
-                                    <Trophy className="w-8 h-8 text-yellow-800" />
-                                  </div>
-                                  <div className="bg-yellow-400 rounded-t-lg pt-2 pb-1 px-2 w-24">
-                                    <div className="text-yellow-900 font-bold text-sm truncate">{top3[0].name}</div>
-                                    <div className="text-yellow-800 text-xs truncate">{top3[0].team}</div>
-                                    <div className="text-yellow-900 text-xs">{top3[0].points || top3[0].time || top3[0].bestScore}</div>
-                                  </div>
-                                  <div className="bg-yellow-500 h-16 w-24 flex items-center justify-center text-xl font-bold text-yellow-900">1</div>
-                                </div>
-                                {/* 铜牌 */}
-                                <div className="text-center">
-                                  <div className="w-14 h-14 mx-auto mb-2 bg-orange-400 rounded-full flex items-center justify-center shadow">
-                                    <Medal className="w-7 h-7 text-orange-800" />
-                                  </div>
-                                  <div className="bg-orange-400 rounded-t-lg pt-2 pb-1 px-2 w-20">
-                                    <div className="text-orange-900 font-bold text-xs truncate">{top3[2].name}</div>
-                                    <div className="text-orange-800 text-xs truncate">{top3[2].team}</div>
-                                    <div className="text-orange-900 text-xs">{top3[2].points || top3[2].time || top3[2].bestScore}</div>
-                                  </div>
-                                  <div className="bg-orange-500 h-8 w-20 flex items-center justify-center text-lg font-bold text-orange-900">3</div>
+                            {/* 展开的详情 - 仅排名表格 */}
+                            {isExpanded && (
+                              <div className="border-t border-gray-100 bg-gray-50">
+                                <div className="overflow-x-auto">
+                                  <table className="min-w-full">
+                                    <thead className="bg-gray-100">
+                                      <tr>
+                                        <th className="px-4 py-2.5 text-center text-xs font-medium text-gray-500 uppercase w-14">名次</th>
+                                        <th className="px-3 py-2.5 text-center text-xs font-medium text-gray-500 uppercase w-14">号码</th>
+                                        <th className="px-4 py-2.5 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
+                                        <th className="px-4 py-2.5 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
+                                        {hasRun && (
+                                          <>
+                                            <th className="px-3 py-2.5 text-center text-xs font-medium text-gray-500 uppercase w-20">第一轮</th>
+                                            <th className="px-3 py-2.5 text-center text-xs font-medium text-gray-500 uppercase w-20">第二轮</th>
+                                          </>
+                                        )}
+                                        {(hasTime || hasBestScore) && (
+                                          <th className="px-3 py-2.5 text-center text-xs font-medium text-gray-500 uppercase w-20">
+                                            {hasTime ? '成绩' : '得分'}
+                                          </th>
+                                        )}
+                                        {hasPoints && (
+                                          <th className="px-3 py-2.5 text-center text-xs font-medium text-gray-500 uppercase w-20">积分</th>
+                                        )}
+                                      </tr>
+                                    </thead>
+                                    <tbody className="bg-white divide-y divide-gray-100">
+                                      {group.athletes.map((athlete, index) => (
+                                        <tr
+                                          key={index}
+                                          className={`hover:bg-blue-50/50 transition-colors ${
+                                            athlete.rank === 1 ? 'bg-yellow-50/50' :
+                                            athlete.rank === 2 ? 'bg-gray-50/50' :
+                                            athlete.rank === 3 ? 'bg-orange-50/50' : ''
+                                          }`}
+                                        >
+                                          <td className="px-4 py-2 whitespace-nowrap text-center">
+                                            {athlete.rank <= 3 ? (
+                                              <span className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold ${
+                                                athlete.rank === 1 ? 'bg-yellow-400 text-yellow-900' :
+                                                athlete.rank === 2 ? 'bg-gray-300 text-gray-700' :
+                                                'bg-orange-300 text-orange-800'
+                                              }`}>
+                                                {athlete.rank}
+                                              </span>
+                                            ) : (
+                                              <span className="text-sm text-gray-600 font-medium">{athlete.rank}</span>
+                                            )}
+                                          </td>
+                                          <td className="px-3 py-2 whitespace-nowrap text-center">
+                                            <span className="text-sm text-gray-500">{athlete.bib}</span>
+                                          </td>
+                                          <td className="px-4 py-2 whitespace-nowrap">
+                                            <span className={`text-sm font-medium ${athlete.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
+                                              {athlete.name}
+                                            </span>
+                                          </td>
+                                          <td className="px-4 py-2 text-sm text-gray-600 max-w-[200px] truncate" title={athlete.team}>
+                                            {athlete.team}
+                                          </td>
+                                          {hasRun && (
+                                            <>
+                                              <td className="px-3 py-2 whitespace-nowrap text-center text-sm text-gray-600">
+                                                {athlete.run1 || '-'}
+                                              </td>
+                                              <td className="px-3 py-2 whitespace-nowrap text-center text-sm text-gray-600">
+                                                {athlete.run2 || '-'}
+                                              </td>
+                                            </>
+                                          )}
+                                          {(hasTime || hasBestScore) && (
+                                            <td className="px-3 py-2 whitespace-nowrap text-center">
+                                              <span className={`text-sm font-medium ${
+                                                athlete.rank === 1 ? 'text-yellow-700' :
+                                                athlete.rank === 2 ? 'text-gray-700' :
+                                                athlete.rank === 3 ? 'text-orange-700' : 'text-gray-900'
+                                              }`}>
+                                                {athlete.time || athlete.bestScore || '-'}
+                                              </span>
+                                            </td>
+                                          )}
+                                          {hasPoints && (
+                                            <td className="px-3 py-2 whitespace-nowrap text-center">
+                                              <span className={`inline-flex px-2.5 py-0.5 rounded text-sm font-bold ${
+                                                athlete.rank === 1 ? 'bg-yellow-400 text-yellow-900' :
+                                                athlete.rank === 2 ? 'bg-gray-300 text-gray-800' :
+                                                athlete.rank === 3 ? 'bg-orange-300 text-orange-900' :
+                                                'bg-blue-100 text-blue-700'
+                                              }`}>
+                                                {athlete.points ?? '-'}
+                                              </span>
+                                            </td>
+                                          )}
+                                        </tr>
+                                      ))}
+                                    </tbody>
+                                  </table>
                                 </div>
                               </div>
-                            </div>
-                          )}
-
-                          {/* 排名表格 */}
-                          <div className="overflow-x-auto">
-                            <table className="min-w-full divide-y divide-gray-200">
-                              <thead className="bg-gray-50">
-                                <tr>
-                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">名次</th>
-                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">号码</th>
-                                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
-                                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
-                                  {hasRun && (
-                                    <>
-                                      <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">第一轮</th>
-                                      <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">第二轮</th>
-                                    </>
-                                  )}
-                                  {(hasTime || hasBestScore) && (
-                                    <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase">
-                                      {hasTime ? '成绩' : '得分'}
-                                    </th>
-                                  )}
-                                  {hasPoints && (
-                                    <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-24">积分</th>
-                                  )}
-                                </tr>
-                              </thead>
-                              <tbody className="bg-white divide-y divide-gray-200">
-                                {group.athletes.map((athlete, index) => (
-                                  <tr
-                                    key={index}
-                                    className={`hover:bg-blue-50 transition-colors ${
-                                      athlete.rank === 1 ? 'bg-yellow-50' :
-                                      athlete.rank === 2 ? 'bg-gray-50' :
-                                      athlete.rank === 3 ? 'bg-orange-50' : ''
-                                    }`}
-                                  >
-                                    <td className="px-4 py-2 whitespace-nowrap text-center">
-                                      {getRankIcon(athlete.rank)}
-                                    </td>
-                                    <td className="px-4 py-2 whitespace-nowrap text-center">
-                                      <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 text-sm font-medium text-gray-600">
-                                        {athlete.bib}
-                                      </span>
-                                    </td>
-                                    <td className="px-4 py-2 whitespace-nowrap">
-                                      <span className={`text-sm font-medium ${athlete.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
-                                        {athlete.name}
-                                      </span>
-                                    </td>
-                                    <td className="px-4 py-2 text-sm text-gray-600" title={athlete.team}>
-                                      {athlete.team}
-                                    </td>
-                                    {hasRun && (
-                                      <>
-                                        <td className="px-4 py-2 whitespace-nowrap text-center">
-                                          <span className="text-sm text-gray-600">{athlete.run1 || '-'}</span>
-                                        </td>
-                                        <td className="px-4 py-2 whitespace-nowrap text-center">
-                                          <span className="text-sm text-gray-600">{athlete.run2 || '-'}</span>
-                                        </td>
-                                      </>
-                                    )}
-                                    {(hasTime || hasBestScore) && (
-                                      <td className="px-4 py-2 whitespace-nowrap text-center">
-                                        <span className={`text-sm font-medium ${
-                                          athlete.rank === 1 ? 'text-yellow-600' :
-                                          athlete.rank === 2 ? 'text-gray-700' :
-                                          athlete.rank === 3 ? 'text-orange-600' : 'text-gray-900'
-                                        }`}>
-                                          {athlete.time || athlete.bestScore || '-'}
-                                        </span>
-                                      </td>
-                                    )}
-                                    {hasPoints && (
-                                      <td className="px-4 py-2 whitespace-nowrap text-center">
-                                        <span className={`inline-flex px-3 py-1 rounded-lg text-sm font-bold ${
-                                          athlete.rank === 1 ? 'bg-yellow-400 text-yellow-900' :
-                                          athlete.rank === 2 ? 'bg-gray-300 text-gray-800' :
-                                          athlete.rank === 3 ? 'bg-orange-300 text-orange-900' :
-                                          'bg-blue-100 text-blue-700'
-                                        }`}>
-                                          {athlete.points ?? '-'}
-                                        </span>
-                                      </td>
-                                    )}
-                                  </tr>
-                                ))}
-                              </tbody>
-                            </table>
+                            )}
                           </div>
-                        </div>
-                      )
-                    })}
+                        )
+                      })}
+                    </div>
                   </div>
                 ))}
               </div>

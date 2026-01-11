@@ -123,7 +123,7 @@ export default function AthletesPage() {
   const [athletes, setAthletes] = useState<Athlete[]>([])
   const [stats, setStats] = useState<StatsOverview | null>(null)
   const [page, setPage] = useState(1)
-  const [pageSize] = useState(20)
+  const [pageSize] = useState(50)
   const [total, setTotal] = useState(0)
   const { showToast } = useToast()
   const [dataSource, setDataSource] = useState<'local' | 'api'>('local')
