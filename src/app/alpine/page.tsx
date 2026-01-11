@@ -117,7 +117,7 @@ export default function AlpinePage() {
 
 
 
-  // 从真实数据生成历史冠军 - 使用 useMemo 缓存
+  // 从真实数据生成历史冠军 - 使用 useMemo 缓存（不再限制数量）
   const champions = useMemo(() => {
     const champList: { year: string; name: string; discipline: string; time: string }[] = [];
 
@@ -135,8 +135,17 @@ export default function AlpinePage() {
       });
     });
 
-    return champList.slice(0, 8);
+    return champList; // 返回全部冠军，由分页控制显示
   }, []);
+
+  // 冠军分页状态
+  const [championPage, setChampionPage] = useState(0);
+  const championsPerPage = 8; // 每页显示8个冠军
+  const totalChampionPages = Math.ceil(champions.length / championsPerPage);
+  const displayedChampions = champions.slice(
+    championPage * championsPerPage,
+    (championPage + 1) * championsPerPage
+  );
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
@@ -389,14 +398,39 @@ export default function AlpinePage() {
           {/* 历史冠军 - 仅当有真实数据时显示 */}
           {champions.length > 0 && (
             <section className="h-full">
-              <div className="bg-white rounded-lg p-6 shadow-sm h-full">
-                <h2 className="text-xl font-bold text-gray-900 flex items-center mb-4">
-                  <History className="w-5 h-5 mr-2 text-yellow-600" />
-                  赛事冠军
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {champions.map((champion, index) => (
-                    <div key={index} className="flex items-center p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border border-yellow-200">
+              <div className="bg-white rounded-lg p-6 shadow-sm h-full flex flex-col">
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-xl font-bold text-gray-900 flex items-center">
+                    <History className="w-5 h-5 mr-2 text-yellow-600" />
+                    赛事冠军
+                    <span className="ml-2 text-sm font-normal text-gray-500">({champions.length}位)</span>
+                  </h2>
+                  {/* 分页控件 */}
+                  {totalChampionPages > 1 && (
+                    <div className="flex items-center gap-2">
+                      <button
+                        onClick={() => setChampionPage(p => Math.max(0, p - 1))}
+                        disabled={championPage === 0}
+                        className="p-1 rounded hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed"
+                      >
+                        <ChevronLeft className="w-5 h-5 text-gray-600" />
+                      </button>
+                      <span className="text-sm text-gray-500">
+                        {championPage + 1}/{totalChampionPages}
+                      </span>
+                      <button
+                        onClick={() => setChampionPage(p => Math.min(totalChampionPages - 1, p + 1))}
+                        disabled={championPage === totalChampionPages - 1}
+                        className="p-1 rounded hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed"
+                      >
+                        <ChevronRight className="w-5 h-5 text-gray-600" />
+                      </button>
+                    </div>
+                  )}
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 flex-1">
+                  {displayedChampions.map((champion, index) => (
+                    <div key={championPage * championsPerPage + index} className="flex items-center p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border border-yellow-200">
                       <div className="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center mr-3 flex-shrink-0">
                         <Trophy className="w-5 h-5 text-white" />
                       </div>
