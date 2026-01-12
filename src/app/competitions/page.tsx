@@ -8,7 +8,6 @@ import {
   Users,
   Trophy,
   Clock,
-  Plus,
   Search,
   Filter,
   Eye,
@@ -214,16 +213,6 @@ export default function CompetitionsPage() {
   // 查看比赛详情 - 跳转到成绩公告页面
   const handleViewDetails = (competition: Competition) => {
     router.push(`/results-announcement?competition=${encodeURIComponent(competition.name)}&id=${competition.id}`)
-  }
-
-  // 快速操作
-  const handleQuickAction = (action: 'create' | 'schedule' | 'stats') => {
-    const messages = {
-      create: '新建比赛功能开发中',
-      schedule: '赛程安排功能开发中',
-      stats: '成绩统计功能开发中',
-    }
-    showToast(messages[action], 'info')
   }
 
   // 获取随机天气图标（装饰用）
@@ -548,35 +537,6 @@ export default function CompetitionsPage() {
         </div>
       )}
 
-      {/* 快速操作 */}
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
-        <div
-          onClick={() => handleQuickAction('create')}
-          className="card text-center hover:shadow-lg transition-shadow duration-200 cursor-pointer"
-        >
-          <Plus className="h-12 w-12 text-ski-blue mx-auto mb-4" />
-          <h3 className="text-lg font-semibold text-ski-navy mb-2">创建新比赛</h3>
-          <p className="text-sm text-gray-600">设置比赛信息，管理报名和成绩</p>
-        </div>
-
-        <div
-          onClick={() => handleQuickAction('schedule')}
-          className="card text-center hover:shadow-lg transition-shadow duration-200 cursor-pointer"
-        >
-          <Calendar className="h-12 w-12 text-green-600 mx-auto mb-4" />
-          <h3 className="text-lg font-semibold text-ski-navy mb-2">赛程安排</h3>
-          <p className="text-sm text-gray-600">查看和管理比赛日程安排</p>
-        </div>
-
-        <div
-          onClick={() => handleQuickAction('stats')}
-          className="card text-center hover:shadow-lg transition-shadow duration-200 cursor-pointer"
-        >
-          <Trophy className="h-12 w-12 text-yellow-600 mx-auto mb-4" />
-          <h3 className="text-lg font-semibold text-ski-navy mb-2">成绩统计</h3>
-          <p className="text-sm text-gray-600">分析比赛数据和运动员表现</p>
-        </div>
-      </div>
     </div>
   )
 }
