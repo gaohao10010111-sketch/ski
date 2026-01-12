@@ -557,83 +557,74 @@ export default function PointsRankingsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* 顶部标题区域 - 白底简洁设计 */}
-      <div className="relative bg-white overflow-hidden border-b border-gray-100">
-        {/* 装饰背景 - 淡蓝色渐变点缀 */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-24 -right-24 w-96 h-96 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-full opacity-60"></div>
-          <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-gradient-to-tr from-amber-50 to-yellow-50 rounded-full opacity-50"></div>
-        </div>
+      {/* 顶部标题区域 - 全宽大气设计 */}
+      <div className="relative bg-white border-b border-gray-200">
+        {/* 顶部装饰线条 */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-ski-blue via-blue-500 to-indigo-500"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-          {/* 返回按钮 - 左上角 */}
-          <Link
-            href="/"
-            className="absolute left-4 top-4 md:left-6 md:top-6 inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-ski-blue transition-colors z-10"
-          >
-            <ArrowLeft className="w-5 h-5" />
-          </Link>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* 面包屑导航 */}
+          <div className="py-4 border-b border-gray-100">
+            <nav className="flex items-center space-x-2 text-sm">
+              <Link href="/" className="text-gray-500 hover:text-ski-blue transition-colors">
+                首页
+              </Link>
+              <span className="text-gray-300">/</span>
+              <Link href="/points/rankings" className="text-gray-500 hover:text-ski-blue transition-colors">
+                积分系统
+              </Link>
+              <span className="text-gray-300">/</span>
+              <span className="text-gray-900 font-medium">积分排行榜</span>
+            </nav>
+          </div>
 
-          {/* 居中大标题区域 */}
-          <div className="text-center">
-            {/* 奖杯图标 */}
-            <div className="relative inline-block mb-5">
-              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg shadow-amber-200/50 rotate-3 hover:rotate-0 transition-transform">
-                <Trophy className="w-8 h-8 md:w-10 md:h-10 text-white drop-shadow-sm" />
+          {/* 主标题区域 */}
+          <div className="py-8 md:py-12">
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+              {/* 左侧：标题和描述 */}
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="inline-flex items-center px-2.5 py-1 rounded text-xs font-semibold bg-ski-blue text-white uppercase tracking-wider">
+                    Official
+                  </span>
+                  <span className="inline-flex items-center px-2.5 py-1 rounded text-xs font-medium bg-amber-100 text-amber-800">
+                    2025-2026 赛季
+                  </span>
+                </div>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight mb-4">
+                  积分排行榜
+                </h1>
+                <p className="text-gray-600 text-base md:text-lg max-w-2xl">
+                  全国滑雪青少年U系列赛事官方积分排名，涵盖高山滑雪、单板滑雪、自由式滑雪全项目数据
+                </p>
               </div>
-              <div className="absolute -top-1 -right-1 w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-md border border-amber-100">
-                <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
+
+              {/* 右侧：视图切换和操作 */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                {/* 视图切换 */}
+                <div className="inline-flex rounded-lg border border-gray-200 p-1 bg-gray-50">
+                  <button
+                    onClick={() => setViewMode('total')}
+                    className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                      viewMode === 'total'
+                        ? 'bg-white text-gray-900 shadow-sm border border-gray-200'
+                        : 'text-gray-600 hover:text-gray-900'
+                    }`}
+                  >
+                    总积分排名
+                  </button>
+                  <button
+                    onClick={() => setViewMode('competition')}
+                    className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                      viewMode === 'competition'
+                        ? 'bg-white text-gray-900 shadow-sm border border-gray-200'
+                        : 'text-gray-600 hover:text-gray-900'
+                    }`}
+                  >
+                    单站成绩
+                  </button>
+                </div>
               </div>
-            </div>
-
-            {/* 主标题 - 蓝色渐变文字 */}
-            <h1 className="text-3xl md:text-5xl font-extrabold bg-gradient-to-r from-ski-blue via-blue-600 to-indigo-600 bg-clip-text text-transparent tracking-wide mb-3">
-              积分排行榜
-            </h1>
-
-            {/* 副标题 */}
-            <p className="text-gray-500 text-base md:text-lg mb-6">
-              全国滑雪青少年U系列赛事积分排名
-            </p>
-
-            {/* 标签组 */}
-            <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-blue-50 text-ski-blue border border-blue-100">
-                <Calendar className="w-4 h-4 mr-1.5" />
-                2025-2026赛季
-              </span>
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-amber-50 text-amber-700 border border-amber-100">
-                <Trophy className="w-4 h-4 mr-1.5" />
-                官方数据
-              </span>
-              <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-green-50 text-green-700 border border-green-100">
-                <Users className="w-4 h-4 mr-1.5" />
-                U系列赛事
-              </span>
-            </div>
-
-            {/* 视图切换按钮 */}
-            <div className="inline-flex rounded-xl bg-gray-100 p-1">
-              <button
-                onClick={() => setViewMode('total')}
-                className={`px-4 py-2 md:px-6 md:py-2.5 rounded-lg text-sm md:text-base font-medium transition-all ${
-                  viewMode === 'total'
-                    ? 'bg-white text-ski-blue shadow-md'
-                    : 'text-gray-600 hover:text-ski-blue'
-                }`}
-              >
-                总积分排名
-              </button>
-              <button
-                onClick={() => setViewMode('competition')}
-                className={`px-4 py-2 md:px-6 md:py-2.5 rounded-lg text-sm md:text-base font-medium transition-all ${
-                  viewMode === 'competition'
-                    ? 'bg-white text-ski-blue shadow-md'
-                    : 'text-gray-600 hover:text-ski-blue'
-                }`}
-              >
-                单次比赛排名
-              </button>
             </div>
           </div>
         </div>
