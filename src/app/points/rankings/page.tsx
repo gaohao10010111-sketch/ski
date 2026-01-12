@@ -854,7 +854,7 @@ export default function PointsRankingsPage() {
                                   </div>
                                   <div className="bg-gradient-to-b from-gray-200 to-gray-300 rounded-t-lg pt-2 pb-1 px-2 sm:px-3 w-20 sm:w-24">
                                     <div className="text-gray-800 font-bold text-xs sm:text-sm truncate">{top3[1].athleteName}</div>
-                                    <div className="text-gray-600 text-[10px] sm:text-xs truncate" title={top3[1].team}>{top3[1].team}</div>
+                                    <div className="text-gray-600 text-[10px] sm:text-xs leading-tight text-center" title={top3[1].team}>{top3[1].team}</div>
                                     <div className="text-gray-700 font-medium text-xs sm:text-sm">{top3[1].totalPoints}分</div>
                                   </div>
                                   <div className="bg-gray-400 h-10 sm:h-12 w-20 sm:w-24 flex items-center justify-center text-xl sm:text-2xl font-bold text-gray-700 rounded-b-sm">2</div>
@@ -866,7 +866,7 @@ export default function PointsRankingsPage() {
                                   </div>
                                   <div className="bg-gradient-to-b from-yellow-300 to-yellow-400 rounded-t-lg pt-2 pb-1 px-2 sm:px-3 w-22 sm:w-28">
                                     <div className="text-yellow-900 font-bold text-xs sm:text-sm truncate">{top3[0].athleteName}</div>
-                                    <div className="text-yellow-800 text-[10px] sm:text-xs truncate" title={top3[0].team}>{top3[0].team}</div>
+                                    <div className="text-yellow-800 text-[10px] sm:text-xs leading-tight text-center" title={top3[0].team}>{top3[0].team}</div>
                                     <div className="text-yellow-900 font-medium text-xs sm:text-sm">{top3[0].totalPoints}分</div>
                                   </div>
                                   <div className="bg-yellow-500 h-16 sm:h-20 w-22 sm:w-28 flex items-center justify-center text-2xl sm:text-3xl font-bold text-yellow-900 rounded-b-sm">1</div>
@@ -878,7 +878,7 @@ export default function PointsRankingsPage() {
                                   </div>
                                   <div className="bg-gradient-to-b from-orange-300 to-orange-400 rounded-t-lg pt-2 pb-1 px-2 sm:px-3 w-20 sm:w-24">
                                     <div className="text-orange-900 font-bold text-xs sm:text-sm truncate">{top3[2].athleteName}</div>
-                                    <div className="text-orange-800 text-[10px] sm:text-xs truncate" title={top3[2].team}>{top3[2].team}</div>
+                                    <div className="text-orange-800 text-[10px] sm:text-xs leading-tight text-center" title={top3[2].team}>{top3[2].team}</div>
                                     <div className="text-orange-900 font-medium text-xs sm:text-sm">{top3[2].totalPoints}分</div>
                                   </div>
                                   <div className="bg-orange-500 h-6 sm:h-8 w-20 sm:w-24 flex items-center justify-center text-lg sm:text-2xl font-bold text-orange-900 rounded-b-sm">3</div>
@@ -894,8 +894,11 @@ export default function PointsRankingsPage() {
                                 <tr>
                                   <th className="px-2 sm:px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-12 sm:w-16">名次</th>
                                   <th className="hidden sm:table-cell px-3 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">变化</th>
-                                  <th className="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
-                                  <th className="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase max-w-[100px] sm:max-w-none">单位</th>
+                                  {/* 移动端：姓名/单位合并 */}
+                                  <th className="sm:hidden px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase">选手</th>
+                                  {/* 桌面端：姓名和单位分开 */}
+                                  <th className="hidden sm:table-cell px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
+                                  <th className="hidden sm:table-cell px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
                                   <th className="hidden sm:table-cell px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">参赛</th>
                                   <th className="hidden md:table-cell px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-20">实时排名</th>
                                   <th className="px-2 sm:px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16 sm:w-24">总积分</th>
@@ -917,12 +920,24 @@ export default function PointsRankingsPage() {
                                     <td className="hidden sm:table-cell px-3 py-2 whitespace-nowrap text-center">
                                       <RankChangeDisplay change={item.rankChange} />
                                     </td>
-                                    <td className="px-2 sm:px-4 py-2 whitespace-nowrap">
-                                      <span className={`text-xs sm:text-sm font-medium ${item.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
+                                    {/* 移动端：姓名+单位双行显示 */}
+                                    <td className="sm:hidden px-2 py-2">
+                                      <div className="flex flex-col">
+                                        <span className={`text-xs font-medium ${item.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
+                                          {item.athleteName}
+                                        </span>
+                                        <span className="text-[11px] text-gray-500 leading-tight mt-0.5">
+                                          {item.team}
+                                        </span>
+                                      </div>
+                                    </td>
+                                    {/* 桌面端：姓名和单位分开显示 */}
+                                    <td className="hidden sm:table-cell px-4 py-2 whitespace-nowrap">
+                                      <span className={`text-sm font-medium ${item.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
                                         {item.athleteName}
                                       </span>
                                     </td>
-                                    <td className="px-2 sm:px-4 py-2 text-xs sm:text-sm text-gray-600 max-w-[100px] sm:max-w-none truncate" title={item.team}>
+                                    <td className="hidden sm:table-cell px-4 py-2 text-sm text-gray-600 max-w-[200px] truncate" title={item.team}>
                                       {item.team}
                                     </td>
                                     <td className="hidden sm:table-cell px-4 py-2 whitespace-nowrap text-center">
@@ -1127,7 +1142,7 @@ export default function PointsRankingsPage() {
                               </div>
                               <div className="text-center">
                                 <div className="font-bold text-gray-800 text-xs sm:text-sm">{top3[1]?.name}</div>
-                                <div className="text-[10px] sm:text-xs text-gray-500 max-w-[60px] sm:max-w-[80px] truncate" title={top3[1]?.team}>{top3[1]?.team}</div>
+                                <div className="text-[10px] sm:text-xs text-gray-500 max-w-[80px] sm:max-w-[100px] text-center leading-tight" title={top3[1]?.team}>{top3[1]?.team}</div>
                                 <div className="mt-1 px-1.5 sm:px-2 py-0.5 bg-gray-200 rounded text-[10px] sm:text-xs font-bold text-gray-700">
                                   {top3[1]?.points ?? '-'}分
                                 </div>
@@ -1144,7 +1159,7 @@ export default function PointsRankingsPage() {
                               </div>
                               <div className="text-center">
                                 <div className="font-bold text-gray-900 text-sm sm:text-base">{top3[0]?.name}</div>
-                                <div className="text-[10px] sm:text-xs text-gray-600 max-w-[70px] sm:max-w-[100px] truncate" title={top3[0]?.team}>{top3[0]?.team}</div>
+                                <div className="text-[10px] sm:text-xs text-gray-600 max-w-[90px] sm:max-w-[120px] text-center leading-tight" title={top3[0]?.team}>{top3[0]?.team}</div>
                                 <div className="mt-1 px-2 sm:px-3 py-0.5 sm:py-1 bg-gradient-to-r from-yellow-400 to-amber-400 rounded text-xs sm:text-sm font-bold text-yellow-900 shadow">
                                   {top3[0]?.points ?? '-'}分
                                 </div>
@@ -1161,7 +1176,7 @@ export default function PointsRankingsPage() {
                               </div>
                               <div className="text-center">
                                 <div className="font-bold text-gray-800 text-xs sm:text-sm">{top3[2]?.name}</div>
-                                <div className="text-[10px] sm:text-xs text-gray-500 max-w-[60px] sm:max-w-[80px] truncate" title={top3[2]?.team}>{top3[2]?.team}</div>
+                                <div className="text-[10px] sm:text-xs text-gray-500 max-w-[80px] sm:max-w-[100px] text-center leading-tight" title={top3[2]?.team}>{top3[2]?.team}</div>
                                 <div className="mt-1 px-1.5 sm:px-2 py-0.5 bg-orange-200 rounded text-[10px] sm:text-xs font-bold text-orange-800">
                                   {top3[2]?.points ?? '-'}分
                                 </div>
@@ -1182,8 +1197,11 @@ export default function PointsRankingsPage() {
                               <tr>
                                 <th className="px-2 sm:px-4 py-3 text-center text-xs font-bold text-gray-600 uppercase w-10 sm:w-14">名次</th>
                                 <th className="hidden sm:table-cell px-3 py-3 text-center text-xs font-bold text-gray-600 uppercase w-14">号码</th>
-                                <th className="px-2 sm:px-4 py-3 text-left text-xs font-bold text-gray-600 uppercase">姓名</th>
-                                <th className="px-2 sm:px-4 py-3 text-left text-xs font-bold text-gray-600 uppercase max-w-[80px] sm:max-w-none">单位</th>
+                                {/* 移动端：姓名/单位合并为一列 */}
+                                <th className="sm:hidden px-2 py-3 text-left text-xs font-bold text-gray-600 uppercase">选手</th>
+                                {/* 桌面端：姓名和单位分开 */}
+                                <th className="hidden sm:table-cell px-4 py-3 text-left text-xs font-bold text-gray-600 uppercase">姓名</th>
+                                <th className="hidden sm:table-cell px-4 py-3 text-left text-xs font-bold text-gray-600 uppercase">单位</th>
                                 {hasRun && (
                                   <>
                                     <th className="hidden md:table-cell px-3 py-3 text-center text-xs font-bold text-gray-600 uppercase w-20">第一轮</th>
@@ -1226,12 +1244,24 @@ export default function PointsRankingsPage() {
                                   <td className="hidden sm:table-cell px-3 py-2.5 whitespace-nowrap text-center">
                                     <span className="text-sm text-gray-500 bg-gray-100 px-2 py-0.5 rounded">{athlete.bib}</span>
                                   </td>
-                                  <td className="px-2 sm:px-4 py-2 sm:py-2.5 whitespace-nowrap">
-                                    <span className={`text-xs sm:text-sm font-semibold ${athlete.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
+                                  {/* 移动端：姓名+单位双行显示 */}
+                                  <td className="sm:hidden px-2 py-2">
+                                    <div className="flex flex-col">
+                                      <span className={`text-xs font-semibold ${athlete.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
+                                        {athlete.name}
+                                      </span>
+                                      <span className="text-[11px] text-gray-500 leading-tight mt-0.5">
+                                        {athlete.team}
+                                      </span>
+                                    </div>
+                                  </td>
+                                  {/* 桌面端：姓名和单位分开显示 */}
+                                  <td className="hidden sm:table-cell px-4 py-2.5 whitespace-nowrap">
+                                    <span className={`text-sm font-semibold ${athlete.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
                                       {athlete.name}
                                     </span>
                                   </td>
-                                  <td className="px-2 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm text-gray-600 max-w-[80px] sm:max-w-[200px] truncate" title={athlete.team}>
+                                  <td className="hidden sm:table-cell px-4 py-2.5 text-sm text-gray-600 max-w-[200px] truncate" title={athlete.team}>
                                     {athlete.team}
                                   </td>
                                   {hasRun && (

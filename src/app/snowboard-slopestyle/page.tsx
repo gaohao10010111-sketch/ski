@@ -230,17 +230,20 @@ export default function SnowboardSlopestylePage() {
                   <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-gray-50">
                       <tr>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-16">排名</th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">运动员</th>
-                        <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">单位</th>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">组别</th>
-                        <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-24">积分</th>
+                        <th className="px-2 sm:px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-12 sm:w-16">排名</th>
+                        {/* 移动端：选手（姓名+单位） */}
+                        <th className="sm:hidden px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">选手</th>
+                        {/* 桌面端：运动员和单位分开 */}
+                        <th className="hidden sm:table-cell px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">运动员</th>
+                        <th className="hidden sm:table-cell px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">单位</th>
+                        <th className="px-2 sm:px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">组别</th>
+                        <th className="px-2 sm:px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-16 sm:w-24">积分</th>
                       </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
                       {rankings.map((athlete, index) => (
                         <tr key={`${athlete.name}-${index}`} className={`hover:bg-gray-50 ${index < 3 ? 'bg-gradient-to-r from-yellow-50 to-orange-50' : ''}`}>
-                          <td className="px-4 py-3 whitespace-nowrap text-center">
+                          <td className="px-2 sm:px-4 py-3 whitespace-nowrap text-center">
                             <div className="flex items-center justify-center">
                               {index === 0 ? (
                                 <Crown className="w-5 h-5 text-yellow-500" />
@@ -253,7 +256,15 @@ export default function SnowboardSlopestylePage() {
                               )}
                             </div>
                           </td>
-                          <td className="px-4 py-3 whitespace-nowrap">
+                          {/* 移动端：姓名+单位双行显示 */}
+                          <td className="sm:hidden px-2 py-2">
+                            <div className="flex flex-col">
+                              <span className="text-xs font-semibold text-gray-900">{athlete.name}</span>
+                              <span className="text-[11px] text-gray-500 leading-tight mt-0.5">{athlete.team}</span>
+                            </div>
+                          </td>
+                          {/* 桌面端：姓名和单位分开显示 */}
+                          <td className="hidden sm:table-cell px-4 py-3 whitespace-nowrap">
                             <div className="flex items-center">
                               <div className="flex-shrink-0 h-8 w-8">
                                 <div className="h-8 w-8 rounded-full bg-purple-100 flex items-center justify-center">
@@ -265,8 +276,8 @@ export default function SnowboardSlopestylePage() {
                               </div>
                             </div>
                           </td>
-                          <td className="px-4 py-3 text-sm text-gray-600">{athlete.team}</td>
-                          <td className="px-4 py-3 whitespace-nowrap text-center">
+                          <td className="hidden sm:table-cell px-4 py-3 text-sm text-gray-600">{athlete.team}</td>
+                          <td className="px-2 sm:px-4 py-3 whitespace-nowrap text-center">
                             <span className="text-xs text-gray-500">{athlete.gender} {athlete.ageGroup}</span>
                           </td>
                           <td className="px-4 py-3 whitespace-nowrap text-center">
