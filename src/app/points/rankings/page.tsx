@@ -557,72 +557,69 @@ export default function PointsRankingsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* 顶部标题区域 - 大气居中设计 */}
-      <div className="relative bg-gradient-to-r from-ski-blue via-blue-600 to-indigo-600 overflow-hidden">
-        {/* 装饰背景元素 */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-72 h-72 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/3 translate-y-1/2"></div>
-          <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-white rounded-full opacity-50"></div>
-        </div>
-        {/* 雪花装饰 */}
-        <div className="absolute inset-0 opacity-20">
-          <svg className="absolute top-4 right-20 w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0L12 24M0 12L24 12M3.5 3.5L20.5 20.5M20.5 3.5L3.5 20.5" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-          </svg>
-          <svg className="absolute bottom-6 left-1/4 w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0L12 24M0 12L24 12M3.5 3.5L20.5 20.5M20.5 3.5L3.5 20.5" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-          </svg>
-          <svg className="absolute top-1/3 right-1/3 w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0L12 24M0 12L24 12M3.5 3.5L20.5 20.5M20.5 3.5L3.5 20.5" stroke="currentColor" strokeWidth="1.5" fill="none"/>
-          </svg>
+      {/* 顶部标题区域 - 白底简洁设计 */}
+      <div className="relative bg-white overflow-hidden border-b border-gray-100">
+        {/* 装饰背景 - 淡蓝色渐变点缀 */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-24 -right-24 w-96 h-96 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-full opacity-60"></div>
+          <div className="absolute -bottom-32 -left-32 w-80 h-80 bg-gradient-to-tr from-amber-50 to-yellow-50 rounded-full opacity-50"></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-          {/* 返回按钮 - 左上角固定 */}
+          {/* 返回按钮 - 左上角 */}
           <Link
             href="/"
-            className="absolute left-4 top-4 md:left-6 md:top-6 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors backdrop-blur-sm z-10"
+            className="absolute left-4 top-4 md:left-6 md:top-6 inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-ski-blue transition-colors z-10"
           >
             <ArrowLeft className="w-5 h-5" />
           </Link>
 
           {/* 居中大标题区域 */}
           <div className="text-center">
-            {/* 奖杯图标 - 更大更醒目 */}
-            <div className="relative inline-block mb-4">
-              <div className="w-20 h-20 md:w-24 md:h-24 mx-auto bg-gradient-to-br from-yellow-400 to-amber-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-amber-500/40 rotate-3 hover:rotate-0 transition-transform">
-                <Trophy className="w-10 h-10 md:w-12 md:h-12 text-white drop-shadow-md" />
+            {/* 奖杯图标 */}
+            <div className="relative inline-block mb-5">
+              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg shadow-amber-200/50 rotate-3 hover:rotate-0 transition-transform">
+                <Trophy className="w-8 h-8 md:w-10 md:h-10 text-white drop-shadow-sm" />
               </div>
-              <div className="absolute -top-2 -right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg">
-                <Star className="w-5 h-5 text-amber-500 fill-amber-500" />
+              <div className="absolute -top-1 -right-1 w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-md border border-amber-100">
+                <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
               </div>
             </div>
 
-            {/* 主标题 */}
-            <h1 className="text-3xl md:text-5xl font-extrabold text-white drop-shadow-lg tracking-wide mb-3">
+            {/* 主标题 - 蓝色渐变文字 */}
+            <h1 className="text-3xl md:text-5xl font-extrabold bg-gradient-to-r from-ski-blue via-blue-600 to-indigo-600 bg-clip-text text-transparent tracking-wide mb-3">
               积分排行榜
             </h1>
 
-            {/* 副标题标签 */}
+            {/* 副标题 */}
+            <p className="text-gray-500 text-base md:text-lg mb-6">
+              全国滑雪青少年U系列赛事积分排名
+            </p>
+
+            {/* 标签组 */}
             <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1 md:px-4 md:py-1.5 rounded-full text-sm md:text-base font-medium bg-white/20 text-white backdrop-blur-sm">
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-blue-50 text-ski-blue border border-blue-100">
                 <Calendar className="w-4 h-4 mr-1.5" />
                 2025-2026赛季
               </span>
-              <span className="inline-flex items-center px-3 py-1 md:px-4 md:py-1.5 rounded-full text-sm md:text-base font-medium bg-white/20 text-white backdrop-blur-sm">
-                全国青少年U系列
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-amber-50 text-amber-700 border border-amber-100">
+                <Trophy className="w-4 h-4 mr-1.5" />
+                官方数据
+              </span>
+              <span className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-green-50 text-green-700 border border-green-100">
+                <Users className="w-4 h-4 mr-1.5" />
+                U系列赛事
               </span>
             </div>
 
-            {/* 视图切换按钮 - 居中 */}
-            <div className="inline-flex rounded-xl bg-white/20 backdrop-blur-sm p-1">
+            {/* 视图切换按钮 */}
+            <div className="inline-flex rounded-xl bg-gray-100 p-1">
               <button
                 onClick={() => setViewMode('total')}
                 className={`px-4 py-2 md:px-6 md:py-2.5 rounded-lg text-sm md:text-base font-medium transition-all ${
                   viewMode === 'total'
                     ? 'bg-white text-ski-blue shadow-md'
-                    : 'text-white hover:bg-white/20'
+                    : 'text-gray-600 hover:text-ski-blue'
                 }`}
               >
                 总积分排名
@@ -632,7 +629,7 @@ export default function PointsRankingsPage() {
                 className={`px-4 py-2 md:px-6 md:py-2.5 rounded-lg text-sm md:text-base font-medium transition-all ${
                   viewMode === 'competition'
                     ? 'bg-white text-ski-blue shadow-md'
-                    : 'text-white hover:bg-white/20'
+                    : 'text-gray-600 hover:text-ski-blue'
                 }`}
               >
                 单次比赛排名
