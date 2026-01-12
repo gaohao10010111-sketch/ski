@@ -1031,29 +1031,6 @@ export default function ResultsImportPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative">
-      {/* 背景装饰 */}
-      <div className="absolute top-0 right-0 w-40 h-40 opacity-15 rounded-full overflow-hidden">
-        <img
-          src={getImagePath("/images/ski-action-2.jpg")}
-          alt=""
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="absolute bottom-10 left-10 w-36 h-36 opacity-15 rounded-full overflow-hidden">
-        <img
-          src={getImagePath("/images/giant-slalom.jpg")}
-          alt=""
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="absolute top-1/3 right-1/4 w-24 h-24 opacity-10 rounded-full overflow-hidden">
-        <img
-          src={getImagePath("/images/ski-action-2.jpg")}
-          alt=""
-          className="w-full h-full object-cover"
-        />
-      </div>
-
       {/* Header */}
       <div className="text-center mb-8 relative z-10">
         <h1 className="section-title">比赛成绩导入</h1>
