@@ -556,7 +556,7 @@ export default function PointsRankingsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 overflow-x-hidden">
       {/* 顶部标题区域 - 全宽大气设计 */}
       <div className="relative bg-white">
         {/* 顶部装饰渐变背景 */}
@@ -986,11 +986,11 @@ export default function PointsRankingsPage() {
         {/* ========== 单次比赛排名视图 ========== */}
         {viewMode === 'competition' && (
           <>
-            {/* 比赛选择下拉 + 筛选器 */}
-            <div className="bg-white rounded-lg shadow p-4 mb-6">
-              <div className="flex flex-wrap items-center gap-4">
+            {/* 比赛选择下拉 + 筛选器 - 移动端优化 */}
+            <div className="bg-white rounded-lg shadow p-3 sm:p-4 mb-4 sm:mb-6">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-end gap-3 sm:gap-4">
                 {/* 比赛下拉选择 */}
-                <div className="flex-1 min-w-[200px]">
+                <div className="w-full sm:flex-1 sm:min-w-[200px]">
                   <label className="block text-xs font-medium text-gray-600 mb-1">选择比赛</label>
                   <select
                     value={selectedCompetitionGroupIndex['__selected_competition'] || groupedByCompetition[0]?.competition || ''}
@@ -1009,7 +1009,7 @@ export default function PointsRankingsPage() {
                 </div>
 
                 {/* 搜索框 */}
-                <div className="relative min-w-[160px]">
+                <div className="relative w-full sm:w-auto sm:min-w-[160px]">
                   <label className="block text-xs font-medium text-gray-600 mb-1">搜索</label>
                   <div className="relative">
                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
@@ -1053,17 +1053,17 @@ export default function PointsRankingsPage() {
                   const hasPoints = currentGroup?.athletes.some(a => a.points !== undefined)
 
                   return (
-                    <div key={competitionData.competition} className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
+                    <div key={competitionData.competition} className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden max-w-full">
                       {/* 比赛标题 - 蓝色主题 */}
-                      <div className="bg-gradient-to-r from-ski-blue to-blue-600 px-3 sm:px-5 py-3 sm:py-4 text-white">
+                      <div className="bg-gradient-to-r from-ski-blue to-blue-600 px-3 sm:px-5 py-3 sm:py-4 text-white overflow-hidden">
                         <div className="flex items-start sm:items-center justify-between gap-2">
                           <div className="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
-                              <Trophy className="h-5 w-5 sm:h-6 sm:w-6" />
+                            <div className="w-9 h-9 sm:w-12 sm:h-12 bg-white/20 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                              <Trophy className="h-4 w-4 sm:h-6 sm:w-6" />
                             </div>
                             <div className="min-w-0 flex-1">
-                              <h2 className="text-sm sm:text-lg font-bold truncate">{competitionData.competition}</h2>
-                              <div className="text-white/80 text-xs sm:text-sm mt-0.5 flex items-center gap-1 sm:gap-2 flex-wrap">
+                              <h2 className="text-xs sm:text-lg font-bold truncate">{competitionData.competition}</h2>
+                              <div className="text-white/80 text-[10px] sm:text-sm mt-0.5 flex items-center gap-1 sm:gap-2 flex-wrap">
                                 <Calendar className="h-3 w-3 sm:h-3.5 sm:w-3.5 flex-shrink-0" />
                                 <span>{competitionData.date}</span>
                                 <span className="hidden sm:inline">·</span>
@@ -1072,7 +1072,7 @@ export default function PointsRankingsPage() {
                             </div>
                           </div>
                           <div className="flex flex-col items-end gap-1 flex-shrink-0">
-                            <span className="bg-white/20 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap">
+                            <span className="bg-white/20 px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-sm font-medium whitespace-nowrap">
                               {sportTypeLabels[competitionData.sportType] || competitionData.sportType}
                             </span>
                             <span className="text-blue-100 text-[10px] sm:text-xs whitespace-nowrap">
@@ -1082,9 +1082,9 @@ export default function PointsRankingsPage() {
                         </div>
                       </div>
 
-                      {/* 小项选择Tab */}
-                      <div className="bg-gray-50 px-4 py-3 border-b border-gray-100">
-                        <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-hide">
+                      {/* 小项选择Tab - 移动端水平滚动 */}
+                      <div className="bg-gray-50 px-2 sm:px-4 py-2 sm:py-3 border-b border-gray-100 -mx-0 overflow-hidden">
+                        <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-hide">
                           {competitionData.groups.map((group, index) => {
                             const isSelected = index === currentGroupIndex
                             return (
@@ -1094,21 +1094,21 @@ export default function PointsRankingsPage() {
                                   ...prev,
                                   [competitionData.competition]: index
                                 }))}
-                                className={`flex-shrink-0 px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${
+                                className={`flex-shrink-0 px-2 py-1.5 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
                                   isSelected
                                     ? 'bg-ski-blue text-white shadow-md'
                                     : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
                                 }`}
                               >
-                                <span className={`inline-block w-2.5 h-2.5 rounded-full mr-2 ${
+                                <span className={`inline-block w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full mr-1 sm:mr-2 ${
                                   group.ageGroup === 'U12' ? 'bg-green-400' :
                                   group.ageGroup === 'U15' ? 'bg-yellow-400' : 'bg-purple-400'
                                 }`} />
-                                {group.ageGroup} {group.gender}
-                                <span className={`ml-2 px-1.5 py-0.5 rounded text-xs ${
+                                {group.ageGroup} {group.gender.replace('子组', '')}
+                                <span className={`ml-1 sm:ml-2 px-1 sm:px-1.5 py-0.5 rounded text-[10px] sm:text-xs ${
                                   isSelected ? 'bg-white/20' : 'bg-gray-100'
                                 }`}>
-                                  {group.athletes.length}人
+                                  {group.athletes.length}
                                 </span>
                               </button>
                             )
