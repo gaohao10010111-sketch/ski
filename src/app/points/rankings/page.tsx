@@ -19,10 +19,10 @@ const sportTypeLabels: Record<string, string> = {
 
 // 四大项目配置（用于总积分视图的滑动Tab）
 const sportTypeConfig = [
-  { value: 'alpine', label: '高山滑雪', icon: Mountain },
-  { value: 'snowboard-slopestyle-bigair', label: '单板坡障/大跳台', icon: Sparkles },
-  { value: 'snowboard-parallel', label: '单板平行项目', icon: ArrowLeftRight },
-  { value: 'freestyle-slopestyle-bigair', label: '自由式坡障/大跳台', icon: Wind },
+  { value: 'alpine', label: '高山滑雪', shortLabel: '高山', icon: Mountain },
+  { value: 'snowboard-slopestyle-bigair', label: '单板坡障/大跳台', shortLabel: '单板坡障', icon: Sparkles },
+  { value: 'snowboard-parallel', label: '单板平行项目', shortLabel: '单板平行', icon: ArrowLeftRight },
+  { value: 'freestyle-slopestyle-bigair', label: '自由式坡障/大跳台', shortLabel: '自由式', icon: Wind },
 ]
 
 // 从数据中提取所有可用的筛选选项
@@ -622,40 +622,40 @@ export default function PointsRankingsPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* 统计卡片 - 四色标签 */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-xl p-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 mb-4 sm:mb-6">
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-xl p-2.5 sm:p-4">
             <div className="flex items-center">
-              <Users className="w-8 h-8 text-blue-600 mr-3" />
-              <div>
-                <div className="text-2xl font-bold text-blue-700">{stats.uniqueAthletes}</div>
-                <div className="text-sm text-blue-600">参赛运动员</div>
+              <Users className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 mr-2 sm:mr-3 flex-shrink-0" />
+              <div className="min-w-0">
+                <div className="text-lg sm:text-2xl font-bold text-blue-700">{stats.uniqueAthletes}</div>
+                <div className="text-xs sm:text-sm text-blue-600">参赛运动员</div>
               </div>
             </div>
           </div>
-          <div className="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-xl p-4">
+          <div className="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-xl p-2.5 sm:p-4">
             <div className="flex items-center">
-              <Calendar className="w-8 h-8 text-green-600 mr-3" />
-              <div>
-                <div className="text-2xl font-bold text-green-700">{stats.totalCompetitions}</div>
-                <div className="text-sm text-green-600">已完赛事</div>
+              <Calendar className="w-6 h-6 sm:w-8 sm:h-8 text-green-600 mr-2 sm:mr-3 flex-shrink-0" />
+              <div className="min-w-0">
+                <div className="text-lg sm:text-2xl font-bold text-green-700">{stats.totalCompetitions}</div>
+                <div className="text-xs sm:text-sm text-green-600">已完赛事</div>
               </div>
             </div>
           </div>
-          <div className="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 rounded-xl p-4">
+          <div className="bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 rounded-xl p-2.5 sm:p-4">
             <div className="flex items-center">
-              <Target className="w-8 h-8 text-purple-600 mr-3" />
-              <div>
-                <div className="text-2xl font-bold text-purple-700">{totalRankingsData.sportRankings.reduce((sum, sr) => sum + (sr.subEventRankings?.length || 0), 0)}</div>
-                <div className="text-sm text-purple-600">比赛小项</div>
+              <Target className="w-6 h-6 sm:w-8 sm:h-8 text-purple-600 mr-2 sm:mr-3 flex-shrink-0" />
+              <div className="min-w-0">
+                <div className="text-lg sm:text-2xl font-bold text-purple-700">{totalRankingsData.sportRankings.reduce((sum, sr) => sum + (sr.subEventRankings?.length || 0), 0)}</div>
+                <div className="text-xs sm:text-sm text-purple-600">比赛小项</div>
               </div>
             </div>
           </div>
-          <div className="bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-200 rounded-xl p-4">
+          <div className="bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-200 rounded-xl p-2.5 sm:p-4">
             <div className="flex items-center">
-              <TrendingUp className="w-8 h-8 text-orange-600 mr-3" />
-              <div>
-                <div className="text-2xl font-bold text-orange-700">{stats.totalAthletes}</div>
-                <div className="text-sm text-orange-600">总参赛人次</div>
+              <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-orange-600 mr-2 sm:mr-3 flex-shrink-0" />
+              <div className="min-w-0">
+                <div className="text-lg sm:text-2xl font-bold text-orange-700">{stats.totalAthletes}</div>
+                <div className="text-xs sm:text-sm text-orange-600">总参赛人次</div>
               </div>
             </div>
           </div>
@@ -664,10 +664,10 @@ export default function PointsRankingsPage() {
         {/* ========== 总积分排名视图 ========== */}
         {viewMode === 'total' && (
           <>
-            {/* 第一行：四大项目Tab - 移动端横向滚动 */}
+            {/* 第一行：四大项目Tab - 移动端显示短标签 */}
             <div className="mb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
-              <div className="flex sm:justify-center overflow-x-auto pb-2 sm:pb-0 scrollbar-hide">
-                <div className="inline-flex bg-white rounded-lg shadow p-1 gap-1">
+              <div className="flex justify-center overflow-x-auto pb-2 sm:pb-0 scrollbar-hide">
+                <div className="inline-flex bg-white rounded-lg shadow p-1 gap-0.5 sm:gap-1">
                   {sportTypeConfig.map((config) => {
                     const Icon = config.icon
                     const isSelected = selectedTotalSportType === config.value
@@ -675,14 +675,15 @@ export default function PointsRankingsPage() {
                       <button
                         key={config.value}
                         onClick={() => { setSelectedTotalSportType(config.value); resetPage(); expandFirstSubEvent(config.value); }}
-                        className={`flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-md text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
+                        className={`flex items-center gap-1 sm:gap-2 px-2 py-1.5 sm:px-4 sm:py-2 rounded-md text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
                           isSelected
                             ? 'bg-ski-blue text-white shadow'
                             : 'text-gray-600 hover:text-ski-blue hover:bg-gray-50'
                         }`}
                       >
                         <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                        {config.label}
+                        <span className="sm:hidden">{config.shortLabel}</span>
+                        <span className="hidden sm:inline">{config.label}</span>
                       </button>
                     )
                   })}
@@ -746,9 +747,9 @@ export default function PointsRankingsPage() {
 
             {/* 全部小项标签选择 */}
             {filteredSportRankings.length > 0 && filteredSportRankings[0].subEventRankings && (
-              <div className="bg-white rounded-lg shadow p-4 mb-4">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-base font-medium text-gray-900">全部小项</h3>
+              <div className="bg-white rounded-lg shadow p-3 sm:p-4 mb-4">
+                <div className="flex items-center justify-between mb-2 sm:mb-3">
+                  <h3 className="text-sm sm:text-base font-medium text-gray-900">全部小项</h3>
                   <div className="flex gap-2">
                     <button
                       onClick={expandAll}
@@ -765,7 +766,7 @@ export default function PointsRankingsPage() {
                     </button>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {filteredSportRankings[0].subEventRankings.map((subEvent) => {
                     const subEventKey = `${filteredSportRankings[0].sportType}-${subEvent.subEventName}`
                     const isExpanded = expandedSubEvents.has(subEventKey)
@@ -773,14 +774,14 @@ export default function PointsRankingsPage() {
                       <button
                         key={subEventKey}
                         onClick={() => toggleSubEvent(subEventKey)}
-                        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
+                        className={`px-2 py-1 sm:px-3 sm:py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all ${
                           isExpanded
                             ? 'bg-ski-blue text-white'
                             : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                         }`}
                       >
-                        {subEvent.discipline} {subEvent.ageGroup} {subEvent.gender}
-                        <span className={`ml-1.5 text-xs ${isExpanded ? 'text-white/70' : 'text-gray-400'}`}>
+                        {subEvent.discipline} {subEvent.ageGroup} {subEvent.gender.replace('子组', '')}
+                        <span className={`ml-1 sm:ml-1.5 text-[10px] sm:text-xs ${isExpanded ? 'text-white/70' : 'text-gray-400'}`}>
                           ({subEvent.total})
                         </span>
                       </button>
