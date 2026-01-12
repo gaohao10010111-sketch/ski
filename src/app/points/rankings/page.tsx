@@ -844,43 +844,43 @@ export default function PointsRankingsPage() {
 
                           {/* 领奖台展示 - 前三名 */}
                           {hasTop3 && (
-                            <div className="bg-gradient-to-br from-slate-800 to-slate-900 p-6">
-                              <div className="flex justify-center items-end gap-4">
+                            <div className="bg-gradient-to-br from-slate-800 to-slate-900 p-4 sm:p-6">
+                              <div className="flex justify-center items-end gap-2 sm:gap-4">
                                 {/* 银牌 - 第2名 */}
                                 <div className="text-center">
-                                  <div className="w-14 h-14 mx-auto mb-2 bg-gradient-to-br from-gray-200 to-gray-400 rounded-full flex items-center justify-center shadow-lg">
-                                    <Medal className="w-7 h-7 text-gray-600" />
+                                  <div className="w-10 h-10 sm:w-14 sm:h-14 mx-auto mb-2 bg-gradient-to-br from-gray-200 to-gray-400 rounded-full flex items-center justify-center shadow-lg">
+                                    <Medal className="w-5 h-5 sm:w-7 sm:h-7 text-gray-600" />
                                   </div>
-                                  <div className="bg-gradient-to-b from-gray-200 to-gray-300 rounded-t-lg pt-2 pb-1 px-3 w-24">
-                                    <div className="text-gray-800 font-bold text-sm truncate">{top3[1].athleteName}</div>
-                                    <div className="text-gray-600 text-xs truncate">{top3[1].team}</div>
-                                    <div className="text-gray-700 font-medium text-sm">{top3[1].totalPoints}分</div>
+                                  <div className="bg-gradient-to-b from-gray-200 to-gray-300 rounded-t-lg pt-2 pb-1 px-2 sm:px-3 w-20 sm:w-24">
+                                    <div className="text-gray-800 font-bold text-xs sm:text-sm truncate">{top3[1].athleteName}</div>
+                                    <div className="text-gray-600 text-[10px] sm:text-xs truncate" title={top3[1].team}>{top3[1].team}</div>
+                                    <div className="text-gray-700 font-medium text-xs sm:text-sm">{top3[1].totalPoints}分</div>
                                   </div>
-                                  <div className="bg-gray-400 h-12 w-24 flex items-center justify-center text-2xl font-bold text-gray-700 rounded-b-sm">2</div>
+                                  <div className="bg-gray-400 h-10 sm:h-12 w-20 sm:w-24 flex items-center justify-center text-xl sm:text-2xl font-bold text-gray-700 rounded-b-sm">2</div>
                                 </div>
                                 {/* 金牌 - 第1名 */}
                                 <div className="text-center -mt-4">
-                                  <div className="w-16 h-16 mx-auto mb-2 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full flex items-center justify-center shadow-lg ring-4 ring-yellow-300/50">
-                                    <Trophy className="w-8 h-8 text-yellow-700" />
+                                  <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full flex items-center justify-center shadow-lg ring-2 sm:ring-4 ring-yellow-300/50">
+                                    <Trophy className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-700" />
                                   </div>
-                                  <div className="bg-gradient-to-b from-yellow-300 to-yellow-400 rounded-t-lg pt-2 pb-1 px-3 w-28">
-                                    <div className="text-yellow-900 font-bold text-sm truncate">{top3[0].athleteName}</div>
-                                    <div className="text-yellow-800 text-xs truncate">{top3[0].team}</div>
-                                    <div className="text-yellow-900 font-medium text-sm">{top3[0].totalPoints}分</div>
+                                  <div className="bg-gradient-to-b from-yellow-300 to-yellow-400 rounded-t-lg pt-2 pb-1 px-2 sm:px-3 w-22 sm:w-28">
+                                    <div className="text-yellow-900 font-bold text-xs sm:text-sm truncate">{top3[0].athleteName}</div>
+                                    <div className="text-yellow-800 text-[10px] sm:text-xs truncate" title={top3[0].team}>{top3[0].team}</div>
+                                    <div className="text-yellow-900 font-medium text-xs sm:text-sm">{top3[0].totalPoints}分</div>
                                   </div>
-                                  <div className="bg-yellow-500 h-20 w-28 flex items-center justify-center text-3xl font-bold text-yellow-900 rounded-b-sm">1</div>
+                                  <div className="bg-yellow-500 h-16 sm:h-20 w-22 sm:w-28 flex items-center justify-center text-2xl sm:text-3xl font-bold text-yellow-900 rounded-b-sm">1</div>
                                 </div>
                                 {/* 铜牌 - 第3名 */}
                                 <div className="text-center">
-                                  <div className="w-14 h-14 mx-auto mb-2 bg-gradient-to-br from-orange-300 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
-                                    <Medal className="w-7 h-7 text-orange-700" />
+                                  <div className="w-10 h-10 sm:w-14 sm:h-14 mx-auto mb-2 bg-gradient-to-br from-orange-300 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+                                    <Medal className="w-5 h-5 sm:w-7 sm:h-7 text-orange-700" />
                                   </div>
-                                  <div className="bg-gradient-to-b from-orange-300 to-orange-400 rounded-t-lg pt-2 pb-1 px-3 w-24">
-                                    <div className="text-orange-900 font-bold text-sm truncate">{top3[2].athleteName}</div>
-                                    <div className="text-orange-800 text-xs truncate">{top3[2].team}</div>
-                                    <div className="text-orange-900 font-medium text-sm">{top3[2].totalPoints}分</div>
+                                  <div className="bg-gradient-to-b from-orange-300 to-orange-400 rounded-t-lg pt-2 pb-1 px-2 sm:px-3 w-20 sm:w-24">
+                                    <div className="text-orange-900 font-bold text-xs sm:text-sm truncate">{top3[2].athleteName}</div>
+                                    <div className="text-orange-800 text-[10px] sm:text-xs truncate" title={top3[2].team}>{top3[2].team}</div>
+                                    <div className="text-orange-900 font-medium text-xs sm:text-sm">{top3[2].totalPoints}分</div>
                                   </div>
-                                  <div className="bg-orange-500 h-8 w-24 flex items-center justify-center text-2xl font-bold text-orange-900 rounded-b-sm">3</div>
+                                  <div className="bg-orange-500 h-6 sm:h-8 w-20 sm:w-24 flex items-center justify-center text-lg sm:text-2xl font-bold text-orange-900 rounded-b-sm">3</div>
                                 </div>
                               </div>
                             </div>
@@ -891,13 +891,13 @@ export default function PointsRankingsPage() {
                             <table className="min-w-full divide-y divide-gray-200">
                               <thead className="bg-gray-50">
                                 <tr>
-                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">名次</th>
-                                  <th className="px-3 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">变化</th>
-                                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
-                                  <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
-                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">参赛</th>
-                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-20">实时排名</th>
-                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-24">总积分</th>
+                                  <th className="px-2 sm:px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-12 sm:w-16">名次</th>
+                                  <th className="hidden sm:table-cell px-3 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">变化</th>
+                                  <th className="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
+                                  <th className="px-2 sm:px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase max-w-[100px] sm:max-w-none">单位</th>
+                                  <th className="hidden sm:table-cell px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">参赛</th>
+                                  <th className="hidden md:table-cell px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-20">实时排名</th>
+                                  <th className="px-2 sm:px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16 sm:w-24">总积分</th>
                                 </tr>
                               </thead>
                               <tbody className="bg-white divide-y divide-gray-200">
@@ -910,24 +910,24 @@ export default function PointsRankingsPage() {
                                       item.rank === 3 ? 'bg-orange-50' : ''
                                     }`}
                                   >
-                                    <td className="px-4 py-2 whitespace-nowrap text-center">
+                                    <td className="px-2 sm:px-4 py-2 whitespace-nowrap text-center">
                                       {getRankIcon(item.rank)}
                                     </td>
-                                    <td className="px-3 py-2 whitespace-nowrap text-center">
+                                    <td className="hidden sm:table-cell px-3 py-2 whitespace-nowrap text-center">
                                       <RankChangeDisplay change={item.rankChange} />
                                     </td>
-                                    <td className="px-4 py-2 whitespace-nowrap">
-                                      <span className={`text-sm font-medium ${item.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
+                                    <td className="px-2 sm:px-4 py-2 whitespace-nowrap">
+                                      <span className={`text-xs sm:text-sm font-medium ${item.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
                                         {item.athleteName}
                                       </span>
                                     </td>
-                                    <td className="px-4 py-2 text-sm text-gray-600" title={item.team}>
+                                    <td className="px-2 sm:px-4 py-2 text-xs sm:text-sm text-gray-600 max-w-[100px] sm:max-w-none truncate" title={item.team}>
                                       {item.team}
                                     </td>
-                                    <td className="px-4 py-2 whitespace-nowrap text-center">
+                                    <td className="hidden sm:table-cell px-4 py-2 whitespace-nowrap text-center">
                                       <span className="text-sm text-gray-600">{item.competitionCount}</span>
                                     </td>
-                                    <td className="px-4 py-2 whitespace-nowrap text-center">
+                                    <td className="hidden md:table-cell px-4 py-2 whitespace-nowrap text-center">
                                       <span className={`text-sm font-medium ${
                                         item.rank === 1 ? 'text-yellow-600' :
                                         item.rank <= 3 ? 'text-orange-600' : 'text-gray-600'
@@ -935,7 +935,7 @@ export default function PointsRankingsPage() {
                                         {item.rank}
                                       </span>
                                     </td>
-                                    <td className="px-4 py-2 whitespace-nowrap text-center">
+                                    <td className="px-2 sm:px-4 py-2 whitespace-nowrap text-center">
                                       <PointsBreakdownTooltip item={item} />
                                     </td>
                                   </tr>
@@ -1054,27 +1054,27 @@ export default function PointsRankingsPage() {
                   return (
                     <div key={competitionData.competition} className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
                       {/* 比赛标题 - 蓝色主题 */}
-                      <div className="bg-gradient-to-r from-ski-blue to-blue-600 px-5 py-4 text-white">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                              <Trophy className="h-6 w-6" />
+                      <div className="bg-gradient-to-r from-ski-blue to-blue-600 px-3 sm:px-5 py-3 sm:py-4 text-white">
+                        <div className="flex items-start sm:items-center justify-between gap-2">
+                          <div className="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white/20 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                              <Trophy className="h-5 w-5 sm:h-6 sm:w-6" />
                             </div>
-                            <div>
-                              <h2 className="text-lg font-bold">{competitionData.competition}</h2>
-                              <div className="text-white/80 text-sm mt-0.5 flex items-center gap-2">
-                                <Calendar className="h-3.5 w-3.5" />
+                            <div className="min-w-0 flex-1">
+                              <h2 className="text-sm sm:text-lg font-bold truncate">{competitionData.competition}</h2>
+                              <div className="text-white/80 text-xs sm:text-sm mt-0.5 flex items-center gap-1 sm:gap-2 flex-wrap">
+                                <Calendar className="h-3 w-3 sm:h-3.5 sm:w-3.5 flex-shrink-0" />
                                 <span>{competitionData.date}</span>
-                                <span>·</span>
-                                <span>{competitionData.location}</span>
+                                <span className="hidden sm:inline">·</span>
+                                <span className="hidden sm:inline">{competitionData.location}</span>
                               </div>
                             </div>
                           </div>
-                          <div className="flex flex-col items-end gap-1">
-                            <span className="bg-white/20 px-3 py-1 rounded-full text-sm font-medium">
+                          <div className="flex flex-col items-end gap-1 flex-shrink-0">
+                            <span className="bg-white/20 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap">
                               {sportTypeLabels[competitionData.sportType] || competitionData.sportType}
                             </span>
-                            <span className="text-blue-100 text-xs">
+                            <span className="text-blue-100 text-[10px] sm:text-xs whitespace-nowrap">
                               {competitionData.groups.length} 个组别
                             </span>
                           </div>
@@ -1117,56 +1117,56 @@ export default function PointsRankingsPage() {
 
                       {/* 🏆 领奖台展示（前三名） */}
                       {currentGroup && top3.length >= 3 && (
-                        <div className="bg-gradient-to-b from-blue-50 to-white px-4 py-6">
-                          <div className="flex items-end justify-center gap-4 max-w-lg mx-auto">
+                        <div className="bg-gradient-to-b from-blue-50 to-white px-2 sm:px-4 py-4 sm:py-6">
+                          <div className="flex items-end justify-center gap-2 sm:gap-4 max-w-lg mx-auto">
                             {/* 银牌 - 第2名 */}
                             <div className="flex flex-col items-center">
-                              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gray-200 to-gray-400 flex items-center justify-center shadow-lg mb-2 ring-4 ring-gray-200">
-                                <span className="text-2xl font-bold text-gray-700">2</span>
+                              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-gray-200 to-gray-400 flex items-center justify-center shadow-lg mb-2 ring-2 sm:ring-4 ring-gray-200">
+                                <span className="text-lg sm:text-2xl font-bold text-gray-700">2</span>
                               </div>
                               <div className="text-center">
-                                <div className="font-bold text-gray-800 text-sm">{top3[1]?.name}</div>
-                                <div className="text-xs text-gray-500 max-w-[80px] truncate">{top3[1]?.team}</div>
-                                <div className="mt-1 px-2 py-0.5 bg-gray-200 rounded text-xs font-bold text-gray-700">
+                                <div className="font-bold text-gray-800 text-xs sm:text-sm">{top3[1]?.name}</div>
+                                <div className="text-[10px] sm:text-xs text-gray-500 max-w-[60px] sm:max-w-[80px] truncate" title={top3[1]?.team}>{top3[1]?.team}</div>
+                                <div className="mt-1 px-1.5 sm:px-2 py-0.5 bg-gray-200 rounded text-[10px] sm:text-xs font-bold text-gray-700">
                                   {top3[1]?.points ?? '-'}分
                                 </div>
                               </div>
-                              <div className="w-20 h-16 bg-gradient-to-t from-gray-300 to-gray-200 rounded-t-lg mt-2 flex items-center justify-center">
-                                <Medal className="h-6 w-6 text-gray-500" />
+                              <div className="w-16 sm:w-20 h-12 sm:h-16 bg-gradient-to-t from-gray-300 to-gray-200 rounded-t-lg mt-2 flex items-center justify-center">
+                                <Medal className="h-5 w-5 sm:h-6 sm:w-6 text-gray-500" />
                               </div>
                             </div>
 
                             {/* 金牌 - 第1名 */}
                             <div className="flex flex-col items-center -mt-6">
-                              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-300 to-amber-500 flex items-center justify-center shadow-xl mb-2 ring-4 ring-yellow-300">
-                                <Crown className="h-8 w-8 text-yellow-800" />
+                              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-yellow-300 to-amber-500 flex items-center justify-center shadow-xl mb-2 ring-2 sm:ring-4 ring-yellow-300">
+                                <Crown className="h-6 w-6 sm:h-8 sm:w-8 text-yellow-800" />
                               </div>
                               <div className="text-center">
-                                <div className="font-bold text-gray-900 text-base">{top3[0]?.name}</div>
-                                <div className="text-xs text-gray-600 max-w-[100px] truncate">{top3[0]?.team}</div>
-                                <div className="mt-1 px-3 py-1 bg-gradient-to-r from-yellow-400 to-amber-400 rounded text-sm font-bold text-yellow-900 shadow">
+                                <div className="font-bold text-gray-900 text-sm sm:text-base">{top3[0]?.name}</div>
+                                <div className="text-[10px] sm:text-xs text-gray-600 max-w-[70px] sm:max-w-[100px] truncate" title={top3[0]?.team}>{top3[0]?.team}</div>
+                                <div className="mt-1 px-2 sm:px-3 py-0.5 sm:py-1 bg-gradient-to-r from-yellow-400 to-amber-400 rounded text-xs sm:text-sm font-bold text-yellow-900 shadow">
                                   {top3[0]?.points ?? '-'}分
                                 </div>
                               </div>
-                              <div className="w-24 h-24 bg-gradient-to-t from-yellow-400 to-amber-300 rounded-t-lg mt-2 flex items-center justify-center shadow-lg">
-                                <Trophy className="h-8 w-8 text-yellow-700" />
+                              <div className="w-18 sm:w-24 h-18 sm:h-24 bg-gradient-to-t from-yellow-400 to-amber-300 rounded-t-lg mt-2 flex items-center justify-center shadow-lg">
+                                <Trophy className="h-6 w-6 sm:h-8 sm:w-8 text-yellow-700" />
                               </div>
                             </div>
 
                             {/* 铜牌 - 第3名 */}
                             <div className="flex flex-col items-center">
-                              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-300 to-orange-500 flex items-center justify-center shadow-lg mb-2 ring-4 ring-orange-200">
-                                <span className="text-2xl font-bold text-orange-800">3</span>
+                              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-orange-300 to-orange-500 flex items-center justify-center shadow-lg mb-2 ring-2 sm:ring-4 ring-orange-200">
+                                <span className="text-lg sm:text-2xl font-bold text-orange-800">3</span>
                               </div>
                               <div className="text-center">
-                                <div className="font-bold text-gray-800 text-sm">{top3[2]?.name}</div>
-                                <div className="text-xs text-gray-500 max-w-[80px] truncate">{top3[2]?.team}</div>
-                                <div className="mt-1 px-2 py-0.5 bg-orange-200 rounded text-xs font-bold text-orange-800">
+                                <div className="font-bold text-gray-800 text-xs sm:text-sm">{top3[2]?.name}</div>
+                                <div className="text-[10px] sm:text-xs text-gray-500 max-w-[60px] sm:max-w-[80px] truncate" title={top3[2]?.team}>{top3[2]?.team}</div>
+                                <div className="mt-1 px-1.5 sm:px-2 py-0.5 bg-orange-200 rounded text-[10px] sm:text-xs font-bold text-orange-800">
                                   {top3[2]?.points ?? '-'}分
                                 </div>
                               </div>
-                              <div className="w-20 h-12 bg-gradient-to-t from-orange-400 to-orange-300 rounded-t-lg mt-2 flex items-center justify-center">
-                                <Award className="h-5 w-5 text-orange-700" />
+                              <div className="w-16 sm:w-20 h-10 sm:h-12 bg-gradient-to-t from-orange-400 to-orange-300 rounded-t-lg mt-2 flex items-center justify-center">
+                                <Award className="h-4 w-4 sm:h-5 sm:w-5 text-orange-700" />
                               </div>
                             </div>
                           </div>
@@ -1179,23 +1179,23 @@ export default function PointsRankingsPage() {
                           <table className="min-w-full">
                             <thead className="bg-gray-100">
                               <tr>
-                                <th className="px-4 py-3 text-center text-xs font-bold text-gray-600 uppercase w-14">名次</th>
-                                <th className="px-3 py-3 text-center text-xs font-bold text-gray-600 uppercase w-14">号码</th>
-                                <th className="px-4 py-3 text-left text-xs font-bold text-gray-600 uppercase">姓名</th>
-                                <th className="px-4 py-3 text-left text-xs font-bold text-gray-600 uppercase">单位</th>
+                                <th className="px-2 sm:px-4 py-3 text-center text-xs font-bold text-gray-600 uppercase w-10 sm:w-14">名次</th>
+                                <th className="hidden sm:table-cell px-3 py-3 text-center text-xs font-bold text-gray-600 uppercase w-14">号码</th>
+                                <th className="px-2 sm:px-4 py-3 text-left text-xs font-bold text-gray-600 uppercase">姓名</th>
+                                <th className="px-2 sm:px-4 py-3 text-left text-xs font-bold text-gray-600 uppercase max-w-[80px] sm:max-w-none">单位</th>
                                 {hasRun && (
                                   <>
-                                    <th className="px-3 py-3 text-center text-xs font-bold text-gray-600 uppercase w-20">第一轮</th>
-                                    <th className="px-3 py-3 text-center text-xs font-bold text-gray-600 uppercase w-20">第二轮</th>
+                                    <th className="hidden md:table-cell px-3 py-3 text-center text-xs font-bold text-gray-600 uppercase w-20">第一轮</th>
+                                    <th className="hidden md:table-cell px-3 py-3 text-center text-xs font-bold text-gray-600 uppercase w-20">第二轮</th>
                                   </>
                                 )}
                                 {(hasTime || hasBestScore) && (
-                                  <th className="px-3 py-3 text-center text-xs font-bold text-gray-600 uppercase w-20">
+                                  <th className="px-2 sm:px-3 py-3 text-center text-xs font-bold text-gray-600 uppercase w-16 sm:w-20">
                                     {hasTime ? '成绩' : '得分'}
                                   </th>
                                 )}
                                 {hasPoints && (
-                                  <th className="px-3 py-3 text-center text-xs font-bold text-gray-600 uppercase w-20">积分</th>
+                                  <th className="px-2 sm:px-3 py-3 text-center text-xs font-bold text-gray-600 uppercase w-14 sm:w-20">积分</th>
                                 )}
                               </tr>
                             </thead>
@@ -1209,9 +1209,9 @@ export default function PointsRankingsPage() {
                                     athlete.rank === 3 ? 'bg-orange-50' : ''
                                   }`}
                                 >
-                                  <td className="px-4 py-2.5 whitespace-nowrap text-center">
+                                  <td className="px-2 sm:px-4 py-2 sm:py-2.5 whitespace-nowrap text-center">
                                     {athlete.rank <= 3 ? (
-                                      <span className={`inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold shadow ${
+                                      <span className={`inline-flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 rounded-full text-xs font-bold shadow ${
                                         athlete.rank === 1 ? 'bg-gradient-to-br from-yellow-300 to-amber-500 text-yellow-900' :
                                         athlete.rank === 2 ? 'bg-gradient-to-br from-gray-200 to-gray-400 text-gray-700' :
                                         'bg-gradient-to-br from-orange-300 to-orange-500 text-orange-900'
@@ -1219,33 +1219,33 @@ export default function PointsRankingsPage() {
                                         {athlete.rank}
                                       </span>
                                     ) : (
-                                      <span className="text-sm text-gray-600 font-medium">{athlete.rank}</span>
+                                      <span className="text-xs sm:text-sm text-gray-600 font-medium">{athlete.rank}</span>
                                     )}
                                   </td>
-                                  <td className="px-3 py-2.5 whitespace-nowrap text-center">
+                                  <td className="hidden sm:table-cell px-3 py-2.5 whitespace-nowrap text-center">
                                     <span className="text-sm text-gray-500 bg-gray-100 px-2 py-0.5 rounded">{athlete.bib}</span>
                                   </td>
-                                  <td className="px-4 py-2.5 whitespace-nowrap">
-                                    <span className={`text-sm font-semibold ${athlete.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
+                                  <td className="px-2 sm:px-4 py-2 sm:py-2.5 whitespace-nowrap">
+                                    <span className={`text-xs sm:text-sm font-semibold ${athlete.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
                                       {athlete.name}
                                     </span>
                                   </td>
-                                  <td className="px-4 py-2.5 text-sm text-gray-600 max-w-[200px] truncate" title={athlete.team}>
+                                  <td className="px-2 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm text-gray-600 max-w-[80px] sm:max-w-[200px] truncate" title={athlete.team}>
                                     {athlete.team}
                                   </td>
                                   {hasRun && (
                                     <>
-                                      <td className="px-3 py-2.5 whitespace-nowrap text-center text-sm text-gray-600 font-mono">
+                                      <td className="hidden md:table-cell px-3 py-2.5 whitespace-nowrap text-center text-sm text-gray-600 font-mono">
                                         {athlete.run1 || '-'}
                                       </td>
-                                      <td className="px-3 py-2.5 whitespace-nowrap text-center text-sm text-gray-600 font-mono">
+                                      <td className="hidden md:table-cell px-3 py-2.5 whitespace-nowrap text-center text-sm text-gray-600 font-mono">
                                         {athlete.run2 || '-'}
                                       </td>
                                     </>
                                   )}
                                   {(hasTime || hasBestScore) && (
-                                    <td className="px-3 py-2.5 whitespace-nowrap text-center">
-                                      <span className={`text-sm font-bold font-mono ${
+                                    <td className="px-2 sm:px-3 py-2 sm:py-2.5 whitespace-nowrap text-center">
+                                      <span className={`text-xs sm:text-sm font-bold font-mono ${
                                         athlete.rank === 1 ? 'text-yellow-700' :
                                         athlete.rank === 2 ? 'text-gray-700' :
                                         athlete.rank === 3 ? 'text-orange-700' : 'text-gray-900'
@@ -1255,8 +1255,8 @@ export default function PointsRankingsPage() {
                                     </td>
                                   )}
                                   {hasPoints && (
-                                    <td className="px-3 py-2.5 whitespace-nowrap text-center">
-                                      <span className={`inline-flex px-3 py-1 rounded-lg text-sm font-bold ${
+                                    <td className="px-2 sm:px-3 py-2 sm:py-2.5 whitespace-nowrap text-center">
+                                      <span className={`inline-flex px-2 sm:px-3 py-0.5 sm:py-1 rounded-lg text-xs sm:text-sm font-bold ${
                                         athlete.rank === 1 ? 'bg-gradient-to-r from-yellow-300 to-amber-400 text-yellow-900' :
                                         athlete.rank === 2 ? 'bg-gradient-to-r from-gray-200 to-gray-300 text-gray-800' :
                                         athlete.rank === 3 ? 'bg-gradient-to-r from-orange-300 to-orange-400 text-orange-900' :
