@@ -674,7 +674,7 @@ export default function HomePage() {
                         </span>
                       </div>
                     </div>
-                    <span className="px-3 py-1 bg-green-500 text-white text-xs font-bold rounded-full">
+                    <span className="px-3 py-1 bg-green-500 text-white text-xs font-bold rounded-full whitespace-nowrap shrink-0">
                       已完赛
                     </span>
                   </div>
