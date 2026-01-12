@@ -643,9 +643,9 @@ export default function HomePage() {
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center">
                 <Trophy className="w-6 h-6 text-yellow-500 mr-3" />
-                <h2 className="text-xl md:text-2xl font-bold text-ski-navy">最新成绩</h2>
+                <h2 className="text-xl md:text-2xl font-bold text-ski-navy">赛事速递</h2>
                 <span className="ml-3 px-2 py-0.5 bg-green-100 text-green-600 text-xs font-medium rounded-full border border-green-200">
-                  最新发布
+                  最新完赛
                 </span>
               </div>
               <Link
@@ -746,10 +746,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-2xl md:text-3xl font-bold text-ski-navy mb-4">
-              {t.home?.latestResults?.title || '最新赛事成绩'}
+              项目数据
             </h2>
             <p className="text-gray-600 text-sm md:text-base mb-6">
-              {t.home?.latestResults?.subtitle || '实时更新的竞赛结果和积分排名'}
+              各项目比赛成绩与积分排行
             </p>
 
             {/* 项目切换 Tab */}
@@ -780,10 +780,10 @@ export default function HomePage() {
             {/* Recent Competition Results - 使用实际比赛数据 */}
             <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
               <div className="flex items-center justify-between mb-4 md:mb-6">
-                <h3 className="text-lg md:text-xl font-semibold text-ski-navy">{t.home?.latestResults?.recentResults || '最新比赛'}</h3>
+                <h3 className="text-lg md:text-xl font-semibold text-ski-navy">比赛成绩</h3>
                 <div className="flex items-center text-sm text-green-600">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                  {t.home?.latestResults?.liveUpdate || '实时更新'}
+                  <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                  已更新
                 </div>
               </div>
               <div className="space-y-4">
