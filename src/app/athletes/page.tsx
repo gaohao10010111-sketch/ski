@@ -114,6 +114,26 @@ function buildStaticAthletesList(): Athlete[] {
 // 预先构建静态运动员列表（在模块加载时执行）
 const STATIC_ATHLETES = buildStaticAthletesList()
 
+// 计算唯一运动员数量（按 name + team 去重，不按子项分开）
+function getUniqueAthleteCount(): number {
+  const uniqueAthletes = new Set<string>()
+
+  for (const competition of latestResults.competitions) {
+    for (const event of competition.events) {
+      for (const athlete of event.athletes) {
+        // 使用 name + team 作为唯一标识
+        const key = `${athlete.name}-${athlete.team}`
+        uniqueAthletes.add(key)
+      }
+    }
+  }
+
+  return uniqueAthletes.size
+}
+
+// 预先计算唯一运动员数量
+const UNIQUE_ATHLETE_COUNT = getUniqueAthleteCount()
+
 export default function AthletesPage() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedSportType, setSelectedSportType] = useState('all')
@@ -289,8 +309,9 @@ export default function AthletesPage() {
     if (STATIC_ATHLETES.length > 0) {
       setStats({
         overview: {
-          totalAthletes: STATIC_ATHLETES.length,
-          activeAthletes: STATIC_ATHLETES.length,
+          // 使用唯一运动员数量（按 name + team 去重），而非按子项分开的记录数
+          totalAthletes: UNIQUE_ATHLETE_COUNT,
+          activeAthletes: UNIQUE_ATHLETE_COUNT,
           totalCompetitions: latestResults.competitions.length,
           completedCompetitions: latestResults.competitions.filter(c => c.status === 'completed').length,
           upcomingCompetitions: latestResults.competitions.filter(c => c.status === 'upcoming').length,
