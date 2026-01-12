@@ -679,47 +679,52 @@ export default function HomePage() {
                     </span>
                   </div>
 
-                  {/* 项目分组展示 */}
-                  <div className="space-y-3 flex-1">
-                    {comp.events.slice(0, 3).map((event, eventIndex) => (
-                      <div key={eventIndex} className="bg-slate-700/50 rounded-lg p-3">
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-gray-200 font-medium text-sm">
-                            {event.discipline} · {event.ageGroup} · {event.gender}
-                          </span>
-                          <span className="text-gray-400 text-xs">
-                            共{event.athletes.length}人
-                          </span>
-                        </div>
-                        <div className="flex items-center space-x-4">
-                          {event.athletes.slice(0, 3).map((athlete, athleteIndex) => (
-                            <div key={athleteIndex} className="flex items-center">
-                              <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mr-2 ${
-                                athleteIndex === 0 ? 'bg-yellow-400 text-yellow-900' :
-                                athleteIndex === 1 ? 'bg-gray-300 text-gray-700' :
-                                'bg-orange-400 text-orange-900'
-                              }`}>
-                                {athleteIndex + 1}
-                              </div>
-                              <div>
-                                <div className="text-white text-sm font-medium">{athlete.name}</div>
-                                <div className="text-gray-400 text-xs">
-                                  {athlete.time || (athlete.bestScore ? `${athlete.bestScore}分` : '')}
-                                  {athlete.points ? ` · ${athlete.points}积分` : ''}
+                  {/* 项目分组展示 - 固定显示3个项目组 */}
+                  <div className="flex-1 flex flex-col">
+                    <div className="space-y-3">
+                      {comp.events.slice(0, 3).map((event, eventIndex) => (
+                        <div key={eventIndex} className="bg-slate-700/50 rounded-lg p-3">
+                          <div className="flex items-center justify-between mb-2">
+                            <span className="text-gray-200 font-medium text-sm truncate">
+                              {event.discipline} · {event.ageGroup} · {event.gender}
+                            </span>
+                            <span className="text-gray-400 text-xs whitespace-nowrap ml-2">
+                              共{event.athletes.length}人
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-4">
+                            {event.athletes.slice(0, 3).map((athlete, athleteIndex) => (
+                              <div key={athleteIndex} className="flex items-center min-w-0 flex-1">
+                                <div className={`w-6 h-6 shrink-0 rounded-full flex items-center justify-center text-xs font-bold mr-2 ${
+                                  athleteIndex === 0 ? 'bg-yellow-400 text-yellow-900' :
+                                  athleteIndex === 1 ? 'bg-gray-300 text-gray-700' :
+                                  'bg-orange-400 text-orange-900'
+                                }`}>
+                                  {athleteIndex + 1}
+                                </div>
+                                <div className="min-w-0">
+                                  <div className="text-white text-sm font-medium truncate">{athlete.name}</div>
+                                  <div className="text-gray-400 text-xs truncate">
+                                    {athlete.time || (athlete.bestScore ? `${athlete.bestScore}分` : '')}
+                                    {athlete.points ? ` · ${athlete.points}积分` : ''}
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          ))}
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    ))}
-                    {comp.events.length > 3 && (
-                      <div className="text-center">
+                      ))}
+                    </div>
+                    {/* 固定位置的"还有X个项目"提示 */}
+                    <div className="text-center py-2 mt-auto">
+                      {comp.events.length > 3 ? (
                         <span className="text-gray-400 text-sm">
                           还有 {comp.events.length - 3} 个项目...
                         </span>
-                      </div>
-                    )}
+                      ) : (
+                        <span className="text-gray-400 text-sm invisible">占位</span>
+                      )}
+                    </div>
                   </div>
 
                   <div className="mt-auto pt-4 border-t border-slate-600 flex justify-between items-center">
