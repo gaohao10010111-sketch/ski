@@ -563,38 +563,38 @@ export default function PointsRankingsPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white"></div>
         <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-ski-blue via-blue-500 to-indigo-600"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-10 md:pt-16 md:pb-14">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-8 sm:pt-12 sm:pb-10 md:pt-16 md:pb-14">
           {/* 居中大标题区域 */}
           <div className="text-center max-w-4xl mx-auto">
-            {/* 标签行 */}
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-md text-xs font-bold bg-ski-blue text-white uppercase tracking-wider shadow-sm">
+            {/* 标签行 - 移动端换行显示 */}
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6 sm:mb-8">
+              <span className="inline-flex items-center px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-md text-[10px] sm:text-xs font-bold bg-ski-blue text-white uppercase tracking-wider shadow-sm">
                 Official
               </span>
-              <span className="inline-flex items-center px-3 py-1.5 rounded-md text-xs font-semibold bg-gradient-to-r from-amber-50 to-orange-50 text-amber-700 border border-amber-200">
+              <span className="inline-flex items-center px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-md text-[10px] sm:text-xs font-semibold bg-gradient-to-r from-amber-50 to-orange-50 text-amber-700 border border-amber-200">
                 2025-2026 赛季
               </span>
-              <span className="inline-flex items-center px-3 py-1.5 rounded-md text-xs font-semibold bg-gradient-to-r from-green-50 to-emerald-50 text-green-700 border border-green-200">
+              <span className="inline-flex items-center px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-md text-[10px] sm:text-xs font-semibold bg-gradient-to-r from-green-50 to-emerald-50 text-green-700 border border-green-200">
                 U系列赛事
               </span>
             </div>
 
             {/* 主标题 */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-4 sm:mb-6">
               积分排行榜
             </h1>
 
             {/* 副标题描述 */}
-            <p className="text-gray-500 text-base md:text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-gray-500 text-sm sm:text-base md:text-lg mb-6 sm:mb-10 leading-relaxed max-w-2xl mx-auto px-2">
               全国滑雪青少年U系列赛事官方积分排名<br className="hidden sm:block" />
               涵盖高山滑雪、单板滑雪、自由式滑雪全项目数据
             </p>
 
             {/* 视图切换按钮 */}
-            <div className="inline-flex rounded-xl bg-gray-100 p-1.5 shadow-inner">
+            <div className="inline-flex rounded-xl bg-gray-100 p-1 sm:p-1.5 shadow-inner">
               <button
                 onClick={() => setViewMode('total')}
-                className={`px-6 py-2.5 rounded-lg text-sm font-semibold transition-all ${
+                className={`px-4 py-2 sm:px-6 sm:py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all ${
                   viewMode === 'total'
                     ? 'bg-white text-ski-blue shadow-md'
                     : 'text-gray-600 hover:text-gray-900'
@@ -604,7 +604,7 @@ export default function PointsRankingsPage() {
               </button>
               <button
                 onClick={() => setViewMode('competition')}
-                className={`px-6 py-2.5 rounded-lg text-sm font-semibold transition-all ${
+                className={`px-4 py-2 sm:px-6 sm:py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition-all ${
                   viewMode === 'competition'
                     ? 'bg-white text-ski-blue shadow-md'
                     : 'text-gray-600 hover:text-gray-900'
@@ -664,35 +664,37 @@ export default function PointsRankingsPage() {
         {/* ========== 总积分排名视图 ========== */}
         {viewMode === 'total' && (
           <>
-            {/* 第一行：四大项目Tab */}
-            <div className="flex justify-center mb-4">
-              <div className="inline-flex bg-white rounded-lg shadow p-1 gap-1 flex-wrap">
-                {sportTypeConfig.map((config) => {
-                  const Icon = config.icon
-                  const isSelected = selectedTotalSportType === config.value
-                  return (
-                    <button
-                      key={config.value}
-                      onClick={() => { setSelectedTotalSportType(config.value); resetPage(); expandFirstSubEvent(config.value); }}
-                      className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-all whitespace-nowrap ${
-                        isSelected
-                          ? 'bg-ski-blue text-white shadow'
-                          : 'text-gray-600 hover:text-ski-blue hover:bg-gray-50'
-                      }`}
-                    >
-                      <Icon className="h-4 w-4" />
-                      {config.label}
-                    </button>
-                  )
-                })}
+            {/* 第一行：四大项目Tab - 移动端横向滚动 */}
+            <div className="mb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
+              <div className="flex sm:justify-center overflow-x-auto pb-2 sm:pb-0 scrollbar-hide">
+                <div className="inline-flex bg-white rounded-lg shadow p-1 gap-1">
+                  {sportTypeConfig.map((config) => {
+                    const Icon = config.icon
+                    const isSelected = selectedTotalSportType === config.value
+                    return (
+                      <button
+                        key={config.value}
+                        onClick={() => { setSelectedTotalSportType(config.value); resetPage(); expandFirstSubEvent(config.value); }}
+                        className={`flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-md text-xs sm:text-sm font-medium transition-all whitespace-nowrap ${
+                          isSelected
+                            ? 'bg-ski-blue text-white shadow'
+                            : 'text-gray-600 hover:text-ski-blue hover:bg-gray-50'
+                        }`}
+                      >
+                        <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                        {config.label}
+                      </button>
+                    )
+                  })}
+                </div>
               </div>
             </div>
 
-            {/* 第二行：筛选器（一行排列） */}
+            {/* 第二行：筛选器 - 移动端优化布局 */}
             <div className="bg-white rounded-lg shadow p-3 mb-4">
-              <div className="flex flex-wrap items-center gap-3">
-                {/* 搜索框 */}
-                <div className="relative flex-1 min-w-[180px]">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2 sm:gap-3">
+                {/* 搜索框 - 移动端全宽 */}
+                <div className="relative w-full sm:flex-1 sm:min-w-[180px]">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                   <input
                     type="text"
@@ -703,39 +705,42 @@ export default function PointsRankingsPage() {
                   />
                 </div>
 
-                {/* 年龄组 */}
-                <select
-                  value={selectedAgeGroup}
-                  onChange={(e) => { setSelectedAgeGroup(e.target.value); resetPage(); }}
-                  className="px-3 py-2 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue"
-                >
-                  <option value="all">全部年龄组</option>
-                  {totalRankingsData.filters.ageGroups.map(ag => (
-                    <option key={ag} value={ag}>{ag}</option>
-                  ))}
-                </select>
+                {/* 筛选项容器 - 移动端一行两个 */}
+                <div className="flex items-center gap-2 w-full sm:w-auto">
+                  {/* 年龄组 */}
+                  <select
+                    value={selectedAgeGroup}
+                    onChange={(e) => { setSelectedAgeGroup(e.target.value); resetPage(); }}
+                    className="flex-1 sm:flex-none px-2 sm:px-3 py-2 text-xs sm:text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue"
+                  >
+                    <option value="all">全部年龄组</option>
+                    {totalRankingsData.filters.ageGroups.map(ag => (
+                      <option key={ag} value={ag}>{ag}</option>
+                    ))}
+                  </select>
 
-                {/* 性别 */}
-                <select
-                  value={selectedGender}
-                  onChange={(e) => { setSelectedGender(e.target.value); resetPage(); }}
-                  className="px-3 py-2 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue"
-                >
-                  <option value="all">男女不限</option>
-                  {totalRankingsData.filters.genders.map(g => (
-                    <option key={g} value={g}>{g}</option>
-                  ))}
-                </select>
+                  {/* 性别 */}
+                  <select
+                    value={selectedGender}
+                    onChange={(e) => { setSelectedGender(e.target.value); resetPage(); }}
+                    className="flex-1 sm:flex-none px-2 sm:px-3 py-2 text-xs sm:text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue"
+                  >
+                    <option value="all">男女不限</option>
+                    {totalRankingsData.filters.genders.map(g => (
+                      <option key={g} value={g}>{g}</option>
+                    ))}
+                  </select>
 
-                {/* 导出按钮 */}
-                <button
-                  onClick={handleExport}
-                  disabled={isExporting || filteredTotalRankings.length === 0}
-                  className="bg-ski-blue text-white py-2 px-4 text-sm rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 flex items-center gap-2"
-                >
-                  <Download className="h-4 w-4" />
-                  导出
-                </button>
+                  {/* 导出按钮 */}
+                  <button
+                    onClick={handleExport}
+                    disabled={isExporting || filteredTotalRankings.length === 0}
+                    className="bg-ski-blue text-white py-2 px-3 sm:px-4 text-xs sm:text-sm rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"
+                  >
+                    <Download className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+                    导出
+                  </button>
+                </div>
               </div>
             </div>
 
