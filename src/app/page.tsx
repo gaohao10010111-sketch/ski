@@ -692,17 +692,17 @@ export default function HomePage() {
                               共{event.athletes.length}人
                             </span>
                           </div>
-                          <div className="flex items-center gap-4">
+                          <div className="grid grid-cols-3 gap-2">
                             {event.athletes.slice(0, 3).map((athlete, athleteIndex) => (
-                              <div key={athleteIndex} className="flex items-center min-w-0 flex-1">
-                                <div className={`w-6 h-6 shrink-0 rounded-full flex items-center justify-center text-xs font-bold mr-2 ${
+                              <div key={athleteIndex} className="flex items-center">
+                                <div className={`w-5 h-5 shrink-0 rounded-full flex items-center justify-center text-xs font-bold mr-1.5 ${
                                   athleteIndex === 0 ? 'bg-yellow-400 text-yellow-900' :
                                   athleteIndex === 1 ? 'bg-gray-300 text-gray-700' :
                                   'bg-orange-400 text-orange-900'
                                 }`}>
                                   {athleteIndex + 1}
                                 </div>
-                                <div className="min-w-0">
+                                <div className="min-w-0 flex-1">
                                   <div className="text-white text-sm font-medium truncate">{athlete.name}</div>
                                   <div className="text-gray-400 text-xs truncate">
                                     {athlete.time || (athlete.bestScore ? `${athlete.bestScore}分` : '')}
