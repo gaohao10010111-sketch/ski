@@ -657,9 +657,9 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
               {latestResults.competitions.slice(0, 2).map((comp, compIndex) => (
-                <div key={compIndex} className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 shadow-md border border-slate-700 hover:border-ski-blue hover:shadow-lg transition-all">
+                <div key={compIndex} className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 shadow-md border border-slate-700 hover:border-ski-blue hover:shadow-lg transition-all flex flex-col">
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <h3 className="text-lg font-bold text-white mb-1">{comp.competition}</h3>
@@ -680,7 +680,7 @@ export default function HomePage() {
                   </div>
 
                   {/* 项目分组展示 */}
-                  <div className="space-y-3">
+                  <div className="space-y-3 flex-1">
                     {comp.events.slice(0, 3).map((event, eventIndex) => (
                       <div key={eventIndex} className="bg-slate-700/50 rounded-lg p-3">
                         <div className="flex items-center justify-between mb-2">
@@ -722,7 +722,7 @@ export default function HomePage() {
                     )}
                   </div>
 
-                  <div className="mt-4 pt-4 border-t border-slate-600 flex justify-between items-center">
+                  <div className="mt-auto pt-4 border-t border-slate-600 flex justify-between items-center">
                     <span className="text-gray-400 text-xs">
                       数据更新: {latestResults.lastUpdated}
                     </span>
@@ -776,9 +776,9 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-stretch">
             {/* Recent Competition Results - 使用实际比赛数据 */}
-            <div className="bg-white rounded-lg shadow-lg p-4 md:p-6">
+            <div className="bg-white rounded-lg shadow-lg p-4 md:p-6 flex flex-col">
               <div className="flex items-center justify-between mb-4 md:mb-6">
                 <h3 className="text-lg md:text-xl font-semibold text-ski-navy">比赛成绩</h3>
                 <div className="flex items-center text-sm text-green-600">
@@ -786,7 +786,7 @@ export default function HomePage() {
                   已更新
                 </div>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-4 flex-1">
                 {(() => {
                   // 根据选中的项目筛选比赛
                   const sportTypeMap: Record<number, string> = {
@@ -842,15 +842,15 @@ export default function HomePage() {
                   )
                 })()}
               </div>
-              <div className="mt-6 text-center">
+              <div className="mt-auto pt-4 text-center">
                 <Link href="/results-announcement" className="text-ski-blue hover:text-ski-blue/80 font-medium">
-                  {t.home?.latestResults?.viewMore || '查看更多赛事'} →
+                  查看更多 → →
                 </Link>
               </div>
             </div>
 
             {/* Top Athletes Rankings - 按小项分页 */}
-            <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold text-ski-navy">{t.home?.rankings?.title || '积分排行榜'}</h3>
                 <div className="text-sm text-gray-500">
@@ -884,40 +884,42 @@ export default function HomePage() {
               )}
 
               {/* 列表样式排行榜 */}
-              {isLoadingStats ? (
-                <div className="flex items-center justify-center py-8">
-                  <Loader2 className="w-6 h-6 text-ski-blue animate-spin" />
-                </div>
-              ) : currentEvent && currentEvent.athletes.length > 0 ? (
-                <div className="space-y-3">
-                  {currentEvent.athletes.map((athlete, index) => {
-                    const cardClass = rankingCardStyles[index] || defaultRankingCardClass
-                    const badgeClass = rankingBadgeStyles[index] || defaultRankingBadgeClass
-                    return (
-                      <div key={athlete.athleteId} className={`flex items-center p-3 rounded-lg ${cardClass}`}>
-                        <div className={`w-7 h-7 ${badgeClass} rounded-full flex items-center justify-center font-bold text-xs mr-3`}>
-                          {athlete.rank}
+              <div className="flex-1">
+                {isLoadingStats ? (
+                  <div className="flex items-center justify-center py-8">
+                    <Loader2 className="w-6 h-6 text-ski-blue animate-spin" />
+                  </div>
+                ) : currentEvent && currentEvent.athletes.length > 0 ? (
+                  <div className="space-y-3">
+                    {currentEvent.athletes.map((athlete, index) => {
+                      const cardClass = rankingCardStyles[index] || defaultRankingCardClass
+                      const badgeClass = rankingBadgeStyles[index] || defaultRankingBadgeClass
+                      return (
+                        <div key={athlete.athleteId} className={`flex items-center p-3 rounded-lg ${cardClass}`}>
+                          <div className={`w-7 h-7 ${badgeClass} rounded-full flex items-center justify-center font-bold text-xs mr-3`}>
+                            {athlete.rank}
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="font-semibold text-gray-900 text-sm">{athlete.athleteName}</div>
+                            <div className="text-xs text-gray-500 truncate">{athlete.province}</div>
+                          </div>
+                          <div className="text-right ml-2">
+                            {athlete.score && <div className="text-xs text-gray-600">{athlete.score}</div>}
+                            <div className="font-bold text-ski-blue text-sm">{athlete.totalPoints > 0 ? `${athlete.totalPoints}分` : '-'}</div>
+                          </div>
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="font-semibold text-gray-900 text-sm">{athlete.athleteName}</div>
-                          <div className="text-xs text-gray-500 truncate">{athlete.province}</div>
-                        </div>
-                        <div className="text-right ml-2">
-                          {athlete.score && <div className="text-xs text-gray-600">{athlete.score}</div>}
-                          <div className="font-bold text-ski-blue text-sm">{athlete.totalPoints > 0 ? `${athlete.totalPoints}分` : '-'}</div>
-                        </div>
-                      </div>
-                    )
-                  })}
-                </div>
-              ) : (
-                <div className="text-center py-8 text-gray-500">
-                  {t.home?.rankings?.noData || '该项目暂无排名数据'}
-                </div>
-              )}
-              <div className="mt-4 text-center">
+                      )
+                    })}
+                  </div>
+                ) : (
+                  <div className="text-center py-8 text-gray-500">
+                    {t.home?.rankings?.noData || '该项目暂无排名数据'}
+                  </div>
+                )}
+              </div>
+              <div className="mt-auto pt-4 text-center">
                 <Link href="/points/rankings" className="text-ski-blue hover:text-ski-blue/80 font-medium text-sm">
-                  {t.home?.rankings?.viewFullRankings || '查看完整排名'} →
+                  查看更多 → →
                 </Link>
               </div>
             </div>
