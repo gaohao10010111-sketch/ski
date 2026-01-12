@@ -1047,9 +1047,13 @@ export default function PointsRankingsPage() {
               </div>
             ) : (
               <div className="space-y-6">
+                {/* 只显示下拉框中选中的比赛，默认显示第一个 */}
                 {groupedByCompetition
-                  .filter(comp => !selectedCompetitionGroupIndex['__selected_competition'] || comp.competition === selectedCompetitionGroupIndex['__selected_competition'])
-                  .slice(0, selectedCompetitionGroupIndex['__selected_competition'] ? 1 : groupedByCompetition.length)
+                  .filter(comp => {
+                    const selectedComp = selectedCompetitionGroupIndex['__selected_competition'] || groupedByCompetition[0]?.competition
+                    return comp.competition === selectedComp
+                  })
+                  .slice(0, 1)
                   .map((competitionData) => {
                   // 获取当前比赛选中的小项索引
                   const currentGroupIndex = selectedCompetitionGroupIndex[competitionData.competition] || 0
