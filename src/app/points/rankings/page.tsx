@@ -563,38 +563,38 @@ export default function PointsRankingsPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white"></div>
         <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-ski-blue via-blue-500 to-indigo-600"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-10 md:pt-16 md:pb-12">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14 md:pt-24 md:pb-20">
           {/* 居中大标题区域 */}
           <div className="text-center max-w-4xl mx-auto">
             {/* 标签行 */}
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <span className="inline-flex items-center px-3 py-1.5 rounded-md text-xs font-bold bg-ski-blue text-white uppercase tracking-wider shadow-sm">
+            <div className="flex items-center justify-center gap-4 mb-10">
+              <span className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-bold bg-ski-blue text-white uppercase tracking-wider shadow-sm">
                 Official
               </span>
-              <span className="inline-flex items-center px-3 py-1.5 rounded-md text-xs font-semibold bg-gradient-to-r from-amber-50 to-orange-50 text-amber-700 border border-amber-200">
+              <span className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-semibold bg-gradient-to-r from-amber-50 to-orange-50 text-amber-700 border border-amber-200">
                 2025-2026 赛季
               </span>
-              <span className="inline-flex items-center px-3 py-1.5 rounded-md text-xs font-semibold bg-gradient-to-r from-green-50 to-emerald-50 text-green-700 border border-green-200">
+              <span className="inline-flex items-center px-4 py-2 rounded-lg text-sm font-semibold bg-gradient-to-r from-green-50 to-emerald-50 text-green-700 border border-green-200">
                 U系列赛事
               </span>
             </div>
 
             {/* 主标题 */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight mb-5">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 tracking-tight mb-8">
               积分排行榜
             </h1>
 
             {/* 副标题描述 */}
-            <p className="text-gray-500 text-lg md:text-xl mb-8 leading-relaxed">
+            <p className="text-gray-500 text-xl md:text-2xl mb-12 leading-relaxed max-w-2xl mx-auto">
               全国滑雪青少年U系列赛事官方积分排名<br className="hidden sm:block" />
               涵盖高山滑雪、单板滑雪、自由式滑雪全项目数据
             </p>
 
             {/* 视图切换按钮 */}
-            <div className="inline-flex rounded-xl bg-gray-100 p-1.5 shadow-inner">
+            <div className="inline-flex rounded-2xl bg-gray-100 p-2 shadow-inner">
               <button
                 onClick={() => setViewMode('total')}
-                className={`px-6 py-2.5 rounded-lg text-sm font-semibold transition-all ${
+                className={`px-8 py-3 rounded-xl text-base font-semibold transition-all ${
                   viewMode === 'total'
                     ? 'bg-white text-ski-blue shadow-md'
                     : 'text-gray-600 hover:text-gray-900'
@@ -604,7 +604,7 @@ export default function PointsRankingsPage() {
               </button>
               <button
                 onClick={() => setViewMode('competition')}
-                className={`px-6 py-2.5 rounded-lg text-sm font-semibold transition-all ${
+                className={`px-8 py-3 rounded-xl text-base font-semibold transition-all ${
                   viewMode === 'competition'
                     ? 'bg-white text-ski-blue shadow-md'
                     : 'text-gray-600 hover:text-gray-900'
