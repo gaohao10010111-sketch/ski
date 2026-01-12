@@ -911,7 +911,7 @@ export default function PointsRankingsPage() {
                                   <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
                                   <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
                                   <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">参赛</th>
-                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">排名</th>
+                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-20">实时排名</th>
                                   <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-24">总积分</th>
                                 </tr>
                               </thead>
