@@ -783,9 +783,9 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-stretch">
             {/* Recent Competition Results - 使用实际比赛数据 */}
-            <div className="bg-white rounded-lg shadow-lg p-4 md:p-6 flex flex-col">
-              <div className="flex items-center justify-between mb-4 md:mb-6">
-                <h3 className="text-lg md:text-xl font-semibold text-ski-navy">比赛成绩</h3>
+            <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-semibold text-ski-navy">比赛成绩</h3>
                 <div className="flex items-center text-sm text-green-600">
                   <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
                   已更新
@@ -848,8 +848,8 @@ export default function HomePage() {
                 })()}
               </div>
               <div className="mt-auto pt-4 text-center">
-                <Link href="/results-announcement" className="text-ski-blue hover:text-ski-blue/80 font-medium">
-                  查看更多 → →
+                <Link href="/results-announcement" className="text-ski-blue hover:text-ski-blue/80 font-medium text-sm">
+                  查看更多 →
                 </Link>
               </div>
             </div>
@@ -924,7 +924,7 @@ export default function HomePage() {
               </div>
               <div className="mt-auto pt-4 text-center">
                 <Link href="/points/rankings" className="text-ski-blue hover:text-ski-blue/80 font-medium text-sm">
-                  查看更多 → →
+                  查看更多 →
                 </Link>
               </div>
             </div>
