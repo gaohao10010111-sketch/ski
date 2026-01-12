@@ -636,14 +636,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 成绩快报 - 最高优先级展示区 */}
+      {/* 最新成绩 - 最高优先级展示区 */}
       {latestResults.competitions.length > 0 && (
         <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-8">
               <div className="flex items-center">
                 <Trophy className="w-6 h-6 text-yellow-500 mr-3" />
-                <h2 className="text-xl md:text-2xl font-bold text-ski-navy">成绩快报</h2>
+                <h2 className="text-xl md:text-2xl font-bold text-ski-navy">最新成绩</h2>
                 <span className="ml-3 px-2 py-0.5 bg-green-100 text-green-600 text-xs font-medium rounded-full border border-green-200">
                   最新发布
                 </span>

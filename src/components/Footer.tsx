@@ -177,7 +177,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/results-announcement" className="text-gray-300 hover:text-primary-400 transition-colors">
-                  成绩公告
+                  最新成绩
                 </Link>
               </li>
             </ul>

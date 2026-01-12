@@ -251,7 +251,7 @@ function ResultsContent() {
           <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full mb-4 shadow-lg">
             <Trophy className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-3xl font-bold text-ski-navy mb-2">成绩公告</h1>
+          <h1 className="text-3xl font-bold text-ski-navy mb-2">最新成绩</h1>
           <p className="text-gray-500 text-sm">数据更新于 {latestResults.lastUpdated}</p>
         </div>
 
