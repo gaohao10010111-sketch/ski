@@ -18,125 +18,165 @@ interface PointsCardProps {
   season?: string
 }
 
-// FIFA风格六边形徽章SVG
-function HexagonBadge({ rank, size = 120 }: { rank: number; size?: number }) {
+// FIFA风格圆形徽章 - 更精致的设计
+function RankBadge({ rank, size = 100 }: { rank: number; size?: number }) {
   // 根据排名确定配色
   const getColors = () => {
     if (rank === 1) return {
       primary: '#FFD700',
-      secondary: '#FFA500',
-      glow: '#FFD700',
+      secondary: '#B8860B',
+      accent: '#FFF8DC',
+      glow: 'rgba(255, 215, 0, 0.6)',
       text: '#1a1a2e',
       label: '冠军',
-      icon: '👑'
+      icon: '👑',
+      ringColor: '#DAA520'
     }
     if (rank === 2) return {
-      primary: '#C0C0C0',
+      primary: '#E8E8E8',
       secondary: '#A8A8A8',
-      glow: '#E8E8E8',
+      accent: '#FFFFFF',
+      glow: 'rgba(192, 192, 192, 0.5)',
       text: '#1a1a2e',
       label: '亚军',
-      icon: '🥈'
+      icon: '🥈',
+      ringColor: '#C0C0C0'
     }
     if (rank === 3) return {
       primary: '#CD7F32',
-      secondary: '#B8860B',
-      glow: '#DAA520',
+      secondary: '#8B4513',
+      accent: '#DEB887',
+      glow: 'rgba(205, 127, 50, 0.5)',
       text: '#1a1a2e',
       label: '季军',
-      icon: '🥉'
+      icon: '🥉',
+      ringColor: '#B8860B'
     }
     if (rank <= 10) return {
-      primary: '#4F46E5',
-      secondary: '#3730A3',
-      glow: '#818CF8',
+      primary: '#6366F1',
+      secondary: '#4338CA',
+      accent: '#A5B4FC',
+      glow: 'rgba(99, 102, 241, 0.5)',
       text: '#ffffff',
       label: `TOP ${rank}`,
-      icon: '⭐'
+      icon: '⭐',
+      ringColor: '#818CF8'
     }
     return {
-      primary: '#0EA5E9',
-      secondary: '#0284C7',
-      glow: '#38BDF8',
+      primary: '#06B6D4',
+      secondary: '#0891B2',
+      accent: '#67E8F9',
+      glow: 'rgba(6, 182, 212, 0.5)',
       text: '#ffffff',
-      label: `第${rank}名`,
-      icon: '🎿'
+      label: `#${rank}`,
+      icon: '🎿',
+      ringColor: '#22D3EE'
     }
   }
 
   const colors = getColors()
 
   return (
-    <div className="relative" style={{ width: size, height: size * 1.15 }}>
-      <svg viewBox="0 0 100 115" className="w-full h-full drop-shadow-2xl">
-        {/* 外层光晕 */}
+    <div className="relative" style={{ width: size, height: size }}>
+      <svg viewBox="0 0 100 100" className="w-full h-full">
         <defs>
-          <linearGradient id={`badgeGradient-${rank}`} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor={colors.primary} />
+          {/* 主渐变 */}
+          <linearGradient id={`mainGrad-${rank}`} x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor={colors.accent} />
+            <stop offset="30%" stopColor={colors.primary} />
             <stop offset="100%" stopColor={colors.secondary} />
           </linearGradient>
-          <filter id={`glow-${rank}`}>
-            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+
+          {/* 外环渐变 */}
+          <linearGradient id={`ringGrad-${rank}`} x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor={colors.ringColor} />
+            <stop offset="50%" stopColor={colors.primary} />
+            <stop offset="100%" stopColor={colors.secondary} />
+          </linearGradient>
+
+          {/* 光晕效果 */}
+          <filter id={`glow-${rank}`} x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feFlood floodColor={colors.glow} result="color"/>
+            <feComposite in="color" in2="blur" operator="in" result="shadow"/>
             <feMerge>
-              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="shadow"/>
               <feMergeNode in="SourceGraphic"/>
             </feMerge>
           </filter>
-          <linearGradient id={`shineGradient-${rank}`} x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="rgba(255,255,255,0.4)" />
+
+          {/* 高光渐变 */}
+          <linearGradient id={`shine-${rank}`} x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="rgba(255,255,255,0.5)" />
             <stop offset="50%" stopColor="rgba(255,255,255,0.1)" />
             <stop offset="100%" stopColor="rgba(255,255,255,0)" />
           </linearGradient>
         </defs>
 
-        {/* 六边形主体 - FIFA风格盾牌 */}
-        <path
-          d="M50 2 L95 25 L95 75 L50 113 L5 75 L5 25 Z"
-          fill={`url(#badgeGradient-${rank})`}
-          stroke={colors.glow}
+        {/* 最外层装饰环 */}
+        <circle
+          cx="50" cy="50" r="48"
+          fill="none"
+          stroke={`url(#ringGrad-${rank})`}
           strokeWidth="2"
+          opacity="0.8"
+        />
+
+        {/* 外环 - 金属质感 */}
+        <circle
+          cx="50" cy="50" r="44"
+          fill="none"
+          stroke={`url(#ringGrad-${rank})`}
+          strokeWidth="4"
           filter={`url(#glow-${rank})`}
         />
 
-        {/* 内层边框 */}
-        <path
-          d="M50 8 L89 28 L89 72 L50 107 L11 72 L11 28 Z"
+        {/* 内环装饰 */}
+        <circle
+          cx="50" cy="50" r="38"
           fill="none"
-          stroke={colors.glow}
-          strokeWidth="1"
-          opacity="0.5"
+          stroke={colors.ringColor}
+          strokeWidth="1.5"
+          strokeDasharray="4 2"
+          opacity="0.6"
         />
 
-        {/* 高光效果 */}
-        <path
-          d="M50 8 L89 28 L89 50 L50 70 L11 50 L11 28 Z"
-          fill={`url(#shineGradient-${rank})`}
+        {/* 主圆形背景 */}
+        <circle
+          cx="50" cy="50" r="35"
+          fill={`url(#mainGrad-${rank})`}
         />
 
-        {/* 顶部装饰线 */}
-        <path
-          d="M30 20 L70 20"
-          stroke={colors.text}
-          strokeWidth="1"
-          opacity="0.3"
-        />
-        <path
-          d="M35 24 L65 24"
-          stroke={colors.text}
+        {/* 内部装饰圈 */}
+        <circle
+          cx="50" cy="50" r="32"
+          fill="none"
+          stroke={colors.accent}
           strokeWidth="0.5"
-          opacity="0.2"
+          opacity="0.4"
+        />
+
+        {/* 高光层 */}
+        <ellipse
+          cx="50" cy="38"
+          rx="22" ry="15"
+          fill={`url(#shine-${rank})`}
+        />
+
+        {/* 底部阴影 */}
+        <ellipse
+          cx="50" cy="65"
+          rx="18" ry="8"
+          fill="rgba(0,0,0,0.15)"
         />
       </svg>
 
       {/* 徽章内容 */}
-      <div
-        className="absolute inset-0 flex flex-col items-center justify-center"
-        style={{ paddingTop: size * 0.08 }}
-      >
-        <span className="text-2xl mb-1">{colors.icon}</span>
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <span className="text-2xl drop-shadow-md" style={{ marginTop: -2 }}>{colors.icon}</span>
         <span
-          className="font-black text-lg tracking-tight"
-          style={{ color: colors.text }}
+          className="font-black text-base tracking-tight drop-shadow-sm"
+          style={{ color: colors.text, marginTop: 2 }}
         >
           {colors.label}
         </span>
@@ -318,7 +358,7 @@ export default function PointsCard({
   ageGroup,
   gender,
   discipline = '综合积分',
-  season = '2024-2025'
+  season = '2025-2026'
 }: PointsCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [isGenerating, setIsGenerating] = useState(false)
@@ -456,8 +496,8 @@ export default function PointsCard({
 
           {/* 中间区域：徽章 + 信息 */}
           <div className="flex items-center gap-4 mb-4">
-            {/* FIFA风格徽章 */}
-            <HexagonBadge rank={rank} size={100} />
+            {/* 精致圆形徽章 */}
+            <RankBadge rank={rank} size={100} />
 
             {/* 运动员信息 */}
             <div className="flex-1">

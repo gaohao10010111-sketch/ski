@@ -85,7 +85,7 @@ export default function CardPreviewPage() {
             ageGroup={selected.ageGroup}
             gender={selected.gender}
             discipline={selected.discipline}
-            season="2024-2025"
+            season="2025-2026"
           />
         </div>
 
