@@ -557,7 +557,7 @@ export default function PointsRankingsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* 顶部标题区域 - 增强设计感 */}
+      {/* 顶部标题区域 - 大气居中设计 */}
       <div className="relative bg-gradient-to-r from-ski-blue via-blue-600 to-indigo-600 overflow-hidden">
         {/* 装饰背景元素 */}
         <div className="absolute inset-0 opacity-10">
@@ -578,46 +578,48 @@ export default function PointsRankingsPage() {
           </svg>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center justify-between">
-            {/* 左侧：返回+标题 */}
-            <div className="flex items-center gap-4">
-              <Link
-                href="/"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors backdrop-blur-sm"
-              >
-                <ArrowLeft className="w-5 h-5" />
-              </Link>
-              <div className="flex items-center gap-4">
-                {/* 奖杯图标 - 更大更醒目 */}
-                <div className="relative">
-                  <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-2xl flex items-center justify-center shadow-lg shadow-amber-500/30 rotate-3 hover:rotate-0 transition-transform">
-                    <Trophy className="w-8 h-8 text-white drop-shadow-md" />
-                  </div>
-                  <div className="absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow">
-                    <Star className="w-3 h-3 text-amber-500 fill-amber-500" />
-                  </div>
-                </div>
-                <div>
-                  <h1 className="text-2xl md:text-3xl font-bold text-white drop-shadow-sm">
-                    积分排行榜
-                  </h1>
-                  <div className="flex items-center gap-2 mt-1">
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-white/20 text-white backdrop-blur-sm">
-                      <Calendar className="w-3 h-3 mr-1" />
-                      2025-2026赛季
-                    </span>
-                    <span className="text-white/80 text-sm">全国青少年U系列</span>
-                  </div>
-                </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+          {/* 返回按钮 - 左上角固定 */}
+          <Link
+            href="/"
+            className="absolute left-4 top-4 md:left-6 md:top-6 inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors backdrop-blur-sm z-10"
+          >
+            <ArrowLeft className="w-5 h-5" />
+          </Link>
+
+          {/* 居中大标题区域 */}
+          <div className="text-center">
+            {/* 奖杯图标 - 更大更醒目 */}
+            <div className="relative inline-block mb-4">
+              <div className="w-20 h-20 md:w-24 md:h-24 mx-auto bg-gradient-to-br from-yellow-400 to-amber-500 rounded-3xl flex items-center justify-center shadow-2xl shadow-amber-500/40 rotate-3 hover:rotate-0 transition-transform">
+                <Trophy className="w-10 h-10 md:w-12 md:h-12 text-white drop-shadow-md" />
+              </div>
+              <div className="absolute -top-2 -right-2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg">
+                <Star className="w-5 h-5 text-amber-500 fill-amber-500" />
               </div>
             </div>
 
-            {/* 右侧：视图切换 */}
+            {/* 主标题 */}
+            <h1 className="text-3xl md:text-5xl font-extrabold text-white drop-shadow-lg tracking-wide mb-3">
+              积分排行榜
+            </h1>
+
+            {/* 副标题标签 */}
+            <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-6">
+              <span className="inline-flex items-center px-3 py-1 md:px-4 md:py-1.5 rounded-full text-sm md:text-base font-medium bg-white/20 text-white backdrop-blur-sm">
+                <Calendar className="w-4 h-4 mr-1.5" />
+                2025-2026赛季
+              </span>
+              <span className="inline-flex items-center px-3 py-1 md:px-4 md:py-1.5 rounded-full text-sm md:text-base font-medium bg-white/20 text-white backdrop-blur-sm">
+                全国青少年U系列
+              </span>
+            </div>
+
+            {/* 视图切换按钮 - 居中 */}
             <div className="inline-flex rounded-xl bg-white/20 backdrop-blur-sm p-1">
               <button
                 onClick={() => setViewMode('total')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                className={`px-4 py-2 md:px-6 md:py-2.5 rounded-lg text-sm md:text-base font-medium transition-all ${
                   viewMode === 'total'
                     ? 'bg-white text-ski-blue shadow-md'
                     : 'text-white hover:bg-white/20'
@@ -627,7 +629,7 @@ export default function PointsRankingsPage() {
               </button>
               <button
                 onClick={() => setViewMode('competition')}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                className={`px-4 py-2 md:px-6 md:py-2.5 rounded-lg text-sm md:text-base font-medium transition-all ${
                   viewMode === 'competition'
                     ? 'bg-white text-ski-blue shadow-md'
                     : 'text-white hover:bg-white/20'
