@@ -399,12 +399,6 @@ export default function AthletesPage() {
           <p className="text-xl text-gray-600">
             中国滑雪运动员档案与积分统计
           </p>
-          {hasLocalData && (
-            <div className="mt-4 inline-flex items-center gap-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm">
-              <Database className="h-4 w-4" />
-              数据来源: 本地导入的比赛成绩 ({localCompetitions.length} 场比赛)
-            </div>
-          )}
         </div>
 
         {/* 搜索和筛选 - 吸顶 */}
