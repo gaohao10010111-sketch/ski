@@ -483,7 +483,7 @@ export default function PointsRankingsPage() {
           showToast('没有数据可导出', 'warning')
           return
         }
-        rows.push(['排名', '运动员', '单位', '年龄组', '性别', '总积分', '参赛次数', '最佳名次'])
+        rows.push(['排名', '运动员', '单位', '年龄组', '性别', '总积分', '参赛次数', '实时排名'])
         for (const item of filteredTotalRankings) {
           rows.push([
             String(item.rank),
@@ -493,7 +493,7 @@ export default function PointsRankingsPage() {
             item.gender,
             String(item.totalPoints),
             String(item.competitionCount),
-            String(item.bestRank)
+            String(item.rank)
           ])
         }
       } else {
@@ -911,7 +911,7 @@ export default function PointsRankingsPage() {
                                   <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
                                   <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
                                   <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">参赛</th>
-                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">最佳</th>
+                                  <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">排名</th>
                                   <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-24">总积分</th>
                                 </tr>
                               </thead>
@@ -944,10 +944,10 @@ export default function PointsRankingsPage() {
                                     </td>
                                     <td className="px-4 py-2 whitespace-nowrap text-center">
                                       <span className={`text-sm font-medium ${
-                                        item.bestRank === 1 ? 'text-yellow-600' :
-                                        item.bestRank <= 3 ? 'text-orange-600' : 'text-gray-600'
+                                        item.rank === 1 ? 'text-yellow-600' :
+                                        item.rank <= 3 ? 'text-orange-600' : 'text-gray-600'
                                       }`}>
-                                        {item.bestRank}
+                                        {item.rank}
                                       </span>
                                     </td>
                                     <td className="px-4 py-2 whitespace-nowrap text-center">
