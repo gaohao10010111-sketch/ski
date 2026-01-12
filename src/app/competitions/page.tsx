@@ -233,86 +233,102 @@ export default function CompetitionsPage() {
       </div>
 
       {/* 统计卡片 */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8 relative z-10">
-        <div className="card text-center">
-          <Calendar className="h-8 w-8 text-ski-blue mx-auto mb-2" />
-          <div className="text-2xl font-bold text-ski-navy">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 mb-6 md:mb-8 relative z-10">
+        <div className="card text-center p-3 md:p-4">
+          <Calendar className="h-6 w-6 md:h-8 md:w-8 text-ski-blue mx-auto mb-1 md:mb-2" />
+          <div className="text-xl md:text-2xl font-bold text-ski-navy">
             {stats?.overview.totalCompetitions ?? localStats.totalCompetitions}
           </div>
-          <div className="text-sm text-gray-600">本季比赛</div>
+          <div className="text-xs md:text-sm text-gray-600">本季比赛</div>
         </div>
-        <div className="card text-center">
-          <Users className="h-8 w-8 text-green-600 mx-auto mb-2" />
-          <div className="text-2xl font-bold text-ski-navy">
+        <div className="card text-center p-3 md:p-4">
+          <Users className="h-6 w-6 md:h-8 md:w-8 text-green-600 mx-auto mb-1 md:mb-2" />
+          <div className="text-xl md:text-2xl font-bold text-ski-navy">
             {stats?.overview.totalAthletes ?? localStats.totalAthletes}
           </div>
-          <div className="text-sm text-gray-600">注册运动员</div>
+          <div className="text-xs md:text-sm text-gray-600">注册运动员</div>
         </div>
-        <div className="card text-center">
-          <Trophy className="h-8 w-8 text-yellow-600 mx-auto mb-2" />
-          <div className="text-2xl font-bold text-ski-navy">
+        <div className="card text-center p-3 md:p-4">
+          <Trophy className="h-6 w-6 md:h-8 md:w-8 text-yellow-600 mx-auto mb-1 md:mb-2" />
+          <div className="text-xl md:text-2xl font-bold text-ski-navy">
             {stats?.overview.completedCompetitions ?? localStats.completedCompetitions}
           </div>
-          <div className="text-sm text-gray-600">已完赛事</div>
+          <div className="text-xs md:text-sm text-gray-600">已完赛事</div>
         </div>
-        <div className="card text-center">
-          <Clock className="h-8 w-8 text-purple-600 mx-auto mb-2" />
-          <div className="text-2xl font-bold text-ski-navy">
+        <div className="card text-center p-3 md:p-4">
+          <Clock className="h-6 w-6 md:h-8 md:w-8 text-purple-600 mx-auto mb-1 md:mb-2" />
+          <div className="text-xl md:text-2xl font-bold text-ski-navy">
             {stats?.overview.upcomingCompetitions ?? localStats.upcomingCompetitions}
           </div>
-          <div className="text-sm text-gray-600">即将开始</div>
+          <div className="text-xs md:text-sm text-gray-600">即将开始</div>
         </div>
       </div>
 
       {/* 筛选和搜索 - 吸顶 */}
-      <div className="sticky top-16 z-40 bg-white rounded-lg shadow-md p-6 mb-8 border border-gray-200">
-        <div className="flex flex-col md:flex-row gap-4 items-center">
-          <div className="flex items-center space-x-2">
+      <div className="sticky top-16 z-40 bg-white rounded-lg shadow-md p-3 md:p-6 mb-4 md:mb-8 border border-gray-200">
+        <div className="flex flex-col gap-3 md:gap-4">
+          {/* 移动端：筛选标签和结果数在同一行 */}
+          <div className="flex items-center justify-between md:hidden">
+            <div className="flex items-center space-x-2">
+              <Filter className="h-4 w-4 text-gray-500" />
+              <span className="text-xs font-medium text-gray-700">筛选</span>
+            </div>
+            <span className="text-xs text-gray-600">
+              找到 <span className="text-ski-blue font-bold">{total}</span> 场比赛
+            </span>
+          </div>
+
+          {/* 桌面端：筛选标签 */}
+          <div className="hidden md:flex items-center space-x-2">
             <Filter className="h-5 w-5 text-gray-500" />
             <span className="text-sm font-medium text-gray-700">筛选条件:</span>
           </div>
 
-          <select
-            value={selectedStatus}
-            onChange={(e) => setSelectedStatus(e.target.value)}
-            className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue transition-all"
-          >
-            <option value="all">全部状态</option>
-            <option value="UPCOMING">即将开始</option>
-            <option value="ONGOING">进行中</option>
-            <option value="COMPLETED">已结束</option>
-            <option value="CANCELLED">已取消</option>
-          </select>
+          {/* 筛选下拉框 */}
+          <div className="grid grid-cols-2 md:flex gap-2 md:gap-4">
+            <select
+              value={selectedStatus}
+              onChange={(e) => setSelectedStatus(e.target.value)}
+              className="px-2 md:px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue transition-all"
+            >
+              <option value="all">全部状态</option>
+              <option value="UPCOMING">即将开始</option>
+              <option value="ONGOING">进行中</option>
+              <option value="COMPLETED">已结束</option>
+              <option value="CANCELLED">已取消</option>
+            </select>
 
-          <select
-            value={selectedSportType}
-            onChange={(e) => setSelectedSportType(e.target.value)}
-            className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue transition-all"
-          >
-            <option value="all">全部项目</option>
-            <option value="ALPINE_SKI">高山滑雪</option>
-            <option value="FREESTYLE_SLOPESTYLE_BIGAIR">自由式坡障/大跳台</option>
-            <option value="SNOWBOARD_SLOPESTYLE_BIGAIR">单板坡障/大跳台</option>
-            <option value="SNOWBOARD_PARALLEL">单板平行项目</option>
-          </select>
+            <select
+              value={selectedSportType}
+              onChange={(e) => setSelectedSportType(e.target.value)}
+              className="px-2 md:px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue transition-all"
+            >
+              <option value="all">全部项目</option>
+              <option value="ALPINE_SKI">高山滑雪</option>
+              <option value="FREESTYLE_SLOPESTYLE_BIGAIR">自由式坡障/大跳台</option>
+              <option value="SNOWBOARD_SLOPESTYLE_BIGAIR">单板坡障/大跳台</option>
+              <option value="SNOWBOARD_PARALLEL">单板平行项目</option>
+            </select>
+          </div>
 
-          <div className="relative flex-1 max-w-md">
-            <Search className="h-5 w-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
+          {/* 搜索框 */}
+          <div className="relative w-full md:max-w-md">
+            <Search className="h-4 w-4 md:h-5 md:w-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
             <input
               type="text"
               placeholder="搜索比赛名称或地点..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue transition-all"
+              className="w-full pl-9 md:pl-10 pr-4 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-ski-blue transition-all"
             />
           </div>
 
-          <div className="flex items-center space-x-2">
+          {/* 桌面端：结果数 */}
+          <div className="hidden md:flex items-center">
             <span className="text-sm text-gray-600 font-medium">
               找到 <span className="text-ski-blue font-bold">{total}</span> 场比赛
             </span>
           </div>
-
         </div>
       </div>
 
@@ -348,7 +364,7 @@ export default function CompetitionsPage() {
 
       {/* 竞赛列表 */}
       {!isLoading && !error && competitions.length > 0 && (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6 relative z-10">
           {competitions.map((competition, index) => {
             const StatusConf = statusConfig[competition.status] || {
               label: competition.status,
@@ -364,114 +380,112 @@ export default function CompetitionsPage() {
             const weatherColor = weatherConfig[weatherType].color
 
             return (
-              <div key={competition.id} className="card hover:shadow-lg transition-shadow duration-200">
+              <div key={competition.id} className="card p-3 md:p-4 hover:shadow-lg transition-shadow duration-200">
                 {/* 比赛图片 */}
-                <div className="relative h-48 rounded-lg overflow-hidden mb-4 bg-gradient-to-br from-ski-blue to-ski-navy">
+                <div className="relative h-36 md:h-48 rounded-lg overflow-hidden mb-3 md:mb-4 bg-gradient-to-br from-ski-blue to-ski-navy">
                   <img
                     src={getImagePath('/images/freestyle-skiing.jpg')}
                     alt={competition.name}
                     className="w-full h-full object-cover opacity-80"
                   />
-                  <div className="absolute top-3 left-3">
+                  <div className="absolute top-2 md:top-3 left-2 md:left-3">
                     <span
-                      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${StatusConf.color}`}
+                      className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${StatusConf.color}`}
                     >
                       {StatusConf.label}
                     </span>
                   </div>
-                  <div className="absolute top-3 right-3">
-                    <WeatherIcon className={`h-5 w-5 ${weatherColor}`} />
+                  <div className="absolute top-2 md:top-3 right-2 md:right-3">
+                    <WeatherIcon className={`h-4 w-4 md:h-5 md:w-5 ${weatherColor}`} />
                   </div>
-                  <div className="absolute bottom-3 left-3 right-3">
+                  <div className="absolute bottom-2 md:bottom-3 left-2 md:left-3 right-2 md:right-3">
                     <div className="bg-black/50 backdrop-blur-sm rounded-lg p-2 text-white">
-                      <h3 className="font-bold text-lg truncate">{competition.name}</h3>
-                      <div className="flex items-center text-sm opacity-90">
-                        <MapPin className="h-3 w-3 mr-1" />
-                        {competition.location}
-                        {competition.venue && ` · ${competition.venue}`}
+                      <h3 className="font-bold text-sm md:text-lg line-clamp-2 md:truncate">{competition.name}</h3>
+                      <div className="flex items-center text-xs md:text-sm opacity-90">
+                        <MapPin className="h-3 w-3 mr-1 flex-shrink-0" />
+                        <span className="truncate">{competition.location}</span>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 {/* 比赛信息 */}
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <LevelConf.icon className={`h-4 w-4 ${LevelConf.color}`} />
-                      <span className={`text-sm font-medium ${LevelConf.color}`}>{LevelConf.label}</span>
+                <div className="space-y-2 md:space-y-3">
+                  <div className="flex items-center justify-between flex-wrap gap-1">
+                    <div className="flex items-center space-x-1 md:space-x-2">
+                      <LevelConf.icon className={`h-3 w-3 md:h-4 md:w-4 ${LevelConf.color}`} />
+                      <span className={`text-xs md:text-sm font-medium ${LevelConf.color}`}>{LevelConf.label}</span>
                     </div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-xs md:text-sm text-gray-600 truncate max-w-[140px] md:max-w-none">
                       {sportTypeLabels[competition.sportType] || competition.sportType}
-                      {competition.discipline && ` · ${competition.discipline}`}
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="grid grid-cols-2 gap-2 md:gap-4 text-xs md:text-sm">
                     <div className="flex items-center">
-                      <Calendar className="h-4 w-4 text-gray-400 mr-2" />
-                      <span className="text-gray-600">
+                      <Calendar className="h-3 w-3 md:h-4 md:w-4 text-gray-400 mr-1 md:mr-2 flex-shrink-0" />
+                      <span className="text-gray-600 truncate">
                         {competition.startDate}
                         {competition.startDate !== competition.endDate && (
-                          <span> - {competition.endDate}</span>
+                          <span className="hidden md:inline"> - {competition.endDate}</span>
                         )}
                       </span>
                     </div>
                     <div className="flex items-center">
-                      <Users className="h-4 w-4 text-gray-400 mr-2" />
+                      <Users className="h-3 w-3 md:h-4 md:w-4 text-gray-400 mr-1 md:mr-2 flex-shrink-0" />
                       <span className="text-gray-600">{competition.participantCount || 0} 人参赛</span>
                     </div>
                   </div>
 
                   {competition.organizer && (
-                    <div className="text-sm text-gray-600">
+                    <div className="text-xs md:text-sm text-gray-600 hidden md:block">
                       <span className="font-medium">主办方:</span> {competition.organizer}
                     </div>
                   )}
 
                   {/* 操作按钮 */}
-                  <div className="flex gap-2 pt-3 border-t border-gray-100">
+                  <div className="flex gap-2 pt-2 md:pt-3 border-t border-gray-100">
                     <button
                       onClick={() => handleViewDetails(competition)}
-                      className="flex-1 flex items-center justify-center py-2 px-3 text-sm bg-ski-blue text-white rounded-md hover:bg-primary-700 transition-colors"
+                      className="flex-1 flex items-center justify-center py-1.5 md:py-2 px-2 md:px-3 text-xs md:text-sm bg-ski-blue text-white rounded-md hover:bg-primary-700 transition-colors"
                     >
-                      <Eye className="h-4 w-4 mr-1" />
+                      <Eye className="h-3 w-3 md:h-4 md:w-4 mr-1" />
                       查看详情
                     </button>
 
                     {competition.status === 'COMPLETED' && (
                       <Link
                         href={`/results-announcement?competition=${encodeURIComponent(competition.name)}&id=${competition.id}`}
-                        className="flex-1 flex items-center justify-center py-2 px-3 text-sm bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors shadow-sm hover:shadow-md"
+                        className="flex-1 flex items-center justify-center py-1.5 md:py-2 px-2 md:px-3 text-xs md:text-sm bg-green-600 text-white rounded-md hover:bg-green-700 transition-colors shadow-sm hover:shadow-md"
                       >
-                        <Award className="h-4 w-4 mr-1" />
+                        <Award className="h-3 w-3 md:h-4 md:w-4 mr-1" />
                         成绩公告
                       </Link>
                     )}
 
                     {competition.status === 'ONGOING' && (
                       <button
-                        className="flex-1 flex items-center justify-center py-2 px-3 text-sm bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition-colors shadow-sm"
+                        className="flex-1 flex items-center justify-center py-1.5 md:py-2 px-2 md:px-3 text-xs md:text-sm bg-yellow-600 text-white rounded-md hover:bg-yellow-700 transition-colors shadow-sm"
                         title="比赛进行中，即将发布成绩"
                       >
-                        <Clock className="h-4 w-4 mr-1" />
+                        <Clock className="h-3 w-3 md:h-4 md:w-4 mr-1" />
                         比赛中
                       </button>
                     )}
 
                     {competition.status === 'UPCOMING' && (
                       <button
-                        className="flex-1 flex items-center justify-center py-2 px-3 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors shadow-sm"
+                        className="flex-1 flex items-center justify-center py-1.5 md:py-2 px-2 md:px-3 text-xs md:text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors shadow-sm"
                         title="比赛即将开始"
                       >
-                        <Calendar className="h-4 w-4 mr-1" />
+                        <Calendar className="h-3 w-3 md:h-4 md:w-4 mr-1" />
                         即将开始
                       </button>
                     )}
 
                     {competition.status === 'CANCELLED' && (
                       <button
-                        className="flex-1 flex items-center justify-center py-2 px-3 text-sm bg-red-600 text-white rounded-md cursor-not-allowed"
+                        className="flex-1 flex items-center justify-center py-1.5 md:py-2 px-2 md:px-3 text-xs md:text-sm bg-red-600 text-white rounded-md cursor-not-allowed"
                         disabled
                       >
                         已取消
