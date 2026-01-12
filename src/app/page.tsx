@@ -661,8 +661,8 @@ export default function HomePage() {
               {latestResults.competitions.slice(0, 2).map((comp, compIndex) => (
                 <div key={compIndex} className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 shadow-md border border-slate-700 hover:border-ski-blue hover:shadow-lg transition-all flex flex-col">
                   <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-lg font-bold text-white mb-1">{comp.competition}</h3>
+                    <div className="flex-1 min-w-0 mr-3">
+                      <h3 className="text-base font-bold text-white mb-1 line-clamp-2 min-h-[2.75rem]">{comp.competition}</h3>
                       <div className="flex items-center text-gray-300 text-sm space-x-4">
                         <span className="flex items-center">
                           <MapPin className="w-4 h-4 mr-1" />
