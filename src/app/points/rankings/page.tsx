@@ -997,21 +997,64 @@ export default function PointsRankingsPage() {
           </>
         )}
 
-        {/* 按比赛视图 - 滑动按钮切换 */}
+        {/* ========== 单次比赛排名视图 ========== */}
         {viewMode === 'competition' && (
           <>
+            {/* 比赛选择下拉 + 筛选器 */}
+            <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-4 mb-6">
+              <div className="flex flex-wrap items-center gap-4">
+                {/* 比赛下拉选择 */}
+                <div className="flex-1 min-w-[200px]">
+                  <label className="block text-xs font-medium text-amber-700 mb-1">选择比赛</label>
+                  <select
+                    value={selectedCompetitionGroupIndex['__selected_competition'] || groupedByCompetition[0]?.competition || ''}
+                    onChange={(e) => setSelectedCompetitionGroupIndex(prev => ({
+                      ...prev,
+                      '__selected_competition': e.target.value
+                    }))}
+                    className="w-full px-3 py-2 text-sm bg-white border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400"
+                  >
+                    {groupedByCompetition.map((comp) => (
+                      <option key={comp.competition} value={comp.competition}>
+                        {comp.competition} ({comp.date})
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* 搜索框 */}
+                <div className="relative min-w-[160px]">
+                  <label className="block text-xs font-medium text-amber-700 mb-1">搜索</label>
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-amber-400" />
+                    <input
+                      type="text"
+                      placeholder="运动员或单位..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      className="pl-9 w-full px-3 py-2 text-sm bg-white border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {groupedByCompetition.length === 0 ? (
               <div className="bg-white rounded-lg shadow-md p-12 text-center">
-                <Trophy className="h-12 w-12 text-gray-300 mx-auto mb-4" />
-                <p className="text-lg font-medium text-gray-500">暂无符合条件的排名数据</p>
-                <p className="text-sm text-gray-400 mt-1">请尝试调整筛选条件</p>
+                <Medal className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+                <p className="text-lg font-medium text-gray-500">暂无比赛数据</p>
+                <p className="text-sm text-gray-400 mt-1">请等待比赛成绩录入</p>
               </div>
             ) : (
               <div className="space-y-6">
-                {groupedByCompetition.map((competitionData) => {
+                {groupedByCompetition
+                  .filter(comp => !selectedCompetitionGroupIndex['__selected_competition'] || comp.competition === selectedCompetitionGroupIndex['__selected_competition'])
+                  .slice(0, selectedCompetitionGroupIndex['__selected_competition'] ? 1 : groupedByCompetition.length)
+                  .map((competitionData) => {
                   // 获取当前比赛选中的小项索引
                   const currentGroupIndex = selectedCompetitionGroupIndex[competitionData.competition] || 0
                   const currentGroup = competitionData.groups[currentGroupIndex]
+                  const top3 = currentGroup?.athletes.slice(0, 3) || []
 
                   // 预先计算当前小项的列配置
                   const hasRun = currentGroup?.athletes.some(a => a.run1)
@@ -1020,31 +1063,42 @@ export default function PointsRankingsPage() {
                   const hasPoints = currentGroup?.athletes.some(a => a.points !== undefined)
 
                   return (
-                    <div key={competitionData.competition} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                      {/* 比赛标题 */}
-                      <div className="bg-gradient-to-r from-ski-blue to-blue-600 px-5 py-3 text-white">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                              <Trophy className="h-5 w-5" />
+                    <div key={competitionData.competition} className="bg-white rounded-xl shadow-lg border-2 border-amber-100 overflow-hidden">
+                      {/* 比赛标题 - 橙金色主题 */}
+                      <div className="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 px-5 py-4 text-white relative overflow-hidden">
+                        {/* 装饰奖杯图案 */}
+                        <div className="absolute right-0 top-0 opacity-10">
+                          <Trophy className="h-24 w-24 -mr-6 -mt-6" />
+                        </div>
+                        <div className="relative flex items-center justify-between">
+                          <div className="flex items-center gap-4">
+                            <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+                              <Medal className="h-6 w-6" />
                             </div>
                             <div>
-                              <h2 className="text-base font-bold">{competitionData.competition}</h2>
-                              <div className="text-white/80 text-xs mt-0.5 flex items-center gap-2">
-                                <span>{competitionData.location}</span>
-                                <span>·</span>
+                              <div className="text-amber-100 text-xs mb-0.5">🏆 单次比赛成绩单</div>
+                              <h2 className="text-lg font-bold">{competitionData.competition}</h2>
+                              <div className="text-white/80 text-sm mt-0.5 flex items-center gap-2">
+                                <Calendar className="h-3.5 w-3.5" />
                                 <span>{competitionData.date}</span>
+                                <span>·</span>
+                                <span>{competitionData.location}</span>
                               </div>
                             </div>
                           </div>
-                          <span className="bg-white/20 px-2.5 py-1 rounded-full text-xs">
-                            {sportTypeLabels[competitionData.sportType] || competitionData.sportType}
-                          </span>
+                          <div className="flex flex-col items-end gap-1">
+                            <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium">
+                              {sportTypeLabels[competitionData.sportType] || competitionData.sportType}
+                            </span>
+                            <span className="text-amber-100 text-xs">
+                              {competitionData.groups.length} 个组别
+                            </span>
+                          </div>
                         </div>
                       </div>
 
-                      {/* 小项滑动按钮 */}
-                      <div className="bg-gray-50 px-4 py-3 border-b border-gray-100">
+                      {/* 小项选择Tab - 突出当前选择 */}
+                      <div className="bg-amber-50 px-4 py-3 border-b-2 border-amber-100">
                         <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-hide">
                           {competitionData.groups.map((group, index) => {
                             const isSelected = index === currentGroupIndex
@@ -1055,19 +1109,21 @@ export default function PointsRankingsPage() {
                                   ...prev,
                                   [competitionData.competition]: index
                                 }))}
-                                className={`flex-shrink-0 px-3 py-1.5 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
+                                className={`flex-shrink-0 px-4 py-2 rounded-lg text-sm font-medium transition-all whitespace-nowrap ${
                                   isSelected
-                                    ? 'bg-ski-blue text-white shadow-sm'
-                                    : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
+                                    ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-md'
+                                    : 'bg-white text-gray-600 hover:bg-amber-100 border border-amber-200'
                                 }`}
                               >
-                                <span className={`inline-block w-2 h-2 rounded-full mr-1.5 ${
+                                <span className={`inline-block w-2.5 h-2.5 rounded-full mr-2 ${
                                   group.ageGroup === 'U12' ? 'bg-green-400' :
                                   group.ageGroup === 'U15' ? 'bg-yellow-400' : 'bg-purple-400'
-                                } ${isSelected ? 'opacity-80' : ''}`} />
+                                } ${isSelected ? 'ring-2 ring-white/50' : ''}`} />
                                 {group.ageGroup} {group.gender}
-                                <span className={`ml-1 text-xs ${isSelected ? 'text-white/70' : 'text-gray-400'}`}>
-                                  ({group.athletes.length})
+                                <span className={`ml-2 px-1.5 py-0.5 rounded text-xs ${
+                                  isSelected ? 'bg-white/20' : 'bg-amber-100'
+                                }`}>
+                                  {group.athletes.length}人
                                 </span>
                               </button>
                             )
@@ -1075,48 +1131,106 @@ export default function PointsRankingsPage() {
                         </div>
                       </div>
 
-                      {/* 当前小项的排名表格 */}
+                      {/* 🏆 领奖台展示（前三名） */}
+                      {currentGroup && top3.length >= 3 && (
+                        <div className="bg-gradient-to-b from-amber-50 to-white px-4 py-6">
+                          <div className="flex items-end justify-center gap-4 max-w-lg mx-auto">
+                            {/* 银牌 - 第2名 */}
+                            <div className="flex flex-col items-center">
+                              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gray-200 to-gray-400 flex items-center justify-center shadow-lg mb-2 ring-4 ring-gray-200">
+                                <span className="text-2xl font-bold text-gray-700">2</span>
+                              </div>
+                              <div className="text-center">
+                                <div className="font-bold text-gray-800 text-sm">{top3[1]?.name}</div>
+                                <div className="text-xs text-gray-500 max-w-[80px] truncate">{top3[1]?.team}</div>
+                                <div className="mt-1 px-2 py-0.5 bg-gray-200 rounded text-xs font-bold text-gray-700">
+                                  {top3[1]?.points ?? '-'}分
+                                </div>
+                              </div>
+                              <div className="w-20 h-16 bg-gradient-to-t from-gray-300 to-gray-200 rounded-t-lg mt-2 flex items-center justify-center">
+                                <Medal className="h-6 w-6 text-gray-500" />
+                              </div>
+                            </div>
+
+                            {/* 金牌 - 第1名 */}
+                            <div className="flex flex-col items-center -mt-6">
+                              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-yellow-300 to-amber-500 flex items-center justify-center shadow-xl mb-2 ring-4 ring-yellow-300">
+                                <Crown className="h-8 w-8 text-yellow-800" />
+                              </div>
+                              <div className="text-center">
+                                <div className="font-bold text-gray-900 text-base">{top3[0]?.name}</div>
+                                <div className="text-xs text-gray-600 max-w-[100px] truncate">{top3[0]?.team}</div>
+                                <div className="mt-1 px-3 py-1 bg-gradient-to-r from-yellow-400 to-amber-400 rounded text-sm font-bold text-yellow-900 shadow">
+                                  {top3[0]?.points ?? '-'}分
+                                </div>
+                              </div>
+                              <div className="w-24 h-24 bg-gradient-to-t from-yellow-400 to-amber-300 rounded-t-lg mt-2 flex items-center justify-center shadow-lg">
+                                <Trophy className="h-8 w-8 text-yellow-700" />
+                              </div>
+                            </div>
+
+                            {/* 铜牌 - 第3名 */}
+                            <div className="flex flex-col items-center">
+                              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-300 to-orange-500 flex items-center justify-center shadow-lg mb-2 ring-4 ring-orange-200">
+                                <span className="text-2xl font-bold text-orange-800">3</span>
+                              </div>
+                              <div className="text-center">
+                                <div className="font-bold text-gray-800 text-sm">{top3[2]?.name}</div>
+                                <div className="text-xs text-gray-500 max-w-[80px] truncate">{top3[2]?.team}</div>
+                                <div className="mt-1 px-2 py-0.5 bg-orange-200 rounded text-xs font-bold text-orange-800">
+                                  {top3[2]?.points ?? '-'}分
+                                </div>
+                              </div>
+                              <div className="w-20 h-12 bg-gradient-to-t from-orange-400 to-orange-300 rounded-t-lg mt-2 flex items-center justify-center">
+                                <Award className="h-5 w-5 text-orange-700" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* 完整排名表格 */}
                       {currentGroup && (
                         <div className="overflow-x-auto">
                           <table className="min-w-full">
-                            <thead className="bg-gray-100">
+                            <thead className="bg-amber-100">
                               <tr>
-                                <th className="px-4 py-2.5 text-center text-xs font-medium text-gray-500 uppercase w-14">名次</th>
-                                <th className="px-3 py-2.5 text-center text-xs font-medium text-gray-500 uppercase w-14">号码</th>
-                                <th className="px-4 py-2.5 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
-                                <th className="px-4 py-2.5 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
+                                <th className="px-4 py-3 text-center text-xs font-bold text-amber-800 uppercase w-14">名次</th>
+                                <th className="px-3 py-3 text-center text-xs font-bold text-amber-800 uppercase w-14">号码</th>
+                                <th className="px-4 py-3 text-left text-xs font-bold text-amber-800 uppercase">姓名</th>
+                                <th className="px-4 py-3 text-left text-xs font-bold text-amber-800 uppercase">单位</th>
                                 {hasRun && (
                                   <>
-                                    <th className="px-3 py-2.5 text-center text-xs font-medium text-gray-500 uppercase w-20">第一轮</th>
-                                    <th className="px-3 py-2.5 text-center text-xs font-medium text-gray-500 uppercase w-20">第二轮</th>
+                                    <th className="px-3 py-3 text-center text-xs font-bold text-amber-800 uppercase w-20">第一轮</th>
+                                    <th className="px-3 py-3 text-center text-xs font-bold text-amber-800 uppercase w-20">第二轮</th>
                                   </>
                                 )}
                                 {(hasTime || hasBestScore) && (
-                                  <th className="px-3 py-2.5 text-center text-xs font-medium text-gray-500 uppercase w-20">
+                                  <th className="px-3 py-3 text-center text-xs font-bold text-amber-800 uppercase w-20">
                                     {hasTime ? '成绩' : '得分'}
                                   </th>
                                 )}
                                 {hasPoints && (
-                                  <th className="px-3 py-2.5 text-center text-xs font-medium text-gray-500 uppercase w-20">积分</th>
+                                  <th className="px-3 py-3 text-center text-xs font-bold text-amber-800 uppercase w-20">积分</th>
                                 )}
                               </tr>
                             </thead>
-                            <tbody className="bg-white divide-y divide-gray-100">
+                            <tbody className="bg-white divide-y divide-amber-100">
                               {currentGroup.athletes.map((athlete, index) => (
                                 <tr
                                   key={index}
-                                  className={`hover:bg-blue-50/50 transition-colors ${
-                                    athlete.rank === 1 ? 'bg-yellow-50/50' :
-                                    athlete.rank === 2 ? 'bg-gray-50/50' :
-                                    athlete.rank === 3 ? 'bg-orange-50/50' : ''
+                                  className={`hover:bg-amber-50 transition-colors ${
+                                    athlete.rank === 1 ? 'bg-yellow-50' :
+                                    athlete.rank === 2 ? 'bg-gray-50' :
+                                    athlete.rank === 3 ? 'bg-orange-50' : ''
                                   }`}
                                 >
-                                  <td className="px-4 py-2 whitespace-nowrap text-center">
+                                  <td className="px-4 py-2.5 whitespace-nowrap text-center">
                                     {athlete.rank <= 3 ? (
-                                      <span className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold ${
-                                        athlete.rank === 1 ? 'bg-yellow-400 text-yellow-900' :
-                                        athlete.rank === 2 ? 'bg-gray-300 text-gray-700' :
-                                        'bg-orange-300 text-orange-800'
+                                      <span className={`inline-flex items-center justify-center w-7 h-7 rounded-full text-xs font-bold shadow ${
+                                        athlete.rank === 1 ? 'bg-gradient-to-br from-yellow-300 to-amber-500 text-yellow-900' :
+                                        athlete.rank === 2 ? 'bg-gradient-to-br from-gray-200 to-gray-400 text-gray-700' :
+                                        'bg-gradient-to-br from-orange-300 to-orange-500 text-orange-900'
                                       }`}>
                                         {athlete.rank}
                                       </span>
@@ -1124,31 +1238,31 @@ export default function PointsRankingsPage() {
                                       <span className="text-sm text-gray-600 font-medium">{athlete.rank}</span>
                                     )}
                                   </td>
-                                  <td className="px-3 py-2 whitespace-nowrap text-center">
-                                    <span className="text-sm text-gray-500">{athlete.bib}</span>
+                                  <td className="px-3 py-2.5 whitespace-nowrap text-center">
+                                    <span className="text-sm text-gray-500 bg-gray-100 px-2 py-0.5 rounded">{athlete.bib}</span>
                                   </td>
-                                  <td className="px-4 py-2 whitespace-nowrap">
-                                    <span className={`text-sm font-medium ${athlete.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
+                                  <td className="px-4 py-2.5 whitespace-nowrap">
+                                    <span className={`text-sm font-semibold ${athlete.rank <= 3 ? 'text-gray-900' : 'text-gray-700'}`}>
                                       {athlete.name}
                                     </span>
                                   </td>
-                                  <td className="px-4 py-2 text-sm text-gray-600 max-w-[200px] truncate" title={athlete.team}>
+                                  <td className="px-4 py-2.5 text-sm text-gray-600 max-w-[200px] truncate" title={athlete.team}>
                                     {athlete.team}
                                   </td>
                                   {hasRun && (
                                     <>
-                                      <td className="px-3 py-2 whitespace-nowrap text-center text-sm text-gray-600">
+                                      <td className="px-3 py-2.5 whitespace-nowrap text-center text-sm text-gray-600 font-mono">
                                         {athlete.run1 || '-'}
                                       </td>
-                                      <td className="px-3 py-2 whitespace-nowrap text-center text-sm text-gray-600">
+                                      <td className="px-3 py-2.5 whitespace-nowrap text-center text-sm text-gray-600 font-mono">
                                         {athlete.run2 || '-'}
                                       </td>
                                     </>
                                   )}
                                   {(hasTime || hasBestScore) && (
-                                    <td className="px-3 py-2 whitespace-nowrap text-center">
-                                      <span className={`text-sm font-medium ${
-                                        athlete.rank === 1 ? 'text-yellow-700' :
+                                    <td className="px-3 py-2.5 whitespace-nowrap text-center">
+                                      <span className={`text-sm font-bold font-mono ${
+                                        athlete.rank === 1 ? 'text-amber-700' :
                                         athlete.rank === 2 ? 'text-gray-700' :
                                         athlete.rank === 3 ? 'text-orange-700' : 'text-gray-900'
                                       }`}>
@@ -1157,12 +1271,12 @@ export default function PointsRankingsPage() {
                                     </td>
                                   )}
                                   {hasPoints && (
-                                    <td className="px-3 py-2 whitespace-nowrap text-center">
-                                      <span className={`inline-flex px-2.5 py-0.5 rounded text-sm font-bold ${
-                                        athlete.rank === 1 ? 'bg-yellow-400 text-yellow-900' :
-                                        athlete.rank === 2 ? 'bg-gray-300 text-gray-800' :
-                                        athlete.rank === 3 ? 'bg-orange-300 text-orange-900' :
-                                        'bg-blue-100 text-blue-700'
+                                    <td className="px-3 py-2.5 whitespace-nowrap text-center">
+                                      <span className={`inline-flex px-3 py-1 rounded-lg text-sm font-bold ${
+                                        athlete.rank === 1 ? 'bg-gradient-to-r from-yellow-300 to-amber-400 text-yellow-900' :
+                                        athlete.rank === 2 ? 'bg-gradient-to-r from-gray-200 to-gray-300 text-gray-800' :
+                                        athlete.rank === 3 ? 'bg-gradient-to-r from-orange-300 to-orange-400 text-orange-900' :
+                                        'bg-amber-100 text-amber-700'
                                       }`}>
                                         {athlete.points ?? '-'}
                                       </span>
