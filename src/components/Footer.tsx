@@ -58,30 +58,30 @@ function HuacoolSection() {
         <h4 className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-4">
           U系列赛事报名平台
         </h4>
-        <div className="flex flex-row items-center justify-center gap-6 sm:gap-8">
+        <div className="flex flex-row items-center justify-center gap-4 sm:gap-6">
           {/* 滑cool Logo */}
           <div className="flex flex-col items-center">
-            <div className="bg-white p-1.5 sm:p-2 rounded-lg">
+            <div className="bg-white p-1 sm:p-1.5 rounded-lg">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={`${basePath}/images/huacool-logo.png`}
                 alt="滑cool"
-                className="h-16 w-16 sm:h-20 sm:w-20 object-contain"
+                className="h-12 w-12 sm:h-14 sm:w-14 object-contain"
               />
             </div>
-            <span className="text-xs text-gray-400 mt-2">滑cool</span>
+            <span className="text-xs text-gray-400 mt-1.5">滑cool</span>
           </div>
           {/* 小程序二维码 */}
           <div className="flex flex-col items-center">
-            <div className="bg-white p-1.5 sm:p-2 rounded-lg">
+            <div className="bg-white p-1 sm:p-1.5 rounded-lg">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={`${basePath}/images/huacool-qrcode.jpg`}
                 alt="滑cool小程序二维码"
-                className="h-16 w-16 sm:h-20 sm:w-20 object-contain"
+                className="h-12 w-12 sm:h-14 sm:w-14 object-contain"
               />
             </div>
-            <span className="text-xs text-gray-400 mt-2">扫码进入小程序</span>
+            <span className="text-xs text-gray-400 mt-1.5">扫码进入小程序</span>
           </div>
         </div>
       </div>
