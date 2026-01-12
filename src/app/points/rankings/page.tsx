@@ -633,7 +633,7 @@ export default function PointsRankingsPage() {
                     : 'text-white hover:bg-white/20'
                 }`}
               >
-                按比赛查看
+                单次比赛排名
               </button>
             </div>
           </div>
