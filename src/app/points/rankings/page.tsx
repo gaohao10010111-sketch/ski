@@ -1133,56 +1133,56 @@ export default function PointsRankingsPage() {
 
                       {/* 🏆 领奖台展示（前三名） */}
                       {currentGroup && top3.length >= 3 && (
-                        <div className="bg-gradient-to-b from-blue-50 to-white px-2 sm:px-4 py-4 sm:py-6">
-                          <div className="flex items-end justify-center gap-2 sm:gap-4 max-w-lg mx-auto">
+                        <div className="bg-gradient-to-b from-blue-50 to-white px-1 sm:px-4 py-3 sm:py-6">
+                          <div className="flex items-end justify-center gap-1 sm:gap-4 max-w-lg mx-auto">
                             {/* 银牌 - 第2名 */}
-                            <div className="flex flex-col items-center">
-                              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-gray-200 to-gray-400 flex items-center justify-center shadow-lg mb-2 ring-2 sm:ring-4 ring-gray-200">
-                                <span className="text-lg sm:text-2xl font-bold text-gray-700">2</span>
+                            <div className="flex flex-col items-center w-[100px] sm:w-auto">
+                              <div className="w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-gray-200 to-gray-400 flex items-center justify-center shadow-lg mb-1 sm:mb-2 ring-2 sm:ring-4 ring-gray-200">
+                                <span className="text-base sm:text-2xl font-bold text-gray-700">2</span>
                               </div>
-                              <div className="text-center">
-                                <div className="font-bold text-gray-800 text-xs sm:text-sm">{top3[1]?.name}</div>
-                                <div className="text-[10px] sm:text-xs text-gray-500 max-w-[80px] sm:max-w-[100px] text-center leading-tight" title={top3[1]?.team}>{top3[1]?.team}</div>
-                                <div className="mt-1 px-1.5 sm:px-2 py-0.5 bg-gray-200 rounded text-[10px] sm:text-xs font-bold text-gray-700">
+                              <div className="text-center w-full">
+                                <div className="font-bold text-gray-800 text-[11px] sm:text-sm truncate">{top3[1]?.name}</div>
+                                <div className="text-[9px] sm:text-xs text-gray-500 truncate px-0.5" title={top3[1]?.team}>{top3[1]?.team}</div>
+                                <div className="mt-0.5 sm:mt-1 px-1 sm:px-2 py-0.5 bg-gray-200 rounded text-[10px] sm:text-xs font-bold text-gray-700 inline-block">
                                   {top3[1]?.points ?? '-'}分
                                 </div>
                               </div>
-                              <div className="w-16 sm:w-20 h-12 sm:h-16 bg-gradient-to-t from-gray-300 to-gray-200 rounded-t-lg mt-2 flex items-center justify-center">
-                                <Medal className="h-5 w-5 sm:h-6 sm:w-6 text-gray-500" />
+                              <div className="w-14 sm:w-20 h-10 sm:h-16 bg-gradient-to-t from-gray-300 to-gray-200 rounded-t-lg mt-1 sm:mt-2 flex items-center justify-center">
+                                <Medal className="h-4 w-4 sm:h-6 sm:w-6 text-gray-500" />
                               </div>
                             </div>
 
                             {/* 金牌 - 第1名 */}
-                            <div className="flex flex-col items-center -mt-6">
-                              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-yellow-300 to-amber-500 flex items-center justify-center shadow-xl mb-2 ring-2 sm:ring-4 ring-yellow-300">
-                                <Crown className="h-6 w-6 sm:h-8 sm:w-8 text-yellow-800" />
+                            <div className="flex flex-col items-center -mt-4 sm:-mt-6 w-[110px] sm:w-auto">
+                              <div className="w-12 h-12 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-yellow-300 to-amber-500 flex items-center justify-center shadow-xl mb-1 sm:mb-2 ring-2 sm:ring-4 ring-yellow-300">
+                                <Crown className="h-5 w-5 sm:h-8 sm:w-8 text-yellow-800" />
                               </div>
-                              <div className="text-center">
-                                <div className="font-bold text-gray-900 text-sm sm:text-base">{top3[0]?.name}</div>
-                                <div className="text-[10px] sm:text-xs text-gray-600 max-w-[90px] sm:max-w-[120px] text-center leading-tight" title={top3[0]?.team}>{top3[0]?.team}</div>
-                                <div className="mt-1 px-2 sm:px-3 py-0.5 sm:py-1 bg-gradient-to-r from-yellow-400 to-amber-400 rounded text-xs sm:text-sm font-bold text-yellow-900 shadow">
+                              <div className="text-center w-full">
+                                <div className="font-bold text-gray-900 text-xs sm:text-base truncate">{top3[0]?.name}</div>
+                                <div className="text-[9px] sm:text-xs text-gray-600 truncate px-0.5" title={top3[0]?.team}>{top3[0]?.team}</div>
+                                <div className="mt-0.5 sm:mt-1 px-1.5 sm:px-3 py-0.5 sm:py-1 bg-gradient-to-r from-yellow-400 to-amber-400 rounded text-[10px] sm:text-sm font-bold text-yellow-900 shadow inline-block">
                                   {top3[0]?.points ?? '-'}分
                                 </div>
                               </div>
-                              <div className="w-18 sm:w-24 h-18 sm:h-24 bg-gradient-to-t from-yellow-400 to-amber-300 rounded-t-lg mt-2 flex items-center justify-center shadow-lg">
-                                <Trophy className="h-6 w-6 sm:h-8 sm:w-8 text-yellow-700" />
+                              <div className="w-16 sm:w-24 h-14 sm:h-24 bg-gradient-to-t from-yellow-400 to-amber-300 rounded-t-lg mt-1 sm:mt-2 flex items-center justify-center shadow-lg">
+                                <Trophy className="h-5 w-5 sm:h-8 sm:w-8 text-yellow-700" />
                               </div>
                             </div>
 
                             {/* 铜牌 - 第3名 */}
-                            <div className="flex flex-col items-center">
-                              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-orange-300 to-orange-500 flex items-center justify-center shadow-lg mb-2 ring-2 sm:ring-4 ring-orange-200">
-                                <span className="text-lg sm:text-2xl font-bold text-orange-800">3</span>
+                            <div className="flex flex-col items-center w-[100px] sm:w-auto">
+                              <div className="w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-orange-300 to-orange-500 flex items-center justify-center shadow-lg mb-1 sm:mb-2 ring-2 sm:ring-4 ring-orange-200">
+                                <span className="text-base sm:text-2xl font-bold text-orange-800">3</span>
                               </div>
-                              <div className="text-center">
-                                <div className="font-bold text-gray-800 text-xs sm:text-sm">{top3[2]?.name}</div>
-                                <div className="text-[10px] sm:text-xs text-gray-500 max-w-[80px] sm:max-w-[100px] text-center leading-tight" title={top3[2]?.team}>{top3[2]?.team}</div>
-                                <div className="mt-1 px-1.5 sm:px-2 py-0.5 bg-orange-200 rounded text-[10px] sm:text-xs font-bold text-orange-800">
+                              <div className="text-center w-full">
+                                <div className="font-bold text-gray-800 text-[11px] sm:text-sm truncate">{top3[2]?.name}</div>
+                                <div className="text-[9px] sm:text-xs text-gray-500 truncate px-0.5" title={top3[2]?.team}>{top3[2]?.team}</div>
+                                <div className="mt-0.5 sm:mt-1 px-1 sm:px-2 py-0.5 bg-orange-200 rounded text-[10px] sm:text-xs font-bold text-orange-800 inline-block">
                                   {top3[2]?.points ?? '-'}分
                                 </div>
                               </div>
-                              <div className="w-16 sm:w-20 h-10 sm:h-12 bg-gradient-to-t from-orange-400 to-orange-300 rounded-t-lg mt-2 flex items-center justify-center">
-                                <Award className="h-4 w-4 sm:h-5 sm:w-5 text-orange-700" />
+                              <div className="w-14 sm:w-20 h-8 sm:h-12 bg-gradient-to-t from-orange-400 to-orange-300 rounded-t-lg mt-1 sm:mt-2 flex items-center justify-center">
+                                <Award className="h-3 w-3 sm:h-5 sm:w-5 text-orange-700" />
                               </div>
                             </div>
                           </div>
