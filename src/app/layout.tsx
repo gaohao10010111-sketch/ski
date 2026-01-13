@@ -6,6 +6,7 @@ import GlobalNavigation from '@/components/GlobalNavigation'
 import Footer from '@/components/Footer'
 import StructuredData from '@/components/StructuredData'
 import NavigationProgress from '@/components/NavigationProgress'
+import Analytics from '@/components/Analytics'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -89,6 +90,7 @@ export default function RootLayout({
           <Suspense fallback={null}>
             <NavigationProgress />
           </Suspense>
+          <Analytics />
           <GlobalNavigation />
           <main className="min-h-screen">
             {children}

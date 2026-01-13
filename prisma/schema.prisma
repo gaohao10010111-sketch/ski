@@ -152,6 +152,43 @@ model RankingSnapshot {
   @@index([season, sportType, ageGroup, gender, rank])
 }
 
+// ========== 访问日志表 ==========
+// 记录网站访问者信息（用户不可见）
+model VisitorLog {
+  id            String   @id @default(cuid())
+
+  // 访问信息
+  path          String                  // 访问路径
+  referrer      String?                 // 来源页面
+  userAgent     String?                 // 浏览器UA
+
+  // 设备信息
+  deviceType    String?                 // mobile/tablet/desktop
+  browser       String?                 // Chrome/Safari/Firefox等
+  os            String?                 // iOS/Android/Windows/MacOS等
+  screenWidth   Int?                    // 屏幕宽度
+  screenHeight  Int?                    // 屏幕高度
+
+  // 地理位置（通过IP解析）
+  ip            String?                 // IP地址
+  country       String?                 // 国家
+  region        String?                 // 省/州
+  city          String?                 // 城市
+
+  // 访问行为
+  sessionId     String?                 // 会话ID（同一用户多次访问）
+  duration      Int?                    // 页面停留时间（秒）
+  isNewVisitor  Boolean @default(true)  // 是否新访客
+
+  // 时间
+  visitedAt     DateTime @default(now())
+
+  @@index([path])
+  @@index([visitedAt])
+  @@index([deviceType])
+  @@index([sessionId])
+}
+
 // ========== 合作意向表 ==========
 // 存储合作咨询页面提交的合作意向
 model CooperationInquiry {
