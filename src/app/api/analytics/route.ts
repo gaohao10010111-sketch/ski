@@ -4,7 +4,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server'
-import { prisma } from '@/lib/db/prisma'
+import { prisma } from '@/lib/db/prismaClient'
 
 // 解析User-Agent获取设备信息
 function parseUserAgent(ua: string | null) {
