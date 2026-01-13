@@ -50,10 +50,24 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react'],
   },
 
-  // Webpack配置 - 忽略pdfjs-dist的可选依赖
-  webpack: (config) => {
+  // Webpack配置 - 忽略pdfjs-dist的可选依赖和原生模块
+  webpack: (config, { isServer }) => {
     config.resolve.alias.canvas = false;
     config.resolve.alias.encoding = false;
+
+    // 将better-sqlite3标记为外部依赖，避免在静态构建时打包原生模块
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        path: false,
+        os: false,
+      };
+    }
+
+    // 排除better-sqlite3原生模块
+    config.externals = [...(config.externals || []), 'better-sqlite3'];
+
     return config;
   },
 }
