@@ -1119,7 +1119,7 @@ export default function PointsRankingsPage() {
                                   group.ageGroup === 'U12' ? 'bg-green-400' :
                                   group.ageGroup === 'U15' ? 'bg-yellow-400' : 'bg-purple-400'
                                 }`} />
-                                {group.ageGroup} {group.gender.replace('子组', '')}
+                                {group.discipline} {group.ageGroup} {group.gender.replace('子组', '')}
                                 <span className={`ml-1 sm:ml-2 px-1 sm:px-1.5 py-0.5 rounded text-[10px] sm:text-xs ${
                                   isSelected ? 'bg-white/20' : 'bg-gray-100'
                                 }`}>
