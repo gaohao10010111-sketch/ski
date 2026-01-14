@@ -1940,11 +1940,23 @@ export const latestResults: ResultsData = {
           "ageGroup": "U11",
           "gender": "女子组",
           "athletes": [
-            { "rank": 1, "bib": 1, "name": "赵紫琪", "team": "山西省冰雪运动中心", "birthYear": "2015", "bestScore": 93.50, "points": 360 },
-            { "rank": 2, "bib": 2, "name": "徐子茜", "team": "山西省冰雪运动中心", "birthYear": "2015", "bestScore": 88.75, "points": 329 },
-            { "rank": 3, "bib": 3, "name": "周文茜", "team": "河北省体育局冬季运动中心", "birthYear": "2016", "bestScore": 85.25, "points": 303 },
-            { "rank": 4, "bib": 4, "name": "王梓萌", "team": "河北省体育局冬季运动中心", "birthYear": "2015", "bestScore": 82.00, "points": 280 },
-            { "rank": 5, "bib": 5, "name": "刘沐桐", "team": "河北省体育局冬季运动中心", "birthYear": "2016", "bestScore": 78.50, "points": 260 }
+            { "rank": 1, "bib": 20, "name": "赵紫琪", "team": "四川体育职业学院", "birthYear": "2014", "bestScore": 93.50, "points": 360 },
+            { "rank": 2, "bib": 6, "name": "甄芝漫", "team": "河北省体育局冬季运动中心", "birthYear": "2014", "bestScore": 90.50, "points": 329 },
+            { "rank": 3, "bib": 17, "name": "李诗沫", "team": "石家庄市冰雪与足球运动推广训练中心", "birthYear": "2015", "bestScore": 87.50, "points": 303 },
+            { "rank": 4, "bib": 16, "name": "武温暖", "team": "石家庄市冰雪与足球运动推广训练中心", "birthYear": "2014", "bestScore": 85.00, "points": 280 },
+            { "rank": 5, "bib": 37, "name": "闫妍", "team": "个人", "birthYear": "2015", "bestScore": 77.50, "points": 260 },
+            { "rank": 6, "bib": 19, "name": "陈科羽", "team": "四川体育职业学院", "birthYear": "2016", "bestScore": 71.75, "points": 242 },
+            { "rank": 7, "bib": 32, "name": "王玗希", "team": "个人", "birthYear": "2016", "bestScore": 69.25, "points": 226 },
+            { "rank": 8, "bib": 18, "name": "任可心", "team": "四川体育职业学院", "birthYear": "2015", "bestScore": 67.25, "points": 212 },
+            { "rank": 9, "bib": 3, "name": "欧子娴", "team": "成都热雪奇迹", "birthYear": "2016", "bestScore": 65.75, "points": 199 },
+            { "rank": 10, "bib": 7, "name": "袁芮涵", "team": "河南省体育局", "birthYear": "2014", "bestScore": 64.75, "points": 187 },
+            { "rank": 11, "bib": 9, "name": "孙焕轲", "team": "河南省体育局", "birthYear": "2016", "bestScore": 56.75, "points": 176 },
+            { "rank": 12, "bib": 8, "name": "王淑哲", "team": "河南省体育局", "birthYear": "2016", "bestScore": 45.75, "points": 166 },
+            { "rank": 13, "bib": 5, "name": "梁宝云", "team": "广西射击射箭运动发展中心", "birthYear": "2014", "bestScore": 43.00, "points": 157 },
+            { "rank": 14, "bib": 25, "name": "周钰芯", "team": "四川体育职业学院", "birthYear": "2015", "bestScore": 39.75, "points": 149 },
+            { "rank": 15, "bib": 33, "name": "左均怡", "team": "个人", "birthYear": "2017", "bestScore": 14.25, "points": 141 },
+            { "rank": 16, "bib": 35, "name": "李佳馨", "team": "个人", "birthYear": "2016", "bestScore": 11.00, "points": 134 },
+            { "rank": 17, "bib": 36, "name": "孙婉迪", "team": "个人", "birthYear": "2016", "bestScore": 10.00, "points": 127 }
           ]
         },
         {
@@ -1952,11 +1964,12 @@ export const latestResults: ResultsData = {
           "ageGroup": "U11",
           "gender": "男子组",
           "athletes": [
-            { "rank": 1, "bib": 1, "name": "吴雨桐", "team": "山西省冰雪运动中心", "birthYear": "2014", "bestScore": 92.75, "points": 360 },
-            { "rank": 2, "bib": 2, "name": "程俊熙", "team": "山西省冰雪运动中心", "birthYear": "2015", "bestScore": 89.00, "points": 329 },
-            { "rank": 3, "bib": 3, "name": "李昊然", "team": "河北省体育局冬季运动中心", "birthYear": "2014", "bestScore": 85.50, "points": 303 },
-            { "rank": 4, "bib": 4, "name": "周天悦", "team": "河北省体育局冬季运动中心", "birthYear": "2015", "bestScore": 81.25, "points": 280 },
-            { "rank": 5, "bib": 5, "name": "张晨阳", "team": "北京市冬季运动管理中心", "birthYear": "2016", "bestScore": 77.00, "points": 260 }
+            { "rank": 1, "bib": 19, "name": "吴雨桐", "team": "个人", "birthYear": "2017", "bestScore": 92.75, "points": 360 },
+            { "rank": 2, "bib": 2, "name": "常嘉林", "team": "广西射击射箭运动发展中心", "birthYear": "2014", "bestScore": 88.00, "points": 329 },
+            { "rank": 3, "bib": 1, "name": "张墨凡", "team": "北京市冬季运动管理中心", "birthYear": "2014", "bestScore": 86.00, "points": 303 },
+            { "rank": 4, "bib": 8, "name": "赵铠轩", "team": "河南省体育局", "birthYear": "2015", "bestScore": 80.00, "points": 280 },
+            { "rank": 5, "bib": 6, "name": "张梓童", "team": "河南省体育局", "birthYear": "2016", "bestScore": 71.25, "points": 260 },
+            { "rank": 6, "bib": 7, "name": "王俊熙", "team": "河南省体育局", "birthYear": "2015", "bestScore": 68.25, "points": 242 }
           ]
         },
         {
@@ -1964,11 +1977,18 @@ export const latestResults: ResultsData = {
           "ageGroup": "U15",
           "gender": "女子组",
           "athletes": [
-            { "rank": 1, "bib": 1, "name": "周绮润", "team": "山西省冰雪运动中心", "birthYear": "2011", "bestScore": 90.50, "points": 360 },
-            { "rank": 2, "bib": 2, "name": "张雅琳", "team": "山西省冰雪运动中心", "birthYear": "2012", "bestScore": 86.75, "points": 329 },
-            { "rank": 3, "bib": 3, "name": "王梦瑶", "team": "河北省体育局冬季运动中心", "birthYear": "2011", "bestScore": 83.00, "points": 303 },
-            { "rank": 4, "bib": 4, "name": "李思琪", "team": "河北省体育局冬季运动中心", "birthYear": "2012", "bestScore": 79.25, "points": 280 },
-            { "rank": 5, "bib": 5, "name": "陈雨萱", "team": "北京市冬季运动管理中心", "birthYear": "2011", "bestScore": 75.50, "points": 260 }
+            { "rank": 1, "bib": 34, "name": "周绮润", "team": "个人", "birthYear": "2012", "bestScore": 90.50, "points": 360 },
+            { "rank": 2, "bib": 23, "name": "马世馨", "team": "四川体育职业学院", "birthYear": "2012", "bestScore": 87.00, "points": 329 },
+            { "rank": 3, "bib": 10, "name": "罗优璇", "team": "河南省体育局", "birthYear": "2010", "bestScore": 80.50, "points": 303 },
+            { "rank": 4, "bib": 13, "name": "殷玉宣", "team": "河南省体育局", "birthYear": "2012", "bestScore": 74.50, "points": 280 },
+            { "rank": 5, "bib": 29, "name": "韩萨仁其木格", "team": "小崔运动", "birthYear": "2013", "bestScore": 72.50, "points": 260 },
+            { "rank": 6, "bib": 22, "name": "吴思琪", "team": "四川体育职业学院", "birthYear": "2010", "bestScore": 69.75, "points": 242 },
+            { "rank": 7, "bib": 15, "name": "王珠彤", "team": "石家庄市冰雪与足球运动推广训练中心", "birthYear": "2011", "bestScore": 68.25, "points": 226 },
+            { "rank": 8, "bib": 27, "name": "杨芷妍", "team": "四川体育职业学院", "birthYear": "2011", "bestScore": 63.75, "points": 212 },
+            { "rank": 9, "bib": 24, "name": "周紫君", "team": "四川体育职业学院", "birthYear": "2011", "bestScore": 62.00, "points": 199 },
+            { "rank": 10, "bib": 12, "name": "陈奕歌", "team": "河南省体育局", "birthYear": "2012", "bestScore": 61.00, "points": 187 },
+            { "rank": 11, "bib": 4, "name": "李明灿", "team": "广西射击射箭运动发展中心", "birthYear": "2012", "bestScore": 56.25, "points": 176 },
+            { "rank": 12, "bib": 21, "name": "王珈绮", "team": "四川体育职业学院", "birthYear": "2013", "bestScore": 42.50, "points": 166 }
           ]
         },
         {
@@ -1976,11 +1996,18 @@ export const latestResults: ResultsData = {
           "ageGroup": "U15",
           "gender": "男子组",
           "athletes": [
-            { "rank": 1, "bib": 1, "name": "徐锦添", "team": "山西省冰雪运动中心", "birthYear": "2011", "bestScore": 92.00, "points": 360 },
-            { "rank": 2, "bib": 2, "name": "李浩宇", "team": "山西省冰雪运动中心", "birthYear": "2012", "bestScore": 88.25, "points": 329 },
-            { "rank": 3, "bib": 3, "name": "王子墨", "team": "河北省体育局冬季运动中心", "birthYear": "2011", "bestScore": 84.50, "points": 303 },
-            { "rank": 4, "bib": 4, "name": "张宇轩", "team": "河北省体育局冬季运动中心", "birthYear": "2012", "bestScore": 80.75, "points": 280 },
-            { "rank": 5, "bib": 5, "name": "刘晨曦", "team": "北京市冬季运动管理中心", "birthYear": "2011", "bestScore": 77.00, "points": 260 }
+            { "rank": 1, "bib": 14, "name": "徐锦添", "team": "四川体育职业学院", "birthYear": "2010", "bestScore": 92.00, "points": 360 },
+            { "rank": 2, "bib": 13, "name": "黄志豪", "team": "四川体育职业学院", "birthYear": "2011", "bestScore": 90.00, "points": 329 },
+            { "rank": 3, "bib": 10, "name": "王凯文", "team": "黑龙江省雪上训练中心", "birthYear": "2011", "bestScore": 80.00, "points": 303 },
+            { "rank": 4, "bib": 16, "name": "邓明涛", "team": "四川体育职业学院", "birthYear": "2010", "bestScore": 79.25, "points": 280 },
+            { "rank": 5, "bib": 9, "name": "璩恩慧", "team": "河南省体育局", "birthYear": "2011", "bestScore": 78.25, "points": 260 },
+            { "rank": 6, "bib": 15, "name": "王培旭", "team": "四川体育职业学院", "birthYear": "2010", "bestScore": 77.75, "points": 242 },
+            { "rank": 7, "bib": 12, "name": "周英杰", "team": "四川体育职业学院", "birthYear": "2013", "bestScore": 65.25, "points": 226 },
+            { "rank": 8, "bib": 18, "name": "程曦辉", "team": "个人", "birthYear": "2011", "bestScore": 44.50, "points": 212 },
+            { "rank": 9, "bib": 5, "name": "程楚阳", "team": "广西射击射箭运动发展中心", "birthYear": "2013", "bestScore": 40.00, "points": 199 },
+            { "rank": 10, "bib": 3, "name": "梁跃飞", "team": "广西射击射箭运动发展中心", "birthYear": "2013", "bestScore": 38.75, "points": 187 },
+            { "rank": 11, "bib": 17, "name": "刘栩辰", "team": "重庆市冬季运动管理中心", "birthYear": "2013", "bestScore": 27.50, "points": 176 },
+            { "rank": 12, "bib": 4, "name": "王冬杰", "team": "广西射击射箭运动发展中心", "birthYear": "2012", "bestScore": 21.50, "points": 166 }
           ]
         },
         {
@@ -1988,11 +2015,9 @@ export const latestResults: ResultsData = {
           "ageGroup": "U18",
           "gender": "女子组",
           "athletes": [
-            { "rank": 1, "bib": 1, "name": "高梓曦", "team": "山西省冰雪运动中心", "birthYear": "2008", "bestScore": 86.00, "points": 360 },
-            { "rank": 2, "bib": 2, "name": "李雨薇", "team": "山西省冰雪运动中心", "birthYear": "2009", "bestScore": 82.50, "points": 329 },
-            { "rank": 3, "bib": 3, "name": "王思涵", "team": "河北省体育局冬季运动中心", "birthYear": "2008", "bestScore": 78.75, "points": 303 },
-            { "rank": 4, "bib": 4, "name": "张雅茹", "team": "河北省体育局冬季运动中心", "birthYear": "2009", "bestScore": 75.00, "points": 280 },
-            { "rank": 5, "bib": 5, "name": "陈诗琪", "team": "北京市冬季运动管理中心", "birthYear": "2008", "bestScore": 71.25, "points": 260 }
+            { "rank": 1, "bib": 30, "name": "高梓曦", "team": "个人", "birthYear": "2008", "bestScore": 86.00, "points": 360 },
+            { "rank": 2, "bib": 31, "name": "陈露凝", "team": "个人", "birthYear": "2010", "bestScore": 73.75, "points": 329 },
+            { "rank": 3, "bib": 1, "name": "齐馨", "team": "A+自由式滑雪队", "birthYear": "2009", "bestScore": 10.50, "points": 303 }
           ]
         }
       ]
@@ -2011,11 +2036,23 @@ export const latestResults: ResultsData = {
           "ageGroup": "U11",
           "gender": "女子组",
           "athletes": [
-            { "rank": 1, "bib": 1, "name": "李诗沫", "team": "山西省冰雪运动中心", "birthYear": "2015", "bestScore": 169.00, "points": 360 },
-            { "rank": 2, "bib": 2, "name": "徐子茜", "team": "山西省冰雪运动中心", "birthYear": "2015", "bestScore": 162.50, "points": 329 },
-            { "rank": 3, "bib": 3, "name": "周文茜", "team": "河北省体育局冬季运动中心", "birthYear": "2016", "bestScore": 155.75, "points": 303 },
-            { "rank": 4, "bib": 4, "name": "王梓萌", "team": "河北省体育局冬季运动中心", "birthYear": "2015", "bestScore": 148.00, "points": 280 },
-            { "rank": 5, "bib": 5, "name": "刘沐桐", "team": "河北省体育局冬季运动中心", "birthYear": "2016", "bestScore": 140.25, "points": 260 }
+            { "rank": 1, "bib": 17, "name": "李诗沫", "team": "石家庄市冰雪与足球运动推广训练中心", "birthYear": "2015", "bestScore": 169.00, "points": 360 },
+            { "rank": 2, "bib": 19, "name": "陈科羽", "team": "四川体育职业学院", "birthYear": "2016", "bestScore": 151.50, "points": 329 },
+            { "rank": 3, "bib": 32, "name": "王玗希", "team": "个人", "birthYear": "2016", "bestScore": 147.75, "points": 303 },
+            { "rank": 4, "bib": 6, "name": "甄芝漫", "team": "河北省体育局冬季运动中心", "birthYear": "2014", "bestScore": 143.00, "points": 280 },
+            { "rank": 5, "bib": 7, "name": "袁芮涵", "team": "河南省体育局", "birthYear": "2014", "bestScore": 131.00, "points": 260 },
+            { "rank": 6, "bib": 8, "name": "王淑哲", "team": "河南省体育局", "birthYear": "2016", "bestScore": 126.75, "points": 242 },
+            { "rank": 7, "bib": 9, "name": "孙焕轲", "team": "河南省体育局", "birthYear": "2016", "bestScore": 123.50, "points": 226 },
+            { "rank": 8, "bib": 18, "name": "任可心", "team": "四川体育职业学院", "birthYear": "2015", "bestScore": 120.00, "points": 212 },
+            { "rank": 9, "bib": 20, "name": "赵紫琪", "team": "四川体育职业学院", "birthYear": "2014", "bestScore": 100.75, "points": 199 },
+            { "rank": 10, "bib": 37, "name": "闫妍", "team": "个人", "birthYear": "2015", "bestScore": 100.50, "points": 187 },
+            { "rank": 11, "bib": 16, "name": "武温暖", "team": "石家庄市冰雪与足球运动推广训练中心", "birthYear": "2014", "bestScore": 97.00, "points": 176 },
+            { "rank": 12, "bib": 25, "name": "周钰芯", "team": "四川体育职业学院", "birthYear": "2015", "bestScore": 93.25, "points": 166 },
+            { "rank": 13, "bib": 5, "name": "梁宝云", "team": "广西射击射箭运动发展中心", "birthYear": "2014", "bestScore": 76.50, "points": 157 },
+            { "rank": 14, "bib": 3, "name": "欧子娴", "team": "成都热雪奇迹", "birthYear": "2016", "bestScore": 75.75, "points": 149 },
+            { "rank": 15, "bib": 33, "name": "左均怡", "team": "个人", "birthYear": "2017", "bestScore": 74.50, "points": 141 },
+            { "rank": 16, "bib": 35, "name": "李佳馨", "team": "个人", "birthYear": "2016", "bestScore": 49.25, "points": 134 },
+            { "rank": 17, "bib": 36, "name": "孙婉迪", "team": "个人", "birthYear": "2016", "bestScore": 44.25, "points": 127 }
           ]
         },
         {
@@ -2023,11 +2060,12 @@ export const latestResults: ResultsData = {
           "ageGroup": "U11",
           "gender": "男子组",
           "athletes": [
-            { "rank": 1, "bib": 1, "name": "张墨凡", "team": "山西省冰雪运动中心", "birthYear": "2014", "bestScore": 184.75, "points": 360 },
-            { "rank": 2, "bib": 2, "name": "程俊熙", "team": "山西省冰雪运动中心", "birthYear": "2015", "bestScore": 177.00, "points": 329 },
-            { "rank": 3, "bib": 3, "name": "李昊然", "team": "河北省体育局冬季运动中心", "birthYear": "2014", "bestScore": 169.25, "points": 303 },
-            { "rank": 4, "bib": 4, "name": "周天悦", "team": "河北省体育局冬季运动中心", "birthYear": "2015", "bestScore": 161.50, "points": 280 },
-            { "rank": 5, "bib": 5, "name": "张晨阳", "team": "北京市冬季运动管理中心", "birthYear": "2016", "bestScore": 153.75, "points": 260 }
+            { "rank": 1, "bib": 1, "name": "张墨凡", "team": "北京市冬季运动管理中心", "birthYear": "2014", "bestScore": 184.75, "points": 360 },
+            { "rank": 2, "bib": 2, "name": "常嘉林", "team": "广西射击射箭运动发展中心", "birthYear": "2014", "bestScore": 169.00, "points": 329 },
+            { "rank": 3, "bib": 19, "name": "吴雨桐", "team": "个人", "birthYear": "2017", "bestScore": 157.75, "points": 303 },
+            { "rank": 4, "bib": 6, "name": "张梓童", "team": "河南省体育局", "birthYear": "2016", "bestScore": 124.25, "points": 280 },
+            { "rank": 5, "bib": 7, "name": "王俊熙", "team": "河南省体育局", "birthYear": "2015", "bestScore": 119.75, "points": 260 },
+            { "rank": 6, "bib": 8, "name": "赵铠轩", "team": "河南省体育局", "birthYear": "2015", "bestScore": 113.00, "points": 242 }
           ]
         },
         {
@@ -2035,11 +2073,17 @@ export const latestResults: ResultsData = {
           "ageGroup": "U15",
           "gender": "女子组",
           "athletes": [
-            { "rank": 1, "bib": 1, "name": "马世馨", "team": "山西省冰雪运动中心", "birthYear": "2011", "bestScore": 191.50, "points": 360 },
-            { "rank": 2, "bib": 2, "name": "张雅琳", "team": "山西省冰雪运动中心", "birthYear": "2012", "bestScore": 183.75, "points": 329 },
-            { "rank": 3, "bib": 3, "name": "王梦瑶", "team": "河北省体育局冬季运动中心", "birthYear": "2011", "bestScore": 176.00, "points": 303 },
-            { "rank": 4, "bib": 4, "name": "李思琪", "team": "河北省体育局冬季运动中心", "birthYear": "2012", "bestScore": 168.25, "points": 280 },
-            { "rank": 5, "bib": 5, "name": "陈雨萱", "team": "北京市冬季运动管理中心", "birthYear": "2011", "bestScore": 160.50, "points": 260 }
+            { "rank": 1, "bib": 23, "name": "马世馨", "team": "四川体育职业学院", "birthYear": "2012", "bestScore": 191.50, "points": 360 },
+            { "rank": 2, "bib": 10, "name": "罗优璇", "team": "河南省体育局", "birthYear": "2010", "bestScore": 176.75, "points": 329 },
+            { "rank": 3, "bib": 22, "name": "吴思琪", "team": "四川体育职业学院", "birthYear": "2010", "bestScore": 175.25, "points": 303 },
+            { "rank": 4, "bib": 24, "name": "周紫君", "team": "四川体育职业学院", "birthYear": "2011", "bestScore": 169.00, "points": 280 },
+            { "rank": 5, "bib": 4, "name": "李明灿", "team": "广西射击射箭运动发展中心", "birthYear": "2012", "bestScore": 162.75, "points": 260 },
+            { "rank": 6, "bib": 12, "name": "陈奕歌", "team": "河南省体育局", "birthYear": "2012", "bestScore": 157.75, "points": 242 },
+            { "rank": 7, "bib": 34, "name": "周绮润", "team": "个人", "birthYear": "2012", "bestScore": 154.50, "points": 226 },
+            { "rank": 8, "bib": 13, "name": "殷玉宣", "team": "河南省体育局", "birthYear": "2012", "bestScore": 149.50, "points": 212 },
+            { "rank": 9, "bib": 21, "name": "王珈绮", "team": "四川体育职业学院", "birthYear": "2013", "bestScore": 147.75, "points": 199 },
+            { "rank": 10, "bib": 27, "name": "杨芷妍", "team": "四川体育职业学院", "birthYear": "2011", "bestScore": 147.75, "points": 187 },
+            { "rank": 11, "bib": 15, "name": "王珠彤", "team": "石家庄市冰雪与足球运动推广训练中心", "birthYear": "2011", "bestScore": 115.75, "points": 176 }
           ]
         },
         {
@@ -2047,11 +2091,17 @@ export const latestResults: ResultsData = {
           "ageGroup": "U15",
           "gender": "男子组",
           "athletes": [
-            { "rank": 1, "bib": 1, "name": "徐锦添", "team": "山西省冰雪运动中心", "birthYear": "2011", "bestScore": 188.50, "points": 360 },
-            { "rank": 2, "bib": 2, "name": "李浩宇", "team": "山西省冰雪运动中心", "birthYear": "2012", "bestScore": 180.75, "points": 329 },
-            { "rank": 3, "bib": 3, "name": "王子墨", "team": "河北省体育局冬季运动中心", "birthYear": "2011", "bestScore": 173.00, "points": 303 },
-            { "rank": 4, "bib": 4, "name": "张宇轩", "team": "河北省体育局冬季运动中心", "birthYear": "2012", "bestScore": 165.25, "points": 280 },
-            { "rank": 5, "bib": 5, "name": "刘晨曦", "team": "北京市冬季运动管理中心", "birthYear": "2011", "bestScore": 157.50, "points": 260 }
+            { "rank": 1, "bib": 14, "name": "徐锦添", "team": "四川体育职业学院", "birthYear": "2010", "bestScore": 188.50, "points": 360 },
+            { "rank": 2, "bib": 13, "name": "黄志豪", "team": "四川体育职业学院", "birthYear": "2011", "bestScore": 187.50, "points": 329 },
+            { "rank": 3, "bib": 10, "name": "王凯文", "team": "黑龙江省雪上训练中心", "birthYear": "2011", "bestScore": 176.50, "points": 303 },
+            { "rank": 4, "bib": 16, "name": "邓明涛", "team": "四川体育职业学院", "birthYear": "2010", "bestScore": 169.25, "points": 280 },
+            { "rank": 5, "bib": 9, "name": "璩恩慧", "team": "河南省体育局", "birthYear": "2011", "bestScore": 162.75, "points": 260 },
+            { "rank": 6, "bib": 15, "name": "王培旭", "team": "四川体育职业学院", "birthYear": "2010", "bestScore": 157.00, "points": 242 },
+            { "rank": 7, "bib": 12, "name": "周英杰", "team": "四川体育职业学院", "birthYear": "2013", "bestScore": 146.50, "points": 226 },
+            { "rank": 8, "bib": 17, "name": "刘栩辰", "team": "重庆市冬季运动管理中心", "birthYear": "2013", "bestScore": 92.50, "points": 212 },
+            { "rank": 9, "bib": 5, "name": "程楚阳", "team": "广西射击射箭运动发展中心", "birthYear": "2013", "bestScore": 84.25, "points": 199 },
+            { "rank": 10, "bib": 3, "name": "梁跃飞", "team": "广西射击射箭运动发展中心", "birthYear": "2013", "bestScore": 80.00, "points": 187 },
+            { "rank": 11, "bib": 4, "name": "王冬杰", "team": "广西射击射箭运动发展中心", "birthYear": "2012", "bestScore": 67.50, "points": 176 }
           ]
         },
         {
@@ -2059,11 +2109,9 @@ export const latestResults: ResultsData = {
           "ageGroup": "U18",
           "gender": "女子组",
           "athletes": [
-            { "rank": 1, "bib": 1, "name": "陈露凝", "team": "山西省冰雪运动中心", "birthYear": "2008", "bestScore": 178.25, "points": 360 },
-            { "rank": 2, "bib": 2, "name": "李雨薇", "team": "山西省冰雪运动中心", "birthYear": "2009", "bestScore": 170.50, "points": 329 },
-            { "rank": 3, "bib": 3, "name": "王思涵", "team": "河北省体育局冬季运动中心", "birthYear": "2008", "bestScore": 162.75, "points": 303 },
-            { "rank": 4, "bib": 4, "name": "张雅茹", "team": "河北省体育局冬季运动中心", "birthYear": "2009", "bestScore": 155.00, "points": 280 },
-            { "rank": 5, "bib": 5, "name": "陈诗琪", "team": "北京市冬季运动管理中心", "birthYear": "2008", "bestScore": 147.25, "points": 260 }
+            { "rank": 1, "bib": 31, "name": "陈露凝", "team": "个人", "birthYear": "2010", "bestScore": 178.25, "points": 360 },
+            { "rank": 2, "bib": 30, "name": "高梓曦", "team": "个人", "birthYear": "2008", "bestScore": 111.25, "points": 329 },
+            { "rank": 3, "bib": 1, "name": "齐馨", "team": "A+自由式滑雪队", "birthYear": "2009", "bestScore": 1.00, "points": 303 }
           ]
         }
       ]
