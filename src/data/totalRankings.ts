@@ -1,7 +1,7 @@
 /**
  * 总积分排名静态数据（按项目和子项分类）
  * 自动生成，请勿手动修改
- * 生成时间: 2026-01-14T11:56:33.478Z
+ * 生成时间: 2026-01-28T09:24:52.894Z
  */
 
 export interface PointsBreakdownItem {
@@ -78,8 +78,8 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkqp00kcbfho4at9jl9k",
               "athleteName": "赵酌",
               "team": "四川体育职业学院",
-              "totalPoints": 360,
-              "competitionCount": 1,
+              "totalPoints": 720,
+              "competitionCount": 2,
               "bestRank": 1,
               "avgPoints": 360,
               "ageGroup": "U11",
@@ -89,6 +89,12 @@ export const totalRankingsData: TotalRankingsData = {
                 {
                   "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
                   "location": "成都热雪奇迹室内滑雪场",
+                  "points": 360,
+                  "rank": 1
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
                   "points": 360,
                   "rank": 1
                 }
@@ -117,6 +123,27 @@ export const totalRankingsData: TotalRankingsData = {
             },
             {
               "rank": 3,
+              "athleteId": "athlete_孙楚为_大连奥萨",
+              "athleteName": "孙楚为",
+              "team": "大连奥萨",
+              "totalPoints": 329,
+              "competitionCount": 1,
+              "bestRank": 2,
+              "avgPoints": 329,
+              "ageGroup": "U11",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 329,
+                  "rank": 2
+                }
+              ]
+            },
+            {
+              "rank": 4,
               "athleteId": "cmjzpdkqv00kibfhosfplepf9",
               "athleteName": "苏一豪",
               "team": "重庆市冬季运动管理中心",
@@ -137,7 +164,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 4,
+              "rank": 5,
+              "athleteId": "athlete_安若维_个人",
+              "athleteName": "安若维",
+              "team": "个人",
+              "totalPoints": 303,
+              "competitionCount": 1,
+              "bestRank": 3,
+              "avgPoints": 303,
+              "ageGroup": "U11",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 303,
+                  "rank": 3
+                }
+              ]
+            },
+            {
+              "rank": 6,
               "athleteId": "cmjzpdkqy00klbfho0qckaxmt",
               "athleteName": "于镇赫",
               "team": "成都热雪奇迹",
@@ -156,9 +204,51 @@ export const totalRankingsData: TotalRankingsData = {
                   "rank": 4
                 }
               ]
+            },
+            {
+              "rank": 7,
+              "athleteId": "athlete_孙乾铭_山域竞技体育工作室二",
+              "athleteName": "孙乾铭",
+              "team": "山域竞技体育工作室二队",
+              "totalPoints": 280,
+              "competitionCount": 1,
+              "bestRank": 4,
+              "avgPoints": 280,
+              "ageGroup": "U11",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 280,
+                  "rank": 4
+                }
+              ]
+            },
+            {
+              "rank": 8,
+              "athleteId": "athlete_柳昇延_延庆区体育局",
+              "athleteName": "柳昇延",
+              "team": "延庆区体育局",
+              "totalPoints": 260,
+              "competitionCount": 1,
+              "bestRank": 5,
+              "avgPoints": 260,
+              "ageGroup": "U11",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 260,
+                  "rank": 5
+                }
+              ]
             }
           ],
-          "total": 4
+          "total": 8
         },
         {
           "discipline": "回转",
@@ -171,10 +261,10 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkq000jrbfhovq39ke3q",
               "athleteName": "李若瑜",
               "team": "中关村一小",
-              "totalPoints": 360,
-              "competitionCount": 1,
+              "totalPoints": 559,
+              "competitionCount": 2,
               "bestRank": 1,
-              "avgPoints": 360,
+              "avgPoints": 279.5,
               "ageGroup": "U11",
               "gender": "女子组",
               "rankChange": null,
@@ -184,11 +274,38 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "成都热雪奇迹室内滑雪场",
                   "points": 360,
                   "rank": 1
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 199,
+                  "rank": 9
                 }
               ]
             },
             {
               "rank": 2,
+              "athleteId": "athlete_钱语墨_张家口辰鹏体育发展有",
+              "athleteName": "钱语墨",
+              "team": "张家口辰鹏体育发展有限公司",
+              "totalPoints": 360,
+              "competitionCount": 1,
+              "bestRank": 1,
+              "avgPoints": 360,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 360,
+                  "rank": 1
+                }
+              ]
+            },
+            {
+              "rank": 3,
               "athleteId": "cmjzpdkq400jubfhoejwo7naf",
               "athleteName": "罗暄晴",
               "team": "成都热雪奇迹",
@@ -209,7 +326,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 3,
+              "rank": 4,
+              "athleteId": "athlete_顾欣蕊_上海市静安区滑雪协会",
+              "athleteName": "顾欣蕊",
+              "team": "上海市静安区滑雪协会",
+              "totalPoints": 329,
+              "competitionCount": 1,
+              "bestRank": 2,
+              "avgPoints": 329,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 329,
+                  "rank": 2
+                }
+              ]
+            },
+            {
+              "rank": 5,
               "athleteId": "cmjzpdkq700jxbfhog679cr7g",
               "athleteName": "吴凌萱",
               "team": "华发冰雪热雪奇迹",
@@ -230,7 +368,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 4,
+              "rank": 6,
+              "athleteId": "athlete_赵希悦_延庆区体育局",
+              "athleteName": "赵希悦",
+              "team": "延庆区体育局",
+              "totalPoints": 303,
+              "competitionCount": 1,
+              "bestRank": 3,
+              "avgPoints": 303,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 303,
+                  "rank": 3
+                }
+              ]
+            },
+            {
+              "rank": 7,
               "athleteId": "cmjzpdkqb00k0bfhow3hoof01",
               "athleteName": "蔡沛琳",
               "team": "成都热雪奇迹",
@@ -251,7 +410,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 5,
+              "rank": 8,
+              "athleteId": "athlete_路钧惠_延庆区体育局",
+              "athleteName": "路钧惠",
+              "team": "延庆区体育局",
+              "totalPoints": 280,
+              "competitionCount": 1,
+              "bestRank": 4,
+              "avgPoints": 280,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 280,
+                  "rank": 4
+                }
+              ]
+            },
+            {
+              "rank": 9,
               "athleteId": "cmjzpdkqe00k3bfhoo18nnq3z",
               "athleteName": "李昊汐",
               "team": "西安热雪奇迹",
@@ -272,7 +452,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 6,
+              "rank": 10,
+              "athleteId": "athlete_张雨桐_个人",
+              "athleteName": "张雨桐",
+              "team": "个人",
+              "totalPoints": 260,
+              "competitionCount": 1,
+              "bestRank": 5,
+              "avgPoints": 260,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 260,
+                  "rank": 5
+                }
+              ]
+            },
+            {
+              "rank": 11,
               "athleteId": "cmjzpdkqi00k6bfhotz0ghplg",
               "athleteName": "吴玟颐",
               "team": "华发冰雪热雪奇迹",
@@ -293,7 +494,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 7,
+              "rank": 12,
+              "athleteId": "athlete_张竞戈_个人",
+              "athleteName": "张竞戈",
+              "team": "个人",
+              "totalPoints": 242,
+              "competitionCount": 1,
+              "bestRank": 6,
+              "avgPoints": 242,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 242,
+                  "rank": 6
+                }
+              ]
+            },
+            {
+              "rank": 13,
               "athleteId": "cmjzpdkql00k9bfhodvj2cshf",
               "athleteName": "卢彦伊",
               "team": "成都热雪奇迹",
@@ -312,9 +534,51 @@ export const totalRankingsData: TotalRankingsData = {
                   "rank": 7
                 }
               ]
+            },
+            {
+              "rank": 14,
+              "athleteId": "athlete_张曦安_零度竞技吉林省零下壹",
+              "athleteName": "张曦安",
+              "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
+              "totalPoints": 226,
+              "competitionCount": 1,
+              "bestRank": 7,
+              "avgPoints": 226,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 226,
+                  "rank": 7
+                }
+              ]
+            },
+            {
+              "rank": 15,
+              "athleteId": "athlete_冯薏霏_个人零度竞技",
+              "athleteName": "冯薏霏",
+              "team": "个人（零度竞技）",
+              "totalPoints": 212,
+              "competitionCount": 1,
+              "bestRank": 8,
+              "avgPoints": 212,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 212,
+                  "rank": 8
+                }
+              ]
             }
           ],
-          "total": 7
+          "total": 15
         },
         {
           "discipline": "回转",
@@ -327,10 +591,10 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkri00l3bfhogfhne4tr",
               "athleteName": "肖瑞林",
               "team": "重庆市冬季运动管理中心",
-              "totalPoints": 360,
-              "competitionCount": 1,
+              "totalPoints": 494,
+              "competitionCount": 2,
               "bestRank": 1,
-              "avgPoints": 360,
+              "avgPoints": 247,
               "ageGroup": "U15",
               "gender": "男子组",
               "rankChange": null,
@@ -340,11 +604,38 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "成都热雪奇迹室内滑雪场",
                   "points": 360,
                   "rank": 1
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 134,
+                  "rank": 16
                 }
               ]
             },
             {
               "rank": 2,
+              "athleteId": "athlete_王梓墨_四川体育职业学院",
+              "athleteName": "王梓墨",
+              "team": "四川体育职业学院",
+              "totalPoints": 360,
+              "competitionCount": 1,
+              "bestRank": 1,
+              "avgPoints": 360,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 360,
+                  "rank": 1
+                }
+              ]
+            },
+            {
+              "rank": 3,
               "athleteId": "cmjzpdkrm00l6bfho179zhn19",
               "athleteName": "刘彦钧凯",
               "team": "河北省体育局冬季运动中心",
@@ -365,7 +656,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 3,
+              "rank": 4,
+              "athleteId": "athlete_陈煜轩_大连奥萨竞技",
+              "athleteName": "陈煜轩",
+              "team": "大连奥萨竞技",
+              "totalPoints": 329,
+              "competitionCount": 1,
+              "bestRank": 2,
+              "avgPoints": 329,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 329,
+                  "rank": 2
+                }
+              ]
+            },
+            {
+              "rank": 5,
               "athleteId": "cmjzpdkrp00l9bfhoebj1petm",
               "athleteName": "黄子歌",
               "team": "四川体育职业学院",
@@ -386,7 +698,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 4,
+              "rank": 6,
+              "athleteId": "athlete_王俞涵_零度竞技吉林省零下壹",
+              "athleteName": "王俞涵",
+              "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
+              "totalPoints": 303,
+              "competitionCount": 1,
+              "bestRank": 3,
+              "avgPoints": 303,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 303,
+                  "rank": 3
+                }
+              ]
+            },
+            {
+              "rank": 7,
               "athleteId": "cmjzpdkrt00lcbfhofvlcdm8r",
               "athleteName": "王梓丞",
               "team": "重庆市冬季运动管理中心",
@@ -407,7 +740,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 5,
+              "rank": 8,
+              "athleteId": "athlete_韩以乐_竞禹体育",
+              "athleteName": "韩以乐",
+              "team": "竞禹体育",
+              "totalPoints": 280,
+              "competitionCount": 1,
+              "bestRank": 4,
+              "avgPoints": 280,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 280,
+                  "rank": 4
+                }
+              ]
+            },
+            {
+              "rank": 9,
               "athleteId": "cmjzpdkrw00lfbfhonz2a0d3b",
               "athleteName": "吕浩源",
               "team": "河北省体育局冬季运动中心",
@@ -428,7 +782,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 6,
+              "rank": 10,
+              "athleteId": "athlete_盛嗣垚_张家口辰鹏体育发展有",
+              "athleteName": "盛嗣垚",
+              "team": "张家口辰鹏体育发展有限公司",
+              "totalPoints": 260,
+              "competitionCount": 1,
+              "bestRank": 5,
+              "avgPoints": 260,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 260,
+                  "rank": 5
+                }
+              ]
+            },
+            {
+              "rank": 11,
               "athleteId": "cmjzpdks000libfhouk369qbh",
               "athleteName": "林朗",
               "team": "哈尔滨热雪奇迹",
@@ -447,9 +822,387 @@ export const totalRankingsData: TotalRankingsData = {
                   "rank": 6
                 }
               ]
+            },
+            {
+              "rank": 12,
+              "athleteId": "athlete_丁天睿_山域竞技体育工作室",
+              "athleteName": "丁天睿",
+              "team": "山域竞技体育工作室",
+              "totalPoints": 242,
+              "competitionCount": 1,
+              "bestRank": 6,
+              "avgPoints": 242,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 242,
+                  "rank": 6
+                }
+              ]
+            },
+            {
+              "rank": 13,
+              "athleteId": "athlete_于承睿_个人零度竞技",
+              "athleteName": "于承睿",
+              "team": "个人（零度竞技）",
+              "totalPoints": 226,
+              "competitionCount": 1,
+              "bestRank": 7,
+              "avgPoints": 226,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 226,
+                  "rank": 7
+                }
+              ]
+            },
+            {
+              "rank": 14,
+              "athleteId": "athlete_国益霖_延庆区体育局",
+              "athleteName": "国益霖",
+              "team": "延庆区体育局",
+              "totalPoints": 212,
+              "competitionCount": 1,
+              "bestRank": 8,
+              "avgPoints": 212,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 212,
+                  "rank": 8
+                }
+              ]
+            },
+            {
+              "rank": 15,
+              "athleteId": "athlete_丁润章_东北师范大学附属实验",
+              "athleteName": "丁润章",
+              "team": "东北师范大学附属实验学校（经开）",
+              "totalPoints": 199,
+              "competitionCount": 1,
+              "bestRank": 9,
+              "avgPoints": 199,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 199,
+                  "rank": 9
+                }
+              ]
+            },
+            {
+              "rank": 16,
+              "athleteId": "athlete_郭轩烨_张家口辰鹏体育发展有",
+              "athleteName": "郭轩烨",
+              "team": "张家口辰鹏体育发展有限公司",
+              "totalPoints": 187,
+              "competitionCount": 1,
+              "bestRank": 10,
+              "avgPoints": 187,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 187,
+                  "rank": 10
+                }
+              ]
+            },
+            {
+              "rank": 17,
+              "athleteId": "athlete_姚政希_个人",
+              "athleteName": "姚政希",
+              "team": "个人",
+              "totalPoints": 176,
+              "competitionCount": 1,
+              "bestRank": 11,
+              "avgPoints": 176,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 176,
+                  "rank": 11
+                }
+              ]
+            },
+            {
+              "rank": 18,
+              "athleteId": "athlete_王景亮_广州热雪奇迹文化体育",
+              "athleteName": "王景亮",
+              "team": "广州热雪奇迹文化体育发展有限公司",
+              "totalPoints": 166,
+              "competitionCount": 1,
+              "bestRank": 12,
+              "avgPoints": 166,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 166,
+                  "rank": 12
+                }
+              ]
+            },
+            {
+              "rank": 19,
+              "athleteId": "athlete_林子辰_重庆市冬季运动管理中",
+              "athleteName": "林子辰",
+              "team": "重庆市冬季运动管理中心1队",
+              "totalPoints": 157,
+              "competitionCount": 1,
+              "bestRank": 13,
+              "avgPoints": 157,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 157,
+                  "rank": 13
+                }
+              ]
+            },
+            {
+              "rank": 20,
+              "athleteId": "athlete_沈昊宇_个人",
+              "athleteName": "沈昊宇",
+              "team": "个人",
+              "totalPoints": 149,
+              "competitionCount": 1,
+              "bestRank": 14,
+              "avgPoints": 149,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 149,
+                  "rank": 14
+                }
+              ]
+            },
+            {
+              "rank": 21,
+              "athleteId": "athlete_张博智_张家口辰鹏体育发展有",
+              "athleteName": "张博智",
+              "team": "张家口辰鹏体育发展有限公司",
+              "totalPoints": 141,
+              "competitionCount": 1,
+              "bestRank": 15,
+              "avgPoints": 141,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 141,
+                  "rank": 15
+                }
+              ]
+            },
+            {
+              "rank": 22,
+              "athleteId": "athlete_赵宣贺_个人",
+              "athleteName": "赵宣贺",
+              "team": "个人",
+              "totalPoints": 127,
+              "competitionCount": 1,
+              "bestRank": 17,
+              "avgPoints": 127,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 127,
+                  "rank": 17
+                }
+              ]
+            },
+            {
+              "rank": 23,
+              "athleteId": "athlete_田芷源_长春市朝阳区山域竞技",
+              "athleteName": "田芷源",
+              "team": "长春市朝阳区山域竞技体育工作室",
+              "totalPoints": 121,
+              "competitionCount": 1,
+              "bestRank": 18,
+              "avgPoints": 121,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 121,
+                  "rank": 18
+                }
+              ]
+            },
+            {
+              "rank": 24,
+              "athleteId": "athlete_孙茂文_个人",
+              "athleteName": "孙茂文",
+              "team": "个人",
+              "totalPoints": 115,
+              "competitionCount": 1,
+              "bestRank": 19,
+              "avgPoints": 115,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 115,
+                  "rank": 19
+                }
+              ]
+            },
+            {
+              "rank": 25,
+              "athleteId": "athlete_冯泽昊_零度竞技吉林省零下壹",
+              "athleteName": "冯泽昊",
+              "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
+              "totalPoints": 110,
+              "competitionCount": 1,
+              "bestRank": 20,
+              "avgPoints": 110,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 110,
+                  "rank": 20
+                }
+              ]
+            },
+            {
+              "rank": 26,
+              "athleteId": "athlete_马照然_大连奥萨体育文化有限",
+              "athleteName": "马照然",
+              "team": "大连奥萨体育文化有限公司",
+              "totalPoints": 105,
+              "competitionCount": 1,
+              "bestRank": 21,
+              "avgPoints": 105,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 105,
+                  "rank": 21
+                }
+              ]
+            },
+            {
+              "rank": 27,
+              "athleteId": "athlete_董林枫_RSKI竞技滑雪队队",
+              "athleteName": "董林枫",
+              "team": "RSKI竞技滑雪队队",
+              "totalPoints": 100,
+              "competitionCount": 1,
+              "bestRank": 22,
+              "avgPoints": 100,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 100,
+                  "rank": 22
+                }
+              ]
+            },
+            {
+              "rank": 28,
+              "athleteId": "athlete_蒋骐阳_兰州碧桂园学校",
+              "athleteName": "蒋骐阳",
+              "team": "兰州碧桂园学校",
+              "totalPoints": 95,
+              "competitionCount": 1,
+              "bestRank": 23,
+              "avgPoints": 95,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 95,
+                  "rank": 23
+                }
+              ]
+            },
+            {
+              "rank": 29,
+              "athleteId": "athlete_龙思祺_广州雪迹文化体育发展",
+              "athleteName": "龙思祺",
+              "team": "广州雪迹文化体育发展有限公司",
+              "totalPoints": 91,
+              "competitionCount": 1,
+              "bestRank": 24,
+              "avgPoints": 91,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 91,
+                  "rank": 24
+                }
+              ]
             }
           ],
-          "total": 6
+          "total": 29
         },
         {
           "discipline": "回转",
@@ -462,10 +1215,10 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkr100kobfhorssp9cun",
               "athleteName": "张雨馨",
               "team": "四川体育职业学院",
-              "totalPoints": 360,
-              "competitionCount": 1,
+              "totalPoints": 663,
+              "competitionCount": 2,
               "bestRank": 1,
-              "avgPoints": 360,
+              "avgPoints": 331.5,
               "ageGroup": "U15",
               "gender": "女子组",
               "rankChange": null,
@@ -475,11 +1228,38 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "成都热雪奇迹室内滑雪场",
                   "points": 360,
                   "rank": 1
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 303,
+                  "rank": 3
                 }
               ]
             },
             {
               "rank": 2,
+              "athleteId": "athlete_陈玥潞_张家口辰鹏体育发展有",
+              "athleteName": "陈玥潞",
+              "team": "张家口辰鹏体育发展有限公司",
+              "totalPoints": 360,
+              "competitionCount": 1,
+              "bestRank": 1,
+              "avgPoints": 360,
+              "ageGroup": "U15",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 360,
+                  "rank": 1
+                }
+              ]
+            },
+            {
+              "rank": 3,
               "athleteId": "cmjzpdkr500krbfhoaxpqfzp4",
               "athleteName": "杨子骞",
               "team": "河北省体育局冬季运动中心",
@@ -500,7 +1280,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 3,
+              "rank": 4,
+              "athleteId": "athlete_贾一诺_零度竞技吉林省零下壹",
+              "athleteName": "贾一诺",
+              "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
+              "totalPoints": 329,
+              "competitionCount": 1,
+              "bestRank": 2,
+              "avgPoints": 329,
+              "ageGroup": "U15",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 329,
+                  "rank": 2
+                }
+              ]
+            },
+            {
+              "rank": 5,
               "athleteId": "cmjzpdkr800kubfho15rzjdm7",
               "athleteName": "罗梓瑜",
               "team": "河北省体育局冬季运动中心",
@@ -521,7 +1322,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 4,
+              "rank": 6,
               "athleteId": "cmjzpdkrb00kxbfhoqtbsgmzj",
               "athleteName": "张雅琪",
               "team": "河北省体育局冬季运动中心",
@@ -542,7 +1343,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 5,
+              "rank": 7,
+              "athleteId": "athlete_刘金潼_个人零度竞技",
+              "athleteName": "刘金潼",
+              "team": "个人（零度竞技）",
+              "totalPoints": 280,
+              "competitionCount": 1,
+              "bestRank": 4,
+              "avgPoints": 280,
+              "ageGroup": "U15",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 280,
+                  "rank": 4
+                }
+              ]
+            },
+            {
+              "rank": 8,
               "athleteId": "cmjzpdkrf00l0bfhoi24xpm3k",
               "athleteName": "陈奕霏",
               "team": "个人",
@@ -561,9 +1383,30 @@ export const totalRankingsData: TotalRankingsData = {
                   "rank": 5
                 }
               ]
+            },
+            {
+              "rank": 9,
+              "athleteId": "athlete_张雨杉_西安高新一中沣东中学",
+              "athleteName": "张雨杉",
+              "team": "西安高新一中沣东中学初中校区",
+              "totalPoints": 260,
+              "competitionCount": 1,
+              "bestRank": 5,
+              "avgPoints": 260,
+              "ageGroup": "U15",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 260,
+                  "rank": 5
+                }
+              ]
             }
           ],
-          "total": 5
+          "total": 9
         },
         {
           "discipline": "回转",
@@ -576,10 +1419,10 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkp000ixbfhoom4nz6ao",
               "athleteName": "王阳明",
               "team": "张家口乔与杨体育服务有限公司",
-              "totalPoints": 360,
-              "competitionCount": 1,
+              "totalPoints": 663,
+              "competitionCount": 2,
               "bestRank": 1,
-              "avgPoints": 360,
+              "avgPoints": 331.5,
               "ageGroup": "U18",
               "gender": "男子组",
               "rankChange": null,
@@ -589,11 +1432,146 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "成都热雪奇迹室内滑雪场",
                   "points": 360,
                   "rank": 1
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 303,
+                  "rank": 3
                 }
               ]
             },
             {
               "rank": 2,
+              "athleteId": "cmjzpdkp700j3bfhoni6zgejk",
+              "athleteName": "高琦硕",
+              "team": "高峰",
+              "totalPoints": 632,
+              "competitionCount": 2,
+              "bestRank": 2,
+              "avgPoints": 316,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 303,
+                  "rank": 3
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 329,
+                  "rank": 2
+                }
+              ]
+            },
+            {
+              "rank": 3,
+              "athleteId": "cmjzpdkph00jcbfho8tsz6f9a",
+              "athleteName": "左子正",
+              "team": "左子正",
+              "totalPoints": 502,
+              "competitionCount": 2,
+              "bestRank": 5,
+              "avgPoints": 251,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 242,
+                  "rank": 6
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 260,
+                  "rank": 5
+                }
+              ]
+            },
+            {
+              "rank": 4,
+              "athleteId": "cmjzpdkpd00j9bfho5ceqs1fb",
+              "athleteName": "王润钰",
+              "team": "张家口乔与杨体育服务有限公司",
+              "totalPoints": 472,
+              "competitionCount": 2,
+              "bestRank": 5,
+              "avgPoints": 236,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 260,
+                  "rank": 5
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 212,
+                  "rank": 8
+                }
+              ]
+            },
+            {
+              "rank": 5,
+              "athleteId": "cmjzpdkpp00jibfho6rmhufv0",
+              "athleteName": "王冠霖",
+              "team": "吉林坤伦滑雪俱乐部",
+              "totalPoints": 411,
+              "competitionCount": 2,
+              "bestRank": 8,
+              "avgPoints": 205.5,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 212,
+                  "rank": 8
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 199,
+                  "rank": 9
+                }
+              ]
+            },
+            {
+              "rank": 6,
+              "athleteId": "cmjzpdkt300mkbfhogytw8qz1",
+              "athleteName": "熊泽瑞",
+              "team": "张家口乔与杨体育服务有限公司",
+              "totalPoints": 360,
+              "competitionCount": 1,
+              "bestRank": 1,
+              "avgPoints": 360,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 360,
+                  "rank": 1
+                }
+              ]
+            },
+            {
+              "rank": 7,
               "athleteId": "cmjzpdkp300j0bfhohn94zbb3",
               "athleteName": "艾思铭",
               "team": "张家口乔与杨体育服务有限公司",
@@ -614,28 +1592,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 3,
-              "athleteId": "cmjzpdkp700j3bfhoni6zgejk",
-              "athleteName": "高琦硕",
-              "team": "高峰",
-              "totalPoints": 303,
-              "competitionCount": 1,
-              "bestRank": 3,
-              "avgPoints": 303,
-              "ageGroup": "U18",
-              "gender": "男子组",
-              "rankChange": null,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
-                  "points": 303,
-                  "rank": 3
-                }
-              ]
-            },
-            {
-              "rank": 4,
+              "rank": 8,
               "athleteId": "cmjzpdkpa00j6bfholp1nby8r",
               "athleteName": "郭一远",
               "team": "河北省体育局冬季运动中心",
@@ -656,31 +1613,31 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 5,
-              "athleteId": "cmjzpdkpd00j9bfho5ceqs1fb",
-              "athleteName": "王润钰",
-              "team": "张家口乔与杨体育服务有限公司",
-              "totalPoints": 260,
+              "rank": 9,
+              "athleteId": "athlete_明泳桐_张家口辰鹏体育发展有",
+              "athleteName": "明泳桐",
+              "team": "张家口辰鹏体育发展有限公司",
+              "totalPoints": 280,
               "competitionCount": 1,
-              "bestRank": 5,
-              "avgPoints": 260,
+              "bestRank": 4,
+              "avgPoints": 280,
               "ageGroup": "U18",
               "gender": "男子组",
               "rankChange": null,
               "pointsBreakdown": [
                 {
-                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
-                  "points": 260,
-                  "rank": 5
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 280,
+                  "rank": 4
                 }
               ]
             },
             {
-              "rank": 6,
-              "athleteId": "cmjzpdkph00jcbfho8tsz6f9a",
-              "athleteName": "左子正",
-              "team": "左子正",
+              "rank": 10,
+              "athleteId": "athlete_王正政_张家口乔与杨体育服务",
+              "athleteName": "王正政",
+              "team": "张家口乔与杨体育服务有限公司",
               "totalPoints": 242,
               "competitionCount": 1,
               "bestRank": 6,
@@ -690,15 +1647,15 @@ export const totalRankingsData: TotalRankingsData = {
               "rankChange": null,
               "pointsBreakdown": [
                 {
-                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
                   "points": 242,
                   "rank": 6
                 }
               ]
             },
             {
-              "rank": 7,
+              "rank": 11,
               "athleteId": "cmjzpdkpk00jfbfhoiy6rykkw",
               "athleteName": "常冠廷",
               "team": "吉林市丰满区滑雪协会",
@@ -719,28 +1676,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 8,
-              "athleteId": "cmjzpdkpp00jibfho6rmhufv0",
-              "athleteName": "王冠霖",
-              "team": "吉林坤伦滑雪俱乐部",
-              "totalPoints": 212,
+              "rank": 12,
+              "athleteId": "athlete_鞠沐辰_济南市皇亭竞技体育学",
+              "athleteName": "鞠沐辰",
+              "team": "济南市皇亭竞技体育学校",
+              "totalPoints": 226,
               "competitionCount": 1,
-              "bestRank": 8,
-              "avgPoints": 212,
+              "bestRank": 7,
+              "avgPoints": 226,
               "ageGroup": "U18",
               "gender": "男子组",
               "rankChange": null,
               "pointsBreakdown": [
                 {
-                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
-                  "points": 212,
-                  "rank": 8
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 226,
+                  "rank": 7
                 }
               ]
             },
             {
-              "rank": 9,
+              "rank": 13,
               "athleteId": "cmjzpdkpt00jlbfho1kgjxby2",
               "athleteName": "王宏轩",
               "team": "河北省体育局冬季运动中心",
@@ -761,7 +1718,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 10,
+              "rank": 14,
               "athleteId": "cmjzpdkpw00jobfho96ief0p6",
               "athleteName": "马健剀",
               "team": "吉林坤伦滑雪俱乐部",
@@ -780,9 +1737,30 @@ export const totalRankingsData: TotalRankingsData = {
                   "rank": 10
                 }
               ]
+            },
+            {
+              "rank": 15,
+              "athleteId": "athlete_谭皓阳_个人高峰",
+              "athleteName": "谭皓阳",
+              "team": "个人（高峰）",
+              "totalPoints": 187,
+              "competitionCount": 1,
+              "bestRank": 10,
+              "avgPoints": 187,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 187,
+                  "rank": 10
+                }
+              ]
             }
           ],
-          "total": 10
+          "total": 15
         },
         {
           "discipline": "回转",
@@ -813,6 +1791,27 @@ export const totalRankingsData: TotalRankingsData = {
             },
             {
               "rank": 2,
+              "athleteId": "athlete_孙若涵_延庆区体育局",
+              "athleteName": "孙若涵",
+              "team": "延庆区体育局",
+              "totalPoints": 360,
+              "competitionCount": 1,
+              "bestRank": 1,
+              "avgPoints": 360,
+              "ageGroup": "U18",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 360,
+                  "rank": 1
+                }
+              ]
+            },
+            {
+              "rank": 3,
               "athleteId": "cmjzpdkot00irbfhoyhtlvzya",
               "athleteName": "杨蓝戈",
               "team": "个人",
@@ -833,7 +1832,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 3,
+              "rank": 4,
+              "athleteId": "cmjzpdks900lrbfho41ykduoi",
+              "athleteName": "周昱含",
+              "team": "沈阳王伟滑雪管理咨询服务有限公司",
+              "totalPoints": 329,
+              "competitionCount": 1,
+              "bestRank": 2,
+              "avgPoints": 329,
+              "ageGroup": "U18",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 329,
+                  "rank": 2
+                }
+              ]
+            },
+            {
+              "rank": 5,
               "athleteId": "cmjzpdkow00iubfhojkdi817d",
               "athleteName": "庞予涵",
               "team": "张家口乔与杨体育服务有限公司",
@@ -852,9 +1872,93 @@ export const totalRankingsData: TotalRankingsData = {
                   "rank": 3
                 }
               ]
+            },
+            {
+              "rank": 6,
+              "athleteId": "athlete_龚信水_重庆市冬季运动管理中",
+              "athleteName": "龚信水",
+              "team": "重庆市冬季运动管理中心1队",
+              "totalPoints": 303,
+              "competitionCount": 1,
+              "bestRank": 3,
+              "avgPoints": 303,
+              "ageGroup": "U18",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 303,
+                  "rank": 3
+                }
+              ]
+            },
+            {
+              "rank": 7,
+              "athleteId": "athlete_邱心悦_葫小芦北京体育有限公",
+              "athleteName": "邱心悦",
+              "team": "葫小芦（北京）体育有限公司",
+              "totalPoints": 280,
+              "competitionCount": 1,
+              "bestRank": 4,
+              "avgPoints": 280,
+              "ageGroup": "U18",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 280,
+                  "rank": 4
+                }
+              ]
+            },
+            {
+              "rank": 8,
+              "athleteId": "athlete_王胜婕_葫小芦北京体育有限公",
+              "athleteName": "王胜婕",
+              "team": "葫小芦（北京）体育有限公司",
+              "totalPoints": 260,
+              "competitionCount": 1,
+              "bestRank": 5,
+              "avgPoints": 260,
+              "ageGroup": "U18",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 260,
+                  "rank": 5
+                }
+              ]
+            },
+            {
+              "rank": 9,
+              "athleteId": "cmjzpdksc00lubfho18uchde6",
+              "athleteName": "杨睿怡",
+              "team": "华发冰雪热雪奇迹",
+              "totalPoints": 242,
+              "competitionCount": 1,
+              "bestRank": 6,
+              "avgPoints": 242,
+              "ageGroup": "U18",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 242,
+                  "rank": 6
+                }
+              ]
             }
           ],
-          "total": 3
+          "total": 9
         },
         {
           "discipline": "大回转",
@@ -867,8 +1971,8 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkqp00kcbfho4at9jl9k",
               "athleteName": "赵酌",
               "team": "四川体育职业学院",
-              "totalPoints": 360,
-              "competitionCount": 1,
+              "totalPoints": 720,
+              "competitionCount": 2,
               "bestRank": 1,
               "avgPoints": 360,
               "ageGroup": "U11",
@@ -880,11 +1984,44 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "成都热雪奇迹室内滑雪场",
                   "points": 360,
                   "rank": 1
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 360,
+                  "rank": 1
                 }
               ]
             },
             {
               "rank": 2,
+              "athleteId": "cmjzpdkqs00kfbfhoekaf7a8k",
+              "athleteName": "竹禹丞",
+              "team": "成都热雪奇迹",
+              "totalPoints": 609,
+              "competitionCount": 2,
+              "bestRank": 2,
+              "avgPoints": 304.5,
+              "ageGroup": "U11",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 280,
+                  "rank": 4
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 329,
+                  "rank": 2
+                }
+              ]
+            },
+            {
+              "rank": 3,
               "athleteId": "cmjzpdkqv00kibfhosfplepf9",
               "athleteName": "苏一豪",
               "team": "重庆市冬季运动管理中心",
@@ -905,7 +2042,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 3,
+              "rank": 4,
               "athleteId": "cmjzpdkto00n5bfho4j8lt3fl",
               "athleteName": "郑捷铭",
               "team": "重庆市冬季运动管理中心",
@@ -926,10 +2063,31 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 4,
-              "athleteId": "cmjzpdkqs00kfbfhoekaf7a8k",
-              "athleteName": "竹禹丞",
-              "team": "成都热雪奇迹",
+              "rank": 5,
+              "athleteId": "athlete_蒋伯阳_兰州碧桂园学校",
+              "athleteName": "蒋伯阳",
+              "team": "兰州碧桂园学校",
+              "totalPoints": 303,
+              "competitionCount": 1,
+              "bestRank": 3,
+              "avgPoints": 303,
+              "ageGroup": "U11",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 303,
+                  "rank": 3
+                }
+              ]
+            },
+            {
+              "rank": 6,
+              "athleteId": "athlete_温逸伦_吉林坤伦滑雪俱乐部",
+              "athleteName": "温逸伦",
+              "team": "吉林坤伦滑雪俱乐部",
               "totalPoints": 280,
               "competitionCount": 1,
               "bestRank": 4,
@@ -939,15 +2097,15 @@ export const totalRankingsData: TotalRankingsData = {
               "rankChange": null,
               "pointsBreakdown": [
                 {
-                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
                   "points": 280,
                   "rank": 4
                 }
               ]
             },
             {
-              "rank": 5,
+              "rank": 7,
               "athleteId": "cmjzpdktv00nabfhomuj9q4hs",
               "athleteName": "杨宗葆",
               "team": "个人",
@@ -968,7 +2126,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 6,
+              "rank": 8,
+              "athleteId": "athlete_张轩睿_RSKI竞技滑雪队队",
+              "athleteName": "张轩睿",
+              "team": "RSKI竞技滑雪队队",
+              "totalPoints": 260,
+              "competitionCount": 1,
+              "bestRank": 5,
+              "avgPoints": 260,
+              "ageGroup": "U11",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 260,
+                  "rank": 5
+                }
+              ]
+            },
+            {
+              "rank": 9,
               "athleteId": "cmjzpdkqy00klbfho0qckaxmt",
               "athleteName": "于镇赫",
               "team": "成都热雪奇迹",
@@ -989,7 +2168,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 7,
+              "rank": 10,
+              "athleteId": "athlete_安若维_个人",
+              "athleteName": "安若维",
+              "team": "个人",
+              "totalPoints": 242,
+              "competitionCount": 1,
+              "bestRank": 6,
+              "avgPoints": 242,
+              "ageGroup": "U11",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 242,
+                  "rank": 6
+                }
+              ]
+            },
+            {
+              "rank": 11,
               "athleteId": "cmjzpdku000nfbfhod6ac8ew5",
               "athleteName": "冯一晗",
               "team": "成都热雪奇迹",
@@ -1010,7 +2210,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 8,
+              "rank": 12,
+              "athleteId": "athlete_杨东信_RSKI竞技滑雪队队",
+              "athleteName": "杨东信",
+              "team": "RSKI竞技滑雪队队",
+              "totalPoints": 226,
+              "competitionCount": 1,
+              "bestRank": 7,
+              "avgPoints": 226,
+              "ageGroup": "U11",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 226,
+                  "rank": 7
+                }
+              ]
+            },
+            {
+              "rank": 13,
               "athleteId": "cmjzpdku400nibfholr4qu1hr",
               "athleteName": "顾羽宸",
               "team": "成都热雪奇迹",
@@ -1029,9 +2250,72 @@ export const totalRankingsData: TotalRankingsData = {
                   "rank": 8
                 }
               ]
+            },
+            {
+              "rank": 14,
+              "athleteId": "athlete_董子都_个人",
+              "athleteName": "董子都",
+              "team": "个人",
+              "totalPoints": 212,
+              "competitionCount": 1,
+              "bestRank": 7,
+              "avgPoints": 212,
+              "ageGroup": "U11",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 212,
+                  "rank": 7
+                }
+              ]
+            },
+            {
+              "rank": 15,
+              "athleteId": "athlete_陈昕逸_个人",
+              "athleteName": "陈昕逸",
+              "team": "个人",
+              "totalPoints": 199,
+              "competitionCount": 1,
+              "bestRank": 9,
+              "avgPoints": 199,
+              "ageGroup": "U11",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 199,
+                  "rank": 9
+                }
+              ]
+            },
+            {
+              "rank": 16,
+              "athleteId": "athlete_柳昇延_延庆区体育局",
+              "athleteName": "柳昇延",
+              "team": "延庆区体育局",
+              "totalPoints": 187,
+              "competitionCount": 1,
+              "bestRank": 10,
+              "avgPoints": 187,
+              "ageGroup": "U11",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 187,
+                  "rank": 10
+                }
+              ]
             }
           ],
-          "total": 8
+          "total": 16
         },
         {
           "discipline": "大回转",
@@ -1062,6 +2346,27 @@ export const totalRankingsData: TotalRankingsData = {
             },
             {
               "rank": 2,
+              "athleteId": "athlete_钱语墨_张家口辰鹏体育发展有",
+              "athleteName": "钱语墨",
+              "team": "张家口辰鹏体育发展有限公司",
+              "totalPoints": 360,
+              "competitionCount": 1,
+              "bestRank": 1,
+              "avgPoints": 360,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 360,
+                  "rank": 1
+                }
+              ]
+            },
+            {
+              "rank": 3,
               "athleteId": "cmjzpdkqb00k0bfhow3hoof01",
               "athleteName": "蔡沛琳",
               "team": "成都热雪奇迹",
@@ -1082,7 +2387,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 3,
+              "rank": 4,
+              "athleteId": "athlete_张雨桐_个人",
+              "athleteName": "张雨桐",
+              "team": "个人",
+              "totalPoints": 329,
+              "competitionCount": 1,
+              "bestRank": 2,
+              "avgPoints": 329,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 329,
+                  "rank": 2
+                }
+              ]
+            },
+            {
+              "rank": 5,
               "athleteId": "cmjzpdkq700jxbfhog679cr7g",
               "athleteName": "吴凌萱",
               "team": "华发冰雪热雪奇迹",
@@ -1103,7 +2429,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 4,
+              "rank": 6,
+              "athleteId": "athlete_赵希悦_延庆区体育局",
+              "athleteName": "赵希悦",
+              "team": "延庆区体育局",
+              "totalPoints": 303,
+              "competitionCount": 1,
+              "bestRank": 3,
+              "avgPoints": 303,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 303,
+                  "rank": 3
+                }
+              ]
+            },
+            {
+              "rank": 7,
               "athleteId": "cmjzpdkqe00k3bfhoo18nnq3z",
               "athleteName": "李昊汐",
               "team": "西安热雪奇迹",
@@ -1124,7 +2471,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 5,
+              "rank": 8,
+              "athleteId": "athlete_顾欣蕊_上海市静安区滑雪协会",
+              "athleteName": "顾欣蕊",
+              "team": "上海市静安区滑雪协会",
+              "totalPoints": 280,
+              "competitionCount": 1,
+              "bestRank": 4,
+              "avgPoints": 280,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 280,
+                  "rank": 4
+                }
+              ]
+            },
+            {
+              "rank": 9,
               "athleteId": "cmjzpdkq400jubfhoejwo7naf",
               "athleteName": "罗暄晴",
               "team": "成都热雪奇迹",
@@ -1145,7 +2513,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 6,
+              "rank": 10,
+              "athleteId": "athlete_张曦安_零度竞技吉林省零下壹",
+              "athleteName": "张曦安",
+              "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
+              "totalPoints": 260,
+              "competitionCount": 1,
+              "bestRank": 5,
+              "avgPoints": 260,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 260,
+                  "rank": 5
+                }
+              ]
+            },
+            {
+              "rank": 11,
               "athleteId": "cmjzpdkqi00k6bfhotz0ghplg",
               "athleteName": "吴玟颐",
               "team": "华发冰雪热雪奇迹",
@@ -1166,7 +2555,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 7,
+              "rank": 12,
+              "athleteId": "athlete_路钧惠_延庆区体育局",
+              "athleteName": "路钧惠",
+              "team": "延庆区体育局",
+              "totalPoints": 242,
+              "competitionCount": 1,
+              "bestRank": 6,
+              "avgPoints": 242,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 242,
+                  "rank": 6
+                }
+              ]
+            },
+            {
+              "rank": 13,
               "athleteId": "cmjzpdkql00k9bfhodvj2cshf",
               "athleteName": "卢彦伊",
               "team": "成都热雪奇迹",
@@ -1185,9 +2595,93 @@ export const totalRankingsData: TotalRankingsData = {
                   "rank": 7
                 }
               ]
+            },
+            {
+              "rank": 14,
+              "athleteId": "athlete_田芷郡_山域竞技体育工作室",
+              "athleteName": "田芷郡",
+              "team": "山域竞技体育工作室",
+              "totalPoints": 226,
+              "competitionCount": 1,
+              "bestRank": 7,
+              "avgPoints": 226,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 226,
+                  "rank": 7
+                }
+              ]
+            },
+            {
+              "rank": 15,
+              "athleteId": "athlete_崔凯淇_山域竞技体育工作室",
+              "athleteName": "崔凯淇",
+              "team": "山域竞技体育工作室",
+              "totalPoints": 212,
+              "competitionCount": 1,
+              "bestRank": 8,
+              "avgPoints": 212,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 212,
+                  "rank": 8
+                }
+              ]
+            },
+            {
+              "rank": 16,
+              "athleteId": "athlete_韩侨安_竞禹体育",
+              "athleteName": "韩侨安",
+              "team": "竞禹体育",
+              "totalPoints": 199,
+              "competitionCount": 1,
+              "bestRank": 9,
+              "avgPoints": 199,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 199,
+                  "rank": 9
+                }
+              ]
+            },
+            {
+              "rank": 17,
+              "athleteId": "athlete_魏子澄_本溪全明星滑雪学校",
+              "athleteName": "魏子澄",
+              "team": "本溪全明星滑雪学校",
+              "totalPoints": 187,
+              "competitionCount": 1,
+              "bestRank": 10,
+              "avgPoints": 187,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 187,
+                  "rank": 10
+                }
+              ]
             }
           ],
-          "total": 7
+          "total": 17
         },
         {
           "discipline": "大回转",
@@ -1197,6 +2691,33 @@ export const totalRankingsData: TotalRankingsData = {
           "rankings": [
             {
               "rank": 1,
+              "athleteId": "cmjzpdkri00l3bfhogfhne4tr",
+              "athleteName": "肖瑞林",
+              "team": "重庆市冬季运动管理中心",
+              "totalPoints": 446,
+              "competitionCount": 2,
+              "bestRank": 4,
+              "avgPoints": 223,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 280,
+                  "rank": 4
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 166,
+                  "rank": 12
+                }
+              ]
+            },
+            {
+              "rank": 2,
               "athleteId": "cmjzpdkrp00l9bfhoebj1petm",
               "athleteName": "黄子歌",
               "team": "四川体育职业学院",
@@ -1217,7 +2738,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 2,
+              "rank": 3,
+              "athleteId": "athlete_王梓墨_四川体育职业学院",
+              "athleteName": "王梓墨",
+              "team": "四川体育职业学院",
+              "totalPoints": 360,
+              "competitionCount": 1,
+              "bestRank": 1,
+              "avgPoints": 360,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 360,
+                  "rank": 1
+                }
+              ]
+            },
+            {
+              "rank": 4,
               "athleteId": "cmjzpdkul00nybfhosbxa0gbd",
               "athleteName": "张芝豪",
               "team": "河北省体育局冬季运动中心",
@@ -1238,7 +2780,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 3,
+              "rank": 5,
+              "athleteId": "athlete_盛嗣垚_张家口辰鹏体育发展有",
+              "athleteName": "盛嗣垚",
+              "team": "张家口辰鹏体育发展有限公司",
+              "totalPoints": 329,
+              "competitionCount": 1,
+              "bestRank": 2,
+              "avgPoints": 329,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 329,
+                  "rank": 2
+                }
+              ]
+            },
+            {
+              "rank": 6,
               "athleteId": "cmjzpdkrm00l6bfho179zhn19",
               "athleteName": "刘彦钧凯",
               "team": "河北省体育局冬季运动中心",
@@ -1259,10 +2822,31 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 4,
-              "athleteId": "cmjzpdkri00l3bfhogfhne4tr",
-              "athleteName": "肖瑞林",
-              "team": "重庆市冬季运动管理中心",
+              "rank": 7,
+              "athleteId": "athlete_丁天睿_山域竞技体育工作室",
+              "athleteName": "丁天睿",
+              "team": "山域竞技体育工作室",
+              "totalPoints": 303,
+              "competitionCount": 1,
+              "bestRank": 3,
+              "avgPoints": 303,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 303,
+                  "rank": 3
+                }
+              ]
+            },
+            {
+              "rank": 8,
+              "athleteId": "athlete_郭轩烨_张家口辰鹏体育发展有",
+              "athleteName": "郭轩烨",
+              "team": "张家口辰鹏体育发展有限公司",
               "totalPoints": 280,
               "competitionCount": 1,
               "bestRank": 4,
@@ -1272,15 +2856,15 @@ export const totalRankingsData: TotalRankingsData = {
               "rankChange": null,
               "pointsBreakdown": [
                 {
-                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
                   "points": 280,
                   "rank": 4
                 }
               ]
             },
             {
-              "rank": 5,
+              "rank": 9,
               "athleteId": "cmjzpdkrw00lfbfhonz2a0d3b",
               "athleteName": "吕浩源",
               "team": "河北省体育局冬季运动中心",
@@ -1301,7 +2885,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 6,
+              "rank": 10,
+              "athleteId": "athlete_韩以乐_竞禹体育",
+              "athleteName": "韩以乐",
+              "team": "竞禹体育",
+              "totalPoints": 260,
+              "competitionCount": 1,
+              "bestRank": 5,
+              "avgPoints": 260,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 260,
+                  "rank": 5
+                }
+              ]
+            },
+            {
+              "rank": 11,
               "athleteId": "cmjzpdks000libfhouk369qbh",
               "athleteName": "林朗",
               "team": "哈尔滨热雪奇迹",
@@ -1322,7 +2927,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 7,
+              "rank": 12,
+              "athleteId": "athlete_贾梓瑞_远东东重庆体育文化发",
+              "athleteName": "贾梓瑞",
+              "team": "远东东（重庆）体育文化发展有限公司",
+              "totalPoints": 242,
+              "competitionCount": 1,
+              "bestRank": 6,
+              "avgPoints": 242,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 242,
+                  "rank": 6
+                }
+              ]
+            },
+            {
+              "rank": 13,
               "athleteId": "cmjzpdkrt00lcbfhofvlcdm8r",
               "athleteName": "王梓丞",
               "team": "重庆市冬季运动管理中心",
@@ -1343,7 +2969,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 8,
+              "rank": 14,
+              "athleteId": "athlete_田芷源_长春市朝阳区山域竞技",
+              "athleteName": "田芷源",
+              "team": "长春市朝阳区山域竞技体育工作室",
+              "totalPoints": 226,
+              "competitionCount": 1,
+              "bestRank": 7,
+              "avgPoints": 226,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 226,
+                  "rank": 7
+                }
+              ]
+            },
+            {
+              "rank": 15,
               "athleteId": "cmjzpdkuz00obbfho0os6d2tq",
               "athleteName": "肖辰俊熙",
               "team": "成都热雪奇迹",
@@ -1364,7 +3011,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 9,
+              "rank": 16,
+              "athleteId": "athlete_林子辰_重庆市冬季运动管理中",
+              "athleteName": "林子辰",
+              "team": "重庆市冬季运动管理中心1队",
+              "totalPoints": 212,
+              "competitionCount": 1,
+              "bestRank": 8,
+              "avgPoints": 212,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 212,
+                  "rank": 8
+                }
+              ]
+            },
+            {
+              "rank": 17,
               "athleteId": "cmjzpdkv200oebfhojl3ujfok",
               "athleteName": "何心远",
               "team": "成都热雪奇迹",
@@ -1383,9 +3051,177 @@ export const totalRankingsData: TotalRankingsData = {
                   "rank": 9
                 }
               ]
+            },
+            {
+              "rank": 18,
+              "athleteId": "athlete_马照然_大连奥萨体育文化有限",
+              "athleteName": "马照然",
+              "team": "大连奥萨体育文化有限公司",
+              "totalPoints": 199,
+              "competitionCount": 1,
+              "bestRank": 9,
+              "avgPoints": 199,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 199,
+                  "rank": 9
+                }
+              ]
+            },
+            {
+              "rank": 19,
+              "athleteId": "athlete_王景亮_广州热雪奇迹文化体育",
+              "athleteName": "王景亮",
+              "team": "广州热雪奇迹文化体育发展有限公司",
+              "totalPoints": 187,
+              "competitionCount": 1,
+              "bestRank": 10,
+              "avgPoints": 187,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 187,
+                  "rank": 10
+                }
+              ]
+            },
+            {
+              "rank": 20,
+              "athleteId": "athlete_邵楷同_广州热雪奇迹",
+              "athleteName": "邵楷同",
+              "team": "广州热雪奇迹",
+              "totalPoints": 176,
+              "competitionCount": 1,
+              "bestRank": 10,
+              "avgPoints": 176,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 176,
+                  "rank": 10
+                }
+              ]
+            },
+            {
+              "rank": 21,
+              "athleteId": "athlete_张博智_张家口辰鹏体育发展有",
+              "athleteName": "张博智",
+              "team": "张家口辰鹏体育发展有限公司",
+              "totalPoints": 157,
+              "competitionCount": 1,
+              "bestRank": 13,
+              "avgPoints": 157,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 157,
+                  "rank": 13
+                }
+              ]
+            },
+            {
+              "rank": 22,
+              "athleteId": "athlete_蒋骐阳_兰州碧桂园学校",
+              "athleteName": "蒋骐阳",
+              "team": "兰州碧桂园学校",
+              "totalPoints": 149,
+              "competitionCount": 1,
+              "bestRank": 14,
+              "avgPoints": 149,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 149,
+                  "rank": 14
+                }
+              ]
+            },
+            {
+              "rank": 23,
+              "athleteId": "athlete_岳皓宇_个人",
+              "athleteName": "岳皓宇",
+              "team": "个人",
+              "totalPoints": 141,
+              "competitionCount": 1,
+              "bestRank": 15,
+              "avgPoints": 141,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 141,
+                  "rank": 15
+                }
+              ]
+            },
+            {
+              "rank": 24,
+              "athleteId": "athlete_刘宸宇_福建省冰雪运动协会",
+              "athleteName": "刘宸宇",
+              "team": "福建省冰雪运动协会",
+              "totalPoints": 134,
+              "competitionCount": 1,
+              "bestRank": 16,
+              "avgPoints": 134,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 134,
+                  "rank": 16
+                }
+              ]
+            },
+            {
+              "rank": 25,
+              "athleteId": "athlete_龙思祺_广州雪迹文化体育发展",
+              "athleteName": "龙思祺",
+              "team": "广州雪迹文化体育发展有限公司",
+              "totalPoints": 127,
+              "competitionCount": 1,
+              "bestRank": 17,
+              "avgPoints": 127,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 127,
+                  "rank": 17
+                }
+              ]
             }
           ],
-          "total": 9
+          "total": 25
         },
         {
           "discipline": "大回转",
@@ -1398,10 +3234,10 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkr100kobfhorssp9cun",
               "athleteName": "张雨馨",
               "team": "四川体育职业学院",
-              "totalPoints": 360,
-              "competitionCount": 1,
+              "totalPoints": 663,
+              "competitionCount": 2,
               "bestRank": 1,
-              "avgPoints": 360,
+              "avgPoints": 331.5,
               "ageGroup": "U15",
               "gender": "女子组",
               "rankChange": null,
@@ -1411,11 +3247,38 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "成都热雪奇迹室内滑雪场",
                   "points": 360,
                   "rank": 1
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 303,
+                  "rank": 3
                 }
               ]
             },
             {
               "rank": 2,
+              "athleteId": "athlete_陈玥潞_张家口辰鹏体育发展有",
+              "athleteName": "陈玥潞",
+              "team": "张家口辰鹏体育发展有限公司",
+              "totalPoints": 360,
+              "competitionCount": 1,
+              "bestRank": 1,
+              "avgPoints": 360,
+              "ageGroup": "U15",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 360,
+                  "rank": 1
+                }
+              ]
+            },
+            {
+              "rank": 3,
               "athleteId": "cmjzpdkr800kubfho15rzjdm7",
               "athleteName": "罗梓瑜",
               "team": "河北省体育局冬季运动中心",
@@ -1436,7 +3299,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 3,
+              "rank": 4,
+              "athleteId": "athlete_杨玉涵_吉林坤伦滑雪俱乐部",
+              "athleteName": "杨玉涵",
+              "team": "吉林坤伦滑雪俱乐部",
+              "totalPoints": 329,
+              "competitionCount": 1,
+              "bestRank": 2,
+              "avgPoints": 329,
+              "ageGroup": "U15",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 329,
+                  "rank": 2
+                }
+              ]
+            },
+            {
+              "rank": 5,
               "athleteId": "cmjzpdkr500krbfhoaxpqfzp4",
               "athleteName": "杨子骞",
               "team": "河北省体育局冬季运动中心",
@@ -1457,7 +3341,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 4,
+              "rank": 6,
               "athleteId": "cmjzpdkue00nrbfhoad1f9vqw",
               "athleteName": "叶涵汐",
               "team": "成都热雪奇迹",
@@ -1478,7 +3362,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 5,
+              "rank": 7,
               "athleteId": "cmjzpdkrb00kxbfhoqtbsgmzj",
               "athleteName": "张雅琪",
               "team": "河北省体育局冬季运动中心",
@@ -1499,7 +3383,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             }
           ],
-          "total": 5
+          "total": 7
         },
         {
           "discipline": "大回转",
@@ -1512,10 +3396,10 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkpd00j9bfho5ceqs1fb",
               "athleteName": "王润钰",
               "team": "张家口乔与杨体育服务有限公司",
-              "totalPoints": 360,
-              "competitionCount": 1,
+              "totalPoints": 689,
+              "competitionCount": 2,
               "bestRank": 1,
-              "avgPoints": 360,
+              "avgPoints": 344.5,
               "ageGroup": "U18",
               "gender": "男子组",
               "rankChange": null,
@@ -1525,11 +3409,146 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "成都热雪奇迹室内滑雪场",
                   "points": 360,
                   "rank": 1
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 329,
+                  "rank": 2
                 }
               ]
             },
             {
               "rank": 2,
+              "athleteId": "cmjzpdksr00m8bfhorh0gxvtl",
+              "athleteName": "李彦博",
+              "team": "四川体育职业学院",
+              "totalPoints": 563,
+              "competitionCount": 2,
+              "bestRank": 3,
+              "avgPoints": 281.5,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 260,
+                  "rank": 5
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 303,
+                  "rank": 3
+                }
+              ]
+            },
+            {
+              "rank": 3,
+              "athleteId": "cmjzpdkp000ixbfhoom4nz6ao",
+              "athleteName": "王阳明",
+              "team": "张家口乔与杨体育服务有限公司",
+              "totalPoints": 506,
+              "competitionCount": 2,
+              "bestRank": 4,
+              "avgPoints": 253,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 280,
+                  "rank": 4
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 226,
+                  "rank": 7
+                }
+              ]
+            },
+            {
+              "rank": 4,
+              "athleteId": "cmjzpdkph00jcbfho8tsz6f9a",
+              "athleteName": "左子正",
+              "team": "左子正",
+              "totalPoints": 486,
+              "competitionCount": 2,
+              "bestRank": 5,
+              "avgPoints": 243,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 226,
+                  "rank": 7
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 260,
+                  "rank": 5
+                }
+              ]
+            },
+            {
+              "rank": 5,
+              "athleteId": "cmjzpdkpk00jfbfhoiy6rykkw",
+              "athleteName": "常冠廷",
+              "team": "吉林市丰满区滑雪协会",
+              "totalPoints": 424,
+              "competitionCount": 2,
+              "bestRank": 8,
+              "avgPoints": 212,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 212,
+                  "rank": 8
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 212,
+                  "rank": 8
+                }
+              ]
+            },
+            {
+              "rank": 6,
+              "athleteId": "athlete_王正政_张家口乔与杨体育服务",
+              "athleteName": "王正政",
+              "team": "张家口乔与杨体育服务有限公司",
+              "totalPoints": 360,
+              "competitionCount": 1,
+              "bestRank": 1,
+              "avgPoints": 360,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 360,
+                  "rank": 1
+                }
+              ]
+            },
+            {
+              "rank": 7,
               "athleteId": "cmjzpdkp700j3bfhoni6zgejk",
               "athleteName": "高琦硕",
               "team": "高峰",
@@ -1550,7 +3569,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 3,
+              "rank": 8,
               "athleteId": "cmjzpdkpa00j6bfholp1nby8r",
               "athleteName": "郭一远",
               "team": "河北省体育局冬季运动中心",
@@ -1571,10 +3590,10 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 4,
-              "athleteId": "cmjzpdkp000ixbfhoom4nz6ao",
-              "athleteName": "王阳明",
-              "team": "张家口乔与杨体育服务有限公司",
+              "rank": 9,
+              "athleteId": "athlete_明泳桐_张家口辰鹏体育发展有",
+              "athleteName": "明泳桐",
+              "team": "张家口辰鹏体育发展有限公司",
               "totalPoints": 280,
               "competitionCount": 1,
               "bestRank": 4,
@@ -1584,36 +3603,15 @@ export const totalRankingsData: TotalRankingsData = {
               "rankChange": null,
               "pointsBreakdown": [
                 {
-                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
                   "points": 280,
                   "rank": 4
                 }
               ]
             },
             {
-              "rank": 5,
-              "athleteId": "cmjzpdksr00m8bfhorh0gxvtl",
-              "athleteName": "李彦博",
-              "team": "四川体育职业学院",
-              "totalPoints": 260,
-              "competitionCount": 1,
-              "bestRank": 5,
-              "avgPoints": 260,
-              "ageGroup": "U18",
-              "gender": "男子组",
-              "rankChange": null,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
-                  "points": 260,
-                  "rank": 5
-                }
-              ]
-            },
-            {
-              "rank": 6,
+              "rank": 10,
               "athleteId": "cmjzpdkp300j0bfhohn94zbb3",
               "athleteName": "艾思铭",
               "team": "张家口乔与杨体育服务有限公司",
@@ -1634,49 +3632,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 7,
-              "athleteId": "cmjzpdkph00jcbfho8tsz6f9a",
-              "athleteName": "左子正",
-              "team": "左子正",
-              "totalPoints": 226,
+              "rank": 11,
+              "athleteId": "athlete_鞠沐辰_济南市皇亭竞技体育学",
+              "athleteName": "鞠沐辰",
+              "team": "济南市皇亭竞技体育学校",
+              "totalPoints": 242,
               "competitionCount": 1,
-              "bestRank": 7,
-              "avgPoints": 226,
+              "bestRank": 6,
+              "avgPoints": 242,
               "ageGroup": "U18",
               "gender": "男子组",
               "rankChange": null,
               "pointsBreakdown": [
                 {
-                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
-                  "points": 226,
-                  "rank": 7
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 242,
+                  "rank": 6
                 }
               ]
             },
             {
-              "rank": 8,
-              "athleteId": "cmjzpdkpk00jfbfhoiy6rykkw",
-              "athleteName": "常冠廷",
-              "team": "吉林市丰满区滑雪协会",
-              "totalPoints": 212,
-              "competitionCount": 1,
-              "bestRank": 8,
-              "avgPoints": 212,
-              "ageGroup": "U18",
-              "gender": "男子组",
-              "rankChange": null,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
-                  "points": 212,
-                  "rank": 8
-                }
-              ]
-            },
-            {
-              "rank": 9,
+              "rank": 12,
               "athleteId": "cmjzpdksz00mhbfhojzwb0bac",
               "athleteName": "李京和",
               "team": "个人",
@@ -1697,7 +3674,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 10,
+              "rank": 13,
+              "athleteId": "athlete_谭皓阳_个人高峰",
+              "athleteName": "谭皓阳",
+              "team": "个人（高峰）",
+              "totalPoints": 199,
+              "competitionCount": 1,
+              "bestRank": 9,
+              "avgPoints": 199,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 199,
+                  "rank": 9
+                }
+              ]
+            },
+            {
+              "rank": 14,
               "athleteId": "cmjzpdkt300mkbfhogytw8qz1",
               "athleteName": "熊泽瑞",
               "team": "张家口乔与杨体育服务有限公司",
@@ -1716,9 +3714,30 @@ export const totalRankingsData: TotalRankingsData = {
                   "rank": 10
                 }
               ]
+            },
+            {
+              "rank": 15,
+              "athleteId": "athlete_戴文研_个人",
+              "athleteName": "戴文研",
+              "team": "个人",
+              "totalPoints": 187,
+              "competitionCount": 1,
+              "bestRank": 10,
+              "avgPoints": 187,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 187,
+                  "rank": 10
+                }
+              ]
             }
           ],
-          "total": 10
+          "total": 15
         },
         {
           "discipline": "大回转",
@@ -1728,6 +3747,33 @@ export const totalRankingsData: TotalRankingsData = {
           "rankings": [
             {
               "rank": 1,
+              "athleteId": "cmjzpdks900lrbfho41ykduoi",
+              "athleteName": "周昱含",
+              "team": "沈阳王伟滑雪管理咨询服务有限公司",
+              "totalPoints": 583,
+              "competitionCount": 2,
+              "bestRank": 3,
+              "avgPoints": 291.5,
+              "ageGroup": "U18",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 280,
+                  "rank": 4
+                },
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 303,
+                  "rank": 3
+                }
+              ]
+            },
+            {
+              "rank": 2,
               "athleteId": "cmjzpdkop00iobfhokthvam34",
               "athleteName": "李金润",
               "team": "四川体育职业学院",
@@ -1748,7 +3794,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 2,
+              "rank": 3,
+              "athleteId": "athlete_孙若涵_延庆区体育局",
+              "athleteName": "孙若涵",
+              "team": "延庆区体育局",
+              "totalPoints": 360,
+              "competitionCount": 1,
+              "bestRank": 1,
+              "avgPoints": 360,
+              "ageGroup": "U18",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 360,
+                  "rank": 1
+                }
+              ]
+            },
+            {
+              "rank": 4,
               "athleteId": "cmjzpdkow00iubfhojkdi817d",
               "athleteName": "庞予涵",
               "team": "张家口乔与杨体育服务有限公司",
@@ -1769,7 +3836,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 3,
+              "rank": 5,
+              "athleteId": "athlete_王胜婕_葫小芦北京体育有限公",
+              "athleteName": "王胜婕",
+              "team": "葫小芦（北京）体育有限公司",
+              "totalPoints": 329,
+              "competitionCount": 1,
+              "bestRank": 2,
+              "avgPoints": 329,
+              "ageGroup": "U18",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 329,
+                  "rank": 2
+                }
+              ]
+            },
+            {
+              "rank": 6,
               "athleteId": "cmjzpdkot00irbfhoyhtlvzya",
               "athleteName": "杨蓝戈",
               "team": "个人",
@@ -1790,10 +3878,10 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 4,
-              "athleteId": "cmjzpdks900lrbfho41ykduoi",
-              "athleteName": "周昱含",
-              "team": "沈阳王伟滑雪管理咨询服务有限公司",
+              "rank": 7,
+              "athleteId": "athlete_邱心悦_葫小芦北京体育有限公",
+              "athleteName": "邱心悦",
+              "team": "葫小芦（北京）体育有限公司",
               "totalPoints": 280,
               "competitionCount": 1,
               "bestRank": 4,
@@ -1803,15 +3891,15 @@ export const totalRankingsData: TotalRankingsData = {
               "rankChange": null,
               "pointsBreakdown": [
                 {
-                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
                   "points": 280,
                   "rank": 4
                 }
               ]
             },
             {
-              "rank": 5,
+              "rank": 8,
               "athleteId": "cmjzpdksc00lubfho18uchde6",
               "athleteName": "杨睿怡",
               "team": "华发冰雪热雪奇迹",
@@ -1832,7 +3920,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 6,
+              "rank": 9,
+              "athleteId": "athlete_龚信水_重庆市冬季运动管理中",
+              "athleteName": "龚信水",
+              "team": "重庆市冬季运动管理中心1队",
+              "totalPoints": 260,
+              "competitionCount": 1,
+              "bestRank": 5,
+              "avgPoints": 260,
+              "ageGroup": "U18",
+              "gender": "女子组",
+              "rankChange": null,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+                  "location": "吉林省吉林市",
+                  "points": 260,
+                  "rank": 5
+                }
+              ]
+            },
+            {
+              "rank": 10,
               "athleteId": "cmjzpdksg00lxbfhopa5j9xjd",
               "athleteName": "刘子歌",
               "team": "张家口乔与杨体育服务有限公司",
@@ -1853,10 +3962,10 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             }
           ],
-          "total": 6
+          "total": 10
         }
       ],
-      "total": 80
+      "total": 175
     },
     {
       "sportType": "snowboard-slopestyle-bigair",
@@ -14282,6 +16391,60 @@ export const totalRankingsData: TotalRankingsData = {
   "rankings": [
     {
       "rank": 1,
+      "athleteId": "cmjzpdkqp00kcbfho4at9jl9k",
+      "athleteName": "赵酌",
+      "team": "四川体育职业学院",
+      "totalPoints": 720,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 360,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 360,
+          "rank": 1
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 360,
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "athleteId": "cmjzpdkqp00kcbfho4at9jl9k",
+      "athleteName": "赵酌",
+      "team": "四川体育职业学院",
+      "totalPoints": 720,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 360,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 360,
+          "rank": 1
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 360,
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "rank": 3,
       "athleteId": "cmjzpdkm300gibfhob9a22der",
       "athleteName": "刘翰泽",
       "team": "个人",
@@ -14308,7 +16471,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 2,
+      "rank": 4,
       "athleteId": "cmjzpdkkt00fobfhovt7it0m5",
       "athleteName": "鱼嘉怡",
       "team": "河北省体育局冬季运动中心",
@@ -14335,7 +16498,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 3,
+      "rank": 5,
       "athleteId": "cmjzpdko000i6bfho6pikfiix",
       "athleteName": "李俊辛",
       "team": "四川体育职业学院",
@@ -14362,7 +16525,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 4,
+      "rank": 6,
       "athleteId": "cmjzpdkmy00h9bfho81478919",
       "athleteName": "王恒宇",
       "team": "个人",
@@ -14389,7 +16552,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 5,
+      "rank": 7,
       "athleteId": "cmjzpdkkt00fobfhovt7it0m5",
       "athleteName": "鱼嘉怡",
       "team": "河北省体育局冬季运动中心",
@@ -14416,7 +16579,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 6,
+      "rank": 8,
       "athleteId": "athlete-封树渝-重庆市冬季运动管理中心",
       "athleteName": "封树渝",
       "team": "重庆市冬季运动管理中心",
@@ -14443,7 +16606,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 7,
+      "rank": 9,
       "athleteId": "cmjzpdkv900ohbfhojesum95s",
       "athleteName": "赵紫琪",
       "team": "四川体育职业学院",
@@ -14470,7 +16633,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 8,
+      "rank": 10,
       "athleteId": "cmjzpdkxs00qhbfhoqhlhgnkz",
       "athleteName": "周绮润",
       "team": "个人",
@@ -14497,7 +16660,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 9,
+      "rank": 11,
+      "athleteId": "cmjzpdkpd00j9bfho5ceqs1fb",
+      "athleteName": "王润钰",
+      "team": "张家口乔与杨体育服务有限公司",
+      "totalPoints": 689,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 344.5,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 360,
+          "rank": 1
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 329,
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 12,
       "athleteId": "cmjzpdkm300gibfhob9a22der",
       "athleteName": "刘翰泽",
       "team": "个人",
@@ -14524,7 +16714,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 10,
+      "rank": 13,
       "athleteId": "cmjzpdkwu00pqbfhojhnxffpm",
       "athleteName": "常嘉林",
       "team": "广西射击射箭运动发展中心",
@@ -14551,7 +16741,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 11,
+      "rank": 14,
       "athleteId": "cmjzpdkwu00pqbfhojhnxffpm",
       "athleteName": "常嘉林",
       "team": "广西射击射箭运动发展中心",
@@ -14578,7 +16768,88 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 12,
+      "rank": 15,
+      "athleteId": "cmjzpdkr100kobfhorssp9cun",
+      "athleteName": "张雨馨",
+      "team": "四川体育职业学院",
+      "totalPoints": 663,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 331.5,
+      "ageGroup": "U15",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 360,
+          "rank": 1
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 303,
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "athleteId": "cmjzpdkp000ixbfhoom4nz6ao",
+      "athleteName": "王阳明",
+      "team": "张家口乔与杨体育服务有限公司",
+      "totalPoints": 663,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 331.5,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 360,
+          "rank": 1
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 303,
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "athleteId": "cmjzpdkr100kobfhorssp9cun",
+      "athleteName": "张雨馨",
+      "team": "四川体育职业学院",
+      "totalPoints": 663,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 331.5,
+      "ageGroup": "U15",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 360,
+          "rank": 1
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 303,
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "rank": 18,
       "athleteId": "cmjzpdkjq00f0bfho7lddp0tk",
       "athleteName": "牛安芷芸",
       "team": "个人",
@@ -14605,7 +16876,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 13,
+      "rank": 19,
       "athleteId": "athlete-谭凯元-个人",
       "athleteName": "谭凯元",
       "team": "个人",
@@ -14632,7 +16903,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 14,
+      "rank": 20,
       "athleteId": "cmjzpdkzu00s5bfhojnktcfby",
       "athleteName": "高梓曦",
       "team": "个人",
@@ -14659,7 +16930,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 15,
+      "rank": 21,
       "athleteId": "cmjzpdkwz00ptbfho9l5fo4g2",
       "athleteName": "张墨凡",
       "team": "北京市冬季运动管理中心",
@@ -14686,7 +16957,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 16,
+      "rank": 22,
       "athleteId": "cmjzpdkmy00h9bfho81478919",
       "athleteName": "王恒宇",
       "team": "个人",
@@ -14713,7 +16984,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 17,
+      "rank": 23,
       "athleteId": "cmjzpdkvn00otbfho8ze6lnnz",
       "athleteName": "李诗沫",
       "team": "石家庄市冰雪与足球运动中心",
@@ -14740,7 +17011,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 18,
+      "rank": 24,
+      "athleteId": "cmjzpdkp700j3bfhoni6zgejk",
+      "athleteName": "高琦硕",
+      "team": "高峰",
+      "totalPoints": 632,
+      "competitionCount": 2,
+      "bestRank": 2,
+      "avgPoints": 316,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 303,
+          "rank": 3
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 329,
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 25,
       "athleteId": "athlete-封树渝-重庆市冬季运动管理中心",
       "athleteName": "封树渝",
       "team": "重庆市冬季运动管理中心",
@@ -14767,7 +17065,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 19,
+      "rank": 26,
       "athleteId": "cmjzpdkn100hcbfho2br834hq",
       "athleteName": "袁梓程",
       "team": "四川体育职业学院",
@@ -14794,7 +17092,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 20,
+      "rank": 27,
       "athleteId": "cmjzpdkwz00ptbfho9l5fo4g2",
       "athleteName": "张墨凡",
       "team": "北京市冬季运动管理中心",
@@ -14821,7 +17119,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 21,
+      "rank": 28,
       "athleteId": "cmjzpdkzu00s5bfhojnktcfby",
       "athleteName": "高梓曦",
       "team": "个人",
@@ -14848,7 +17146,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 22,
+      "rank": 29,
       "athleteId": "cmjzpdkjm00exbfhon8q764e7",
       "athleteName": "孙嘉怡",
       "team": "河北省体育局冬季运动中心",
@@ -14875,7 +17173,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 23,
+      "rank": 30,
+      "athleteId": "cmjzpdkqs00kfbfhoekaf7a8k",
+      "athleteName": "竹禹丞",
+      "team": "成都热雪奇迹",
+      "totalPoints": 609,
+      "competitionCount": 2,
+      "bestRank": 2,
+      "avgPoints": 304.5,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 280,
+          "rank": 4
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 329,
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 31,
       "athleteId": "cmjzpdkjm00exbfhon8q764e7",
       "athleteName": "孙嘉怡",
       "team": "河北省体育局冬季运动中心",
@@ -14902,7 +17227,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 24,
+      "rank": 32,
       "athleteId": "cmjzpdkm700glbfhoigv6cvu9",
       "athleteName": "王祖安",
       "team": "河南省体育局",
@@ -14929,7 +17254,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 25,
+      "rank": 33,
       "athleteId": "cmjzpdkl100fubfho8tg9xa1r",
       "athleteName": "杨可轩",
       "team": "广西射击射箭运动发展中心",
@@ -14956,7 +17281,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 26,
+      "rank": 34,
       "athleteId": "cmjzpdko400i9bfhoakuixeat",
       "athleteName": "米馥豪",
       "team": "石家庄市冰雪与足球运动中心",
@@ -14983,7 +17308,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 27,
+      "rank": 35,
       "athleteId": "cmjzpdkn100hcbfho2br834hq",
       "athleteName": "袁梓程",
       "team": "四川体育职业学院",
@@ -15010,7 +17335,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 28,
+      "rank": 36,
       "athleteId": "cmjzpdkme00grbfhokxgnro49",
       "athleteName": "范天成",
       "team": "个人",
@@ -15037,7 +17362,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 29,
+      "rank": 37,
       "athleteId": "cmjzpdkyk00r5bfhoikmy4e16",
       "athleteName": "周英杰",
       "team": "四川体育职业学院",
@@ -15064,7 +17389,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 30,
+      "rank": 38,
       "athleteId": "cmjzpdkyk00r5bfhoikmy4e16",
       "athleteName": "周英杰",
       "team": "四川体育职业学院",
@@ -15091,7 +17416,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 31,
+      "rank": 39,
+      "athleteId": "cmjzpdks900lrbfho41ykduoi",
+      "athleteName": "周昱含",
+      "team": "沈阳王伟滑雪管理咨询服务有限公司",
+      "totalPoints": 583,
+      "competitionCount": 2,
+      "bestRank": 3,
+      "avgPoints": 291.5,
+      "ageGroup": "U18",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 280,
+          "rank": 4
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 303,
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "rank": 40,
       "athleteId": "athlete-刘沐泽-个人",
       "athleteName": "刘沐泽",
       "team": "个人",
@@ -15118,7 +17470,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 32,
+      "rank": 41,
       "athleteId": "athlete-谭凯元-个人",
       "athleteName": "谭凯元",
       "team": "个人",
@@ -15145,7 +17497,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 33,
+      "rank": 42,
       "athleteId": "cmjzpdkx200pwbfhonl48w33h",
       "athleteName": "赵铠轩",
       "team": "河南省体育局",
@@ -15172,7 +17524,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 34,
+      "rank": 43,
       "athleteId": "cmjzpdkjq00f0bfho7lddp0tk",
       "athleteName": "牛安芷芸",
       "team": "个人",
@@ -15199,7 +17551,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 35,
+      "rank": 44,
       "athleteId": "cmjzpdko000i6bfho6pikfiix",
       "athleteName": "李俊辛",
       "team": "四川体育职业学院",
@@ -15226,7 +17578,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 36,
+      "rank": 45,
       "athleteId": "cmjzpdkx200pwbfhonl48w33h",
       "athleteName": "赵铠轩",
       "team": "河南省体育局",
@@ -15253,7 +17605,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 37,
+      "rank": 46,
       "athleteId": "cmjzpdkvc00okbfhoitspibck",
       "athleteName": "王淑哲",
       "team": "河南省体育局",
@@ -15280,7 +17632,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 38,
+      "rank": 47,
+      "athleteId": "cmjzpdksr00m8bfhorh0gxvtl",
+      "athleteName": "李彦博",
+      "team": "四川体育职业学院",
+      "totalPoints": 563,
+      "competitionCount": 2,
+      "bestRank": 3,
+      "avgPoints": 281.5,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 260,
+          "rank": 5
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 303,
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "rank": 48,
       "athleteId": "cmjzpdkvn00otbfho8ze6lnnz",
       "athleteName": "李诗沫",
       "team": "石家庄市冰雪与足球运动中心",
@@ -15307,7 +17686,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 39,
+      "rank": 49,
       "athleteId": "cmjzpdkvk00oqbfhotqaedvcn",
       "athleteName": "武温暖",
       "team": "石家庄市冰雪与足球运动中心",
@@ -15334,7 +17713,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 40,
+      "rank": 50,
       "athleteId": "cmjzpdkx700pzbfholzzypp6c",
       "athleteName": "张梓童",
       "team": "河南省体育局",
@@ -15361,7 +17740,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 41,
+      "rank": 51,
+      "athleteId": "cmjzpdkq000jrbfhovq39ke3q",
+      "athleteName": "李若瑜",
+      "team": "中关村一小",
+      "totalPoints": 559,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 279.5,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 360,
+          "rank": 1
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 199,
+          "rank": 9
+        }
+      ]
+    },
+    {
+      "rank": 52,
       "athleteId": "cmjzpdkv900ohbfhojesum95s",
       "athleteName": "赵紫琪",
       "team": "四川体育职业学院",
@@ -15388,7 +17794,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 42,
+      "rank": 53,
       "athleteId": "cmjzpdkm700glbfhoigv6cvu9",
       "athleteName": "王祖安",
       "team": "河南省体育局",
@@ -15415,7 +17821,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 43,
+      "rank": 54,
       "athleteId": "cmjzpdkvz00p2bfhobxqhq2ex",
       "athleteName": "甄芝漫",
       "team": "河北省体育局冬季运动中心",
@@ -15442,7 +17848,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 44,
+      "rank": 55,
       "athleteId": "cmjzpdkx700pzbfholzzypp6c",
       "athleteName": "张梓童",
       "team": "河南省体育局",
@@ -15469,7 +17875,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 45,
+      "rank": 56,
       "athleteId": "cmjzpdky900qwbfhouv7qekds",
       "athleteName": "李明灿",
       "team": "广西射击射箭运动发展中心",
@@ -15496,7 +17902,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 46,
+      "rank": 57,
       "athleteId": "cmjzpdkvg00onbfhog8ooajnb",
       "athleteName": "任可心",
       "team": "四川体育职业学院",
@@ -15523,7 +17929,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 47,
+      "rank": 58,
+      "athleteId": "cmjzpdkp000ixbfhoom4nz6ao",
+      "athleteName": "王阳明",
+      "team": "张家口乔与杨体育服务有限公司",
+      "totalPoints": 506,
+      "competitionCount": 2,
+      "bestRank": 4,
+      "avgPoints": 253,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 280,
+          "rank": 4
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 226,
+          "rank": 7
+        }
+      ]
+    },
+    {
+      "rank": 59,
       "athleteId": "cmjzpdky200qqbfhojspykxzi",
       "athleteName": "王珠彤",
       "team": "石家庄市冰雪与足球运动中心",
@@ -15550,7 +17983,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 48,
+      "rank": 60,
       "athleteId": "cmjzpdkwi00phbfho8f0ltvne",
       "athleteName": "陈科羽",
       "team": "四川体育职业学院",
@@ -15577,7 +18010,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 49,
+      "rank": 61,
+      "athleteId": "cmjzpdkph00jcbfho8tsz6f9a",
+      "athleteName": "左子正",
+      "team": "左子正",
+      "totalPoints": 502,
+      "competitionCount": 2,
+      "bestRank": 5,
+      "avgPoints": 251,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 242,
+          "rank": 6
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 260,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "rank": 62,
       "athleteId": "cmjzpdko400i9bfhoakuixeat",
       "athleteName": "米馥豪",
       "team": "石家庄市冰雪与足球运动中心",
@@ -15604,7 +18064,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 50,
+      "rank": 63,
       "athleteId": "cmjzpdknb00hlbfhoeja6849z",
       "athleteName": "张家睿",
       "team": "四川体育职业学院",
@@ -15631,7 +18091,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 51,
+      "rank": 64,
       "athleteId": "cmjzpdkxa00q2bfhoqpmx31h0",
       "athleteName": "王俊熙",
       "team": "河南省体育局",
@@ -15658,7 +18118,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 52,
+      "rank": 65,
       "athleteId": "cmjzpdkxa00q2bfhoqpmx31h0",
       "athleteName": "王俊熙",
       "team": "河南省体育局",
@@ -15685,7 +18145,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 53,
+      "rank": 66,
       "athleteId": "cmjzpdkxv00qkbfhogyt55uun",
       "athleteName": "王珈绮",
       "team": "四川体育职业学院",
@@ -15712,7 +18172,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 54,
+      "rank": 67,
       "athleteId": "cmjzpdkvc00okbfhoitspibck",
       "athleteName": "王淑哲",
       "team": "河南省体育局",
@@ -15739,7 +18199,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 55,
+      "rank": 68,
       "athleteId": "cmjzpdkxv00qkbfhogyt55uun",
       "athleteName": "王珈绮",
       "team": "四川体育职业学院",
@@ -15766,7 +18226,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 56,
+      "rank": 69,
+      "athleteId": "cmjzpdkri00l3bfhogfhne4tr",
+      "athleteName": "肖瑞林",
+      "team": "重庆市冬季运动管理中心",
+      "totalPoints": 494,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 247,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 360,
+          "rank": 1
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 134,
+          "rank": 16
+        }
+      ]
+    },
+    {
+      "rank": 70,
       "athleteId": "cmjzpdkjw00f3bfhoswtiqk6b",
       "athleteName": "周斯言",
       "team": "个人",
@@ -15793,7 +18280,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 57,
+      "rank": 71,
+      "athleteId": "cmjzpdkph00jcbfho8tsz6f9a",
+      "athleteName": "左子正",
+      "team": "左子正",
+      "totalPoints": 486,
+      "competitionCount": 2,
+      "bestRank": 5,
+      "avgPoints": 243,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 226,
+          "rank": 7
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 260,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "rank": 72,
       "athleteId": "cmjzpdkvv00ozbfho9q5gtmko",
       "athleteName": "闫妍",
       "team": "个人",
@@ -15820,7 +18334,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 58,
+      "rank": 73,
       "athleteId": "cmjzpdkk000f6bfho8me6szz1",
       "athleteName": "张诗涵",
       "team": "石家庄市冰雪与足球运动中心",
@@ -15847,7 +18361,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 59,
+      "rank": 74,
       "athleteId": "cmjzpdkn800hibfho8h61j0ao",
       "athleteName": "刘子俊",
       "team": "四川体育职业学院",
@@ -15874,7 +18388,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 60,
+      "rank": 75,
       "athleteId": "athlete-贺舒玉-重庆市冬季运动管理中心",
       "athleteName": "贺舒玉",
       "team": "重庆市冬季运动管理中心",
@@ -15901,7 +18415,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 61,
+      "rank": 76,
       "athleteId": "cmjzpdkvk00oqbfhotqaedvcn",
       "athleteName": "武温暖",
       "team": "石家庄市冰雪与足球运动中心",
@@ -15928,7 +18442,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 62,
+      "rank": 77,
+      "athleteId": "cmjzpdkpd00j9bfho5ceqs1fb",
+      "athleteName": "王润钰",
+      "team": "张家口乔与杨体育服务有限公司",
+      "totalPoints": 472,
+      "competitionCount": 2,
+      "bestRank": 5,
+      "avgPoints": 236,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 260,
+          "rank": 5
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 212,
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "rank": 78,
       "athleteId": "cmjzpdklb00g0bfhoygeoy8ua",
       "athleteName": "赖文悦",
       "team": "四川体育职业学院",
@@ -15955,7 +18496,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 63,
+      "rank": 79,
       "athleteId": "cmjzpdkyc00qzbfhoa03c1g4b",
       "athleteName": "杨芷妍",
       "team": "四川体育职业学院",
@@ -15982,7 +18523,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 64,
+      "rank": 80,
       "athleteId": "cmjzpdkly00gfbfhof1a75ldx",
       "athleteName": "陈宇垚",
       "team": "四川体育职业学院",
@@ -16009,7 +18550,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 65,
+      "rank": 81,
       "athleteId": "cmjzpdklb00g0bfhoygeoy8ua",
       "athleteName": "赖文悦",
       "team": "四川体育职业学院",
@@ -16036,7 +18577,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 66,
+      "rank": 82,
       "athleteId": "cmjzpdkmo00h0bfho8q8f5myc",
       "athleteName": "魏子博",
       "team": "河南省体育局",
@@ -16063,7 +18604,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 67,
+      "rank": 83,
       "athleteId": "athlete-刘栩辰-重庆市冬季运动管理中心",
       "athleteName": "刘栩辰",
       "team": "重庆市冬季运动管理中心",
@@ -16090,7 +18631,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 68,
+      "rank": 84,
       "athleteId": "cmjzpdkxs00qhbfhoqhlhgnkz",
       "athleteName": "周绮润",
       "team": "个人",
@@ -16117,7 +18658,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 69,
+      "rank": 85,
       "athleteId": "cmjzpdkvv00ozbfho9q5gtmko",
       "athleteName": "闫妍",
       "team": "个人",
@@ -16144,7 +18685,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 70,
+      "rank": 86,
+      "athleteId": "cmjzpdkri00l3bfhogfhne4tr",
+      "athleteName": "肖瑞林",
+      "team": "重庆市冬季运动管理中心",
+      "totalPoints": 446,
+      "competitionCount": 2,
+      "bestRank": 4,
+      "avgPoints": 223,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 280,
+          "rank": 4
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 166,
+          "rank": 12
+        }
+      ]
+    },
+    {
+      "rank": 87,
       "athleteId": "athlete-郭彧铭-个人",
       "athleteName": "郭彧铭",
       "team": "个人",
@@ -16171,7 +18739,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 71,
+      "rank": 88,
       "athleteId": "cmjzpdknm00hubfho7bvsgi98",
       "athleteName": "梁嘉俊",
       "team": "石家庄市冰雪与足球运动中心",
@@ -16198,7 +18766,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 72,
+      "rank": 89,
       "athleteId": "cmjzpdkyc00qzbfhoa03c1g4b",
       "athleteName": "杨芷妍",
       "team": "四川体育职业学院",
@@ -16225,7 +18793,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 73,
+      "rank": 90,
       "athleteId": "cmjzpdkvg00onbfhog8ooajnb",
       "athleteName": "任可心",
       "team": "四川体育职业学院",
@@ -16252,7 +18820,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 74,
+      "rank": 91,
       "athleteId": "athlete-孙焕轲-河南省体育局",
       "athleteName": "孙焕轲",
       "team": "河南省体育局",
@@ -16279,7 +18847,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 75,
+      "rank": 92,
       "athleteId": "cmjzpdkkf00ffbfhovtl6y82z",
       "athleteName": "翟姝涵",
       "team": "北京市冬季运动管理中心",
@@ -16306,7 +18874,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 76,
+      "rank": 93,
       "athleteId": "cmjzpdkvz00p2bfhobxqhq2ex",
       "athleteName": "甄芝漫",
       "team": "河北省体育局冬季运动中心",
@@ -16333,7 +18901,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 77,
+      "rank": 94,
       "athleteId": "cmjzpdkoc00ifbfhogzsxfk2n",
       "athleteName": "黄子剑",
       "team": "湖北省武术和冬季运动管理中心",
@@ -16360,7 +18928,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 78,
+      "rank": 95,
       "athleteId": "cmjzpdknf00hobfho0vnutqs9",
       "athleteName": "高翊博",
       "team": "北京市冬季运动管理中心",
@@ -16387,7 +18955,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 79,
+      "rank": 96,
       "athleteId": "cmjzpdkog00iibfhotxzpqno2",
       "athleteName": "倪文凯",
       "team": "湖北省武术和冬季运动管理中心",
@@ -16414,7 +18982,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 80,
+      "rank": 97,
       "athleteId": "cmjzpdkw600p8bfhouhcl0616",
       "athleteName": "袁芮涵",
       "team": "河南省体育局",
@@ -16441,7 +19009,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 81,
+      "rank": 98,
+      "athleteId": "cmjzpdkpk00jfbfhoiy6rykkw",
+      "athleteName": "常冠廷",
+      "team": "吉林市丰满区滑雪协会",
+      "totalPoints": 424,
+      "competitionCount": 2,
+      "bestRank": 8,
+      "avgPoints": 212,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 212,
+          "rank": 8
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 212,
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "rank": 99,
       "athleteId": "cmjzpdkkk00fibfhornkfaegp",
       "athleteName": "蒋柠萱",
       "team": "北京市冬季运动管理中心",
@@ -16468,7 +19063,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 82,
+      "rank": 100,
       "athleteId": "athlete-刘栩辰-重庆市冬季运动管理中心",
       "athleteName": "刘栩辰",
       "team": "重庆市冬季运动管理中心",
@@ -16495,7 +19090,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 83,
+      "rank": 101,
       "athleteId": "cmjzpdky900qwbfhouv7qekds",
       "athleteName": "李明灿",
       "team": "广西射击射箭运动发展中心",
@@ -16522,7 +19117,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 84,
+      "rank": 102,
       "athleteId": "cmjzpdkzj00rwbfhoyoxomh3h",
       "athleteName": "梁跃飞",
       "team": "广西射击射箭运动发展中心",
@@ -16549,7 +19144,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 85,
+      "rank": 103,
+      "athleteId": "cmjzpdkpp00jibfho6rmhufv0",
+      "athleteName": "王冠霖",
+      "team": "吉林坤伦滑雪俱乐部",
+      "totalPoints": 411,
+      "competitionCount": 2,
+      "bestRank": 8,
+      "avgPoints": 205.5,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 212,
+          "rank": 8
+        },
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 199,
+          "rank": 9
+        }
+      ]
+    },
+    {
+      "rank": 104,
       "athleteId": "cmjzpdkwi00phbfho8f0ltvne",
       "athleteName": "陈科羽",
       "team": "四川体育职业学院",
@@ -16576,7 +19198,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 86,
+      "rank": 105,
       "athleteId": "cmjzpdkzf00rtbfhou6ca98ui",
       "athleteName": "程楚阳",
       "team": "广西射击射箭运动发展中心",
@@ -16603,7 +19225,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 87,
+      "rank": 106,
       "athleteId": "cmjzpdkzf00rtbfhou6ca98ui",
       "athleteName": "程楚阳",
       "team": "广西射击射箭运动发展中心",
@@ -16630,7 +19252,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 88,
+      "rank": 107,
       "athleteId": "cmjzpdklg00g3bfhopeqe1sgz",
       "athleteName": "周雨辰",
       "team": "广西射击射箭运动发展中心",
@@ -16657,7 +19279,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 89,
+      "rank": 108,
       "athleteId": "cmjzpdkzb00rqbfhozbj66j9r",
       "athleteName": "王冬杰",
       "team": "广西射击射箭运动发展中心",
@@ -16684,7 +19306,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 90,
+      "rank": 109,
       "athleteId": "cmjzpdky200qqbfhojspykxzi",
       "athleteName": "王珠彤",
       "team": "石家庄市冰雪与足球运动中心",
@@ -16711,7 +19333,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 91,
+      "rank": 110,
       "athleteId": "cmjzpdkmr00h3bfhom6eectsq",
       "athleteName": "石昊桐",
       "team": "北京市冬季运动管理中心",
@@ -16738,7 +19360,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 92,
+      "rank": 111,
       "athleteId": "cmjzpdkmk00gxbfho34o28xv8",
       "athleteName": "赵严诺",
       "team": "河北省体育局冬季运动中心",
@@ -16765,7 +19387,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 93,
+      "rank": 112,
       "athleteId": "cmjzpdkkf00ffbfhovtl6y82z",
       "athleteName": "翟姝涵",
       "team": "北京市冬季运动管理中心",
@@ -16792,7 +19414,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 94,
+      "rank": 113,
       "athleteId": "cmjzpdkzb00rqbfhozbj66j9r",
       "athleteName": "王冬杰",
       "team": "广西射击射箭运动发展中心",
@@ -16819,7 +19441,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 95,
+      "rank": 114,
       "athleteId": "athlete-杨茗然-个人",
       "athleteName": "杨茗然",
       "team": "个人",
@@ -16846,7 +19468,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 96,
+      "rank": 115,
       "athleteId": "cmjzpdkw600p8bfhouhcl0616",
       "athleteName": "袁芮涵",
       "team": "河南省体育局",
@@ -16873,7 +19495,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 97,
+      "rank": 116,
       "athleteId": "cmjzpdkzj00rwbfhoyoxomh3h",
       "athleteName": "梁跃飞",
       "team": "广西射击射箭运动发展中心",
@@ -16900,7 +19522,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 98,
+      "rank": 117,
       "athleteId": "athlete-王若西-重庆市冬季运动管理中心",
       "athleteName": "王若西",
       "team": "重庆市冬季运动管理中心",
@@ -16927,7 +19549,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 99,
+      "rank": 118,
       "athleteId": "cmjzpdkwf00pebfhoy6f0kq3d",
       "athleteName": "欧子娴",
       "team": "成都热雪奇迹",
@@ -16954,31 +19576,10 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 100,
-      "athleteId": "cmjzpdkqp00kcbfho4at9jl9k",
-      "athleteName": "赵酌",
-      "team": "四川体育职业学院",
-      "totalPoints": 360,
-      "competitionCount": 1,
-      "bestRank": 1,
-      "avgPoints": 360,
-      "ageGroup": "U11",
-      "gender": "男子组",
-      "rankChange": null,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 360,
-          "rank": 1
-        }
-      ]
-    },
-    {
-      "rank": 101,
-      "athleteId": "cmjzpdkq000jrbfhovq39ke3q",
-      "athleteName": "李若瑜",
-      "team": "中关村一小",
+      "rank": 119,
+      "athleteId": "athlete_钱语墨_张家口辰鹏体育发展有",
+      "athleteName": "钱语墨",
+      "team": "张家口辰鹏体育发展有限公司",
       "totalPoints": 360,
       "competitionCount": 1,
       "bestRank": 1,
@@ -16988,18 +19589,18 @@ export const totalRankingsData: TotalRankingsData = {
       "rankChange": null,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
           "points": 360,
           "rank": 1
         }
       ]
     },
     {
-      "rank": 102,
-      "athleteId": "cmjzpdkri00l3bfhogfhne4tr",
-      "athleteName": "肖瑞林",
-      "team": "重庆市冬季运动管理中心",
+      "rank": 120,
+      "athleteId": "athlete_王梓墨_四川体育职业学院",
+      "athleteName": "王梓墨",
+      "team": "四川体育职业学院",
       "totalPoints": 360,
       "competitionCount": 1,
       "bestRank": 1,
@@ -17009,18 +19610,18 @@ export const totalRankingsData: TotalRankingsData = {
       "rankChange": null,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
           "points": 360,
           "rank": 1
         }
       ]
     },
     {
-      "rank": 103,
-      "athleteId": "cmjzpdkr100kobfhorssp9cun",
-      "athleteName": "张雨馨",
-      "team": "四川体育职业学院",
+      "rank": 121,
+      "athleteId": "athlete_陈玥潞_张家口辰鹏体育发展有",
+      "athleteName": "陈玥潞",
+      "team": "张家口辰鹏体育发展有限公司",
       "totalPoints": 360,
       "competitionCount": 1,
       "bestRank": 1,
@@ -17030,17 +19631,17 @@ export const totalRankingsData: TotalRankingsData = {
       "rankChange": null,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
           "points": 360,
           "rank": 1
         }
       ]
     },
     {
-      "rank": 104,
-      "athleteId": "cmjzpdkp000ixbfhoom4nz6ao",
-      "athleteName": "王阳明",
+      "rank": 122,
+      "athleteId": "cmjzpdkt300mkbfhogytw8qz1",
+      "athleteName": "熊泽瑞",
       "team": "张家口乔与杨体育服务有限公司",
       "totalPoints": 360,
       "competitionCount": 1,
@@ -17051,15 +19652,15 @@ export const totalRankingsData: TotalRankingsData = {
       "rankChange": null,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
           "points": 360,
           "rank": 1
         }
       ]
     },
     {
-      "rank": 105,
+      "rank": 123,
       "athleteId": "cmjzpdkop00iobfhokthvam34",
       "athleteName": "李金润",
       "team": "四川体育职业学院",
@@ -17080,28 +19681,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 106,
-      "athleteId": "cmjzpdkqp00kcbfho4at9jl9k",
-      "athleteName": "赵酌",
-      "team": "四川体育职业学院",
+      "rank": 124,
+      "athleteId": "athlete_孙若涵_延庆区体育局",
+      "athleteName": "孙若涵",
+      "team": "延庆区体育局",
       "totalPoints": 360,
       "competitionCount": 1,
       "bestRank": 1,
       "avgPoints": 360,
-      "ageGroup": "U11",
-      "gender": "男子组",
+      "ageGroup": "U18",
+      "gender": "女子组",
       "rankChange": null,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
           "points": 360,
           "rank": 1
         }
       ]
     },
     {
-      "rank": 107,
+      "rank": 125,
       "athleteId": "cmjzpdkq000jrbfhovq39ke3q",
       "athleteName": "李若瑜",
       "team": "中关村一小",
@@ -17122,7 +19723,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 108,
+      "rank": 126,
+      "athleteId": "athlete_钱语墨_张家口辰鹏体育发展有",
+      "athleteName": "钱语墨",
+      "team": "张家口辰鹏体育发展有限公司",
+      "totalPoints": 360,
+      "competitionCount": 1,
+      "bestRank": 1,
+      "avgPoints": 360,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 360,
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "rank": 127,
       "athleteId": "cmjzpdkrp00l9bfhoebj1petm",
       "athleteName": "黄子歌",
       "team": "四川体育职业学院",
@@ -17143,10 +19765,31 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 109,
-      "athleteId": "cmjzpdkr100kobfhorssp9cun",
-      "athleteName": "张雨馨",
+      "rank": 128,
+      "athleteId": "athlete_王梓墨_四川体育职业学院",
+      "athleteName": "王梓墨",
       "team": "四川体育职业学院",
+      "totalPoints": 360,
+      "competitionCount": 1,
+      "bestRank": 1,
+      "avgPoints": 360,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 360,
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "rank": 129,
+      "athleteId": "athlete_陈玥潞_张家口辰鹏体育发展有",
+      "athleteName": "陈玥潞",
+      "team": "张家口辰鹏体育发展有限公司",
       "totalPoints": 360,
       "competitionCount": 1,
       "bestRank": 1,
@@ -17156,17 +19799,17 @@ export const totalRankingsData: TotalRankingsData = {
       "rankChange": null,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
           "points": 360,
           "rank": 1
         }
       ]
     },
     {
-      "rank": 110,
-      "athleteId": "cmjzpdkpd00j9bfho5ceqs1fb",
-      "athleteName": "王润钰",
+      "rank": 130,
+      "athleteId": "athlete_王正政_张家口乔与杨体育服务",
+      "athleteName": "王正政",
       "team": "张家口乔与杨体育服务有限公司",
       "totalPoints": 360,
       "competitionCount": 1,
@@ -17177,15 +19820,15 @@ export const totalRankingsData: TotalRankingsData = {
       "rankChange": null,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
           "points": 360,
           "rank": 1
         }
       ]
     },
     {
-      "rank": 111,
+      "rank": 131,
       "athleteId": "cmjzpdkop00iobfhokthvam34",
       "athleteName": "李金润",
       "team": "四川体育职业学院",
@@ -17206,7 +19849,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 112,
+      "rank": 132,
+      "athleteId": "athlete_孙若涵_延庆区体育局",
+      "athleteName": "孙若涵",
+      "team": "延庆区体育局",
+      "totalPoints": 360,
+      "competitionCount": 1,
+      "bestRank": 1,
+      "avgPoints": 360,
+      "ageGroup": "U18",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 360,
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "rank": 133,
       "athleteId": "athlete-杨舒雅-个人",
       "athleteName": "杨舒雅",
       "team": "个人",
@@ -17227,7 +19891,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 113,
+      "rank": 134,
       "athleteId": "athlete-陈松妤-个人",
       "athleteName": "陈松妤",
       "team": "个人",
@@ -17248,7 +19912,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 114,
+      "rank": 135,
       "athleteId": "cmjzpdk3v001ubfhorz5wf7hs",
       "athleteName": "王一臣",
       "team": "MAYA TEAM",
@@ -17269,7 +19933,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 115,
+      "rank": 136,
       "athleteId": "cmjzpdk120000bfhogt7ct1il",
       "athleteName": "李禹潭",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -17290,7 +19954,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 116,
+      "rank": 137,
       "athleteId": "cmjzpdkad007fbfho5yptlw6j",
       "athleteName": "高佳钇",
       "team": "速森体育",
@@ -17311,7 +19975,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 117,
+      "rank": 138,
       "athleteId": "cmjzpdk79004rbfhooqi32wqr",
       "athleteName": "邱嘉晴",
       "team": "北京虎村竞技体育有限公司",
@@ -17332,7 +19996,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 118,
+      "rank": 139,
       "athleteId": "cmjzpdkgv00cxbfhohvvnjx3w",
       "athleteName": "窦羿",
       "team": "MAYA TEAM",
@@ -17353,7 +20017,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 119,
+      "rank": 140,
       "athleteId": "cmjzpdkex00b6bfho71gr5qj3",
       "athleteName": "李妙涵",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -17374,7 +20038,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 120,
+      "rank": 141,
       "athleteId": "athlete-吴雨桐-个人",
       "athleteName": "吴雨桐",
       "team": "个人",
@@ -17395,7 +20059,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 121,
+      "rank": 142,
       "athleteId": "athlete-徐锦添-四川体育职业学院",
       "athleteName": "徐锦添",
       "team": "四川体育职业学院",
@@ -17416,7 +20080,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 122,
+      "rank": 143,
       "athleteId": "cmjzpdkzy00s8bfhoiv0z32ls",
       "athleteName": "田嘉译",
       "team": "沈阳体育学院",
@@ -17437,7 +20101,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 123,
+      "rank": 144,
       "athleteId": "cmjzpdkzn00rzbfhozmvs8hx9",
       "athleteName": "夏可馨",
       "team": "河北省体育局冬季运动中心",
@@ -17458,7 +20122,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 124,
+      "rank": 145,
       "athleteId": "athlete-徐锦添-四川体育职业学院",
       "athleteName": "徐锦添",
       "team": "四川体育职业学院",
@@ -17479,7 +20143,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 125,
+      "rank": 146,
       "athleteId": "cmjzpdky600qtbfhoiwp2kmsc",
       "athleteName": "平梓涵",
       "team": "河北省体育局冬季运动中心",
@@ -17500,7 +20164,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 126,
+      "rank": 147,
       "athleteId": "athlete-马世馨-四川体育职业学院",
       "athleteName": "马世馨",
       "team": "四川体育职业学院",
@@ -17521,7 +20185,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 127,
+      "rank": 148,
       "athleteId": "cmjzpdkzy00s8bfhoiv0z32ls",
       "athleteName": "田嘉译",
       "team": "沈阳体育学院",
@@ -17542,7 +20206,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 128,
+      "rank": 149,
       "athleteId": "cmjzpdkzn00rzbfhozmvs8hx9",
       "athleteName": "夏可馨",
       "team": "河北省体育局冬季运动中心",
@@ -17563,7 +20227,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 129,
+      "rank": 150,
       "athleteId": "athlete-陈露凝-个人",
       "athleteName": "陈露凝",
       "team": "个人",
@@ -17584,7 +20248,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 130,
+      "rank": 151,
       "athleteId": "athlete-孙焕轲-河南省体育局",
       "athleteName": "孙焕轲",
       "team": "河南省体育局",
@@ -17611,7 +20275,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 131,
+      "rank": 152,
       "athleteId": "cmjzpdklq00g9bfhoyym4yvox",
       "athleteName": "周雨欣",
       "team": "广西射击射箭运动发展中心",
@@ -17638,7 +20302,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 132,
+      "rank": 153,
       "athleteId": "athlete-刘沐泽-个人",
       "athleteName": "刘沐泽",
       "team": "个人",
@@ -17665,7 +20329,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 133,
+      "rank": 154,
       "athleteId": "cmjzpdkwf00pebfhoy6f0kq3d",
       "athleteName": "欧子娴",
       "team": "成都热雪奇迹",
@@ -17692,7 +20356,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 134,
+      "rank": 155,
       "athleteId": "athlete-张钊宁-重庆市冬季运动管理中心",
       "athleteName": "张钊宁",
       "team": "重庆市冬季运动管理中心",
@@ -17719,7 +20383,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 135,
+      "rank": 156,
       "athleteId": "cmjzpdkqs00kfbfhoekaf7a8k",
       "athleteName": "竹禹丞",
       "team": "成都热雪奇迹",
@@ -17740,7 +20404,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 136,
+      "rank": 157,
+      "athleteId": "athlete_孙楚为_大连奥萨",
+      "athleteName": "孙楚为",
+      "team": "大连奥萨",
+      "totalPoints": 329,
+      "competitionCount": 1,
+      "bestRank": 2,
+      "avgPoints": 329,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 329,
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 158,
       "athleteId": "cmjzpdkq400jubfhoejwo7naf",
       "athleteName": "罗暄晴",
       "team": "成都热雪奇迹",
@@ -17761,7 +20446,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 137,
+      "rank": 159,
+      "athleteId": "athlete_顾欣蕊_上海市静安区滑雪协会",
+      "athleteName": "顾欣蕊",
+      "team": "上海市静安区滑雪协会",
+      "totalPoints": 329,
+      "competitionCount": 1,
+      "bestRank": 2,
+      "avgPoints": 329,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 329,
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 160,
       "athleteId": "cmjzpdkrm00l6bfho179zhn19",
       "athleteName": "刘彦钧凯",
       "team": "河北省体育局冬季运动中心",
@@ -17782,7 +20488,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 138,
+      "rank": 161,
+      "athleteId": "athlete_陈煜轩_大连奥萨竞技",
+      "athleteName": "陈煜轩",
+      "team": "大连奥萨竞技",
+      "totalPoints": 329,
+      "competitionCount": 1,
+      "bestRank": 2,
+      "avgPoints": 329,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 329,
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 162,
       "athleteId": "cmjzpdkr500krbfhoaxpqfzp4",
       "athleteName": "杨子骞",
       "team": "河北省体育局冬季运动中心",
@@ -17803,7 +20530,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 139,
+      "rank": 163,
+      "athleteId": "athlete_贾一诺_零度竞技吉林省零下壹",
+      "athleteName": "贾一诺",
+      "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
+      "totalPoints": 329,
+      "competitionCount": 1,
+      "bestRank": 2,
+      "avgPoints": 329,
+      "ageGroup": "U15",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 329,
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 164,
       "athleteId": "cmjzpdkp300j0bfhohn94zbb3",
       "athleteName": "艾思铭",
       "team": "张家口乔与杨体育服务有限公司",
@@ -17824,7 +20572,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 140,
+      "rank": 165,
       "athleteId": "cmjzpdkot00irbfhoyhtlvzya",
       "athleteName": "杨蓝戈",
       "team": "个人",
@@ -17845,7 +20593,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 141,
+      "rank": 166,
+      "athleteId": "cmjzpdks900lrbfho41ykduoi",
+      "athleteName": "周昱含",
+      "team": "沈阳王伟滑雪管理咨询服务有限公司",
+      "totalPoints": 329,
+      "competitionCount": 1,
+      "bestRank": 2,
+      "avgPoints": 329,
+      "ageGroup": "U18",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 329,
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 167,
       "athleteId": "cmjzpdkqv00kibfhosfplepf9",
       "athleteName": "苏一豪",
       "team": "重庆市冬季运动管理中心",
@@ -17866,7 +20635,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 142,
+      "rank": 168,
       "athleteId": "cmjzpdkqb00k0bfhow3hoof01",
       "athleteName": "蔡沛琳",
       "team": "成都热雪奇迹",
@@ -17887,7 +20656,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 143,
+      "rank": 169,
+      "athleteId": "athlete_张雨桐_个人",
+      "athleteName": "张雨桐",
+      "team": "个人",
+      "totalPoints": 329,
+      "competitionCount": 1,
+      "bestRank": 2,
+      "avgPoints": 329,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 329,
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 170,
       "athleteId": "cmjzpdkul00nybfhosbxa0gbd",
       "athleteName": "张芝豪",
       "team": "河北省体育局冬季运动中心",
@@ -17908,7 +20698,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 144,
+      "rank": 171,
+      "athleteId": "athlete_盛嗣垚_张家口辰鹏体育发展有",
+      "athleteName": "盛嗣垚",
+      "team": "张家口辰鹏体育发展有限公司",
+      "totalPoints": 329,
+      "competitionCount": 1,
+      "bestRank": 2,
+      "avgPoints": 329,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 329,
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 172,
       "athleteId": "cmjzpdkr800kubfho15rzjdm7",
       "athleteName": "罗梓瑜",
       "team": "河北省体育局冬季运动中心",
@@ -17929,7 +20740,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 145,
+      "rank": 173,
+      "athleteId": "athlete_杨玉涵_吉林坤伦滑雪俱乐部",
+      "athleteName": "杨玉涵",
+      "team": "吉林坤伦滑雪俱乐部",
+      "totalPoints": 329,
+      "competitionCount": 1,
+      "bestRank": 2,
+      "avgPoints": 329,
+      "ageGroup": "U15",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 329,
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 174,
       "athleteId": "cmjzpdkp700j3bfhoni6zgejk",
       "athleteName": "高琦硕",
       "team": "高峰",
@@ -17950,7 +20782,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 146,
+      "rank": 175,
       "athleteId": "cmjzpdkow00iubfhojkdi817d",
       "athleteName": "庞予涵",
       "team": "张家口乔与杨体育服务有限公司",
@@ -17971,7 +20803,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 147,
+      "rank": 176,
+      "athleteId": "athlete_王胜婕_葫小芦北京体育有限公",
+      "athleteName": "王胜婕",
+      "team": "葫小芦（北京）体育有限公司",
+      "totalPoints": 329,
+      "competitionCount": 1,
+      "bestRank": 2,
+      "avgPoints": 329,
+      "ageGroup": "U18",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 329,
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 177,
       "athleteId": "athlete-王瞾霖-河南省体育局",
       "athleteName": "王瞾霖",
       "team": "河南省体育局",
@@ -17992,7 +20845,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 148,
+      "rank": 178,
       "athleteId": "athlete-陈松妤-个人",
       "athleteName": "陈松妤",
       "team": "个人",
@@ -18013,7 +20866,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 149,
+      "rank": 179,
       "athleteId": "athlete-张诗蕊-四川体育职业学院",
       "athleteName": "张诗蕊",
       "team": "四川体育职业学院",
@@ -18034,7 +20887,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 150,
+      "rank": 180,
       "athleteId": "athlete-陈珉在-四川体育职业学院",
       "athleteName": "陈珉在",
       "team": "四川体育职业学院",
@@ -18055,7 +20908,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 151,
+      "rank": 181,
       "athleteId": "athlete-杨舒雅-个人",
       "athleteName": "杨舒雅",
       "team": "个人",
@@ -18076,7 +20929,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 152,
+      "rank": 182,
       "athleteId": "athlete-王浩臣-Star单板队",
       "athleteName": "王浩臣",
       "team": "Star单板队",
@@ -18097,7 +20950,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 153,
+      "rank": 183,
       "athleteId": "cmjzpdkkx00frbfhonb81p7bu",
       "athleteName": "叶欣瑞",
       "team": "四川体育职业学院",
@@ -18118,7 +20971,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 154,
+      "rank": 184,
       "athleteId": "athlete-张潇然-山西省冰雪运动中心",
       "athleteName": "张潇然",
       "team": "山西省冰雪运动中心",
@@ -18139,7 +20992,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 155,
+      "rank": 185,
       "athleteId": "athlete-陈珉在-四川体育职业学院",
       "athleteName": "陈珉在",
       "team": "四川体育职业学院",
@@ -18160,7 +21013,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 156,
+      "rank": 186,
       "athleteId": "cmjzpdk3y001xbfhocfpqhm9n",
       "athleteName": "周翎",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -18181,7 +21034,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 157,
+      "rank": 187,
       "athleteId": "cmjzpdk190003bfhodyfd3ttw",
       "athleteName": "于忱汐",
       "team": "太原市第二少年体育学校",
@@ -18202,7 +21055,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 158,
+      "rank": 188,
       "athleteId": "cmjzpdkah007ibfhoakn9j359",
       "athleteName": "陈清桦",
       "team": "MAYA TEAM",
@@ -18223,7 +21076,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 159,
+      "rank": 189,
       "athleteId": "cmjzpdk7c004ubfhoayny1i0x",
       "athleteName": "沈凌羽",
       "team": "MAYA TEAM",
@@ -18244,7 +21097,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 160,
+      "rank": 190,
       "athleteId": "cmjzpdkgy00d0bfho9vble00l",
       "athleteName": "张鑫泽",
       "team": "速森体育",
@@ -18265,7 +21118,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 161,
+      "rank": 191,
       "athleteId": "cmjzpdkf000b9bfho3gs0l1zy",
       "athleteName": "臧怡然",
       "team": "个人",
@@ -18286,7 +21139,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 162,
+      "rank": 192,
       "athleteId": "cmjzpdkyn00r8bfho5hxp5a6u",
       "athleteName": "张乔淳佑",
       "team": "河北省体育局冬季运动中心",
@@ -18307,7 +21160,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 163,
+      "rank": 193,
       "athleteId": "athlete-黄志豪-四川体育职业学院",
       "athleteName": "黄志豪",
       "team": "四川体育职业学院",
@@ -18328,7 +21181,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 164,
+      "rank": 194,
       "athleteId": "athlete-马世馨-四川体育职业学院",
       "athleteName": "马世馨",
       "team": "四川体育职业学院",
@@ -18349,7 +21202,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 165,
+      "rank": 195,
       "athleteId": "cmjzpdl0200sbbfho4oyc84yi",
       "athleteName": "孙金隆",
       "team": "河北省体育局冬季运动中心",
@@ -18370,7 +21223,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 166,
+      "rank": 196,
       "athleteId": "cmjzpdkzr00s2bfhoszo6feyy",
       "athleteName": "余思源",
       "team": "四川体育职业学院",
@@ -18391,7 +21244,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 167,
+      "rank": 197,
       "athleteId": "athlete-陈露凝-个人",
       "athleteName": "陈露凝",
       "team": "个人",
@@ -18412,7 +21265,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 168,
+      "rank": 198,
       "athleteId": "cmjzpdkyr00rbbfhon1ylf1wi",
       "athleteName": "欧阳聚勇",
       "team": "广西射击射箭运动发展中心",
@@ -18433,7 +21286,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 169,
+      "rank": 199,
       "athleteId": "athlete-黄志豪-四川体育职业学院",
       "athleteName": "黄志豪",
       "team": "四川体育职业学院",
@@ -18454,7 +21307,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 170,
+      "rank": 200,
       "athleteId": "cmjzpdkxy00qnbfhoi0fohlcs",
       "athleteName": "叶欣悦",
       "team": "四川体育职业学院",
@@ -18475,7 +21328,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 171,
+      "rank": 201,
       "athleteId": "athlete-罗优璇-河南省体育局",
       "athleteName": "罗优璇",
       "team": "河南省体育局",
@@ -18496,7 +21349,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 172,
+      "rank": 202,
       "athleteId": "cmjzpdl0900sebfhochiz1nog",
       "athleteName": "张天迈",
       "team": "河北省体育局冬季运动中心",
@@ -18517,7 +21370,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 173,
+      "rank": 203,
       "athleteId": "cmjzpdkzr00s2bfhoszo6feyy",
       "athleteName": "余思源",
       "team": "四川体育职业学院",
@@ -18538,7 +21391,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 174,
+      "rank": 204,
       "athleteId": "cmjzpdklu00gcbfhoyosgjvcs",
       "athleteName": "苏常格",
       "team": "河北省体育局冬季运动中心",
@@ -18565,7 +21418,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 175,
+      "rank": 205,
       "athleteId": "cmjzpdlbz0121bfhoofrhg803",
       "athleteName": "曾星越",
       "team": "个人",
@@ -18592,7 +21445,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 176,
+      "rank": 206,
       "athleteId": "cmjzpdkqv00kibfhosfplepf9",
       "athleteName": "苏一豪",
       "team": "重庆市冬季运动管理中心",
@@ -18613,7 +21466,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 177,
+      "rank": 207,
+      "athleteId": "athlete_安若维_个人",
+      "athleteName": "安若维",
+      "team": "个人",
+      "totalPoints": 303,
+      "competitionCount": 1,
+      "bestRank": 3,
+      "avgPoints": 303,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 303,
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "rank": 208,
       "athleteId": "cmjzpdkq700jxbfhog679cr7g",
       "athleteName": "吴凌萱",
       "team": "华发冰雪热雪奇迹",
@@ -18634,7 +21508,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 178,
+      "rank": 209,
+      "athleteId": "athlete_赵希悦_延庆区体育局",
+      "athleteName": "赵希悦",
+      "team": "延庆区体育局",
+      "totalPoints": 303,
+      "competitionCount": 1,
+      "bestRank": 3,
+      "avgPoints": 303,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 303,
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "rank": 210,
       "athleteId": "cmjzpdkrp00l9bfhoebj1petm",
       "athleteName": "黄子歌",
       "team": "四川体育职业学院",
@@ -18655,7 +21550,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 179,
+      "rank": 211,
+      "athleteId": "athlete_王俞涵_零度竞技吉林省零下壹",
+      "athleteName": "王俞涵",
+      "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
+      "totalPoints": 303,
+      "competitionCount": 1,
+      "bestRank": 3,
+      "avgPoints": 303,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 303,
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "rank": 212,
       "athleteId": "cmjzpdkr800kubfho15rzjdm7",
       "athleteName": "罗梓瑜",
       "team": "河北省体育局冬季运动中心",
@@ -18676,28 +21592,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 180,
-      "athleteId": "cmjzpdkp700j3bfhoni6zgejk",
-      "athleteName": "高琦硕",
-      "team": "高峰",
-      "totalPoints": 303,
-      "competitionCount": 1,
-      "bestRank": 3,
-      "avgPoints": 303,
-      "ageGroup": "U18",
-      "gender": "男子组",
-      "rankChange": null,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 303,
-          "rank": 3
-        }
-      ]
-    },
-    {
-      "rank": 181,
+      "rank": 213,
       "athleteId": "cmjzpdkow00iubfhojkdi817d",
       "athleteName": "庞予涵",
       "team": "张家口乔与杨体育服务有限公司",
@@ -18718,7 +21613,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 182,
+      "rank": 214,
+      "athleteId": "athlete_龚信水_重庆市冬季运动管理中",
+      "athleteName": "龚信水",
+      "team": "重庆市冬季运动管理中心1队",
+      "totalPoints": 303,
+      "competitionCount": 1,
+      "bestRank": 3,
+      "avgPoints": 303,
+      "ageGroup": "U18",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 303,
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "rank": 215,
       "athleteId": "cmjzpdkto00n5bfho4j8lt3fl",
       "athleteName": "郑捷铭",
       "team": "重庆市冬季运动管理中心",
@@ -18739,7 +21655,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 183,
+      "rank": 216,
+      "athleteId": "athlete_蒋伯阳_兰州碧桂园学校",
+      "athleteName": "蒋伯阳",
+      "team": "兰州碧桂园学校",
+      "totalPoints": 303,
+      "competitionCount": 1,
+      "bestRank": 3,
+      "avgPoints": 303,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 303,
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "rank": 217,
       "athleteId": "cmjzpdkq700jxbfhog679cr7g",
       "athleteName": "吴凌萱",
       "team": "华发冰雪热雪奇迹",
@@ -18760,7 +21697,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 184,
+      "rank": 218,
+      "athleteId": "athlete_赵希悦_延庆区体育局",
+      "athleteName": "赵希悦",
+      "team": "延庆区体育局",
+      "totalPoints": 303,
+      "competitionCount": 1,
+      "bestRank": 3,
+      "avgPoints": 303,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 303,
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "rank": 219,
       "athleteId": "cmjzpdkrm00l6bfho179zhn19",
       "athleteName": "刘彦钧凯",
       "team": "河北省体育局冬季运动中心",
@@ -18781,7 +21739,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 185,
+      "rank": 220,
+      "athleteId": "athlete_丁天睿_山域竞技体育工作室",
+      "athleteName": "丁天睿",
+      "team": "山域竞技体育工作室",
+      "totalPoints": 303,
+      "competitionCount": 1,
+      "bestRank": 3,
+      "avgPoints": 303,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 303,
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "rank": 221,
       "athleteId": "cmjzpdkr500krbfhoaxpqfzp4",
       "athleteName": "杨子骞",
       "team": "河北省体育局冬季运动中心",
@@ -18802,7 +21781,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 186,
+      "rank": 222,
       "athleteId": "cmjzpdkpa00j6bfholp1nby8r",
       "athleteName": "郭一远",
       "team": "河北省体育局冬季运动中心",
@@ -18823,7 +21802,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 187,
+      "rank": 223,
       "athleteId": "cmjzpdkot00irbfhoyhtlvzya",
       "athleteName": "杨蓝戈",
       "team": "个人",
@@ -18844,7 +21823,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 188,
+      "rank": 224,
       "athleteId": "athlete-闵家蕴-个人",
       "athleteName": "闵家蕴",
       "team": "个人",
@@ -18865,7 +21844,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 189,
+      "rank": 225,
       "athleteId": "athlete-郭展麟-黑龙江省雪上训练中心",
       "athleteName": "郭展麟",
       "team": "黑龙江省雪上训练中心",
@@ -18886,7 +21865,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 190,
+      "rank": 226,
       "athleteId": "cmjzpdkkx00frbfhonb81p7bu",
       "athleteName": "叶欣瑞",
       "team": "四川体育职业学院",
@@ -18907,7 +21886,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 191,
+      "rank": 227,
       "athleteId": "athlete-曾梓萱-四川体育职业学院",
       "athleteName": "曾梓萱",
       "team": "四川体育职业学院",
@@ -18928,7 +21907,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 192,
+      "rank": 228,
       "athleteId": "athlete-宋佳诺-Criss-Crew",
       "athleteName": "宋佳诺",
       "team": "Criss Crew",
@@ -18949,7 +21928,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 193,
+      "rank": 229,
       "athleteId": "cmjzpdk420020bfhodtt3x27o",
       "athleteName": "韩赫洺",
       "team": "四川体育职业学院",
@@ -18970,7 +21949,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 194,
+      "rank": 230,
       "athleteId": "cmjzpdk1d0006bfhokdvat4q3",
       "athleteName": "肖金茂",
       "team": "四川体育职业学院",
@@ -18991,7 +21970,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 195,
+      "rank": 231,
       "athleteId": "cmjzpdkak007lbfho9nwb723l",
       "athleteName": "张雨曈",
       "team": "MAYA TEAM",
@@ -19012,7 +21991,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 196,
+      "rank": 232,
       "athleteId": "cmjzpdk7g004xbfhordq0746d",
       "athleteName": "韦苗茵",
       "team": "大连雨彤体育赛事俱乐部",
@@ -19033,7 +22012,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 197,
+      "rank": 233,
       "athleteId": "cmjzpdkh100d3bfhojzgo7pr4",
       "athleteName": "李嘉祺",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -19054,7 +22033,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 198,
+      "rank": 234,
       "athleteId": "cmjzpdkf300bcbfhoptyf96dp",
       "athleteName": "丁小苏",
       "team": "MAYA TEAM",
@@ -19075,7 +22054,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 199,
+      "rank": 235,
       "athleteId": "cmjzpdkyr00rbbfhon1ylf1wi",
       "athleteName": "欧阳聚勇",
       "team": "广西射击射箭运动发展中心",
@@ -19096,7 +22075,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 200,
+      "rank": 236,
       "athleteId": "athlete-王凯文-黑龙江省雪上训练中心",
       "athleteName": "王凯文",
       "team": "黑龙江省雪上训练中心",
@@ -19117,7 +22096,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 201,
+      "rank": 237,
       "athleteId": "cmjzpdkxy00qnbfhoi0fohlcs",
       "athleteName": "叶欣悦",
       "team": "四川体育职业学院",
@@ -19138,7 +22117,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 202,
+      "rank": 238,
       "athleteId": "athlete-罗优璇-河南省体育局",
       "athleteName": "罗优璇",
       "team": "河南省体育局",
@@ -19159,7 +22138,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 203,
+      "rank": 239,
       "athleteId": "cmjzpdl0900sebfhochiz1nog",
       "athleteName": "张天迈",
       "team": "河北省体育局冬季运动中心",
@@ -19180,7 +22159,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 204,
+      "rank": 240,
       "athleteId": "athlete-齐馨-A+自由式滑雪队",
       "athleteName": "齐馨",
       "team": "A+自由式滑雪队",
@@ -19201,7 +22180,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 205,
+      "rank": 241,
       "athleteId": "athlete-吴雨桐-个人",
       "athleteName": "吴雨桐",
       "team": "个人",
@@ -19222,7 +22201,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 206,
+      "rank": 242,
       "athleteId": "athlete-王玗希-个人",
       "athleteName": "王玗希",
       "team": "个人",
@@ -19243,7 +22222,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 207,
+      "rank": 243,
       "athleteId": "cmjzpdkyn00r8bfho5hxp5a6u",
       "athleteName": "张乔淳佑",
       "team": "河北省体育局冬季运动中心",
@@ -19264,7 +22243,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 208,
+      "rank": 244,
       "athleteId": "athlete-王凯文-黑龙江省雪上训练中心",
       "athleteName": "王凯文",
       "team": "黑龙江省雪上训练中心",
@@ -19285,7 +22264,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 209,
+      "rank": 245,
       "athleteId": "athlete-吴思琪-四川体育职业学院",
       "athleteName": "吴思琪",
       "team": "四川体育职业学院",
@@ -19306,7 +22285,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 210,
+      "rank": 246,
       "athleteId": "cmjzpdl0200sbbfho4oyc84yi",
       "athleteName": "孙金隆",
       "team": "河北省体育局冬季运动中心",
@@ -19327,7 +22306,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 211,
+      "rank": 247,
       "athleteId": "athlete-齐馨-A+自由式滑雪队",
       "athleteName": "齐馨",
       "team": "A+自由式滑雪队",
@@ -19348,7 +22327,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 212,
+      "rank": 248,
       "athleteId": "cmjzpdkqy00klbfho0qckaxmt",
       "athleteName": "于镇赫",
       "team": "成都热雪奇迹",
@@ -19369,7 +22348,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 213,
+      "rank": 249,
+      "athleteId": "athlete_孙乾铭_山域竞技体育工作室二",
+      "athleteName": "孙乾铭",
+      "team": "山域竞技体育工作室二队",
+      "totalPoints": 280,
+      "competitionCount": 1,
+      "bestRank": 4,
+      "avgPoints": 280,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 280,
+          "rank": 4
+        }
+      ]
+    },
+    {
+      "rank": 250,
       "athleteId": "cmjzpdkqb00k0bfhow3hoof01",
       "athleteName": "蔡沛琳",
       "team": "成都热雪奇迹",
@@ -19390,7 +22390,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 214,
+      "rank": 251,
+      "athleteId": "athlete_路钧惠_延庆区体育局",
+      "athleteName": "路钧惠",
+      "team": "延庆区体育局",
+      "totalPoints": 280,
+      "competitionCount": 1,
+      "bestRank": 4,
+      "avgPoints": 280,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 280,
+          "rank": 4
+        }
+      ]
+    },
+    {
+      "rank": 252,
       "athleteId": "cmjzpdkrt00lcbfhofvlcdm8r",
       "athleteName": "王梓丞",
       "team": "重庆市冬季运动管理中心",
@@ -19411,7 +22432,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 215,
+      "rank": 253,
+      "athleteId": "athlete_韩以乐_竞禹体育",
+      "athleteName": "韩以乐",
+      "team": "竞禹体育",
+      "totalPoints": 280,
+      "competitionCount": 1,
+      "bestRank": 4,
+      "avgPoints": 280,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 280,
+          "rank": 4
+        }
+      ]
+    },
+    {
+      "rank": 254,
       "athleteId": "cmjzpdkrb00kxbfhoqtbsgmzj",
       "athleteName": "张雅琪",
       "team": "河北省体育局冬季运动中心",
@@ -19432,7 +22474,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 216,
+      "rank": 255,
+      "athleteId": "athlete_刘金潼_个人零度竞技",
+      "athleteName": "刘金潼",
+      "team": "个人（零度竞技）",
+      "totalPoints": 280,
+      "competitionCount": 1,
+      "bestRank": 4,
+      "avgPoints": 280,
+      "ageGroup": "U15",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 280,
+          "rank": 4
+        }
+      ]
+    },
+    {
+      "rank": 256,
       "athleteId": "cmjzpdkpa00j6bfholp1nby8r",
       "athleteName": "郭一远",
       "team": "河北省体育局冬季运动中心",
@@ -19453,10 +22516,52 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 217,
-      "athleteId": "cmjzpdkqs00kfbfhoekaf7a8k",
-      "athleteName": "竹禹丞",
-      "team": "成都热雪奇迹",
+      "rank": 257,
+      "athleteId": "athlete_明泳桐_张家口辰鹏体育发展有",
+      "athleteName": "明泳桐",
+      "team": "张家口辰鹏体育发展有限公司",
+      "totalPoints": 280,
+      "competitionCount": 1,
+      "bestRank": 4,
+      "avgPoints": 280,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 280,
+          "rank": 4
+        }
+      ]
+    },
+    {
+      "rank": 258,
+      "athleteId": "athlete_邱心悦_葫小芦北京体育有限公",
+      "athleteName": "邱心悦",
+      "team": "葫小芦（北京）体育有限公司",
+      "totalPoints": 280,
+      "competitionCount": 1,
+      "bestRank": 4,
+      "avgPoints": 280,
+      "ageGroup": "U18",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 280,
+          "rank": 4
+        }
+      ]
+    },
+    {
+      "rank": 259,
+      "athleteId": "athlete_温逸伦_吉林坤伦滑雪俱乐部",
+      "athleteName": "温逸伦",
+      "team": "吉林坤伦滑雪俱乐部",
       "totalPoints": 280,
       "competitionCount": 1,
       "bestRank": 4,
@@ -19466,15 +22571,15 @@ export const totalRankingsData: TotalRankingsData = {
       "rankChange": null,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
           "points": 280,
           "rank": 4
         }
       ]
     },
     {
-      "rank": 218,
+      "rank": 260,
       "athleteId": "cmjzpdkqe00k3bfhoo18nnq3z",
       "athleteName": "李昊汐",
       "team": "西安热雪奇迹",
@@ -19495,10 +22600,31 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 219,
-      "athleteId": "cmjzpdkri00l3bfhogfhne4tr",
-      "athleteName": "肖瑞林",
-      "team": "重庆市冬季运动管理中心",
+      "rank": 261,
+      "athleteId": "athlete_顾欣蕊_上海市静安区滑雪协会",
+      "athleteName": "顾欣蕊",
+      "team": "上海市静安区滑雪协会",
+      "totalPoints": 280,
+      "competitionCount": 1,
+      "bestRank": 4,
+      "avgPoints": 280,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 280,
+          "rank": 4
+        }
+      ]
+    },
+    {
+      "rank": 262,
+      "athleteId": "athlete_郭轩烨_张家口辰鹏体育发展有",
+      "athleteName": "郭轩烨",
+      "team": "张家口辰鹏体育发展有限公司",
       "totalPoints": 280,
       "competitionCount": 1,
       "bestRank": 4,
@@ -19508,15 +22634,15 @@ export const totalRankingsData: TotalRankingsData = {
       "rankChange": null,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
           "points": 280,
           "rank": 4
         }
       ]
     },
     {
-      "rank": 220,
+      "rank": 263,
       "athleteId": "cmjzpdkue00nrbfhoad1f9vqw",
       "athleteName": "叶涵汐",
       "team": "成都热雪奇迹",
@@ -19537,10 +22663,10 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 221,
-      "athleteId": "cmjzpdkp000ixbfhoom4nz6ao",
-      "athleteName": "王阳明",
-      "team": "张家口乔与杨体育服务有限公司",
+      "rank": 264,
+      "athleteId": "athlete_明泳桐_张家口辰鹏体育发展有",
+      "athleteName": "明泳桐",
+      "team": "张家口辰鹏体育发展有限公司",
       "totalPoints": 280,
       "competitionCount": 1,
       "bestRank": 4,
@@ -19550,18 +22676,18 @@ export const totalRankingsData: TotalRankingsData = {
       "rankChange": null,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
           "points": 280,
           "rank": 4
         }
       ]
     },
     {
-      "rank": 222,
-      "athleteId": "cmjzpdks900lrbfho41ykduoi",
-      "athleteName": "周昱含",
-      "team": "沈阳王伟滑雪管理咨询服务有限公司",
+      "rank": 265,
+      "athleteId": "athlete_邱心悦_葫小芦北京体育有限公",
+      "athleteName": "邱心悦",
+      "team": "葫小芦（北京）体育有限公司",
       "totalPoints": 280,
       "competitionCount": 1,
       "bestRank": 4,
@@ -19571,15 +22697,15 @@ export const totalRankingsData: TotalRankingsData = {
       "rankChange": null,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
           "points": 280,
           "rank": 4
         }
       ]
     },
     {
-      "rank": 223,
+      "rank": 266,
       "athleteId": "cmjzpdl5y00xbbfhos8fn9jes",
       "athleteName": "戴宸熠",
       "team": "个人",
@@ -19600,7 +22726,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 224,
+      "rank": 267,
       "athleteId": "cmjzpdl3v00vnbfhosnyeji4m",
       "athleteName": "姜子悦",
       "team": "个人",
@@ -19621,7 +22747,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 225,
+      "rank": 268,
       "athleteId": "cmjzpdl7j00yqbfho51mw9qqo",
       "athleteName": "李奕泽",
       "team": "个人",
@@ -19642,7 +22768,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 226,
+      "rank": 269,
       "athleteId": "cmjzpdkn800hibfho8h61j0ao",
       "athleteName": "刘子俊",
       "team": "四川体育职业学院",
@@ -19663,7 +22789,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 227,
+      "rank": 270,
       "athleteId": "cmjzpdl4r00webfho0i331lns",
       "athleteName": "鲁淼",
       "team": "个人",
@@ -19684,7 +22810,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 228,
+      "rank": 271,
       "athleteId": "athlete-张依冉-山西省冰雪运动中心",
       "athleteName": "张依冉",
       "team": "山西省冰雪运动中心",
@@ -19705,7 +22831,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 229,
+      "rank": 272,
       "athleteId": "cmjzpdl9100zzbfhoe6g8bjfo",
       "athleteName": "李俣辛",
       "team": "河北省体育局冬季运动中心",
@@ -19726,7 +22852,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 230,
+      "rank": 273,
       "athleteId": "athlete-袁嘉伟-湖北省武术和冬季运动管理中心",
       "athleteName": "袁嘉伟",
       "team": "湖北省武术和冬季运动管理中心",
@@ -19747,7 +22873,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 231,
+      "rank": 274,
       "athleteId": "cmjzpdkma00gobfhoa7jwls5r",
       "athleteName": "王曌霖",
       "team": "河南省体育局",
@@ -19768,7 +22894,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 232,
+      "rank": 275,
       "athleteId": "athlete-曾云泽-New-team",
       "athleteName": "曾云泽",
       "team": "New team",
@@ -19789,7 +22915,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 233,
+      "rank": 276,
       "athleteId": "athlete-颜嘉懿-个人",
       "athleteName": "颜嘉懿",
       "team": "个人",
@@ -19810,7 +22936,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 234,
+      "rank": 277,
       "athleteId": "athlete-张淑雅-山西省冰雪运动中心",
       "athleteName": "张淑雅",
       "team": "山西省冰雪运动中心",
@@ -19831,7 +22957,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 235,
+      "rank": 278,
       "athleteId": "cmjzpdko800icbfho0ujbn9cl",
       "athleteName": "罗皓桉",
       "team": "湖北省武术和冬季运动管理中心",
@@ -19852,7 +22978,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 236,
+      "rank": 279,
       "athleteId": "athlete-李智贤-湖北省武术和冬季运动管理中心",
       "athleteName": "李智贤",
       "team": "湖北省武术和冬季运动管理中心",
@@ -19873,7 +22999,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 237,
+      "rank": 280,
       "athleteId": "cmjzpdk450023bfhoh5itp0hi",
       "athleteName": "李承桓",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -19894,7 +23020,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 238,
+      "rank": 281,
       "athleteId": "cmjzpdk1g0009bfhohs29gxqf",
       "athleteName": "须星漫",
       "team": "北京虎村竞技体育有限公司",
@@ -19915,7 +23041,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 239,
+      "rank": 282,
       "athleteId": "cmjzpdkan007obfhov8p3d9ke",
       "athleteName": "贾子一南",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -19936,7 +23062,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 240,
+      "rank": 283,
       "athleteId": "cmjzpdk7k0050bfhof32r335m",
       "athleteName": "刘妍梦",
       "team": "中麟体育",
@@ -19957,7 +23083,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 241,
+      "rank": 284,
       "athleteId": "cmjzpdkh500d6bfhogif50da9",
       "athleteName": "马凯涛",
       "team": "新疆维吾尔自治区冬季运动训练中心",
@@ -19978,7 +23104,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 242,
+      "rank": 285,
       "athleteId": "cmjzpdkf700bfbfhosv5aak4b",
       "athleteName": "王子怡",
       "team": "个人",
@@ -19999,7 +23125,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 243,
+      "rank": 286,
       "athleteId": "cmjzpdkyu00rebfhoup8aq1ld",
       "athleteName": "王翊宁",
       "team": "北京市冬季运动管理中心",
@@ -20020,7 +23146,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 244,
+      "rank": 287,
       "athleteId": "athlete-邓明涛-四川体育职业学院",
       "athleteName": "邓明涛",
       "team": "四川体育职业学院",
@@ -20041,7 +23167,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 245,
+      "rank": 288,
       "athleteId": "athlete-殷玉宣-河南省体育局",
       "athleteName": "殷玉宣",
       "team": "河南省体育局",
@@ -20062,7 +23188,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 246,
+      "rank": 289,
       "athleteId": "cmjzpdl0e00shbfhoc5njd0lb",
       "athleteName": "王晨",
       "team": "个人",
@@ -20083,7 +23209,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 247,
+      "rank": 290,
       "athleteId": "cmjzpdkyu00rebfhoup8aq1ld",
       "athleteName": "王翊宁",
       "team": "北京市冬季运动管理中心",
@@ -20104,7 +23230,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 248,
+      "rank": 291,
       "athleteId": "athlete-邓明涛-四川体育职业学院",
       "athleteName": "邓明涛",
       "team": "四川体育职业学院",
@@ -20125,7 +23251,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 249,
+      "rank": 292,
       "athleteId": "athlete-周紫君-四川体育职业学院",
       "athleteName": "周紫君",
       "team": "四川体育职业学院",
@@ -20146,7 +23272,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 250,
+      "rank": 293,
       "athleteId": "cmjzpdl0e00shbfhoc5njd0lb",
       "athleteName": "王晨",
       "team": "个人",
@@ -20167,7 +23293,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 251,
+      "rank": 294,
       "athleteId": "cmjzpdkwq00pnbfhozuu1pwmh",
       "athleteName": "孙婉迪",
       "team": "个人",
@@ -20194,7 +23320,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 252,
+      "rank": 295,
       "athleteId": "cmjzpdl1f00tcbfhowslhbsqq",
       "athleteName": "李佳馨",
       "team": "个人",
@@ -20221,7 +23347,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 253,
+      "rank": 296,
       "athleteId": "cmjzpdkwq00pnbfhozuu1pwmh",
       "athleteName": "孙婉迪",
       "team": "个人",
@@ -20248,7 +23374,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 254,
+      "rank": 297,
+      "athleteId": "athlete_柳昇延_延庆区体育局",
+      "athleteName": "柳昇延",
+      "team": "延庆区体育局",
+      "totalPoints": 260,
+      "competitionCount": 1,
+      "bestRank": 5,
+      "avgPoints": 260,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 260,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "rank": 298,
       "athleteId": "cmjzpdkqe00k3bfhoo18nnq3z",
       "athleteName": "李昊汐",
       "team": "西安热雪奇迹",
@@ -20269,7 +23416,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 255,
+      "rank": 299,
+      "athleteId": "athlete_张雨桐_个人",
+      "athleteName": "张雨桐",
+      "team": "个人",
+      "totalPoints": 260,
+      "competitionCount": 1,
+      "bestRank": 5,
+      "avgPoints": 260,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 260,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "rank": 300,
       "athleteId": "cmjzpdkrw00lfbfhonz2a0d3b",
       "athleteName": "吕浩源",
       "team": "河北省体育局冬季运动中心",
@@ -20290,7 +23458,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 256,
+      "rank": 301,
+      "athleteId": "athlete_盛嗣垚_张家口辰鹏体育发展有",
+      "athleteName": "盛嗣垚",
+      "team": "张家口辰鹏体育发展有限公司",
+      "totalPoints": 260,
+      "competitionCount": 1,
+      "bestRank": 5,
+      "avgPoints": 260,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 260,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "rank": 302,
       "athleteId": "cmjzpdkrf00l0bfhoi24xpm3k",
       "athleteName": "陈奕霏",
       "team": "个人",
@@ -20311,28 +23500,49 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 257,
-      "athleteId": "cmjzpdkpd00j9bfho5ceqs1fb",
-      "athleteName": "王润钰",
-      "team": "张家口乔与杨体育服务有限公司",
+      "rank": 303,
+      "athleteId": "athlete_张雨杉_西安高新一中沣东中学",
+      "athleteName": "张雨杉",
+      "team": "西安高新一中沣东中学初中校区",
       "totalPoints": 260,
       "competitionCount": 1,
       "bestRank": 5,
       "avgPoints": 260,
-      "ageGroup": "U18",
-      "gender": "男子组",
+      "ageGroup": "U15",
+      "gender": "女子组",
       "rankChange": null,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
           "points": 260,
           "rank": 5
         }
       ]
     },
     {
-      "rank": 258,
+      "rank": 304,
+      "athleteId": "athlete_王胜婕_葫小芦北京体育有限公",
+      "athleteName": "王胜婕",
+      "team": "葫小芦（北京）体育有限公司",
+      "totalPoints": 260,
+      "competitionCount": 1,
+      "bestRank": 5,
+      "avgPoints": 260,
+      "ageGroup": "U18",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 260,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "rank": 305,
       "athleteId": "cmjzpdktv00nabfhomuj9q4hs",
       "athleteName": "杨宗葆",
       "team": "个人",
@@ -20353,7 +23563,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 259,
+      "rank": 306,
+      "athleteId": "athlete_张轩睿_RSKI竞技滑雪队队",
+      "athleteName": "张轩睿",
+      "team": "RSKI竞技滑雪队队",
+      "totalPoints": 260,
+      "competitionCount": 1,
+      "bestRank": 5,
+      "avgPoints": 260,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 260,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "rank": 307,
       "athleteId": "cmjzpdkq400jubfhoejwo7naf",
       "athleteName": "罗暄晴",
       "team": "成都热雪奇迹",
@@ -20374,7 +23605,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 260,
+      "rank": 308,
+      "athleteId": "athlete_张曦安_零度竞技吉林省零下壹",
+      "athleteName": "张曦安",
+      "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
+      "totalPoints": 260,
+      "competitionCount": 1,
+      "bestRank": 5,
+      "avgPoints": 260,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 260,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "rank": 309,
       "athleteId": "cmjzpdkrw00lfbfhonz2a0d3b",
       "athleteName": "吕浩源",
       "team": "河北省体育局冬季运动中心",
@@ -20395,7 +23647,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 261,
+      "rank": 310,
+      "athleteId": "athlete_韩以乐_竞禹体育",
+      "athleteName": "韩以乐",
+      "team": "竞禹体育",
+      "totalPoints": 260,
+      "competitionCount": 1,
+      "bestRank": 5,
+      "avgPoints": 260,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 260,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "rank": 311,
       "athleteId": "cmjzpdkrb00kxbfhoqtbsgmzj",
       "athleteName": "张雅琪",
       "team": "河北省体育局冬季运动中心",
@@ -20416,28 +23689,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 262,
-      "athleteId": "cmjzpdksr00m8bfhorh0gxvtl",
-      "athleteName": "李彦博",
-      "team": "四川体育职业学院",
-      "totalPoints": 260,
-      "competitionCount": 1,
-      "bestRank": 5,
-      "avgPoints": 260,
-      "ageGroup": "U18",
-      "gender": "男子组",
-      "rankChange": null,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 260,
-          "rank": 5
-        }
-      ]
-    },
-    {
-      "rank": 263,
+      "rank": 312,
       "athleteId": "cmjzpdksc00lubfho18uchde6",
       "athleteName": "杨睿怡",
       "team": "华发冰雪热雪奇迹",
@@ -20458,7 +23710,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 264,
+      "rank": 313,
+      "athleteId": "athlete_龚信水_重庆市冬季运动管理中",
+      "athleteName": "龚信水",
+      "team": "重庆市冬季运动管理中心1队",
+      "totalPoints": 260,
+      "competitionCount": 1,
+      "bestRank": 5,
+      "avgPoints": 260,
+      "ageGroup": "U18",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 260,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "rank": 314,
       "athleteId": "cmjzpdl6100xebfhoyxhqpnwq",
       "athleteName": "范家睿",
       "team": "河北省体育局冬季运动中心",
@@ -20479,7 +23752,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 315,
       "athleteId": "cmjzpdkme00grbfhokxgnro49",
       "athleteName": "范天成",
       "team": "个人",
@@ -20500,7 +23773,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 266,
+      "rank": 316,
       "athleteId": "cmjzpdl3y00vqbfho1jpzm9my",
       "athleteName": "王迎紫",
       "team": "四川体育职业学院",
@@ -20521,7 +23794,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 267,
+      "rank": 317,
       "athleteId": "athlete-周子钰-山西省冰雪运动中心",
       "athleteName": "周子钰",
       "team": "山西省冰雪运动中心",
@@ -20542,7 +23815,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 268,
+      "rank": 318,
       "athleteId": "cmjzpdl7n00ytbfhovb95z3d0",
       "athleteName": "吴昊隆",
       "team": "哈尔滨市冬季运动与水上运动中心",
@@ -20563,7 +23836,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 269,
+      "rank": 319,
       "athleteId": "athlete-王浩臣-Star单板队",
       "athleteName": "王浩臣",
       "team": "Star单板队",
@@ -20584,7 +23857,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 270,
+      "rank": 320,
       "athleteId": "cmjzpdl4v00whbfhoqb4c47yx",
       "athleteName": "刘心雅",
       "team": "个人",
@@ -20605,7 +23878,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 271,
+      "rank": 321,
       "athleteId": "athlete-杜雨欣-四川体育职业学院",
       "athleteName": "杜雨欣",
       "team": "四川体育职业学院",
@@ -20626,7 +23899,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 272,
+      "rank": 322,
       "athleteId": "cmjzpdl950102bfho492pljcc",
       "athleteName": "冯晨峰",
       "team": "沈阳体育学院",
@@ -20647,7 +23920,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 273,
+      "rank": 323,
       "athleteId": "cmjzpdkoc00ifbfhogzsxfk2n",
       "athleteName": "黄子剑",
       "team": "湖北省武术和冬季运动管理中心",
@@ -20668,7 +23941,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 274,
+      "rank": 324,
       "athleteId": "athlete-方柏尧-个人",
       "athleteName": "方柏尧",
       "team": "个人",
@@ -20689,7 +23962,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 275,
+      "rank": 325,
       "athleteId": "cmjzpdkk700f9bfhoa69ugr1p",
       "athleteName": "姚予希",
       "team": "成都热雪奇迹",
@@ -20710,7 +23983,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 276,
+      "rank": 326,
       "athleteId": "athlete-孙晨曦-河北省体育局冬季运动中心",
       "athleteName": "孙晨曦",
       "team": "河北省体育局冬季运动中心",
@@ -20731,7 +24004,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 277,
+      "rank": 327,
       "athleteId": "athlete-张依冉-山西省冰雪运动中心",
       "athleteName": "张依冉",
       "team": "山西省冰雪运动中心",
@@ -20752,7 +24025,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 278,
+      "rank": 328,
       "athleteId": "athlete-何鲲鹏-湖北省武术和冬季运动管理中心",
       "athleteName": "何鲲鹏",
       "team": "湖北省武术和冬季运动管理中心",
@@ -20773,7 +24046,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 279,
+      "rank": 329,
       "athleteId": "cmjzpdk4a0026bfhow0uq57v3",
       "athleteName": "陈鼎钧",
       "team": "北京虎村竞技体育有限公司",
@@ -20794,7 +24067,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 280,
+      "rank": 330,
       "athleteId": "cmjzpdk1r000cbfho49uldr41",
       "athleteName": "古庭钰",
       "team": "中麟体育",
@@ -20815,7 +24088,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 281,
+      "rank": 331,
       "athleteId": "cmjzpdkar007rbfhoke7nk1ap",
       "athleteName": "李天圆",
       "team": "MAYA TEAM",
@@ -20836,7 +24109,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 282,
+      "rank": 332,
       "athleteId": "cmjzpdk7o0053bfhopj22d7t9",
       "athleteName": "赵南茜",
       "team": "太原市第二少年体育学校",
@@ -20857,7 +24130,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 283,
+      "rank": 333,
       "athleteId": "cmjzpdkh800d9bfho23y46y7o",
       "athleteName": "尚久智",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -20878,7 +24151,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 284,
+      "rank": 334,
       "athleteId": "cmjzpdkfa00bibfho2rfh2opo",
       "athleteName": "张芊凝",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -20899,7 +24172,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 285,
+      "rank": 335,
       "athleteId": "cmjzpdkyy00rhbfhomuo5xnnw",
       "athleteName": "宇威琦",
       "team": "河北省体育局冬季运动中心",
@@ -20920,7 +24193,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 286,
+      "rank": 336,
       "athleteId": "athlete-璩恩慧-河南省体育局",
       "athleteName": "璩恩慧",
       "team": "河南省体育局",
@@ -20941,7 +24214,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 287,
+      "rank": 337,
       "athleteId": "cmjzpdky600qtbfhoiwp2kmsc",
       "athleteName": "平梓涵",
       "team": "河北省体育局冬季运动中心",
@@ -20962,7 +24235,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 288,
+      "rank": 338,
       "athleteId": "athlete-韩萨仁其木格-小崔运动",
       "athleteName": "韩萨仁其木格",
       "team": "小崔运动",
@@ -20983,7 +24256,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 289,
+      "rank": 339,
       "athleteId": "cmjzpdkxe00q5bfho8r60z791",
       "athleteName": "崔芃森",
       "team": "河北省体育局冬季运动中心",
@@ -21004,7 +24277,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 290,
+      "rank": 340,
       "athleteId": "cmjzpdkyy00rhbfhomuo5xnnw",
       "athleteName": "宇威琦",
       "team": "河北省体育局冬季运动中心",
@@ -21025,7 +24298,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 291,
+      "rank": 341,
       "athleteId": "athlete-璩恩慧-河南省体育局",
       "athleteName": "璩恩慧",
       "team": "河南省体育局",
@@ -21046,7 +24319,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 292,
+      "rank": 342,
       "athleteId": "cmjzpdkqi00k6bfhotz0ghplg",
       "athleteName": "吴玟颐",
       "team": "华发冰雪热雪奇迹",
@@ -21067,7 +24340,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 293,
+      "rank": 343,
+      "athleteId": "athlete_张竞戈_个人",
+      "athleteName": "张竞戈",
+      "team": "个人",
+      "totalPoints": 242,
+      "competitionCount": 1,
+      "bestRank": 6,
+      "avgPoints": 242,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 242,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "rank": 344,
       "athleteId": "cmjzpdks000libfhouk369qbh",
       "athleteName": "林朗",
       "team": "哈尔滨热雪奇迹",
@@ -21088,10 +24382,31 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 294,
-      "athleteId": "cmjzpdkph00jcbfho8tsz6f9a",
-      "athleteName": "左子正",
-      "team": "左子正",
+      "rank": 345,
+      "athleteId": "athlete_丁天睿_山域竞技体育工作室",
+      "athleteName": "丁天睿",
+      "team": "山域竞技体育工作室",
+      "totalPoints": 242,
+      "competitionCount": 1,
+      "bestRank": 6,
+      "avgPoints": 242,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 242,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "rank": 346,
+      "athleteId": "athlete_王正政_张家口乔与杨体育服务",
+      "athleteName": "王正政",
+      "team": "张家口乔与杨体育服务有限公司",
       "totalPoints": 242,
       "competitionCount": 1,
       "bestRank": 6,
@@ -21101,15 +24416,36 @@ export const totalRankingsData: TotalRankingsData = {
       "rankChange": null,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
           "points": 242,
           "rank": 6
         }
       ]
     },
     {
-      "rank": 295,
+      "rank": 347,
+      "athleteId": "cmjzpdksc00lubfho18uchde6",
+      "athleteName": "杨睿怡",
+      "team": "华发冰雪热雪奇迹",
+      "totalPoints": 242,
+      "competitionCount": 1,
+      "bestRank": 6,
+      "avgPoints": 242,
+      "ageGroup": "U18",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 242,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "rank": 348,
       "athleteId": "cmjzpdkqy00klbfho0qckaxmt",
       "athleteName": "于镇赫",
       "team": "成都热雪奇迹",
@@ -21130,7 +24466,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 296,
+      "rank": 349,
+      "athleteId": "athlete_安若维_个人",
+      "athleteName": "安若维",
+      "team": "个人",
+      "totalPoints": 242,
+      "competitionCount": 1,
+      "bestRank": 6,
+      "avgPoints": 242,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 242,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "rank": 350,
       "athleteId": "cmjzpdkqi00k6bfhotz0ghplg",
       "athleteName": "吴玟颐",
       "team": "华发冰雪热雪奇迹",
@@ -21151,7 +24508,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 297,
+      "rank": 351,
+      "athleteId": "athlete_路钧惠_延庆区体育局",
+      "athleteName": "路钧惠",
+      "team": "延庆区体育局",
+      "totalPoints": 242,
+      "competitionCount": 1,
+      "bestRank": 6,
+      "avgPoints": 242,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 242,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "rank": 352,
       "athleteId": "cmjzpdks000libfhouk369qbh",
       "athleteName": "林朗",
       "team": "哈尔滨热雪奇迹",
@@ -21172,7 +24550,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 298,
+      "rank": 353,
+      "athleteId": "athlete_贾梓瑞_远东东重庆体育文化发",
+      "athleteName": "贾梓瑞",
+      "team": "远东东（重庆）体育文化发展有限公司",
+      "totalPoints": 242,
+      "competitionCount": 1,
+      "bestRank": 6,
+      "avgPoints": 242,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 242,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "rank": 354,
       "athleteId": "cmjzpdkp300j0bfhohn94zbb3",
       "athleteName": "艾思铭",
       "team": "张家口乔与杨体育服务有限公司",
@@ -21193,7 +24592,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 299,
+      "rank": 355,
+      "athleteId": "athlete_鞠沐辰_济南市皇亭竞技体育学",
+      "athleteName": "鞠沐辰",
+      "team": "济南市皇亭竞技体育学校",
+      "totalPoints": 242,
+      "competitionCount": 1,
+      "bestRank": 6,
+      "avgPoints": 242,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 242,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "rank": 356,
       "athleteId": "cmjzpdksg00lxbfhopa5j9xjd",
       "athleteName": "刘子歌",
       "team": "张家口乔与杨体育服务有限公司",
@@ -21214,7 +24634,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 300,
+      "rank": 357,
       "athleteId": "cmjzpdl6400xhbfhoxutlhyxn",
       "athleteName": "赵一翔",
       "team": "河北省体育局冬季运动中心",
@@ -21235,7 +24655,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 301,
+      "rank": 358,
       "athleteId": "athlete-宋知敏-个人",
       "athleteName": "宋知敏",
       "team": "个人",
@@ -21256,7 +24676,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 302,
+      "rank": 359,
       "athleteId": "cmjzpdl4100vtbfhodt352vf0",
       "athleteName": "傅诗宸",
       "team": "个人",
@@ -21277,7 +24697,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 303,
+      "rank": 360,
       "athleteId": "athlete-宋佳诺-Criss-Crew",
       "athleteName": "宋佳诺",
       "team": "Criss Crew",
@@ -21298,7 +24718,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 361,
       "athleteId": "cmjzpdl7q00ywbfhorj0y439x",
       "athleteName": "王小虎",
       "team": "哈尔滨市冬季运动与水上运动中心",
@@ -21319,7 +24739,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 305,
+      "rank": 362,
       "athleteId": "cmjzpdl5000wkbfhocx121wgy",
       "athleteName": "王雪宸",
       "team": "长春市冬季运动管理中心",
@@ -21340,7 +24760,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 306,
+      "rank": 363,
       "athleteId": "athlete-郭婉诗-山西省冰雪运动中心",
       "athleteName": "郭婉诗",
       "team": "山西省冰雪运动中心",
@@ -21361,7 +24781,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 307,
+      "rank": 364,
       "athleteId": "cmjzpdl980105bfhowaz22rhr",
       "athleteName": "耿浩然",
       "team": "长春市冬季运动管理中心",
@@ -21382,7 +24802,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 308,
+      "rank": 365,
       "athleteId": "cmjzpdkog00iibfhotxzpqno2",
       "athleteName": "倪文凯",
       "team": "湖北省武术和冬季运动管理中心",
@@ -21403,7 +24823,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 309,
+      "rank": 366,
       "athleteId": "athlete-郭婉诗-山西省冰雪运动中心",
       "athleteName": "郭婉诗",
       "team": "山西省冰雪运动中心",
@@ -21424,7 +24844,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 310,
+      "rank": 367,
       "athleteId": "cmjzpdk4d0029bfhowuueorwu",
       "athleteName": "聂榕辰",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -21445,7 +24865,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 311,
+      "rank": 368,
       "athleteId": "cmjzpdk1u000fbfhou88cqxsm",
       "athleteName": "周子翕",
       "team": "成都热雪奇迹",
@@ -21466,7 +24886,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 312,
+      "rank": 369,
       "athleteId": "cmjzpdkav007ubfho0ossatdk",
       "athleteName": "王子兮",
       "team": "四川体育职业学院",
@@ -21487,7 +24907,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 313,
+      "rank": 370,
       "athleteId": "cmjzpdk7s0056bfhouamezkf4",
       "athleteName": "刘沛怡",
       "team": "MAYA TEAM",
@@ -21508,7 +24928,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 314,
+      "rank": 371,
       "athleteId": "cmjzpdkhb00dcbfho0ww5obv1",
       "athleteName": "吴凯",
       "team": "中麟体育",
@@ -21529,7 +24949,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 315,
+      "rank": 372,
       "athleteId": "cmjzpdkfd00blbfho7svp8try",
       "athleteName": "李雨濛",
       "team": "大连雨彤体育赛事俱乐部",
@@ -21550,7 +24970,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 316,
+      "rank": 373,
       "athleteId": "cmjzpdkxe00q5bfho8r60z791",
       "athleteName": "崔芃森",
       "team": "河北省体育局冬季运动中心",
@@ -21571,7 +24991,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 317,
+      "rank": 374,
       "athleteId": "cmjzpdkvr00owbfhobsujiv88",
       "athleteName": "孙焕轶",
       "team": "个人",
@@ -21592,7 +25012,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 318,
+      "rank": 375,
       "athleteId": "athlete-王培旭-四川体育职业学院",
       "athleteName": "王培旭",
       "team": "四川体育职业学院",
@@ -21613,7 +25033,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 319,
+      "rank": 376,
       "athleteId": "athlete-吴思琪-四川体育职业学院",
       "athleteName": "吴思琪",
       "team": "四川体育职业学院",
@@ -21634,7 +25054,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 320,
+      "rank": 377,
       "athleteId": "cmjzpdkvr00owbfhobsujiv88",
       "athleteName": "孙焕轶",
       "team": "个人",
@@ -21655,7 +25075,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 321,
+      "rank": 378,
       "athleteId": "athlete-王培旭-四川体育职业学院",
       "athleteName": "王培旭",
       "team": "四川体育职业学院",
@@ -21676,7 +25096,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 322,
+      "rank": 379,
       "athleteId": "cmjzpdkyg00r2bfhonpfve5v0",
       "athleteName": "李雅馨",
       "team": "北京市冬季运动管理中心",
@@ -21697,7 +25117,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 323,
+      "rank": 380,
       "athleteId": "athlete-陈奕歌-河南省体育局",
       "athleteName": "陈奕歌",
       "team": "河南省体育局",
@@ -21718,7 +25138,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 324,
+      "rank": 381,
       "athleteId": "cmjzpdlcg012dbfho7kz6iwv3",
       "athleteName": "林芮锋",
       "team": "四川体育职业学院",
@@ -21745,7 +25165,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 325,
+      "rank": 382,
       "athleteId": "cmjzpdkql00k9bfhodvj2cshf",
       "athleteName": "卢彦伊",
       "team": "成都热雪奇迹",
@@ -21766,7 +25186,49 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 326,
+      "rank": 383,
+      "athleteId": "athlete_张曦安_零度竞技吉林省零下壹",
+      "athleteName": "张曦安",
+      "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
+      "totalPoints": 226,
+      "competitionCount": 1,
+      "bestRank": 7,
+      "avgPoints": 226,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 226,
+          "rank": 7
+        }
+      ]
+    },
+    {
+      "rank": 384,
+      "athleteId": "athlete_于承睿_个人零度竞技",
+      "athleteName": "于承睿",
+      "team": "个人（零度竞技）",
+      "totalPoints": 226,
+      "competitionCount": 1,
+      "bestRank": 7,
+      "avgPoints": 226,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 226,
+          "rank": 7
+        }
+      ]
+    },
+    {
+      "rank": 385,
       "athleteId": "cmjzpdkpk00jfbfhoiy6rykkw",
       "athleteName": "常冠廷",
       "team": "吉林市丰满区滑雪协会",
@@ -21787,7 +25249,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 327,
+      "rank": 386,
+      "athleteId": "athlete_鞠沐辰_济南市皇亭竞技体育学",
+      "athleteName": "鞠沐辰",
+      "team": "济南市皇亭竞技体育学校",
+      "totalPoints": 226,
+      "competitionCount": 1,
+      "bestRank": 7,
+      "avgPoints": 226,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 226,
+          "rank": 7
+        }
+      ]
+    },
+    {
+      "rank": 387,
       "athleteId": "cmjzpdku000nfbfhod6ac8ew5",
       "athleteName": "冯一晗",
       "team": "成都热雪奇迹",
@@ -21808,7 +25291,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 328,
+      "rank": 388,
+      "athleteId": "athlete_杨东信_RSKI竞技滑雪队队",
+      "athleteName": "杨东信",
+      "team": "RSKI竞技滑雪队队",
+      "totalPoints": 226,
+      "competitionCount": 1,
+      "bestRank": 7,
+      "avgPoints": 226,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 226,
+          "rank": 7
+        }
+      ]
+    },
+    {
+      "rank": 389,
       "athleteId": "cmjzpdkql00k9bfhodvj2cshf",
       "athleteName": "卢彦伊",
       "team": "成都热雪奇迹",
@@ -21829,7 +25333,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 329,
+      "rank": 390,
+      "athleteId": "athlete_田芷郡_山域竞技体育工作室",
+      "athleteName": "田芷郡",
+      "team": "山域竞技体育工作室",
+      "totalPoints": 226,
+      "competitionCount": 1,
+      "bestRank": 7,
+      "avgPoints": 226,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 226,
+          "rank": 7
+        }
+      ]
+    },
+    {
+      "rank": 391,
       "athleteId": "cmjzpdkrt00lcbfhofvlcdm8r",
       "athleteName": "王梓丞",
       "team": "重庆市冬季运动管理中心",
@@ -21850,28 +25375,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 330,
-      "athleteId": "cmjzpdkph00jcbfho8tsz6f9a",
-      "athleteName": "左子正",
-      "team": "左子正",
+      "rank": 392,
+      "athleteId": "athlete_田芷源_长春市朝阳区山域竞技",
+      "athleteName": "田芷源",
+      "team": "长春市朝阳区山域竞技体育工作室",
       "totalPoints": 226,
       "competitionCount": 1,
       "bestRank": 7,
       "avgPoints": 226,
-      "ageGroup": "U18",
+      "ageGroup": "U15",
       "gender": "男子组",
       "rankChange": null,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
           "points": 226,
           "rank": 7
         }
       ]
     },
     {
-      "rank": 331,
+      "rank": 393,
       "athleteId": "cmjzpdl6700xkbfhog299ru7s",
       "athleteName": "王梓铭",
       "team": "个人",
@@ -21892,7 +25417,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 332,
+      "rank": 394,
       "athleteId": "cmjzpdl4500vwbfhof9h7fpmt",
       "athleteName": "郭涵钰",
       "team": "个人",
@@ -21913,7 +25438,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 333,
+      "rank": 395,
       "athleteId": "cmjzpdkk000f6bfho8me6szz1",
       "athleteName": "张诗涵",
       "team": "石家庄市冰雪与足球运动中心",
@@ -21934,7 +25459,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 334,
+      "rank": 396,
       "athleteId": "cmjzpdl7t00yzbfho1iuq4hpl",
       "athleteName": "张子骁",
       "team": "河北省体育局冬季运动中心",
@@ -21955,7 +25480,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 335,
+      "rank": 397,
       "athleteId": "athlete-孙晨曦-河北省体育局冬季运动中心",
       "athleteName": "孙晨曦",
       "team": "河北省体育局冬季运动中心",
@@ -21976,7 +25501,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 336,
+      "rank": 398,
       "athleteId": "cmjzpdl5400wnbfhonij1rfxe",
       "athleteName": "何芷昕",
       "team": "个人",
@@ -21997,7 +25522,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 337,
+      "rank": 399,
       "athleteId": "athlete-贺舒玉-重庆市冬季运动管理中心",
       "athleteName": "贺舒玉",
       "team": "重庆市冬季运动管理中心",
@@ -22018,7 +25543,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 338,
+      "rank": 400,
       "athleteId": "cmjzpdl9c0108bfhobi5x26qe",
       "athleteName": "李汶轩",
       "team": "长春市冬季运动管理中心",
@@ -22039,7 +25564,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 339,
+      "rank": 401,
       "athleteId": "athlete-吴海鑫-湖北省武术和冬季运动管理中心",
       "athleteName": "吴海鑫",
       "team": "湖北省武术和冬季运动管理中心",
@@ -22060,7 +25585,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 340,
+      "rank": 402,
       "athleteId": "athlete-蒋桨-个人",
       "athleteName": "蒋桨",
       "team": "个人",
@@ -22081,7 +25606,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 341,
+      "rank": 403,
       "athleteId": "athlete-周子钰-山西省冰雪运动中心",
       "athleteName": "周子钰",
       "team": "山西省冰雪运动中心",
@@ -22102,7 +25627,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 342,
+      "rank": 404,
       "athleteId": "athlete-刘霓霏-个人",
       "athleteName": "刘霓霏",
       "team": "个人",
@@ -22123,7 +25648,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 343,
+      "rank": 405,
       "athleteId": "cmjzpdle0013sbfho3jgfbpad",
       "athleteName": "雷涵文",
       "team": "重庆市冬季运动管理中心",
@@ -22144,7 +25669,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 344,
+      "rank": 406,
       "athleteId": "athlete-袁嘉伟-湖北省武术和冬季运动管理中心",
       "athleteName": "袁嘉伟",
       "team": "湖北省武术和冬季运动管理中心",
@@ -22165,7 +25690,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 345,
+      "rank": 407,
       "athleteId": "cmjzpdk4h002cbfho72bud3ju",
       "athleteName": "罗晓野",
       "team": "个人",
@@ -22186,7 +25711,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 346,
+      "rank": 408,
       "athleteId": "cmjzpdk21000ibfhojbpxew23",
       "athleteName": "ALBEESU",
       "team": "张家口市足球和冰雪运动学校",
@@ -22207,7 +25732,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 347,
+      "rank": 409,
       "athleteId": "cmjzpdkay007xbfhogkqgc8hp",
       "athleteName": "阿琪勒图",
       "team": "内蒙古嘉灏体育",
@@ -22228,7 +25753,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 348,
+      "rank": 410,
       "athleteId": "cmjzpdk7w0059bfhoqf1tul7a",
       "athleteName": "邰淼",
       "team": "内蒙古嘉灏体育",
@@ -22249,7 +25774,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 349,
+      "rank": 411,
       "athleteId": "cmjzpdkhf00dfbfhoxmumwieq",
       "athleteName": "杨武胜俊",
       "team": "四川体育职业学院",
@@ -22270,7 +25795,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 350,
+      "rank": 412,
       "athleteId": "cmjzpdkff00bobfhoseh0eifz",
       "athleteName": "张允童",
       "team": "个人",
@@ -22291,7 +25816,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 351,
+      "rank": 413,
       "athleteId": "cmjzpdkxh00q8bfho5kg4losu",
       "athleteName": "卢彦词",
       "team": "四川体育职业学院",
@@ -22312,7 +25837,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 352,
+      "rank": 414,
       "athleteId": "athlete-王玗希-个人",
       "athleteName": "王玗希",
       "team": "个人",
@@ -22333,7 +25858,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 353,
+      "rank": 415,
       "athleteId": "cmjzpdkz700rnbfhorz1h81nt",
       "athleteName": "李霁开",
       "team": "河北省体育局冬季运动中心",
@@ -22354,7 +25879,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 354,
+      "rank": 416,
       "athleteId": "cmjzpdkxl00qbbfhowxx5v1fm",
       "athleteName": "赵子钰",
       "team": "河北省体育局冬季运动中心",
@@ -22375,28 +25900,49 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 355,
-      "athleteId": "cmjzpdkpp00jibfho6rmhufv0",
-      "athleteName": "王冠霖",
-      "team": "吉林坤伦滑雪俱乐部",
+      "rank": 417,
+      "athleteId": "athlete_冯薏霏_个人零度竞技",
+      "athleteName": "冯薏霏",
+      "team": "个人（零度竞技）",
       "totalPoints": 212,
       "competitionCount": 1,
       "bestRank": 8,
       "avgPoints": 212,
-      "ageGroup": "U18",
-      "gender": "男子组",
+      "ageGroup": "U11",
+      "gender": "女子组",
       "rankChange": null,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
           "points": 212,
           "rank": 8
         }
       ]
     },
     {
-      "rank": 356,
+      "rank": 418,
+      "athleteId": "athlete_国益霖_延庆区体育局",
+      "athleteName": "国益霖",
+      "team": "延庆区体育局",
+      "totalPoints": 212,
+      "competitionCount": 1,
+      "bestRank": 8,
+      "avgPoints": 212,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 212,
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "rank": 419,
       "athleteId": "cmjzpdku400nibfholr4qu1hr",
       "athleteName": "顾羽宸",
       "team": "成都热雪奇迹",
@@ -22417,7 +25963,49 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 357,
+      "rank": 420,
+      "athleteId": "athlete_董子都_个人",
+      "athleteName": "董子都",
+      "team": "个人",
+      "totalPoints": 212,
+      "competitionCount": 1,
+      "bestRank": 7,
+      "avgPoints": 212,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 212,
+          "rank": 7
+        }
+      ]
+    },
+    {
+      "rank": 421,
+      "athleteId": "athlete_崔凯淇_山域竞技体育工作室",
+      "athleteName": "崔凯淇",
+      "team": "山域竞技体育工作室",
+      "totalPoints": 212,
+      "competitionCount": 1,
+      "bestRank": 8,
+      "avgPoints": 212,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 212,
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "rank": 422,
       "athleteId": "cmjzpdkuz00obbfho0os6d2tq",
       "athleteName": "肖辰俊熙",
       "team": "成都热雪奇迹",
@@ -22438,28 +26026,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 358,
-      "athleteId": "cmjzpdkpk00jfbfhoiy6rykkw",
-      "athleteName": "常冠廷",
-      "team": "吉林市丰满区滑雪协会",
+      "rank": 423,
+      "athleteId": "athlete_林子辰_重庆市冬季运动管理中",
+      "athleteName": "林子辰",
+      "team": "重庆市冬季运动管理中心1队",
       "totalPoints": 212,
       "competitionCount": 1,
       "bestRank": 8,
       "avgPoints": 212,
-      "ageGroup": "U18",
+      "ageGroup": "U15",
       "gender": "男子组",
       "rankChange": null,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国高山滑雪U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
           "points": 212,
           "rank": 8
         }
       ]
     },
     {
-      "rank": 359,
+      "rank": 424,
       "athleteId": "cmjzpdl6b00xnbfhodbirxnv7",
       "athleteName": "翁晨皓",
       "team": "个人",
@@ -22480,7 +26068,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 360,
+      "rank": 425,
       "athleteId": "cmjzpdkmk00gxbfho34o28xv8",
       "athleteName": "赵严诺",
       "team": "河北省体育局冬季运动中心",
@@ -22501,7 +26089,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 361,
+      "rank": 426,
       "athleteId": "cmjzpdl4900vzbfhonmuyxvkn",
       "athleteName": "张曦彤",
       "team": "个人",
@@ -22522,7 +26110,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 362,
+      "rank": 427,
       "athleteId": "cmjzpdkjw00f3bfhoswtiqk6b",
       "athleteName": "周斯言",
       "team": "个人",
@@ -22543,7 +26131,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 363,
+      "rank": 428,
       "athleteId": "cmjzpdl7x00z2bfhoq20wf501",
       "athleteName": "申桐",
       "team": "沈阳体育学院",
@@ -22564,7 +26152,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 429,
       "athleteId": "athlete-郭彧铭-个人",
       "athleteName": "郭彧铭",
       "team": "个人",
@@ -22585,7 +26173,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 365,
+      "rank": 430,
       "athleteId": "cmjzpdl5700wqbfhokaor4wmd",
       "athleteName": "包雨彤",
       "team": "沈阳体育学院",
@@ -22606,7 +26194,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 366,
+      "rank": 431,
       "athleteId": "athlete-张潇然-山西省冰雪运动中心",
       "athleteName": "张潇然",
       "team": "山西省冰雪运动中心",
@@ -22627,7 +26215,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 367,
+      "rank": 432,
       "athleteId": "cmjzpdkzy00s8bfhoiv0z32ls",
       "athleteName": "田嘉译",
       "team": "沈阳体育学院",
@@ -22648,7 +26236,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 368,
+      "rank": 433,
       "athleteId": "athlete-何鲲鹏-湖北省武术和冬季运动管理中心",
       "athleteName": "何鲲鹏",
       "team": "湖北省武术和冬季运动管理中心",
@@ -22669,7 +26257,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 369,
+      "rank": 434,
       "athleteId": "athlete-褚天羿-Star单板队",
       "athleteName": "褚天羿",
       "team": "Star单板队",
@@ -22690,7 +26278,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 370,
+      "rank": 435,
       "athleteId": "athlete-杨峻溪-个人",
       "athleteName": "杨峻溪",
       "team": "个人",
@@ -22711,7 +26299,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 371,
+      "rank": 436,
       "athleteId": "cmjzpdk4k002fbfhoetv2avcp",
       "athleteName": "薛景尧",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -22732,7 +26320,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 372,
+      "rank": 437,
       "athleteId": "cmjzpdk28000lbfhofq439jkr",
       "athleteName": "焦阳云朵",
       "team": "北京虎村竞技体育有限公司",
@@ -22753,7 +26341,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 373,
+      "rank": 438,
       "athleteId": "cmjzpdkb20080bfhokp36urcp",
       "athleteName": "叶庆安",
       "team": "新疆维吾尔自治区冬季运动训练中心",
@@ -22774,7 +26362,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 374,
+      "rank": 439,
       "athleteId": "cmjzpdk80005cbfhoxp1aexei",
       "athleteName": "张诺笒",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -22795,7 +26383,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 375,
+      "rank": 440,
       "athleteId": "cmjzpdkhi00dibfhokox5yuvz",
       "athleteName": "付壡喆",
       "team": "四川体育职业学院",
@@ -22816,7 +26404,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 376,
+      "rank": 441,
       "athleteId": "cmjzpdkfj00brbfhoma9b5hn6",
       "athleteName": "袁丽文",
       "team": "上海市静安区滑雪协会",
@@ -22837,7 +26425,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 377,
+      "rank": 442,
       "athleteId": "cmjzpdkxl00qbbfhowxx5v1fm",
       "athleteName": "赵子钰",
       "team": "河北省体育局冬季运动中心",
@@ -22858,7 +26446,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 378,
+      "rank": 443,
       "athleteId": "athlete-程曦辉-个人",
       "athleteName": "程曦辉",
       "team": "个人",
@@ -22879,7 +26467,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 379,
+      "rank": 444,
       "athleteId": "cmjzpdkyg00r2bfhonpfve5v0",
       "athleteName": "李雅馨",
       "team": "北京市冬季运动管理中心",
@@ -22900,7 +26488,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 380,
+      "rank": 445,
       "athleteId": "cmjzpdkxh00q8bfho5kg4losu",
       "athleteName": "卢彦词",
       "team": "四川体育职业学院",
@@ -22921,7 +26509,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 381,
+      "rank": 446,
       "athleteId": "athlete-殷玉宣-河南省体育局",
       "athleteName": "殷玉宣",
       "team": "河南省体育局",
@@ -22942,7 +26530,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 382,
+      "rank": 447,
+      "athleteId": "athlete_丁润章_东北师范大学附属实验",
+      "athleteName": "丁润章",
+      "team": "东北师范大学附属实验学校（经开）",
+      "totalPoints": 199,
+      "competitionCount": 1,
+      "bestRank": 9,
+      "avgPoints": 199,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 199,
+          "rank": 9
+        }
+      ]
+    },
+    {
+      "rank": 448,
       "athleteId": "cmjzpdkpt00jlbfho1kgjxby2",
       "athleteName": "王宏轩",
       "team": "河北省体育局冬季运动中心",
@@ -22963,7 +26572,49 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 383,
+      "rank": 449,
+      "athleteId": "athlete_陈昕逸_个人",
+      "athleteName": "陈昕逸",
+      "team": "个人",
+      "totalPoints": 199,
+      "competitionCount": 1,
+      "bestRank": 9,
+      "avgPoints": 199,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 199,
+          "rank": 9
+        }
+      ]
+    },
+    {
+      "rank": 450,
+      "athleteId": "athlete_韩侨安_竞禹体育",
+      "athleteName": "韩侨安",
+      "team": "竞禹体育",
+      "totalPoints": 199,
+      "competitionCount": 1,
+      "bestRank": 9,
+      "avgPoints": 199,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 199,
+          "rank": 9
+        }
+      ]
+    },
+    {
+      "rank": 451,
       "athleteId": "cmjzpdkv200oebfhojl3ujfok",
       "athleteName": "何心远",
       "team": "成都热雪奇迹",
@@ -22984,7 +26635,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 384,
+      "rank": 452,
+      "athleteId": "athlete_马照然_大连奥萨体育文化有限",
+      "athleteName": "马照然",
+      "team": "大连奥萨体育文化有限公司",
+      "totalPoints": 199,
+      "competitionCount": 1,
+      "bestRank": 9,
+      "avgPoints": 199,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 199,
+          "rank": 9
+        }
+      ]
+    },
+    {
+      "rank": 453,
       "athleteId": "cmjzpdksz00mhbfhojzwb0bac",
       "athleteName": "李京和",
       "team": "个人",
@@ -23005,7 +26677,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 385,
+      "rank": 454,
+      "athleteId": "athlete_谭皓阳_个人高峰",
+      "athleteName": "谭皓阳",
+      "team": "个人（高峰）",
+      "totalPoints": 199,
+      "competitionCount": 1,
+      "bestRank": 9,
+      "avgPoints": 199,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 199,
+          "rank": 9
+        }
+      ]
+    },
+    {
+      "rank": 455,
       "athleteId": "cmjzpdl6e00xqbfhoshn2l5ll",
       "athleteName": "侯胤翔",
       "team": "四川体育职业学院",
@@ -23026,7 +26719,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 386,
+      "rank": 456,
       "athleteId": "athlete-方柏尧-个人",
       "athleteName": "方柏尧",
       "team": "个人",
@@ -23047,7 +26740,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 387,
+      "rank": 457,
       "athleteId": "cmjzpdl4c00w2bfhokl4nmyi0",
       "athleteName": "张瑾苒",
       "team": "内蒙古体育职业学院",
@@ -23068,7 +26761,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 388,
+      "rank": 458,
       "athleteId": "athlete-颜嘉懿-个人",
       "athleteName": "颜嘉懿",
       "team": "个人",
@@ -23089,7 +26782,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 389,
+      "rank": 459,
       "athleteId": "cmjzpdl8000z5bfhof416yoli",
       "athleteName": "霍圣康",
       "team": "个人",
@@ -23110,7 +26803,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 390,
+      "rank": 460,
       "athleteId": "cmjzpdknb00hlbfhoeja6849z",
       "athleteName": "张家睿",
       "team": "四川体育职业学院",
@@ -23131,7 +26824,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 391,
+      "rank": 461,
       "athleteId": "cmjzpdl5b00wtbfhok8xo24ek",
       "athleteName": "栾智媛",
       "team": "河北省体育局冬季运动中心",
@@ -23152,7 +26845,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 392,
+      "rank": 462,
       "athleteId": "athlete-刘霓霏-个人",
       "athleteName": "刘霓霏",
       "team": "个人",
@@ -23173,7 +26866,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 393,
+      "rank": 463,
       "athleteId": "athlete-王瞾霖-河南省体育局",
       "athleteName": "王瞾霖",
       "team": "河南省体育局",
@@ -23194,7 +26887,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 394,
+      "rank": 464,
       "athleteId": "cmjzpdkkp00flbfho4fw9ataz",
       "athleteName": "冷昕莲",
       "team": "河北省体育局冬季运动中心",
@@ -23215,7 +26908,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 395,
+      "rank": 465,
       "athleteId": "cmjzpdknp00hxbfho2se1dzm8",
       "athleteName": "麦冠航",
       "team": "河北省体育局冬季运动中心",
@@ -23236,7 +26929,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 396,
+      "rank": 466,
       "athleteId": "athlete-吴海鑫-湖北省武术和冬季运动管理中心",
       "athleteName": "吴海鑫",
       "team": "湖北省武术和冬季运动管理中心",
@@ -23257,7 +26950,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 397,
+      "rank": 467,
       "athleteId": "cmjzpdk4o002ibfhom3xfw7t5",
       "athleteName": "马昊文",
       "team": "MAYA TEAM",
@@ -23278,7 +26971,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 398,
+      "rank": 468,
       "athleteId": "cmjzpdk2d000obfhodusp02c8",
       "athleteName": "李汶瑾",
       "team": "MAYA TEAM",
@@ -23299,7 +26992,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 399,
+      "rank": 469,
       "athleteId": "cmjzpdkb50083bfhoc0bflgh2",
       "athleteName": "高琢皓",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -23320,7 +27013,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 400,
+      "rank": 470,
       "athleteId": "cmjzpdk84005fbfhocwqzec0v",
       "athleteName": "高宇宣",
       "team": "北京虎村竞技体育有限公司",
@@ -23341,7 +27034,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 401,
+      "rank": 471,
       "athleteId": "cmjzpdkhm00dlbfhoh1eef7a9",
       "athleteName": "廉钰洁",
       "team": "河北省体育局冬季运动中心",
@@ -23362,7 +27055,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 402,
+      "rank": 472,
       "athleteId": "cmjzpdkfm00bubfhoxikrrhxg",
       "athleteName": "王婧霏",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -23383,7 +27076,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 403,
+      "rank": 473,
       "athleteId": "cmjzpdkxo00qebfhomrlq3drg",
       "athleteName": "李雪聪",
       "team": "河北省体育局冬季运动中心",
@@ -23404,7 +27097,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 404,
+      "rank": 474,
       "athleteId": "cmjzpdkw300p5bfhodr0bg1op",
       "athleteName": "韩小贝",
       "team": "河北省体育局冬季运动中心",
@@ -23425,7 +27118,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 405,
+      "rank": 475,
       "athleteId": "athlete-周紫君-四川体育职业学院",
       "athleteName": "周紫君",
       "team": "四川体育职业学院",
@@ -23446,7 +27139,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 406,
+      "rank": 476,
       "athleteId": "cmjzpdkxo00qebfhomrlq3drg",
       "athleteName": "李雪聪",
       "team": "河北省体育局冬季运动中心",
@@ -23467,7 +27160,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 407,
+      "rank": 477,
       "athleteId": "cmjzpdkw300p5bfhodr0bg1op",
       "athleteName": "韩小贝",
       "team": "河北省体育局冬季运动中心",
@@ -23488,7 +27181,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 408,
+      "rank": 478,
+      "athleteId": "athlete_郭轩烨_张家口辰鹏体育发展有",
+      "athleteName": "郭轩烨",
+      "team": "张家口辰鹏体育发展有限公司",
+      "totalPoints": 187,
+      "competitionCount": 1,
+      "bestRank": 10,
+      "avgPoints": 187,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 187,
+          "rank": 10
+        }
+      ]
+    },
+    {
+      "rank": 479,
       "athleteId": "cmjzpdkpw00jobfho96ief0p6",
       "athleteName": "马健剀",
       "team": "吉林坤伦滑雪俱乐部",
@@ -23509,7 +27223,91 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 409,
+      "rank": 480,
+      "athleteId": "athlete_谭皓阳_个人高峰",
+      "athleteName": "谭皓阳",
+      "team": "个人（高峰）",
+      "totalPoints": 187,
+      "competitionCount": 1,
+      "bestRank": 10,
+      "avgPoints": 187,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 187,
+          "rank": 10
+        }
+      ]
+    },
+    {
+      "rank": 481,
+      "athleteId": "athlete_柳昇延_延庆区体育局",
+      "athleteName": "柳昇延",
+      "team": "延庆区体育局",
+      "totalPoints": 187,
+      "competitionCount": 1,
+      "bestRank": 10,
+      "avgPoints": 187,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 187,
+          "rank": 10
+        }
+      ]
+    },
+    {
+      "rank": 482,
+      "athleteId": "athlete_魏子澄_本溪全明星滑雪学校",
+      "athleteName": "魏子澄",
+      "team": "本溪全明星滑雪学校",
+      "totalPoints": 187,
+      "competitionCount": 1,
+      "bestRank": 10,
+      "avgPoints": 187,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 187,
+          "rank": 10
+        }
+      ]
+    },
+    {
+      "rank": 483,
+      "athleteId": "athlete_王景亮_广州热雪奇迹文化体育",
+      "athleteName": "王景亮",
+      "team": "广州热雪奇迹文化体育发展有限公司",
+      "totalPoints": 187,
+      "competitionCount": 1,
+      "bestRank": 10,
+      "avgPoints": 187,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 187,
+          "rank": 10
+        }
+      ]
+    },
+    {
+      "rank": 484,
       "athleteId": "cmjzpdkt300mkbfhogytw8qz1",
       "athleteName": "熊泽瑞",
       "team": "张家口乔与杨体育服务有限公司",
@@ -23530,7 +27328,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 410,
+      "rank": 485,
+      "athleteId": "athlete_戴文研_个人",
+      "athleteName": "戴文研",
+      "team": "个人",
+      "totalPoints": 187,
+      "competitionCount": 1,
+      "bestRank": 10,
+      "avgPoints": 187,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 187,
+          "rank": 10
+        }
+      ]
+    },
+    {
+      "rank": 486,
       "athleteId": "cmjzpdl6h00xtbfhod637cmn5",
       "athleteName": "周珈禾",
       "team": "黑龙江冰雪体育职业学院",
@@ -23551,7 +27370,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 411,
+      "rank": 487,
       "athleteId": "athlete-王睿文-Criss-Crew",
       "athleteName": "王睿文",
       "team": "Criss Crew",
@@ -23572,7 +27391,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 412,
+      "rank": 488,
       "athleteId": "athlete-郭芮溪-个人",
       "athleteName": "郭芮溪",
       "team": "个人",
@@ -23593,7 +27412,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 413,
+      "rank": 489,
       "athleteId": "cmjzpdl8300z8bfhoclhueadd",
       "athleteName": "曾国强",
       "team": "个人",
@@ -23614,7 +27433,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 414,
+      "rank": 490,
       "athleteId": "athlete-张钊宁-重庆市冬季运动管理中心",
       "athleteName": "张钊宁",
       "team": "重庆市冬季运动管理中心",
@@ -23635,7 +27454,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 415,
+      "rank": 491,
       "athleteId": "cmjzpdl5f00wwbfhoxyrpjrpk",
       "athleteName": "刘宣成",
       "team": "个人",
@@ -23656,7 +27475,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 416,
+      "rank": 492,
       "athleteId": "athlete-张淑雅-山西省冰雪运动中心",
       "athleteName": "张淑雅",
       "team": "山西省冰雪运动中心",
@@ -23677,7 +27496,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 417,
+      "rank": 493,
       "athleteId": "athlete-赵开元-湖北省武术和冬季运动管理中心",
       "athleteName": "赵开元",
       "team": "湖北省武术和冬季运动管理中心",
@@ -23698,7 +27517,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 494,
       "athleteId": "cmjzpdkmu00h6bfhoz183j346",
       "athleteName": "宁浩然",
       "team": "成都热雪奇迹",
@@ -23719,7 +27538,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 419,
+      "rank": 495,
       "athleteId": "cmjzpdld4012zbfhoeg1jphpu",
       "athleteName": "于瀚",
       "team": "重庆市冬季运动管理中心",
@@ -23740,7 +27559,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 420,
+      "rank": 496,
       "athleteId": "athlete-杜雨欣-四川体育职业学院",
       "athleteName": "杜雨欣",
       "team": "四川体育职业学院",
@@ -23761,7 +27580,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 421,
+      "rank": 497,
       "athleteId": "cmjzpdk4r002lbfhoazgg5gnu",
       "athleteName": "周天朗",
       "team": "北京虎村竞技体育有限公司",
@@ -23782,7 +27601,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 422,
+      "rank": 498,
       "athleteId": "cmjzpdk2g000rbfhodm7jwa0h",
       "athleteName": "朱安然",
       "team": "上海雪酷滑雪竞技队",
@@ -23803,7 +27622,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 423,
+      "rank": 499,
       "athleteId": "cmjzpdkb80086bfhocqooy0qe",
       "athleteName": "马赛",
       "team": "四川体育职业学院",
@@ -23824,7 +27643,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 424,
+      "rank": 500,
       "athleteId": "cmjzpdk87005ibfhohu5zegc3",
       "athleteName": "汪昱诺",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -23845,7 +27664,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 425,
+      "rank": 501,
       "athleteId": "cmjzpdkhq00dobfhogqrw3gj7",
       "athleteName": "苗誉镨",
       "team": "速森体育",
@@ -23866,7 +27685,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 426,
+      "rank": 502,
       "athleteId": "cmjzpdkfq00bxbfho3nqtwyo2",
       "athleteName": "邵菲梵",
       "team": "北京天高云淡体育有限公司",
@@ -23887,7 +27706,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 427,
+      "rank": 503,
       "athleteId": "athlete-陈奕歌-河南省体育局",
       "athleteName": "陈奕歌",
       "team": "河南省体育局",
@@ -23908,7 +27727,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 428,
+      "rank": 504,
       "athleteId": "cmjzpdl3200uvbfho4hlumf98",
       "athleteName": "徐思远",
       "team": "沈阳体育学院",
@@ -23929,7 +27748,49 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 429,
+      "rank": 505,
+      "athleteId": "athlete_姚政希_个人",
+      "athleteName": "姚政希",
+      "team": "个人",
+      "totalPoints": 176,
+      "competitionCount": 1,
+      "bestRank": 11,
+      "avgPoints": 176,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 176,
+          "rank": 11
+        }
+      ]
+    },
+    {
+      "rank": 506,
+      "athleteId": "athlete_邵楷同_广州热雪奇迹",
+      "athleteName": "邵楷同",
+      "team": "广州热雪奇迹",
+      "totalPoints": 176,
+      "competitionCount": 1,
+      "bestRank": 10,
+      "avgPoints": 176,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 176,
+          "rank": 10
+        }
+      ]
+    },
+    {
+      "rank": 507,
       "athleteId": "cmjzpdl6l00xwbfhowjl65bn5",
       "athleteName": "林佳易",
       "team": "哈尔滨市冬季运动与水上运动中心",
@@ -23950,7 +27811,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 430,
+      "rank": 508,
       "athleteId": "cmjzpdkly00gfbfhof1a75ldx",
       "athleteName": "陈宇垚",
       "team": "四川体育职业学院",
@@ -23971,7 +27832,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 431,
+      "rank": 509,
       "athleteId": "cmjzpdkkk00fibfhornkfaegp",
       "athleteName": "蒋柠萱",
       "team": "北京市冬季运动管理中心",
@@ -23992,7 +27853,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 432,
+      "rank": 510,
       "athleteId": "cmjzpdl8700zbbfhohn1861h0",
       "athleteName": "孙琪翔",
       "team": "哈尔滨市冬季运动与水上运动中心",
@@ -24013,7 +27874,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 433,
+      "rank": 511,
       "athleteId": "cmjzpdknf00hobfho0vnutqs9",
       "athleteName": "高翊博",
       "team": "北京市冬季运动管理中心",
@@ -24034,7 +27895,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 434,
+      "rank": 512,
       "athleteId": "cmjzpdl5j00wzbfho4iy8wvyi",
       "athleteName": "王籽童",
       "team": "辽宁省体育事业发展中心",
@@ -24055,7 +27916,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 435,
+      "rank": 513,
       "athleteId": "athlete-张益嘉-河南省体育局",
       "athleteName": "张益嘉",
       "team": "河南省体育局",
@@ -24076,7 +27937,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 436,
+      "rank": 514,
       "athleteId": "athlete-杨峻溪-个人",
       "athleteName": "杨峻溪",
       "team": "个人",
@@ -24097,7 +27958,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 437,
+      "rank": 515,
       "athleteId": "athlete-监柏霖-个人",
       "athleteName": "监柏霖",
       "team": "个人",
@@ -24118,7 +27979,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 438,
+      "rank": 516,
       "athleteId": "athlete-周若慈-个人",
       "athleteName": "周若慈",
       "team": "个人",
@@ -24139,7 +28000,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 439,
+      "rank": 517,
       "athleteId": "cmjzpdld80132bfhoadlpmpwp",
       "athleteName": "邓与骜",
       "team": "成都热雪奇迹",
@@ -24160,7 +28021,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 440,
+      "rank": 518,
       "athleteId": "athlete-曾梓萱-四川体育职业学院",
       "athleteName": "曾梓萱",
       "team": "四川体育职业学院",
@@ -24181,7 +28042,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 441,
+      "rank": 519,
       "athleteId": "cmjzpdk4v002obfho9tmsoz86",
       "athleteName": "马昊迪",
       "team": "MAYA TEAM",
@@ -24202,7 +28063,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 442,
+      "rank": 520,
       "athleteId": "cmjzpdk2l000ubfhoux0a5q2h",
       "athleteName": "李宛凝",
       "team": "大连雨彤体育赛事俱乐部",
@@ -24223,7 +28084,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 443,
+      "rank": 521,
       "athleteId": "cmjzpdkbc0089bfhow3t9kyiy",
       "athleteName": "徐承昊",
       "team": "上海市静安区滑雪协会",
@@ -24244,7 +28105,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 444,
+      "rank": 522,
       "athleteId": "cmjzpdk8b005lbfho4c97oyke",
       "athleteName": "杨卓尔",
       "team": "中麟体育",
@@ -24265,7 +28126,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 445,
+      "rank": 523,
       "athleteId": "cmjzpdkht00drbfhoo183z471",
       "athleteName": "王嘉崎",
       "team": "新疆维吾尔自治区冬季运动训练中心",
@@ -24286,7 +28147,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 446,
+      "rank": 524,
       "athleteId": "cmjzpdkft00c0bfhofpnn2mnq",
       "athleteName": "贾釉茜",
       "team": "吉林省阔展体育服务有限公司",
@@ -24307,7 +28168,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 447,
+      "rank": 525,
       "athleteId": "cmjzpdkz700rnbfhorz1h81nt",
       "athleteName": "李霁开",
       "team": "河北省体育局冬季运动中心",
@@ -24328,7 +28189,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 448,
+      "rank": 526,
+      "athleteId": "athlete_王景亮_广州热雪奇迹文化体育",
+      "athleteName": "王景亮",
+      "team": "广州热雪奇迹文化体育发展有限公司",
+      "totalPoints": 166,
+      "competitionCount": 1,
+      "bestRank": 12,
+      "avgPoints": 166,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 166,
+          "rank": 12
+        }
+      ]
+    },
+    {
+      "rank": 527,
       "athleteId": "cmjzpdl6o00xzbfhoj6u9bsim",
       "athleteName": "王泊文",
       "team": "个人",
@@ -24349,7 +28231,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 449,
+      "rank": 528,
       "athleteId": "athlete-曾云泽-New-team",
       "athleteName": "曾云泽",
       "team": "New team",
@@ -24370,7 +28252,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 450,
+      "rank": 529,
       "athleteId": "athlete-张迦淳-个人",
       "athleteName": "张迦淳",
       "team": "个人",
@@ -24391,7 +28273,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 451,
+      "rank": 530,
       "athleteId": "cmjzpdl8b00zebfhoaawem8yw",
       "athleteName": "李星翰",
       "team": "沈阳体育学院",
@@ -24412,7 +28294,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 452,
+      "rank": 531,
       "athleteId": "cmjzpdknm00hubfho7bvsgi98",
       "athleteName": "梁嘉俊",
       "team": "石家庄市冰雪与足球运动中心",
@@ -24433,7 +28315,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 453,
+      "rank": 532,
       "athleteId": "cmjzpdklg00g3bfhopeqe1sgz",
       "athleteName": "周雨辰",
       "team": "广西射击射箭运动发展中心",
@@ -24454,7 +28336,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 454,
+      "rank": 533,
       "athleteId": "athlete-李智贤-湖北省武术和冬季运动管理中心",
       "athleteName": "李智贤",
       "team": "湖北省武术和冬季运动管理中心",
@@ -24475,7 +28357,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 455,
+      "rank": 534,
       "athleteId": "cmjzpdlc30124bfho0cnhg41y",
       "athleteName": "马泰铭",
       "team": "成都热雪奇迹",
@@ -24496,7 +28378,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 456,
+      "rank": 535,
       "athleteId": "athlete-陶志伟-山西省冰雪运动中心",
       "athleteName": "陶志伟",
       "team": "山西省冰雪运动中心",
@@ -24517,7 +28399,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 457,
+      "rank": 536,
       "athleteId": "athlete-张迦淳-个人",
       "athleteName": "张迦淳",
       "team": "个人",
@@ -24538,7 +28420,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 458,
+      "rank": 537,
       "athleteId": "cmjzpdldb0135bfhoenavjvdu",
       "athleteName": "罗知腾",
       "team": "重庆市冬季运动管理中心",
@@ -24559,7 +28441,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 459,
+      "rank": 538,
       "athleteId": "athlete-郭展麟-黑龙江省雪上训练中心",
       "athleteName": "郭展麟",
       "team": "黑龙江省雪上训练中心",
@@ -24580,7 +28462,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 460,
+      "rank": 539,
       "athleteId": "athlete-张益嘉-河南省体育局",
       "athleteName": "张益嘉",
       "team": "河南省体育局",
@@ -24601,7 +28483,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 461,
+      "rank": 540,
       "athleteId": "athlete-赵开元-湖北省武术和冬季运动管理中心",
       "athleteName": "赵开元",
       "team": "湖北省武术和冬季运动管理中心",
@@ -24622,7 +28504,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 462,
+      "rank": 541,
       "athleteId": "cmjzpdk4y002rbfho4iulm870",
       "athleteName": "蒋文栋",
       "team": "MAYA TEAM",
@@ -24643,7 +28525,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 463,
+      "rank": 542,
       "athleteId": "cmjzpdk2r000xbfho3kcj25v9",
       "athleteName": "刘和一",
       "team": "北京天高云淡体育有限公司",
@@ -24664,7 +28546,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 464,
+      "rank": 543,
       "athleteId": "cmjzpdkbg008cbfhoy1byx6zt",
       "athleteName": "刘宸卓",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -24685,7 +28567,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 465,
+      "rank": 544,
       "athleteId": "cmjzpdk8f005obfhos0k3gyvq",
       "athleteName": "黄卫瑄",
       "team": "吉林省阔展体育服务有限公司",
@@ -24706,7 +28588,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 466,
+      "rank": 545,
       "athleteId": "cmjzpdkhx00dubfhogq1rb5ct",
       "athleteName": "杨伯伦",
       "team": "个人",
@@ -24727,7 +28609,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 467,
+      "rank": 546,
       "athleteId": "cmjzpdkfw00c3bfhocx32ry78",
       "athleteName": "叶香菲",
       "team": "大连雨彤体育赛事俱乐部",
@@ -24748,7 +28630,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 468,
+      "rank": 547,
       "athleteId": "athlete-周钰芯-四川体育职业学院",
       "athleteName": "周钰芯",
       "team": "四川体育职业学院",
@@ -24769,7 +28651,49 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 469,
+      "rank": 548,
+      "athleteId": "athlete_林子辰_重庆市冬季运动管理中",
+      "athleteName": "林子辰",
+      "team": "重庆市冬季运动管理中心1队",
+      "totalPoints": 157,
+      "competitionCount": 1,
+      "bestRank": 13,
+      "avgPoints": 157,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 157,
+          "rank": 13
+        }
+      ]
+    },
+    {
+      "rank": 549,
+      "athleteId": "athlete_张博智_张家口辰鹏体育发展有",
+      "athleteName": "张博智",
+      "team": "张家口辰鹏体育发展有限公司",
+      "totalPoints": 157,
+      "competitionCount": 1,
+      "bestRank": 13,
+      "avgPoints": 157,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 157,
+          "rank": 13
+        }
+      ]
+    },
+    {
+      "rank": 550,
       "athleteId": "cmjzpdl6r00y2bfhojet9qq4z",
       "athleteName": "杨翔宇",
       "team": "个人",
@@ -24790,7 +28714,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 470,
+      "rank": 551,
       "athleteId": "athlete-刘桐朔-石家庄市冰雪与足球运动中心",
       "athleteName": "刘桐朔",
       "team": "石家庄市冰雪与足球运动中心",
@@ -24811,7 +28735,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 552,
       "athleteId": "athlete-周若慈-个人",
       "athleteName": "周若慈",
       "team": "个人",
@@ -24832,7 +28756,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 472,
+      "rank": 553,
       "athleteId": "cmjzpdl8f00zhbfho8fu1sd6q",
       "athleteName": "刘济豪",
       "team": "河北省体育局冬季运动中心",
@@ -24853,7 +28777,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 473,
+      "rank": 554,
       "athleteId": "athlete-梁明峰-山西省冰雪运动中心",
       "athleteName": "梁明峰",
       "team": "山西省冰雪运动中心",
@@ -24874,7 +28798,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 474,
+      "rank": 555,
       "athleteId": "cmjzpdkl100fubfho8tg9xa1r",
       "athleteName": "杨可轩",
       "team": "广西射击射箭运动发展中心",
@@ -24895,7 +28819,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 475,
+      "rank": 556,
       "athleteId": "cmjzpdlc90127bfho5v74jhb5",
       "athleteName": "程锦辰",
       "team": "河北省体育局冬季运动中心",
@@ -24916,7 +28840,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 476,
+      "rank": 557,
       "athleteId": "athlete-张诗蕊-四川体育职业学院",
       "athleteName": "张诗蕊",
       "team": "四川体育职业学院",
@@ -24937,7 +28861,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 477,
+      "rank": 558,
       "athleteId": "cmjzpdk52002ubfho239nfqzd",
       "athleteName": "高宇承",
       "team": "北京虎村竞技体育有限公司",
@@ -24958,7 +28882,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 478,
+      "rank": 559,
       "athleteId": "cmjzpdk2v0010bfhoaewhfwuy",
       "athleteName": "李子纯",
       "team": "个人",
@@ -24979,7 +28903,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 479,
+      "rank": 560,
       "athleteId": "cmjzpdkbi008fbfhogpqphcae",
       "athleteName": "吉淏辰",
       "team": "北京虎村竞技体育有限公司",
@@ -25000,7 +28924,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 480,
+      "rank": 561,
       "athleteId": "cmjzpdk8i005rbfho2oo4b7sh",
       "athleteName": "赵浛西",
       "team": "爱上雪体育产业发展（北京）有限公司",
@@ -25021,7 +28945,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 481,
+      "rank": 562,
       "athleteId": "cmjzpdki100dxbfhozwyr4wjz",
       "athleteName": "常一鸣",
       "team": "锐冠青少年竞技滑雪队",
@@ -25042,7 +28966,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 482,
+      "rank": 563,
       "athleteId": "cmjzpdkg000c6bfhoihmgqo4f",
       "athleteName": "刘墨晗",
       "team": "北京虎村竞技体育有限公司",
@@ -25063,7 +28987,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 483,
+      "rank": 564,
       "athleteId": "athlete-梁宝云-广西射击射箭运动发展中心",
       "athleteName": "梁宝云",
       "team": "广西射击射箭运动发展中心",
@@ -25084,7 +29008,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 484,
+      "rank": 565,
       "athleteId": "athlete-梁宝云-广西射击射箭运动发展中心",
       "athleteName": "梁宝云",
       "team": "广西射击射箭运动发展中心",
@@ -25105,7 +29029,49 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 485,
+      "rank": 566,
+      "athleteId": "athlete_沈昊宇_个人",
+      "athleteName": "沈昊宇",
+      "team": "个人",
+      "totalPoints": 149,
+      "competitionCount": 1,
+      "bestRank": 14,
+      "avgPoints": 149,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 149,
+          "rank": 14
+        }
+      ]
+    },
+    {
+      "rank": 567,
+      "athleteId": "athlete_蒋骐阳_兰州碧桂园学校",
+      "athleteName": "蒋骐阳",
+      "team": "兰州碧桂园学校",
+      "totalPoints": 149,
+      "competitionCount": 1,
+      "bestRank": 14,
+      "avgPoints": 149,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 149,
+          "rank": 14
+        }
+      ]
+    },
+    {
+      "rank": 568,
       "athleteId": "cmjzpdl6v00y5bfhoikyoooch",
       "athleteName": "刘泽琛",
       "team": "哈尔滨市冬季运动与水上运动中心",
@@ -25126,7 +29092,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 486,
+      "rank": 569,
       "athleteId": "athlete-监柏霖-个人",
       "athleteName": "监柏霖",
       "team": "个人",
@@ -25147,7 +29113,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 487,
+      "rank": 570,
       "athleteId": "athlete-马珞恩-个人",
       "athleteName": "马珞恩",
       "team": "个人",
@@ -25168,7 +29134,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 488,
+      "rank": 571,
       "athleteId": "cmjzpdl8j00zkbfhohoc9ab91",
       "athleteName": "贺天佑",
       "team": "四川体育职业学院",
@@ -25189,7 +29155,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 489,
+      "rank": 572,
       "athleteId": "athlete-冯思源-个人",
       "athleteName": "冯思源",
       "team": "个人",
@@ -25210,7 +29176,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 490,
+      "rank": 573,
       "athleteId": "cmjzpdklq00g9bfhoyym4yvox",
       "athleteName": "周雨欣",
       "team": "广西射击射箭运动发展中心",
@@ -25231,7 +29197,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 491,
+      "rank": 574,
       "athleteId": "cmjzpdlcc012abfhogtiodmxg",
       "athleteName": "朱秋霖",
       "team": "个人",
@@ -25252,7 +29218,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 492,
+      "rank": 575,
       "athleteId": "athlete-张哲朗-个人",
       "athleteName": "张哲朗",
       "team": "个人",
@@ -25273,7 +29239,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 493,
+      "rank": 576,
       "athleteId": "athlete-郭芮溪-个人",
       "athleteName": "郭芮溪",
       "team": "个人",
@@ -25294,7 +29260,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 494,
+      "rank": 577,
       "athleteId": "cmjzpdldi013bbfhoor5kxh26",
       "athleteName": "王天磊",
       "team": "河北省体育局冬季运动中心",
@@ -25315,7 +29281,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 495,
+      "rank": 578,
       "athleteId": "cmjzpdk55002xbfhookyfbfz5",
       "athleteName": "刘昱辰",
       "team": "MAYA TEAM",
@@ -25336,7 +29302,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 496,
+      "rank": 579,
       "athleteId": "cmjzpdk2z0013bfho4korkuwl",
       "athleteName": "李获稻",
       "team": "成都热雪奇迹",
@@ -25357,7 +29323,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 497,
+      "rank": 580,
       "athleteId": "cmjzpdkbm008ibfhod1hwvi59",
       "athleteName": "邢子瀚",
       "team": "纳西亚",
@@ -25378,7 +29344,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 498,
+      "rank": 581,
       "athleteId": "cmjzpdk8m005ubfhou7sh1nue",
       "athleteName": "邹齐",
       "team": "个人",
@@ -25399,7 +29365,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 499,
+      "rank": 582,
       "athleteId": "cmjzpdki500e0bfho3yo046wx",
       "athleteName": "杨一丁",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -25420,7 +29386,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 500,
+      "rank": 583,
       "athleteId": "cmjzpdkg300c9bfhov8mzyq6r",
       "athleteName": "朱珈仪",
       "team": "吉林市冬季运动管理中心",
@@ -25441,7 +29407,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 501,
+      "rank": 584,
       "athleteId": "cmjzpdkwn00pkbfhoanaefh2j",
       "athleteName": "万洛辰",
       "team": "个人",
@@ -25462,7 +29428,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 502,
+      "rank": 585,
       "athleteId": "athlete-周钰芯-四川体育职业学院",
       "athleteName": "周钰芯",
       "team": "四川体育职业学院",
@@ -25483,7 +29449,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 503,
+      "rank": 586,
       "athleteId": "cmjzpdl6y00y8bfho0nmikypo",
       "athleteName": "蒲彦西",
       "team": "个人",
@@ -25504,7 +29470,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 504,
+      "rank": 587,
       "athleteId": "cmjzpdl8n00znbfhovc4w60l6",
       "athleteName": "陈宥呈",
       "team": "个人",
@@ -25525,7 +29491,49 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 505,
+      "rank": 588,
+      "athleteId": "athlete_张博智_张家口辰鹏体育发展有",
+      "athleteName": "张博智",
+      "team": "张家口辰鹏体育发展有限公司",
+      "totalPoints": 141,
+      "competitionCount": 1,
+      "bestRank": 15,
+      "avgPoints": 141,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 141,
+          "rank": 15
+        }
+      ]
+    },
+    {
+      "rank": 589,
+      "athleteId": "athlete_岳皓宇_个人",
+      "athleteName": "岳皓宇",
+      "team": "个人",
+      "totalPoints": 141,
+      "competitionCount": 1,
+      "bestRank": 15,
+      "avgPoints": 141,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 141,
+          "rank": 15
+        }
+      ]
+    },
+    {
+      "rank": 590,
       "athleteId": "athlete-王霖逸-个人",
       "athleteName": "王霖逸",
       "team": "个人",
@@ -25546,7 +29554,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 506,
+      "rank": 591,
       "athleteId": "athlete-杨茗然-个人",
       "athleteName": "杨茗然",
       "team": "个人",
@@ -25567,7 +29575,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 507,
+      "rank": 592,
       "athleteId": "athlete-高艺轩-个人",
       "athleteName": "高艺轩",
       "team": "个人",
@@ -25588,7 +29596,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 508,
+      "rank": 593,
       "athleteId": "athlete-马珞恩-个人",
       "athleteName": "马珞恩",
       "team": "个人",
@@ -25609,7 +29617,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 594,
       "athleteId": "cmjzpdk590030bfho0px3f8sf",
       "athleteName": "张朔源",
       "team": "个人",
@@ -25630,7 +29638,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 510,
+      "rank": 595,
       "athleteId": "cmjzpdk320016bfhoxp3pgkx8",
       "athleteName": "武子蓉",
       "team": "太原市第二少年体育学校",
@@ -25651,7 +29659,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 511,
+      "rank": 596,
       "athleteId": "cmjzpdkbq008lbfhoegwsywal",
       "athleteName": "于谨赫",
       "team": "速森体育",
@@ -25672,7 +29680,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 512,
+      "rank": 597,
       "athleteId": "cmjzpdk8q005xbfhoxswwnnkl",
       "athleteName": "刘姝廷",
       "team": "中麟体育",
@@ -25693,7 +29701,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 513,
+      "rank": 598,
       "athleteId": "cmjzpdki900e3bfho6qc9ewhq",
       "athleteName": "郑研伟",
       "team": "个人",
@@ -25714,7 +29722,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 514,
+      "rank": 599,
       "athleteId": "cmjzpdkg700ccbfhossdgz9de",
       "athleteName": "韩非桐",
       "team": "速森体育",
@@ -25735,7 +29743,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 515,
+      "rank": 600,
       "athleteId": "athlete-左均怡-个人",
       "athleteName": "左均怡",
       "team": "个人",
@@ -25756,7 +29764,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 516,
+      "rank": 601,
       "athleteId": "athlete-左均怡-个人",
       "athleteName": "左均怡",
       "team": "个人",
@@ -25777,7 +29785,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 517,
+      "rank": 602,
       "athleteId": "cmjzpdl7100ybbfhoo3p1hnvm",
       "athleteName": "王梓伊",
       "team": "个人",
@@ -25798,7 +29806,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 518,
+      "rank": 603,
+      "athleteId": "athlete_刘宸宇_福建省冰雪运动协会",
+      "athleteName": "刘宸宇",
+      "team": "福建省冰雪运动协会",
+      "totalPoints": 134,
+      "competitionCount": 1,
+      "bestRank": 16,
+      "avgPoints": 134,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 134,
+          "rank": 16
+        }
+      ]
+    },
+    {
+      "rank": 604,
       "athleteId": "cmjzpdkmo00h0bfho8q8f5myc",
       "athleteName": "魏子博",
       "team": "河南省体育局",
@@ -25819,7 +29848,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 519,
+      "rank": 605,
       "athleteId": "cmjzpdklu00gcbfhoyosgjvcs",
       "athleteName": "苏常格",
       "team": "河北省体育局冬季运动中心",
@@ -25840,7 +29869,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 520,
+      "rank": 606,
       "athleteId": "athlete-马铂淙-个人",
       "athleteName": "马铂淙",
       "team": "个人",
@@ -25861,7 +29890,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 521,
+      "rank": 607,
       "athleteId": "cmjzpdk5d0033bfhoh5d8fwx8",
       "athleteName": "张睦然",
       "team": "MAYA TEAM",
@@ -25882,7 +29911,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 522,
+      "rank": 608,
       "athleteId": "cmjzpdk360019bfho7kcuehdp",
       "athleteName": "张语珊",
       "team": "个人",
@@ -25903,7 +29932,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 523,
+      "rank": 609,
       "athleteId": "cmjzpdkbu008obfhondaq2opk",
       "athleteName": "刘哲鸣",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -25924,7 +29953,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 524,
+      "rank": 610,
       "athleteId": "cmjzpdk8u0060bfho1vg3hn2i",
       "athleteName": "周焕熙",
       "team": "爱上雪体育产业发展（北京）有限公司",
@@ -25945,7 +29974,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 525,
+      "rank": 611,
       "athleteId": "cmjzpdkid00e6bfho99rqbw7s",
       "athleteName": "樊冠序",
       "team": "吉林省阔展体育服务有限公司",
@@ -25966,7 +29995,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 526,
+      "rank": 612,
       "athleteId": "cmjzpdkga00cfbfhoyfzzm0hh",
       "athleteName": "杨笑语",
       "team": "河北省体育局冬季运动中心",
@@ -25987,7 +30016,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 527,
+      "rank": 613,
       "athleteId": "cmjzpdl1f00tcbfhowslhbsqq",
       "athleteName": "李佳馨",
       "team": "个人",
@@ -26008,7 +30037,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 528,
+      "rank": 614,
       "athleteId": "cmjzpdl7500yebfhon5cb75ux",
       "athleteName": "冯翊瀚",
       "team": "个人",
@@ -26029,7 +30058,49 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 529,
+      "rank": 615,
+      "athleteId": "athlete_赵宣贺_个人",
+      "athleteName": "赵宣贺",
+      "team": "个人",
+      "totalPoints": 127,
+      "competitionCount": 1,
+      "bestRank": 17,
+      "avgPoints": 127,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 127,
+          "rank": 17
+        }
+      ]
+    },
+    {
+      "rank": 616,
+      "athleteId": "athlete_龙思祺_广州雪迹文化体育发展",
+      "athleteName": "龙思祺",
+      "team": "广州雪迹文化体育发展有限公司",
+      "totalPoints": 127,
+      "competitionCount": 1,
+      "bestRank": 17,
+      "avgPoints": 127,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 127,
+          "rank": 17
+        }
+      ]
+    },
+    {
+      "rank": 617,
       "athleteId": "athlete-褚天羿-Star单板队",
       "athleteName": "褚天羿",
       "team": "Star单板队",
@@ -26050,7 +30121,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 530,
+      "rank": 618,
       "athleteId": "athlete-刘桐朔-石家庄市冰雪与足球运动中心",
       "athleteName": "刘桐朔",
       "team": "石家庄市冰雪与足球运动中心",
@@ -26071,7 +30142,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 531,
+      "rank": 619,
       "athleteId": "cmjzpdk5g0036bfhojj36lkyb",
       "athleteName": "白雨奇",
       "team": "大连雨彤体育赛事俱乐部",
@@ -26092,7 +30163,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 532,
+      "rank": 620,
       "athleteId": "cmjzpdk3a001cbfhosbj1b2bo",
       "athleteName": "李墨涵",
       "team": "中麟体育",
@@ -26113,7 +30184,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 533,
+      "rank": 621,
       "athleteId": "cmjzpdkbx008rbfho8v83oc7a",
       "athleteName": "孙屹卓",
       "team": "MAYA TEAM",
@@ -26134,7 +30205,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 534,
+      "rank": 622,
       "athleteId": "cmjzpdk8x0063bfhobic6c948",
       "athleteName": "闫艺宸",
       "team": "个人",
@@ -26155,7 +30226,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 535,
+      "rank": 623,
       "athleteId": "cmjzpdkih00e9bfholi22uh9o",
       "athleteName": "曲星铭",
       "team": "个人",
@@ -26176,7 +30247,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 536,
+      "rank": 624,
       "athleteId": "cmjzpdkge00cibfhoiniuvbof",
       "athleteName": "房洢伊",
       "team": "个人",
@@ -26197,7 +30268,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 537,
+      "rank": 625,
+      "athleteId": "athlete_田芷源_长春市朝阳区山域竞技",
+      "athleteName": "田芷源",
+      "team": "长春市朝阳区山域竞技体育工作室",
+      "totalPoints": 121,
+      "competitionCount": 1,
+      "bestRank": 18,
+      "avgPoints": 121,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 121,
+          "rank": 18
+        }
+      ]
+    },
+    {
+      "rank": 626,
       "athleteId": "athlete-蒋桨-个人",
       "athleteName": "蒋桨",
       "team": "个人",
@@ -26218,7 +30310,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 538,
+      "rank": 627,
       "athleteId": "athlete-王若西-重庆市冬季运动管理中心",
       "athleteName": "王若西",
       "team": "重庆市冬季运动管理中心",
@@ -26239,7 +30331,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 539,
+      "rank": 628,
       "athleteId": "athlete-刘音里-个人",
       "athleteName": "刘音里",
       "team": "个人",
@@ -26260,7 +30352,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 540,
+      "rank": 629,
       "athleteId": "cmjzpdk5j0039bfho0a2ww5j0",
       "athleteName": "王子溪",
       "team": "KingProTeam",
@@ -26281,7 +30373,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 541,
+      "rank": 630,
       "athleteId": "cmjzpdk3e001fbfho3hhippx7",
       "athleteName": "李雨萱",
       "team": "个人",
@@ -26302,7 +30394,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 542,
+      "rank": 631,
       "athleteId": "cmjzpdkc1008ubfho003mc70z",
       "athleteName": "嘎日玛盖",
       "team": "新疆维吾尔自治区冬季运动训练中心",
@@ -26323,7 +30415,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 632,
       "athleteId": "cmjzpdk900066bfho8yqnek9e",
       "athleteName": "徐紫馨",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -26344,7 +30436,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 544,
+      "rank": 633,
       "athleteId": "cmjzpdkik00ecbfho4luzmtsp",
       "athleteName": "付若洵",
       "team": "KingProTeam",
@@ -26365,7 +30457,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 545,
+      "rank": 634,
       "athleteId": "cmjzpdkgh00clbfhozrtx7frf",
       "athleteName": "白默函",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -26386,7 +30478,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 546,
+      "rank": 635,
+      "athleteId": "athlete_孙茂文_个人",
+      "athleteName": "孙茂文",
+      "team": "个人",
+      "totalPoints": 115,
+      "competitionCount": 1,
+      "bestRank": 19,
+      "avgPoints": 115,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 115,
+          "rank": 19
+        }
+      ]
+    },
+    {
+      "rank": 636,
       "athleteId": "athlete-陶志伟-山西省冰雪运动中心",
       "athleteName": "陶志伟",
       "team": "山西省冰雪运动中心",
@@ -26407,7 +30520,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 547,
+      "rank": 637,
       "athleteId": "athlete-王玮怡-个人",
       "athleteName": "王玮怡",
       "team": "个人",
@@ -26428,7 +30541,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 548,
+      "rank": 638,
       "athleteId": "athlete-王睿文-Criss-Crew",
       "athleteName": "王睿文",
       "team": "Criss Crew",
@@ -26449,7 +30562,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 549,
+      "rank": 639,
       "athleteId": "cmjzpdk5m003cbfhosvizw7ep",
       "athleteName": "黄益航",
       "team": "四川体育职业学院",
@@ -26470,7 +30583,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 550,
+      "rank": 640,
       "athleteId": "cmjzpdk3h001ibfho4lvkrl73",
       "athleteName": "马音霓",
       "team": "爱上雪体育产业发展（北京）有限公司",
@@ -26491,7 +30604,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 551,
+      "rank": 641,
       "athleteId": "cmjzpdkc4008xbfhoyml7rqhz",
       "athleteName": "崔承泽",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -26512,7 +30625,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 552,
+      "rank": 642,
       "athleteId": "cmjzpdk930069bfho54mrsdcb",
       "athleteName": "王艺潼",
       "team": "个人",
@@ -26533,7 +30646,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 553,
+      "rank": 643,
       "athleteId": "cmjzpdkio00efbfho8e577j04",
       "athleteName": "吴保江",
       "team": "零站单板滑雪俱乐部",
@@ -26554,7 +30667,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 554,
+      "rank": 644,
       "athleteId": "cmjzpdkgl00cobfhobsdhpr93",
       "athleteName": "刘怡廷",
       "team": "张家口市足球和冰雪运动学校",
@@ -26575,7 +30688,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 555,
+      "rank": 645,
+      "athleteId": "athlete_冯泽昊_零度竞技吉林省零下壹",
+      "athleteName": "冯泽昊",
+      "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
+      "totalPoints": 110,
+      "competitionCount": 1,
+      "bestRank": 20,
+      "avgPoints": 110,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 110,
+          "rank": 20
+        }
+      ]
+    },
+    {
+      "rank": 646,
       "athleteId": "cmjzpdlbz0121bfhoofrhg803",
       "athleteName": "曾星越",
       "team": "个人",
@@ -26596,7 +30730,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 556,
+      "rank": 647,
       "athleteId": "athlete-孙翎皓-Criss-Crew",
       "athleteName": "孙翎皓",
       "team": "Criss Crew",
@@ -26617,7 +30751,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 557,
+      "rank": 648,
       "athleteId": "cmjzpdk5q003fbfho5e0w98bk",
       "athleteName": "夏誉领",
       "team": "上海雪酷滑雪竞技队",
@@ -26638,7 +30772,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 558,
+      "rank": 649,
       "athleteId": "cmjzpdk3k001lbfho3ro7vqgl",
       "athleteName": "张兆檬",
       "team": "KingProTeam",
@@ -26659,7 +30793,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 559,
+      "rank": 650,
       "athleteId": "cmjzpdkc80090bfhouqhl68vg",
       "athleteName": "王子嘉",
       "team": "内蒙古嘉灏体育",
@@ -26680,7 +30814,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 560,
+      "rank": 651,
       "athleteId": "cmjzpdk96006cbfho14znv0uq",
       "athleteName": "徐艺玮",
       "team": "河北省体育局冬季运动中心",
@@ -26701,7 +30835,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 561,
+      "rank": 652,
       "athleteId": "cmjzpdkiv00eibfhomj9j7tlk",
       "athleteName": "辛博",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -26722,7 +30856,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 562,
+      "rank": 653,
       "athleteId": "cmjzpdkgo00crbfhoj3jtd3nu",
       "athleteName": "范芮希",
       "team": "个人",
@@ -26743,7 +30877,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 563,
+      "rank": 654,
+      "athleteId": "athlete_马照然_大连奥萨体育文化有限",
+      "athleteName": "马照然",
+      "team": "大连奥萨体育文化有限公司",
+      "totalPoints": 105,
+      "competitionCount": 1,
+      "bestRank": 21,
+      "avgPoints": 105,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 105,
+          "rank": 21
+        }
+      ]
+    },
+    {
+      "rank": 655,
       "athleteId": "athlete-孙翎皓-Criss-Crew",
       "athleteName": "孙翎皓",
       "team": "Criss Crew",
@@ -26764,7 +30919,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 564,
+      "rank": 656,
       "athleteId": "cmjzpdk5t003ibfhocx6w9f2u",
       "athleteName": "周豫",
       "team": "北京虎村竞技体育有限公司",
@@ -26785,7 +30940,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 565,
+      "rank": 657,
       "athleteId": "cmjzpdk3o001obfhodbkhcpfl",
       "athleteName": "高怡雯",
       "team": "北京天高云淡体育有限公司",
@@ -26806,7 +30961,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 566,
+      "rank": 658,
       "athleteId": "cmjzpdkcb0093bfho0ocki2j0",
       "athleteName": "江显晨",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -26827,7 +30982,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 567,
+      "rank": 659,
       "athleteId": "cmjzpdk99006fbfhowh2pew1l",
       "athleteName": "史怀竺",
       "team": "大连雨彤体育赛事俱乐部",
@@ -26848,7 +31003,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 568,
+      "rank": 660,
       "athleteId": "cmjzpdkiz00elbfhowy5fi3bf",
       "athleteName": "黄铸轩",
       "team": "个人",
@@ -26869,7 +31024,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 569,
+      "rank": 661,
       "athleteId": "cmjzpdkgs00cubfho86ndwawc",
       "athleteName": "杜美佳妮",
       "team": "北京佩士体育有限公司",
@@ -26890,7 +31045,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 570,
+      "rank": 662,
+      "athleteId": "athlete_董林枫_RSKI竞技滑雪队队",
+      "athleteName": "董林枫",
+      "team": "RSKI竞技滑雪队队",
+      "totalPoints": 100,
+      "competitionCount": 1,
+      "bestRank": 22,
+      "avgPoints": 100,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 100,
+          "rank": 22
+        }
+      ]
+    },
+    {
+      "rank": 663,
       "athleteId": "cmjzpdkmr00h3bfhom6eectsq",
       "athleteName": "石昊桐",
       "team": "北京市冬季运动管理中心",
@@ -26911,7 +31087,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 571,
+      "rank": 664,
       "athleteId": "cmjzpdk5w003lbfho6honytan",
       "athleteName": "张柏轩",
       "team": "MAYA TEAM",
@@ -26932,7 +31108,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 572,
+      "rank": 665,
       "athleteId": "cmjzpdk3s001rbfhonoy1krhm",
       "athleteName": "周芸溪",
       "team": "MAYA TEAM",
@@ -26953,7 +31129,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 573,
+      "rank": 666,
       "athleteId": "cmjzpdkce0096bfho9w4cv43j",
       "athleteName": "孟裕皓",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -26974,7 +31150,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 574,
+      "rank": 667,
       "athleteId": "cmjzpdk9d006ibfho62rtb6mv",
       "athleteName": "叶丽扎·别克苏力坦",
       "team": "新疆维吾尔自治区冬季运动训练中心",
@@ -26995,7 +31171,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 575,
+      "rank": 668,
       "athleteId": "cmjzpdkj200eobfhou82m9qil",
       "athleteName": "唐鸿博",
       "team": "KingProTeam",
@@ -27016,7 +31192,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 576,
+      "rank": 669,
+      "athleteId": "athlete_蒋骐阳_兰州碧桂园学校",
+      "athleteName": "蒋骐阳",
+      "team": "兰州碧桂园学校",
+      "totalPoints": 95,
+      "competitionCount": 1,
+      "bestRank": 23,
+      "avgPoints": 95,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 95,
+          "rank": 23
+        }
+      ]
+    },
+    {
+      "rank": 670,
       "athleteId": "cmjzpdlcg012dbfho7kz6iwv3",
       "athleteName": "林芮锋",
       "team": "四川体育职业学院",
@@ -27037,7 +31234,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 577,
+      "rank": 671,
       "athleteId": "cmjzpdk5z003obfhomuy5i56z",
       "athleteName": "朱朗灿",
       "team": "个人",
@@ -27058,7 +31255,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 672,
       "athleteId": "cmjzpdkci0099bfhoj2fomk7j",
       "athleteName": "李柏翔",
       "team": "MAYA TEAM",
@@ -27079,7 +31276,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 579,
+      "rank": 673,
       "athleteId": "cmjzpdk9g006lbfhonossoltj",
       "athleteName": "刘于靖璇",
       "team": "丝绸之路青少年俱乐部",
@@ -27100,7 +31297,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 580,
+      "rank": 674,
       "athleteId": "cmjzpdkj600erbfhoagwamkpg",
       "athleteName": "杜鑫",
       "team": "张家口市足球和冰雪运动学校",
@@ -27121,7 +31318,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 581,
+      "rank": 675,
+      "athleteId": "athlete_龙思祺_广州雪迹文化体育发展",
+      "athleteName": "龙思祺",
+      "team": "广州雪迹文化体育发展有限公司",
+      "totalPoints": 91,
+      "competitionCount": 1,
+      "bestRank": 24,
+      "avgPoints": 91,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": null,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
+          "location": "吉林省吉林市",
+          "points": 91,
+          "rank": 24
+        }
+      ]
+    },
+    {
+      "rank": 676,
       "athleteId": "athlete-刘音里-个人",
       "athleteName": "刘音里",
       "team": "个人",
@@ -27142,7 +31360,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 582,
+      "rank": 677,
       "athleteId": "cmjzpdk62003rbfho276bqrn6",
       "athleteName": "程子航",
       "team": "北京虎村竞技体育有限公司",
@@ -27163,7 +31381,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 583,
+      "rank": 678,
       "athleteId": "cmjzpdkcm009cbfhotv2stqaf",
       "athleteName": "陶勃遇",
       "team": "锐冠青少年竞技滑雪队",
@@ -27184,7 +31402,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 584,
+      "rank": 679,
       "athleteId": "cmjzpdk9j006obfhor1vkbpvi",
       "athleteName": "王羽佳",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -27205,7 +31423,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 585,
+      "rank": 680,
       "athleteId": "cmjzpdkja00eubfho4y4pipqd",
       "athleteName": "刘馨泽",
       "team": "吉林省阔展体育服务有限公司",
@@ -27226,7 +31444,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 586,
+      "rank": 681,
       "athleteId": "athlete-马铂淙-个人",
       "athleteName": "马铂淙",
       "team": "个人",
@@ -27247,7 +31465,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 587,
+      "rank": 682,
       "athleteId": "cmjzpdk65003ubfhov0tbtt6p",
       "athleteName": "聂铭熙",
       "team": "MAYA TEAM",
@@ -27268,7 +31486,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 588,
+      "rank": 683,
       "athleteId": "cmjzpdkcq009fbfhoxa5ipl1g",
       "athleteName": "仲作成",
       "team": "MAYA TEAM",
@@ -27289,7 +31507,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 589,
+      "rank": 684,
       "athleteId": "cmjzpdk9n006rbfhoom69d3b4",
       "athleteName": "黎若水",
       "team": "个人",
@@ -27310,7 +31528,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 590,
+      "rank": 685,
       "athleteId": "athlete-张哲朗-个人",
       "athleteName": "张哲朗",
       "team": "个人",
@@ -27331,7 +31549,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 591,
+      "rank": 686,
       "athleteId": "cmjzpdk69003xbfhomaabax6c",
       "athleteName": "金子彦",
       "team": "个人",
@@ -27352,7 +31570,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 592,
+      "rank": 687,
       "athleteId": "cmjzpdkct009ibfhoibkwcoe4",
       "athleteName": "郭天泽",
       "team": "MAYA TEAM",
@@ -27373,7 +31591,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 593,
+      "rank": 688,
       "athleteId": "cmjzpdk9q006ubfhol25rw40e",
       "athleteName": "刘芊焱",
       "team": "个人",
@@ -27394,7 +31612,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 594,
+      "rank": 689,
       "athleteId": "cmjzpdk6c0040bfhor621ft1n",
       "athleteName": "陈鑫艺",
       "team": "四川体育职业学院",
@@ -27415,7 +31633,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 595,
+      "rank": 690,
       "athleteId": "cmjzpdkcx009lbfhovbf8c77r",
       "athleteName": "袁子宸",
       "team": "重庆巴蜀科学城中学校",
@@ -27436,7 +31654,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 596,
+      "rank": 691,
       "athleteId": "cmjzpdk9t006xbfhobc0rcef9",
       "athleteName": "吴宛霖",
       "team": "北京天高云淡体育有限公司",
@@ -27457,7 +31675,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 597,
+      "rank": 692,
       "athleteId": "cmjzpdk6f0043bfhotms7f5yw",
       "athleteName": "孙奥荣",
       "team": "四川体育职业学院",
@@ -27478,7 +31696,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 598,
+      "rank": 693,
       "athleteId": "cmjzpdkd0009obfhoo2lnifjm",
       "athleteName": "张亚琨",
       "team": "大连雨彤体育赛事俱乐部",
@@ -27499,7 +31717,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 599,
+      "rank": 694,
       "athleteId": "cmjzpdk9w0070bfhojofn6m13",
       "athleteName": "赵天冉",
       "team": "KingProTeam",
@@ -27520,7 +31738,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 600,
+      "rank": 695,
       "athleteId": "cmjzpdk6j0046bfhov1sarue5",
       "athleteName": "赵梓聿",
       "team": "MAYA TEAM",
@@ -27541,7 +31759,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 601,
+      "rank": 696,
       "athleteId": "cmjzpdkd4009rbfhoi14egzfo",
       "athleteName": "贾博翔",
       "team": "锐冠青少年竞技滑雪队",
@@ -27562,7 +31780,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 602,
+      "rank": 697,
       "athleteId": "cmjzpdka00073bfhovx3noqyi",
       "athleteName": "周琪",
       "team": "锐冠青少年竞技滑雪队",
@@ -27583,7 +31801,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 603,
+      "rank": 698,
       "athleteId": "cmjzpdk6m0049bfho5dxuehct",
       "athleteName": "闫慕垚",
       "team": "大连雨彤体育赛事俱乐部",
@@ -27604,7 +31822,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 604,
+      "rank": 699,
       "athleteId": "cmjzpdkd8009ubfhotio8k1cy",
       "athleteName": "井诚",
       "team": "中麟体育",
@@ -27625,7 +31843,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 605,
+      "rank": 700,
       "athleteId": "cmjzpdka40076bfhorgd2m8ou",
       "athleteName": "亢正熙",
       "team": "四川体育职业学院",
@@ -27646,7 +31864,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 606,
+      "rank": 701,
       "athleteId": "cmjzpdk6q004cbfhod35sxrf6",
       "athleteName": "杨滨睿",
       "team": "MAYA TEAM",
@@ -27667,7 +31885,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 702,
       "athleteId": "cmjzpdkdc009xbfhoo2klfjap",
       "athleteName": "洪戬",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -27688,7 +31906,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 608,
+      "rank": 703,
       "athleteId": "cmjzpdka70079bfho3f7ql9v4",
       "athleteName": "王奕棽",
       "team": "速森体育",
@@ -27709,7 +31927,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 609,
+      "rank": 704,
       "athleteId": "cmjzpdk6t004fbfhoynftnzxa",
       "athleteName": "景子融",
       "team": "中麟体育",
@@ -27730,7 +31948,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 610,
+      "rank": 705,
       "athleteId": "cmjzpdkdh00a0bfho4wxoxzvt",
       "athleteName": "张晧泽",
       "team": "太原市第二少年体育学校",
@@ -27751,7 +31969,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 611,
+      "rank": 706,
       "athleteId": "cmjzpdkaa007cbfho0t5qqqm9",
       "athleteName": "陈卓",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -27772,7 +31990,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 612,
+      "rank": 707,
       "athleteId": "cmjzpdk6w004ibfhowp9zh349",
       "athleteName": "祖与辰",
       "team": "秦皇岛狂雪滑雪俱乐部",
@@ -27793,7 +32011,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 613,
+      "rank": 708,
       "athleteId": "cmjzpdkdl00a3bfhobgcrmoxf",
       "athleteName": "郭芮名",
       "team": "河北省体育局冬季运动中心",
@@ -27814,7 +32032,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 614,
+      "rank": 709,
       "athleteId": "cmjzpdk70004lbfhoemd7yndw",
       "athleteName": "吕毅",
       "team": "太原市第二少年体育学校",
@@ -27835,7 +32053,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 615,
+      "rank": 710,
       "athleteId": "cmjzpdkdq00a6bfhooeygbvcg",
       "athleteName": "李钊羽",
       "team": "个人",
@@ -27856,7 +32074,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 616,
+      "rank": 711,
       "athleteId": "cmjzpdk74004obfhof6076pvg",
       "athleteName": "王博晨昊",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -27877,7 +32095,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 617,
+      "rank": 712,
       "athleteId": "cmjzpdkdu00a9bfhoglttsdpp",
       "athleteName": "谢书敖",
       "team": "零站单板滑雪俱乐部",
@@ -27898,7 +32116,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 618,
+      "rank": 713,
       "athleteId": "cmjzpdkdy00acbfhof8j22w6u",
       "athleteName": "王浩然",
       "team": "中麟体育",
@@ -27919,7 +32137,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 619,
+      "rank": 714,
       "athleteId": "cmjzpdke200afbfho46pb1bph",
       "athleteName": "陈浩铭",
       "team": "四川体育职业学院",
@@ -27940,7 +32158,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 620,
+      "rank": 715,
       "athleteId": "cmjzpdke600aibfhorlv0ah7f",
       "athleteName": "徐悦宾",
       "team": "北京虎村竞技体育有限公司",
@@ -27961,7 +32179,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 621,
+      "rank": 716,
       "athleteId": "cmjzpdke900albfhoigjeyd76",
       "athleteName": "暴城睿",
       "team": "辽宁极限体育发展有限公司",
@@ -27982,7 +32200,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 622,
+      "rank": 717,
       "athleteId": "cmjzpdked00aobfhobpgyq4nt",
       "athleteName": "靳淏宬",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -28003,7 +32221,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 623,
+      "rank": 718,
       "athleteId": "cmjzpdkeg00arbfhofvp5x8xt",
       "athleteName": "熊品超",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -28024,7 +32242,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 624,
+      "rank": 719,
       "athleteId": "cmjzpdkek00aubfhonxqvxggw",
       "athleteName": "孙裕恒",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -28045,7 +32263,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 625,
+      "rank": 720,
       "athleteId": "cmjzpdken00axbfhox6zhp4mo",
       "athleteName": "陈羿同",
       "team": "零站体育",
@@ -28066,7 +32284,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 626,
+      "rank": 721,
       "athleteId": "cmjzpdker00b0bfhocrpgfxmf",
       "athleteName": "陈宥廷",
       "team": "上海雪酷滑雪竞技队",
@@ -28087,7 +32305,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 627,
+      "rank": 722,
       "athleteId": "cmjzpdkeu00b3bfhoz7xisfn9",
       "athleteName": "杨昊泽",
       "team": "速森体育",
@@ -28108,7 +32326,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     }
   ],
-  "total": 627,
+  "total": 722,
   "filters": {
     "ageGroups": [
       "U11",
@@ -28127,6 +32345,7 @@ export const totalRankingsData: TotalRankingsData = {
       "平行大回转"
     ],
     "locations": [
+      "吉林省吉林市",
       "张家口富龙滑雪场",
       "成都热雪奇迹室内滑雪场",
       "雪如意滑雪场"
@@ -28151,9 +32370,9 @@ export const totalRankingsData: TotalRankingsData = {
     ]
   },
   "stats": {
-    "athleteCount": 446,
-    "competitionCount": 10,
-    "totalResults": 737
+    "athleteCount": 509,
+    "competitionCount": 11,
+    "totalResults": 851
   },
-  "generatedAt": "2026-01-14T11:56:33.477Z"
+  "generatedAt": "2026-01-28T09:24:52.893Z"
 };
