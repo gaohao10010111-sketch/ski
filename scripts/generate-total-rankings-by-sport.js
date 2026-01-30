@@ -42,30 +42,88 @@ function getLastSnapshotRankMap() {
     LIMIT 1
   `).get();
 
-  if (!lastSnapshot) {
-    console.log('没有找到历史快照数据，所有运动员将显示为"新进榜"');
+  if (lastSnapshot) {
+    console.log(`使用快照时间: ${lastSnapshot.snapshotDate}`);
+
+    const snapshots = db.prepare(`
+      SELECT athleteId, sportType, ageGroup, gender, rank
+      FROM RankingSnapshot
+      WHERE snapshotDate = ?
+    `).all(lastSnapshot.snapshotDate);
+
+    console.log(`找到 ${snapshots.length} 条快照记录`);
+
+    snapshots.forEach(s => {
+      const mergedSportType = snapshotSportTypeMergeMap[s.sportType] || s.sportType || 'total';
+      const key = `${mergedSportType}-${s.ageGroup}-${s.gender}-${s.athleteId}`;
+      snapshotMap.set(key, s.rank);
+    });
+
+    if (snapshotMap.size > 0) return snapshotMap;
+  }
+
+  // 没有快照数据时，自动基于"排除最近一批比赛"计算基准排名
+  console.log('没有快照数据，自动计算基准排名（排除最近一批比赛）...');
+
+  // 获取所有不同的比赛日期
+  const compDates = db.prepare(`
+    SELECT DISTINCT date FROM Competition ORDER BY date ASC
+  `).all().map(r => r.date);
+
+  if (compDates.length < 2) {
+    console.log('只有一批比赛，无法计算排名变化，所有运动员显示为"新进榜"');
     return snapshotMap;
   }
 
-  console.log(`使用快照时间: ${lastSnapshot.snapshotDate}`);
+  // 最后一个日期视为"最新一批"，排除它
+  const latestDate = compDates[compDates.length - 1];
+  console.log(`排除最近比赛日期 ${latestDate}，基于之前的比赛计算基准排名`);
 
-  // 获取该快照时间的所有排名记录
-  const snapshots = db.prepare(`
-    SELECT athleteId, sportType, ageGroup, gender, rank
-    FROM RankingSnapshot
-    WHERE snapshotDate = ?
-  `).all(lastSnapshot.snapshotDate);
+  // 获取排除最后一批后的成绩
+  const prevResults = db.prepare(`
+    SELECT r.athleteId, r.discipline, r.ageGroup, r.gender, r.points, r.rank,
+           c.sportType
+    FROM Result r
+    JOIN Competition c ON r.competitionId = c.id
+    WHERE c.date < ?
+  `).all(latestDate);
 
-  console.log(`找到 ${snapshots.length} 条快照记录`);
+  if (prevResults.length === 0) {
+    console.log('排除后无历史成绩，所有运动员显示为"新进榜"');
+    return snapshotMap;
+  }
 
-  // 构建快照Map
-  // 将原始sportType映射到合并后的sportType
-  snapshots.forEach(s => {
-    const mergedSportType = snapshotSportTypeMergeMap[s.sportType] || s.sportType || 'total';
-    const key = `${mergedSportType}-${s.ageGroup}-${s.gender}-${s.athleteId}`;
-    snapshotMap.set(key, s.rank);
+  console.log(`基准成绩: ${prevResults.length} 条`);
+
+  // 按 mergedSportType + discipline + ageGroup + gender + athleteId 累积积分
+  const prevStatsMap = new Map();
+  prevResults.forEach(r => {
+    const mergedSportType = sportTypeMergeMap[r.sportType] || r.sportType;
+    const key = `${mergedSportType}-${r.discipline}-${r.ageGroup}-${r.gender}-${r.athleteId}`;
+    if (!prevStatsMap.has(key)) {
+      prevStatsMap.set(key, { totalPoints: 0, athleteId: r.athleteId, sportType: mergedSportType, discipline: r.discipline, ageGroup: r.ageGroup, gender: r.gender });
+    }
+    prevStatsMap.get(key).totalPoints += r.points || 0;
   });
 
+  // 按每个 discipline+ageGroup+gender 子项排名
+  const subEventGroups = new Map();
+  prevStatsMap.forEach((stats, key) => {
+    const groupKey = `${stats.sportType}-${stats.discipline}-${stats.ageGroup}-${stats.gender}`;
+    if (!subEventGroups.has(groupKey)) subEventGroups.set(groupKey, []);
+    subEventGroups.get(groupKey).push(stats);
+  });
+
+  subEventGroups.forEach((athletes, groupKey) => {
+    athletes.sort((a, b) => b.totalPoints - a.totalPoints);
+    athletes.forEach((a, idx) => {
+      // 带 discipline 的 key，确保不同小项不互相覆盖
+      const snapshotKey = `${a.sportType}-${a.discipline}-${a.ageGroup}-${a.gender}-${a.athleteId}`;
+      snapshotMap.set(snapshotKey, idx + 1);
+    });
+  });
+
+  console.log(`自动基准排名: ${snapshotMap.size} 条记录`);
   return snapshotMap;
 }
 
@@ -214,8 +272,10 @@ function generateTotalRankingsBySport() {
         const currentRank = index + 1;
         // 尝试查找上次快照中的排名
         // 先尝试按 sportType + ageGroup + gender + athleteId 查找
+        // 先尝试带 discipline 的 key（自动基准模式），再尝试不带的（快照模式兼容）
+        const snapshotKeyWithDisc = `${mainSportType}-${stats.discipline}-${stats.ageGroup}-${stats.gender}-${stats.athleteId}`;
         const snapshotKey = `${mainSportType}-${stats.ageGroup}-${stats.gender}-${stats.athleteId}`;
-        const lastRank = lastSnapshotRankMap.get(snapshotKey);
+        const lastRank = lastSnapshotRankMap.get(snapshotKeyWithDisc) ?? lastSnapshotRankMap.get(snapshotKey);
 
         // 计算排名变化：lastRank - currentRank（上升为正，下降为负）
         // null 表示新进榜
