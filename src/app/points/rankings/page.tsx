@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useMemo, useEffect, useRef } from 'react'
+import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
+import { createPortal } from 'react-dom'
 import Link from 'next/link'
 import { Trophy, Medal, Award, Crown, Download, Search, ChevronLeft, ChevronRight, ArrowLeft, ChevronDown, ChevronUp, Users, Sparkles, Target, TrendingUp, Calendar, ArrowUpRight, ArrowDownRight, Minus, Mountain, ArrowLeftRight, Wind, Star } from 'lucide-react'
 import { latestResults, type AthleteResult } from '@/data/latestResults'
@@ -140,7 +141,7 @@ function RankChangeDisplay({ change }: { change?: number | null }) {
 // 积分构成提示组件
 function PointsBreakdownTooltip({ item }: { item: TotalRankingItem }) {
   const [isOpen, setIsOpen] = useState(false)
-  const [showBelow, setShowBelow] = useState(false)
+  const [pos, setPos] = useState<{ top: number; left: number; below: boolean }>({ top: 0, left: 0, below: false })
   const triggerRef = useRef<HTMLDivElement>(null)
 
   // 检查是否有积分构成数据
@@ -167,11 +168,65 @@ function PointsBreakdownTooltip({ item }: { item: TotalRankingItem }) {
   const handleMouseEnter = () => {
     if (triggerRef.current) {
       const rect = triggerRef.current.getBoundingClientRect()
-      // 如果上方空间不足150px，则向下弹出
-      setShowBelow(rect.top < 150)
+      const below = rect.top < 180
+      setPos({
+        top: below ? rect.bottom + 8 : rect.top - 8,
+        left: rect.left + rect.width / 2,
+        below
+      })
     }
     setIsOpen(true)
   }
+
+  const tooltipContent = isOpen ? createPortal(
+    <div
+      style={{
+        position: 'fixed',
+        top: pos.below ? pos.top : undefined,
+        bottom: pos.below ? undefined : `${window.innerHeight - pos.top}px`,
+        left: pos.left,
+        transform: 'translateX(-50%)',
+        zIndex: 9999,
+      }}
+      className="min-w-[240px]"
+      onMouseEnter={() => setIsOpen(true)}
+      onMouseLeave={() => setIsOpen(false)}
+    >
+      <div className="bg-gray-900 text-white rounded-lg shadow-xl p-3 text-left">
+        <div className="text-xs font-medium text-gray-400 mb-2">积分构成明细</div>
+        <div className="space-y-1.5">
+          {breakdown.map((b, i) => (
+            <div key={i} className="flex items-center justify-between gap-3 text-sm">
+              <div className="flex-1 min-w-0">
+                <div className="truncate text-gray-200" title={b.competition}>
+                  {b.location || b.competition}
+                </div>
+                <div className="text-xs text-gray-500">第{b.rank}名</div>
+              </div>
+              <div className="font-bold text-yellow-400 whitespace-nowrap">
+                +{b.points}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-2 pt-2 border-t border-gray-700 flex justify-between text-sm">
+          <span className="text-gray-400">总计</span>
+          <span className="font-bold text-white">{item.totalPoints}分</span>
+        </div>
+        {/* 箭头 */}
+        {pos.below ? (
+          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-[-1px]">
+            <div className="w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-gray-900"></div>
+          </div>
+        ) : (
+          <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-px">
+            <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-gray-900"></div>
+          </div>
+        )}
+      </div>
+    </div>,
+    document.body
+  ) : null
 
   return (
     <div
@@ -188,46 +243,7 @@ function PointsBreakdownTooltip({ item }: { item: TotalRankingItem }) {
       } ${isOpen ? 'scale-105' : ''}`}>
         {item.totalPoints}
       </span>
-
-      {/* 工具提示 */}
-      {isOpen && (
-        <div className={`absolute z-50 left-1/2 -translate-x-1/2 min-w-[240px] ${
-          showBelow ? 'top-full mt-2' : 'bottom-full mb-2'
-        }`}>
-          <div className="bg-gray-900 text-white rounded-lg shadow-xl p-3 text-left">
-            <div className="text-xs font-medium text-gray-400 mb-2">积分构成明细</div>
-            <div className="space-y-1.5">
-              {breakdown.map((b, i) => (
-                <div key={i} className="flex items-center justify-between gap-3 text-sm">
-                  <div className="flex-1 min-w-0">
-                    <div className="truncate text-gray-200" title={b.competition}>
-                      {b.location || b.competition}
-                    </div>
-                    <div className="text-xs text-gray-500">第{b.rank}名</div>
-                  </div>
-                  <div className="font-bold text-yellow-400 whitespace-nowrap">
-                    +{b.points}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="mt-2 pt-2 border-t border-gray-700 flex justify-between text-sm">
-              <span className="text-gray-400">总计</span>
-              <span className="font-bold text-white">{item.totalPoints}分</span>
-            </div>
-            {/* 箭头 */}
-            {showBelow ? (
-              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-[-1px]">
-                <div className="w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-gray-900"></div>
-              </div>
-            ) : (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-px">
-                <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-gray-900"></div>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
+      {tooltipContent}
     </div>
   )
 }
