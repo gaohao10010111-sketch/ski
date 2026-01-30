@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { Trophy, Medal, Award, Crown, Download, Search, ChevronLeft, ChevronRight, ArrowLeft, ChevronDown, ChevronUp, Users, Sparkles, Target, TrendingUp, Calendar, ArrowUpRight, ArrowDownRight, Minus, Mountain, ArrowLeftRight, Wind, Star } from 'lucide-react'
 import { latestResults, type AthleteResult } from '@/data/latestResults'
@@ -140,6 +140,8 @@ function RankChangeDisplay({ change }: { change?: number | null }) {
 // 积分构成提示组件
 function PointsBreakdownTooltip({ item }: { item: TotalRankingItem }) {
   const [isOpen, setIsOpen] = useState(false)
+  const [showBelow, setShowBelow] = useState(false)
+  const triggerRef = useRef<HTMLDivElement>(null)
 
   // 检查是否有积分构成数据
   const breakdown = (item as any).pointsBreakdown as Array<{
@@ -162,10 +164,20 @@ function PointsBreakdownTooltip({ item }: { item: TotalRankingItem }) {
     )
   }
 
+  const handleMouseEnter = () => {
+    if (triggerRef.current) {
+      const rect = triggerRef.current.getBoundingClientRect()
+      // 如果上方空间不足150px，则向下弹出
+      setShowBelow(rect.top < 150)
+    }
+    setIsOpen(true)
+  }
+
   return (
     <div
+      ref={triggerRef}
       className="relative inline-block"
-      onMouseEnter={() => setIsOpen(true)}
+      onMouseEnter={handleMouseEnter}
       onMouseLeave={() => setIsOpen(false)}
     >
       <span className={`inline-flex px-3 py-1 rounded-lg text-sm font-bold cursor-help transition-transform ${
@@ -179,7 +191,9 @@ function PointsBreakdownTooltip({ item }: { item: TotalRankingItem }) {
 
       {/* 工具提示 */}
       {isOpen && (
-        <div className="absolute z-50 bottom-full left-1/2 -translate-x-1/2 mb-2 min-w-[240px]">
+        <div className={`absolute z-50 left-1/2 -translate-x-1/2 min-w-[240px] ${
+          showBelow ? 'top-full mt-2' : 'bottom-full mb-2'
+        }`}>
           <div className="bg-gray-900 text-white rounded-lg shadow-xl p-3 text-left">
             <div className="text-xs font-medium text-gray-400 mb-2">积分构成明细</div>
             <div className="space-y-1.5">
@@ -202,9 +216,15 @@ function PointsBreakdownTooltip({ item }: { item: TotalRankingItem }) {
               <span className="font-bold text-white">{item.totalPoints}分</span>
             </div>
             {/* 箭头 */}
-            <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-px">
-              <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-gray-900"></div>
-            </div>
+            {showBelow ? (
+              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-[-1px]">
+                <div className="w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-gray-900"></div>
+              </div>
+            ) : (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-px">
+                <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-gray-900"></div>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -893,7 +913,6 @@ export default function PointsRankingsPage() {
                               <thead className="bg-gray-50">
                                 <tr>
                                   <th className="px-2 sm:px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-12 sm:w-16">名次</th>
-                                  <th className="hidden sm:table-cell px-3 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">变化</th>
                                   {/* 移动端：姓名/单位合并 */}
                                   <th className="sm:hidden px-2 py-3 text-left text-xs font-medium text-gray-500 uppercase">选手</th>
                                   {/* 桌面端：姓名和单位分开 */}
@@ -901,6 +920,7 @@ export default function PointsRankingsPage() {
                                   <th className="hidden sm:table-cell px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
                                   <th className="hidden sm:table-cell px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">参赛</th>
                                   <th className="hidden md:table-cell px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-20">实时排名</th>
+                                  <th className="hidden sm:table-cell px-3 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">变化</th>
                                   <th className="px-2 sm:px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16 sm:w-24">总积分</th>
                                 </tr>
                               </thead>
@@ -916,9 +936,6 @@ export default function PointsRankingsPage() {
                                   >
                                     <td className="px-2 sm:px-4 py-2 whitespace-nowrap text-center">
                                       {getRankIcon(item.rank)}
-                                    </td>
-                                    <td className="hidden sm:table-cell px-3 py-2 whitespace-nowrap text-center">
-                                      <RankChangeDisplay change={item.rankChange} />
                                     </td>
                                     {/* 移动端：姓名+单位双行显示 */}
                                     <td className="sm:hidden px-2 py-2">
@@ -950,6 +967,9 @@ export default function PointsRankingsPage() {
                                       }`}>
                                         {item.rank}
                                       </span>
+                                    </td>
+                                    <td className="hidden sm:table-cell px-3 py-2 whitespace-nowrap text-center">
+                                      <RankChangeDisplay change={item.rankChange} />
                                     </td>
                                     <td className="px-2 sm:px-4 py-2 whitespace-nowrap text-center">
                                       <PointsBreakdownTooltip item={item} />
