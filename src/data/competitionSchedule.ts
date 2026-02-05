@@ -873,13 +873,13 @@ export const competitionSchedule2025: Competition[] = [
     "id": 72,
     "sport": "单板滑雪平行大回转",
     "name": "2025-2026赛季全国单板滑雪平行项目青少年U系列比赛-第二站",
-    "startDate": "2026-01-27",
-    "endDate": "2026-01-29",
+    "startDate": "2026-01-30",
+    "endDate": "2026-01-31",
     "organizer": "北京华体冰雪产业发展有限公司",
     "location": "沈阳东北亚滑雪场",
     "category": "snowboard-parallel",
     "isOurs": true,
-    "status": "upcoming"
+    "status": "completed"
   },
   {
     "id": 73,
