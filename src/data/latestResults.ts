@@ -1,6 +1,6 @@
 // 最新比赛成绩数据
-// 数据来源: 官方成绩公告PDF
-// 最后更新: 2026-01-14
+// 自动生成，请勿手动修改
+// 生成时间: 2026-02-07T21:33:16.284Z
 
 export interface AthleteResult {
   rank: number
@@ -40,926 +40,1279 @@ export interface ResultsData {
 }
 
 export const latestResults: ResultsData = {
-  "lastUpdated": "2026-02-05",
+  "lastUpdated": "2026-02-07",
   "competitions": [
     {
-        "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（第二站沈阳东北亚站）",
-        "sport": "单板滑雪",
-        "sportType": "snowboard-parallel",
-        "location": "沈阳东北亚滑雪场",
-        "date": "2026-01-30",
-        "endDate": "2026-01-31",
-        "status": "completed",
-        "events": [
-              {
-                    "discipline": "平行大回转",
-                    "ageGroup": "U18",
-                    "gender": "女子组",
-                    "athletes": [
-                          {
-                                "rank": 1,
-                                "bib": 10,
-                                "name": "林子又",
-                                "team": "四川体育职业学院",
-                                "points": 360
-                          },
-                          {
-                                "rank": 2,
-                                "bib": 17,
-                                "name": "张芊凝",
-                                "team": "北京市朝阳区第三少儿业余体校",
-                                "points": 329
-                          },
-                          {
-                                "rank": 3,
-                                "bib": 7,
-                                "name": "臧怡然",
-                                "team": "个人",
-                                "points": 303
-                          },
-                          {
-                                "rank": 4,
-                                "bib": 4,
-                                "name": "丁小苏",
-                                "team": "MAYA TEAM",
-                                "points": 280
-                          },
-                          {
-                                "rank": 5,
-                                "bib": 16,
-                                "name": "袁丽文",
-                                "team": "上海市静安区滑雪协会",
-                                "points": 260
-                          },
-                          {
-                                "rank": 6,
-                                "bib": 5,
-                                "name": "姜林宏",
-                                "team": "重庆埃尔派体育文化传播有限公司",
-                                "points": 242
-                          },
-                          {
-                                "rank": 7,
-                                "bib": 14,
-                                "name": "李雨濛",
-                                "team": "大连雨彤体育赛事俱乐部",
-                                "points": 226
-                          },
-                          {
-                                "rank": 8,
-                                "bib": 8,
-                                "name": "张允童",
-                                "team": "个人",
-                                "points": 212
-                          },
-                          {
-                                "rank": 9,
-                                "bib": 1,
-                                "name": "罗念其",
-                                "team": "四川体育职业学院",
-                                "points": 199
-                          },
-                          {
-                                "rank": 10,
-                                "bib": 2,
-                                "name": "靳羽琪",
-                                "team": "长春市冬季运动管理中心（长春市业余冰雪运动学校）",
-                                "points": 187
-                          }
-                    ]
-              },
-              {
-                    "discipline": "平行大回转",
-                    "ageGroup": "U18",
-                    "gender": "男子组",
-                    "athletes": [
-                          {
-                                "rank": 1,
-                                "bib": 51,
-                                "name": "张鑫泽",
-                                "team": "速森体育",
-                                "points": 360
-                          },
-                          {
-                                "rank": 2,
-                                "bib": 71,
-                                "name": "谢德拥",
-                                "team": "吉林省体育局雪上运动管理中心",
-                                "points": 329
-                          },
-                          {
-                                "rank": 3,
-                                "bib": 60,
-                                "name": "王嘉崎",
-                                "team": "新疆维吾尔自治区冬季运动训练中心",
-                                "points": 303
-                          },
-                          {
-                                "rank": 4,
-                                "bib": 65,
-                                "name": "王洪飞",
-                                "team": "长春市冬季运动管理中心（长春市业余冰雪运动学校）",
-                                "points": 280
-                          },
-                          {
-                                "rank": 5,
-                                "bib": 64,
-                                "name": "李嘉祺",
-                                "team": "北京市朝阳区第三少儿业余体校",
-                                "points": 260
-                          },
-                          {
-                                "rank": 6,
-                                "bib": 75,
-                                "name": "窦羿",
-                                "team": "MAYA TEAM",
-                                "points": 242
-                          },
-                          {
-                                "rank": 7,
-                                "bib": 63,
-                                "name": "郝子铭",
-                                "team": "四川体育职业学院",
-                                "points": 226
-                          },
-                          {
-                                "rank": 8,
-                                "bib": 56,
-                                "name": "付壡喆",
-                                "team": "四川体育职业学院",
-                                "points": 212
-                          },
-                          {
-                                "rank": 9,
-                                "bib": 68,
-                                "name": "程春",
-                                "team": "长春市冬季运动管理中心（长春市业余冰雪运动学校）",
-                                "points": 199
-                          },
-                          {
-                                "rank": 10,
-                                "bib": 76,
-                                "name": "苗誉镨",
-                                "team": "速森体育",
-                                "points": 187
-                          }
-                    ]
-              },
-              {
-                    "discipline": "大回转",
-                    "ageGroup": "U11",
-                    "gender": "女子组",
-                    "athletes": [
-                          {
-                                "rank": 1,
-                                "bib": 207,
-                                "name": "须星漫",
-                                "team": "北京虎村竞技体育有限公司",
-                                "points": 360
-                          },
-                          {
-                                "rank": 2,
-                                "bib": 223,
-                                "name": "周子翕",
-                                "team": "成都热雪奇迹",
-                                "points": 329
-                          },
-                          {
-                                "rank": 3,
-                                "bib": 220,
-                                "name": "肖金茂",
-                                "team": "四川体育职业学院",
-                                "points": 303
-                          },
-                          {
-                                "rank": 4,
-                                "bib": 216,
-                                "name": "焦阳云朵",
-                                "team": "北京虎村竞技体育有限公司",
-                                "points": 280
-                          },
-                          {
-                                "rank": 5,
-                                "bib": 219,
-                                "name": "古庭钰",
-                                "team": "8848俱乐部",
-                                "points": 260
-                          },
-                          {
-                                "rank": 6,
-                                "bib": 214,
-                                "name": "李悦嘉",
-                                "team": "长春市冬季运动管理中心（长春市业余冰雪运动学校）",
-                                "points": 242
-                          },
-                          {
-                                "rank": 7,
-                                "bib": 201,
-                                "name": "李子纯",
-                                "team": "个人",
-                                "points": 226
-                          },
-                          {
-                                "rank": 8,
-                                "bib": 221,
-                                "name": "曹娜瑛",
-                                "team": "个人",
-                                "points": 212
-                          },
-                          {
-                                "rank": 9,
-                                "bib": 208,
-                                "name": "李一菂",
-                                "team": "北京虎村竞技体育有限公司",
-                                "points": 199
-                          },
-                          {
-                                "rank": 10,
-                                "bib": 202,
-                                "name": "詹涵予",
-                                "team": "长春市冬季运动管理中心（长春市业余冰雪运动学校）",
-                                "points": 187
-                          }
-                    ]
-              },
-              {
-                    "discipline": "大回转",
-                    "ageGroup": "U11",
-                    "gender": "男子组",
-                    "athletes": [
-                          {
-                                "rank": 1,
-                                "bib": 287,
-                                "name": "韩赫洺",
-                                "team": "四川体育职业学院",
-                                "points": 360
-                          },
-                          {
-                                "rank": 2,
-                                "bib": 291,
-                                "name": "宣达辰",
-                                "team": "个人",
-                                "points": 329
-                          },
-                          {
-                                "rank": 3,
-                                "bib": 267,
-                                "name": "蒋文栋",
-                                "team": "MAYA TEAM",
-                                "points": 303
-                          },
-                          {
-                                "rank": 4,
-                                "bib": 266,
-                                "name": "王一臣",
-                                "team": "MAYA TEAM",
-                                "points": 280
-                          },
-                          {
-                                "rank": 5,
-                                "bib": 253,
-                                "name": "刘昱辰",
-                                "team": "MAYA TEAM",
-                                "points": 260
-                          },
-                          {
-                                "rank": 6,
-                                "bib": 272,
-                                "name": "罗晓野",
-                                "team": "个人",
-                                "points": 242
-                          },
-                          {
-                                "rank": 7,
-                                "bib": 252,
-                                "name": "郑祎衫",
-                                "team": "沈抚改革创新示范区体育联合会",
-                                "points": 226
-                          },
-                          {
-                                "rank": 8,
-                                "bib": 262,
-                                "name": "肖咏悦",
-                                "team": "上海市静安区滑雪协会",
-                                "points": 212
-                          },
-                          {
-                                "rank": 9,
-                                "bib": 270,
-                                "name": "陈鑫艺",
-                                "team": "四川体育职业学院",
-                                "points": 199
-                          },
-                          {
-                                "rank": 10,
-                                "bib": 273,
-                                "name": "王子溪",
-                                "team": "King Pro Team",
-                                "points": 187
-                          }
-                    ]
-              },
-              {
-                    "discipline": "大回转",
-                    "ageGroup": "U15",
-                    "gender": "女子组",
-                    "athletes": [
-                          {
-                                "rank": 1,
-                                "bib": 128,
-                                "name": "邱嘉晴",
-                                "team": "北京虎村竞技体育有限公司",
-                                "points": 360
-                          },
-                          {
-                                "rank": 2,
-                                "bib": 112,
-                                "name": "沈凌羽",
-                                "team": "MAYA TEAM",
-                                "points": 329
-                          },
-                          {
-                                "rank": 3,
-                                "bib": 121,
-                                "name": "刘沛怡",
-                                "team": "MAYA TEAM",
-                                "points": 303
-                          },
-                          {
-                                "rank": 4,
-                                "bib": 127,
-                                "name": "朱恩瑞",
-                                "team": "吉林省体育局雪上运动管理中心",
-                                "points": 280
-                          },
-                          {
-                                "rank": 5,
-                                "bib": 105,
-                                "name": "刘妍梦",
-                                "team": "8848俱乐部",
-                                "points": 260
-                          },
-                          {
-                                "rank": 6,
-                                "bib": 104,
-                                "name": "付睿熹",
-                                "team": "四川体育职业学院",
-                                "points": 242
-                          },
-                          {
-                                "rank": 7,
-                                "bib": 111,
-                                "name": "刘姝廷",
-                                "team": "8848俱乐部",
-                                "points": 226
-                          },
-                          {
-                                "rank": 8,
-                                "bib": 102,
-                                "name": "邹齐",
-                                "team": "个人",
-                                "points": 212
-                          },
-                          {
-                                "rank": 9,
-                                "bib": 122,
-                                "name": "袁薪雅",
-                                "team": "吉林省体育局雪上运动管理中心",
-                                "points": 199
-                          },
-                          {
-                                "rank": 10,
-                                "bib": 123,
-                                "name": "黄卫瑄",
-                                "team": "ACE竞技滑雪队",
-                                "points": 187
-                          },
-                          {
-                                "rank": 11,
-                                "bib": 108,
-                                "name": "陈雨歌",
-                                "team": "四川体育职业学院",
-                                "points": 176
-                          },
-                          {
-                                "rank": 12,
-                                "bib": 124,
-                                "name": "罗依然",
-                                "team": "四川体育职业学院",
-                                "points": 166
-                          },
-                          {
-                                "rank": 13,
-                                "bib": 101,
-                                "name": "王艺潼",
-                                "team": "个人",
-                                "points": 157
-                          }
-                    ]
-              },
-              {
-                    "discipline": "大回转",
-                    "ageGroup": "U15",
-                    "gender": "男子组",
-                    "athletes": [
-                          {
-                                "rank": 1,
-                                "bib": 162,
-                                "name": "高佳钇",
-                                "team": "速森体育",
-                                "points": 360
-                          },
-                          {
-                                "rank": 2,
-                                "bib": 155,
-                                "name": "刁禹宁",
-                                "team": "个人",
-                                "points": 329
-                          },
-                          {
-                                "rank": 3,
-                                "bib": 181,
-                                "name": "李天圆",
-                                "team": "MAYA TEAM",
-                                "points": 303
-                          },
-                          {
-                                "rank": 4,
-                                "bib": 178,
-                                "name": "陈清桦",
-                                "team": "MAYA TEAM",
-                                "points": 280
-                          },
-                          {
-                                "rank": 5,
-                                "bib": 151,
-                                "name": "张雨曈",
-                                "team": "MAYA TEAM",
-                                "points": 260
-                          },
-                          {
-                                "rank": 6,
-                                "bib": 167,
-                                "name": "李柏翔",
-                                "team": "MAYA TEAM",
-                                "points": 242
-                          },
-                          {
-                                "rank": 7,
-                                "bib": 180,
-                                "name": "马赛",
-                                "team": "四川体育职业学院",
-                                "points": 226
-                          },
-                          {
-                                "rank": 8,
-                                "bib": 179,
-                                "name": "高暄壹",
-                                "team": "吉林省体育局雪上运动管理中心",
-                                "points": 212
-                          },
-                          {
-                                "rank": 9,
-                                "bib": 156,
-                                "name": "李曾翼",
-                                "team": "个人",
-                                "points": 199
-                          },
-                          {
-                                "rank": 10,
-                                "bib": 170,
-                                "name": "郭天泽",
-                                "team": "MAYA TEAM",
-                                "points": 187
-                          }
-                    ]
-              }
-        ]
-  },
+      "competition": "2025-2026赛季全国单板滑雪平行项目U系列比赛（第二站沈阳东北亚站）",
+      "sport": "单板滑雪",
+      "sportType": "snowboard-parallel",
+      "location": "沈阳东北亚滑雪场",
+      "date": "2026-01-30",
+      "endDate": "2026-01-31",
+      "status": "completed",
+      "events": [
         {
-      "competition": "2025-2026赛季全国高山滑雪青少年U系列比赛（松花湖站）",
+          "discipline": "大回转",
+          "ageGroup": "U11",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 207,
+              "name": "须星漫",
+              "team": "北京虎村竞技体育有限公司",
+              "birthYear": "2016",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 223,
+              "name": "周子翕",
+              "team": "成都热雪奇迹",
+              "birthYear": "2014",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 220,
+              "name": "肖金茂",
+              "team": "四川体育职业学院",
+              "birthYear": "2014",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 216,
+              "name": "焦阳云朵",
+              "team": "北京虎村竞技体育有限公司",
+              "birthYear": "2014",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 219,
+              "name": "古庭钰",
+              "team": "8848俱乐部",
+              "birthYear": "2014",
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 214,
+              "name": "李悦嘉",
+              "team": "长春市冬季运动管理中心",
+              "birthYear": "2015",
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 201,
+              "name": "李子纯",
+              "team": "个人",
+              "birthYear": "2014",
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 221,
+              "name": "曹娜瑛",
+              "team": "个人",
+              "birthYear": "2016",
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 208,
+              "name": "李一菂",
+              "team": "北京虎村竞技体育有限公司",
+              "birthYear": "2015",
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 202,
+              "name": "詹涵予",
+              "team": "长春市冬季运动管理中心",
+              "birthYear": "2015",
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 218,
+              "name": "朱安然",
+              "team": "上海雪酷滑雪竞技队",
+              "birthYear": "2015",
+              "points": 176
+            },
+            {
+              "rank": 12,
+              "bib": 222,
+              "name": "李雨萱",
+              "team": "个人",
+              "birthYear": "2014",
+              "points": 166
+            },
+            {
+              "rank": 13,
+              "bib": 212,
+              "name": "ALBBESU",
+              "team": "张家口冰雪运动学校",
+              "birthYear": "2015",
+              "points": 157
+            },
+            {
+              "rank": 14,
+              "bib": 204,
+              "name": "张语珊",
+              "team": "个人",
+              "birthYear": "2014",
+              "points": 149
+            },
+            {
+              "rank": 15,
+              "bib": 210,
+              "name": "李汶瑾",
+              "team": "MAYA TEAM",
+              "birthYear": "2015",
+              "points": 141
+            },
+            {
+              "rank": 16,
+              "bib": 203,
+              "name": "姜予乔",
+              "team": "个人",
+              "birthYear": "2015",
+              "points": 134
+            },
+            {
+              "rank": 17,
+              "bib": 217,
+              "name": "李默涵",
+              "team": "8848俱乐部",
+              "birthYear": "2014",
+              "points": 127
+            },
+            {
+              "rank": 18,
+              "bib": 213,
+              "name": "周爱戴",
+              "team": "长春市极刃体育发展有限公司",
+              "birthYear": "2015",
+              "points": 121
+            },
+            {
+              "rank": 19,
+              "bib": 209,
+              "name": "马艺瑄",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2015",
+              "points": 115
+            },
+            {
+              "rank": 20,
+              "bib": 224,
+              "name": "张兆檬",
+              "team": "King Pro Team",
+              "birthYear": "2016",
+              "points": 110
+            },
+            {
+              "rank": 21,
+              "bib": 206,
+              "name": "刘泽萱",
+              "team": "吉林峰尚青教体育文化产业有限公司",
+              "birthYear": "2017",
+              "points": 105
+            }
+          ]
+        },
+        {
+          "discipline": "大回转",
+          "ageGroup": "U11",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 287,
+              "name": "韩赫洺",
+              "team": "四川体育职业学院",
+              "birthYear": "2015",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 291,
+              "name": "宣达辰",
+              "team": "个人",
+              "birthYear": "2014",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 267,
+              "name": "蒋文栋",
+              "team": "MAYA TEAM",
+              "birthYear": "2014",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 266,
+              "name": "王一臣",
+              "team": "MAYA TEAM",
+              "birthYear": "2014",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 253,
+              "name": "刘昱辰",
+              "team": "MAYA TEAM",
+              "birthYear": "2014",
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 272,
+              "name": "罗晓野",
+              "team": "个人",
+              "birthYear": "2014",
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 252,
+              "name": "郑祎衫",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2016",
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 262,
+              "name": "肖咏悦",
+              "team": "上海市静安区滑雪协会",
+              "birthYear": "2014",
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 270,
+              "name": "陈鑫艺",
+              "team": "四川体育职业学院",
+              "birthYear": "2014",
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 273,
+              "name": "王子溪",
+              "team": "King Pro Team",
+              "birthYear": "2014",
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 295,
+              "name": "张睦然",
+              "team": "MAYA TEAM",
+              "birthYear": "2014",
+              "points": 176
+            },
+            {
+              "rank": 12,
+              "bib": 288,
+              "name": "赵梓聿",
+              "team": "MAYA TEAM",
+              "birthYear": "2014",
+              "points": 166
+            },
+            {
+              "rank": 13,
+              "bib": 278,
+              "name": "张朔源",
+              "team": "张家口市足球和冰雪运动学校",
+              "birthYear": "2014",
+              "points": 157
+            },
+            {
+              "rank": 14,
+              "bib": 276,
+              "name": "徐嘉艺",
+              "team": "长春市冬季运动管理中心",
+              "birthYear": "2014",
+              "points": 149
+            },
+            {
+              "rank": 15,
+              "bib": 257,
+              "name": "朱思越",
+              "team": "成都热雪奇迹",
+              "birthYear": "2016",
+              "points": 141
+            },
+            {
+              "rank": 16,
+              "bib": 294,
+              "name": "黄益航",
+              "team": "四川体育职业学院",
+              "birthYear": "2015",
+              "points": 134
+            },
+            {
+              "rank": 17,
+              "bib": 280,
+              "name": "孙奥荣",
+              "team": "四川体育职业学院",
+              "birthYear": "2014",
+              "points": 127
+            },
+            {
+              "rank": 18,
+              "bib": 281,
+              "name": "赵一诺",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2014",
+              "points": 121
+            },
+            {
+              "rank": 19,
+              "bib": 290,
+              "name": "李沛洋",
+              "team": "个人",
+              "birthYear": "2014",
+              "points": 115
+            },
+            {
+              "rank": 20,
+              "bib": 289,
+              "name": "金俊烨",
+              "team": "延吉雪范",
+              "birthYear": "2014",
+              "points": 110
+            },
+            {
+              "rank": 21,
+              "bib": 255,
+              "name": "孙昊洋",
+              "team": "上海市静安区滑雪协会",
+              "birthYear": "2017",
+              "points": 105
+            },
+            {
+              "rank": 22,
+              "bib": 256,
+              "name": "郑伟伦",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2014",
+              "points": 100
+            },
+            {
+              "rank": 23,
+              "bib": 260,
+              "name": "刘钥宸",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2016",
+              "points": 96
+            },
+            {
+              "rank": 24,
+              "bib": 269,
+              "name": "许原岑",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2017",
+              "points": 92
+            },
+            {
+              "rank": 25,
+              "bib": 264,
+              "name": "王梓墨",
+              "team": "四川体育职业学院",
+              "birthYear": "2015",
+              "points": 88
+            },
+            {
+              "rank": 26,
+              "bib": 268,
+              "name": "李承儒",
+              "team": "长春市冬季运动管理中心",
+              "birthYear": "2017",
+              "points": 84
+            },
+            {
+              "rank": 27,
+              "bib": 254,
+              "name": "梁洺嘉",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2017",
+              "points": 80
+            },
+            {
+              "rank": 28,
+              "bib": 286,
+              "name": "安泓宇",
+              "team": "吉林峰尚青教体育文化产业有限公司",
+              "birthYear": "2017",
+              "points": 76
+            },
+            {
+              "rank": 29,
+              "bib": 284,
+              "name": "崔铭浩",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2017",
+              "points": 73
+            },
+            {
+              "rank": 30,
+              "bib": 261,
+              "name": "李俊毅",
+              "team": "长春市极刃体育发展有限公司",
+              "birthYear": "2017",
+              "points": 70
+            },
+            {
+              "rank": 31,
+              "bib": 285,
+              "name": "孟奕成",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2017",
+              "points": 67
+            },
+            {
+              "rank": 32,
+              "bib": 251,
+              "name": "尹一诺",
+              "team": "吉林峰尚青教体育文化产业有限公司",
+              "birthYear": "2017",
+              "points": 64
+            },
+            {
+              "rank": 33,
+              "bib": 292,
+              "name": "吴杭熹",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2016",
+              "points": 61
+            },
+            {
+              "rank": 34,
+              "bib": 263,
+              "name": "梁洺睿",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2014",
+              "points": 58
+            },
+            {
+              "rank": 35,
+              "bib": 277,
+              "name": "崔凯棋",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2017",
+              "points": 55
+            }
+          ]
+        },
+        {
+          "discipline": "大回转",
+          "ageGroup": "U15",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 128,
+              "name": "邱嘉晴",
+              "team": "北京虎村竞技体育有限公司",
+              "birthYear": "2012",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 112,
+              "name": "沈凌羽",
+              "team": "MAYA TEAM",
+              "birthYear": "2012",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 121,
+              "name": "刘沛怡",
+              "team": "MAYA TEAM",
+              "birthYear": "2011",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 127,
+              "name": "朱恩瑞",
+              "team": "吉林省体育局雪上运动管理中心",
+              "birthYear": "2013",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 105,
+              "name": "刘妍梦",
+              "team": "8848俱乐部",
+              "birthYear": "2011",
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 104,
+              "name": "付睿熹",
+              "team": "四川体育职业学院",
+              "birthYear": "2012",
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 111,
+              "name": "刘姝廷",
+              "team": "8848俱乐部",
+              "birthYear": "2011",
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 102,
+              "name": "邹齐",
+              "team": "个人",
+              "birthYear": "2012",
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 122,
+              "name": "袁薪雅",
+              "team": "吉林省体育局雪上运动管理中心",
+              "birthYear": "2012",
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 123,
+              "name": "黄卫瑄",
+              "team": "ACE竞技滑雪队",
+              "birthYear": "2011",
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 108,
+              "name": "陈雨歌",
+              "team": "四川体育职业学院",
+              "birthYear": "2011",
+              "points": 176
+            },
+            {
+              "rank": 12,
+              "bib": 124,
+              "name": "罗依然",
+              "team": "四川体育职业学院",
+              "birthYear": "2010",
+              "points": 166
+            },
+            {
+              "rank": 13,
+              "bib": 101,
+              "name": "王艺潼",
+              "team": "个人",
+              "birthYear": "2010",
+              "points": 157
+            },
+            {
+              "rank": 14,
+              "bib": 132,
+              "name": "亢正熙",
+              "team": "四川体育职业学院",
+              "birthYear": "2012",
+              "points": 149
+            },
+            {
+              "rank": 15,
+              "bib": 107,
+              "name": "李文静",
+              "team": "吉林省体育局雪上运动管理中心",
+              "birthYear": "2010",
+              "points": 141
+            },
+            {
+              "rank": 16,
+              "bib": 119,
+              "name": "谢露萱",
+              "team": "上海市静安区滑雪协会",
+              "birthYear": "2013",
+              "points": 134
+            },
+            {
+              "rank": 17,
+              "bib": 114,
+              "name": "叶丽扎·别克苏力坦",
+              "team": "新疆维吾尔自治区冬季运动训练中心",
+              "birthYear": "2010",
+              "points": 127
+            },
+            {
+              "rank": 18,
+              "bib": 125,
+              "name": "高雅傲雪",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2012",
+              "points": 121
+            },
+            {
+              "rank": 19,
+              "bib": 116,
+              "name": "CANDIE JIANI SONG",
+              "team": "上海雪酷滑雪竞技队",
+              "birthYear": "2011",
+              "points": 115
+            },
+            {
+              "rank": 20,
+              "bib": 115,
+              "name": "赵天冉",
+              "team": "King Pro Team",
+              "birthYear": "2012",
+              "points": 110
+            },
+            {
+              "rank": 21,
+              "bib": 113,
+              "name": "孙小晰",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2013",
+              "points": 105
+            },
+            {
+              "rank": 22,
+              "bib": 110,
+              "name": "王艺诺",
+              "team": "吉林省体育局雪上运动管理中心",
+              "birthYear": "2013",
+              "points": 100
+            },
+            {
+              "rank": 23,
+              "bib": 130,
+              "name": "刘馨泽",
+              "team": "吉林峰尚青教体育文化产业有限公司",
+              "birthYear": "2012",
+              "points": 96
+            },
+            {
+              "rank": 24,
+              "bib": 131,
+              "name": "陈梓萌",
+              "team": "King Pro Team",
+              "birthYear": "2012",
+              "points": 92
+            },
+            {
+              "rank": 25,
+              "bib": 103,
+              "name": "张涵舒",
+              "team": "重庆埃尔派体育文化传播有限公司",
+              "birthYear": "2010",
+              "points": 88
+            },
+            {
+              "rank": 26,
+              "bib": 120,
+              "name": "焦禹侨",
+              "team": "北京虎村竞技体育有限公司",
+              "birthYear": "2012",
+              "points": 84
+            },
+            {
+              "rank": 27,
+              "bib": 117,
+              "name": "朴恩裕",
+              "team": "延吉雪范",
+              "birthYear": "2011",
+              "points": 80
+            },
+            {
+              "rank": 28,
+              "bib": 118,
+              "name": "刘彦熠",
+              "team": "上海市静安区滑雪协会",
+              "birthYear": "2013",
+              "points": 76
+            }
+          ]
+        },
+        {
+          "discipline": "大回转",
+          "ageGroup": "U15",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 162,
+              "name": "高佳钇",
+              "team": "速森体育",
+              "birthYear": "2011",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 155,
+              "name": "刁禹宁",
+              "team": "个人",
+              "birthYear": "2011",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 181,
+              "name": "李天圆",
+              "team": "MAYA TEAM",
+              "birthYear": "2011",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 178,
+              "name": "陈清桦",
+              "team": "MAYA TEAM",
+              "birthYear": "2012",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 151,
+              "name": "张雨曈",
+              "team": "MAYA TEAM",
+              "birthYear": "2012",
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 167,
+              "name": "李柏翔",
+              "team": "MAYA TEAM",
+              "birthYear": "2010",
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 180,
+              "name": "马赛",
+              "team": "四川体育职业学院",
+              "birthYear": "2010",
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 179,
+              "name": "高暄壹",
+              "team": "吉林省体育局雪上运动管理中心",
+              "birthYear": "2012",
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 156,
+              "name": "李曾翼",
+              "team": "个人",
+              "birthYear": "2013",
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 170,
+              "name": "郭天泽",
+              "team": "MAYA TEAM",
+              "birthYear": "2012",
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 158,
+              "name": "暴城睿",
+              "team": "辽宁极限体育",
+              "birthYear": "2012",
+              "points": 176
+            },
+            {
+              "rank": 12,
+              "bib": 185,
+              "name": "杨子绪",
+              "team": "个人",
+              "birthYear": "2014",
+              "points": 166
+            },
+            {
+              "rank": 13,
+              "bib": 175,
+              "name": "于谨赫",
+              "team": "速森体育",
+              "birthYear": "2010",
+              "points": 157
+            },
+            {
+              "rank": 14,
+              "bib": 154,
+              "name": "徐承昊",
+              "team": "上海市静安区滑雪协会",
+              "birthYear": "2012",
+              "points": 149
+            },
+            {
+              "rank": 15,
+              "bib": 174,
+              "name": "叶庆安",
+              "team": "新疆维吾尔自治区冬季运动训练中心",
+              "birthYear": "2010",
+              "points": 141
+            },
+            {
+              "rank": 16,
+              "bib": 169,
+              "name": "陈浩铭",
+              "team": "四川体育职业学院",
+              "birthYear": "2011",
+              "points": 134
+            },
+            {
+              "rank": 17,
+              "bib": 164,
+              "name": "刘华森",
+              "team": "吉林峰尚青教体育文化产业有限公司",
+              "birthYear": "2013",
+              "points": 127
+            },
+            {
+              "rank": 18,
+              "bib": 153,
+              "name": "尤玺为",
+              "team": "个人",
+              "birthYear": "2011",
+              "points": 121
+            },
+            {
+              "rank": 19,
+              "bib": 165,
+              "name": "嘎日玛盖",
+              "team": "新疆维吾尔自治区冬季运动训练中心",
+              "birthYear": "2012",
+              "points": 115
+            },
+            {
+              "rank": 20,
+              "bib": 173,
+              "name": "司忠正",
+              "team": "长春市冬季运动管理中心",
+              "birthYear": "2011",
+              "points": 110
+            },
+            {
+              "rank": 21,
+              "bib": 159,
+              "name": "董天赋",
+              "team": "长春市冬季运动管理中心",
+              "birthYear": "2011",
+              "points": 105
+            },
+            {
+              "rank": 22,
+              "bib": 182,
+              "name": "左珈宁",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2011",
+              "points": 100
+            },
+            {
+              "rank": 23,
+              "bib": 177,
+              "name": "高希言",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2012",
+              "points": 96
+            },
+            {
+              "rank": 24,
+              "bib": 176,
+              "name": "刘子木",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2011",
+              "points": 92
+            },
+            {
+              "rank": 25,
+              "bib": 152,
+              "name": "张峰睿",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2011",
+              "points": 88
+            },
+            {
+              "rank": 26,
+              "bib": 168,
+              "name": "孙晟轩",
+              "team": "个人",
+              "birthYear": "2012",
+              "points": 84
+            },
+            {
+              "rank": 27,
+              "bib": 166,
+              "name": "刘子乐",
+              "team": "King Pro Team",
+              "birthYear": "2011",
+              "points": 80
+            },
+            {
+              "rank": 28,
+              "bib": 163,
+              "name": "梁恩泽",
+              "team": "上海市静安区滑雪协会",
+              "birthYear": "2011",
+              "points": 76
+            },
+            {
+              "rank": 29,
+              "bib": 161,
+              "name": "姜胤伯",
+              "team": "长春市极刃体育发展有限公司",
+              "birthYear": "2012",
+              "points": 73
+            },
+            {
+              "rank": 30,
+              "bib": 160,
+              "name": "陈冠霖",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2010",
+              "points": 70
+            }
+          ]
+        },
+        {
+          "discipline": "平行大回转",
+          "ageGroup": "U18",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 10,
+              "name": "林子又",
+              "team": "四川体育职业学院",
+              "birthYear": "2009",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 17,
+              "name": "张芊凝",
+              "team": "北京市朝阳区第三少儿业余体校",
+              "birthYear": "2009",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 7,
+              "name": "臧怡然",
+              "team": "个人",
+              "birthYear": "2008",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 4,
+              "name": "丁小苏",
+              "team": "MAYA TEAM",
+              "birthYear": "2009",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 16,
+              "name": "袁丽文",
+              "team": "上海市静安区滑雪协会",
+              "birthYear": "2009",
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 5,
+              "name": "姜林宏",
+              "team": "重庆埃尔派体育文化传播有限公司",
+              "birthYear": "2007",
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 14,
+              "name": "李雨濛",
+              "team": "大连雨彤体育赛事俱乐部",
+              "birthYear": "2010",
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 8,
+              "name": "张允童",
+              "team": "个人",
+              "birthYear": "2008",
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 1,
+              "name": "罗念其",
+              "team": "四川体育职业学院",
+              "birthYear": "2009",
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 2,
+              "name": "靳羽琪",
+              "team": "长春市冬季运动管理中心",
+              "birthYear": "2009",
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 13,
+              "name": "邵菲梵",
+              "team": "北京天高云淡体育文化有限公司",
+              "points": 176
+            },
+            {
+              "rank": 12,
+              "bib": 9,
+              "name": "范芮希",
+              "team": "个人",
+              "birthYear": "2009",
+              "points": 166
+            },
+            {
+              "rank": 13,
+              "bib": 12,
+              "name": "贾釉茜",
+              "team": "ACE竞技滑雪队",
+              "birthYear": "2009",
+              "points": 157
+            },
+            {
+              "rank": 14,
+              "bib": 15,
+              "name": "房洢伊",
+              "team": "北京市朝阳区第三少儿业余体校",
+              "birthYear": "2010",
+              "points": 149
+            },
+            {
+              "rank": 15,
+              "bib": 11,
+              "name": "白默函",
+              "team": "重庆埃尔派体育文化传播有限公司",
+              "birthYear": "2008",
+              "points": 141
+            }
+          ]
+        },
+        {
+          "discipline": "平行大回转",
+          "ageGroup": "U18",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 51,
+              "name": "张鑫泽",
+              "team": "速森体育",
+              "birthYear": "2009",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 71,
+              "name": "谢德拥",
+              "team": "吉林省体育局雪上运动管理中心",
+              "birthYear": "2008",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 60,
+              "name": "王嘉崎",
+              "team": "新疆维吾尔自治区冬季运动训练中心",
+              "birthYear": "2008",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 65,
+              "name": "王洪飞",
+              "team": "长春市冬季运动管理中心",
+              "birthYear": "2008",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 64,
+              "name": "李嘉祺",
+              "team": "北京市朝阳区第三少儿业余体校",
+              "birthYear": "2010",
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 75,
+              "name": "窦羿",
+              "team": "MAYA TEAM",
+              "birthYear": "2007",
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 63,
+              "name": "郝子铭",
+              "team": "四川体育职业学院",
+              "birthYear": "2008",
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 56,
+              "name": "付壡喆",
+              "team": "四川体育职业学院",
+              "birthYear": "2009",
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 68,
+              "name": "程春",
+              "team": "长春市冬季运动管理中心",
+              "birthYear": "2009",
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 76,
+              "name": "苗誉镨",
+              "team": "速森体育",
+              "birthYear": "2007",
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 55,
+              "name": "杨武胜俊",
+              "team": "四川体育职业学院",
+              "birthYear": "2008",
+              "points": 176
+            },
+            {
+              "rank": 12,
+              "bib": 59,
+              "name": "宋星锋",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2009",
+              "points": 166
+            },
+            {
+              "rank": 13,
+              "bib": 79,
+              "name": "吴熙诚",
+              "team": "上海市静安区滑雪协会",
+              "birthYear": "2009",
+              "points": 157
+            },
+            {
+              "rank": 14,
+              "bib": 54,
+              "name": "尚久智",
+              "team": "北京市朝阳区第三少儿业余体校",
+              "birthYear": "2009",
+              "points": 149
+            },
+            {
+              "rank": 15,
+              "bib": 69,
+              "name": "曲星铭",
+              "team": "个人",
+              "birthYear": "2008",
+              "points": 141
+            },
+            {
+              "rank": 16,
+              "bib": 78,
+              "name": "樊冠序",
+              "team": "ACE竞技滑雪队",
+              "birthYear": "2008",
+              "points": 134
+            },
+            {
+              "rank": 17,
+              "bib": 73,
+              "name": "吴保江",
+              "team": "零站单板滑雪俱乐部",
+              "birthYear": "2007",
+              "points": 127
+            },
+            {
+              "rank": 18,
+              "bib": 52,
+              "name": "王天阳",
+              "team": "个人",
+              "birthYear": "2008",
+              "points": 121
+            },
+            {
+              "rank": 19,
+              "bib": 70,
+              "name": "杨一丁",
+              "team": "北京市朝阳区第三少儿业余体校",
+              "birthYear": "2009",
+              "points": 115
+            },
+            {
+              "rank": 20,
+              "bib": 67,
+              "name": "童科军",
+              "team": "五家渠市金科实验",
+              "birthYear": "2008",
+              "points": 110
+            },
+            {
+              "rank": 21,
+              "bib": 61,
+              "name": "刘鑫泽",
+              "team": "ACE竞技滑雪队",
+              "birthYear": "2009",
+              "points": 105
+            },
+            {
+              "rank": 22,
+              "bib": 62,
+              "name": "孙嘉泽",
+              "team": "沈抚改革创新示范区体育联合会",
+              "birthYear": "2009",
+              "points": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "competition": "2025-2026赛季全国高山滑雪U系列比赛（松花湖站）",
       "sport": "高山滑雪",
       "sportType": "alpine",
-      "location": "中旅松花湖滑雪场",
+      "location": "吉林省吉林市",
       "date": "2026-01-13",
       "endDate": "2026-01-16",
       "status": "completed",
       "events": [
         {
-          "discipline": "大回转",
-          "ageGroup": "U18",
-          "gender": "女子组",
-          "athletes": [
-            {
-              "rank": 1,
-              "bib": 1,
-              "name": "孙若涵",
-              "team": "延庆区体育局",
-              "run1": "26.77",
-              "run2": "26.58",
-              "time": "53.35",
-              "diff": "0.00",
-              "points": 360
-            },
-            {
-              "rank": 2,
-              "bib": 2,
-              "name": "王胜婕",
-              "team": "葫小芦（北京）体育有限公司",
-              "run1": "27.40",
-              "run2": "27.00",
-              "time": "54.40",
-              "diff": "",
-              "points": 329
-            },
-            {
-              "rank": 3,
-              "bib": 3,
-              "name": "周昱含",
-              "team": "沈阳王伟滑雪管理咨询服务有限公司",
-              "run1": "27.88",
-              "run2": "27.41",
-              "time": "55.29",
-              "diff": "",
-              "points": 303
-            },
-            {
-              "rank": 4,
-              "bib": 4,
-              "name": "邱心悦",
-              "team": "葫小芦（北京）体育有限公司",
-              "run1": "28.12",
-              "run2": "28.03",
-              "time": "56.15",
-              "diff": "",
-              "points": 280
-            },
-            {
-              "rank": 5,
-              "bib": 5,
-              "name": "龚信水",
-              "team": "重庆市冬季运动管理中心1队",
-              "run1": "28.60",
-              "run2": "28.00",
-              "time": "56.60",
-              "diff": "",
-              "points": 260
-            }
-          ]
-        },
-        {
-          "discipline": "大回转",
-          "ageGroup": "U18",
-          "gender": "男子组",
-          "athletes": [
-            {
-              "rank": 1,
-              "bib": 1,
-              "name": "王正政",
-              "team": "张家口乔与杨体育服务有限公司",
-              "run1": "26.15",
-              "run2": "25.77",
-              "time": "51.92",
-              "diff": "0.00",
-              "points": 360
-            },
-            {
-              "rank": 2,
-              "bib": 2,
-              "name": "王润钰",
-              "team": "张家口乔与杨体育服务有限公司",
-              "run1": "26.09",
-              "run2": "25.94",
-              "time": "52.03",
-              "diff": "",
-              "points": 329
-            },
-            {
-              "rank": 3,
-              "bib": 3,
-              "name": "李彦博",
-              "team": "四川体育职业学院",
-              "run1": "25.90",
-              "run2": "26.33",
-              "time": "52.23",
-              "diff": "",
-              "points": 303
-            },
-            {
-              "rank": 4,
-              "bib": 4,
-              "name": "明泳桐",
-              "team": "张家口辰鹏体育发展有限公司",
-              "run1": "26.36",
-              "run2": "25.95",
-              "time": "52.31",
-              "diff": "",
-              "points": 280
-            },
-            {
-              "rank": 5,
-              "bib": 5,
-              "name": "左子正",
-              "team": "左子正",
-              "run1": "25.83",
-              "run2": "26.56",
-              "time": "52.39",
-              "diff": "",
-              "points": 260
-            },
-            {
-              "rank": 6,
-              "bib": 6,
-              "name": "鞠沐辰",
-              "team": "济南市皇亭竞技体育学校",
-              "run1": "26.64",
-              "run2": "25.84",
-              "time": "52.48",
-              "diff": "",
-              "points": 242
-            },
-            {
-              "rank": 7,
-              "bib": 7,
-              "name": "王阳明",
-              "team": "张家口乔与杨体育服务有限公司",
-              "run1": "26.94",
-              "run2": "25.62",
-              "time": "52.56",
-              "diff": "",
-              "points": 226
-            },
-            {
-              "rank": 8,
-              "bib": 8,
-              "name": "常冠廷",
-              "team": "吉林市丰满区滑雪协会",
-              "run1": "26.56",
-              "run2": "26.31",
-              "time": "52.87",
-              "diff": "",
-              "points": 212
-            },
-            {
-              "rank": 9,
-              "bib": 9,
-              "name": "谭皓阳",
-              "team": "个人（高峰）",
-              "run1": "30.37",
-              "run2": "30.37",
-              "time": "1:00.74",
-              "diff": "",
-              "points": 199
-            },
-            {
-              "rank": 10,
-              "bib": 10,
-              "name": "戴文研",
-              "team": "个人",
-              "run1": "48.95",
-              "run2": "35.29",
-              "time": "1:24.24",
-              "diff": "",
-              "points": 187
-            }
-          ]
-        },
-        {
-          "discipline": "大回转",
-          "ageGroup": "U15",
-          "gender": "女子组",
-          "athletes": [
-            {
-              "rank": 1,
-              "bib": 1,
-              "name": "陈玥潞",
-              "team": "张家口辰鹏体育发展有限公司",
-              "run1": "25.94",
-              "run2": "26.23",
-              "time": "52.17",
-              "diff": "0.00",
-              "points": 360
-            },
-            {
-              "rank": 2,
-              "bib": 2,
-              "name": "杨玉涵",
-              "team": "吉林坤伦滑雪俱乐部",
-              "run1": "26.42",
-              "run2": "26.31",
-              "time": "52.73",
-              "diff": "",
-              "points": 329
-            },
-            {
-              "rank": 3,
-              "bib": 3,
-              "name": "张雨馨",
-              "team": "四川体育职业学院",
-              "run1": "27.43",
-              "run2": "26.88",
-              "time": "54.31",
-              "diff": "",
-              "points": 303
-            }
-          ]
-        },
-        {
-          "discipline": "大回转",
-          "ageGroup": "U15",
-          "gender": "男子组",
-          "athletes": [
-            {
-              "rank": 1,
-              "bib": 1,
-              "name": "王梓墨",
-              "team": "四川体育职业学院",
-              "run1": "24.95",
-              "run2": "24.86",
-              "time": "49.81",
-              "diff": "0.00",
-              "points": 360
-            },
-            {
-              "rank": 2,
-              "bib": 2,
-              "name": "盛嗣垚",
-              "team": "张家口辰鹏体育发展有限公司",
-              "run1": "25.53",
-              "run2": "25.02",
-              "time": "50.55",
-              "diff": "",
-              "points": 329
-            },
-            {
-              "rank": 3,
-              "bib": 3,
-              "name": "丁天睿",
-              "team": "山域竞技体育工作室",
-              "run1": "25.47",
-              "run2": "25.48",
-              "time": "50.95",
-              "diff": "",
-              "points": 303
-            },
-            {
-              "rank": 4,
-              "bib": 4,
-              "name": "郭轩烨",
-              "team": "张家口辰鹏体育发展有限公司",
-              "run1": "26.17",
-              "run2": "25.49",
-              "time": "51.66",
-              "diff": "",
-              "points": 280
-            },
-            {
-              "rank": 5,
-              "bib": 5,
-              "name": "韩以乐",
-              "team": "竞禹体育",
-              "run1": "25.62",
-              "run2": "26.23",
-              "time": "51.85",
-              "diff": "",
-              "points": 260
-            },
-            {
-              "rank": 6,
-              "bib": 6,
-              "name": "贾梓瑞",
-              "team": "远东东（重庆）体育文化发展有限公司",
-              "run1": "26.07",
-              "run2": "26.11",
-              "time": "52.18",
-              "diff": "",
-              "points": 242
-            },
-            {
-              "rank": 7,
-              "bib": 7,
-              "name": "田芷源",
-              "team": "长春市朝阳区山域竞技体育工作室",
-              "run1": "26.53",
-              "run2": "26.15",
-              "time": "52.68",
-              "diff": "",
-              "points": 226
-            },
-            {
-              "rank": 8,
-              "bib": 8,
-              "name": "林子辰",
-              "team": "重庆市冬季运动管理中心1队",
-              "run1": "26.41",
-              "run2": "26.64",
-              "time": "53.05",
-              "diff": "",
-              "points": 212
-            },
-            {
-              "rank": 9,
-              "bib": 9,
-              "name": "马照然",
-              "team": "大连奥萨体育文化有限公司",
-              "run1": "27.39",
-              "run2": "26.37",
-              "time": "53.76",
-              "diff": "",
-              "points": 199
-            },
-            {
-              "rank": 10,
-              "bib": 10,
-              "name": "王景亮",
-              "team": "广州热雪奇迹文化体育发展有限公司",
-              "run1": "28.09",
-              "run2": "26.88",
-              "time": "54.97",
-              "diff": "",
-              "points": 187
-            },
-            {
-              "rank": 10,
-              "bib": 11,
-              "name": "邵楷同",
-              "team": "广州热雪奇迹",
-              "run1": "27.58",
-              "run2": "27.39",
-              "time": "54.97",
-              "diff": "",
-              "points": 176
-            },
-            {
-              "rank": 12,
-              "bib": 12,
-              "name": "肖瑞林",
-              "team": "重庆市冬季运动管理中心1队",
-              "run1": "28.03",
-              "run2": "26.96",
-              "time": "54.99",
-              "diff": "",
-              "points": 166
-            },
-            {
-              "rank": 13,
-              "bib": 13,
-              "name": "张博智",
-              "team": "张家口辰鹏体育发展有限公司",
-              "run1": "27.94",
-              "run2": "27.31",
-              "time": "55.25",
-              "diff": "",
-              "points": 157
-            },
-            {
-              "rank": 14,
-              "bib": 14,
-              "name": "蒋骐阳",
-              "team": "兰州碧桂园学校",
-              "run1": "28.35",
-              "run2": "27.59",
-              "time": "55.94",
-              "diff": "",
-              "points": 149
-            },
-            {
-              "rank": 15,
-              "bib": 15,
-              "name": "岳皓宇",
-              "team": "个人",
-              "run1": "28.47",
-              "run2": "27.81",
-              "time": "56.28",
-              "diff": "",
-              "points": 141
-            },
-            {
-              "rank": 16,
-              "bib": 16,
-              "name": "刘宸宇",
-              "team": "福建省冰雪运动协会",
-              "run1": "28.80",
-              "run2": "28.36",
-              "time": "57.16",
-              "diff": "",
-              "points": 134
-            },
-            {
-              "rank": 17,
-              "bib": 17,
-              "name": "龙思祺",
-              "team": "广州雪迹文化体育发展有限公司",
-              "run1": "29.85",
-              "run2": "29.95",
-              "time": "59.80",
-              "diff": "",
-              "points": 127
-            }
-          ]
-        },
-        {
-          "discipline": "大回转",
+          "discipline": "回转",
           "ageGroup": "U11",
           "gender": "女子组",
           "athletes": [
@@ -968,21 +1321,19 @@ export const latestResults: ResultsData = {
               "bib": 1,
               "name": "钱语墨",
               "team": "张家口辰鹏体育发展有限公司",
-              "run1": "26.62",
-              "run2": "26.36",
-              "time": "52.98",
-              "diff": "0.00",
+              "run1": "00:25.73",
+              "run2": "00:25.51",
+              "time": "00:51.24",
               "points": 360
             },
             {
               "rank": 2,
               "bib": 2,
-              "name": "张雨桐",
-              "team": "个人",
-              "run1": "27.47",
-              "run2": "27.85",
-              "time": "55.32",
-              "diff": "",
+              "name": "顾欣蕊",
+              "team": "上海市静安区滑雪协会",
+              "run1": "00:27.55",
+              "run2": "00:26.77",
+              "time": "00:54.32",
               "points": 329
             },
             {
@@ -990,93 +1341,75 @@ export const latestResults: ResultsData = {
               "bib": 3,
               "name": "赵希悦",
               "team": "延庆区体育局",
-              "run1": "27.89",
-              "run2": "28.21",
-              "time": "56.10",
-              "diff": "",
+              "run1": "00:27.38",
+              "run2": "00:27.24",
+              "time": "00:54.62",
               "points": 303
             },
             {
               "rank": 4,
               "bib": 4,
-              "name": "顾欣蕊",
-              "team": "上海市静安区滑雪协会",
-              "run1": "28.46",
-              "run2": "27.80",
-              "time": "56.26",
-              "diff": "",
+              "name": "路钧惠",
+              "team": "延庆区体育局",
+              "run1": "00:27.67",
+              "run2": "00:27.30",
+              "time": "00:54.97",
               "points": 280
             },
             {
               "rank": 5,
               "bib": 5,
-              "name": "张曦安",
-              "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
-              "run1": "28.75",
-              "run2": "28.13",
-              "time": "56.88",
-              "diff": "",
+              "name": "张雨桐",
+              "team": "个人",
+              "run1": "00:27.94",
+              "run2": "00:27.77",
+              "time": "00:55.71",
               "points": 260
             },
             {
               "rank": 6,
               "bib": 6,
-              "name": "路钧惠",
-              "team": "延庆区体育局",
-              "run1": "29.47",
-              "run2": "29.23",
-              "time": "58.70",
-              "diff": "",
+              "name": "张竞戈",
+              "team": "个人",
+              "run1": "00:28.44",
+              "run2": "00:28.46",
+              "time": "00:56.90",
               "points": 242
             },
             {
               "rank": 7,
               "bib": 7,
-              "name": "田芷郡",
-              "team": "山域竞技体育工作室",
-              "run1": "32.05",
-              "run2": "31.76",
-              "time": "1:03.81",
-              "diff": "",
+              "name": "张曦安",
+              "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
+              "run1": "00:29.39",
+              "run2": "00:29.09",
+              "time": "00:58.48",
               "points": 226
             },
             {
               "rank": 8,
               "bib": 8,
-              "name": "崔凯淇",
-              "team": "山域竞技体育工作室",
-              "run1": "35.81",
-              "run2": "35.44",
-              "time": "1:11.25",
-              "diff": "",
+              "name": "冯薏霏",
+              "team": "个人（零度竞技）",
+              "run1": "00:29.97",
+              "run2": "00:29.81",
+              "time": "00:59.78",
               "points": 212
             },
             {
               "rank": 9,
               "bib": 9,
-              "name": "韩侨安",
-              "team": "竞禹体育",
-              "run1": "36.24",
-              "run2": "36.45",
-              "time": "1:12.69",
-              "diff": "",
+              "name": "李若瑜",
+              "team": "中关村一小",
+              "run1": "00:31.81",
+              "run2": "00:30.62",
+              "time": "01:02.43",
               "points": 199
-            },
-            {
-              "rank": 10,
-              "bib": 10,
-              "name": "魏子澄",
-              "team": "本溪全明星滑雪学校",
-              "run1": "38.49",
-              "run2": "38.94",
-              "time": "1:17.43",
-              "diff": "",
-              "points": 187
             }
           ]
         },
         {
-          "discipline": "大回转",
+          "discipline": "回转",
           "ageGroup": "U11",
           "gender": "男子组",
           "athletes": [
@@ -1085,110 +1418,355 @@ export const latestResults: ResultsData = {
               "bib": 1,
               "name": "赵酌",
               "team": "四川体育职业学院",
-              "run1": "26.82",
-              "run2": "26.55",
-              "time": "53.37",
-              "diff": "0.00",
+              "run1": "00:23.73",
+              "run2": "00:23.91",
+              "time": "00:47.64",
               "points": 360
             },
             {
               "rank": 2,
               "bib": 2,
-              "name": "竹禹丞",
-              "team": "四川体育职业学院",
-              "run1": "31.17",
-              "run2": "30.11",
-              "time": "1:01.28",
-              "diff": "",
+              "name": "孙楚为",
+              "team": "大连奥萨",
+              "run1": "00:28.40",
+              "run2": "00:27.13",
+              "time": "00:55.53",
               "points": 329
             },
             {
               "rank": 3,
               "bib": 3,
-              "name": "蒋伯阳",
-              "team": "兰州碧桂园学校",
-              "run1": "30.95",
-              "run2": "30.45",
-              "time": "1:01.40",
-              "diff": "",
+              "name": "安若维",
+              "team": "个人",
+              "run1": "00:32.39",
+              "run2": "00:30.78",
+              "time": "01:03.17",
               "points": 303
             },
             {
               "rank": 4,
               "bib": 4,
-              "name": "温逸伦",
-              "team": "吉林坤伦滑雪俱乐部",
-              "run1": "30.87",
-              "run2": "30.65",
-              "time": "1:01.52",
-              "diff": "",
+              "name": "孙乾铭",
+              "team": "山域竞技体育工作室二队",
+              "run1": "00:34.36",
+              "run2": "00:33.34",
+              "time": "01:07.70",
               "points": 280
             },
             {
               "rank": 5,
               "bib": 5,
-              "name": "张轩睿",
-              "team": "RSKI竞技滑雪队队",
-              "run1": "31.24",
-              "run2": "30.72",
-              "time": "1:01.96",
-              "diff": "",
+              "name": "柳昇延",
+              "team": "延庆区体育局",
+              "run1": "00:35.21",
+              "run2": "00:33.84",
+              "time": "01:09.05",
+              "points": 260
+            }
+          ]
+        },
+        {
+          "discipline": "回转",
+          "ageGroup": "U15",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 1,
+              "name": "陈玥潞",
+              "team": "张家口辰鹏体育发展有限公司",
+              "run1": "00:24.10",
+              "run2": "00:24.53",
+              "time": "00:48.63",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 2,
+              "name": "贾一诺",
+              "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
+              "run1": "00:24.61",
+              "run2": "00:24.49",
+              "time": "00:49.10",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 3,
+              "name": "张雨馨",
+              "team": "四川体育职业学院",
+              "run1": "00:24.59",
+              "run2": "00:25.32",
+              "time": "00:49.91",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 4,
+              "name": "刘金潼",
+              "team": "个人（零度竞技）",
+              "run1": "00:27.79",
+              "run2": "00:27.52",
+              "time": "00:55.31",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 5,
+              "name": "张雨杉",
+              "team": "西安高新一中沣东中学初中校区",
+              "run1": "00:28.81",
+              "run2": "00:27.83",
+              "time": "00:56.64",
+              "points": 260
+            }
+          ]
+        },
+        {
+          "discipline": "回转",
+          "ageGroup": "U15",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 1,
+              "name": "王梓墨",
+              "team": "四川体育职业学院",
+              "birthYear": "2015",
+              "run1": "00:21.80",
+              "run2": "00:21.75",
+              "time": "00:43.55",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 2,
+              "name": "陈煜轩",
+              "team": "大连奥萨竞技",
+              "run1": "00:21.83",
+              "run2": "00:21.82",
+              "time": "00:43.65",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 3,
+              "name": "王俞涵",
+              "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
+              "run1": "00:22.21",
+              "run2": "00:22.28",
+              "time": "00:44.49",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 4,
+              "name": "韩以乐",
+              "team": "竞禹体育",
+              "run1": "00:22.45",
+              "run2": "00:22.07",
+              "time": "00:44.52",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 5,
+              "name": "盛嗣垚",
+              "team": "张家口辰鹏体育发展有限公司",
+              "run1": "00:22.50",
+              "run2": "00:22.11",
+              "time": "00:44.61",
               "points": 260
             },
             {
               "rank": 6,
               "bib": 6,
-              "name": "安若维",
-              "team": "个人",
-              "run1": "31.41",
-              "run2": "31.08",
-              "time": "1:02.49",
-              "diff": "",
+              "name": "丁天睿",
+              "team": "山域竞技体育工作室",
+              "run1": "00:22.52",
+              "run2": "00:22.10",
+              "time": "00:44.62",
               "points": 242
             },
             {
               "rank": 7,
               "bib": 7,
-              "name": "杨东信",
-              "team": "RSKI竞技滑雪队队",
-              "run1": "31.89",
-              "run2": "30.74",
-              "time": "1:02.63",
-              "diff": "",
+              "name": "于承睿",
+              "team": "个人（零度竞技）",
+              "run1": "00:22.62",
+              "run2": "00:22.44",
+              "time": "00:45.06",
               "points": 226
             },
             {
-              "rank": 7,
+              "rank": 8,
               "bib": 8,
-              "name": "董子都",
-              "team": "个人",
-              "run1": "30.62",
-              "run2": "32.01",
-              "time": "1:02.63",
-              "diff": "",
+              "name": "国益霖",
+              "team": "延庆区体育局",
+              "run1": "00:22.92",
+              "run2": "00:23.00",
+              "time": "00:45.92",
               "points": 212
             },
             {
               "rank": 9,
               "bib": 9,
-              "name": "陈昕逸",
-              "team": "个人",
-              "run1": "31.27",
-              "run2": "31.46",
-              "time": "1:02.73",
-              "diff": "",
+              "name": "丁润章",
+              "team": "东北师范大学附属实验学校（经开）",
+              "run1": "00:22.28",
+              "run2": "00:23.75",
+              "time": "00:46.03",
               "points": 199
             },
             {
               "rank": 10,
               "bib": 10,
-              "name": "柳昇延",
-              "team": "延庆区体育局",
-              "run1": "33.64",
-              "run2": "34.38",
-              "time": "1:08.02",
-              "diff": "",
+              "name": "郭轩烨",
+              "team": "张家口辰鹏体育发展有限公司",
+              "run1": "00:23.13",
+              "run2": "00:22.95",
+              "time": "00:46.08",
               "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 11,
+              "name": "姚政希",
+              "team": "个人",
+              "run1": "00:23.84",
+              "run2": "00:23.63",
+              "time": "00:47.47",
+              "points": 176
+            },
+            {
+              "rank": 12,
+              "bib": 12,
+              "name": "王景亮",
+              "team": "广州热雪奇迹文化体育发展有限公司",
+              "run1": "00:23.92",
+              "run2": "00:23.80",
+              "time": "00:47.72",
+              "points": 166
+            },
+            {
+              "rank": 13,
+              "bib": 13,
+              "name": "林子辰",
+              "team": "重庆市冬季运动管理中心1队",
+              "run1": "00:24.67",
+              "run2": "00:23.29",
+              "time": "00:47.96",
+              "points": 157
+            },
+            {
+              "rank": 14,
+              "bib": 14,
+              "name": "沈昊宇",
+              "team": "个人",
+              "run1": "00:24.52",
+              "run2": "00:23.66",
+              "time": "00:48.18",
+              "points": 149
+            },
+            {
+              "rank": 15,
+              "bib": 15,
+              "name": "张博智",
+              "team": "张家口辰鹏体育发展有限公司",
+              "run1": "00:24.31",
+              "run2": "00:24.07",
+              "time": "00:48.38",
+              "points": 141
+            },
+            {
+              "rank": 16,
+              "bib": 16,
+              "name": "肖瑞林",
+              "team": "重庆市冬季运动管理中心",
+              "run1": "00:24.92",
+              "run2": "00:24.55",
+              "time": "00:49.47",
+              "points": 134
+            },
+            {
+              "rank": 17,
+              "bib": 17,
+              "name": "赵宣贺",
+              "team": "个人",
+              "run1": "00:24.98",
+              "run2": "00:25.26",
+              "time": "00:50.24",
+              "points": 127
+            },
+            {
+              "rank": 18,
+              "bib": 18,
+              "name": "田芷源",
+              "team": "长春市朝阳区山域竞技体育工作室",
+              "run1": "00:25.51",
+              "run2": "00:25.32",
+              "time": "00:50.83",
+              "points": 121
+            },
+            {
+              "rank": 19,
+              "bib": 19,
+              "name": "孙茂文",
+              "team": "个人",
+              "run1": "00:25.54",
+              "run2": "00:25.86",
+              "time": "00:51.40",
+              "points": 115
+            },
+            {
+              "rank": 20,
+              "bib": 20,
+              "name": "冯泽昊",
+              "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
+              "run1": "00:26.02",
+              "run2": "00:26.52",
+              "time": "00:52.54",
+              "points": 110
+            },
+            {
+              "rank": 21,
+              "bib": 21,
+              "name": "马照然",
+              "team": "大连奥萨体育文化有限公司",
+              "run1": "00:26.66",
+              "run2": "00:26.13",
+              "time": "00:52.79",
+              "points": 105
+            },
+            {
+              "rank": 22,
+              "bib": 22,
+              "name": "董林枫",
+              "team": "RSKI竞技滑雪队队",
+              "run1": "00:26.57",
+              "run2": "00:26.72",
+              "time": "00:53.29",
+              "points": 100
+            },
+            {
+              "rank": 23,
+              "bib": 23,
+              "name": "蒋骐阳",
+              "team": "兰州碧桂园学校",
+              "run1": "00:28.24",
+              "run2": "00:27.78",
+              "time": "00:56.02",
+              "points": 95
+            },
+            {
+              "rank": 24,
+              "bib": 24,
+              "name": "龙思祺",
+              "team": "广州雪迹文化体育发展有限公司",
+              "run1": "00:32.11",
+              "run2": "00:31.38",
+              "time": "01:03.49",
+              "points": 91
             }
           ]
         },
@@ -1202,10 +1780,9 @@ export const latestResults: ResultsData = {
               "bib": 1,
               "name": "孙若涵",
               "team": "延庆区体育局",
-              "run1": "25.05",
-              "run2": "25.23",
-              "time": "50.28",
-              "diff": "0.00",
+              "run1": "00:25.05",
+              "run2": "00:25.23",
+              "time": "00:50.28",
               "points": 360
             },
             {
@@ -1213,10 +1790,9 @@ export const latestResults: ResultsData = {
               "bib": 2,
               "name": "周昱含",
               "team": "沈阳王伟滑雪管理咨询服务有限公司",
-              "run1": "25.31",
-              "run2": "25.87",
-              "time": "51.18",
-              "diff": "",
+              "run1": "00:25.31",
+              "run2": "00:25.87",
+              "time": "00:51.18",
               "points": 329
             },
             {
@@ -1224,10 +1800,9 @@ export const latestResults: ResultsData = {
               "bib": 3,
               "name": "龚信水",
               "team": "重庆市冬季运动管理中心1队",
-              "run1": "25.86",
-              "run2": "26.16",
-              "time": "52.02",
-              "diff": "",
+              "run1": "00:25.86",
+              "run2": "00:26.16",
+              "time": "00:52.02",
               "points": 303
             },
             {
@@ -1235,10 +1810,9 @@ export const latestResults: ResultsData = {
               "bib": 4,
               "name": "邱心悦",
               "team": "葫小芦（北京）体育有限公司",
-              "run1": "27.07",
-              "run2": "26.79",
-              "time": "53.86",
-              "diff": "",
+              "run1": "00:27.07",
+              "run2": "00:26.79",
+              "time": "00:53.86",
               "points": 280
             },
             {
@@ -1246,21 +1820,19 @@ export const latestResults: ResultsData = {
               "bib": 5,
               "name": "王胜婕",
               "team": "葫小芦（北京）体育有限公司",
-              "run1": "27.03",
-              "run2": "26.92",
-              "time": "53.95",
-              "diff": "",
+              "run1": "00:27.03",
+              "run2": "00:26.92",
+              "time": "00:53.95",
               "points": 260
             },
             {
               "rank": 6,
               "bib": 6,
               "name": "杨睿怡",
-              "team": "个人",
-              "run1": "31.20",
-              "run2": "31.74",
-              "time": "1:02.94",
-              "diff": "",
+              "team": "华发冰雪热雪奇迹",
+              "run1": "00:31.20",
+              "run2": "00:31.74",
+              "time": "01:02.94",
               "points": 242
             }
           ]
@@ -1275,10 +1847,9 @@ export const latestResults: ResultsData = {
               "bib": 1,
               "name": "熊泽瑞",
               "team": "张家口乔与杨体育服务有限公司",
-              "run1": "22.67",
-              "run2": "22.79",
-              "time": "45.46",
-              "diff": "0.00",
+              "run1": "00:22.67",
+              "run2": "00:22.79",
+              "time": "00:45.46",
               "points": 360
             },
             {
@@ -1286,10 +1857,9 @@ export const latestResults: ResultsData = {
               "bib": 2,
               "name": "高琦硕",
               "team": "高峰",
-              "run1": "23.02",
-              "run2": "23.00",
-              "time": "46.02",
-              "diff": "",
+              "run1": "00:23.02",
+              "run2": "00:23.00",
+              "time": "00:46.02",
               "points": 329
             },
             {
@@ -1297,10 +1867,9 @@ export const latestResults: ResultsData = {
               "bib": 3,
               "name": "王阳明",
               "team": "张家口乔与杨体育服务有限公司",
-              "run1": "23.51",
-              "run2": "22.89",
-              "time": "46.40",
-              "diff": "",
+              "run1": "00:23.51",
+              "run2": "00:22.89",
+              "time": "00:46.40",
               "points": 303
             },
             {
@@ -1308,10 +1877,9 @@ export const latestResults: ResultsData = {
               "bib": 4,
               "name": "明泳桐",
               "team": "张家口辰鹏体育发展有限公司",
-              "run1": "23.48",
-              "run2": "23.11",
-              "time": "46.59",
-              "diff": "",
+              "run1": "00:23.48",
+              "run2": "00:23.11",
+              "time": "00:46.59",
               "points": 280
             },
             {
@@ -1319,10 +1887,9 @@ export const latestResults: ResultsData = {
               "bib": 5,
               "name": "左子正",
               "team": "左子正",
-              "run1": "23.26",
-              "run2": "23.49",
-              "time": "46.75",
-              "diff": "",
+              "run1": "00:23.26",
+              "run2": "00:23.49",
+              "time": "00:46.75",
               "points": 260
             },
             {
@@ -1330,10 +1897,9 @@ export const latestResults: ResultsData = {
               "bib": 6,
               "name": "王正政",
               "team": "张家口乔与杨体育服务有限公司",
-              "run1": "23.62",
-              "run2": "23.82",
-              "time": "47.44",
-              "diff": "",
+              "run1": "00:23.62",
+              "run2": "00:23.82",
+              "time": "00:47.44",
               "points": 242
             },
             {
@@ -1341,10 +1907,9 @@ export const latestResults: ResultsData = {
               "bib": 7,
               "name": "鞠沐辰",
               "team": "济南市皇亭竞技体育学校",
-              "run1": "24.42",
-              "run2": "23.38",
-              "time": "47.80",
-              "diff": "",
+              "run1": "00:24.42",
+              "run2": "00:23.38",
+              "time": "00:47.80",
               "points": 226
             },
             {
@@ -1352,10 +1917,9 @@ export const latestResults: ResultsData = {
               "bib": 8,
               "name": "王润钰",
               "team": "张家口乔与杨体育服务有限公司",
-              "run1": "24.16",
-              "run2": "24.10",
-              "time": "48.26",
-              "diff": "",
+              "run1": "00:24.16",
+              "run2": "00:24.10",
+              "time": "00:48.26",
               "points": 212
             },
             {
@@ -1363,10 +1927,9 @@ export const latestResults: ResultsData = {
               "bib": 9,
               "name": "王冠霖",
               "team": "吉林坤伦滑雪俱乐部",
-              "run1": "25.23",
-              "run2": "24.48",
-              "time": "49.71",
-              "diff": "",
+              "run1": "00:25.23",
+              "run2": "00:24.48",
+              "time": "00:49.71",
               "points": 199
             },
             {
@@ -1374,349 +1937,15 @@ export const latestResults: ResultsData = {
               "bib": 10,
               "name": "谭皓阳",
               "team": "个人（高峰）",
-              "run1": "30.24",
-              "run2": "30.09",
-              "time": "1:00.33",
-              "diff": "",
+              "run1": "00:30.24",
+              "run2": "00:30.09",
+              "time": "01:00.33",
               "points": 187
             }
           ]
         },
         {
-          "discipline": "回转",
-          "ageGroup": "U15",
-          "gender": "女子组",
-          "athletes": [
-            {
-              "rank": 1,
-              "bib": 1,
-              "name": "陈玥潞",
-              "team": "张家口辰鹏体育发展有限公司",
-              "run1": "24.10",
-              "run2": "24.53",
-              "time": "48.63",
-              "diff": "0.00",
-              "points": 360
-            },
-            {
-              "rank": 2,
-              "bib": 2,
-              "name": "贾一诺",
-              "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
-              "run1": "24.61",
-              "run2": "24.49",
-              "time": "49.10",
-              "diff": "",
-              "points": 329
-            },
-            {
-              "rank": 3,
-              "bib": 3,
-              "name": "张雨馨",
-              "team": "四川体育职业学院",
-              "run1": "24.59",
-              "run2": "25.32",
-              "time": "49.91",
-              "diff": "",
-              "points": 303
-            },
-            {
-              "rank": 4,
-              "bib": 4,
-              "name": "刘金潼",
-              "team": "个人（零度竞技）",
-              "run1": "27.79",
-              "run2": "27.52",
-              "time": "55.31",
-              "diff": "",
-              "points": 280
-            },
-            {
-              "rank": 5,
-              "bib": 5,
-              "name": "张雨杉",
-              "team": "西安高新一中沣东中学初中校区",
-              "run1": "28.81",
-              "run2": "27.83",
-              "time": "56.64",
-              "diff": "",
-              "points": 260
-            }
-          ]
-        },
-        {
-          "discipline": "回转",
-          "ageGroup": "U15",
-          "gender": "男子组",
-          "athletes": [
-            {
-              "rank": 1,
-              "bib": 1,
-              "name": "王梓墨",
-              "team": "四川体育职业学院",
-              "run1": "21.80",
-              "run2": "21.75",
-              "time": "43.55",
-              "diff": "0.00",
-              "points": 360
-            },
-            {
-              "rank": 2,
-              "bib": 2,
-              "name": "陈煜轩",
-              "team": "大连奥萨竞技",
-              "run1": "21.83",
-              "run2": "21.82",
-              "time": "43.65",
-              "diff": "",
-              "points": 329
-            },
-            {
-              "rank": 3,
-              "bib": 3,
-              "name": "王俞涵",
-              "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
-              "run1": "22.21",
-              "run2": "22.28",
-              "time": "44.49",
-              "diff": "",
-              "points": 303
-            },
-            {
-              "rank": 4,
-              "bib": 4,
-              "name": "韩以乐",
-              "team": "竞禹体育",
-              "run1": "22.45",
-              "run2": "22.07",
-              "time": "44.52",
-              "diff": "",
-              "points": 280
-            },
-            {
-              "rank": 5,
-              "bib": 5,
-              "name": "盛嗣垚",
-              "team": "张家口辰鹏体育发展有限公司",
-              "run1": "22.50",
-              "run2": "22.11",
-              "time": "44.61",
-              "diff": "",
-              "points": 260
-            },
-            {
-              "rank": 6,
-              "bib": 6,
-              "name": "丁天睿",
-              "team": "山域竞技体育工作室",
-              "run1": "22.52",
-              "run2": "22.10",
-              "time": "44.62",
-              "diff": "",
-              "points": 242
-            },
-            {
-              "rank": 7,
-              "bib": 7,
-              "name": "于承睿",
-              "team": "个人（零度竞技）",
-              "run1": "22.62",
-              "run2": "22.44",
-              "time": "45.06",
-              "diff": "",
-              "points": 226
-            },
-            {
-              "rank": 8,
-              "bib": 8,
-              "name": "国益霖",
-              "team": "延庆区体育局",
-              "run1": "22.92",
-              "run2": "23.00",
-              "time": "45.92",
-              "diff": "",
-              "points": 212
-            },
-            {
-              "rank": 9,
-              "bib": 9,
-              "name": "丁润章",
-              "team": "东北师范大学附属实验学校（经开）",
-              "run1": "22.28",
-              "run2": "23.75",
-              "time": "46.03",
-              "diff": "",
-              "points": 199
-            },
-            {
-              "rank": 10,
-              "bib": 10,
-              "name": "郭轩烨",
-              "team": "张家口辰鹏体育发展有限公司",
-              "run1": "23.13",
-              "run2": "22.95",
-              "time": "46.08",
-              "diff": "",
-              "points": 187
-            },
-            {
-              "rank": 11,
-              "bib": 11,
-              "name": "姚政希",
-              "team": "个人",
-              "run1": "23.84",
-              "run2": "23.63",
-              "time": "47.47",
-              "diff": "",
-              "points": 176
-            },
-            {
-              "rank": 12,
-              "bib": 12,
-              "name": "王景亮",
-              "team": "广州热雪奇迹文化体育发展有限公司",
-              "run1": "23.92",
-              "run2": "23.80",
-              "time": "47.72",
-              "diff": "",
-              "points": 166
-            },
-            {
-              "rank": 13,
-              "bib": 13,
-              "name": "林子辰",
-              "team": "重庆市冬季运动管理中心1队",
-              "run1": "24.67",
-              "run2": "23.29",
-              "time": "47.96",
-              "diff": "",
-              "points": 157
-            },
-            {
-              "rank": 14,
-              "bib": 14,
-              "name": "沈昊宇",
-              "team": "个人",
-              "run1": "24.52",
-              "run2": "23.66",
-              "time": "48.18",
-              "diff": "",
-              "points": 149
-            },
-            {
-              "rank": 15,
-              "bib": 15,
-              "name": "张博智",
-              "team": "张家口辰鹏体育发展有限公司",
-              "run1": "24.31",
-              "run2": "24.07",
-              "time": "48.38",
-              "diff": "",
-              "points": 141
-            },
-            {
-              "rank": 16,
-              "bib": 16,
-              "name": "肖瑞林",
-              "team": "重庆市冬季运动管理中心1队",
-              "run1": "24.92",
-              "run2": "24.55",
-              "time": "49.47",
-              "diff": "",
-              "points": 134
-            },
-            {
-              "rank": 17,
-              "bib": 17,
-              "name": "赵宣贺",
-              "team": "个人",
-              "run1": "24.98",
-              "run2": "25.26",
-              "time": "50.24",
-              "diff": "",
-              "points": 127
-            },
-            {
-              "rank": 18,
-              "bib": 18,
-              "name": "田芷源",
-              "team": "长春市朝阳区山域竞技体育工作室",
-              "run1": "25.51",
-              "run2": "25.32",
-              "time": "50.83",
-              "diff": "",
-              "points": 121
-            },
-            {
-              "rank": 19,
-              "bib": 19,
-              "name": "孙茂文",
-              "team": "个人",
-              "run1": "25.54",
-              "run2": "25.86",
-              "time": "51.40",
-              "diff": "",
-              "points": 115
-            },
-            {
-              "rank": 20,
-              "bib": 20,
-              "name": "冯泽昊",
-              "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
-              "run1": "26.02",
-              "run2": "26.52",
-              "time": "52.54",
-              "diff": "",
-              "points": 110
-            },
-            {
-              "rank": 21,
-              "bib": 21,
-              "name": "马照然",
-              "team": "大连奥萨体育文化有限公司",
-              "run1": "26.66",
-              "run2": "26.13",
-              "time": "52.79",
-              "diff": "",
-              "points": 105
-            },
-            {
-              "rank": 22,
-              "bib": 22,
-              "name": "董林枫",
-              "team": "RSKI竞技滑雪队队",
-              "run1": "26.57",
-              "run2": "26.72",
-              "time": "53.29",
-              "diff": "",
-              "points": 100
-            },
-            {
-              "rank": 23,
-              "bib": 23,
-              "name": "蒋骐阳",
-              "team": "兰州碧桂园学校",
-              "run1": "28.24",
-              "run2": "27.78",
-              "time": "56.02",
-              "diff": "",
-              "points": 95
-            },
-            {
-              "rank": 24,
-              "bib": 24,
-              "name": "龙思祺",
-              "team": "广州雪迹文化体育发展有限公司",
-              "run1": "32.11",
-              "run2": "31.38",
-              "time": "1:03.49",
-              "diff": "",
-              "points": 91
-            }
-          ]
-        },
-        {
-          "discipline": "回转",
+          "discipline": "大回转",
           "ageGroup": "U11",
           "gender": "女子组",
           "athletes": [
@@ -1725,21 +1954,19 @@ export const latestResults: ResultsData = {
               "bib": 1,
               "name": "钱语墨",
               "team": "张家口辰鹏体育发展有限公司",
-              "run1": "25.73",
-              "run2": "25.51",
-              "time": "51.24",
-              "diff": "0.00",
+              "run1": "00:26.62",
+              "run2": "00:26.36",
+              "time": "00:52.98",
               "points": 360
             },
             {
               "rank": 2,
               "bib": 2,
-              "name": "顾欣蕊",
-              "team": "上海市静安区滑雪协会",
-              "run1": "27.55",
-              "run2": "26.77",
-              "time": "54.32",
-              "diff": "",
+              "name": "张雨桐",
+              "team": "个人",
+              "run1": "00:27.47",
+              "run2": "00:27.85",
+              "time": "00:55.32",
               "points": 329
             },
             {
@@ -1747,82 +1974,85 @@ export const latestResults: ResultsData = {
               "bib": 3,
               "name": "赵希悦",
               "team": "延庆区体育局",
-              "run1": "27.38",
-              "run2": "27.24",
-              "time": "54.62",
-              "diff": "",
+              "run1": "00:27.89",
+              "run2": "00:28.21",
+              "time": "00:56.10",
               "points": 303
             },
             {
               "rank": 4,
               "bib": 4,
-              "name": "路钧惠",
-              "team": "延庆区体育局",
-              "run1": "27.67",
-              "run2": "27.30",
-              "time": "54.97",
-              "diff": "",
+              "name": "顾欣蕊",
+              "team": "上海市静安区滑雪协会",
+              "run1": "00:28.46",
+              "run2": "00:27.80",
+              "time": "00:56.26",
               "points": 280
             },
             {
               "rank": 5,
               "bib": 5,
-              "name": "张雨桐",
-              "team": "个人",
-              "run1": "27.94",
-              "run2": "27.77",
-              "time": "55.71",
-              "diff": "",
+              "name": "张曦安",
+              "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
+              "run1": "00:28.75",
+              "run2": "00:28.13",
+              "time": "00:56.88",
               "points": 260
             },
             {
               "rank": 6,
               "bib": 6,
-              "name": "张竞戈",
-              "team": "个人",
-              "run1": "28.44",
-              "run2": "28.46",
-              "time": "56.90",
-              "diff": "",
+              "name": "路钧惠",
+              "team": "延庆区体育局",
+              "run1": "00:29.47",
+              "run2": "00:29.23",
+              "time": "00:58.70",
               "points": 242
             },
             {
               "rank": 7,
               "bib": 7,
-              "name": "张曦安",
-              "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
-              "run1": "29.39",
-              "run2": "29.09",
-              "time": "58.48",
-              "diff": "",
+              "name": "田芷郡",
+              "team": "山域竞技体育工作室",
+              "run1": "00:32.05",
+              "run2": "00:31.76",
+              "time": "01:03.81",
               "points": 226
             },
             {
               "rank": 8,
               "bib": 8,
-              "name": "冯薏霏",
-              "team": "个人（零度竞技）",
-              "run1": "29.97",
-              "run2": "29.81",
-              "time": "59.78",
-              "diff": "",
+              "name": "崔凯淇",
+              "team": "山域竞技体育工作室",
+              "run1": "00:35.81",
+              "run2": "00:35.44",
+              "time": "01:11.25",
               "points": 212
             },
             {
               "rank": 9,
               "bib": 9,
-              "name": "李若瑜",
-              "team": "北京市中关村一小",
-              "run1": "31.81",
-              "run2": "30.62",
-              "time": "1:02.43",
-              "diff": "",
+              "name": "韩侨安",
+              "team": "竞禹体育",
+              "run1": "00:36.24",
+              "run2": "00:36.45",
+              "time": "01:12.69",
               "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 10,
+              "name": "魏子澄",
+              "team": "本溪全明星滑雪学校",
+              "run1": "00:38.49",
+              "run2": "00:38.94",
+              "time": "01:17.43",
+              "points": 187
             }
           ]
         },
         {
-          "discipline": "回转",
+          "discipline": "大回转",
           "ageGroup": "U11",
           "gender": "男子组",
           "athletes": [
@@ -1831,533 +2061,479 @@ export const latestResults: ResultsData = {
               "bib": 1,
               "name": "赵酌",
               "team": "四川体育职业学院",
-              "run1": "23.73",
-              "run2": "23.91",
-              "time": "47.64",
-              "diff": "0.00",
+              "run1": "00:26.82",
+              "run2": "00:26.55",
+              "time": "00:53.37",
               "points": 360
             },
             {
               "rank": 2,
               "bib": 2,
-              "name": "孙楚为",
-              "team": "大连奥萨",
-              "run1": "28.40",
-              "run2": "27.13",
-              "time": "55.53",
-              "diff": "",
+              "name": "竹禹丞",
+              "team": "成都热雪奇迹",
+              "run1": "00:31.17",
+              "run2": "00:30.11",
+              "time": "01:01.28",
               "points": 329
             },
             {
               "rank": 3,
               "bib": 3,
-              "name": "安若维",
-              "team": "个人",
-              "run1": "32.39",
-              "run2": "30.78",
-              "time": "1:03.17",
-              "diff": "",
+              "name": "蒋伯阳",
+              "team": "兰州碧桂园学校",
+              "run1": "00:30.95",
+              "run2": "00:30.45",
+              "time": "01:01.40",
               "points": 303
             },
             {
               "rank": 4,
               "bib": 4,
-              "name": "孙乾铭",
-              "team": "山域竞技体育工作室二队",
-              "run1": "34.36",
-              "run2": "33.34",
-              "time": "1:07.70",
-              "diff": "",
+              "name": "温逸伦",
+              "team": "吉林坤伦滑雪俱乐部",
+              "run1": "00:30.87",
+              "run2": "00:30.65",
+              "time": "01:01.52",
               "points": 280
             },
             {
               "rank": 5,
               "bib": 5,
-              "name": "柳昇延",
-              "team": "延庆区体育局",
-              "run1": "35.21",
-              "run2": "33.84",
-              "time": "1:09.05",
-              "diff": "",
-              "points": 260
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（富龙站）",
-      "sport": "自由式滑雪大跳台",
-      "sportType": "freestyle-bigair",
-      "location": "张家口富龙滑雪场",
-      "date": "2026-01-11",
-      "endDate": "2026-01-14",
-      "status": "completed",
-      "events": [
-        {
-          "discipline": "大跳台",
-          "ageGroup": "U11",
-          "gender": "女子组",
-          "athletes": [
-            {
-              "rank": 1,
-              "bib": 17,
-              "name": "李诗沫",
-              "team": "石家庄市冰雪与足球运动推广训练中心",
-              "birthYear": "2015",
-              "bestScore": 169,
-              "points": 360
-            },
-            {
-              "rank": 2,
-              "bib": 19,
-              "name": "陈科羽",
-              "team": "四川体育职业学院",
-              "birthYear": "2016",
-              "bestScore": 151.5,
-              "points": 329
-            },
-            {
-              "rank": 3,
-              "bib": 32,
-              "name": "王玗希",
-              "team": "个人",
-              "birthYear": "2016",
-              "bestScore": 147.75,
-              "points": 303
-            },
-            {
-              "rank": 4,
-              "bib": 6,
-              "name": "甄芝漫",
-              "team": "河北省体育局冬季运动中心",
-              "birthYear": "2014",
-              "bestScore": 143,
-              "points": 280
-            },
-            {
-              "rank": 5,
-              "bib": 7,
-              "name": "袁芮涵",
-              "team": "河南省体育局",
-              "birthYear": "2014",
-              "bestScore": 131,
+              "name": "张轩睿",
+              "team": "RSKI竞技滑雪队队",
+              "run1": "00:31.24",
+              "run2": "00:30.72",
+              "time": "01:01.96",
               "points": 260
             },
             {
               "rank": 6,
-              "bib": 8,
-              "name": "王淑哲",
-              "team": "河南省体育局",
-              "birthYear": "2016",
-              "bestScore": 126.75,
+              "bib": 6,
+              "name": "安若维",
+              "team": "个人",
+              "run1": "00:31.41",
+              "run2": "00:31.08",
+              "time": "01:02.49",
               "points": 242
             },
             {
               "rank": 7,
-              "bib": 9,
-              "name": "孙焕轲",
-              "team": "河南省体育局",
-              "birthYear": "2016",
-              "bestScore": 123.5,
+              "bib": 7,
+              "name": "杨东信",
+              "team": "RSKI竞技滑雪队队",
+              "run1": "00:31.89",
+              "run2": "00:30.74",
+              "time": "01:02.63",
               "points": 226
             },
             {
-              "rank": 8,
-              "bib": 18,
-              "name": "任可心",
-              "team": "四川体育职业学院",
-              "birthYear": "2015",
-              "bestScore": 120,
+              "rank": 7,
+              "bib": 8,
+              "name": "董子都",
+              "team": "个人",
+              "run1": "00:30.62",
+              "run2": "00:32.01",
+              "time": "01:02.63",
               "points": 212
             },
             {
               "rank": 9,
-              "bib": 20,
-              "name": "赵紫琪",
-              "team": "四川体育职业学院",
-              "birthYear": "2014",
-              "bestScore": 100.75,
+              "bib": 9,
+              "name": "陈昕逸",
+              "team": "个人",
+              "run1": "00:31.27",
+              "run2": "00:31.46",
+              "time": "01:02.73",
               "points": 199
             },
             {
               "rank": 10,
-              "bib": 37,
-              "name": "闫妍",
-              "team": "个人",
+              "bib": 10,
+              "name": "柳昇延",
+              "team": "延庆区体育局",
+              "run1": "00:33.64",
+              "run2": "00:34.38",
+              "time": "01:08.02",
+              "points": 187
+            }
+          ]
+        },
+        {
+          "discipline": "大回转",
+          "ageGroup": "U15",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 1,
+              "name": "陈玥潞",
+              "team": "张家口辰鹏体育发展有限公司",
+              "run1": "00:25.94",
+              "run2": "00:26.23",
+              "time": "00:52.17",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 2,
+              "name": "杨玉涵",
+              "team": "吉林坤伦滑雪俱乐部",
+              "run1": "00:26.42",
+              "run2": "00:26.31",
+              "time": "00:52.73",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 3,
+              "name": "张雨馨",
+              "team": "四川体育职业学院",
+              "run1": "00:27.43",
+              "run2": "00:26.88",
+              "time": "00:54.31",
+              "points": 303
+            }
+          ]
+        },
+        {
+          "discipline": "大回转",
+          "ageGroup": "U15",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 1,
+              "name": "王梓墨",
+              "team": "四川体育职业学院",
               "birthYear": "2015",
-              "bestScore": 100.5,
+              "run1": "00:24.95",
+              "run2": "00:24.86",
+              "time": "00:49.81",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 2,
+              "name": "盛嗣垚",
+              "team": "张家口辰鹏体育发展有限公司",
+              "run1": "00:25.53",
+              "run2": "00:25.02",
+              "time": "00:50.55",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 3,
+              "name": "丁天睿",
+              "team": "山域竞技体育工作室",
+              "run1": "00:25.47",
+              "run2": "00:25.48",
+              "time": "00:50.95",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 4,
+              "name": "郭轩烨",
+              "team": "张家口辰鹏体育发展有限公司",
+              "run1": "00:26.17",
+              "run2": "00:25.49",
+              "time": "00:51.66",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 5,
+              "name": "韩以乐",
+              "team": "竞禹体育",
+              "run1": "00:25.62",
+              "run2": "00:26.23",
+              "time": "00:51.85",
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 6,
+              "name": "贾梓瑞",
+              "team": "远东东（重庆）体育文化发展有限公司",
+              "run1": "00:26.07",
+              "run2": "00:26.11",
+              "time": "00:52.18",
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 7,
+              "name": "田芷源",
+              "team": "长春市朝阳区山域竞技体育工作室",
+              "run1": "00:26.53",
+              "run2": "00:26.15",
+              "time": "00:52.68",
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 8,
+              "name": "林子辰",
+              "team": "重庆市冬季运动管理中心1队",
+              "run1": "00:26.41",
+              "run2": "00:26.64",
+              "time": "00:53.05",
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 9,
+              "name": "马照然",
+              "team": "大连奥萨体育文化有限公司",
+              "run1": "00:27.39",
+              "run2": "00:26.37",
+              "time": "00:53.76",
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 10,
+              "name": "王景亮",
+              "team": "广州热雪奇迹文化体育发展有限公司",
+              "run1": "00:28.09",
+              "run2": "00:26.88",
+              "time": "00:54.97",
               "points": 187
             },
             {
-              "rank": 11,
-              "bib": 16,
-              "name": "武温暖",
-              "team": "石家庄市冰雪与足球运动推广训练中心",
-              "birthYear": "2014",
-              "bestScore": 97,
+              "rank": 10,
+              "bib": 11,
+              "name": "邵楷同",
+              "team": "广州热雪奇迹",
+              "run1": "00:27.58",
+              "run2": "00:27.39",
+              "time": "00:54.97",
               "points": 176
             },
             {
               "rank": 12,
-              "bib": 25,
-              "name": "周钰芯",
-              "team": "四川体育职业学院",
-              "birthYear": "2015",
-              "bestScore": 93.25,
+              "bib": 12,
+              "name": "肖瑞林",
+              "team": "重庆市冬季运动管理中心",
+              "run1": "00:28.03",
+              "run2": "00:26.96",
+              "time": "00:54.99",
               "points": 166
             },
             {
               "rank": 13,
-              "bib": 5,
-              "name": "梁宝云",
-              "team": "广西射击射箭运动发展中心",
-              "birthYear": "2014",
-              "bestScore": 76.5,
+              "bib": 13,
+              "name": "张博智",
+              "team": "张家口辰鹏体育发展有限公司",
+              "run1": "00:27.94",
+              "run2": "00:27.31",
+              "time": "00:55.25",
               "points": 157
             },
             {
               "rank": 14,
-              "bib": 3,
-              "name": "欧子娴",
-              "team": "成都热雪奇迹",
-              "birthYear": "2016",
-              "bestScore": 75.75,
+              "bib": 14,
+              "name": "蒋骐阳",
+              "team": "兰州碧桂园学校",
+              "run1": "00:28.35",
+              "run2": "00:27.59",
+              "time": "00:55.94",
               "points": 149
             },
             {
               "rank": 15,
-              "bib": 33,
-              "name": "左均怡",
+              "bib": 15,
+              "name": "岳皓宇",
               "team": "个人",
-              "birthYear": "2017",
-              "bestScore": 74.5,
+              "run1": "00:28.47",
+              "run2": "00:27.81",
+              "time": "00:56.28",
               "points": 141
             },
             {
               "rank": 16,
-              "bib": 35,
-              "name": "李佳馨",
-              "team": "个人",
-              "birthYear": "2016",
-              "bestScore": 49.25,
+              "bib": 16,
+              "name": "刘宸宇",
+              "team": "福建省冰雪运动协会",
+              "run1": "00:28.80",
+              "run2": "00:28.36",
+              "time": "00:57.16",
               "points": 134
             },
             {
               "rank": 17,
-              "bib": 36,
-              "name": "孙婉迪",
-              "team": "个人",
-              "birthYear": "2016",
-              "bestScore": 44.25,
+              "bib": 17,
+              "name": "龙思祺",
+              "team": "广州雪迹文化体育发展有限公司",
+              "run1": "00:29.85",
+              "run2": "00:29.95",
+              "time": "00:59.80",
               "points": 127
             }
           ]
         },
         {
-          "discipline": "大跳台",
-          "ageGroup": "U11",
-          "gender": "男子组",
-          "athletes": [
-            {
-              "rank": 1,
-              "bib": 1,
-              "name": "张墨凡",
-              "team": "北京市冬季运动管理中心",
-              "birthYear": "2014",
-              "bestScore": 184.75,
-              "points": 360
-            },
-            {
-              "rank": 2,
-              "bib": 2,
-              "name": "常嘉林",
-              "team": "广西射击射箭运动发展中心",
-              "birthYear": "2014",
-              "bestScore": 169,
-              "points": 329
-            },
-            {
-              "rank": 3,
-              "bib": 19,
-              "name": "吴雨桐",
-              "team": "个人",
-              "birthYear": "2017",
-              "bestScore": 157.75,
-              "points": 303
-            },
-            {
-              "rank": 4,
-              "bib": 6,
-              "name": "张梓童",
-              "team": "河南省体育局",
-              "birthYear": "2016",
-              "bestScore": 124.25,
-              "points": 280
-            },
-            {
-              "rank": 5,
-              "bib": 7,
-              "name": "王俊熙",
-              "team": "河南省体育局",
-              "birthYear": "2015",
-              "bestScore": 119.75,
-              "points": 260
-            },
-            {
-              "rank": 6,
-              "bib": 8,
-              "name": "赵铠轩",
-              "team": "河南省体育局",
-              "birthYear": "2015",
-              "bestScore": 113,
-              "points": 242
-            }
-          ]
-        },
-        {
-          "discipline": "大跳台",
-          "ageGroup": "U15",
-          "gender": "女子组",
-          "athletes": [
-            {
-              "rank": 1,
-              "bib": 23,
-              "name": "马世馨",
-              "team": "四川体育职业学院",
-              "birthYear": "2012",
-              "bestScore": 191.5,
-              "points": 360
-            },
-            {
-              "rank": 2,
-              "bib": 10,
-              "name": "罗优璇",
-              "team": "河南省体育局",
-              "birthYear": "2010",
-              "bestScore": 176.75,
-              "points": 329
-            },
-            {
-              "rank": 3,
-              "bib": 22,
-              "name": "吴思琪",
-              "team": "四川体育职业学院",
-              "birthYear": "2010",
-              "bestScore": 175.25,
-              "points": 303
-            },
-            {
-              "rank": 4,
-              "bib": 24,
-              "name": "周紫君",
-              "team": "四川体育职业学院",
-              "birthYear": "2011",
-              "bestScore": 169,
-              "points": 280
-            },
-            {
-              "rank": 5,
-              "bib": 4,
-              "name": "李明灿",
-              "team": "广西射击射箭运动发展中心",
-              "birthYear": "2012",
-              "bestScore": 162.75,
-              "points": 260
-            },
-            {
-              "rank": 6,
-              "bib": 12,
-              "name": "陈奕歌",
-              "team": "河南省体育局",
-              "birthYear": "2012",
-              "bestScore": 157.75,
-              "points": 242
-            },
-            {
-              "rank": 7,
-              "bib": 34,
-              "name": "周绮润",
-              "team": "个人",
-              "birthYear": "2012",
-              "bestScore": 154.5,
-              "points": 226
-            },
-            {
-              "rank": 8,
-              "bib": 13,
-              "name": "殷玉宣",
-              "team": "河南省体育局",
-              "birthYear": "2012",
-              "bestScore": 149.5,
-              "points": 212
-            },
-            {
-              "rank": 9,
-              "bib": 21,
-              "name": "王珈绮",
-              "team": "四川体育职业学院",
-              "birthYear": "2013",
-              "bestScore": 147.75,
-              "points": 199
-            },
-            {
-              "rank": 10,
-              "bib": 27,
-              "name": "杨芷妍",
-              "team": "四川体育职业学院",
-              "birthYear": "2011",
-              "bestScore": 147.75,
-              "points": 187
-            },
-            {
-              "rank": 11,
-              "bib": 15,
-              "name": "王珠彤",
-              "team": "石家庄市冰雪与足球运动推广训练中心",
-              "birthYear": "2011",
-              "bestScore": 115.75,
-              "points": 176
-            }
-          ]
-        },
-        {
-          "discipline": "大跳台",
-          "ageGroup": "U15",
-          "gender": "男子组",
-          "athletes": [
-            {
-              "rank": 1,
-              "bib": 14,
-              "name": "徐锦添",
-              "team": "四川体育职业学院",
-              "birthYear": "2010",
-              "bestScore": 188.5,
-              "points": 360
-            },
-            {
-              "rank": 2,
-              "bib": 13,
-              "name": "黄志豪",
-              "team": "四川体育职业学院",
-              "birthYear": "2011",
-              "bestScore": 187.5,
-              "points": 329
-            },
-            {
-              "rank": 3,
-              "bib": 10,
-              "name": "王凯文",
-              "team": "黑龙江省雪上训练中心",
-              "birthYear": "2011",
-              "bestScore": 176.5,
-              "points": 303
-            },
-            {
-              "rank": 4,
-              "bib": 16,
-              "name": "邓明涛",
-              "team": "四川体育职业学院",
-              "birthYear": "2010",
-              "bestScore": 169.25,
-              "points": 280
-            },
-            {
-              "rank": 5,
-              "bib": 9,
-              "name": "璩恩慧",
-              "team": "河南省体育局",
-              "birthYear": "2011",
-              "bestScore": 162.75,
-              "points": 260
-            },
-            {
-              "rank": 6,
-              "bib": 15,
-              "name": "王培旭",
-              "team": "四川体育职业学院",
-              "birthYear": "2010",
-              "bestScore": 157,
-              "points": 242
-            },
-            {
-              "rank": 7,
-              "bib": 12,
-              "name": "周英杰",
-              "team": "四川体育职业学院",
-              "birthYear": "2013",
-              "bestScore": 146.5,
-              "points": 226
-            },
-            {
-              "rank": 8,
-              "bib": 17,
-              "name": "刘栩辰",
-              "team": "重庆市冬季运动管理中心",
-              "birthYear": "2013",
-              "bestScore": 92.5,
-              "points": 212
-            },
-            {
-              "rank": 9,
-              "bib": 5,
-              "name": "程楚阳",
-              "team": "广西射击射箭运动发展中心",
-              "birthYear": "2013",
-              "bestScore": 84.25,
-              "points": 199
-            },
-            {
-              "rank": 10,
-              "bib": 3,
-              "name": "梁跃飞",
-              "team": "广西射击射箭运动发展中心",
-              "birthYear": "2013",
-              "bestScore": 80,
-              "points": 187
-            },
-            {
-              "rank": 11,
-              "bib": 4,
-              "name": "王冬杰",
-              "team": "广西射击射箭运动发展中心",
-              "birthYear": "2012",
-              "bestScore": 67.5,
-              "points": 176
-            }
-          ]
-        },
-        {
-          "discipline": "大跳台",
+          "discipline": "大回转",
           "ageGroup": "U18",
           "gender": "女子组",
           "athletes": [
             {
               "rank": 1,
-              "bib": 31,
-              "name": "陈露凝",
-              "team": "个人",
-              "birthYear": "2010",
-              "bestScore": 178.25,
+              "bib": 1,
+              "name": "孙若涵",
+              "team": "延庆区体育局",
+              "run1": "00:26.77",
+              "run2": "00:26.58",
+              "time": "00:53.35",
               "points": 360
             },
             {
               "rank": 2,
-              "bib": 30,
-              "name": "高梓曦",
-              "team": "个人",
-              "birthYear": "2008",
-              "bestScore": 111.25,
+              "bib": 2,
+              "name": "王胜婕",
+              "team": "葫小芦（北京）体育有限公司",
+              "run1": "00:27.40",
+              "run2": "00:27.00",
+              "time": "00:54.40",
               "points": 329
             },
             {
               "rank": 3,
-              "bib": 1,
-              "name": "齐馨",
-              "team": "A+自由式滑雪队",
-              "birthYear": "2009",
-              "bestScore": 1,
+              "bib": 3,
+              "name": "周昱含",
+              "team": "沈阳王伟滑雪管理咨询服务有限公司",
+              "run1": "00:27.88",
+              "run2": "00:27.41",
+              "time": "00:55.29",
               "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 4,
+              "name": "邱心悦",
+              "team": "葫小芦（北京）体育有限公司",
+              "run1": "00:28.12",
+              "run2": "00:28.03",
+              "time": "00:56.15",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 5,
+              "name": "龚信水",
+              "team": "重庆市冬季运动管理中心1队",
+              "run1": "00:28.60",
+              "run2": "00:28.00",
+              "time": "00:56.60",
+              "points": 260
+            }
+          ]
+        },
+        {
+          "discipline": "大回转",
+          "ageGroup": "U18",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 1,
+              "name": "王正政",
+              "team": "张家口乔与杨体育服务有限公司",
+              "run1": "00:26.15",
+              "run2": "00:25.77",
+              "time": "00:51.92",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 2,
+              "name": "王润钰",
+              "team": "张家口乔与杨体育服务有限公司",
+              "run1": "00:26.09",
+              "run2": "00:25.94",
+              "time": "00:52.03",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 3,
+              "name": "李彦博",
+              "team": "四川体育职业学院",
+              "run1": "00:25.90",
+              "run2": "00:26.33",
+              "time": "00:52.23",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 4,
+              "name": "明泳桐",
+              "team": "张家口辰鹏体育发展有限公司",
+              "run1": "00:26.36",
+              "run2": "00:25.95",
+              "time": "00:52.31",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 5,
+              "name": "左子正",
+              "team": "左子正",
+              "run1": "00:25.83",
+              "run2": "00:26.56",
+              "time": "00:52.39",
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 6,
+              "name": "鞠沐辰",
+              "team": "济南市皇亭竞技体育学校",
+              "run1": "00:26.64",
+              "run2": "00:25.84",
+              "time": "00:52.48",
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 7,
+              "name": "王阳明",
+              "team": "张家口乔与杨体育服务有限公司",
+              "run1": "00:26.94",
+              "run2": "00:25.62",
+              "time": "00:52.56",
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 8,
+              "name": "常冠廷",
+              "team": "吉林市丰满区滑雪协会",
+              "run1": "00:26.56",
+              "run2": "00:26.31",
+              "time": "00:52.87",
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 9,
+              "name": "谭皓阳",
+              "team": "个人（高峰）",
+              "run1": "00:30.37",
+              "run2": "00:30.37",
+              "time": "01:00.74",
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 10,
+              "name": "戴文研",
+              "team": "个人",
+              "run1": "00:48.95",
+              "run2": "00:35.29",
+              "time": "01:24.24",
+              "points": 187
             }
           ]
         }
@@ -2399,7 +2575,7 @@ export const latestResults: ResultsData = {
               "rank": 3,
               "bib": 17,
               "name": "李诗沫",
-              "team": "石家庄市冰雪与足球运动推广训练中心",
+              "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2015",
               "bestScore": 87.5,
               "points": 303
@@ -2408,7 +2584,7 @@ export const latestResults: ResultsData = {
               "rank": 4,
               "bib": 16,
               "name": "武温暖",
-              "team": "石家庄市冰雪与足球运动推广训练中心",
+              "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2014",
               "bestScore": 85,
               "points": 280
@@ -2656,7 +2832,7 @@ export const latestResults: ResultsData = {
               "rank": 7,
               "bib": 15,
               "name": "王珠彤",
-              "team": "石家庄市冰雪与足球运动推广训练中心",
+              "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2011",
               "bestScore": 68.25,
               "points": 226
@@ -2860,12 +3036,12 @@ export const latestResults: ResultsData = {
       ]
     },
     {
-      "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（富龙站）",
-      "sport": "单板滑雪大跳台",
-      "sportType": "snowboard-bigair",
+      "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（富龙站）",
+      "sport": "自由式滑雪大跳台",
+      "sportType": "freestyle-bigair",
       "location": "张家口富龙滑雪场",
-      "date": "2026-01-08",
-      "endDate": "2026-01-11",
+      "date": "2026-01-11",
+      "endDate": "2026-01-14",
       "status": "completed",
       "events": [
         {
@@ -2875,147 +3051,156 @@ export const latestResults: ResultsData = {
           "athletes": [
             {
               "rank": 1,
-              "bib": 31,
-              "name": "陈松妤",
-              "team": "个人",
-              "birthYear": "2014",
-              "bestScore": 173,
+              "bib": 17,
+              "name": "李诗沫",
+              "team": "石家庄市冰雪与足球运动中心",
+              "birthYear": "2015",
+              "bestScore": 169,
               "points": 360
             },
             {
               "rank": 2,
-              "bib": 30,
-              "name": "杨舒雅",
-              "team": "个人",
-              "birthYear": "2015",
-              "bestScore": 144.67,
+              "bib": 19,
+              "name": "陈科羽",
+              "team": "四川体育职业学院",
+              "birthYear": "2016",
+              "bestScore": 151.5,
               "points": 329
             },
             {
               "rank": 3,
-              "bib": 1,
-              "name": "宋佳诺",
-              "team": "Criss Crew",
-              "birthYear": "2014",
-              "bestScore": 120.67,
+              "bib": 32,
+              "name": "王玗希",
+              "team": "个人",
+              "birthYear": "2016",
+              "bestScore": 147.75,
               "points": 303
             },
             {
               "rank": 4,
-              "bib": 35,
-              "name": "颜嘉懿",
-              "team": "个人",
+              "bib": 6,
+              "name": "甄芝漫",
+              "team": "河北省体育局冬季运动中心",
               "birthYear": "2014",
-              "bestScore": 116.33,
+              "bestScore": 143,
               "points": 280
             },
             {
               "rank": 5,
               "bib": 7,
-              "name": "孙嘉怡",
-              "team": "河北省体育局冬季运动中心",
-              "birthYear": "2015",
-              "bestScore": 111.66,
+              "name": "袁芮涵",
+              "team": "河南省体育局",
+              "birthYear": "2014",
+              "bestScore": 131,
               "points": 260
             },
             {
               "rank": 6,
-              "bib": 34,
-              "name": "牛安芷芸",
-              "team": "个人",
-              "birthYear": "2014",
-              "bestScore": 99.33,
+              "bib": 8,
+              "name": "王淑哲",
+              "team": "河南省体育局",
+              "birthYear": "2016",
+              "bestScore": 126.75,
               "points": 242
             },
             {
               "rank": 7,
-              "bib": 18,
-              "name": "周子钰",
-              "team": "山西省冰雪运动中心",
-              "birthYear": "2017",
-              "bestScore": 57.33,
+              "bib": 9,
+              "name": "孙焕轲",
+              "team": "河南省体育局",
+              "birthYear": "2016",
+              "bestScore": 123.5,
               "points": 226
             },
             {
               "rank": 8,
-              "bib": 2,
-              "name": "蒋柠萱",
-              "team": "北京市冬季运动管理中心",
+              "bib": 18,
+              "name": "任可心",
+              "team": "四川体育职业学院",
               "birthYear": "2015",
-              "bestScore": 55.67,
+              "bestScore": 120,
               "points": 212
             },
             {
               "rank": 9,
-              "bib": 19,
-              "name": "张诗涵",
-              "team": "石家庄市冰雪与足球运动推广训练中心",
-              "birthYear": "2017",
-              "bestScore": 53,
+              "bib": 20,
+              "name": "赵紫琪",
+              "team": "四川体育职业学院",
+              "birthYear": "2014",
+              "bestScore": 100.75,
               "points": 199
             },
             {
               "rank": 10,
-              "bib": 33,
-              "name": "周斯言",
+              "bib": 37,
+              "name": "闫妍",
               "team": "个人",
               "birthYear": "2015",
-              "bestScore": 48,
+              "bestScore": 100.5,
               "points": 187
             },
             {
               "rank": 11,
-              "bib": 36,
-              "name": "周若慈",
-              "team": "个人",
+              "bib": 16,
+              "name": "武温暖",
+              "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2014",
-              "bestScore": 45,
+              "bestScore": 97,
               "points": 176
             },
             {
               "rank": 12,
-              "bib": 38,
-              "name": "张迦淳",
-              "team": "个人",
-              "birthYear": "2017",
-              "bestScore": 43,
+              "bib": 25,
+              "name": "周钰芯",
+              "team": "四川体育职业学院",
+              "birthYear": "2015",
+              "bestScore": 93.25,
               "points": 166
             },
             {
               "rank": 13,
-              "bib": 3,
-              "name": "翟姝涵",
-              "team": "北京市冬季运动管理中心",
-              "birthYear": "2017",
-              "bestScore": 43,
+              "bib": 5,
+              "name": "梁宝云",
+              "team": "广西射击射箭运动发展中心",
+              "birthYear": "2014",
+              "bestScore": 76.5,
               "points": 157
             },
             {
               "rank": 14,
-              "bib": 32,
-              "name": "郭芮溪",
-              "team": "个人",
-              "birthYear": "2015",
-              "bestScore": 36.34,
+              "bib": 3,
+              "name": "欧子娴",
+              "team": "成都热雪奇迹",
+              "birthYear": "2016",
+              "bestScore": 75.75,
               "points": 149
             },
             {
               "rank": 15,
-              "bib": 29,
-              "name": "马珞恩",
+              "bib": 33,
+              "name": "左均怡",
               "team": "个人",
-              "birthYear": "2016",
-              "bestScore": 27.33,
+              "birthYear": "2017",
+              "bestScore": 74.5,
               "points": 141
             },
             {
               "rank": 16,
-              "bib": 39,
-              "name": "杨茗然",
+              "bib": 35,
+              "name": "李佳馨",
               "team": "个人",
-              "birthYear": "2015",
-              "bestScore": 26.33,
+              "birthYear": "2016",
+              "bestScore": 49.25,
               "points": 134
+            },
+            {
+              "rank": 17,
+              "bib": 36,
+              "name": "孙婉迪",
+              "team": "个人",
+              "birthYear": "2016",
+              "bestScore": 44.25,
+              "points": 127
             }
           ]
         },
@@ -3026,210 +3211,57 @@ export const latestResults: ResultsData = {
           "athletes": [
             {
               "rank": 1,
-              "bib": 42,
-              "name": "刘翰泽",
-              "team": "个人",
+              "bib": 1,
+              "name": "张墨凡",
+              "team": "北京市冬季运动管理中心",
               "birthYear": "2014",
-              "bestScore": 147.34,
+              "bestScore": 184.75,
               "points": 360
             },
             {
               "rank": 2,
-              "bib": 38,
-              "name": "范天成",
-              "team": "个人",
-              "birthYear": "2015",
-              "bestScore": 146.66,
+              "bib": 2,
+              "name": "常嘉林",
+              "team": "广西射击射箭运动发展中心",
+              "birthYear": "2014",
+              "bestScore": 169,
               "points": 329
             },
             {
               "rank": 3,
-              "bib": 12,
-              "name": "王祖安",
-              "team": "河南省体育局",
-              "birthYear": "2014",
-              "bestScore": 123,
+              "bib": 19,
+              "name": "吴雨桐",
+              "team": "个人",
+              "birthYear": "2017",
+              "bestScore": 157.75,
               "points": 303
             },
             {
               "rank": 4,
-              "bib": 3,
-              "name": "曾云泽",
-              "team": "New team",
-              "birthYear": "2014",
-              "bestScore": 122.67,
+              "bib": 6,
+              "name": "张梓童",
+              "team": "河南省体育局",
+              "birthYear": "2016",
+              "bestScore": 124.25,
               "points": 280
             },
             {
               "rank": 5,
-              "bib": 44,
-              "name": "方柏尧",
-              "team": "个人",
-              "birthYear": "2014",
-              "bestScore": 112.66,
+              "bib": 7,
+              "name": "王俊熙",
+              "team": "河南省体育局",
+              "birthYear": "2015",
+              "bestScore": 119.75,
               "points": 260
             },
             {
               "rank": 6,
-              "bib": 10,
-              "name": "魏子博",
-              "team": "河南省体育局",
-              "birthYear": "2014",
-              "bestScore": 101.33,
-              "points": 242
-            },
-            {
-              "rank": 7,
-              "bib": 51,
-              "name": "蒋桨",
-              "team": "个人",
-              "birthYear": "2015",
-              "bestScore": 97.34,
-              "points": 226
-            },
-            {
-              "rank": 8,
-              "bib": 5,
-              "name": "褚天羿",
-              "team": "Star单板队",
-              "birthYear": "2016",
-              "bestScore": 94,
-              "points": 212
-            },
-            {
-              "rank": 9,
-              "bib": 11,
-              "name": "王瞾霖",
-              "team": "河南省体育局",
-              "birthYear": "2014",
-              "bestScore": 89,
-              "points": 199
-            },
-            {
-              "rank": 10,
-              "bib": 7,
-              "name": "石昊桐",
-              "team": "北京市冬季运动管理中心",
-              "birthYear": "2017",
-              "bestScore": 88,
-              "points": 187
-            },
-            {
-              "rank": 11,
-              "bib": 52,
-              "name": "监柏霖",
-              "team": "个人",
-              "birthYear": "2014",
-              "bestScore": 86,
-              "points": 176
-            },
-            {
-              "rank": 12,
-              "bib": 22,
-              "name": "陶志伟",
-              "team": "山西省冰雪运动中心",
-              "birthYear": "2016",
-              "bestScore": 65.67,
-              "points": 166
-            },
-            {
-              "rank": 13,
               "bib": 8,
-              "name": "赵严诺",
-              "team": "河北省体育局冬季运动中心",
-              "birthYear": "2014",
-              "bestScore": 59.33,
-              "points": 157
-            },
-            {
-              "rank": 14,
-              "bib": 50,
-              "name": "张哲朗",
-              "team": "个人",
-              "birthYear": "2016",
-              "bestScore": 53.33,
-              "points": 149
-            },
-            {
-              "rank": 15,
-              "bib": 40,
-              "name": "曾星越",
-              "team": "个人",
-              "birthYear": "2016",
-              "bestScore": 52,
-              "points": 141
-            },
-            {
-              "rank": 16,
-              "bib": 39,
-              "name": "马铂淙",
-              "team": "个人",
-              "birthYear": "2017",
-              "bestScore": 49,
-              "points": 134
-            },
-            {
-              "rank": 17,
-              "bib": 56,
-              "name": "刘桐朔",
-              "team": "石家庄市冰雪与足球运动推广训练中心",
-              "birthYear": "2014",
-              "bestScore": 40.67,
-              "points": 127
-            },
-            {
-              "rank": 18,
-              "bib": 46,
-              "name": "刘音里",
-              "team": "个人",
-              "birthYear": "2016",
-              "bestScore": 40.66,
-              "points": 121
-            },
-            {
-              "rank": 19,
-              "bib": 1,
-              "name": "王睿文",
-              "team": "Criss Crew",
+              "name": "赵铠轩",
+              "team": "河南省体育局",
               "birthYear": "2015",
-              "bestScore": 39,
-              "points": 115
-            },
-            {
-              "rank": 20,
-              "bib": 2,
-              "name": "孙翎皓",
-              "team": "Criss Crew",
-              "birthYear": "2017",
-              "bestScore": 38.33,
-              "points": 110
-            },
-            {
-              "rank": 21,
-              "bib": 34,
-              "name": "陈宇垚",
-              "team": "四川体育职业学院",
-              "birthYear": "2014",
-              "bestScore": 35.67,
-              "points": 105
-            },
-            {
-              "rank": 22,
-              "bib": 28,
-              "name": "林芮锋",
-              "team": "四川体育职业学院",
-              "birthYear": "2014",
-              "bestScore": 21.67,
-              "points": 100
-            },
-            {
-              "rank": 23,
-              "bib": 23,
-              "name": "刘沐泽",
-              "team": "石家庄市冰雪与足球运动推广训练中心",
-              "birthYear": "2014",
-              "bestScore": 18,
-              "points": 95
+              "bestScore": 113,
+              "points": 242
             }
           ]
         },
@@ -3240,156 +3272,102 @@ export const latestResults: ResultsData = {
           "athletes": [
             {
               "rank": 1,
-              "bib": 9,
-              "name": "鱼嘉怡",
-              "team": "河北省体育局冬季运动中心",
-              "birthYear": "2010",
-              "bestScore": 161.33,
+              "bib": 23,
+              "name": "马世馨",
+              "team": "四川体育职业学院",
+              "birthYear": "2012",
+              "bestScore": 191.5,
               "points": 360
             },
             {
               "rank": 2,
-              "bib": 17,
-              "name": "张潇然",
-              "team": "山西省冰雪运动中心",
-              "birthYear": "2011",
-              "bestScore": 148,
+              "bib": 10,
+              "name": "罗优璇",
+              "team": "河南省体育局",
+              "birthYear": "2010",
+              "bestScore": 176.75,
               "points": 329
             },
             {
               "rank": 3,
-              "bib": 4,
-              "name": "杨可轩",
-              "team": "广西射击射箭运动发展中心",
+              "bib": 22,
+              "name": "吴思琪",
+              "team": "四川体育职业学院",
               "birthYear": "2010",
-              "bestScore": 137,
+              "bestScore": 175.25,
               "points": 303
             },
             {
               "rank": 4,
-              "bib": 14,
-              "name": "张淑雅",
-              "team": "山西省冰雪运动中心",
-              "birthYear": "2013",
-              "bestScore": 120,
+              "bib": 24,
+              "name": "周紫君",
+              "team": "四川体育职业学院",
+              "birthYear": "2011",
+              "bestScore": 169,
               "points": 280
             },
             {
               "rank": 5,
-              "bib": 16,
-              "name": "张依冉",
-              "team": "山西省冰雪运动中心",
-              "birthYear": "2011",
-              "bestScore": 118,
+              "bib": 4,
+              "name": "李明灿",
+              "team": "广西射击射箭运动发展中心",
+              "birthYear": "2012",
+              "bestScore": 162.75,
               "points": 260
             },
             {
               "rank": 6,
-              "bib": 15,
-              "name": "郭婉诗",
-              "team": "山西省冰雪运动中心",
-              "birthYear": "2013",
-              "bestScore": 116.34,
+              "bib": 12,
+              "name": "陈奕歌",
+              "team": "河南省体育局",
+              "birthYear": "2012",
+              "bestScore": 157.75,
               "points": 242
             },
             {
               "rank": 7,
-              "bib": 37,
-              "name": "刘霓霏",
+              "bib": 34,
+              "name": "周绮润",
               "team": "个人",
               "birthYear": "2012",
-              "bestScore": 115.66,
+              "bestScore": 154.5,
               "points": 226
             },
             {
               "rank": 8,
-              "bib": 25,
-              "name": "赖文悦",
-              "team": "四川体育职业学院",
-              "birthYear": "2010",
-              "bestScore": 111,
+              "bib": 13,
+              "name": "殷玉宣",
+              "team": "河南省体育局",
+              "birthYear": "2012",
+              "bestScore": 149.5,
               "points": 212
             },
             {
               "rank": 9,
-              "bib": 27,
-              "name": "贺舒玉",
-              "team": "重庆市冬季运动管理中心",
-              "birthYear": "2011",
-              "bestScore": 105.34,
+              "bib": 21,
+              "name": "王珈绮",
+              "team": "四川体育职业学院",
+              "birthYear": "2013",
+              "bestScore": 147.75,
               "points": 199
             },
             {
               "rank": 10,
-              "bib": 20,
-              "name": "杜雨欣",
+              "bib": 27,
+              "name": "杨芷妍",
               "team": "四川体育职业学院",
-              "birthYear": "2012",
-              "bestScore": 104.67,
+              "birthYear": "2011",
+              "bestScore": 147.75,
               "points": 187
             },
             {
               "rank": 11,
-              "bib": 21,
-              "name": "曾梓萱",
-              "team": "四川体育职业学院",
-              "birthYear": "2012",
-              "bestScore": 97.34,
-              "points": 176
-            },
-            {
-              "rank": 12,
-              "bib": 12,
-              "name": "张益嘉",
-              "team": "河南省体育局",
-              "birthYear": "2013",
-              "bestScore": 82,
-              "points": 166
-            },
-            {
-              "rank": 13,
-              "bib": 22,
-              "name": "张诗蕊",
-              "team": "四川体育职业学院",
+              "bib": 15,
+              "name": "王珠彤",
+              "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2011",
-              "bestScore": 63,
-              "points": 157
-            },
-            {
-              "rank": 14,
-              "bib": 6,
-              "name": "周雨辰",
-              "team": "广西射击射箭运动发展中心",
-              "birthYear": "2012",
-              "bestScore": 54.67,
-              "points": 149
-            },
-            {
-              "rank": 15,
-              "bib": 28,
-              "name": "王若西",
-              "team": "重庆市冬季运动管理中心",
-              "birthYear": "2013",
-              "bestScore": 49,
-              "points": 141
-            },
-            {
-              "rank": 16,
-              "bib": 5,
-              "name": "周雨欣",
-              "team": "广西射击射箭运动发展中心",
-              "birthYear": "2012",
-              "bestScore": 31.67,
-              "points": 134
-            },
-            {
-              "rank": 17,
-              "bib": 8,
-              "name": "苏常格",
-              "team": "河北省体育局冬季运动中心",
-              "birthYear": "2013",
-              "bestScore": 1,
-              "points": 127
+              "bestScore": 115.75,
+              "points": 176
             }
           ]
         },
@@ -3400,226 +3378,136 @@ export const latestResults: ResultsData = {
           "athletes": [
             {
               "rank": 1,
-              "bib": 37,
-              "name": "王恒宇",
-              "team": "个人",
-              "birthYear": "2013",
-              "bestScore": 182.67,
+              "bib": 14,
+              "name": "徐锦添",
+              "team": "四川体育职业学院",
+              "birthYear": "2010",
+              "bestScore": 188.5,
               "points": 360
             },
             {
               "rank": 2,
-              "bib": 4,
-              "name": "王浩臣",
-              "team": "Star单板队",
-              "birthYear": "2013",
-              "bestScore": 168,
+              "bib": 13,
+              "name": "黄志豪",
+              "team": "四川体育职业学院",
+              "birthYear": "2011",
+              "bestScore": 187.5,
               "points": 329
             },
             {
               "rank": 3,
-              "bib": 33,
-              "name": "袁梓程",
-              "team": "四川体育职业学院",
+              "bib": 10,
+              "name": "王凯文",
+              "team": "黑龙江省雪上训练中心",
               "birthYear": "2011",
-              "bestScore": 165.33,
+              "bestScore": 176.5,
               "points": 303
             },
             {
               "rank": 4,
-              "bib": 47,
-              "name": "谭凯元",
-              "team": "个人",
-              "birthYear": "2012",
-              "bestScore": 162.33,
+              "bib": 16,
+              "name": "邓明涛",
+              "team": "四川体育职业学院",
+              "birthYear": "2010",
+              "bestScore": 169.25,
               "points": 280
             },
             {
               "rank": 5,
               "bib": 9,
-              "name": "孙晨曦",
-              "team": "河北省体育局冬季运动中心",
-              "birthYear": "2010",
-              "bestScore": 134,
+              "name": "璩恩慧",
+              "team": "河南省体育局",
+              "birthYear": "2011",
+              "bestScore": 162.75,
               "points": 260
             },
             {
               "rank": 6,
-              "bib": 27,
-              "name": "张家睿",
+              "bib": 15,
+              "name": "王培旭",
               "team": "四川体育职业学院",
-              "birthYear": "2013",
-              "bestScore": 120.34,
+              "birthYear": "2010",
+              "bestScore": 157,
               "points": 242
             },
             {
               "rank": 7,
-              "bib": 25,
-              "name": "梁嘉俊",
-              "team": "石家庄市冰雪与足球运动推广训练中心",
+              "bib": 12,
+              "name": "周英杰",
+              "team": "四川体育职业学院",
               "birthYear": "2013",
-              "bestScore": 115.67,
+              "bestScore": 146.5,
               "points": 226
             },
             {
               "rank": 8,
-              "bib": 45,
-              "name": "郭彧铭",
-              "team": "个人",
+              "bib": 17,
+              "name": "刘栩辰",
+              "team": "重庆市冬季运动管理中心",
               "birthYear": "2013",
-              "bestScore": 110.33,
+              "bestScore": 92.5,
               "points": 212
             },
             {
               "rank": 9,
-              "bib": 32,
-              "name": "刘子俊",
-              "team": "四川体育职业学院",
-              "birthYear": "2010",
-              "bestScore": 80,
+              "bib": 5,
+              "name": "程楚阳",
+              "team": "广西射击射箭运动发展中心",
+              "birthYear": "2013",
+              "bestScore": 84.25,
               "points": 199
             },
             {
               "rank": 10,
-              "bib": 6,
-              "name": "高翊博",
-              "team": "北京市冬季运动管理中心",
+              "bib": 3,
+              "name": "梁跃飞",
+              "team": "广西射击射箭运动发展中心",
               "birthYear": "2013",
-              "bestScore": 64.67,
+              "bestScore": 80,
               "points": 187
             },
             {
               "rank": 11,
-              "bib": 36,
-              "name": "张钊宁",
-              "team": "重庆市冬季运动管理中心",
-              "birthYear": "2013",
-              "bestScore": 50.67,
+              "bib": 4,
+              "name": "王冬杰",
+              "team": "广西射击射箭运动发展中心",
+              "birthYear": "2012",
+              "bestScore": 67.5,
               "points": 176
-            },
-            {
-              "rank": 12,
-              "bib": 13,
-              "name": "郭展麟",
-              "team": "黑龙江省雪上训练中心",
-              "birthYear": "2011",
-              "bestScore": 42.67,
-              "points": 166
             }
           ]
         },
         {
           "discipline": "大跳台",
           "ageGroup": "U18",
-          "gender": "男子组",
+          "gender": "女子组",
           "athletes": [
             {
               "rank": 1,
-              "bib": 35,
-              "name": "封树渝",
-              "team": "重庆市冬季运动管理中心",
-              "birthYear": "2008",
-              "bestScore": 183,
+              "bib": 31,
+              "name": "陈露凝",
+              "team": "个人",
+              "birthYear": "2010",
+              "bestScore": 178.25,
               "points": 360
             },
             {
               "rank": 2,
               "bib": 30,
-              "name": "陈珉在",
-              "team": "四川体育职业学院",
-              "birthYear": "2009",
-              "bestScore": 169.34,
+              "name": "高梓曦",
+              "team": "个人",
+              "birthYear": "2008",
+              "bestScore": 111.25,
               "points": 329
             },
             {
               "rank": 3,
-              "bib": 24,
-              "name": "米馥豪",
-              "team": "石家庄市冰雪与足球运动推广训练中心",
+              "bib": 1,
+              "name": "齐馨",
+              "team": "A+自由式滑雪队",
               "birthYear": "2009",
-              "bestScore": 128.67,
+              "bestScore": 1,
               "points": 303
-            },
-            {
-              "rank": 4,
-              "bib": 16,
-              "name": "李智贤",
-              "team": "湖北省武术和冬季运动管理中心",
-              "birthYear": "2010",
-              "bestScore": 128.33,
-              "points": 280
-            },
-            {
-              "rank": 5,
-              "bib": 15,
-              "name": "何鲲鹏",
-              "team": "湖北省武术和冬季运动管理中心",
-              "birthYear": "2009",
-              "bestScore": 97,
-              "points": 260
-            },
-            {
-              "rank": 6,
-              "bib": 31,
-              "name": "李俊辛",
-              "team": "四川体育职业学院",
-              "birthYear": "2008",
-              "bestScore": 95,
-              "points": 242
-            },
-            {
-              "rank": 7,
-              "bib": 17,
-              "name": "袁嘉伟",
-              "team": "湖北省武术和冬季运动管理中心",
-              "birthYear": "2009",
-              "bestScore": 95,
-              "points": 226
-            },
-            {
-              "rank": 8,
-              "bib": 43,
-              "name": "杨峻溪",
-              "team": "个人",
-              "birthYear": "2010",
-              "bestScore": 82.66,
-              "points": 212
-            },
-            {
-              "rank": 9,
-              "bib": 14,
-              "name": "吴海鑫",
-              "team": "湖北省武术和冬季运动管理中心",
-              "birthYear": "2009",
-              "bestScore": 73.33,
-              "points": 199
-            },
-            {
-              "rank": 10,
-              "bib": 19,
-              "name": "倪文凯",
-              "team": "湖北省武术和冬季运动管理中心",
-              "birthYear": "2009",
-              "bestScore": 72.67,
-              "points": 187
-            },
-            {
-              "rank": 11,
-              "bib": 18,
-              "name": "黄子剑",
-              "team": "湖北省武术和冬季运动管理中心",
-              "birthYear": "2008",
-              "bestScore": 49.67,
-              "points": 176
-            },
-            {
-              "rank": 12,
-              "bib": 20,
-              "name": "赵开元",
-              "team": "湖北省武术和冬季运动管理中心",
-              "birthYear": "2010",
-              "bestScore": 36,
-              "points": 166
             }
           ]
         }
@@ -3697,7 +3585,7 @@ export const latestResults: ResultsData = {
               "rank": 7,
               "bib": 19,
               "name": "张诗涵",
-              "team": "石家庄市冰雪与足球运动推广训练中心",
+              "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2017",
               "bestScore": 62,
               "points": 226
@@ -3821,7 +3709,7 @@ export const latestResults: ResultsData = {
               "rank": 4,
               "bib": 23,
               "name": "刘沐泽",
-              "team": "石家庄市冰雪与足球运动推广训练中心",
+              "team": "个人",
               "birthYear": "2014",
               "bestScore": 71.67,
               "points": 280
@@ -3902,7 +3790,7 @@ export const latestResults: ResultsData = {
               "rank": 13,
               "bib": 56,
               "name": "刘桐朔",
-              "team": "石家庄市冰雪与足球运动推广训练中心",
+              "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2014",
               "bestScore": 44.67,
               "points": 157
@@ -4312,7 +4200,7 @@ export const latestResults: ResultsData = {
               "rank": 12,
               "bib": 25,
               "name": "梁嘉俊",
-              "team": "石家庄市冰雪与足球运动推广训练中心",
+              "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2013",
               "bestScore": 9,
               "points": 166
@@ -4418,7 +4306,7 @@ export const latestResults: ResultsData = {
               "rank": 9,
               "bib": 24,
               "name": "米馥豪",
-              "team": "石家庄市冰雪与足球运动推广训练中心",
+              "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2009",
               "bestScore": 45.33,
               "points": 199
@@ -4448,6 +4336,772 @@ export const latestResults: ResultsData = {
               "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2010",
               "bestScore": 8.33,
+              "points": 166
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（富龙站）",
+      "sport": "单板滑雪大跳台",
+      "sportType": "snowboard-bigair",
+      "location": "张家口富龙滑雪场",
+      "date": "2026-01-08",
+      "endDate": "2026-01-11",
+      "status": "completed",
+      "events": [
+        {
+          "discipline": "大跳台",
+          "ageGroup": "U11",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 31,
+              "name": "陈松妤",
+              "team": "个人",
+              "birthYear": "2014",
+              "bestScore": 173,
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 30,
+              "name": "杨舒雅",
+              "team": "个人",
+              "birthYear": "2015",
+              "bestScore": 144.67,
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 1,
+              "name": "宋佳诺",
+              "team": "Criss Crew",
+              "birthYear": "2014",
+              "bestScore": 120.67,
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 35,
+              "name": "颜嘉懿",
+              "team": "个人",
+              "birthYear": "2014",
+              "bestScore": 116.33,
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 7,
+              "name": "孙嘉怡",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2015",
+              "bestScore": 111.66,
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 34,
+              "name": "牛安芷芸",
+              "team": "个人",
+              "birthYear": "2014",
+              "bestScore": 99.33,
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 18,
+              "name": "周子钰",
+              "team": "山西省冰雪运动中心",
+              "birthYear": "2017",
+              "bestScore": 57.33,
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 2,
+              "name": "蒋柠萱",
+              "team": "北京市冬季运动管理中心",
+              "birthYear": "2015",
+              "bestScore": 55.67,
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 19,
+              "name": "张诗涵",
+              "team": "石家庄市冰雪与足球运动中心",
+              "birthYear": "2017",
+              "bestScore": 53,
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 33,
+              "name": "周斯言",
+              "team": "个人",
+              "birthYear": "2015",
+              "bestScore": 48,
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 36,
+              "name": "周若慈",
+              "team": "个人",
+              "birthYear": "2014",
+              "bestScore": 45,
+              "points": 176
+            },
+            {
+              "rank": 12,
+              "bib": 38,
+              "name": "张迦淳",
+              "team": "个人",
+              "birthYear": "2017",
+              "bestScore": 43,
+              "points": 166
+            },
+            {
+              "rank": 13,
+              "bib": 3,
+              "name": "翟姝涵",
+              "team": "北京市冬季运动管理中心",
+              "birthYear": "2017",
+              "bestScore": 43,
+              "points": 157
+            },
+            {
+              "rank": 14,
+              "bib": 32,
+              "name": "郭芮溪",
+              "team": "个人",
+              "birthYear": "2015",
+              "bestScore": 36.34,
+              "points": 149
+            },
+            {
+              "rank": 15,
+              "bib": 29,
+              "name": "马珞恩",
+              "team": "个人",
+              "birthYear": "2016",
+              "bestScore": 27.33,
+              "points": 141
+            },
+            {
+              "rank": 16,
+              "bib": 39,
+              "name": "杨茗然",
+              "team": "个人",
+              "birthYear": "2015",
+              "bestScore": 26.33,
+              "points": 134
+            }
+          ]
+        },
+        {
+          "discipline": "大跳台",
+          "ageGroup": "U11",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 42,
+              "name": "刘翰泽",
+              "team": "个人",
+              "birthYear": "2014",
+              "bestScore": 147.34,
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 38,
+              "name": "范天成",
+              "team": "个人",
+              "birthYear": "2015",
+              "bestScore": 146.66,
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 12,
+              "name": "王祖安",
+              "team": "河南省体育局",
+              "birthYear": "2014",
+              "bestScore": 123,
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 3,
+              "name": "曾云泽",
+              "team": "New team",
+              "birthYear": "2014",
+              "bestScore": 122.67,
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 44,
+              "name": "方柏尧",
+              "team": "个人",
+              "birthYear": "2014",
+              "bestScore": 112.66,
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 10,
+              "name": "魏子博",
+              "team": "河南省体育局",
+              "birthYear": "2014",
+              "bestScore": 101.33,
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 51,
+              "name": "蒋桨",
+              "team": "个人",
+              "birthYear": "2015",
+              "bestScore": 97.34,
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 5,
+              "name": "褚天羿",
+              "team": "Star单板队",
+              "birthYear": "2016",
+              "bestScore": 94,
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 11,
+              "name": "王瞾霖",
+              "team": "河南省体育局",
+              "birthYear": "2014",
+              "bestScore": 89,
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 7,
+              "name": "石昊桐",
+              "team": "北京市冬季运动管理中心",
+              "birthYear": "2017",
+              "bestScore": 88,
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 52,
+              "name": "监柏霖",
+              "team": "个人",
+              "birthYear": "2014",
+              "bestScore": 86,
+              "points": 176
+            },
+            {
+              "rank": 12,
+              "bib": 22,
+              "name": "陶志伟",
+              "team": "山西省冰雪运动中心",
+              "birthYear": "2016",
+              "bestScore": 65.67,
+              "points": 166
+            },
+            {
+              "rank": 13,
+              "bib": 8,
+              "name": "赵严诺",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2014",
+              "bestScore": 59.33,
+              "points": 157
+            },
+            {
+              "rank": 14,
+              "bib": 50,
+              "name": "张哲朗",
+              "team": "个人",
+              "birthYear": "2016",
+              "bestScore": 53.33,
+              "points": 149
+            },
+            {
+              "rank": 15,
+              "bib": 40,
+              "name": "曾星越",
+              "team": "个人",
+              "birthYear": "2016",
+              "bestScore": 52,
+              "points": 141
+            },
+            {
+              "rank": 16,
+              "bib": 39,
+              "name": "马铂淙",
+              "team": "个人",
+              "birthYear": "2017",
+              "bestScore": 49,
+              "points": 134
+            },
+            {
+              "rank": 17,
+              "bib": 56,
+              "name": "刘桐朔",
+              "team": "石家庄市冰雪与足球运动中心",
+              "birthYear": "2014",
+              "bestScore": 40.67,
+              "points": 127
+            },
+            {
+              "rank": 18,
+              "bib": 46,
+              "name": "刘音里",
+              "team": "个人",
+              "birthYear": "2016",
+              "bestScore": 40.66,
+              "points": 121
+            },
+            {
+              "rank": 19,
+              "bib": 1,
+              "name": "王睿文",
+              "team": "Criss Crew",
+              "birthYear": "2015",
+              "bestScore": 39,
+              "points": 115
+            },
+            {
+              "rank": 20,
+              "bib": 2,
+              "name": "孙翎皓",
+              "team": "Criss Crew",
+              "birthYear": "2017",
+              "bestScore": 38.33,
+              "points": 110
+            },
+            {
+              "rank": 21,
+              "bib": 34,
+              "name": "陈宇垚",
+              "team": "四川体育职业学院",
+              "birthYear": "2014",
+              "bestScore": 35.67,
+              "points": 105
+            },
+            {
+              "rank": 22,
+              "bib": 28,
+              "name": "林芮锋",
+              "team": "四川体育职业学院",
+              "birthYear": "2014",
+              "bestScore": 21.67,
+              "points": 100
+            },
+            {
+              "rank": 23,
+              "bib": 23,
+              "name": "刘沐泽",
+              "team": "个人",
+              "birthYear": "2014",
+              "bestScore": 18,
+              "points": 95
+            }
+          ]
+        },
+        {
+          "discipline": "大跳台",
+          "ageGroup": "U15",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 9,
+              "name": "鱼嘉怡",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2010",
+              "bestScore": 161.33,
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 17,
+              "name": "张潇然",
+              "team": "山西省冰雪运动中心",
+              "birthYear": "2011",
+              "bestScore": 148,
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 4,
+              "name": "杨可轩",
+              "team": "广西射击射箭运动发展中心",
+              "birthYear": "2010",
+              "bestScore": 137,
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 14,
+              "name": "张淑雅",
+              "team": "山西省冰雪运动中心",
+              "birthYear": "2013",
+              "bestScore": 120,
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 16,
+              "name": "张依冉",
+              "team": "山西省冰雪运动中心",
+              "birthYear": "2011",
+              "bestScore": 118,
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 15,
+              "name": "郭婉诗",
+              "team": "山西省冰雪运动中心",
+              "birthYear": "2013",
+              "bestScore": 116.34,
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 37,
+              "name": "刘霓霏",
+              "team": "个人",
+              "birthYear": "2012",
+              "bestScore": 115.66,
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 25,
+              "name": "赖文悦",
+              "team": "四川体育职业学院",
+              "birthYear": "2010",
+              "bestScore": 111,
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 27,
+              "name": "贺舒玉",
+              "team": "重庆市冬季运动管理中心",
+              "birthYear": "2011",
+              "bestScore": 105.34,
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 20,
+              "name": "杜雨欣",
+              "team": "四川体育职业学院",
+              "birthYear": "2012",
+              "bestScore": 104.67,
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 21,
+              "name": "曾梓萱",
+              "team": "四川体育职业学院",
+              "birthYear": "2012",
+              "bestScore": 97.34,
+              "points": 176
+            },
+            {
+              "rank": 12,
+              "bib": 12,
+              "name": "张益嘉",
+              "team": "河南省体育局",
+              "birthYear": "2013",
+              "bestScore": 82,
+              "points": 166
+            },
+            {
+              "rank": 13,
+              "bib": 22,
+              "name": "张诗蕊",
+              "team": "四川体育职业学院",
+              "birthYear": "2011",
+              "bestScore": 63,
+              "points": 157
+            },
+            {
+              "rank": 14,
+              "bib": 6,
+              "name": "周雨辰",
+              "team": "广西射击射箭运动发展中心",
+              "birthYear": "2012",
+              "bestScore": 54.67,
+              "points": 149
+            },
+            {
+              "rank": 15,
+              "bib": 28,
+              "name": "王若西",
+              "team": "重庆市冬季运动管理中心",
+              "birthYear": "2013",
+              "bestScore": 49,
+              "points": 141
+            },
+            {
+              "rank": 16,
+              "bib": 5,
+              "name": "周雨欣",
+              "team": "广西射击射箭运动发展中心",
+              "birthYear": "2012",
+              "bestScore": 31.67,
+              "points": 134
+            },
+            {
+              "rank": 17,
+              "bib": 8,
+              "name": "苏常格",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2013",
+              "bestScore": 1,
+              "points": 127
+            }
+          ]
+        },
+        {
+          "discipline": "大跳台",
+          "ageGroup": "U15",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 37,
+              "name": "王恒宇",
+              "team": "个人",
+              "birthYear": "2013",
+              "bestScore": 182.67,
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 4,
+              "name": "王浩臣",
+              "team": "Star单板队",
+              "birthYear": "2013",
+              "bestScore": 168,
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 33,
+              "name": "袁梓程",
+              "team": "四川体育职业学院",
+              "birthYear": "2011",
+              "bestScore": 165.33,
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 47,
+              "name": "谭凯元",
+              "team": "个人",
+              "birthYear": "2012",
+              "bestScore": 162.33,
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 9,
+              "name": "孙晨曦",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2010",
+              "bestScore": 134,
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 27,
+              "name": "张家睿",
+              "team": "四川体育职业学院",
+              "birthYear": "2013",
+              "bestScore": 120.34,
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 25,
+              "name": "梁嘉俊",
+              "team": "石家庄市冰雪与足球运动中心",
+              "birthYear": "2013",
+              "bestScore": 115.67,
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 45,
+              "name": "郭彧铭",
+              "team": "个人",
+              "birthYear": "2013",
+              "bestScore": 110.33,
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 32,
+              "name": "刘子俊",
+              "team": "四川体育职业学院",
+              "birthYear": "2010",
+              "bestScore": 80,
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 6,
+              "name": "高翊博",
+              "team": "北京市冬季运动管理中心",
+              "birthYear": "2013",
+              "bestScore": 64.67,
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 36,
+              "name": "张钊宁",
+              "team": "重庆市冬季运动管理中心",
+              "birthYear": "2013",
+              "bestScore": 50.67,
+              "points": 176
+            },
+            {
+              "rank": 12,
+              "bib": 13,
+              "name": "郭展麟",
+              "team": "黑龙江省雪上训练中心",
+              "birthYear": "2011",
+              "bestScore": 42.67,
+              "points": 166
+            }
+          ]
+        },
+        {
+          "discipline": "大跳台",
+          "ageGroup": "U18",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 35,
+              "name": "封树渝",
+              "team": "重庆市冬季运动管理中心",
+              "birthYear": "2008",
+              "bestScore": 183,
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 30,
+              "name": "陈珉在",
+              "team": "四川体育职业学院",
+              "birthYear": "2009",
+              "bestScore": 169.34,
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 24,
+              "name": "米馥豪",
+              "team": "石家庄市冰雪与足球运动中心",
+              "birthYear": "2009",
+              "bestScore": 128.67,
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 16,
+              "name": "李智贤",
+              "team": "湖北省武术和冬季运动管理中心",
+              "birthYear": "2010",
+              "bestScore": 128.33,
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 15,
+              "name": "何鲲鹏",
+              "team": "湖北省武术和冬季运动管理中心",
+              "birthYear": "2009",
+              "bestScore": 97,
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 31,
+              "name": "李俊辛",
+              "team": "四川体育职业学院",
+              "birthYear": "2008",
+              "bestScore": 95,
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 17,
+              "name": "袁嘉伟",
+              "team": "湖北省武术和冬季运动管理中心",
+              "birthYear": "2009",
+              "bestScore": 95,
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 43,
+              "name": "杨峻溪",
+              "team": "个人",
+              "birthYear": "2010",
+              "bestScore": 82.66,
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 14,
+              "name": "吴海鑫",
+              "team": "湖北省武术和冬季运动管理中心",
+              "birthYear": "2009",
+              "bestScore": 73.33,
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 19,
+              "name": "倪文凯",
+              "team": "湖北省武术和冬季运动管理中心",
+              "birthYear": "2009",
+              "bestScore": 72.67,
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 18,
+              "name": "黄子剑",
+              "team": "湖北省武术和冬季运动管理中心",
+              "birthYear": "2008",
+              "bestScore": 49.67,
+              "points": 176
+            },
+            {
+              "rank": 12,
+              "bib": 20,
+              "name": "赵开元",
+              "team": "湖北省武术和冬季运动管理中心",
+              "birthYear": "2010",
+              "bestScore": 36,
               "points": 166
             }
           ]
@@ -4494,6 +5148,7 @@ export const latestResults: ResultsData = {
               "bib": 214,
               "name": "肖金茂",
               "team": "四川体育职业学院",
+              "birthYear": "2014",
               "run1": "00:40.35",
               "run2": "00:39.76",
               "time": "01:20.11",
@@ -4505,6 +5160,7 @@ export const latestResults: ResultsData = {
               "bib": 204,
               "name": "须星漫",
               "team": "北京虎村竞技体育有限公司",
+              "birthYear": "2016",
               "run1": "00:43.45",
               "run2": "00:37.17",
               "time": "01:20.62",
@@ -4527,6 +5183,7 @@ export const latestResults: ResultsData = {
               "bib": 208,
               "name": "周子翕",
               "team": "成都热雪奇迹",
+              "birthYear": "2014",
               "run1": "00:43.78",
               "run2": "00:39.91",
               "time": "01:23.69",
@@ -4549,6 +5206,7 @@ export const latestResults: ResultsData = {
               "bib": 201,
               "name": "焦阳云朵",
               "team": "北京虎村竞技体育有限公司",
+              "birthYear": "2014",
               "run1": "00:44.05",
               "run2": "00:41.26",
               "time": "01:25.31",
@@ -4560,6 +5218,7 @@ export const latestResults: ResultsData = {
               "bib": 206,
               "name": "李汶瑾",
               "team": "MAYA TEAM",
+              "birthYear": "2015",
               "run1": "00:42.24",
               "run2": "00:43.25",
               "time": "01:25.49",
@@ -4571,6 +5230,7 @@ export const latestResults: ResultsData = {
               "bib": 223,
               "name": "朱安然",
               "team": "上海雪酷滑雪竞技队",
+              "birthYear": "2015",
               "run1": "00:43.75",
               "run2": "00:41.89",
               "time": "01:25.64",
@@ -4604,6 +5264,7 @@ export const latestResults: ResultsData = {
               "bib": 217,
               "name": "李子纯",
               "team": "个人",
+              "birthYear": "2014",
               "run1": "00:43.70",
               "run2": "00:43.84",
               "time": "01:27.54",
@@ -4637,6 +5298,7 @@ export const latestResults: ResultsData = {
               "bib": 215,
               "name": "张语珊",
               "team": "个人",
+              "birthYear": "2014",
               "run1": "00:48.07",
               "run2": "00:44.95",
               "time": "01:33.02",
@@ -4659,6 +5321,7 @@ export const latestResults: ResultsData = {
               "bib": 210,
               "name": "李雨萱",
               "team": "个人",
+              "birthYear": "2014",
               "run1": "00:51.48",
               "run2": "00:44.26",
               "time": "01:35.74",
@@ -4680,7 +5343,8 @@ export const latestResults: ResultsData = {
               "rank": 20,
               "bib": 207,
               "name": "张兆檬",
-              "team": "KingProTeam",
+              "team": "King Pro Team",
+              "birthYear": "2016",
               "run1": "00:51.15",
               "run2": "00:52.54",
               "time": "01:43.69",
@@ -4721,6 +5385,7 @@ export const latestResults: ResultsData = {
               "bib": 268,
               "name": "王一臣",
               "team": "MAYA TEAM",
+              "birthYear": "2014",
               "run1": "00:36.99",
               "run2": "00:35.85",
               "time": "01:12.84",
@@ -4742,6 +5407,7 @@ export const latestResults: ResultsData = {
               "bib": 258,
               "name": "韩赫洺",
               "team": "四川体育职业学院",
+              "birthYear": "2015",
               "run1": "00:38.06",
               "run2": "00:37.50",
               "time": "01:15.56",
@@ -4786,6 +5452,7 @@ export const latestResults: ResultsData = {
               "bib": 264,
               "name": "罗晓野",
               "team": "个人",
+              "birthYear": "2014",
               "run1": "00:39.02",
               "run2": "00:38.05",
               "time": "01:17.07",
@@ -4797,6 +5464,7 @@ export const latestResults: ResultsData = {
               "bib": 260,
               "name": "薛景尧",
               "team": "北京市朝阳区第三少儿业余体校",
+              "birthYear": "2014",
               "run1": "00:40.13",
               "run2": "00:38.91",
               "time": "01:19.04",
@@ -4841,6 +5509,7 @@ export const latestResults: ResultsData = {
               "bib": 277,
               "name": "蒋文栋",
               "team": "MAYA TEAM",
+              "birthYear": "2014",
               "run1": "00:40.29",
               "run2": "00:39.64",
               "time": "01:19.93",
@@ -4863,6 +5532,7 @@ export const latestResults: ResultsData = {
               "bib": 266,
               "name": "刘昱辰",
               "team": "MAYA TEAM",
+              "birthYear": "2014",
               "run1": "00:45.33",
               "run2": "00:36.77",
               "time": "01:22.10",
@@ -4873,7 +5543,8 @@ export const latestResults: ResultsData = {
               "rank": 15,
               "bib": 272,
               "name": "张朔源",
-              "team": "个人",
+              "team": "张家口市足球和冰雪运动学校",
+              "birthYear": "2014",
               "run1": "00:38.63",
               "run2": "00:44.32",
               "time": "01:22.95",
@@ -4885,6 +5556,7 @@ export const latestResults: ResultsData = {
               "bib": 287,
               "name": "张睦然",
               "team": "MAYA TEAM",
+              "birthYear": "2014",
               "run1": "00:41.69",
               "run2": "00:41.57",
               "time": "01:23.26",
@@ -4918,6 +5590,7 @@ export const latestResults: ResultsData = {
               "bib": 285,
               "name": "黄益航",
               "team": "四川体育职业学院",
+              "birthYear": "2015",
               "run1": "00:42.77",
               "run2": "00:42.44",
               "time": "01:25.21",
@@ -5006,6 +5679,7 @@ export const latestResults: ResultsData = {
               "bib": 289,
               "name": "陈鑫艺",
               "team": "四川体育职业学院",
+              "birthYear": "2014",
               "run1": "00:47.13",
               "run2": "00:41.36",
               "time": "01:28.49",
@@ -5017,6 +5691,7 @@ export const latestResults: ResultsData = {
               "bib": 270,
               "name": "孙奥荣",
               "team": "四川体育职业学院",
+              "birthYear": "2014",
               "run1": "00:45.27",
               "run2": "00:43.67",
               "time": "01:28.94",
@@ -5028,6 +5703,7 @@ export const latestResults: ResultsData = {
               "bib": 265,
               "name": "赵梓聿",
               "team": "MAYA TEAM",
+              "birthYear": "2014",
               "run1": "00:44.39",
               "run2": "00:44.77",
               "time": "01:29.16",
@@ -5112,6 +5788,7 @@ export const latestResults: ResultsData = {
               "bib": 108,
               "name": "邱嘉晴",
               "team": "北京虎村竞技体育有限公司",
+              "birthYear": "2012",
               "run1": "00:33.62",
               "run2": "00:32.91",
               "time": "01:06.53",
@@ -5122,6 +5799,7 @@ export const latestResults: ResultsData = {
               "bib": 118,
               "name": "沈凌羽",
               "team": "MAYA TEAM",
+              "birthYear": "2012",
               "run1": "00:34.92",
               "run2": "00:34.13",
               "time": "01:09.05",
@@ -5166,6 +5844,7 @@ export const latestResults: ResultsData = {
               "bib": 103,
               "name": "刘沛怡",
               "team": "MAYA TEAM",
+              "birthYear": "2011",
               "run1": "00:35.90",
               "run2": "00:35.97",
               "time": "01:11.87",
@@ -5254,6 +5933,7 @@ export const latestResults: ResultsData = {
               "bib": 106,
               "name": "邹齐",
               "team": "个人",
+              "birthYear": "2012",
               "run1": "00:36.69",
               "run2": "00:36.47",
               "time": "01:13.16",
@@ -5309,6 +5989,7 @@ export const latestResults: ResultsData = {
               "bib": 131,
               "name": "王艺潼",
               "team": "个人",
+              "birthYear": "2010",
               "run1": "00:41.07",
               "run2": "00:38.79",
               "time": "01:19.86",
@@ -5342,6 +6023,7 @@ export const latestResults: ResultsData = {
               "bib": 130,
               "name": "叶丽扎·别克苏力坦",
               "team": "新疆维吾尔自治区冬季运动训练中心",
+              "birthYear": "2010",
               "run1": "00:46.64",
               "run2": "00:39.90",
               "time": "01:26.54",
@@ -5407,7 +6089,8 @@ export const latestResults: ResultsData = {
               "rank": 28,
               "bib": 123,
               "name": "赵天冉",
-              "team": "KingProTeam",
+              "team": "King Pro Team",
+              "birthYear": "2012",
               "run1": "00:46.42",
               "run2": "00:52.13",
               "time": "01:38.55",
@@ -5430,6 +6113,7 @@ export const latestResults: ResultsData = {
               "bib": 134,
               "name": "亢正熙",
               "team": "四川体育职业学院",
+              "birthYear": "2012",
               "run1": "01:01.82",
               "run2": "00:38.89",
               "time": "01:40.71",
@@ -5470,6 +6154,7 @@ export const latestResults: ResultsData = {
               "bib": 190,
               "name": "高佳钇",
               "team": "速森体育",
+              "birthYear": "2011",
               "run1": "00:33.02",
               "run2": "00:32.85",
               "time": "01:05.87",
@@ -5480,6 +6165,7 @@ export const latestResults: ResultsData = {
               "bib": 164,
               "name": "陈清桦",
               "team": "MAYA TEAM",
+              "birthYear": "2012",
               "run1": "00:33.79",
               "run2": "00:33.65",
               "time": "01:07.44",
@@ -5491,6 +6177,7 @@ export const latestResults: ResultsData = {
               "bib": 154,
               "name": "张雨曈",
               "team": "MAYA TEAM",
+              "birthYear": "2012",
               "run1": "00:34.11",
               "run2": "00:34.19",
               "time": "01:08.30",
@@ -5513,6 +6200,7 @@ export const latestResults: ResultsData = {
               "bib": 178,
               "name": "李天圆",
               "team": "MAYA TEAM",
+              "birthYear": "2011",
               "run1": "00:33.45",
               "run2": "00:35.10",
               "time": "01:08.55",
@@ -5546,6 +6234,7 @@ export const latestResults: ResultsData = {
               "bib": 195,
               "name": "叶庆安",
               "team": "新疆维吾尔自治区冬季运动训练中心",
+              "birthYear": "2010",
               "run1": "00:34.74",
               "run2": "00:35.41",
               "time": "01:10.15",
@@ -5568,6 +6257,7 @@ export const latestResults: ResultsData = {
               "bib": 158,
               "name": "马赛",
               "team": "四川体育职业学院",
+              "birthYear": "2010",
               "run1": "00:35.73",
               "run2": "00:34.75",
               "time": "01:10.48",
@@ -5579,6 +6269,7 @@ export const latestResults: ResultsData = {
               "bib": 181,
               "name": "徐承昊",
               "team": "上海市静安区滑雪协会",
+              "birthYear": "2012",
               "run1": "00:36.27",
               "run2": "00:34.34",
               "time": "01:10.61",
@@ -5623,6 +6314,7 @@ export const latestResults: ResultsData = {
               "bib": 153,
               "name": "于谨赫",
               "team": "速森体育",
+              "birthYear": "2010",
               "run1": "00:35.62",
               "run2": "00:36.22",
               "time": "01:11.84",
@@ -5656,6 +6348,7 @@ export const latestResults: ResultsData = {
               "bib": 173,
               "name": "嘎日玛盖",
               "team": "新疆维吾尔自治区冬季运动训练中心",
+              "birthYear": "2012",
               "run1": "00:34.92",
               "run2": "00:38.22",
               "time": "01:13.14",
@@ -5711,6 +6404,7 @@ export const latestResults: ResultsData = {
               "bib": 188,
               "name": "李柏翔",
               "team": "MAYA TEAM",
+              "birthYear": "2010",
               "run1": "00:42.73",
               "run2": "00:33.01",
               "time": "01:15.74",
@@ -5744,6 +6438,7 @@ export const latestResults: ResultsData = {
               "bib": 165,
               "name": "郭天泽",
               "team": "MAYA TEAM",
+              "birthYear": "2012",
               "run1": "00:35.65",
               "run2": "00:41.33",
               "time": "01:16.98",
@@ -5755,6 +6450,7 @@ export const latestResults: ResultsData = {
               "bib": 185,
               "name": "袁子宸",
               "team": "重庆巴蜀科学城中学校",
+              "birthYear": "2013",
               "run1": "00:39.75",
               "run2": "00:37.87",
               "time": "01:17.62",
@@ -5854,6 +6550,7 @@ export const latestResults: ResultsData = {
               "bib": 156,
               "name": "王浩然",
               "team": "中麟体育",
+              "birthYear": "2010",
               "run1": "00:46.53",
               "run2": "00:37.08",
               "time": "01:23.61",
@@ -5865,6 +6562,7 @@ export const latestResults: ResultsData = {
               "bib": 167,
               "name": "陈浩铭",
               "team": "四川体育职业学院",
+              "birthYear": "2011",
               "run1": "00:37.80",
               "run2": "00:47.36",
               "time": "01:25.16",
@@ -5886,7 +6584,8 @@ export const latestResults: ResultsData = {
               "rank": 39,
               "bib": 196,
               "name": "暴城睿",
-              "team": "辽宁极限体育发展有限公司",
+              "team": "辽宁极限体育",
+              "birthYear": "2012",
               "run1": "00:35.03",
               "run2": "00:52.27",
               "time": "01:27.30",
@@ -5978,6 +6677,7 @@ export const latestResults: ResultsData = {
               "bib": 10,
               "name": "臧怡然",
               "team": "个人",
+              "birthYear": "2008",
               "points": 329
             },
             {
@@ -5985,6 +6685,7 @@ export const latestResults: ResultsData = {
               "bib": 5,
               "name": "丁小苏",
               "team": "MAYA TEAM",
+              "birthYear": "2009",
               "points": 303
             },
             {
@@ -5999,6 +6700,7 @@ export const latestResults: ResultsData = {
               "bib": 19,
               "name": "张芊凝",
               "team": "北京市朝阳区第三少儿业余体校",
+              "birthYear": "2009",
               "run1": "00:39.86",
               "run2": "00:40.30",
               "time": "01:20.16",
@@ -6010,6 +6712,7 @@ export const latestResults: ResultsData = {
               "bib": 14,
               "name": "李雨濛",
               "team": "大连雨彤体育赛事俱乐部",
+              "birthYear": "2010",
               "run1": "00:40.63",
               "run2": "00:39.59",
               "time": "01:20.22",
@@ -6021,6 +6724,7 @@ export const latestResults: ResultsData = {
               "bib": 17,
               "name": "张允童",
               "team": "个人",
+              "birthYear": "2008",
               "run1": "00:40.81",
               "run2": "00:40.13",
               "time": "01:20.94",
@@ -6032,6 +6736,7 @@ export const latestResults: ResultsData = {
               "bib": 3,
               "name": "袁丽文",
               "team": "上海市静安区滑雪协会",
+              "birthYear": "2009",
               "run1": "00:42.14",
               "run2": "00:41.69",
               "time": "01:23.83",
@@ -6053,7 +6758,7 @@ export const latestResults: ResultsData = {
               "rank": 10,
               "bib": 12,
               "name": "邵菲梵",
-              "team": "北京天高云淡体育有限公司",
+              "team": "北京天高云淡体育文化有限公司",
               "run1": "00:42.17",
               "run2": "00:41.93",
               "time": "01:24.10",
@@ -6064,7 +6769,8 @@ export const latestResults: ResultsData = {
               "rank": 11,
               "bib": 8,
               "name": "贾釉茜",
-              "team": "吉林省阔展体育服务有限公司",
+              "team": "ACE竞技滑雪队",
+              "birthYear": "2009",
               "run1": "00:43.51",
               "run2": "00:45.51",
               "time": "01:29.02",
@@ -6130,7 +6836,8 @@ export const latestResults: ResultsData = {
               "rank": 17,
               "bib": 20,
               "name": "房洢伊",
-              "team": "个人",
+              "team": "北京市朝阳区第三少儿业余体校",
+              "birthYear": "2010",
               "run1": "00:42.12",
               "run2": "00:59.65",
               "time": "01:41.77",
@@ -6142,6 +6849,7 @@ export const latestResults: ResultsData = {
               "bib": 1,
               "name": "白默函",
               "team": "重庆埃尔派体育文化传播有限公司",
+              "birthYear": "2008",
               "run1": "00:50.79",
               "run2": "00:51.04",
               "time": "01:41.83",
@@ -6164,6 +6872,7 @@ export const latestResults: ResultsData = {
               "bib": 15,
               "name": "范芮希",
               "team": "个人",
+              "birthYear": "2009",
               "run1": "01:08.61",
               "run2": "00:42.19",
               "time": "01:50.80",
@@ -6175,6 +6884,7 @@ export const latestResults: ResultsData = {
               "bib": 4,
               "name": "杜美佳妮",
               "team": "北京佩士体育有限公司",
+              "birthYear": "2008",
               "run1": "01:13.03",
               "run2": "00:55.18",
               "time": "02:08.21",
@@ -6193,6 +6903,7 @@ export const latestResults: ResultsData = {
               "bib": 53,
               "name": "窦羿",
               "team": "MAYA TEAM",
+              "birthYear": "2007",
               "points": 360
             },
             {
@@ -6200,6 +6911,7 @@ export const latestResults: ResultsData = {
               "bib": 54,
               "name": "张鑫泽",
               "team": "速森体育",
+              "birthYear": "2009",
               "points": 329
             },
             {
@@ -6207,6 +6919,7 @@ export const latestResults: ResultsData = {
               "bib": 66,
               "name": "李嘉祺",
               "team": "北京市朝阳区第三少儿业余体校",
+              "birthYear": "2010",
               "points": 303
             },
             {
@@ -6214,6 +6927,7 @@ export const latestResults: ResultsData = {
               "bib": 56,
               "name": "马凯涛",
               "team": "新疆维吾尔自治区冬季运动训练中心",
+              "birthYear": "2009",
               "points": 280
             },
             {
@@ -6221,6 +6935,7 @@ export const latestResults: ResultsData = {
               "bib": 68,
               "name": "尚久智",
               "team": "北京市朝阳区第三少儿业余体校",
+              "birthYear": "2009",
               "run1": "00:35.14",
               "run2": "00:34.75",
               "time": "01:09.89",
@@ -6243,6 +6958,7 @@ export const latestResults: ResultsData = {
               "bib": 69,
               "name": "杨武胜俊",
               "team": "四川体育职业学院",
+              "birthYear": "2008",
               "run1": "00:37.08",
               "run2": "00:36.59",
               "time": "01:13.67",
@@ -6254,6 +6970,7 @@ export const latestResults: ResultsData = {
               "bib": 59,
               "name": "付壡喆",
               "team": "四川体育职业学院",
+              "birthYear": "2009",
               "run1": "00:37.31",
               "run2": "00:36.65",
               "time": "01:13.96",
@@ -6276,6 +6993,7 @@ export const latestResults: ResultsData = {
               "bib": 65,
               "name": "苗誉镨",
               "team": "速森体育",
+              "birthYear": "2007",
               "run1": "00:36.46",
               "run2": "00:37.19",
               "time": "01:13.65",
@@ -6287,6 +7005,7 @@ export const latestResults: ResultsData = {
               "bib": 62,
               "name": "王嘉崎",
               "team": "新疆维吾尔自治区冬季运动训练中心",
+              "birthYear": "2008",
               "run1": "00:37.62",
               "run2": "00:37.15",
               "time": "01:14.77",
@@ -6320,6 +7039,7 @@ export const latestResults: ResultsData = {
               "bib": 71,
               "name": "杨一丁",
               "team": "北京市朝阳区第三少儿业余体校",
+              "birthYear": "2009",
               "run1": "00:38.80",
               "run2": "00:40.26",
               "time": "01:19.06",
@@ -6341,7 +7061,8 @@ export const latestResults: ResultsData = {
               "rank": 16,
               "bib": 74,
               "name": "樊冠序",
-              "team": "吉林省阔展体育服务有限公司",
+              "team": "ACE竞技滑雪队",
+              "birthYear": "2008",
               "run1": "00:40.47",
               "run2": "00:39.89",
               "time": "01:20.36",
@@ -6353,6 +7074,7 @@ export const latestResults: ResultsData = {
               "bib": 57,
               "name": "曲星铭",
               "team": "个人",
+              "birthYear": "2008",
               "run1": "00:40.97",
               "run2": "00:40.01",
               "time": "01:20.98",
@@ -6364,6 +7086,7 @@ export const latestResults: ResultsData = {
               "bib": 64,
               "name": "付若洵",
               "team": "KingProTeam",
+              "birthYear": "2009",
               "run1": "00:38.44",
               "run2": "00:43.07",
               "time": "01:21.51",
@@ -6375,6 +7098,7 @@ export const latestResults: ResultsData = {
               "bib": 52,
               "name": "吴保江",
               "team": "零站单板滑雪俱乐部",
+              "birthYear": "2007",
               "run1": "00:39.75",
               "run2": "00:42.68",
               "time": "01:22.43",
@@ -6397,6 +7121,7 @@ export const latestResults: ResultsData = {
               "bib": 60,
               "name": "黄铸轩",
               "team": "个人",
+              "birthYear": "2008",
               "run1": "00:43.33",
               "run2": "00:43.70",
               "time": "01:27.03",
@@ -6408,6 +7133,7 @@ export const latestResults: ResultsData = {
               "bib": 58,
               "name": "唐鸿博",
               "team": "KingProTeam",
+              "birthYear": "2009",
               "run1": "00:41.75",
               "run2": "00:48.08",
               "time": "01:29.83",
@@ -6429,7 +7155,8 @@ export const latestResults: ResultsData = {
               "rank": 24,
               "bib": 75,
               "name": "刘馨泽",
-              "team": "吉林省阔展体育服务有限公司",
+              "team": "吉林峰尚青教体育文化产业有限公司",
+              "birthYear": "2012",
               "run1": "00:49.46",
               "run2": "00:46.86",
               "time": "01:36.32",
@@ -6548,7 +7275,7 @@ export const latestResults: ResultsData = {
               "rank": 11,
               "bib": 54,
               "name": "孙焕轲",
-              "team": "个人",
+              "team": "河南省体育局",
               "birthYear": "2016",
               "bestScore": 48.4,
               "points": 176
@@ -6812,7 +7539,7 @@ export const latestResults: ResultsData = {
               "rank": 6,
               "bib": 71,
               "name": "刘栩辰",
-              "team": "重庆市沙坪坝区体育运动学校",
+              "team": "重庆市冬季运动管理中心",
               "birthYear": "2013",
               "bestScore": 42.4,
               "points": 242
@@ -7015,7 +7742,7 @@ export const latestResults: ResultsData = {
               "rank": 8,
               "bib": 54,
               "name": "孙焕轲",
-              "team": "个人",
+              "team": "河南省体育局",
               "birthYear": "2016",
               "bestScore": 94.6,
               "points": 212
@@ -7306,7 +8033,7 @@ export const latestResults: ResultsData = {
               "rank": 6,
               "bib": 71,
               "name": "刘栩辰",
-              "team": "重庆市沙坪坝区体育运动学校",
+              "team": "重庆市冬季运动管理中心",
               "birthYear": "2013",
               "bestScore": 88,
               "points": 242
@@ -7446,163 +8173,6 @@ export const latestResults: ResultsData = {
       "endDate": "2025-11-28",
       "status": "completed",
       "events": [
-        {
-          "discipline": "回转",
-          "ageGroup": "U18",
-          "gender": "女子组",
-          "athletes": [
-            {
-              "rank": 1,
-              "bib": 39,
-              "name": "李金润",
-              "team": "四川体育职业学院",
-              "run1": "29.56",
-              "run2": "29.88",
-              "time": "59.44",
-              "diff": "0.00",
-              "points": 360
-            },
-            {
-              "rank": 2,
-              "bib": 7,
-              "name": "杨蓝戈",
-              "team": "个人",
-              "run1": "30.70",
-              "run2": "30.74",
-              "time": "1:01.44",
-              "diff": "2.00",
-              "points": 329
-            },
-            {
-              "rank": 3,
-              "bib": 34,
-              "name": "庞予涵",
-              "team": "张家口乔与杨体育服务有限公司",
-              "run1": "30.95",
-              "run2": "31.51",
-              "time": "1:02.46",
-              "diff": "3.02",
-              "points": 303
-            }
-          ]
-        },
-        {
-          "discipline": "回转",
-          "ageGroup": "U18",
-          "gender": "男子组",
-          "athletes": [
-            {
-              "rank": 1,
-              "bib": 29,
-              "name": "王阳明",
-              "team": "张家口乔与杨体育服务有限公司",
-              "run1": "27.82",
-              "run2": "28.28",
-              "time": "56.10",
-              "diff": "0.00",
-              "points": 360
-            },
-            {
-              "rank": 2,
-              "bib": 33,
-              "name": "艾思铭",
-              "team": "张家口乔与杨体育服务有限公司",
-              "run1": "28.53",
-              "run2": "28.41",
-              "time": "56.94",
-              "diff": "0.84",
-              "points": 329
-            },
-            {
-              "rank": 3,
-              "bib": 6,
-              "name": "高琦硕",
-              "team": "高峰",
-              "run1": "28.67",
-              "run2": "28.43",
-              "time": "57.10",
-              "diff": "1.00",
-              "points": 303
-            },
-            {
-              "rank": 4,
-              "bib": 15,
-              "name": "郭一远",
-              "team": "河北省体育局冬季运动中心",
-              "run1": "28.61",
-              "run2": "28.65",
-              "time": "57.26",
-              "diff": "1.16",
-              "points": 280
-            },
-            {
-              "rank": 5,
-              "bib": 31,
-              "name": "王润钰",
-              "team": "张家口乔与杨体育服务有限公司",
-              "run1": "28.64",
-              "run2": "28.67",
-              "time": "57.31",
-              "diff": "1.21",
-              "points": 260
-            },
-            {
-              "rank": 6,
-              "bib": 10,
-              "name": "左子正",
-              "team": "左子正",
-              "run1": "28.70",
-              "run2": "28.63",
-              "time": "57.33",
-              "diff": "1.23",
-              "points": 242
-            },
-            {
-              "rank": 7,
-              "bib": 3,
-              "name": "常冠廷",
-              "team": "吉林市丰满区滑雪协会",
-              "run1": "29.16",
-              "run2": "28.60",
-              "time": "57.76",
-              "diff": "1.66",
-              "points": 226
-            },
-            {
-              "rank": 8,
-              "bib": 1,
-              "name": "王冠霖",
-              "team": "吉林坤伦滑雪俱乐部",
-              "run1": "29.04",
-              "run2": "29.55",
-              "time": "58.59",
-              "diff": "2.49",
-              "points": 212
-            },
-            {
-              "rank": 9,
-              "bib": 14,
-              "name": "王宏轩",
-              "team": "河北省体育局冬季运动中心",
-              "run1": "30.32",
-              "run2": "30.41",
-              "time": "1:00.73",
-              "diff": "4.63",
-              "points": 199
-            },
-            {
-              "rank": 10,
-              "bib": 2,
-              "name": "马健剀",
-              "team": "吉林坤伦滑雪俱乐部",
-              "run1": "33.39",
-              "run2": "31.61",
-              "time": "1:05.00",
-              "diff": "8.90",
-              "points": 187
-            }
-          ]
-        },
         {
           "discipline": "回转",
           "ageGroup": "U11",
@@ -7874,7 +8444,7 @@ export const latestResults: ResultsData = {
           ]
         },
         {
-          "discipline": "大回转",
+          "discipline": "回转",
           "ageGroup": "U18",
           "gender": "女子组",
           "athletes": [
@@ -7883,183 +8453,157 @@ export const latestResults: ResultsData = {
               "bib": 39,
               "name": "李金润",
               "team": "四川体育职业学院",
-              "run1": "21.90",
-              "run2": "21.95",
-              "time": "43.85",
+              "run1": "29.56",
+              "run2": "29.88",
+              "time": "59.44",
               "diff": "0.00",
               "points": 360
             },
             {
               "rank": 2,
-              "bib": 34,
-              "name": "庞予涵",
-              "team": "张家口乔与杨体育服务有限公司",
-              "run1": "22.46",
-              "run2": "22.12",
-              "time": "44.58",
-              "diff": "0.73",
+              "bib": 7,
+              "name": "杨蓝戈",
+              "team": "个人",
+              "run1": "30.70",
+              "run2": "30.74",
+              "time": "1:01.44",
+              "diff": "2.00",
               "points": 329
             },
             {
               "rank": 3,
-              "bib": 7,
-              "name": "杨蓝戈",
-              "team": "个人",
-              "run1": "22.43",
-              "run2": "22.45",
-              "time": "44.88",
-              "diff": "1.03",
-              "points": 303
-            },
-            {
-              "rank": 4,
-              "bib": 4,
-              "name": "周昱含",
-              "team": "沈阳王伟滑雪管理咨询服务有限公司",
-              "run1": "22.87",
-              "run2": "22.79",
-              "time": "45.66",
-              "diff": "1.81",
-              "points": 280
-            },
-            {
-              "rank": 5,
-              "bib": 50,
-              "name": "杨睿怡",
-              "team": "华发冰雪热雪奇迹",
-              "run1": "23.54",
-              "run2": "23.81",
-              "time": "47.35",
-              "diff": "3.50",
-              "points": 260
-            },
-            {
-              "rank": 6,
-              "bib": 35,
-              "name": "刘子歌",
+              "bib": 34,
+              "name": "庞予涵",
               "team": "张家口乔与杨体育服务有限公司",
-              "run1": "25.22",
-              "run2": "24.57",
-              "time": "49.79",
-              "diff": "5.94",
-              "points": 242
+              "run1": "30.95",
+              "run2": "31.51",
+              "time": "1:02.46",
+              "diff": "3.02",
+              "points": 303
             }
           ]
         },
         {
-          "discipline": "大回转",
+          "discipline": "回转",
           "ageGroup": "U18",
           "gender": "男子组",
           "athletes": [
             {
               "rank": 1,
-              "bib": 31,
-              "name": "王润钰",
+              "bib": 29,
+              "name": "王阳明",
               "team": "张家口乔与杨体育服务有限公司",
-              "run1": "20.73",
-              "run2": "20.90",
-              "time": "41.63",
+              "run1": "27.82",
+              "run2": "28.28",
+              "time": "56.10",
               "diff": "0.00",
               "points": 360
             },
             {
               "rank": 2,
-              "bib": 6,
-              "name": "高琦硕",
-              "team": "高峰",
-              "run1": "21.20",
-              "run2": "20.92",
-              "time": "42.12",
-              "diff": "0.49",
+              "bib": 33,
+              "name": "艾思铭",
+              "team": "张家口乔与杨体育服务有限公司",
+              "run1": "28.53",
+              "run2": "28.41",
+              "time": "56.94",
+              "diff": "0.84",
               "points": 329
             },
             {
               "rank": 3,
-              "bib": 15,
-              "name": "郭一远",
-              "team": "河北省体育局冬季运动中心",
-              "run1": "21.42",
-              "run2": "20.90",
-              "time": "42.32",
-              "diff": "0.69",
+              "bib": 6,
+              "name": "高琦硕",
+              "team": "高峰",
+              "run1": "28.67",
+              "run2": "28.43",
+              "time": "57.10",
+              "diff": "1.00",
               "points": 303
             },
             {
               "rank": 4,
-              "bib": 29,
-              "name": "王阳明",
-              "team": "张家口乔与杨体育服务有限公司",
-              "run1": "21.40",
-              "run2": "21.07",
-              "time": "42.47",
-              "diff": "0.84",
+              "bib": 15,
+              "name": "郭一远",
+              "team": "河北省体育局冬季运动中心",
+              "run1": "28.61",
+              "run2": "28.65",
+              "time": "57.26",
+              "diff": "1.16",
               "points": 280
             },
             {
               "rank": 5,
-              "bib": 38,
-              "name": "李彦博",
-              "team": "四川体育职业学院",
-              "run1": "21.37",
-              "run2": "21.16",
-              "time": "42.53",
-              "diff": "0.90",
+              "bib": 31,
+              "name": "王润钰",
+              "team": "张家口乔与杨体育服务有限公司",
+              "run1": "28.64",
+              "run2": "28.67",
+              "time": "57.31",
+              "diff": "1.21",
               "points": 260
             },
             {
               "rank": 6,
-              "bib": 33,
-              "name": "艾思铭",
-              "team": "张家口乔与杨体育服务有限公司",
-              "run1": "21.41",
-              "run2": "21.18",
-              "time": "42.59",
-              "diff": "0.96",
+              "bib": 10,
+              "name": "左子正",
+              "team": "左子正",
+              "run1": "28.70",
+              "run2": "28.63",
+              "time": "57.33",
+              "diff": "1.23",
               "points": 242
             },
             {
               "rank": 7,
-              "bib": 10,
-              "name": "左子正",
-              "team": "左子正",
-              "run1": "21.30",
-              "run2": "21.38",
-              "time": "42.68",
-              "diff": "1.05",
+              "bib": 3,
+              "name": "常冠廷",
+              "team": "吉林市丰满区滑雪协会",
+              "run1": "29.16",
+              "run2": "28.60",
+              "time": "57.76",
+              "diff": "1.66",
               "points": 226
             },
             {
               "rank": 8,
-              "bib": 3,
-              "name": "常冠廷",
-              "team": "吉林市丰满区滑雪协会",
-              "run1": "21.32",
-              "run2": "21.50",
-              "time": "42.82",
-              "diff": "1.19",
+              "bib": 1,
+              "name": "王冠霖",
+              "team": "吉林坤伦滑雪俱乐部",
+              "run1": "29.04",
+              "run2": "29.55",
+              "time": "58.59",
+              "diff": "2.49",
               "points": 212
             },
             {
               "rank": 9,
-              "bib": 8,
-              "name": "李京和",
-              "team": "个人",
-              "run1": "21.68",
-              "run2": "21.30",
-              "time": "42.98",
-              "diff": "1.35",
+              "bib": 14,
+              "name": "王宏轩",
+              "team": "河北省体育局冬季运动中心",
+              "run1": "30.32",
+              "run2": "30.41",
+              "time": "1:00.73",
+              "diff": "4.63",
               "points": 199
             },
             {
               "rank": 10,
-              "bib": 30,
-              "name": "熊泽瑞",
-              "team": "张家口乔与杨体育服务有限公司",
-              "run1": "21.94",
-              "run2": "21.35",
-              "time": "43.29",
-              "diff": "1.66",
+              "bib": 2,
+              "name": "马健剀",
+              "team": "吉林坤伦滑雪俱乐部",
+              "run1": "33.39",
+              "run2": "31.61",
+              "time": "1:05.00",
+              "diff": "8.90",
               "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 9,
+              "name": "李正翰",
+              "team": "个人",
+              "points": 176
             }
           ]
         },
@@ -8409,6 +8953,224 @@ export const latestResults: ResultsData = {
               "points": 199
             }
           ]
+        },
+        {
+          "discipline": "大回转",
+          "ageGroup": "U18",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 39,
+              "name": "李金润",
+              "team": "四川体育职业学院",
+              "run1": "21.90",
+              "run2": "21.95",
+              "time": "43.85",
+              "diff": "0.00",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 34,
+              "name": "庞予涵",
+              "team": "张家口乔与杨体育服务有限公司",
+              "run1": "22.46",
+              "run2": "22.12",
+              "time": "44.58",
+              "diff": "0.73",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 7,
+              "name": "杨蓝戈",
+              "team": "个人",
+              "run1": "22.43",
+              "run2": "22.45",
+              "time": "44.88",
+              "diff": "1.03",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 4,
+              "name": "周昱含",
+              "team": "沈阳王伟滑雪管理咨询服务有限公司",
+              "run1": "22.87",
+              "run2": "22.79",
+              "time": "45.66",
+              "diff": "1.81",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 50,
+              "name": "杨睿怡",
+              "team": "华发冰雪热雪奇迹",
+              "run1": "23.54",
+              "run2": "23.81",
+              "time": "47.35",
+              "diff": "3.50",
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 35,
+              "name": "刘子歌",
+              "team": "张家口乔与杨体育服务有限公司",
+              "run1": "25.22",
+              "run2": "24.57",
+              "time": "49.79",
+              "diff": "5.94",
+              "points": 242
+            }
+          ]
+        },
+        {
+          "discipline": "大回转",
+          "ageGroup": "U18",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 31,
+              "name": "王润钰",
+              "team": "张家口乔与杨体育服务有限公司",
+              "run1": "20.73",
+              "run2": "20.90",
+              "time": "41.63",
+              "diff": "0.00",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 6,
+              "name": "高琦硕",
+              "team": "高峰",
+              "run1": "21.20",
+              "run2": "20.92",
+              "time": "42.12",
+              "diff": "0.49",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 15,
+              "name": "郭一远",
+              "team": "河北省体育局冬季运动中心",
+              "run1": "21.42",
+              "run2": "20.90",
+              "time": "42.32",
+              "diff": "0.69",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 29,
+              "name": "王阳明",
+              "team": "张家口乔与杨体育服务有限公司",
+              "run1": "21.40",
+              "run2": "21.07",
+              "time": "42.47",
+              "diff": "0.84",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 38,
+              "name": "李彦博",
+              "team": "四川体育职业学院",
+              "run1": "21.37",
+              "run2": "21.16",
+              "time": "42.53",
+              "diff": "0.90",
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 33,
+              "name": "艾思铭",
+              "team": "张家口乔与杨体育服务有限公司",
+              "run1": "21.41",
+              "run2": "21.18",
+              "time": "42.59",
+              "diff": "0.96",
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 10,
+              "name": "左子正",
+              "team": "左子正",
+              "run1": "21.30",
+              "run2": "21.38",
+              "time": "42.68",
+              "diff": "1.05",
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 3,
+              "name": "常冠廷",
+              "team": "吉林市丰满区滑雪协会",
+              "run1": "21.32",
+              "run2": "21.50",
+              "time": "42.82",
+              "diff": "1.19",
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 8,
+              "name": "李京和",
+              "team": "个人",
+              "run1": "21.68",
+              "run2": "21.30",
+              "time": "42.98",
+              "diff": "1.35",
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 30,
+              "name": "熊泽瑞",
+              "team": "张家口乔与杨体育服务有限公司",
+              "run1": "21.94",
+              "run2": "21.35",
+              "time": "43.29",
+              "diff": "1.66",
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 14,
+              "name": "王宏轩",
+              "team": "河北省体育局冬季运动中心",
+              "points": 176
+            },
+            {
+              "rank": 12,
+              "bib": 1,
+              "name": "王冠霖",
+              "team": "吉林坤伦滑雪俱乐部",
+              "points": 166
+            },
+            {
+              "rank": 13,
+              "bib": 2,
+              "name": "马健剀",
+              "team": "吉林坤伦滑雪俱乐部",
+              "points": 157
+            },
+            {
+              "rank": 14,
+              "bib": 9,
+              "name": "李正翰",
+              "team": "个人",
+              "points": 149
+            }
+          ]
         }
       ]
     },
@@ -8428,190 +9190,84 @@ export const latestResults: ResultsData = {
           "athletes": [
             {
               "rank": 1,
-              "bib": 6,
+              "bib": 11,
               "name": "牛安芷芸",
-              "team": "滑雪兔俱乐部",
-              "birthYear": "2015",
+              "team": "个人",
+              "birthYear": "2014",
               "bestScore": 83.75,
               "points": 360
             },
             {
               "rank": 2,
-              "bib": 2,
+              "bib": 4,
               "name": "孙嘉怡",
-              "team": "哈尔滨市冬季运动与水上运动中心",
-              "birthYear": "2014",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2015",
               "bestScore": 80.75,
               "points": 329
             },
             {
               "rank": 3,
-              "bib": 1,
+              "bib": 2,
               "name": "翟姝涵",
-              "team": "哈尔滨市冬季运动与水上运动中心",
-              "birthYear": "2014",
+              "team": "北京市冬季运动管理中心",
+              "birthYear": "2017",
               "bestScore": 65.75,
               "points": 303
             },
             {
               "rank": 4,
-              "bib": 5,
-              "name": "姜子悦",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2016",
-              "bestScore": 58.75,
+              "bib": 13,
+              "name": "张诗涵",
+              "team": "石家庄市冰雪与足球运动中心",
+              "birthYear": "2017",
+              "bestScore": 59.25,
               "points": 280
             },
             {
               "rank": 5,
-              "bib": 4,
-              "name": "王迎紫",
-              "team": "万域芳菲俱乐部",
-              "birthYear": "2016",
-              "bestScore": 47.25,
-              "points": 260
-            },
-            {
-              "rank": 6,
-              "bib": 7,
-              "name": "傅诗宸",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2016",
-              "bestScore": 42.5,
-              "points": 242
-            },
-            {
-              "rank": 7,
-              "bib": 8,
-              "name": "郭涵钰",
+              "bib": 3,
+              "name": "周斯言",
               "team": "个人",
               "birthYear": "2015",
-              "bestScore": 37,
-              "points": 226
-            },
-            {
-              "rank": 8,
-              "bib": 9,
-              "name": "张曦彤",
-              "team": "个人",
-              "birthYear": "2016",
-              "bestScore": 36,
-              "points": 212
-            },
-            {
-              "rank": 9,
-              "bib": 3,
-              "name": "张瑾苒",
-              "team": "内蒙古体育职业学院",
-              "birthYear": "2014",
-              "bestScore": 26.75,
-              "points": 199
-            }
-          ]
-        },
-        {
-          "discipline": "坡面障碍技巧",
-          "ageGroup": "U15",
-          "gender": "女子组",
-          "athletes": [
-            {
-              "rank": 1,
-              "bib": 16,
-              "name": "鱼嘉怡",
-              "team": "西安市竞技体育学校",
-              "birthYear": "2012",
-              "bestScore": 82.75,
-              "points": 360
-            },
-            {
-              "rank": 2,
-              "bib": 14,
-              "name": "赖文悦",
-              "team": "万域芳菲俱乐部",
-              "birthYear": "2011",
-              "bestScore": 80,
-              "points": 329
-            },
-            {
-              "rank": 3,
-              "bib": 12,
-              "name": "叶欣瑞",
-              "team": "河北省体育局冬季运动中心",
-              "birthYear": "2011",
-              "bestScore": 76,
-              "points": 303
-            },
-            {
-              "rank": 4,
-              "bib": 10,
-              "name": "鲁淼",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2011",
-              "bestScore": 68.25,
-              "points": 280
-            },
-            {
-              "rank": 5,
-              "bib": 11,
-              "name": "刘心雅",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2012",
-              "bestScore": 64.5,
+              "bestScore": 45.75,
               "points": 260
             },
             {
               "rank": 6,
-              "bib": 18,
-              "name": "王雪宸",
-              "team": "长春市冬季运动管理中心",
-              "birthYear": "2013",
-              "bestScore": 63,
+              "bib": 6,
+              "name": "杨茗然",
+              "team": "个人",
+              "birthYear": "2015",
+              "bestScore": 41,
               "points": 242
             },
             {
               "rank": 7,
-              "bib": 17,
-              "name": "何芷昕",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2011",
-              "bestScore": 52.25,
+              "bib": 1,
+              "name": "蒋柠萱",
+              "team": "北京市冬季运动管理中心",
+              "birthYear": "2015",
+              "bestScore": 37.5,
               "points": 226
             },
             {
               "rank": 8,
-              "bib": 15,
-              "name": "包雨彤",
-              "team": "沈阳体育学院",
-              "birthYear": "2013",
-              "bestScore": 48,
+              "bib": 20,
+              "name": "姚予希",
+              "team": "成都热雪奇迹",
+              "birthYear": "2014",
+              "bestScore": 32,
               "points": 212
             },
             {
               "rank": 9,
-              "bib": 13,
-              "name": "栾智媛",
+              "bib": 7,
+              "name": "冷昕莲",
               "team": "河北省体育局冬季运动中心",
-              "birthYear": "2012",
-              "bestScore": 45.25,
+              "birthYear": "2014",
+              "bestScore": 12.25,
               "points": 199
-            },
-            {
-              "rank": 10,
-              "bib": 20,
-              "name": "刘宣成",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2013",
-              "bestScore": 36,
-              "points": 187
-            },
-            {
-              "rank": 11,
-              "bib": 19,
-              "name": "王籽童",
-              "team": "辽宁省体育事业发展中心",
-              "birthYear": "2012",
-              "bestScore": 18.5,
-              "points": 176
             }
           ]
         },
@@ -8622,10 +9278,10 @@ export const latestResults: ResultsData = {
           "athletes": [
             {
               "rank": 1,
-              "bib": 33,
+              "bib": 18,
               "name": "刘翰泽",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2015",
+              "team": "个人",
+              "birthYear": "2014",
               "bestScore": 90.75,
               "points": 360
             },
@@ -8633,145 +9289,248 @@ export const latestResults: ResultsData = {
               "rank": 2,
               "bib": 24,
               "name": "王祖安",
-              "team": "河北省体育局冬季运动中心",
+              "team": "河南省体育局",
               "birthYear": "2014",
               "bestScore": 86.5,
               "points": 329
             },
             {
               "rank": 3,
-              "bib": 34,
+              "bib": 3,
               "name": "刘沐泽",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2015",
+              "team": "个人",
+              "birthYear": "2014",
               "bestScore": 85,
               "points": 303
             },
             {
               "rank": 4,
-              "bib": 27,
-              "name": "戴宸熠",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2015",
-              "bestScore": 82,
+              "bib": 26,
+              "name": "陈宇垚",
+              "team": "四川体育职业学院",
+              "birthYear": "2014",
+              "bestScore": 76.5,
               "points": 280
             },
             {
               "rank": 5,
-              "bib": 25,
-              "name": "范家睿",
-              "team": "河北省体育局冬季运动中心",
+              "bib": 2,
+              "name": "范天成",
+              "team": "个人",
               "birthYear": "2015",
-              "bestScore": 76.5,
+              "bestScore": 74.25,
               "points": 260
             },
             {
               "rank": 6,
-              "bib": 21,
-              "name": "赵一翔",
-              "team": "河北省体育局冬季运动中心",
+              "bib": 23,
+              "name": "魏子博",
+              "team": "河南省体育局",
               "birthYear": "2014",
-              "bestScore": 72,
+              "bestScore": 73,
               "points": 242
             },
             {
               "rank": 7,
-              "bib": 32,
-              "name": "王梓铭",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2017",
-              "bestScore": 62.75,
+              "bib": 25,
+              "name": "王曌霖",
+              "team": "河南省体育局",
+              "birthYear": "2014",
+              "bestScore": 67.25,
               "points": 226
             },
             {
               "rank": 8,
-              "bib": 31,
-              "name": "翁晨皓",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2017",
-              "bestScore": 50,
+              "bib": 20,
+              "name": "林芮锋",
+              "team": "四川体育职业学院",
+              "birthYear": "2014",
+              "bestScore": 51.75,
               "points": 212
             },
             {
               "rank": 9,
-              "bib": 26,
-              "name": "侯胤翔",
-              "team": "万域芳菲俱乐部",
-              "birthYear": "2015",
-              "bestScore": 49.25,
+              "bib": 9,
+              "name": "赵严诺",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2014",
+              "bestScore": 47.5,
               "points": 199
             },
             {
               "rank": 10,
-              "bib": 28,
-              "name": "周珈禾",
-              "team": "黑龙江冰雪体育职业学院",
+              "bib": 32,
+              "name": "曾星越",
+              "team": "个人",
               "birthYear": "2016",
-              "bestScore": 48,
+              "bestScore": 38.25,
               "points": 187
             },
             {
               "rank": 11,
-              "bib": 22,
-              "name": "林佳易",
-              "team": "哈尔滨市冬季运动与水上运动中心",
+              "bib": 39,
+              "name": "宁浩然",
+              "team": "成都热雪奇迹",
               "birthYear": "2015",
-              "bestScore": 45.25,
+              "bestScore": 29.75,
               "points": 176
             },
             {
               "rank": 12,
-              "bib": 36,
-              "name": "王泊文",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2017",
-              "bestScore": 43,
+              "bib": 38,
+              "name": "马泰铭",
+              "team": "成都热雪奇迹",
+              "birthYear": "2014",
+              "bestScore": 26.25,
               "points": 166
             },
             {
               "rank": 13,
-              "bib": 30,
-              "name": "杨翔宇",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2014",
-              "bestScore": 42.5,
+              "bib": 5,
+              "name": "石昊桐",
+              "team": "北京市冬季运动管理中心",
+              "birthYear": "2017",
+              "bestScore": 22.5,
               "points": 157
             },
             {
               "rank": 14,
-              "bib": 23,
-              "name": "刘泽琛",
-              "team": "哈尔滨市冬季运动与水上运动中心",
-              "birthYear": "2015",
-              "bestScore": 37,
+              "bib": 41,
+              "name": "刘子逸",
+              "team": "四川体育职业学院",
+              "bestScore": 22.25,
               "points": 149
             },
             {
               "rank": 15,
-              "bib": 29,
-              "name": "蒲彦西",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2014",
-              "bestScore": 36.5,
-              "points": 142
+              "bib": 40,
+              "name": "陈奎亦",
+              "team": "四川体育职业学院",
+              "bestScore": 22,
+              "points": 141
             },
             {
               "rank": 16,
-              "bib": 35,
-              "name": "王梓伊",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2016",
-              "bestScore": 25.5,
-              "points": 135
+              "bib": 36,
+              "name": "朱秋霖",
+              "team": "个人",
+              "birthYear": "2014",
+              "bestScore": 17.5,
+              "points": 134
             },
             {
               "rank": 17,
-              "bib": 37,
-              "name": "冯翊瀚",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2016",
-              "bestScore": 6.75,
-              "points": 129
+              "bib": 6,
+              "name": "程锦辰",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2014",
+              "bestScore": 16.5,
+              "points": 127
+            }
+          ]
+        },
+        {
+          "discipline": "坡面障碍技巧",
+          "ageGroup": "U15",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 8,
+              "name": "鱼嘉怡",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2010",
+              "bestScore": 82.75,
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 15,
+              "name": "赖文悦",
+              "team": "四川体育职业学院",
+              "birthYear": "2010",
+              "bestScore": 80,
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 14,
+              "name": "叶欣瑞",
+              "team": "四川体育职业学院",
+              "birthYear": "2011",
+              "bestScore": 76,
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 9,
+              "name": "贺舒玉",
+              "team": "重庆市冬季运动管理中心",
+              "birthYear": "2011",
+              "bestScore": 61.5,
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 12,
+              "name": "高艺轩",
+              "team": "个人",
+              "birthYear": "2012",
+              "bestScore": 48.75,
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 18,
+              "name": "杨可轩",
+              "team": "广西射击射箭运动发展中心",
+              "birthYear": "2010",
+              "bestScore": 46.75,
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 17,
+              "name": "周雨辰",
+              "team": "广西射击射箭运动发展中心",
+              "birthYear": "2012",
+              "bestScore": 44.5,
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 16,
+              "name": "周雨欣",
+              "team": "广西射击射箭运动发展中心",
+              "birthYear": "2012",
+              "bestScore": 41,
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 5,
+              "name": "苏常格",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2013",
+              "bestScore": 23.5,
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 10,
+              "name": "王若西",
+              "team": "重庆市冬季运动管理中心",
+              "birthYear": "2013",
+              "bestScore": 20.5,
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 19,
+              "name": "闫梓左",
+              "team": "个人",
+              "bestScore": 7.25,
+              "points": 176
             }
           ]
         },
@@ -8782,138 +9541,137 @@ export const latestResults: ResultsData = {
           "athletes": [
             {
               "rank": 1,
-              "bib": 52,
+              "bib": 27,
               "name": "袁梓程",
-              "team": "万域芳菲俱乐部",
-              "birthYear": "2012",
+              "team": "四川体育职业学院",
+              "birthYear": "2011",
               "bestScore": 88.25,
               "points": 360
             },
             {
               "rank": 2,
-              "bib": 48,
+              "bib": 1,
               "name": "王恒宇",
-              "team": "河北省体育局冬季运动中心",
+              "team": "个人",
               "birthYear": "2013",
               "bestScore": 81,
               "points": 329
             },
             {
               "rank": 3,
-              "bib": 42,
+              "bib": 35,
               "name": "谭凯元",
-              "team": "成都市武侯区滑雪运动协会",
+              "team": "个人",
               "birthYear": "2012",
               "bestScore": 68.5,
               "points": 303
             },
             {
               "rank": 4,
-              "bib": 41,
-              "name": "李奕泽",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2012",
-              "bestScore": 66.25,
+              "bib": 30,
+              "name": "郭彧铭",
+              "team": "个人",
+              "birthYear": "2013",
+              "bestScore": 51.5,
               "points": 280
             },
             {
               "rank": 5,
-              "bib": 38,
-              "name": "吴昊隆",
-              "team": "哈尔滨市冬季运动与水上运动中心",
-              "birthYear": "2011",
-              "bestScore": 57,
+              "bib": 22,
+              "name": "梁嘉俊",
+              "team": "石家庄市冰雪与足球运动中心",
+              "birthYear": "2013",
+              "bestScore": 46.75,
               "points": 260
             },
             {
               "rank": 6,
-              "bib": 39,
-              "name": "王小虎",
-              "team": "哈尔滨市冬季运动与水上运动中心",
-              "birthYear": "2012",
-              "bestScore": 56.5,
+              "bib": 19,
+              "name": "张家睿",
+              "team": "四川体育职业学院",
+              "birthYear": "2013",
+              "bestScore": 45.5,
               "points": 242
             },
             {
               "rank": 7,
-              "bib": 49,
-              "name": "张子骁",
-              "team": "河北省体育局冬季运动中心",
-              "birthYear": "2012",
-              "bestScore": 53.75,
+              "bib": 4,
+              "name": "高翊博",
+              "team": "北京市冬季运动管理中心",
+              "birthYear": "2013",
+              "bestScore": 39.25,
               "points": 226
             },
             {
               "rank": 8,
-              "bib": 45,
-              "name": "申桐",
-              "team": "沈阳体育学院",
-              "birthYear": "2011",
-              "bestScore": 52.75,
+              "bib": 7,
+              "name": "麦冠航",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2010",
+              "bestScore": 33,
               "points": 212
             },
             {
               "rank": 9,
-              "bib": 43,
-              "name": "霍圣康",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2011",
-              "bestScore": 50.5,
+              "bib": 16,
+              "name": "张钊宁",
+              "team": "重庆市冬季运动管理中心",
+              "birthYear": "2013",
+              "bestScore": 29.5,
               "points": 199
             },
             {
               "rank": 10,
-              "bib": 44,
-              "name": "曾国强",
-              "team": "成都市武侯区滑雪运动协会",
-              "birthYear": "2013",
-              "bestScore": 49.5,
+              "bib": 15,
+              "name": "于瀚",
+              "team": "重庆市冬季运动管理中心",
+              "birthYear": "2012",
+              "bestScore": 27.75,
               "points": 187
             },
             {
               "rank": 11,
-              "bib": 40,
-              "name": "孙琪翔",
-              "team": "哈尔滨市冬季运动与水上运动中心",
-              "birthYear": "2012",
-              "bestScore": 48,
+              "bib": 37,
+              "name": "邓与骜",
+              "team": "成都热雪奇迹",
+              "birthYear": "2013",
+              "bestScore": 24.5,
               "points": 176
             },
             {
               "rank": 12,
-              "bib": 46,
-              "name": "李星翰",
-              "team": "沈阳体育学院",
-              "birthYear": "2011",
-              "bestScore": 47.25,
+              "bib": 29,
+              "name": "刘子俊",
+              "team": "四川体育职业学院",
+              "birthYear": "2010",
+              "bestScore": 17.5,
               "points": 166
             },
             {
               "rank": 13,
-              "bib": 50,
-              "name": "刘济豪",
-              "team": "河北省体育局冬季运动中心",
-              "birthYear": "2011",
-              "bestScore": 42.5,
+              "bib": 14,
+              "name": "罗知腾",
+              "team": "重庆市冬季运动管理中心",
+              "birthYear": "2012",
+              "bestScore": 15.75,
               "points": 157
             },
             {
               "rank": 14,
-              "bib": 47,
-              "name": "贺天佑",
-              "team": "四川体育职业学院",
-              "birthYear": "2012",
-              "bestScore": 33.75,
+              "bib": 33,
+              "name": "刘名豪",
+              "team": "个人",
+              "bestScore": 5,
               "points": 149
             },
             {
               "rank": 15,
-              "bib": 51,
-              "name": "陈宥呈",
-              "team": "成都市武侯区滑雪运动协会",
+              "bib": 8,
+              "name": "王天磊",
+              "team": "河北省体育局冬季运动中心",
               "birthYear": "2011",
-              "bestScore": 29.25,
-              "points": 142
+              "bestScore": 2.75,
+              "points": 141
             }
           ]
         },
@@ -8924,75 +9682,66 @@ export const latestResults: ResultsData = {
           "athletes": [
             {
               "rank": 1,
-              "bib": 56,
+              "bib": 28,
               "name": "李俊辛",
-              "team": "河北省体育局冬季运动中心",
+              "team": "四川体育职业学院",
               "birthYear": "2008",
               "bestScore": 90,
               "points": 360
             },
             {
               "rank": 2,
-              "bib": 53,
+              "bib": 13,
               "name": "封树渝",
-              "team": "河北省体育局冬季运动中心",
+              "team": "重庆市冬季运动管理中心",
               "birthYear": "2008",
               "bestScore": 76.25,
               "points": 329
             },
             {
               "rank": 3,
-              "bib": 54,
+              "bib": 21,
               "name": "米馥豪",
-              "team": "河北省体育局冬季运动中心",
-              "birthYear": "2010",
+              "team": "石家庄市冰雪与足球运动中心",
+              "birthYear": "2009",
               "bestScore": 71.25,
               "points": 303
             },
             {
               "rank": 4,
-              "bib": 57,
-              "name": "李俣辛",
-              "team": "河北省体育局冬季运动中心",
-              "birthYear": "2010",
-              "bestScore": 66.5,
+              "bib": 11,
+              "name": "黄子剑",
+              "team": "湖北省武术和冬季运动管理中心",
+              "birthYear": "2008",
+              "bestScore": 43.75,
               "points": 280
             },
             {
               "rank": 5,
-              "bib": 60,
-              "name": "冯晨峰",
-              "team": "沈阳体育学院",
-              "birthYear": "2008",
-              "bestScore": 60.5,
+              "bib": 10,
+              "name": "罗皓桉",
+              "team": "湖北省武术和冬季运动管理中心",
+              "birthYear": "2007",
+              "bestScore": 39.75,
               "points": 260
             },
             {
               "rank": 6,
-              "bib": 58,
-              "name": "耿浩然",
-              "team": "长春市冬季运动管理中心",
+              "bib": 12,
+              "name": "倪文凯",
+              "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2009",
-              "bestScore": 58.5,
+              "bestScore": 37.5,
               "points": 242
             },
             {
               "rank": 7,
-              "bib": 59,
-              "name": "李汶轩",
-              "team": "长春市冬季运动管理中心",
+              "bib": 17,
+              "name": "雷涵文",
+              "team": "重庆市冬季运动管理中心",
               "birthYear": "2009",
-              "bestScore": 47.5,
+              "bestScore": 35.25,
               "points": 226
-            },
-            {
-              "rank": 8,
-              "bib": 55,
-              "name": "田嘉译",
-              "team": "沈阳体育学院",
-              "birthYear": "2009",
-              "bestScore": 36.5,
-              "points": 212
             }
           ]
         }
@@ -9061,7 +9810,7 @@ export const latestResults: ResultsData = {
               "rank": 6,
               "bib": 6,
               "name": "杨茗然",
-              "team": "河北省体育局冬季运动中心",
+              "team": "个人",
               "birthYear": "2015",
               "bestScore": 87.8,
               "points": 242
@@ -9091,94 +9840,6 @@ export const latestResults: ResultsData = {
               "team": "河北省体育局冬季运动中心",
               "birthYear": "2014",
               "bestScore": 1,
-              "points": 199
-            }
-          ]
-        },
-        {
-          "discipline": "大跳台",
-          "ageGroup": "U15",
-          "gender": "女子组",
-          "athletes": [
-            {
-              "rank": 1,
-              "bib": 8,
-              "name": "鱼嘉怡",
-              "team": "河北省体育局冬季运动中心",
-              "birthYear": "2010",
-              "bestScore": 168.2,
-              "points": 360
-            },
-            {
-              "rank": 2,
-              "bib": 14,
-              "name": "叶欣瑞",
-              "team": "四川体育职业学院",
-              "birthYear": "2011",
-              "bestScore": 132.4,
-              "points": 329
-            },
-            {
-              "rank": 3,
-              "bib": 18,
-              "name": "杨可轩",
-              "team": "广西射击射箭运动发展中心",
-              "birthYear": "2010",
-              "bestScore": 122,
-              "points": 303
-            },
-            {
-              "rank": 4,
-              "bib": 9,
-              "name": "贺舒玉",
-              "team": "重庆市沙坪坝区体育运动学校",
-              "birthYear": "2011",
-              "bestScore": 108.4,
-              "points": 280
-            },
-            {
-              "rank": 5,
-              "bib": 15,
-              "name": "赖文悦",
-              "team": "四川体育职业学院",
-              "birthYear": "2010",
-              "bestScore": 104.8,
-              "points": 260
-            },
-            {
-              "rank": 6,
-              "bib": 17,
-              "name": "周雨辰",
-              "team": "广西射击射箭运动发展中心",
-              "birthYear": "2012",
-              "bestScore": 94.4,
-              "points": 242
-            },
-            {
-              "rank": 7,
-              "bib": 10,
-              "name": "王若西",
-              "team": "重庆市沙坪坝区体育运动学校",
-              "birthYear": "2013",
-              "bestScore": 79.6,
-              "points": 226
-            },
-            {
-              "rank": 8,
-              "bib": 16,
-              "name": "周雨欣",
-              "team": "广西射击射箭运动发展中心",
-              "birthYear": "2012",
-              "bestScore": 67.4,
-              "points": 212
-            },
-            {
-              "rank": 9,
-              "bib": 5,
-              "name": "苏常格",
-              "team": "河北省体育局冬季运动中心",
-              "birthYear": "2013",
-              "bestScore": 43.2,
               "points": 199
             }
           ]
@@ -9237,7 +9898,7 @@ export const latestResults: ResultsData = {
               "rank": 6,
               "bib": 3,
               "name": "刘沐泽",
-              "team": "石家庄市冰雪与足球运动中心",
+              "team": "个人",
               "birthYear": "2014",
               "bestScore": 119.4,
               "points": 242
@@ -9328,6 +9989,94 @@ export const latestResults: ResultsData = {
         {
           "discipline": "大跳台",
           "ageGroup": "U15",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 8,
+              "name": "鱼嘉怡",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2010",
+              "bestScore": 168.2,
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 14,
+              "name": "叶欣瑞",
+              "team": "四川体育职业学院",
+              "birthYear": "2011",
+              "bestScore": 132.4,
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 18,
+              "name": "杨可轩",
+              "team": "广西射击射箭运动发展中心",
+              "birthYear": "2010",
+              "bestScore": 122,
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 9,
+              "name": "贺舒玉",
+              "team": "重庆市冬季运动管理中心",
+              "birthYear": "2011",
+              "bestScore": 108.4,
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 15,
+              "name": "赖文悦",
+              "team": "四川体育职业学院",
+              "birthYear": "2010",
+              "bestScore": 104.8,
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 17,
+              "name": "周雨辰",
+              "team": "广西射击射箭运动发展中心",
+              "birthYear": "2012",
+              "bestScore": 94.4,
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 10,
+              "name": "王若西",
+              "team": "重庆市冬季运动管理中心",
+              "birthYear": "2013",
+              "bestScore": 79.6,
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 16,
+              "name": "周雨欣",
+              "team": "广西射击射箭运动发展中心",
+              "birthYear": "2012",
+              "bestScore": 67.4,
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 5,
+              "name": "苏常格",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2013",
+              "bestScore": 43.2,
+              "points": 199
+            }
+          ]
+        },
+        {
+          "discipline": "大跳台",
+          "ageGroup": "U15",
           "gender": "男子组",
           "athletes": [
             {
@@ -9352,7 +10101,7 @@ export const latestResults: ResultsData = {
               "rank": 3,
               "bib": 35,
               "name": "谭凯元",
-              "team": "谭凯元",
+              "team": "个人",
               "birthYear": "2012",
               "bestScore": 164.8,
               "points": 303
@@ -9388,7 +10137,7 @@ export const latestResults: ResultsData = {
               "rank": 7,
               "bib": 30,
               "name": "郭彧铭",
-              "team": "四川体育职业学院",
+              "team": "个人",
               "birthYear": "2013",
               "bestScore": 120,
               "points": 226
@@ -9415,7 +10164,7 @@ export const latestResults: ResultsData = {
               "rank": 10,
               "bib": 15,
               "name": "于瀚",
-              "team": "重庆市沙坪坝区体育运动学校",
+              "team": "重庆市冬季运动管理中心",
               "birthYear": "2012",
               "bestScore": 73,
               "points": 187
@@ -9433,7 +10182,7 @@ export const latestResults: ResultsData = {
               "rank": 12,
               "bib": 14,
               "name": "罗知腾",
-              "team": "重庆市沙坪坝区体育运动学校",
+              "team": "重庆市冬季运动管理中心",
               "birthYear": "2012",
               "bestScore": 60.2,
               "points": 166
@@ -9442,7 +10191,7 @@ export const latestResults: ResultsData = {
               "rank": 13,
               "bib": 16,
               "name": "张钊宁",
-              "team": "重庆市沙坪坝区体育运动学校",
+              "team": "重庆市冬季运动管理中心",
               "birthYear": "2013",
               "bestScore": 42,
               "points": 157
@@ -9467,7 +10216,7 @@ export const latestResults: ResultsData = {
               "rank": 1,
               "bib": 13,
               "name": "封树渝",
-              "team": "重庆市沙坪坝区体育运动学校",
+              "team": "重庆市冬季运动管理中心",
               "birthYear": "2008",
               "bestScore": 152.6,
               "points": 360
@@ -9521,7 +10270,7 @@ export const latestResults: ResultsData = {
               "rank": 7,
               "bib": 17,
               "name": "雷涵文",
-              "team": "重庆市沙坪坝区体育运动学校",
+              "team": "重庆市冬季运动管理中心",
               "birthYear": "2009",
               "bestScore": 40.6,
               "points": 226

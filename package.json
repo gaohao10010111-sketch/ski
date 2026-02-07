@@ -16,7 +16,10 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "generate:results": "node scripts/generate-latest-results.js",
+    "generate:rankings": "node scripts/generate-total-rankings-by-sport.js",
+    "generate:all": "node scripts/generate-latest-results.js && node scripts/generate-total-rankings-by-sport.js"
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",
@@ -30,13 +33,15 @@
     "html2canvas": "^1.4.1",
     "lucide-react": "^0.292.0",
     "next": "^14.0.0",
+    "pdf-parse": "^2.4.5",
     "pdfjs-dist": "^3.11.174",
     "postcss": "^8.4.0",
     "qrcode": "^1.5.4",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",

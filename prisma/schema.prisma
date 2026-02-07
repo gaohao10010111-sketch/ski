@@ -10,14 +10,44 @@ datasource db {
   url      = "file:./ski.db"
 }
 
+// ========== 俱乐部/团体表 ==========
+model Team {
+  id           String   @id @default(cuid())
+  name         String   @unique           // 团体名称
+
+  // 经办人信息
+  agentName    String?                    // 经办人姓名
+  agentPhone   String?                    // 经办人电话
+
+  // 领队信息
+  leaderName   String?                    // 领队姓名
+  leaderPhone  String?                    // 领队电话
+
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  athletes     Athlete[]
+
+  @@index([name])
+}
+
 // ========== 运动员表 ==========
 model Athlete {
   id        String   @id @default(cuid())
   name      String                    // 姓名
-  team      String                    // 单位
+  team      String                    // 单位（保留用于兼容）
   gender    String                    // 性别：男/女
   birthYear String?                   // 出生年份
   idNumber  String?                   // 身份证号（可选）
+
+  // 扩展字段
+  birthDate DateTime?                 // 完整出生日期
+  ethnicity String?                   // 民族
+
+  // 关联俱乐部
+  teamId    String?
+  teamRef   Team?    @relation(fields: [teamId], references: [id])
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
@@ -26,6 +56,8 @@ model Athlete {
 
   @@unique([name, team])              // 姓名+单位唯一
   @@index([name])
+  @@index([idNumber])
+  @@index([teamId])
 }
 
 // ========== 比赛表 ==========
