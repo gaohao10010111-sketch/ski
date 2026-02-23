@@ -1,6 +1,6 @@
 // 最新比赛成绩数据
 // 自动生成，请勿手动修改
-// 生成时间: 2026-02-08T11:13:20.590Z
+// 生成时间: 2026-02-13T03:48:16.948Z
 
 export interface AthleteResult {
   rank: number
@@ -40,7 +40,7 @@ export interface ResultsData {
 }
 
 export const latestResults: ResultsData = {
-  "lastUpdated": "2026-02-08",
+  "lastUpdated": "2026-02-13",
   "competitions": [
     {
       "competition": "2025-2026赛季全国单板滑雪大跳台U系列比赛（雪如意站）",
@@ -650,6 +650,526 @@ export const latestResults: ResultsData = {
               "birthYear": "2009",
               "bestScore": 9,
               "points": 212
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "competition": "2025-2026赛季全国自由式滑雪大跳台U系列比赛（雪如意站）",
+      "sport": "自由式滑雪大跳台",
+      "sportType": "freestyle-bigair",
+      "location": "张家口崇礼雪如意滑雪场",
+      "date": "2026-02-08",
+      "endDate": "2026-02-11",
+      "status": "completed",
+      "events": [
+        {
+          "discipline": "大跳台",
+          "ageGroup": "U11",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 61,
+              "name": "闫妍",
+              "team": "个人",
+              "birthYear": "2015",
+              "bestScore": 85,
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 44,
+              "name": "张天馨",
+              "team": "石家庄市冰雪与足球运动中心",
+              "bestScore": 83.67,
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 50,
+              "name": "赵紫琪",
+              "team": "四川体育职业学院",
+              "birthYear": "2014",
+              "bestScore": 80.67,
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 45,
+              "name": "武温暖",
+              "team": "石家庄市冰雪与足球运动中心",
+              "birthYear": "2014",
+              "bestScore": 76.33,
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 64,
+              "name": "张耘萌",
+              "team": "个人",
+              "bestScore": 74,
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 49,
+              "name": "陈科羽",
+              "team": "四川体育职业学院",
+              "birthYear": "2016",
+              "bestScore": 72.33,
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 33,
+              "name": "甄芝漫",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2014",
+              "bestScore": 70.33,
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 43,
+              "name": "李诗沫",
+              "team": "石家庄市冰雪与足球运动中心",
+              "birthYear": "2015",
+              "bestScore": 68,
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 56,
+              "name": "王玗希",
+              "team": "个人",
+              "birthYear": "2016",
+              "bestScore": 64.33,
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 36,
+              "name": "王淑哲",
+              "team": "河南省体育局",
+              "birthYear": "2016",
+              "bestScore": 62.33,
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 38,
+              "name": "孙焕轲",
+              "team": "河南省体育局",
+              "birthYear": "2016",
+              "bestScore": 59.67,
+              "points": 176
+            },
+            {
+              "rank": 12,
+              "bib": 46,
+              "name": "韩小贝",
+              "team": "石家庄市冰雪与足球运动中心",
+              "bestScore": 58,
+              "points": 166
+            },
+            {
+              "rank": 13,
+              "bib": 60,
+              "name": "孙焕轶",
+              "team": "个人",
+              "birthYear": "2014",
+              "bestScore": 56,
+              "points": 157
+            },
+            {
+              "rank": 14,
+              "bib": 48,
+              "name": "任可心",
+              "team": "四川体育职业学院",
+              "birthYear": "2015",
+              "bestScore": 51.33,
+              "points": 149
+            },
+            {
+              "rank": 15,
+              "bib": 30,
+              "name": "欧子娴",
+              "team": "成都热雪奇迹",
+              "birthYear": "2016",
+              "bestScore": 45.33,
+              "points": 141
+            },
+            {
+              "rank": 16,
+              "bib": 59,
+              "name": "王汝懿",
+              "team": "个人",
+              "bestScore": 35.33,
+              "points": 134
+            },
+            {
+              "rank": 17,
+              "bib": 63,
+              "name": "孙婉迪",
+              "team": "个人",
+              "birthYear": "2016",
+              "bestScore": 34.33,
+              "points": 127
+            },
+            {
+              "rank": 18,
+              "bib": 62,
+              "name": "李佳馨",
+              "team": "个人",
+              "birthYear": "2016",
+              "bestScore": 33.33,
+              "points": 121
+            },
+            {
+              "rank": 19,
+              "bib": 57,
+              "name": "纪栩妍",
+              "team": "个人",
+              "bestScore": 16.67,
+              "points": 115
+            }
+          ]
+        },
+        {
+          "discipline": "大跳台",
+          "ageGroup": "U11",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 62,
+              "name": "张墨凡",
+              "team": "北京市冬季运动管理中心",
+              "birthYear": "2014",
+              "bestScore": 88,
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 64,
+              "name": "常嘉林",
+              "team": "广西射击射箭运动发展中心",
+              "birthYear": "2014",
+              "bestScore": 76,
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 71,
+              "name": "赵铠轩",
+              "team": "河南省体育局",
+              "birthYear": "2015",
+              "bestScore": 69.33,
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 70,
+              "name": "王俊熙",
+              "team": "河南省体育局",
+              "birthYear": "2015",
+              "bestScore": 62.33,
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 82,
+              "name": "吴雨桐",
+              "team": "个人",
+              "birthYear": "2017",
+              "bestScore": 57.67,
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 65,
+              "name": "崔芃森",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2015",
+              "bestScore": 48.67,
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 69,
+              "name": "张梓童",
+              "team": "河南省体育局",
+              "birthYear": "2016",
+              "bestScore": 46.67,
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 74,
+              "name": "陈维仁",
+              "team": "上海雪酷滑雪竞技队",
+              "bestScore": 45.33,
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 73,
+              "name": "芦梓恒",
+              "team": "纳西亚",
+              "bestScore": 40.33,
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 66,
+              "name": "赵子钰",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2015",
+              "bestScore": 36.33,
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 77,
+              "name": "卢彦词",
+              "team": "四川体育职业学院",
+              "birthYear": "2014",
+              "bestScore": 13.33,
+              "points": 176
+            }
+          ]
+        },
+        {
+          "discipline": "大跳台",
+          "ageGroup": "U15",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 52,
+              "name": "周紫君",
+              "team": "四川体育职业学院",
+              "birthYear": "2011",
+              "bestScore": 90.67,
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 41,
+              "name": "罗优璇",
+              "team": "河南省体育局",
+              "birthYear": "2010",
+              "bestScore": 85.33,
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 34,
+              "name": "平梓涵",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2010",
+              "bestScore": 81,
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 54,
+              "name": "叶欣悦",
+              "team": "四川体育职业学院",
+              "birthYear": "2011",
+              "bestScore": 79,
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 53,
+              "name": "杨芷妍",
+              "team": "四川体育职业学院",
+              "birthYear": "2011",
+              "bestScore": 77,
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 29,
+              "name": "李雅馨",
+              "team": "北京市冬季运动管理中心",
+              "birthYear": "2011",
+              "bestScore": 75.33,
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 51,
+              "name": "王珈绮",
+              "team": "四川体育职业学院",
+              "birthYear": "2013",
+              "bestScore": 73.33,
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 39,
+              "name": "陈奕歌",
+              "team": "河南省体育局",
+              "birthYear": "2012",
+              "bestScore": 69.33,
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 55,
+              "name": "韩萨仁其木格",
+              "team": "小崔运动",
+              "birthYear": "2013",
+              "bestScore": 61.33,
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 40,
+              "name": "殷玉萱",
+              "team": "河南省体育局",
+              "bestScore": 19.33,
+              "points": 187
+            }
+          ]
+        },
+        {
+          "discipline": "大跳台",
+          "ageGroup": "U15",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 72,
+              "name": "璩恩慧",
+              "team": "河南省体育局",
+              "birthYear": "2011",
+              "bestScore": 93.67,
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 80,
+              "name": "邓明涛",
+              "team": "四川体育职业学院",
+              "birthYear": "2010",
+              "bestScore": 90,
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 79,
+              "name": "王培旭",
+              "team": "四川体育职业学院",
+              "birthYear": "2010",
+              "bestScore": 81.67,
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 78,
+              "name": "周英杰",
+              "team": "四川体育职业学院",
+              "birthYear": "2013",
+              "bestScore": 79.67,
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 67,
+              "name": "张乔淳佑",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2012",
+              "bestScore": 71,
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 63,
+              "name": "王翊宁",
+              "team": "北京市冬季运动管理中心",
+              "birthYear": "2012",
+              "bestScore": 67,
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 76,
+              "name": "陈飞扬",
+              "team": "上海雪酷滑雪竞技队",
+              "bestScore": 60,
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 83,
+              "name": "刘锐淇",
+              "team": "个人",
+              "bestScore": 49,
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 75,
+              "name": "陈鑫昊",
+              "team": "上海雪酷滑雪竞技队",
+              "bestScore": 48,
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 81,
+              "name": "刘栩辰",
+              "team": "重庆市冬季运动管理中心",
+              "birthYear": "2013",
+              "bestScore": 47.33,
+              "points": 187
+            }
+          ]
+        },
+        {
+          "discipline": "大跳台",
+          "ageGroup": "U18",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 35,
+              "name": "夏可馨",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2009",
+              "bestScore": 78.67,
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 26,
+              "name": "高梓曦",
+              "team": "A+自由式滑雪队",
+              "bestScore": 63,
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 66,
+              "name": "陈露凝",
+              "team": "个人",
+              "birthYear": "2010",
+              "bestScore": 57.67,
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 27,
+              "name": "齐馨",
+              "team": "A+自由式滑雪队",
+              "birthYear": "2009",
+              "bestScore": 30.33,
+              "points": 280
             }
           ]
         }
@@ -1316,6 +1836,933 @@ export const latestResults: ResultsData = {
               "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2008",
               "bestScore": 57.25,
+              "points": 226
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "competition": "2025-2026赛季全国高山滑雪U系列比赛（鳌山站）",
+      "sport": "高山滑雪",
+      "sportType": "alpine",
+      "location": "鳌山滑雪场",
+      "date": "2026-02-03",
+      "endDate": "2026-02-06",
+      "status": "completed",
+      "events": [
+        {
+          "discipline": "回转",
+          "ageGroup": "U11",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 25,
+              "name": "钱语墨",
+              "team": "张家口辰鹏体育发展有限公司",
+              "run1": "28.89",
+              "run2": "29.75",
+              "time": "58.64",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 26,
+              "name": "张雨桐",
+              "team": "个人",
+              "run1": "33.52",
+              "run2": "33.36",
+              "time": "1:06.88",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 23,
+              "name": "李若瑜",
+              "team": "中关村一小",
+              "birthYear": "2014",
+              "run1": "34.88",
+              "run2": "34.32",
+              "time": "1:09.20",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 31,
+              "name": "李欣桐",
+              "team": "北京市朝阳区第三少儿业余体校",
+              "run1": "35.50",
+              "run2": "35.93",
+              "time": "1:11.43",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 24,
+              "name": "李昊汐",
+              "team": "西安热雪奇迹",
+              "birthYear": "2016",
+              "run1": "37.74",
+              "run2": "38.28",
+              "time": "1:16.02",
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 29,
+              "name": "谷悦来",
+              "team": "泾源县国有资本投资运营集团有限公司",
+              "run1": "39.32",
+              "run2": "39.44",
+              "time": "1:18.76",
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 22,
+              "name": "付子乔",
+              "team": "个人",
+              "run1": "43.84",
+              "run2": "44.98",
+              "time": "1:28.82",
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 27,
+              "name": "穆艺馨",
+              "team": "西安热雪奇迹竞技队",
+              "run1": "46.05",
+              "run2": "43.89",
+              "time": "1:29.94",
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 21,
+              "name": "潘秋潼",
+              "team": "西安热雪奇迹竞技队",
+              "run1": "50.07",
+              "run2": "49.98",
+              "time": "1:40.05",
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 30,
+              "name": "符芳缘",
+              "team": "个人",
+              "run1": "56.05",
+              "run2": "54.62",
+              "time": "1:50.67",
+              "points": 187
+            }
+          ]
+        },
+        {
+          "discipline": "回转",
+          "ageGroup": "U11",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 39,
+              "name": "王子川",
+              "team": "北京市朝阳区第三少儿业余体校",
+              "run1": "28.68",
+              "run2": "29.65",
+              "time": "58.33",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 50,
+              "name": "张沐晨",
+              "team": "北京市朝阳区第三少儿业余体校",
+              "run1": "33.50",
+              "run2": "32.20",
+              "time": "1:05.70",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 40,
+              "name": "马金凯",
+              "team": "西安热雪奇迹竞技队",
+              "run1": "33.63",
+              "run2": "34.67",
+              "time": "1:08.30",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 43,
+              "name": "安若维",
+              "team": "个人",
+              "run1": "36.12",
+              "run2": "35.97",
+              "time": "1:12.09",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 51,
+              "name": "李景瑞",
+              "team": "张家口乔与杨体育服务有限公司",
+              "run1": "36.09",
+              "run2": "36.60",
+              "time": "1:12.69",
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 38,
+              "name": "吴俊霖",
+              "team": "个人",
+              "run1": "48.91",
+              "run2": "47.97",
+              "time": "1:36.88",
+              "points": 242
+            }
+          ]
+        },
+        {
+          "discipline": "回转",
+          "ageGroup": "U15",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 60,
+              "name": "张雨杉",
+              "team": "西安高新一中沣东中学初中校区",
+              "run1": "33.13",
+              "run2": "33.57",
+              "time": "1:06.70",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 64,
+              "name": "唐妙",
+              "team": "重庆市冬季运动管理中心",
+              "run1": "34.93",
+              "run2": "32.94",
+              "time": "1:07.87",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 62,
+              "name": "吴馨悦",
+              "team": "济南市皇亭竞技体育学校",
+              "run1": "33.70",
+              "run2": "35.12",
+              "time": "1:08.82",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 61,
+              "name": "杨茹迦",
+              "team": "济南市皇亭竞技体育学校",
+              "run1": "38.40",
+              "run2": "37.92",
+              "time": "1:16.32",
+              "points": 280
+            }
+          ]
+        },
+        {
+          "discipline": "回转",
+          "ageGroup": "U15",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 79,
+              "name": "国益霖",
+              "team": "延庆区体育局",
+              "run1": "26.80",
+              "run2": "27.14",
+              "time": "53.94",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 72,
+              "name": "蒋骐阳",
+              "team": "兰州碧桂园学校",
+              "run1": "31.50",
+              "run2": "32.22",
+              "time": "1:03.72",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 76,
+              "name": "夏睦和",
+              "team": "西安热雪奇迹竞技队",
+              "run1": "33.57",
+              "run2": "34.61",
+              "time": "1:08.18",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 82,
+              "name": "陈相伯",
+              "team": "泾源县国有资本投资运营集团有限公司",
+              "run1": "35.88",
+              "run2": "38.06",
+              "time": "1:13.94",
+              "points": 280
+            }
+          ]
+        },
+        {
+          "discipline": "回转",
+          "ageGroup": "U18",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 6,
+              "name": "孙若涵",
+              "team": "延庆区体育局",
+              "run1": "29.12",
+              "run2": "29.43",
+              "time": "58.55",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 2,
+              "name": "周昱含",
+              "team": "沈阳王伟滑雪管理咨询服务有限公司",
+              "birthYear": "2009",
+              "run1": "30.19",
+              "run2": "31.20",
+              "time": "1:01.39",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 3,
+              "name": "李冉",
+              "team": "个人",
+              "run1": "30.71",
+              "run2": "32.42",
+              "time": "1:03.13",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 1,
+              "name": "邱心悦",
+              "team": "葫小芦（北京）体育有限公司",
+              "run1": "32.76",
+              "run2": "32.42",
+              "time": "1:05.18",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 4,
+              "name": "王胜婕",
+              "team": "葫小芦（北京）体育有限公司",
+              "run1": "34.20",
+              "run2": "33.94",
+              "time": "1:08.14",
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 5,
+              "name": "杨睿怡",
+              "team": "个人",
+              "run1": "35.32",
+              "run2": "38.29",
+              "time": "1:13.61",
+              "points": 242
+            }
+          ]
+        },
+        {
+          "discipline": "回转",
+          "ageGroup": "U18",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 13,
+              "name": "王阳明",
+              "team": "张家口乔与杨体育服务有限公司",
+              "birthYear": "2010",
+              "run1": "26.23",
+              "run2": "27.30",
+              "time": "53.53",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 11,
+              "name": "王正政",
+              "team": "张家口乔与杨体育服务有限公司",
+              "run1": "27.20",
+              "run2": "27.04",
+              "time": "54.24",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 15,
+              "name": "王冠霖",
+              "team": "吉林坤伦滑雪俱乐部",
+              "birthYear": "2009",
+              "run1": "28.33",
+              "run2": "27.97",
+              "time": "56.30",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 16,
+              "name": "左子正",
+              "team": "个人",
+              "birthYear": "2009",
+              "run1": "28.36",
+              "run2": "28.73",
+              "time": "57.09",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 17,
+              "name": "王润钰",
+              "team": "张家口乔与杨体育服务有限公司",
+              "birthYear": "2009",
+              "run1": "28.45",
+              "run2": "30.55",
+              "time": "59.00",
+              "points": 260
+            }
+          ]
+        },
+        {
+          "discipline": "大回转",
+          "ageGroup": "U11",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 28,
+              "name": "钱语墨",
+              "team": "张家口辰鹏体育发展有限公司",
+              "run1": "23.63",
+              "run2": "23.60",
+              "time": "47.23",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 23,
+              "name": "李欣桐",
+              "team": "北京市朝阳区第三少儿业余体校",
+              "run1": "28.24",
+              "run2": "31.17",
+              "time": "59.41",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 27,
+              "name": "穆艺馨",
+              "team": "西安热雪奇迹竞技队",
+              "run1": "32.54",
+              "run2": "33.40",
+              "time": "1:05.94",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 29,
+              "name": "符芳缘",
+              "team": "个人",
+              "run1": "36.41",
+              "run2": "37.20",
+              "time": "1:13.61",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 30,
+              "name": "魏锦楦",
+              "team": "个人",
+              "run1": "50.25",
+              "run2": "47.96",
+              "time": "1:38.21",
+              "points": 260
+            }
+          ]
+        },
+        {
+          "discipline": "大回转",
+          "ageGroup": "U11",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 45,
+              "name": "赵酌",
+              "team": "成都热雪奇迹",
+              "run1": "23.52",
+              "run2": "23.50",
+              "time": "47.02",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 40,
+              "name": "王子川",
+              "team": "北京市朝阳区第三少儿业余体校",
+              "run1": "24.81",
+              "run2": "25.30",
+              "time": "50.11",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 47,
+              "name": "王永清",
+              "team": "济南市皇亭竞技体育学校",
+              "run1": "26.14",
+              "run2": "26.20",
+              "time": "52.34",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 35,
+              "name": "李景瑞",
+              "team": "张家口乔与杨体育服务有限公司",
+              "run1": "26.58",
+              "run2": "27.51",
+              "time": "54.09",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 36,
+              "name": "张沐晨",
+              "team": "北京市朝阳区第三少儿业余体校",
+              "run1": "26.67",
+              "run2": "27.60",
+              "time": "54.27",
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 42,
+              "name": "马金凯",
+              "team": "西安热雪奇迹竞技队",
+              "run1": "27.26",
+              "run2": "27.76",
+              "time": "55.02",
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 51,
+              "name": "郭承卓",
+              "team": "泾源县国有资本投资运营集团有限公司",
+              "run1": "28.50",
+              "run2": "28.32",
+              "time": "56.82",
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 38,
+              "name": "郭承远",
+              "team": "泾源县国有资本投资运营集团有限公司",
+              "run1": "29.63",
+              "run2": "31.75",
+              "time": "1:01.38",
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 37,
+              "name": "徐子皓",
+              "team": "泾源县国有资本投资运营集团有限公司",
+              "run1": "31.46",
+              "run2": "34.71",
+              "time": "1:06.17",
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 48,
+              "name": "白瑾轩",
+              "team": "西安热雪奇迹竞技队",
+              "run1": "32.47",
+              "run2": "33.88",
+              "time": "1:06.35",
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 53,
+              "name": "吴俊霖",
+              "team": "个人",
+              "run1": "33.52",
+              "run2": "34.05",
+              "time": "1:07.57",
+              "points": 176
+            },
+            {
+              "rank": 12,
+              "bib": 41,
+              "name": "王永源",
+              "team": "济南市皇亭竞技体育学校",
+              "run1": "38.72",
+              "run2": "32.69",
+              "time": "1:11.41",
+              "points": 166
+            },
+            {
+              "rank": 13,
+              "bib": 50,
+              "name": "祁琨博",
+              "team": "个人",
+              "run1": "41.46",
+              "run2": "42.95",
+              "time": "1:24.41",
+              "points": 157
+            }
+          ]
+        },
+        {
+          "discipline": "大回转",
+          "ageGroup": "U15",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 60,
+              "name": "张雨杉",
+              "team": "西安高新一中沣东中学初中校区",
+              "run1": "25.66",
+              "run2": "26.33",
+              "time": "51.99",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 65,
+              "name": "唐妙",
+              "team": "重庆市冬季运动管理中心",
+              "run1": "26.40",
+              "run2": "26.86",
+              "time": "53.26",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 61,
+              "name": "吴馨悦",
+              "team": "济南市皇亭竞技体育学校",
+              "run1": "26.97",
+              "run2": "27.99",
+              "time": "54.96",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 63,
+              "name": "杨茹迦",
+              "team": "济南市皇亭竞技体育学校",
+              "run1": "28.31",
+              "run2": "29.23",
+              "time": "57.54",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 62,
+              "name": "张歆瑶",
+              "team": "个人",
+              "run1": "50.01",
+              "run2": "51.21",
+              "time": "1:41.22",
+              "points": 260
+            }
+          ]
+        },
+        {
+          "discipline": "大回转",
+          "ageGroup": "U15",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 75,
+              "name": "盛嗣垚",
+              "team": "张家口辰鹏体育发展有限公司",
+              "run1": "22.65",
+              "run2": "22.80",
+              "time": "45.45",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 73,
+              "name": "国益霖",
+              "team": "延庆区体育局",
+              "run1": "23.58",
+              "run2": "23.75",
+              "time": "47.33",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 72,
+              "name": "王思博",
+              "team": "延庆区体育局",
+              "run1": "23.73",
+              "run2": "23.70",
+              "time": "47.43",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 81,
+              "name": "马腾轩",
+              "team": "北京市朝阳区第三少儿业余体校",
+              "run1": "24.55",
+              "run2": "24.06",
+              "time": "48.61",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 71,
+              "name": "贾梓瑞",
+              "team": "远东东（重庆）体育文化发展有限公司",
+              "run1": "24.29",
+              "run2": "24.40",
+              "time": "48.69",
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 79,
+              "name": "蒋骐阳",
+              "team": "兰州碧桂园学校",
+              "run1": "25.59",
+              "run2": "25.56",
+              "time": "51.15",
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 76,
+              "name": "夏睦和",
+              "team": "西安热雪奇迹竞技队",
+              "run1": "26.34",
+              "run2": "28.44",
+              "time": "54.78",
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 70,
+              "name": "陈相伯",
+              "team": "泾源县国有资本投资运营集团有限公司",
+              "run1": "26.49",
+              "run2": "33.20",
+              "time": "59.69",
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 82,
+              "name": "李毓森",
+              "team": "北京市朝阳区第三少儿业余体校",
+              "run1": "29.73",
+              "run2": "30.50",
+              "time": "1:00.23",
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 78,
+              "name": "李波一",
+              "team": "西安热雪奇迹竞技队",
+              "run1": "32.05",
+              "run2": "33.93",
+              "time": "1:05.98",
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 77,
+              "name": "尚立明",
+              "team": "泾源县国有资本投资运营集团有限公司",
+              "run1": "35.33",
+              "run2": "35.14",
+              "time": "1:10.47",
+              "points": 176
+            }
+          ]
+        },
+        {
+          "discipline": "大回转",
+          "ageGroup": "U18",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 3,
+              "name": "周昱含",
+              "team": "沈阳王伟滑雪管理咨询服务有限公司",
+              "birthYear": "2009",
+              "run1": "26.24",
+              "run2": "25.89",
+              "time": "52.13",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 1,
+              "name": "孙若涵",
+              "team": "延庆区体育局",
+              "run1": "26.36",
+              "run2": "26.27",
+              "time": "52.63",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 8,
+              "name": "邱心悦",
+              "team": "葫小芦（北京）体育有限公司",
+              "run1": "26.62",
+              "run2": "26.15",
+              "time": "52.77",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 7,
+              "name": "龚信水",
+              "team": "重庆市冬季运动管理中心",
+              "run1": "27.69",
+              "run2": "27.22",
+              "time": "54.91",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 9,
+              "name": "杨睿怡",
+              "team": "个人",
+              "run1": "28.84",
+              "run2": "29.33",
+              "time": "58.17",
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 5,
+              "name": "刘子歌",
+              "team": "个人",
+              "run1": "30.00",
+              "run2": "30.55",
+              "time": "1:00.55",
+              "points": 242
+            }
+          ]
+        },
+        {
+          "discipline": "大回转",
+          "ageGroup": "U18",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 18,
+              "name": "王正政",
+              "team": "张家口乔与杨体育服务有限公司",
+              "run1": "25.28",
+              "run2": "24.98",
+              "time": "50.26",
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 16,
+              "name": "王阳明",
+              "team": "张家口乔与杨体育服务有限公司",
+              "birthYear": "2010",
+              "run1": "25.50",
+              "run2": "24.95",
+              "time": "50.45",
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 14,
+              "name": "王润钰",
+              "team": "张家口乔与杨体育服务有限公司",
+              "birthYear": "2009",
+              "run1": "25.25",
+              "run2": "25.25",
+              "time": "50.50",
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 12,
+              "name": "左子正",
+              "team": "个人",
+              "birthYear": "2009",
+              "run1": "25.27",
+              "run2": "25.27",
+              "time": "50.54",
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 17,
+              "name": "李彦博",
+              "team": "成都热雪奇迹",
+              "run1": "26.08",
+              "run2": "24.92",
+              "time": "51.00",
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 13,
+              "name": "熊泽瑞",
+              "team": "张家口乔与杨体育服务有限公司",
+              "birthYear": "2010",
+              "run1": "25.79",
+              "run2": "25.43",
+              "time": "51.22",
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 19,
+              "name": "卢佑涵",
+              "team": "个人",
+              "run1": "49.85",
+              "run2": "44.28",
+              "time": "1:34.13",
               "points": 226
             }
           ]

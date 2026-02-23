@@ -181,7 +181,7 @@ export default function HomePage() {
   }, [fetchData])
 
   // 动态生成新闻条目，包含最新比赛成绩
-  const dynamicNewsFromResults = latestResults.competitions.slice(0, 2).map((comp, index) => ({
+  const dynamicNewsFromResults = latestResults.competitions.slice(0, 4).map((comp, index) => ({
     id: `result-${index}`,
     title: comp.competition,
     subtitle: `${comp.sport} · ${comp.events.length}个项目 · 已完赛`,
@@ -658,7 +658,7 @@ export default function HomePage() {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-              {latestResults.competitions.slice(0, 2).map((comp, compIndex) => (
+              {latestResults.competitions.slice(0, 4).map((comp, compIndex) => (
                 <div key={compIndex} className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 shadow-md border border-slate-700 hover:border-ski-blue hover:shadow-lg transition-all flex flex-col">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1 min-w-0 mr-3">
