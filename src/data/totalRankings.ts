@@ -1,7 +1,7 @@
 /**
  * 总积分排名静态数据（按项目和子项分类）
  * 自动生成，请勿手动修改
- * 生成时间: 2026-02-27T23:05:20.620455
+ * 生成时间: 2026-02-27T23:22:52.547583
  */
 
 export interface PointsBreakdownItem {
@@ -46562,5 +46562,5 @@ export const totalRankingsData: TotalRankingsData = {
     "competitionCount": 18,
     "totalResults": 1421
   },
-  "generatedAt": "2026-02-27T23:05:20.620443"
+  "generatedAt": "2026-02-27T23:22:52.547568"
 };

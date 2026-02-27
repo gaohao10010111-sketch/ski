@@ -1,6 +1,6 @@
 // 最新比赛成绩数据
 // 自动生成，请勿手动修改
-// 生成时间: 2026-02-27T23:05:20.569825
+// 生成时间: 2026-02-27T23:22:52.494013
 
 export interface AthleteResult {
   rank: number
@@ -62,7 +62,7 @@ export const latestResults: ResultsData = {
               "name": "刘翰泽",
               "team": "个人",
               "birthYear": "2014",
-              "bestScore": 95.0,
+              "bestScore": 94.0,
               "points": 360
             },
             {
@@ -71,7 +71,7 @@ export const latestResults: ResultsData = {
               "name": "王祖安",
               "team": "河南省体育局",
               "birthYear": "2014",
-              "bestScore": 92.0,
+              "bestScore": 92.33,
               "points": 329
             },
             {
@@ -80,7 +80,7 @@ export const latestResults: ResultsData = {
               "name": "刘沐泽",
               "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2014",
-              "bestScore": 90.0,
+              "bestScore": 89.33,
               "points": 303
             },
             {
@@ -89,7 +89,7 @@ export const latestResults: ResultsData = {
               "name": "范天成",
               "team": "个人",
               "birthYear": "2015",
-              "bestScore": 81.0,
+              "bestScore": 81.33,
               "points": 280
             },
             {
@@ -98,7 +98,7 @@ export const latestResults: ResultsData = {
               "name": "曾云泽",
               "team": "New team",
               "birthYear": "2014",
-              "bestScore": 1.0,
+              "bestScore": 74.67,
               "points": 260
             },
             {
@@ -107,7 +107,7 @@ export const latestResults: ResultsData = {
               "name": "王曌霖",
               "team": "河南省体育局",
               "birthYear": "2014",
-              "bestScore": 70.0,
+              "bestScore": 69.67,
               "points": 242
             },
             {
@@ -116,7 +116,7 @@ export const latestResults: ResultsData = {
               "name": "程让",
               "team": "上海雪酷滑雪竞技队",
               "birthYear": "2015",
-              "bestScore": 1.0,
+              "bestScore": 65.0,
               "points": 226
             },
             {
@@ -125,7 +125,7 @@ export const latestResults: ResultsData = {
               "name": "魏子博",
               "team": "河南省体育局",
               "birthYear": "2014",
-              "bestScore": 63.0,
+              "bestScore": 63.67,
               "points": 212
             },
             {
@@ -134,7 +134,7 @@ export const latestResults: ResultsData = {
               "name": "赵严诺",
               "team": "河北省体育局冬季运动中心",
               "birthYear": "2014",
-              "bestScore": 1.0,
+              "bestScore": 62.33,
               "points": 199
             },
             {
@@ -143,7 +143,7 @@ export const latestResults: ResultsData = {
               "name": "刘音里",
               "team": "个人",
               "birthYear": "2016",
-              "bestScore": 1.0,
+              "bestScore": 61.0,
               "points": 187
             },
             {
@@ -161,7 +161,7 @@ export const latestResults: ResultsData = {
               "name": "刘沐文",
               "team": "个人",
               "birthYear": "2017",
-              "bestScore": 1.0,
+              "bestScore": 55.33,
               "points": 166
             },
             {
@@ -170,7 +170,7 @@ export const latestResults: ResultsData = {
               "name": "王辰然",
               "team": "个人",
               "birthYear": "2015",
-              "bestScore": 52.0,
+              "bestScore": 52.67,
               "points": 157
             },
             {
@@ -179,7 +179,7 @@ export const latestResults: ResultsData = {
               "name": "马琸明",
               "team": "个人",
               "birthYear": "2017",
-              "bestScore": 1.0,
+              "bestScore": 46.67,
               "points": 149
             },
             {
@@ -188,7 +188,7 @@ export const latestResults: ResultsData = {
               "name": "石昊桐",
               "team": "北京市冬季运动管理中心",
               "birthYear": "2017",
-              "bestScore": 1.0,
+              "bestScore": 40.0,
               "points": 141
             },
             {
@@ -206,7 +206,7 @@ export const latestResults: ResultsData = {
               "name": "陶志伟",
               "team": "山西省冰雪运动中心",
               "birthYear": "2016",
-              "bestScore": 1.0,
+              "bestScore": 22.0,
               "points": 127
             },
             {
@@ -215,7 +215,7 @@ export const latestResults: ResultsData = {
               "name": "监柏霖",
               "team": "个人",
               "birthYear": "2014",
-              "bestScore": 21.0,
+              "bestScore": 19.67,
               "points": 121
             },
             {
@@ -224,7 +224,7 @@ export const latestResults: ResultsData = {
               "name": "方柏尧",
               "team": "个人",
               "birthYear": "2014",
-              "bestScore": 1.0,
+              "bestScore": 16.67,
               "points": 115
             },
             {
@@ -233,7 +233,7 @@ export const latestResults: ResultsData = {
               "name": "马琸阳",
               "team": "个人",
               "birthYear": "2017",
-              "bestScore": 2.0,
+              "bestScore": 13.67,
               "points": 110
             },
             {
@@ -258,7 +258,7 @@ export const latestResults: ResultsData = {
               "name": "陈松妤",
               "team": "个人",
               "birthYear": "2014",
-              "bestScore": 1.0,
+              "bestScore": 92.33,
               "points": 360
             },
             {
@@ -267,7 +267,7 @@ export const latestResults: ResultsData = {
               "name": "牛安芷芸",
               "team": "个人",
               "birthYear": "2014",
-              "bestScore": 86.0,
+              "bestScore": 85.33,
               "points": 329
             },
             {
@@ -276,7 +276,7 @@ export const latestResults: ResultsData = {
               "name": "杨舒雅",
               "team": "个人",
               "birthYear": "2015",
-              "bestScore": 1.0,
+              "bestScore": 80.0,
               "points": 303
             },
             {
@@ -285,7 +285,7 @@ export const latestResults: ResultsData = {
               "name": "颜嘉懿",
               "team": "个人",
               "birthYear": "2014",
-              "bestScore": 1.0,
+              "bestScore": 77.0,
               "points": 280
             },
             {
@@ -294,7 +294,7 @@ export const latestResults: ResultsData = {
               "name": "蒋柠萱",
               "team": "北京市冬季运动管理中心",
               "birthYear": "2015",
-              "bestScore": 65.0,
+              "bestScore": 63.33,
               "points": 260
             },
             {
@@ -303,7 +303,7 @@ export const latestResults: ResultsData = {
               "name": "周斯言",
               "team": "个人",
               "birthYear": "2015",
-              "bestScore": 1.0,
+              "bestScore": 58.0,
               "points": 242
             },
             {
@@ -312,7 +312,7 @@ export const latestResults: ResultsData = {
               "name": "顾嘉禾",
               "team": "河南省体育局",
               "birthYear": "2014",
-              "bestScore": 53.0,
+              "bestScore": 54.0,
               "points": 226
             },
             {
@@ -321,7 +321,7 @@ export const latestResults: ResultsData = {
               "name": "张诗涵",
               "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2017",
-              "bestScore": 1.0,
+              "bestScore": 49.67,
               "points": 212
             },
             {
@@ -339,7 +339,7 @@ export const latestResults: ResultsData = {
               "name": "张迦淳",
               "team": "个人",
               "birthYear": "2017",
-              "bestScore": 1.0,
+              "bestScore": 39.33,
               "points": 187
             },
             {
@@ -348,7 +348,7 @@ export const latestResults: ResultsData = {
               "name": "崔嘉懿",
               "team": "上海雪酷滑雪竞技队",
               "birthYear": "2015",
-              "bestScore": 25.0,
+              "bestScore": 27.67,
               "points": 176
             },
             {
@@ -357,7 +357,7 @@ export const latestResults: ResultsData = {
               "name": "仇逸菲",
               "team": "上海雪酷滑雪竞技队",
               "birthYear": "2015",
-              "bestScore": 1.0,
+              "bestScore": 23.67,
               "points": 166
             },
             {
@@ -366,7 +366,7 @@ export const latestResults: ResultsData = {
               "name": "周子钰",
               "team": "山西省冰雪运动中心",
               "birthYear": "2017",
-              "bestScore": 16.0,
+              "bestScore": 17.33,
               "points": 157
             },
             {
@@ -375,7 +375,7 @@ export const latestResults: ResultsData = {
               "name": "陈玟聿",
               "team": "上海雪酷滑雪竞技队",
               "birthYear": "2016",
-              "bestScore": 11.0,
+              "bestScore": 12.33,
               "points": 149
             },
             {
@@ -384,7 +384,7 @@ export const latestResults: ResultsData = {
               "name": "叶恩瑶",
               "team": "上海雪酷滑雪竞技队",
               "birthYear": "2014",
-              "bestScore": 1.0,
+              "bestScore": 12.0,
               "points": 141
             },
             {
@@ -393,7 +393,7 @@ export const latestResults: ResultsData = {
               "name": "周若慈",
               "team": "个人",
               "birthYear": "2014",
-              "bestScore": 134.0,
+              "bestScore": 7.67,
               "points": 134
             }
           ]
@@ -409,7 +409,7 @@ export const latestResults: ResultsData = {
               "name": "王恒宇",
               "team": "个人",
               "birthYear": "2013",
-              "bestScore": 1.0,
+              "bestScore": 93.0,
               "points": 360
             },
             {
@@ -418,7 +418,7 @@ export const latestResults: ResultsData = {
               "name": "袁梓程",
               "team": "四川体育职业学院",
               "birthYear": "2011",
-              "bestScore": 2.0,
+              "bestScore": 87.67,
               "points": 329
             },
             {
@@ -427,7 +427,7 @@ export const latestResults: ResultsData = {
               "name": "卢司焱",
               "team": "个人",
               "birthYear": "2013",
-              "bestScore": 2.0,
+              "bestScore": 78.33,
               "points": 303
             },
             {
@@ -436,7 +436,7 @@ export const latestResults: ResultsData = {
               "name": "谭凯元",
               "team": "个人",
               "birthYear": "2012",
-              "bestScore": 2.0,
+              "bestScore": 71.33,
               "points": 280
             },
             {
@@ -445,7 +445,7 @@ export const latestResults: ResultsData = {
               "name": "丁振珈",
               "team": "个人",
               "birthYear": "2013",
-              "bestScore": 2.0,
+              "bestScore": 68.33,
               "points": 260
             },
             {
@@ -454,7 +454,7 @@ export const latestResults: ResultsData = {
               "name": "郭彧铭",
               "team": "个人",
               "birthYear": "2013",
-              "bestScore": 2.0,
+              "bestScore": 65.0,
               "points": 242
             },
             {
@@ -463,7 +463,7 @@ export const latestResults: ResultsData = {
               "name": "孙晨曦",
               "team": "河北省体育局冬季运动中心",
               "birthYear": "2010",
-              "bestScore": 2.0,
+              "bestScore": 61.67,
               "points": 226
             },
             {
@@ -472,7 +472,7 @@ export const latestResults: ResultsData = {
               "name": "高翊博",
               "team": "北京市冬季运动管理中心",
               "birthYear": "2013",
-              "bestScore": 2.0,
+              "bestScore": 48.0,
               "points": 212
             },
             {
@@ -481,7 +481,7 @@ export const latestResults: ResultsData = {
               "name": "刘子俊",
               "team": "四川体育职业学院",
               "birthYear": "2010",
-              "bestScore": 199.0,
+              "bestScore": 45.67,
               "points": 199
             },
             {
@@ -490,7 +490,7 @@ export const latestResults: ResultsData = {
               "name": "梁嘉俊",
               "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2013",
-              "bestScore": 187.0,
+              "bestScore": 35.33,
               "points": 187
             },
             {
@@ -499,7 +499,7 @@ export const latestResults: ResultsData = {
               "name": "李懿恒",
               "team": "自由地带pop滑雪俱乐部",
               "birthYear": "2011",
-              "bestScore": 176.0,
+              "bestScore": 16.33,
               "points": 176
             },
             {
@@ -508,7 +508,7 @@ export const latestResults: ResultsData = {
               "name": "贺洛东",
               "team": "上海雪酷滑雪竞技队",
               "birthYear": "2011",
-              "bestScore": 166.0,
+              "bestScore": 13.67,
               "points": 166
             }
           ]
@@ -524,7 +524,7 @@ export const latestResults: ResultsData = {
               "name": "鱼嘉怡",
               "team": "河北省体育局冬季运动中心",
               "birthYear": "2010",
-              "bestScore": 2.0,
+              "bestScore": 81.33,
               "points": 360
             },
             {
@@ -533,7 +533,7 @@ export const latestResults: ResultsData = {
               "name": "郭婉诗",
               "team": "山西省冰雪运动中心",
               "birthYear": "2013",
-              "bestScore": 2.0,
+              "bestScore": 67.33,
               "points": 329
             },
             {
@@ -542,7 +542,7 @@ export const latestResults: ResultsData = {
               "name": "张益嘉",
               "team": "河南省体育局",
               "birthYear": "2013",
-              "bestScore": 2.0,
+              "bestScore": 60.33,
               "points": 303
             },
             {
@@ -551,7 +551,7 @@ export const latestResults: ResultsData = {
               "name": "张淑雅",
               "team": "山西省冰雪运动中心",
               "birthYear": "2013",
-              "bestScore": 2.0,
+              "bestScore": 56.0,
               "points": 280
             },
             {
@@ -560,7 +560,7 @@ export const latestResults: ResultsData = {
               "name": "刘霓霏",
               "team": "个人",
               "birthYear": "2012",
-              "bestScore": 2.0,
+              "bestScore": 15.33,
               "points": 260
             }
           ]
@@ -576,7 +576,7 @@ export const latestResults: ResultsData = {
               "name": "袁嘉伟",
               "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2009",
-              "bestScore": 2.0,
+              "bestScore": 81.0,
               "points": 360
             },
             {
@@ -585,7 +585,7 @@ export const latestResults: ResultsData = {
               "name": "何琨鹏",
               "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2009",
-              "bestScore": 2.0,
+              "bestScore": 70.33,
               "points": 329
             },
             {
@@ -594,7 +594,7 @@ export const latestResults: ResultsData = {
               "name": "李智贤",
               "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2010",
-              "bestScore": 2.0,
+              "bestScore": 61.0,
               "points": 303
             },
             {
@@ -603,7 +603,7 @@ export const latestResults: ResultsData = {
               "name": "吴海鑫",
               "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2009",
-              "bestScore": 2.0,
+              "bestScore": 49.0,
               "points": 280
             },
             {
@@ -612,7 +612,7 @@ export const latestResults: ResultsData = {
               "name": "周亮",
               "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2009",
-              "bestScore": 2.0,
+              "bestScore": 45.67,
               "points": 260
             },
             {
@@ -621,7 +621,7 @@ export const latestResults: ResultsData = {
               "name": "米馥豪",
               "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2009",
-              "bestScore": 2.0,
+              "bestScore": 41.33,
               "points": 242
             },
             {
@@ -630,7 +630,7 @@ export const latestResults: ResultsData = {
               "name": "杨峻溪",
               "team": "个人",
               "birthYear": "2010",
-              "bestScore": 2.0,
+              "bestScore": 37.67,
               "points": 226
             },
             {
@@ -639,7 +639,7 @@ export const latestResults: ResultsData = {
               "name": "杨路龙",
               "team": "个人",
               "birthYear": "2008",
-              "bestScore": 2.0,
+              "bestScore": 35.33,
               "points": 212
             },
             {
@@ -648,7 +648,7 @@ export const latestResults: ResultsData = {
               "name": "赵开元",
               "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2010",
-              "bestScore": 199.0,
+              "bestScore": 18.0,
               "points": 199
             },
             {
@@ -657,7 +657,7 @@ export const latestResults: ResultsData = {
               "name": "黄子剑",
               "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2008",
-              "bestScore": 187.0,
+              "bestScore": 15.33,
               "points": 187
             },
             {
@@ -666,7 +666,7 @@ export const latestResults: ResultsData = {
               "name": "刘智鑫",
               "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2010",
-              "bestScore": 176.0,
+              "bestScore": 13.33,
               "points": 176
             },
             {
@@ -675,7 +675,7 @@ export const latestResults: ResultsData = {
               "name": "姚佳俊",
               "team": "个人",
               "birthYear": "2008",
-              "bestScore": 166.0,
+              "bestScore": 1.0,
               "points": 166
             }
           ]
@@ -691,7 +691,7 @@ export const latestResults: ResultsData = {
               "name": "张楚仪",
               "team": "个人",
               "birthYear": "2007",
-              "bestScore": 2.0,
+              "bestScore": 45.0,
               "points": 360
             },
             {
@@ -709,7 +709,7 @@ export const latestResults: ResultsData = {
               "name": "乔焱",
               "team": "个人",
               "birthYear": "2008",
-              "bestScore": 2.0,
+              "bestScore": 1.0,
               "points": 303
             }
           ]
@@ -736,7 +736,7 @@ export const latestResults: ResultsData = {
               "name": "刘翰泽",
               "team": "个人",
               "birthYear": "2014",
-              "bestScore": 93.0,
+              "bestScore": 92.33,
               "points": 360
             },
             {
@@ -745,7 +745,7 @@ export const latestResults: ResultsData = {
               "name": "王祖安",
               "team": "河南省体育局",
               "birthYear": "2014",
-              "bestScore": 1.0,
+              "bestScore": 88.0,
               "points": 329
             },
             {
@@ -754,7 +754,7 @@ export const latestResults: ResultsData = {
               "name": "范天成",
               "team": "个人",
               "birthYear": "2015",
-              "bestScore": 83.0,
+              "bestScore": 83.33,
               "points": 303
             },
             {
@@ -763,7 +763,7 @@ export const latestResults: ResultsData = {
               "name": "王曌霖",
               "team": "河南省体育局",
               "birthYear": "2014",
-              "bestScore": 79.0,
+              "bestScore": 79.33,
               "points": 280
             },
             {
@@ -772,7 +772,7 @@ export const latestResults: ResultsData = {
               "name": "刘沐泽",
               "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2014",
-              "bestScore": 1.0,
+              "bestScore": 76.33,
               "points": 260
             },
             {
@@ -781,7 +781,7 @@ export const latestResults: ResultsData = {
               "name": "曾云泽",
               "team": "New team",
               "birthYear": "2014",
-              "bestScore": 1.0,
+              "bestScore": 74.33,
               "points": 242
             },
             {
@@ -790,7 +790,7 @@ export const latestResults: ResultsData = {
               "name": "赵严诺",
               "team": "河北省体育局冬季运动中心",
               "birthYear": "2014",
-              "bestScore": 1.0,
+              "bestScore": 73.67,
               "points": 226
             },
             {
@@ -799,7 +799,7 @@ export const latestResults: ResultsData = {
               "name": "魏子博",
               "team": "河南省体育局",
               "birthYear": "2014",
-              "bestScore": 1.0,
+              "bestScore": 71.33,
               "points": 212
             },
             {
@@ -808,7 +808,7 @@ export const latestResults: ResultsData = {
               "name": "监柏霖",
               "team": "个人",
               "birthYear": "2014",
-              "bestScore": 1.0,
+              "bestScore": 66.33,
               "points": 199
             },
             {
@@ -817,7 +817,7 @@ export const latestResults: ResultsData = {
               "name": "马琸明",
               "team": "个人",
               "birthYear": "2017",
-              "bestScore": 1.0,
+              "bestScore": 61.0,
               "points": 187
             },
             {
@@ -826,7 +826,7 @@ export const latestResults: ResultsData = {
               "name": "王辰然",
               "team": "个人",
               "birthYear": "2015",
-              "bestScore": 56.0,
+              "bestScore": 56.33,
               "points": 176
             },
             {
@@ -835,7 +835,7 @@ export const latestResults: ResultsData = {
               "name": "刘音里",
               "team": "个人",
               "birthYear": "2016",
-              "bestScore": 1.0,
+              "bestScore": 52.0,
               "points": 166
             },
             {
@@ -844,7 +844,7 @@ export const latestResults: ResultsData = {
               "name": "蒋桨",
               "team": "个人",
               "birthYear": "2015",
-              "bestScore": 50.0,
+              "bestScore": 49.67,
               "points": 157
             },
             {
@@ -853,7 +853,7 @@ export const latestResults: ResultsData = {
               "name": "刘沐文",
               "team": "个人",
               "birthYear": "2017",
-              "bestScore": 1.0,
+              "bestScore": 48.0,
               "points": 149
             },
             {
@@ -862,7 +862,7 @@ export const latestResults: ResultsData = {
               "name": "方柏尧",
               "team": "个人",
               "birthYear": "2014",
-              "bestScore": 45.0,
+              "bestScore": 45.33,
               "points": 141
             },
             {
@@ -871,7 +871,7 @@ export const latestResults: ResultsData = {
               "name": "史景夫",
               "team": "个人",
               "birthYear": "2014",
-              "bestScore": 1.0,
+              "bestScore": 42.0,
               "points": 134
             },
             {
@@ -880,7 +880,7 @@ export const latestResults: ResultsData = {
               "name": "石昊桐",
               "team": "北京市冬季运动管理中心",
               "birthYear": "2017",
-              "bestScore": 1.0,
+              "bestScore": 33.67,
               "points": 127
             },
             {
@@ -889,7 +889,7 @@ export const latestResults: ResultsData = {
               "name": "马琸阳",
               "team": "个人",
               "birthYear": "2017",
-              "bestScore": 1.0,
+              "bestScore": 30.67,
               "points": 121
             },
             {
@@ -925,7 +925,7 @@ export const latestResults: ResultsData = {
               "name": "程让",
               "team": "上海雪酷滑雪竞技队",
               "birthYear": "2015",
-              "bestScore": 100.0,
+              "bestScore": 8.33,
               "points": 100
             },
             {
@@ -934,7 +934,7 @@ export const latestResults: ResultsData = {
               "name": "刘桐朔",
               "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2014",
-              "bestScore": 95.0,
+              "bestScore": 4.33,
               "points": 95
             }
           ]
@@ -950,7 +950,7 @@ export const latestResults: ResultsData = {
               "name": "杨舒雅",
               "team": "个人",
               "birthYear": "2015",
-              "bestScore": 93.0,
+              "bestScore": 92.0,
               "points": 360
             },
             {
@@ -959,7 +959,7 @@ export const latestResults: ResultsData = {
               "name": "陈松妤",
               "team": "个人",
               "birthYear": "2014",
-              "bestScore": 1.0,
+              "bestScore": 88.0,
               "points": 329
             },
             {
@@ -968,7 +968,7 @@ export const latestResults: ResultsData = {
               "name": "牛安芷芸",
               "team": "个人",
               "birthYear": "2014",
-              "bestScore": 1.0,
+              "bestScore": 68.0,
               "points": 303
             },
             {
@@ -977,7 +977,7 @@ export const latestResults: ResultsData = {
               "name": "颜嘉懿",
               "team": "个人",
               "birthYear": "2014",
-              "bestScore": 1.0,
+              "bestScore": 62.67,
               "points": 280
             },
             {
@@ -986,7 +986,7 @@ export const latestResults: ResultsData = {
               "name": "张诗涵",
               "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2017",
-              "bestScore": 1.0,
+              "bestScore": 56.0,
               "points": 260
             },
             {
@@ -995,7 +995,7 @@ export const latestResults: ResultsData = {
               "name": "范允朵",
               "team": "石家庄市冰雪与足球运动推广训练中心",
               "birthYear": "2016",
-              "bestScore": 1.0,
+              "bestScore": 52.67,
               "points": 242
             },
             {
@@ -1004,7 +1004,7 @@ export const latestResults: ResultsData = {
               "name": "叶恩瑶",
               "team": "上海雪酷滑雪竞技队",
               "birthYear": "2014",
-              "bestScore": 1.0,
+              "bestScore": 48.0,
               "points": 226
             },
             {
@@ -1013,7 +1013,7 @@ export const latestResults: ResultsData = {
               "name": "蒋柠萱",
               "team": "北京市冬季运动管理中心",
               "birthYear": "2015",
-              "bestScore": 43.0,
+              "bestScore": 44.33,
               "points": 212
             },
             {
@@ -1031,7 +1031,7 @@ export const latestResults: ResultsData = {
               "name": "陈玟聿",
               "team": "上海雪酷滑雪竞技队",
               "birthYear": "2016",
-              "bestScore": 1.0,
+              "bestScore": 40.0,
               "points": 187
             },
             {
@@ -1058,7 +1058,7 @@ export const latestResults: ResultsData = {
               "name": "翟姝涵",
               "team": "北京市冬季运动管理中心",
               "birthYear": "2017",
-              "bestScore": 1.0,
+              "bestScore": 23.67,
               "points": 157
             },
             {
@@ -1076,7 +1076,7 @@ export const latestResults: ResultsData = {
               "name": "仇逸菲",
               "team": "上海雪酷滑雪竞技队",
               "birthYear": "2015",
-              "bestScore": 1.0,
+              "bestScore": 16.33,
               "points": 141
             },
             {
@@ -1085,7 +1085,7 @@ export const latestResults: ResultsData = {
               "name": "顾嘉禾",
               "team": "河南省体育局",
               "birthYear": "2014",
-              "bestScore": 1.0,
+              "bestScore": 12.33,
               "points": 134
             },
             {
@@ -1094,7 +1094,7 @@ export const latestResults: ResultsData = {
               "name": "周斯言",
               "team": "个人",
               "birthYear": "2015",
-              "bestScore": 127.0,
+              "bestScore": 8.67,
               "points": 127
             }
           ]
@@ -1110,7 +1110,7 @@ export const latestResults: ResultsData = {
               "name": "袁梓程",
               "team": "四川体育职业学院",
               "birthYear": "2011",
-              "bestScore": 1.0,
+              "bestScore": 85.33,
               "points": 360
             },
             {
@@ -1119,7 +1119,7 @@ export const latestResults: ResultsData = {
               "name": "卢司焱",
               "team": "个人",
               "birthYear": "2013",
-              "bestScore": 1.0,
+              "bestScore": 72.33,
               "points": 329
             },
             {
@@ -1128,7 +1128,7 @@ export const latestResults: ResultsData = {
               "name": "王恒宇",
               "team": "个人",
               "birthYear": "2013",
-              "bestScore": 64.0,
+              "bestScore": 67.67,
               "points": 303
             },
             {
@@ -1137,7 +1137,7 @@ export const latestResults: ResultsData = {
               "name": "谭凯元",
               "team": "个人",
               "birthYear": "2012",
-              "bestScore": 1.0,
+              "bestScore": 66.67,
               "points": 280
             },
             {
@@ -1146,7 +1146,7 @@ export const latestResults: ResultsData = {
               "name": "孙晨曦",
               "team": "河北省体育局冬季运动中心",
               "birthYear": "2010",
-              "bestScore": 61.0,
+              "bestScore": 64.0,
               "points": 260
             },
             {
@@ -1155,7 +1155,7 @@ export const latestResults: ResultsData = {
               "name": "刘子俊",
               "team": "四川体育职业学院",
               "birthYear": "2010",
-              "bestScore": 1.0,
+              "bestScore": 63.0,
               "points": 242
             },
             {
@@ -1164,7 +1164,7 @@ export const latestResults: ResultsData = {
               "name": "丁振珈",
               "team": "个人",
               "birthYear": "2013",
-              "bestScore": 1.0,
+              "bestScore": 53.0,
               "points": 226
             },
             {
@@ -1173,7 +1173,7 @@ export const latestResults: ResultsData = {
               "name": "高翊博",
               "team": "北京市冬季运动管理中心",
               "birthYear": "2013",
-              "bestScore": 1.0,
+              "bestScore": 50.0,
               "points": 212
             },
             {
@@ -1182,7 +1182,7 @@ export const latestResults: ResultsData = {
               "name": "贺洛东",
               "team": "上海雪酷滑雪竞技队",
               "birthYear": "2011",
-              "bestScore": 49.0,
+              "bestScore": 46.67,
               "points": 199
             },
             {
@@ -1191,7 +1191,7 @@ export const latestResults: ResultsData = {
               "name": "张栋涵",
               "team": "个人",
               "birthYear": "2013",
-              "bestScore": 1.0,
+              "bestScore": 46.67,
               "points": 187
             },
             {
@@ -1200,7 +1200,7 @@ export const latestResults: ResultsData = {
               "name": "李懿恒",
               "team": "自由地带pop滑雪俱乐部",
               "birthYear": "2011",
-              "bestScore": 1.0,
+              "bestScore": 41.67,
               "points": 176
             },
             {
@@ -1209,7 +1209,7 @@ export const latestResults: ResultsData = {
               "name": "梁嘉俊",
               "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2013",
-              "bestScore": 1.0,
+              "bestScore": 36.67,
               "points": 166
             },
             {
@@ -1218,7 +1218,7 @@ export const latestResults: ResultsData = {
               "name": "黄熙灿",
               "team": "上海雪酷滑雪竞技队",
               "birthYear": "2011",
-              "bestScore": 1.0,
+              "bestScore": 32.0,
               "points": 157
             },
             {
@@ -1227,7 +1227,7 @@ export const latestResults: ResultsData = {
               "name": "郭彧铭",
               "team": "个人",
               "birthYear": "2013",
-              "bestScore": 26.0,
+              "bestScore": 27.0,
               "points": 149
             },
             {
@@ -1236,7 +1236,7 @@ export const latestResults: ResultsData = {
               "name": "张显祖",
               "team": "上海雪酷滑雪竞技队",
               "birthYear": "2012",
-              "bestScore": 25.0,
+              "bestScore": 25.33,
               "points": 141
             }
           ]
@@ -1252,7 +1252,7 @@ export const latestResults: ResultsData = {
               "name": "鱼嘉怡",
               "team": "河北省体育局冬季运动中心",
               "birthYear": "2010",
-              "bestScore": 2.0,
+              "bestScore": 81.33,
               "points": 360
             },
             {
@@ -1261,7 +1261,7 @@ export const latestResults: ResultsData = {
               "name": "刘霓霏",
               "team": "个人",
               "birthYear": "2012",
-              "bestScore": 2.0,
+              "bestScore": 67.0,
               "points": 329
             },
             {
@@ -1270,7 +1270,7 @@ export const latestResults: ResultsData = {
               "name": "张益嘉",
               "team": "河南省体育局",
               "birthYear": "2013",
-              "bestScore": 2.0,
+              "bestScore": 64.0,
               "points": 303
             },
             {
@@ -1279,7 +1279,7 @@ export const latestResults: ResultsData = {
               "name": "郭婉诗",
               "team": "山西省冰雪运动中心",
               "birthYear": "2013",
-              "bestScore": 2.0,
+              "bestScore": 60.0,
               "points": 280
             },
             {
@@ -1288,7 +1288,7 @@ export const latestResults: ResultsData = {
               "name": "张淑棋",
               "team": "山西省冰雪运动中心",
               "birthYear": "2013",
-              "bestScore": 2.0,
+              "bestScore": 55.33,
               "points": 260
             },
             {
@@ -1297,7 +1297,7 @@ export const latestResults: ResultsData = {
               "name": "张淑雅",
               "team": "山西省冰雪运动中心",
               "birthYear": "2013",
-              "bestScore": 2.0,
+              "bestScore": 50.0,
               "points": 242
             },
             {
@@ -1306,7 +1306,7 @@ export const latestResults: ResultsData = {
               "name": "高艺轩",
               "team": "个人",
               "birthYear": "2012",
-              "bestScore": 2.0,
+              "bestScore": 33.33,
               "points": 226
             }
           ]
@@ -1322,7 +1322,7 @@ export const latestResults: ResultsData = {
               "name": "李俊辛",
               "team": "四川体育职业学院",
               "birthYear": "2008",
-              "bestScore": 2.0,
+              "bestScore": 92.0,
               "points": 360
             },
             {
@@ -1331,7 +1331,7 @@ export const latestResults: ResultsData = {
               "name": "杨峻溪",
               "team": "个人",
               "birthYear": "2010",
-              "bestScore": 2.0,
+              "bestScore": 90.33,
               "points": 329
             },
             {
@@ -1340,7 +1340,7 @@ export const latestResults: ResultsData = {
               "name": "黄子剑",
               "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2008",
-              "bestScore": 2.0,
+              "bestScore": 73.67,
               "points": 303
             },
             {
@@ -1349,7 +1349,7 @@ export const latestResults: ResultsData = {
               "name": "吴海鑫",
               "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2009",
-              "bestScore": 2.0,
+              "bestScore": 64.67,
               "points": 280
             },
             {
@@ -1358,7 +1358,7 @@ export const latestResults: ResultsData = {
               "name": "袁嘉伟",
               "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2009",
-              "bestScore": 2.0,
+              "bestScore": 56.67,
               "points": 260
             },
             {
@@ -1367,7 +1367,7 @@ export const latestResults: ResultsData = {
               "name": "何琨鹏",
               "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2009",
-              "bestScore": 2.0,
+              "bestScore": 42.0,
               "points": 242
             },
             {
@@ -1376,7 +1376,7 @@ export const latestResults: ResultsData = {
               "name": "周亮",
               "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2009",
-              "bestScore": 2.0,
+              "bestScore": 37.0,
               "points": 226
             },
             {
@@ -1385,7 +1385,7 @@ export const latestResults: ResultsData = {
               "name": "米馥豪",
               "team": "石家庄市冰雪与足球运动中心",
               "birthYear": "2009",
-              "bestScore": 2.0,
+              "bestScore": 33.0,
               "points": 212
             },
             {
@@ -1394,7 +1394,7 @@ export const latestResults: ResultsData = {
               "name": "李智贤",
               "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2010",
-              "bestScore": 199.0,
+              "bestScore": 31.33,
               "points": 199
             },
             {
@@ -1403,7 +1403,7 @@ export const latestResults: ResultsData = {
               "name": "赵开元",
               "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2010",
-              "bestScore": 187.0,
+              "bestScore": 29.0,
               "points": 187
             },
             {
@@ -1412,7 +1412,7 @@ export const latestResults: ResultsData = {
               "name": "杨路龙",
               "team": "个人",
               "birthYear": "2008",
-              "bestScore": 176.0,
+              "bestScore": 24.0,
               "points": 176
             },
             {
@@ -1421,7 +1421,7 @@ export const latestResults: ResultsData = {
               "name": "刘智鑫",
               "team": "湖北省武术和冬季运动管理中心",
               "birthYear": "2010",
-              "bestScore": 166.0,
+              "bestScore": 16.0,
               "points": 166
             },
             {
@@ -1430,7 +1430,7 @@ export const latestResults: ResultsData = {
               "name": "姚佳俊",
               "team": "个人",
               "birthYear": "2008",
-              "bestScore": 157.0,
+              "bestScore": 1.0,
               "points": 157
             }
           ]
@@ -1446,7 +1446,7 @@ export const latestResults: ResultsData = {
               "name": "张楚仪",
               "team": "个人",
               "birthYear": "2007",
-              "bestScore": 2.0,
+              "bestScore": 50.67,
               "points": 360
             },
             {
@@ -1455,7 +1455,7 @@ export const latestResults: ResultsData = {
               "name": "张潇月",
               "team": "个人",
               "birthYear": "2009",
-              "bestScore": 2.0,
+              "bestScore": 12.33,
               "points": 329
             },
             {
@@ -1464,7 +1464,7 @@ export const latestResults: ResultsData = {
               "name": "乔焱",
               "team": "个人",
               "birthYear": "2008",
-              "bestScore": 2.0,
+              "bestScore": 1.0,
               "points": 303
             }
           ]
