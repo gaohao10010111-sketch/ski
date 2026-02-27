@@ -1,6 +1,6 @@
 // 最新比赛成绩数据
 // 自动生成，请勿手动修改
-// 生成时间: 2026-02-27T23:33:51.898144
+// 生成时间: 2026-02-28T00:48:21.426823
 
 export interface AthleteResult {
   rank: number
@@ -40,7 +40,7 @@ export interface ResultsData {
 }
 
 export const latestResults: ResultsData = {
-  "lastUpdated": "2026-02-27",
+  "lastUpdated": "2026-02-28",
   "competitions": [
     {
       "competition": "2025-2026赛季单板滑雪大跳台U系列比赛（第四站富龙站）",
@@ -4422,7 +4422,7 @@ export const latestResults: ResultsData = {
               "name": "刘钥宸",
               "team": "沈抚改革创新示范区体育联合会",
               "birthYear": "2016",
-              "points": 96
+              "points": 95
             },
             {
               "rank": 24,
@@ -4430,7 +4430,7 @@ export const latestResults: ResultsData = {
               "name": "许原岑",
               "team": "沈抚改革创新示范区体育联合会",
               "birthYear": "2017",
-              "points": 92
+              "points": 91
             },
             {
               "rank": 25,
@@ -4438,7 +4438,7 @@ export const latestResults: ResultsData = {
               "name": "王梓墨",
               "team": "四川体育职业学院",
               "birthYear": "2015",
-              "points": 88
+              "points": 87
             },
             {
               "rank": 26,
@@ -4446,7 +4446,7 @@ export const latestResults: ResultsData = {
               "name": "李承儒",
               "team": "长春市冬季运动管理中心",
               "birthYear": "2017",
-              "points": 84
+              "points": 83
             },
             {
               "rank": 27,
@@ -4454,7 +4454,7 @@ export const latestResults: ResultsData = {
               "name": "梁洺嘉",
               "team": "沈抚改革创新示范区体育联合会",
               "birthYear": "2017",
-              "points": 80
+              "points": 79
             },
             {
               "rank": 28,
@@ -4462,7 +4462,7 @@ export const latestResults: ResultsData = {
               "name": "安泓宇",
               "team": "吉林峰尚青教体育文化产业有限公司",
               "birthYear": "2017",
-              "points": 76
+              "points": 75
             },
             {
               "rank": 29,
@@ -4470,7 +4470,7 @@ export const latestResults: ResultsData = {
               "name": "崔铭浩",
               "team": "沈抚改革创新示范区体育联合会",
               "birthYear": "2017",
-              "points": 73
+              "points": 71
             },
             {
               "rank": 30,
@@ -4478,7 +4478,7 @@ export const latestResults: ResultsData = {
               "name": "李俊毅",
               "team": "长春市极刃体育发展有限公司",
               "birthYear": "2017",
-              "points": 70
+              "points": 67
             },
             {
               "rank": 31,
@@ -4486,7 +4486,7 @@ export const latestResults: ResultsData = {
               "name": "孟奕成",
               "team": "沈抚改革创新示范区体育联合会",
               "birthYear": "2017",
-              "points": 67
+              "points": 63
             },
             {
               "rank": 32,
@@ -4494,7 +4494,7 @@ export const latestResults: ResultsData = {
               "name": "尹一诺",
               "team": "吉林峰尚青教体育文化产业有限公司",
               "birthYear": "2017",
-              "points": 64
+              "points": 59
             },
             {
               "rank": 33,
@@ -4502,7 +4502,7 @@ export const latestResults: ResultsData = {
               "name": "吴杭熹",
               "team": "沈抚改革创新示范区体育联合会",
               "birthYear": "2016",
-              "points": 61
+              "points": 55
             },
             {
               "rank": 34,
@@ -4510,7 +4510,7 @@ export const latestResults: ResultsData = {
               "name": "梁洺睿",
               "team": "沈抚改革创新示范区体育联合会",
               "birthYear": "2014",
-              "points": 58
+              "points": 51
             },
             {
               "rank": 35,
@@ -4518,7 +4518,7 @@ export const latestResults: ResultsData = {
               "name": "崔凯棋",
               "team": "沈抚改革创新示范区体育联合会",
               "birthYear": "2017",
-              "points": 55
+              "points": 47
             }
           ]
         },
@@ -4884,7 +4884,7 @@ export const latestResults: ResultsData = {
               "name": "高希言",
               "team": "沈抚改革创新示范区体育联合会",
               "birthYear": "2012",
-              "points": 96
+              "points": 95
             },
             {
               "rank": 24,
@@ -4892,7 +4892,7 @@ export const latestResults: ResultsData = {
               "name": "刘子木",
               "team": "沈抚改革创新示范区体育联合会",
               "birthYear": "2011",
-              "points": 92
+              "points": 91
             },
             {
               "rank": 25,
@@ -4900,7 +4900,7 @@ export const latestResults: ResultsData = {
               "name": "张峰睿",
               "team": "沈抚改革创新示范区体育联合会",
               "birthYear": "2011",
-              "points": 88
+              "points": 87
             },
             {
               "rank": 26,
@@ -4908,7 +4908,7 @@ export const latestResults: ResultsData = {
               "name": "孙晟轩",
               "team": "个人",
               "birthYear": "2012",
-              "points": 84
+              "points": 83
             },
             {
               "rank": 27,
@@ -4916,7 +4916,7 @@ export const latestResults: ResultsData = {
               "name": "刘子乐",
               "team": "King Pro Team",
               "birthYear": "2011",
-              "points": 80
+              "points": 79
             },
             {
               "rank": 28,
@@ -4924,7 +4924,7 @@ export const latestResults: ResultsData = {
               "name": "梁恩泽",
               "team": "上海市静安区滑雪协会",
               "birthYear": "2011",
-              "points": 76
+              "points": 75
             },
             {
               "rank": 29,
@@ -4932,7 +4932,7 @@ export const latestResults: ResultsData = {
               "name": "姜胤伯",
               "team": "长春市极刃体育发展有限公司",
               "birthYear": "2012",
-              "points": 73
+              "points": 71
             },
             {
               "rank": 30,
@@ -4940,7 +4940,7 @@ export const latestResults: ResultsData = {
               "name": "陈冠霖",
               "team": "沈抚改革创新示范区体育联合会",
               "birthYear": "2010",
-              "points": 70
+              "points": 67
             }
           ]
         },
@@ -5131,7 +5131,7 @@ export const latestResults: ResultsData = {
               "name": "刘馨泽",
               "team": "吉林峰尚青教体育文化产业有限公司",
               "birthYear": "2012",
-              "points": 96
+              "points": 95
             },
             {
               "rank": 24,
@@ -5139,7 +5139,7 @@ export const latestResults: ResultsData = {
               "name": "陈梓萌",
               "team": "King Pro Team",
               "birthYear": "2012",
-              "points": 92
+              "points": 91
             },
             {
               "rank": 25,
@@ -5147,7 +5147,7 @@ export const latestResults: ResultsData = {
               "name": "张涵舒",
               "team": "重庆埃尔派体育文化传播有限公司",
               "birthYear": "2010",
-              "points": 88
+              "points": 87
             },
             {
               "rank": 26,
@@ -5155,7 +5155,7 @@ export const latestResults: ResultsData = {
               "name": "焦禹侨",
               "team": "北京虎村竞技体育有限公司",
               "birthYear": "2012",
-              "points": 84
+              "points": 83
             },
             {
               "rank": 27,
@@ -5163,7 +5163,7 @@ export const latestResults: ResultsData = {
               "name": "朴恩裕",
               "team": "延吉雪范",
               "birthYear": "2011",
-              "points": 80
+              "points": 79
             },
             {
               "rank": 28,
@@ -5171,7 +5171,7 @@ export const latestResults: ResultsData = {
               "name": "刘彦熠",
               "team": "上海市静安区滑雪协会",
               "birthYear": "2013",
-              "points": 76
+              "points": 75
             }
           ]
         },
@@ -6278,7 +6278,7 @@ export const latestResults: ResultsData = {
               "run1": "00:30.62",
               "run2": "00:32.01",
               "time": "01:02.63",
-              "points": 212
+              "points": 226
             },
             {
               "rank": 9,
@@ -6545,7 +6545,7 @@ export const latestResults: ResultsData = {
               "run1": "00:27.58",
               "run2": "00:27.39",
               "time": "00:54.97",
-              "points": 176
+              "points": 187
             },
             {
               "rank": 12,
