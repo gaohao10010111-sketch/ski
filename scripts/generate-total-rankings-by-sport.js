@@ -268,11 +268,14 @@ function generateTotalRankingsBySport() {
         )
         .sort((a, b) => b.totalPoints - a.totalPoints);
 
-      const rankings = athleteStats.map((stats, index) => {
-        const currentRank = index + 1;
+      const rankings = [];
+      for (let index = 0; index < athleteStats.length; index++) {
+        const stats = athleteStats[index];
+        // 并列排名：积分相同的运动员排名相同，否则排名 = 位置 + 1
+        const currentRank = (index > 0 && stats.totalPoints === athleteStats[index - 1].totalPoints)
+          ? rankings[index - 1].rank
+          : index + 1;
         // 尝试查找上次快照中的排名
-        // 先尝试按 sportType + ageGroup + gender + athleteId 查找
-        // 先尝试带 discipline 的 key（自动基准模式），再尝试不带的（快照模式兼容）
         const snapshotKeyWithDisc = `${mainSportType}-${stats.discipline}-${stats.ageGroup}-${stats.gender}-${stats.athleteId}`;
         const snapshotKey = `${mainSportType}-${stats.ageGroup}-${stats.gender}-${stats.athleteId}`;
         const lastRank = lastSnapshotRankMap.get(snapshotKeyWithDisc) ?? lastSnapshotRankMap.get(snapshotKey);
@@ -284,7 +287,7 @@ function generateTotalRankingsBySport() {
           rankChange = lastRank - currentRank;
         }
 
-        return {
+        rankings.push({
           rank: currentRank,
           athleteId: stats.athleteId,
           athleteName: stats.athleteName,
@@ -295,16 +298,15 @@ function generateTotalRankingsBySport() {
           avgPoints: stats.competitionCount > 0 ? Math.round(stats.totalPoints / stats.competitionCount * 100) / 100 : 0,
           ageGroup: stats.ageGroup,
           gender: stats.gender,
-          rankChange: rankChange,  // 排名变化：正数=上升，负数=下降，0=持平，null=新进榜
-          // 积分构成明细
+          rankChange: rankChange,
           pointsBreakdown: stats.results.map(r => ({
             competition: r.competitionName,
             location: r.location,
             points: r.points,
             rank: r.rank
           }))
-        };
-      });
+        });
+      }
 
       // 小子项名称：如 "回转 U11 男子组"
       const subEventName = `${subEvent.discipline} ${subEvent.ageGroup} ${subEvent.gender}`;
@@ -344,11 +346,17 @@ function generateTotalRankingsBySport() {
     totalResults: results.length
   };
 
-  // 合并所有项目的排名（兼容旧格式）
-  const allRankings = sportRankingsList
+  // 合并所有项目的排名（兼容旧格式），支持并列排名
+  const allRankingsSorted = sportRankingsList
     .flatMap(sr => sr.subEventRankings.flatMap(se => se.rankings))
-    .sort((a, b) => b.totalPoints - a.totalPoints)
-    .map((r, i) => ({ ...r, rank: i + 1 }));
+    .sort((a, b) => b.totalPoints - a.totalPoints);
+  const allRankings = [];
+  for (let i = 0; i < allRankingsSorted.length; i++) {
+    const tiedRank = (i > 0 && allRankingsSorted[i].totalPoints === allRankingsSorted[i - 1].totalPoints)
+      ? allRankings[i - 1].rank
+      : i + 1;
+    allRankings.push({ ...allRankingsSorted[i], rank: tiedRank });
+  }
 
   // 构建完整数据
   const data = {
