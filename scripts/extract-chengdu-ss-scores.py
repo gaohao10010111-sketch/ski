@@ -28,7 +28,7 @@ def parse_age_group_gender(text):
     m = re.search(r'(U\d+)(女子|男子)组', text)
     if m:
         age = m.group(1)
-        # Map U11 -> U12 (the DB uses U12 for the youngest group)
+        # PDF may contain U11, map to U11 (correct age group)
         # Actually, check what the DB uses...
         gender = "女" if "女" in m.group(2) else "男"
         return f"{age} {m.group(2)}组", gender

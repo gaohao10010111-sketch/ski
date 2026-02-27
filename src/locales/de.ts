@@ -174,7 +174,7 @@ export const de: PartialTranslationKeys = {
       },
       slide3: {
         title: 'U-Serie Jugendentwicklungsprogramm',
-        subtitle: 'U12/U15/U18 Talentfördersystem'
+        subtitle: 'U11/U15/U18 Talentfördersystem'
       }
     },
 
@@ -222,7 +222,7 @@ export const de: PartialTranslationKeys = {
       },
       slide3: {
         title: 'U-Serie Jugendtrainingsprogramm',
-        subtitle: 'U12/U15/U18 dreistufiges Kultivierungssystem'
+        subtitle: 'U11/U15/U18 dreistufiges Kultivierungssystem'
       }
     },
 
@@ -974,7 +974,7 @@ export const de: PartialTranslationKeys = {
       description1: 'Das Chinesische Ski-Punktesystem ist eine umfassende Wettkampf-Management-Plattform basierend auf den Standards des Wintersport-Zentrums. Es deckt alle Disziplinen des Alpinen Skilaufs, Freestyle-Skifahrens und Snowboardens ab und bietet maßgebliche und präzise Datenverwaltung und Punkteberechnung für chinesische Skiwettkämpfe.',
       description2: 'Wir setzen uns für die digitale und standardisierte Entwicklung des chinesischen Skisports ein und bieten moderne Datenverwaltung, Punkteberechnung und Ergebnisstatistik-Tools für Athleten, Trainer, Veranstalter und Wettkampfrichter.',
       multiTierPoints: { title: 'Mehrstufiges Punktesystem', description: '360/240/120 Punktestufen' },
-      uSeries: { title: 'U-Serie Events', description: 'U12/U15/U18 vollständig' },
+      uSeries: { title: 'U-Serie Events', description: 'U11/U15/U18 vollständig' },
       officialCertification: { title: 'Offizielle Zertifizierung', description: 'Wintersport-Zentrum Standards' },
       allDisciplines: { title: 'Alle Disziplinen', description: 'Alpin·Freestyle·Snowboard' }
     },
@@ -983,7 +983,7 @@ export const de: PartialTranslationKeys = {
       feature1: 'China Alpin-Ski Punkteregelwerk',
       feature2: 'Freestyle/Snowboard 360/240/120 Punktestufensystem',
       feature3: 'Big Air, Slopestyle, Parallel Events vollständig abgedeckt',
-      feature4: 'U12/U15/U18 Jugendserien-Eventmanagement',
+      feature4: 'U11/U15/U18 Jugendserien-Eventmanagement',
       feature5: 'Vom Wintersport-Zentrum zertifiziert',
       feature6: 'Multi-Disziplin Punkteranglisten und Datenvisualisierung'
     }
@@ -1084,7 +1084,7 @@ export const de: PartialTranslationKeys = {
           id: 'u-series',
           icon: 'target',
           title: 'U-Serie Management',
-          description: 'Jugend-Altersgruppen U12, U15 und U18'
+          description: 'Jugend-Altersgruppen U11, U15 und U18'
         },
         {
           id: 'continuation',

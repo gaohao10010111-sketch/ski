@@ -410,7 +410,7 @@ export const PointsCalculatorUtils = {
    */
   getAgeGroupDescription(ageGroup: AgeGroup): string {
     const descriptions = {
-      [AgeGroup.U12]: 'U12组（8-11岁）',
+      [AgeGroup.U11]: 'U11组（8-11岁）',
       [AgeGroup.U15]: 'U15组（12-14岁）',
       [AgeGroup.U18]: 'U18组（15-17岁）',
       [AgeGroup.ADULT]: '大众组（18岁以上）'
@@ -436,7 +436,7 @@ export const PointsCalculatorUtils = {
     }
 
     switch (ageGroup) {
-      case AgeGroup.U12:
+      case AgeGroup.U11:
         return age >= 8 && age <= 11;
       case AgeGroup.U15:
         return age >= 12 && age <= 14;

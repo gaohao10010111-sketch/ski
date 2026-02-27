@@ -173,7 +173,7 @@ export const es: PartialTranslationKeys = {
       },
       slide3: {
         title: 'Programa de Desarrollo Juvenil Serie U',
-        subtitle: 'Sistema de desarrollo de talentos U12/U15/U18'
+        subtitle: 'Sistema de desarrollo de talentos U11/U15/U18'
       }
     },
 
@@ -219,7 +219,7 @@ export const es: PartialTranslationKeys = {
       },
       slide3: {
         title: 'Programa de Desarrollo Juvenil Serie U',
-        subtitle: 'Sistema de desarrollo de tres niveles U12/U15/U18'
+        subtitle: 'Sistema de desarrollo de tres niveles U11/U15/U18'
       }
     },
 
@@ -971,7 +971,7 @@ export const es: PartialTranslationKeys = {
       description1: 'El Sistema de Puntos de Esquí de China es una plataforma integral de gestión de competiciones basada en los estándares del Centro de Deportes de Invierno de la Administración General del Deporte. Cubre todas las disciplinas de esquí alpino, esquí estilo libre y snowboard, utilizando algoritmos de cálculo de puntos multinivel conformes a los estándares de China, proporcionando servicios autorizados y precisos de gestión de datos y cálculo de puntos para las competiciones de esquí chinas.',
       description2: 'Nos comprometemos a promover el desarrollo digital y estandarizado del esquí chino, proporcionando herramientas modernas de gestión de datos, cálculo de puntos y estadísticas de resultados para atletas, entrenadores, organizadores de eventos y árbitros, abarcando de manera integral big air, slopestyle, eventos paralelos y otros deportes de nieve, mejorando el nivel organizativo y competitivo del esquí chino.',
       multiTierPoints: { title: 'Sistema de Puntos Multinivel', description: 'Niveles de Puntos 360/240/120' },
-      uSeries: { title: 'Eventos Serie U', description: 'Cobertura Completa U12/U15/U18' },
+      uSeries: { title: 'Eventos Serie U', description: 'Cobertura Completa U11/U15/U18' },
       officialCertification: { title: 'Certificación Oficial', description: 'Estándares del Centro de Deportes de Invierno' },
       allDisciplines: { title: 'Todas las Disciplinas', description: 'Alpino·Freestyle·Snowboard' }
     },
@@ -980,7 +980,7 @@ export const es: PartialTranslationKeys = {
       feature1: 'Estándar de Reglas de Puntos de Esquí Alpino de China',
       feature2: 'Sistema de Niveles de Puntos 360/240/120 para Freestyle/Snowboard',
       feature3: 'Cobertura Completa de Big Air, Slopestyle y Eventos Paralelos',
-      feature4: 'Gestión de Eventos de la Serie Juvenil U12/U15/U18',
+      feature4: 'Gestión de Eventos de la Serie Juvenil U11/U15/U18',
       feature5: 'Certificado por el Centro de Deportes de Invierno de la Administración General del Deporte',
       feature6: 'Clasificaciones de Puntos Multidisciplina y Visualización de Datos'
     }

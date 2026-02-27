@@ -1047,7 +1047,7 @@ export default function HomePage() {
                   </div>
                   <div className="border-l-4 border-green-500 pl-4">
                     <div className="font-semibold text-ski-navy">{t.home?.about?.uSeries?.title || 'U-Series Events'}</div>
-                    <div className="text-sm">{t.home?.about?.uSeries?.description || 'U12/U15/U18 coverage'}</div>
+                    <div className="text-sm">{t.home?.about?.uSeries?.description || 'U11/U15/U18 coverage'}</div>
                   </div>
                   <div className="border-l-4 border-purple-500 pl-4">
                     <div className="font-semibold text-ski-navy">{t.home?.about?.officialCertification?.title || 'Official Certification'}</div>
@@ -1079,7 +1079,7 @@ export default function HomePage() {
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-300 mr-3 flex-shrink-0" />
-                    <span>{t.home?.systemFeatures?.feature4 || 'Youth series management for U12/U15/U18'}</span>
+                    <span>{t.home?.systemFeatures?.feature4 || 'Youth series management for U11/U15/U18'}</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-300 mr-3 flex-shrink-0" />

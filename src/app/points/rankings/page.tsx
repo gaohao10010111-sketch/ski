@@ -1149,7 +1149,7 @@ export default function PointsRankingsPage() {
                                 }`}
                               >
                                 <span className={`inline-block w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full mr-1 sm:mr-2 ${
-                                  group.ageGroup === 'U12' ? 'bg-green-400' :
+                                  group.ageGroup === 'U11' ? 'bg-green-400' :
                                   group.ageGroup === 'U15' ? 'bg-yellow-400' : 'bg-purple-400'
                                 }`} />
                                 {group.discipline} {group.ageGroup} {group.gender.replace('子组', '')}

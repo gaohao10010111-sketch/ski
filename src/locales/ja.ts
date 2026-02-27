@@ -169,7 +169,7 @@ export const ja: PartialTranslationKeys = {
       },
       slide3: {
         title: 'Uシリーズユース育成プログラム',
-        subtitle: 'U12/U15/U18人材育成システム'
+        subtitle: 'U11/U15/U18人材育成システム'
       }
     },
 
@@ -212,7 +212,7 @@ export const ja: PartialTranslationKeys = {
       },
       slide3: {
         title: 'Uシリーズユース育成プログラム',
-        subtitle: 'U12/U15/U18三段階育成システム'
+        subtitle: 'U11/U15/U18三段階育成システム'
       }
     },
 
@@ -895,7 +895,7 @@ export const ja: PartialTranslationKeys = {
       description1: 'China Skiing Points System is a comprehensive competition management platform built based on the standards of the Winter Sports Management Center of the General Administration of Sport. Covering all disciplines of alpine skiing, freestyle skiing, and snowboarding, using multi-tier points calculation algorithms compliant with China standards, providing authoritative and accurate data management and points calculation services for Chinese skiing competitions.',
       description2: 'We are committed to promoting the digital and standardized development of Chinese skiing sports, providing modern data management, points calculation, and results statistics tools for athletes, coaches, event organizers, and competition referees, comprehensively covering big air, slopestyle, parallel events and other snow sports, improving the organizational and competitive level of Chinese skiing.',
       multiTierPoints: { title: 'Multi-tier Points System', description: '360/240/120 Points Tiers' },
-      uSeries: { title: 'U-Series Events', description: 'U12/U15/U18 Full Coverage' },
+      uSeries: { title: 'U-Series Events', description: 'U11/U15/U18 Full Coverage' },
       officialCertification: { title: 'Official Certification', description: 'Winter Sports Center Standards' },
       allDisciplines: { title: 'All Disciplines Support', description: 'Alpine·Freestyle·Snowboard' }
     },
@@ -904,7 +904,7 @@ export const ja: PartialTranslationKeys = {
       feature1: '中国アルペンスキーポイントルール標準',
       feature2: 'フリースタイル/スノーボード 360/240/120 ポイント階層システム',
       feature3: 'ビッグエア、スロープスタイル、パラレル種目を網羅',
-      feature4: 'U12/U15/U18 ユースシリーズイベント管理',
+      feature4: 'U11/U15/U18 ユースシリーズイベント管理',
       feature5: 'ウィンタースポーツセンター認証',
       feature6: '多種目ポイントランキングとデータ可視化'
     }
@@ -1005,7 +1005,7 @@ export const ja: PartialTranslationKeys = {
           id: 'u-series',
           icon: 'target',
           title: 'U系列管理',
-          description: 'U12、U15、U18年齢別グループ'
+          description: 'U11、U15、U18年齢別グループ'
         },
         {
           id: 'continuation',

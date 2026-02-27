@@ -169,7 +169,7 @@ export const fi: PartialTranslationKeys = {
       },
       slide3: {
         title: 'U-sarjan Nuorten Kehitysohjelma',
-        subtitle: 'U12/U15/U18 lahjakkuuksien kehitysjärjestelmä'
+        subtitle: 'U11/U15/U18 lahjakkuuksien kehitysjärjestelmä'
       }
     },
 
@@ -212,7 +212,7 @@ export const fi: PartialTranslationKeys = {
       },
       slide3: {
         title: 'U-sarjan Nuorten Kehitysohjelma',
-        subtitle: 'U12/U15/U18 kolmiportainen kehitysjärjestelmä'
+        subtitle: 'U11/U15/U18 kolmiportainen kehitysjärjestelmä'
       }
     },
 
@@ -895,7 +895,7 @@ export const fi: PartialTranslationKeys = {
       description1: 'Kiinalainen Hiihtopistejärjestelmä on kattava kilpailunhallinta-alusta, joka on rakennettu Urheiluministeriön Talviurheilukeskuksen standardien mukaan. Se kattaa kaikki alppihiihdon, freeskin ja lumilautailun lajit, käyttää monitasoisia pistelaskenta-algoritmeja Kiinan standardien mukaisesti ja tarjoaa auktoritatiivisia ja tarkkoja datapalveluita kiinalaisille hiihtokilpailuille.',
       description2: 'Olemme sitoutuneet edistämään kiinalaisen hiihtourheilun digitaalista ja standardoitua kehitystä, tarjoamalla moderneja työkaluja tiedonhallintaan, pistelaskentaan ja tulosstatistiikkaan urheilijoille, valmentajille, järjestäjille ja tuomareille, kattaen laajasti big air, slopestyle, rinnakkais- ja muut talvilajit, parantaen kiinalaisen hiihtourheilun organisatorista ja kilpailullista tasoa.',
       multiTierPoints: { title: 'Monitasoinen Pistejärjestelmä', description: 'Pistetasot 360/240/120' },
-      uSeries: { title: 'U-sarja Kilpailut', description: 'Täysi kattavuus U12/U15/U18' },
+      uSeries: { title: 'U-sarja Kilpailut', description: 'Täysi kattavuus U11/U15/U18' },
       officialCertification: { title: 'Virallinen Sertifiointi', description: 'Talviurheilukeskuksen standardit' },
       allDisciplines: { title: 'Kaikki Lajit', description: 'Alppihiihto·Freeski·Lumilautailu' }
     },
@@ -904,7 +904,7 @@ export const fi: PartialTranslationKeys = {
       feature1: 'Kiinan alppihiihtopisteiden sääntöstandardi',
       feature2: 'Freeski/Lumilautailu 360/240/120 pistetasojärjestelmä',
       feature3: 'Täysi kattavuus Big Air, Slopestyle ja rinnakkaislajit',
-      feature4: 'U12/U15/U18 juniorisarjojen hallinta',
+      feature4: 'U11/U15/U18 juniorisarjojen hallinta',
       feature5: 'Urheiluministeriön Talviurheilukeskuksen sertifioima',
       feature6: 'Monilajiset pistesijoitukset ja datavisualisointi'
     }

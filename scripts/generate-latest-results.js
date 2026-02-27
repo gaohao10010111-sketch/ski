@@ -77,7 +77,7 @@ function generateLatestResults() {
     }
 
     // Sort events: by discipline, then ageGroup order, then gender order
-    const ageGroupOrder = ['U11', 'U12', 'U15', 'U18'];
+    const ageGroupOrder = ['U11', 'U15', 'U18'];
     const genderOrder = ['女子组', '男子组'];
 
     const events = Array.from(eventMap.values()).sort((a, b) => {

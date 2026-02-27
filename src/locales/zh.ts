@@ -206,7 +206,7 @@ export const zh = {
       },
       slide3: {
         title: 'U系列青少年比赛',
-        subtitle: 'U12/U15/U18年龄组分组竞赛'
+        subtitle: 'U11/U15/U18年龄组分组竞赛'
       }
     },
 
@@ -284,7 +284,7 @@ export const zh = {
       },
       slide3: {
         title: 'U系列青少年比赛',
-        subtitle: 'U12/U15/U18年龄组分组竞赛'
+        subtitle: 'U11/U15/U18年龄组分组竞赛'
       }
     },
 
@@ -362,7 +362,7 @@ export const zh = {
       },
       slide3: {
         title: 'U系列青少年比赛',
-        subtitle: 'U12/U15/U18年龄组分组竞赛'
+        subtitle: 'U11/U15/U18年龄组分组竞赛'
       }
     },
 
@@ -518,7 +518,7 @@ export const zh = {
           id: 'u-series',
           icon: 'target',
           title: 'U系列管理',
-          description: 'U12/U15/U18青少年分组'
+          description: 'U11/U15/U18青少年分组'
         },
         {
           id: 'continuation',
@@ -1245,7 +1245,7 @@ export const zh = {
       description1: '中国滑雪青少年积分排名官方平台是基于官方标准打造的综合性竞赛管理平台。涵盖高山滑雪、自由式滑雪、单板滑雪全项目，采用符合中国标准的多档积分计算算法，为中国滑雪竞赛提供权威、准确的数据管理和积分计算服务。',
       description2: '根据国家体育总局冬季运动管理中心官网公示，北京华体冰雪产业发展有限公司正式成为2025-2028三个赛季全国青少年U系列比赛的官方承办单位。经华体冰雪授权，本平台为全国滑雪青少年U系列赛事积分排名的指定官方发布平台。',
       multiTierPoints: { title: '多档积分体系', description: '360/240/120分档标准' },
-      uSeries: { title: 'U系列赛事', description: 'U12/U15/U18全覆盖' },
+      uSeries: { title: 'U系列赛事', description: 'U11/U15/U18全覆盖' },
       officialCertification: { title: '官方授权', description: '华体冰雪指定平台' },
       allDisciplines: { title: '全项目支持', description: '高山·自由式·单板滑雪' }
     },
@@ -1254,7 +1254,7 @@ export const zh = {
       feature1: '高山滑雪中国积分规则标准',
       feature2: '自由式/单板滑雪360/240/120分档体系',
       feature3: '大跳台、坡面障碍技巧、平行项目全覆盖',
-      feature4: 'U12/U15/U18青少年系列赛事管理',
+      feature4: 'U11/U15/U18青少年系列赛事管理',
       feature5: '官方标准认证',
       feature6: '多项目积分排行榜和数据可视化'
     }

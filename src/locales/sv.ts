@@ -169,7 +169,7 @@ export const sv: PartialTranslationKeys = {
       },
       slide3: {
         title: 'U-serien Ungdomsutvecklingsprogram',
-        subtitle: 'U12/U15/U18 talantutvecklingssystem'
+        subtitle: 'U11/U15/U18 talantutvecklingssystem'
       }
     },
 
@@ -212,7 +212,7 @@ export const sv: PartialTranslationKeys = {
       },
       slide3: {
         title: 'U-serien Ungdomsutvecklingsprogram',
-        subtitle: 'U12/U15/U18 trestegs utvecklingssystem'
+        subtitle: 'U11/U15/U18 trestegs utvecklingssystem'
       }
     },
 
@@ -895,7 +895,7 @@ export const sv: PartialTranslationKeys = {
       description1: 'Kinesiska Skidpoäng System är en omfattande tävlingshanteringsplattform byggd enligt standarderna från Vintersportcentret vid Idrottsministeriet. Den täcker alla discipliner inom alpin skidåkning, freeski och snowboard, och använder poängberäkningsalgoritmer på flera nivåer i enlighet med kinesiska standarder, och tillhandahåller auktoritativa och exakta datatjänster för kinesiska skidtävlingar.',
       description2: 'Vi är engagerade i att främja den digitala och standardiserade utvecklingen av kinesisk skidsport, och erbjuder moderna verktyg för datahantering, poängberäkning och resultatstatistik för atleter, tränare, arrangörer och domare, med fullständig täckning av big air, slopestyle, parallella discipliner och andra snösporter, för att höja den organisatoriska och tävlingsmässiga nivån inom kinesisk skidsport.',
       multiTierPoints: { title: 'Flernivå Poängsystem', description: 'Poängnivåer 360/240/120' },
-      uSeries: { title: 'U-Serie Tävlingar', description: 'Full täckning U12/U15/U18' },
+      uSeries: { title: 'U-Serie Tävlingar', description: 'Full täckning U11/U15/U18' },
       officialCertification: { title: 'Officiell Certifiering', description: 'Vintersportcentrets standarder' },
       allDisciplines: { title: 'Alla Discipliner', description: 'Alpin·Freeski·Snowboard' }
     },
@@ -904,7 +904,7 @@ export const sv: PartialTranslationKeys = {
       feature1: 'Kinesisk standard för alpina skidpoäng',
       feature2: 'Freeski/Snowboard 360/240/120 poängnivåsystem',
       feature3: 'Full täckning av Big Air, Slopestyle och parallella discipliner',
-      feature4: 'Hantering av U12/U15/U18 ungdomsserier',
+      feature4: 'Hantering av U11/U15/U18 ungdomsserier',
       feature5: 'Certifierat av Idrottsministeriets vintersportcenter',
       feature6: 'Tvärvetenskapliga poängplaceringar och datavisualisering'
     }

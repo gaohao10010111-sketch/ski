@@ -75,7 +75,7 @@ const commonFeatures = [
   {
     icon: Users,
     title: 'U系列年龄分组',
-    description: 'U12/U15/U18自动分组，独立排名'
+    description: 'U11/U15/U18自动分组，独立排名'
   },
   {
     icon: FileText,

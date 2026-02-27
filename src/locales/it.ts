@@ -169,7 +169,7 @@ export const it: PartialTranslationKeys = {
       },
       slide3: {
         title: 'Programma di Sviluppo Giovanile Serie U',
-        subtitle: 'Sistema di coltivazione talenti U12/U15/U18'
+        subtitle: 'Sistema di coltivazione talenti U11/U15/U18'
       }
     },
 
@@ -212,7 +212,7 @@ export const it: PartialTranslationKeys = {
       },
       slide3: {
         title: 'Programma di Formazione Giovanile Serie U',
-        subtitle: 'Sistema di coltivazione a tre livelli U12/U15/U18'
+        subtitle: 'Sistema di coltivazione a tre livelli U11/U15/U18'
       }
     },
 
@@ -895,7 +895,7 @@ export const it: PartialTranslationKeys = {
       description1: 'China Skiing Points System is a comprehensive competition management platform built based on the standards of the Winter Sports Management Center of the General Administration of Sport. Covering all disciplines of alpine skiing, freestyle skiing, and snowboarding, using multi-tier points calculation algorithms compliant with China standards, providing authoritative and accurate data management and points calculation services for Chinese skiing competitions.',
       description2: 'We are committed to promoting the digital and standardized development of Chinese skiing sports, providing modern data management, points calculation, and results statistics tools for athletes, coaches, event organizers, and competition referees, comprehensively covering big air, slopestyle, parallel events and other snow sports, improving the organizational and competitive level of Chinese skiing.',
       multiTierPoints: { title: 'Multi-tier Points System', description: '360/240/120 Points Tiers' },
-      uSeries: { title: 'U-Series Events', description: 'U12/U15/U18 Full Coverage' },
+      uSeries: { title: 'U-Series Events', description: 'U11/U15/U18 Full Coverage' },
       officialCertification: { title: 'Official Certification', description: 'Winter Sports Center Standards' },
       allDisciplines: { title: 'All Disciplines Support', description: 'Alpine·Freestyle·Snowboard' }
     },
@@ -904,7 +904,7 @@ export const it: PartialTranslationKeys = {
       feature1: 'Standard regole punti sci alpino cinese',
       feature2: 'Sistema livelli punti Freestyle/Snowboard 360/240/120',
       feature3: 'Big Air, Slopestyle, Eventi Paralleli coperti',
-      feature4: 'Gestione eventi Serie Giovanile U12/U15/U18',
+      feature4: 'Gestione eventi Serie Giovanile U11/U15/U18',
       feature5: 'Certificato dal Centro Sport Invernali',
       feature6: 'Classifiche multi-disciplina e visualizzazione dati'
     }
@@ -1005,7 +1005,7 @@ export const it: PartialTranslationKeys = {
           id: 'u-series',
           icon: 'target',
           title: 'Gestione U-Serie',
-          description: 'Gruppi età giovanili U12, U15 e U18'
+          description: 'Gruppi età giovanili U11, U15 e U18'
         },
         {
           id: 'continuation',

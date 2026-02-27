@@ -27,7 +27,7 @@ SPORT_TYPE_NAMES = {
     'freestyle-slopestyle-bigair': '自由式坡面障碍技巧/大跳台',
 }
 SPORT_ORDER = ['alpine', 'snowboard-slopestyle-bigair', 'snowboard-parallel', 'freestyle-slopestyle-bigair']
-AGE_ORDER = ['U11', 'U12', 'U15', 'U18']
+AGE_ORDER = ['U11', 'U15', 'U18']
 GENDER_ORDER = ['男子组', '女子组']
 
 

@@ -153,7 +153,7 @@ const sportTypeOrder = [
 ];
 
 // 年龄组排序顺序
-const ageGroupOrder = ['U11', 'U12', 'U15', 'U18'];
+const ageGroupOrder = ['U11', 'U15', 'U18'];
 
 // 性别排序顺序
 const genderOrder = ['男子组', '女子组'];

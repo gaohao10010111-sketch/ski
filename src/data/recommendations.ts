@@ -321,7 +321,7 @@ export const recommendedClubs: Club[] = [
       '冬奥会人才输送基地'
     ],
     coaches: 25,
-    ageGroups: ['U12', 'U15', 'U18', '成年'],
+    ageGroups: ['U11', 'U15', 'U18', '成年'],
     fee: '年费12000-25000元',
     description: '北京市青少年滑雪培训机构，曾向国家队输送多名运动员。'
   },
@@ -357,7 +357,7 @@ export const recommendedClubs: Club[] = [
       '冬奥遗产推广单位'
     ],
     coaches: 30,
-    ageGroups: ['U12', 'U15', 'U18', '成年', '亲子'],
+    ageGroups: ['U11', 'U15', 'U18', '成年', '亲子'],
     fee: '年费5000-12000元',
     description: '崇礼地区规模最大的滑雪俱乐部，充分利用冬奥场馆资源，提供专业训练和休闲滑雪服务。'
   },
@@ -393,7 +393,7 @@ export const recommendedClubs: Club[] = [
       '中国滑雪人才摇篮'
     ],
     coaches: 35,
-    ageGroups: ['U12', 'U15', 'U18'],
+    ageGroups: ['U11', 'U15', 'U18'],
     fee: '义务教育免费 / 专业队择优录取',
     description: '中国历史最悠久的滑雪运动学校，被誉为"世界冠军的摇篮"。采用体教融合模式，文化学习与专业训练并重。'
   },
@@ -411,7 +411,7 @@ export const recommendedClubs: Club[] = [
       '亲子滑雪推广先锋'
     ],
     coaches: 15,
-    ageGroups: ['儿童', 'U12', 'U15', '成年', '亲子'],
+    ageGroups: ['儿童', 'U11', 'U15', '成年', '亲子'],
     fee: '年费3000-8000元',
     description: '华东地区规模最大的滑雪爱好者俱乐部，组织各类滑雪活动和冬令营。特别适合南方家庭的滑雪启蒙。'
   }

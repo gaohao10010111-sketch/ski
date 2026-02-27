@@ -21,7 +21,7 @@ export const createAthleteSchema = z.object({
   club: z.string().optional().nullable(),
   fisCode: z.string().optional().nullable(),
   sportType: z.enum(['ALPINE_SKI', 'SNOWBOARD_SLOPESTYLE_BIGAIR', 'SNOWBOARD_PARALLEL', 'FREESTYLE_SLOPESTYLE_BIGAIR']),
-  uSeriesGroup: z.enum(['U12', 'U15', 'U18']).optional().nullable(),
+  uSeriesGroup: z.enum(['U11', 'U15', 'U18']).optional().nullable(),
 });
 
 export const updateAthleteSchema = createAthleteSchema.partial();
@@ -30,7 +30,7 @@ export const athleteQuerySchema = paginationSchema.extend({
   sportType: z.enum(['ALPINE_SKI', 'SNOWBOARD_SLOPESTYLE_BIGAIR', 'SNOWBOARD_PARALLEL', 'FREESTYLE_SLOPESTYLE_BIGAIR']).optional(),
   gender: z.enum(['MALE', 'FEMALE']).optional(),
   province: z.string().optional(),
-  uSeriesGroup: z.enum(['U12', 'U15', 'U18']).optional(),
+  uSeriesGroup: z.enum(['U11', 'U15', 'U18']).optional(),
   status: z.enum(['ACTIVE', 'INJURED', 'RETIRED']).optional(),
   search: z.string().optional(),
 });
@@ -94,7 +94,7 @@ export const calculatePointsSchema = z.object({
 export const rankingsQuerySchema = paginationSchema.extend({
   sportType: z.enum(['ALPINE_SKI', 'SNOWBOARD_SLOPESTYLE_BIGAIR', 'SNOWBOARD_PARALLEL', 'FREESTYLE_SLOPESTYLE_BIGAIR']).optional(),
   gender: z.enum(['MALE', 'FEMALE']).optional(),
-  uSeriesGroup: z.enum(['U12', 'U15', 'U18']).optional(),
+  uSeriesGroup: z.enum(['U11', 'U15', 'U18']).optional(),
   season: z.string().regex(/^\d{4}-\d{4}$/, '赛季格式应为 YYYY-YYYY').optional(),
   discipline: z.string().optional(),
 });

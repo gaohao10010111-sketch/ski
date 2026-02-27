@@ -36,7 +36,7 @@ function detectCompetitionType(text) {
 // 检测年龄组
 function detectAgeGroup(text) {
   if (text.includes('U11') || text.includes('U-11')) return 'U11'
-  if (text.includes('U12') || text.includes('U-12')) return 'U12'
+  if (text.includes('U11') || text.includes('U-12')) return 'U11'
   if (text.includes('U15') || text.includes('U-15')) return 'U15'
   if (text.includes('U18') || text.includes('U-18')) return 'U18'
   return '成人'

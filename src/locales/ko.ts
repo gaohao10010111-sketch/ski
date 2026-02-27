@@ -169,7 +169,7 @@ export const ko: PartialTranslationKeys = {
       },
       slide3: {
         title: 'U 시리즈 청소년 육성 프로그램',
-        subtitle: 'U12/U15/U18 인재 육성 시스템'
+        subtitle: 'U11/U15/U18 인재 육성 시스템'
       }
     },
 
@@ -212,7 +212,7 @@ export const ko: PartialTranslationKeys = {
       },
       slide3: {
         title: 'U 시리즈 청소년 육성 프로그램',
-        subtitle: 'U12/U15/U18 3단계 육성 시스템'
+        subtitle: 'U11/U15/U18 3단계 육성 시스템'
       }
     },
 
@@ -895,7 +895,7 @@ export const ko: PartialTranslationKeys = {
       description1: 'China Skiing Points System is a comprehensive competition management platform built based on the standards of the Winter Sports Management Center of the General Administration of Sport. Covering all disciplines of alpine skiing, freestyle skiing, and snowboarding, using multi-tier points calculation algorithms compliant with China standards, providing authoritative and accurate data management and points calculation services for Chinese skiing competitions.',
       description2: 'We are committed to promoting the digital and standardized development of Chinese skiing sports, providing modern data management, points calculation, and results statistics tools for athletes, coaches, event organizers, and competition referees, comprehensively covering big air, slopestyle, parallel events and other snow sports, improving the organizational and competitive level of Chinese skiing.',
       multiTierPoints: { title: 'Multi-tier Points System', description: '360/240/120 Points Tiers' },
-      uSeries: { title: 'U-Series Events', description: 'U12/U15/U18 Full Coverage' },
+      uSeries: { title: 'U-Series Events', description: 'U11/U15/U18 Full Coverage' },
       officialCertification: { title: 'Official Certification', description: 'Winter Sports Center Standards' },
       allDisciplines: { title: 'All Disciplines Support', description: 'Alpine·Freestyle·Snowboard' }
     },
@@ -904,7 +904,7 @@ export const ko: PartialTranslationKeys = {
       feature1: '중국 알파인 스키 포인트 규칙 표준',
       feature2: '프리스타일/스노보드 360/240/120 포인트 등급 시스템',
       feature3: '빅에어, 슬로프스타일, 패러렐 종목 완전 지원',
-      feature4: 'U12/U15/U18 유스 시리즈 이벤트 관리',
+      feature4: 'U11/U15/U18 유스 시리즈 이벤트 관리',
       feature5: '동계스포츠센터 인증',
       feature6: '다종목 포인트 순위 및 데이터 시각화'
     }
@@ -1005,7 +1005,7 @@ export const ko: PartialTranslationKeys = {
           id: 'u-series',
           icon: 'target',
           title: 'U시리즈 관리',
-          description: 'U12, U15, U18 연령대별 그룹'
+          description: 'U11, U15, U18 연령대별 그룹'
         },
         {
           id: 'continuation',

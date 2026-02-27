@@ -169,7 +169,7 @@ export const no: PartialTranslationKeys = {
       },
       slide3: {
         title: 'U-Serie Ungdomsutviklingsprogram',
-        subtitle: 'U12/U15/U18 talentkultiveringsssystem'
+        subtitle: 'U11/U15/U18 talentkultiveringsssystem'
       }
     },
 
@@ -212,7 +212,7 @@ export const no: PartialTranslationKeys = {
       },
       slide3: {
         title: 'U-Serie Ungdomstreningsprogram',
-        subtitle: 'U12/U15/U18 tre-trinns kultiveringsssystem'
+        subtitle: 'U11/U15/U18 tre-trinns kultiveringsssystem'
       }
     },
 
@@ -895,7 +895,7 @@ export const no: PartialTranslationKeys = {
       description1: 'Kinesisk Skipoeng System er en omfattende konkurranseforvaltningsplattform bygget etter standardene til Vintersportsenteret i Idrettsdepartementet. Den dekker alle disipliner innen alpint, freeski og snowboard, og bruker flernivå poengberegningsalgoritmer i samsvar med kinesiske standarder, og tilbyr autoritative og nøyaktige datatjenester for kinesiske skikonkurranser.',
       description2: 'Vi er forpliktet til å fremme den digitale og standardiserte utviklingen av kinesisk skisport, og tilbyr moderne verktøy for dataadministrasjon, poengberegning og resultatstatistikk for utøvere, trenere, arrangører og dommere, med full dekning av big air, slopestyle, parallelle disipliner og andre snøsporter, for å heve organisasjons- og konkurransenivået i kinesisk skisport.',
       multiTierPoints: { title: 'Flernivå Poengsystem', description: 'Poengnivåer 360/240/120' },
-      uSeries: { title: 'U-Serie Arrangementer', description: 'Full dekning U12/U15/U18' },
+      uSeries: { title: 'U-Serie Arrangementer', description: 'Full dekning U11/U15/U18' },
       officialCertification: { title: 'Offisiell Sertifisering', description: 'Vintersportssenterets standarder' },
       allDisciplines: { title: 'Alle Disipliner', description: 'Alpint·Freeski·Snowboard' }
     },
@@ -904,7 +904,7 @@ export const no: PartialTranslationKeys = {
       feature1: 'Kinesisk standard for alpin skipoeng',
       feature2: 'Freeski/Snowboard 360/240/120 poengnivåsystem',
       feature3: 'Full dekning av Big Air, Slopestyle og parallelle disipliner',
-      feature4: 'Administrasjon av U12/U15/U18 ungdomsserier',
+      feature4: 'Administrasjon av U11/U15/U18 ungdomsserier',
       feature5: 'Sertifisert av Idrettsdepartementets vintersportsenter',
       feature6: 'Tverrfaglige poengrangeringer og datavisualisering'
     }

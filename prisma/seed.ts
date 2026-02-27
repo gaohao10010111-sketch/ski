@@ -42,7 +42,7 @@ async function main() {
 
     // U系列运动员
     { name: '小明', gender: Gender.MALE, birthDate: new Date('2012-06-10'), province: '北京', sportType: SportType.ALPINE_SKI, uSeriesGroup: USeriesGroup.U15, club: '北京青少年滑雪俱乐部' },
-    { name: '小红', gender: Gender.FEMALE, birthDate: new Date('2014-02-20'), province: '河北', sportType: SportType.SNOWBOARD_SLOPESTYLE_BIGAIR, uSeriesGroup: USeriesGroup.U12, club: '崇礼青少年训练营' },
+    { name: '小红', gender: Gender.FEMALE, birthDate: new Date('2014-02-20'), province: '河北', sportType: SportType.SNOWBOARD_SLOPESTYLE_BIGAIR, uSeriesGroup: USeriesGroup.U11, club: '崇礼青少年训练营' },
   ];
 
   for (const athleteData of athletes) {

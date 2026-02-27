@@ -38,7 +38,7 @@ export interface Athlete {
   birthDate: string;
   province: string;
   club?: string;
-  uSeries?: 'U12' | 'U15' | 'U18';
+  uSeries?: 'U11' | 'U15' | 'U18';
   // 四大项目积分
   points: {
     [SportType.SNOWBOARD_SLOPESTYLE_BIGAIR]?: number;
@@ -100,7 +100,7 @@ export interface PointsCalculationResult {
 // U系列年龄组验证
 export interface USeriesValidation {
   isEligible: boolean;
-  ageGroup?: 'U12' | 'U15' | 'U18';
+  ageGroup?: 'U11' | 'U15' | 'U18';
   age: number;
   cutoffDate: string;
 }
@@ -135,7 +135,7 @@ export interface Ranking {
   points: number;
   competitions: number;
   province: string;
-  uSeries?: 'U12' | 'U15' | 'U18';
+  uSeries?: 'U11' | 'U15' | 'U18';
 }
 
 // 赛季管理

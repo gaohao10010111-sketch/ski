@@ -456,7 +456,7 @@ export const mockStatistics = {
     [SportType.ALPINE_SKI]: 528
   },
   byUSeries: {
-    U12: 156,
+    U11: 156,
     U15: 234,
     U18: 298,
     成年组: 559
