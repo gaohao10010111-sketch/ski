@@ -415,13 +415,10 @@ export default function PointsRankingsPage() {
           )
         }
 
-        // 重新计算排名
+        // 保留原始排名（已含并列排名），不重新计算
         return {
           ...se,
-          rankings: rankings.map((item, index) => ({
-            ...item,
-            rank: index + 1
-          })),
+          rankings,
           total: rankings.length
         }
       }).filter(se => se.rankings.length > 0) // 过滤掉没有数据的小子项
