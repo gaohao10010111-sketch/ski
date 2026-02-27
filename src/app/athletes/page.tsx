@@ -89,24 +89,31 @@ function buildStaticAthletesList(): Athlete[] {
     }
   }
 
-  // 转换为 Athlete[] 并按积分排序
-  const athletes = Array.from(athleteMap.values())
-    .sort((a, b) => b.totalPoints - a.totalPoints)
-    .map((a, index): Athlete => ({
+  // 转换为 Athlete[] 并按积分排序，支持并列排名
+  const sorted = Array.from(athleteMap.values())
+    .sort((a, b) => b.totalPoints - a.totalPoints);
+  const athletes: Athlete[] = [];
+  for (let index = 0; index < sorted.length; index++) {
+    const a = sorted[index];
+    const rank = (index > 0 && a.totalPoints === sorted[index - 1].totalPoints)
+      ? athletes[index - 1].currentRank
+      : index + 1;
+    athletes.push({
       id: `static-${index}`,
       name: a.name,
       gender: a.gender,
       sportType: a.sportType,
       status: 'ACTIVE' as const,
       province: a.team,
-      club: a.discipline, // 使用 club 字段存储子项信息
+      club: a.discipline,
       currentPoints: a.totalPoints,
-      currentRank: index + 1,
+      currentRank: rank,
       uSeriesGroup: null,
-      birthDate: null, // 真实数据中无出生日期
+      birthDate: null,
       nationality: 'CHN',
       fisCode: '',
-    }))
+    });
+  }
 
   return athletes
 }
@@ -161,31 +168,34 @@ export default function AthletesPage() {
 
     if (localRankings.length === 0) return []
 
-    // 将本地格式转换为 Athlete 格式
-    const converted: Athlete[] = localRankings.map((item, index) => {
-      // 根据team名称推断项目类型
+    // 将本地格式转换为 Athlete 格式，支持并列排名
+    const converted: Athlete[] = [];
+    for (let index = 0; index < localRankings.length; index++) {
+      const item = localRankings[index];
       const competition = competitions[0]
-      let sportType = 'SNOWBOARD_SLOPESTYLE_BIGAIR' // 默认
+      let sportType = 'SNOWBOARD_SLOPESTYLE_BIGAIR'
       if (competition?.sportType) {
         sportType = localSportTypeMapping[competition.sportType] || 'SNOWBOARD_SLOPESTYLE_BIGAIR'
       }
-
-      return {
+      const rank = (index > 0 && item.totalPoints === localRankings[index - 1].totalPoints)
+        ? converted[index - 1].currentRank
+        : index + 1;
+      converted.push({
         id: `local-athlete-${index}`,
         name: item.name,
-        gender: 'MALE' as const, // 默认设为男性，因为本地数据可能没有性别信息
+        gender: 'MALE' as const,
         sportType,
         status: 'ACTIVE' as const,
         province: item.team,
         club: null,
         currentPoints: item.totalPoints,
-        currentRank: index + 1,
+        currentRank: rank,
         uSeriesGroup: null,
-        birthDate: null, // 真实数据中无出生日期
+        birthDate: null,
         nationality: 'CHN',
         fisCode: '',
-      }
-    })
+      });
+    }
 
     // 筛选
     let filtered = converted

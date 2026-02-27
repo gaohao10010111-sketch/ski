@@ -104,19 +104,16 @@ export default function AlpinePage() {
       });
     });
 
-    return Object.values(athleteData)
+    const sorted = Object.values(athleteData)
       .sort((a, b) => b.points - a.points)
-      .slice(0, 8)
-      .map((a, idx) => ({
-        id: idx + 1,
-        name: a.name,
-        nation: '中国',
-        discipline: a.discipline,
-        points: a.points.toString(),
-        worldRank: idx + 1,
-        age: 0,
-        wins: a.events
-      }));
+      .slice(0, 8);
+    const result: { id: number; name: string; nation: string; discipline: string; points: string; worldRank: number; age: number; wins: number }[] = [];
+    for (let idx = 0; idx < sorted.length; idx++) {
+      const a = sorted[idx];
+      const rank = (idx > 0 && a.points === sorted[idx - 1].points) ? result[idx - 1].worldRank : idx + 1;
+      result.push({ id: rank, name: a.name, nation: '中国', discipline: a.discipline, points: a.points.toString(), worldRank: rank, age: 0, wins: a.events });
+    }
+    return result;
   }, []);
 
 
