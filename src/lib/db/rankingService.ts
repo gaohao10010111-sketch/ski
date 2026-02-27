@@ -259,22 +259,30 @@ export function getTotalRankings(filters: RankingFilters = {}): {
   // 分页
   const pagedStats = sortedStats.slice(offset, offset + limit)
 
-  // 生成排名
-  const rankings: TotalRankingItem[] = pagedStats.map((stats, index) => ({
-    rank: offset + index + 1,
-    athleteId: stats.athleteId,
-    athleteName: stats.athleteName,
-    team: stats.team,
-    ageGroup: stats.ageGroup,
-    gender: stats.gender,
-    totalPoints: stats.totalPoints,
-    competitionCount: stats.competitionCount,
-    bestRank: stats.bestRank === 999 ? 1 : stats.bestRank,
-    avgPoints: stats.competitionCount > 0
-      ? Math.round(stats.totalPoints / stats.competitionCount * 100) / 100
-      : 0,
-    breakdown: stats.results
-  }))
+  // 生成排名（支持并列：积分相同则排名相同）
+  const rankings: TotalRankingItem[] = []
+  for (let index = 0; index < pagedStats.length; index++) {
+    const stats = pagedStats[index]
+    const globalIndex = offset + index
+    const tiedRank = (index > 0 && stats.totalPoints === pagedStats[index - 1].totalPoints)
+      ? rankings[index - 1].rank
+      : globalIndex + 1
+    rankings.push({
+      rank: tiedRank,
+      athleteId: stats.athleteId,
+      athleteName: stats.athleteName,
+      team: stats.team,
+      ageGroup: stats.ageGroup,
+      gender: stats.gender,
+      totalPoints: stats.totalPoints,
+      competitionCount: stats.competitionCount,
+      bestRank: stats.bestRank === 999 ? 1 : stats.bestRank,
+      avgPoints: stats.competitionCount > 0
+        ? Math.round(stats.totalPoints / stats.competitionCount * 100) / 100
+        : 0,
+      breakdown: stats.results
+    })
+  }
 
   // 获取筛选选项
   const allFilters = db.prepare(`

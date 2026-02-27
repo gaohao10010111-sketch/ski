@@ -244,14 +244,14 @@ export default function AlpinePage() {
                         <tr key={`${athlete.name}-${index}`} className={`hover:bg-gray-50 ${index < 3 ? 'bg-gradient-to-r from-yellow-50 to-orange-50' : ''}`}>
                           <td className="px-2 sm:px-4 py-3 whitespace-nowrap text-center">
                             <div className="flex items-center justify-center">
-                              {index === 0 ? (
+                              {athlete.rank === 1 ? (
                                 <Crown className="w-5 h-5 text-yellow-500" />
-                              ) : index === 1 ? (
+                              ) : athlete.rank === 2 ? (
                                 <Medal className="w-5 h-5 text-gray-400" />
-                              ) : index === 2 ? (
+                              ) : athlete.rank === 3 ? (
                                 <Award className="w-5 h-5 text-orange-500" />
                               ) : (
-                                <span className="w-5 h-5 flex items-center justify-center text-sm font-medium text-gray-500">{index + 1}</span>
+                                <span className="w-5 h-5 flex items-center justify-center text-sm font-medium text-gray-500">{athlete.rank}</span>
                               )}
                             </div>
                           </td>

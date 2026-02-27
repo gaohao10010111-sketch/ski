@@ -241,14 +241,14 @@ export default function FreestyleSlopestylePage() {
                         <tr key={idx} className={`hover:bg-gray-50 ${idx < 3 ? 'bg-gradient-to-r from-yellow-50/50 to-transparent' : ''}`}>
                           <td className="px-4 py-3 whitespace-nowrap">
                             <div className="flex items-center gap-2">
-                              {idx === 0 ? (
+                              {athlete.rank === 1 ? (
                                 <Crown className="w-5 h-5 text-yellow-500" />
-                              ) : idx === 1 ? (
+                              ) : athlete.rank === 2 ? (
                                 <Medal className="w-5 h-5 text-gray-400" />
-                              ) : idx === 2 ? (
+                              ) : athlete.rank === 3 ? (
                                 <Medal className="w-5 h-5 text-amber-600" />
                               ) : (
-                                <span className="w-5 h-5 flex items-center justify-center text-sm font-medium text-gray-500">{idx + 1}</span>
+                                <span className="w-5 h-5 flex items-center justify-center text-sm font-medium text-gray-500">{athlete.rank}</span>
                               )}
                             </div>
                           </td>
