@@ -46,7 +46,7 @@ export default function AlpinePage() {
     {
       title: t.alpine?.hero?.slide3?.title || '积分排行榜',
       subtitle: t.alpine?.hero?.slide3?.subtitle || '查看最新积分排名',
-      image: getImagePath('/images/winter-sport.jpg'),
+      image: getImagePath('/images/snowboard-jump.jpg'),
       link: '/points/rankings'
     }
   ];

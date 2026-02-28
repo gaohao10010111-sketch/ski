@@ -77,6 +77,14 @@ const tierConfig: Record<string, { label: string; color: string }> = {
   TIER_120: { label: '120分档', color: 'text-green-600' },
 }
 
+// 根据运动类型选择卡片图片
+const sportTypeImages: Record<string, string> = {
+  ALPINE_SKI: '/images/ski-bg.jpg',
+  SNOWBOARD_SLOPESTYLE_BIGAIR: '/images/alpine-race.jpg',
+  SNOWBOARD_PARALLEL: '/images/snowboard-jump.jpg',
+  FREESTYLE_SLOPESTYLE_BIGAIR: '/images/freestyle-skiing.jpg',
+}
+
 // 天气图标（随机装饰用）
 const weatherConfig: Record<string, { icon: typeof Snowflake; color: string }> = {
   snow: { icon: Snowflake, color: 'text-blue-500' },
@@ -384,7 +392,7 @@ export default function CompetitionsPage() {
                 {/* 比赛图片 */}
                 <div className="relative h-36 md:h-48 rounded-lg overflow-hidden mb-3 md:mb-4 bg-gradient-to-br from-ski-blue to-ski-navy">
                   <img
-                    src={getImagePath('/images/freestyle-skiing.jpg')}
+                    src={getImagePath(sportTypeImages[competition.sportType] || '/images/ski-bg.jpg')}
                     alt={competition.name}
                     className="w-full h-full object-cover opacity-80"
                   />

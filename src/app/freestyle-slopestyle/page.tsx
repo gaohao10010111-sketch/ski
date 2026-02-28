@@ -140,7 +140,7 @@ export default function FreestyleSlopestylePage() {
     {
       title: '积分排行榜',
       subtitle: '查看最新积分排名',
-      image: getImagePath('/images/winter-sport.jpg'),
+      image: getImagePath('/images/snowboard-jump.jpg'),
       link: '/points/rankings'
     }
   ];
