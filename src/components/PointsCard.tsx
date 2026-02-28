@@ -16,10 +16,13 @@ interface PointsCardProps {
   gender: string
   discipline?: string
   season?: string
+  dataType?: 'season' | 'race'
+  competitionName?: string
+  bestScore?: number
 }
 
 // FIFA风格圆形徽章 - 更精致的设计
-function RankBadge({ rank, size = 100 }: { rank: number; size?: number }) {
+export function RankBadge({ rank, size = 100 }: { rank: number; size?: number }) {
   // 根据排名确定配色
   const getColors = () => {
     if (rank === 1) return {
@@ -312,7 +315,7 @@ function PentagonStats({
 }
 
 // 动态二维码组件
-function DynamicQRCode({ url, size = 64 }: { url: string; size?: number }) {
+export function DynamicQRCode({ url, size = 64 }: { url: string; size?: number }) {
   const [qrDataUrl, setQrDataUrl] = useState<string>('')
 
   useEffect(() => {
@@ -358,7 +361,10 @@ export default function PointsCard({
   ageGroup,
   gender,
   discipline = '综合积分',
-  season = '2025-2026'
+  season = '2025-2026',
+  dataType = 'season',
+  competitionName,
+  bestScore,
 }: PointsCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [isGenerating, setIsGenerating] = useState(false)
@@ -486,7 +492,11 @@ export default function PointsCard({
               </div>
               <div>
                 <div className="text-white font-bold text-sm tracking-wide">CHINA SKI</div>
-                <div className="text-cyan-400 text-xs font-medium">{season} SEASON</div>
+                <div className="text-cyan-400 text-xs font-medium">
+                  {dataType === 'race' && competitionName
+                    ? competitionName.replace(/2025-2026赛季/, '').replace(/U系列比赛/, '')
+                    : `${season} SEASON`}
+                </div>
               </div>
             </div>
             <div className="bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20">
@@ -513,7 +523,9 @@ export default function PointsCard({
           <div className="bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-sm rounded-2xl p-4 mb-4 border border-white/10">
             <div className="flex items-end justify-between">
               <div>
-                <div className="text-gray-400 text-xs uppercase tracking-wider mb-1">TOTAL POINTS</div>
+                <div className="text-gray-400 text-xs uppercase tracking-wider mb-1">
+                  {dataType === 'race' ? 'RACE POINTS' : 'TOTAL POINTS'}
+                </div>
                 <div className="flex items-baseline gap-1">
                   <span className="text-white text-5xl font-black tracking-tighter">
                     {totalPoints}
@@ -521,14 +533,20 @@ export default function PointsCard({
                   <span className="text-cyan-400 text-lg font-bold">PTS</span>
                 </div>
               </div>
-              {/* 五边形能力图 */}
-              <PentagonStats
-                points={totalPoints}
-                competitions={competitionCount}
-                bestRank={bestRank}
-                avgPoints={avgPoints}
-                winRate={winRate}
-              />
+              {dataType === 'race' && bestScore ? (
+                <div className="text-right">
+                  <div className="text-gray-400 text-xs uppercase tracking-wider mb-1">BEST SCORE</div>
+                  <div className="text-white text-3xl font-black">{bestScore}</div>
+                </div>
+              ) : (
+                <PentagonStats
+                  points={totalPoints}
+                  competitions={competitionCount}
+                  bestRank={bestRank}
+                  avgPoints={avgPoints}
+                  winRate={winRate}
+                />
+              )}
             </div>
           </div>
 
@@ -551,18 +569,20 @@ export default function PointsCard({
             </div>
           </div>
 
-          {/* 底部：二维码和品牌 */}
+          {/* 底部：主办方/承办方Logo + 二维码 */}
           <div className="flex items-center justify-between pt-4 border-t border-white/10">
-            <div className="flex items-center gap-3">
-              <DynamicQRCode url={siteUrl} size={56} />
-              <div>
-                <div className="text-gray-400 text-xs">扫码查看完整排名</div>
-                <div className="text-cyan-400 text-sm font-bold">cnskipoints.com</div>
-              </div>
+            <div className="flex items-center gap-2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logos/csa.jpg" alt="中国滑雪协会" className="h-9 w-auto rounded-sm" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logos/huati.png" alt="华体冰雪" className="h-9 w-auto" />
             </div>
-            <div className="text-right">
-              <div className="text-gray-600 text-[10px] uppercase tracking-wider">Official Platform</div>
-              <div className="text-gray-500 text-xs">U-Series China © 2025</div>
+            <div className="flex items-center gap-2">
+              <div className="text-right">
+                <div className="text-gray-400 text-[10px]">扫码查看排名</div>
+                <div className="text-cyan-400 text-xs font-bold">cnskipoints.com</div>
+              </div>
+              <DynamicQRCode url={siteUrl} size={48} />
             </div>
           </div>
         </div>

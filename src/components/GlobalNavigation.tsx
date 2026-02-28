@@ -19,7 +19,8 @@ import {
   Calendar,
   Home,
   Search,
-  Briefcase
+  Briefcase,
+  Award
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
@@ -152,7 +153,8 @@ export default function GlobalNavigation() {
     { key: 'points-rankings', name: '积分排行榜', href: '/points/rankings', icon: Trophy },
     { key: 'results', name: '比赛成绩', href: '/competitions', icon: Trophy },
     { key: 'schedule', name: '赛程', href: '/competitions/schedule', icon: Calendar },
-    { key: 'athletes', name: '运动员名录', href: '/athletes', icon: Users }
+    { key: 'athletes', name: '运动员名录', href: '/athletes', icon: Users },
+    { key: 'badge', name: '徽章分享', href: '/badge', icon: Award }
   ];
 
   return (
