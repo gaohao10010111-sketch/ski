@@ -154,7 +154,7 @@ export default function GlobalNavigation() {
     { key: 'results', name: '比赛成绩', href: '/competitions', icon: Trophy },
     { key: 'schedule', name: '赛程', href: '/competitions/schedule', icon: Calendar },
     { key: 'athletes', name: '运动员名录', href: '/athletes', icon: Users },
-    { key: 'badge', name: '徽章分享', href: '/badge', icon: Award }
+    { key: 'badge', name: '海报分享', href: '/badge', icon: Award }
   ];
 
   return (

@@ -63,10 +63,10 @@ function BadgePageContent() {
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 mb-3">
             <Award className="h-7 w-7 text-blue-600" />
-            <h1 className="text-2xl font-bold text-gray-900">徽章分享</h1>
+            <h1 className="text-2xl font-bold text-gray-900">海报分享</h1>
           </div>
           <p className="text-gray-500 text-sm">
-            搜索运动员，生成精美积分徽章，保存分享到朋友圈
+            搜索运动员，生成精美积分海报，保存分享到朋友圈
           </p>
         </div>
 
@@ -114,7 +114,7 @@ function BadgePageContent() {
                 }`}
               >
                 <ImageIcon className="h-4 w-4" />
-                精美大卡片
+                精美大海报
               </button>
               <button
                 onClick={() => setCardStyle('mini')}
@@ -125,7 +125,7 @@ function BadgePageContent() {
                 }`}
               >
                 <Square className="h-4 w-4" />
-                简洁小徽章
+                简洁小海报
               </button>
             </div>
           </div>
@@ -159,7 +159,7 @@ function BadgePageContent() {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 rounded-full mb-4">
               <Award className="h-8 w-8 text-gray-400" />
             </div>
-            <p className="text-gray-500 text-sm">搜索运动员姓名，选择记录生成徽章</p>
+            <p className="text-gray-500 text-sm">搜索运动员姓名，选择记录生成海报</p>
           </div>
         )}
       </div>
