@@ -159,6 +159,13 @@ export default function PointsCard({
           </svg>
         </div>
 
+        {/* Top-left logo */}
+        <div className="absolute z-20 flex items-center gap-1.5" style={{ top: 14, left: 16 }}>
+          <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: '#1e3a5f' }}>
+            <Mountain className="text-white" style={{ width: 16, height: 16 }} />
+          </div>
+        </div>
+
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center h-full px-7 pt-8 pb-5">
           {/* Header branding */}
@@ -250,9 +257,6 @@ export default function PointsCard({
               <img src="/logos/csa.jpg" alt="CSA" className="rounded-full object-cover" style={{ width: 28, height: 28, border: '1px solid #c8d8e4' }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/logos/huati-icon.png" alt="CNSG" className="rounded-full object-contain" style={{ width: 28, height: 28, border: '1px solid #c8d8e4', background: '#fff' }} />
-              <div className="w-6 h-6 rounded flex items-center justify-center" style={{ background: '#1e3a5f' }}>
-                <Mountain className="text-white" style={{ width: 14, height: 14 }} />
-              </div>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-[10px] font-semibold" style={{ color: '#1e3a5f' }}>cnskipoints.com</span>

@@ -77,6 +77,13 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
           <div key={i} className="absolute rounded-full" style={{ top: d.top, left: d.left, width: d.size, height: d.size, background: '#94b8d0', opacity: d.opacity }} />
         ))}
 
+        {/* Top-left logo */}
+        <div className="absolute z-20 flex items-center gap-1" style={{ top: 10, left: 12 }}>
+          <div className="w-5 h-5 rounded flex items-center justify-center" style={{ background: '#1e3a5f' }}>
+            <Mountain className="text-white" style={{ width: 12, height: 12 }} />
+          </div>
+        </div>
+
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center h-full pt-5 pb-4 px-5">
           {/* Header */}
@@ -132,9 +139,6 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
               <img src="/logos/csa.jpg" alt="CSA" className="rounded-full object-cover" style={{ width: 20, height: 20, border: '1px solid #c8d8e4' }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/logos/huati-icon.png" alt="CNSG" className="rounded-full object-contain" style={{ width: 20, height: 20, border: '1px solid #c8d8e4', background: '#fff' }} />
-              <div className="w-4 h-4 rounded flex items-center justify-center" style={{ background: '#1e3a5f' }}>
-                <Mountain className="text-white" style={{ width: 10, height: 10 }} />
-              </div>
             </div>
             <div className="flex items-center gap-1.5">
               <span className="text-[9px] font-semibold" style={{ color: '#1e3a5f' }}>cnskipoints.com</span>
