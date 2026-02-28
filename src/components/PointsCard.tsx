@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { Download, Share2, Trophy, Medal, Star, Zap } from 'lucide-react'
+import { Download, Share2, Trophy, Medal, Star, Mountain } from 'lucide-react'
 import html2canvas from 'html2canvas'
 import QRCode from 'qrcode'
 
@@ -443,100 +443,93 @@ export default function PointsCard({
     }
   }
 
+  // Shorten competition name for display
+  const shortCompName = competitionName
+    ? competitionName.replace(/2025-2026赛季/, '').replace(/全国/, '').replace(/U系列比赛/, '')
+    : ''
+
   return (
     <div className="flex flex-col items-center gap-4">
-      {/* 卡片主体 - FIFA风格 */}
+      {/* 卡片主体 */}
       <div
         ref={cardRef}
-        className="relative w-[380px] overflow-hidden rounded-3xl shadow-2xl"
+        className="relative w-[380px] overflow-hidden rounded-2xl"
         style={{
-          background: 'linear-gradient(145deg, #0f172a 0%, #1e293b 30%, #0f172a 70%, #020617 100%)',
+          background: 'linear-gradient(165deg, #0c1426 0%, #162036 35%, #0e1a30 65%, #060d1a 100%)',
         }}
       >
         {/* 装饰性背景 */}
         <div className="absolute inset-0 overflow-hidden">
-          {/* 几何装饰 */}
-          <div className="absolute top-0 left-0 w-full h-full opacity-10">
-            <div className="absolute top-10 left-10 w-32 h-32 border border-cyan-500 rotate-45" />
-            <div className="absolute bottom-20 right-10 w-24 h-24 border border-blue-500 rotate-12" />
-            <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-indigo-500 -rotate-12" />
-          </div>
-          {/* 光晕 */}
-          <div className="absolute -top-20 right-0 w-60 h-60 bg-cyan-500/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 -left-20 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl" />
-          {/* 网格背景 */}
+          {/* 大弧形装饰 */}
           <div
-            className="absolute inset-0 opacity-5"
-            style={{
-              backgroundImage: `
-                linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
-              `,
-              backgroundSize: '20px 20px'
-            }}
+            className="absolute -top-32 -right-32 w-72 h-72 rounded-full opacity-[0.07]"
+            style={{ background: 'radial-gradient(circle, #38bdf8 0%, transparent 70%)' }}
+          />
+          <div
+            className="absolute -bottom-24 -left-24 w-56 h-56 rounded-full opacity-[0.05]"
+            style={{ background: 'radial-gradient(circle, #6366f1 0%, transparent 70%)' }}
+          />
+          {/* 顶部金色高光条 */}
+          <div
+            className="absolute top-0 left-0 right-0 h-[3px]"
+            style={{ background: 'linear-gradient(90deg, transparent, #f59e0b, #eab308, #f59e0b, transparent)' }}
           />
         </div>
 
         {/* 卡片内容 */}
-        <div className="relative z-10 p-6">
-          {/* 顶部：Logo和赛季 */}
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-2">
-              <div className="relative">
-                <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
-                  <Zap className="h-5 w-5 text-white" />
-                </div>
-                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full flex items-center justify-center">
-                  <span className="text-[8px] font-bold text-yellow-900">CN</span>
-                </div>
+        <div className="relative z-10 p-6 pb-5">
+          {/* 顶部品牌栏 */}
+          <div className="flex items-center justify-between mb-5">
+            <div className="flex items-center gap-2.5">
+              <div className="w-9 h-9 rounded-lg flex items-center justify-center"
+                style={{ background: 'linear-gradient(135deg, #0ea5e9, #2563eb)' }}>
+                <Mountain className="h-5 w-5 text-white" />
               </div>
               <div>
-                <div className="text-white font-bold text-sm tracking-wide">CHINA SKI</div>
-                <div className="text-cyan-400 text-xs font-medium">
-                  {dataType === 'race' && competitionName
-                    ? competitionName.replace(/2025-2026赛季/, '').replace(/U系列比赛/, '')
-                    : `${season} SEASON`}
+                <div className="text-white font-extrabold text-sm tracking-widest">CSPS</div>
+                <div className="text-sky-400/70 text-[10px] tracking-wide">
+                  {dataType === 'race' ? shortCompName : `${season} SEASON`}
                 </div>
               </div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20">
-              <span className="text-white text-xs font-medium">{discipline}</span>
+            <div className="bg-white/[0.07] px-3 py-1 rounded-full border border-white/10">
+              <span className="text-white/80 text-[11px] font-medium">{discipline}</span>
             </div>
           </div>
 
-          {/* 中间区域：徽章 + 信息 */}
-          <div className="flex items-center gap-4 mb-4">
-            {/* 精致圆形徽章 */}
-            <RankBadge rank={rank} size={100} />
-
-            {/* 运动员信息 */}
-            <div className="flex-1">
-              <div className="mb-2">
-                <span className="text-gray-400 text-xs uppercase tracking-wider">{ageGroup} · {gender}</span>
+          {/* 运动员核心区域 */}
+          <div className="flex items-center gap-5 mb-5">
+            <RankBadge rank={rank} size={96} />
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-1.5">
+                <span className="text-[10px] font-semibold text-sky-400/60 uppercase tracking-widest">{ageGroup}</span>
+                <span className="text-white/20 text-[10px]">|</span>
+                <span className="text-[10px] font-semibold text-sky-400/60 uppercase tracking-widest">{gender}</span>
               </div>
-              <h2 className="text-white text-2xl font-black mb-1 tracking-tight">{athleteName}</h2>
-              <p className="text-cyan-300 text-sm font-medium truncate">{team}</p>
+              <h2 className="text-white text-[26px] font-black leading-tight tracking-tight mb-1">{athleteName}</h2>
+              <p className="text-sky-300/50 text-sm font-medium truncate">{team}</p>
             </div>
           </div>
 
-          {/* 积分大数字展示 */}
-          <div className="bg-gradient-to-r from-white/5 to-white/10 backdrop-blur-sm rounded-2xl p-4 mb-4 border border-white/10">
+          {/* 积分展示区 */}
+          <div
+            className="rounded-xl p-4 mb-4"
+            style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.08) 100%)', border: '1px solid rgba(255,255,255,0.06)' }}
+          >
             <div className="flex items-end justify-between">
               <div>
-                <div className="text-gray-400 text-xs uppercase tracking-wider mb-1">
-                  {dataType === 'race' ? 'RACE POINTS' : 'TOTAL POINTS'}
+                <div className="text-white/30 text-[10px] uppercase tracking-widest font-semibold mb-1">
+                  {dataType === 'race' ? 'Race Points' : 'Total Points'}
                 </div>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-white text-5xl font-black tracking-tighter">
-                    {totalPoints}
-                  </span>
-                  <span className="text-cyan-400 text-lg font-bold">PTS</span>
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-white text-[48px] font-black leading-none tracking-tighter">{totalPoints}</span>
+                  <span className="text-sky-400/70 text-base font-bold">PTS</span>
                 </div>
               </div>
               {dataType === 'race' && bestScore ? (
                 <div className="text-right">
-                  <div className="text-gray-400 text-xs uppercase tracking-wider mb-1">BEST SCORE</div>
-                  <div className="text-white text-3xl font-black">{bestScore}</div>
+                  <div className="text-white/30 text-[10px] uppercase tracking-widest font-semibold mb-1">Score</div>
+                  <div className="text-white/90 text-3xl font-black leading-none">{bestScore}</div>
                 </div>
               ) : (
                 <PentagonStats
@@ -550,39 +543,56 @@ export default function PointsCard({
             </div>
           </div>
 
-          {/* 数据统计条 */}
-          <div className="grid grid-cols-3 gap-2 mb-4">
-            <div className="bg-white/5 rounded-xl p-3 text-center border border-white/5">
-              <Trophy className="h-4 w-4 text-yellow-400 mx-auto mb-1" />
-              <div className="text-white font-bold text-lg">{competitionCount}</div>
-              <div className="text-gray-500 text-[10px] uppercase">Matches</div>
+          {/* 数据统计 */}
+          <div className="grid grid-cols-3 gap-2 mb-5">
+            <div className="rounded-lg py-2.5 text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.04)' }}>
+              <Trophy className="h-3.5 w-3.5 text-amber-400/80 mx-auto mb-1" />
+              <div className="text-white font-bold text-base leading-tight">{competitionCount}</div>
+              <div className="text-white/25 text-[9px] uppercase font-medium mt-0.5">Races</div>
             </div>
-            <div className="bg-white/5 rounded-xl p-3 text-center border border-white/5">
-              <Medal className="h-4 w-4 text-orange-400 mx-auto mb-1" />
-              <div className="text-white font-bold text-lg">#{bestRank}</div>
-              <div className="text-gray-500 text-[10px] uppercase">Best Rank</div>
+            <div className="rounded-lg py-2.5 text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.04)' }}>
+              <Medal className="h-3.5 w-3.5 text-orange-400/80 mx-auto mb-1" />
+              <div className="text-white font-bold text-base leading-tight">#{bestRank}</div>
+              <div className="text-white/25 text-[9px] uppercase font-medium mt-0.5">Best</div>
             </div>
-            <div className="bg-white/5 rounded-xl p-3 text-center border border-white/5">
-              <Star className="h-4 w-4 text-cyan-400 mx-auto mb-1" />
-              <div className="text-white font-bold text-lg">{avgPoints.toFixed(0)}</div>
-              <div className="text-gray-500 text-[10px] uppercase">Avg Points</div>
+            <div className="rounded-lg py-2.5 text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.04)' }}>
+              <Star className="h-3.5 w-3.5 text-sky-400/80 mx-auto mb-1" />
+              <div className="text-white font-bold text-base leading-tight">{avgPoints.toFixed(0)}</div>
+              <div className="text-white/25 text-[9px] uppercase font-medium mt-0.5">Avg</div>
             </div>
           </div>
 
-          {/* 底部：主办方/承办方Logo + 二维码 */}
-          <div className="flex items-center justify-between pt-4 border-t border-white/10">
-            <div className="flex items-center gap-2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logos/csa.jpg" alt="中国滑雪协会" className="h-9 w-auto rounded-sm" />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logos/huati.png" alt="华体冰雪" className="h-9 w-auto" />
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="text-right">
-                <div className="text-gray-400 text-[10px]">扫码查看排名</div>
-                <div className="text-cyan-400 text-xs font-bold">cnskipoints.com</div>
+          {/* 底部：主办方 + 承办方 + 网站二维码 */}
+          <div className="pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+            <div className="flex items-center justify-between">
+              {/* 主办方 & 承办方 logos */}
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-1.5">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/logos/csa.jpg" alt="中国滑雪协会" className="h-8 w-8 rounded-full object-cover" style={{ border: '1.5px solid rgba(255,255,255,0.15)' }} />
+                  <div className="leading-none">
+                    <div className="text-white/50 text-[8px] font-medium">主办</div>
+                    <div className="text-white/30 text-[7px]">中国滑雪协会</div>
+                  </div>
+                </div>
+                <div className="w-px h-6 bg-white/10" />
+                <div className="flex items-center gap-1.5">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/logos/huati-icon.png" alt="华体冰雪" className="h-8 w-8 rounded-full object-contain" style={{ background: 'white', border: '1.5px solid rgba(255,255,255,0.15)' }} />
+                  <div className="leading-none">
+                    <div className="text-white/50 text-[8px] font-medium">承办</div>
+                    <div className="text-white/30 text-[7px]">华体冰雪</div>
+                  </div>
+                </div>
               </div>
-              <DynamicQRCode url={siteUrl} size={48} />
+              {/* 二维码 + 网址 */}
+              <div className="flex items-center gap-2">
+                <div className="text-right leading-none">
+                  <div className="text-white/40 text-[8px]">扫码查看排名</div>
+                  <div className="text-sky-400/70 text-[11px] font-bold mt-0.5">cnskipoints.com</div>
+                </div>
+                <DynamicQRCode url={siteUrl} size={44} />
+              </div>
             </div>
           </div>
         </div>
@@ -593,7 +603,7 @@ export default function PointsCard({
         <button
           onClick={handleDownload}
           disabled={isGenerating}
-          className="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all shadow-lg hover:shadow-cyan-500/25 disabled:opacity-50 font-medium"
+          className="flex items-center gap-2 bg-gradient-to-r from-sky-500 to-blue-600 text-white px-6 py-2.5 rounded-xl hover:from-sky-600 hover:to-blue-700 transition-all shadow-lg shadow-sky-500/20 disabled:opacity-50 text-sm font-semibold"
         >
           <Download className="h-4 w-4" />
           {isGenerating ? '生成中...' : '保存图片'}
@@ -601,7 +611,7 @@ export default function PointsCard({
         <button
           onClick={handleShare}
           disabled={isGenerating}
-          className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-6 py-3 rounded-full hover:from-green-600 hover:to-emerald-700 transition-all shadow-lg hover:shadow-green-500/25 disabled:opacity-50 font-medium"
+          className="flex items-center gap-2 bg-white/10 text-white px-6 py-2.5 rounded-xl hover:bg-white/15 transition-all border border-white/10 disabled:opacity-50 text-sm font-semibold"
         >
           <Share2 className="h-4 w-4" />
           分享卡片
