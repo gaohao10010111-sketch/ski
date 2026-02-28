@@ -3,7 +3,7 @@
 import { useRef, useState } from 'react'
 import { Download, Share2, Mountain } from 'lucide-react'
 import html2canvas from 'html2canvas'
-import { RankBadge, DynamicQRCode } from '@/components/PointsCard'
+import { DynamicQRCode } from '@/components/PointsCard'
 import type { BadgeCardData } from '@/lib/badgeData'
 
 interface MiniBadgeProps {
@@ -14,6 +14,9 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
   const badgeRef = useRef<HTMLDivElement>(null)
   const [isGenerating, setIsGenerating] = useState(false)
   const siteUrl = 'https://cnskipoints.com'
+
+  const rankText = data.rank === 1 ? '冠军' : data.rank === 2 ? '亚军' : data.rank === 3 ? '季军' : `第${data.rank}名`
+  const isTopThree = data.rank <= 3
 
   const handleDownload = async () => {
     if (!badgeRef.current) return
@@ -49,10 +52,6 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
     finally { setIsGenerating(false) }
   }
 
-  const shortLabel = data.dataType === 'race' && data.competitionName
-    ? data.competitionName.replace(/2025-2026赛季/, '').replace(/U系列比赛/, '').replace(/全国/, '')
-    : '全国滑雪青少年U系列赛事官方积分排名'
-
   return (
     <div className="flex flex-col items-center gap-4">
       <div
@@ -60,62 +59,86 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
         className="relative overflow-hidden"
         style={{
           width: 360, height: 360, borderRadius: 14,
-          background: 'linear-gradient(180deg, #ffffff 0%, #f8f6f1 100%)',
-          border: '1px solid #e8e4dc',
+          background: 'linear-gradient(180deg, #d4e4ef 0%, #e4eef5 25%, #f0f5f8 50%, #fafcfd 80%, #ffffff 100%)',
+          border: '1px solid #c8d8e4',
         }}
       >
-        {/* Top gold bar */}
-        <div style={{ height: 3, background: 'linear-gradient(90deg, #b8860b, #d4a853, #f0d48a, #d4a853, #b8860b)' }} />
+        {/* Snow dots */}
+        {[
+          { top: 10, left: 20, size: 4, opacity: 0.15 },
+          { top: 6, left: 120, size: 3, opacity: 0.12 },
+          { top: 25, left: 260, size: 5, opacity: 0.13 },
+          { top: 4, left: 200, size: 3, opacity: 0.18 },
+          { top: 35, left: 50, size: 4, opacity: 0.1 },
+          { top: 18, left: 320, size: 4, opacity: 0.14 },
+          { top: 30, left: 160, size: 3, opacity: 0.16 },
+          { top: 15, left: 90, size: 3, opacity: 0.1 },
+        ].map((d, i) => (
+          <div key={i} className="absolute rounded-full" style={{ top: d.top, left: d.left, width: d.size, height: d.size, background: '#94b8d0', opacity: d.opacity }} />
+        ))}
 
-        <div className="relative z-10 flex flex-col items-center h-full pt-3 pb-3 px-5" style={{ height: 357 }}>
-          {/* Official tags */}
-          <div className="flex items-center gap-1.5 mb-2">
-            <span className="text-[8px] font-bold text-white px-2 py-0.5 rounded" style={{ background: '#1e3a5f' }}>OFFICIAL</span>
-            <span className="text-[8px] font-bold px-2 py-0.5 rounded" style={{ background: '#f0fdf4', color: '#166534', border: '1px solid #bbf7d0' }}>{data.season} 赛季</span>
-            <span className="text-[8px] font-bold px-2 py-0.5 rounded" style={{ background: '#fff7ed', color: '#9a3412', border: '1px solid #fed7aa' }}>U系列赛事</span>
-          </div>
+        {/* Content */}
+        <div className="relative z-10 flex flex-col items-center h-full pt-5 pb-4 px-5">
+          {/* Header */}
+          <p className="font-black tracking-[0.2em] mb-0.5" style={{ fontSize: 11, color: '#1e3a5f' }}>
+            中国滑雪U系列赛事
+          </p>
+          <div className="mx-auto mb-3" style={{ width: 36, height: 1.5, background: 'linear-gradient(90deg, transparent, #1e3a5f, transparent)' }} />
 
-          {/* Rank badge */}
-          <div className="mb-1.5">
-            <RankBadge rank={data.rank} size={72} />
-          </div>
+          {/* Name - large */}
+          <h2 className="font-black leading-tight text-center mb-1" style={{ fontSize: 32, color: '#1e3a5f', letterSpacing: '0.05em' }}>
+            {data.athleteName}
+          </h2>
 
-          {/* Name + team */}
-          <h3 className="text-xl font-black text-gray-900 leading-tight text-center">{data.athleteName}</h3>
-          <p className="text-[11px] text-gray-400 font-medium truncate max-w-[260px] mb-2">{data.team}</p>
+          {/* Category */}
+          <p className="text-[11px] font-bold mb-0.5" style={{ color: '#3d6a8e' }}>
+            {data.discipline} · {data.ageGroup} · {data.gender}
+          </p>
+          <p className="text-[10px] mb-3" style={{ color: '#8fafc5' }}>{data.team}</p>
 
-          {/* Points block */}
-          <div className="w-full rounded-lg px-4 py-2.5 mb-2" style={{ background: 'linear-gradient(135deg, #1e3a5f, #0f2340)' }}>
-            <div className="flex items-center justify-between">
-              <div className="flex items-baseline gap-1">
-                <span className="text-white text-[32px] font-black leading-none tracking-tighter">{data.points}</span>
-                <span className="text-[11px] font-bold" style={{ color: '#d4a853' }}>分</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <span className="text-white/50 text-[9px] px-1.5 py-px rounded" style={{ background: 'rgba(255,255,255,0.1)' }}>{data.discipline}</span>
-                <span className="text-white/50 text-[9px] px-1.5 py-px rounded" style={{ background: 'rgba(255,255,255,0.1)' }}>{data.ageGroup}</span>
-                <span className="text-white/50 text-[9px] px-1.5 py-px rounded" style={{ background: 'rgba(255,255,255,0.1)' }}>{data.gender}</span>
-              </div>
+          {/* Score - hero element */}
+          <div className="text-center flex-1 flex flex-col justify-center">
+            <p className="text-[9px] font-semibold tracking-[0.15em] mb-1.5" style={{ color: '#7a9bb5' }}>
+              {data.dataType === 'race' ? '比赛积分' : '赛季总积分'}
+            </p>
+            <div className="flex items-baseline justify-center">
+              <span className="font-black leading-none" style={{ fontSize: 58, color: '#1e3a5f', letterSpacing: '-0.03em' }}>
+                {data.points}
+              </span>
+              <span className="font-bold ml-0.5" style={{ fontSize: 16, color: '#5a8aaa' }}>分</span>
+            </div>
+
+            {/* Rank */}
+            <div className="flex items-center justify-center gap-1.5 mt-3">
+              <div style={{ width: 24, height: 1, background: isTopThree ? 'linear-gradient(90deg, transparent, #c4a24e)' : 'linear-gradient(90deg, transparent, #7a9bb5)' }} />
+              <span className="font-black px-3 py-1 rounded-full" style={{
+                fontSize: 13,
+                background: isTopThree ? 'linear-gradient(135deg, #d4a853, #b8860b)' : '#1e3a5f',
+                color: '#fff',
+              }}>
+                {rankText}
+              </span>
+              <div style={{ width: 24, height: 1, background: isTopThree ? 'linear-gradient(90deg, #c4a24e, transparent)' : 'linear-gradient(90deg, #7a9bb5, transparent)' }} />
             </div>
           </div>
 
-          {/* Description */}
-          <p className="text-gray-400 text-[9px] text-center truncate max-w-[280px] mb-auto">{shortLabel}</p>
+          {/* Season */}
+          <p className="text-[11px] font-semibold mb-2.5" style={{ color: '#5a8aaa' }}>{data.season} 赛季</p>
 
           {/* Bottom: logos + QR */}
-          <div className="flex items-center justify-between w-full pt-2.5" style={{ borderTop: '1px solid #e8e4dc' }}>
-            <div className="flex items-center gap-2">
+          <div className="flex items-center justify-between w-full pt-2" style={{ borderTop: '1px solid #c8d8e4' }}>
+            <div className="flex items-center gap-1.5">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logos/csa.jpg" alt="CSA" className="rounded-full object-cover" style={{ width: 22, height: 22, border: '1px solid #e8e4dc' }} />
+              <img src="/logos/csa.jpg" alt="CSA" className="rounded-full object-cover" style={{ width: 20, height: 20, border: '1px solid #c8d8e4' }} />
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logos/huati-icon.png" alt="CNSG" className="rounded-full object-contain" style={{ width: 22, height: 22, border: '1px solid #e8e4dc', background: '#fff' }} />
-              <div className="w-5 h-5 rounded flex items-center justify-center" style={{ background: '#1e3a5f' }}>
-                <Mountain className="text-white" style={{ width: 11, height: 11 }} />
+              <img src="/logos/huati-icon.png" alt="CNSG" className="rounded-full object-contain" style={{ width: 20, height: 20, border: '1px solid #c8d8e4', background: '#fff' }} />
+              <div className="w-4 h-4 rounded flex items-center justify-center" style={{ background: '#1e3a5f' }}>
+                <Mountain className="text-white" style={{ width: 10, height: 10 }} />
               </div>
             </div>
             <div className="flex items-center gap-1.5">
               <span className="text-[9px] font-semibold" style={{ color: '#1e3a5f' }}>cnskipoints.com</span>
-              <DynamicQRCode url={siteUrl} size={26} dark="#1e3a5f" />
+              <DynamicQRCode url={siteUrl} size={24} dark="#1e3a5f" />
             </div>
           </div>
         </div>
