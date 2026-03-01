@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useMemo } from 'react'
 import { Download, Share2 } from 'lucide-react'
 import html2canvas from 'html2canvas'
 import QRCode from 'qrcode'
+import SharePopup from '@/components/SharePopup'
 
 // Detect basePath: '/ski' for GitHub Pages / dev, '' for standalone (cnskipoints.com)
 export function detectBasePath() {
@@ -164,6 +165,7 @@ export default function PointsCard({
 }: PointsCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [isGenerating, setIsGenerating] = useState(false)
+  const [showSharePopup, setShowSharePopup] = useState(false)
   const basePath = useMemo(() => detectBasePath(), [])
   const siteUrl = 'https://cnskipoints.com'
 
@@ -191,23 +193,20 @@ export default function PointsCard({
     finally { setIsGenerating(false) }
   }
 
-  const handleShare = async () => {
+  const handleShareImage = async () => {
     if (!cardRef.current) return
     setIsGenerating(true)
     try {
       const canvas = await html2canvas(cardRef.current, { scale: 3, backgroundColor: null, useCORS: true })
-      canvas.toBlob(async (blob) => {
-        if (!blob) return
-        if (navigator.share && navigator.canShare) {
-          const file = new File([blob], `${athleteName}_积分海报.png`, { type: 'image/png' })
-          const shareData = { title: `${athleteName}的滑雪积分海报`, text: `${athleteName} ${ageGroup}${gender}${discipline} 第${rank}名 ${totalPoints}分 ${siteUrl}`, files: [file] }
-          if (navigator.canShare(shareData)) await navigator.share(shareData)
-          else await navigator.share({ title: shareData.title, text: shareData.text, url: siteUrl })
-        } else {
-          await navigator.clipboard.writeText(`${athleteName} 第${rank}名 ${totalPoints}分 ${siteUrl}`)
-          alert('链接已复制到剪贴板！')
-        }
-      }, 'image/png')
+      const blob = await new Promise<Blob | null>(resolve => canvas.toBlob(resolve, 'image/png'))
+      if (!blob) return
+      const file = new File([blob], `${athleteName}_积分海报.png`, { type: 'image/png' })
+      const shareData = { files: [file] }
+      if (navigator.share && navigator.canShare && navigator.canShare(shareData)) {
+        await navigator.share(shareData)
+      } else {
+        alert('当前浏览器不支持直接分享图片，请先保存图片再分享')
+      }
     } catch (e) { console.error('分享失败:', e) }
     finally { setIsGenerating(false) }
   }
@@ -395,13 +394,24 @@ export default function PointsCard({
           <Download className="h-4 w-4" />
           {isGenerating ? '生成中...' : '保存图片'}
         </button>
-        <button onClick={handleShare} disabled={isGenerating}
+        <button onClick={() => setShowSharePopup(true)} disabled={isGenerating}
           className="flex items-center gap-2 px-6 py-2.5 rounded-xl disabled:opacity-50 text-sm font-semibold transition-all hover:bg-gray-50"
           style={{ border: '1px solid #d1d5db', color: '#374151' }}>
           <Share2 className="h-4 w-4" />
           分享海报
         </button>
       </div>
+
+      <SharePopup
+        isOpen={showSharePopup}
+        onClose={() => setShowSharePopup(false)}
+        athleteName={athleteName}
+        rank={rank}
+        points={totalPoints}
+        discipline={discipline}
+        onShareImage={handleShareImage}
+        isGenerating={isGenerating}
+      />
     </div>
   )
 }
