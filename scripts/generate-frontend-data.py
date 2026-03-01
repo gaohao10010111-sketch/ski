@@ -410,10 +410,209 @@ export const totalRankingsData: TotalRankingsData = {json.dumps(data, ensure_asc
     print(f'  Written: {out_path} ({data["total"]} rankings, {stats["athleteCount"]} athletes)')
 
 
+TEAM_NAME_MAPPING = {
+    "石家庄市冰雪与足球运动推广训练中心": "石家庄市冰雪与足球运动中心",
+    "石家庄市冰雪与足球运动推广与训练中心": "石家庄市冰雪与足球运动中心",
+    "重庆市沙坪坝区体育运动中心": "重庆市沙坪坝区体育运动学校",
+    "零战单板滑雪俱乐部": "零站单板滑雪俱乐部",
+}
+
+
+def normalize_team_name(team):
+    return TEAM_NAME_MAPPING.get(team, team)
+
+
+def generate_club_rankings(conn):
+    print('Generating clubRankings.ts...')
+    c = conn.cursor()
+
+    results = c.execute('''
+        SELECT r.athleteId, r.discipline, r.ageGroup, r.gender, r.points, r.rank,
+               a.name as athleteName, a.team as athleteTeam,
+               c.sportType, c.name as competitionName, c.id as competitionId
+        FROM Result r
+        JOIN Athlete a ON r.athleteId = a.id
+        JOIN Competition c ON r.competitionId = c.id
+    ''').fetchall()
+    res_cols = [d[0] for d in c.description]
+    results_dict = [dict(zip(res_cols, row)) for row in results]
+    print(f'  Found {len(results_dict)} results')
+
+    # Step 1: Aggregate per-athlete points (by sportType+discipline+ageGroup+gender)
+    athlete_stats = defaultdict(lambda: {
+        'athleteId': '', 'athleteName': '', 'team': '',
+        'sportType': '', 'discipline': '', 'ageGroup': '', 'gender': '',
+        'totalPoints': 0
+    })
+
+    for r in results_dict:
+        merged = SPORT_TYPE_MERGE.get(r['sportType'], r['sportType'])
+        key = f"{merged}-{r['discipline']}-{r['ageGroup']}-{r['gender']}-{r['athleteId']}"
+        s = athlete_stats[key]
+        s['athleteId'] = r['athleteId']
+        s['athleteName'] = r['athleteName']
+        s['team'] = normalize_team_name(r['athleteTeam'])
+        s['sportType'] = merged
+        s['discipline'] = r['discipline']
+        s['ageGroup'] = r['ageGroup']
+        s['gender'] = r['gender']
+        s['totalPoints'] += r['points'] or 0
+
+    # Step 2: Filter out "个人" and aggregate to club level
+    club_stats = defaultdict(lambda: {
+        'team': '', 'sportType': '', 'discipline': '', 'ageGroup': '', 'gender': '',
+        'totalPoints': 0, 'athletes': set()
+    })
+
+    for s in athlete_stats.values():
+        if s['team'] == '个人' or not s['team']:
+            continue
+        club_key = f"{s['team']}-{s['sportType']}-{s['discipline']}-{s['ageGroup']}-{s['gender']}"
+        cs = club_stats[club_key]
+        cs['team'] = s['team']
+        cs['sportType'] = s['sportType']
+        cs['discipline'] = s['discipline']
+        cs['ageGroup'] = s['ageGroup']
+        cs['gender'] = s['gender']
+        cs['totalPoints'] += s['totalPoints']
+        cs['athletes'].add(s['athleteId'])
+
+    # Step 3: Build sub-events and rank clubs
+    sub_events = set()
+    for cs in club_stats.values():
+        sub_events.add((cs['sportType'], cs['discipline'], cs['ageGroup'], cs['gender']))
+
+    sport_rankings_list = []
+    all_clubs = set()
+    all_athletes = set()
+
+    for main_st in SPORT_ORDER:
+        se_list = [se for se in sub_events if se[0] == main_st]
+        se_list.sort(key=lambda se: (
+            se[1],
+            AGE_ORDER.index(se[2]) if se[2] in AGE_ORDER else 99,
+            GENDER_ORDER.index(se[3]) if se[3] in GENDER_ORDER else 99
+        ))
+        if not se_list:
+            continue
+
+        sub_event_rankings = []
+        for st, disc, ag, gen in se_list:
+            clubs = [cs for cs in club_stats.values()
+                     if cs['sportType'] == main_st and cs['discipline'] == disc
+                     and cs['ageGroup'] == ag and cs['gender'] == gen]
+            clubs.sort(key=lambda c: -c['totalPoints'])
+
+            rankings = []
+            for idx, cs in enumerate(clubs):
+                if idx > 0 and cs['totalPoints'] == clubs[idx-1]['totalPoints']:
+                    current_rank = rankings[idx-1]['rank']
+                else:
+                    current_rank = idx + 1
+
+                all_clubs.add(cs['team'])
+                all_athletes.update(cs['athletes'])
+
+                rankings.append({
+                    'rank': current_rank,
+                    'team': cs['team'],
+                    'totalPoints': cs['totalPoints'],
+                    'athleteCount': len(cs['athletes']),
+                })
+
+            sub_event_name = f"{disc} {ag} {gen}"
+            sub_event_rankings.append({
+                'discipline': disc, 'ageGroup': ag, 'gender': gen,
+                'subEventName': sub_event_name, 'rankings': rankings
+            })
+            print(f'  {SPORT_TYPE_NAMES.get(main_st, main_st)} - {sub_event_name}: {len(rankings)} clubs')
+
+        sport_rankings_list.append({
+            'sportType': main_st,
+            'sportName': SPORT_TYPE_NAMES.get(main_st, main_st),
+            'subEventRankings': sub_event_rankings,
+        })
+
+    # Collect filter options
+    age_groups = sorted(set(r['ageGroup'] for r in results_dict))
+    genders = sorted(set(r['gender'] for r in results_dict))
+
+    comps = c.execute('SELECT * FROM Competition').fetchall()
+
+    data = {
+        'sportRankings': sport_rankings_list,
+        'filters': {
+            'ageGroups': age_groups,
+            'genders': genders,
+            'sportTypes': [{'value': st, 'label': SPORT_TYPE_NAMES.get(st, st)}
+                          for st in SPORT_ORDER if any(sr['sportType'] == st for sr in sport_rankings_list)]
+        },
+        'stats': {
+            'totalClubs': len(all_clubs),
+            'totalAthletes': len(all_athletes),
+            'totalCompetitions': len(comps),
+        },
+        'generatedAt': datetime.now().isoformat()
+    }
+
+    now_iso = datetime.now().isoformat()
+    ts_content = f'''/**
+ * 俱乐部积分排名静态数据
+ * 自动生成，请勿手动修改
+ * 生成时间: {now_iso}
+ */
+
+export interface ClubRankingItem {{
+  rank: number;
+  team: string;
+  totalPoints: number;
+  athleteCount: number;
+}}
+
+export interface ClubSubEventRankings {{
+  discipline: string;
+  ageGroup: string;
+  gender: string;
+  subEventName: string;
+  rankings: ClubRankingItem[];
+}}
+
+export interface ClubSportRankings {{
+  sportType: string;
+  sportName: string;
+  subEventRankings: ClubSubEventRankings[];
+}}
+
+export interface ClubRankingsData {{
+  sportRankings: ClubSportRankings[];
+  filters: {{
+    ageGroups: string[];
+    genders: string[];
+    sportTypes: {{ value: string; label: string }}[];
+  }};
+  stats: {{
+    totalClubs: number;
+    totalAthletes: number;
+    totalCompetitions: number;
+  }};
+  generatedAt: string;
+}}
+
+export const clubRankingsData: ClubRankingsData = {json.dumps(data, ensure_ascii=False, indent=2)};
+'''
+
+    out_path = os.path.join(SRC_DATA, 'clubRankings.ts')
+    with open(out_path, 'w', encoding='utf-8') as f:
+        f.write(ts_content)
+    print(f'  Written: {out_path} ({len(all_clubs)} clubs, {len(all_athletes)} athletes)')
+
+
 if __name__ == '__main__':
     conn = sqlite3.connect(DB_PATH)
     generate_latest_results(conn)
     print()
     generate_total_rankings(conn)
+    print()
+    generate_club_rankings(conn)
     conn.close()
     print('\nDone!')

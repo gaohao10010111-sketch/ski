@@ -1,6 +1,6 @@
 // 最新比赛成绩数据
 // 自动生成，请勿手动修改
-// 生成时间: 2026-02-28T00:48:21.426823
+// 生成时间: 2026-03-01T16:58:29.564110
 
 export interface AthleteResult {
   rank: number
@@ -40,7 +40,7 @@ export interface ResultsData {
 }
 
 export const latestResults: ResultsData = {
-  "lastUpdated": "2026-02-28",
+  "lastUpdated": "2026-03-01",
   "competitions": [
     {
       "competition": "2025-2026赛季单板滑雪大跳台U系列比赛（第四站富龙站）",

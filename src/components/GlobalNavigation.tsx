@@ -150,7 +150,8 @@ export default function GlobalNavigation() {
         { key: 'freestyle-slopestyle', name: t.navigation?.freestyleSlopestyle || 'Freestyle Slopestyle', href: '/freestyle-slopestyle' }
       ]
     },
-    { key: 'points-rankings', name: '积分排行榜', href: '/points/rankings', icon: Trophy },
+    { key: 'points-rankings', name: '个人积分排行', href: '/points/rankings', icon: Trophy },
+    { key: 'club-rankings', name: '俱乐部积分排行', href: '/points/club-rankings', icon: Users },
     { key: 'results', name: '比赛成绩', href: '/competitions', icon: Trophy },
     { key: 'schedule', name: '赛程', href: '/competitions/schedule', icon: Calendar },
     { key: 'athletes', name: '运动员名录', href: '/athletes', icon: Users },
