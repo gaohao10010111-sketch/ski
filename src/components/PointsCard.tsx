@@ -219,7 +219,7 @@ export default function PointsCard({
         className="relative overflow-hidden"
         style={{
           width: 380,
-          height: 700,
+          height: 730,
           borderRadius: 16,
           background: '#ffffff',
         }}
@@ -268,18 +268,15 @@ export default function PointsCard({
         <Snowflakes count={15} />
 
         {/* ===== SVG Ski equipment decorations ===== */}
-        <SkiEquipment x={280} y={20} rotation={-25} scale={0.9} opacity={0.1} />
-        <SkiEquipment x={-50} y={140} rotation={15} scale={0.8} opacity={0.08} />
-        <SkiEquipment x={290} y={500} rotation={-40} scale={0.7} opacity={0.1} />
+        <SkiEquipment x={280} y={20} rotation={-25} scale={0.9} opacity={0.045} />
+        <SkiEquipment x={-50} y={140} rotation={15} scale={0.8} opacity={0.035} />
+        <SkiEquipment x={290} y={530} rotation={-40} scale={0.7} opacity={0.045} />
 
-        {/* ===== Top-left small mountain logo ===== */}
+        {/* ===== Top-left mountain icon (matches navbar) ===== */}
         <div className="absolute z-20" style={{ top: 14, left: 16 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={`${basePath}/images/huacool-logo.png`}
-            alt="小山logo"
-            style={{ width: 36, height: 36, objectFit: 'contain', opacity: 0.9 }}
-          />
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.3))' }}>
+            <path d="m8 3 4 8 5-5 5 16H2L8 3z" />
+          </svg>
         </div>
 
         {/* ===== Brand text on photo ===== */}

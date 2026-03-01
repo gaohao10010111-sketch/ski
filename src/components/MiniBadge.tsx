@@ -190,17 +190,14 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
         <MiniSnowflakes />
 
         {/* Ski equipment decorations */}
-        <MiniSkiEquipment x={270} y={5} rotation={-25} scale={0.5} opacity={0.1} />
-        <MiniSkiEquipment x={-25} y={240} rotation={20} scale={0.45} opacity={0.08} />
+        <MiniSkiEquipment x={270} y={5} rotation={-25} scale={0.5} opacity={0.045} />
+        <MiniSkiEquipment x={-25} y={240} rotation={20} scale={0.45} opacity={0.035} />
 
-        {/* Top-left logo */}
+        {/* Top-left mountain icon (matches navbar) */}
         <div className="absolute z-20" style={{ top: 8, left: 10 }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={`${basePath}/images/huacool-logo.png`}
-            alt="小山logo"
-            style={{ width: 24, height: 24, objectFit: 'contain', opacity: 0.9 }}
-          />
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.3))' }}>
+            <path d="m8 3 4 8 5-5 5 16H2L8 3z" />
+          </svg>
         </div>
 
         {/* Brand text on photo */}
