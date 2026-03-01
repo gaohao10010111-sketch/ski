@@ -149,6 +149,13 @@ function BadgePageContent() {
                 dataType={selectedData.dataType}
                 competitionName={selectedData.competitionName}
                 bestScore={selectedData.bestScore}
+                bestResultText={(() => {
+                  if (!selectedData.pointsBreakdown?.length) return undefined
+                  const best = selectedData.pointsBreakdown.reduce((a, b) => a.rank < b.rank ? a : b)
+                  const loc = best.location || best.competition.replace(/2025-2026赛季/, '').replace(/全国/, '').replace(/U系列比赛/, '').replace(/[（()）]/g, '')
+                  const rk = best.rank === 1 ? '冠军' : best.rank === 2 ? '亚军' : best.rank === 3 ? '季军' : `第${best.rank}名`
+                  return `${loc}站 ${rk}`
+                })()}
               />
             ) : (
               <MiniBadge data={selectedData} />

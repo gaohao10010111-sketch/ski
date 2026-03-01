@@ -94,13 +94,12 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
   const basePath = useMemo(() => detectBasePath(), [])
   const siteUrl = 'https://cnskipoints.com'
 
-  const rankText = data.rank === 1 ? '冠军' : data.rank === 2 ? '亚军' : data.rank === 3 ? '季军' : `第${data.rank}名`
-  const isTopThree = data.rank <= 3
+  const rankText = `第${data.rank}名`
 
   // Strip trailing "组" from gender to avoid "男子组组"
   const genderBase = data.gender.replace(/组$/, '')
-  const headlineLine1 = `${data.athleteName} ${data.discipline}${data.ageGroup}`
-  const headlineLine2 = `${genderBase}组积分${rankText}`
+  const headlineLine1 = data.athleteName
+  const headlineLine2 = `${data.discipline} · ${data.ageGroup} · ${genderBase}组`
 
   const handleDownload = async () => {
     if (!badgeRef.current) return
@@ -236,18 +235,13 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
             <span className="font-black" style={{ fontSize: 20, color: '#1e3a5f', marginLeft: 2 }}>分</span>
           </div>
 
-          {/* Rank pill - LARGER */}
-          <div className="flex items-center justify-center gap-1.5" style={{ marginTop: 6 }}>
-            <div style={{ width: 28, height: 2, background: isTopThree ? 'linear-gradient(90deg, transparent, #c4a24e)' : 'linear-gradient(90deg, transparent, #1e3a5f)' }} />
-            <span className="font-black px-4 py-1.5 rounded-full" style={{
-              fontSize: 14,
-              background: isTopThree ? 'linear-gradient(135deg, #d4a853, #b8860b)' : '#0f2340',
-              color: '#fff',
-            }}>
-              {rankText}
-            </span>
-            <div style={{ width: 28, height: 2, background: isTopThree ? 'linear-gradient(90deg, #c4a24e, transparent)' : 'linear-gradient(90deg, #1e3a5f, transparent)' }} />
-          </div>
+          {/* Rank - prominent */}
+          <p className="font-bold tracking-[0.1em]" style={{ fontSize: 9, color: '#3d6a8e', marginTop: 4, marginBottom: 0 }}>
+            实时排名
+          </p>
+          <span className="font-black leading-none" style={{ fontSize: 30, color: '#0f2340' }}>
+            {rankText}
+          </span>
 
           {/* Spacer */}
           <div className="flex-1" />

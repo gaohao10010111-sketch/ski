@@ -30,6 +30,7 @@ interface PointsCardProps {
   dataType?: 'season' | 'race'
   competitionName?: string
   bestScore?: number
+  bestResultText?: string
 }
 
 // Rank badge - kept as export for compatibility
@@ -159,7 +160,7 @@ function Snowflakes({ count = 15, area = { w: 380, h: 300 } }: { count?: number;
 export default function PointsCard({
   athleteName, team, rank, totalPoints, competitionCount, bestRank,
   ageGroup, gender, discipline = '综合积分', season = '2025-2026',
-  dataType = 'season', competitionName, bestScore,
+  dataType = 'season', competitionName, bestScore, bestResultText,
 }: PointsCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [isGenerating, setIsGenerating] = useState(false)
@@ -170,13 +171,12 @@ export default function PointsCard({
     ? competitionName.replace(/2025-2026赛季/, '').replace(/全国/, '').replace(/U系列比赛/, '')
     : ''
 
-  const rankText = rank === 1 ? '冠军' : rank === 2 ? '亚军' : rank === 3 ? '季军' : `第${rank}名`
-  const isTopThree = rank <= 3
+  const rankText = `第${rank}名`
 
   // Strip trailing "组" from gender if present to avoid "男子组组"
   const genderBase = gender.replace(/组$/, '')
-  const headlineLine1 = `${athleteName} ${discipline}${ageGroup}`
-  const headlineLine2 = `${genderBase}组积分${rankText}`
+  const headlineLine1 = athleteName
+  const headlineLine2 = `${discipline} · ${ageGroup} · ${genderBase}组`
 
   const handleDownload = async () => {
     if (!cardRef.current) return
@@ -315,17 +315,14 @@ export default function PointsCard({
             <span className="font-black" style={{ fontSize: 30, color: '#1e3a5f', marginLeft: 4 }}>分</span>
           </div>
 
-          {/* Rank pill - LARGER */}
-          <div className="flex items-center justify-center gap-2" style={{ marginTop: 14 }}>
-            <div style={{ width: 40, height: 2, background: isTopThree ? 'linear-gradient(90deg, transparent, #c4a24e)' : 'linear-gradient(90deg, transparent, #1e3a5f)' }} />
-            <span className="font-black px-6 py-2 rounded-full" style={{
-              fontSize: 20,
-              background: isTopThree ? 'linear-gradient(135deg, #d4a853, #b8860b)' : '#0f2340',
-              color: '#fff',
-            }}>
+          {/* Rank - prominent, same importance as score */}
+          <p className="font-bold tracking-[0.15em]" style={{ fontSize: 13, color: '#3d6a8e', marginTop: 10, marginBottom: 2 }}>
+            实时排名
+          </p>
+          <div className="flex items-baseline justify-center">
+            <span className="font-black leading-none" style={{ fontSize: 52, color: '#0f2340', letterSpacing: '-0.02em' }}>
               {rankText}
             </span>
-            <div style={{ width: 40, height: 2, background: isTopThree ? 'linear-gradient(90deg, #c4a24e, transparent)' : 'linear-gradient(90deg, #1e3a5f, transparent)' }} />
           </div>
 
           {/* Stats row (season mode only) */}
@@ -343,9 +340,9 @@ export default function PointsCard({
                 <div style={{ fontSize: 11, fontWeight: 600, color: '#3d6a8e' }}>参赛场次</div>
               </div>
               <div style={{ width: 1, background: '#1e3a5f', opacity: 0.3 }} />
-              <div className="text-center">
-                <div style={{ fontSize: 22, fontWeight: 800, color: '#000' }}>#{bestRank}</div>
-                <div style={{ fontSize: 11, fontWeight: 600, color: '#3d6a8e' }}>最佳名次</div>
+              <div className="text-center" style={{ flex: 1 }}>
+                <div style={{ fontSize: 13, fontWeight: 800, color: '#000', lineHeight: 1.3 }}>{bestResultText || `第${bestRank}名`}</div>
+                <div style={{ fontSize: 11, fontWeight: 600, color: '#3d6a8e' }}>最佳成绩</div>
               </div>
               <div style={{ width: 1, background: '#1e3a5f', opacity: 0.3 }} />
               <div className="text-center">
