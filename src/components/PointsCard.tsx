@@ -219,7 +219,7 @@ export default function PointsCard({
         className="relative overflow-hidden"
         style={{
           width: 380,
-          height: 750,
+          height: 800,
           borderRadius: 16,
           background: '#ffffff',
         }}
@@ -289,14 +289,14 @@ export default function PointsCard({
         {/* ===== Content area (below photo transition) ===== */}
         <div className="relative z-10 flex flex-col items-center h-full" style={{ paddingTop: 275, paddingLeft: 24, paddingRight: 24, paddingBottom: 18 }}>
 
-          {/* Headline: narrative style - BOLD & LARGE for thumbnail readability */}
-          <div className="text-center w-full" style={{ marginBottom: 4 }}>
+          {/* Headline: name large, category info smaller */}
+          <div className="text-center w-full" style={{ marginBottom: 2 }}>
             <h1 className="font-black leading-tight" style={{ fontSize: 44, color: '#000000', letterSpacing: '0.01em', lineHeight: 1.2 }}>
               {headlineLine1}
             </h1>
-            <h1 className="font-black leading-tight" style={{ fontSize: 44, color: '#000000', letterSpacing: '0.01em', lineHeight: 1.2, marginTop: 2 }}>
+            <p className="font-bold" style={{ fontSize: 18, color: '#1e3a5f', lineHeight: 1.3, marginTop: 4 }}>
               {headlineLine2}
-            </h1>
+            </p>
           </div>
 
           {/* Team */}
@@ -309,10 +309,10 @@ export default function PointsCard({
 
           {/* ===== HERO score number - EXTRA LARGE ===== */}
           <div className="flex items-baseline justify-center">
-            <span className="font-black leading-none" style={{ fontSize: 96, color: '#000000', letterSpacing: '-0.03em' }}>
+            <span className="font-black leading-none" style={{ fontSize: 84, color: '#000000', letterSpacing: '-0.03em' }}>
               {totalPoints}
             </span>
-            <span className="font-black" style={{ fontSize: 30, color: '#1e3a5f', marginLeft: 4 }}>分</span>
+            <span className="font-black" style={{ fontSize: 26, color: '#1e3a5f', marginLeft: 4 }}>分</span>
           </div>
 
           {/* Rank - prominent, same importance as score */}
@@ -320,7 +320,7 @@ export default function PointsCard({
             实时排名
           </p>
           <div className="flex items-baseline justify-center">
-            <span className="font-black leading-none" style={{ fontSize: 52, color: '#0f2340', letterSpacing: '-0.02em' }}>
+            <span className="font-black leading-none" style={{ fontSize: 44, color: '#0f2340', letterSpacing: '-0.02em' }}>
               {rankText}
             </span>
           </div>
@@ -358,7 +358,7 @@ export default function PointsCard({
           <div className="flex-1" />
 
           {/* Brand line */}
-          <p className="font-black tracking-[0.12em]" style={{ fontSize: 13, color: '#0f2340', marginBottom: 8 }}>
+          <p className="font-black tracking-[0.12em]" style={{ fontSize: 13, color: '#0f2340', marginBottom: 4 }}>
             中国滑雪U系列赛事
           </p>
 

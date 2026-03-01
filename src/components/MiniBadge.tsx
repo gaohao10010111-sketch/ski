@@ -209,14 +209,14 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
         {/* ===== Content area ===== */}
         <div className="relative z-10 flex flex-col items-center h-full" style={{ paddingTop: 115, paddingLeft: 16, paddingRight: 16, paddingBottom: 12 }}>
 
-          {/* Headline: narrative style - BOLD for thumbnail readability */}
+          {/* Headline: name large, category info smaller */}
           <div className="text-center w-full" style={{ marginBottom: 0 }}>
-            <h2 className="font-black leading-tight" style={{ fontSize: 30, color: '#000000', letterSpacing: '0.01em', lineHeight: 1.2 }}>
+            <h2 className="font-black leading-tight" style={{ fontSize: 28, color: '#000000', letterSpacing: '0.01em', lineHeight: 1.2 }}>
               {headlineLine1}
             </h2>
-            <h2 className="font-black leading-tight" style={{ fontSize: 30, color: '#000000', letterSpacing: '0.01em', lineHeight: 1.2, marginTop: 1 }}>
+            <p className="font-bold" style={{ fontSize: 13, color: '#1e3a5f', lineHeight: 1.3, marginTop: 2 }}>
               {headlineLine2}
-            </h2>
+            </p>
           </div>
 
           {/* Team */}
