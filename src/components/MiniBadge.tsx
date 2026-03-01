@@ -1,22 +1,106 @@
 'use client'
 
-import { useRef, useState } from 'react'
-import { Download, Share2, Mountain } from 'lucide-react'
+import { useRef, useState, useMemo } from 'react'
+import { Download, Share2 } from 'lucide-react'
 import html2canvas from 'html2canvas'
-import { DynamicQRCode } from '@/components/PointsCard'
+import { DynamicQRCode, detectBasePath } from '@/components/PointsCard'
 import type { BadgeCardData } from '@/lib/badgeData'
 
 interface MiniBadgeProps {
   data: BadgeCardData
 }
 
+// SVG snowflakes for mini badge
+function MiniSnowflakes() {
+  const flakes = [
+    { top: 8, left: 15, size: 10, opacity: 0.25, rotation: 0 },
+    { top: 30, left: 290, size: 14, opacity: 0.3, rotation: 30 },
+    { top: 55, left: 40, size: 8, opacity: 0.2, rotation: 15 },
+    { top: 10, left: 160, size: 12, opacity: 0.22, rotation: 45 },
+    { top: 70, left: 310, size: 8, opacity: 0.18, rotation: 60 },
+    { top: 40, left: 110, size: 10, opacity: 0.25, rotation: 20 },
+    { top: 20, left: 240, size: 10, opacity: 0.22, rotation: 50 },
+    { top: 60, left: 200, size: 8, opacity: 0.16, rotation: 35 },
+    { top: 5, left: 80, size: 8, opacity: 0.2, rotation: 55 },
+    { top: 45, left: 340, size: 10, opacity: 0.18, rotation: 40 },
+  ]
+
+  return (
+    <>
+      {flakes.map((f, i) => (
+        <svg
+          key={i}
+          className="absolute"
+          style={{ top: f.top, left: f.left, opacity: f.opacity, transform: `rotate(${f.rotation}deg)` }}
+          width={f.size}
+          height={f.size}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          strokeWidth="1.5"
+        >
+          <line x1="12" y1="2" x2="12" y2="22" />
+          <line x1="3.27" y1="7" x2="20.73" y2="17" />
+          <line x1="3.27" y1="17" x2="20.73" y2="7" />
+          <line x1="12" y1="2" x2="9.5" y2="5" />
+          <line x1="12" y1="2" x2="14.5" y2="5" />
+          <line x1="12" y1="22" x2="9.5" y2="19" />
+          <line x1="12" y1="22" x2="14.5" y2="19" />
+        </svg>
+      ))}
+    </>
+  )
+}
+
+// SVG ski equipment decoration for mini badge
+function MiniSkiEquipment({ x, y, rotation = 0, scale = 1, opacity = 0.1 }: { x: number; y: number; rotation?: number; scale?: number; opacity?: number }) {
+  return (
+    <svg
+      className="absolute"
+      style={{
+        left: x,
+        top: y,
+        transform: `rotate(${rotation}deg) scale(${scale})`,
+        opacity,
+        pointerEvents: 'none',
+      }}
+      width="160"
+      height="180"
+      viewBox="0 0 160 180"
+      fill="none"
+    >
+      {/* Pair of parallel ski boards */}
+      <rect x="30" y="10" width="12" height="160" rx="6" fill="rgba(15,35,64,0.9)" />
+      <rect x="52" y="10" width="12" height="160" rx="6" fill="rgba(15,35,64,0.9)" />
+      {/* Ski board tips */}
+      <ellipse cx="36" cy="12" rx="6" ry="4" fill="rgba(15,35,64,0.9)" />
+      <ellipse cx="58" cy="12" rx="6" ry="4" fill="rgba(15,35,64,0.9)" />
+      {/* Crossed poles */}
+      <line x1="90" y1="15" x2="130" y2="170" stroke="rgba(15,35,64,0.9)" strokeWidth="4" strokeLinecap="round" />
+      <line x1="130" y1="15" x2="90" y2="170" stroke="rgba(15,35,64,0.9)" strokeWidth="4" strokeLinecap="round" />
+      {/* Pole handles */}
+      <circle cx="90" cy="13" r="6" fill="rgba(15,35,64,0.9)" />
+      <circle cx="130" cy="13" r="6" fill="rgba(15,35,64,0.9)" />
+      {/* Pole baskets */}
+      <circle cx="130" cy="170" r="5" stroke="rgba(15,35,64,0.9)" strokeWidth="2" fill="none" />
+      <circle cx="90" cy="170" r="5" stroke="rgba(15,35,64,0.9)" strokeWidth="2" fill="none" />
+    </svg>
+  )
+}
+
 export default function MiniBadge({ data }: MiniBadgeProps) {
   const badgeRef = useRef<HTMLDivElement>(null)
   const [isGenerating, setIsGenerating] = useState(false)
+  const basePath = useMemo(() => detectBasePath(), [])
   const siteUrl = 'https://cnskipoints.com'
 
   const rankText = data.rank === 1 ? '冠军' : data.rank === 2 ? '亚军' : data.rank === 3 ? '季军' : `第${data.rank}名`
   const isTopThree = data.rank <= 3
+
+  // Strip trailing "组" from gender to avoid "男子组组"
+  const genderBase = data.gender.replace(/组$/, '')
+  const headlineLine1 = `${data.athleteName} ${data.discipline}${data.ageGroup}`
+  const headlineLine2 = `${genderBase}组积分${rankText}`
 
   const handleDownload = async () => {
     if (!badgeRef.current) return
@@ -59,90 +143,138 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
         className="relative overflow-hidden"
         style={{
           width: 360, height: 360, borderRadius: 14,
-          background: 'linear-gradient(180deg, #d4e4ef 0%, #e4eef5 25%, #f0f5f8 50%, #fafcfd 80%, #ffffff 100%)',
-          border: '1px solid #c8d8e4',
+          background: '#ffffff',
         }}
       >
-        {/* Snow dots */}
-        {[
-          { top: 10, left: 20, size: 4, opacity: 0.15 },
-          { top: 6, left: 120, size: 3, opacity: 0.12 },
-          { top: 25, left: 260, size: 5, opacity: 0.13 },
-          { top: 4, left: 200, size: 3, opacity: 0.18 },
-          { top: 35, left: 50, size: 4, opacity: 0.1 },
-          { top: 18, left: 320, size: 4, opacity: 0.14 },
-          { top: 30, left: 160, size: 3, opacity: 0.16 },
-          { top: 15, left: 90, size: 3, opacity: 0.1 },
-        ].map((d, i) => (
-          <div key={i} className="absolute rounded-full" style={{ top: d.top, left: d.left, width: d.size, height: d.size, background: '#94b8d0', opacity: d.opacity }} />
-        ))}
+        {/* ===== Background photo top 35% ===== */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${basePath}/images/snow-mountain-bg.png`}
+          alt=""
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: 360,
+            height: 130,
+            objectFit: 'cover',
+            objectPosition: 'center top',
+          }}
+        />
+
+        {/* Light overlay */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: 360,
+            height: 130,
+            background: 'linear-gradient(180deg, rgba(15,35,64,0.15) 0%, rgba(15,35,64,0.05) 60%, rgba(15,35,64,0.1) 100%)',
+          }}
+        />
+
+        {/* White gradient fade */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 95,
+            left: 0,
+            width: 360,
+            height: 45,
+            background: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,1) 100%)',
+          }}
+        />
+
+        {/* Snowflake decorations */}
+        <MiniSnowflakes />
+
+        {/* Ski equipment decorations */}
+        <MiniSkiEquipment x={270} y={5} rotation={-25} scale={0.5} opacity={0.1} />
+        <MiniSkiEquipment x={-25} y={240} rotation={20} scale={0.45} opacity={0.08} />
 
         {/* Top-left logo */}
-        <div className="absolute z-20 flex items-center gap-1" style={{ top: 10, left: 12 }}>
-          <div className="w-5 h-5 rounded flex items-center justify-center" style={{ background: '#1e3a5f' }}>
-            <Mountain className="text-white" style={{ width: 12, height: 12 }} />
-          </div>
+        <div className="absolute z-20" style={{ top: 8, left: 10 }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${basePath}/images/huacool-logo.png`}
+            alt="小山logo"
+            style={{ width: 24, height: 24, objectFit: 'contain', opacity: 0.9 }}
+          />
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 flex flex-col items-center h-full pt-5 pb-4 px-5">
-          {/* Header */}
-          <p className="font-black tracking-[0.2em] mb-0.5" style={{ fontSize: 11, color: '#1e3a5f' }}>
+        {/* Brand text on photo */}
+        <div className="absolute z-20" style={{ top: 10, right: 10 }}>
+          <p className="font-black tracking-[0.12em]" style={{ fontSize: 10, color: 'rgba(255,255,255,0.95)', textShadow: '0 1px 4px rgba(0,0,0,0.5)' }}>
             中国滑雪U系列赛事
           </p>
-          <div className="mx-auto mb-3" style={{ width: 36, height: 1.5, background: 'linear-gradient(90deg, transparent, #1e3a5f, transparent)' }} />
+        </div>
 
-          {/* Name - large */}
-          <h2 className="font-black leading-tight text-center mb-1" style={{ fontSize: 32, color: '#1e3a5f', letterSpacing: '0.05em' }}>
-            {data.athleteName}
-          </h2>
+        {/* ===== Content area ===== */}
+        <div className="relative z-10 flex flex-col items-center h-full" style={{ paddingTop: 115, paddingLeft: 16, paddingRight: 16, paddingBottom: 12 }}>
 
-          {/* Category */}
-          <p className="text-[11px] font-bold mb-0.5" style={{ color: '#3d6a8e' }}>
-            {data.discipline} · {data.ageGroup} · {data.gender}
-          </p>
-          <p className="text-[10px] mb-3" style={{ color: '#8fafc5' }}>{data.team}</p>
-
-          {/* Score - hero element */}
-          <div className="text-center flex-1 flex flex-col justify-center">
-            <p className="text-[9px] font-semibold tracking-[0.15em] mb-1.5" style={{ color: '#7a9bb5' }}>
-              {data.dataType === 'race' ? '比赛积分' : '赛季总积分'}
-            </p>
-            <div className="flex items-baseline justify-center">
-              <span className="font-black leading-none" style={{ fontSize: 58, color: '#1e3a5f', letterSpacing: '-0.03em' }}>
-                {data.points}
-              </span>
-              <span className="font-bold ml-0.5" style={{ fontSize: 16, color: '#5a8aaa' }}>分</span>
-            </div>
-
-            {/* Rank */}
-            <div className="flex items-center justify-center gap-1.5 mt-3">
-              <div style={{ width: 24, height: 1, background: isTopThree ? 'linear-gradient(90deg, transparent, #c4a24e)' : 'linear-gradient(90deg, transparent, #7a9bb5)' }} />
-              <span className="font-black px-3 py-1 rounded-full" style={{
-                fontSize: 13,
-                background: isTopThree ? 'linear-gradient(135deg, #d4a853, #b8860b)' : '#1e3a5f',
-                color: '#fff',
-              }}>
-                {rankText}
-              </span>
-              <div style={{ width: 24, height: 1, background: isTopThree ? 'linear-gradient(90deg, #c4a24e, transparent)' : 'linear-gradient(90deg, #7a9bb5, transparent)' }} />
-            </div>
+          {/* Headline: narrative style - BOLD for thumbnail readability */}
+          <div className="text-center w-full" style={{ marginBottom: 2 }}>
+            <h2 className="font-black leading-tight" style={{ fontSize: 30, color: '#000000', letterSpacing: '0.01em', lineHeight: 1.2 }}>
+              {headlineLine1}
+            </h2>
+            <h2 className="font-black leading-tight" style={{ fontSize: 30, color: '#000000', letterSpacing: '0.01em', lineHeight: 1.2, marginTop: 1 }}>
+              {headlineLine2}
+            </h2>
           </div>
 
-          {/* Season */}
-          <p className="text-[11px] font-semibold mb-2.5" style={{ color: '#5a8aaa' }}>{data.season} 赛季</p>
+          {/* Team */}
+          <p style={{ fontSize: 11, color: '#1e3a5f', fontWeight: 700, marginBottom: 2 }}>{data.team}</p>
+
+          {/* Score label */}
+          <p className="font-bold tracking-[0.15em]" style={{ fontSize: 10, color: '#3d6a8e', marginBottom: 4 }}>
+            {data.dataType === 'race' ? '比赛积分' : `${data.season} 赛季总积分`}
+          </p>
+
+          {/* HERO score - LARGE for thumbnail readability */}
+          <div className="flex items-baseline justify-center">
+            <span className="font-black leading-none" style={{ fontSize: 56, color: '#000000', letterSpacing: '-0.03em' }}>
+              {data.points}
+            </span>
+            <span className="font-black" style={{ fontSize: 20, color: '#1e3a5f', marginLeft: 2 }}>分</span>
+          </div>
+
+          {/* Rank pill - LARGER */}
+          <div className="flex items-center justify-center gap-1.5" style={{ marginTop: 6 }}>
+            <div style={{ width: 28, height: 2, background: isTopThree ? 'linear-gradient(90deg, transparent, #c4a24e)' : 'linear-gradient(90deg, transparent, #1e3a5f)' }} />
+            <span className="font-black px-4 py-1.5 rounded-full" style={{
+              fontSize: 14,
+              background: isTopThree ? 'linear-gradient(135deg, #d4a853, #b8860b)' : '#0f2340',
+              color: '#fff',
+            }}>
+              {rankText}
+            </span>
+            <div style={{ width: 28, height: 2, background: isTopThree ? 'linear-gradient(90deg, #c4a24e, transparent)' : 'linear-gradient(90deg, #1e3a5f, transparent)' }} />
+          </div>
+
+          {/* Spacer */}
+          <div className="flex-1" />
 
           {/* Bottom: logos + QR */}
-          <div className="flex items-center justify-between w-full pt-2" style={{ borderTop: '1px solid #c8d8e4' }}>
-            <div className="flex items-center gap-1.5">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logos/csa.jpg" alt="CSA" className="rounded-full object-cover" style={{ width: 20, height: 20, border: '1px solid #c8d8e4' }} />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logos/huati-icon.png" alt="CNSG" className="rounded-full object-contain" style={{ width: 20, height: 20, border: '1px solid #c8d8e4', background: '#fff' }} />
+          <div className="flex items-center justify-between w-full" style={{ paddingTop: 6, borderTop: '1px solid #dde6ed' }}>
+            <div className="flex items-center gap-2">
+              <div className="flex flex-col items-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`${basePath}/logos/csa.jpg`} alt="CSA" className="rounded-full object-cover" style={{ width: 24, height: 24, border: '1px solid #c8d8e4' }} />
+                <span style={{ fontSize: 5.5, fontWeight: 600, color: '#3d6a8e', marginTop: 1 }}>中国滑雪协会</span>
+              </div>
+              <div className="flex flex-col items-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`${basePath}/logos/huati-icon.png`} alt="华体冰雪" className="rounded-full object-contain" style={{ width: 24, height: 24, border: '1px solid #c8d8e4', background: '#fff' }} />
+                <span style={{ fontSize: 5.5, fontWeight: 600, color: '#3d6a8e', marginTop: 1 }}>华体冰雪</span>
+              </div>
             </div>
             <div className="flex items-center gap-1.5">
-              <span className="text-[9px] font-semibold" style={{ color: '#1e3a5f' }}>cnskipoints.com</span>
-              <DynamicQRCode url={siteUrl} size={24} dark="#1e3a5f" />
+              <div className="text-right">
+                <span style={{ fontSize: 7, fontWeight: 600, color: '#3d6a8e', display: 'block', lineHeight: 1.2, marginBottom: 1 }}>中国滑雪青少年积分排名官方平台</span>
+                <span style={{ fontSize: 9, fontWeight: 700, color: '#0f2340' }}>cnskipoints.com</span>
+              </div>
+              <DynamicQRCode url={siteUrl} size={22} dark="#1e3a5f" />
             </div>
           </div>
         </div>

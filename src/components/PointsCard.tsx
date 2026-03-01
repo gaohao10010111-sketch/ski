@@ -1,9 +1,20 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
-import { Download, Share2, Mountain } from 'lucide-react'
+import { useState, useRef, useEffect, useMemo } from 'react'
+import { Download, Share2 } from 'lucide-react'
 import html2canvas from 'html2canvas'
 import QRCode from 'qrcode'
+
+// Detect basePath: '/ski' for GitHub Pages / dev, '' for standalone (cnskipoints.com)
+export function detectBasePath() {
+  if (typeof window === 'undefined') return '/ski'
+  // Check Next.js script tags - most reliable across client-side navigations
+  const scripts = document.querySelectorAll('script[src]')
+  if (Array.from(scripts).some(s => s.src.includes('/ski/_next'))) return '/ski'
+  // Fallback: check current or referrer URL
+  if (window.location.pathname.startsWith('/ski')) return '/ski'
+  return ''
+}
 
 interface PointsCardProps {
   athleteName: string
@@ -56,31 +67,90 @@ export function DynamicQRCode({ url, size = 64, dark = '#1e3a5f' }: { url: strin
   return <img src={qrDataUrl} alt="扫码查看" className="rounded" style={{ width: size, height: size }} />
 }
 
-// Decorative snow dots
-function SnowDots({ count = 12, area = { w: 380, h: 200 } }: { count?: number; area?: { w: number; h: number } }) {
-  const dots = [
-    { top: 15, left: 25, size: 5, opacity: 0.18 },
-    { top: 8, left: 130, size: 4, opacity: 0.12 },
-    { top: 35, left: 280, size: 6, opacity: 0.15 },
-    { top: 5, left: 210, size: 3, opacity: 0.22 },
-    { top: 50, left: 55, size: 4, opacity: 0.1 },
-    { top: 28, left: 340, size: 5, opacity: 0.16 },
-    { top: 42, left: 170, size: 3, opacity: 0.2 },
-    { top: 60, left: 95, size: 4, opacity: 0.12 },
-    { top: 12, left: 310, size: 5, opacity: 0.08 },
-    { top: 55, left: 240, size: 3, opacity: 0.15 },
-    { top: 20, left: 70, size: 4, opacity: 0.14 },
-    { top: 45, left: 350, size: 3, opacity: 0.1 },
+// SVG ski equipment decoration (ski boards + poles silhouette)
+function SkiEquipment({ x, y, rotation = 0, scale = 1, opacity = 0.1 }: { x: number; y: number; rotation?: number; scale?: number; opacity?: number }) {
+  return (
+    <svg
+      className="absolute"
+      style={{
+        left: x,
+        top: y,
+        transform: `rotate(${rotation}deg) scale(${scale})`,
+        opacity,
+        pointerEvents: 'none',
+      }}
+      width="160"
+      height="180"
+      viewBox="0 0 160 180"
+      fill="none"
+    >
+      {/* Pair of parallel ski boards */}
+      <rect x="30" y="10" width="12" height="160" rx="6" fill="rgba(15,35,64,0.9)" />
+      <rect x="52" y="10" width="12" height="160" rx="6" fill="rgba(15,35,64,0.9)" />
+      {/* Ski board tips (top curve) */}
+      <ellipse cx="36" cy="12" rx="6" ry="4" fill="rgba(15,35,64,0.9)" />
+      <ellipse cx="58" cy="12" rx="6" ry="4" fill="rgba(15,35,64,0.9)" />
+      {/* Crossed poles */}
+      <line x1="90" y1="15" x2="130" y2="170" stroke="rgba(15,35,64,0.9)" strokeWidth="4" strokeLinecap="round" />
+      <line x1="130" y1="15" x2="90" y2="170" stroke="rgba(15,35,64,0.9)" strokeWidth="4" strokeLinecap="round" />
+      {/* Pole handles (top circles) */}
+      <circle cx="90" cy="13" r="6" fill="rgba(15,35,64,0.9)" />
+      <circle cx="130" cy="13" r="6" fill="rgba(15,35,64,0.9)" />
+      {/* Pole baskets (bottom circles) */}
+      <circle cx="130" cy="170" r="5" stroke="rgba(15,35,64,0.9)" strokeWidth="2" fill="none" />
+      <circle cx="90" cy="170" r="5" stroke="rgba(15,35,64,0.9)" strokeWidth="2" fill="none" />
+    </svg>
+  )
+}
+
+// SVG snowflake decorations
+function Snowflakes({ count = 15, area = { w: 380, h: 300 } }: { count?: number; area?: { w: number; h: number } }) {
+  const flakes = [
+    { top: 18, left: 30, size: 16, opacity: 0.25, rotation: 0 },
+    { top: 45, left: 310, size: 20, opacity: 0.3, rotation: 30 },
+    { top: 80, left: 60, size: 12, opacity: 0.2, rotation: 15 },
+    { top: 12, left: 180, size: 14, opacity: 0.22, rotation: 45 },
+    { top: 100, left: 340, size: 10, opacity: 0.18, rotation: 60 },
+    { top: 55, left: 140, size: 18, opacity: 0.28, rotation: 20 },
+    { top: 130, left: 25, size: 10, opacity: 0.15, rotation: 10 },
+    { top: 35, left: 260, size: 14, opacity: 0.22, rotation: 50 },
+    { top: 90, left: 200, size: 8, opacity: 0.18, rotation: 35 },
+    { top: 150, left: 280, size: 12, opacity: 0.2, rotation: 25 },
+    { top: 70, left: 350, size: 10, opacity: 0.16, rotation: 40 },
+    { top: 8, left: 95, size: 12, opacity: 0.2, rotation: 55 },
+    { top: 115, left: 160, size: 8, opacity: 0.15, rotation: 5 },
+    { top: 60, left: 5, size: 14, opacity: 0.22, rotation: 70 },
+    { top: 140, left: 110, size: 10, opacity: 0.17, rotation: 15 },
   ].slice(0, count)
 
   return (
     <>
-      {dots.map((d, i) => (
-        <div
+      {flakes.map((f, i) => (
+        <svg
           key={i}
-          className="absolute rounded-full"
-          style={{ top: d.top, left: d.left, width: d.size, height: d.size, background: '#94b8d0', opacity: d.opacity }}
-        />
+          className="absolute"
+          style={{ top: f.top, left: f.left, opacity: f.opacity, transform: `rotate(${f.rotation}deg)` }}
+          width={f.size}
+          height={f.size}
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          strokeWidth="1.5"
+        >
+          {/* 6-arm snowflake */}
+          <line x1="12" y1="2" x2="12" y2="22" />
+          <line x1="3.27" y1="7" x2="20.73" y2="17" />
+          <line x1="3.27" y1="17" x2="20.73" y2="7" />
+          {/* Branch tips */}
+          <line x1="12" y1="2" x2="9.5" y2="5" />
+          <line x1="12" y1="2" x2="14.5" y2="5" />
+          <line x1="12" y1="22" x2="9.5" y2="19" />
+          <line x1="12" y1="22" x2="14.5" y2="19" />
+          <line x1="3.27" y1="7" x2="5.5" y2="5.2" />
+          <line x1="3.27" y1="7" x2="4.5" y2="9.8" />
+          <line x1="20.73" y1="7" x2="18.5" y2="5.2" />
+          <line x1="20.73" y1="7" x2="19.5" y2="9.8" />
+        </svg>
       ))}
     </>
   )
@@ -93,6 +163,7 @@ export default function PointsCard({
 }: PointsCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [isGenerating, setIsGenerating] = useState(false)
+  const basePath = useMemo(() => detectBasePath(), [])
   const siteUrl = 'https://cnskipoints.com'
 
   const shortCompName = competitionName
@@ -101,6 +172,11 @@ export default function PointsCard({
 
   const rankText = rank === 1 ? '冠军' : rank === 2 ? '亚军' : rank === 3 ? '季军' : `第${rank}名`
   const isTopThree = rank <= 3
+
+  // Strip trailing "组" from gender if present to avoid "男子组组"
+  const genderBase = gender.replace(/组$/, '')
+  const headlineLine1 = `${athleteName} ${discipline}${ageGroup}`
+  const headlineLine2 = `${genderBase}组积分${rankText}`
 
   const handleDownload = async () => {
     if (!cardRef.current) return
@@ -143,123 +219,174 @@ export default function PointsCard({
         className="relative overflow-hidden"
         style={{
           width: 380,
-          height: 660,
+          height: 700,
           borderRadius: 16,
-          background: 'linear-gradient(180deg, #d4e4ef 0%, #e2edf5 18%, #edf3f7 35%, #f5f8fa 55%, #fafcfd 75%, #ffffff 100%)',
-          border: '1px solid #c8d8e4',
+          background: '#ffffff',
         }}
       >
-        {/* Snow decoration dots */}
-        <SnowDots />
+        {/* ===== Background photo top 45% ===== */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`${basePath}/images/snow-mountain-bg.png`}
+          alt=""
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: 380,
+            height: 320,
+            objectFit: 'cover',
+            objectPosition: 'center top',
+          }}
+        />
 
-        {/* Subtle mountain silhouette watermark */}
-        <div className="absolute" style={{ bottom: 180, left: 0, right: 0, height: 120, opacity: 0.035 }}>
-          <svg viewBox="0 0 380 120" width="380" height="120" style={{ display: 'block' }}>
-            <path d="M0,120 L60,55 L95,80 L140,25 L185,65 L220,35 L270,70 L310,20 L350,60 L380,40 L380,120 Z" fill="#1e3a5f" />
-          </svg>
+        {/* Light overlay on photo for contrast */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: 380,
+            height: 320,
+            background: 'linear-gradient(180deg, rgba(15,35,64,0.15) 0%, rgba(15,35,64,0.05) 50%, rgba(15,35,64,0.1) 100%)',
+          }}
+        />
+
+        {/* White gradient fade from photo to white */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 260,
+            left: 0,
+            width: 380,
+            height: 80,
+            background: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,1) 100%)',
+          }}
+        />
+
+        {/* ===== SVG Snowflake decorations on photo area ===== */}
+        <Snowflakes count={15} />
+
+        {/* ===== SVG Ski equipment decorations ===== */}
+        <SkiEquipment x={280} y={20} rotation={-25} scale={0.9} opacity={0.1} />
+        <SkiEquipment x={-50} y={140} rotation={15} scale={0.8} opacity={0.08} />
+        <SkiEquipment x={290} y={500} rotation={-40} scale={0.7} opacity={0.1} />
+
+        {/* ===== Top-left small mountain logo ===== */}
+        <div className="absolute z-20" style={{ top: 14, left: 16 }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`${basePath}/images/huacool-logo.png`}
+            alt="小山logo"
+            style={{ width: 36, height: 36, objectFit: 'contain', opacity: 0.9 }}
+          />
         </div>
 
-        {/* Top-left logo */}
-        <div className="absolute z-20 flex items-center gap-1.5" style={{ top: 14, left: 16 }}>
-          <div className="w-7 h-7 rounded-lg flex items-center justify-center" style={{ background: '#1e3a5f' }}>
-            <Mountain className="text-white" style={{ width: 16, height: 16 }} />
-          </div>
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10 flex flex-col items-center h-full px-7 pt-8 pb-5">
-          {/* Header branding */}
-          <div className="text-center mb-2">
-            <p className="font-black tracking-[0.25em]" style={{ fontSize: 15, color: '#1e3a5f' }}>
-              中国滑雪U系列赛事
-            </p>
-            <p className="text-[12px] font-semibold mt-1" style={{ color: '#6a9ab8' }}>
-              {dataType === 'race' ? shortCompName : '官方积分排名'}
-            </p>
-          </div>
-          <div className="mx-auto mb-6" style={{ width: 50, height: 2, background: 'linear-gradient(90deg, transparent, #1e3a5f, transparent)' }} />
-
-          {/* Athlete name - HERO text */}
-          <h1 className="font-black leading-tight text-center mb-2" style={{ fontSize: 44, color: '#1e3a5f', letterSpacing: '0.06em' }}>
-            {athleteName}
-          </h1>
-
-          {/* Discipline + category */}
-          <p className="text-[15px] font-bold mb-1" style={{ color: '#3d6a8e' }}>
-            {discipline} · {ageGroup} · {gender}
+        {/* ===== Brand text on photo ===== */}
+        <div className="absolute z-20" style={{ top: 18, right: 16 }}>
+          <p className="font-bold tracking-[0.15em]" style={{ fontSize: 11, color: 'rgba(255,255,255,0.9)', textShadow: '0 1px 3px rgba(0,0,0,0.4)' }}>
+            {dataType === 'race' ? shortCompName : '中国滑雪U系列赛事'}
           </p>
+        </div>
+
+        {/* ===== Content area (below photo transition) ===== */}
+        <div className="relative z-10 flex flex-col items-center h-full" style={{ paddingTop: 275, paddingLeft: 24, paddingRight: 24, paddingBottom: 18 }}>
+
+          {/* Headline: narrative style - BOLD & LARGE for thumbnail readability */}
+          <div className="text-center w-full" style={{ marginBottom: 4 }}>
+            <h1 className="font-black leading-tight" style={{ fontSize: 44, color: '#000000', letterSpacing: '0.01em', lineHeight: 1.2 }}>
+              {headlineLine1}
+            </h1>
+            <h1 className="font-black leading-tight" style={{ fontSize: 44, color: '#000000', letterSpacing: '0.01em', lineHeight: 1.2, marginTop: 2 }}>
+              {headlineLine2}
+            </h1>
+          </div>
 
           {/* Team */}
-          <p className="text-[12px] mb-6" style={{ color: '#8fafc5' }}>{team}</p>
+          <p style={{ fontSize: 14, color: '#1e3a5f', fontWeight: 700, marginBottom: 6 }}>{team}</p>
 
-          {/* Score section - visual centerpiece */}
-          <div className="text-center flex-1 flex flex-col justify-center">
-            <p className="text-[11px] font-semibold tracking-[0.2em] mb-3" style={{ color: '#7a9bb5' }}>
-              {dataType === 'race' ? '比赛积分' : '赛季总积分'}
-            </p>
-            <div className="flex items-baseline justify-center">
-              <span className="font-black leading-none" style={{ fontSize: 92, color: '#1e3a5f', letterSpacing: '-0.03em' }}>
-                {totalPoints}
-              </span>
-              <span className="font-bold ml-1" style={{ fontSize: 24, color: '#5a8aaa' }}>分</span>
-            </div>
+          {/* Score label */}
+          <p className="font-bold tracking-[0.15em]" style={{ fontSize: 13, color: '#3d6a8e', marginBottom: 6 }}>
+            {dataType === 'race' ? '比赛积分' : `${season} 赛季总积分`}
+          </p>
 
-            {/* Rank pill */}
-            <div className="flex items-center justify-center gap-2 mt-5">
-              <div style={{ width: 35, height: 1, background: isTopThree ? 'linear-gradient(90deg, transparent, #c4a24e)' : 'linear-gradient(90deg, transparent, #7a9bb5)' }} />
-              <span className="font-black px-5 py-1.5 rounded-full" style={{
-                fontSize: 18,
-                background: isTopThree ? 'linear-gradient(135deg, #d4a853, #b8860b)' : '#1e3a5f',
-                color: '#fff',
-              }}>
-                {rankText}
-              </span>
-              <div style={{ width: 35, height: 1, background: isTopThree ? 'linear-gradient(90deg, #c4a24e, transparent)' : 'linear-gradient(90deg, #7a9bb5, transparent)' }} />
-            </div>
-
-            {/* Stats row */}
-            {dataType === 'race' ? (
-              bestScore ? (
-                <div className="mt-4 text-center">
-                  <span className="text-[12px]" style={{ color: '#7a9bb5' }}>最佳成绩 </span>
-                  <span className="text-[17px] font-bold" style={{ color: '#1e3a5f' }}>{bestScore}</span>
-                </div>
-              ) : null
-            ) : (
-              <div className="flex justify-center gap-8 mt-5">
-                <div className="text-center">
-                  <div className="text-[20px] font-bold" style={{ color: '#1e3a5f' }}>{competitionCount}</div>
-                  <div className="text-[10px] font-medium" style={{ color: '#8fafc5' }}>参赛场次</div>
-                </div>
-                <div style={{ width: 1, background: '#c8d8e4' }} />
-                <div className="text-center">
-                  <div className="text-[20px] font-bold" style={{ color: '#1e3a5f' }}>#{bestRank}</div>
-                  <div className="text-[10px] font-medium" style={{ color: '#8fafc5' }}>最佳名次</div>
-                </div>
-                <div style={{ width: 1, background: '#c8d8e4' }} />
-                <div className="text-center">
-                  <div className="text-[20px] font-bold" style={{ color: '#1e3a5f' }}>
-                    {competitionCount > 0 ? (totalPoints / competitionCount).toFixed(0) : 0}
-                  </div>
-                  <div className="text-[10px] font-medium" style={{ color: '#8fafc5' }}>场均积分</div>
-                </div>
-              </div>
-            )}
+          {/* ===== HERO score number - EXTRA LARGE ===== */}
+          <div className="flex items-baseline justify-center">
+            <span className="font-black leading-none" style={{ fontSize: 96, color: '#000000', letterSpacing: '-0.03em' }}>
+              {totalPoints}
+            </span>
+            <span className="font-black" style={{ fontSize: 30, color: '#1e3a5f', marginLeft: 4 }}>分</span>
           </div>
 
-          {/* Season */}
-          <p className="text-[13px] font-semibold mb-4" style={{ color: '#5a8aaa' }}>{season} 赛季</p>
+          {/* Rank pill - LARGER */}
+          <div className="flex items-center justify-center gap-2" style={{ marginTop: 14 }}>
+            <div style={{ width: 40, height: 2, background: isTopThree ? 'linear-gradient(90deg, transparent, #c4a24e)' : 'linear-gradient(90deg, transparent, #1e3a5f)' }} />
+            <span className="font-black px-6 py-2 rounded-full" style={{
+              fontSize: 20,
+              background: isTopThree ? 'linear-gradient(135deg, #d4a853, #b8860b)' : '#0f2340',
+              color: '#fff',
+            }}>
+              {rankText}
+            </span>
+            <div style={{ width: 40, height: 2, background: isTopThree ? 'linear-gradient(90deg, #c4a24e, transparent)' : 'linear-gradient(90deg, #1e3a5f, transparent)' }} />
+          </div>
+
+          {/* Stats row (season mode only) */}
+          {dataType === 'race' ? (
+            bestScore ? (
+              <div style={{ marginTop: 14, textAlign: 'center' }}>
+                <span style={{ fontSize: 13, color: '#3d6a8e', fontWeight: 600 }}>最佳成绩 </span>
+                <span style={{ fontSize: 18, fontWeight: 800, color: '#000' }}>{bestScore}</span>
+              </div>
+            ) : null
+          ) : (
+            <div className="flex justify-center gap-8" style={{ marginTop: 16 }}>
+              <div className="text-center">
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#000' }}>{competitionCount}</div>
+                <div style={{ fontSize: 11, fontWeight: 600, color: '#3d6a8e' }}>参赛场次</div>
+              </div>
+              <div style={{ width: 1, background: '#1e3a5f', opacity: 0.3 }} />
+              <div className="text-center">
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#000' }}>#{bestRank}</div>
+                <div style={{ fontSize: 11, fontWeight: 600, color: '#3d6a8e' }}>最佳名次</div>
+              </div>
+              <div style={{ width: 1, background: '#1e3a5f', opacity: 0.3 }} />
+              <div className="text-center">
+                <div style={{ fontSize: 22, fontWeight: 800, color: '#000' }}>
+                  {competitionCount > 0 ? (totalPoints / competitionCount).toFixed(0) : 0}
+                </div>
+                <div style={{ fontSize: 11, fontWeight: 600, color: '#3d6a8e' }}>场均积分</div>
+              </div>
+            </div>
+          )}
+
+          {/* Spacer */}
+          <div className="flex-1" />
+
+          {/* Brand line */}
+          <p className="font-black tracking-[0.12em]" style={{ fontSize: 13, color: '#0f2340', marginBottom: 8 }}>
+            中国滑雪U系列赛事
+          </p>
 
           {/* Bottom: logos + QR */}
-          <div className="flex items-center justify-between w-full pt-3" style={{ borderTop: '1px solid #c8d8e4' }}>
-            <div className="flex items-center gap-2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logos/csa.jpg" alt="CSA" className="rounded-full object-cover" style={{ width: 28, height: 28, border: '1px solid #c8d8e4' }} />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logos/huati-icon.png" alt="CNSG" className="rounded-full object-contain" style={{ width: 28, height: 28, border: '1px solid #c8d8e4', background: '#fff' }} />
+          <div className="flex items-center justify-between w-full" style={{ paddingTop: 10, borderTop: '1px solid #dde6ed' }}>
+            <div className="flex items-center gap-3">
+              <div className="flex flex-col items-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`${basePath}/logos/csa.jpg`} alt="CSA" className="rounded-full object-cover" style={{ width: 34, height: 34, border: '1px solid #c8d8e4' }} />
+                <span style={{ fontSize: 7, fontWeight: 600, color: '#3d6a8e', marginTop: 2 }}>中国滑雪协会</span>
+              </div>
+              <div className="flex flex-col items-center">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`${basePath}/logos/huati-icon.png`} alt="华体冰雪" className="rounded-full object-contain" style={{ width: 34, height: 34, border: '1px solid #c8d8e4', background: '#fff' }} />
+                <span style={{ fontSize: 7, fontWeight: 600, color: '#3d6a8e', marginTop: 2 }}>华体冰雪</span>
+              </div>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[10px] font-semibold" style={{ color: '#1e3a5f' }}>cnskipoints.com</span>
+              <div className="text-right">
+                <span style={{ fontSize: 8, fontWeight: 500, color: '#7a9bb5', display: 'block', lineHeight: 1.2, marginBottom: 2 }}>中国滑雪青少年积分排名官方平台</span>
+                <span style={{ fontSize: 10, fontWeight: 600, color: '#1e3a5f' }}>cnskipoints.com</span>
+              </div>
               <DynamicQRCode url={siteUrl} size={36} dark="#1e3a5f" />
             </div>
           </div>
