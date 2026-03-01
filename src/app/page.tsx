@@ -33,6 +33,7 @@ import { useAuth } from '@/contexts/AuthContext'
 import { useTranslation } from '@/contexts/LanguageContext'
 import { statsApi, competitionsApi, rankingsApi, type StatsOverview, type Competition, type RankingItem } from '@/lib/api'
 import { latestResults } from '@/data/latestResults'
+import { totalRankingsData } from '@/data/totalRankings'
 import { recommendationStats, recommendedCoaches, recommendedVenues, recommendedClubs } from '@/data/recommendations'
 
 // 运动类型映射
@@ -278,16 +279,8 @@ export default function HomePage() {
     color: item.color || highlightFallbackColors[index % highlightFallbackColors.length]
   }))
 
-  // 从本地数据计算统计信息（作为API数据的fallback）
-  const localTotalAthletes = (() => {
-    const athleteSet = new Set<string>()
-    latestResults.competitions.forEach(comp => {
-      comp.events.forEach(event => {
-        event.athletes.forEach(a => athleteSet.add(a.name))
-      })
-    })
-    return athleteSet.size
-  })()
+  // Use totalRankingsData as the single source of truth for athlete count
+  const localTotalAthletes = totalRankingsData.stats.athleteCount
 
   const localTotalCompetitions = latestResults.competitions.length
   const localCompletedCompetitions = latestResults.competitions.filter(c => c.status === 'completed').length

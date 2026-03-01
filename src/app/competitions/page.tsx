@@ -24,6 +24,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { competitionsApi, statsApi, type Competition, type StatsOverview } from '@/lib/api'
 import { latestResults } from '@/data/latestResults'
+import { totalRankingsData } from '@/data/totalRankings'
 
 // 将本地数据转换为Competition格式
 const localCompetitions: Competition[] = latestResults.competitions.map((comp, index) => ({
@@ -179,15 +180,7 @@ export default function CompetitionsPage() {
   // 计算本地统计数据
   const localStats = {
     totalCompetitions: localCompetitions.length,
-    totalAthletes: (() => {
-      const athleteSet = new Set<string>()
-      latestResults.competitions.forEach(comp => {
-        comp.events.forEach(event => {
-          event.athletes.forEach(a => athleteSet.add(a.name))
-        })
-      })
-      return athleteSet.size
-    })(),
+    totalAthletes: totalRankingsData.stats.athleteCount,
     completedCompetitions: localCompetitions.filter(c => c.status === 'COMPLETED').length,
     upcomingCompetitions: localCompetitions.filter(c => c.status === 'UPCOMING').length,
   }

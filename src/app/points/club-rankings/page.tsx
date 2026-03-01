@@ -126,7 +126,7 @@ export default function ClubRankingsPage() {
               <Target className="w-6 h-6 sm:w-8 sm:h-8 text-green-600 mr-2 sm:mr-3 flex-shrink-0" />
               <div className="min-w-0">
                 <div className="text-lg sm:text-2xl font-bold text-green-700">{clubRankingsData.stats.totalAthletes}</div>
-                <div className="text-xs sm:text-sm text-green-600">参赛运动员</div>
+                <div className="text-xs sm:text-sm text-green-600">俱乐部运动员</div>
               </div>
             </div>
           </div>

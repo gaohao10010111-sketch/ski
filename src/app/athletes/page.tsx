@@ -6,6 +6,7 @@ import { useToast } from '@/components/Toast'
 import { athletesApi, statsApi, type Athlete, type StatsOverview } from '@/lib/api'
 import { getPointsRanking, getStatsOverview, getCompetitions, type CompetitionInfo } from '@/lib/resultsStorage'
 import { latestResults } from '@/data/latestResults'
+import { totalRankingsData } from '@/data/totalRankings'
 import Link from 'next/link'
 
 // 项目类型映射
@@ -121,25 +122,8 @@ function buildStaticAthletesList(): Athlete[] {
 // 预先构建静态运动员列表（在模块加载时执行）
 const STATIC_ATHLETES = buildStaticAthletesList()
 
-// 计算唯一运动员数量（按 name + team 去重，不按子项分开）
-function getUniqueAthleteCount(): number {
-  const uniqueAthletes = new Set<string>()
-
-  for (const competition of latestResults.competitions) {
-    for (const event of competition.events) {
-      for (const athlete of event.athletes) {
-        // 使用 name + team 作为唯一标识
-        const key = `${athlete.name}-${athlete.team}`
-        uniqueAthletes.add(key)
-      }
-    }
-  }
-
-  return uniqueAthletes.size
-}
-
-// 预先计算唯一运动员数量
-const UNIQUE_ATHLETE_COUNT = getUniqueAthleteCount()
+// Use totalRankingsData as the single source of truth for athlete count
+const UNIQUE_ATHLETE_COUNT = totalRankingsData.stats.athleteCount
 
 export default function AthletesPage() {
   const [searchTerm, setSearchTerm] = useState('')
