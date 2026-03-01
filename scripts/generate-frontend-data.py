@@ -490,6 +490,34 @@ def generate_club_rankings(conn):
         })
         print(f'  {SPORT_TYPE_NAMES.get(main_st, main_st)}: {len(rankings)} clubs')
 
+    # Build "all" overall ranking (sum across all sport types per club)
+    overall_stats = defaultdict(lambda: {'team': '', 'totalPoints': 0, 'athletes': set()})
+    for cs in club_stats.values():
+        os_ = overall_stats[cs['team']]
+        os_['team'] = cs['team']
+        os_['totalPoints'] += cs['totalPoints']
+        os_['athletes'].update(cs['athletes'])
+
+    overall_list = sorted(overall_stats.values(), key=lambda c: -c['totalPoints'])
+    overall_rankings = []
+    for idx, cs in enumerate(overall_list):
+        if idx > 0 and cs['totalPoints'] == overall_list[idx-1]['totalPoints']:
+            current_rank = overall_rankings[idx-1]['rank']
+        else:
+            current_rank = idx + 1
+        overall_rankings.append({
+            'rank': current_rank,
+            'team': cs['team'],
+            'totalPoints': cs['totalPoints'],
+            'athleteCount': len(cs['athletes']),
+        })
+    sport_rankings_list.insert(0, {
+        'sportType': 'all',
+        'sportName': '全部项目',
+        'rankings': overall_rankings,
+    })
+    print(f'  全部项目: {len(overall_rankings)} clubs')
+
     comps = c.execute('SELECT * FROM Competition').fetchall()
 
     data = {

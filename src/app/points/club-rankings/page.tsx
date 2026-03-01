@@ -1,11 +1,12 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { Trophy, Crown, Medal, Award, Search, Download, Users, Calendar, Target, Mountain, Sparkles, ArrowLeftRight, Wind } from 'lucide-react'
+import { Trophy, Crown, Medal, Award, Search, Download, Users, Calendar, Target, Mountain, Sparkles, ArrowLeftRight, Wind, Star } from 'lucide-react'
 import { clubRankingsData } from '@/data/clubRankings'
 import { useToast } from '@/components/Toast'
 
 const sportTypeConfig = [
+  { value: 'all', label: '全部项目', shortLabel: '全部', icon: Star },
   { value: 'alpine', label: '高山滑雪', shortLabel: '高山', icon: Mountain },
   { value: 'snowboard-slopestyle-bigair', label: '单板坡障/大跳台', shortLabel: '单板坡障', icon: Sparkles },
   { value: 'snowboard-parallel', label: '单板平行项目', shortLabel: '单板平行', icon: ArrowLeftRight },
@@ -13,7 +14,7 @@ const sportTypeConfig = [
 ]
 
 export default function ClubRankingsPage() {
-  const [selectedSportType, setSelectedSportType] = useState('alpine')
+  const [selectedSportType, setSelectedSportType] = useState('all')
   const [searchTerm, setSearchTerm] = useState('')
   const [isExporting, setIsExporting] = useState(false)
   const { showToast } = useToast()
