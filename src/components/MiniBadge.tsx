@@ -141,7 +141,7 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
         ref={badgeRef}
         className="relative overflow-hidden"
         style={{
-          width: 360, height: 360, borderRadius: 14,
+          width: 360, height: 400, borderRadius: 14,
           background: '#ffffff',
         }}
       >
@@ -207,7 +207,7 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
         </div>
 
         {/* ===== Content area ===== */}
-        <div className="relative z-10 flex flex-col items-center h-full" style={{ paddingTop: 115, paddingLeft: 16, paddingRight: 16, paddingBottom: 12 }}>
+        <div className="relative z-10 flex flex-col items-center h-full" style={{ paddingTop: 110, paddingLeft: 16, paddingRight: 16, paddingBottom: 14 }}>
 
           {/* Headline: name large, category info smaller */}
           <div className="text-center w-full" style={{ marginBottom: 0 }}>
