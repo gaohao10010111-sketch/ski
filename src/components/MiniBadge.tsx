@@ -4,7 +4,6 @@ import { useRef, useState, useMemo } from 'react'
 import { Download, Share2 } from 'lucide-react'
 import html2canvas from 'html2canvas'
 import { DynamicQRCode, detectBasePath } from '@/components/PointsCard'
-import SharePopup from '@/components/SharePopup'
 import type { BadgeCardData } from '@/lib/badgeData'
 
 interface MiniBadgeProps {
@@ -92,7 +91,6 @@ function MiniSkiEquipment({ x, y, rotation = 0, scale = 1, opacity = 0.1 }: { x:
 export default function MiniBadge({ data }: MiniBadgeProps) {
   const badgeRef = useRef<HTMLDivElement>(null)
   const [isGenerating, setIsGenerating] = useState(false)
-  const [showSharePopup, setShowSharePopup] = useState(false)
   const basePath = useMemo(() => detectBasePath(), [])
   const siteUrl = 'https://cnskipoints.com'
 
@@ -278,24 +276,13 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
           <Download className="h-4 w-4" />
           {isGenerating ? '生成中...' : '保存图片'}
         </button>
-        <button onClick={() => setShowSharePopup(true)} disabled={isGenerating}
+        <button onClick={handleShareImage} disabled={isGenerating}
           className="flex items-center gap-2 px-5 py-2.5 rounded-xl disabled:opacity-50 text-sm font-semibold transition-all hover:bg-gray-50"
           style={{ border: '1px solid #d1d5db', color: '#374151' }}>
           <Share2 className="h-4 w-4" />
           分享
         </button>
       </div>
-
-      <SharePopup
-        isOpen={showSharePopup}
-        onClose={() => setShowSharePopup(false)}
-        athleteName={data.athleteName}
-        rank={data.rank}
-        points={data.points}
-        discipline={data.discipline}
-        onShareImage={handleShareImage}
-        isGenerating={isGenerating}
-      />
     </div>
   )
 }
