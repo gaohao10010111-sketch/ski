@@ -219,7 +219,7 @@ export default function PointsCard({
         className="relative overflow-hidden"
         style={{
           width: 380,
-          height: 730,
+          height: 750,
           borderRadius: 16,
           background: '#ffffff',
         }}
@@ -316,7 +316,7 @@ export default function PointsCard({
           </div>
 
           {/* Rank - prominent, same importance as score */}
-          <p className="font-bold tracking-[0.15em]" style={{ fontSize: 13, color: '#3d6a8e', marginTop: 10, marginBottom: 2 }}>
+          <p className="font-bold tracking-[0.15em]" style={{ fontSize: 13, color: '#3d6a8e', marginTop: 4, marginBottom: 2 }}>
             实时排名
           </p>
           <div className="flex items-baseline justify-center">
@@ -334,7 +334,7 @@ export default function PointsCard({
               </div>
             ) : null
           ) : (
-            <div className="flex justify-center gap-8" style={{ marginTop: 16 }}>
+            <div className="flex justify-center gap-8" style={{ marginTop: 8 }}>
               <div className="text-center">
                 <div style={{ fontSize: 22, fontWeight: 800, color: '#000' }}>{competitionCount}</div>
                 <div style={{ fontSize: 11, fontWeight: 600, color: '#3d6a8e' }}>参赛场次</div>

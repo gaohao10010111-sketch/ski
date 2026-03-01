@@ -210,7 +210,7 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
         <div className="relative z-10 flex flex-col items-center h-full" style={{ paddingTop: 115, paddingLeft: 16, paddingRight: 16, paddingBottom: 12 }}>
 
           {/* Headline: narrative style - BOLD for thumbnail readability */}
-          <div className="text-center w-full" style={{ marginBottom: 2 }}>
+          <div className="text-center w-full" style={{ marginBottom: 0 }}>
             <h2 className="font-black leading-tight" style={{ fontSize: 30, color: '#000000', letterSpacing: '0.01em', lineHeight: 1.2 }}>
               {headlineLine1}
             </h2>
@@ -220,10 +220,10 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
           </div>
 
           {/* Team */}
-          <p style={{ fontSize: 11, color: '#1e3a5f', fontWeight: 700, marginBottom: 2 }}>{data.team}</p>
+          <p style={{ fontSize: 11, color: '#1e3a5f', fontWeight: 700, marginBottom: 1 }}>{data.team}</p>
 
           {/* Score label */}
-          <p className="font-bold tracking-[0.15em]" style={{ fontSize: 10, color: '#3d6a8e', marginBottom: 4 }}>
+          <p className="font-bold tracking-[0.15em]" style={{ fontSize: 10, color: '#3d6a8e', marginBottom: 2 }}>
             {data.dataType === 'race' ? '比赛积分' : `${data.season} 赛季总积分`}
           </p>
 
@@ -236,7 +236,7 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
           </div>
 
           {/* Rank - prominent */}
-          <p className="font-bold tracking-[0.1em]" style={{ fontSize: 9, color: '#3d6a8e', marginTop: 4, marginBottom: 0 }}>
+          <p className="font-bold tracking-[0.1em]" style={{ fontSize: 9, color: '#3d6a8e', marginTop: 2, marginBottom: 0 }}>
             实时排名
           </p>
           <span className="font-black leading-none" style={{ fontSize: 30, color: '#0f2340' }}>
