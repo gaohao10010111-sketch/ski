@@ -268,14 +268,14 @@ export default function PointsCard({
 
         {/* ===== Top-left logos (CSA + 华体冰雪) — same as nav bar ===== */}
         <div className="absolute z-20 flex items-center gap-1" style={{ top: 10, left: 14 }}>
-          <div style={{ width: 48, height: 48, borderRadius: '50%', backgroundImage: `url(${basePath}/logos/csa.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+          <div style={{ width: 38, height: 38, borderRadius: '50%', backgroundImage: `url(${basePath}/logos/csa.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
           <div style={{ height: 68, width: 76, backgroundImage: `url(${basePath}/logos/huati-vertical.png)`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }} />
         </div>
 
         {/* ===== Brand text — large, below logos ===== */}
-        <div className="absolute z-20" style={{ top: 72, left: 0, right: 0, textAlign: 'center' }}>
-          <p className="font-black tracking-[0.25em]" style={{ fontSize: 30, color: 'rgba(255,255,255,0.97)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
-            {dataType === 'race' ? shortCompName : '中国滑雪U赛事'}
+        <div className="absolute z-20" style={{ top: 88, left: 0, right: 0, textAlign: 'center' }}>
+          <p className="font-black tracking-[0.2em]" style={{ fontSize: 28, color: 'rgba(255,255,255,0.97)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
+            {dataType === 'race' ? shortCompName : '中国滑雪U系列赛事'}
           </p>
         </div>
 
