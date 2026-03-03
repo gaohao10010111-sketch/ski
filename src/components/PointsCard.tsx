@@ -269,8 +269,8 @@ export default function PointsCard({
 
         {/* ===== Top-left logos (CSA + 华体冰雪) — same as nav bar ===== */}
         <div className="absolute z-20 flex items-center gap-1" style={{ top: 10, left: 14 }}>
-          <div style={{ width: 36, height: 36, borderRadius: '50%', backgroundImage: `url(${basePath}/logos/csa.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
-          <div style={{ height: 52, width: 60, backgroundImage: `url(${basePath}/logos/huati-vertical.png)`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }} />
+          <div style={{ width: 48, height: 48, borderRadius: '50%', backgroundImage: `url(${basePath}/logos/csa.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+          <div style={{ height: 68, width: 76, backgroundImage: `url(${basePath}/logos/huati-vertical.png)`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }} />
         </div>
 
         {/* ===== Brand text — large, below logos ===== */}
@@ -281,7 +281,7 @@ export default function PointsCard({
         </div>
 
         {/* ===== Content area (below photo transition) ===== */}
-        <div className="relative z-10 flex flex-col items-center h-full" style={{ paddingTop: 275, paddingLeft: 24, paddingRight: 24, paddingBottom: 18 }}>
+        <div className="relative z-10 flex flex-col items-center" style={{ paddingTop: 275, paddingLeft: 24, paddingRight: 24 }}>
 
           {/* Headline: name large, category info smaller */}
           <div className="text-center w-full" style={{ marginBottom: 2 }}>
@@ -348,15 +348,13 @@ export default function PointsCard({
             </div>
           )}
 
-          {/* Spacer */}
-          <div className="flex-1" />
+        </div>
 
-          {/* Brand line */}
-          <p className="font-black tracking-[0.12em]" style={{ fontSize: 13, color: '#0f2340', marginBottom: 4 }}>
+        {/* ===== Bottom section — absolute positioned to avoid flex issues in html2canvas ===== */}
+        <div className="absolute z-10" style={{ bottom: 18, left: 24, right: 24 }}>
+          <p className="font-black tracking-[0.12em]" style={{ fontSize: 13, color: '#0f2340', marginBottom: 4, textAlign: 'center' }}>
             中国滑雪U系列赛事
           </p>
-
-          {/* Bottom: logos + QR */}
           <div className="flex items-center justify-between w-full" style={{ paddingTop: 10, borderTop: '1px solid #dde6ed' }}>
             <div className="flex items-center gap-1.5">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
