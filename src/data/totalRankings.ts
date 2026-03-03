@@ -1,7 +1,7 @@
 /**
  * 总积分排名静态数据（按项目和子项分类）
  * 自动生成，请勿手动修改
- * 生成时间: 2026-03-03T10:01:47.212448
+ * 生成时间: 2026-03-03T17:15:34.211868
  */
 
 export interface PointsBreakdownItem {
@@ -19485,10 +19485,10 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkwu00pqbfhojhnxffpm",
               "athleteName": "常嘉林",
               "team": "广西射击射箭运动发展中心",
-              "totalPoints": 689,
-              "competitionCount": 2,
+              "totalPoints": 1049,
+              "competitionCount": 3,
               "bestRank": 1,
-              "avgPoints": 344.5,
+              "avgPoints": 349.67,
               "ageGroup": "U11",
               "gender": "男子组",
               "rankChange": 0,
@@ -19504,6 +19504,12 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "张家口富龙滑雪场",
                   "points": 329,
                   "rank": 2
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 360,
+                  "rank": 1
                 }
               ]
             },
@@ -19512,10 +19518,10 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkwz00ptbfho9l5fo4g2",
               "athleteName": "张墨凡",
               "team": "北京市冬季运动管理中心",
-              "totalPoints": 632,
-              "competitionCount": 2,
+              "totalPoints": 961,
+              "competitionCount": 3,
               "bestRank": 2,
-              "avgPoints": 316.0,
+              "avgPoints": 320.33,
               "ageGroup": "U11",
               "gender": "男子组",
               "rankChange": 0,
@@ -19531,6 +19537,12 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "张家口富龙滑雪场",
                   "points": 303,
                   "rank": 3
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 329,
+                  "rank": 2
                 }
               ]
             },
@@ -19539,10 +19551,10 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkx200pwbfhonl48w33h",
               "athleteName": "赵铠轩",
               "team": "河南省体育局",
-              "totalPoints": 583,
-              "competitionCount": 2,
+              "totalPoints": 863,
+              "competitionCount": 3,
               "bestRank": 3,
-              "avgPoints": 291.5,
+              "avgPoints": 287.67,
               "ageGroup": "U11",
               "gender": "男子组",
               "rankChange": 0,
@@ -19556,6 +19568,12 @@ export const totalRankingsData: TotalRankingsData = {
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
                   "location": "张家口富龙滑雪场",
+                  "points": 280,
+                  "rank": 4
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
                   "points": 280,
                   "rank": 4
                 }
@@ -19566,10 +19584,10 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkx700pzbfholzzypp6c",
               "athleteName": "张梓童",
               "team": "河南省体育局",
-              "totalPoints": 540,
-              "competitionCount": 2,
+              "totalPoints": 782,
+              "competitionCount": 3,
               "bestRank": 4,
-              "avgPoints": 270.0,
+              "avgPoints": 260.67,
               "ageGroup": "U11",
               "gender": "男子组",
               "rankChange": 0,
@@ -19585,6 +19603,12 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "张家口富龙滑雪场",
                   "points": 260,
                   "rank": 5
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 242,
+                  "rank": 6
                 }
               ]
             },
@@ -19593,10 +19617,10 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkxa00q2bfhoqpmx31h0",
               "athleteName": "王俊熙",
               "team": "河南省体育局",
-              "totalPoints": 502,
-              "competitionCount": 2,
+              "totalPoints": 762,
+              "competitionCount": 3,
               "bestRank": 5,
-              "avgPoints": 251.0,
+              "avgPoints": 254.0,
               "ageGroup": "U11",
               "gender": "男子组",
               "rankChange": 0,
@@ -19612,6 +19636,12 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "张家口富龙滑雪场",
                   "points": 242,
                   "rank": 6
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 260,
+                  "rank": 5
                 }
               ]
             },
@@ -19620,10 +19650,10 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "athlete-吴雨桐-个人",
               "athleteName": "吴雨桐",
               "team": "个人",
-              "totalPoints": 360,
-              "competitionCount": 1,
+              "totalPoints": 663,
+              "competitionCount": 2,
               "bestRank": 1,
-              "avgPoints": 360.0,
+              "avgPoints": 331.5,
               "ageGroup": "U11",
               "gender": "男子组",
               "rankChange": 0,
@@ -19633,6 +19663,12 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "张家口富龙滑雪场",
                   "points": 360,
                   "rank": 1
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 303,
+                  "rank": 3
                 }
               ]
             },
@@ -19641,10 +19677,10 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkxe00q5bfho8r60z791",
               "athleteName": "崔芃森",
               "team": "河北省体育局冬季运动中心",
-              "totalPoints": 242,
-              "competitionCount": 1,
+              "totalPoints": 454,
+              "competitionCount": 2,
               "bestRank": 6,
-              "avgPoints": 242.0,
+              "avgPoints": 227.0,
               "ageGroup": "U11",
               "gender": "男子组",
               "rankChange": 0,
@@ -19654,39 +19690,24 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "成都热雪奇迹室内滑雪场",
                   "points": 242,
                   "rank": 6
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 212,
+                  "rank": 8
                 }
               ]
             },
             {
               "rank": 8,
-              "athleteId": "cmjzpdkxh00q8bfho5kg4losu",
-              "athleteName": "卢彦词",
-              "team": "四川体育职业学院",
-              "totalPoints": 226,
-              "competitionCount": 1,
-              "bestRank": 7,
-              "avgPoints": 226.0,
-              "ageGroup": "U11",
-              "gender": "男子组",
-              "rankChange": 0,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
-                  "points": 226,
-                  "rank": 7
-                }
-              ]
-            },
-            {
-              "rank": 9,
               "athleteId": "cmjzpdkxl00qbbfhowxx5v1fm",
               "athleteName": "赵子钰",
               "team": "河北省体育局冬季运动中心",
-              "totalPoints": 212,
-              "competitionCount": 1,
-              "bestRank": 8,
-              "avgPoints": 212.0,
+              "totalPoints": 438,
+              "competitionCount": 2,
+              "bestRank": 7,
+              "avgPoints": 219.0,
               "ageGroup": "U11",
               "gender": "男子组",
               "rankChange": 0,
@@ -19696,6 +19717,39 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "成都热雪奇迹室内滑雪场",
                   "points": 212,
                   "rank": 8
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 226,
+                  "rank": 7
+                }
+              ]
+            },
+            {
+              "rank": 9,
+              "athleteId": "cmjzpdkxh00q8bfho5kg4losu",
+              "athleteName": "卢彦词",
+              "team": "四川体育职业学院",
+              "totalPoints": 402,
+              "competitionCount": 2,
+              "bestRank": 7,
+              "avgPoints": 201.0,
+              "ageGroup": "U11",
+              "gender": "男子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 226,
+                  "rank": 7
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 176,
+                  "rank": 11
                 }
               ]
             },
@@ -19719,9 +19773,51 @@ export const totalRankingsData: TotalRankingsData = {
                   "rank": 9
                 }
               ]
+            },
+            {
+              "rank": 10,
+              "athleteId": "athlete-芦梓恒-纳西亚",
+              "athleteName": "芦梓恒",
+              "team": "纳西亚",
+              "totalPoints": 199,
+              "competitionCount": 1,
+              "bestRank": 9,
+              "avgPoints": 199.0,
+              "ageGroup": "U11",
+              "gender": "男子组",
+              "rankChange": 1,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 199,
+                  "rank": 9
+                }
+              ]
+            },
+            {
+              "rank": 12,
+              "athleteId": "athlete-陈维仁-上海雪酷滑雪竞技队",
+              "athleteName": "陈维仁",
+              "team": "上海雪酷滑雪竞技队",
+              "totalPoints": 187,
+              "competitionCount": 1,
+              "bestRank": 10,
+              "avgPoints": 187.0,
+              "ageGroup": "U11",
+              "gender": "男子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 187,
+                  "rank": 10
+                }
+              ]
             }
           ],
-          "total": 10
+          "total": 12
         },
         {
           "discipline": "坡面障碍技巧",
@@ -19734,10 +19830,10 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkv900ohbfhojesum95s",
               "athleteName": "赵紫琪",
               "team": "四川体育职业学院",
-              "totalPoints": 720,
-              "competitionCount": 2,
+              "totalPoints": 962,
+              "competitionCount": 3,
               "bestRank": 1,
-              "avgPoints": 360.0,
+              "avgPoints": 320.67,
               "ageGroup": "U11",
               "gender": "女子组",
               "rankChange": 0,
@@ -19753,6 +19849,12 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "张家口富龙滑雪场",
                   "points": 360,
                   "rank": 1
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 242,
+                  "rank": 6
                 }
               ]
             },
@@ -19761,10 +19863,10 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkvn00otbfho8ze6lnnz",
               "athleteName": "李诗沫",
               "team": "石家庄市冰雪与足球运动中心",
-              "totalPoints": 563,
-              "competitionCount": 2,
-              "bestRank": 3,
-              "avgPoints": 281.5,
+              "totalPoints": 892,
+              "competitionCount": 3,
+              "bestRank": 2,
+              "avgPoints": 297.33,
               "ageGroup": "U11",
               "gender": "女子组",
               "rankChange": 0,
@@ -19780,16 +19882,55 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "张家口富龙滑雪场",
                   "points": 303,
                   "rank": 3
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 329,
+                  "rank": 2
                 }
               ]
             },
             {
               "rank": 3,
+              "athleteId": "cmjzpdkvz00p2bfhobxqhq2ex",
+              "athleteName": "甄芝漫",
+              "team": "河北省体育局冬季运动中心",
+              "totalPoints": 844,
+              "competitionCount": 3,
+              "bestRank": 2,
+              "avgPoints": 281.33,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 212,
+                  "rank": 8
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+                  "location": "张家口富龙滑雪场",
+                  "points": 329,
+                  "rank": 2
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 303,
+                  "rank": 3
+                }
+              ]
+            },
+            {
+              "rank": 4,
               "athleteId": "cmjzpdkvk00oqbfhotqaedvcn",
               "athleteName": "武温暖",
               "team": "石家庄市冰雪与足球运动中心",
-              "totalPoints": 560,
-              "competitionCount": 2,
+              "totalPoints": 840,
+              "competitionCount": 3,
               "bestRank": 4,
               "avgPoints": 280.0,
               "ageGroup": "U11",
@@ -19807,99 +19948,24 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "张家口富龙滑雪场",
                   "points": 280,
                   "rank": 4
-                }
-              ]
-            },
-            {
-              "rank": 4,
-              "athleteId": "cmjzpdkvz00p2bfhobxqhq2ex",
-              "athleteName": "甄芝漫",
-              "team": "河北省体育局冬季运动中心",
-              "totalPoints": 541,
-              "competitionCount": 2,
-              "bestRank": 2,
-              "avgPoints": 270.5,
-              "ageGroup": "U11",
-              "gender": "女子组",
-              "rankChange": 0,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
-                  "points": 212,
-                  "rank": 8
                 },
                 {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-                  "location": "张家口富龙滑雪场",
-                  "points": 329,
-                  "rank": 2
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 280,
+                  "rank": 4
                 }
               ]
             },
             {
               "rank": 5,
-              "athleteId": "cmjzpdkvg00onbfhog8ooajnb",
-              "athleteName": "任可心",
-              "team": "四川体育职业学院",
-              "totalPoints": 515,
-              "competitionCount": 2,
-              "bestRank": 3,
-              "avgPoints": 257.5,
-              "ageGroup": "U11",
-              "gender": "女子组",
-              "rankChange": 0,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
-                  "points": 303,
-                  "rank": 3
-                },
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-                  "location": "张家口富龙滑雪场",
-                  "points": 212,
-                  "rank": 8
-                }
-              ]
-            },
-            {
-              "rank": 6,
-              "athleteId": "cmjzpdkvc00okbfhoitspibck",
-              "athleteName": "王淑哲",
-              "team": "河南省体育局",
-              "totalPoints": 495,
-              "competitionCount": 2,
-              "bestRank": 2,
-              "avgPoints": 247.5,
-              "ageGroup": "U11",
-              "gender": "女子组",
-              "rankChange": 0,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
-                  "points": 329,
-                  "rank": 2
-                },
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-                  "location": "张家口富龙滑雪场",
-                  "points": 166,
-                  "rank": 12
-                }
-              ]
-            },
-            {
-              "rank": 7,
               "athleteId": "cmjzpdkvv00ozbfho9q5gtmko",
               "athleteName": "闫妍",
               "team": "个人",
-              "totalPoints": 486,
-              "competitionCount": 2,
+              "totalPoints": 746,
+              "competitionCount": 3,
               "bestRank": 5,
-              "avgPoints": 243.0,
+              "avgPoints": 248.67,
               "ageGroup": "U11",
               "gender": "女子组",
               "rankChange": 0,
@@ -19915,18 +19981,123 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "张家口富龙滑雪场",
                   "points": 260,
                   "rank": 5
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 260,
+                  "rank": 5
+                }
+              ]
+            },
+            {
+              "rank": 6,
+              "athleteId": "cmjzpdkvc00okbfhoitspibck",
+              "athleteName": "王淑哲",
+              "team": "河南省体育局",
+              "totalPoints": 682,
+              "competitionCount": 3,
+              "bestRank": 2,
+              "avgPoints": 227.33,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 329,
+                  "rank": 2
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+                  "location": "张家口富龙滑雪场",
+                  "points": 166,
+                  "rank": 12
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 187,
+                  "rank": 10
+                }
+              ]
+            },
+            {
+              "rank": 7,
+              "athleteId": "cmjzpdkvg00onbfhog8ooajnb",
+              "athleteName": "任可心",
+              "team": "四川体育职业学院",
+              "totalPoints": 672,
+              "competitionCount": 3,
+              "bestRank": 3,
+              "avgPoints": 224.0,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 303,
+                  "rank": 3
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+                  "location": "张家口富龙滑雪场",
+                  "points": 212,
+                  "rank": 8
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 157,
+                  "rank": 13
                 }
               ]
             },
             {
               "rank": 8,
+              "athleteId": "cmjzpdkwf00pebfhoy6f0kq3d",
+              "athleteName": "欧子娴",
+              "team": "成都热雪奇迹",
+              "totalPoints": 591,
+              "competitionCount": 3,
+              "bestRank": 7,
+              "avgPoints": 197.0,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 166,
+                  "rank": 12
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+                  "location": "张家口富龙滑雪场",
+                  "points": 199,
+                  "rank": 9
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 226,
+                  "rank": 7
+                }
+              ]
+            },
+            {
+              "rank": 9,
               "athleteId": "cmjzpdkwi00phbfho8f0ltvne",
               "athleteName": "陈科羽",
               "team": "四川体育职业学院",
-              "totalPoints": 399,
-              "competitionCount": 2,
+              "totalPoints": 533,
+              "competitionCount": 3,
               "bestRank": 6,
-              "avgPoints": 199.5,
+              "avgPoints": 177.67,
               "ageGroup": "U11",
               "gender": "女子组",
               "rankChange": 0,
@@ -19942,11 +20113,110 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "张家口富龙滑雪场",
                   "points": 242,
                   "rank": 6
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 134,
+                  "rank": 16
                 }
               ]
             },
             {
-              "rank": 9,
+              "rank": 10,
+              "athleteId": "athlete-孙焕轲-河南省体育局",
+              "athleteName": "孙焕轲",
+              "team": "河南省体育局",
+              "totalPoints": 493,
+              "competitionCount": 3,
+              "bestRank": 11,
+              "avgPoints": 164.33,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 176,
+                  "rank": 11
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+                  "location": "张家口富龙滑雪场",
+                  "points": 176,
+                  "rank": 11
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 141,
+                  "rank": 15
+                }
+              ]
+            },
+            {
+              "rank": 11,
+              "athleteId": "athlete-王玗希-个人",
+              "athleteName": "王玗希",
+              "team": "个人",
+              "totalPoints": 425,
+              "competitionCount": 2,
+              "bestRank": 7,
+              "avgPoints": 212.5,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+                  "location": "张家口富龙滑雪场",
+                  "points": 226,
+                  "rank": 7
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 199,
+                  "rank": 9
+                }
+              ]
+            },
+            {
+              "rank": 12,
+              "athleteId": "cmjzpdkwq00pnbfhozuu1pwmh",
+              "athleteName": "孙婉迪",
+              "team": "个人",
+              "totalPoints": 395,
+              "competitionCount": 3,
+              "bestRank": 15,
+              "avgPoints": 131.67,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 141,
+                  "rank": 15
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+                  "location": "张家口富龙滑雪场",
+                  "points": 127,
+                  "rank": 17
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 127,
+                  "rank": 17
+                }
+              ]
+            },
+            {
+              "rank": 13,
               "athleteId": "cmjzpdkw600p8bfhouhcl0616",
               "athleteName": "袁芮涵",
               "team": "河南省体育局",
@@ -19973,95 +20243,14 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 10,
-              "athleteId": "cmjzpdkwf00pebfhoy6f0kq3d",
-              "athleteName": "欧子娴",
-              "team": "成都热雪奇迹",
-              "totalPoints": 365,
-              "competitionCount": 2,
-              "bestRank": 9,
-              "avgPoints": 182.5,
-              "ageGroup": "U11",
-              "gender": "女子组",
-              "rankChange": 0,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
-                  "points": 166,
-                  "rank": 12
-                },
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-                  "location": "张家口富龙滑雪场",
-                  "points": 199,
-                  "rank": 9
-                }
-              ]
-            },
-            {
-              "rank": 11,
-              "athleteId": "athlete-孙焕轲-河南省体育局",
-              "athleteName": "孙焕轲",
-              "team": "河南省体育局",
-              "totalPoints": 352,
-              "competitionCount": 2,
-              "bestRank": 11,
-              "avgPoints": 176.0,
-              "ageGroup": "U11",
-              "gender": "女子组",
-              "rankChange": 0,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
-                  "points": 176,
-                  "rank": 11
-                },
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-                  "location": "张家口富龙滑雪场",
-                  "points": 176,
-                  "rank": 11
-                }
-              ]
-            },
-            {
-              "rank": 12,
-              "athleteId": "cmjzpdkwq00pnbfhozuu1pwmh",
-              "athleteName": "孙婉迪",
-              "team": "个人",
-              "totalPoints": 268,
-              "competitionCount": 2,
-              "bestRank": 15,
-              "avgPoints": 134.0,
-              "ageGroup": "U11",
-              "gender": "女子组",
-              "rankChange": 0,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
-                  "points": 141,
-                  "rank": 15
-                },
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-                  "location": "张家口富龙滑雪场",
-                  "points": 127,
-                  "rank": 17
-                }
-              ]
-            },
-            {
-              "rank": 13,
+              "rank": 14,
               "athleteId": "cmjzpdkvr00owbfhobsujiv88",
               "athleteName": "孙焕轶",
               "team": "个人",
-              "totalPoints": 242,
-              "competitionCount": 1,
+              "totalPoints": 363,
+              "competitionCount": 2,
               "bestRank": 6,
-              "avgPoints": 242.0,
+              "avgPoints": 181.5,
               "ageGroup": "U11",
               "gender": "女子组",
               "rankChange": 0,
@@ -20071,18 +20260,45 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "成都热雪奇迹室内滑雪场",
                   "points": 242,
                   "rank": 6
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 121,
+                  "rank": 18
                 }
               ]
             },
             {
-              "rank": 14,
-              "athleteId": "athlete-王玗希-个人",
-              "athleteName": "王玗希",
-              "team": "个人",
-              "totalPoints": 226,
+              "rank": 15,
+              "athleteId": "athlete-张天馨-石家庄市冰雪与足球运动中心",
+              "athleteName": "张天馨",
+              "team": "石家庄市冰雪与足球运动中心",
+              "totalPoints": 360,
               "competitionCount": 1,
-              "bestRank": 7,
-              "avgPoints": 226.0,
+              "bestRank": 1,
+              "avgPoints": 360.0,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 360,
+                  "rank": 1
+                }
+              ]
+            },
+            {
+              "rank": 16,
+              "athleteId": "cmjzpdl1f00tcbfhowslhbsqq",
+              "athleteName": "李佳馨",
+              "team": "个人",
+              "totalPoints": 249,
+              "competitionCount": 2,
+              "bestRank": 16,
+              "avgPoints": 124.5,
               "ageGroup": "U11",
               "gender": "女子组",
               "rankChange": 0,
@@ -20090,13 +20306,40 @@ export const totalRankingsData: TotalRankingsData = {
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
                   "location": "张家口富龙滑雪场",
-                  "points": 226,
-                  "rank": 7
+                  "points": 134,
+                  "rank": 16
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 115,
+                  "rank": 19
                 }
               ]
             },
             {
-              "rank": 15,
+              "rank": 17,
+              "athleteId": "athlete-张耘萌-个人",
+              "athleteName": "张耘萌",
+              "team": "个人",
+              "totalPoints": 212,
+              "competitionCount": 1,
+              "bestRank": 8,
+              "avgPoints": 212.0,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 212,
+                  "rank": 8
+                }
+              ]
+            },
+            {
+              "rank": 18,
               "athleteId": "cmjzpdkw300p5bfhodr0bg1op",
               "athleteName": "韩小贝",
               "team": "河北省体育局冬季运动中心",
@@ -20117,7 +20360,49 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 16,
+              "rank": 19,
+              "athleteId": "athlete-韩小贝-石家庄市冰雪与足球运动中心",
+              "athleteName": "韩小贝",
+              "team": "石家庄市冰雪与足球运动中心",
+              "totalPoints": 176,
+              "competitionCount": 1,
+              "bestRank": 11,
+              "avgPoints": 176.0,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 176,
+                  "rank": 11
+                }
+              ]
+            },
+            {
+              "rank": 20,
+              "athleteId": "athlete-纪栩妍-个人",
+              "athleteName": "纪栩妍",
+              "team": "个人",
+              "totalPoints": 166,
+              "competitionCount": 1,
+              "bestRank": 12,
+              "avgPoints": 166.0,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 166,
+                  "rank": 12
+                }
+              ]
+            },
+            {
+              "rank": 21,
               "athleteId": "athlete-梁宝云-广西射击射箭运动发展中心",
               "athleteName": "梁宝云",
               "team": "广西射击射箭运动发展中心",
@@ -20138,7 +20423,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 17,
+              "rank": 22,
               "athleteId": "cmjzpdkwn00pkbfhoanaefh2j",
               "athleteName": "万洛辰",
               "team": "个人",
@@ -20159,7 +20444,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 17,
+              "rank": 22,
               "athleteId": "athlete-周钰芯-四川体育职业学院",
               "athleteName": "周钰芯",
               "team": "四川体育职业学院",
@@ -20180,7 +20465,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 19,
+              "rank": 22,
+              "athleteId": "athlete-王汝懿-个人",
+              "athleteName": "王汝懿",
+              "team": "个人",
+              "totalPoints": 149,
+              "competitionCount": 1,
+              "bestRank": 14,
+              "avgPoints": 149.0,
+              "ageGroup": "U11",
+              "gender": "女子组",
+              "rankChange": 2,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 149,
+                  "rank": 14
+                }
+              ]
+            },
+            {
+              "rank": 25,
               "athleteId": "athlete-左均怡-个人",
               "athleteName": "左均怡",
               "team": "个人",
@@ -20201,28 +20507,28 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 20,
-              "athleteId": "cmjzpdl1f00tcbfhowslhbsqq",
-              "athleteName": "李佳馨",
+              "rank": 26,
+              "athleteId": "athlete-Zhouyiyi-个人",
+              "athleteName": "Zhouyiyi",
               "team": "个人",
-              "totalPoints": 134,
+              "totalPoints": 110,
               "competitionCount": 1,
-              "bestRank": 16,
-              "avgPoints": 134.0,
+              "bestRank": 20,
+              "avgPoints": 110.0,
               "ageGroup": "U11",
               "gender": "女子组",
               "rankChange": 0,
               "pointsBreakdown": [
                 {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-                  "location": "张家口富龙滑雪场",
-                  "points": 134,
-                  "rank": 16
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 110,
+                  "rank": 20
                 }
               ]
             }
           ],
-          "total": 20
+          "total": 26
         },
         {
           "discipline": "坡面障碍技巧",
@@ -20235,10 +20541,10 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkyk00r5bfhoikmy4e16",
               "athleteName": "周英杰",
               "team": "四川体育职业学院",
-              "totalPoints": 586,
-              "competitionCount": 2,
+              "totalPoints": 828,
+              "competitionCount": 3,
               "bestRank": 1,
-              "avgPoints": 293.0,
+              "avgPoints": 276.0,
               "ageGroup": "U15",
               "gender": "男子组",
               "rankChange": 0,
@@ -20254,18 +20560,78 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "张家口富龙滑雪场",
                   "points": 226,
                   "rank": 7
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 242,
+                  "rank": 6
                 }
               ]
             },
             {
               "rank": 2,
+              "athleteId": "cmjzpdkyn00r8bfho5hxp5a6u",
+              "athleteName": "张乔淳佑",
+              "team": "河北省体育局冬季运动中心",
+              "totalPoints": 632,
+              "competitionCount": 2,
+              "bestRank": 2,
+              "avgPoints": 316.0,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 329,
+                  "rank": 2
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 303,
+                  "rank": 3
+                }
+              ]
+            },
+            {
+              "rank": 3,
+              "athleteId": "athlete-璩恩慧-河南省体育局",
+              "athleteName": "璩恩慧",
+              "team": "河南省体育局",
+              "totalPoints": 620,
+              "competitionCount": 2,
+              "bestRank": 1,
+              "avgPoints": 310.0,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+                  "location": "张家口富龙滑雪场",
+                  "points": 260,
+                  "rank": 5
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 360,
+                  "rank": 1
+                }
+              ]
+            },
+            {
+              "rank": 4,
               "athleteId": "athlete-刘栩辰-重庆市冬季运动管理中心",
               "athleteName": "刘栩辰",
               "team": "重庆市冬季运动管理中心",
-              "totalPoints": 418,
-              "competitionCount": 2,
+              "totalPoints": 617,
+              "competitionCount": 3,
               "bestRank": 6,
-              "avgPoints": 209.0,
+              "avgPoints": 205.67,
               "ageGroup": "U15",
               "gender": "男子组",
               "rankChange": 0,
@@ -20281,11 +20647,98 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "张家口富龙滑雪场",
                   "points": 176,
                   "rank": 11
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 199,
+                  "rank": 9
                 }
               ]
             },
             {
-              "rank": 3,
+              "rank": 5,
+              "athleteId": "athlete-邓明涛-四川体育职业学院",
+              "athleteName": "邓明涛",
+              "team": "四川体育职业学院",
+              "totalPoints": 609,
+              "competitionCount": 2,
+              "bestRank": 2,
+              "avgPoints": 304.5,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+                  "location": "张家口富龙滑雪场",
+                  "points": 280,
+                  "rank": 4
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 329,
+                  "rank": 2
+                }
+              ]
+            },
+            {
+              "rank": 6,
+              "athleteId": "cmjzpdkyu00rebfhoup8aq1ld",
+              "athleteName": "王翊宁",
+              "team": "北京市冬季运动管理中心",
+              "totalPoints": 506,
+              "competitionCount": 2,
+              "bestRank": 4,
+              "avgPoints": 253.0,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 280,
+                  "rank": 4
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 226,
+                  "rank": 7
+                }
+              ]
+            },
+            {
+              "rank": 7,
+              "athleteId": "athlete-王培旭-四川体育职业学院",
+              "athleteName": "王培旭",
+              "team": "四川体育职业学院",
+              "totalPoints": 502,
+              "competitionCount": 2,
+              "bestRank": 5,
+              "avgPoints": 251.0,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+                  "location": "张家口富龙滑雪场",
+                  "points": 242,
+                  "rank": 6
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 260,
+                  "rank": 5
+                }
+              ]
+            },
+            {
+              "rank": 8,
               "athleteId": "cmjzpdkzf00rtbfhou6ca98ui",
               "athleteName": "程楚阳",
               "team": "广西射击射箭运动发展中心",
@@ -20312,7 +20765,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 4,
+              "rank": 9,
               "athleteId": "cmjzpdkzb00rqbfhozbj66j9r",
               "athleteName": "王冬杰",
               "team": "广西射击射箭运动发展中心",
@@ -20339,7 +20792,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 5,
+              "rank": 10,
               "athleteId": "cmjzpdkzj00rwbfhoyoxomh3h",
               "athleteName": "梁跃飞",
               "team": "广西射击射箭运动发展中心",
@@ -20366,7 +20819,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 6,
+              "rank": 11,
               "athleteId": "athlete-徐锦添-四川体育职业学院",
               "athleteName": "徐锦添",
               "team": "四川体育职业学院",
@@ -20387,28 +20840,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 7,
-              "athleteId": "cmjzpdkyn00r8bfho5hxp5a6u",
-              "athleteName": "张乔淳佑",
-              "team": "河北省体育局冬季运动中心",
-              "totalPoints": 329,
-              "competitionCount": 1,
-              "bestRank": 2,
-              "avgPoints": 329.0,
-              "ageGroup": "U15",
-              "gender": "男子组",
-              "rankChange": 0,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
-                  "points": 329,
-                  "rank": 2
-                }
-              ]
-            },
-            {
-              "rank": 7,
+              "rank": 12,
               "athleteId": "athlete-黄志豪-四川体育职业学院",
               "athleteName": "黄志豪",
               "team": "四川体育职业学院",
@@ -20418,7 +20850,7 @@ export const totalRankingsData: TotalRankingsData = {
               "avgPoints": 329.0,
               "ageGroup": "U15",
               "gender": "男子组",
-              "rankChange": 1,
+              "rankChange": 0,
               "pointsBreakdown": [
                 {
                   "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
@@ -20429,7 +20861,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 9,
+              "rank": 13,
               "athleteId": "cmjzpdkyr00rbbfhon1ylf1wi",
               "athleteName": "欧阳聚勇",
               "team": "广西射击射箭运动发展中心",
@@ -20450,7 +20882,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 9,
+              "rank": 13,
               "athleteId": "athlete-王凯文-黑龙江省雪上训练中心",
               "athleteName": "王凯文",
               "team": "黑龙江省雪上训练中心",
@@ -20471,10 +20903,10 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 11,
-              "athleteId": "cmjzpdkyu00rebfhoup8aq1ld",
-              "athleteName": "王翊宁",
-              "team": "北京市冬季运动管理中心",
+              "rank": 15,
+              "athleteId": "athlete-陈飞扬-上海雪酷滑雪竞技队",
+              "athleteName": "陈飞扬",
+              "team": "上海雪酷滑雪竞技队",
               "totalPoints": 280,
               "competitionCount": 1,
               "bestRank": 4,
@@ -20484,36 +20916,15 @@ export const totalRankingsData: TotalRankingsData = {
               "rankChange": 0,
               "pointsBreakdown": [
                 {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
                   "points": 280,
                   "rank": 4
                 }
               ]
             },
             {
-              "rank": 11,
-              "athleteId": "athlete-邓明涛-四川体育职业学院",
-              "athleteName": "邓明涛",
-              "team": "四川体育职业学院",
-              "totalPoints": 280,
-              "competitionCount": 1,
-              "bestRank": 4,
-              "avgPoints": 280.0,
-              "ageGroup": "U15",
-              "gender": "男子组",
-              "rankChange": 1,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-                  "location": "张家口富龙滑雪场",
-                  "points": 280,
-                  "rank": 4
-                }
-              ]
-            },
-            {
-              "rank": 13,
+              "rank": 16,
               "athleteId": "cmjzpdkyy00rhbfhomuo5xnnw",
               "athleteName": "宇威琦",
               "team": "河北省体育局冬季运动中心",
@@ -20534,49 +20945,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 13,
-              "athleteId": "athlete-璩恩慧-河南省体育局",
-              "athleteName": "璩恩慧",
-              "team": "河南省体育局",
-              "totalPoints": 260,
-              "competitionCount": 1,
-              "bestRank": 5,
-              "avgPoints": 260.0,
-              "ageGroup": "U15",
-              "gender": "男子组",
-              "rankChange": 1,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-                  "location": "张家口富龙滑雪场",
-                  "points": 260,
-                  "rank": 5
-                }
-              ]
-            },
-            {
-              "rank": 15,
-              "athleteId": "athlete-王培旭-四川体育职业学院",
-              "athleteName": "王培旭",
-              "team": "四川体育职业学院",
-              "totalPoints": 242,
-              "competitionCount": 1,
-              "bestRank": 6,
-              "avgPoints": 242.0,
-              "ageGroup": "U15",
-              "gender": "男子组",
-              "rankChange": 0,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-                  "location": "张家口富龙滑雪场",
-                  "points": 242,
-                  "rank": 6
-                }
-              ]
-            },
-            {
-              "rank": 16,
+              "rank": 17,
               "athleteId": "cmjzpdkz700rnbfhorz1h81nt",
               "athleteName": "李霁开",
               "team": "河北省体育局冬季运动中心",
@@ -20597,7 +20966,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 17,
+              "rank": 18,
               "athleteId": "athlete-程曦辉-个人",
               "athleteName": "程曦辉",
               "team": "个人",
@@ -20616,9 +20985,51 @@ export const totalRankingsData: TotalRankingsData = {
                   "rank": 8
                 }
               ]
+            },
+            {
+              "rank": 18,
+              "athleteId": "athlete-刘锐淇-个人",
+              "athleteName": "刘锐淇",
+              "team": "个人",
+              "totalPoints": 212,
+              "competitionCount": 1,
+              "bestRank": 8,
+              "avgPoints": 212.0,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": 1,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 212,
+                  "rank": 8
+                }
+              ]
+            },
+            {
+              "rank": 20,
+              "athleteId": "athlete-陈鑫昊-上海雪酷滑雪竞技队",
+              "athleteName": "陈鑫昊",
+              "team": "上海雪酷滑雪竞技队",
+              "totalPoints": 187,
+              "competitionCount": 1,
+              "bestRank": 10,
+              "avgPoints": 187.0,
+              "ageGroup": "U15",
+              "gender": "男子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 187,
+                  "rank": 10
+                }
+              ]
             }
           ],
-          "total": 17
+          "total": 20
         },
         {
           "discipline": "坡面障碍技巧",
@@ -20631,10 +21042,10 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkxs00qhbfhoqhlhgnkz",
               "athleteName": "周绮润",
               "team": "个人",
-              "totalPoints": 720,
-              "competitionCount": 2,
+              "totalPoints": 1023,
+              "competitionCount": 3,
               "bestRank": 1,
-              "avgPoints": 360.0,
+              "avgPoints": 341.0,
               "ageGroup": "U15",
               "gender": "女子组",
               "rankChange": 0,
@@ -20650,45 +21061,24 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "张家口富龙滑雪场",
                   "points": 360,
                   "rank": 1
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 303,
+                  "rank": 3
                 }
               ]
             },
             {
               "rank": 2,
-              "athleteId": "cmjzpdky200qqbfhojspykxzi",
-              "athleteName": "王珠彤",
-              "team": "石家庄市冰雪与足球运动中心",
-              "totalPoints": 506,
-              "competitionCount": 2,
-              "bestRank": 4,
-              "avgPoints": 253.0,
-              "ageGroup": "U15",
-              "gender": "女子组",
-              "rankChange": 0,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
-                  "points": 280,
-                  "rank": 4
-                },
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-                  "location": "张家口富龙滑雪场",
-                  "points": 226,
-                  "rank": 7
-                }
-              ]
-            },
-            {
-              "rank": 3,
               "athleteId": "cmjzpdkxv00qkbfhogyt55uun",
               "athleteName": "王珈绮",
               "team": "四川体育职业学院",
-              "totalPoints": 495,
-              "competitionCount": 2,
+              "totalPoints": 682,
+              "competitionCount": 3,
               "bestRank": 2,
-              "avgPoints": 247.5,
+              "avgPoints": 227.33,
               "ageGroup": "U15",
               "gender": "女子组",
               "rankChange": 0,
@@ -20704,6 +21094,45 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "张家口富龙滑雪场",
                   "points": 166,
                   "rank": 12
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 187,
+                  "rank": 10
+                }
+              ]
+            },
+            {
+              "rank": 2,
+              "athleteId": "cmjzpdky200qqbfhojspykxzi",
+              "athleteName": "王珠彤",
+              "team": "石家庄市冰雪与足球运动中心",
+              "totalPoints": 682,
+              "competitionCount": 3,
+              "bestRank": 4,
+              "avgPoints": 227.33,
+              "ageGroup": "U15",
+              "gender": "女子组",
+              "rankChange": 1,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 280,
+                  "rank": 4
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+                  "location": "张家口富龙滑雪场",
+                  "points": 226,
+                  "rank": 7
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 176,
+                  "rank": 11
                 }
               ]
             },
@@ -20712,10 +21141,10 @@ export const totalRankingsData: TotalRankingsData = {
               "athleteId": "cmjzpdkyc00qzbfhoa03c1g4b",
               "athleteName": "杨芷妍",
               "team": "四川体育职业学院",
-              "totalPoints": 438,
-              "competitionCount": 2,
+              "totalPoints": 604,
+              "competitionCount": 3,
               "bestRank": 7,
-              "avgPoints": 219.0,
+              "avgPoints": 201.33,
               "ageGroup": "U15",
               "gender": "女子组",
               "rankChange": 0,
@@ -20731,11 +21160,179 @@ export const totalRankingsData: TotalRankingsData = {
                   "location": "张家口富龙滑雪场",
                   "points": 212,
                   "rank": 8
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 166,
+                  "rank": 12
                 }
               ]
             },
             {
               "rank": 5,
+              "athleteId": "athlete-韩萨仁其木格-小崔运动",
+              "athleteName": "韩萨仁其木格",
+              "team": "小崔运动",
+              "totalPoints": 589,
+              "competitionCount": 2,
+              "bestRank": 2,
+              "avgPoints": 294.5,
+              "ageGroup": "U15",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+                  "location": "张家口富龙滑雪场",
+                  "points": 260,
+                  "rank": 5
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 329,
+                  "rank": 2
+                }
+              ]
+            },
+            {
+              "rank": 6,
+              "athleteId": "athlete-周紫君-四川体育职业学院",
+              "athleteName": "周紫君",
+              "team": "四川体育职业学院",
+              "totalPoints": 559,
+              "competitionCount": 2,
+              "bestRank": 1,
+              "avgPoints": 279.5,
+              "ageGroup": "U15",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+                  "location": "张家口富龙滑雪场",
+                  "points": 199,
+                  "rank": 9
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 360,
+                  "rank": 1
+                }
+              ]
+            },
+            {
+              "rank": 7,
+              "athleteId": "athlete-罗优璇-河南省体育局",
+              "athleteName": "罗优璇",
+              "team": "河南省体育局",
+              "totalPoints": 545,
+              "competitionCount": 2,
+              "bestRank": 3,
+              "avgPoints": 272.5,
+              "ageGroup": "U15",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+                  "location": "张家口富龙滑雪场",
+                  "points": 303,
+                  "rank": 3
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 242,
+                  "rank": 6
+                }
+              ]
+            },
+            {
+              "rank": 8,
+              "athleteId": "cmjzpdky600qtbfhoiwp2kmsc",
+              "athleteName": "平梓涵",
+              "team": "河北省体育局冬季运动中心",
+              "totalPoints": 540,
+              "competitionCount": 2,
+              "bestRank": 4,
+              "avgPoints": 270.0,
+              "ageGroup": "U15",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 260,
+                  "rank": 5
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 280,
+                  "rank": 4
+                }
+              ]
+            },
+            {
+              "rank": 9,
+              "athleteId": "cmjzpdkyg00r2bfhonpfve5v0",
+              "athleteName": "李雅馨",
+              "team": "北京市冬季运动管理中心",
+              "totalPoints": 472,
+              "competitionCount": 2,
+              "bestRank": 5,
+              "avgPoints": 236.0,
+              "ageGroup": "U15",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 212,
+                  "rank": 8
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 260,
+                  "rank": 5
+                }
+              ]
+            },
+            {
+              "rank": 10,
+              "athleteId": "cmjzpdkxy00qnbfhoi0fohlcs",
+              "athleteName": "叶欣悦",
+              "team": "四川体育职业学院",
+              "totalPoints": 460,
+              "competitionCount": 2,
+              "bestRank": 3,
+              "avgPoints": 230.0,
+              "ageGroup": "U15",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 303,
+                  "rank": 3
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 157,
+                  "rank": 13
+                }
+              ]
+            },
+            {
+              "rank": 11,
               "athleteId": "cmjzpdky900qwbfhouv7qekds",
               "athleteName": "李明灿",
               "team": "广西射击射箭运动发展中心",
@@ -20762,7 +21359,34 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 6,
+              "rank": 12,
+              "athleteId": "athlete-陈奕歌-河南省体育局",
+              "athleteName": "陈奕歌",
+              "team": "河南省体育局",
+              "totalPoints": 413,
+              "competitionCount": 2,
+              "bestRank": 7,
+              "avgPoints": 206.5,
+              "ageGroup": "U15",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+                  "location": "张家口富龙滑雪场",
+                  "points": 187,
+                  "rank": 10
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 226,
+                  "rank": 7
+                }
+              ]
+            },
+            {
+              "rank": 13,
               "athleteId": "athlete-马世馨-四川体育职业学院",
               "athleteName": "马世馨",
               "team": "四川体育职业学院",
@@ -20783,49 +21407,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 7,
-              "athleteId": "cmjzpdkxy00qnbfhoi0fohlcs",
-              "athleteName": "叶欣悦",
-              "team": "四川体育职业学院",
-              "totalPoints": 303,
-              "competitionCount": 1,
-              "bestRank": 3,
-              "avgPoints": 303.0,
-              "ageGroup": "U15",
-              "gender": "女子组",
-              "rankChange": 0,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
-                  "points": 303,
-                  "rank": 3
-                }
-              ]
-            },
-            {
-              "rank": 7,
-              "athleteId": "athlete-罗优璇-河南省体育局",
-              "athleteName": "罗优璇",
-              "team": "河南省体育局",
-              "totalPoints": 303,
-              "competitionCount": 1,
-              "bestRank": 3,
-              "avgPoints": 303.0,
-              "ageGroup": "U15",
-              "gender": "女子组",
-              "rankChange": 1,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-                  "location": "张家口富龙滑雪场",
-                  "points": 303,
-                  "rank": 3
-                }
-              ]
-            },
-            {
-              "rank": 9,
+              "rank": 14,
               "athleteId": "athlete-殷玉宣-河南省体育局",
               "athleteName": "殷玉宣",
               "team": "河南省体育局",
@@ -20846,49 +21428,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 10,
-              "athleteId": "cmjzpdky600qtbfhoiwp2kmsc",
-              "athleteName": "平梓涵",
-              "team": "河北省体育局冬季运动中心",
-              "totalPoints": 260,
-              "competitionCount": 1,
-              "bestRank": 5,
-              "avgPoints": 260.0,
-              "ageGroup": "U15",
-              "gender": "女子组",
-              "rankChange": 0,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
-                  "points": 260,
-                  "rank": 5
-                }
-              ]
-            },
-            {
-              "rank": 10,
-              "athleteId": "athlete-韩萨仁其木格-小崔运动",
-              "athleteName": "韩萨仁其木格",
-              "team": "小崔运动",
-              "totalPoints": 260,
-              "competitionCount": 1,
-              "bestRank": 5,
-              "avgPoints": 260.0,
-              "ageGroup": "U15",
-              "gender": "女子组",
-              "rankChange": 1,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-                  "location": "张家口富龙滑雪场",
-                  "points": 260,
-                  "rank": 5
-                }
-              ]
-            },
-            {
-              "rank": 12,
+              "rank": 15,
               "athleteId": "athlete-吴思琪-四川体育职业学院",
               "athleteName": "吴思琪",
               "team": "四川体育职业学院",
@@ -20909,10 +21449,10 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 13,
-              "athleteId": "cmjzpdkyg00r2bfhonpfve5v0",
-              "athleteName": "李雅馨",
-              "team": "北京市冬季运动管理中心",
+              "rank": 16,
+              "athleteId": "athlete-赵雯溪-河南省体育局",
+              "athleteName": "赵雯溪",
+              "team": "河南省体育局",
               "totalPoints": 212,
               "competitionCount": 1,
               "bestRank": 8,
@@ -20922,18 +21462,18 @@ export const totalRankingsData: TotalRankingsData = {
               "rankChange": 0,
               "pointsBreakdown": [
                 {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
                   "points": 212,
                   "rank": 8
                 }
               ]
             },
             {
-              "rank": 14,
-              "athleteId": "athlete-周紫君-四川体育职业学院",
-              "athleteName": "周紫君",
-              "team": "四川体育职业学院",
+              "rank": 17,
+              "athleteId": "athlete-殷玉萱-河南省体育局",
+              "athleteName": "殷玉萱",
+              "team": "河南省体育局",
               "totalPoints": 199,
               "competitionCount": 1,
               "bestRank": 9,
@@ -20943,36 +21483,15 @@ export const totalRankingsData: TotalRankingsData = {
               "rankChange": 0,
               "pointsBreakdown": [
                 {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-                  "location": "张家口富龙滑雪场",
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
                   "points": 199,
                   "rank": 9
                 }
               ]
-            },
-            {
-              "rank": 15,
-              "athleteId": "athlete-陈奕歌-河南省体育局",
-              "athleteName": "陈奕歌",
-              "team": "河南省体育局",
-              "totalPoints": 187,
-              "competitionCount": 1,
-              "bestRank": 10,
-              "avgPoints": 187.0,
-              "ageGroup": "U15",
-              "gender": "女子组",
-              "rankChange": 0,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-                  "location": "张家口富龙滑雪场",
-                  "points": 187,
-                  "rank": 10
-                }
-              ]
             }
           ],
-          "total": 15
+          "total": 17
         },
         {
           "discipline": "坡面障碍技巧",
@@ -20982,6 +21501,33 @@ export const totalRankingsData: TotalRankingsData = {
           "rankings": [
             {
               "rank": 1,
+              "athleteId": "cmjzpdl0900sebfhochiz1nog",
+              "athleteName": "张天迈",
+              "team": "河北省体育局冬季运动中心",
+              "totalPoints": 663,
+              "competitionCount": 2,
+              "bestRank": 1,
+              "avgPoints": 331.5,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 303,
+                  "rank": 3
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 360,
+                  "rank": 1
+                }
+              ]
+            },
+            {
+              "rank": 2,
               "athleteId": "cmjzpdkzy00s8bfhoiv0z32ls",
               "athleteName": "田嘉译",
               "team": "沈阳体育学院",
@@ -21002,7 +21548,7 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 2,
+              "rank": 3,
               "athleteId": "cmjzpdl0200sbbfho4oyc84yi",
               "athleteName": "孙金隆",
               "team": "河北省体育局冬季运动中心",
@@ -21024,9 +21570,30 @@ export const totalRankingsData: TotalRankingsData = {
             },
             {
               "rank": 3,
-              "athleteId": "cmjzpdl0900sebfhochiz1nog",
-              "athleteName": "张天迈",
-              "team": "河北省体育局冬季运动中心",
+              "athleteId": "athlete-李胤希-个人",
+              "athleteName": "李胤希",
+              "team": "个人",
+              "totalPoints": 329,
+              "competitionCount": 1,
+              "bestRank": 2,
+              "avgPoints": 329.0,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": 1,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 329,
+                  "rank": 2
+                }
+              ]
+            },
+            {
+              "rank": 5,
+              "athleteId": "athlete-卢兆轩-个人",
+              "athleteName": "卢兆轩",
+              "team": "个人",
               "totalPoints": 303,
               "competitionCount": 1,
               "bestRank": 3,
@@ -21036,15 +21603,15 @@ export const totalRankingsData: TotalRankingsData = {
               "rankChange": 0,
               "pointsBreakdown": [
                 {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
                   "points": 303,
                   "rank": 3
                 }
               ]
             },
             {
-              "rank": 4,
+              "rank": 6,
               "athleteId": "cmjzpdl0e00shbfhoc5njd0lb",
               "athleteName": "王晨",
               "team": "个人",
@@ -21063,9 +21630,93 @@ export const totalRankingsData: TotalRankingsData = {
                   "rank": 4
                 }
               ]
+            },
+            {
+              "rank": 6,
+              "athleteId": "athlete-李昊然-个人",
+              "athleteName": "李昊然",
+              "team": "个人",
+              "totalPoints": 280,
+              "competitionCount": 1,
+              "bestRank": 4,
+              "avgPoints": 280.0,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": 1,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 280,
+                  "rank": 4
+                }
+              ]
+            },
+            {
+              "rank": 8,
+              "athleteId": "athlete-贾博阳-个人",
+              "athleteName": "贾博阳",
+              "team": "个人",
+              "totalPoints": 260,
+              "competitionCount": 1,
+              "bestRank": 5,
+              "avgPoints": 260.0,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 260,
+                  "rank": 5
+                }
+              ]
+            },
+            {
+              "rank": 9,
+              "athleteId": "athlete-周一尘-个人",
+              "athleteName": "周一尘",
+              "team": "个人",
+              "totalPoints": 242,
+              "competitionCount": 1,
+              "bestRank": 6,
+              "avgPoints": 242.0,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 242,
+                  "rank": 6
+                }
+              ]
+            },
+            {
+              "rank": 10,
+              "athleteId": "athlete-李泽瀚-个人",
+              "athleteName": "李泽瀚",
+              "team": "个人",
+              "totalPoints": 226,
+              "competitionCount": 1,
+              "bestRank": 7,
+              "avgPoints": 226.0,
+              "ageGroup": "U18",
+              "gender": "男子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 226,
+                  "rank": 7
+                }
+              ]
             }
           ],
-          "total": 4
+          "total": 10
         },
         {
           "discipline": "坡面障碍技巧",
@@ -21075,6 +21726,33 @@ export const totalRankingsData: TotalRankingsData = {
           "rankings": [
             {
               "rank": 1,
+              "athleteId": "cmjzpdkzn00rzbfhozmvs8hx9",
+              "athleteName": "夏可馨",
+              "team": "河北省体育局冬季运动中心",
+              "totalPoints": 720,
+              "competitionCount": 2,
+              "bestRank": 1,
+              "avgPoints": 360.0,
+              "ageGroup": "U18",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+                  "location": "成都热雪奇迹室内滑雪场",
+                  "points": 360,
+                  "rank": 1
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 360,
+                  "rank": 1
+                }
+              ]
+            },
+            {
+              "rank": 2,
               "athleteId": "cmjzpdkzu00s5bfhojnktcfby",
               "athleteName": "高梓曦",
               "team": "个人",
@@ -21101,28 +21779,61 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 2,
-              "athleteId": "cmjzpdkzn00rzbfhozmvs8hx9",
-              "athleteName": "夏可馨",
-              "team": "河北省体育局冬季运动中心",
-              "totalPoints": 360,
-              "competitionCount": 1,
-              "bestRank": 1,
-              "avgPoints": 360.0,
+              "rank": 3,
+              "athleteId": "athlete-陈露凝-个人",
+              "athleteName": "陈露凝",
+              "team": "个人",
+              "totalPoints": 658,
+              "competitionCount": 2,
+              "bestRank": 2,
+              "avgPoints": 329.0,
               "ageGroup": "U18",
               "gender": "女子组",
               "rankChange": 0,
               "pointsBreakdown": [
                 {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-                  "location": "成都热雪奇迹室内滑雪场",
-                  "points": 360,
-                  "rank": 1
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+                  "location": "张家口富龙滑雪场",
+                  "points": 329,
+                  "rank": 2
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 329,
+                  "rank": 2
                 }
               ]
             },
             {
-              "rank": 3,
+              "rank": 4,
+              "athleteId": "athlete-齐馨-A+自由式滑雪队",
+              "athleteName": "齐馨",
+              "team": "A+自由式滑雪队",
+              "totalPoints": 583,
+              "competitionCount": 2,
+              "bestRank": 3,
+              "avgPoints": 291.5,
+              "ageGroup": "U18",
+              "gender": "女子组",
+              "rankChange": 0,
+              "pointsBreakdown": [
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+                  "location": "张家口富龙滑雪场",
+                  "points": 303,
+                  "rank": 3
+                },
+                {
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
+                  "points": 280,
+                  "rank": 4
+                }
+              ]
+            },
+            {
+              "rank": 5,
               "athleteId": "cmjzpdkzr00s2bfhoszo6feyy",
               "athleteName": "余思源",
               "team": "四川体育职业学院",
@@ -21143,30 +21854,9 @@ export const totalRankingsData: TotalRankingsData = {
               ]
             },
             {
-              "rank": 3,
-              "athleteId": "athlete-陈露凝-个人",
-              "athleteName": "陈露凝",
-              "team": "个人",
-              "totalPoints": 329,
-              "competitionCount": 1,
-              "bestRank": 2,
-              "avgPoints": 329.0,
-              "ageGroup": "U18",
-              "gender": "女子组",
-              "rankChange": 1,
-              "pointsBreakdown": [
-                {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-                  "location": "张家口富龙滑雪场",
-                  "points": 329,
-                  "rank": 2
-                }
-              ]
-            },
-            {
-              "rank": 5,
-              "athleteId": "athlete-齐馨-A+自由式滑雪队",
-              "athleteName": "齐馨",
+              "rank": 6,
+              "athleteId": "athlete-高梓曦-A+自由式滑雪队",
+              "athleteName": "高梓曦",
               "team": "A+自由式滑雪队",
               "totalPoints": 303,
               "competitionCount": 1,
@@ -21177,15 +21867,15 @@ export const totalRankingsData: TotalRankingsData = {
               "rankChange": 0,
               "pointsBreakdown": [
                 {
-                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-                  "location": "张家口富龙滑雪场",
+                  "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+                  "location": "张家口崇礼雪如意滑雪场",
                   "points": 303,
                   "rank": 3
                 }
               ]
             }
           ],
-          "total": 5
+          "total": 6
         },
         {
           "discipline": "大跳台",
@@ -23354,7 +24044,7 @@ export const totalRankingsData: TotalRankingsData = {
           "total": 5
         }
       ],
-      "total": 151
+      "total": 171
     }
   ],
   "rankings": [
@@ -24082,7 +24772,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 20,
+      "rank": 19,
+      "athleteId": "cmjzpdkwu00pqbfhojhnxffpm",
+      "athleteName": "常嘉林",
+      "team": "广西射击射箭运动发展中心",
+      "totalPoints": 1049,
+      "competitionCount": 3,
+      "bestRank": 1,
+      "avgPoints": 349.67,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 360,
+          "rank": 1
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 329,
+          "rank": 2
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 360,
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "rank": 21,
       "athleteId": "cmjzpdkp000ixbfhoom4nz6ao",
       "athleteName": "王阳明",
       "team": "张家口乔与杨体育服务有限公司",
@@ -24115,7 +24838,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 20,
+      "rank": 21,
+      "athleteId": "cmjzpdkxs00qhbfhoqhlhgnkz",
+      "athleteName": "周绮润",
+      "team": "个人",
+      "totalPoints": 1023,
+      "competitionCount": 3,
+      "bestRank": 1,
+      "avgPoints": 341.0,
+      "ageGroup": "U15",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 360,
+          "rank": 1
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 360,
+          "rank": 1
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 303,
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "rank": 21,
       "athleteId": "cmjzpdkwz00ptbfho9l5fo4g2",
       "athleteName": "张墨凡",
       "team": "北京市冬季运动管理中心",
@@ -24148,7 +24904,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 22,
+      "rank": 24,
       "athleteId": "cmjzpdkwu00pqbfhojhnxffpm",
       "athleteName": "常嘉林",
       "team": "广西射击射箭运动发展中心",
@@ -24181,7 +24937,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 23,
+      "rank": 25,
       "athleteId": "cmjzpdkk000f6bfho8me6szz1",
       "athleteName": "张诗涵",
       "team": "石家庄市冰雪与足球运动中心",
@@ -24220,7 +24976,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 24,
+      "rank": 26,
       "athleteId": "cmjzpdkpd00j9bfho5ceqs1fb",
       "athleteName": "王润钰",
       "team": "张家口乔与杨体育服务有限公司",
@@ -24253,7 +25009,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 25,
+      "rank": 27,
       "athleteId": "athlete-刘沐泽-石家庄市冰雪与足球运动中心",
       "athleteName": "刘沐泽",
       "team": "石家庄市冰雪与足球运动推广训练中心",
@@ -24292,7 +25048,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 26,
+      "rank": 28,
       "athleteId": "cmjzpdkkk00fibfhornkfaegp",
       "athleteName": "蒋柠萱",
       "team": "北京市冬季运动管理中心",
@@ -24331,7 +25087,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 27,
+      "rank": 29,
+      "athleteId": "cmjzpdkv900ohbfhojesum95s",
+      "athleteName": "赵紫琪",
+      "team": "四川体育职业学院",
+      "totalPoints": 962,
+      "competitionCount": 3,
+      "bestRank": 1,
+      "avgPoints": 320.67,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 360,
+          "rank": 1
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 360,
+          "rank": 1
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 242,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "rank": 30,
       "athleteId": "athlete-陈松妤-个人",
       "athleteName": "陈松妤",
       "team": "个人",
@@ -24364,7 +25153,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 27,
+      "rank": 30,
       "athleteId": "athlete-杨舒雅-个人",
       "athleteName": "杨舒雅",
       "team": "个人",
@@ -24397,7 +25186,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 27,
+      "rank": 30,
+      "athleteId": "cmjzpdkwz00ptbfho9l5fo4g2",
+      "athleteName": "张墨凡",
+      "team": "北京市冬季运动管理中心",
+      "totalPoints": 961,
+      "competitionCount": 3,
+      "bestRank": 2,
+      "avgPoints": 320.33,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 329,
+          "rank": 2
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 303,
+          "rank": 3
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 329,
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 30,
       "athleteId": "cmjzpdkzu00s5bfhojnktcfby",
       "athleteName": "高梓曦",
       "team": "个人",
@@ -24430,7 +25252,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 30,
+      "rank": 34,
       "athleteId": "athlete-封树渝-重庆市冬季运动管理中心",
       "athleteName": "封树渝",
       "team": "重庆市冬季运动管理中心",
@@ -24463,7 +25285,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 31,
+      "rank": 35,
       "athleteId": "cmjzpdks900lrbfho41ykduoi",
       "athleteName": "周昱含",
       "team": "沈阳王伟滑雪管理咨询服务有限公司",
@@ -24496,7 +25318,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 31,
+      "rank": 35,
       "athleteId": "athlete-谭凯元-个人",
       "athleteName": "谭凯元",
       "team": "个人",
@@ -24529,7 +25351,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 31,
+      "rank": 35,
       "athleteId": "athlete-刘沐泽-石家庄市冰雪与足球运动中心",
       "athleteName": "刘沐泽",
       "team": "石家庄市冰雪与足球运动推广训练中心",
@@ -24568,7 +25390,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 34,
+      "rank": 38,
       "athleteId": "cmjzpdkn800hibfho8h61j0ao",
       "athleteName": "刘子俊",
       "team": "四川体育职业学院",
@@ -24607,7 +25429,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 35,
+      "rank": 39,
       "athleteId": "cmjzpdkk000f6bfho8me6szz1",
       "athleteName": "张诗涵",
       "team": "石家庄市冰雪与足球运动中心",
@@ -24646,7 +25468,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 36,
+      "rank": 40,
       "athleteId": "cmjzpdkn800hibfho8h61j0ao",
       "athleteName": "刘子俊",
       "team": "四川体育职业学院",
@@ -24685,7 +25507,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 37,
+      "rank": 41,
       "athleteId": "athlete-袁嘉伟-湖北省武术和冬季运动管理中心",
       "athleteName": "袁嘉伟",
       "team": "湖北省武术和冬季运动管理中心",
@@ -24718,7 +25540,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 38,
+      "rank": 42,
       "athleteId": "cmjzpdkoc00ifbfhogzsxfk2n",
       "athleteName": "黄子剑",
       "team": "湖北省武术和冬季运动管理中心",
@@ -24757,7 +25579,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 39,
+      "rank": 43,
       "athleteId": "athlete-郭彧铭-个人",
       "athleteName": "郭彧铭",
       "team": "个人",
@@ -24796,7 +25618,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 40,
+      "rank": 43,
+      "athleteId": "cmjzpdkvn00otbfho8ze6lnnz",
+      "athleteName": "李诗沫",
+      "team": "石家庄市冰雪与足球运动中心",
+      "totalPoints": 892,
+      "competitionCount": 3,
+      "bestRank": 2,
+      "avgPoints": 297.33,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 260,
+          "rank": 5
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 303,
+          "rank": 3
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 329,
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 45,
       "athleteId": "cmjzpdkx200pwbfhonl48w33h",
       "athleteName": "赵铠轩",
       "team": "河南省体育局",
@@ -24829,7 +25684,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 41,
+      "rank": 46,
       "athleteId": "cmjzpdkyk00r5bfhoikmy4e16",
       "athleteName": "周英杰",
       "team": "四川体育职业学院",
@@ -24862,7 +25717,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 42,
+      "rank": 47,
       "athleteId": "athlete-颜嘉懿-个人",
       "athleteName": "颜嘉懿",
       "team": "个人",
@@ -24895,7 +25750,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 42,
+      "rank": 47,
       "athleteId": "athlete-谭凯元-个人",
       "athleteName": "谭凯元",
       "team": "个人",
@@ -24928,7 +25783,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 44,
+      "rank": 47,
+      "athleteId": "cmjzpdkx200pwbfhonl48w33h",
+      "athleteName": "赵铠轩",
+      "team": "河南省体育局",
+      "totalPoints": 863,
+      "competitionCount": 3,
+      "bestRank": 3,
+      "avgPoints": 287.67,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 303,
+          "rank": 3
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 280,
+          "rank": 4
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 280,
+          "rank": 4
+        }
+      ]
+    },
+    {
+      "rank": 50,
       "athleteId": "cmjzpdkq000jrbfhovq39ke3q",
       "athleteName": "李若瑜",
       "team": "中关村一小",
@@ -24961,7 +25849,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 44,
+      "rank": 50,
       "athleteId": "cmjzpdkv900ohbfhojesum95s",
       "athleteName": "赵紫琪",
       "team": "四川体育职业学院",
@@ -24994,7 +25882,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 46,
+      "rank": 52,
       "athleteId": "cmjzpdkvn00otbfho8ze6lnnz",
       "athleteName": "李诗沫",
       "team": "石家庄市冰雪与足球运动中心",
@@ -25027,7 +25915,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 47,
+      "rank": 53,
       "athleteId": "cmjzpdkmk00gxbfho34o28xv8",
       "athleteName": "赵严诺",
       "team": "河北省体育局冬季运动中心",
@@ -25066,7 +25954,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 48,
+      "rank": 54,
       "athleteId": "cmjzpdko400i9bfhoakuixeat",
       "athleteName": "米馥豪",
       "team": "石家庄市冰雪与足球运动中心",
@@ -25099,7 +25987,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 49,
+      "rank": 55,
+      "athleteId": "cmjzpdkvz00p2bfhobxqhq2ex",
+      "athleteName": "甄芝漫",
+      "team": "河北省体育局冬季运动中心",
+      "totalPoints": 844,
+      "competitionCount": 3,
+      "bestRank": 2,
+      "avgPoints": 281.33,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 212,
+          "rank": 8
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 329,
+          "rank": 2
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 303,
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "rank": 56,
       "athleteId": "athlete-李智贤-湖北省武术和冬季运动管理中心",
       "athleteName": "李智贤",
       "team": "湖北省武术和冬季运动管理中心",
@@ -25132,7 +26053,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 50,
+      "rank": 57,
       "athleteId": "athlete-郭彧铭-个人",
       "athleteName": "郭彧铭",
       "team": "个人",
@@ -25171,7 +26092,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 51,
+      "rank": 57,
+      "athleteId": "cmjzpdkvk00oqbfhotqaedvcn",
+      "athleteName": "武温暖",
+      "team": "石家庄市冰雪与足球运动中心",
+      "totalPoints": 840,
+      "competitionCount": 3,
+      "bestRank": 4,
+      "avgPoints": 280.0,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 280,
+          "rank": 4
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 280,
+          "rank": 4
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 280,
+          "rank": 4
+        }
+      ]
+    },
+    {
+      "rank": 59,
       "athleteId": "athlete-颜嘉懿-个人",
       "athleteName": "颜嘉懿",
       "team": "个人",
@@ -25204,7 +26158,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 52,
+      "rank": 60,
       "athleteId": "cmjzpdkp000ixbfhoom4nz6ao",
       "athleteName": "王阳明",
       "team": "张家口乔与杨体育服务有限公司",
@@ -25237,7 +26191,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 52,
+      "rank": 60,
       "athleteId": "athlete-吴海鑫-湖北省武术和冬季运动管理中心",
       "athleteName": "吴海鑫",
       "team": "湖北省武术和冬季运动管理中心",
@@ -25270,7 +26224,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 54,
+      "rank": 62,
       "athleteId": "cmjzpdknf00hobfho0vnutqs9",
       "athleteName": "高翊博",
       "team": "北京市冬季运动管理中心",
@@ -25309,7 +26263,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 55,
+      "rank": 62,
+      "athleteId": "cmjzpdkyk00r5bfhoikmy4e16",
+      "athleteName": "周英杰",
+      "team": "四川体育职业学院",
+      "totalPoints": 828,
+      "competitionCount": 3,
+      "bestRank": 1,
+      "avgPoints": 276.0,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 360,
+          "rank": 1
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 226,
+          "rank": 7
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 242,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "rank": 64,
       "athleteId": "cmjzpdkly00gfbfhof1a75ldx",
       "athleteName": "陈宇垚",
       "team": "四川体育职业学院",
@@ -25342,7 +26329,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 56,
+      "rank": 65,
       "athleteId": "cmjzpdksr00m8bfhorh0gxvtl",
       "athleteName": "李彦博",
       "team": "四川体育职业学院",
@@ -25375,7 +26362,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 57,
+      "rank": 66,
       "athleteId": "athlete-张淑雅-山西省冰雪运动中心",
       "athleteName": "张淑雅",
       "team": "山西省冰雪运动中心",
@@ -25408,7 +26395,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 58,
+      "rank": 67,
       "athleteId": "athlete-杨峻溪-个人",
       "athleteName": "杨峻溪",
       "team": "个人",
@@ -25441,7 +26428,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 59,
+      "rank": 68,
       "athleteId": "cmjzpdkvv00ozbfho9q5gtmko",
       "athleteName": "闫妍",
       "team": "个人",
@@ -25474,7 +26461,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 60,
+      "rank": 69,
       "athleteId": "athlete-袁嘉伟-湖北省武术和冬季运动管理中心",
       "athleteName": "袁嘉伟",
       "team": "湖北省武术和冬季运动管理中心",
@@ -25507,7 +26494,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 61,
+      "rank": 70,
       "athleteId": "athlete-杨峻溪-个人",
       "athleteName": "杨峻溪",
       "team": "个人",
@@ -25540,7 +26527,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 62,
+      "rank": 71,
       "athleteId": "athlete-郭婉诗-山西省冰雪运动中心",
       "athleteName": "郭婉诗",
       "team": "山西省冰雪运动中心",
@@ -25573,7 +26560,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 63,
+      "rank": 72,
       "athleteId": "cmjzpdkkf00ffbfhovtl6y82z",
       "athleteName": "翟姝涵",
       "team": "北京市冬季运动管理中心",
@@ -25612,7 +26599,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 64,
+      "rank": 73,
       "athleteId": "cmjzpdkkk00fibfhornkfaegp",
       "athleteName": "蒋柠萱",
       "team": "北京市冬季运动管理中心",
@@ -25651,7 +26638,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 65,
+      "rank": 74,
       "athleteId": "cmjzpdkma00gobfhoa7jwls5r",
       "athleteName": "王曌霖",
       "team": "河南省体育局",
@@ -25684,7 +26671,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 65,
+      "rank": 74,
       "athleteId": "cmjzpdkx700pzbfholzzypp6c",
       "athleteName": "张梓童",
       "team": "河南省体育局",
@@ -25717,7 +26704,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 67,
+      "rank": 76,
       "athleteId": "cmjzpdkph00jcbfho8tsz6f9a",
       "athleteName": "左子正",
       "team": "个人",
@@ -25750,7 +26737,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 67,
+      "rank": 76,
       "athleteId": "athlete-郭婉诗-山西省冰雪运动中心",
       "athleteName": "郭婉诗",
       "team": "山西省冰雪运动中心",
@@ -25783,7 +26770,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 67,
+      "rank": 76,
+      "athleteId": "cmjzpdkx700pzbfholzzypp6c",
+      "athleteName": "张梓童",
+      "team": "河南省体育局",
+      "totalPoints": 782,
+      "competitionCount": 3,
+      "bestRank": 4,
+      "avgPoints": 260.67,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 280,
+          "rank": 4
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 260,
+          "rank": 5
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 242,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "rank": 76,
       "athleteId": "cmjzpdkxa00q2bfhoqpmx31h0",
       "athleteName": "王俊熙",
       "team": "河南省体育局",
@@ -25816,7 +26836,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 70,
+      "rank": 80,
       "athleteId": "cmjzpdkkf00ffbfhovtl6y82z",
       "athleteName": "翟姝涵",
       "team": "北京市冬季运动管理中心",
@@ -25855,7 +26875,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 71,
+      "rank": 81,
       "athleteId": "cmjzpdkmk00gxbfho34o28xv8",
       "athleteName": "赵严诺",
       "team": "河北省体育局冬季运动中心",
@@ -25894,7 +26914,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 72,
+      "rank": 82,
       "athleteId": "cmjzpdkph00jcbfho8tsz6f9a",
       "athleteName": "左子正",
       "team": "个人",
@@ -25927,7 +26947,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 72,
+      "rank": 82,
       "athleteId": "cmjzpdkmo00h0bfho8q8f5myc",
       "athleteName": "魏子博",
       "team": "河南省体育局",
@@ -25966,7 +26986,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 72,
+      "rank": 82,
       "athleteId": "athlete-刘霓霏-个人",
       "athleteName": "刘霓霏",
       "team": "个人",
@@ -25999,7 +27019,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 75,
+      "rank": 85,
+      "athleteId": "cmjzpdkxa00q2bfhoqpmx31h0",
+      "athleteName": "王俊熙",
+      "team": "河南省体育局",
+      "totalPoints": 762,
+      "competitionCount": 3,
+      "bestRank": 5,
+      "avgPoints": 254.0,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 260,
+          "rank": 5
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 242,
+          "rank": 6
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 260,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "rank": 86,
       "athleteId": "cmjzpdkly00gfbfhof1a75ldx",
       "athleteName": "陈宇垚",
       "team": "四川体育职业学院",
@@ -26032,7 +27085,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 75,
+      "rank": 86,
       "athleteId": "cmjzpdkvk00oqbfhotqaedvcn",
       "athleteName": "武温暖",
       "team": "石家庄市冰雪与足球运动中心",
@@ -26065,7 +27118,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 77,
+      "rank": 88,
       "athleteId": "cmjzpdkvc00okbfhoitspibck",
       "athleteName": "王淑哲",
       "team": "河南省体育局",
@@ -26098,7 +27151,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 78,
+      "rank": 89,
       "athleteId": "cmjzpdknf00hobfho0vnutqs9",
       "athleteName": "高翊博",
       "team": "北京市冬季运动管理中心",
@@ -26137,7 +27190,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 79,
+      "rank": 90,
       "athleteId": "athlete-刘霓霏-个人",
       "athleteName": "刘霓霏",
       "team": "个人",
@@ -26170,7 +27223,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 80,
+      "rank": 91,
       "athleteId": "cmjzpdkwi00phbfho8f0ltvne",
       "athleteName": "陈科羽",
       "team": "四川体育职业学院",
@@ -26203,7 +27256,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 81,
+      "rank": 92,
+      "athleteId": "cmjzpdkvv00ozbfho9q5gtmko",
+      "athleteName": "闫妍",
+      "team": "个人",
+      "totalPoints": 746,
+      "competitionCount": 3,
+      "bestRank": 5,
+      "avgPoints": 248.67,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 226,
+          "rank": 7
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 260,
+          "rank": 5
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 260,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "rank": 93,
       "athleteId": "athlete-曾云泽-New-team",
       "athleteName": "曾云泽",
       "team": "New team",
@@ -26236,7 +27322,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 82,
+      "rank": 94,
       "athleteId": "cmjzpdkmo00h0bfho8q8f5myc",
       "athleteName": "魏子博",
       "team": "河南省体育局",
@@ -26275,7 +27361,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 83,
+      "rank": 95,
       "athleteId": "cmjzpdkma00gobfhoa7jwls5r",
       "athleteName": "王曌霖",
       "team": "河南省体育局",
@@ -26308,7 +27394,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 84,
+      "rank": 96,
       "athleteId": "cmjzpdkpd00j9bfho5ceqs1fb",
       "athleteName": "王润钰",
       "team": "张家口乔与杨体育服务有限公司",
@@ -26341,7 +27427,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 84,
+      "rank": 96,
       "athleteId": "athlete-张淑雅-山西省冰雪运动中心",
       "athleteName": "张淑雅",
       "team": "山西省冰雪运动中心",
@@ -26374,7 +27460,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 84,
+      "rank": 96,
       "athleteId": "cmjzpdkjw00f3bfhoswtiqk6b",
       "athleteName": "周斯言",
       "team": "个人",
@@ -26407,7 +27493,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 87,
+      "rank": 99,
       "athleteId": "cmjzpdkxv00qkbfhogyt55uun",
       "athleteName": "王珈绮",
       "team": "四川体育职业学院",
@@ -26440,7 +27526,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 88,
+      "rank": 100,
       "athleteId": "cmjzpdkyc00qzbfhoa03c1g4b",
       "athleteName": "杨芷妍",
       "team": "四川体育职业学院",
@@ -26473,7 +27559,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 89,
+      "rank": 101,
       "athleteId": "athlete-贺舒玉-重庆市冬季运动管理中心",
       "athleteName": "贺舒玉",
       "team": "重庆市冬季运动管理中心",
@@ -26506,7 +27592,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 89,
+      "rank": 101,
       "athleteId": "athlete-吴海鑫-湖北省武术和冬季运动管理中心",
       "athleteName": "吴海鑫",
       "team": "湖北省武术和冬季运动管理中心",
@@ -26539,7 +27625,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 91,
+      "rank": 103,
       "athleteId": "cmjzpdkqp00kcbfho4at9jl9k",
       "athleteName": "赵酌",
       "team": "四川体育职业学院",
@@ -26566,7 +27652,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 91,
+      "rank": 103,
       "athleteId": "athlete_钱语墨_张家口辰鹏体育发展有",
       "athleteName": "钱语墨",
       "team": "张家口辰鹏体育发展有限公司",
@@ -26593,7 +27679,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 91,
+      "rank": 103,
       "athleteId": "athlete_孙若涵_延庆区体育局",
       "athleteName": "孙若涵",
       "team": "延庆区体育局",
@@ -26620,7 +27706,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 91,
+      "rank": 103,
       "athleteId": "athlete_钱语墨_张家口辰鹏体育发展有",
       "athleteName": "钱语墨",
       "team": "张家口辰鹏体育发展有限公司",
@@ -26647,7 +27733,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 91,
+      "rank": 103,
       "athleteId": "athlete_王正政_张家口乔与杨体育服务",
       "athleteName": "王正政",
       "team": "张家口乔与杨体育服务有限公司",
@@ -26674,15 +27760,15 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 91,
-      "athleteId": "cmjzpdkv900ohbfhojesum95s",
-      "athleteName": "赵紫琪",
-      "team": "四川体育职业学院",
+      "rank": 103,
+      "athleteId": "cmjzpdkzn00rzbfhozmvs8hx9",
+      "athleteName": "夏可馨",
+      "team": "河北省体育局冬季运动中心",
       "totalPoints": 720,
       "competitionCount": 2,
       "bestRank": 1,
       "avgPoints": 360.0,
-      "ageGroup": "U11",
+      "ageGroup": "U18",
       "gender": "女子组",
       "rankChange": 0,
       "pointsBreakdown": [
@@ -26693,42 +27779,15 @@ export const totalRankingsData: TotalRankingsData = {
           "rank": 1
         },
         {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
           "points": 360,
           "rank": 1
         }
       ]
     },
     {
-      "rank": 91,
-      "athleteId": "cmjzpdkxs00qhbfhoqhlhgnkz",
-      "athleteName": "周绮润",
-      "team": "个人",
-      "totalPoints": 720,
-      "competitionCount": 2,
-      "bestRank": 1,
-      "avgPoints": 360.0,
-      "ageGroup": "U15",
-      "gender": "女子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 360,
-          "rank": 1
-        },
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 360,
-          "rank": 1
-        }
-      ]
-    },
-    {
-      "rank": 91,
+      "rank": 103,
       "athleteId": "cmjzpdkzn00rzbfhozmvs8hx9",
       "athleteName": "夏可馨",
       "team": "河北省体育局冬季运动中心",
@@ -26755,7 +27814,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 99,
+      "rank": 110,
       "athleteId": "cmjzpdkpp00jibfho6rmhufv0",
       "athleteName": "王冠霖",
       "team": "吉林坤伦滑雪俱乐部",
@@ -26788,7 +27847,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 99,
+      "rank": 110,
       "athleteId": "cmjzpdko400i9bfhoakuixeat",
       "athleteName": "米馥豪",
       "team": "石家庄市冰雪与足球运动中心",
@@ -26821,7 +27880,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 101,
+      "rank": 112,
       "athleteId": "athlete-孙晨曦-河北省体育局冬季运动中心",
       "athleteName": "孙晨曦",
       "team": "河北省体育局冬季运动中心",
@@ -26854,7 +27913,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 102,
+      "rank": 113,
       "athleteId": "athlete-周子钰-山西省冰雪运动中心",
       "athleteName": "周子钰",
       "team": "山西省冰雪运动中心",
@@ -26887,7 +27946,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 103,
+      "rank": 114,
       "athleteId": "athlete_盛嗣垚_张家口辰鹏体育发展有",
       "athleteName": "盛嗣垚",
       "team": "张家口辰鹏体育发展有限公司",
@@ -26914,7 +27973,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 103,
+      "rank": 114,
       "athleteId": "athlete_孙若涵_延庆区体育局",
       "athleteName": "孙若涵",
       "team": "延庆区体育局",
@@ -26941,7 +28000,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 103,
+      "rank": 114,
       "athleteId": "cmjzpdkgy00d0bfho9vble00l",
       "athleteName": "张鑫泽",
       "team": "速森体育",
@@ -26968,34 +28027,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 103,
-      "athleteId": "cmjzpdkwu00pqbfhojhnxffpm",
-      "athleteName": "常嘉林",
-      "team": "广西射击射箭运动发展中心",
-      "totalPoints": 689,
-      "competitionCount": 2,
-      "bestRank": 1,
-      "avgPoints": 344.5,
-      "ageGroup": "U11",
-      "gender": "男子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 360,
-          "rank": 1
-        },
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 329,
-          "rank": 2
-        }
-      ]
-    },
-    {
-      "rank": 107,
+      "rank": 117,
       "athleteId": "athlete-孙晨曦-河北省体育局冬季运动中心",
       "athleteName": "孙晨曦",
       "team": "河北省体育局冬季运动中心",
@@ -27028,7 +28060,106 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 108,
+      "rank": 118,
+      "athleteId": "cmjzpdkvc00okbfhoitspibck",
+      "athleteName": "王淑哲",
+      "team": "河南省体育局",
+      "totalPoints": 682,
+      "competitionCount": 3,
+      "bestRank": 2,
+      "avgPoints": 227.33,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 329,
+          "rank": 2
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 166,
+          "rank": 12
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 187,
+          "rank": 10
+        }
+      ]
+    },
+    {
+      "rank": 118,
+      "athleteId": "cmjzpdkxv00qkbfhogyt55uun",
+      "athleteName": "王珈绮",
+      "team": "四川体育职业学院",
+      "totalPoints": 682,
+      "competitionCount": 3,
+      "bestRank": 2,
+      "avgPoints": 227.33,
+      "ageGroup": "U15",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 329,
+          "rank": 2
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 166,
+          "rank": 12
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 187,
+          "rank": 10
+        }
+      ]
+    },
+    {
+      "rank": 118,
+      "athleteId": "cmjzpdky200qqbfhojspykxzi",
+      "athleteName": "王珠彤",
+      "team": "石家庄市冰雪与足球运动中心",
+      "totalPoints": 682,
+      "competitionCount": 3,
+      "bestRank": 4,
+      "avgPoints": 227.33,
+      "ageGroup": "U15",
+      "gender": "女子组",
+      "rankChange": 1,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 280,
+          "rank": 4
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 226,
+          "rank": 7
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 176,
+          "rank": 11
+        }
+      ]
+    },
+    {
+      "rank": 121,
       "athleteId": "cmjzpdkmr00h3bfhom6eectsq",
       "athleteName": "石昊桐",
       "team": "北京市冬季运动管理中心",
@@ -27067,7 +28198,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 109,
+      "rank": 122,
+      "athleteId": "cmjzpdkvg00onbfhog8ooajnb",
+      "athleteName": "任可心",
+      "team": "四川体育职业学院",
+      "totalPoints": 672,
+      "competitionCount": 3,
+      "bestRank": 3,
+      "avgPoints": 224.0,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 303,
+          "rank": 3
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 212,
+          "rank": 8
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 157,
+          "rank": 13
+        }
+      ]
+    },
+    {
+      "rank": 123,
       "athleteId": "cmjzpdkr100kobfhorssp9cun",
       "athleteName": "张雨馨",
       "team": "四川体育职业学院",
@@ -27094,7 +28258,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 109,
+      "rank": 123,
       "athleteId": "cmjzpdkr100kobfhorssp9cun",
       "athleteName": "张雨馨",
       "team": "四川体育职业学院",
@@ -27121,7 +28285,61 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 109,
+      "rank": 123,
+      "athleteId": "athlete-吴雨桐-个人",
+      "athleteName": "吴雨桐",
+      "team": "个人",
+      "totalPoints": 663,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 331.5,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 360,
+          "rank": 1
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 303,
+          "rank": 3
+        }
+      ]
+    },
+    {
+      "rank": 123,
+      "athleteId": "cmjzpdl0900sebfhochiz1nog",
+      "athleteName": "张天迈",
+      "team": "河北省体育局冬季运动中心",
+      "totalPoints": 663,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 331.5,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 303,
+          "rank": 3
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 360,
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "rank": 123,
       "athleteId": "cmjzpdkzu00s5bfhojnktcfby",
       "athleteName": "高梓曦",
       "team": "个人",
@@ -27148,7 +28366,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 109,
+      "rank": 123,
       "athleteId": "cmjzpdkvz00p2bfhobxqhq2ex",
       "athleteName": "甄芝漫",
       "team": "河北省体育局冬季运动中心",
@@ -27181,7 +28399,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 109,
+      "rank": 123,
       "athleteId": "cmjzpdky600qtbfhoiwp2kmsc",
       "athleteName": "平梓涵",
       "team": "河北省体育局冬季运动中心",
@@ -27208,7 +28426,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 109,
+      "rank": 123,
       "athleteId": "athlete-陈露凝-个人",
       "athleteName": "陈露凝",
       "team": "个人",
@@ -27235,7 +28453,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 115,
+      "rank": 131,
       "athleteId": "cmjzpdks900lrbfho41ykduoi",
       "athleteName": "周昱含",
       "team": "沈阳王伟滑雪管理咨询服务有限公司",
@@ -27262,7 +28480,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 115,
+      "rank": 131,
+      "athleteId": "athlete-陈露凝-个人",
+      "athleteName": "陈露凝",
+      "team": "个人",
+      "totalPoints": 658,
+      "competitionCount": 2,
+      "bestRank": 2,
+      "avgPoints": 329.0,
+      "ageGroup": "U18",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 329,
+          "rank": 2
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 329,
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 131,
       "athleteId": "athlete-罗优璇-河南省体育局",
       "athleteName": "罗优璇",
       "team": "河南省体育局",
@@ -27289,7 +28534,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 117,
+      "rank": 134,
       "athleteId": "athlete-曾云泽-New-team",
       "athleteName": "曾云泽",
       "team": "New team",
@@ -27322,7 +28567,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 118,
+      "rank": 135,
       "athleteId": "athlete-周子钰-山西省冰雪运动中心",
       "athleteName": "周子钰",
       "team": "山西省冰雪运动中心",
@@ -27355,7 +28600,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 119,
+      "rank": 136,
       "athleteId": "athlete-刘栩辰-重庆市冬季运动管理中心",
       "athleteName": "刘栩辰",
       "team": "重庆市冬季运动管理中心",
@@ -27388,7 +28633,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 120,
+      "rank": 137,
       "athleteId": "athlete-周紫君-四川体育职业学院",
       "athleteName": "周紫君",
       "team": "四川体育职业学院",
@@ -27415,7 +28660,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 121,
+      "rank": 138,
       "athleteId": "athlete-方柏尧-个人",
       "athleteName": "方柏尧",
       "team": "个人",
@@ -27448,7 +28693,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 122,
+      "rank": 139,
       "athleteId": "cmjzpdkp700j3bfhoni6zgejk",
       "athleteName": "高琦硕",
       "team": "高峰",
@@ -27475,7 +28720,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 122,
+      "rank": 139,
       "athleteId": "athlete-封树渝-重庆市冬季运动管理中心",
       "athleteName": "封树渝",
       "team": "重庆市冬季运动管理中心",
@@ -27502,7 +28747,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 122,
+      "rank": 139,
       "athleteId": "athlete-何琨鹏-湖北省武术和冬季运动管理中心",
       "athleteName": "何琨鹏",
       "team": "湖北省武术和冬季运动管理中心",
@@ -27529,7 +28774,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 122,
+      "rank": 139,
       "athleteId": "cmjzpdkf000b9bfho3gs0l1zy",
       "athleteName": "臧怡然",
       "team": "个人",
@@ -27556,15 +28801,15 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 122,
-      "athleteId": "cmjzpdkwz00ptbfho9l5fo4g2",
-      "athleteName": "张墨凡",
-      "team": "北京市冬季运动管理中心",
+      "rank": 139,
+      "athleteId": "cmjzpdkyn00r8bfho5hxp5a6u",
+      "athleteName": "张乔淳佑",
+      "team": "河北省体育局冬季运动中心",
       "totalPoints": 632,
       "competitionCount": 2,
       "bestRank": 2,
       "avgPoints": 316.0,
-      "ageGroup": "U11",
+      "ageGroup": "U15",
       "gender": "男子组",
       "rankChange": 0,
       "pointsBreakdown": [
@@ -27575,15 +28820,15 @@ export const totalRankingsData: TotalRankingsData = {
           "rank": 2
         },
         {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
           "points": 303,
           "rank": 3
         }
       ]
     },
     {
-      "rank": 127,
+      "rank": 144,
       "athleteId": "athlete-高艺轩-个人",
       "athleteName": "高艺轩",
       "team": "个人",
@@ -27616,7 +28861,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 128,
+      "rank": 145,
       "athleteId": "cmjzpdknm00hubfho7bvsgi98",
       "athleteName": "梁嘉俊",
       "team": "石家庄市冰雪与足球运动中心",
@@ -27649,7 +28894,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 129,
+      "rank": 146,
       "athleteId": "athlete_张雨杉_西安高新一中沣东中学",
       "athleteName": "张雨杉",
       "team": "西安高新一中沣东中学初中校区",
@@ -27676,7 +28921,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 129,
+      "rank": 146,
       "athleteId": "cmjzpdkjm00exbfhon8q764e7",
       "athleteName": "孙嘉怡",
       "team": "河北省体育局冬季运动中心",
@@ -27703,7 +28948,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 129,
+      "rank": 146,
+      "athleteId": "athlete-璩恩慧-河南省体育局",
+      "athleteName": "璩恩慧",
+      "team": "河南省体育局",
+      "totalPoints": 620,
+      "competitionCount": 2,
+      "bestRank": 1,
+      "avgPoints": 310.0,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 260,
+          "rank": 5
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 360,
+          "rank": 1
+        }
+      ]
+    },
+    {
+      "rank": 146,
       "athleteId": "athlete-璩恩慧-河南省体育局",
       "athleteName": "璩恩慧",
       "team": "河南省体育局",
@@ -27730,7 +29002,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 132,
+      "rank": 150,
+      "athleteId": "athlete-刘栩辰-重庆市冬季运动管理中心",
+      "athleteName": "刘栩辰",
+      "team": "重庆市冬季运动管理中心",
+      "totalPoints": 617,
+      "competitionCount": 3,
+      "bestRank": 6,
+      "avgPoints": 205.67,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 242,
+          "rank": 6
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 176,
+          "rank": 11
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 199,
+          "rank": 9
+        }
+      ]
+    },
+    {
+      "rank": 151,
       "athleteId": "athlete-孙焕轲-河南省体育局",
       "athleteName": "孙焕轲",
       "team": "河南省体育局",
@@ -27763,7 +29068,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 133,
+      "rank": 152,
       "athleteId": "cmjzpdkqs00kfbfhoekaf7a8k",
       "athleteName": "竹禹丞",
       "team": "成都热雪奇迹",
@@ -27790,7 +29095,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 133,
+      "rank": 152,
       "athleteId": "cmjzpdkjm00exbfhon8q764e7",
       "athleteName": "孙嘉怡",
       "team": "河北省体育局冬季运动中心",
@@ -27817,7 +29122,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 133,
+      "rank": 152,
       "athleteId": "athlete-张依冉-山西省冰雪运动中心",
       "athleteName": "张依冉",
       "team": "山西省冰雪运动中心",
@@ -27844,7 +29149,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 133,
+      "rank": 152,
+      "athleteId": "athlete-邓明涛-四川体育职业学院",
+      "athleteName": "邓明涛",
+      "team": "四川体育职业学院",
+      "totalPoints": 609,
+      "competitionCount": 2,
+      "bestRank": 2,
+      "avgPoints": 304.5,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 280,
+          "rank": 4
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 329,
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 152,
       "athleteId": "athlete-邓明涛-四川体育职业学院",
       "athleteName": "邓明涛",
       "team": "四川体育职业学院",
@@ -27871,7 +29203,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 133,
+      "rank": 152,
       "athleteId": "cmjzpdkxy00qnbfhoi0fohlcs",
       "athleteName": "叶欣悦",
       "team": "四川体育职业学院",
@@ -27898,7 +29230,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 138,
+      "rank": 158,
       "athleteId": "athlete-李智贤-湖北省武术和冬季运动管理中心",
       "athleteName": "李智贤",
       "team": "湖北省武术和冬季运动管理中心",
@@ -27931,7 +29263,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 139,
+      "rank": 159,
       "athleteId": "cmjzpdkl100fubfho8tg9xa1r",
       "athleteName": "杨可轩",
       "team": "广西射击射箭运动发展中心",
@@ -27958,7 +29290,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 140,
+      "rank": 160,
+      "athleteId": "cmjzpdkyc00qzbfhoa03c1g4b",
+      "athleteName": "杨芷妍",
+      "team": "四川体育职业学院",
+      "totalPoints": 604,
+      "competitionCount": 3,
+      "bestRank": 7,
+      "avgPoints": 201.33,
+      "ageGroup": "U15",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 226,
+          "rank": 7
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 212,
+          "rank": 8
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 166,
+          "rank": 12
+        }
+      ]
+    },
+    {
+      "rank": 161,
       "athleteId": "cmjzpdkgv00cxbfhohvvnjx3w",
       "athleteName": "窦羿",
       "team": "MAYA TEAM",
@@ -27985,7 +29350,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 141,
+      "rank": 162,
       "athleteId": "cmjzpdkjw00f3bfhoswtiqk6b",
       "athleteName": "周斯言",
       "team": "个人",
@@ -28018,7 +29383,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 142,
+      "rank": 163,
       "athleteId": "cmjzpdknm00hubfho7bvsgi98",
       "athleteName": "梁嘉俊",
       "team": "石家庄市冰雪与足球运动中心",
@@ -28051,7 +29416,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 143,
+      "rank": 164,
+      "athleteId": "cmjzpdkwf00pebfhoy6f0kq3d",
+      "athleteName": "欧子娴",
+      "team": "成都热雪奇迹",
+      "totalPoints": 591,
+      "competitionCount": 3,
+      "bestRank": 7,
+      "avgPoints": 197.0,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 166,
+          "rank": 12
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 199,
+          "rank": 9
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 226,
+          "rank": 7
+        }
+      ]
+    },
+    {
+      "rank": 165,
       "athleteId": "athlete_张雨桐_个人",
       "athleteName": "张雨桐",
       "team": "个人",
@@ -28078,7 +29476,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 143,
+      "rank": 165,
       "athleteId": "athlete-卢司焱-个人",
       "athleteName": "卢司焱",
       "team": "个人",
@@ -28105,7 +29503,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 143,
+      "rank": 165,
       "athleteId": "athlete-张依冉-山西省冰雪运动中心",
       "athleteName": "张依冉",
       "team": "山西省冰雪运动中心",
@@ -28132,7 +29530,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 143,
+      "rank": 165,
       "athleteId": "cmjzpdkfa00bibfho2rfh2opo",
       "athleteName": "张芊凝",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -28159,7 +29557,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 147,
+      "rank": 165,
+      "athleteId": "athlete-韩萨仁其木格-小崔运动",
+      "athleteName": "韩萨仁其木格",
+      "team": "小崔运动",
+      "totalPoints": 589,
+      "competitionCount": 2,
+      "bestRank": 2,
+      "avgPoints": 294.5,
+      "ageGroup": "U15",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 260,
+          "rank": 5
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 329,
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 170,
       "athleteId": "cmjzpdkvg00onbfhog8ooajnb",
       "athleteName": "任可心",
       "team": "四川体育职业学院",
@@ -28192,34 +29617,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 148,
-      "athleteId": "cmjzpdkyk00r5bfhoikmy4e16",
-      "athleteName": "周英杰",
-      "team": "四川体育职业学院",
-      "totalPoints": 586,
-      "competitionCount": 2,
-      "bestRank": 1,
-      "avgPoints": 293.0,
-      "ageGroup": "U15",
-      "gender": "男子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 360,
-          "rank": 1
-        },
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 226,
-          "rank": 7
-        }
-      ]
-    },
-    {
-      "rank": 149,
+      "rank": 171,
       "athleteId": "athlete_安若维_个人",
       "athleteName": "安若维",
       "team": "个人",
@@ -28246,7 +29644,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 149,
+      "rank": 171,
       "athleteId": "athlete_邱心悦_葫小芦北京体育有限公",
       "athleteName": "邱心悦",
       "team": "葫小芦（北京）体育有限公司",
@@ -28273,7 +29671,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 149,
+      "rank": 171,
       "athleteId": "athlete-卢司焱-个人",
       "athleteName": "卢司焱",
       "team": "个人",
@@ -28300,7 +29698,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 149,
+      "rank": 171,
       "athleteId": "cmjzpdkf300bcbfhoptyf96dp",
       "athleteName": "丁小苏",
       "team": "MAYA TEAM",
@@ -28327,34 +29725,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 149,
-      "athleteId": "cmjzpdkx200pwbfhonl48w33h",
-      "athleteName": "赵铠轩",
-      "team": "河南省体育局",
+      "rank": 171,
+      "athleteId": "athlete-齐馨-A+自由式滑雪队",
+      "athleteName": "齐馨",
+      "team": "A+自由式滑雪队",
       "totalPoints": 583,
       "competitionCount": 2,
       "bestRank": 3,
       "avgPoints": 291.5,
-      "ageGroup": "U11",
-      "gender": "男子组",
+      "ageGroup": "U18",
+      "gender": "女子组",
       "rankChange": 0,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
           "points": 303,
           "rank": 3
         },
         {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
           "points": 280,
           "rank": 4
         }
       ]
     },
     {
-      "rank": 149,
+      "rank": 171,
       "athleteId": "athlete-齐馨-A+自由式滑雪队",
       "athleteName": "齐馨",
       "team": "A+自由式滑雪队",
@@ -28381,7 +29779,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 155,
+      "rank": 177,
       "athleteId": "athlete_国益霖_延庆区体育局",
       "athleteName": "国益霖",
       "team": "延庆区体育局",
@@ -28408,7 +29806,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 156,
+      "rank": 178,
       "athleteId": "athlete_王正政_张家口乔与杨体育服务",
       "athleteName": "王正政",
       "team": "张家口乔与杨体育服务有限公司",
@@ -28435,7 +29833,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 156,
+      "rank": 178,
       "athleteId": "cmjzpdko000i6bfho6pikfiix",
       "athleteName": "李俊辛",
       "team": "四川体育职业学院",
@@ -28462,7 +29860,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 158,
+      "rank": 180,
       "athleteId": "athlete-杨茗然-个人",
       "athleteName": "杨茗然",
       "team": "个人",
@@ -28495,7 +29893,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 159,
+      "rank": 181,
       "athleteId": "athlete-杨茗然-个人",
       "athleteName": "杨茗然",
       "team": "个人",
@@ -28528,7 +29926,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 159,
+      "rank": 181,
       "athleteId": "cmjzpdkh100d3bfhojzgo7pr4",
       "athleteName": "李嘉祺",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -28555,34 +29953,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 159,
-      "athleteId": "cmjzpdkvn00otbfho8ze6lnnz",
-      "athleteName": "李诗沫",
-      "team": "石家庄市冰雪与足球运动中心",
-      "totalPoints": 563,
-      "competitionCount": 2,
-      "bestRank": 3,
-      "avgPoints": 281.5,
-      "ageGroup": "U11",
-      "gender": "女子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 260,
-          "rank": 5
-        },
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 303,
-          "rank": 3
-        }
-      ]
-    },
-    {
-      "rank": 159,
+      "rank": 181,
       "athleteId": "athlete-吴雨桐-个人",
       "athleteName": "吴雨桐",
       "team": "个人",
@@ -28609,7 +29980,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 159,
+      "rank": 181,
       "athleteId": "cmjzpdkyn00r8bfho5hxp5a6u",
       "athleteName": "张乔淳佑",
       "team": "河北省体育局冬季运动中心",
@@ -28636,7 +30007,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 164,
+      "rank": 185,
       "athleteId": "athlete_邱心悦_葫小芦北京体育有限公",
       "athleteName": "邱心悦",
       "team": "葫小芦（北京）体育有限公司",
@@ -28663,34 +30034,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 164,
-      "athleteId": "cmjzpdkvk00oqbfhotqaedvcn",
-      "athleteName": "武温暖",
-      "team": "石家庄市冰雪与足球运动中心",
-      "totalPoints": 560,
+      "rank": 186,
+      "athleteId": "athlete-周紫君-四川体育职业学院",
+      "athleteName": "周紫君",
+      "team": "四川体育职业学院",
+      "totalPoints": 559,
       "competitionCount": 2,
-      "bestRank": 4,
-      "avgPoints": 280.0,
-      "ageGroup": "U11",
+      "bestRank": 1,
+      "avgPoints": 279.5,
+      "ageGroup": "U15",
       "gender": "女子组",
       "rankChange": 0,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 280,
-          "rank": 4
-        },
-        {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
           "location": "张家口富龙滑雪场",
-          "points": 280,
-          "rank": 4
+          "points": 199,
+          "rank": 9
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 360,
+          "rank": 1
         }
       ]
     },
     {
-      "rank": 166,
+      "rank": 187,
       "athleteId": "athlete-王浩臣-Star单板队",
       "athleteName": "王浩臣",
       "team": "Star单板队",
@@ -28717,7 +30088,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 167,
+      "rank": 188,
+      "athleteId": "athlete-罗优璇-河南省体育局",
+      "athleteName": "罗优璇",
+      "team": "河南省体育局",
+      "totalPoints": 545,
+      "competitionCount": 2,
+      "bestRank": 3,
+      "avgPoints": 272.5,
+      "ageGroup": "U15",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 303,
+          "rank": 3
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 242,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "rank": 188,
       "athleteId": "athlete-王培旭-四川体育职业学院",
       "athleteName": "王培旭",
       "team": "四川体育职业学院",
@@ -28744,7 +30142,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 168,
+      "rank": 190,
       "athleteId": "athlete-蒋桨-个人",
       "athleteName": "蒋桨",
       "team": "个人",
@@ -28777,34 +30175,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 169,
-      "athleteId": "cmjzpdkvz00p2bfhobxqhq2ex",
-      "athleteName": "甄芝漫",
-      "team": "河北省体育局冬季运动中心",
-      "totalPoints": 541,
-      "competitionCount": 2,
-      "bestRank": 2,
-      "avgPoints": 270.5,
-      "ageGroup": "U11",
-      "gender": "女子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 212,
-          "rank": 8
-        },
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 329,
-          "rank": 2
-        }
-      ]
-    },
-    {
-      "rank": 170,
+      "rank": 191,
       "athleteId": "athlete_龚信水_重庆市冬季运动管理中",
       "athleteName": "龚信水",
       "team": "重庆市冬季运动管理中心1队",
@@ -28831,7 +30202,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 170,
+      "rank": 191,
       "athleteId": "athlete-王浩臣-Star单板队",
       "athleteName": "王浩臣",
       "team": "Star单板队",
@@ -28858,34 +30229,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 170,
-      "athleteId": "cmjzpdkx700pzbfholzzypp6c",
-      "athleteName": "张梓童",
-      "team": "河南省体育局",
+      "rank": 191,
+      "athleteId": "cmjzpdky600qtbfhoiwp2kmsc",
+      "athleteName": "平梓涵",
+      "team": "河北省体育局冬季运动中心",
       "totalPoints": 540,
       "competitionCount": 2,
       "bestRank": 4,
       "avgPoints": 270.0,
-      "ageGroup": "U11",
-      "gender": "男子组",
+      "ageGroup": "U15",
+      "gender": "女子组",
       "rankChange": 0,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
           "location": "成都热雪奇迹室内滑雪场",
-          "points": 280,
-          "rank": 4
-        },
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
           "points": 260,
           "rank": 5
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 280,
+          "rank": 4
         }
       ]
     },
     {
-      "rank": 173,
+      "rank": 194,
       "athleteId": "athlete-监柏霖-个人",
       "athleteName": "监柏霖",
       "team": "个人",
@@ -28918,7 +30289,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 174,
+      "rank": 195,
       "athleteId": "athlete-周若慈-个人",
       "athleteName": "周若慈",
       "team": "个人",
@@ -28951,7 +30322,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 175,
+      "rank": 196,
+      "athleteId": "cmjzpdkwi00phbfho8f0ltvne",
+      "athleteName": "陈科羽",
+      "team": "四川体育职业学院",
+      "totalPoints": 533,
+      "competitionCount": 3,
+      "bestRank": 6,
+      "avgPoints": 177.67,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 157,
+          "rank": 13
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 242,
+          "rank": 6
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 134,
+          "rank": 16
+        }
+      ]
+    },
+    {
+      "rank": 197,
       "athleteId": "athlete-何琨鹏-湖北省武术和冬季运动管理中心",
       "athleteName": "何琨鹏",
       "team": "湖北省武术和冬季运动管理中心",
@@ -28978,7 +30382,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 175,
+      "rank": 197,
       "athleteId": "athlete-周若慈-个人",
       "athleteName": "周若慈",
       "team": "个人",
@@ -29011,7 +30415,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 175,
+      "rank": 197,
       "athleteId": "cmjzpdkyu00rebfhoup8aq1ld",
       "athleteName": "王翊宁",
       "team": "北京市冬季运动管理中心",
@@ -29038,7 +30442,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 178,
+      "rank": 200,
       "athleteId": "cmjzpdkqe00k3bfhoo18nnq3z",
       "athleteName": "李昊汐",
       "team": "西安热雪奇迹",
@@ -29065,7 +30469,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 178,
+      "rank": 200,
       "athleteId": "athlete_王胜婕_葫小芦北京体育有限公",
       "athleteName": "王胜婕",
       "team": "葫小芦（北京）体育有限公司",
@@ -29092,7 +30496,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 178,
+      "rank": 200,
       "athleteId": "athlete_杨睿怡_个人",
       "athleteName": "杨睿怡",
       "team": "个人",
@@ -29119,7 +30523,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 178,
+      "rank": 200,
       "athleteId": "cmjzpdky900qwbfhouv7qekds",
       "athleteName": "李明灿",
       "team": "广西射击射箭运动发展中心",
@@ -29146,34 +30550,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 182,
-      "athleteId": "cmjzpdkvg00onbfhog8ooajnb",
-      "athleteName": "任可心",
-      "team": "四川体育职业学院",
-      "totalPoints": 515,
-      "competitionCount": 2,
-      "bestRank": 3,
-      "avgPoints": 257.5,
-      "ageGroup": "U11",
-      "gender": "女子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 303,
-          "rank": 3
-        },
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 212,
-          "rank": 8
-        }
-      ]
-    },
-    {
-      "rank": 183,
+      "rank": 204,
       "athleteId": "athlete-贺舒玉-重庆市冬季运动管理中心",
       "athleteName": "贺舒玉",
       "team": "重庆市冬季运动管理中心",
@@ -29200,16 +30577,16 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 183,
-      "athleteId": "cmjzpdky200qqbfhojspykxzi",
-      "athleteName": "王珠彤",
-      "team": "石家庄市冰雪与足球运动中心",
+      "rank": 204,
+      "athleteId": "cmjzpdkyu00rebfhoup8aq1ld",
+      "athleteName": "王翊宁",
+      "team": "北京市冬季运动管理中心",
       "totalPoints": 506,
       "competitionCount": 2,
       "bestRank": 4,
       "avgPoints": 253.0,
       "ageGroup": "U15",
-      "gender": "女子组",
+      "gender": "男子组",
       "rankChange": 0,
       "pointsBreakdown": [
         {
@@ -29219,15 +30596,15 @@ export const totalRankingsData: TotalRankingsData = {
           "rank": 4
         },
         {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
           "points": 226,
           "rank": 7
         }
       ]
     },
     {
-      "rank": 185,
+      "rank": 206,
       "athleteId": "athlete-蒋桨-个人",
       "athleteName": "蒋桨",
       "team": "个人",
@@ -29260,7 +30637,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 186,
+      "rank": 207,
       "athleteId": "athlete_贾梓瑞_远东东重庆体育文化发",
       "athleteName": "贾梓瑞",
       "team": "远东东（重庆）体育文化发展有限公司",
@@ -29287,7 +30664,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 186,
+      "rank": 207,
       "athleteId": "athlete-张淑棋-山西省冰雪运动中心",
       "athleteName": "张淑棋",
       "team": "山西省冰雪运动中心",
@@ -29314,7 +30691,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 186,
+      "rank": 207,
       "athleteId": "cmjzpdknb00hlbfhoeja6849z",
       "athleteName": "张家睿",
       "team": "四川体育职业学院",
@@ -29341,34 +30718,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 186,
-      "athleteId": "cmjzpdkxa00q2bfhoqpmx31h0",
-      "athleteName": "王俊熙",
-      "team": "河南省体育局",
+      "rank": 207,
+      "athleteId": "athlete-王培旭-四川体育职业学院",
+      "athleteName": "王培旭",
+      "team": "四川体育职业学院",
       "totalPoints": 502,
       "competitionCount": 2,
       "bestRank": 5,
       "avgPoints": 251.0,
-      "ageGroup": "U11",
+      "ageGroup": "U15",
       "gender": "男子组",
       "rankChange": 0,
       "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 260,
-          "rank": 5
-        },
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
           "location": "张家口富龙滑雪场",
           "points": 242,
           "rank": 6
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 260,
+          "rank": 5
         }
       ]
     },
     {
-      "rank": 186,
+      "rank": 207,
       "athleteId": "cmjzpdkxe00q5bfho8r60z791",
       "athleteName": "崔芃森",
       "team": "河北省体育局冬季运动中心",
@@ -29395,7 +30772,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 186,
+      "rank": 207,
       "athleteId": "athlete-王玗希-个人",
       "athleteName": "王玗希",
       "team": "个人",
@@ -29422,61 +30799,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 192,
-      "athleteId": "cmjzpdkvc00okbfhoitspibck",
-      "athleteName": "王淑哲",
-      "team": "河南省体育局",
-      "totalPoints": 495,
-      "competitionCount": 2,
-      "bestRank": 2,
-      "avgPoints": 247.5,
-      "ageGroup": "U11",
-      "gender": "女子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 329,
-          "rank": 2
-        },
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 166,
-          "rank": 12
-        }
-      ]
-    },
-    {
-      "rank": 192,
-      "athleteId": "cmjzpdkxv00qkbfhogyt55uun",
-      "athleteName": "王珈绮",
-      "team": "四川体育职业学院",
-      "totalPoints": 495,
-      "competitionCount": 2,
-      "bestRank": 2,
-      "avgPoints": 247.5,
-      "ageGroup": "U15",
-      "gender": "女子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 329,
-          "rank": 2
-        },
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 166,
-          "rank": 12
-        }
-      ]
-    },
-    {
-      "rank": 194,
+      "rank": 213,
       "athleteId": "cmjzpdkri00l3bfhogfhne4tr",
       "athleteName": "肖瑞林",
       "team": "重庆市冬季运动管理中心",
@@ -29503,7 +30826,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 195,
+      "rank": 214,
+      "athleteId": "athlete-孙焕轲-河南省体育局",
+      "athleteName": "孙焕轲",
+      "team": "河南省体育局",
+      "totalPoints": 493,
+      "competitionCount": 3,
+      "bestRank": 11,
+      "avgPoints": 164.33,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 176,
+          "rank": 11
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 176,
+          "rank": 11
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 141,
+          "rank": 15
+        }
+      ]
+    },
+    {
+      "rank": 215,
       "athleteId": "athlete-监柏霖-个人",
       "athleteName": "监柏霖",
       "team": "个人",
@@ -29536,34 +30892,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 196,
-      "athleteId": "cmjzpdkvv00ozbfho9q5gtmko",
-      "athleteName": "闫妍",
-      "team": "个人",
-      "totalPoints": 486,
-      "competitionCount": 2,
-      "bestRank": 5,
-      "avgPoints": 243.0,
-      "ageGroup": "U11",
-      "gender": "女子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 226,
-          "rank": 7
-        },
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 260,
-          "rank": 5
-        }
-      ]
-    },
-    {
-      "rank": 197,
+      "rank": 216,
       "athleteId": "athlete_杨睿怡_个人",
       "athleteName": "杨睿怡",
       "team": "个人",
@@ -29590,7 +30919,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 197,
+      "rank": 216,
       "athleteId": "athlete-刘子歌-个人",
       "athleteName": "刘子歌",
       "team": "个人",
@@ -29617,7 +30946,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 197,
+      "rank": 216,
       "athleteId": "cmjzpdkog00iibfhotxzpqno2",
       "athleteName": "倪文凯",
       "team": "湖北省武术和冬季运动管理中心",
@@ -29644,7 +30973,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 197,
+      "rank": 216,
       "athleteId": "athlete-刘音里-个人",
       "athleteName": "刘音里",
       "team": "个人",
@@ -29677,7 +31006,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 197,
+      "rank": 216,
       "athleteId": "cmjzpdkyg00r2bfhonpfve5v0",
       "athleteName": "李雅馨",
       "team": "北京市冬季运动管理中心",
@@ -29704,7 +31033,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 202,
+      "rank": 221,
       "athleteId": "athlete-张益嘉-河南省体育局",
       "athleteName": "张益嘉",
       "team": "河南省体育局",
@@ -29731,7 +31060,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 202,
+      "rank": 221,
       "athleteId": "cmjzpdkht00drbfhoo183z471",
       "athleteName": "王嘉崎",
       "team": "新疆维吾尔自治区冬季运动训练中心",
@@ -29758,7 +31087,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 204,
+      "rank": 223,
       "athleteId": "cmjzpdkwf00pebfhoy6f0kq3d",
       "athleteName": "欧子娴",
       "team": "成都热雪奇迹",
@@ -29791,7 +31120,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 205,
+      "rank": 224,
       "athleteId": "cmjzpdlbz0121bfhoofrhg803",
       "athleteName": "曾星越",
       "team": "个人",
@@ -29824,7 +31153,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 206,
+      "rank": 225,
       "athleteId": "cmjzpdklb00g0bfhoygeoy8ua",
       "athleteName": "赖文悦",
       "team": "四川体育职业学院",
@@ -29851,7 +31180,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 206,
+      "rank": 225,
       "athleteId": "cmjzpdkfj00brbfhoma9b5hn6",
       "athleteName": "袁丽文",
       "team": "上海市静安区滑雪协会",
@@ -29878,7 +31207,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 208,
+      "rank": 225,
+      "athleteId": "cmjzpdkyg00r2bfhonpfve5v0",
+      "athleteName": "李雅馨",
+      "team": "北京市冬季运动管理中心",
+      "totalPoints": 472,
+      "competitionCount": 2,
+      "bestRank": 5,
+      "avgPoints": 236.0,
+      "ageGroup": "U15",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 212,
+          "rank": 8
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 260,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "rank": 228,
       "athleteId": "cmjzpdkmr00h3bfhom6eectsq",
       "athleteName": "石昊桐",
       "team": "北京市冬季运动管理中心",
@@ -29917,7 +31273,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 209,
+      "rank": 229,
       "athleteId": "athlete-张益嘉-河南省体育局",
       "athleteName": "张益嘉",
       "team": "河南省体育局",
@@ -29944,7 +31300,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 210,
+      "rank": 230,
       "athleteId": "cmjzpdkfd00blbfho7svp8try",
       "athleteName": "李雨濛",
       "team": "大连雨彤体育赛事俱乐部",
@@ -29971,7 +31327,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 211,
+      "rank": 231,
       "athleteId": "athlete-方柏尧-个人",
       "athleteName": "方柏尧",
       "team": "个人",
@@ -30004,7 +31360,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 212,
+      "rank": 232,
+      "athleteId": "cmjzpdkxy00qnbfhoi0fohlcs",
+      "athleteName": "叶欣悦",
+      "team": "四川体育职业学院",
+      "totalPoints": 460,
+      "competitionCount": 2,
+      "bestRank": 3,
+      "avgPoints": 230.0,
+      "ageGroup": "U15",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 303,
+          "rank": 3
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 157,
+          "rank": 13
+        }
+      ]
+    },
+    {
+      "rank": 233,
       "athleteId": "cmjzpdklb00g0bfhoygeoy8ua",
       "athleteName": "赖文悦",
       "team": "四川体育职业学院",
@@ -30031,7 +31414,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 213,
+      "rank": 234,
+      "athleteId": "cmjzpdkxe00q5bfho8r60z791",
+      "athleteName": "崔芃森",
+      "team": "河北省体育局冬季运动中心",
+      "totalPoints": 454,
+      "competitionCount": 2,
+      "bestRank": 6,
+      "avgPoints": 227.0,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 242,
+          "rank": 6
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 212,
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "rank": 234,
       "athleteId": "athlete-陈奕歌-河南省体育局",
       "athleteName": "陈奕歌",
       "team": "河南省体育局",
@@ -30058,7 +31468,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 214,
+      "rank": 236,
       "athleteId": "athlete-顾嘉禾-河南省体育局",
       "athleteName": "顾嘉禾",
       "team": "河南省体育局",
@@ -30085,7 +31495,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 214,
+      "rank": 236,
       "athleteId": "cmjzpdkxs00qhbfhoqhlhgnkz",
       "athleteName": "周绮润",
       "team": "个人",
@@ -30112,7 +31522,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 216,
+      "rank": 238,
       "athleteId": "cmjzpdkri00l3bfhogfhne4tr",
       "athleteName": "肖瑞林",
       "team": "重庆市冬季运动管理中心",
@@ -30139,7 +31549,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 217,
+      "rank": 239,
       "athleteId": "cmjzpdknb00hlbfhoeja6849z",
       "athleteName": "张家睿",
       "team": "四川体育职业学院",
@@ -30166,7 +31576,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 218,
+      "rank": 240,
       "athleteId": "cmjzpdle0013sbfho3jgfbpad",
       "athleteName": "雷涵文",
       "team": "重庆市冬季运动管理中心",
@@ -30193,7 +31603,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 218,
+      "rank": 240,
       "athleteId": "cmjzpdkff00bobfhoseh0eifz",
       "athleteName": "张允童",
       "team": "个人",
@@ -30220,34 +31630,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 218,
-      "athleteId": "cmjzpdkyc00qzbfhoa03c1g4b",
-      "athleteName": "杨芷妍",
-      "team": "四川体育职业学院",
+      "rank": 240,
+      "athleteId": "cmjzpdkxl00qbbfhowxx5v1fm",
+      "athleteName": "赵子钰",
+      "team": "河北省体育局冬季运动中心",
       "totalPoints": 438,
       "competitionCount": 2,
       "bestRank": 7,
       "avgPoints": 219.0,
-      "ageGroup": "U15",
-      "gender": "女子组",
+      "ageGroup": "U11",
+      "gender": "男子组",
       "rankChange": 0,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
           "location": "成都热雪奇迹室内滑雪场",
-          "points": 226,
-          "rank": 7
-        },
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
           "points": 212,
           "rank": 8
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 226,
+          "rank": 7
         }
       ]
     },
     {
-      "rank": 221,
+      "rank": 243,
       "athleteId": "cmjzpdkt300mkbfhogytw8qz1",
       "athleteName": "熊泽瑞",
       "team": "张家口乔与杨体育服务有限公司",
@@ -30274,7 +31684,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 221,
+      "rank": 243,
       "athleteId": "cmjzpdkog00iibfhotxzpqno2",
       "athleteName": "倪文凯",
       "team": "湖北省武术和冬季运动管理中心",
@@ -30301,7 +31711,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 223,
+      "rank": 245,
       "athleteId": "athlete-陶志伟-山西省冰雪运动中心",
       "athleteName": "陶志伟",
       "team": "山西省冰雪运动中心",
@@ -30334,7 +31744,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 224,
+      "rank": 246,
       "athleteId": "cmjzpdkw600p8bfhouhcl0616",
       "athleteName": "袁芮涵",
       "team": "河南省体育局",
@@ -30361,7 +31771,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 225,
+      "rank": 247,
+      "athleteId": "athlete-王玗希-个人",
+      "athleteName": "王玗希",
+      "team": "个人",
+      "totalPoints": 425,
+      "competitionCount": 2,
+      "bestRank": 7,
+      "avgPoints": 212.5,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 226,
+          "rank": 7
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 199,
+          "rank": 9
+        }
+      ]
+    },
+    {
+      "rank": 248,
       "athleteId": "athlete_蒋骐阳_兰州碧桂园学校",
       "athleteName": "蒋骐阳",
       "team": "兰州碧桂园学校",
@@ -30388,7 +31825,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 225,
+      "rank": 248,
       "athleteId": "cmjzpdkpk00jfbfhoiy6rykkw",
       "athleteName": "常冠廷",
       "team": "吉林市丰满区滑雪协会",
@@ -30415,7 +31852,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 225,
+      "rank": 248,
       "athleteId": "cmjzpdkhi00dibfhokox5yuvz",
       "athleteName": "付壡喆",
       "team": "四川体育职业学院",
@@ -30442,34 +31879,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 228,
-      "athleteId": "athlete-刘栩辰-重庆市冬季运动管理中心",
-      "athleteName": "刘栩辰",
-      "team": "重庆市冬季运动管理中心",
-      "totalPoints": 418,
-      "competitionCount": 2,
-      "bestRank": 6,
-      "avgPoints": 209.0,
-      "ageGroup": "U15",
-      "gender": "男子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 242,
-          "rank": 6
-        },
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 176,
-          "rank": 11
-        }
-      ]
-    },
-    {
-      "rank": 228,
+      "rank": 251,
       "athleteId": "cmjzpdky900qwbfhouv7qekds",
       "athleteName": "李明灿",
       "team": "广西射击射箭运动发展中心",
@@ -30496,7 +31906,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 230,
+      "rank": 252,
       "athleteId": "athlete-张栋涵-个人",
       "athleteName": "张栋涵",
       "team": "个人",
@@ -30523,7 +31933,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 230,
+      "rank": 252,
+      "athleteId": "athlete-陈奕歌-河南省体育局",
+      "athleteName": "陈奕歌",
+      "team": "河南省体育局",
+      "totalPoints": 413,
+      "competitionCount": 2,
+      "bestRank": 7,
+      "avgPoints": 206.5,
+      "ageGroup": "U15",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 187,
+          "rank": 10
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 226,
+          "rank": 7
+        }
+      ]
+    },
+    {
+      "rank": 252,
       "athleteId": "cmjzpdkxl00qbbfhowxx5v1fm",
       "athleteName": "赵子钰",
       "team": "河北省体育局冬季运动中心",
@@ -30550,7 +31987,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 230,
+      "rank": 252,
       "athleteId": "cmjzpdkzj00rwbfhoyoxomh3h",
       "athleteName": "梁跃飞",
       "team": "广西射击射箭运动发展中心",
@@ -30577,7 +32014,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 233,
+      "rank": 256,
       "athleteId": "athlete-刘桐朔-石家庄市冰雪与足球运动中心",
       "athleteName": "刘桐朔",
       "team": "石家庄市冰雪与足球运动中心",
@@ -30610,7 +32047,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 233,
+      "rank": 256,
       "athleteId": "cmjzpdkh800d9bfho23y46y7o",
       "athleteName": "尚久智",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -30637,7 +32074,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 235,
+      "rank": 258,
       "athleteId": "cmjzpdkwq00pnbfhozuu1pwmh",
       "athleteName": "孙婉迪",
       "team": "个人",
@@ -30670,7 +32107,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 236,
+      "rank": 259,
       "athleteId": "cmjzpdkhf00dfbfhoxmumwieq",
       "athleteName": "杨武胜俊",
       "team": "四川体育职业学院",
@@ -30697,7 +32134,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 237,
+      "rank": 259,
+      "athleteId": "cmjzpdkxh00q8bfho5kg4losu",
+      "athleteName": "卢彦词",
+      "team": "四川体育职业学院",
+      "totalPoints": 402,
+      "competitionCount": 2,
+      "bestRank": 7,
+      "avgPoints": 201.0,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 226,
+          "rank": 7
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 176,
+          "rank": 11
+        }
+      ]
+    },
+    {
+      "rank": 261,
       "athleteId": "cmjzpdkl100fubfho8tg9xa1r",
       "athleteName": "杨可轩",
       "team": "广西射击射箭运动发展中心",
@@ -30724,34 +32188,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 237,
-      "athleteId": "cmjzpdkwi00phbfho8f0ltvne",
-      "athleteName": "陈科羽",
-      "team": "四川体育职业学院",
-      "totalPoints": 399,
-      "competitionCount": 2,
-      "bestRank": 6,
-      "avgPoints": 199.5,
-      "ageGroup": "U11",
-      "gender": "女子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 157,
-          "rank": 13
-        },
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 242,
-          "rank": 6
-        }
-      ]
-    },
-    {
-      "rank": 237,
+      "rank": 261,
       "athleteId": "cmjzpdkvr00owbfhobsujiv88",
       "athleteName": "孙焕轶",
       "team": "个人",
@@ -30778,7 +32215,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 240,
+      "rank": 263,
       "athleteId": "cmjzpdkzf00rtbfhou6ca98ui",
       "athleteName": "程楚阳",
       "team": "广西射击射箭运动发展中心",
@@ -30805,7 +32242,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 240,
+      "rank": 263,
       "athleteId": "cmjzpdkzf00rtbfhou6ca98ui",
       "athleteName": "程楚阳",
       "team": "广西射击射箭运动发展中心",
@@ -30832,7 +32269,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 242,
+      "rank": 265,
       "athleteId": "cmjzpdl1f00tcbfhowslhbsqq",
       "athleteName": "李佳馨",
       "team": "个人",
@@ -30865,7 +32302,40 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 243,
+      "rank": 266,
+      "athleteId": "cmjzpdkwq00pnbfhozuu1pwmh",
+      "athleteName": "孙婉迪",
+      "team": "个人",
+      "totalPoints": 395,
+      "competitionCount": 3,
+      "bestRank": 15,
+      "avgPoints": 131.67,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 141,
+          "rank": 15
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 127,
+          "rank": 17
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 127,
+          "rank": 17
+        }
+      ]
+    },
+    {
+      "rank": 267,
       "athleteId": "cmjzpdklg00g3bfhopeqe1sgz",
       "athleteName": "周雨辰",
       "team": "广西射击射箭运动发展中心",
@@ -30892,7 +32362,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 244,
+      "rank": 268,
       "athleteId": "athlete_蒋骐阳_兰州碧桂园学校",
       "athleteName": "蒋骐阳",
       "team": "兰州碧桂园学校",
@@ -30919,7 +32389,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 244,
+      "rank": 268,
       "athleteId": "cmjzpdklg00g3bfhopeqe1sgz",
       "athleteName": "周雨辰",
       "team": "广西射击射箭运动发展中心",
@@ -30946,7 +32416,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 246,
+      "rank": 270,
       "athleteId": "cmjzpdlbz0121bfhoofrhg803",
       "athleteName": "曾星越",
       "team": "个人",
@@ -30979,7 +32449,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 246,
+      "rank": 270,
       "athleteId": "cmjzpdkxh00q8bfho5kg4losu",
       "athleteName": "卢彦词",
       "team": "四川体育职业学院",
@@ -31006,7 +32476,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 246,
+      "rank": 270,
       "athleteId": "cmjzpdkzb00rqbfhozbj66j9r",
       "athleteName": "王冬杰",
       "team": "广西射击射箭运动发展中心",
@@ -31033,7 +32503,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 246,
+      "rank": 270,
       "athleteId": "cmjzpdky200qqbfhojspykxzi",
       "athleteName": "王珠彤",
       "team": "石家庄市冰雪与足球运动中心",
@@ -31060,7 +32530,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 250,
+      "rank": 274,
       "athleteId": "athlete-张钊宁-重庆市冬季运动管理中心",
       "athleteName": "张钊宁",
       "team": "重庆市冬季运动管理中心",
@@ -31087,7 +32557,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 251,
+      "rank": 275,
       "athleteId": "cmjzpdkzb00rqbfhozbj66j9r",
       "athleteName": "王冬杰",
       "team": "广西射击射箭运动发展中心",
@@ -31114,7 +32584,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 252,
+      "rank": 276,
       "athleteId": "athlete-王辰然-个人",
       "athleteName": "王辰然",
       "team": "个人",
@@ -31141,7 +32611,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 253,
+      "rank": 277,
       "athleteId": "athlete-赵开元-湖北省武术和冬季运动管理中心",
       "athleteName": "赵开元",
       "team": "湖北省武术和冬季运动管理中心",
@@ -31168,7 +32638,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 253,
+      "rank": 277,
       "athleteId": "cmjzpdkhq00dobfhogqrw3gj7",
       "athleteName": "苗誉镨",
       "team": "速森体育",
@@ -31195,7 +32665,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 253,
+      "rank": 277,
       "athleteId": "cmjzpdkw600p8bfhouhcl0616",
       "athleteName": "袁芮涵",
       "team": "河南省体育局",
@@ -31222,7 +32692,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 253,
+      "rank": 277,
       "athleteId": "cmjzpdkzj00rwbfhoyoxomh3h",
       "athleteName": "梁跃飞",
       "team": "广西射击射箭运动发展中心",
@@ -31249,7 +32719,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 257,
+      "rank": 281,
       "athleteId": "athlete-王若西-重庆市冬季运动管理中心",
       "athleteName": "王若西",
       "team": "重庆市冬季运动管理中心",
@@ -31276,7 +32746,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 258,
+      "rank": 282,
       "athleteId": "athlete-张迦淳-个人",
       "athleteName": "张迦淳",
       "team": "个人",
@@ -31303,7 +32773,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 258,
+      "rank": 282,
       "athleteId": "athlete-赵开元-湖北省武术和冬季运动管理中心",
       "athleteName": "赵开元",
       "team": "湖北省武术和冬季运动管理中心",
@@ -31330,34 +32800,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 258,
-      "athleteId": "cmjzpdkwf00pebfhoy6f0kq3d",
-      "athleteName": "欧子娴",
-      "team": "成都热雪奇迹",
-      "totalPoints": 365,
-      "competitionCount": 2,
-      "bestRank": 9,
-      "avgPoints": 182.5,
-      "ageGroup": "U11",
-      "gender": "女子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 166,
-          "rank": 12
-        },
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 199,
-          "rank": 9
-        }
-      ]
-    },
-    {
-      "rank": 258,
+      "rank": 282,
       "athleteId": "cmjzpdkw300p5bfhodr0bg1op",
       "athleteName": "韩小贝",
       "team": "河北省体育局冬季运动中心",
@@ -31384,7 +32827,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 262,
+      "rank": 285,
       "athleteId": "cmjzpdkfq00bxbfho3nqtwyo2",
       "athleteName": "邵菲梵",
       "team": "北京天高云淡体育文化有限公司",
@@ -31411,7 +32854,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 263,
+      "rank": 285,
+      "athleteId": "cmjzpdkvr00owbfhobsujiv88",
+      "athleteName": "孙焕轶",
+      "team": "个人",
+      "totalPoints": 363,
+      "competitionCount": 2,
+      "bestRank": 6,
+      "avgPoints": 181.5,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
+          "location": "成都热雪奇迹室内滑雪场",
+          "points": 242,
+          "rank": 6
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 121,
+          "rank": 18
+        }
+      ]
+    },
+    {
+      "rank": 287,
       "athleteId": "athlete-刘音里-个人",
       "athleteName": "刘音里",
       "team": "个人",
@@ -31444,7 +32914,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 264,
+      "rank": 288,
       "athleteId": "cmjzpdklq00g9bfhoyym4yvox",
       "athleteName": "周雨欣",
       "team": "广西射击射箭运动发展中心",
@@ -31471,7 +32941,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "athlete-王子川-北京市朝阳区第三少儿业余体校",
       "athleteName": "王子川",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -31492,7 +32962,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "athlete_王梓墨_四川体育职业学院",
       "athleteName": "王梓墨",
       "team": "四川体育职业学院",
@@ -31513,7 +32983,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "athlete_陈玥潞_张家口辰鹏体育发展有",
       "athleteName": "陈玥潞",
       "team": "张家口辰鹏体育发展有限公司",
@@ -31534,7 +33004,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "cmjzpdkt300mkbfhogytw8qz1",
       "athleteName": "熊泽瑞",
       "team": "张家口乔与杨体育服务有限公司",
@@ -31555,7 +33025,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "cmjzpdkop00iobfhokthvam34",
       "athleteName": "李金润",
       "team": "四川体育职业学院",
@@ -31576,7 +33046,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "cmjzpdkq000jrbfhovq39ke3q",
       "athleteName": "李若瑜",
       "team": "中关村一小",
@@ -31597,7 +33067,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "cmjzpdkrp00l9bfhoebj1petm",
       "athleteName": "黄子歌",
       "team": "四川体育职业学院",
@@ -31618,7 +33088,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "athlete_王梓墨_四川体育职业学院",
       "athleteName": "王梓墨",
       "team": "四川体育职业学院",
@@ -31639,7 +33109,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "athlete_陈玥潞_张家口辰鹏体育发展有",
       "athleteName": "陈玥潞",
       "team": "张家口辰鹏体育发展有限公司",
@@ -31660,7 +33130,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "athlete_张雨杉_西安高新一中沣东中学",
       "athleteName": "张雨杉",
       "team": "西安高新一中沣东中学初中校区",
@@ -31681,7 +33151,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "cmjzpdkop00iobfhokthvam34",
       "athleteName": "李金润",
       "team": "四川体育职业学院",
@@ -31702,7 +33172,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "athlete-顾嘉禾-河南省体育局",
       "athleteName": "顾嘉禾",
       "team": "河南省体育局",
@@ -31729,7 +33199,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "athlete-高明烨-四川体育职业学院",
       "athleteName": "高明烨",
       "team": "四川体育职业学院",
@@ -31750,7 +33220,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "athlete-张楚仪个人",
       "athleteName": "张楚仪",
       "team": "个人",
@@ -31771,7 +33241,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "athlete-高明烨-四川体育职业学院",
       "athleteName": "高明烨",
       "team": "四川体育职业学院",
@@ -31792,7 +33262,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "athlete-张楚仪个人",
       "athleteName": "张楚仪",
       "team": "个人",
@@ -31813,7 +33283,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "cmjzpdk420020bfhodtt3x27o",
       "athleteName": "韩赫洺",
       "team": "四川体育职业学院",
@@ -31834,7 +33304,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "cmjzpdk1g0009bfhohs29gxqf",
       "athleteName": "须星漫",
       "team": "北京虎村竞技体育有限公司",
@@ -31855,7 +33325,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "cmjzpdkad007fbfho5yptlw6j",
       "athleteName": "高佳钇",
       "team": "速森体育",
@@ -31876,7 +33346,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "cmjzpdk79004rbfhooqi32wqr",
       "athleteName": "邱嘉晴",
       "team": "北京虎村竞技体育有限公司",
@@ -31897,7 +33367,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "cmjzpdk3v001ubfhorz5wf7hs",
       "athleteName": "王一臣",
       "team": "MAYA TEAM",
@@ -31918,7 +33388,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "cmjzpdk120000bfhogt7ct1il",
       "athleteName": "李禹潭",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -31939,7 +33409,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "cmjzpdkad007fbfho5yptlw6j",
       "athleteName": "高佳钇",
       "team": "速森体育",
@@ -31960,7 +33430,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "cmjzpdk79004rbfhooqi32wqr",
       "athleteName": "邱嘉晴",
       "team": "北京虎村竞技体育有限公司",
@@ -31981,7 +33451,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "cmjzpdkex00b6bfho71gr5qj3",
       "athleteName": "李妙涵",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -32002,7 +33472,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "cmjzpdk31fe3306d6d5f18",
       "athleteName": "林子又",
       "team": "四川体育职业学院",
@@ -32023,28 +33493,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
-      "athleteId": "athlete-吴雨桐-个人",
-      "athleteName": "吴雨桐",
-      "team": "个人",
+      "rank": 289,
+      "athleteId": "athlete-张天馨-石家庄市冰雪与足球运动中心",
+      "athleteName": "张天馨",
+      "team": "石家庄市冰雪与足球运动中心",
       "totalPoints": 360,
       "competitionCount": 1,
       "bestRank": 1,
       "avgPoints": 360.0,
       "ageGroup": "U11",
-      "gender": "男子组",
+      "gender": "女子组",
       "rankChange": 0,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
           "points": 360,
           "rank": 1
         }
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "athlete-徐锦添-四川体育职业学院",
       "athleteName": "徐锦添",
       "team": "四川体育职业学院",
@@ -32065,7 +33535,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "cmjzpdkzy00s8bfhoiv0z32ls",
       "athleteName": "田嘉译",
       "team": "沈阳体育学院",
@@ -32086,28 +33556,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
-      "athleteId": "cmjzpdkzn00rzbfhozmvs8hx9",
-      "athleteName": "夏可馨",
-      "team": "河北省体育局冬季运动中心",
-      "totalPoints": 360,
-      "competitionCount": 1,
-      "bestRank": 1,
-      "avgPoints": 360.0,
-      "ageGroup": "U18",
-      "gender": "女子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 360,
-          "rank": 1
-        }
-      ]
-    },
-    {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "athlete-徐锦添-四川体育职业学院",
       "athleteName": "徐锦添",
       "team": "四川体育职业学院",
@@ -32128,7 +33577,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "athlete-马世馨-四川体育职业学院",
       "athleteName": "马世馨",
       "team": "四川体育职业学院",
@@ -32149,7 +33598,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 265,
+      "rank": 289,
       "athleteId": "cmjzpdkzy00s8bfhoiv0z32ls",
       "athleteName": "田嘉译",
       "team": "沈阳体育学院",
@@ -32170,7 +33619,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 298,
+      "rank": 321,
       "athleteId": "athlete-张迦淳-个人",
       "athleteName": "张迦淳",
       "team": "个人",
@@ -32197,34 +33646,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 299,
-      "athleteId": "athlete-孙焕轲-河南省体育局",
-      "athleteName": "孙焕轲",
-      "team": "河南省体育局",
-      "totalPoints": 352,
-      "competitionCount": 2,
-      "bestRank": 11,
-      "avgPoints": 176.0,
-      "ageGroup": "U11",
-      "gender": "女子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 176,
-          "rank": 11
-        },
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 176,
-          "rank": 11
-        }
-      ]
-    },
-    {
-      "rank": 300,
+      "rank": 322,
       "athleteId": "cmjzpdklq00g9bfhoyym4yvox",
       "athleteName": "周雨欣",
       "team": "广西射击射箭运动发展中心",
@@ -32251,7 +33673,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 301,
+      "rank": 323,
       "athleteId": "cmjzpdklu00gcbfhoyosgjvcs",
       "athleteName": "苏常格",
       "team": "河北省体育局冬季运动中心",
@@ -32278,7 +33700,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 301,
+      "rank": 323,
       "athleteId": "athlete-张钊宁-重庆市冬季运动管理中心",
       "athleteName": "张钊宁",
       "team": "重庆市冬季运动管理中心",
@@ -32305,7 +33727,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 301,
+      "rank": 323,
       "athleteId": "cmjzpdkft00c0bfhofpnn2mnq",
       "athleteName": "贾釉茜",
       "team": "ACE竞技滑雪队",
@@ -32332,7 +33754,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdkqs00kfbfhoekaf7a8k",
       "athleteName": "竹禹丞",
       "team": "成都热雪奇迹",
@@ -32353,7 +33775,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete_孙楚为_大连奥萨",
       "athleteName": "孙楚为",
       "team": "大连奥萨",
@@ -32374,7 +33796,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete-张沐晨-北京市朝阳区第三少儿业余体校",
       "athleteName": "张沐晨",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -32395,7 +33817,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdkq400jubfhoejwo7naf",
       "athleteName": "罗暄晴",
       "team": "成都热雪奇迹",
@@ -32416,7 +33838,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete_顾欣蕊_上海市静安区滑雪协会",
       "athleteName": "顾欣蕊",
       "team": "上海市静安区滑雪协会",
@@ -32437,7 +33859,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdkrm00l6bfho179zhn19",
       "athleteName": "刘彦钧凯",
       "team": "河北省体育局冬季运动中心",
@@ -32458,7 +33880,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete_陈煜轩_大连奥萨竞技",
       "athleteName": "陈煜轩",
       "team": "大连奥萨竞技",
@@ -32479,7 +33901,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdkr500krbfhoaxpqfzp4",
       "athleteName": "杨子骞",
       "team": "河北省体育局冬季运动中心",
@@ -32500,7 +33922,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete_贾一诺_零度竞技吉林省零下壹",
       "athleteName": "贾一诺",
       "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
@@ -32521,7 +33943,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete-唐妙-重庆市冬季运动管理中心",
       "athleteName": "唐妙",
       "team": "重庆市冬季运动管理中心",
@@ -32542,7 +33964,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdkp300j0bfhohn94zbb3",
       "athleteName": "艾思铭",
       "team": "张家口乔与杨体育服务有限公司",
@@ -32563,7 +33985,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdkot00irbfhoyhtlvzya",
       "athleteName": "杨蓝戈",
       "team": "个人",
@@ -32584,7 +34006,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdkqv00kibfhosfplepf9",
       "athleteName": "苏一豪",
       "team": "重庆市冬季运动管理中心",
@@ -32605,7 +34027,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete-王子川-北京市朝阳区第三少儿业余体校",
       "athleteName": "王子川",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -32626,7 +34048,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdkqb00k0bfhow3hoof01",
       "athleteName": "蔡沛琳",
       "team": "成都热雪奇迹",
@@ -32647,7 +34069,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete_张雨桐_个人",
       "athleteName": "张雨桐",
       "team": "个人",
@@ -32668,7 +34090,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete-李欣桐-北京市朝阳区第三少儿业余体校",
       "athleteName": "李欣桐",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -32689,7 +34111,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdkul00nybfhosbxa0gbd",
       "athleteName": "张芝豪",
       "team": "河北省体育局冬季运动中心",
@@ -32710,7 +34132,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete_国益霖_延庆区体育局",
       "athleteName": "国益霖",
       "team": "延庆区体育局",
@@ -32731,7 +34153,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdkr800kubfho15rzjdm7",
       "athleteName": "罗梓瑜",
       "team": "河北省体育局冬季运动中心",
@@ -32752,7 +34174,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete_杨玉涵_吉林坤伦滑雪俱乐部",
       "athleteName": "杨玉涵",
       "team": "吉林坤伦滑雪俱乐部",
@@ -32773,7 +34195,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete-唐妙-重庆市冬季运动管理中心",
       "athleteName": "唐妙",
       "team": "重庆市冬季运动管理中心",
@@ -32794,7 +34216,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdkp700j3bfhoni6zgejk",
       "athleteName": "高琦硕",
       "team": "高峰",
@@ -32815,7 +34237,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdkow00iubfhojkdi817d",
       "athleteName": "庞予涵",
       "team": "张家口乔与杨体育服务有限公司",
@@ -32836,7 +34258,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete_王胜婕_葫小芦北京体育有限公",
       "athleteName": "王胜婕",
       "team": "葫小芦（北京）体育有限公司",
@@ -32857,7 +34279,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete-王瞾霖-河南省体育局",
       "athleteName": "王瞾霖",
       "team": "河南省体育局",
@@ -32878,7 +34300,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete-张诗蕊-四川体育职业学院",
       "athleteName": "张诗蕊",
       "team": "四川体育职业学院",
@@ -32899,7 +34321,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete-陈珉在-四川体育职业学院",
       "athleteName": "陈珉在",
       "team": "四川体育职业学院",
@@ -32920,7 +34342,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete-张潇月个人",
       "athleteName": "张潇月",
       "team": "个人",
@@ -32941,7 +34363,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdkkx00frbfhonb81p7bu",
       "athleteName": "叶欣瑞",
       "team": "四川体育职业学院",
@@ -32962,7 +34384,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete-张潇然-山西省冰雪运动中心",
       "athleteName": "张潇然",
       "team": "山西省冰雪运动中心",
@@ -32983,7 +34405,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete-陈珉在-四川体育职业学院",
       "athleteName": "陈珉在",
       "team": "四川体育职业学院",
@@ -33004,7 +34426,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete-张潇月个人",
       "athleteName": "张潇月",
       "team": "个人",
@@ -33025,7 +34447,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdke9606e4a2e7ed25",
       "athleteName": "宣达辰",
       "team": "个人",
@@ -33046,7 +34468,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdk1u000fbfhou88cqxsm",
       "athleteName": "周子翕",
       "team": "成都热雪奇迹",
@@ -33067,7 +34489,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdk4fd9c7afb85a37f",
       "athleteName": "刁禹宁",
       "team": "个人",
@@ -33088,7 +34510,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdk7c004ubfhoayny1i0x",
       "athleteName": "沈凌羽",
       "team": "MAYA TEAM",
@@ -33109,7 +34531,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdk3y001xbfhocfpqhm9n",
       "athleteName": "周翎",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -33130,7 +34552,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdk190003bfhodyfd3ttw",
       "athleteName": "于忱汐",
       "team": "太原市第二少年体育学校",
@@ -33151,7 +34573,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdkah007ibfhoakn9j359",
       "athleteName": "陈清桦",
       "team": "MAYA TEAM",
@@ -33172,7 +34594,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdk7c004ubfhoayny1i0x",
       "athleteName": "沈凌羽",
       "team": "MAYA TEAM",
@@ -33193,7 +34615,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdkab0a423d909ff1e",
       "athleteName": "谢德拥",
       "team": "吉林省体育局雪上运动管理中心",
@@ -33214,28 +34636,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
-      "athleteId": "cmjzpdkyn00r8bfho5hxp5a6u",
-      "athleteName": "张乔淳佑",
-      "team": "河北省体育局冬季运动中心",
-      "totalPoints": 329,
-      "competitionCount": 1,
-      "bestRank": 2,
-      "avgPoints": 329.0,
-      "ageGroup": "U15",
-      "gender": "男子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 329,
-          "rank": 2
-        }
-      ]
-    },
-    {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete-黄志豪-四川体育职业学院",
       "athleteName": "黄志豪",
       "team": "四川体育职业学院",
@@ -33245,7 +34646,7 @@ export const totalRankingsData: TotalRankingsData = {
       "avgPoints": 329.0,
       "ageGroup": "U15",
       "gender": "男子组",
-      "rankChange": 1,
+      "rankChange": 0,
       "pointsBreakdown": [
         {
           "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
@@ -33256,7 +34657,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete-马世馨-四川体育职业学院",
       "athleteName": "马世馨",
       "team": "四川体育职业学院",
@@ -33277,7 +34678,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdl0200sbbfho4oyc84yi",
       "athleteName": "孙金隆",
       "team": "河北省体育局冬季运动中心",
@@ -33298,7 +34699,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
+      "athleteId": "athlete-李胤希-个人",
+      "athleteName": "李胤希",
+      "team": "个人",
+      "totalPoints": 329,
+      "competitionCount": 1,
+      "bestRank": 2,
+      "avgPoints": 329.0,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": 1,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 329,
+          "rank": 2
+        }
+      ]
+    },
+    {
+      "rank": 326,
       "athleteId": "cmjzpdkzr00s2bfhoszo6feyy",
       "athleteName": "余思源",
       "team": "四川体育职业学院",
@@ -33319,28 +34741,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
-      "athleteId": "athlete-陈露凝-个人",
-      "athleteName": "陈露凝",
-      "team": "个人",
-      "totalPoints": 329,
-      "competitionCount": 1,
-      "bestRank": 2,
-      "avgPoints": 329.0,
-      "ageGroup": "U18",
-      "gender": "女子组",
-      "rankChange": 1,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 329,
-          "rank": 2
-        }
-      ]
-    },
-    {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete-张天馨-石家庄市冰雪与足球运动中心",
       "athleteName": "张天馨",
       "team": "石家庄市冰雪与足球运动中心",
@@ -33361,7 +34762,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdkyr00rbbfhon1ylf1wi",
       "athleteName": "欧阳聚勇",
       "team": "广西射击射箭运动发展中心",
@@ -33382,7 +34783,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "athlete-黄志豪-四川体育职业学院",
       "athleteName": "黄志豪",
       "team": "四川体育职业学院",
@@ -33403,7 +34804,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdl0900sebfhochiz1nog",
       "athleteName": "张天迈",
       "team": "河北省体育局冬季运动中心",
@@ -33424,7 +34825,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 304,
+      "rank": 326,
       "athleteId": "cmjzpdkzr00s2bfhoszo6feyy",
       "athleteName": "余思源",
       "team": "四川体育职业学院",
@@ -33445,7 +34846,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 357,
+      "rank": 378,
       "athleteId": "cmjzpdklu00gcbfhoyosgjvcs",
       "athleteName": "苏常格",
       "team": "河北省体育局冬季运动中心",
@@ -33472,7 +34873,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 358,
+      "rank": 379,
       "athleteId": "athlete-马琸明-个人",
       "athleteName": "马琸明",
       "team": "个人",
@@ -33499,7 +34900,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 359,
+      "rank": 380,
       "athleteId": "athlete-王玮怡-个人",
       "athleteName": "王玮怡",
       "team": "个人",
@@ -33526,7 +34927,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 360,
+      "rank": 381,
       "athleteId": "athlete-马琸阳-个人",
       "athleteName": "马琸阳",
       "team": "个人",
@@ -33553,7 +34954,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 360,
+      "rank": 381,
       "athleteId": "athlete-王若西-重庆市冬季运动管理中心",
       "athleteName": "王若西",
       "team": "重庆市冬季运动管理中心",
@@ -33580,7 +34981,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 362,
+      "rank": 383,
       "athleteId": "cmjzpdlcg012dbfho7kz6iwv3",
       "athleteName": "林芮锋",
       "team": "四川体育职业学院",
@@ -33607,7 +35008,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 363,
+      "rank": 384,
       "athleteId": "athlete-梁明峰-山西省冰雪运动中心",
       "athleteName": "梁明峰",
       "team": "山西省冰雪运动中心",
@@ -33634,7 +35035,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdkqv00kibfhosfplepf9",
       "athleteName": "苏一豪",
       "team": "重庆市冬季运动管理中心",
@@ -33655,7 +35056,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-马金凯-西安热雪奇迹竞技队",
       "athleteName": "马金凯",
       "team": "西安热雪奇迹竞技队",
@@ -33676,7 +35077,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdkq700jxbfhog679cr7g",
       "athleteName": "吴凌萱",
       "team": "华发冰雪热雪奇迹",
@@ -33697,7 +35098,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete_赵希悦_延庆区体育局",
       "athleteName": "赵希悦",
       "team": "延庆区体育局",
@@ -33718,7 +35119,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdkrp00l9bfhoebj1petm",
       "athleteName": "黄子歌",
       "team": "四川体育职业学院",
@@ -33739,7 +35140,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete_王俞涵_零度竞技吉林省零下壹",
       "athleteName": "王俞涵",
       "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
@@ -33760,7 +35161,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-夏睦和-西安热雪奇迹竞技队",
       "athleteName": "夏睦和",
       "team": "西安热雪奇迹竞技队",
@@ -33781,7 +35182,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdkr800kubfho15rzjdm7",
       "athleteName": "罗梓瑜",
       "team": "河北省体育局冬季运动中心",
@@ -33802,7 +35203,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-吴馨悦-济南市皇亭竞技体育学校",
       "athleteName": "吴馨悦",
       "team": "济南市皇亭竞技体育学校",
@@ -33823,7 +35224,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdkow00iubfhojkdi817d",
       "athleteName": "庞予涵",
       "team": "张家口乔与杨体育服务有限公司",
@@ -33844,7 +35245,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete_龚信水_重庆市冬季运动管理中",
       "athleteName": "龚信水",
       "team": "重庆市冬季运动管理中心1队",
@@ -33865,7 +35266,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-李冉-个人",
       "athleteName": "李冉",
       "team": "个人",
@@ -33886,7 +35287,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdkto00n5bfho4j8lt3fl",
       "athleteName": "郑捷铭",
       "team": "重庆市冬季运动管理中心",
@@ -33907,7 +35308,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete_蒋伯阳_兰州碧桂园学校",
       "athleteName": "蒋伯阳",
       "team": "兰州碧桂园学校",
@@ -33928,7 +35329,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-王永清-济南市皇亭竞技体育学校",
       "athleteName": "王永清",
       "team": "济南市皇亭竞技体育学校",
@@ -33949,7 +35350,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdkq700jxbfhog679cr7g",
       "athleteName": "吴凌萱",
       "team": "华发冰雪热雪奇迹",
@@ -33970,7 +35371,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete_赵希悦_延庆区体育局",
       "athleteName": "赵希悦",
       "team": "延庆区体育局",
@@ -33991,7 +35392,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-穆艺馨-西安热雪奇迹竞技队",
       "athleteName": "穆艺馨",
       "team": "西安热雪奇迹竞技队",
@@ -34012,7 +35413,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdkrm00l6bfho179zhn19",
       "athleteName": "刘彦钧凯",
       "team": "河北省体育局冬季运动中心",
@@ -34033,7 +35434,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete_丁天睿_山域竞技体育工作室",
       "athleteName": "丁天睿",
       "team": "山域竞技体育工作室",
@@ -34054,7 +35455,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-王思博-延庆区体育局",
       "athleteName": "王思博",
       "team": "延庆区体育局",
@@ -34075,7 +35476,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdkr500krbfhoaxpqfzp4",
       "athleteName": "杨子骞",
       "team": "河北省体育局冬季运动中心",
@@ -34096,7 +35497,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-吴馨悦-济南市皇亭竞技体育学校",
       "athleteName": "吴馨悦",
       "team": "济南市皇亭竞技体育学校",
@@ -34117,7 +35518,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdkpa00j6bfholp1nby8r",
       "athleteName": "郭一远",
       "team": "河北省体育局冬季运动中心",
@@ -34138,7 +35539,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdkot00irbfhoyhtlvzya",
       "athleteName": "杨蓝戈",
       "team": "个人",
@@ -34159,7 +35560,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-闵家蕴-个人",
       "athleteName": "闵家蕴",
       "team": "个人",
@@ -34180,7 +35581,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-褚天羿-Star单板队",
       "athleteName": "褚天羿",
       "team": "Star单板队",
@@ -34207,7 +35608,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-陶志伟-山西省冰雪运动中心",
       "athleteName": "陶志伟",
       "team": "山西省冰雪运动中心",
@@ -34240,7 +35641,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-郭展麟-黑龙江省雪上训练中心",
       "athleteName": "郭展麟",
       "team": "黑龙江省雪上训练中心",
@@ -34261,7 +35662,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-曾梓萱-四川体育职业学院",
       "athleteName": "曾梓萱",
       "team": "四川体育职业学院",
@@ -34282,7 +35683,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdkkx00frbfhonb81p7bu",
       "athleteName": "叶欣瑞",
       "team": "四川体育职业学院",
@@ -34303,7 +35704,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-乔焱个人",
       "athleteName": "乔焱",
       "team": "个人",
@@ -34324,7 +35725,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-宋佳诺-Criss-Crew",
       "athleteName": "宋佳诺",
       "team": "Criss Crew",
@@ -34345,7 +35746,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-李芸西-个人",
       "athleteName": "李芸西",
       "team": "个人",
@@ -34366,7 +35767,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-乔焱个人",
       "athleteName": "乔焱",
       "team": "个人",
@@ -34387,7 +35788,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdk4y002rbfho4iulm870",
       "athleteName": "蒋文栋",
       "team": "MAYA TEAM",
@@ -34408,7 +35809,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdk1d0006bfhokdvat4q3",
       "athleteName": "肖金茂",
       "team": "四川体育职业学院",
@@ -34429,7 +35830,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdkar007rbfhoke7nk1ap",
       "athleteName": "李天圆",
       "team": "MAYA TEAM",
@@ -34450,7 +35851,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdk7s0056bfhouamezkf4",
       "athleteName": "刘沛怡",
       "team": "MAYA TEAM",
@@ -34471,7 +35872,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdk420020bfhodtt3x27o",
       "athleteName": "韩赫洺",
       "team": "四川体育职业学院",
@@ -34492,7 +35893,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdk1d0006bfhokdvat4q3",
       "athleteName": "肖金茂",
       "team": "四川体育职业学院",
@@ -34513,7 +35914,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdkak007lbfho9nwb723l",
       "athleteName": "张雨曈",
       "team": "MAYA TEAM",
@@ -34534,7 +35935,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdk7g004xbfhordq0746d",
       "athleteName": "韦苗茵",
       "team": "大连雨彤体育赛事俱乐部",
@@ -34555,7 +35956,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdkyr00rbbfhon1ylf1wi",
       "athleteName": "欧阳聚勇",
       "team": "广西射击射箭运动发展中心",
@@ -34576,7 +35977,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-王凯文-黑龙江省雪上训练中心",
       "athleteName": "王凯文",
       "team": "黑龙江省雪上训练中心",
@@ -34597,52 +35998,10 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
-      "athleteId": "cmjzpdkxy00qnbfhoi0fohlcs",
-      "athleteName": "叶欣悦",
-      "team": "四川体育职业学院",
-      "totalPoints": 303,
-      "competitionCount": 1,
-      "bestRank": 3,
-      "avgPoints": 303.0,
-      "ageGroup": "U15",
-      "gender": "女子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 303,
-          "rank": 3
-        }
-      ]
-    },
-    {
-      "rank": 364,
-      "athleteId": "athlete-罗优璇-河南省体育局",
-      "athleteName": "罗优璇",
-      "team": "河南省体育局",
-      "totalPoints": 303,
-      "competitionCount": 1,
-      "bestRank": 3,
-      "avgPoints": 303.0,
-      "ageGroup": "U15",
-      "gender": "女子组",
-      "rankChange": 1,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 303,
-          "rank": 3
-        }
-      ]
-    },
-    {
-      "rank": 364,
-      "athleteId": "cmjzpdl0900sebfhochiz1nog",
-      "athleteName": "张天迈",
-      "team": "河北省体育局冬季运动中心",
+      "rank": 385,
+      "athleteId": "athlete-卢兆轩-个人",
+      "athleteName": "卢兆轩",
+      "team": "个人",
       "totalPoints": 303,
       "competitionCount": 1,
       "bestRank": 3,
@@ -34652,17 +36011,17 @@ export const totalRankingsData: TotalRankingsData = {
       "rankChange": 0,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
           "points": 303,
           "rank": 3
         }
       ]
     },
     {
-      "rank": 364,
-      "athleteId": "athlete-齐馨-A+自由式滑雪队",
-      "athleteName": "齐馨",
+      "rank": 385,
+      "athleteId": "athlete-高梓曦-A+自由式滑雪队",
+      "athleteName": "高梓曦",
       "team": "A+自由式滑雪队",
       "totalPoints": 303,
       "competitionCount": 1,
@@ -34673,15 +36032,15 @@ export const totalRankingsData: TotalRankingsData = {
       "rankChange": 0,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
           "points": 303,
           "rank": 3
         }
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-王凯文-黑龙江省雪上训练中心",
       "athleteName": "王凯文",
       "team": "黑龙江省雪上训练中心",
@@ -34702,7 +36061,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "athlete-吴思琪-四川体育职业学院",
       "athleteName": "吴思琪",
       "team": "四川体育职业学院",
@@ -34723,7 +36082,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 364,
+      "rank": 385,
       "athleteId": "cmjzpdl0200sbbfho4oyc84yi",
       "athleteName": "孙金隆",
       "team": "河北省体育局冬季运动中心",
@@ -34744,7 +36103,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 416,
+      "rank": 435,
       "athleteId": "athlete-褚天羿-Star单板队",
       "athleteName": "褚天羿",
       "team": "Star单板队",
@@ -34771,7 +36130,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 417,
+      "rank": 436,
       "athleteId": "athlete-冯思源-个人",
       "athleteName": "冯思源",
       "team": "个人",
@@ -34798,7 +36157,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdkqy00klbfho0qckaxmt",
       "athleteName": "于镇赫",
       "team": "成都热雪奇迹",
@@ -34819,7 +36178,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "athlete_孙乾铭_山域竞技体育工作室二",
       "athleteName": "孙乾铭",
       "team": "山域竞技体育工作室二队",
@@ -34840,7 +36199,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdkqb00k0bfhow3hoof01",
       "athleteName": "蔡沛琳",
       "team": "成都热雪奇迹",
@@ -34861,7 +36220,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "athlete_路钧惠_延庆区体育局",
       "athleteName": "路钧惠",
       "team": "延庆区体育局",
@@ -34882,7 +36241,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "athlete-李欣桐-北京市朝阳区第三少儿业余体校",
       "athleteName": "李欣桐",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -34903,7 +36262,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdkrt00lcbfhofvlcdm8r",
       "athleteName": "王梓丞",
       "team": "重庆市冬季运动管理中心",
@@ -34924,7 +36283,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "athlete_韩以乐_竞禹体育",
       "athleteName": "韩以乐",
       "team": "竞禹体育",
@@ -34945,7 +36304,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "athlete-陈相伯-泾源县国有资本投资运营集团有限公司",
       "athleteName": "陈相伯",
       "team": "泾源县国有资本投资运营集团有限公司",
@@ -34966,7 +36325,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdkrb00kxbfhoqtbsgmzj",
       "athleteName": "张雅琪",
       "team": "河北省体育局冬季运动中心",
@@ -34987,7 +36346,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "athlete_刘金潼_个人零度竞技",
       "athleteName": "刘金潼",
       "team": "个人（零度竞技）",
@@ -35008,7 +36367,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "athlete-杨茹迦-济南市皇亭竞技体育学校",
       "athleteName": "杨茹迦",
       "team": "济南市皇亭竞技体育学校",
@@ -35029,7 +36388,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdkpa00j6bfholp1nby8r",
       "athleteName": "郭一远",
       "team": "河北省体育局冬季运动中心",
@@ -35050,7 +36409,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "athlete_明泳桐_张家口辰鹏体育发展有",
       "athleteName": "明泳桐",
       "team": "张家口辰鹏体育发展有限公司",
@@ -35071,7 +36430,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "athlete_温逸伦_吉林坤伦滑雪俱乐部",
       "athleteName": "温逸伦",
       "team": "吉林坤伦滑雪俱乐部",
@@ -35092,7 +36451,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "athlete-李景瑞-张家口乔与杨体育服务有限公司",
       "athleteName": "李景瑞",
       "team": "张家口乔与杨体育服务有限公司",
@@ -35113,7 +36472,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdkqe00k3bfhoo18nnq3z",
       "athleteName": "李昊汐",
       "team": "西安热雪奇迹",
@@ -35134,7 +36493,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "athlete_顾欣蕊_上海市静安区滑雪协会",
       "athleteName": "顾欣蕊",
       "team": "上海市静安区滑雪协会",
@@ -35155,7 +36514,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "athlete-符芳缘-个人",
       "athleteName": "符芳缘",
       "team": "个人",
@@ -35176,7 +36535,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "athlete_郭轩烨_张家口辰鹏体育发展有",
       "athleteName": "郭轩烨",
       "team": "张家口辰鹏体育发展有限公司",
@@ -35197,7 +36556,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "athlete-马腾轩-北京市朝阳区第三少儿业余体校",
       "athleteName": "马腾轩",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -35218,7 +36577,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdkue00nrbfhoad1f9vqw",
       "athleteName": "叶涵汐",
       "team": "成都热雪奇迹",
@@ -35239,7 +36598,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "athlete-杨茹迦-济南市皇亭竞技体育学校",
       "athleteName": "杨茹迦",
       "team": "济南市皇亭竞技体育学校",
@@ -35260,7 +36619,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "athlete_明泳桐_张家口辰鹏体育发展有",
       "athleteName": "明泳桐",
       "team": "张家口辰鹏体育发展有限公司",
@@ -35281,7 +36640,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "athlete-李芸西-个人",
       "athleteName": "李芸西",
       "team": "个人",
@@ -35302,7 +36661,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdko800icbfho0ujbn9cl",
       "athleteName": "罗皓桉",
       "team": "湖北省武术和冬季运动管理中心",
@@ -35323,7 +36682,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdk3v001ubfhorz5wf7hs",
       "athleteName": "王一臣",
       "team": "MAYA TEAM",
@@ -35344,7 +36703,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdk28000lbfhofq439jkr",
       "athleteName": "焦阳云朵",
       "team": "北京虎村竞技体育有限公司",
@@ -35365,7 +36724,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdkah007ibfhoakn9j359",
       "athleteName": "陈清桦",
       "team": "MAYA TEAM",
@@ -35386,7 +36745,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdk09c8b0e81b6b85c",
       "athleteName": "朱恩瑞",
       "team": "吉林省体育局雪上运动管理中心",
@@ -35407,7 +36766,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdk450023bfhoh5itp0hi",
       "athleteName": "李承桓",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -35428,7 +36787,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdk1g0009bfhohs29gxqf",
       "athleteName": "须星漫",
       "team": "北京虎村竞技体育有限公司",
@@ -35449,7 +36808,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdkan007obfhov8p3d9ke",
       "athleteName": "贾子一南",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -35470,7 +36829,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdk47529b9debdc39b",
       "athleteName": "刘妍梦",
       "team": "8848俱乐部",
@@ -35491,7 +36850,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdkh500d6bfhogif50da9",
       "athleteName": "马凯涛",
       "team": "新疆维吾尔自治区冬季运动训练中心",
@@ -35512,7 +36871,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdkb6e14b28fc87da6",
       "athleteName": "王洪飞",
       "team": "长春市冬季运动管理中心",
@@ -35533,7 +36892,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdkf700bfbfhosv5aak4b",
       "athleteName": "王子怡",
       "team": "个人",
@@ -35554,10 +36913,10 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
-      "athleteId": "cmjzpdkyu00rebfhoup8aq1ld",
-      "athleteName": "王翊宁",
-      "team": "北京市冬季运动管理中心",
+      "rank": 437,
+      "athleteId": "athlete-陈飞扬-上海雪酷滑雪竞技队",
+      "athleteName": "陈飞扬",
+      "team": "上海雪酷滑雪竞技队",
       "totalPoints": 280,
       "competitionCount": 1,
       "bestRank": 4,
@@ -35567,36 +36926,15 @@ export const totalRankingsData: TotalRankingsData = {
       "rankChange": 0,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
           "points": 280,
           "rank": 4
         }
       ]
     },
     {
-      "rank": 418,
-      "athleteId": "athlete-邓明涛-四川体育职业学院",
-      "athleteName": "邓明涛",
-      "team": "四川体育职业学院",
-      "totalPoints": 280,
-      "competitionCount": 1,
-      "bestRank": 4,
-      "avgPoints": 280.0,
-      "ageGroup": "U15",
-      "gender": "男子组",
-      "rankChange": 1,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 280,
-          "rank": 4
-        }
-      ]
-    },
-    {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "athlete-殷玉宣-河南省体育局",
       "athleteName": "殷玉宣",
       "team": "河南省体育局",
@@ -35617,7 +36955,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
       "athleteId": "cmjzpdl0e00shbfhoc5njd0lb",
       "athleteName": "王晨",
       "team": "个人",
@@ -35638,7 +36976,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 418,
+      "rank": 437,
+      "athleteId": "athlete-李昊然-个人",
+      "athleteName": "李昊然",
+      "team": "个人",
+      "totalPoints": 280,
+      "competitionCount": 1,
+      "bestRank": 4,
+      "avgPoints": 280.0,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": 1,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 280,
+          "rank": 4
+        }
+      ]
+    },
+    {
+      "rank": 437,
       "athleteId": "cmjzpdl0e00shbfhoc5njd0lb",
       "athleteName": "王晨",
       "team": "个人",
@@ -35659,7 +37018,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 459,
+      "rank": 478,
       "athleteId": "athlete-马琸阳-个人",
       "athleteName": "马琸阳",
       "team": "个人",
@@ -35686,7 +37045,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 459,
+      "rank": 478,
       "athleteId": "cmjzpdkge00cibfhoiniuvbof",
       "athleteName": "房洢伊",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -35713,7 +37072,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 459,
+      "rank": 478,
       "athleteId": "cmjzpdkgo00crbfhoj3jtd3nu",
       "athleteName": "范芮希",
       "team": "个人",
@@ -35740,7 +37099,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 462,
+      "rank": 481,
       "athleteId": "athlete-马琸明-个人",
       "athleteName": "马琸明",
       "team": "个人",
@@ -35767,7 +37126,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 463,
+      "rank": 482,
       "athleteId": "cmjzpdkid00e6bfho99rqbw7s",
       "athleteName": "樊冠序",
       "team": "ACE竞技滑雪队",
@@ -35794,7 +37153,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 463,
+      "rank": 482,
       "athleteId": "cmjzpdkih00e9bfholi22uh9o",
       "athleteName": "曲星铭",
       "team": "个人",
@@ -35821,34 +37180,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 463,
-      "athleteId": "cmjzpdkwq00pnbfhozuu1pwmh",
-      "athleteName": "孙婉迪",
-      "team": "个人",
-      "totalPoints": 268,
-      "competitionCount": 2,
-      "bestRank": 15,
-      "avgPoints": 134.0,
-      "ageGroup": "U11",
-      "gender": "女子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 141,
-          "rank": 15
-        },
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 127,
-          "rank": 17
-        }
-      ]
-    },
-    {
-      "rank": 466,
+      "rank": 484,
       "athleteId": "athlete-王辰然-个人",
       "athleteName": "王辰然",
       "team": "个人",
@@ -35875,7 +37207,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 467,
+      "rank": 485,
       "athleteId": "athlete-张哲朗-个人",
       "athleteName": "张哲朗",
       "team": "个人",
@@ -35902,7 +37234,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 467,
+      "rank": 485,
       "athleteId": "cmjzpdki500e0bfho3yo046wx",
       "athleteName": "杨一丁",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -35929,7 +37261,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 469,
+      "rank": 487,
       "athleteId": "cmjzpdkgh00clbfhozrtx7frf",
       "athleteName": "白默函",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -35956,7 +37288,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 470,
+      "rank": 488,
       "athleteId": "athlete-刘沐文-个人",
       "athleteName": "刘沐文",
       "team": "个人",
@@ -35983,7 +37315,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "athlete_柳昇延_延庆区体育局",
       "athleteName": "柳昇延",
       "team": "延庆区体育局",
@@ -36004,7 +37336,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "athlete-李景瑞-张家口乔与杨体育服务有限公司",
       "athleteName": "李景瑞",
       "team": "张家口乔与杨体育服务有限公司",
@@ -36025,7 +37357,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "cmjzpdkrw00lfbfhonz2a0d3b",
       "athleteName": "吕浩源",
       "team": "河北省体育局冬季运动中心",
@@ -36046,7 +37378,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "athlete_盛嗣垚_张家口辰鹏体育发展有",
       "athleteName": "盛嗣垚",
       "team": "张家口辰鹏体育发展有限公司",
@@ -36067,7 +37399,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "cmjzpdkrf00l0bfhoi24xpm3k",
       "athleteName": "陈奕霏",
       "team": "个人",
@@ -36088,7 +37420,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "cmjzpdktv00nabfhomuj9q4hs",
       "athleteName": "杨宗葆",
       "team": "个人",
@@ -36109,7 +37441,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "athlete_张轩睿_RSKI竞技滑雪队队",
       "athleteName": "张轩睿",
       "team": "RSKI竞技滑雪队队",
@@ -36130,7 +37462,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "athlete-张沐晨-北京市朝阳区第三少儿业余体校",
       "athleteName": "张沐晨",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -36151,7 +37483,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "cmjzpdkq400jubfhoejwo7naf",
       "athleteName": "罗暄晴",
       "team": "成都热雪奇迹",
@@ -36172,7 +37504,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "athlete_张曦安_零度竞技吉林省零下壹",
       "athleteName": "张曦安",
       "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
@@ -36193,7 +37525,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "athlete-魏锦楦-个人",
       "athleteName": "魏锦楦",
       "team": "个人",
@@ -36214,7 +37546,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "cmjzpdkrw00lfbfhonz2a0d3b",
       "athleteName": "吕浩源",
       "team": "河北省体育局冬季运动中心",
@@ -36235,7 +37567,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "athlete_韩以乐_竞禹体育",
       "athleteName": "韩以乐",
       "team": "竞禹体育",
@@ -36256,7 +37588,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "cmjzpdkrb00kxbfhoqtbsgmzj",
       "athleteName": "张雅琪",
       "team": "河北省体育局冬季运动中心",
@@ -36277,7 +37609,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "athlete-张歆瑶-个人",
       "athleteName": "张歆瑶",
       "team": "个人",
@@ -36298,7 +37630,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "athlete-杜雨欣-四川体育职业学院",
       "athleteName": "杜雨欣",
       "team": "四川体育职业学院",
@@ -36319,7 +37651,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "cmjzpdko800icbfho0ujbn9cl",
       "athleteName": "罗皓桉",
       "team": "湖北省武术和冬季运动管理中心",
@@ -36340,7 +37672,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "cmjzpdkk700f9bfhoa69ugr1p",
       "athleteName": "姚予希",
       "team": "成都热雪奇迹",
@@ -36361,7 +37693,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "athlete-丁振珈个人",
       "athleteName": "丁振珈",
       "team": "个人",
@@ -36382,7 +37714,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "athlete-何鲲鹏-湖北省武术和冬季运动管理中心",
       "athleteName": "何鲲鹏",
       "team": "湖北省武术和冬季运动管理中心",
@@ -36403,7 +37735,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "athlete-周亮湖北省武术和冬季运动管理中心",
       "athleteName": "周亮",
       "team": "湖北省武术和冬季运动管理中心",
@@ -36424,7 +37756,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "cmjzpdk55002xbfhookyfbfz5",
       "athleteName": "刘昱辰",
       "team": "MAYA TEAM",
@@ -36445,7 +37777,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "cmjzpdka08ab730491e5cc",
       "athleteName": "古庭钰",
       "team": "8848俱乐部",
@@ -36466,7 +37798,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "cmjzpdkak007lbfho9nwb723l",
       "athleteName": "张雨曈",
       "team": "MAYA TEAM",
@@ -36487,7 +37819,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "cmjzpdk47529b9debdc39b",
       "athleteName": "刘妍梦",
       "team": "8848俱乐部",
@@ -36508,7 +37840,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "cmjzpdk4a0026bfhow0uq57v3",
       "athleteName": "陈鼎钧",
       "team": "北京虎村竞技体育有限公司",
@@ -36529,7 +37861,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "cmjzpdka08ab730491e5cc",
       "athleteName": "古庭钰",
       "team": "8848俱乐部",
@@ -36550,7 +37882,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "cmjzpdkar007rbfhoke7nk1ap",
       "athleteName": "李天圆",
       "team": "MAYA TEAM",
@@ -36571,7 +37903,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "cmjzpdk7o0053bfhopj22d7t9",
       "athleteName": "赵南茜",
       "team": "太原市第二少年体育学校",
@@ -36592,7 +37924,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "cmjzpdkyy00rhbfhomuo5xnnw",
       "athleteName": "宇威琦",
       "team": "河北省体育局冬季运动中心",
@@ -36613,70 +37945,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
-      "athleteId": "athlete-璩恩慧-河南省体育局",
-      "athleteName": "璩恩慧",
-      "team": "河南省体育局",
+      "rank": 489,
+      "athleteId": "athlete-贾博阳-个人",
+      "athleteName": "贾博阳",
+      "team": "个人",
       "totalPoints": 260,
       "competitionCount": 1,
       "bestRank": 5,
       "avgPoints": 260.0,
-      "ageGroup": "U15",
+      "ageGroup": "U18",
       "gender": "男子组",
-      "rankChange": 1,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 260,
-          "rank": 5
-        }
-      ]
-    },
-    {
-      "rank": 471,
-      "athleteId": "cmjzpdky600qtbfhoiwp2kmsc",
-      "athleteName": "平梓涵",
-      "team": "河北省体育局冬季运动中心",
-      "totalPoints": 260,
-      "competitionCount": 1,
-      "bestRank": 5,
-      "avgPoints": 260.0,
-      "ageGroup": "U15",
-      "gender": "女子组",
       "rankChange": 0,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
           "points": 260,
           "rank": 5
         }
       ]
     },
     {
-      "rank": 471,
-      "athleteId": "athlete-韩萨仁其木格-小崔运动",
-      "athleteName": "韩萨仁其木格",
-      "team": "小崔运动",
-      "totalPoints": 260,
-      "competitionCount": 1,
-      "bestRank": 5,
-      "avgPoints": 260.0,
-      "ageGroup": "U15",
-      "gender": "女子组",
-      "rankChange": 1,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 260,
-          "rank": 5
-        }
-      ]
-    },
-    {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "athlete-张耘萌-个人",
       "athleteName": "张耘萌",
       "team": "个人",
@@ -36697,7 +37987,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 471,
+      "rank": 489,
       "athleteId": "cmjzpdkyy00rhbfhomuo5xnnw",
       "athleteName": "宇威琦",
       "team": "河北省体育局冬季运动中心",
@@ -36718,7 +38008,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 506,
+      "rank": 522,
       "athleteId": "athlete-刘沐文-个人",
       "athleteName": "刘沐文",
       "team": "个人",
@@ -36745,7 +38035,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 507,
+      "rank": 523,
       "athleteId": "athlete-刘桐朔-石家庄市冰雪与足球运动中心",
       "athleteName": "刘桐朔",
       "team": "石家庄市冰雪与足球运动中心",
@@ -36772,7 +38062,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 508,
+      "rank": 524,
       "athleteId": "athlete-张哲朗-个人",
       "athleteName": "张哲朗",
       "team": "个人",
@@ -36799,7 +38089,34 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 524,
+      "athleteId": "cmjzpdl1f00tcbfhowslhbsqq",
+      "athleteName": "李佳馨",
+      "team": "个人",
+      "totalPoints": 249,
+      "competitionCount": 2,
+      "bestRank": 16,
+      "avgPoints": 124.5,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
+          "location": "张家口富龙滑雪场",
+          "points": 134,
+          "rank": 16
+        },
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 115,
+          "rank": 19
+        }
+      ]
+    },
+    {
+      "rank": 526,
       "athleteId": "athlete-吴俊霖-个人",
       "athleteName": "吴俊霖",
       "team": "个人",
@@ -36820,7 +38137,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "cmjzpdkqi00k6bfhotz0ghplg",
       "athleteName": "吴玟颐",
       "team": "华发冰雪热雪奇迹",
@@ -36841,7 +38158,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "athlete_张竞戈_个人",
       "athleteName": "张竞戈",
       "team": "个人",
@@ -36862,7 +38179,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "athlete-谷悦来-泾源县国有资本投资运营集团有限公司",
       "athleteName": "谷悦来",
       "team": "泾源县国有资本投资运营集团有限公司",
@@ -36883,7 +38200,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "cmjzpdks000libfhouk369qbh",
       "athleteName": "林朗",
       "team": "哈尔滨热雪奇迹",
@@ -36904,7 +38221,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "athlete_丁天睿_山域竞技体育工作室",
       "athleteName": "丁天睿",
       "team": "山域竞技体育工作室",
@@ -36925,7 +38242,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "cmjzpdkqy00klbfho0qckaxmt",
       "athleteName": "于镇赫",
       "team": "成都热雪奇迹",
@@ -36946,7 +38263,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "athlete_安若维_个人",
       "athleteName": "安若维",
       "team": "个人",
@@ -36967,7 +38284,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "athlete-马金凯-西安热雪奇迹竞技队",
       "athleteName": "马金凯",
       "team": "西安热雪奇迹竞技队",
@@ -36988,7 +38305,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "cmjzpdkqi00k6bfhotz0ghplg",
       "athleteName": "吴玟颐",
       "team": "华发冰雪热雪奇迹",
@@ -37009,7 +38326,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "athlete_路钧惠_延庆区体育局",
       "athleteName": "路钧惠",
       "team": "延庆区体育局",
@@ -37030,7 +38347,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "cmjzpdks000libfhouk369qbh",
       "athleteName": "林朗",
       "team": "哈尔滨热雪奇迹",
@@ -37051,7 +38368,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "cmjzpdkp300j0bfhohn94zbb3",
       "athleteName": "艾思铭",
       "team": "张家口乔与杨体育服务有限公司",
@@ -37072,7 +38389,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "athlete_鞠沐辰_济南市皇亭竞技体育学",
       "athleteName": "鞠沐辰",
       "team": "济南市皇亭竞技体育学校",
@@ -37093,7 +38410,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "athlete-宋知敏-个人",
       "athleteName": "宋知敏",
       "team": "个人",
@@ -37114,7 +38431,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "athlete-宋佳诺-Criss-Crew",
       "athleteName": "宋佳诺",
       "team": "Criss Crew",
@@ -37135,7 +38452,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "athlete-范允朵石家庄市冰雪与足球运动推广训练中心",
       "athleteName": "范允朵",
       "team": "石家庄市冰雪与足球运动推广训练中心",
@@ -37156,7 +38473,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "athlete-张栋涵-个人",
       "athleteName": "张栋涵",
       "team": "个人",
@@ -37177,7 +38494,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "cmjzpdk4h002cbfho72bud3ju",
       "athleteName": "罗晓野",
       "team": "个人",
@@ -37198,7 +38515,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "cmjzpdk1e51caa1f0eb6b5",
       "athleteName": "李悦嘉",
       "team": "长春市冬季运动管理中心",
@@ -37219,7 +38536,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "cmjzpdkci0099bfhoj2fomk7j",
       "athleteName": "李柏翔",
       "team": "MAYA TEAM",
@@ -37240,7 +38557,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "cmjzpdk2a48ca92e5934ac",
       "athleteName": "付睿熹",
       "team": "四川体育职业学院",
@@ -37261,7 +38578,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "cmjzpdk4d0029bfhowuueorwu",
       "athleteName": "聂榕辰",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -37282,7 +38599,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "cmjzpdk1u000fbfhou88cqxsm",
       "athleteName": "周子翕",
       "team": "成都热雪奇迹",
@@ -37303,7 +38620,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "cmjzpdkav007ubfho0ossatdk",
       "athleteName": "王子兮",
       "team": "四川体育职业学院",
@@ -37324,7 +38641,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "cmjzpdk7s0056bfhouamezkf4",
       "athleteName": "刘沛怡",
       "team": "MAYA TEAM",
@@ -37345,7 +38662,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "cmjzpdkhb00dcbfho0ww5obv1",
       "athleteName": "吴凯",
       "team": "中麟体育",
@@ -37366,7 +38683,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "cmjzpdkio00efbfho8e577j04",
       "athleteName": "吴保江",
       "team": "零站单板滑雪俱乐部",
@@ -37393,7 +38710,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "cmjzpdkadd8f981190f914",
       "athleteName": "姜林宏",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -37414,70 +38731,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 509,
-      "athleteId": "cmjzpdkxe00q5bfho8r60z791",
-      "athleteName": "崔芃森",
-      "team": "河北省体育局冬季运动中心",
-      "totalPoints": 242,
-      "competitionCount": 1,
-      "bestRank": 6,
-      "avgPoints": 242.0,
-      "ageGroup": "U11",
-      "gender": "男子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 242,
-          "rank": 6
-        }
-      ]
-    },
-    {
-      "rank": 509,
-      "athleteId": "cmjzpdkvr00owbfhobsujiv88",
-      "athleteName": "孙焕轶",
-      "team": "个人",
-      "totalPoints": 242,
-      "competitionCount": 1,
-      "bestRank": 6,
-      "avgPoints": 242.0,
-      "ageGroup": "U11",
-      "gender": "女子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 242,
-          "rank": 6
-        }
-      ]
-    },
-    {
-      "rank": 509,
-      "athleteId": "athlete-王培旭-四川体育职业学院",
-      "athleteName": "王培旭",
-      "team": "四川体育职业学院",
-      "totalPoints": 242,
-      "competitionCount": 1,
-      "bestRank": 6,
-      "avgPoints": 242.0,
-      "ageGroup": "U15",
-      "gender": "男子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 242,
-          "rank": 6
-        }
-      ]
-    },
-    {
-      "rank": 509,
+      "rank": 526,
       "athleteId": "athlete-吴思琪-四川体育职业学院",
       "athleteName": "吴思琪",
       "team": "四川体育职业学院",
@@ -37498,7 +38752,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 542,
+      "rank": 526,
+      "athleteId": "athlete-周一尘-个人",
+      "athleteName": "周一尘",
+      "team": "个人",
+      "totalPoints": 242,
+      "competitionCount": 1,
+      "bestRank": 6,
+      "avgPoints": 242.0,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 242,
+          "rank": 6
+        }
+      ]
+    },
+    {
+      "rank": 557,
       "athleteId": "cmjzpdlcg012dbfho7kz6iwv3",
       "athleteName": "林芮锋",
       "team": "四川体育职业学院",
@@ -37525,7 +38800,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "cmjzpdkql00k9bfhodvj2cshf",
       "athleteName": "卢彦伊",
       "team": "成都热雪奇迹",
@@ -37546,7 +38821,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "athlete_张曦安_零度竞技吉林省零下壹",
       "athleteName": "张曦安",
       "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
@@ -37567,7 +38842,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "athlete-付子乔-个人",
       "athleteName": "付子乔",
       "team": "个人",
@@ -37588,7 +38863,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "athlete_于承睿_个人零度竞技",
       "athleteName": "于承睿",
       "team": "个人（零度竞技）",
@@ -37609,7 +38884,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "cmjzpdkpk00jfbfhoiy6rykkw",
       "athleteName": "常冠廷",
       "team": "吉林市丰满区滑雪协会",
@@ -37630,7 +38905,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "athlete_鞠沐辰_济南市皇亭竞技体育学",
       "athleteName": "鞠沐辰",
       "team": "济南市皇亭竞技体育学校",
@@ -37651,7 +38926,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "cmjzpdku000nfbfhod6ac8ew5",
       "athleteName": "冯一晗",
       "team": "成都热雪奇迹",
@@ -37672,7 +38947,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "athlete_杨东信_RSKI竞技滑雪队队",
       "athleteName": "杨东信",
       "team": "RSKI竞技滑雪队队",
@@ -37693,7 +38968,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "athlete_董子都_个人",
       "athleteName": "董子都",
       "team": "个人",
@@ -37714,7 +38989,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "athlete-郭承卓-泾源县国有资本投资运营集团有限公司",
       "athleteName": "郭承卓",
       "team": "泾源县国有资本投资运营集团有限公司",
@@ -37735,7 +39010,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "cmjzpdkql00k9bfhodvj2cshf",
       "athleteName": "卢彦伊",
       "team": "成都热雪奇迹",
@@ -37756,7 +39031,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "athlete_田芷郡_山域竞技体育工作室",
       "athleteName": "田芷郡",
       "team": "山域竞技体育工作室",
@@ -37777,7 +39052,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "cmjzpdkrt00lcbfhofvlcdm8r",
       "athleteName": "王梓丞",
       "team": "重庆市冬季运动管理中心",
@@ -37798,7 +39073,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "athlete_田芷源_长春市朝阳区山域竞技",
       "athleteName": "田芷源",
       "team": "长春市朝阳区山域竞技体育工作室",
@@ -37819,7 +39094,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "athlete-夏睦和-西安热雪奇迹竞技队",
       "athleteName": "夏睦和",
       "team": "西安热雪奇迹竞技队",
@@ -37840,7 +39115,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "athlete-卢佑涵-个人",
       "athleteName": "卢佑涵",
       "team": "个人",
@@ -37861,7 +39136,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "athlete-叶恩瑶上海雪酷滑雪竞技队",
       "athleteName": "叶恩瑶",
       "team": "上海雪酷滑雪竞技队",
@@ -37882,7 +39157,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "athlete-丁振珈个人",
       "athleteName": "丁振珈",
       "team": "个人",
@@ -37903,7 +39178,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "cmjzpdle0013sbfho3jgfbpad",
       "athleteName": "雷涵文",
       "team": "重庆市冬季运动管理中心",
@@ -37924,7 +39199,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "athlete-周亮湖北省武术和冬季运动管理中心",
       "athleteName": "周亮",
       "team": "湖北省武术和冬季运动管理中心",
@@ -37945,7 +39220,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "athlete-程让上海雪酷滑雪竞技队",
       "athleteName": "程让",
       "team": "上海雪酷滑雪竞技队",
@@ -37966,7 +39241,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "cmjzpdk36bfa89e85ce615",
       "athleteName": "郑祎衫",
       "team": "沈抚改革创新示范区体育联合会",
@@ -37987,7 +39262,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "cmjzpdk2v0010bfhoaewhfwuy",
       "athleteName": "李子纯",
       "team": "个人",
@@ -38008,7 +39283,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "cmjzpdkb80086bfhocqooy0qe",
       "athleteName": "马赛",
       "team": "四川体育职业学院",
@@ -38029,7 +39304,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "cmjzpdk1cab384a82a2e82",
       "athleteName": "刘姝廷",
       "team": "8848俱乐部",
@@ -38050,7 +39325,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "cmjzpdk4h002cbfho72bud3ju",
       "athleteName": "罗晓野",
       "team": "个人",
@@ -38071,7 +39346,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "cmjzpdk21000ibfhojbpxew23",
       "athleteName": "ALBEESU",
       "team": "张家口市足球和冰雪运动学校",
@@ -38092,7 +39367,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "cmjzpdkay007xbfhogkqgc8hp",
       "athleteName": "阿琪勒图",
       "team": "内蒙古嘉灏体育",
@@ -38113,7 +39388,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "cmjzpdk7w0059bfhoqf1tul7a",
       "athleteName": "邰淼",
       "team": "内蒙古嘉灏体育",
@@ -38134,7 +39409,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "cmjzpdk33d95673cdcc40f",
       "athleteName": "郝子铭",
       "team": "四川体育职业学院",
@@ -38155,49 +39430,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
-      "athleteId": "cmjzpdkxh00q8bfho5kg4losu",
-      "athleteName": "卢彦词",
-      "team": "四川体育职业学院",
-      "totalPoints": 226,
-      "competitionCount": 1,
-      "bestRank": 7,
-      "avgPoints": 226.0,
-      "ageGroup": "U11",
-      "gender": "男子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
-          "points": 226,
-          "rank": 7
-        }
-      ]
-    },
-    {
-      "rank": 543,
-      "athleteId": "athlete-王玗希-个人",
-      "athleteName": "王玗希",
-      "team": "个人",
-      "totalPoints": 226,
-      "competitionCount": 1,
-      "bestRank": 7,
-      "avgPoints": 226.0,
-      "ageGroup": "U11",
-      "gender": "女子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 226,
-          "rank": 7
-        }
-      ]
-    },
-    {
-      "rank": 543,
+      "rank": 558,
       "athleteId": "cmjzpdkz700rnbfhorz1h81nt",
       "athleteName": "李霁开",
       "team": "河北省体育局冬季运动中心",
@@ -38218,7 +39451,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 543,
+      "rank": 558,
+      "athleteId": "athlete-李泽瀚-个人",
+      "athleteName": "李泽瀚",
+      "team": "个人",
+      "totalPoints": 226,
+      "competitionCount": 1,
+      "bestRank": 7,
+      "avgPoints": 226.0,
+      "ageGroup": "U18",
+      "gender": "男子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 226,
+          "rank": 7
+        }
+      ]
+    },
+    {
+      "rank": 558,
       "athleteId": "athlete-陈飞扬-上海雪酷滑雪竞技队",
       "athleteName": "陈飞扬",
       "team": "上海雪酷滑雪竞技队",
@@ -38239,7 +39493,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 577,
+      "rank": 591,
       "athleteId": "athlete-阿力合尔·木拉提江-北京市冬季运动管理中心",
       "athleteName": "阿力合尔·木拉提江",
       "team": "北京市冬季运动管理中心",
@@ -38266,7 +39520,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "athlete_冯薏霏_个人零度竞技",
       "athleteName": "冯薏霏",
       "team": "个人（零度竞技）",
@@ -38287,7 +39541,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "athlete-穆艺馨-西安热雪奇迹竞技队",
       "athleteName": "穆艺馨",
       "team": "西安热雪奇迹竞技队",
@@ -38308,7 +39562,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "cmjzpdku400nibfholr4qu1hr",
       "athleteName": "顾羽宸",
       "team": "成都热雪奇迹",
@@ -38329,7 +39583,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "athlete-郭承远-泾源县国有资本投资运营集团有限公司",
       "athleteName": "郭承远",
       "team": "泾源县国有资本投资运营集团有限公司",
@@ -38350,7 +39604,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "athlete_崔凯淇_山域竞技体育工作室",
       "athleteName": "崔凯淇",
       "team": "山域竞技体育工作室",
@@ -38371,7 +39625,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "cmjzpdkuz00obbfho0os6d2tq",
       "athleteName": "肖辰俊熙",
       "team": "成都热雪奇迹",
@@ -38392,7 +39646,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "athlete_林子辰_重庆市冬季运动管理中",
       "athleteName": "林子辰",
       "team": "重庆市冬季运动管理中心1队",
@@ -38413,7 +39667,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "athlete-陈相伯-泾源县国有资本投资运营集团有限公司",
       "athleteName": "陈相伯",
       "team": "泾源县国有资本投资运营集团有限公司",
@@ -38434,7 +39688,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "cmjzpdkk700f9bfhoa69ugr1p",
       "athleteName": "姚予希",
       "team": "成都热雪奇迹",
@@ -38455,7 +39709,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "cmjzpdknp00hxbfho2se1dzm8",
       "athleteName": "麦冠航",
       "team": "河北省体育局冬季运动中心",
@@ -38476,7 +39730,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "athlete-张潇然-山西省冰雪运动中心",
       "athleteName": "张潇然",
       "team": "山西省冰雪运动中心",
@@ -38497,7 +39751,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "athlete-刘禹婵-四平市冬季运动管理中心",
       "athleteName": "刘禹婵",
       "team": "四平市冬季运动管理中心",
@@ -38518,7 +39772,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "athlete-何鲲鹏-湖北省武术和冬季运动管理中心",
       "athleteName": "何鲲鹏",
       "team": "湖北省武术和冬季运动管理中心",
@@ -38539,7 +39793,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "athlete-刘禹婵-四平市冬季运动管理中心",
       "athleteName": "刘禹婵",
       "team": "四平市冬季运动管理中心",
@@ -38560,7 +39814,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "athlete-杨路龙个人",
       "athleteName": "杨路龙",
       "team": "个人",
@@ -38581,7 +39835,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "cmjzpdk518d5b2de2ae31e",
       "athleteName": "肖咏悦",
       "team": "上海市静安区滑雪协会",
@@ -38602,7 +39856,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "cmjzpdkf9807ed9afabeb2",
       "athleteName": "曹娜瑛",
       "team": "个人",
@@ -38623,7 +39877,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "cmjzpdkbeafc72e9fab207",
       "athleteName": "高暄壹",
       "team": "吉林省体育局雪上运动管理中心",
@@ -38644,7 +39898,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "cmjzpdk8m005ubfhou7sh1nue",
       "athleteName": "邹齐",
       "team": "个人",
@@ -38665,7 +39919,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "cmjzpdk4k002fbfhoetv2avcp",
       "athleteName": "薛景尧",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -38686,7 +39940,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "cmjzpdk28000lbfhofq439jkr",
       "athleteName": "焦阳云朵",
       "team": "北京虎村竞技体育有限公司",
@@ -38707,7 +39961,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "cmjzpdkb20080bfhokp36urcp",
       "athleteName": "叶庆安",
       "team": "新疆维吾尔自治区冬季运动训练中心",
@@ -38728,7 +39982,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "cmjzpdk80005cbfhoxp1aexei",
       "athleteName": "张诺笒",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -38749,28 +40003,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
-      "athleteId": "cmjzpdkxl00qbbfhowxx5v1fm",
-      "athleteName": "赵子钰",
-      "team": "河北省体育局冬季运动中心",
+      "rank": 592,
+      "athleteId": "athlete-张耘萌-个人",
+      "athleteName": "张耘萌",
+      "team": "个人",
       "totalPoints": 212,
       "competitionCount": 1,
       "bestRank": 8,
       "avgPoints": 212.0,
       "ageGroup": "U11",
-      "gender": "男子组",
+      "gender": "女子组",
       "rankChange": 0,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
           "points": 212,
           "rank": 8
         }
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "athlete-程曦辉-个人",
       "athleteName": "程曦辉",
       "team": "个人",
@@ -38791,10 +40045,31 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
-      "athleteId": "cmjzpdkyg00r2bfhonpfve5v0",
-      "athleteName": "李雅馨",
-      "team": "北京市冬季运动管理中心",
+      "rank": 592,
+      "athleteId": "athlete-刘锐淇-个人",
+      "athleteName": "刘锐淇",
+      "team": "个人",
+      "totalPoints": 212,
+      "competitionCount": 1,
+      "bestRank": 8,
+      "avgPoints": 212.0,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": 1,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 212,
+          "rank": 8
+        }
+      ]
+    },
+    {
+      "rank": 592,
+      "athleteId": "athlete-赵雯溪-河南省体育局",
+      "athleteName": "赵雯溪",
+      "team": "河南省体育局",
       "totalPoints": 212,
       "competitionCount": 1,
       "bestRank": 8,
@@ -38804,15 +40079,15 @@ export const totalRankingsData: TotalRankingsData = {
       "rankChange": 0,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（成都站）",
-          "location": "成都热雪奇迹室内滑雪场",
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
           "points": 212,
           "rank": 8
         }
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "athlete-陈维仁-上海雪酷滑雪竞技队",
       "athleteName": "陈维仁",
       "team": "上海雪酷滑雪竞技队",
@@ -38833,7 +40108,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "athlete-刘锐淇-个人",
       "athleteName": "刘锐淇",
       "team": "个人",
@@ -38854,7 +40129,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 578,
+      "rank": 592,
       "athleteId": "athlete-殷玉宣-河南省体育局",
       "athleteName": "殷玉宣",
       "team": "河南省体育局",
@@ -38875,7 +40150,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "athlete-潘秋潼-西安热雪奇迹竞技队",
       "athleteName": "潘秋潼",
       "team": "西安热雪奇迹竞技队",
@@ -38896,7 +40171,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "athlete_丁润章_东北师范大学附属实验",
       "athleteName": "丁润章",
       "team": "东北师范大学附属实验学校（经开）",
@@ -38917,7 +40192,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdkpt00jlbfho1kgjxby2",
       "athleteName": "王宏轩",
       "team": "河北省体育局冬季运动中心",
@@ -38938,7 +40213,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "athlete_陈昕逸_个人",
       "athleteName": "陈昕逸",
       "team": "个人",
@@ -38959,7 +40234,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "athlete-徐子皓-泾源县国有资本投资运营集团有限公司",
       "athleteName": "徐子皓",
       "team": "泾源县国有资本投资运营集团有限公司",
@@ -38980,7 +40255,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "athlete_韩侨安_竞禹体育",
       "athleteName": "韩侨安",
       "team": "竞禹体育",
@@ -39001,7 +40276,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdkv200oebfhojl3ujfok",
       "athleteName": "何心远",
       "team": "成都热雪奇迹",
@@ -39022,7 +40297,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "athlete_马照然_大连奥萨体育文化有限",
       "athleteName": "马照然",
       "team": "大连奥萨体育文化有限公司",
@@ -39043,7 +40318,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "athlete-李毓森-北京市朝阳区第三少儿业余体校",
       "athleteName": "李毓森",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -39064,7 +40339,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdksz00mhbfhojzwb0bac",
       "athleteName": "李京和",
       "team": "个人",
@@ -39085,7 +40360,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "athlete_谭皓阳_个人高峰",
       "athleteName": "谭皓阳",
       "team": "个人（高峰）",
@@ -39106,7 +40381,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdkkp00flbfho4fw9ataz",
       "athleteName": "冷昕莲",
       "team": "河北省体育局冬季运动中心",
@@ -39127,7 +40402,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "athlete-贺洛东上海雪酷滑雪竞技队",
       "athleteName": "贺洛东",
       "team": "上海雪酷滑雪竞技队",
@@ -39148,7 +40423,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "athlete-王瞾霖-河南省体育局",
       "athleteName": "王瞾霖",
       "team": "河南省体育局",
@@ -39169,7 +40444,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdkkp00flbfho4fw9ataz",
       "athleteName": "冷昕莲",
       "team": "河北省体育局冬季运动中心",
@@ -39190,7 +40465,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdknp00hxbfho2se1dzm8",
       "athleteName": "麦冠航",
       "team": "河北省体育局冬季运动中心",
@@ -39211,7 +40486,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdk6c0040bfhor621ft1n",
       "athleteName": "陈鑫艺",
       "team": "四川体育职业学院",
@@ -39232,7 +40507,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdk933d1ba9f64d084",
       "athleteName": "李一菂",
       "team": "北京虎村竞技体育有限公司",
@@ -39253,7 +40528,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdk7b20e0310ebcd2e",
       "athleteName": "李曾翼",
       "team": "个人",
@@ -39274,7 +40549,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdk6c047354e62eb2e",
       "athleteName": "袁薪雅",
       "team": "吉林省体育局雪上运动管理中心",
@@ -39295,7 +40570,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdk4o002ibfhom3xfw7t5",
       "athleteName": "马昊文",
       "team": "MAYA TEAM",
@@ -39316,7 +40591,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdk2d000obfhodusp02c8",
       "athleteName": "李汶瑾",
       "team": "MAYA TEAM",
@@ -39337,7 +40612,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdkb50083bfhoc0bflgh2",
       "athleteName": "高琢皓",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -39358,7 +40633,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdk84005fbfhocwqzec0v",
       "athleteName": "高宇宣",
       "team": "北京虎村竞技体育有限公司",
@@ -39379,7 +40654,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdkhm00dlbfhoh1eef7a9",
       "athleteName": "廉钰洁",
       "team": "河北省体育局冬季运动中心",
@@ -39400,7 +40675,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdk6333c3ee590c52d",
       "athleteName": "程春",
       "team": "长春市冬季运动管理中心",
@@ -39421,7 +40696,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdkfm00bubfhoxikrrhxg",
       "athleteName": "王婧霏",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -39442,7 +40717,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdkfaf90e5b2c0844f",
       "athleteName": "罗念其",
       "team": "四川体育职业学院",
@@ -39463,7 +40738,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdkxo00qebfhomrlq3drg",
       "athleteName": "李雪聪",
       "team": "河北省体育局冬季运动中心",
@@ -39484,7 +40759,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
+      "athleteId": "athlete-芦梓恒-纳西亚",
+      "athleteName": "芦梓恒",
+      "team": "纳西亚",
+      "totalPoints": 199,
+      "competitionCount": 1,
+      "bestRank": 9,
+      "avgPoints": 199.0,
+      "ageGroup": "U11",
+      "gender": "男子组",
+      "rankChange": 1,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 199,
+          "rank": 9
+        }
+      ]
+    },
+    {
+      "rank": 622,
       "athleteId": "cmjzpdkw300p5bfhodr0bg1op",
       "athleteName": "韩小贝",
       "team": "河北省体育局冬季运动中心",
@@ -39505,10 +40801,10 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
-      "athleteId": "athlete-周紫君-四川体育职业学院",
-      "athleteName": "周紫君",
-      "team": "四川体育职业学院",
+      "rank": 622,
+      "athleteId": "athlete-殷玉萱-河南省体育局",
+      "athleteName": "殷玉萱",
+      "team": "河南省体育局",
       "totalPoints": 199,
       "competitionCount": 1,
       "bestRank": 9,
@@ -39518,15 +40814,15 @@ export const totalRankingsData: TotalRankingsData = {
       "rankChange": 0,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
           "points": 199,
           "rank": 9
         }
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "cmjzpdkxo00qebfhomrlq3drg",
       "athleteName": "李雪聪",
       "team": "河北省体育局冬季运动中心",
@@ -39547,7 +40843,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "athlete-芦梓恒-纳西亚",
       "athleteName": "芦梓恒",
       "team": "纳西亚",
@@ -39568,7 +40864,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "athlete-陈鑫昊-上海雪酷滑雪竞技队",
       "athleteName": "陈鑫昊",
       "team": "上海雪酷滑雪竞技队",
@@ -39589,7 +40885,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 607,
+      "rank": 622,
       "athleteId": "athlete-韩萨仁其木格-小崔运动",
       "athleteName": "韩萨仁其木格",
       "team": "小崔运动",
@@ -39610,7 +40906,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 642,
+      "rank": 658,
       "athleteId": "athlete-阿力合尔·木拉提江-北京市冬季运动管理中心",
       "athleteName": "阿力合尔·木拉提江",
       "team": "北京市冬季运动管理中心",
@@ -39637,7 +40933,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "athlete-符芳缘-个人",
       "athleteName": "符芳缘",
       "team": "个人",
@@ -39658,7 +40954,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "athlete_郭轩烨_张家口辰鹏体育发展有",
       "athleteName": "郭轩烨",
       "team": "张家口辰鹏体育发展有限公司",
@@ -39679,7 +40975,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "cmjzpdkpw00jobfho96ief0p6",
       "athleteName": "马健剀",
       "team": "吉林坤伦滑雪俱乐部",
@@ -39700,7 +40996,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "athlete_谭皓阳_个人高峰",
       "athleteName": "谭皓阳",
       "team": "个人（高峰）",
@@ -39721,7 +41017,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "athlete_柳昇延_延庆区体育局",
       "athleteName": "柳昇延",
       "team": "延庆区体育局",
@@ -39742,7 +41038,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "athlete-白瑾轩-西安热雪奇迹竞技队",
       "athleteName": "白瑾轩",
       "team": "西安热雪奇迹竞技队",
@@ -39763,7 +41059,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "athlete_魏子澄_本溪全明星滑雪学校",
       "athleteName": "魏子澄",
       "team": "本溪全明星滑雪学校",
@@ -39784,7 +41080,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "athlete_王景亮_广州热雪奇迹文化体育",
       "athleteName": "王景亮",
       "team": "广州热雪奇迹文化体育发展有限公司",
@@ -39805,7 +41101,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "athlete_邵楷同_广州热雪奇迹",
       "athleteName": "邵楷同",
       "team": "广州热雪奇迹",
@@ -39826,7 +41122,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "athlete-李波一-西安热雪奇迹竞技队",
       "athleteName": "李波一",
       "team": "西安热雪奇迹竞技队",
@@ -39847,7 +41143,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "athlete_戴文研_个人",
       "athleteName": "戴文研",
       "team": "个人",
@@ -39868,7 +41164,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "athlete-王睿文-Criss-Crew",
       "athleteName": "王睿文",
       "team": "Criss Crew",
@@ -39889,7 +41185,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "athlete-郭芮溪-个人",
       "athleteName": "郭芮溪",
       "team": "个人",
@@ -39910,7 +41206,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "athlete-陈玟聿上海雪酷滑雪竞技队",
       "athleteName": "陈玟聿",
       "team": "上海雪酷滑雪竞技队",
@@ -39931,7 +41227,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "cmjzpdld4012zbfhoeg1jphpu",
       "athleteName": "于瀚",
       "team": "重庆市冬季运动管理中心",
@@ -39952,7 +41248,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "athlete-管奕涵-个人",
       "athleteName": "管奕涵",
       "team": "个人",
@@ -39973,7 +41269,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "cmjzpdkmu00h6bfhoz183j346",
       "athleteName": "宁浩然",
       "team": "成都热雪奇迹",
@@ -39994,7 +41290,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "cmjzpdld4012zbfhoeg1jphpu",
       "athleteName": "于瀚",
       "team": "重庆市冬季运动管理中心",
@@ -40015,7 +41311,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "athlete-杜雨欣-四川体育职业学院",
       "athleteName": "杜雨欣",
       "team": "四川体育职业学院",
@@ -40036,7 +41332,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "cmjzpdk19e0d390a702297",
       "athleteName": "王子溪",
       "team": "King Pro Team",
@@ -40057,7 +41353,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "cmjzpdkd568a784a7e6046",
       "athleteName": "詹涵予",
       "team": "长春市冬季运动管理中心",
@@ -40078,7 +41374,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "cmjzpdkct009ibfhoibkwcoe4",
       "athleteName": "郭天泽",
       "team": "MAYA TEAM",
@@ -40099,7 +41395,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "cmjzpdkf700214209ff5ef",
       "athleteName": "黄卫瑄",
       "team": "ACE竞技滑雪队",
@@ -40120,7 +41416,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "cmjzpdk4r002lbfhoazgg5gnu",
       "athleteName": "周天朗",
       "team": "北京虎村竞技体育有限公司",
@@ -40141,7 +41437,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "cmjzpdk2g000rbfhodm7jwa0h",
       "athleteName": "朱安然",
       "team": "上海雪酷滑雪竞技队",
@@ -40162,7 +41458,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "cmjzpdkb80086bfhocqooy0qe",
       "athleteName": "马赛",
       "team": "四川体育职业学院",
@@ -40183,7 +41479,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "cmjzpdk87005ibfhohu5zegc3",
       "athleteName": "汪昱诺",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -40204,7 +41500,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "cmjzpdk8eb1503599bd533",
       "athleteName": "靳羽琪",
       "team": "长春市冬季运动管理中心",
@@ -40225,28 +41521,49 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
-      "athleteId": "athlete-陈奕歌-河南省体育局",
-      "athleteName": "陈奕歌",
-      "team": "河南省体育局",
+      "rank": 659,
+      "athleteId": "athlete-陈维仁-上海雪酷滑雪竞技队",
+      "athleteName": "陈维仁",
+      "team": "上海雪酷滑雪竞技队",
       "totalPoints": 187,
       "competitionCount": 1,
       "bestRank": 10,
       "avgPoints": 187.0,
-      "ageGroup": "U15",
-      "gender": "女子组",
+      "ageGroup": "U11",
+      "gender": "男子组",
       "rankChange": 0,
       "pointsBreakdown": [
         {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
           "points": 187,
           "rank": 10
         }
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
+      "athleteId": "athlete-陈鑫昊-上海雪酷滑雪竞技队",
+      "athleteName": "陈鑫昊",
+      "team": "上海雪酷滑雪竞技队",
+      "totalPoints": 187,
+      "competitionCount": 1,
+      "bestRank": 10,
+      "avgPoints": 187.0,
+      "ageGroup": "U15",
+      "gender": "男子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 187,
+          "rank": 10
+        }
+      ]
+    },
+    {
+      "rank": 659,
       "athleteId": "cmjzpdl3200uvbfho4hlumf98",
       "athleteName": "徐思远",
       "team": "沈阳体育学院",
@@ -40267,7 +41584,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 643,
+      "rank": 659,
       "athleteId": "athlete-殷玉萱-河南省体育局",
       "athleteName": "殷玉萱",
       "team": "河南省体育局",
@@ -40288,7 +41605,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "athlete_姚政希_个人",
       "athleteName": "姚政希",
       "team": "个人",
@@ -40309,7 +41626,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "athlete_3ihz7g25",
       "athleteName": "李正翰",
       "team": "个人",
@@ -40330,7 +41647,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "athlete-吴俊霖-个人",
       "athleteName": "吴俊霖",
       "team": "个人",
@@ -40351,7 +41668,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "athlete-尚立明-泾源县国有资本投资运营集团有限公司",
       "athleteName": "尚立明",
       "team": "泾源县国有资本投资运营集团有限公司",
@@ -40372,7 +41689,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "cmjzpdkpt00jlbfho1kgjxby2",
       "athleteName": "王宏轩",
       "team": "河北省体育局冬季运动中心",
@@ -40393,7 +41710,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "cmjzpdkmu00h6bfhoz183j346",
       "athleteName": "宁浩然",
       "team": "成都热雪奇迹",
@@ -40414,7 +41731,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "cmjzpdld80132bfhoadlpmpwp",
       "athleteName": "邓与骜",
       "team": "成都热雪奇迹",
@@ -40435,7 +41752,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "athlete-刘牧州-个人",
       "athleteName": "刘牧州",
       "team": "个人",
@@ -40456,7 +41773,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "athlete-李懿恒自由地带pop滑雪俱乐部",
       "athleteName": "李懿恒",
       "team": "自由地带pop滑雪俱乐部",
@@ -40477,7 +41794,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "athlete_nbv3zi6w",
       "athleteName": "闫梓左",
       "team": "个人",
@@ -40498,7 +41815,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "athlete-杨路龙个人",
       "athleteName": "杨路龙",
       "team": "个人",
@@ -40519,7 +41836,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "athlete-崔嘉懿上海雪酷滑雪竞技队",
       "athleteName": "崔嘉懿",
       "team": "上海雪酷滑雪竞技队",
@@ -40540,7 +41857,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "cmjzpdld80132bfhoadlpmpwp",
       "athleteName": "邓与骜",
       "team": "成都热雪奇迹",
@@ -40561,7 +41878,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "athlete-刘牧州-个人",
       "athleteName": "刘牧州",
       "team": "个人",
@@ -40582,7 +41899,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "athlete-李懿恒自由地带pop滑雪俱乐部",
       "athleteName": "李懿恒",
       "team": "自由地带pop滑雪俱乐部",
@@ -40603,7 +41920,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "athlete-曾梓萱-四川体育职业学院",
       "athleteName": "曾梓萱",
       "team": "四川体育职业学院",
@@ -40624,7 +41941,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "athlete-刘智鑫湖北省武术和冬季运动管理中心",
       "athleteName": "刘智鑫",
       "team": "湖北省武术和冬季运动管理中心",
@@ -40645,7 +41962,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "cmjzpdk5d0033bfhoh5d8fwx8",
       "athleteName": "张睦然",
       "team": "MAYA TEAM",
@@ -40666,7 +41983,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "cmjzpdk2g000rbfhodm7jwa0h",
       "athleteName": "朱安然",
       "team": "上海雪酷滑雪竞技队",
@@ -40687,7 +42004,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "cmjzpdke900albfhoigjeyd76",
       "athleteName": "暴城睿",
       "team": "辽宁极限体育",
@@ -40708,7 +42025,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "cmjzpdk42781b5533a8899",
       "athleteName": "陈雨歌",
       "team": "四川体育职业学院",
@@ -40729,7 +42046,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "cmjzpdk4v002obfho9tmsoz86",
       "athleteName": "马昊迪",
       "team": "MAYA TEAM",
@@ -40750,7 +42067,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "cmjzpdk2l000ubfhoux0a5q2h",
       "athleteName": "李宛凝",
       "team": "大连雨彤体育赛事俱乐部",
@@ -40771,7 +42088,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "cmjzpdkbc0089bfhow3t9kyiy",
       "athleteName": "徐承昊",
       "team": "上海市静安区滑雪协会",
@@ -40792,7 +42109,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
       "athleteId": "cmjzpdk8b005lbfho4c97oyke",
       "athleteName": "杨卓尔",
       "team": "中麟体育",
@@ -40813,7 +42130,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 674,
+      "rank": 691,
+      "athleteId": "athlete-韩小贝-石家庄市冰雪与足球运动中心",
+      "athleteName": "韩小贝",
+      "team": "石家庄市冰雪与足球运动中心",
+      "totalPoints": 176,
+      "competitionCount": 1,
+      "bestRank": 11,
+      "avgPoints": 176.0,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 176,
+          "rank": 11
+        }
+      ]
+    },
+    {
+      "rank": 691,
       "athleteId": "cmjzpdkz700rnbfhorz1h81nt",
       "athleteName": "李霁开",
       "team": "河北省体育局冬季运动中心",
@@ -40834,7 +42172,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "athlete_王景亮_广州热雪奇迹文化体育",
       "athleteName": "王景亮",
       "team": "广州热雪奇迹文化体育发展有限公司",
@@ -40855,7 +42193,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "athlete-王永源-济南市皇亭竞技体育学校",
       "athleteName": "王永源",
       "team": "济南市皇亭竞技体育学校",
@@ -40876,7 +42214,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "cmjzpdkpp00jibfho6rmhufv0",
       "athleteName": "王冠霖",
       "team": "吉林坤伦滑雪俱乐部",
@@ -40897,7 +42235,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "cmjzpdlc30124bfho0cnhg41y",
       "athleteName": "马泰铭",
       "team": "成都热雪奇迹",
@@ -40918,7 +42256,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "athlete-汤一-个人",
       "athleteName": "汤一",
       "team": "个人",
@@ -40939,7 +42277,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "athlete-刘智鑫湖北省武术和冬季运动管理中心",
       "athleteName": "刘智鑫",
       "team": "湖北省武术和冬季运动管理中心",
@@ -40960,7 +42298,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "cmjzpdlc30124bfho0cnhg41y",
       "athleteName": "马泰铭",
       "team": "成都热雪奇迹",
@@ -40981,7 +42319,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "athlete-仇逸菲上海雪酷滑雪竞技队",
       "athleteName": "仇逸菲",
       "team": "上海雪酷滑雪竞技队",
@@ -41002,7 +42340,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "cmjzpdldb0135bfhoenavjvdu",
       "athleteName": "罗知腾",
       "team": "重庆市冬季运动管理中心",
@@ -41023,7 +42361,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "athlete-郭展麟-黑龙江省雪上训练中心",
       "athleteName": "郭展麟",
       "team": "黑龙江省雪上训练中心",
@@ -41044,7 +42382,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "athlete-贺洛东上海雪酷滑雪竞技队",
       "athleteName": "贺洛东",
       "team": "上海雪酷滑雪竞技队",
@@ -41065,7 +42403,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "athlete-姚佳俊个人",
       "athleteName": "姚佳俊",
       "team": "个人",
@@ -41086,7 +42424,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "cmjzpdk6j0046bfhov1sarue5",
       "athleteName": "赵梓聿",
       "team": "MAYA TEAM",
@@ -41107,7 +42445,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "cmjzpdk3e001fbfho3hhippx7",
       "athleteName": "李雨萱",
       "team": "个人",
@@ -41128,7 +42466,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "cmjzpdk2a43d4db4e09537",
       "athleteName": "杨子绪",
       "team": "个人",
@@ -41149,7 +42487,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "cmjzpdk1f58bef5f720f1d",
       "athleteName": "罗依然",
       "team": "四川体育职业学院",
@@ -41170,7 +42508,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "cmjzpdk4y002rbfho4iulm870",
       "athleteName": "蒋文栋",
       "team": "MAYA TEAM",
@@ -41191,7 +42529,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "cmjzpdk2r000xbfho3kcj25v9",
       "athleteName": "刘和一",
       "team": "北京天高云淡体育有限公司",
@@ -41212,7 +42550,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "cmjzpdkbg008cbfhoy1byx6zt",
       "athleteName": "刘宸卓",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -41233,7 +42571,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "cmjzpdkf700214209ff5ef",
       "athleteName": "黄卫瑄",
       "team": "ACE竞技滑雪队",
@@ -41254,7 +42592,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "cmjzpdkhx00dubfhogq1rb5ct",
       "athleteName": "杨伯伦",
       "team": "个人",
@@ -41275,7 +42613,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "cmjzpdk33c647f77c12d1f",
       "athleteName": "宋星锋",
       "team": "沈抚改革创新示范区体育联合会",
@@ -41296,7 +42634,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
       "athleteId": "cmjzpdkfw00c3bfhocx32ry78",
       "athleteName": "叶香菲",
       "team": "大连雨彤体育赛事俱乐部",
@@ -41317,7 +42655,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 700,
+      "rank": 718,
+      "athleteId": "athlete-纪栩妍-个人",
+      "athleteName": "纪栩妍",
+      "team": "个人",
+      "totalPoints": 166,
+      "competitionCount": 1,
+      "bestRank": 12,
+      "avgPoints": 166.0,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 166,
+          "rank": 12
+        }
+      ]
+    },
+    {
+      "rank": 718,
       "athleteId": "athlete-周钰芯-四川体育职业学院",
       "athleteName": "周钰芯",
       "team": "四川体育职业学院",
@@ -41338,7 +42697,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "athlete_林子辰_重庆市冬季运动管理中",
       "athleteName": "林子辰",
       "team": "重庆市冬季运动管理中心1队",
@@ -41359,7 +42718,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "athlete-祁琨博-个人",
       "athleteName": "祁琨博",
       "team": "个人",
@@ -41380,7 +42739,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "athlete_张博智_张家口辰鹏体育发展有",
       "athleteName": "张博智",
       "team": "张家口辰鹏体育发展有限公司",
@@ -41401,7 +42760,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "cmjzpdkpw00jobfho96ief0p6",
       "athleteName": "马健剀",
       "team": "吉林坤伦滑雪俱乐部",
@@ -41422,7 +42781,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "cmjzpdldb0135bfhoenavjvdu",
       "athleteName": "罗知腾",
       "team": "重庆市冬季运动管理中心",
@@ -41443,7 +42802,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "athlete-尤睿-个人",
       "athleteName": "尤睿",
       "team": "个人",
@@ -41464,7 +42823,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "athlete-黄熙灿上海雪酷滑雪竞技队",
       "athleteName": "黄熙灿",
       "team": "上海雪酷滑雪竞技队",
@@ -41485,7 +42844,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "athlete-姚佳俊个人",
       "athleteName": "姚佳俊",
       "team": "个人",
@@ -41506,7 +42865,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "cmjzpdlc90127bfho5v74jhb5",
       "athleteName": "程锦辰",
       "team": "河北省体育局冬季运动中心",
@@ -41527,7 +42886,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "athlete-张诗蕊-四川体育职业学院",
       "athleteName": "张诗蕊",
       "team": "四川体育职业学院",
@@ -41548,7 +42907,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "cmjzpdk590030bfho0px3f8sf",
       "athleteName": "张朔源",
       "team": "张家口市足球和冰雪运动学校",
@@ -41569,7 +42928,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "cmjzpdk55b341e408d1059",
       "athleteName": "ALBBESU",
       "team": "张家口冰雪运动学校",
@@ -41590,7 +42949,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "cmjzpdkbq008lbfhoegwsywal",
       "athleteName": "于谨赫",
       "team": "速森体育",
@@ -41611,7 +42970,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "cmjzpdk930069bfho54mrsdcb",
       "athleteName": "王艺潼",
       "team": "个人",
@@ -41632,7 +42991,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "cmjzpdk52002ubfho239nfqzd",
       "athleteName": "高宇承",
       "team": "北京虎村竞技体育有限公司",
@@ -41653,7 +43012,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "cmjzpdk2v0010bfhoaewhfwuy",
       "athleteName": "李子纯",
       "team": "个人",
@@ -41674,7 +43033,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "cmjzpdkbi008fbfhogpqphcae",
       "athleteName": "吉淏辰",
       "team": "北京虎村竞技体育有限公司",
@@ -41695,7 +43054,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "cmjzpdk8i005rbfho2oo4b7sh",
       "athleteName": "赵浛西",
       "team": "爱上雪体育产业发展（北京）有限公司",
@@ -41716,7 +43075,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "cmjzpdki100dxbfhozwyr4wjz",
       "athleteName": "常一鸣",
       "team": "锐冠青少年竞技滑雪队",
@@ -41737,7 +43096,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "cmjzpdk4dca11958f70b0b",
       "athleteName": "吴熙诚",
       "team": "上海市静安区滑雪协会",
@@ -41758,7 +43117,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "cmjzpdkg000c6bfhoihmgqo4f",
       "athleteName": "刘墨晗",
       "team": "北京虎村竞技体育有限公司",
@@ -41779,7 +43138,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "athlete-梁宝云-广西射击射箭运动发展中心",
       "athleteName": "梁宝云",
       "team": "广西射击射箭运动发展中心",
@@ -41800,7 +43159,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 724,
+      "rank": 743,
       "athleteId": "athlete-梁宝云-广西射击射箭运动发展中心",
       "athleteName": "梁宝云",
       "team": "广西射击射箭运动发展中心",
@@ -41821,7 +43180,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "athlete_沈昊宇_个人",
       "athleteName": "沈昊宇",
       "team": "个人",
@@ -41842,7 +43201,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "athlete_3ihz7g25",
       "athleteName": "李正翰",
       "team": "个人",
@@ -41863,7 +43222,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "athlete_ts3rt1po",
       "athleteName": "刘子逸",
       "team": "四川体育职业学院",
@@ -41884,7 +43243,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "athlete-马珞恩-个人",
       "athleteName": "马珞恩",
       "team": "个人",
@@ -41905,7 +43264,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "athlete-崔嘉懿上海雪酷滑雪竞技队",
       "athleteName": "崔嘉懿",
       "team": "上海雪酷滑雪竞技队",
@@ -41926,7 +43285,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "athlete_xwemlahd",
       "athleteName": "刘名豪",
       "team": "个人",
@@ -41947,7 +43306,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "cmjzpdlcc012abfhogtiodmxg",
       "athleteName": "朱秋霖",
       "team": "个人",
@@ -41968,7 +43327,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "athlete-郭芮溪-个人",
       "athleteName": "郭芮溪",
       "team": "个人",
@@ -41989,7 +43348,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "athlete-陈玟聿上海雪酷滑雪竞技队",
       "athleteName": "陈玟聿",
       "team": "上海雪酷滑雪竞技队",
@@ -42010,7 +43369,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "cmjzpdldi013bbfhoor5kxh26",
       "athleteName": "王天磊",
       "team": "河北省体育局冬季运动中心",
@@ -42031,7 +43390,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "cmjzpdk63d8a5b4100bf40",
       "athleteName": "徐嘉艺",
       "team": "长春市冬季运动管理中心",
@@ -42052,7 +43411,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "cmjzpdk360019bfho7kcuehdp",
       "athleteName": "张语珊",
       "team": "个人",
@@ -42073,7 +43432,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "cmjzpdkbc0089bfhow3t9kyiy",
       "athleteName": "徐承昊",
       "team": "上海市静安区滑雪协会",
@@ -42094,7 +43453,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "cmjzpdka40076bfhorgd2m8ou",
       "athleteName": "亢正熙",
       "team": "四川体育职业学院",
@@ -42115,7 +43474,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "cmjzpdk55002xbfhookyfbfz5",
       "athleteName": "刘昱辰",
       "team": "MAYA TEAM",
@@ -42136,7 +43495,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "cmjzpdk2z0013bfho4korkuwl",
       "athleteName": "李获稻",
       "team": "成都热雪奇迹",
@@ -42157,7 +43516,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "cmjzpdkbm008ibfhod1hwvi59",
       "athleteName": "邢子瀚",
       "team": "纳西亚",
@@ -42178,7 +43537,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "cmjzpdk8m005ubfhou7sh1nue",
       "athleteName": "邹齐",
       "team": "个人",
@@ -42199,7 +43558,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "cmjzpdkg300c9bfhov8mzyq6r",
       "athleteName": "朱珈仪",
       "team": "吉林市冬季运动管理中心",
@@ -42220,7 +43579,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "cmjzpdkwn00pkbfhoanaefh2j",
       "athleteName": "万洛辰",
       "team": "个人",
@@ -42241,7 +43600,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 747,
+      "rank": 766,
       "athleteId": "athlete-周钰芯-四川体育职业学院",
       "athleteName": "周钰芯",
       "team": "四川体育职业学院",
@@ -42262,7 +43621,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 766,
+      "athleteId": "athlete-王汝懿-个人",
+      "athleteName": "王汝懿",
+      "team": "个人",
+      "totalPoints": 149,
+      "competitionCount": 1,
+      "bestRank": 14,
+      "avgPoints": 149.0,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": 2,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 149,
+          "rank": 14
+        }
+      ]
+    },
+    {
+      "rank": 788,
       "athleteId": "athlete_张博智_张家口辰鹏体育发展有",
       "athleteName": "张博智",
       "team": "张家口辰鹏体育发展有限公司",
@@ -42283,7 +43663,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "athlete_岳皓宇_个人",
       "athleteName": "岳皓宇",
       "team": "个人",
@@ -42304,7 +43684,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "athlete-王霖逸-个人",
       "athleteName": "王霖逸",
       "team": "个人",
@@ -42325,7 +43705,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "athlete_6duvy5kn",
       "athleteName": "陈奎亦",
       "team": "四川体育职业学院",
@@ -42346,7 +43726,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "athlete-仇逸菲上海雪酷滑雪竞技队",
       "athleteName": "仇逸菲",
       "team": "上海雪酷滑雪竞技队",
@@ -42367,7 +43747,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "cmjzpdldi013bbfhoor5kxh26",
       "athleteName": "王天磊",
       "team": "河北省体育局冬季运动中心",
@@ -42388,7 +43768,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "athlete-张显祖上海雪酷滑雪竞技队",
       "athleteName": "张显祖",
       "team": "上海雪酷滑雪竞技队",
@@ -42409,7 +43789,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "athlete-马珞恩-个人",
       "athleteName": "马珞恩",
       "team": "个人",
@@ -42430,7 +43810,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "athlete-叶恩瑶上海雪酷滑雪竞技队",
       "athleteName": "叶恩瑶",
       "team": "上海雪酷滑雪竞技队",
@@ -42451,7 +43831,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "cmjzpdk3e772362b5adebf",
       "athleteName": "朱思越",
       "team": "成都热雪奇迹",
@@ -42472,7 +43852,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "cmjzpdk2d000obfhodusp02c8",
       "athleteName": "李汶瑾",
       "team": "MAYA TEAM",
@@ -42493,7 +43873,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "cmjzpdkb20080bfhokp36urcp",
       "athleteName": "叶庆安",
       "team": "新疆维吾尔自治区冬季运动训练中心",
@@ -42514,7 +43894,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "cmjzpdk9ee2569f2174f9e",
       "athleteName": "李文静",
       "team": "吉林省体育局雪上运动管理中心",
@@ -42535,7 +43915,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "cmjzpdk590030bfho0px3f8sf",
       "athleteName": "张朔源",
       "team": "张家口市足球和冰雪运动学校",
@@ -42556,7 +43936,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "cmjzpdk320016bfhoxp3pgkx8",
       "athleteName": "武子蓉",
       "team": "太原市第二少年体育学校",
@@ -42577,7 +43957,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "cmjzpdkbq008lbfhoegwsywal",
       "athleteName": "于谨赫",
       "team": "速森体育",
@@ -42598,7 +43978,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "cmjzpdk1cab384a82a2e82",
       "athleteName": "刘姝廷",
       "team": "8848俱乐部",
@@ -42619,7 +43999,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "cmjzpdki900e3bfho6qc9ewhq",
       "athleteName": "郑研伟",
       "team": "个人",
@@ -42640,7 +44020,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "cmjzpdkg700ccbfhossdgz9de",
       "athleteName": "韩非桐",
       "team": "速森体育",
@@ -42661,7 +44041,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "athlete-左均怡-个人",
       "athleteName": "左均怡",
       "team": "个人",
@@ -42682,7 +44062,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 768,
+      "rank": 788,
       "athleteId": "athlete-左均怡-个人",
       "athleteName": "左均怡",
       "team": "个人",
@@ -42703,7 +44083,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 789,
+      "rank": 809,
       "athleteId": "athlete_刘宸宇_福建省冰雪运动协会",
       "athleteName": "刘宸宇",
       "team": "福建省冰雪运动协会",
@@ -42724,7 +44104,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 789,
+      "rank": 809,
       "athleteId": "cmjzpdlcc012abfhogtiodmxg",
       "athleteName": "朱秋霖",
       "team": "个人",
@@ -42745,7 +44125,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 789,
+      "rank": 809,
       "athleteId": "athlete-史景夫个人",
       "athleteName": "史景夫",
       "team": "个人",
@@ -42766,7 +44146,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 789,
+      "rank": 809,
       "athleteId": "athlete-马铂淙-个人",
       "athleteName": "马铂淙",
       "team": "个人",
@@ -42787,7 +44167,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 789,
+      "rank": 809,
       "athleteId": "athlete-郭瀚林上海雪酷滑雪竞技队",
       "athleteName": "郭瀚林",
       "team": "上海雪酷滑雪竞技队",
@@ -42808,7 +44188,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 789,
+      "rank": 809,
       "athleteId": "cmjzpdk5m003cbfhosvizw7ep",
       "athleteName": "黄益航",
       "team": "四川体育职业学院",
@@ -42829,7 +44209,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 789,
+      "rank": 809,
       "athleteId": "cmjzpdkbbb88e5eab4dead",
       "athleteName": "姜予乔",
       "team": "个人",
@@ -42850,7 +44230,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 789,
+      "rank": 809,
       "athleteId": "cmjzpdke200afbfho46pb1bph",
       "athleteName": "陈浩铭",
       "team": "四川体育职业学院",
@@ -42871,7 +44251,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 789,
+      "rank": 809,
       "athleteId": "cmjzpdk0908a3ae0863e6d",
       "athleteName": "谢露萱",
       "team": "上海市静安区滑雪协会",
@@ -42892,7 +44272,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 789,
+      "rank": 809,
       "athleteId": "cmjzpdk5d0033bfhoh5d8fwx8",
       "athleteName": "张睦然",
       "team": "MAYA TEAM",
@@ -42913,7 +44293,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 789,
+      "rank": 809,
       "athleteId": "cmjzpdk360019bfho7kcuehdp",
       "athleteName": "张语珊",
       "team": "个人",
@@ -42934,7 +44314,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 789,
+      "rank": 809,
       "athleteId": "cmjzpdkbu008obfhondaq2opk",
       "athleteName": "刘哲鸣",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -42955,7 +44335,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 789,
+      "rank": 809,
       "athleteId": "cmjzpdk8u0060bfho1vg3hn2i",
       "athleteName": "周焕熙",
       "team": "爱上雪体育产业发展（北京）有限公司",
@@ -42976,7 +44356,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 789,
+      "rank": 809,
       "athleteId": "cmjzpdkga00cfbfhoyfzzm0hh",
       "athleteName": "杨笑语",
       "team": "河北省体育局冬季运动中心",
@@ -42997,28 +44377,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 789,
-      "athleteId": "cmjzpdl1f00tcbfhowslhbsqq",
-      "athleteName": "李佳馨",
-      "team": "个人",
-      "totalPoints": 134,
-      "competitionCount": 1,
-      "bestRank": 16,
-      "avgPoints": 134.0,
-      "ageGroup": "U11",
-      "gender": "女子组",
-      "rankChange": 0,
-      "pointsBreakdown": [
-        {
-          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（富龙站）",
-          "location": "张家口富龙滑雪场",
-          "points": 134,
-          "rank": 16
-        }
-      ]
-    },
-    {
-      "rank": 789,
+      "rank": 809,
       "athleteId": "athlete-王汝懿-个人",
       "athleteName": "王汝懿",
       "team": "个人",
@@ -43039,7 +44398,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 805,
+      "rank": 824,
       "athleteId": "athlete_赵宣贺_个人",
       "athleteName": "赵宣贺",
       "team": "个人",
@@ -43060,7 +44419,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 805,
+      "rank": 824,
       "athleteId": "athlete_龙思祺_广州雪迹文化体育发展",
       "athleteName": "龙思祺",
       "team": "广州雪迹文化体育发展有限公司",
@@ -43081,7 +44440,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 805,
+      "rank": 824,
       "athleteId": "cmjzpdlc90127bfho5v74jhb5",
       "athleteName": "程锦辰",
       "team": "河北省体育局冬季运动中心",
@@ -43102,7 +44461,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 805,
+      "rank": 824,
       "athleteId": "cmjzpdk6f0043bfhotms7f5yw",
       "athleteName": "孙奥荣",
       "team": "四川体育职业学院",
@@ -43123,7 +44482,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 805,
+      "rank": 824,
       "athleteId": "cmjzpdkce2aea5535e6480",
       "athleteName": "李默涵",
       "team": "8848俱乐部",
@@ -43144,7 +44503,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 805,
+      "rank": 824,
       "athleteId": "cmjzpdk1d7730381b78e02",
       "athleteName": "刘华森",
       "team": "吉林峰尚青教体育文化产业有限公司",
@@ -43165,7 +44524,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 805,
+      "rank": 824,
       "athleteId": "cmjzpdk9d006ibfho62rtb6mv",
       "athleteName": "叶丽扎·别克苏力坦",
       "team": "新疆维吾尔自治区冬季运动训练中心",
@@ -43186,7 +44545,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 805,
+      "rank": 824,
       "athleteId": "cmjzpdk5g0036bfhojj36lkyb",
       "athleteName": "白雨奇",
       "team": "大连雨彤体育赛事俱乐部",
@@ -43207,7 +44566,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 805,
+      "rank": 824,
       "athleteId": "cmjzpdk3a001cbfhosbj1b2bo",
       "athleteName": "李墨涵",
       "team": "中麟体育",
@@ -43228,7 +44587,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 805,
+      "rank": 824,
       "athleteId": "cmjzpdkbx008rbfho8v83oc7a",
       "athleteName": "孙屹卓",
       "team": "MAYA TEAM",
@@ -43249,7 +44608,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 805,
+      "rank": 824,
       "athleteId": "cmjzpdk8x0063bfhobic6c948",
       "athleteName": "闫艺宸",
       "team": "个人",
@@ -43270,7 +44629,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 816,
+      "rank": 835,
       "athleteId": "athlete_田芷源_长春市朝阳区山域竞技",
       "athleteName": "田芷源",
       "team": "长春市朝阳区山域竞技体育工作室",
@@ -43291,7 +44650,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 816,
+      "rank": 835,
       "athleteId": "cmjzpdk066106354541314",
       "athleteName": "赵一诺",
       "team": "沈抚改革创新示范区体育联合会",
@@ -43312,7 +44671,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 816,
+      "rank": 835,
       "athleteId": "cmjzpdk1a2c860e2d0c557",
       "athleteName": "周爱戴",
       "team": "长春市极刃体育发展有限公司",
@@ -43333,7 +44692,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 816,
+      "rank": 835,
       "athleteId": "cmjzpdk6ec8da751d28f49",
       "athleteName": "尤玺为",
       "team": "个人",
@@ -43354,7 +44713,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 816,
+      "rank": 835,
       "athleteId": "cmjzpdk70df0e3dbc4faf2",
       "athleteName": "高雅傲雪",
       "team": "沈抚改革创新示范区体育联合会",
@@ -43375,7 +44734,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 816,
+      "rank": 835,
       "athleteId": "cmjzpdk19e0d390a702297",
       "athleteName": "王子溪",
       "team": "King Pro Team",
@@ -43396,7 +44755,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 816,
+      "rank": 835,
       "athleteId": "cmjzpdk3e001fbfho3hhippx7",
       "athleteName": "李雨萱",
       "team": "个人",
@@ -43417,7 +44776,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 816,
+      "rank": 835,
       "athleteId": "cmjzpdkc1008ubfho003mc70z",
       "athleteName": "嘎日玛盖",
       "team": "新疆维吾尔自治区冬季运动训练中心",
@@ -43438,7 +44797,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 816,
+      "rank": 835,
       "athleteId": "cmjzpdk900066bfho8yqnek9e",
       "athleteName": "徐紫馨",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -43459,7 +44818,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 816,
+      "rank": 835,
       "athleteId": "cmjzpdkik00ecbfho4luzmtsp",
       "athleteName": "付若洵",
       "team": "KingProTeam",
@@ -43480,7 +44839,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 816,
+      "rank": 835,
       "athleteId": "cmjzpdk6b8d979c30b278c",
       "athleteName": "王天阳",
       "team": "个人",
@@ -43501,7 +44860,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 827,
+      "rank": 846,
       "athleteId": "athlete_孙茂文_个人",
       "athleteName": "孙茂文",
       "team": "个人",
@@ -43522,7 +44881,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 827,
+      "rank": 846,
       "athleteId": "athlete-高圣煊-个人",
       "athleteName": "高圣煊",
       "team": "个人",
@@ -43543,7 +44902,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 827,
+      "rank": 846,
       "athleteId": "athlete-王睿文-Criss-Crew",
       "athleteName": "王睿文",
       "team": "Criss Crew",
@@ -43564,7 +44923,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 827,
+      "rank": 846,
       "athleteId": "cmjzpdk2eda9d48e98ca2d",
       "athleteName": "李沛洋",
       "team": "个人",
@@ -43585,7 +44944,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 827,
+      "rank": 846,
       "athleteId": "cmjzpdk3922fa6be142591",
       "athleteName": "马艺瑄",
       "team": "沈抚改革创新示范区体育联合会",
@@ -43606,7 +44965,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 827,
+      "rank": 846,
       "athleteId": "cmjzpdkc1008ubfho003mc70z",
       "athleteName": "嘎日玛盖",
       "team": "新疆维吾尔自治区冬季运动训练中心",
@@ -43627,7 +44986,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 827,
+      "rank": 846,
       "athleteId": "cmjzpdk549624664a5f8d6",
       "athleteName": "CANDIE JIANI SONG",
       "team": "上海雪酷滑雪竞技队",
@@ -43648,7 +45007,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 827,
+      "rank": 846,
       "athleteId": "cmjzpdk5m003cbfhosvizw7ep",
       "athleteName": "黄益航",
       "team": "四川体育职业学院",
@@ -43669,7 +45028,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 827,
+      "rank": 846,
       "athleteId": "cmjzpdk3h001ibfho4lvkrl73",
       "athleteName": "马音霓",
       "team": "爱上雪体育产业发展（北京）有限公司",
@@ -43690,7 +45049,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 827,
+      "rank": 846,
       "athleteId": "cmjzpdkc4008xbfhoyml7rqhz",
       "athleteName": "崔承泽",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -43711,7 +45070,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 827,
+      "rank": 846,
       "athleteId": "cmjzpdk930069bfho54mrsdcb",
       "athleteName": "王艺潼",
       "team": "个人",
@@ -43732,7 +45091,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 827,
+      "rank": 846,
       "athleteId": "cmjzpdkgl00cobfhobsdhpr93",
       "athleteName": "刘怡廷",
       "team": "张家口市足球和冰雪运动学校",
@@ -43753,7 +45112,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 827,
+      "rank": 846,
       "athleteId": "athlete-纪栩妍-个人",
       "athleteName": "纪栩妍",
       "team": "个人",
@@ -43774,7 +45133,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 840,
+      "rank": 859,
       "athleteId": "athlete_冯泽昊_零度竞技吉林省零下壹",
       "athleteName": "冯泽昊",
       "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
@@ -43795,7 +45154,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 840,
+      "rank": 859,
       "athleteId": "athlete-郭瀚林上海雪酷滑雪竞技队",
       "athleteName": "郭瀚林",
       "team": "上海雪酷滑雪竞技队",
@@ -43816,7 +45175,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 840,
+      "rank": 859,
       "athleteId": "athlete-孙翎皓-Criss-Crew",
       "athleteName": "孙翎皓",
       "team": "Criss Crew",
@@ -43837,7 +45196,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 840,
+      "rank": 859,
       "athleteId": "cmjzpdkf2f5f9a09ffabfc",
       "athleteName": "金俊烨",
       "team": "延吉雪范",
@@ -43858,7 +45217,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 840,
+      "rank": 859,
       "athleteId": "cmjzpdk3k001lbfho3ro7vqgl",
       "athleteName": "张兆檬",
       "team": "King Pro Team",
@@ -43879,7 +45238,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 840,
+      "rank": 859,
       "athleteId": "cmjzpdk9cdb3a7d31055fe",
       "athleteName": "司忠正",
       "team": "长春市冬季运动管理中心",
@@ -43900,7 +45259,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 840,
+      "rank": 859,
       "athleteId": "cmjzpdk9w0070bfhojofn6m13",
       "athleteName": "赵天冉",
       "team": "King Pro Team",
@@ -43921,7 +45280,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 840,
+      "rank": 859,
       "athleteId": "cmjzpdk5q003fbfho5e0w98bk",
       "athleteName": "夏誉领",
       "team": "上海雪酷滑雪竞技队",
@@ -43942,7 +45301,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 840,
+      "rank": 859,
       "athleteId": "cmjzpdk3k001lbfho3ro7vqgl",
       "athleteName": "张兆檬",
       "team": "King Pro Team",
@@ -43963,7 +45322,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 840,
+      "rank": 859,
       "athleteId": "cmjzpdkc80090bfhouqhl68vg",
       "athleteName": "王子嘉",
       "team": "内蒙古嘉灏体育",
@@ -43984,7 +45343,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 840,
+      "rank": 859,
       "athleteId": "cmjzpdk96006cbfho14znv0uq",
       "athleteName": "徐艺玮",
       "team": "河北省体育局冬季运动中心",
@@ -44005,7 +45364,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 840,
+      "rank": 859,
       "athleteId": "cmjzpdkiv00eibfhomj9j7tlk",
       "athleteName": "辛博",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -44026,7 +45385,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 840,
+      "rank": 859,
       "athleteId": "cmjzpdkce66dfeff3253c3",
       "athleteName": "童科军",
       "team": "五家渠市金科实验",
@@ -44047,7 +45406,28 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 853,
+      "rank": 859,
+      "athleteId": "athlete-Zhouyiyi-个人",
+      "athleteName": "Zhouyiyi",
+      "team": "个人",
+      "totalPoints": 110,
+      "competitionCount": 1,
+      "bestRank": 20,
+      "avgPoints": 110.0,
+      "ageGroup": "U11",
+      "gender": "女子组",
+      "rankChange": 0,
+      "pointsBreakdown": [
+        {
+          "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+          "location": "张家口崇礼雪如意滑雪场",
+          "points": 110,
+          "rank": 20
+        }
+      ]
+    },
+    {
+      "rank": 873,
       "athleteId": "athlete_马照然_大连奥萨体育文化有限",
       "athleteName": "马照然",
       "team": "大连奥萨体育文化有限公司",
@@ -44068,7 +45448,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 853,
+      "rank": 873,
       "athleteId": "athlete-孙翎皓-Criss-Crew",
       "athleteName": "孙翎皓",
       "team": "Criss Crew",
@@ -44089,7 +45469,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 853,
+      "rank": 873,
       "athleteId": "athlete-刘奇翀-四平市冬季运动管理中心",
       "athleteName": "刘奇翀",
       "team": "四平市冬季运动管理中心",
@@ -44110,7 +45490,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 853,
+      "rank": 873,
       "athleteId": "cmjzpdk2059cb0422f53e3",
       "athleteName": "孙昊洋",
       "team": "上海市静安区滑雪协会",
@@ -44131,7 +45511,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 853,
+      "rank": 873,
       "athleteId": "cmjzpdk53301831ab2963a",
       "athleteName": "刘泽萱",
       "team": "吉林峰尚青教体育文化产业有限公司",
@@ -44152,7 +45532,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 853,
+      "rank": 873,
       "athleteId": "cmjzpdk611e787dc6c966c",
       "athleteName": "董天赋",
       "team": "长春市冬季运动管理中心",
@@ -44173,7 +45553,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 853,
+      "rank": 873,
       "athleteId": "cmjzpdk462ffa2ea7b41f5",
       "athleteName": "孙小晰",
       "team": "沈抚改革创新示范区体育联合会",
@@ -44194,7 +45574,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 853,
+      "rank": 873,
       "athleteId": "cmjzpdk5t003ibfhocx6w9f2u",
       "athleteName": "周豫",
       "team": "北京虎村竞技体育有限公司",
@@ -44215,7 +45595,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 853,
+      "rank": 873,
       "athleteId": "cmjzpdk3o001obfhodbkhcpfl",
       "athleteName": "高怡雯",
       "team": "北京天高云淡体育有限公司",
@@ -44236,7 +45616,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 853,
+      "rank": 873,
       "athleteId": "cmjzpdkcb0093bfho0ocki2j0",
       "athleteName": "江显晨",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -44257,7 +45637,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 853,
+      "rank": 873,
       "athleteId": "cmjzpdk99006fbfhowh2pew1l",
       "athleteName": "史怀竺",
       "team": "大连雨彤体育赛事俱乐部",
@@ -44278,7 +45658,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 853,
+      "rank": 873,
       "athleteId": "cmjzpdkiz00elbfhowy5fi3bf",
       "athleteName": "黄铸轩",
       "team": "个人",
@@ -44299,7 +45679,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 853,
+      "rank": 873,
       "athleteId": "cmjzpdkc81b33bce7e7321",
       "athleteName": "刘鑫泽",
       "team": "ACE竞技滑雪队",
@@ -44320,7 +45700,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 853,
+      "rank": 873,
       "athleteId": "cmjzpdkgs00cubfho86ndwawc",
       "athleteName": "杜美佳妮",
       "team": "北京佩士体育有限公司",
@@ -44341,7 +45721,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 867,
+      "rank": 887,
       "athleteId": "athlete_董林枫_RSKI竞技滑雪队队",
       "athleteName": "董林枫",
       "team": "RSKI竞技滑雪队队",
@@ -44362,7 +45742,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 867,
+      "rank": 887,
       "athleteId": "athlete-程让上海雪酷滑雪竞技队",
       "athleteName": "程让",
       "team": "上海雪酷滑雪竞技队",
@@ -44383,7 +45763,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 867,
+      "rank": 887,
       "athleteId": "cmjzpdkc19762bcc1ab9ec",
       "athleteName": "郑伟伦",
       "team": "沈抚改革创新示范区体育联合会",
@@ -44404,7 +45784,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 867,
+      "rank": 887,
       "athleteId": "cmjzpdk9ed47557dbe6a1d",
       "athleteName": "左珈宁",
       "team": "沈抚改革创新示范区体育联合会",
@@ -44425,7 +45805,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 867,
+      "rank": 887,
       "athleteId": "cmjzpdk444bb9f37383773",
       "athleteName": "王艺诺",
       "team": "吉林省体育局雪上运动管理中心",
@@ -44446,7 +45826,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 867,
+      "rank": 887,
       "athleteId": "cmjzpdk5w003lbfho6honytan",
       "athleteName": "张柏轩",
       "team": "MAYA TEAM",
@@ -44467,7 +45847,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 867,
+      "rank": 887,
       "athleteId": "cmjzpdk3s001rbfhonoy1krhm",
       "athleteName": "周芸溪",
       "team": "MAYA TEAM",
@@ -44488,7 +45868,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 867,
+      "rank": 887,
       "athleteId": "cmjzpdkce0096bfho9w4cv43j",
       "athleteName": "孟裕皓",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -44509,7 +45889,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 867,
+      "rank": 887,
       "athleteId": "cmjzpdk9d006ibfho62rtb6mv",
       "athleteName": "叶丽扎·别克苏力坦",
       "team": "新疆维吾尔自治区冬季运动训练中心",
@@ -44530,7 +45910,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 867,
+      "rank": 887,
       "athleteId": "cmjzpdkj200eobfhou82m9qil",
       "athleteName": "唐鸿博",
       "team": "KingProTeam",
@@ -44551,7 +45931,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 867,
+      "rank": 887,
       "athleteId": "cmjzpdk327e2fabf4635ac",
       "athleteName": "孙嘉泽",
       "team": "沈抚改革创新示范区体育联合会",
@@ -44572,7 +45952,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 878,
+      "rank": 898,
       "athleteId": "athlete-刘奇翀-四平市冬季运动管理中心",
       "athleteName": "刘奇翀",
       "team": "四平市冬季运动管理中心",
@@ -44593,7 +45973,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 878,
+      "rank": 898,
       "athleteId": "cmjzpdkd3b5f91832cd8f1",
       "athleteName": "刘钥宸",
       "team": "沈抚改革创新示范区体育联合会",
@@ -44614,7 +45994,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 878,
+      "rank": 898,
       "athleteId": "cmjzpdk56768c68ea847d0",
       "athleteName": "高希言",
       "team": "沈抚改革创新示范区体育联合会",
@@ -44635,7 +46015,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 878,
+      "rank": 898,
       "athleteId": "cmjzpdkja00eubfho4y4pipqd",
       "athleteName": "刘馨泽",
       "team": "吉林峰尚青教体育文化产业有限公司",
@@ -44656,7 +46036,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 878,
+      "rank": 898,
       "athleteId": "cmjzpdk5z003obfhomuy5i56z",
       "athleteName": "朱朗灿",
       "team": "个人",
@@ -44677,7 +46057,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 878,
+      "rank": 898,
       "athleteId": "cmjzpdkci0099bfhoj2fomk7j",
       "athleteName": "李柏翔",
       "team": "MAYA TEAM",
@@ -44698,7 +46078,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 878,
+      "rank": 898,
       "athleteId": "cmjzpdk9g006lbfhonossoltj",
       "athleteName": "刘于靖璇",
       "team": "丝绸之路青少年俱乐部",
@@ -44719,7 +46099,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 878,
+      "rank": 898,
       "athleteId": "cmjzpdkj600erbfhoagwamkpg",
       "athleteName": "杜鑫",
       "team": "张家口市足球和冰雪运动学校",
@@ -44740,7 +46120,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 886,
+      "rank": 906,
       "athleteId": "athlete_龙思祺_广州雪迹文化体育发展",
       "athleteName": "龙思祺",
       "team": "广州雪迹文化体育发展有限公司",
@@ -44761,7 +46141,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 886,
+      "rank": 906,
       "athleteId": "cmjzpdka254f827784e4ca",
       "athleteName": "许原岑",
       "team": "沈抚改革创新示范区体育联合会",
@@ -44782,7 +46162,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 886,
+      "rank": 906,
       "athleteId": "cmjzpdka621f1bf4cf0867",
       "athleteName": "刘子木",
       "team": "沈抚改革创新示范区体育联合会",
@@ -44803,7 +46183,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 886,
+      "rank": 906,
       "athleteId": "cmjzpdk23e667a043521ff",
       "athleteName": "陈梓萌",
       "team": "King Pro Team",
@@ -44824,7 +46204,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 886,
+      "rank": 906,
       "athleteId": "cmjzpdk62003rbfho276bqrn6",
       "athleteName": "程子航",
       "team": "北京虎村竞技体育有限公司",
@@ -44845,7 +46225,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 886,
+      "rank": 906,
       "athleteId": "cmjzpdkcm009cbfhotv2stqaf",
       "athleteName": "陶勃遇",
       "team": "锐冠青少年竞技滑雪队",
@@ -44866,7 +46246,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 886,
+      "rank": 906,
       "athleteId": "cmjzpdk9j006obfhor1vkbpvi",
       "athleteName": "王羽佳",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -44887,7 +46267,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 886,
+      "rank": 906,
       "athleteId": "cmjzpdkja00eubfho4y4pipqd",
       "athleteName": "刘馨泽",
       "team": "吉林峰尚青教体育文化产业有限公司",
@@ -44908,7 +46288,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 894,
+      "rank": 914,
       "athleteId": "athlete-马铂淙-个人",
       "athleteName": "马铂淙",
       "team": "个人",
@@ -44929,7 +46309,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 894,
+      "rank": 914,
       "athleteId": "athlete_王梓墨_四川体育职业学院",
       "athleteName": "王梓墨",
       "team": "四川体育职业学院",
@@ -44950,7 +46330,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 894,
+      "rank": 914,
       "athleteId": "cmjzpdk443229a11685a6c",
       "athleteName": "张峰睿",
       "team": "沈抚改革创新示范区体育联合会",
@@ -44971,7 +46351,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 894,
+      "rank": 914,
       "athleteId": "cmjzpdkc081c78a7bb12eb",
       "athleteName": "张涵舒",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -44992,7 +46372,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 894,
+      "rank": 914,
       "athleteId": "cmjzpdk65003ubfhov0tbtt6p",
       "athleteName": "聂铭熙",
       "team": "MAYA TEAM",
@@ -45013,7 +46393,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 894,
+      "rank": 914,
       "athleteId": "cmjzpdkcq009fbfhoxa5ipl1g",
       "athleteName": "仲作成",
       "team": "MAYA TEAM",
@@ -45034,7 +46414,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 894,
+      "rank": 914,
       "athleteId": "cmjzpdk9n006rbfhoom69d3b4",
       "athleteName": "黎若水",
       "team": "个人",
@@ -45055,7 +46435,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 901,
+      "rank": 921,
       "athleteId": "cmjzpdka7292ceb97e1295",
       "athleteName": "李承儒",
       "team": "长春市冬季运动管理中心",
@@ -45076,7 +46456,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 901,
+      "rank": 921,
       "athleteId": "cmjzpdkab5c6a01e772b47",
       "athleteName": "孙晟轩",
       "team": "个人",
@@ -45097,7 +46477,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 901,
+      "rank": 921,
       "athleteId": "cmjzpdkf0e9dd7955cfa65",
       "athleteName": "焦禹侨",
       "team": "北京虎村竞技体育有限公司",
@@ -45118,7 +46498,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 901,
+      "rank": 921,
       "athleteId": "cmjzpdk69003xbfhomaabax6c",
       "athleteName": "金子彦",
       "team": "个人",
@@ -45139,7 +46519,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 901,
+      "rank": 921,
       "athleteId": "cmjzpdkct009ibfhoibkwcoe4",
       "athleteName": "郭天泽",
       "team": "MAYA TEAM",
@@ -45160,7 +46540,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 901,
+      "rank": 921,
       "athleteId": "cmjzpdk9q006ubfhol25rw40e",
       "athleteName": "刘芊焱",
       "team": "个人",
@@ -45181,7 +46561,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 907,
+      "rank": 927,
       "athleteId": "cmjzpdk6d1ab1276ea5ec9",
       "athleteName": "梁洺嘉",
       "team": "沈抚改革创新示范区体育联合会",
@@ -45202,7 +46582,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 907,
+      "rank": 927,
       "athleteId": "cmjzpdk2d90919e13c0434",
       "athleteName": "刘子乐",
       "team": "King Pro Team",
@@ -45223,7 +46603,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 907,
+      "rank": 927,
       "athleteId": "cmjzpdk220da0f9fb87c6a",
       "athleteName": "朴恩裕",
       "team": "延吉雪范",
@@ -45244,7 +46624,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 907,
+      "rank": 927,
       "athleteId": "cmjzpdk6c0040bfhor621ft1n",
       "athleteName": "陈鑫艺",
       "team": "四川体育职业学院",
@@ -45265,7 +46645,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 907,
+      "rank": 927,
       "athleteId": "cmjzpdkcx009lbfhovbf8c77r",
       "athleteName": "袁子宸",
       "team": "重庆巴蜀科学城中学校",
@@ -45286,7 +46666,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 907,
+      "rank": 927,
       "athleteId": "cmjzpdk9t006xbfhobc0rcef9",
       "athleteName": "吴宛霖",
       "team": "北京天高云淡体育有限公司",
@@ -45307,7 +46687,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 913,
+      "rank": 933,
       "athleteId": "cmjzpdk89c3e2c16c05169",
       "athleteName": "安泓宇",
       "team": "吉林峰尚青教体育文化产业有限公司",
@@ -45328,7 +46708,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 913,
+      "rank": 933,
       "athleteId": "cmjzpdkd1151fa31fa8445",
       "athleteName": "梁恩泽",
       "team": "上海市静安区滑雪协会",
@@ -45349,7 +46729,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 913,
+      "rank": 933,
       "athleteId": "cmjzpdk106b5e569059a7d",
       "athleteName": "刘彦熠",
       "team": "上海市静安区滑雪协会",
@@ -45370,7 +46750,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 913,
+      "rank": 933,
       "athleteId": "cmjzpdk6f0043bfhotms7f5yw",
       "athleteName": "孙奥荣",
       "team": "四川体育职业学院",
@@ -45391,7 +46771,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 913,
+      "rank": 933,
       "athleteId": "cmjzpdkd0009obfhoo2lnifjm",
       "athleteName": "张亚琨",
       "team": "大连雨彤体育赛事俱乐部",
@@ -45412,7 +46792,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 913,
+      "rank": 933,
       "athleteId": "cmjzpdk9w0070bfhojofn6m13",
       "athleteName": "赵天冉",
       "team": "King Pro Team",
@@ -45433,7 +46813,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 919,
+      "rank": 939,
       "athleteId": "cmjzpdkc1670dede3eb330",
       "athleteName": "崔铭浩",
       "team": "沈抚改革创新示范区体育联合会",
@@ -45454,7 +46834,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 919,
+      "rank": 939,
       "athleteId": "cmjzpdkf9024e5c3bc4b2d",
       "athleteName": "姜胤伯",
       "team": "长春市极刃体育发展有限公司",
@@ -45475,7 +46855,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 919,
+      "rank": 939,
       "athleteId": "cmjzpdk6j0046bfhov1sarue5",
       "athleteName": "赵梓聿",
       "team": "MAYA TEAM",
@@ -45496,7 +46876,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 919,
+      "rank": 939,
       "athleteId": "cmjzpdkd4009rbfhoi14egzfo",
       "athleteName": "贾博翔",
       "team": "锐冠青少年竞技滑雪队",
@@ -45517,7 +46897,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 919,
+      "rank": 939,
       "athleteId": "cmjzpdka00073bfhovx3noqyi",
       "athleteName": "周琪",
       "team": "锐冠青少年竞技滑雪队",
@@ -45538,7 +46918,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 924,
+      "rank": 944,
       "athleteId": "cmjzpdk0c6c85751d1910c",
       "athleteName": "李俊毅",
       "team": "长春市极刃体育发展有限公司",
@@ -45559,7 +46939,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 924,
+      "rank": 944,
       "athleteId": "cmjzpdkb3b681fa7dae79f",
       "athleteName": "陈冠霖",
       "team": "沈抚改革创新示范区体育联合会",
@@ -45580,7 +46960,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 924,
+      "rank": 944,
       "athleteId": "cmjzpdk6m0049bfho5dxuehct",
       "athleteName": "闫慕垚",
       "team": "大连雨彤体育赛事俱乐部",
@@ -45601,7 +46981,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 924,
+      "rank": 944,
       "athleteId": "cmjzpdkd8009ubfhotio8k1cy",
       "athleteName": "井诚",
       "team": "中麟体育",
@@ -45622,7 +47002,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 924,
+      "rank": 944,
       "athleteId": "cmjzpdka40076bfhorgd2m8ou",
       "athleteName": "亢正熙",
       "team": "四川体育职业学院",
@@ -45643,7 +47023,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 929,
+      "rank": 949,
       "athleteId": "cmjzpdk05d5be7c2407431",
       "athleteName": "孟奕成",
       "team": "沈抚改革创新示范区体育联合会",
@@ -45664,7 +47044,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 929,
+      "rank": 949,
       "athleteId": "cmjzpdk6q004cbfhod35sxrf6",
       "athleteName": "杨滨睿",
       "team": "MAYA TEAM",
@@ -45685,7 +47065,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 929,
+      "rank": 949,
       "athleteId": "cmjzpdkdc009xbfhoo2klfjap",
       "athleteName": "洪戬",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -45706,7 +47086,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 929,
+      "rank": 949,
       "athleteId": "cmjzpdka70079bfho3f7ql9v4",
       "athleteName": "王奕棽",
       "team": "速森体育",
@@ -45727,7 +47107,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 933,
+      "rank": 953,
       "athleteId": "cmjzpdk6d8c714f1752090",
       "athleteName": "尹一诺",
       "team": "吉林峰尚青教体育文化产业有限公司",
@@ -45748,7 +47128,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 933,
+      "rank": 953,
       "athleteId": "cmjzpdk6t004fbfhoynftnzxa",
       "athleteName": "景子融",
       "team": "中麟体育",
@@ -45769,7 +47149,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 933,
+      "rank": 953,
       "athleteId": "cmjzpdkdh00a0bfho4wxoxzvt",
       "athleteName": "张晧泽",
       "team": "太原市第二少年体育学校",
@@ -45790,7 +47170,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 933,
+      "rank": 953,
       "athleteId": "cmjzpdkaa007cbfho0t5qqqm9",
       "athleteName": "陈卓",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -45811,7 +47191,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 937,
+      "rank": 957,
       "athleteId": "cmjzpdk0065df96127f253",
       "athleteName": "吴杭熹",
       "team": "沈抚改革创新示范区体育联合会",
@@ -45832,7 +47212,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 937,
+      "rank": 957,
       "athleteId": "cmjzpdk6w004ibfhowp9zh349",
       "athleteName": "祖与辰",
       "team": "秦皇岛狂雪滑雪俱乐部",
@@ -45853,7 +47233,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 937,
+      "rank": 957,
       "athleteId": "cmjzpdkdl00a3bfhobgcrmoxf",
       "athleteName": "郭芮名",
       "team": "河北省体育局冬季运动中心",
@@ -45874,7 +47254,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 940,
+      "rank": 960,
       "athleteId": "cmjzpdk016165312d78a64",
       "athleteName": "梁洺睿",
       "team": "沈抚改革创新示范区体育联合会",
@@ -45895,7 +47275,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 940,
+      "rank": 960,
       "athleteId": "cmjzpdk70004lbfhoemd7yndw",
       "athleteName": "吕毅",
       "team": "太原市第二少年体育学校",
@@ -45916,7 +47296,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 940,
+      "rank": 960,
       "athleteId": "cmjzpdkdq00a6bfhooeygbvcg",
       "athleteName": "李钊羽",
       "team": "个人",
@@ -45937,7 +47317,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 943,
+      "rank": 963,
       "athleteId": "cmjzpdkbd0752b5758b9b2",
       "athleteName": "崔凯棋",
       "team": "沈抚改革创新示范区体育联合会",
@@ -45958,7 +47338,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 943,
+      "rank": 963,
       "athleteId": "cmjzpdk74004obfhof6076pvg",
       "athleteName": "王博晨昊",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -45979,7 +47359,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 943,
+      "rank": 963,
       "athleteId": "cmjzpdkdu00a9bfhoglttsdpp",
       "athleteName": "谢书敖",
       "team": "零站单板滑雪俱乐部",
@@ -46000,7 +47380,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 946,
+      "rank": 966,
       "athleteId": "cmjzpdkdy00acbfhof8j22w6u",
       "athleteName": "王浩然",
       "team": "中麟体育",
@@ -46021,7 +47401,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 947,
+      "rank": 967,
       "athleteId": "cmjzpdke200afbfho46pb1bph",
       "athleteName": "陈浩铭",
       "team": "四川体育职业学院",
@@ -46042,7 +47422,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 948,
+      "rank": 968,
       "athleteId": "cmjzpdke600aibfhorlv0ah7f",
       "athleteName": "徐悦宾",
       "team": "北京虎村竞技体育有限公司",
@@ -46063,7 +47443,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 949,
+      "rank": 969,
       "athleteId": "cmjzpdke900albfhoigjeyd76",
       "athleteName": "暴城睿",
       "team": "辽宁极限体育",
@@ -46084,7 +47464,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 950,
+      "rank": 970,
       "athleteId": "cmjzpdked00aobfhobpgyq4nt",
       "athleteName": "靳淏宬",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -46105,7 +47485,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 951,
+      "rank": 971,
       "athleteId": "cmjzpdkeg00arbfhofvp5x8xt",
       "athleteName": "熊品超",
       "team": "重庆埃尔派体育文化传播有限公司",
@@ -46126,7 +47506,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 952,
+      "rank": 972,
       "athleteId": "cmjzpdkek00aubfhonxqvxggw",
       "athleteName": "孙裕恒",
       "team": "北京市朝阳区第三少儿业余体校",
@@ -46147,7 +47527,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 953,
+      "rank": 973,
       "athleteId": "cmjzpdken00axbfhox6zhp4mo",
       "athleteName": "陈羿同",
       "team": "零站体育",
@@ -46168,7 +47548,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 954,
+      "rank": 974,
       "athleteId": "cmjzpdker00b0bfhocrpgfxmf",
       "athleteName": "陈宥廷",
       "team": "上海雪酷滑雪竞技队",
@@ -46189,7 +47569,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     },
     {
-      "rank": 955,
+      "rank": 975,
       "athleteId": "cmjzpdkeu00b3bfhoz7xisfn9",
       "athleteName": "杨昊泽",
       "team": "速森体育",
@@ -46210,7 +47590,7 @@ export const totalRankingsData: TotalRankingsData = {
       ]
     }
   ],
-  "total": 955,
+  "total": 975,
   "filters": {
     "ageGroups": [
       "U11",
@@ -46258,9 +47638,9 @@ export const totalRankingsData: TotalRankingsData = {
     ]
   },
   "stats": {
-    "athleteCount": 630,
-    "competitionCount": 18,
-    "totalResults": 1421
+    "athleteCount": 640,
+    "competitionCount": 19,
+    "totalResults": 1486
   },
-  "generatedAt": "2026-03-03T10:01:47.212437"
+  "generatedAt": "2026-03-03T17:15:34.211854"
 };

@@ -1,6 +1,6 @@
 // 最新比赛成绩数据
 // 自动生成，请勿手动修改
-// 生成时间: 2026-03-03T10:01:47.168656
+// 生成时间: 2026-03-03T17:15:34.157403
 
 export interface AthleteResult {
   rank: number
@@ -2079,6 +2079,624 @@ export const latestResults: ResultsData = {
               "birthYear": "2009",
               "bestScore": 9.0,
               "points": 212
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "competition": "2025-2026赛季全国自由式滑雪坡面障碍技巧U系列比赛（雪如意站）",
+      "sport": "自由式滑雪坡面障碍技巧",
+      "sportType": "freestyle-slopestyle",
+      "location": "张家口崇礼雪如意滑雪场",
+      "date": "2026-02-08",
+      "endDate": "2026-02-10",
+      "status": "completed",
+      "events": [
+        {
+          "discipline": "坡面障碍技巧",
+          "ageGroup": "U11",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 64,
+              "name": "常嘉林",
+              "team": "广西射击射箭运动发展中心",
+              "birthYear": "2014",
+              "bestScore": 88.67,
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 62,
+              "name": "张墨凡",
+              "team": "北京市冬季运动管理中心",
+              "birthYear": "2014",
+              "bestScore": 85.67,
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 82,
+              "name": "吴雨桐",
+              "team": "个人",
+              "birthYear": "2017",
+              "bestScore": 75.0,
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 71,
+              "name": "赵铠轩",
+              "team": "河南省体育局",
+              "birthYear": "2015",
+              "bestScore": 61.0,
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 70,
+              "name": "王俊熙",
+              "team": "河南省体育局",
+              "birthYear": "2015",
+              "bestScore": 58.0,
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 69,
+              "name": "张梓童",
+              "team": "河南省体育局",
+              "birthYear": "2016",
+              "bestScore": 55.33,
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 66,
+              "name": "赵子钰",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2015",
+              "bestScore": 52.67,
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 65,
+              "name": "崔芃森",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2015",
+              "bestScore": 50.33,
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 73,
+              "name": "芦梓恒",
+              "team": "纳西亚",
+              "bestScore": 46.0,
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 74,
+              "name": "陈维仁",
+              "team": "上海雪酷滑雪竞技队",
+              "bestScore": 42.0,
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 77,
+              "name": "卢彦词",
+              "team": "四川体育职业学院",
+              "birthYear": "2014",
+              "bestScore": 35.33,
+              "points": 176
+            }
+          ]
+        },
+        {
+          "discipline": "坡面障碍技巧",
+          "ageGroup": "U11",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 44,
+              "name": "张天馨",
+              "team": "石家庄市冰雪与足球运动中心",
+              "bestScore": 91.33,
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 43,
+              "name": "李诗沫",
+              "team": "石家庄市冰雪与足球运动中心",
+              "birthYear": "2015",
+              "bestScore": 87.33,
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 33,
+              "name": "甄芝漫",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2014",
+              "bestScore": 84.67,
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 45,
+              "name": "武温暖",
+              "team": "石家庄市冰雪与足球运动中心",
+              "birthYear": "2014",
+              "bestScore": 75.33,
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 61,
+              "name": "闫妍",
+              "team": "个人",
+              "birthYear": "2015",
+              "bestScore": 73.67,
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 50,
+              "name": "赵紫琪",
+              "team": "四川体育职业学院",
+              "birthYear": "2014",
+              "bestScore": 72.67,
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 30,
+              "name": "欧子娴",
+              "team": "成都热雪奇迹",
+              "birthYear": "2016",
+              "bestScore": 72.0,
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 64,
+              "name": "张耘萌",
+              "team": "个人",
+              "bestScore": 70.67,
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 56,
+              "name": "王玗希",
+              "team": "个人",
+              "birthYear": "2016",
+              "bestScore": 70.0,
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 36,
+              "name": "王淑哲",
+              "team": "河南省体育局",
+              "birthYear": "2016",
+              "bestScore": 62.67,
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 46,
+              "name": "韩小贝",
+              "team": "石家庄市冰雪与足球运动中心",
+              "bestScore": 59.33,
+              "points": 176
+            },
+            {
+              "rank": 12,
+              "bib": 57,
+              "name": "纪栩妍",
+              "team": "个人",
+              "bestScore": 55.33,
+              "points": 166
+            },
+            {
+              "rank": 13,
+              "bib": 48,
+              "name": "任可心",
+              "team": "四川体育职业学院",
+              "birthYear": "2015",
+              "bestScore": 49.0,
+              "points": 157
+            },
+            {
+              "rank": 14,
+              "bib": 59,
+              "name": "王汝懿",
+              "team": "个人",
+              "bestScore": 46.33,
+              "points": 149
+            },
+            {
+              "rank": 15,
+              "bib": 38,
+              "name": "孙焕轲",
+              "team": "河南省体育局",
+              "birthYear": "2016",
+              "bestScore": 32.33,
+              "points": 141
+            },
+            {
+              "rank": 16,
+              "bib": 49,
+              "name": "陈科羽",
+              "team": "四川体育职业学院",
+              "birthYear": "2016",
+              "bestScore": 30.0,
+              "points": 134
+            },
+            {
+              "rank": 17,
+              "bib": 63,
+              "name": "孙婉迪",
+              "team": "个人",
+              "birthYear": "2016",
+              "bestScore": 25.33,
+              "points": 127
+            },
+            {
+              "rank": 18,
+              "bib": 60,
+              "name": "孙焕轶",
+              "team": "个人",
+              "birthYear": "2014",
+              "bestScore": 18.0,
+              "points": 121
+            },
+            {
+              "rank": 19,
+              "bib": 62,
+              "name": "李佳馨",
+              "team": "个人",
+              "birthYear": "2016",
+              "bestScore": 15.67,
+              "points": 115
+            },
+            {
+              "rank": 20,
+              "bib": 58,
+              "name": "Zhouyiyi",
+              "team": "个人",
+              "bestScore": 11.67,
+              "points": 110
+            }
+          ]
+        },
+        {
+          "discipline": "坡面障碍技巧",
+          "ageGroup": "U15",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 72,
+              "name": "璩恩慧",
+              "team": "河南省体育局",
+              "birthYear": "2011",
+              "bestScore": 86.33,
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 80,
+              "name": "邓明涛",
+              "team": "四川体育职业学院",
+              "birthYear": "2010",
+              "bestScore": 80.0,
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 67,
+              "name": "张乔淳佑",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2012",
+              "bestScore": 73.33,
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 76,
+              "name": "陈飞扬",
+              "team": "上海雪酷滑雪竞技队",
+              "bestScore": 71.0,
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 79,
+              "name": "王培旭",
+              "team": "四川体育职业学院",
+              "birthYear": "2010",
+              "bestScore": 68.0,
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 78,
+              "name": "周英杰",
+              "team": "四川体育职业学院",
+              "birthYear": "2013",
+              "bestScore": 65.67,
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 63,
+              "name": "王翊宁",
+              "team": "北京市冬季运动管理中心",
+              "birthYear": "2012",
+              "bestScore": 50.33,
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 83,
+              "name": "刘锐淇",
+              "team": "个人",
+              "bestScore": 47.67,
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 81,
+              "name": "刘栩辰",
+              "team": "重庆市冬季运动管理中心",
+              "birthYear": "2013",
+              "bestScore": 46.33,
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 75,
+              "name": "陈鑫昊",
+              "team": "上海雪酷滑雪竞技队",
+              "bestScore": 42.67,
+              "points": 187
+            }
+          ]
+        },
+        {
+          "discipline": "坡面障碍技巧",
+          "ageGroup": "U15",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 52,
+              "name": "周紫君",
+              "team": "四川体育职业学院",
+              "birthYear": "2011",
+              "bestScore": 87.33,
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 55,
+              "name": "韩萨仁其木格",
+              "team": "小崔运动",
+              "birthYear": "2013",
+              "bestScore": 80.67,
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 65,
+              "name": "周绮润",
+              "team": "个人",
+              "birthYear": "2012",
+              "bestScore": 78.0,
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 34,
+              "name": "平梓涵",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2010",
+              "bestScore": 74.33,
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 29,
+              "name": "李雅馨",
+              "team": "北京市冬季运动管理中心",
+              "birthYear": "2011",
+              "bestScore": 73.0,
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 41,
+              "name": "罗优璇",
+              "team": "河南省体育局",
+              "birthYear": "2010",
+              "bestScore": 69.33,
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 39,
+              "name": "陈奕歌",
+              "team": "河南省体育局",
+              "birthYear": "2012",
+              "bestScore": 62.33,
+              "points": 226
+            },
+            {
+              "rank": 8,
+              "bib": 42,
+              "name": "赵雯溪",
+              "team": "河南省体育局",
+              "bestScore": 58.0,
+              "points": 212
+            },
+            {
+              "rank": 9,
+              "bib": 40,
+              "name": "殷玉萱",
+              "team": "河南省体育局",
+              "bestScore": 55.0,
+              "points": 199
+            },
+            {
+              "rank": 10,
+              "bib": 51,
+              "name": "王珈绮",
+              "team": "四川体育职业学院",
+              "birthYear": "2013",
+              "bestScore": 52.33,
+              "points": 187
+            },
+            {
+              "rank": 11,
+              "bib": 47,
+              "name": "王珠彤",
+              "team": "石家庄市冰雪与足球运动中心",
+              "birthYear": "2011",
+              "bestScore": 50.33,
+              "points": 176
+            },
+            {
+              "rank": 12,
+              "bib": 53,
+              "name": "杨芷妍",
+              "team": "四川体育职业学院",
+              "birthYear": "2011",
+              "bestScore": 48.0,
+              "points": 166
+            },
+            {
+              "rank": 13,
+              "bib": 54,
+              "name": "叶欣悦",
+              "team": "四川体育职业学院",
+              "birthYear": "2011",
+              "bestScore": 40.33,
+              "points": 157
+            }
+          ]
+        },
+        {
+          "discipline": "坡面障碍技巧",
+          "ageGroup": "U18",
+          "gender": "男子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 68,
+              "name": "张天迈",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2009",
+              "bestScore": 76.33,
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 84,
+              "name": "李胤希",
+              "team": "个人",
+              "bestScore": 62.67,
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 85,
+              "name": "卢兆轩",
+              "team": "个人",
+              "bestScore": 3.0,
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 88,
+              "name": "李昊然",
+              "team": "个人",
+              "bestScore": 2.33,
+              "points": 280
+            },
+            {
+              "rank": 5,
+              "bib": 86,
+              "name": "贾博阳",
+              "team": "个人",
+              "bestScore": 2.0,
+              "points": 260
+            },
+            {
+              "rank": 6,
+              "bib": 89,
+              "name": "周一尘",
+              "team": "个人",
+              "bestScore": 1.67,
+              "points": 242
+            },
+            {
+              "rank": 7,
+              "bib": 87,
+              "name": "李泽瀚",
+              "team": "个人",
+              "bestScore": 1.33,
+              "points": 226
+            }
+          ]
+        },
+        {
+          "discipline": "坡面障碍技巧",
+          "ageGroup": "U18",
+          "gender": "女子组",
+          "athletes": [
+            {
+              "rank": 1,
+              "bib": 35,
+              "name": "夏可馨",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2009",
+              "bestScore": 78.33,
+              "points": 360
+            },
+            {
+              "rank": 2,
+              "bib": 66,
+              "name": "陈露凝",
+              "team": "个人",
+              "birthYear": "2010",
+              "bestScore": 64.67,
+              "points": 329
+            },
+            {
+              "rank": 3,
+              "bib": 26,
+              "name": "高梓曦",
+              "team": "A+自由式滑雪队",
+              "bestScore": 60.0,
+              "points": 303
+            },
+            {
+              "rank": 4,
+              "bib": 27,
+              "name": "齐馨",
+              "team": "A+自由式滑雪队",
+              "birthYear": "2009",
+              "bestScore": 15.33,
+              "points": 280
             }
           ]
         }
