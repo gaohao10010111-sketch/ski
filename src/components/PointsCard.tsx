@@ -273,9 +273,9 @@ export default function PointsCard({
           <div style={{ height: 52, width: 60, backgroundImage: `url(${basePath}/logos/huati-vertical.png)`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }} />
         </div>
 
-        {/* ===== Brand text top center ===== */}
-        <div className="absolute z-20" style={{ top: 14, left: 0, right: 0, textAlign: 'center' }}>
-          <p className="font-black tracking-[0.2em]" style={{ fontSize: 22, color: 'rgba(255,255,255,0.95)', textShadow: '0 2px 6px rgba(0,0,0,0.4)' }}>
+        {/* ===== Brand text — large, below logos ===== */}
+        <div className="absolute z-20" style={{ top: 72, left: 0, right: 0, textAlign: 'center' }}>
+          <p className="font-black tracking-[0.25em]" style={{ fontSize: 30, color: 'rgba(255,255,255,0.97)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
             {dataType === 'race' ? shortCompName : '中国滑雪U赛事'}
           </p>
         </div>
