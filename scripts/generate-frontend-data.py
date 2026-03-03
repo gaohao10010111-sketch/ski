@@ -427,9 +427,9 @@ def generate_club_rankings(conn):
     c = conn.cursor()
 
     results = c.execute('''
-        SELECT r.athleteId, r.points,
+        SELECT r.athleteId, r.points, r.rank, r.discipline,
                a.name as athleteName, a.team as athleteTeam,
-               c.sportType
+               c.sportType, c.id as competitionId
         FROM Result r
         JOIN Athlete a ON r.athleteId = a.id
         JOIN Competition c ON r.competitionId = c.id
@@ -440,7 +440,9 @@ def generate_club_rankings(conn):
 
     # Aggregate per club per sport type (total points across all sub-events)
     club_stats = defaultdict(lambda: {
-        'team': '', 'sportType': '', 'totalPoints': 0, 'athletes': set()
+        'team': '', 'sportType': '', 'totalPoints': 0, 'athletes': set(),
+        'competitions': set(), 'disciplines': set(),
+        'goldCount': 0, 'silverCount': 0, 'bronzeCount': 0,
     })
 
     for r in results_dict:
@@ -454,6 +456,15 @@ def generate_club_rankings(conn):
         cs['sportType'] = merged
         cs['totalPoints'] += r['points'] or 0
         cs['athletes'].add(r['athleteId'])
+        cs['competitions'].add(r['competitionId'])
+        cs['disciplines'].add(r['discipline'])
+        rank = r['rank']
+        if rank == 1:
+            cs['goldCount'] += 1
+        elif rank == 2:
+            cs['silverCount'] += 1
+        elif rank == 3:
+            cs['bronzeCount'] += 1
 
     # Rank clubs per sport type
     sport_rankings_list = []
@@ -481,6 +492,11 @@ def generate_club_rankings(conn):
                 'team': cs['team'],
                 'totalPoints': cs['totalPoints'],
                 'athleteCount': len(cs['athletes']),
+                'competitionCount': len(cs['competitions']),
+                'disciplineCount': len(cs['disciplines']),
+                'goldCount': cs['goldCount'],
+                'silverCount': cs['silverCount'],
+                'bronzeCount': cs['bronzeCount'],
             })
 
         sport_rankings_list.append({
@@ -491,12 +507,21 @@ def generate_club_rankings(conn):
         print(f'  {SPORT_TYPE_NAMES.get(main_st, main_st)}: {len(rankings)} clubs')
 
     # Build "all" overall ranking (sum across all sport types per club)
-    overall_stats = defaultdict(lambda: {'team': '', 'totalPoints': 0, 'athletes': set()})
+    overall_stats = defaultdict(lambda: {
+        'team': '', 'totalPoints': 0, 'athletes': set(),
+        'competitions': set(), 'disciplines': set(),
+        'goldCount': 0, 'silverCount': 0, 'bronzeCount': 0,
+    })
     for cs in club_stats.values():
         os_ = overall_stats[cs['team']]
         os_['team'] = cs['team']
         os_['totalPoints'] += cs['totalPoints']
         os_['athletes'].update(cs['athletes'])
+        os_['competitions'].update(cs['competitions'])
+        os_['disciplines'].update(cs['disciplines'])
+        os_['goldCount'] += cs['goldCount']
+        os_['silverCount'] += cs['silverCount']
+        os_['bronzeCount'] += cs['bronzeCount']
 
     overall_list = sorted(overall_stats.values(), key=lambda c: -c['totalPoints'])
     overall_rankings = []
@@ -510,6 +535,11 @@ def generate_club_rankings(conn):
             'team': cs['team'],
             'totalPoints': cs['totalPoints'],
             'athleteCount': len(cs['athletes']),
+            'competitionCount': len(cs['competitions']),
+            'disciplineCount': len(cs['disciplines']),
+            'goldCount': cs['goldCount'],
+            'silverCount': cs['silverCount'],
+            'bronzeCount': cs['bronzeCount'],
         })
     sport_rankings_list.insert(0, {
         'sportType': 'all',
@@ -542,6 +572,11 @@ export interface ClubRankingItem {{
   team: string;
   totalPoints: number;
   athleteCount: number;
+  competitionCount: number;
+  disciplineCount: number;
+  goldCount: number;
+  silverCount: number;
+  bronzeCount: number;
 }}
 
 export interface ClubSportRankings {{
