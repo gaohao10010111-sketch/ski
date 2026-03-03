@@ -268,9 +268,9 @@ export default function PointsCard({
         <SkiEquipment x={290} y={530} rotation={-40} scale={0.7} opacity={0.045} />
 
         {/* ===== Top-left logos (CSA + 华体冰雪) — same as nav bar ===== */}
-        <div className="absolute z-20 flex items-center gap-2" style={{ top: 10, left: 14 }}>
+        <div className="absolute z-20 flex items-center gap-1" style={{ top: 10, left: 14 }}>
           <div style={{ width: 36, height: 36, borderRadius: '50%', backgroundImage: `url(${basePath}/logos/csa.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
-          <div style={{ height: 42, width: 'auto', backgroundImage: `url(${basePath}/logos/huati-vertical.png)`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', minWidth: 50 }} />
+          <div style={{ height: 52, width: 60, backgroundImage: `url(${basePath}/logos/huati-vertical.png)`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }} />
         </div>
 
         {/* ===== Brand text top center ===== */}
