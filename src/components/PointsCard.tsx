@@ -358,10 +358,11 @@ export default function PointsCard({
 
           {/* Bottom: logos + QR */}
           <div className="flex items-center justify-between w-full" style={{ paddingTop: 10, borderTop: '1px solid #dde6ed' }}>
-            <div className="flex items-center">
+            <div className="flex items-center gap-1.5">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="m8 3 4 8 5-5 5 16H2L8 3z" />
               </svg>
+              <span style={{ fontSize: 8, fontWeight: 600, color: '#1e3a5f', lineHeight: 1.3 }}>中国滑雪青少年<br />积分排行官方平台</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="text-right">
