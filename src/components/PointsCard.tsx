@@ -274,8 +274,8 @@ export default function PointsCard({
         </div>
 
         {/* ===== Brand text top center ===== */}
-        <div className="absolute z-20" style={{ top: 18, left: 0, right: 0, textAlign: 'center' }}>
-          <p className="font-bold tracking-[0.15em]" style={{ fontSize: 11, color: 'rgba(255,255,255,0.9)', textShadow: '0 1px 3px rgba(0,0,0,0.4)' }}>
+        <div className="absolute z-20" style={{ top: 14, left: 0, right: 0, textAlign: 'center' }}>
+          <p className="font-black tracking-[0.2em]" style={{ fontSize: 22, color: 'rgba(255,255,255,0.95)', textShadow: '0 2px 6px rgba(0,0,0,0.4)' }}>
             {dataType === 'race' ? shortCompName : '中国滑雪U赛事'}
           </p>
         </div>
