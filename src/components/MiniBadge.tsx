@@ -143,18 +143,16 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
         }}
       >
         {/* ===== Background photo top 35% ===== */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={`${basePath}/images/snow-mountain-bg.png`}
-          alt=""
+        <div
           style={{
             position: 'absolute',
             top: 0,
             left: 0,
             width: 360,
             height: 130,
-            objectFit: 'cover',
-            objectPosition: 'center top',
+            backgroundImage: `url(${basePath}/images/snow-mountain-bg.png)`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center top',
           }}
         />
 
@@ -191,7 +189,7 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
 
         {/* Top-left mountain icon (matches navbar) */}
         <div className="absolute z-20" style={{ top: 8, left: 10 }}>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.3))' }}>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="m8 3 4 8 5-5 5 16H2L8 3z" />
           </svg>
         </div>
@@ -247,13 +245,11 @@ export default function MiniBadge({ data }: MiniBadgeProps) {
           <div className="flex items-center justify-between w-full" style={{ paddingTop: 6, borderTop: '1px solid #dde6ed' }}>
             <div className="flex items-center gap-2">
               <div className="flex flex-col items-center">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`${basePath}/logos/csa.jpg`} alt="CSA" className="rounded-full object-cover" style={{ width: 24, height: 24, border: '1px solid #c8d8e4' }} />
+                <div style={{ width: 24, height: 24, borderRadius: '50%', border: '1px solid #c8d8e4', backgroundImage: `url(${basePath}/logos/csa.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
                 <span style={{ fontSize: 5.5, fontWeight: 600, color: '#3d6a8e', marginTop: 1 }}>中国滑雪协会</span>
               </div>
               <div className="flex flex-col items-center">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`${basePath}/logos/huati-icon.png`} alt="华体冰雪" className="rounded-full object-contain" style={{ width: 24, height: 24, border: '1px solid #c8d8e4', background: '#fff' }} />
+                <div style={{ width: 24, height: 24, borderRadius: '50%', border: '1px solid #c8d8e4', background: `#fff url(${basePath}/logos/huati-icon.png) center/contain no-repeat` }} />
                 <span style={{ fontSize: 5.5, fontWeight: 600, color: '#3d6a8e', marginTop: 1 }}>华体冰雪</span>
               </div>
             </div>
