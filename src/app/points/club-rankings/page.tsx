@@ -209,40 +209,40 @@ export default function ClubRankingsPage() {
               <div className="bg-gradient-to-br from-slate-800 to-slate-900 p-4 sm:p-6">
                 <div className="flex justify-center items-end gap-2 sm:gap-4">
                   {/* Silver - 2nd */}
-                  <div className="text-center">
+                  <div className="text-center w-24 sm:w-28">
                     <div className="w-10 h-10 sm:w-14 sm:h-14 mx-auto mb-2 bg-gradient-to-br from-gray-200 to-gray-400 rounded-full flex items-center justify-center shadow-lg">
                       <Medal className="w-5 h-5 sm:w-7 sm:h-7 text-gray-600" />
                     </div>
-                    <div className="bg-gradient-to-b from-gray-200 to-gray-300 rounded-t-lg pt-2 pb-1 px-2 sm:px-3 w-20 sm:w-24">
-                      <div className="text-gray-800 font-bold text-xs sm:text-sm truncate">{currentRankings[1]?.team}</div>
+                    <div className="bg-gradient-to-b from-gray-200 to-gray-300 rounded-t-lg pt-2 pb-1 px-1.5 sm:px-2">
+                      <div className="text-gray-800 font-bold text-[10px] sm:text-xs leading-tight">{currentRankings[1]?.team}</div>
                       <div className="text-gray-600 text-[10px] sm:text-xs leading-tight text-center">{currentRankings[1]?.athleteCount}人</div>
                       <div className="text-gray-700 font-medium text-xs sm:text-sm">{currentRankings[1]?.totalPoints}分</div>
                     </div>
-                    <div className="bg-gray-400 h-10 sm:h-12 w-20 sm:w-24 flex items-center justify-center text-xl sm:text-2xl font-bold text-gray-700 rounded-b-sm">2</div>
+                    <div className="bg-gray-400 h-10 sm:h-12 flex items-center justify-center text-xl sm:text-2xl font-bold text-gray-700 rounded-b-sm">2</div>
                   </div>
                   {/* Gold - 1st */}
-                  <div className="text-center -mt-4">
+                  <div className="text-center -mt-4 w-28 sm:w-32">
                     <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-2 bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-full flex items-center justify-center shadow-lg ring-2 sm:ring-4 ring-yellow-300/50">
                       <Trophy className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-700" />
                     </div>
-                    <div className="bg-gradient-to-b from-yellow-300 to-yellow-400 rounded-t-lg pt-2 pb-1 px-2 sm:px-3 w-22 sm:w-28">
-                      <div className="text-yellow-900 font-bold text-xs sm:text-sm truncate">{currentRankings[0]?.team}</div>
+                    <div className="bg-gradient-to-b from-yellow-300 to-yellow-400 rounded-t-lg pt-2 pb-1 px-1.5 sm:px-2">
+                      <div className="text-yellow-900 font-bold text-[10px] sm:text-xs leading-tight">{currentRankings[0]?.team}</div>
                       <div className="text-yellow-800 text-[10px] sm:text-xs leading-tight text-center">{currentRankings[0]?.athleteCount}人</div>
                       <div className="text-yellow-900 font-medium text-xs sm:text-sm">{currentRankings[0]?.totalPoints}分</div>
                     </div>
-                    <div className="bg-yellow-500 h-16 sm:h-20 w-22 sm:w-28 flex items-center justify-center text-2xl sm:text-3xl font-bold text-yellow-900 rounded-b-sm">1</div>
+                    <div className="bg-yellow-500 h-16 sm:h-20 flex items-center justify-center text-2xl sm:text-3xl font-bold text-yellow-900 rounded-b-sm">1</div>
                   </div>
                   {/* Bronze - 3rd */}
-                  <div className="text-center">
+                  <div className="text-center w-24 sm:w-28">
                     <div className="w-10 h-10 sm:w-14 sm:h-14 mx-auto mb-2 bg-gradient-to-br from-orange-300 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
                       <Medal className="w-5 h-5 sm:w-7 sm:h-7 text-orange-700" />
                     </div>
-                    <div className="bg-gradient-to-b from-orange-300 to-orange-400 rounded-t-lg pt-2 pb-1 px-2 sm:px-3 w-20 sm:w-24">
-                      <div className="text-orange-900 font-bold text-xs sm:text-sm truncate">{currentRankings[2]?.team}</div>
+                    <div className="bg-gradient-to-b from-orange-300 to-orange-400 rounded-t-lg pt-2 pb-1 px-1.5 sm:px-2">
+                      <div className="text-orange-900 font-bold text-[10px] sm:text-xs leading-tight">{currentRankings[2]?.team}</div>
                       <div className="text-orange-800 text-[10px] sm:text-xs leading-tight text-center">{currentRankings[2]?.athleteCount}人</div>
                       <div className="text-orange-900 font-medium text-xs sm:text-sm">{currentRankings[2]?.totalPoints}分</div>
                     </div>
-                    <div className="bg-orange-500 h-6 sm:h-8 w-20 sm:w-24 flex items-center justify-center text-lg sm:text-2xl font-bold text-orange-900 rounded-b-sm">3</div>
+                    <div className="bg-orange-500 h-6 sm:h-8 flex items-center justify-center text-lg sm:text-2xl font-bold text-orange-900 rounded-b-sm">3</div>
                   </div>
                 </div>
               </div>
