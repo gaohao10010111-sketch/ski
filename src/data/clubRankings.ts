@@ -1,7 +1,7 @@
 /**
  * 俱乐部积分排名静态数据（按大项汇总）
  * 自动生成，请勿手动修改
- * 生成时间: 2026-03-03T10:01:47.298463
+ * 生成时间: 2026-03-03T17:15:34.306135
  */
 
 export interface ClubRankingItem {
@@ -41,45 +41,45 @@ export const clubRankingsData: ClubRankingsData = {
         {
           "rank": 1,
           "team": "四川体育职业学院",
-          "totalPoints": 40821,
+          "totalPoints": 43231,
           "athleteCount": 55,
-          "competitionCount": 18,
+          "competitionCount": 19,
           "disciplineCount": 5,
-          "goldCount": 33,
-          "silverCount": 18,
+          "goldCount": 34,
+          "silverCount": 19,
           "bronzeCount": 18
         },
         {
           "rank": 2,
           "team": "河北省体育局冬季运动中心",
-          "totalPoints": 22509,
+          "totalPoints": 24553,
           "athleteCount": 33,
-          "competitionCount": 15,
+          "competitionCount": 16,
           "disciplineCount": 5,
-          "goldCount": 13,
+          "goldCount": 15,
           "silverCount": 9,
-          "bronzeCount": 8
+          "bronzeCount": 10
         },
         {
           "rank": 3,
           "team": "河南省体育局",
-          "totalPoints": 17986,
-          "athleteCount": 17,
-          "competitionCount": 13,
+          "totalPoints": 20335,
+          "athleteCount": 18,
+          "competitionCount": 14,
           "disciplineCount": 2,
-          "goldCount": 1,
+          "goldCount": 2,
           "silverCount": 10,
           "bronzeCount": 7
         },
         {
           "rank": 4,
           "team": "石家庄市冰雪与足球运动中心",
-          "totalPoints": 11495,
-          "athleteCount": 10,
-          "competitionCount": 13,
+          "totalPoints": 12816,
+          "athleteCount": 11,
+          "competitionCount": 14,
           "disciplineCount": 2,
-          "goldCount": 1,
-          "silverCount": 1,
+          "goldCount": 2,
+          "silverCount": 2,
           "bronzeCount": 8
         },
         {
@@ -95,34 +95,34 @@ export const clubRankingsData: ClubRankingsData = {
         },
         {
           "rank": 6,
+          "team": "北京市冬季运动管理中心",
+          "totalPoints": 10437,
+          "athleteCount": 8,
+          "competitionCount": 14,
+          "disciplineCount": 2,
+          "goldCount": 2,
+          "silverCount": 2,
+          "bronzeCount": 3
+        },
+        {
+          "rank": 7,
           "team": "重庆市冬季运动管理中心",
-          "totalPoints": 9658,
+          "totalPoints": 9857,
           "athleteCount": 13,
-          "competitionCount": 13,
+          "competitionCount": 14,
           "disciplineCount": 4,
           "goldCount": 3,
           "silverCount": 4,
           "bronzeCount": 3
         },
         {
-          "rank": 7,
-          "team": "北京市冬季运动管理中心",
-          "totalPoints": 9622,
-          "athleteCount": 8,
-          "competitionCount": 13,
-          "disciplineCount": 2,
-          "goldCount": 2,
-          "silverCount": 1,
-          "bronzeCount": 3
-        },
-        {
           "rank": 8,
           "team": "广西射击射箭运动发展中心",
-          "totalPoints": 8435,
+          "totalPoints": 8795,
           "athleteCount": 10,
-          "competitionCount": 9,
+          "competitionCount": 10,
           "disciplineCount": 2,
-          "goldCount": 2,
+          "goldCount": 3,
           "silverCount": 4,
           "bronzeCount": 3
         },
@@ -151,9 +151,9 @@ export const clubRankingsData: ClubRankingsData = {
         {
           "rank": 11,
           "team": "成都热雪奇迹",
-          "totalPoints": 7461,
+          "totalPoints": 7687,
           "athleteCount": 18,
-          "competitionCount": 11,
+          "competitionCount": 12,
           "disciplineCount": 5,
           "goldCount": 0,
           "silverCount": 5,
@@ -183,6 +183,17 @@ export const clubRankingsData: ClubRankingsData = {
         },
         {
           "rank": 14,
+          "team": "上海雪酷滑雪竞技队",
+          "totalPoints": 4462,
+          "athleteCount": 16,
+          "competitionCount": 6,
+          "disciplineCount": 4,
+          "goldCount": 0,
+          "silverCount": 0,
+          "bronzeCount": 0
+        },
+        {
+          "rank": 15,
           "team": "张家口辰鹏体育发展有限公司",
           "totalPoints": 4434,
           "athleteCount": 6,
@@ -193,7 +204,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 15,
+          "rank": 16,
           "team": "延庆区体育局",
           "totalPoints": 4188,
           "athleteCount": 6,
@@ -202,17 +213,6 @@ export const clubRankingsData: ClubRankingsData = {
           "goldCount": 4,
           "silverCount": 2,
           "bronzeCount": 3
-        },
-        {
-          "rank": 16,
-          "team": "上海雪酷滑雪竞技队",
-          "totalPoints": 3808,
-          "athleteCount": 16,
-          "competitionCount": 5,
-          "disciplineCount": 4,
-          "goldCount": 0,
-          "silverCount": 0,
-          "bronzeCount": 0
         },
         {
           "rank": 17,
@@ -392,6 +392,17 @@ export const clubRankingsData: ClubRankingsData = {
         },
         {
           "rank": 33,
+          "team": "A+自由式滑雪队",
+          "totalPoints": 1469,
+          "athleteCount": 2,
+          "competitionCount": 4,
+          "disciplineCount": 2,
+          "goldCount": 0,
+          "silverCount": 0,
+          "bronzeCount": 3
+        },
+        {
+          "rank": 34,
           "team": "New team",
           "totalPoints": 1389,
           "athleteCount": 1,
@@ -402,7 +413,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 34,
+          "rank": 35,
           "team": "吉林省体育局雪上运动管理中心",
           "totalPoints": 1261,
           "athleteCount": 6,
@@ -413,7 +424,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 35,
+          "rank": 36,
           "team": "零度竞技（吉林省零下壹度体育用品有限公司）",
           "totalPoints": 1228,
           "athleteCount": 4,
@@ -424,7 +435,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 1
         },
         {
-          "rank": 36,
+          "rank": 37,
           "team": "中关村一小",
           "totalPoints": 1222,
           "athleteCount": 1,
@@ -435,7 +446,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 1
         },
         {
-          "rank": 37,
+          "rank": 38,
           "team": "重庆市冬季运动管理中心1队",
           "totalPoints": 1212,
           "athleteCount": 2,
@@ -446,7 +457,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 1
         },
         {
-          "rank": 38,
+          "rank": 39,
           "team": "兰州碧桂园学校",
           "totalPoints": 1118,
           "athleteCount": 2,
@@ -457,7 +468,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 1
         },
         {
-          "rank": 39,
+          "rank": 40,
           "team": "华发冰雪热雪奇迹",
           "totalPoints": 1090,
           "athleteCount": 2,
@@ -468,7 +479,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 2
         },
         {
-          "rank": 40,
+          "rank": 41,
           "team": "黑龙江省雪上训练中心",
           "totalPoints": 1075,
           "athleteCount": 2,
@@ -479,7 +490,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 3
         },
         {
-          "rank": 41,
+          "rank": 42,
           "team": "Criss Crew",
           "totalPoints": 1062,
           "athleteCount": 3,
@@ -490,7 +501,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 1
         },
         {
-          "rank": 42,
+          "rank": 43,
           "team": "ACE竞技滑雪队",
           "totalPoints": 1059,
           "athleteCount": 4,
@@ -501,7 +512,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 43,
+          "rank": 44,
           "team": "山域竞技体育工作室",
           "totalPoints": 983,
           "athleteCount": 3,
@@ -512,7 +523,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 1
         },
         {
-          "rank": 44,
+          "rank": 45,
           "team": "西安高新一中沣东中学初中校区",
           "totalPoints": 980,
           "athleteCount": 1,
@@ -523,7 +534,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 45,
+          "rank": 46,
           "team": "高峰",
           "totalPoints": 961,
           "athleteCount": 1,
@@ -534,7 +545,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 1
         },
         {
-          "rank": 46,
+          "rank": 47,
           "team": "沈阳体育学院",
           "totalPoints": 907,
           "athleteCount": 2,
@@ -543,17 +554,6 @@ export const clubRankingsData: ClubRankingsData = {
           "goldCount": 2,
           "silverCount": 0,
           "bronzeCount": 0
-        },
-        {
-          "rank": 47,
-          "team": "A+自由式滑雪队",
-          "totalPoints": 886,
-          "athleteCount": 1,
-          "competitionCount": 3,
-          "disciplineCount": 2,
-          "goldCount": 0,
-          "silverCount": 0,
-          "bronzeCount": 2
         },
         {
           "rank": 48,
@@ -590,6 +590,17 @@ export const clubRankingsData: ClubRankingsData = {
         },
         {
           "rank": 51,
+          "team": "小崔运动",
+          "totalPoints": 788,
+          "athleteCount": 1,
+          "competitionCount": 3,
+          "disciplineCount": 2,
+          "goldCount": 0,
+          "silverCount": 1,
+          "bronzeCount": 0
+        },
+        {
+          "rank": 52,
           "team": "竞禹体育",
           "totalPoints": 739,
           "athleteCount": 2,
@@ -600,7 +611,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 52,
+          "rank": 53,
           "team": "张家口市足球和冰雪运动学校",
           "totalPoints": 734,
           "athleteCount": 4,
@@ -611,7 +622,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 53,
+          "rank": 54,
           "team": "个人（零度竞技）",
           "totalPoints": 718,
           "athleteCount": 3,
@@ -622,7 +633,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 54,
+          "rank": 55,
           "team": "中麟体育",
           "totalPoints": 714,
           "athleteCount": 6,
@@ -633,7 +644,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 55,
+          "rank": 56,
           "team": "吉林市丰满区滑雪协会",
           "totalPoints": 650,
           "athleteCount": 1,
@@ -644,7 +655,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 56,
+          "rank": 57,
           "team": "四平市冬季运动管理中心",
           "totalPoints": 624,
           "athleteCount": 2,
@@ -655,7 +666,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 57,
+          "rank": 58,
           "team": "RSKI竞技滑雪队队",
           "totalPoints": 586,
           "athleteCount": 3,
@@ -666,7 +677,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 58,
+          "rank": 59,
           "team": "内蒙古嘉灏体育",
           "totalPoints": 562,
           "athleteCount": 3,
@@ -677,7 +688,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 59,
+          "rank": 60,
           "team": "吉林峰尚青教体育文化产业有限公司",
           "totalPoints": 552,
           "athleteCount": 5,
@@ -688,7 +699,18 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 60,
+          "rank": 61,
+          "team": "纳西亚",
+          "totalPoints": 547,
+          "athleteCount": 2,
+          "competitionCount": 3,
+          "disciplineCount": 3,
+          "goldCount": 0,
+          "silverCount": 0,
+          "bronzeCount": 0
+        },
+        {
+          "rank": 62,
           "team": "远东东（重庆）体育文化发展有限公司",
           "totalPoints": 502,
           "athleteCount": 1,
@@ -699,7 +721,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 61,
+          "rank": 63,
           "team": "哈尔滨热雪奇迹",
           "totalPoints": 484,
           "athleteCount": 1,
@@ -710,18 +732,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 62,
-          "team": "小崔运动",
-          "totalPoints": 459,
-          "athleteCount": 1,
-          "competitionCount": 2,
-          "disciplineCount": 2,
-          "goldCount": 0,
-          "silverCount": 0,
-          "bronzeCount": 0
-        },
-        {
-          "rank": 63,
+          "rank": 64,
           "team": "爱上雪体育产业发展（北京）有限公司",
           "totalPoints": 406,
           "athleteCount": 3,
@@ -732,7 +743,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 64,
+          "rank": 65,
           "team": "锐冠青少年竞技滑雪队",
           "totalPoints": 390,
           "athleteCount": 4,
@@ -743,7 +754,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 65,
+          "rank": 66,
           "team": "个人（高峰）",
           "totalPoints": 386,
           "athleteCount": 1,
@@ -754,7 +765,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 66,
+          "rank": 67,
           "team": "北京天高云淡体育文化有限公司",
           "totalPoints": 363,
           "athleteCount": 1,
@@ -765,7 +776,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 67,
+          "rank": 68,
           "team": "广州热雪奇迹文化体育发展有限公司",
           "totalPoints": 353,
           "athleteCount": 1,
@@ -776,7 +787,7 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 68,
+          "rank": 69,
           "team": "自由地带pop滑雪俱乐部",
           "totalPoints": 352,
           "athleteCount": 1,
@@ -787,23 +798,12 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 69,
+          "rank": 70,
           "team": "北京天高云淡体育有限公司",
           "totalPoints": 350,
           "athleteCount": 3,
           "competitionCount": 1,
           "disciplineCount": 1,
-          "goldCount": 0,
-          "silverCount": 0,
-          "bronzeCount": 0
-        },
-        {
-          "rank": 70,
-          "team": "纳西亚",
-          "totalPoints": 348,
-          "athleteCount": 2,
-          "competitionCount": 2,
-          "disciplineCount": 2,
           "goldCount": 0,
           "silverCount": 0,
           "bronzeCount": 0
@@ -2188,82 +2188,115 @@ export const clubRankingsData: ClubRankingsData = {
         {
           "rank": 1,
           "team": "四川体育职业学院",
-          "totalPoints": 15296,
+          "totalPoints": 17706,
           "athleteCount": 17,
-          "competitionCount": 5,
+          "competitionCount": 6,
           "disciplineCount": 2,
-          "goldCount": 9,
-          "silverCount": 9,
+          "goldCount": 10,
+          "silverCount": 10,
           "bronzeCount": 6
         },
         {
           "rank": 2,
           "team": "河南省体育局",
-          "totalPoints": 10247,
-          "athleteCount": 11,
-          "competitionCount": 5,
+          "totalPoints": 12596,
+          "athleteCount": 12,
+          "competitionCount": 6,
           "disciplineCount": 2,
-          "goldCount": 1,
+          "goldCount": 2,
           "silverCount": 5,
           "bronzeCount": 3
         },
         {
           "rank": 3,
           "team": "河北省体育局冬季运动中心",
-          "totalPoints": 8616,
+          "totalPoints": 10660,
           "athleteCount": 12,
-          "competitionCount": 5,
+          "competitionCount": 6,
           "disciplineCount": 2,
-          "goldCount": 4,
+          "goldCount": 6,
           "silverCount": 4,
-          "bronzeCount": 4
+          "bronzeCount": 6
         },
         {
           "rank": 4,
           "team": "广西射击射箭运动发展中心",
-          "totalPoints": 5940,
+          "totalPoints": 6300,
           "athleteCount": 7,
-          "competitionCount": 5,
+          "competitionCount": 6,
           "disciplineCount": 2,
-          "goldCount": 2,
+          "goldCount": 3,
           "silverCount": 4,
           "bronzeCount": 1
         },
         {
           "rank": 5,
           "team": "石家庄市冰雪与足球运动中心",
-          "totalPoints": 3957,
-          "athleteCount": 4,
-          "competitionCount": 5,
+          "totalPoints": 5278,
+          "athleteCount": 5,
+          "competitionCount": 6,
           "disciplineCount": 2,
-          "goldCount": 1,
-          "silverCount": 1,
+          "goldCount": 2,
+          "silverCount": 2,
           "bronzeCount": 2
         },
         {
           "rank": 6,
           "team": "北京市冬季运动管理中心",
-          "totalPoints": 3153,
+          "totalPoints": 3968,
           "athleteCount": 3,
-          "competitionCount": 5,
+          "competitionCount": 6,
           "disciplineCount": 2,
           "goldCount": 2,
-          "silverCount": 1,
+          "silverCount": 2,
           "bronzeCount": 2
         },
         {
           "rank": 7,
-          "team": "重庆市冬季运动管理中心",
-          "totalPoints": 1059,
-          "athleteCount": 1,
-          "competitionCount": 5,
+          "team": "A+自由式滑雪队",
+          "totalPoints": 1469,
+          "athleteCount": 2,
+          "competitionCount": 4,
+          "disciplineCount": 2,
+          "goldCount": 0,
+          "silverCount": 0,
+          "bronzeCount": 3
+        },
+        {
+          "rank": 8,
+          "team": "上海雪酷滑雪竞技队",
+          "totalPoints": 1291,
+          "athleteCount": 3,
+          "competitionCount": 2,
           "disciplineCount": 2,
           "goldCount": 0,
           "silverCount": 0,
           "bronzeCount": 0
         },
         {
-          "rank": 8,
+          "rank": 9,
+          "team": "重庆市冬季运动管理中心",
+          "totalPoints": 1258,
+          "athleteCount": 1,
+          "competitionCount": 6,
+          "disciplineCount": 2,
+          "goldCount": 0,
+          "silverCount": 0,
+          "bronzeCount": 0
+        },
+        {
+          "rank": 10,
+          "team": "成都热雪奇迹",
+          "totalPoints": 1068,
+          "athleteCount": 1,
+          "competitionCount": 6,
+          "disciplineCount": 2,
+          "goldCount": 0,
+          "silverCount": 0,
+          "bronzeCount": 0
+        },
+        {
+          "rank": 11,
           "team": "沈阳体育学院",
           "totalPoints": 907,
           "athleteCount": 2,
@@ -2274,40 +2307,18 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 0
         },
         {
-          "rank": 9,
-          "team": "A+自由式滑雪队",
-          "totalPoints": 886,
+          "rank": 12,
+          "team": "小崔运动",
+          "totalPoints": 788,
           "athleteCount": 1,
           "competitionCount": 3,
           "disciplineCount": 2,
           "goldCount": 0,
-          "silverCount": 0,
-          "bronzeCount": 2
-        },
-        {
-          "rank": 10,
-          "team": "成都热雪奇迹",
-          "totalPoints": 842,
-          "athleteCount": 1,
-          "competitionCount": 5,
-          "disciplineCount": 2,
-          "goldCount": 0,
-          "silverCount": 0,
+          "silverCount": 1,
           "bronzeCount": 0
         },
         {
-          "rank": 11,
-          "team": "上海雪酷滑雪竞技队",
-          "totalPoints": 637,
-          "athleteCount": 3,
-          "competitionCount": 1,
-          "disciplineCount": 1,
-          "goldCount": 0,
-          "silverCount": 0,
-          "bronzeCount": 0
-        },
-        {
-          "rank": 12,
+          "rank": 13,
           "team": "黑龙江省雪上训练中心",
           "totalPoints": 606,
           "athleteCount": 1,
@@ -2318,23 +2329,12 @@ export const clubRankingsData: ClubRankingsData = {
           "bronzeCount": 2
         },
         {
-          "rank": 13,
-          "team": "小崔运动",
-          "totalPoints": 459,
+          "rank": 14,
+          "team": "纳西亚",
+          "totalPoints": 398,
           "athleteCount": 1,
           "competitionCount": 2,
           "disciplineCount": 2,
-          "goldCount": 0,
-          "silverCount": 0,
-          "bronzeCount": 0
-        },
-        {
-          "rank": 14,
-          "team": "纳西亚",
-          "totalPoints": 199,
-          "athleteCount": 1,
-          "competitionCount": 1,
-          "disciplineCount": 1,
           "goldCount": 0,
           "silverCount": 0,
           "bronzeCount": 0
@@ -2344,8 +2344,8 @@ export const clubRankingsData: ClubRankingsData = {
   ],
   "stats": {
     "totalClubs": 93,
-    "totalAthletes": 504,
-    "totalCompetitions": 18
+    "totalAthletes": 507,
+    "totalCompetitions": 19
   },
-  "generatedAt": "2026-03-03T10:01:47.298453"
+  "generatedAt": "2026-03-03T17:15:34.306122"
 };
