@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, useMemo } from 'react'
 import { Download, Share2 } from 'lucide-react'
-import html2canvas from 'html2canvas'
+import { domToPng, domToBlob } from 'modern-screenshot'
 import QRCode from 'qrcode'
 
 // Detect basePath: '/ski' for GitHub Pages / dev, '' for standalone (cnskipoints.com)
@@ -182,10 +182,10 @@ export default function PointsCard({
     if (!cardRef.current) return
     setIsGenerating(true)
     try {
-      const canvas = await html2canvas(cardRef.current, { scale: 3, backgroundColor: null, useCORS: true })
+      const dataUrl = await domToPng(cardRef.current, { scale: 3 })
       const link = document.createElement('a')
       link.download = `${athleteName}_积分海报_${season}.png`
-      link.href = canvas.toDataURL('image/png')
+      link.href = dataUrl
       link.click()
     } catch (e) { console.error('生成图片失败:', e) }
     finally { setIsGenerating(false) }
@@ -195,8 +195,7 @@ export default function PointsCard({
     if (!cardRef.current) return
     setIsGenerating(true)
     try {
-      const canvas = await html2canvas(cardRef.current, { scale: 3, backgroundColor: null, useCORS: true })
-      const blob = await new Promise<Blob | null>(resolve => canvas.toBlob(resolve, 'image/png'))
+      const blob = await domToBlob(cardRef.current, { scale: 3 })
       if (!blob) return
       const file = new File([blob], `${athleteName}_积分海报.png`, { type: 'image/png' })
       const shareData = { files: [file] }

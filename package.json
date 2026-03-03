@@ -33,6 +33,7 @@
     "date-fns": "^2.30.0",
     "html2canvas": "^1.4.1",
     "lucide-react": "^0.292.0",
+    "modern-screenshot": "^4.6.8",
     "next": "^14.0.0",
     "pdf-parse": "^2.4.5",
     "pdfjs-dist": "^3.11.174",
