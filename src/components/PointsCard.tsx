@@ -267,17 +267,16 @@ export default function PointsCard({
         <SkiEquipment x={-50} y={140} rotation={15} scale={0.8} opacity={0.035} />
         <SkiEquipment x={290} y={530} rotation={-40} scale={0.7} opacity={0.045} />
 
-        {/* ===== Top-left mountain icon (matches navbar) ===== */}
-        <div className="absolute z-20" style={{ top: 14, left: 16 }}>
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="m8 3 4 8 5-5 5 16H2L8 3z" />
-          </svg>
+        {/* ===== Top-left logos (CSA + 华体冰雪) ===== */}
+        <div className="absolute z-20 flex items-center gap-2" style={{ top: 12, left: 14 }}>
+          <div style={{ width: 30, height: 30, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.5)', backgroundImage: `url(${basePath}/logos/csa.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+          <div style={{ width: 30, height: 30, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.5)', background: `#fff url(${basePath}/logos/huati-icon.png) center/contain no-repeat` }} />
         </div>
 
-        {/* ===== Brand text on photo ===== */}
-        <div className="absolute z-20" style={{ top: 18, right: 16 }}>
+        {/* ===== Brand text top center ===== */}
+        <div className="absolute z-20" style={{ top: 18, left: 0, right: 0, textAlign: 'center' }}>
           <p className="font-bold tracking-[0.15em]" style={{ fontSize: 11, color: 'rgba(255,255,255,0.9)', textShadow: '0 1px 3px rgba(0,0,0,0.4)' }}>
-            {dataType === 'race' ? shortCompName : '中国滑雪U系列赛事'}
+            {dataType === 'race' ? shortCompName : '中国滑雪U赛事'}
           </p>
         </div>
 
@@ -359,15 +358,10 @@ export default function PointsCard({
 
           {/* Bottom: logos + QR */}
           <div className="flex items-center justify-between w-full" style={{ paddingTop: 10, borderTop: '1px solid #dde6ed' }}>
-            <div className="flex items-center gap-3">
-              <div className="flex flex-col items-center">
-                <div style={{ width: 34, height: 34, borderRadius: '50%', border: '1px solid #c8d8e4', backgroundImage: `url(${basePath}/logos/csa.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
-                <span style={{ fontSize: 7, fontWeight: 600, color: '#3d6a8e', marginTop: 2 }}>中国滑雪协会</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <div style={{ width: 34, height: 34, borderRadius: '50%', border: '1px solid #c8d8e4', background: `#fff url(${basePath}/logos/huati-icon.png) center/contain no-repeat` }} />
-                <span style={{ fontSize: 7, fontWeight: 600, color: '#3d6a8e', marginTop: 2 }}>华体冰雪</span>
-              </div>
+            <div className="flex items-center">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="m8 3 4 8 5-5 5 16H2L8 3z" />
+              </svg>
             </div>
             <div className="flex items-center gap-2">
               <div className="text-right">
