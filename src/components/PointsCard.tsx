@@ -267,16 +267,10 @@ export default function PointsCard({
         <SkiEquipment x={-50} y={140} rotation={15} scale={0.8} opacity={0.035} />
         <SkiEquipment x={290} y={530} rotation={-40} scale={0.7} opacity={0.045} />
 
-        {/* ===== Top-left logos (CSA + 华体冰雪) ===== */}
-        <div className="absolute z-20 flex items-start gap-3" style={{ top: 10, left: 14 }}>
-          <div className="flex flex-col items-center">
-            <div style={{ width: 30, height: 30, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.5)', backgroundImage: `url(${basePath}/logos/csa.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
-            <span style={{ fontSize: 6, fontWeight: 600, color: 'rgba(255,255,255,0.9)', marginTop: 2, textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>中国滑雪协会</span>
-          </div>
-          <div className="flex flex-col items-center">
-            <div style={{ width: 30, height: 30, borderRadius: '50%', border: '1px solid rgba(255,255,255,0.5)', background: `#fff url(${basePath}/logos/huati-icon.png) center/contain no-repeat` }} />
-            <span style={{ fontSize: 6, fontWeight: 600, color: 'rgba(255,255,255,0.9)', marginTop: 2, textShadow: '0 1px 3px rgba(0,0,0,0.5)' }}>华体冰雪</span>
-          </div>
+        {/* ===== Top-left logos (CSA + 华体冰雪) — same as nav bar ===== */}
+        <div className="absolute z-20 flex items-center gap-2" style={{ top: 10, left: 14 }}>
+          <div style={{ width: 36, height: 36, borderRadius: '50%', backgroundImage: `url(${basePath}/logos/csa.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+          <div style={{ height: 42, width: 'auto', backgroundImage: `url(${basePath}/logos/huati-vertical.png)`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', minWidth: 50 }} />
         </div>
 
         {/* ===== Brand text top center ===== */}
