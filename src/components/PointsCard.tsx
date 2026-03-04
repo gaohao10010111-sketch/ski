@@ -267,16 +267,27 @@ export default function PointsCard({
         <SkiEquipment x={290} y={530} rotation={-40} scale={0.7} opacity={0.045} />
 
         {/* ===== Top-left logos (CSA + 华体冰雪) — same as nav bar ===== */}
-        <div className="absolute z-20 flex items-center gap-1" style={{ top: 10, left: 14 }}>
+        <div className="absolute z-20 flex items-center gap-1" style={{ top: 24, left: 14 }}>
           <div style={{ width: 38, height: 38, borderRadius: '50%', backgroundImage: `url(${basePath}/logos/csa.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
           <div style={{ height: 68, width: 76, backgroundImage: `url(${basePath}/logos/huati-vertical.png)`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }} />
         </div>
 
         {/* ===== Brand text — large, below logos ===== */}
         <div className="absolute z-20" style={{ top: 88, left: 0, right: 0, textAlign: 'center' }}>
-          <p className="font-black tracking-[0.2em]" style={{ fontSize: 28, color: 'rgba(255,255,255,0.97)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
-            {dataType === 'race' ? shortCompName : '中国滑雪U系列赛事'}
-          </p>
+          {dataType === 'race' ? (
+            <p className="font-black tracking-[0.2em]" style={{ fontSize: 28, color: '#000000', textShadow: '0 1px 4px rgba(255,255,255,0.6)' }}>
+              {shortCompName}
+            </p>
+          ) : (
+            <>
+              <p className="font-bold tracking-[0.15em]" style={{ fontSize: 18, color: '#000000', textShadow: '0 1px 4px rgba(255,255,255,0.6)', marginBottom: 2 }}>
+                {season}赛季
+              </p>
+              <p className="font-black tracking-[0.2em]" style={{ fontSize: 28, color: '#000000', textShadow: '0 1px 4px rgba(255,255,255,0.6)' }}>
+                中国滑雪U系列赛事
+              </p>
+            </>
+          )}
         </div>
 
         {/* ===== Content area (below photo transition) ===== */}
@@ -297,7 +308,7 @@ export default function PointsCard({
 
           {/* Score label */}
           <p className="font-bold tracking-[0.15em]" style={{ fontSize: 13, color: '#3d6a8e', marginBottom: 6 }}>
-            {dataType === 'race' ? '比赛积分' : `${season} 赛季总积分`}
+            {dataType === 'race' ? '比赛积分' : '赛季总积分'}
           </p>
 
           {/* ===== HERO score number - EXTRA LARGE ===== */}
@@ -327,18 +338,18 @@ export default function PointsCard({
               </div>
             ) : null
           ) : (
-            <div className="flex justify-center gap-8" style={{ marginTop: 8 }}>
-              <div className="text-center">
+            <div className="flex justify-between items-start w-full" style={{ marginTop: 8 }}>
+              <div className="text-center" style={{ flex: 1 }}>
                 <div style={{ fontSize: 22, fontWeight: 800, color: '#000' }}>{competitionCount}</div>
                 <div style={{ fontSize: 11, fontWeight: 600, color: '#3d6a8e' }}>参赛场次</div>
               </div>
-              <div style={{ width: 1, background: '#1e3a5f', opacity: 0.3 }} />
-              <div className="text-center" style={{ flex: 1 }}>
+              <div style={{ width: 1, alignSelf: 'stretch', background: '#1e3a5f', opacity: 0.3, marginLeft: 8, marginRight: 8 }} />
+              <div className="text-center" style={{ flex: 1.2 }}>
                 <div style={{ fontSize: 13, fontWeight: 800, color: '#000', lineHeight: 1.3 }}>{bestResultText || `第${bestRank}名`}</div>
                 <div style={{ fontSize: 11, fontWeight: 600, color: '#3d6a8e' }}>最佳成绩</div>
               </div>
-              <div style={{ width: 1, background: '#1e3a5f', opacity: 0.3 }} />
-              <div className="text-center">
+              <div style={{ width: 1, alignSelf: 'stretch', background: '#1e3a5f', opacity: 0.3, marginLeft: 8, marginRight: 8 }} />
+              <div className="text-center" style={{ flex: 1 }}>
                 <div style={{ fontSize: 22, fontWeight: 800, color: '#000' }}>
                   {competitionCount > 0 ? (totalPoints / competitionCount).toFixed(0) : 0}
                 </div>
@@ -351,23 +362,17 @@ export default function PointsCard({
 
         {/* ===== Bottom section — absolute positioned to avoid flex issues in html2canvas ===== */}
         <div className="absolute z-10" style={{ bottom: 18, left: 24, right: 24 }}>
-          <p className="font-black tracking-[0.12em]" style={{ fontSize: 13, color: '#0f2340', marginBottom: 4, textAlign: 'center' }}>
-            中国滑雪U系列赛事
-          </p>
           <div className="flex items-center justify-between w-full" style={{ paddingTop: 10, borderTop: '1px solid #dde6ed' }}>
             <div className="flex items-center gap-1.5">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e3a5f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="m8 3 4 8 5-5 5 16H2L8 3z" />
               </svg>
-              <span style={{ fontSize: 8, fontWeight: 600, color: '#1e3a5f', lineHeight: 1.3 }}>中国滑雪青少年<br />积分排行官方平台</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="text-right">
-                <span style={{ fontSize: 8, fontWeight: 500, color: '#7a9bb5', display: 'block', lineHeight: 1.2, marginBottom: 2 }}>中国滑雪青少年积分排名官方平台</span>
-                <span style={{ fontSize: 10, fontWeight: 600, color: '#1e3a5f' }}>cnskipoints.com</span>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <span style={{ fontSize: 10, fontWeight: 700, color: '#0f2340', lineHeight: 1.3 }}>中国滑雪青少年积分排名官方平台</span>
+                <span style={{ fontSize: 8, fontWeight: 500, color: '#6b7280' }}>www.cnskipoints.com</span>
               </div>
-              <DynamicQRCode url={siteUrl} size={36} dark="#1e3a5f" />
             </div>
+            <DynamicQRCode url={siteUrl} size={36} dark="#1e3a5f" />
           </div>
         </div>
       </div>
