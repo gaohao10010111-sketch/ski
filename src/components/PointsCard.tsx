@@ -280,7 +280,7 @@ export default function PointsCard({
             </p>
           ) : (
             <>
-              <p className="font-bold tracking-[0.15em]" style={{ fontSize: 18, color: '#000000', textShadow: '0 1px 4px rgba(255,255,255,0.6)', marginBottom: 2 }}>
+              <p className="font-black tracking-[0.2em]" style={{ fontSize: 28, color: '#000000', textShadow: '0 1px 4px rgba(255,255,255,0.6)', marginBottom: 2 }}>
                 {season}赛季
               </p>
               <p className="font-black tracking-[0.2em]" style={{ fontSize: 28, color: '#000000', textShadow: '0 1px 4px rgba(255,255,255,0.6)' }}>
