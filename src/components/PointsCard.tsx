@@ -267,7 +267,7 @@ export default function PointsCard({
         <SkiEquipment x={290} y={530} rotation={-40} scale={0.7} opacity={0.045} />
 
         {/* ===== Top-left logos (CSA + 华体冰雪) — same as nav bar ===== */}
-        <div className="absolute z-20 flex items-center gap-1" style={{ top: 24, left: 14 }}>
+        <div className="absolute z-20 flex items-center" style={{ top: 24, left: 14 }}>
           <div style={{ width: 38, height: 38, borderRadius: '50%', backgroundImage: `url(${basePath}/logos/csa.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
           <div style={{ height: 68, width: 76, backgroundImage: `url(${basePath}/logos/huati-vertical.png)`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }} />
         </div>
@@ -280,7 +280,7 @@ export default function PointsCard({
             </p>
           ) : (
             <>
-              <p className="font-black tracking-[0.2em]" style={{ fontSize: 28, color: '#000000', textShadow: '0 1px 4px rgba(255,255,255,0.6)', marginBottom: 2 }}>
+              <p className="font-black tracking-[0.05em]" style={{ fontSize: 28, color: '#000000', textShadow: '0 1px 4px rgba(255,255,255,0.6)', marginBottom: 2 }}>
                 {season}赛季
               </p>
               <p className="font-black tracking-[0.2em]" style={{ fontSize: 28, color: '#000000', textShadow: '0 1px 4px rgba(255,255,255,0.6)' }}>
@@ -338,7 +338,7 @@ export default function PointsCard({
               </div>
             ) : null
           ) : (
-            <div className="flex justify-between items-start w-full" style={{ marginTop: 8 }}>
+            <div className="flex justify-between items-stretch w-full" style={{ marginTop: 8 }}>
               <div className="text-center" style={{ flex: 1 }}>
                 <div style={{ fontSize: 22, fontWeight: 800, color: '#000' }}>{competitionCount}</div>
                 <div style={{ fontSize: 11, fontWeight: 600, color: '#3d6a8e' }}>参赛场次</div>
