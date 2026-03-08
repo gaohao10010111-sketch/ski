@@ -6,7 +6,6 @@ import {
   Star,
   MapPin,
   Mountain,
-  Thermometer,
   Clock,
   ChevronRight,
   Search,
@@ -14,7 +13,8 @@ import {
   Building,
   Trees,
   ExternalLink,
-  MessageCircle
+  MessageCircle,
+  Trophy
 } from 'lucide-react'
 import { recommendedVenues, type Venue } from '@/data/recommendations'
 
@@ -34,6 +34,7 @@ export default function VenuesPage() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedType, setSelectedType] = useState('')
   const [selectedLocation, setSelectedLocation] = useState('')
+  const [onlyCompetition, setOnlyCompetition] = useState(false)
 
   // 获取所有地点
   const locations = Array.from(new Set(recommendedVenues.map(v => v.location)))
@@ -45,7 +46,8 @@ export default function VenuesPage() {
                        venue.features.some(f => f.includes(searchTerm))
     const matchType = !selectedType || venue.type === selectedType
     const matchLocation = !selectedLocation || venue.location === selectedLocation
-    return matchSearch && matchType && matchLocation
+    const matchCompetition = !onlyCompetition || venue.isCompetitionVenue
+    return matchSearch && matchType && matchLocation && matchCompetition
   })
 
   return (
@@ -103,6 +105,20 @@ export default function VenuesPage() {
                 <option key={loc} value={loc}>{loc}</option>
               ))}
             </select>
+
+            {/* 赛事举办地筛选 */}
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={onlyCompetition}
+                onChange={(e) => setOnlyCompetition(e.target.checked)}
+                className="w-4 h-4 text-ski-blue rounded border-gray-300 focus:ring-ski-blue"
+              />
+              <span className="text-sm text-gray-700 flex items-center gap-1">
+                <Trophy className="w-4 h-4 text-amber-500" />
+                仅赛事举办地
+              </span>
+            </label>
           </div>
         </div>
       </section>
@@ -156,11 +172,11 @@ function VenueCard({ venue }: { venue: Venue }) {
   return (
     <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden">
       {/* 顶部图片区 */}
-      <div className="h-48 bg-gradient-to-br from-cyan-400 to-blue-600 relative">
+      <div className={`h-48 relative ${venue.isCompetitionVenue ? 'bg-gradient-to-br from-sky-500 to-indigo-700' : 'bg-gradient-to-br from-cyan-400 to-blue-600'}`}>
         <div className="absolute inset-0 flex items-center justify-center">
           <Snowflake className="w-24 h-24 text-white/20" />
         </div>
-        <div className="absolute top-4 left-4">
+        <div className="absolute top-4 left-4 flex gap-2">
           <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
             venue.type === 'indoor' ? 'bg-purple-100 text-purple-700' :
             venue.type === 'outdoor' ? 'bg-green-100 text-green-700' :
@@ -169,6 +185,12 @@ function VenueCard({ venue }: { venue: Venue }) {
             <TypeIcon className="w-4 h-4 mr-1" />
             {venueTypeLabels[venue.type]}
           </span>
+          {venue.isCompetitionVenue && (
+            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-amber-100 text-amber-700">
+              <Trophy className="w-4 h-4 mr-1" />
+              U系列赛事举办地
+            </span>
+          )}
         </div>
         <div className="absolute top-4 right-4 flex items-center bg-white/90 rounded-full px-2 py-1">
           <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
