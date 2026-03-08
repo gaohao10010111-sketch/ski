@@ -216,6 +216,9 @@ export function getTotalRankings(filters: RankingFilters = {}): {
     results: PointsBreakdownItem[]
   }>()
 
+  // Best-of-3: take top 3 competition scores per discipline per athlete
+  const MAX_COUNTING_RESULTS = 3
+
   results.forEach(r => {
     const key = `${r.athleteId}-${r.ageGroup}-${r.gender}`
 
@@ -234,7 +237,6 @@ export function getTotalRankings(filters: RankingFilters = {}): {
     }
 
     const stats = athleteStatsMap.get(key)!
-    stats.totalPoints += r.points
     stats.competitionCount += 1
     if (r.rank < stats.bestRank) {
       stats.bestRank = r.rank
@@ -248,6 +250,13 @@ export function getTotalRankings(filters: RankingFilters = {}): {
       rank: r.rank,
       points: r.points
     })
+  })
+
+  // Calculate totalPoints using best-of-3 rule
+  athleteStatsMap.forEach(stats => {
+    const sorted = [...stats.results].sort((a, b) => b.points - a.points)
+    const counting = sorted.slice(0, MAX_COUNTING_RESULTS)
+    stats.totalPoints = counting.reduce((sum, r) => sum + r.points, 0)
   })
 
   // 转换为数组并排序
@@ -389,17 +398,33 @@ export function getAthleteSubEventRanking(
 
   if (athleteResults.length === 0) return null
 
-  // 获取该小子项所有运动员的总积分
-  const allTotals = db.prepare(`
-    SELECT athleteId, SUM(points) as totalPoints
+  // Best-of-3: fetch all results per athlete, compute top 3 in JS
+  const MAX_COUNTING = 3
+  const allResults = db.prepare(`
+    SELECT athleteId, points
     FROM Result
     WHERE discipline = ? AND ageGroup = ? AND gender = ?
-    GROUP BY athleteId
-    ORDER BY totalPoints DESC
+    ORDER BY athleteId, points DESC
   `).all(discipline, ageGroup, gender) as Array<{
     athleteId: string
-    totalPoints: number
+    points: number
   }>
+
+  // Group by athlete and take best 3
+  const athleteTotals = new Map<string, number>()
+  const athleteCounts = new Map<string, number>()
+  allResults.forEach(r => {
+    const count = (athleteCounts.get(r.athleteId) || 0) + 1
+    athleteCounts.set(r.athleteId, count)
+    if (count <= MAX_COUNTING) {
+      athleteTotals.set(r.athleteId, (athleteTotals.get(r.athleteId) || 0) + r.points)
+    }
+  })
+
+  // Sort by totalPoints desc
+  const allTotals = Array.from(athleteTotals.entries())
+    .map(([id, pts]) => ({ athleteId: id, totalPoints: pts }))
+    .sort((a, b) => b.totalPoints - a.totalPoints)
 
   // 找到排名
   const rank = allTotals.findIndex(t => t.athleteId === athleteId) + 1

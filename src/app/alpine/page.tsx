@@ -85,8 +85,10 @@ export default function AlpinePage() {
 
   // 从真实数据生成顶尖运动员列表 - 使用 useMemo 缓存
   // 注意：积分只在同一子项内累加，不跨子项（回转和大回转分开统计）
+  // 取最好3场积分之和
   const topAthletes = useMemo(() => {
-    const athleteData: { [key: string]: { name: string; team: string; points: number; events: number; discipline: string } } = {};
+    const MAX_COUNTING = 3;
+    const athleteData: { [key: string]: { name: string; team: string; pointsList: number[]; events: number; discipline: string } } = {};
 
     alpineCompetitions.forEach(comp => {
       comp.events.forEach(event => {
@@ -94,17 +96,18 @@ export default function AlpinePage() {
           // 使用 name + discipline 作为 key，确保同一子项内累加，不跨子项
           const key = `${athlete.name}-${event.discipline}`;
           if (!athleteData[key]) {
-            athleteData[key] = { name: athlete.name, team: athlete.team, points: 0, events: 0, discipline: event.discipline };
+            athleteData[key] = { name: athlete.name, team: athlete.team, pointsList: [], events: 0, discipline: event.discipline };
           }
           // 优先使用数据中的积分，如果没有则使用公式计算
           const points = athlete.points || (athlete.rank <= 50 ? Math.max(360 - (athlete.rank - 1) * 7, 1) : 0);
-          athleteData[key].points += points;
+          athleteData[key].pointsList.push(points);
           athleteData[key].events += 1;
         });
       });
     });
 
     const sorted = Object.values(athleteData)
+      .map(a => ({ ...a, points: [...a.pointsList].sort((x, y) => y - x).slice(0, MAX_COUNTING).reduce((s, p) => s + p, 0) }))
       .sort((a, b) => b.points - a.points)
       .slice(0, 8);
     const result: { id: number; name: string; nation: string; discipline: string; points: string; worldRank: number; age: number; wins: number }[] = [];

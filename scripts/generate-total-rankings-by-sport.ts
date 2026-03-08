@@ -1,15 +1,16 @@
 /**
  * 生成按项目分类的总积分排名静态数据
  * 四个大项分别独立排名
+ * Best-of-3: 取最好3场积分之和
  *
  * 运行: npx tsx scripts/generate-total-rankings-by-sport.ts
  */
 
-import { PrismaClient } from '@prisma/client';
+import Database from 'better-sqlite3';
 import * as fs from 'fs';
 import * as path from 'path';
 
-const prisma = new PrismaClient();
+const DB_PATH = path.join(__dirname, '../prisma/ski.db');
 
 interface RankingItem {
   rank: number;
@@ -38,80 +39,75 @@ const sportTypeNames: Record<string, string> = {
   'freestyle-slopestyle': '自由式坡面障碍技巧/大跳台'
 };
 
-async function generateTotalRankingsBySport() {
+// Best-of-3: take top 3 competition scores
+const MAX_COUNTING_RESULTS = 3;
+
+function generateTotalRankingsBySport() {
   console.log('开始生成按项目分类的总积分排名数据...');
 
-  // 获取所有比赛
-  const competitions = await prisma.competition.findMany();
+  const db = new Database(DB_PATH);
+
+  // Get competitions
+  const competitions = db.prepare('SELECT * FROM Competition').all() as Array<{
+    id: string; name: string; sportType: string; location: string; date: string;
+  }>;
   console.log(`找到 ${competitions.length} 场比赛`);
 
-  // 创建比赛ID到sportType的映射
-  const competitionSportMap = new Map<string, string>();
-  competitions.forEach(c => {
-    competitionSportMap.set(c.id, c.sportType);
-  });
-
-  // 获取所有成绩，包含比赛信息
-  const results = await prisma.result.findMany({
-    include: {
-      athlete: true,
-      competition: true
-    }
-  });
+  // Get all results with athlete and competition info
+  const results = db.prepare(`
+    SELECT r.athleteId, a.name as athleteName, a.team,
+           r.ageGroup, r.gender, r.discipline, r.rank, r.points,
+           c.id as competitionId, c.sportType, c.location
+    FROM Result r
+    JOIN Athlete a ON r.athleteId = a.id
+    JOIN Competition c ON r.competitionId = c.id
+  `).all() as Array<{
+    athleteId: string; athleteName: string; team: string;
+    ageGroup: string; gender: string; discipline: string;
+    rank: number; points: number;
+    competitionId: string; sportType: string; location: string;
+  }>;
   console.log(`找到 ${results.length} 条成绩记录`);
 
-  // 按项目分组统计每个运动员的积分
-  // key: `${sportType}-${athleteId}-${ageGroup}-${gender}`
+  // Group by sportType -> athlete+ageGroup+gender
   const athleteStatsMap = new Map<string, {
-    athleteId: string;
-    athleteName: string;
-    team: string;
-    sportType: string;
-    ageGroup: string;
-    gender: string;
-    totalPoints: number;
-    competitionCount: number;
-    bestRank: number;
-    results: { points: number; rank: number }[];
+    athleteId: string; athleteName: string; team: string;
+    sportType: string; ageGroup: string; gender: string;
+    totalPoints: number; competitionCount: number; bestRank: number;
+    pointsList: number[];
   }>();
 
   results.forEach(r => {
-    const sportType = r.competition.sportType;
-    const key = `${sportType}-${r.athleteId}-${r.ageGroup}-${r.gender}`;
+    const key = `${r.sportType}-${r.athleteId}-${r.ageGroup}-${r.gender}`;
 
     if (!athleteStatsMap.has(key)) {
       athleteStatsMap.set(key, {
-        athleteId: r.athleteId,
-        athleteName: r.athlete.name,
-        team: r.athlete.team,
-        sportType,
-        ageGroup: r.ageGroup,
-        gender: r.gender,
-        totalPoints: 0,
-        competitionCount: 0,
-        bestRank: 999,
-        results: []
+        athleteId: r.athleteId, athleteName: r.athleteName, team: r.team,
+        sportType: r.sportType, ageGroup: r.ageGroup, gender: r.gender,
+        totalPoints: 0, competitionCount: 0, bestRank: 999, pointsList: []
       });
     }
 
     const stats = athleteStatsMap.get(key)!;
-    stats.totalPoints += r.points;
     stats.competitionCount += 1;
-    if (r.rank < stats.bestRank) {
-      stats.bestRank = r.rank;
-    }
-    stats.results.push({ points: r.points, rank: r.rank });
+    if (r.rank < stats.bestRank) stats.bestRank = r.rank;
+    stats.pointsList.push(r.points);
   });
 
-  // 获取所有项目类型
-  const sportTypes = [...new Set(results.map(r => r.competition.sportType))];
+  // Apply best-of-3 rule
+  athleteStatsMap.forEach(stats => {
+    const sorted = [...stats.pointsList].sort((a, b) => b - a);
+    stats.totalPoints = sorted.slice(0, MAX_COUNTING_RESULTS).reduce((sum, p) => sum + p, 0);
+  });
+
+  // Get unique sport types
+  const sportTypes = [...new Set(results.map(r => r.sportType))];
   console.log(`项目类型: ${sportTypes.join(', ')}`);
 
-  // 按项目分别生成排名
+  // Generate rankings per sport
   const sportRankingsList: SportRankings[] = [];
 
   for (const sportType of sportTypes) {
-    // 筛选该项目的运动员
     const athleteStats = Array.from(athleteStatsMap.values())
       .filter(s => s.sportType === sportType)
       .sort((a, b) => b.totalPoints - a.totalPoints);
@@ -136,42 +132,44 @@ async function generateTotalRankingsBySport() {
       total: rankings.length
     });
 
-    console.log(`${sportTypeNames[sportType]}: ${rankings.length} 名运动员`);
+    console.log(`${sportTypeNames[sportType] || sportType}: ${rankings.length} 名运动员`);
   }
 
-  // 获取筛选选项
+  // Get filter options
   const ageGroups = [...new Set(results.map(r => r.ageGroup))].sort();
   const genders = [...new Set(results.map(r => r.gender))].sort();
   const locations = [...new Set(competitions.map(c => c.location))].sort();
   const disciplines = [...new Set(results.map(r => r.discipline))].sort();
 
-  // 统计数据
+  // Stats
   const stats = {
     athleteCount: new Set(results.map(r => r.athleteId)).size,
     competitionCount: competitions.length,
     totalResults: results.length
   };
 
-  // 构建完整数据
+  // Build full data
   const data = {
     sportRankings: sportRankingsList,
     filters: {
-      ageGroups,
-      genders,
-      disciplines,
-      locations,
+      ageGroups, genders, disciplines, locations,
       sportTypes: sportTypes.map(st => ({ value: st, label: sportTypeNames[st] || st }))
     },
     stats,
     generatedAt: new Date().toISOString()
   };
 
-  // 写入文件
+  // Write output file
   const outputPath = path.join(__dirname, '../src/data/totalRankings.ts');
+  const allRankings = data.sportRankings.flatMap(sr => sr.rankings)
+    .sort((a, b) => b.totalPoints - a.totalPoints)
+    .map((r, i) => ({ ...r, rank: i + 1 }));
+
   const content = `/**
  * 总积分排名静态数据（按项目分类）
  * 自动生成，请勿手动修改
  * 生成时间: ${new Date().toISOString()}
+ * 积分规则: 取最好${MAX_COUNTING_RESULTS}场积分之和
  */
 
 export interface TotalRankingItem {
@@ -215,7 +213,7 @@ export interface TotalRankingsData {
 export const totalRankingsData: TotalRankingsData & { rankings: TotalRankingItem[] } = {
   ...${JSON.stringify(data, null, 2)},
   // 兼容旧格式：合并所有项目的排名
-  rankings: ${JSON.stringify(data.sportRankings.flatMap(sr => sr.rankings).sort((a, b) => b.totalPoints - a.totalPoints).map((r, i) => ({ ...r, rank: i + 1 })), null, 2)}
+  rankings: ${JSON.stringify(allRankings, null, 2)}
 };
 `;
 
@@ -225,7 +223,7 @@ export const totalRankingsData: TotalRankingsData & { rankings: TotalRankingItem
   console.log(`运动员数: ${stats.athleteCount}`);
   console.log(`比赛数: ${stats.competitionCount}`);
 
-  // 输出每个项目前3名
+  // Print top 3 per sport
   console.log('\n各项目前3名:');
   for (const sr of sportRankingsList) {
     console.log(`\n【${sr.sportName}】`);
@@ -233,8 +231,8 @@ export const totalRankingsData: TotalRankingsData & { rankings: TotalRankingItem
       console.log(`  ${r.rank}. ${r.athleteName} (${r.team}) - ${r.totalPoints}分`);
     });
   }
+
+  db.close();
 }
 
-generateTotalRankingsBySport()
-  .catch(console.error)
-  .finally(() => prisma.$disconnect());
+generateTotalRankingsBySport();

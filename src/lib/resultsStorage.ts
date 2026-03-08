@@ -203,11 +203,14 @@ export function getPointsRanking(sportType?: string, gender?: 'male' | 'female')
   const allResults = getAllResults()
   const competitions = getCompetitions()
 
+  // Best-of-3: take top 3 competition scores per athlete
+  const MAX_COUNTING = 3
+
   // 按运动员汇总积分
   const athleteStats: Record<string, {
     name: string
     team: string
-    totalPoints: number
+    pointsList: number[]
     competitionCount: number
     bestRank: number
   }> = {}
@@ -230,23 +233,26 @@ export function getPointsRanking(sportType?: string, gender?: 'male' | 'female')
           athleteStats[key] = {
             name: result.name,
             team: result.team,
-            totalPoints: 0,
+            pointsList: [],
             competitionCount: 0,
             bestRank: Infinity
           }
         }
 
-        athleteStats[key].totalPoints += result.points
+        athleteStats[key].pointsList.push(result.points)
         athleteStats[key].competitionCount++
         athleteStats[key].bestRank = Math.min(athleteStats[key].bestRank, result.rank)
       }
     }
   }
 
-  // 转换为数组并排序
+  // 转换为数组，应用best-of-3并排序
   return Object.values(athleteStats)
     .map(a => ({
-      ...a,
+      name: a.name,
+      team: a.team,
+      totalPoints: [...a.pointsList].sort((x, y) => y - x).slice(0, MAX_COUNTING).reduce((s, p) => s + p, 0),
+      competitionCount: a.competitionCount,
       bestRank: a.bestRank === Infinity ? 0 : a.bestRank
     }))
     .sort((a, b) => b.totalPoints - a.totalPoints)

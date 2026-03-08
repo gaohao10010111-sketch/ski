@@ -35,6 +35,9 @@ function generateId() {
   return 'snap_' + Date.now().toString(36) + Math.random().toString(36).substring(2, 9)
 }
 
+// Best-of-3: take top 3 competition scores per athlete
+const MAX_COUNTING_RESULTS = 3
+
 // 获取当前排名
 function getTotalRankings(db, sportType = null) {
   let sql = `
@@ -44,9 +47,9 @@ function getTotalRankings(db, sportType = null) {
       a.team,
       r.ageGroup,
       r.gender,
-      SUM(r.points) as totalPoints,
-      COUNT(*) as competitionCount,
-      MIN(r.rank) as bestRank
+      r.points,
+      COUNT(*) OVER (PARTITION BY r.athleteId, r.ageGroup, r.gender) as competitionCount,
+      MIN(r.rank) OVER (PARTITION BY r.athleteId, r.ageGroup, r.gender) as bestRank
     FROM Result r
     JOIN Athlete a ON r.athleteId = a.id
     JOIN Competition c ON r.competitionId = c.id
@@ -59,11 +62,43 @@ function getTotalRankings(db, sportType = null) {
     params.push(sportType)
   }
 
-  sql += ' GROUP BY r.athleteId, r.ageGroup, r.gender ORDER BY totalPoints DESC'
+  sql += ' ORDER BY r.athleteId, r.ageGroup, r.gender, r.points DESC'
 
-  const results = db.prepare(sql).all(...params)
+  const rows = db.prepare(sql).all(...params)
 
-  // 添加排名
+  // Group by athlete and apply best-of-3
+  const athleteMap = new Map()
+  for (const row of rows) {
+    const key = `${row.athleteId}-${row.ageGroup}-${row.gender}`
+    if (!athleteMap.has(key)) {
+      athleteMap.set(key, {
+        athleteId: row.athleteId,
+        athleteName: row.athleteName,
+        team: row.team,
+        ageGroup: row.ageGroup,
+        gender: row.gender,
+        competitionCount: row.competitionCount,
+        bestRank: row.bestRank,
+        pointsList: []
+      })
+    }
+    athleteMap.get(key).pointsList.push(row.points)
+  }
+
+  // Calculate totalPoints from best 3
+  const results = Array.from(athleteMap.values()).map(item => ({
+    athleteId: item.athleteId,
+    athleteName: item.athleteName,
+    team: item.team,
+    ageGroup: item.ageGroup,
+    gender: item.gender,
+    competitionCount: item.competitionCount,
+    bestRank: item.bestRank,
+    totalPoints: item.pointsList.slice(0, MAX_COUNTING_RESULTS).reduce((s, p) => s + p, 0)
+  }))
+
+  // Sort and add rank
+  results.sort((a, b) => b.totalPoints - a.totalPoints)
   return results.map((item, index) => ({
     ...item,
     rank: index + 1

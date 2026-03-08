@@ -45,15 +45,19 @@ const localSportTypeMapping: Record<string, string> = {
   'freestyle-slopestyle': 'FREESTYLE_SLOPESTYLE_BIGAIR',
 }
 
+// Best-of-3: take top 3 competition scores per discipline per athlete
+const MAX_COUNTING_RESULTS = 3
+
 // 从静态数据提取运动员列表（模块级别，确保在导入时就执行）
 // 注意：积分只在同一子项内累加，不跨子项（坡面障碍技巧和大跳台分开统计）
+// 取最好3场积分之和
 function buildStaticAthletesList(): Athlete[] {
   const athleteMap = new Map<string, {
     name: string
     team: string
     sportType: string
     discipline: string
-    totalPoints: number
+    pointsList: number[]
     bestRank: number
     competitions: number
     gender: 'MALE' | 'FEMALE'
@@ -71,7 +75,7 @@ function buildStaticAthletesList(): Athlete[] {
         const existing = athleteMap.get(key)
 
         if (existing) {
-          existing.totalPoints += athlete.points || 0
+          existing.pointsList.push(athlete.points || 0)
           existing.bestRank = Math.min(existing.bestRank, athlete.rank)
           existing.competitions++
         } else {
@@ -80,7 +84,7 @@ function buildStaticAthletesList(): Athlete[] {
             team: athlete.team,
             sportType,
             discipline: event.discipline,
-            totalPoints: athlete.points || 0,
+            pointsList: [athlete.points || 0],
             bestRank: athlete.rank,
             competitions: 1,
             gender
@@ -90,8 +94,13 @@ function buildStaticAthletesList(): Athlete[] {
     }
   }
 
-  // 转换为 Athlete[] 并按积分排序，支持并列排名
+  // Apply best-of-3 and convert to sorted array
   const sorted = Array.from(athleteMap.values())
+    .map(a => {
+      const sortedPts = [...a.pointsList].sort((x, y) => y - x)
+      const totalPoints = sortedPts.slice(0, MAX_COUNTING_RESULTS).reduce((s, p) => s + p, 0)
+      return { ...a, totalPoints }
+    })
     .sort((a, b) => b.totalPoints - a.totalPoints);
   const athletes: Athlete[] = [];
   for (let index = 0; index < sorted.length; index++) {

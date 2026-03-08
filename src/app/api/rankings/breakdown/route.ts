@@ -38,8 +38,10 @@ export async function GET(request: NextRequest) {
 
     const breakdown = await getAthletePointsBreakdown(athleteId, filters)
 
-    // 计算总积分
-    const totalPoints = breakdown.reduce((sum, item) => sum + item.points, 0)
+    // Best-of-3: sort by points desc, take top 3 for total
+    const MAX_COUNTING = 3
+    const sorted = [...breakdown].sort((a, b) => b.points - a.points)
+    const totalPoints = sorted.slice(0, MAX_COUNTING).reduce((sum, item) => sum + item.points, 0)
 
     return NextResponse.json({
       success: true,
