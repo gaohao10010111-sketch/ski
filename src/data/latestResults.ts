@@ -1,6 +1,6 @@
 // 最新比赛成绩数据
 // 自动生成，请勿手动修改
-// 生成时间: 2026-03-03T17:15:34.157403
+// 生成时间: 2026-03-08T14:45:15.350776
 
 export interface AthleteResult {
   rank: number
@@ -40,7 +40,7 @@ export interface ResultsData {
 }
 
 export const latestResults: ResultsData = {
-  "lastUpdated": "2026-03-03",
+  "lastUpdated": "2026-03-08",
   "competitions": [
     {
       "competition": "2025-2026赛季单板滑雪大跳台U系列比赛（第四站富龙站）",
@@ -2294,7 +2294,8 @@ export const latestResults: ResultsData = {
               "rank": 11,
               "bib": 46,
               "name": "韩小贝",
-              "team": "石家庄市冰雪与足球运动中心",
+              "team": "河北省体育局冬季运动中心",
+              "birthYear": "2015",
               "bestScore": 59.33,
               "points": 176
             },
@@ -2685,7 +2686,8 @@ export const latestResults: ResultsData = {
               "rank": 3,
               "bib": 26,
               "name": "高梓曦",
-              "team": "A+自由式滑雪队",
+              "team": "个人",
+              "birthYear": "2008",
               "bestScore": 60.0,
               "points": 303
             },
@@ -10537,8 +10539,9 @@ export const latestResults: ResultsData = {
             {
               "rank": 7,
               "bib": 218,
-              "name": "ALBEESU",
-              "team": "张家口市足球和冰雪运动学校",
+              "name": "ALBBESU",
+              "team": "张家口冰雪运动学校",
+              "birthYear": "2015",
               "run1": "00:41.77",
               "run2": "00:43.27",
               "time": "01:25.04",
