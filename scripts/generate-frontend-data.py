@@ -185,17 +185,20 @@ def generate_total_rankings(conn):
     if len(comp_dates) >= 2:
         latest_date = comp_dates[-1]
         prev_results = [r for r in results_dict if r['compDate'] < latest_date]
-        prev_stats = defaultdict(lambda: {'totalPoints': 0, 'athleteId': '', 'sportType': '', 'discipline': '', 'ageGroup': '', 'gender': ''})
+        MAX_COUNTING = 3  # Best-of-3 rule
+        prev_stats = defaultdict(lambda: {'pointsList': [], 'totalPoints': 0, 'athleteId': '', 'sportType': '', 'discipline': '', 'ageGroup': '', 'gender': ''})
         for r in prev_results:
             merged = SPORT_TYPE_MERGE.get(r['sportType'], r['sportType'])
             key = f"{merged}-{r['discipline']}-{r['ageGroup']}-{r['gender']}-{r['athleteId']}"
             s = prev_stats[key]
-            s['totalPoints'] += r['points'] or 0
+            s['pointsList'].append(r['points'] or 0)
             s['athleteId'] = r['athleteId']
             s['sportType'] = merged
             s['discipline'] = r['discipline']
             s['ageGroup'] = r['ageGroup']
             s['gender'] = r['gender']
+        for s in prev_stats.values():
+            s['totalPoints'] = sum(sorted(s['pointsList'], reverse=True)[:MAX_COUNTING])
 
         groups = defaultdict(list)
         for s in prev_stats.values():
@@ -207,11 +210,15 @@ def generate_total_rankings(conn):
                 sk = f"{a['sportType']}-{a['discipline']}-{a['ageGroup']}-{a['gender']}-{a['athleteId']}"
                 last_snapshot_map[sk] = idx + 1
 
+    # Best-of-3: take top 3 competition scores per discipline per athlete
+    MAX_COUNTING = 3
+
     # Aggregate current stats
     athlete_stats = defaultdict(lambda: {
         'athleteId': '', 'athleteName': '', 'team': '', 'sportType': '',
         'discipline': '', 'ageGroup': '', 'gender': '',
-        'totalPoints': 0, 'competitionCount': 0, 'bestRank': 999, 'results': []
+        'totalPoints': 0, 'competitionCount': 0, 'bestRank': 999, 'results': [],
+        'pointsList': []
     })
 
     for r in results_dict:
@@ -225,7 +232,7 @@ def generate_total_rankings(conn):
         s['discipline'] = r['discipline']
         s['ageGroup'] = r['ageGroup']
         s['gender'] = r['gender']
-        s['totalPoints'] += r['points'] or 0
+        s['pointsList'].append(r['points'] or 0)
         s['competitionCount'] += 1
         if r['rank'] < s['bestRank']:
             s['bestRank'] = r['rank']
@@ -233,6 +240,10 @@ def generate_total_rankings(conn):
             'points': r['points'], 'rank': r['rank'],
             'competitionName': r['competitionName'], 'location': r['competitionLocation']
         })
+
+    # Apply best-of-3 rule
+    for s in athlete_stats.values():
+        s['totalPoints'] = sum(sorted(s['pointsList'], reverse=True)[:MAX_COUNTING])
 
     # Build sub-events
     sub_events = set()
@@ -427,7 +438,7 @@ def generate_club_rankings(conn):
     c = conn.cursor()
 
     results = c.execute('''
-        SELECT r.athleteId, r.points, r.rank, r.discipline,
+        SELECT r.athleteId, r.points, r.rank, r.discipline, r.ageGroup, r.gender,
                a.name as athleteName, a.team as athleteTeam,
                c.sportType, c.id as competitionId
         FROM Result r
@@ -438,11 +449,13 @@ def generate_club_rankings(conn):
     results_dict = [dict(zip(res_cols, row)) for row in results]
     print(f'  Found {len(results_dict)} results')
 
-    # Aggregate per club per sport type (total points across all sub-events)
-    club_stats = defaultdict(lambda: {
-        'team': '', 'sportType': '', 'totalPoints': 0, 'athletes': set(),
-        'competitions': set(), 'disciplines': set(),
-        'goldCount': 0, 'silverCount': 0, 'bronzeCount': 0,
+    # Aggregate per club per sport type
+    # First compute best-of-3 per athlete per discipline, then sum to club
+    MAX_COUNTING_CLUB = 3
+    athlete_club_stats = defaultdict(lambda: {
+        'team': '', 'sportType': '', 'athleteId': '', 'discipline': '',
+        'pointsList': [], 'goldCount': 0, 'silverCount': 0, 'bronzeCount': 0,
+        'competitions': set()
     })
 
     for r in results_dict:
@@ -450,21 +463,43 @@ def generate_club_rankings(conn):
         if team == '个人' or not team:
             continue
         merged = SPORT_TYPE_MERGE.get(r['sportType'], r['sportType'])
-        key = f"{team}-{merged}"
-        cs = club_stats[key]
-        cs['team'] = team
-        cs['sportType'] = merged
-        cs['totalPoints'] += r['points'] or 0
-        cs['athletes'].add(r['athleteId'])
-        cs['competitions'].add(r['competitionId'])
-        cs['disciplines'].add(r['discipline'])
+        akey = f"{team}-{merged}-{r['athleteId']}-{r['discipline']}-{r['ageGroup']}-{r['gender']}"
+        acs = athlete_club_stats[akey]
+        acs['team'] = team
+        acs['sportType'] = merged
+        acs['athleteId'] = r['athleteId']
+        acs['discipline'] = r['discipline']
+        acs['pointsList'].append(r['points'] or 0)
+        acs['competitions'].add(r['competitionId'])
         rank = r['rank']
         if rank == 1:
-            cs['goldCount'] += 1
+            acs['goldCount'] += 1
         elif rank == 2:
-            cs['silverCount'] += 1
+            acs['silverCount'] += 1
         elif rank == 3:
-            cs['bronzeCount'] += 1
+            acs['bronzeCount'] += 1
+
+    # Now aggregate to club level
+    club_stats = defaultdict(lambda: {
+        'team': '', 'sportType': '', 'totalPoints': 0, 'athletes': set(),
+        'competitions': set(), 'disciplines': set(),
+        'goldCount': 0, 'silverCount': 0, 'bronzeCount': 0,
+    })
+
+    for acs in athlete_club_stats.values():
+        key = f"{acs['team']}-{acs['sportType']}"
+        cs = club_stats[key]
+        cs['team'] = acs['team']
+        cs['sportType'] = acs['sportType']
+        # Best-of-3 per athlete per discipline
+        best3 = sum(sorted(acs['pointsList'], reverse=True)[:MAX_COUNTING_CLUB])
+        cs['totalPoints'] += best3
+        cs['athletes'].add(acs['athleteId'])
+        cs['competitions'].update(acs['competitions'])
+        cs['disciplines'].add(acs['discipline'])
+        cs['goldCount'] += acs['goldCount']
+        cs['silverCount'] += acs['silverCount']
+        cs['bronzeCount'] += acs['bronzeCount']
 
     # Rank clubs per sport type
     sport_rankings_list = []

@@ -1,7 +1,7 @@
 /**
  * 俱乐部积分排名静态数据（按大项汇总）
  * 自动生成，请勿手动修改
- * 生成时间: 2026-03-03T17:15:34.306135
+ * 生成时间: 2026-03-08T14:19:27.332477
  */
 
 export interface ClubRankingItem {
@@ -41,7 +41,7 @@ export const clubRankingsData: ClubRankingsData = {
         {
           "rank": 1,
           "team": "四川体育职业学院",
-          "totalPoints": 43231,
+          "totalPoints": 41961,
           "athleteCount": 55,
           "competitionCount": 19,
           "disciplineCount": 5,
@@ -52,7 +52,7 @@ export const clubRankingsData: ClubRankingsData = {
         {
           "rank": 2,
           "team": "河北省体育局冬季运动中心",
-          "totalPoints": 24553,
+          "totalPoints": 23477,
           "athleteCount": 33,
           "competitionCount": 16,
           "disciplineCount": 5,
@@ -63,7 +63,7 @@ export const clubRankingsData: ClubRankingsData = {
         {
           "rank": 3,
           "team": "河南省体育局",
-          "totalPoints": 20335,
+          "totalPoints": 19595,
           "athleteCount": 18,
           "competitionCount": 14,
           "disciplineCount": 2,
@@ -74,7 +74,7 @@ export const clubRankingsData: ClubRankingsData = {
         {
           "rank": 4,
           "team": "石家庄市冰雪与足球运动中心",
-          "totalPoints": 12816,
+          "totalPoints": 12169,
           "athleteCount": 11,
           "competitionCount": 14,
           "disciplineCount": 2,
@@ -85,7 +85,7 @@ export const clubRankingsData: ClubRankingsData = {
         {
           "rank": 5,
           "team": "湖北省武术和冬季运动管理中心",
-          "totalPoints": 11339,
+          "totalPoints": 10937,
           "athleteCount": 11,
           "competitionCount": 8,
           "disciplineCount": 2,
@@ -95,17 +95,6 @@ export const clubRankingsData: ClubRankingsData = {
         },
         {
           "rank": 6,
-          "team": "北京市冬季运动管理中心",
-          "totalPoints": 10437,
-          "athleteCount": 8,
-          "competitionCount": 14,
-          "disciplineCount": 2,
-          "goldCount": 2,
-          "silverCount": 2,
-          "bronzeCount": 3
-        },
-        {
-          "rank": 7,
           "team": "重庆市冬季运动管理中心",
           "totalPoints": 9857,
           "athleteCount": 13,
@@ -113,6 +102,17 @@ export const clubRankingsData: ClubRankingsData = {
           "disciplineCount": 4,
           "goldCount": 3,
           "silverCount": 4,
+          "bronzeCount": 3
+        },
+        {
+          "rank": 7,
+          "team": "北京市冬季运动管理中心",
+          "totalPoints": 9202,
+          "athleteCount": 8,
+          "competitionCount": 14,
+          "disciplineCount": 2,
+          "goldCount": 2,
+          "silverCount": 2,
           "bronzeCount": 3
         },
         {
@@ -1538,7 +1538,7 @@ export const clubRankingsData: ClubRankingsData = {
         {
           "rank": 1,
           "team": "四川体育职业学院",
-          "totalPoints": 14149,
+          "totalPoints": 12879,
           "athleteCount": 15,
           "competitionCount": 8,
           "disciplineCount": 2,
@@ -1549,7 +1549,7 @@ export const clubRankingsData: ClubRankingsData = {
         {
           "rank": 2,
           "team": "湖北省武术和冬季运动管理中心",
-          "totalPoints": 11339,
+          "totalPoints": 10937,
           "athleteCount": 11,
           "competitionCount": 8,
           "disciplineCount": 2,
@@ -1560,7 +1560,7 @@ export const clubRankingsData: ClubRankingsData = {
         {
           "rank": 3,
           "team": "河北省体育局冬季运动中心",
-          "totalPoints": 9152,
+          "totalPoints": 8076,
           "athleteCount": 9,
           "competitionCount": 8,
           "disciplineCount": 2,
@@ -1582,7 +1582,7 @@ export const clubRankingsData: ClubRankingsData = {
         {
           "rank": 5,
           "team": "河南省体育局",
-          "totalPoints": 7739,
+          "totalPoints": 6999,
           "athleteCount": 6,
           "competitionCount": 8,
           "disciplineCount": 2,
@@ -1593,7 +1593,7 @@ export const clubRankingsData: ClubRankingsData = {
         {
           "rank": 6,
           "team": "石家庄市冰雪与足球运动中心",
-          "totalPoints": 7538,
+          "totalPoints": 6891,
           "athleteCount": 6,
           "competitionCount": 8,
           "disciplineCount": 2,
@@ -1603,17 +1603,6 @@ export const clubRankingsData: ClubRankingsData = {
         },
         {
           "rank": 7,
-          "team": "北京市冬季运动管理中心",
-          "totalPoints": 6469,
-          "athleteCount": 5,
-          "competitionCount": 8,
-          "disciplineCount": 2,
-          "goldCount": 0,
-          "silverCount": 0,
-          "bronzeCount": 1
-        },
-        {
-          "rank": 8,
           "team": "重庆市冬季运动管理中心",
           "totalPoints": 5560,
           "athleteCount": 7,
@@ -1621,6 +1610,17 @@ export const clubRankingsData: ClubRankingsData = {
           "disciplineCount": 2,
           "goldCount": 2,
           "silverCount": 1,
+          "bronzeCount": 1
+        },
+        {
+          "rank": 8,
+          "team": "北京市冬季运动管理中心",
+          "totalPoints": 5234,
+          "athleteCount": 5,
+          "competitionCount": 8,
+          "disciplineCount": 2,
+          "goldCount": 0,
+          "silverCount": 0,
           "bronzeCount": 1
         },
         {
@@ -2347,5 +2347,5 @@ export const clubRankingsData: ClubRankingsData = {
     "totalAthletes": 507,
     "totalCompetitions": 19
   },
-  "generatedAt": "2026-03-03T17:15:34.306122"
+  "generatedAt": "2026-03-08T14:19:27.332467"
 };
