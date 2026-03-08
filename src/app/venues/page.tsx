@@ -13,18 +13,17 @@ import {
   Building,
   Trees,
   ExternalLink,
-  MessageCircle,
   Trophy
 } from 'lucide-react'
 import { recommendedVenues, type Venue } from '@/data/recommendations'
 
-const venueTypeLabels = {
+const venueTypeLabels: Record<string, string> = {
   indoor: '室内雪场',
   outdoor: '户外雪场',
   resort: '滑雪度假区'
 }
 
-const venueTypeIcons = {
+const venueTypeIcons: Record<string, typeof Building> = {
   indoor: Building,
   outdoor: Trees,
   resort: Mountain
@@ -36,10 +35,8 @@ export default function VenuesPage() {
   const [selectedLocation, setSelectedLocation] = useState('')
   const [onlyCompetition, setOnlyCompetition] = useState(false)
 
-  // 获取所有地点
   const locations = Array.from(new Set(recommendedVenues.map(v => v.location)))
 
-  // 筛选场馆
   const filteredVenues = recommendedVenues.filter(venue => {
     const matchSearch = venue.name.includes(searchTerm) ||
                        venue.location.includes(searchTerm) ||
@@ -50,43 +47,46 @@ export default function VenuesPage() {
     return matchSearch && matchType && matchLocation && matchCompetition
   })
 
+  const competitionCount = recommendedVenues.filter(v => v.isCompetitionVenue).length
+
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              优质雪场
-            </h1>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              精选全国优质滑雪场馆，为您提供最佳滑雪体验
-            </p>
+      {/* Page Header */}
+      <div className="bg-white border-b border-gray-200">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px] py-6">
+          <div className="flex items-center gap-3 mb-1">
+            <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
+              <Snowflake className="w-5 h-5 text-blue-600" />
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900">优质雪场</h1>
+              <p className="text-sm text-gray-500">
+                精选全国 {recommendedVenues.length} 个优质滑雪场馆，其中 {competitionCount} 个为U系列赛事举办地
+              </p>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* 筛选区 */}
-      <section className="py-6 bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap gap-4 items-center">
-            {/* 搜索框 */}
-            <div className="relative flex-1 min-w-[200px]">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+      {/* Filter Bar */}
+      <div className="bg-white border-b border-gray-100">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px] py-3">
+          <div className="flex flex-wrap gap-3 items-center">
+            <div className="relative flex-1 min-w-[180px]">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
               <input
                 type="text"
                 placeholder="搜索场馆名称、地区..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue focus:border-transparent"
+                className="w-full pl-9 pr-4 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
             </div>
 
-            {/* 类型筛选 */}
             <select
               value={selectedType}
               onChange={(e) => setSelectedType(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue"
+              className="px-3 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500"
             >
               <option value="">全部类型</option>
               <option value="indoor">室内雪场</option>
@@ -94,11 +94,10 @@ export default function VenuesPage() {
               <option value="resort">滑雪度假区</option>
             </select>
 
-            {/* 地区筛选 */}
             <select
               value={selectedLocation}
               onChange={(e) => setSelectedLocation(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ski-blue"
+              className="px-3 py-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500"
             >
               <option value="">全部地区</option>
               {locations.map(loc => (
@@ -106,62 +105,58 @@ export default function VenuesPage() {
               ))}
             </select>
 
-            {/* 赛事举办地筛选 */}
-            <label className="flex items-center gap-2 cursor-pointer">
+            <label className="flex items-center gap-1.5 cursor-pointer text-sm">
               <input
                 type="checkbox"
                 checked={onlyCompetition}
                 onChange={(e) => setOnlyCompetition(e.target.checked)}
-                className="w-4 h-4 text-ski-blue rounded border-gray-300 focus:ring-ski-blue"
+                className="w-4 h-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
               />
-              <span className="text-sm text-gray-700 flex items-center gap-1">
-                <Trophy className="w-4 h-4 text-amber-500" />
-                仅赛事举办地
-              </span>
+              <Trophy className="w-3.5 h-3.5 text-amber-500" />
+              <span className="text-gray-600">仅赛事举办地</span>
             </label>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* 场馆列表 */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-6 flex items-center justify-between">
-            <p className="text-gray-600">
-              共找到 <span className="font-bold text-ski-navy">{filteredVenues.length}</span> 个场馆
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {filteredVenues.map((venue) => (
-              <VenueCard key={venue.id} venue={venue} />
-            ))}
-          </div>
-
-          {filteredVenues.length === 0 && (
-            <div className="text-center py-16">
-              <p className="text-gray-500 text-lg">没有找到符合条件的场馆</p>
-            </div>
-          )}
+      {/* Venue List */}
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px] py-6">
+        <div className="mb-4">
+          <span className="text-sm text-gray-500">
+            共 <span className="font-semibold text-gray-900">{filteredVenues.length}</span> 个场馆
+          </span>
         </div>
-      </section>
 
-      {/* 底部提示 */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-ski-navy mb-4">想要入驻平台？</h2>
-          <p className="text-gray-600 mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          {filteredVenues.map((venue) => (
+            <VenueCard key={venue.id} venue={venue} />
+          ))}
+        </div>
+
+        {filteredVenues.length === 0 && (
+          <div className="text-center py-16 bg-white rounded-lg">
+            <Snowflake className="w-12 h-12 text-gray-300 mx-auto mb-3" />
+            <p className="text-gray-500">没有找到符合条件的场馆</p>
+          </div>
+        )}
+      </div>
+
+      {/* Bottom CTA */}
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 md:px-20 xl:px-[120px] pb-12">
+        <div className="bg-white rounded-lg shadow-sm p-8 text-center">
+          <h2 className="text-lg font-bold text-gray-900 mb-2">想要入驻平台？</h2>
+          <p className="text-sm text-gray-500 mb-4">
             如果您是滑雪场馆运营方，欢迎申请入驻我们的推荐平台
           </p>
           <Link
-            href="/contact"
-            className="inline-flex items-center px-6 py-3 bg-ski-blue text-white rounded-lg hover:bg-ski-blue/90 transition-colors"
+            href="/cooperation"
+            className="inline-flex items-center px-5 py-2.5 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors"
           >
             申请入驻
-            <ChevronRight className="w-5 h-5 ml-1" />
+            <ChevronRight className="w-4 h-4 ml-1" />
           </Link>
         </div>
-      </section>
+      </div>
     </div>
   )
 }
@@ -170,117 +165,109 @@ function VenueCard({ venue }: { venue: Venue }) {
   const TypeIcon = venueTypeIcons[venue.type]
 
   return (
-    <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow overflow-hidden">
-      {/* 顶部图片区 */}
-      <div className={`h-48 relative ${venue.isCompetitionVenue ? 'bg-gradient-to-br from-sky-500 to-indigo-700' : 'bg-gradient-to-br from-cyan-400 to-blue-600'}`}>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Snowflake className="w-24 h-24 text-white/20" />
-        </div>
-        <div className="absolute top-4 left-4 flex gap-2">
-          <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
-            venue.type === 'indoor' ? 'bg-purple-100 text-purple-700' :
-            venue.type === 'outdoor' ? 'bg-green-100 text-green-700' :
-            'bg-blue-100 text-blue-700'
-          }`}>
-            <TypeIcon className="w-4 h-4 mr-1" />
-            {venueTypeLabels[venue.type]}
-          </span>
-          {venue.isCompetitionVenue && (
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-amber-100 text-amber-700">
-              <Trophy className="w-4 h-4 mr-1" />
-              U系列赛事举办地
+    <div className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+      <div className="flex flex-col sm:flex-row">
+        {/* Left: Visual */}
+        <div className={`sm:w-48 h-36 sm:h-auto relative flex-shrink-0 ${
+          venue.isCompetitionVenue
+            ? 'bg-gradient-to-br from-sky-500 to-indigo-600'
+            : venue.type === 'indoor'
+            ? 'bg-gradient-to-br from-purple-400 to-indigo-500'
+            : 'bg-gradient-to-br from-cyan-400 to-blue-500'
+        }`}>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <Snowflake className="w-16 h-16 text-white/15" />
+          </div>
+          <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
+            <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-white/90 ${
+              venue.type === 'indoor' ? 'text-purple-700' :
+              venue.type === 'outdoor' ? 'text-green-700' :
+              'text-blue-700'
+            }`}>
+              <TypeIcon className="w-3 h-3 mr-1" />
+              {venueTypeLabels[venue.type]}
             </span>
-          )}
-        </div>
-        <div className="absolute top-4 right-4 flex items-center bg-white/90 rounded-full px-2 py-1">
-          <Star className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-          <span className="text-sm font-medium ml-1">{venue.rating}</span>
-          <span className="text-xs text-gray-500 ml-1">({venue.reviews})</span>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-          <h3 className="text-xl font-bold text-white">{venue.name}</h3>
-          <div className="flex items-center text-white/80 text-sm">
-            <MapPin className="w-4 h-4 mr-1" />
-            {venue.location} · {venue.address}
+            {venue.isCompetitionVenue && (
+              <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-amber-100 text-amber-700">
+                <Trophy className="w-3 h-3 mr-1" />
+                赛事举办地
+              </span>
+            )}
           </div>
-        </div>
-      </div>
-
-      <div className="p-5">
-        {/* 雪道信息 */}
-        <div className="flex items-center gap-4 mb-4 text-sm">
-          <div className="flex items-center">
-            <span className="w-3 h-3 rounded-full bg-green-500 mr-1"></span>
-            <span className="text-gray-600">初级 {venue.slopes.beginner}</span>
-          </div>
-          <div className="flex items-center">
-            <span className="w-3 h-3 rounded-full bg-blue-500 mr-1"></span>
-            <span className="text-gray-600">中级 {venue.slopes.intermediate}</span>
-          </div>
-          <div className="flex items-center">
-            <span className="w-3 h-3 rounded-full bg-black mr-1"></span>
-            <span className="text-gray-600">高级 {venue.slopes.advanced}</span>
+          {/* Rating */}
+          <div className="absolute bottom-3 right-3 flex items-center bg-white/90 rounded px-1.5 py-0.5">
+            <Star className="w-3 h-3 text-yellow-400 fill-yellow-400" />
+            <span className="text-xs font-medium ml-0.5">{venue.rating}</span>
           </div>
         </div>
 
-        {/* 海拔信息 */}
-        {venue.elevation && (
-          <div className="flex items-center gap-4 mb-4 text-sm text-gray-600">
+        {/* Right: Info */}
+        <div className="flex-1 p-4">
+          <div className="mb-2">
+            <h3 className="text-base font-bold text-gray-900">{venue.name}</h3>
+            <div className="flex items-center text-xs text-gray-500 mt-0.5">
+              <MapPin className="w-3 h-3 mr-1 flex-shrink-0" />
+              {venue.location} · {venue.address}
+            </div>
+          </div>
+
+          {/* Slopes */}
+          <div className="flex items-center gap-3 mb-2 text-xs">
             <div className="flex items-center">
-              <Mountain className="w-4 h-4 mr-1" />
-              海拔 {venue.elevation.base}-{venue.elevation.summit}m
+              <span className="w-2 h-2 rounded-full bg-green-500 mr-1"></span>
+              <span className="text-gray-600">初级 {venue.slopes.beginner}</span>
             </div>
-            <div>
-              落差 {venue.elevation.summit - venue.elevation.base}m
+            <div className="flex items-center">
+              <span className="w-2 h-2 rounded-full bg-blue-500 mr-1"></span>
+              <span className="text-gray-600">中级 {venue.slopes.intermediate}</span>
+            </div>
+            <div className="flex items-center">
+              <span className="w-2 h-2 rounded-full bg-gray-800 mr-1"></span>
+              <span className="text-gray-600">高级 {venue.slopes.advanced}</span>
+            </div>
+            {venue.elevation && (
+              <div className="flex items-center text-gray-500">
+                <Mountain className="w-3 h-3 mr-1" />
+                落差 {venue.elevation.summit - venue.elevation.base}m
+              </div>
+            )}
+          </div>
+
+          {/* Features */}
+          <div className="flex flex-wrap gap-1 mb-2">
+            {venue.features.slice(0, 4).map((feature, idx) => (
+              <span
+                key={idx}
+                className="px-1.5 py-0.5 bg-gray-50 text-gray-500 text-[11px] rounded border border-gray-100"
+              >
+                {feature}
+              </span>
+            ))}
+          </div>
+
+          {/* Price + Season + Actions */}
+          <div className="flex items-center justify-between mt-2 pt-2 border-t border-gray-100">
+            <div className="flex items-center gap-3 text-xs text-gray-500">
+              <div className="flex items-center">
+                <Clock className="w-3 h-3 mr-1" />
+                {venue.openSeason}
+              </div>
+              <div className="font-medium text-blue-600">{venue.price}</div>
+            </div>
+            <div className="flex items-center gap-2">
+              {venue.website && (
+                <a
+                  href={`https://${venue.website}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-xs text-blue-600 hover:text-blue-700"
+                >
+                  <ExternalLink className="w-3 h-3 mr-0.5" />
+                  官网
+                </a>
+              )}
             </div>
           </div>
-        )}
-
-        {/* 特色标签 */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {venue.features.slice(0, 4).map((feature, idx) => (
-            <span
-              key={idx}
-              className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded"
-            >
-              {feature}
-            </span>
-          ))}
-        </div>
-
-        {/* 开放时间和价格 */}
-        <div className="flex items-center justify-between text-sm mb-4">
-          <div className="flex items-center text-gray-600">
-            <Clock className="w-4 h-4 mr-1" />
-            {venue.openSeason}
-          </div>
-          <div className="text-ski-blue font-semibold">
-            {venue.price}
-          </div>
-        </div>
-
-        {/* 简介 */}
-        <p className="text-sm text-gray-600 line-clamp-2 mb-4">
-          {venue.description}
-        </p>
-
-        {/* 操作按钮 */}
-        <div className="flex gap-3">
-          {venue.website && (
-            <a
-              href={`https://${venue.website}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 flex items-center justify-center px-4 py-2 border border-ski-blue text-ski-blue rounded-lg hover:bg-ski-blue/5 transition-colors text-sm"
-            >
-              <ExternalLink className="w-4 h-4 mr-1" />
-              官网
-            </a>
-          )}
-          <button className="flex-1 flex items-center justify-center px-4 py-2 bg-ski-blue text-white rounded-lg hover:bg-ski-blue/90 transition-colors text-sm">
-            <MessageCircle className="w-4 h-4 mr-1" />
-            咨询预订
-          </button>
         </div>
       </div>
     </div>
