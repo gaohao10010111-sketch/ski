@@ -516,7 +516,7 @@ export default function PointsRankingsPage() {
           showToast('没有数据可导出', 'warning')
           return
         }
-        rows.push(['排名', '运动员', '单位', '年龄组', '性别', '总积分', '参赛次数', '实时排名'])
+        rows.push(['排名', '运动员', '单位', '年龄组', '性别', '总积分', '场次', '实时排名'])
         for (const item of filteredTotalRankings) {
           rows.push([
             String(item.rank),
@@ -931,7 +931,7 @@ export default function PointsRankingsPage() {
                                   {/* 桌面端：姓名和单位分开 */}
                                   <th className="hidden sm:table-cell px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">姓名</th>
                                   <th className="hidden sm:table-cell px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">单位</th>
-                                  <th className="hidden sm:table-cell px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">参赛</th>
+                                  <th className="hidden sm:table-cell px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">场次</th>
                                   <th className="hidden md:table-cell px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-20">实时排名</th>
                                   <th className="hidden sm:table-cell px-3 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16">变化</th>
                                   <th className="px-2 sm:px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase w-16 sm:w-24">总积分</th>
