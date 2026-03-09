@@ -256,15 +256,10 @@ function VenueCard({ venue }: { venue: Venue }) {
             </div>
             <div className="flex items-center gap-2">
               {venue.website && (
-                <a
-                  href={`https://${venue.website}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center text-xs text-blue-600 hover:text-blue-700"
-                >
+                <span className="flex items-center text-xs text-gray-400 cursor-default">
                   <ExternalLink className="w-3 h-3 mr-0.5" />
                   官网
-                </a>
+                </span>
               )}
             </div>
           </div>
